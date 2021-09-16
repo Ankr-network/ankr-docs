@@ -24,12 +24,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -49,43 +43,43 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'What-is-Ankr/About',
             position: 'left',
             label: 'About',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'What-is-Ankr/About',
             position: 'left',
             label: 'Resources',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'What-is-Ankr/About',
             position: 'left',
             label: 'Build',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'What-is-Ankr/About',
             position: 'left',
             label: 'Earn',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'What-is-Ankr/About',
             position: 'left',
             label: 'Enterprise',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'What-is-Ankr/About',
             position: 'left',
             label: 'Community',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'What-is-Ankr/About',
             position: 'left',
             label: 'Guides',
           },
@@ -101,7 +95,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/What-is-Ankr/About',
               },
             ],
           },
@@ -127,7 +121,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                href: 'https://medium.com/ankr-network',
               },
               {
                 label: 'GitHub',
