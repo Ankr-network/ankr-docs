@@ -1,9 +1,14 @@
-# Types of Internet Bonds
+---
+title: Liquidity Staking Tokens
+id: liquidity-tokens
+---
 
-There are two types of Internet Bonds:
+# Types of Liquidity Tokens
+
+There are two types of Liquidity Tokens:
 
 • Reward Earning Certificates e.g. aETHc formerly aETH
-• Reward Earning Bonds e.g. aAVAXb and aETHb (formerly fETH.)
+• Reward Earning Tokens e.g. aAVAXb and aETHb (formerly fETH.)
 
 ## Reward Earning Certificates
 These are automatically issued to your StakeFi Dashboard upon successful ETH2 staking.
@@ -21,7 +26,7 @@ Fair Value is your stake plus the rewards that have not yet been distributed. Th
 
 The Market Price is the price that traders are willing to buy and sell internet bonds knowing that they don't have access to the Fair Value until 2022. 
 
-## Reward Earning Bonds
+## Reward Earning Tokens
 These are automatically issued to your StakeFi Dashboard upon successful ETH2 and/or AVAX staking.
 
 Daily rewards are automatically updated in Bond holders’ wallets. The amount of aETHb/aAVAX held automatically increases with every daily rebase.

@@ -7,12 +7,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   title: 'Ankr Docs',
   tagline: 'Your single-source-of-truth for all things Ankr',
   url: 'https://docs.ankr.com',
-  baseUrl: '/',
+  baseUrl: "/",
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'ankr-network', // Usually your GitHub org/user name.
   projectName: 'Ankr-docs', // Usually your repo name.
+ 
 
   presets: [
     [
@@ -22,7 +23,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/ankr-network/ankr-docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -42,48 +43,63 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
         items: [
           {
-            type: 'doc',
-            docId: 'What-is-Ankr/About',
+            type: 'dropdown',
+            label: 'What is Ankr',
             position: 'left',
-            label: 'About',
+            items: [
+              {
+                "to": "docs/whatisankr/about",
+                "label": 'About',
+              },
+              {
+                "to": "docs/whatisankr/ankr-approach",
+                "label": 'Ankr Principles',
+              },
+              {
+                "to": "docs/whatisankr/ankr-vision",
+                "label": 'Ankr Vision',
+              },
+            ],
           },
           {
-            type: 'doc',
-            docId: 'What-is-Ankr/About',
-            position: 'left',
-            label: 'Resources',
-          },
-          {
-            type: 'doc',
-            docId: 'What-is-Ankr/About',
-            position: 'left',
+            type: 'dropdown',
             label: 'Build',
+            position: 'left',
+            items: [
+              {
+                "to": "docs/Build/about-api-services",
+                "label": 'API Services',
+              },
+              {
+                "to": "docs/Build/dev-pricing-plans",
+                "label": 'API Pricing Plans',
+              },
+              {
+                "to": "docs/Build/dev-get-started",
+                "label": 'Getting Started',
+              },
+            ],
           },
           {
-            type: 'doc',
-            docId: 'What-is-Ankr/About',
-            position: 'left',
+            type: 'dropdown',
             label: 'Earn',
-          },
-          {
-            type: 'doc',
-            docId: 'What-is-Ankr/About',
             position: 'left',
-            label: 'Enterprise',
+            items: [
+              {
+                "to": "docs/Earn/about-stakefi",
+                "label": 'About StakeFi',
+              },
+              {
+                "to": "docs/Earn/liquidity-tokens",
+                "label": 'API Pricing Plans',
+              },
+              {
+                "to": "docs/Build/dev-get-started",
+                "label": 'Getting Started',
+              },
+            ],
           },
-          {
-            type: 'doc',
-            docId: 'What-is-Ankr/About',
-            position: 'left',
-            label: 'Community',
-          },
-          {
-            type: 'doc',
-            docId: 'What-is-Ankr/About',
-            position: 'left',
-            label: 'Guides',
-          },
-       
+            
           
         ],
       },
