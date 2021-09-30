@@ -1,3 +1,8 @@
+---
+title: Developer API Pricing Plans 
+id: dev-pricing-plans
+---
+
 # Pricing Plans
 
 We offer 5 flexible options and pricing plans to suit all budgets and requirements.
