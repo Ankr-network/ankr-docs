@@ -38,7 +38,7 @@ $ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-<<<<<<< Updated upstream
+
 # Collaboration
 
 ## Prerequisites:
@@ -54,28 +54,26 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 3. Open VS Code or other Markdown Editor. 
 
-=======
->>>>>>> Stashed changes
+
 ## How to add a new page
 
 1. Simply create a new markdown file in a related folder e.g. staking.md should go in docs/Earn
 
 2. Insert ***yaml front matter*** as below with the **title** and a unique **id** for the document. (It is important that the **id** is unique).
 
-<<<<<<< Updated upstream
+
 ```
-=======
->>>>>>> Stashed changes
+
 ---
 title: About StakeFi
 id: about-stakefi
 ---
-<<<<<<< Updated upstream
+
 ```
-=======
->>>>>>> Stashed changes
+
 
 3. Add content using standard markdown. Be aware that admonitions can be added as follows:
+
 ```
 :::note
 
@@ -107,7 +105,4 @@ Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 ```
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
