@@ -1,3 +1,8 @@
+---
+title: Web 3.0
+id: web-3.0
+---
+
 # Web 3.0
 
 ## Web 3.0 - The Next Generation of Internet
