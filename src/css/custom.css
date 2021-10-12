@@ -5,6 +5,8 @@
  */
 
 /* You can override the default Infima variables here. */
+
+
 :root {
   --ifm-color-primary: #2c59d6;
   --ifm-color-primary-dark: rgb(33, 54, 175);
@@ -13,9 +15,16 @@
   --ifm-color-primary-light: rgb(192, 199, 197);
   --ifm-color-primary-lighter: rgb(201, 207, 206);
   --ifm-color-primary-lightest: rgb(223, 226, 226);
-  --ifm-font-family-base: 'Raleway';
   --ifm-code-font-size: 95%;
 }
+
+
+@font-face {
+  font-family: 'Raleway';
+  src:  url('raleway.woff2') format('woff2'),
+        url('raleway.woff') format('woff');
+}
+
 
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
@@ -29,6 +38,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
 
 

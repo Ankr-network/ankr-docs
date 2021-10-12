@@ -9,7 +9,7 @@ id: about-stakefi
 
 2. Liquidity Staking
 
-3. Parachain Bonds
+3. Liquid Parachain Tokens
 
 ( 4. StakeFi Alpha* - *Platform to identify additional revenues across DeFi platforms. Coming Soon.*) 
 
@@ -29,13 +29,16 @@ Serving as a validator is a technically complex and costly business demanding a 
 ## How Ankr solves these problems with StakeFi
 Ankr StakeFi offers a range of solutions designed to ease complexity and enable mass adoption with a range of opportunities for anybody to get involved in staking with:
 ​ 
-### 1. Pooled staking with low minimum assets to solve high capital requirement problem. 
+### 1. Capital Efficiency
+#### Pooled staking with low minimum assets to solve high capital requirement problem. 
 To ensure wider participation, Pooled Staking allows a minimal amount of crypto assets to be deposited into Micropools. Currently ETH (0.5 ETH minimum), BNB (1 BNB minimum), AVAX (no minimum amount). 
 
-### 2. Instant issuing of Liquidity tokens to solve locked value problem
+#### Instant issuing of Liquidity tokens to solve locked value problem
 Following successful staking, **Liquidity Tokens** are issued to stakers that can be immediately redeemed and utilized in a range of DeFi opportunities e.g. lending, yield farming etc. 
 
-### 3. Instant issuing of Parachain Bonds
+#### Instant issuing of Liquid Parachain Tokens
 Depositing DOT or KSM on projects participating in Parachain Slot Auctions allows more people to support the project of their choice with a low commitment. Instant issuing of liquidity tokens allows participation in DeFi platforms.
 ​ 
-### 4. 
+### 2. Removing Technical Complexity 
+Ankr offers freedom from the technical burden of running a Node.
+You have the option to use Ankr Nodes to perform staking. This passes the burden of managing challenging technology onto experts whilst you can enjoy the rewards of staking.
