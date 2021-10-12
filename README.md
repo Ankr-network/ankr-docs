@@ -53,18 +53,22 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 3. Open VS Code or other Markdown Editor. 
 
+
 ## How to add a new page
 
 1. Simply create a new markdown file in a related folder e.g. staking.md should go in docs/Earn
 
 2. Insert ***yaml front matter*** as below with the **title** and a unique **id** for the document. (It is important that the **id** is unique).
 
+
 ---
 title: About StakeFi
 id: about-stakefi
 ---
 
+
 3. Add content using standard markdown. Be aware that admonitions can be added as follows:
+
 ```
 :::note
 
@@ -96,3 +100,4 @@ Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 ```
+
