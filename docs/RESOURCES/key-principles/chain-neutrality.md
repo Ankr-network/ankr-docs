@@ -1,3 +1,7 @@
+---
+title: Chain Neutrality
+id: chain-neutral
+---
 # Chain Neutrality 
 
 ## We are Chain Neutral

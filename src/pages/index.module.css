@@ -5,10 +5,17 @@
 
 .heroBanner {
   padding: 4rem 0;
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
 }
+
+.h1 {
+  font-family: 'Raleway';
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @media screen and (max-width: 966px) {
   .heroBanner {
