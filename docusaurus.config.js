@@ -79,7 +79,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 "label": 'API Pricing Plans',
               },
               {
-                "to": "docs/Build/dev-get-started",
+                "to": "docs/Build/getting-started/dev-get-started",
                 "label": 'Getting Started',
               },
             ],
@@ -150,8 +150,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             position: 'left',
             items: [
               {
-                "to": "docs/Resources/key-principles/key-principles",
-                "label": 'Key Principles',
+                "to": "docs/Protocol/about-protocol",
+                "label": 'About Protocol',
               },
               {
                 "to": "docs/Resources/guides/guides",

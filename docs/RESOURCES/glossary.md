@@ -59,7 +59,7 @@ Sharding is a scalability and capacity improvement for ETH 2 using Shard chains 
 
 Shard chains can only safely enter the Ethereum ecosystem with a proof-of-stake consensus mechanism in place.
 
-## EVM-Compatible
+## EVM-Compatible Chains
 EVM, or Ethereum Virtual Machine, is a leading standard for smart-contract development. With EVM compatibility, developers can build the same way that they would do on Ethereum, and benefit from the same tools and applications.
 
 This is particularly useful in addressing the scalability problems of Ethereum. Ethereum 1.0 is currently limited to 15 or so transactions per second, whilst rising transaction fees can make it extremely hard to move funds in a timely manner, especially when interacting with smart contracts.
@@ -72,12 +72,12 @@ Examples of EVM compatible blockchains are Binance Smart Chain, Polygon and Aval
 
 With Ankr’s support for EVM-compatible chains, developers can easily access other chains with the same functions and code, without getting locked into a single chain.
 
-## Binance Smart Chain
+### Binance Smart Chain
 Binance Smart Chain solves the development challenges in adding new decentralized features for assets and community to the native DEX blockchain.
 
 Binance Smart Chain is a standalone parallel Binance chain offering much requested Smart Contract and Virtual Machine functionality. The provision of a parallel chain ensures the continuance of existing Binance Chain performance capabilities in handling millions of trades in a short time.
 
-### Key Benefits
+#### Key Benefits
 
 * Cross-chain communication meaning that users are free to create any tokenization, financial products, and digital assets on Binance Smart Chain or Binance Chain. Items on BSC can be manually and programmatically traded and circulated in the stable, high throughput, fast and friendly environment of Binance Chain whilst being able to operate these in a single interface and tooling ecosystem.
 
@@ -85,25 +85,25 @@ Binance Smart Chain is a standalone parallel Binance chain offering much request
 
 * Ethereum Compatibility.
 
-## Polygon (formerly known as MATIC)
+### Polygon (formerly known as MATIC)
 Polygon solves the problem of ecosystem fragmentation and development challenges in connecting Ethereum-compatible blockchain networks.
 
 Polygon is a specialized protocol and framework for building and connecting blockchain networks. The Polygon platform is designed for ease of use and provides a structure for Ethereum scaling and infrastructure development. Its core component is Polygon SDK, a modular, flexible framework that supports building multiple types of applications.
 
 Using Polygon, one can create Optimistic Rollup chains, ZK Rollup chains, stand-alone chains, or any other kind of infra required by the developer.
 
-### Key Benefits
+#### Key Benefits
 
 Polygon enhances and transforms the Ethereum Network into a fully-fledged multi-chain system with the advantages of Ethereum’s security, ecosystem, and openness.
 
-## Avalanche
+### Avalanche
 Avalanche is a smart contracts platform aiming to solve the problem of fragmentation in the global financial system by providing an internet-scale electronic payment system with a novel consensus mechanism. The Avalanche consensus engine solves the blockchain scalability trilemma of balancing speed, scalability and security in a number of novel ways. - Snowball Consensus Protocol - Inspired by gossip algorithms, this system works by repeatedly sampling the network at random and steering correct nodes towards a common outcome. Avalanche executes multiple Snowball instances with the aid of a Directed Acyclic Graph.
 
 - DAG (Directed Acyclic Graph) - A non-linear data structure to store data and enable the partial ordering of decisions. DAG works with Snowball to resolve any conflicting (double-spend) transactions and achieve consensus and fast finality transactions at high speed, efficiency and security.
 
 Unlike PoW and PoS there is no competition to create a new block and the Avalanche consensus engine is eco-friendly, energy efficient and does not require special computer hardware. It performs well in adversarial conditions and is resilient to "51% attacks."
 
-### Key Benefits
+#### Key Benefits
 
 * Supports the building of application-specific blockchains, spanning permissioned (private) and permissionless (public) deployments.
 
