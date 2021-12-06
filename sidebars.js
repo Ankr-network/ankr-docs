@@ -11,8 +11,8 @@ module.exports = {
   enterpriseSidebar: {
   'Enterprise': ['Enterprise/about-web3',]
 },
-  communitySidebar: {
-  'Community': ['Community/about-ankr-tokens',]
+  governanceSidebar: {
+  'Tokens & Governance': ['Tokens&Governance/about-ankr-tokens', 'Tokens&Governance/governance','Tokens&Governance/tokenomics'],
 },
   resourcesSidebar: {
   'Resources': ['Resources/guides/guides',]
