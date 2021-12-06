@@ -15,9 +15,6 @@ module.exports = {
   communitySidebar: {
   'Community': ['Community/about-ankr-tokens',]
 },
-  resourcesSidebar: {
-  'Resources': ['Resources/guides/guides',]
-},
   protocolSidebar: {
   'Protocol': ['Protocol/about-protocol', 'Protocol/connect-wallet', 'Protocol/ankr-premium', 'Protocol/protocol-staking', 'Protocol/troubleshooting', 'Protocol/rpc-node-providers']
   },
