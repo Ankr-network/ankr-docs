@@ -1,0 +1,88 @@
+.features {
+  background-color: #f2f5fa;
+  padding-bottom: 100px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 466px;
+  grid-gap: 20px;
+}
+
+.item {
+  background-color: white;
+  border-radius: 30px;
+  padding: 48px 60px;
+  position: relative;
+}
+
+.title {
+  color: #356df3;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.icon {
+  margin-left: 8px;
+}
+
+.description {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #1f2226;
+}
+
+.image {
+  position: absolute;
+  bottom: 52px;
+  right: 44px;
+}
+
+.button {
+  color: white;
+  background: linear-gradient(0deg, #1f2226, #1f2226), #356df3;
+  border-radius: 12px;
+  width: 212px;
+  height: 54px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.community {
+  max-width: 1200px;
+  margin: 100px auto 120px auto;
+  padding: 52px 0 80px 0;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+}
+
+.communityTitle {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: #1f2226;
+  margin: 36px auto 20px auto;
+}
+
+.communityDesc {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  max-width: 740px;
+  color: #1f2226;
+  opacity: 0.5;
+  margin: 0 auto 56px auto;
+}

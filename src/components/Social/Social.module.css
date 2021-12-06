@@ -1,0 +1,49 @@
+.container {
+  background-color: #f2f5fa;
+  padding-bottom: 120px;
+}
+.social {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.item {
+  height: 180px;
+  background-color: white;
+  border-radius: 21px;
+  flex: 1;
+  margin: 0 20px;
+  text-align: left;
+  padding: 20px;
+  position: relative;
+}
+.item:hover {
+  text-decoration: none;
+  box-shadow: 0 0 25px rgb(31 34 38 / 10%), 0 5px 100px rgb(31 34 38 / 15%);
+}
+
+.name {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1f2226;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 500;
+  color: #1f2226;
+  opacity: 0.5;
+}
+
+.icon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}

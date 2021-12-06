@@ -6,7 +6,6 @@
 
 /* You can override the default Infima variables here. */
 
-
 :root {
   --ifm-color-primary: #2c59d6;
   --ifm-color-primary-dark: rgb(33, 54, 175);
@@ -16,15 +15,9 @@
   --ifm-color-primary-lighter: rgb(201, 207, 206);
   --ifm-color-primary-lightest: rgb(223, 226, 226);
   --ifm-code-font-size: 95%;
+  --ifm-color-primary: #356df3;
+  --ifm-link-color: #356df3;
 }
-
-
-@font-face {
-  font-family: 'Raleway';
-  src:  url('raleway.woff2') format('woff2'),
-        url('raleway.woff') format('woff');
-}
-
 
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
@@ -33,12 +26,298 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.navbar {
+  width: 100%;
+  height: 128px;
+  padding: 0;
+  box-shadow: none;
+}
+.navbar__inner {
+  padding: 0 60px;
+}
 
+.navbar__logo {
+  padding-right: 20px;
+  border-right: 1px solid #c4c4c4;
+  margin-right: 20px;
+}
+.navbar__brand {
+  font-size: 20px;
+  line-height: 1.35;
+}
+.navbar__brand b {
+  font-weight: 400;
+  color: rgba(46, 46, 46, 0.8);
+}
 
+.navbar__item {
+  cursor: pointer;
+}
+.navbar__link {
+  color: #1f2226;
+  opacity: 0.5;
+}
 
+.dropdown {
+  font-family: "Gilroy";
+}
+.dropdown > .navbar__link:after {
+  width: 14px;
+  height: 6px;
+  border: none;
+  padding-right: 14px;
+  background: url("../../static/img/dropdown.svg") 0 0 no-repeat;
+}
+.dropdown__menu {
+  text-align: left;
+}
+.dropdown__link {
+  color: rgba(31, 34, 38, 0.5);
+}
+.dropdown__link:hover,
+.dropdown__link--active {
+  background-color: transparent;
+  color: #356df3;
+}
 
+.docs-wrapper {
+  background-color: #f2f5fa;
+  font-family: "Helvetica Neue";
+}
+main .container {
+  padding: 46px 0 46px 92px !important;
+  max-width: 100%;
+}
+aside {
+  border-right: none !important;
+  margin-top: 0 !important;
+  background-color: #fff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+aside > div {
+  padding-top: 40px !important;
+}
 
+aside nav {
+  padding: 0 !important;
+}
+
+.menu__list {
+  padding: 0 20px 0 60px;
+  color: rgba(31, 34, 38, 0.8);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.menu__list .menu__list {
+  margin-left: 0;
+  padding-left: 12px;
+}
+.menu__link {
+  padding: 0;
+  margin-bottom: 20px;
+}
+.menu__list-item {
+  margin: 0;
+}
+
+.menu__link--active:not(.menu__link--sublist),
+.menu__link:hover {
+  color: #356df3;
+  background-color: transparent;
+}
+
+.menu__link--sublist:after {
+  background: url("../../static/img/dropdown.svg") 0 0 no-repeat;
+  transform: none;
+}
+.menu__list-item--collapsed .menu__link--sublist:after {
+  transform: rotate(180deg);
+  margin-top: -10px;
+  margin-right: 10px;
+}
+
+.pagination-nav__item {
+  position: relative;
+}
+.pagination-nav__item:after {
+  content: " ";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 32px;
+  left: 24px;
+  background: url("../../static/img/left.svg") 0 0 no-repeat;
+}
+.pagination-nav__item.pagination-nav__item--next:after {
+  background-image: url("../../static/img/right.svg");
+  left: calc(100% - 48px);
+}
+.pagination-nav__item:hover:after {
+  background-image: url("../../static/img/leftHover.svg");
+}
+.pagination-nav__item:hover.pagination-nav__item--next:after {
+  background-image: url("../../static/img/rightHover.svg");
+  left: calc(100% - 48px);
+}
+
+.pagination-nav__link {
+  border-radius: 21px;
+  padding: 20px 24px;
+  color: rgba(31, 34, 38, 0.8);
+  font-size: 12px;
+}
+.pagination-nav__link:hover {
+  color: #356df3;
+}
+.pagination-nav__link:hover .pagination-nav__label {
+  color: inherit;
+}
+.pagination-nav__sublabel {
+  color: inherit;
+  text-align: right;
+  font-weight: 400;
+  color: inherit;
+}
+.pagination-nav__label {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2226;
+  opacity: 0.8;
+  display: inline;
+  position: relative;
+  float: right;
+}
+
+.pagination-nav__label:after {
+  content: " ";
+  width: 10px;
+  height: 20px;
+  background-color: #f2f5fa;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pagination-nav__item--next .pagination-nav__sublabel {
+  color: inherit;
+  text-align: left;
+}
+.pagination-nav__item--next .pagination-nav__label {
+  text-align: left;
+  float: left;
+}
+.pagination-nav__item--next .pagination-nav__label:after {
+  content: " ";
+  width: 10px;
+  height: 20px;
+  background-color: #f2f5fa;
+  position: absolute;
+  top: 0;
+  left: calc(100% - 10px);
+}
+
+table thead tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+}
+table th {
+  border: none;
+  text-align: left;
+  color: rgba(31, 34, 38, 0.8);
+  padding: 16px 8px 16px;
+}
+table tr:nth-child(2n) {
+  background-color: transparent;
+}
+table td {
+  border-width: 0 0 1px 0;
+  padding: 16px 8px 16px;
+}
+
+.alert {
+  background-color: white;
+  box-shadow: none;
+  border-radius: 21px;
+  border-width: 1px;
+  color: rgba(31, 34, 38, 0.8);
+}
+.admonition h5 {
+  color: #1f2226;
+}
+
+.markdown h1 {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1f2226;
+}
+.markdown h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #1f2226;
+}
+.markdown p {
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(31, 34, 38, 0.8);
+  margin-bottom: 8px;
+}
+
+.markdown .tabs li::before {
+  display: none;
+}
+.markdown ul.tabs {
+  padding-left: 0;
+}
+.markdown ol {
+  counter-reset: ol;
+  padding-left: 2em;
+}
+.markdown ul {
+  counter-reset: ul;
+  padding-left: 2em;
+}
+.markdown li:before {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -2em;
+  top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #356df3;
+  color: #356df3;
+  border-radius: 50%;
+}
+.markdown li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 9px;
+}
+.markdown li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+.markdown ol li:before {
+  content: counter(ol);
+  counter-increment: ol;
+}
+.markdown ul li:before {
+  content: counter(ul);
+  counter-increment: ul;
+}

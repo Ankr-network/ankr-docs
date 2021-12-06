@@ -3,28 +3,56 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
+.top {
+  width: 100%;
+  height: 490px;
+  background-color: #f2f5fa;
+}
+.container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.h1 {
-  font-family: 'Raleway';
-  font-weight: normal;
-  font-style: normal;
+.title {
+  font-size: 52px;
+  line-height: 62px;
+  color: #1f2226;
+  margin-bottom: 20px;
 }
 
+.subTitle {
+  font-size: 20px;
+  line-height: 28px;
+  color: rgba(31, 34, 38, 0.5);
+  margin-bottom: 40px;
+}
 
 @media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.button {
+  color: white;
+  background: linear-gradient(0deg, #1f2226, #1f2226), #356df3;
+  border-radius: 12px;
+  width: 212px;
+  height: 54px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button:hover {
+  color: white;
+  text-decoration: none;
 }
