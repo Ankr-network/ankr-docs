@@ -12,22 +12,24 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={styles.top}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>{siteConfig.title}</h1>
-        <p className={styles.subTitle}>{siteConfig.tagline}</p>{" "}
-        <div className={styles.buttons}>
-          <Link
-            className={styles.button}
-            to="http://www.ankr.com"
-            target="_blank"
-          >
-            Meet Ankr
-          </Link>
-          <Link className={styles.button} to="/docs/intro">
-            Quick Links
-          </Link>
+      <div className={styles.root}>
+        <div className={styles.container}>
+          <h1 className={styles.title}>{siteConfig.title}</h1>
+          <p className={styles.subTitle}>{siteConfig.tagline}</p>{" "}
+          <div className={styles.buttons}>
+            <Link
+              className={styles.button}
+              to="http://www.ankr.com"
+              target="_blank"
+            >
+              Meet Ankr
+            </Link>
+            <Link className={styles.button} to="/docs/intro">
+              Quick Links
+            </Link>
+          </div>
         </div>
-        <Holder className={styles.holder} />
+        <Holder />
       </div>
     </header>
   );

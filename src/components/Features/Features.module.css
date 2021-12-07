@@ -6,16 +6,17 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 466px;
-  grid-gap: 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
 .item {
   background-color: white;
   border-radius: 30px;
   padding: 48px 60px;
+  margin: 12px 20px;
+  flex: 1;
 }
 
 .title {
@@ -35,6 +36,11 @@
   line-height: 28px;
   font-weight: 600;
   color: #1f2226;
+}
+
+.holder {
+  display: flex;
+  margin: 0 auto;
 }
 
 .button {
@@ -78,4 +84,10 @@
   color: #1f2226;
   opacity: 0.5;
   margin: 0 auto 56px auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
 }

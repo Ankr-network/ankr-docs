@@ -128,11 +128,12 @@ export default function Footer() {
             {"© 2021 Ankr All rights reserved | info@ankr.com"}
           </span>
         </div>
-        <div className={styles.column}></div>
-        <Link to="https://www.ankr.com/terms/">{"Teams of service"}</Link>
-        <Link to="https://www.ankr.com/privacy-policy/">
-          {"Privacy Policy"}
-        </Link>
+        <div className={styles.column}>
+          <Link to="https://www.ankr.com/terms/">{"Teams of service"}</Link>
+          <Link to="https://www.ankr.com/privacy-policy/">
+            {"Privacy Policy"}
+          </Link>
+        </div>
       </div>
     </div>
   );

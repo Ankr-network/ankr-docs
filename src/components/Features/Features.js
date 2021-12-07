@@ -40,7 +40,7 @@ function Feature({ Svg, Icon, title, description }) {
         <Icon className={styles.icon} />
       </h3>
       <p className={styles.description}>{description}</p>
-      <Svg alt={title} />
+      <Svg alt={title} className={styles.holder} />
     </div>
   );
 }

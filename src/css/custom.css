@@ -96,6 +96,11 @@ main .container {
   padding: 46px 0 46px 92px !important;
   max-width: 100%;
 }
+@media (max-width: 960px) {
+  main .container {
+    padding: 32px 16px 0 16px !important;
+  }
+}
 aside {
   border-right: none !important;
   margin-top: 0 !important;
@@ -146,10 +151,23 @@ aside nav {
   margin-right: 10px;
 }
 
-.pagination-nav__item {
-  position: relative;
+@media (max-width: 680px) {
+  .pagination-nav {
+    flex-direction: column;
+  }
+  .pagination-nav__item {
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+  .pagination-nav__item + .pagination-nav__item {
+    margin: 0;
+  }
 }
-.pagination-nav__item:after {
+.pagination-nav__item a {
+  position: relative;
+  overflow: hidden;
+}
+.pagination-nav__item a:after {
   content: " ";
   width: 16px;
   height: 16px;
@@ -158,14 +176,14 @@ aside nav {
   left: 24px;
   background: url("../../static/img/left.svg") 0 0 no-repeat;
 }
-.pagination-nav__item.pagination-nav__item--next:after {
+.pagination-nav__item.pagination-nav__item--next a:after {
   background-image: url("../../static/img/right.svg");
   left: calc(100% - 48px);
 }
-.pagination-nav__item:hover:after {
+.pagination-nav__item:hover a:after {
   background-image: url("../../static/img/leftHover.svg");
 }
-.pagination-nav__item:hover.pagination-nav__item--next:after {
+.pagination-nav__item:hover.pagination-nav__item--next a:after {
   background-image: url("../../static/img/rightHover.svg");
   left: calc(100% - 48px);
 }
@@ -197,6 +215,10 @@ aside nav {
   display: inline;
   position: relative;
   float: right;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pagination-nav__label:after {
@@ -324,4 +346,49 @@ table td {
 .markdown ul li:before {
   content: counter(ul);
   counter-increment: ul;
+}
+
+@media (max-width: 1200px) {
+  .navbar__inner {
+    padding: 0 0 0 60px;
+  }
+}
+@media (max-width: 960px) {
+  .navbar {
+    height: 64px;
+  }
+  .navbar__inner {
+    padding: 0 16px;
+  }
+  .navbar__items {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .navbar__items--right {
+    display: none;
+  }
+  .navbar-sidebar__item {
+    padding: 0;
+  }
+  .menu__list {
+    padding: 32px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 32px;
+  }
+  .menu__list .menu__list {
+    padding: 0;
+  }
+  .theme-doc-sidebar-menu.menu__list {
+    padding: 0 16px;
+  }
+  .theme-doc-sidebar-menu .menu__list {
+    border-bottom: none;
+  }
+  .navbar-sidebar__back {
+    top: 0;
+    margin-bottom: 12px;
+  }
 }

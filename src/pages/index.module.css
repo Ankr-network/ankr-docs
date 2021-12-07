@@ -8,19 +8,21 @@
   height: 490px;
   background-color: #f2f5fa;
 }
-.container {
+.root {
   max-width: 1200px;
   height: 100%;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   position: relative;
-}
-.holder {
-  position: absolute;
-  right: 0;
 }
 
 .title {
@@ -35,9 +37,6 @@
   line-height: 28px;
   color: rgba(31, 34, 38, 0.5);
   margin-bottom: 40px;
-}
-
-@media screen and (max-width: 966px) {
 }
 
 .buttons {
@@ -60,4 +59,19 @@
 .button:hover {
   color: white;
   text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .top {
+    height: auto;
+  }
+  .root {
+    padding-top: 48px;
+    padding-bottom: 100px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  .container {
+    align-items: center;
+  }
 }

@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .item {
@@ -20,6 +21,7 @@
   text-align: left;
   padding: 20px;
   position: relative;
+  margin-bottom: 20px;
 }
 .item:hover {
   text-decoration: none;
