@@ -16,7 +16,6 @@
   background-color: white;
   border-radius: 30px;
   padding: 48px 60px;
-  position: relative;
 }
 
 .title {
@@ -36,12 +35,6 @@
   line-height: 28px;
   font-weight: 600;
   color: #1f2226;
-}
-
-.image {
-  position: absolute;
-  bottom: 52px;
-  right: 44px;
 }
 
 .button {

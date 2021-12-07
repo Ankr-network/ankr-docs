@@ -6,6 +6,7 @@ import styles from "./index.module.css";
 import Features from "../components/Features/Features";
 import Social from "../components/Social/Social";
 import Footer from "../components/Footer/Footer";
+const Holder = require("../../static/img/hero.svg").default;
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -26,6 +27,7 @@ function HomepageHeader() {
             Quick Links
           </Link>
         </div>
+        <Holder className={styles.holder} />
       </div>
     </header>
   );
