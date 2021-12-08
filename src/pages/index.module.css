@@ -75,3 +75,22 @@
     align-items: center;
   }
 }
+@media (max-width: 570px) {
+  svg {
+    max-width: 100%;
+  }
+  .title,
+  .subTitle {
+    padding: 0 20px;
+    text-align: center;
+  }
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .button {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}

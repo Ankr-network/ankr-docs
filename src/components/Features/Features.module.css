@@ -90,4 +90,7 @@
   .container {
     flex-direction: column;
   }
+  .communityDesc {
+    padding: 0 20px;
+  }
 }

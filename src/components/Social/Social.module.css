@@ -49,3 +49,9 @@
   right: 20px;
   bottom: 20px;
 }
+
+@media (max-width: 600px) {
+  .icon {
+    left: 20px;
+  }
+}

@@ -7,15 +7,11 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   padding-bottom: 32px;
   border-bottom: 2px solid #f2f5fa;
   margin-bottom: 24px;
   flex-wrap: wrap;
-}
-
-.column,
-.links {
-  flex: 1;
 }
 
 .title {
@@ -26,6 +22,12 @@
   margin-bottom: 22px;
 }
 
+.partners,
+.link {
+  width: 25%;
+  margin-bottom: 50px;
+}
+
 .partner {
   display: flex;
   align-items: center;
@@ -33,16 +35,6 @@
 }
 .partner a {
   margin-right: 20px;
-}
-
-.links {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-.link {
-  margin-right: 100px;
 }
 
 .list {
@@ -85,35 +77,36 @@
   .container {
     padding: 0 40px;
   }
-  .column {
-    flex: 1;
-  }
-  .links {
-    flex: 3;
-  }
   .partner {
     flex-direction: column;
     align-items: flex-start;
   }
-  .service .column {
-    flex: unset;
-  }
 }
 
-@media (max-width: 820px) {
-  .partner {
-    flex-direction: row;
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 580px) {
-  .info {
-    flex-direction: column;
-  }
+@media (max-width: 840px) {
   .partner {
     flex-direction: column;
   }
   .service {
     flex-direction: column;
+    align-items: flex-start;
+  }
+  .copy {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .copy svg {
+    margin-bottom: 20px;
+  }
+  .service a {
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .partners,
+  .link {
+    width: 50%;
   }
 }
