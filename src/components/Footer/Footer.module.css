@@ -1,0 +1,80 @@
+.container {
+  background-color: white;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+.info {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 32px;
+  border-bottom: 2px solid #f2f5fa;
+  margin-bottom: 24px;
+}
+
+.column,
+.links {
+  flex: 1;
+}
+
+.title {
+  color: #1f2226;
+  font-size: 18px;
+  line-height: 1.45;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.partner a {
+  margin-right: 20px;
+}
+
+.links {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.link {
+  margin-right: 100px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.list a {
+  color: #1f2226;
+  opacity: 0.5;
+  margin: 8px 0;
+}
+.list a:hover {
+  text-decoration: none;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  color: rgba(31, 34, 38, 0.5);
+}
+.service a {
+  color: inherit;
+  margin-left: 30px;
+}
+.service a:hover {
+  text-decoration: none;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+}
+.copy svg {
+  margin-right: 30px;
+}

@@ -3,7 +3,8 @@ module.exports = {
   'About': ['Whatisankr/about', 'Whatisankr/ankr-approach', 'Whatisankr/ankr-vision'],
 },
   buildSidebar: {
-  'Build': ['Build/about-api-services','Build/making-requests/code-samples', 'Build/making-requests/json-methods'],
+  'Build': ['Build/about-api-services','Build/making-requests/code-samples', 'Build/making-requests/json-methods']
+  
 },
   earnSidebar: {
   'Earn': ['Earn/about-stakefi', 'Earn/liquidity-tokens', 'Earn/micropools'],  
@@ -11,10 +12,10 @@ module.exports = {
   enterpriseSidebar: {
   'Enterprise': ['Enterprise/about-web3',]
 },
-  communitySidebar: {
-  'Community': ['Community/about-ankr-tokens',]
+  governanceSidebar: {
+  'Tokens & Governance': ['Tokens&Governance/about-ankr-tokens', 'Tokens&Governance/governance','Tokens&Governance/tokenomics'],
 },
-  resourcesSidebar: {
-  'Resources': ['Resources/guides/guides',]
-  }
+  protocolSidebar: {
+  'Protocol': ['Protocol/about-protocol', 'Protocol/connect-wallet', 'Protocol/ankr-premium', 'Protocol/protocol-staking', 'Protocol/troubleshooting', 'Protocol/rpc-node-providers']
+  },
 };
