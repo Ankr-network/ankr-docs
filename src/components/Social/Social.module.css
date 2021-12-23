@@ -2,6 +2,13 @@
   background-color: #f2f5fa;
   padding-bottom: 120px;
 }
+.title {
+  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 500;
+  font-size: 40px;
+}
 .social {
   max-width: 1240px;
   margin: 0 auto;

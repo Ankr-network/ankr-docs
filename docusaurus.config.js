@@ -15,7 +15,12 @@
       "https://fonts.googleapis.com/css?family=Raleway|Source+Code+Pro",
       "https://at-ui.github.io/feather-font/css/iconfont.css",
     ],
-
+    scripts: [
+      {
+        src: 'https://crypto.com/price/static/widget/index.js',
+        defer: true,
+      },
+    ],
     presets: [
       [
         "@docusaurus/preset-classic",
@@ -27,7 +32,7 @@
             editUrl: "https://github.com/ankr-network/ankr-docs",
           },
           theme: {
-            customCss: require.resolve("./src/css/custom.css"),
+            customCss: require.resolve("./static/css/custom.css"),
           },
         }),
       ],

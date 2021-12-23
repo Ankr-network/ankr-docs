@@ -2,6 +2,7 @@
   background-color: white;
   max-width: 1200px;
   margin: 60px auto;
+  position: relative;
 }
 .info {
   width: 100%;
@@ -18,13 +19,11 @@
   color: #1f2226;
   font-size: 18px;
   line-height: 1.45;
-  text-transform: uppercase;
   margin-bottom: 22px;
 }
 
 .partners,
 .link {
-  width: 25%;
   margin-bottom: 50px;
 }
 
@@ -75,11 +74,17 @@
 
 @media (max-width: 1200px) {
   .container {
-    padding: 0 40px;
+    padding: 120px 40px 0 40px;
   }
   .partner {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .cryptoWidget {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }
 

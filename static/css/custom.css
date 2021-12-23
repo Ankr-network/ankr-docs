@@ -6,6 +6,32 @@
 
 /* You can override the default Infima variables here. */
 
+@font-face {
+  font-family: "Gilroy";
+	src: url('./gilroy-medium.woff2') format('woff2'),
+		url('./gilroy-medium.woff') format('woff');
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("Helvetica Neue Medium Extended.otf") format("otf"),
+    url("Helvetica Neue Medium Extended.ttf") format("ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT-Firs-Neue-Demi-Bold';
+  src: local('TT Firs Neue Demi Bold'), local('TT-Firs-Neue-Demi-Bold'),
+      url('TTFirsNeue-DemiBold.woff2') format('woff2'),
+      url('TTFirsNeue-DemiBold.woff') format('woff');
+	font-style: normal;
+	font-display: swap;
+  font-weight: 500;
+}
+
 :root {
   --ifm-color-primary: #2c59d6;
   --ifm-color-primary-dark: rgb(33, 54, 175);

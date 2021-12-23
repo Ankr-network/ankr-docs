@@ -105,6 +105,12 @@ export default function Footer() {
               </Link>
             ))}
           </div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: "<div id='crypto-widget-CoinList' data-transparent='true' data-coins='ankr'></div>"
+            }}
+            className={styles.cryptoWidget}
+          />
         </div>
         {LINKS.map((link) => (
           <div className={styles.link} key={`${link.name}`}>
