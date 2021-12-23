@@ -2,6 +2,13 @@
   background-color: #f2f5fa;
   padding-bottom: 120px;
 }
+.title {
+  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 500;
+  font-size: 40px;
+}
 .social {
   max-width: 1240px;
   margin: 0 auto;
@@ -9,6 +16,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .item {
@@ -20,6 +28,7 @@
   text-align: left;
   padding: 20px;
   position: relative;
+  margin-bottom: 20px;
 }
 .item:hover {
   text-decoration: none;
@@ -46,4 +55,10 @@
   position: absolute;
   right: 20px;
   bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .icon {
+    left: 20px;
+  }
 }

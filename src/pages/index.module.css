@@ -8,17 +8,25 @@
   height: 490px;
   background-color: #f2f5fa;
 }
-.container {
+.root {
   max-width: 1200px;
   height: 100%;
   margin: 0 auto;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container {
+  height: 100%;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  position: relative;
 }
 
 .title {
+  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
   font-size: 52px;
   line-height: 62px;
   color: #1f2226;
@@ -30,9 +38,6 @@
   line-height: 28px;
   color: rgba(31, 34, 38, 0.5);
   margin-bottom: 40px;
-}
-
-@media screen and (max-width: 966px) {
 }
 
 .buttons {
@@ -55,4 +60,38 @@
 .button:hover {
   color: white;
   text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .top {
+    height: auto;
+  }
+  .root {
+    padding-top: 48px;
+    padding-bottom: 100px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  .container {
+    align-items: center;
+  }
+}
+@media (max-width: 570px) {
+  svg {
+    max-width: 100%;
+  }
+  .title,
+  .subTitle {
+    padding: 0 20px;
+    text-align: center;
+  }
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .button {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
 }

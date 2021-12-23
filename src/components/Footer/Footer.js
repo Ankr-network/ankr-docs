@@ -96,7 +96,7 @@ export default function Footer() {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
-        <div className={styles.column}>
+        <div className={styles.partners}>
           <div className={styles.title}>{"Find on"}</div>
           <div className={styles.partner}>
             {PARTNERS.map((item) => (
@@ -105,21 +105,25 @@ export default function Footer() {
               </Link>
             ))}
           </div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: "<div id='crypto-widget-CoinList' data-transparent='true' data-coins='ankr'></div>"
+            }}
+            className={styles.cryptoWidget}
+          />
         </div>
-        <div className={styles.links}>
-          {LINKS.map((link) => (
-            <div className={styles.link} key={`${link.name}`}>
-              <div className={styles.title}>{link.name}</div>
-              <div className={styles.list}>
-                {link.list.map((item) => (
-                  <Link key={`${item.name}-${item.link}`} to={item.link}>
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
+        {LINKS.map((link) => (
+          <div className={styles.link} key={`${link.name}`}>
+            <div className={styles.title}>{link.name}</div>
+            <div className={styles.list}>
+              {link.list.map((item) => (
+                <Link key={`${item.name}-${item.link}`} to={item.link}>
+                  {item.name}
+                </Link>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
       <div className={styles.service}>
         <div className={styles.column}>
@@ -128,11 +132,12 @@ export default function Footer() {
             {"© 2021 Ankr All rights reserved | info@ankr.com"}
           </span>
         </div>
-        <div className={styles.column}></div>
-        <Link to="https://www.ankr.com/terms/">{"Teams of service"}</Link>
-        <Link to="https://www.ankr.com/privacy-policy/">
-          {"Privacy Policy"}
-        </Link>
+        <div>
+          <Link to="https://www.ankr.com/terms/">{"Teams of service"}</Link>
+          <Link to="https://www.ankr.com/privacy-policy/">
+            {"Privacy Policy"}
+          </Link>
+        </div>
       </div>
     </div>
   );

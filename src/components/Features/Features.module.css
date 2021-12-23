@@ -6,17 +6,17 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 466px;
-  grid-gap: 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
 .item {
   background-color: white;
   border-radius: 30px;
   padding: 48px 60px;
-  position: relative;
+  margin: 12px 20px;
+  flex: 1;
 }
 
 .title {
@@ -32,16 +32,16 @@
 }
 
 .description {
+  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
   font-size: 24px;
   line-height: 28px;
   font-weight: 600;
   color: #1f2226;
 }
 
-.image {
-  position: absolute;
-  bottom: 52px;
-  right: 44px;
+.holder {
+  display: flex;
+  margin: 0 auto;
 }
 
 .button {
@@ -70,6 +70,7 @@
 }
 
 .communityTitle {
+  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
@@ -85,4 +86,13 @@
   color: #1f2226;
   opacity: 0.5;
   margin: 0 auto 56px auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+  .communityDesc {
+    padding: 0 20px;
+  }
 }

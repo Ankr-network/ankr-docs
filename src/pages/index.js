@@ -6,26 +6,30 @@ import styles from "./index.module.css";
 import Features from "../components/Features/Features";
 import Social from "../components/Social/Social";
 import Footer from "../components/Footer/Footer";
+const Holder = require("../../static/img/hero.svg").default;
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={styles.top}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>{siteConfig.title}</h1>
-        <p className={styles.subTitle}>{siteConfig.tagline}</p>{" "}
-        <div className={styles.buttons}>
-          <Link
-            className={styles.button}
-            to="http://www.ankr.com"
-            target="_blank"
-          >
-            Meet Ankr
-          </Link>
-          <Link className={styles.button} to="/docs/intro">
-            Quick Links
-          </Link>
+      <div className={styles.root}>
+        <div className={styles.container}>
+          <h1 className={styles.title}>{siteConfig.title}</h1>
+          <p className={styles.subTitle}>{siteConfig.tagline}</p>{" "}
+          <div className={styles.buttons}>
+            <Link
+              className={styles.button}
+              to="http://www.ankr.com"
+              target="_blank"
+            >
+              Meet Ankr
+            </Link>
+            <Link className={styles.button} to="/docs/intro">
+              Quick Links
+            </Link>
+          </div>
         </div>
+        <Holder />
       </div>
     </header>
   );

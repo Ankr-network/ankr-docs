@@ -2,27 +2,29 @@
   background-color: white;
   max-width: 1200px;
   margin: 60px auto;
+  position: relative;
 }
 .info {
   width: 100%;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   padding-bottom: 32px;
   border-bottom: 2px solid #f2f5fa;
   margin-bottom: 24px;
-}
-
-.column,
-.links {
-  flex: 1;
+  flex-wrap: wrap;
 }
 
 .title {
   color: #1f2226;
   font-size: 18px;
   line-height: 1.45;
-  text-transform: uppercase;
   margin-bottom: 22px;
+}
+
+.partners,
+.link {
+  margin-bottom: 50px;
 }
 
 .partner {
@@ -32,15 +34,6 @@
 }
 .partner a {
   margin-right: 20px;
-}
-
-.links {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.link {
-  margin-right: 100px;
 }
 
 .list {
@@ -77,4 +70,48 @@
 }
 .copy svg {
   margin-right: 30px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 120px 40px 0 40px;
+  }
+  .partner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cryptoWidget {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 840px) {
+  .partner {
+    flex-direction: column;
+  }
+  .service {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .copy {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .copy svg {
+    margin-bottom: 20px;
+  }
+  .service a {
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .partners,
+  .link {
+    width: 50%;
+  }
 }
