@@ -1,46 +1,59 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import styles from "./Features.module.css";
+import ArrowIcon from '../../../static/img/feature/arrow.svg';
 
 const FeatureList = [
   {
-    title: "Build",
-    Svg: require("../../../static/img/build.svg").default,
-    Icon: require("../../../static/img/arrow.svg").default,
-    description:
-      "Join the Web 3.0 movement and connect your application to any chain in seconds",
+    title: "Connect and Build",
+    Svg: require("../../../static/img/feature/build.svg").default,
+    list: [
+      'For Developers, Product Owners and Providers',
+      'Easy access tp our Multi-Chain RPC & Ankr Protocol',
+      '40+ Nodes',
+      'Docs, Guides and Tutorials'
+    ],
+    link: '',
   },
   {
-    title: "Earn",
-    Svg: require("../../../static/img/earn.svg").default,
-    Icon: require("../../../static/img/arrow.svg").default,
-    description: "Earn with Ankr StakeFi solutions",
+    title: "Stake and Earn",
+    Svg: require("../../../static/img/feature/earn.svg").default,
+    list: [
+      'For Everyone - whether you are new to crypto and risk averse or looking for innovative products',
+      'Simplified staking and reward earning for new and seasoned perticipants',
+      'Decentralized & Secure',
+      'Docs, Guides and Tutorials'
+    ],
+    link: '',
   },
   {
-    title: "Enterprise",
-    Svg: require("../../../static/img/enterprise.svg").default,
-    Icon: require("../../../static/img/arrow.svg").default,
-    description: "Ankr for Enterprise provides turnkey infastructure solutions",
+    title: "Tokens and Governance",
+    Svg: require("../../../static/img/feature/token.svg").default,
+    description: "ANKR tokens are for the Ankr community to participate and pay for Ankr services as well as have a say in the governance of the Ankr Network.",
+    link: '',
   },
+  {
+    title: "Community",
+    Svg: require("../../../static/img/feature/community.svg").default,
+    description: "ANKR tokens are for the Ankr community to participate and pay for Ankr services as well as have a say in the governance of the Ankr Network.",
+    link: '',
+  }
 ];
 
-const community = {
-  icon: require("../../../static/img/community.svg").default,
-  title: "Ankr Community",
-  description:
-    "ANKR tokens are for the Ankr community to participate and pay for Ankr services as well as have a say in the governance of the Ankr Network.",
-  button: "Open Community",
-};
-
-function Feature({ Svg, Icon, title, description }) {
+function Feature({ Svg, title, list, description, link }) {
   return (
     <div className={styles.item}>
       <h3 className={styles.title}>
+        <Svg alt={title} />
         {title}
-        <Icon className={styles.icon} />
       </h3>
-      <p className={styles.description}>{description}</p>
-      <Svg alt={title} className={styles.holder} />
+      {list && <div className={styles.list}>
+        {list.map((listItem, index) => <div key={`list-${index}`} className={styles.listItem}>
+          {listItem}
+        </div>)}
+      </div>}
+      {description && <p className={styles.description}>{description}</p>}
+      <a className={styles.learnMore} href={link}>Learn more <ArrowIcon /></a>
     </div>
   );
 }
@@ -52,14 +65,6 @@ export default function Features() {
         {FeatureList.map((props, idx) => (
           <Feature key={idx} {...props} />
         ))}
-      </div>
-      <div className={styles.community}>
-        <community.icon />
-        <h2 className={styles.communityTitle}>{community.title}</h2>
-        <p className={styles.communityDesc}>{community.description}</p>
-        <Link to="" className={styles.button}>
-          Open Community
-        </Link>
       </div>
     </section>
   );
