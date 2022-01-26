@@ -1,3 +1,8 @@
+---
+title: Glossary
+id: glossary
+---
+
 # Glossary
 
 Use CTRL + F to search for a term or select a term from the right hand menu
