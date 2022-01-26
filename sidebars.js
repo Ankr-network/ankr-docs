@@ -1,21 +1,42 @@
 module.exports = {
   aboutSidebar: {
-  'About': ['Whatisankr/about', 'Whatisankr/ankr-approach', 'Whatisankr/ankr-vision'],
+  'About Ankr': ['Whatisankr/about', 'Whatisankr/ankr-approach', 'Whatisankr/ankr-vision', 'Whatisankr/ankr-solutions'],
 },
   buildSidebar: {
-  'Build': ['Build/about-api-services','Build/making-requests/code-samples', 'Build/making-requests/json-methods']
+  'Build - Overview': ['Build/Concepts/build-overview', 'Build/Chains/chain-chooser', 'Build/Tutorials/guide-list', 'Build/Support/get-support']
+},
   
+  getStartedSidebar: {
+  'Build - Get Started': ['Build/Get-Started/build-start', 'Build/Chains/chain-chooser', 'Build/Tutorials/guide-list', 'Build/Support/get-support']
 },
-  earnSidebar: {
-  'Earn': ['Earn/about-stakefi', 'Earn/liquidity-tokens', 'Earn/micropools'],  
+
+  chainsSidebar: {
+  'Build - Chains': ['Build/Chains/avalanche',
+  'Build/Chains/arbitrum',
+  'Build/Chains/binance',
+  'Build/Chains/celo'] 
+  }, 
+  
+
+  earnSidebar: 
+    {
+  'Earn': ['Earn/about-earn', 'Earn/liquidity-tokens', 'Earn/micropools'],  
 },
-  enterpriseSidebar: {
-  'Enterprise': ['Enterprise/about-web3',]
-},
-  governanceSidebar: {
+
+  
+  governanceSidebar: 
+    {
   'Tokens & Governance': ['Tokens&Governance/about-ankr-tokens', 'Tokens&Governance/governance','Tokens&Governance/tokenomics'],
 },
-  protocolSidebar: {
-  'Protocol': ['Protocol/about-protocol', 'Protocol/connect-wallet', 'Protocol/ankr-premium', 'Protocol/protocol-staking', 'Protocol/troubleshooting', 'Protocol/rpc-node-providers']
+
+
+  communitySidebar: 
+  {
+  'Community': ['Community/channels', 'Community/contribute', 'Community/grants']
   },
+
+
+  resourcesSidebar: {
+    'Resources': ['Resources/glossary', 'Resources/help']
+    },
 };

@@ -1,10 +1,10 @@
 ---
-Title: About
+Title: About Ankr
 id: about
 ---
 # About
 
-Ankr Web 3.0 infrastructure | Blockchain nodes & APIs | Ankr
+**Ankr Web 3.0 infrastructure | Blockchain nodes & APIs | Ankr**
 
 Ankr makes accessing Web 3.0 easy. We offer distributed, multi-cloud blockchain infrastructure for one-click node deployment and management as well as instant API access to major blockchains and DeFi protocols for developers.
 

@@ -1,10 +1,13 @@
 ---
-title: Community Channels
-id: channels
+title: Contribute
+id: contribute
 ---
 
-## Overview
+# How to Contribute
 
-Participate in the Ankr network and interact with our community.
 
-## You 
+## Contribute to Docs
+
+
+## Contribute other Content
+

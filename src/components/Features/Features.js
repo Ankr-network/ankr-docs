@@ -4,7 +4,7 @@ import styles from "./Features.module.css";
 
 const FeatureList = [
   {
-    title: "Build",
+    title: "Connect & Build",
     Svg: require("../../../static/img/build.svg").default,
     Icon: require("../../../static/img/arrow.svg").default,
     description:

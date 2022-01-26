@@ -68,6 +68,10 @@
                   to: "docs/whatisankr/ankr-vision",
                   label: "Ankr Vision",
                 },
+                {
+                  to: "docs/whatisankr/ankr-solutions",
+                  label: "Ankr Solutions",
+                },
               ],
             },
             {
@@ -76,16 +80,24 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Build/about-api-services",
-                  label: "About API Services",
+                  to: "docs/Build/Concepts/build-overview",
+                  label: "Overview",
                 },
                 {
-                  to: "docs/Build/dev-pricing-plans",
-                  label: "API Pricing Plans",
+                  to: "docs/Build/Get-Started/build-start",
+                  label: "Get Started",
                 },
                 {
-                  to: "docs/Build/getting-started/dev-get-started",
-                  label: "Getting Started",
+                  to: "docs/Build/Chains/avalanche",
+                  label: "Chains",
+                },
+                {
+                  to: "docs/Build/Tutorials/guide-list",
+                  label: "Guides",
+                },
+                {
+                  to: "docs/Build/Support/get-support",
+                  label: "Support",
                 },
               ],
             },
@@ -95,8 +107,8 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Earn/about-stakefi",
-                  label: "About StakeFi",
+                  to: "docs/Earn/about-earn",
+                  label: "Overview",
                 },
                 {
                   to: "docs/Earn/micropools",
@@ -110,12 +122,20 @@
             },
             {
               type: "dropdown",
-              label: "Enterprise",
+              label: "Tokens & Governance",
               position: "right",
               items: [
                 {
-                  to: "docs/Enterprise/about-web3",
-                  label: "About Enterprise",
+                  to: "docs/Tokens&Governance/about-ankr-tokens",
+                  label: "Overview",
+                },
+                {
+                  to: "docs/Tokens&Governance/governance",
+                  label: "Governance",
+                },
+                {
+                  to: "docs/Tokens&Governance/tokenomics",
+                  label: "Tokenomics",
                 },
               ],
             },
@@ -125,8 +145,16 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Community/about-ankr-tokens",
-                  label: "About ANKR Tokens",
+                  to: "docs/Community/channels",
+                  label: "Community Channels",
+                },
+                {
+                  to: "docs/Community/contribute",
+                  label: "Contribute",
+                },
+                {
+                  to: "docs/Community/grants",
+                  label: "Grants",
                 },
               ],
             },
@@ -138,25 +166,6 @@
                 {
                   to: "docs/Resources/key-principles/key-principles",
                   label: "Key Principles",
-                },
-                {
-                  to: "docs/Resources/guides/guides",
-                  label: "Guides",
-                },
-                {
-                  to: "docs/Resources/glossary",
-                  label: "Glossary",
-                },
-              ],
-            },
-            {
-              type: "dropdown",
-              label: "Protocol",
-              position: "right",
-              items: [
-                {
-                  to: "docs/Protocol/about-protocol",
-                  label: "About Protocol",
                 },
                 {
                   to: "docs/Resources/guides/guides",

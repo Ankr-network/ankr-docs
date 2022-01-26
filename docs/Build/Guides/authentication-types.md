@@ -1,3 +1,7 @@
+---
+title: Choosing Authentication
+id: authentication
+---
 # Choosing an authentication type
 
 ## Basic Authentication 

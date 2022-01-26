@@ -1,0 +1,4 @@
+---
+Title: Architecture
+id: architecture
+---
