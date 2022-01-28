@@ -80,19 +80,19 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Build/Concepts/build-overview",
-                  label: "Overview",
+                  to: "docs/category/concepts",
+                  label: "Concepts",
                 },
                 {
-                  to: "docs/Build/Get-Started/build-start",
+                  to: "docs/category/get-started",
                   label: "Get Started",
                 },
                 {
-                  to: "docs/Build/Chains/avalanche",
+                  to: "docs/category/chains-v2",
                   label: "Chains",
                 },
                 {
-                  to: "docs/Build/Tutorials/guide-list",
+                  to: "docs/category/guides",
                   label: "Guides",
                 },
                 {

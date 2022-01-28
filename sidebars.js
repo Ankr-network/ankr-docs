@@ -1,21 +1,116 @@
 module.exports = {
   aboutSidebar: {
-  'About Ankr': ['Whatisankr/about', 'Whatisankr/ankr-approach', 'Whatisankr/ankr-vision', 'Whatisankr/ankr-solutions'],
+  'About Ankr': [
+    'Whatisankr/about', 
+    'Whatisankr/ankr-approach', 
+    'Whatisankr/ankr-vision', 
+    'Whatisankr/ankr-solutions'
+  ],
 },
   buildSidebar: {
-  'Build - Overview': ['Build/Concepts/build-overview', 'Build/Chains/chain-chooser', 'Build/Tutorials/guide-list', 'Build/Support/get-support']
+  'Build': [
+    {
+        type: 'category',
+        label: 'Concepts',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Build/Concepts/build-concepts',
+          'Build/Concepts/foundations',
+          'Build/Concepts/architecture'
+        ]
+    },
+    {
+        type: 'category',
+        label: 'Get Started',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Build/Get-Started/build-start',
+          'Build/Get-Started/ankr-protocol/about-ankr-protocol/protocol',
+          'Build/about-api-services',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Chains V2',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Build/Chains/acala',
+          'Build/Chains/algorand',
+          'Build/Chains/ankr-eth2',
+          'Build/Chains/arbitrum',
+          'Build/Chains/astar',
+          'Build/Chains/avalanche',
+          'Build/Chains/bifrost',
+          'Build/Chains/binance-chain',
+          'Build/Chains/binance-smart-chain',
+          'Build/Chains/celo',
+          'Build/Chains/clover',
+          'Build/Chains/cosmos',
+          'Build/Chains/darwinia',
+          'Build/Chains/dash',
+          'Build/Chains/decred',
+          'Build/Chains/elastos',
+          'Build/Chains/elrond',
+          'Build/Chains/enecuum',
+          'Build/Chains/ethereum-2',
+          'Build/Chains/ethereum-classic',
+          'Build/Chains/ethereum',
+          'Build/Chains/fantom',
+          'Build/Chains/hathor',
+          'Build/Chains/hedera',
+          'Build/Chains/huobi',
+          'Build/Chains/icon',
+          'Build/Chains/kusama',
+          'Build/Chains/lto',
+          'Build/Chains/near',
+          'Build/Chains/neo',
+          'Build/Chains/nervos',
+          'Build/Chains/nucypher',
+          'Build/Chains/nuls',
+          'Build/Chains/okex',
+          'Build/Chains/omisego',
+          'Build/Chains/ontology',
+          'Build/Chains/optimism',
+          'Build/Chains/polkadot',
+          'Build/Chains/polygon',
+          'Build/Chains/qtum',
+          'Build/Chains/reddcoin',
+          'Build/Chains/sifchain',
+          'Build/Chains/solana',
+          'Build/Chains/stafi',
+          'Build/Chains/terra',
+          'Build/Chains/tezos',
+          'Build/Chains/tron',
+          'Build/Chains/vitae',
+          'Build/Chains/xdai',
+          'Build/Chains/zcash'
+              ],
+      },
+
+      {
+        type: 'category',
+        label: 'Guides',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Build/Guides/libraries',
+          'Build/Guides/rpcapi'
+        ],
+      },
+    
+    'Build/Support/get-support'
+  ]
 },
   
-  getStartedSidebar: {
-  'Build - Get Started': ['Build/Get-Started/build-start', 'Build/Chains/chain-chooser', 'Build/Tutorials/guide-list', 'Build/Support/get-support']
-},
 
-  chainsSidebar: {
-  'Build - Chains': ['Build/Chains/avalanche',
-  'Build/Chains/arbitrum',
-  'Build/Chains/binance',
-  'Build/Chains/celo'] 
-  }, 
+  
   
 
   earnSidebar: 
