@@ -1,4 +1,6 @@
 ---
+title: 03 Node Ops
+id: node-ops
 description: >-
   Put idle resources to work for rewards. Benefit from the wider node network at
   times of high demand.

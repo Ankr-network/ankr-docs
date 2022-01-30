@@ -1,5 +1,5 @@
 ---
-title: Ankr Protocol 
+title: About
 id: protocol
 ---
 
@@ -9,16 +9,25 @@ id: protocol
 
 The (r)evolutionary Ankr protocol brings increasing definition to Ankr’s vision of Web 3.0 mass adoption.
 
-Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
+Featuring open access to a Public Multi-Chain RPC layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
 “Join a decentralized community and economy”.
 
 ### What's so (r)evolutionary about it?
 
+Developers can instantly access public or premium endpoints for both full nodes and archive nodes on Binance Smart Chain using either HTTPS or Websocket (Websockets on **Premium** only)
+
+With Ankr RPC endpoints, you don't have to spend hours or days or weeks waiting for your node to sync. o
+Our Public RPC endpoints can easily serve 80 million requests per day on a single endpoint.
+Compared to other public RPC endpoints over a 30 day period, Ankr Public RPCs ran ten times faster in terms of latency. 
+
+This same infrastructure is available for individual developers and enterprise customers alike.
+
 Basically, you can utilize the Ankr Protocol to do the following:
 
-1. As a **Provider of Infrastructure **or **Node Owner, **you can opt your node into the Ankr Protocol ⁃ The Protocol registers the node and includes it in the network.
-2. As a **Developer** or **Product Owne**r you can opt it to being a user of the protocol. You can get public or pay 10k ANKR per year for Ankr Premium and get private endpoints to access the Protocol via your dApp.&#x20;
+1. As a **Provider of Infrastructure** or **Node Owner** you can opt your node into the Ankr Protocol ⁃ The Protocol registers the node and includes it in the network.
+
+2. As a **Developer** or **Product Owner** you can opt it to being a user of the protocol. You can get public or pay 10k ANKR per year for Ankr Premium and get private endpoints to access the Protocol via your dApp.&#x20;
 
 The Protocol optimises usage of the blockchain to provide the most efficient response possible by dynamically reducing latency between the user and the nodes.
 

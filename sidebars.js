@@ -29,8 +29,35 @@ module.exports = {
         },
         items: [
           'Build/Get-Started/build-start',
-          'Build/Get-Started/ankr-protocol/about-ankr-protocol/protocol',
+        {
+          type: 'category',
+          label: 'V2 Ankr Protocol',
+          link: {
+            type: 'generated-index',
+          },
+          items: [
+            'Build/Get-Started/ankr-protocol/about-ankr-protocol/protocol',
+            'Build/Get-Started/ankr-protocol/about-ankr-protocol/public-rpc',
+            'Build/Get-Started/ankr-protocol/about-ankr-protocol/premium-rpc',
+            'Build/Get-Started/ankr-protocol/about-ankr-protocol/node-ops',
+            'Build/Get-Started/ankr-protocol/about-ankr-protocol/scan'
+          ],
+        },
+        ],
+      },
+      {
+        type: 'category',
+        label: 'V1 Products',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
           'Build/about-api-services',
+          'Build/Get-Started/ankr-protocol/about-ankr-protocol/protocol',
+          'Build/Get-Started/ankr-protocol/about-ankr-protocol/public-rpc',
+          'Build/Get-Started/ankr-protocol/about-ankr-protocol/premium-rpc',
+          'Build/Get-Started/ankr-protocol/about-ankr-protocol/node-ops',
+          'Build/Get-Started/ankr-protocol/about-ankr-protocol/scan'
         ],
       },
       {

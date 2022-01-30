@@ -1,8 +1,15 @@
+---
+title: 01 Public RPC Endpoints
+id: public-rpc
+---
+
 # 01 Public Community RPCs
 
-Public Community RPCs are central to the Ankr vision of mass adoption in Web 3.0 and the crypto economy. The Ankr Public RPC layer provides ultra fast and reliable access via API endpoints to anybody in the world to connect to the following networks:
+Public Community RPCs are central to the Ankr vision of mass adoption in Web 3.0 and the crypto economy. The Ankr Public RPC layer provides ultra fast and reliable access via API endpoints to anybody in the world to connect to a growing number of networks:
 
-**Avalanche, Arbitrum, Binance Smart Chain, Ethereum, Fantom, Near, Polygon, Solana**
+Check out the latest chains at https://www.ankr.com/protocol/public/
+
+Connect to [Chains V2](docs/category/chains-v2)
 
 Enjoy the following benefits:
 
@@ -20,4 +27,3 @@ Constant system monitoring ensures that RPC endpoints are synced in real-time to
 
 This architecture is built for high availability and scalability.
 
-<!-- ![](/img/ankr-logo.png) -->

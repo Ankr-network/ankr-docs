@@ -1,4 +1,9 @@
-Understanding JSON RPC API
+---
+title: What is JSON RPC API?
+id: rpcapi
+---
+
+# Understanding JSON RPC API
 
 JSON-RPC API is bridge that allows dApps to connect to nodes.
 
@@ -6,12 +11,12 @@ dApps need to interact with a blockchain to read blockchain data and/or send tra
 
 For this purpose web 3.0 clients implement a JSON-RPC specification with a uniform set of methods that applications can rely on.
 
-What is JSON RPC API?
+## What is JSON RPC API?
 JSON RPC API is a stateless, light-weight remote procedure call (RPC) protocol.
 
 Primarily this specification defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
 
-RPC Calls
+## RPC Calls
 An RPC call is represented by sending a Request object to a Server.
 
 THE REQUEST OBJECT
