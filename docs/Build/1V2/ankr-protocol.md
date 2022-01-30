@@ -5,7 +5,7 @@ id: protocol
 
 # About Ankr Protocol
 
-### The Ankr Protocol&#x20;
+### The Ankr Protocol
 
 The (r)evolutionary Ankr protocol brings increasing definition to Ankr’s vision of Web 3.0 mass adoption.
 
@@ -17,7 +17,8 @@ Featuring open access to a Public Multi-Chain RPC layer, Ankr Protocol provides 
 
 Developers can instantly access public or premium endpoints for both full nodes and archive nodes on Binance Smart Chain using either HTTPS or Websocket (Websockets on **Premium** only)
 
-With Ankr RPC endpoints, you don't have to spend hours or days or weeks waiting for your node to sync. o
+With Ankr RPC endpoints, you don't have to spend hours or days or weeks waiting for your node to sync.
+
 Our Public RPC endpoints can easily serve 80 million requests per day on a single endpoint.
 Compared to other public RPC endpoints over a 30 day period, Ankr Public RPCs ran ten times faster in terms of latency. 
 
@@ -27,7 +28,7 @@ Basically, you can utilize the Ankr Protocol to do the following:
 
 1. As a **Provider of Infrastructure** or **Node Owner** you can opt your node into the Ankr Protocol ⁃ The Protocol registers the node and includes it in the network.
 
-2. As a **Developer** or **Product Owner** you can opt it to being a user of the protocol. You can get public or pay 10k ANKR per year for Ankr Premium and get private endpoints to access the Protocol via your dApp.&#x20;
+2. As a **Developer** or **Product Owner** you can opt it to being a user of the protocol. You can get public or pay 10k ANKR per year for Ankr Premium and get private endpoints to access the Protocol via your dApp.
 
 The Protocol optimises usage of the blockchain to provide the most efficient response possible by dynamically reducing latency between the user and the nodes.
 

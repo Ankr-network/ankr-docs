@@ -1,7 +1,7 @@
 module.exports = {
   aboutSidebar: {
-  'About Ankr': [
-    'Whatisankr/about', 
+  'About': [
+    'Whatisankr/about-ankr', 
     'Whatisankr/ankr-approach', 
     'Whatisankr/ankr-vision', 
     'Whatisankr/ankr-solutions'
@@ -29,35 +29,31 @@ module.exports = {
         },
         items: [
           'Build/Get-Started/build-start',
-        {
+        ],
+      },
+      {
           type: 'category',
-          label: 'V2 Ankr Protocol',
+          label: 'V2',
           link: {
             type: 'generated-index',
           },
           items: [
-            'Build/Get-Started/ankr-protocol/about-ankr-protocol/protocol',
-            'Build/Get-Started/ankr-protocol/about-ankr-protocol/public-rpc',
-            'Build/Get-Started/ankr-protocol/about-ankr-protocol/premium-rpc',
-            'Build/Get-Started/ankr-protocol/about-ankr-protocol/node-ops',
-            'Build/Get-Started/ankr-protocol/about-ankr-protocol/scan'
+            'Build/1V2/protocol',
+            'Build/1V2/public-rpc',
+            'Build/1V2/premium-rpc',
+            'Build/1V2/node-ops',
+            'Build/1V2/scan'
           ],
         },
-        ],
-      },
       {
         type: 'category',
-        label: 'V1 Products',
+        label: 'V1',
         link: {
           type: 'generated-index',
         },
         items: [
-          'Build/about-api-services',
-          'Build/Get-Started/ankr-protocol/about-ankr-protocol/protocol',
-          'Build/Get-Started/ankr-protocol/about-ankr-protocol/public-rpc',
-          'Build/Get-Started/ankr-protocol/about-ankr-protocol/premium-rpc',
-          'Build/Get-Started/ankr-protocol/about-ankr-protocol/node-ops',
-          'Build/Get-Started/ankr-protocol/about-ankr-protocol/scan'
+          'Build/2V1/about-api-services',
+          'Build/2V1/node-services'
         ],
       },
       {
@@ -135,15 +131,48 @@ module.exports = {
     'Build/Support/get-support'
   ]
 },
-  
-
-  
-  
-
-  earnSidebar: 
+earnSidebar: {
+  'Earn': [
     {
-  'Earn': ['Earn/about-earn', 'Earn/liquidity-tokens', 'Earn/micropools'],  
+        type: 'category',
+        label: 'Earn-Concepts',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Earn/Concepts/about-earn',
+          'Earn/Concepts/earn-foundations',
+          'Earn/Concepts/earn-architecture'
+        ]
+    },
+    {
+      type: 'category',
+      label: 'Earn-Guides',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'Earn/Guides/earn-started',
+        'Earn/Guides/earn-wallets',
+        'Earn/Guides/liquidity-dex',
+        'Earn/Guides/earn-yield'
+      ]
+  },
+  {
+    type: 'category',
+    label: 'Earn-Products',
+    link: {
+      type: 'generated-index',
+    },
+    items: [
+      'Earn/Products/liquid-staking',
+      'Earn/Products/smart-staking',
+      'Earn/Products/delegate-staking',
+    ],
 },
+  ],
+},
+
 
   
   governanceSidebar: 

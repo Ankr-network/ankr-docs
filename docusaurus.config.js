@@ -57,7 +57,7 @@
               position: "right",
               items: [
                 {
-                  to: "docs/whatisankr/about",
+                  to: "docs/whatisankr/about-ankr",
                   label: "About Ankr",
                 },
                 {
@@ -107,16 +107,28 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Earn/about-earn",
-                  label: "Overview",
+                  to: "docs/category/earn-concepts",
+                  label: "Concepts",
                 },
                 {
-                  to: "docs/Earn/micropools",
-                  label: "Pooled Staking",
+                  to: "docs/category/earn-guides",
+                  label: "Guides",
                 },
                 {
-                  to: "docs/Earn/liquidity-tokens",
-                  label: "Liquidity Tokens",
+                  to: "docs/category/earn-products",
+                  label: "Products",
+                },
+                {
+                  to: "docs/category/earn-ecosystem",
+                  label: "Ecosystem",
+                },
+                {
+                  to: "docs/category/reference",
+                  label: "Reference",
+                },
+                {
+                  to: "docs/category/support",
+                  label: "Support",
                 },
               ],
             },

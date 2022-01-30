@@ -1,6 +1,6 @@
 ---
-title: Overview
-id: about-earn
+title: Architecture
+id: earn-architecture
 ---
 
 # Earn -  Ankr Staking Solution
