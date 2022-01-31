@@ -172,20 +172,16 @@
             },
             {
               type: "dropdown",
-              label: "Resources",
+              label: "Tutorials",
               position: "right",
               items: [
                 {
-                  to: "docs/Resources/key-principles/key-principles",
+                  to: "docs/Tutorials/key-principles/key-principles",
                   label: "Key Principles",
                 },
                 {
-                  to: "docs/Resources/guides/guides",
-                  label: "Guides",
-                },
-                {
-                  to: "docs/Resources/glossary",
-                  label: "Glossary",
+                  to: "docs/Tutorials/key-principles/web-3.0",
+                  label: "Web3.0",
                 },
               ],
             },

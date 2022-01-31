@@ -187,7 +187,7 @@ earnSidebar: {
   },
 
 
-  resourcesSidebar: {
-    'Resources': ['Resources/glossary', 'Resources/help']
+  tutorialsSidebar: {
+    'Resources': ['Tutorials/glossary', 'Tutorials/help']
     },
 };
