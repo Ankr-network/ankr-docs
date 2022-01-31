@@ -48,6 +48,9 @@
 .list a:hover {
   text-decoration: none;
 }
+.cryptoWidget {
+  margin-left: -20px;
+}
 
 .service {
   display: flex;

@@ -7,41 +7,81 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-between;
 }
 
 .item {
+  position: relative;
   background-color: white;
   border-radius: 30px;
-  padding: 48px 60px;
-  margin: 12px 20px;
-  flex: 1;
+  padding: 32px 60px 72px 50px;
+  margin: 0 10px 40px 10px;
+  width: calc(50% - 20px);
 }
 
 .title {
-  color: #356df3;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
+  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
+  color: #1F2226;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
   margin-bottom: 24px;
-}
-
-.icon {
-  margin-left: 8px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .description {
-  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 600;
-  color: #1f2226;
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgba(31, 34, 38, 0.5);
 }
 
-.holder {
+.list {
+  margin-bottom: 48px;
+  color: rgba(31, 34, 38, 0.5);
+}
+
+.listItem {
+  padding-left: 20px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.2;
+  position: relative;
+}
+.listItem:before {
+  content: " ";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #356DF3;
+  position: absolute;
+  top: 6px;
+  left: 2px;
+}
+
+.learnMore {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  height: 22px;
   display: flex;
-  margin: 0 auto;
+  align-items: center;
+  color:rgba(31, 34, 38, 1);
+  position: absolute;
+  left: 52px;
+  bottom: 50px;
+}
+.learnMore:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.learnMore svg {
+  margin-left: 10px;
 }
 
 .button {
@@ -60,39 +100,12 @@
   text-decoration: none;
 }
 
-.community {
-  max-width: 1200px;
-  margin: 100px auto 120px auto;
-  padding: 52px 0 80px 0;
-  border-radius: 30px;
-  background-color: white;
-  text-align: center;
-}
-
-.communityTitle {
-  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 48px;
-  color: #1f2226;
-  margin: 36px auto 20px auto;
-}
-
-.communityDesc {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  max-width: 740px;
-  color: #1f2226;
-  opacity: 0.5;
-  margin: 0 auto 56px auto;
-}
-
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
   }
-  .communityDesc {
-    padding: 0 20px;
+
+  .item {
+    width: calc(100% - 20px);
   }
 }
