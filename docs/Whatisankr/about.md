@@ -1,8 +1,8 @@
 ---
 Title: About Ankr
-id: about
+id: about-ankr
 ---
-# About
+# About Ankr
 
 **Ankr Web 3.0 infrastructure | Blockchain nodes & APIs | Ankr**
 

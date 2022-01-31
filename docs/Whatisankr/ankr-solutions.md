@@ -51,10 +51,10 @@ Our staking solutions open the gates for more crypto users to support Proof of S
 ### Liquid Staking 
 **Ankr Earn** liquid staking solutions enable users to stake crypto assets on chain and instantly free up the liquidity of the staked assets in the form of liquid staking tokens. This means users can earn multiple layers of rewards with the value of their staked crypto assets. 
 
-### Pooled Staking
-Staking Pools represent several token holders consolidating their resources to enjoy several benefits over indvidual staking. 
+### Delegate Staking
+**Delegate Staking** represent several token holders consolidating their resources and delegating them to an Ankr Node to enjoy several benefits over individual staking. 
 
 ### Parachain Liquid Crowdloans
-Parachain Liquid Crowdloans unlock the liquidity of bonded DOT, collect rewards from winning Parachain slot auctions, and distributes token rewards from the winning project’s to Parachain Liquid Crowdloans token holders.
+**Parachain Liquid Crowdloans** unlock the liquidity of bonded DOT or KSM. Collect rewards from winning Parachain slot auctions. Token rewards from the winning project are distributed to Parachain Liquid Crowdloan token holders.
 
 ### Security

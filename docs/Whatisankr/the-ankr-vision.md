@@ -11,3 +11,11 @@ At Ankr we believe that Web 3.0 and the crypto economy should be available to an
 * We want to liberate people from complexity with user-friendly tools that enable easy participation.
 
 * We want to remove the barriers to participation in the crypto economy for both individuals and organizations alike.
+
+## Key Principles
+
+### Chain Neutrality
+
+### Full Decentralization
+
+### Web 3.0 Infrastructure

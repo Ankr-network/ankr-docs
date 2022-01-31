@@ -8,7 +8,7 @@ Code samples are provided for each chain
 
 ### TWO: Command Line
 
-Curl samples are provided for each chain..
+Curl samples are provided for each chain.
 
 ### THREE: Wallet
 
