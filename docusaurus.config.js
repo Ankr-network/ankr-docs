@@ -57,7 +57,7 @@
               position: "right",
               items: [
                 {
-                  to: "docs/whatisankr/about",
+                  to: "docs/whatisankr/about-ankr",
                   label: "About Ankr",
                 },
                 {
@@ -68,6 +68,10 @@
                   to: "docs/whatisankr/ankr-vision",
                   label: "Ankr Vision",
                 },
+                {
+                  to: "docs/whatisankr/ankr-solutions",
+                  label: "Ankr Solutions",
+                },
               ],
             },
             {
@@ -76,16 +80,24 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Build/about-api-services",
-                  label: "About API Services",
+                  to: "docs/category/concepts",
+                  label: "Concepts",
                 },
                 {
-                  to: "docs/Build/dev-pricing-plans",
-                  label: "API Pricing Plans",
+                  to: "docs/category/get-started",
+                  label: "Get Started",
                 },
                 {
-                  to: "docs/Build/getting-started/dev-get-started",
-                  label: "Getting Started",
+                  to: "docs/category/chains-v2",
+                  label: "Chains",
+                },
+                {
+                  to: "docs/category/guides",
+                  label: "Guides",
+                },
+                {
+                  to: "docs/Build/Support/get-support",
+                  label: "Support",
                 },
               ],
             },
@@ -95,27 +107,47 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Earn/about-stakefi",
-                  label: "About StakeFi",
+                  to: "docs/category/earn-concepts",
+                  label: "Concepts",
                 },
                 {
-                  to: "docs/Earn/micropools",
-                  label: "Pooled Staking",
+                  to: "docs/category/earn-guides",
+                  label: "Guides",
                 },
                 {
-                  to: "docs/Earn/liquidity-tokens",
-                  label: "Liquidity Tokens",
+                  to: "docs/category/earn-products",
+                  label: "Products",
+                },
+                {
+                  to: "docs/category/earn-ecosystem",
+                  label: "Ecosystem",
+                },
+                {
+                  to: "docs/category/reference",
+                  label: "Reference",
+                },
+                {
+                  to: "docs/category/support",
+                  label: "Support",
                 },
               ],
             },
             {
               type: "dropdown",
-              label: "Enterprise",
+              label: "Tokens & Governance",
               position: "right",
               items: [
                 {
-                  to: "docs/Enterprise/about-web3",
-                  label: "About Enterprise",
+                  to: "docs/Tokens&Governance/about-ankr-tokens",
+                  label: "Overview",
+                },
+                {
+                  to: "docs/Tokens&Governance/governance",
+                  label: "Governance",
+                },
+                {
+                  to: "docs/Tokens&Governance/tokenomics",
+                  label: "Tokenomics",
                 },
               ],
             },
@@ -125,46 +157,31 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Community/about-ankr-tokens",
-                  label: "About ANKR Tokens",
+                  to: "docs/Community/channels",
+                  label: "Community Channels",
+                },
+                {
+                  to: "docs/Community/contribute",
+                  label: "Contribute",
+                },
+                {
+                  to: "docs/Community/grants",
+                  label: "Grants",
                 },
               ],
             },
             {
               type: "dropdown",
-              label: "Resources",
+              label: "Tutorials",
               position: "right",
               items: [
                 {
-                  to: "docs/Resources/key-principles/key-principles",
+                  to: "docs/Tutorials/key-principles/key-principles",
                   label: "Key Principles",
                 },
                 {
-                  to: "docs/Resources/guides/guides",
-                  label: "Guides",
-                },
-                {
-                  to: "docs/Resources/glossary",
-                  label: "Glossary",
-                },
-              ],
-            },
-            {
-              type: "dropdown",
-              label: "Protocol",
-              position: "right",
-              items: [
-                {
-                  to: "docs/Protocol/about-protocol",
-                  label: "About Protocol",
-                },
-                {
-                  to: "docs/Resources/guides/guides",
-                  label: "Guides",
-                },
-                {
-                  to: "docs/Resources/glossary",
-                  label: "Glossary",
+                  to: "docs/Tutorials/key-principles/web-3.0",
+                  label: "Web3.0",
                 },
               ],
             },
