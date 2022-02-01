@@ -27,7 +27,7 @@ Ankr Protocol features
 - Flexible Node Providing options 
 
 ### Ankr Scan
-Ankr Scan 
+Ankr Scan is a Multi-Chain Explorer allowing to view assets across chains as well as assigned to a specific wallet address.  
 
 ### API Services (v1)
 - Free Tier with scaling as you go.

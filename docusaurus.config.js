@@ -57,19 +57,19 @@
               position: "right",
               items: [
                 {
-                  to: "docs/whatisankr/about-ankr",
+                  to: "docs/category/about",
                   label: "About Ankr",
                 },
                 {
-                  to: "docs/whatisankr/ankr-approach",
-                  label: "Ankr Principles",
-                },
-                {
-                  to: "docs/whatisankr/ankr-vision",
+                  to: "docs/about/ankr-vision",
                   label: "Ankr Vision",
                 },
                 {
-                  to: "docs/whatisankr/ankr-solutions",
+                  to: "docs/about/ankr-approach",
+                  label: "Ankr Principles",
+                },
+                {
+                  to: "docs/about/ankr-solutions",
                   label: "Ankr Solutions",
                 },
               ],
@@ -176,11 +176,11 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Tutorials/key-principles/key-principles",
+                  to: "page/Tutorials/home",
                   label: "Key Principles",
                 },
                 {
-                  to: "docs/Tutorials/key-principles/web-3.0",
+                  to: "docs/Tutorials/key-/web-3.0",
                   label: "Web3.0",
                 },
               ],
