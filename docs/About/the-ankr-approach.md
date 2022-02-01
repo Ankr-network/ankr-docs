@@ -4,7 +4,7 @@ id: ankr-approach
 ---
 # The Ankr Approach
 
-### We are Chain Neutral
+# We are Chain Neutral
 
 Ankr is a single platform that provides multiple different chains without advocating for any particular chain over another. 
 
@@ -19,7 +19,7 @@ One consideration is whether they want users to hold crypto assets on ETH (ERC20
 
 Ankr is at the forefront of addressing these limitations. By working closely with developers, Ankr has pioneered the building of tools for cross-chain interoperability.
 
-### We are committed to Full Decentralization
+# We are committed to Full Decentralization
 
 Decentralization is a corner stone of Ankr's purpose.
 
@@ -41,12 +41,12 @@ Since then, Ankr has evolved to focus exclusively on serving the crypto economy 
 
 * The Community owns and secures the service.
 
-#### We are on a path towards being a DAO.
+# We are on a path towards being a DAO.
 
 Ankr is on a solid pathway towards being governed by its community through the ANKR DAO (Decentralized Autonomous Organization). Institutional investors will not be allowed to buy up the majority of tokens, hence ensuring the community is in power. 
 
 
-## Web 3.0
+# Web 3.0
 
 Web 3.0 - The Next Generation of Internet
 Mass adoption of Web 3.0 by individuals, developers and enterprises is key to securing the next stage of the internet.
@@ -58,15 +58,3 @@ Blockchain technology underlies the decentralization that is essential to the fo
 
 Ankr provides Web 3.0 infrastructure for individuals, developers, and enterprises.
 
-We work towards this vision in 3  key ways:
-
-## Users & Community First by Design
-We put the needs of users and the community at the forefront of our technology development. We create products and services that we know people want, we design our ecosystem offerings to be pleasurable and easy to engage with.
-
-## Removing Complexity
-We work to simplify the complexity of blockchain and DeFi by providing the following:
-a) Robust web 3.0 multi-chain infrastructure that enables reliable, accurate communication and integration with multiple blockchains.
-b) One-click Staking solutions that enable you to start earning rewards with minimal effort.
-
-## Building an inclusive Web 3.0 blockchain infrastructure
-We want to empower developers with easy to use tools, services and interfaces to a multi-chain environment. 

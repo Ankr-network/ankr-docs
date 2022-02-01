@@ -1,12 +1,21 @@
 module.exports = {
   aboutSidebar: {
   'About': [
-    'Whatisankr/about-ankr', 
-    'Whatisankr/ankr-approach', 
-    'Whatisankr/ankr-vision', 
-    'Whatisankr/ankr-solutions'
-  ],
-},
+    {
+        type: 'category',
+        label: 'About',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+    'About/about-ankr', 
+    'About/ankr-vision',
+    'About/ankr-approach', 
+    'About/ankr-solutions'
+               ],
+    },
+            ],
+                },
   buildSidebar: {
   'Build': [
     {
@@ -59,6 +68,26 @@ module.exports = {
       {
         type: 'category',
         label: 'Chains V2',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Build/Chains/avalanche',
+          'Build/Chains/binance-smart-chain',
+          'Build/Chains/celo',
+          'Build/Chains/ethereum',
+          'Build/Chains/fantom',
+          'Build/Chains/iotex',
+          'Build/Chains/near',
+          'Build/Chains/nervos',
+          'Build/Chains/polygon',
+          'Build/Chains/solana',
+              ],
+      },
+
+      {
+        type: 'category',
+        label: 'Chains V1',
         link: {
           type: 'generated-index',
         },
