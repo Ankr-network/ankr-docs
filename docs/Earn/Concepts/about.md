@@ -5,24 +5,34 @@ id: about-earn
 
 # About Ankr Earn
 
-[​Ankr Earn](https://stakefi.ankr.com/liquid-staking) is platform to earn staking rewards in multiple ways.
+The **Ankr Earn** suite of products aim to enable user-friendly opportunities for staking and participating in decentralized finance.
+
+Check out [​Ankr Earn](https://stakefi.ankr.com/liquid-staking).
 
 1. Liquid Staking
 2. Pooled Staking
-3. Parachain Liquid Bonding
-4. Ankr Boost - Platform to identify yield farming opportunities across DeFi platforms. \_Coming Soon. \_
+3. Parachain Liquid Staing
+4. Ankr Boost 
 
-Ankr Earn provides a simplified staking experience to users of Proof-of-Stake (PoS) networks and requires no specialist expertise, machinery, or hardware to get started.
+**Ankr Earn** provides a simplified staking experience to users of Proof-of-Stake (PoS) networks and requires no specialist expertise, machinery, or hardware to get started. 
+
+**Ankr Earn** solves the problems associated with traditional staking opportunities.
 
 ## **The Problem with Traditional staking** <a href="#the-problem-with-traditional-staking" id="the-problem-with-traditional-staking"></a>
 
-Traditional Staking presents barriers to the majority of people interested in becoming involved in Staking. Ankr removes these barriers to enable anybody to participate in staking opportunities.
+Traditional Staking presents barriers to the majority of people interested in becoming involved in Staking. 
 
-### :one: **Capital Inefficiency**
+## Capital Inefficiency
 
-**LOSS OF LIQUIDITY** these funds are then locked until the current Ethereum mainnet merges with the beacon chain estimated to be in 2022. This loss of liquidity presents another barrier to staking.
+### Loss of Liquidity 
+When assets are staked on a chain they are typically locked until the end of the staking period. This loss of liquidity is a significant barrier to staking. 
 
-**HIGH CAPITAL REQUIREMENT TO ACCESS STAKING REWARDS** Currently, a deposit contract to run a Validator node on the ETH2 beacon chain is 32 ETH. This is a big commitment of approximately $84,779 (as of August 1st 2021) and is a significant barrier to many crypto enthusiasts keen to run a node. Ankr solves this problem with Pooled Staking enabling individual participants to pool smaller amounts of crypto assets to collectively acquire the minimum required to run a node.\
+For example, staking ETH locks these funds until the current Ethereum mainnet merges with the Proof of Stake Ethereum 2.0 beacon chain. Until then ETH assets are inaccessible. 
+
+### High Capital Requirement to Access Staking Rewards
+Currently, a deposit contract to run a Staking/Validator node on Ethereum 2.0 is 32 ETH. This is a big commitment of approximately $85,000 at the time of writing. It is a significant barrier to many crypto fans who would like to be involved in Staking. 
+
+Ankr solves this problem with Pooled Staking enabling individual participants to pool smaller amounts of crypto assets to collectively acquire the minimum required to run a node.\
 \
 **LOCKED FUNDS** Assets are providing security to the network and are locked for that purpose. Not being able to re-use the bonds.
 

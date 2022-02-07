@@ -44,17 +44,42 @@ Available UNLESS superseded by API services and/or Ankr Protocol.
 
 ## Ankr Earn Products
 
-The **Ankr Earn** platform seeks to enable user-friendly staking products to allow more people to participate in decentralized finance. 
+The **Ankr Earn** platform seeks to enable user-friendly staking innovative products to allow more people to participate in decentralized finance. 
 
 Our staking solutions open the gates for more crypto users to support Proof of Stake networks directly with: 
 
-### Liquid Staking 
-**Ankr Earn** liquid staking solutions enable users to stake crypto assets on chain and instantly free up the liquidity of the staked assets in the form of liquid staking tokens. This means users can earn multiple layers of rewards with the value of their staked crypto assets. 
+### Staking
 
-### Delegate Staking
-**Delegate Staking** represent several token holders consolidating their resources and delegating them to an Ankr Node to enjoy several benefits over individual staking. 
+a. Smart Staking: Easy one-click staking with a very low minimum stake.
 
-### Parachain Liquid Crowdloans
-**Parachain Liquid Crowdloans** unlock the liquidity of bonded DOT or KSM. Collect rewards from winning Parachain slot auctions. Token rewards from the winning project are distributed to Parachain Liquid Crowdloan token holders.
+b. Liquid Staking: Solving capital inefficiency of Proof-of-Stake
 
-### Security
+c. Delegate Staking: stake without smart contract risk. 
+
+### Parachain Liquid Crowdloans:
+
+Solve the capital inefficiency of Parachain slot auctions.
+
+Bond KSM/DOT to your preferred project during Parachain Slot Auctions and receive portable liquid crowdloan token. 
+
+### Ankr Boost
+
+Ankr Boost provides aggregated real-time data feeds to help users boost their staking rewards and yield farming strategies. 
+
+a. Trade: Find the best option for trading liquid staking tokens, or staking.
+
+b. Liquid Mining: View how profitable it is to provide liquidity to a DEX with liquid staking tokens
+
+c. Yield: Aggregates yield opportunities related to 1. lending, 2. farming, 3. vaults
+
+### Ankr Bridge
+
+Ankr Bridge brings liquid staking to multiple chains.
+Participate in cross-chain staking, more yield opportunities across multiple chains and cross-chain arbitrage opportunities. 
+
+
+
+
+
+
+

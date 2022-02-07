@@ -169,7 +169,7 @@ earnSidebar: {
           type: 'generated-index',
         },
         items: [
-          'Earn/Concepts/about-earn',
+          'Earn/Concepts/earn-overview',
           'Earn/Concepts/earn-foundations',
           'Earn/Concepts/earn-architecture'
         ]
