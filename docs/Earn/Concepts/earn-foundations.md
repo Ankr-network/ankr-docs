@@ -2,25 +2,39 @@
 title: Foundations
 id: earn-foundations
 ---
+Ankr Earn solves key issues with Traditional Staking
 
-# What is Smart Staking?
-Smart Staking provides a one-click staking experience using liquid staking as collateral to fully represent the staked assets. 
+## **The Problem with Traditional staking**  
 
-# Key Benefits
-* One-click staking experience
-* Non-custodial staking experience
-* Lower staking requirement than staking nodes (e.g. min. 0.5 ETH instead of 32 ETH for one staking node)
-* Powered by the most scalable staking infrastructure - liquid staking
+## Capital Inefficiency
 
-# How does it work?
-1. Deposit ETH or any PoS native token 
-Deposit assets from any Proof-of-Stake chain supported by Ankr liquid staking. 
-These are deposited into a smart contract from Ankr. Alternatively, if you are a company, you can provide your own smart contract if you want to enable smart staking for your own customers.
+### Loss of Liquidity 
+When assets are staked on a chain they are typically locked until the end of the staking period. Staked assets are important to the networks they are staked on as they used to participate in on-chain activities and provide security for the network. This loss of liquidity is a significant barrier to staking. 
 
-2. Receive Liquid Staking Tokens
-The smart contract receives liquid staking tokens (from either Ankr or the market depending on the best price).
+### High Capital Requirement to Access Staking Rewards
+Typically, staking on PoS chains requires a high deposit. For example, to stake on Ethereum 2.0 directly requires a minimum stake 32 ETH. This is a big commitment of approximately $85,000. 
 
-3. Depositors can withdraw using two options
-*Claim liquid staking token* from the smart contract.
+Ankr removes this barrier by enabling participants to stake smaller amounts towards the running of a node. Rewards are then distributed proportionally.
+\
+**LOCKED FUNDS** Assets are providing security to the network and are locked for that purpose. Not being able to re-use the bonds.
 
-*Unstake* The smart contract redeems liquid staking tokens to Ankr and receives funds at the end of the unbonding period (e.g. every 28 days for aAVAXb, 3-4 days for aMATICb, 7 days for aBNBb)
+### :two: **Technical Complexity**
+
+Serving as a validator is a technically complex and costly business demanding a high degree of expertise. There are high financial penalties - slashing - if an invalid transaction is wrongly validated or if a node goes offline.
+
+## **The Ankr Staking Solution** <a href="#the-ankr-staking-solution" id="the-ankr-staking-solution"></a>
+
+Ankr Earn offers a range of solutions designed to ease complexity and enable mass adoption with a range of opportunities for anybody to get involved in staking with:
+
+* Minimum commitment costs
+* Immediate access to liquidity
+* Transfer of risks to Ankr experts
+
+**Ankr Staking Solutions are comprised of:**
+
+​ :one: **Pooled Staking -** Stake a minimal amount into a micropool of your choice. Currently ETH (0.5 ETH minimum), BNB (1 BNB minimum), AVAX (no minimum amount) reducing barriers to entry.
+
+:two: **Liquid Staking -** Unlock liquidity from staked tokens and get instant market liquidity with liquid staking tokens. Furthermore, explore additional DeFi yield opportunities with Ankr Boost.
+
+:three:**Ankr Boost -** Easily find yield farming opportunities using Liquid staking tokens from Ankr, namely: Trading Cockpit, Liquid Mining, Farming, Yield Aggregator, Lending
+
