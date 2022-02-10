@@ -5,9 +5,7 @@ id: earn-overview
 
 # Earn Overview
 
-Ankr Earn aims to bring the benefits of DeFi to the masses. 
-
-The following solutions are available:
+Ankr Earn aims to bring the benefits of DeFi to the masses with the following solutions. 
 
 ## Staking
 
@@ -44,7 +42,7 @@ View how profitable it is to provide liquidity to a DEX with liquid staking toke
 3. **Yield**
 Aggregates yield opportunities related to 1. lending, 2. farming, 3. vaults
 
-### Ankr Bridge
+## Ankr Bridge
 
 Ankr Bridge brings cross-chain liquid staking to multiple chains to enable users to increase their yield opportunities.
 

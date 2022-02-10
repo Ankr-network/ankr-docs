@@ -11,11 +11,11 @@ The Solana architecture combines a set of software algorithms to remove software
 
 ## Quick Links
 
-[**Solana**](https://solana.com)****
+[**Solana**](https://solana.com)
 
-[**Docs**](https://docs.solana.com)****
+[**Docs**](https://docs.solana.com)
 
-[**Github**](https://github.com/solana-labs/solana)****
+[**Github**](https://github.com/solana-labs/solana)
 
 ---
 # Connect Wallet
@@ -30,5 +30,5 @@ For developers, [command-line wallets](https://docs.solana.com/wallet-guide/cli)
 
 Solana uses it's own command-line tools to interact with a Solana cluster.
 
-Solana provides easy to follow guidance in their [documentation on how to install and use Solana Command Line (CLI) tools](https://docs.solana.com/cli).&#x20;
+Solana provides easy to follow guidance in their [documentation on how to install and use Solana Command Line (CLI) tools](https://docs.solana.com/cli).
 

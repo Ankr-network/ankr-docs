@@ -4,7 +4,7 @@ id: foundations
 ---
 # Foundations
 
-## Multi-Chain and Chain Neutral
+### Multi-Chain and Chain Neutral
 
 Ankr is a single platform that provides multiple different chains without advocating for any particular chain over another. 
 
