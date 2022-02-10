@@ -21,6 +21,7 @@
         defer: true,
       },
     ],
+    themes: ['@docusaurus/theme-live-codeblock'],
     presets: [
       [
         "@docusaurus/preset-classic",

@@ -6,7 +6,7 @@ import ArrowIcon from '../../../static/img/feature/arrow.svg';
 const FeatureList = [
   {
     title: "Connect and Build",
-    Svg: require("../../../static/img/feature/build-icon.svg").default,
+    icon: require("../../../static/img/feature/build-icon.png").default,
     list: [
       'For Developers, Product Owners and Providers',
       'Easy access tp our Multi-Chain RPC & Ankr Protocol',
@@ -17,7 +17,7 @@ const FeatureList = [
   },
   {
     title: "Stake and Earn",
-    Svg: require("../../../static/img/feature/earn-icon.svg").default,
+    icon: require("../../../static/img/feature/earn-icon.png").default,
     list: [
       'For Individuals, Integrators and Institutions',
       'Multi-Chain staking solutions that bridge PoS to DeFi',
@@ -28,7 +28,7 @@ const FeatureList = [
   },
   {
     title: "Tokens and Governance",
-    Svg: require("../../../static/img/feature/token-icon.svg").default,
+    icon: require("../../../static/img/feature/token-icon.png").default,
     list: [
       'For Ankr Community Token Holders',
       'ANKR Token utility across the Ankr Product Suite',
@@ -39,7 +39,7 @@ const FeatureList = [
   },
   {
     title: "Community",
-    Svg: require("../../../static/img/feature/community-icon.svg").default,
+    icon: require("../../../static/img/feature/community-icon.png").default,
     list: [
       'For Everyone',
       'Connect with the Ankr Community',
@@ -50,11 +50,11 @@ const FeatureList = [
   }
 ];
 
-function Feature({ Svg, title, list, description, link }) {
+function Feature({ icon, title, list, description, link }) {
   return (
     <div className={styles.item}>
       <h3 className={styles.title}>
-        <Svg alt={title} />
+        <img src={icon} alt={title} />
         {title}
       </h3>
       {list && <div className={styles.list}>
