@@ -15,3 +15,4 @@ Staking rewards from Proof-of-Stake networks can be one of the most stable strea
 2. **Removing barriers to access**
 
 No staking infrastructure is required to participate. 
+
