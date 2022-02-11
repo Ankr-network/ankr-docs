@@ -236,6 +236,18 @@ earnSidebar: {
           'Earn/Ecosystem/Avalanche/stake-avax-02',
                ],
        },
+       {
+        type: 'category',
+        label: 'Ethereum',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Ethereum/ethereum-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Ethereum/01-stake-eth',
+          'Earn/Ecosystem/Ethereum/stake-eth-faq',
+               ],
+       },
       ],
       },
     ],     
