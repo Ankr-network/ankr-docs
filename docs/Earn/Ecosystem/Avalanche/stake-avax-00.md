@@ -1,7 +1,6 @@
 ---
-description: >-
-  This section explains how to configure a Metamask wallet to the Avalanche
-  Network
+title: 00 Stake Avax
+id: stake-avax-00
 ---
 
 # Configure Metamask To Avalanche Network

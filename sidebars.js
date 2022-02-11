@@ -172,7 +172,7 @@ earnSidebar: {
           'Earn/Concepts/earn-overview',
           'Earn/Concepts/earn-foundations',
           'Earn/Concepts/earn-architecture'
-        ]
+        ],
     },
     {
       type: 'category',
@@ -198,9 +198,49 @@ earnSidebar: {
       'Earn/Products/smart-staking',
       'Earn/Products/delegate-staking',
     ],
-},
-  ],
-},
+  },
+    {
+      type: 'category',
+      label: 'Earn-Ecosystem',
+      link: {
+        type: 'generated-index',
+    },
+      items: [
+        {
+        type: 'category',
+        label: 'Binance',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Binance/binance-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Binance/bnb-delegate-staking',
+          'Earn/Ecosystem/Binance/bnb-liquid-staking',
+          'Earn/Ecosystem/Binance/stake-bnb-00',
+          'Earn/Ecosystem/Binance/stake-bnb-01',
+          'Earn/Ecosystem/Binance/stake-bnb-02',
+               ],
+       },
+       {
+        type: 'category',
+        label: 'Avalanche',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Avalanche/avalanche-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Avalanche/avax-smart-staking',
+          'Earn/Ecosystem/Avalanche/avax-liquid-staking',
+          'Earn/Ecosystem/Avalanche/stake-avax-00',
+          'Earn/Ecosystem/Avalanche/stake-avax-01',
+          'Earn/Ecosystem/Avalanche/stake-avax-02',
+               ],
+       },
+      ],
+      },
+    ],     
+    },
+
 
 
   

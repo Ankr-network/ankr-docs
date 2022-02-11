@@ -1,6 +1,6 @@
 ---
 title: Avalanche Liquid Staking
-id: avax-liq
+id: avax-liquid-staking
 ---
 
 # Avalanche Liquid Staking
@@ -28,10 +28,6 @@ Unstaking means that aAVAXb has an **elastic supply** contributing to a **robust
 :::
 
 ### 3. Access **Instant Liquidity Pools** 
-
-:::note
-COMING SOON
-:::
 
 * ANKR token holders can soon gain access to instant liquidity pools. This allows them to sell 1 aAVAXb against 1 AVAX instantly and subject to the instant liquidity pool capacity. 
 
