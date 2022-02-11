@@ -1,5 +1,5 @@
 ---
-title: 00 Stake BNB 
+title: 00 Before you Start 
 id: stake-bnb-00
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 02 Stake BNB
+title: 02 Claim Liquidity Tokens
 id: stake-bnb-02
 ---
 

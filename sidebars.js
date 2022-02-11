@@ -244,8 +244,24 @@ earnSidebar: {
           id: 'Earn/Ecosystem/Ethereum/ethereum-eco',
         },
         items: [
-          'Earn/Ecosystem/Ethereum/01-stake-eth',
+          'Earn/Ecosystem/Ethereum/eth-liquid-staking',
+          'Earn/Ecosystem/Ethereum/stake-eth-01',
+          'Earn/Ecosystem/Ethereum/stake-eth-02',
           'Earn/Ecosystem/Ethereum/stake-eth-faq',
+               ],
+       },
+       {
+        type: 'category',
+        label: 'Fantom',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Fantom/fantom-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Fantom/ftm-liquid-staking',
+          'Earn/Ecosystem/Fantom/stake-ftm-01',
+          'Earn/Ecosystem/Fantom/stake-ftm-02',
+          'Earn/Ecosystem/Fantom/stake-ftm-faq',
                ],
        },
       ],
