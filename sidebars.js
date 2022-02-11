@@ -1,12 +1,21 @@
 module.exports = {
   aboutSidebar: {
   'About': [
-    'Whatisankr/about-ankr', 
-    'Whatisankr/ankr-approach', 
-    'Whatisankr/ankr-vision', 
-    'Whatisankr/ankr-solutions'
-  ],
-},
+    {
+        type: 'category',
+        label: 'About',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+    'About/about-ankr', 
+    'About/ankr-vision',
+    'About/ankr-approach', 
+    'About/ankr-solutions'
+               ],
+    },
+            ],
+                },
   buildSidebar: {
   'Build': [
     {
@@ -59,6 +68,26 @@ module.exports = {
       {
         type: 'category',
         label: 'Chains V2',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Build/Chains/avalanche',
+          'Build/Chains/binance-smart-chain',
+          'Build/Chains/celo',
+          'Build/Chains/ethereum',
+          'Build/Chains/fantom',
+          'Build/Chains/iotex',
+          'Build/Chains/near',
+          'Build/Chains/nervos',
+          'Build/Chains/polygon',
+          'Build/Chains/solana',
+              ],
+      },
+
+      {
+        type: 'category',
+        label: 'Chains V1',
         link: {
           type: 'generated-index',
         },
@@ -140,10 +169,10 @@ earnSidebar: {
           type: 'generated-index',
         },
         items: [
-          'Earn/Concepts/about-earn',
+          'Earn/Concepts/earn-overview',
           'Earn/Concepts/earn-foundations',
           'Earn/Concepts/earn-architecture'
-        ]
+        ],
     },
     {
       type: 'category',
@@ -169,9 +198,49 @@ earnSidebar: {
       'Earn/Products/smart-staking',
       'Earn/Products/delegate-staking',
     ],
-},
-  ],
-},
+  },
+    {
+      type: 'category',
+      label: 'Earn-Ecosystem',
+      link: {
+        type: 'generated-index',
+    },
+      items: [
+        {
+        type: 'category',
+        label: 'Binance',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Binance/binance-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Binance/bnb-delegate-staking',
+          'Earn/Ecosystem/Binance/bnb-liquid-staking',
+          'Earn/Ecosystem/Binance/stake-bnb-00',
+          'Earn/Ecosystem/Binance/stake-bnb-01',
+          'Earn/Ecosystem/Binance/stake-bnb-02',
+               ],
+       },
+       {
+        type: 'category',
+        label: 'Avalanche',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Avalanche/avalanche-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Avalanche/avax-smart-staking',
+          'Earn/Ecosystem/Avalanche/avax-liquid-staking',
+          'Earn/Ecosystem/Avalanche/stake-avax-00',
+          'Earn/Ecosystem/Avalanche/stake-avax-01',
+          'Earn/Ecosystem/Avalanche/stake-avax-02',
+               ],
+       },
+      ],
+      },
+    ],     
+    },
+
 
 
   

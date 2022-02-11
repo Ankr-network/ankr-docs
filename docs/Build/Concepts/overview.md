@@ -5,33 +5,33 @@ id: build-concepts
 
 # Overview
 
-More and more businesses and consumers are seeking opportunities to adapt and innovate with Web 3.0 blockchain technology. However, the technical complexities and operational overhead involved in creating, configuring, and operating a blockchain and maintaining its infrastructure often act as a barrier.
+As Web 3.0 gains in popularity, increasing numbers are seeking opportunities to develop innovative products and features with Web 3.0 blockchain technology. 
 
-Ankr is committed to simplifying developer access to Web 3.0 and Decentralized Finance. 
+A real barrier to entering this space is navigating the technical complexity and cost of running blockchain infrastructure. 
 
-We make it super easy to connect via our **Public RPC Chains** without even needing to sign up with Ankr. Additional plans are available as you scale. 
+For example:
+:::warning Running your Own Node Risk Summary
 
-Our Public RPC Chains are part of the Multi Chain Network that underpins **Ankr Protocol**. The Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world. As you scale, our premium plan offers an exclusive RPC API endpoint as well as an exclusive Websocket wss endpoint. 
+ - There can be penalties if the uptime of your node is interrupted.
 
-You also have the opportunity to participate in the Ankr Protocol as a **Provider**. Providers benefit from the ability to send traffic to our ultra fast and reliable Multi RPC network at times of peak demand in a pay as you go model. Additionally, you can add your own node infrastructure to the Multi RPC network and allow others to use your idle capacity at times of low demand for you. You can earn rewards for doing so.
+ - Internet outages can result in missed transactions and slashing events.
 
+- Managing node maintenance alongside ensuring constant uptime without loss of data. 
 
+ - Risk of losing keys or damaging hardware that store keys.
 
-
-
-## Chain Neutrality
-
-### We are Chain Neutral
-Ankr is a single platform that provides multiple different chains without advocating for any particular chain over another.
-
-:::info
-This is also known as Blockchain Agnosticism.
+ - Malicious attack. 
 :::
 
-As a multi-chain provider, Ankr is chain neutral; we don’t advocate for our users to adopt any particular chain in preference to another. For example, a question we often get from developers is “Should I build my project on Ethereum or Binance Smart Chain?”. We leave this to you.
+Ankr Products remove this complexity and simplify access to Web 3.0.
 
-Developers currently have to choose between the networks and ecosystem.
+:::success Fast, Secure, Node Access
+1. Get an **RPC endpoint** immediately.
+We make it super easy to connect to networks including Ethereum, Avalanche, Fantom and a growing number of chains with free Public RPC endpoints. Additional **Premium** plans are available as you scale with an exclusive RPC API endpoint as well as an exclusive Websocket wss endpoint. 
 
-One consideration might be whether they want users to hold crypto assets on ETH (ERC20) or BSC (BEP20) and what the implications are. For example, a user holding USDT, the ERC20 version, cannot easily buy a NFT being sold with USDT, the BEP20 version.
+2. Fully **decentralized multi-chain network**
+These public RPC Chains are part of the multi-chain network that underpins **Ankr Protocol**. The Ankr Protocol provides truly decentralized reliable and load balanced access to node clusters from anywhere in the world. 
 
-Ankr is at the forefront of addressing these limitations. By working closely with developers, Ankr has pioneered the building of tools for cross-chain interoperability.
+3. Join the **Ankr Provider Program**.
+You also have the opportunity to participate in the Ankr Protocol as part of our **Provider Program**. Providers can add their own node infrastructure to the multi-chain network and earn rewards for doing so. Providers will also be able to send traffic to our ultra fast and reliable multi-chain network at times of peak demand in a pay as you go model. 
+:::

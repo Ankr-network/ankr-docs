@@ -1,9 +1,9 @@
 ---
-title: Stake AVAX for aAVAXb
-id: stake-avax
+title: 02 Stake AVAX
+id: stake-avax-02
 ---
 
-# How to stake AVAX
+# Obtain Liquidity Tokens
 
 This section assumes you have set up your wallet for the Avalanche C Network.
 

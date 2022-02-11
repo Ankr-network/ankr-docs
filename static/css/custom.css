@@ -358,7 +358,7 @@ table td {
   color: #356df3;
   border-radius: 50%;
 }
-.markdown li {
+.markdown ol li {
   position: relative;
   display: flex;
   align-items: flex-start;

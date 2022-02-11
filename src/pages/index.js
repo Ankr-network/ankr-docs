@@ -24,8 +24,8 @@ function HomepageHeader() {
             >
               Meet Ankr
             </Link>
-            <Link className={styles.button} to="/docs/intro">
-              Quick Links
+            <Link className={styles.button} to="https://github.com/Ankr-network/ankr-docs/issues/new?labels=Tutorial&template=submit-a-tutorial.md">
+              Submit a tutorial
             </Link>
           </div>
         </div>

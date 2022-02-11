@@ -5,7 +5,20 @@ id: liquid-staking
 
 # Liquid Staking
 
-Liquid Staking allows you to earn staking rewards without locking up assets. 
+Liquid Staking provides instant liquidity for staked assets in the form of liquid staking tokens. 
+
+Liquid staking tokens represent the value of your staked assets but the tokens are portable, accessible and thus liquid. They can now be utilized in a number of ways.
+
+For example,
+
+1. **Provide liquidity on Decentralized Exchanges**
+Pairs of tokens for example liquidity token aAVAXb and AVAX can be deposited in liquidity pools on a number of DEXs such as Uniswap. By providing liquidity, you can earn additional rewards.  As more people trade, you can earn a share of transaction fees (Liquidity Mining), on top of your AVAX staking rewards from aAVAXb.
+
+2. **Receiving additional tokens from DEXs**
+By providing liquidity, you also have the possibility of receiving farming rewards or tokens on top of Liquidity Pool tokens, representing your share of a liquidity pool on a DEX.
+
+3. **Earn more yield**
+You can harvest the farmed tokens and stake those tokens as well to earn more yield, or simply sell them to buy more AVAX and aAVAXb to generate more yield. Repeating this operation periodically can add a compounding effect to yield.
 
 :::tip
 
@@ -14,27 +27,11 @@ Ready to get started?
 Check out [**Ankr Earn**](https://stakefi.ankr.com)
 :::
 
-## What is Liquid Staking?
-
-Liquid Staking solves the problem of locked up liquidity when staking assets on Proof-of-Stake networks. 
-
-Liquid Staking tokens are equivalent in value to your staked assets (including their staking rewards).
+## How do I get Liquid Staking Tokens?
 
 Liquid Staking tokens are automatically issued to your Ankr Earn Dashboard when you successfully stake assets such as ETH, AVAX, FTM, BNB. 
 
-### The Problem with Traditional Staking
-
-Staking rewards from Proof-of-Stake networks can be one of the most stable streams of income available (in percentage terms). The downside of staking is the wait until the end of the staking period to realize your staking rewards.
-
-For example, if you stake 0.5 ETH on the Ethereum 2.0 PoS network today, you lose access to that staked ETH and won’t realize any rewards until some point in 2022. 
-
-So in the meantime, you have no access to your staked assets, nor do you have any income from rewards.
-
-### Ankr Liquid Staking Solution
-
-Staked assets are immediately represented by liquid staking tokens such as **aETHb** and can be accessed directly from the **Ankr Earn** dashboard. 
-
-These liquid staking tokens represent the value of the staked assets but are portable, accessible and thus liquid. They can now be utilized in a number of ways.
+Check out [**Ankr Earn**](https://stakefi.ankr.com)
 
 For example,
 

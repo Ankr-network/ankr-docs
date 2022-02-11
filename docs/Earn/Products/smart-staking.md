@@ -3,7 +3,8 @@ title: Smart Staking
 id: smart-staking
 ---
 
-## What is Smart Staking?
+## Smart Staking?
+
 Smart Staking provides a One-Click staking experience using liquid staking as collateral to fully represent staked assets. 
 
 ### Key Benefits
