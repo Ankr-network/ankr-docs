@@ -108,19 +108,19 @@
               position: "right",
               items: [
                 {
-                  to: "docs/category/earn-concepts",
+                  to: "docs/category/-concepts",
                   label: "Concepts",
                 },
                 {
-                  to: "docs/category/earn-guides",
+                  to: "docs/category/-guides",
                   label: "Guides",
                 },
                 {
-                  to: "docs/category/earn-products",
+                  to: "docs/category/-products",
                   label: "Products",
                 },
                 {
-                  to: "docs/category/earn-ecosystem",
+                  to: "docs/category/-ecosystem",
                   label: "Ecosystem",
                 },
                 {

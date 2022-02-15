@@ -1,5 +1,5 @@
 ---
-title: Parachain Liquid Crowdloans
+title: 🪁 Parachain Liquid Crowdloans
 id: parachain-crowdloans
 ---
 
