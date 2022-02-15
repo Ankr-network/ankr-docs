@@ -1,5 +1,6 @@
 ---
-description: Frequently Asked Questions on MATIC staking
+title: Polygon FAQs
+id: stake-matic-faq
 ---
 
 # MATIC FAQs
@@ -35,17 +36,14 @@ Unstaking takes approximately 9 days (80 checkpoints). \
 
 ### A.
 
-aMATICb rewards arrive in your wallet with every rebase. Rebasing occurs daily.&#x20;
-
-****[**What is rebasing?**](https://docs.ankr.com/resources/glossary#rebase-or-rebasing)&#x20;
+aMATICb rewards arrive in your wallet with every rebase. Rebasing occurs daily.
 
 ### Q. How do I receive rewards?
 
 ### A.
 
-&#x20;A rebase runs daily and rewards are received each time this runs. You receive these rewards directly to your wallet - assuming you hold aMATICb.
+A rebase runs daily and rewards are received each time this runs. You receive these rewards directly to your wallet - assuming you hold aMATICb.
 
-[**What is rebasing?**](https://docs.ankr.com/resources/glossary#rebase-or-rebasing)&#x20;
 
 ### Q. What determines the amount of reward I receive each rebase?
 

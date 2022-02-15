@@ -1,9 +1,9 @@
 ---
-title: Kusama
-id: ksm-eco
+title: Polkadot
+id: dot-eco
 ---
 
-## Kusama Products
+## Polkadot Products
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,4 +16,4 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-Also, you can participate in **Kusama Liquid Crowdloans** to support the project of your choice. 
+Also, you can participate in **Polkadot Liquid Crowdloans** to support the project of your choice. 

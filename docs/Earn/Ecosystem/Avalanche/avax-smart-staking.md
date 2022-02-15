@@ -1,5 +1,5 @@
 ---
-title: A😃vax Smart Staking
+title: Avax Smart Staking
 id: avax-smart-staking
 ---
 

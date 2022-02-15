@@ -5,12 +5,14 @@ id: binance-eco
 
 ## Binance Ecosystem Products
 
-Ankr offers 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-**BNB Delegate Staking**
+<Tabs>
+  <TabItem value="Delegate Staking" label="Delegate Staking" default>
+  </TabItem>
+  <TabItem value="Liquid Staking" label="Liquid Staking">
+  You receive <strong>Liquidity tokens</strong> automatically upon completing <strong>Delegate Staking</strong>.
+  </TabItem>
+</Tabs>
 
-**BNB Liquid Staking**
-
-:::tip
-You receive Liquidity tokens automatically upon completing Delegate Staking.
-:::

@@ -1,6 +1,6 @@
 ---
 title: 02 Claim Liquidity Tokens
-id: stake-ftm-02
+id: stake-matic-02
 ---
 
 ## How to obtain your Liquidity Tokens 
