@@ -164,7 +164,7 @@ earnSidebar: {
   'Earn': [
     {
         type: 'category',
-        label: 'Earn-Concepts',
+        label: '💡 Concepts',
         link: {
           type: 'generated-index',
         },
@@ -176,7 +176,7 @@ earnSidebar: {
     },
     {
       type: 'category',
-      label: 'Earn-Guides',
+      label: '📚 Guides',
       link: {
         type: 'generated-index',
       },
@@ -188,7 +188,7 @@ earnSidebar: {
   },
   {
     type: 'category',
-    label: 'Earn-Products',
+    label: '🛍 Products',
     link: {
       type: 'generated-index',
     },
@@ -196,11 +196,12 @@ earnSidebar: {
       'Earn/Products/liquid-staking',
       'Earn/Products/smart-staking',
       'Earn/Products/delegate-staking',
+      'Earn/Products/parachain-crowdloans',
     ],
   },
     {
       type: 'category',
-      label: 'Earn-Ecosystem',
+      label: '🌳 Ecosystems',
       link: {
         type: 'generated-index',
     },
