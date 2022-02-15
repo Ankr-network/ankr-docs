@@ -181,7 +181,6 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-        'Earn/Guides/earn-started',
         'Earn/Guides/earn-wallets',
         'Earn/Guides/liquidity-dex',
         'Earn/Guides/earn-yield'
@@ -276,6 +275,37 @@ earnSidebar: {
           'Earn/Ecosystem/Kusama/stake-ksm-00',
           'Earn/Ecosystem/Kusama/stake-ksm-01',
           'Earn/Ecosystem/Kusama/stake-ksm-faq',
+               ],
+       },
+       {
+        type: 'category',
+        label: 'Polygon',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Polygon/polygon-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Polygon/matic-liquid-staking',
+          'Earn/Ecosystem/Polygon/stake-matic-00',
+          'Earn/Ecosystem/Polygon/stake-matic-01',
+          'Earn/Ecosystem/Polygon/stake-matic-02',
+          'Earn/Ecosystem/Polygon/stake-matic-03',
+          'Earn/Ecosystem/Polygon/stake-matic-faq',
+               ],
+       },
+       {
+        type: 'category',
+        label: 'Polkadot',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Polkadot/dot-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Polkadot/dot-liquid-staking',
+          'Earn/Ecosystem/Polkadot/stake-dot-00',
+          'Earn/Ecosystem/Polkadot/stake-dot-01',
+          'Earn/Ecosystem/Polkadot/stake-dot-02',
+          'Earn/Ecosystem/Polkadot/stake-dot-faq',
                ],
        },
       ],

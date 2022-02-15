@@ -5,12 +5,13 @@ id: avalanche-eco
 
 ## Avalanche Ecosystem Products
 
-Ankr offers 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-**AVAX Smart Staking**
-
-**AVAX Liquid Staking**
-
-:::tip
-You receive Liquidity tokens automatically upon completing Smart Staking.
-:::
+<Tabs>
+  <TabItem value="Smart Staking" label="Smart Staking" default>
+  </TabItem>
+  <TabItem value="Liquid Staking" label="Liquid Staking">
+  You receive <strong>Liquidity tokens</strong> automatically upon completing <strong>Smart Staking</strong>.
+  </TabItem>
+</Tabs>

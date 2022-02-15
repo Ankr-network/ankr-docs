@@ -1,13 +1,13 @@
 ---
-title: Kusama Liquid Staking
-id: ksm-liquid-staking
+title: Polkadot Liquid Staking
+id: dot-liquid-staking
 ---
 
-Kusama Staking uses nominated proof-of-stake (NPoS) as its foundation consensus mechanism. By staking KSM on the Kusama blockchain, participants earn rewards and help to bring economic security to the networks. 
+Polkadot Staking uses nominated proof-of-stake (NPoS) as its foundation consensus mechanism. By staking DOT on the Polkadot blockchain, participants earn rewards and help to bring security to the network. 
 
-Kusama Liquid Staking from **Ankr Earn** offers instant liquidity for your staked **KSM**.
+Polkadot Liquid Staking from **Ankr Earn** offers instant liquidity for your staked **DOT**.
 
-KSM Liquid Staking enables you to earn **alpha** (The _return on investment that goes beyond normal increases in the crypto market index_).
+DOT Liquid Staking enables you to earn **alpha** (The _return on investment that goes beyond normal increases in the crypto market index_).
 
 Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 

@@ -54,7 +54,7 @@
           items: [
             {
               type: "dropdown",
-              label: "About",
+              label: "⚓️  About",
               position: "right",
               items: [
                 {
@@ -77,7 +77,7 @@
             },
             {
               type: "dropdown",
-              label: "Build",
+              label: "🔨 Build",
               position: "right",
               items: [
                 {
@@ -104,7 +104,7 @@
             },
             {
               type: "dropdown",
-              label: "Earn",
+              label: " 💰 Earn",
               position: "right",
               items: [
                 {
@@ -135,7 +135,7 @@
             },
             {
               type: "dropdown",
-              label: "Tokens & Governance",
+              label: "⚖️ Tokens & Governance",
               position: "right",
               items: [
                 {
@@ -154,7 +154,7 @@
             },
             {
               type: "dropdown",
-              label: "Community",
+              label: "👥 Community",
               position: "right",
               items: [
                 {
@@ -177,12 +177,12 @@
               position: "right",
               items: [
                 {
-                  to: "page/Tutorials/home",
-                  label: "Key Principles",
+                  to: "docs/Tutorials/connect-web3js",
+                  label: "Connect with Javascript",
                 },
                 {
-                  to: "docs/Tutorials/key-/web-3.0",
-                  label: "Web3.0",
+                  to: "docs/Tutorials/connect-web3py",
+                  label: "Connect with Python",
                 },
               ],
             },
