@@ -264,6 +264,20 @@ earnSidebar: {
           'Earn/Ecosystem/Fantom/stake-ftm-faq',
                ],
        },
+       {
+        type: 'category',
+        label: 'Kusama',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Kusama/ksm-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Kusama/ksm-liquid-staking',
+          'Earn/Ecosystem/Kusama/stake-ksm-00',
+          'Earn/Ecosystem/Kusama/stake-ksm-01',
+          'Earn/Ecosystem/Kusama/stake-ksm-faq',
+               ],
+       },
       ],
       },
     ],     
