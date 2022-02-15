@@ -1,17 +1,24 @@
 ---
-title: Ethereum Ecosystem
-id: ethereum-eco
+title: Polygon
+id: polygon-eco
 ---
 
-## Ethereum Earn Products
+## Polygon Products
+
+Ankr offers 
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="Smart Staking" label="Smart Staking" default>
+
   </TabItem>
   <TabItem value="Liquid Staking" label="Liquid Staking">
-  You receive <strong>Liquidity tokens</strong> automatically upon completing <strong>Smart Staking</strong>.
+
   </TabItem>
 </Tabs>
+
+:::tip
+You receive Liquidity tokens automatically upon completing Smart Staking.
+:::

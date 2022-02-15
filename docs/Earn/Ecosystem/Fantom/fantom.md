@@ -5,12 +5,13 @@ id: fantom-eco
 
 ## Fantom Earn Products
 
-Ankr offers 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-**FTM Smart Staking**
-
-**FTM Liquid Staking**
-
-:::tip
-You receive Liquidity tokens automatically upon completing Smart Staking.
-:::
+<Tabs>
+  <TabItem value="Smart Staking" label="Smart Staking" default>
+  </TabItem>
+  <TabItem value="Liquid Staking" label="Liquid Staking">
+  You receive <strong>Liquidity tokens</strong> automatically upon completing <strong>Smart Staking</strong>.
+  </TabItem>
+</Tabs>

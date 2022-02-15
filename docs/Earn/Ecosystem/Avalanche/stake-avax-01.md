@@ -11,15 +11,9 @@ Check out [00 Before you Start](stake-avax-00.md) if you haven't done so yet.
 
 ## 01 Connect your Wallet
 
-1. Visit the [Ankr Earn](https://stakefi.ankr.com)app and click the '**Launchpad**'button.
-
-2. Locate the ‘**Stake AVAX**’ box and click ‘Start staking’.
-
-
-3. You are prompted to grant **Ankr Earn** access to your wallet. Click \*\*Grant Access \*\*to proceed.
-
-
 :::info **Avalanche Supported Wallets:**
+
+**Ensure you are connected to the Avalanche Network**
 
 :white_check_mark: **Metamask**: Avalanche supported
 
@@ -32,15 +26,13 @@ Check out [00 Before you Start](stake-avax-00.md) if you haven't done so yet.
 :x: **Huobi wallet**: Avalanche is not supported
 :::
 
+1. Visit the [Ankr Earn](https://stakefi.ankr.com)app and click the '**Launchpad**'button.
+
+2. Locate the ‘**Stake AVAX**’ box and click ‘Start staking’.
+
+3. You are prompted to grant **Ankr Earn** access to your wallet. Click *Grant Access* to proceed.
 
 4. Select the **Avalanche supported wallet** you wish to connect to e.g. Metamask.
-
-:::tip
-
-**Ensure you are connected to the Avalanche Network**
-
-:::
-
 
 5. Successful connection to **Ankr Earn** is indicated at top right corner.
 
@@ -59,12 +51,12 @@ To allow sufficient AVAX to cover gas fees AVAX - from 0.025 to 0.1 AVAX
 
 2. Enter the desired amount of AVAX to stake.
 
-3. Your wallet pops with details of the transaction including a suggested gas fee .
+3. Your wallet pops with details of the transaction including a suggested gas fee.
 
-* Click ‘**Confirm**’ to proceed.
+4. Click ‘**Confirm**’ to proceed.
 
-4. The status of the transaction updates in your wallet.
+5. The status of the transaction updates in your wallet.
 
-5. When staking is finalized, the **Staking Dashboard** updates.
+6. When staking is finalized, the **Staking Dashboard** updates.
 
 
