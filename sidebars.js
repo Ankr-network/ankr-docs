@@ -236,6 +236,48 @@ earnSidebar: {
           'Earn/Ecosystem/Avalanche/stake-avax-02',
                ],
        },
+       {
+        type: 'category',
+        label: 'Ethereum',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Ethereum/ethereum-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Ethereum/eth-liquid-staking',
+          'Earn/Ecosystem/Ethereum/stake-eth-01',
+          'Earn/Ecosystem/Ethereum/stake-eth-02',
+          'Earn/Ecosystem/Ethereum/stake-eth-faq',
+               ],
+       },
+       {
+        type: 'category',
+        label: 'Fantom',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Fantom/fantom-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Fantom/ftm-liquid-staking',
+          'Earn/Ecosystem/Fantom/stake-ftm-01',
+          'Earn/Ecosystem/Fantom/stake-ftm-02',
+          'Earn/Ecosystem/Fantom/stake-ftm-faq',
+               ],
+       },
+       {
+        type: 'category',
+        label: 'Kusama',
+        link: {
+          type: 'doc',
+          id: 'Earn/Ecosystem/Kusama/ksm-eco',
+        },
+        items: [
+          'Earn/Ecosystem/Kusama/ksm-liquid-staking',
+          'Earn/Ecosystem/Kusama/stake-ksm-00',
+          'Earn/Ecosystem/Kusama/stake-ksm-01',
+          'Earn/Ecosystem/Kusama/stake-ksm-faq',
+               ],
+       },
       ],
       },
     ],     

@@ -38,7 +38,7 @@ aAVAXb will increase with every rebase, rebase occurs daily.
 
 ### A.
 
-A rebase runs daily and rewards are received each time this runs. You will receive these rewards provided you hold AVAXb in your wallet, so you MUST claim the tokens out of StakeFi.
+A rebase runs daily and rewards are received each time this runs. You will receive these rewards provided you hold AVAXb in your wallet, so you MUST claim the tokens out of Ankr Earn.
 
 ### Q. Does Ankr charge for the rebasing service?
 

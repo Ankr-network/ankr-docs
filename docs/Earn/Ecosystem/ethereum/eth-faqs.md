@@ -1,3 +1,8 @@
+---
+title: Stake ETH FAQs
+id: stake-eth-faq
+---
+
 # ETH FAQs
 
 ### Q. What is the minimum amount of ETH I can stake?
