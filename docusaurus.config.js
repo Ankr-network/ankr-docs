@@ -120,8 +120,8 @@
                   label: "Products",
                 },
                 {
-                  to: "docs/category/-ecosystem",
-                  label: "Ecosystem",
+                  to: "docs/category/-ecosystems",
+                  label: "Ecosystems",
                 },
                 {
                   to: "docs/category/reference",
