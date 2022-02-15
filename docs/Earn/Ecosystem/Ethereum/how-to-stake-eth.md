@@ -26,7 +26,7 @@ id: stake-eth-01
 
 ## 02 Stake your ETH
 
-1.Click the '_**+ button**'_ to stake ETH
+1.Click the '**+**' button to stake ETH
 
 
 2. Enter the desired staking amount or use the slider.
