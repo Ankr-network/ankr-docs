@@ -25,9 +25,7 @@ module.exports = {
           type: 'generated-index',
         },
         items: [
-          'Build/Concepts/build-concepts',
-          'Build/Concepts/foundations',
-          'Build/Concepts/architecture'
+          'Build/Concepts/build-concepts'
         ]
     },
     {
@@ -247,7 +245,6 @@ earnSidebar: {
           'Earn/Ecosystem/Ethereum/eth-liquid-staking',
           'Earn/Ecosystem/Ethereum/stake-eth-01',
           'Earn/Ecosystem/Ethereum/stake-eth-02',
-          'Earn/Ecosystem/Ethereum/stake-eth-faq',
                ],
        },
        {
@@ -259,6 +256,7 @@ earnSidebar: {
         },
         items: [
           'Earn/Ecosystem/Fantom/ftm-liquid-staking',
+          'Earn/Ecosystem/Fantom/stake-ftm-00',
           'Earn/Ecosystem/Fantom/stake-ftm-01',
           'Earn/Ecosystem/Fantom/stake-ftm-02',
           'Earn/Ecosystem/Fantom/stake-ftm-faq',
