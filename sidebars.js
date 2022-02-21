@@ -25,9 +25,7 @@ module.exports = {
           type: 'generated-index',
         },
         items: [
-          'Build/Concepts/build-concepts',
-          'Build/Concepts/foundations',
-          'Build/Concepts/architecture'
+          'Build/Concepts/build-concepts'
         ]
     },
     {
@@ -259,6 +257,7 @@ earnSidebar: {
         },
         items: [
           'Earn/Ecosystem/Fantom/ftm-liquid-staking',
+          'Earn/Ecosystem/Fantom/stake-ftm-00',
           'Earn/Ecosystem/Fantom/stake-ftm-01',
           'Earn/Ecosystem/Fantom/stake-ftm-02',
           'Earn/Ecosystem/Fantom/stake-ftm-faq',

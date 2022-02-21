@@ -1,6 +1,6 @@
 ---
 title: 00 Before you Start
-id: stake-ftm-0
+id: stake-ftm-00
 ---
 
 # Configuring MetaMask & other wallet support
@@ -14,11 +14,12 @@ id: stake-ftm-0
 2. Click the **Network** drop-down and select "*Custom RPC*"
     
 3. Enter the following details:
-   * **Network Name**: Fantom Opera
-   * **New RPC URL**: [https://rpc.ftm.tools](https://rpc.ftm.tools)
-   * **ChainID**: 250
-   * **Symbol**: FTM
-   * **Explorer**: [https://ankrscan.io/](https://ankrscan.io)
+
+* **Network Name**: Fantom Opera
+* **New RPC URL**: [https://rpc.ftm.tools](https://rpc.ftm.tools)
+* **ChainID**: 250
+* **Symbol**: FTM
+* **Explorer**: [https://ankrscan.io/](https://ankrscan.io)
 
 ## Other wallets that support Fantom
 
