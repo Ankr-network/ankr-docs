@@ -245,7 +245,7 @@ earnSidebar: {
           'Earn/Ecosystem/Ethereum/eth-liquid-staking',
           'Earn/Ecosystem/Ethereum/stake-eth-01',
           'Earn/Ecosystem/Ethereum/stake-eth-02',
-          'Earn/Ecosystem/Ethereum/stake-eth-faq',
+          'Earn/Ecosystem/Ethereum/stake-eth-faq'
                ],
        },
        {
