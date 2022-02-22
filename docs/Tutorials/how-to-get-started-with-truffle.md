@@ -1,10 +1,10 @@
 ---
-title: Create a simple project with Truffle
+title: Simple project with Truffle
 id: simple-truffle
-description: 
-  Truffle is a development environment, testing framework and asset pipeline for
-  blockchains using the Ethereum Virtual Machine (EVM
 ---
+
+Truffle is a development environment, testing framework and asset pipeline for
+blockchains using the Ethereum Virtual Machine (EVM
 
 # How to Create a Simple Project with Truffle
 

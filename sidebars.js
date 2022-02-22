@@ -337,16 +337,37 @@ earnSidebar: {
     },
   ],
 }, 
-    
-
-
-  communitySidebar: 
-  {
-  'Community': ['Community/channels', 'Community/contribute', 'Community/grants']
+  communitySidebar: {
+  'Community': [
+    {
+      type: 'category',
+      label: '👥 Community',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'Community/channels', 
+        'Community/contribute', 
+        'Community/grants'
+      ],
   },
-
-
-  tutorialsSidebar: {
-    'Resources': ['Tutorials/glossary', 'Tutorials/help']
+ ],
+},
+  tutorialSidebar: {
+    'Tutorials': [
+      {
+        type: 'category',
+        label: '🎓 Tutorials',
+        link: {
+            type: 'generated-index',
+          },
+        items: [
+        'Tutorials/simple-truffle', 
+        'Tutorials/connect-web3js',
+        'Tutorials/connect-web3py'
+      ],
     },
-};
+  ],
+},
+}
+
