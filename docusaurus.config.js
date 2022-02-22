@@ -38,10 +38,9 @@
         }),
       ],
     ],
-
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-      ({
+      {
         colorMode: {
           disableSwitch: true,
         },
@@ -124,34 +123,17 @@
                   label: "Ecosystems",
                 },
                 {
-                  to: "docs/category/reference",
+                  to: "docs/category/-reference",
                   label: "Reference",
                 },
-                {
-                  to: "docs/category/support",
-                  label: "Support",
-                },
               ],
             },
-            {
-              type: "dropdown",
-              label: "⚖️ Tokens & Governance",
-              position: "right",
-              items: [
-                {
-                  to: "docs/Tokens&Governance/about-ankr-tokens",
-                  label: "Overview",
-                },
-                {
-                  to: "docs/Tokens&Governance/governance",
-                  label: "Governance",
-                },
-                {
-                  to: "docs/Tokens&Governance/tokenomics",
-                  label: "Tokenomics",
-                },
-              ],
-            },
+              {
+                type: "docSidebar",
+                sidebarId: "governanceSidebar",
+                position: "right",
+                label: "⚖️ Tokens-Governance"
+              },
             {
               type: "dropdown",
               label: "👥 Community",
@@ -173,7 +155,7 @@
             },
             {
               type: "dropdown",
-              label: "Tutorials",
+              label: "🎓 Tutorials",
               position: "right",
               items: [
                 {
@@ -188,6 +170,5 @@
             },
           ],
         },
-      }),
-  }
-);
+      },
+    })

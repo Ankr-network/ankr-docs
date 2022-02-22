@@ -18,20 +18,6 @@ In general,
 
 Websocket connections are subject to a maximum of 15.
 
-**400-428 Errors **are commonly due to end-user formatting errors. Check the composition of your requests. See [sample requests (external)](https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest#intro) for assistance.&#x20;
+**400-428 Errors** are commonly due to end-user formatting errors. Check the composition of your requests. See [sample requests (external)](https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest#intro) for assistance.
 
-### Q. How do I deposit ANKR tokens?
 
-A. Check out [Deposit ANKR](premium-rpcs/02-deposit-ankr.md) tokens.
-
-### Q. Where do I buy ANKR tokens?
-
-A. Check out [How to buy ANKR](premium-rpcs/01-get-ready/how-to-buy-ankr-tokens.md) tokens.&#x20;
-
-### Q. What is a Public RPC?
-
-A. Check out [Public RPCs](about-ankr-protocol/01-public-community-rpcs.md)
-
-### Q. What are the benefits of Ankr Premium?
-
-A. Check out [Ankr Premium](about-ankr-protocol/02-premium-features.md)
