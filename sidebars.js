@@ -362,6 +362,7 @@ earnSidebar: {
             type: 'generated-index',
           },
         items: [
+        'Tutorials/submit-tutorial',
         'Tutorials/simple-truffle', 
         'Tutorials/connect-web3js',
         'Tutorials/connect-web3py'
