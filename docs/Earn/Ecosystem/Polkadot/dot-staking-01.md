@@ -9,7 +9,7 @@ This walkthrough assumes you have:
 - A _polkadot.jswallet_ installed in your Chrome Browser
 - Sufficient DOT tokens for staking AND gas fees.
 
-If not, check out [DOT - 00 Before you Start](@site/docs/Earn/Ecosystem/Polkadot/dot-staking-00.md) for guidance.
+If not, check out [DOT - 00 Before you Start](dot-staking-00.md) for guidance.
 
 :::
 
