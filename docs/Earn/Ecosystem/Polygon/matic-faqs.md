@@ -11,7 +11,7 @@ id: stake-matic-faq
 
 **Polygon Liquid Staking** offers **instant liquidity** for your staked **MATIC**. When you stake MATIC you can claim aMATICb tokens. These can be used with DeFi platforms to potentially earn additional layers of rewards.
 
-The aMATICb token allows you to earn Alpha. Alpha (α) is a term used to describe a return that beats the normal crypto market. Also known as an excess return.&#x20;
+The aMATICb token allows you to earn Alpha. Alpha (α) is a term used to describe a return that beats the normal crypto market. Also known as an excess return.
 
 By staking aMATICb tokens on other DeFi platforms there is the potential to earn additional rewards.
 
@@ -28,9 +28,9 @@ The minimum amount you can stake is **1 MATIC**.
 Unstaking takes approximately 9 days (80 checkpoints). \
 
 
-{% hint style="info" %}
+:::info
 **Checkpoints** are a key part of the Matic protocol. They represents snapshots of the chain state and must be verified by ⅔+ of the validator set before they are confirmed and submitted on contracts deployed on Ethereum.
-{% endhint %}
+:::
 
 ### Q. How soon after staking will I begin to receive rewards?
 
@@ -89,10 +89,5 @@ The aMATICb tokens are ERC-20 tokens that can be safely stored on wallets like M
 ### A.
 
 Check out these instructions to set up your Metamask wallet.\
-\
-[configure-metamask-to-polygon-network.md](configure-metamask-to-polygon-network.md "mention")
 
-\
-
-
-&#x20;
+Polygon [00 Before you Start](matic-staking-00.md)

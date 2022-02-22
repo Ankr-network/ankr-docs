@@ -6,9 +6,7 @@ description: In this section we address some of the common questions users ask a
 
 ### Q. How do I configure my wallet?
 
-{% content-ref url="metamask.md" %}
-[metamask.md](metamask.md)
-{% endcontent-ref %}
+Check out Avalanche [00 Before you Start](stake-avax-00.md)
 
 ### A.
 

@@ -308,17 +308,36 @@ earnSidebar: {
                ],
        },
       ],
-      },
-    ],     
     },
-
-
-
-  
-  governanceSidebar: 
-    {
-  'Tokens & Governance': ['Tokens&Governance/about-ankr-tokens', 'Tokens&Governance/governance','Tokens&Governance/tokenomics'],
-},
+       {
+        type: 'category',
+        label: '🗂 Reference',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Earn/Reference/token-addresses'
+        ],
+        },
+      ],
+    },       
+  governanceSidebar: {
+    'Governance': [
+      {
+        type: 'category',
+        label: '⚖️ Governance',
+        link: {
+            type: 'generated-index',
+          },
+        items: [
+          'Tokens&Governance/about-ankr-tokens', 
+          'Tokens&Governance/governance',
+          'Tokens&Governance/tokenomics'
+        ],
+    },
+  ],
+}, 
+    
 
 
   communitySidebar: 
