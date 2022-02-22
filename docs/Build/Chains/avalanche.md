@@ -40,7 +40,7 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 |           |   BLOCK EXPLORER:   | [https://cchain.explorer.avax.network/](https://cchain.explorer.avax.network) |
 
 
-# Integrate CLI
+# Integrate Code
 
 ## Avalanche
 

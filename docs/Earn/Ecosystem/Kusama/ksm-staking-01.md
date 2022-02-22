@@ -9,7 +9,7 @@ This walkthrough assumes you have:
 - A_polkadot.jswallet_ installed in your Chrome Browser
 - Sufficient KSM tokens for staking AND gas fees.
 
-If not, check out[KSM - 00 Before you Start](@site/docs/Earn/Ecosystem/Kusama/ksm-staking-00.md) for guidance.
+If not, check out[KSM - 00 Before you Start](ksm-staking-00.md) for guidance.
 
 :::
 
