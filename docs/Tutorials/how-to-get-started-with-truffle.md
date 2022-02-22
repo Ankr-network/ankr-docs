@@ -16,21 +16,21 @@ This guide walks you through setting up a simple project with [Truffle](https://
 * Windows, Linux or Mac OS X
 * Ethereum Client that supports standard JSON RPC API
 
-Truffle also requires that you have a running Ethereum client which supports standard JSON RPC API (which is nearly all of them).&#x20;
+Truffle also requires that you have a running Ethereum client which supports standard JSON RPC API (which is nearly all of them).
 
 See [Choosing an Ethereum Client ](https://www.trufflesuite.com/docs/truffle/reference/choosing-an-ethereum-client)(External Link)
 
-### 1. Setting up&#x20;
+### 1. Setting up
 
 #### 1. Install Truffle
 
-Truffle allows you to compile, debug, test and deploy smart contracts.&#x20;
+Truffle allows you to compile, debug, test and deploy smart contracts.
 
 ```
 npm install -g truffle
 ```
 
-#### 2. Install webpack&#x20;
+#### 2. Install webpack
 
 [Webpack](https://webpack.js.org) is a _static module bundler_ for modern JavaScript applications.
 
@@ -67,7 +67,7 @@ Once completed, you'll have a project structure with the following items:
 
 Contracts are written in [Solidity](https://solidity.readthedocs.io/en/develop/), all files containing contracts will have a file extension of `.sol`
 
-1. Create a new .`sol` file in the _contracts_ folder.&#x20;
+1. Create a new .`sol` file in the _contracts_ folder.
 
 **Example contract file**
 
@@ -94,9 +94,9 @@ Filename: `2_deploy_contracts.js`
 {% hint style="info" %}
 **NOTE: **
 
-The filename is prefixed with a number and is suffixed by a description.&#x20;
+The filename is prefixed with a number and is suffixed by a description.
 
-The numbered **prefix** is required in order to determine the order in which to run migrations as well as to record whether the migration ran successfully.&#x20;
+The numbered **prefix** is required in order to determine the order in which to run migrations as well as to record whether the migration ran successfully.
 
 The **suffix** is purely for human readability and comprehension. Your migration function also may be `async`  in order to use the `await` keyword to await your deployments.
 {% endhint %}
@@ -124,10 +124,10 @@ npm install babel-register truffle-hdwallet-provider --save
 
 ### 6. Create an API on Ankr
 
-Follow the [**Getting Started **](getting-started/)section to **Create an API **and get your API keys.&#x20;
+Check out [app.ankr.com](https://app.ankr.com/api) to **Create an API **and get your API keys.
 
 You can view your successfully created APIs inside [app.ankr.com](https://app.ankr.com/api), as well as the:\
-&#x20;\
+\
 \* Project name of each API, \
 \* Network type of the API,\
 \* Maximum number of API requests per day, \
