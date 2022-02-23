@@ -154,19 +154,10 @@
               ],
             },
             {
-              type: "dropdown",
-              label: "🎓 Tutorials",
+              type: "docSidebar",
+              sidebarId: "tutorialSidebar",
               position: "right",
-              items: [
-                {
-                  to: "docs/Tutorials/connect-web3js",
-                  label: "Connect with Javascript",
-                },
-                {
-                  to: "docs/Tutorials/connect-web3py",
-                  label: "Connect with Python",
-                },
-              ],
+              label: "🎓 Tutorials",           
             },
           ],
         },
