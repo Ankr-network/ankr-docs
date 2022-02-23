@@ -54,7 +54,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: '⛓ Chains V2',
+          label: 'Chains V2',
           link: {
             type: 'generated-index',
           },
