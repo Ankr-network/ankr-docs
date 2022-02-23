@@ -1,5 +1,5 @@
 ---
-title: Kusama Liquid Staking
+title: 💦 Kusama Liquid Staking
 id: ksm-liquid-staking
 ---
 

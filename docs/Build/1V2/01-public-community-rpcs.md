@@ -17,7 +17,7 @@ Enjoy the following benefits:
 * Zero cost access to Public RPC API endpoints
 * No rate-limiting
 * No username or password required.
-* Dashboard views of the status of individual chain public RPCs&#x20;
+* Dashboard views of the status of individual chain public RPCs
 
 ### How it works
 
