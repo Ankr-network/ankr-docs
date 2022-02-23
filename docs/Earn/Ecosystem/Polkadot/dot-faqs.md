@@ -1,5 +1,5 @@
 ---
-title: Stake DOT
+title: DOT Liquid Staking FAQs
 id: stake-dot-faq
 ---
 

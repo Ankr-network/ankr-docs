@@ -88,7 +88,7 @@
                   label: "Get Started",
                 },
                 {
-                  to: "docs/category/chains-v2",
+                  to: "docs/category/-chains-v2",
                   label: "Chains",
                 },
                 {

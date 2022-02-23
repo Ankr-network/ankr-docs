@@ -40,7 +40,7 @@ module.exports = {
       },
       {
           type: 'category',
-          label: 'V2',
+          label: 'V2 Product Suite',
           link: {
             type: 'generated-index',
           },
@@ -52,9 +52,28 @@ module.exports = {
             'Build/1V2/scan'
           ],
         },
+        {
+          type: 'category',
+          label: '⛓ Chains V2',
+          link: {
+            type: 'generated-index',
+          },
+          items: [
+            'Build/Chains/avalanche',
+            'Build/Chains/binance-smart-chain',
+            'Build/Chains/celo',
+            'Build/Chains/ethereum',
+            'Build/Chains/fantom',
+            'Build/Chains/iotex',
+            'Build/Chains/near',
+            'Build/Chains/nervos',
+            'Build/Chains/polygon',
+            'Build/Chains/solana',
+                ],
+        },
       {
         type: 'category',
-        label: 'V1',
+        label: '❏ V1 Products',
         link: {
           type: 'generated-index',
         },
@@ -63,29 +82,11 @@ module.exports = {
           'Build/2V1/node-services'
         ],
       },
-      {
-        type: 'category',
-        label: 'Chains V2',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-          'Build/Chains/avalanche',
-          'Build/Chains/binance-smart-chain',
-          'Build/Chains/celo',
-          'Build/Chains/ethereum',
-          'Build/Chains/fantom',
-          'Build/Chains/iotex',
-          'Build/Chains/near',
-          'Build/Chains/nervos',
-          'Build/Chains/polygon',
-          'Build/Chains/solana',
-              ],
-      },
+      
 
       {
         type: 'category',
-        label: 'Chains V1',
+        label: '⛓ Chains V1',
         link: {
           type: 'generated-index',
         },
@@ -273,7 +274,11 @@ earnSidebar: {
           'Earn/Ecosystem/Kusama/ksm-liquid-staking',
           'Earn/Ecosystem/Kusama/stake-ksm-00',
           'Earn/Ecosystem/Kusama/stake-ksm-01',
+          'Earn/Ecosystem/Kusama/stake-ksm-02',
           'Earn/Ecosystem/Kusama/stake-ksm-faq',
+          'Earn/Ecosystem/Kusama/ksm-plc',
+          'Earn/Ecosystem/Kusama/ksm-plc-00',
+          'Earn/Ecosystem/Kusama/ksm-plc-01',
                ],
        },
        {
@@ -305,6 +310,11 @@ earnSidebar: {
           'Earn/Ecosystem/Polkadot/stake-dot-01',
           'Earn/Ecosystem/Polkadot/stake-dot-02',
           'Earn/Ecosystem/Polkadot/stake-dot-faq',
+          'Earn/Ecosystem/Polkadot/dot-plc',
+          'Earn/Ecosystem/Polkadot/dot-plc-00',
+          'Earn/Ecosystem/Polkadot/dot-plc-01',
+          'Earn/Ecosystem/Polkadot/dot-plc-02'
+
                ],
        },
       ],
@@ -316,7 +326,8 @@ earnSidebar: {
           type: 'generated-index',
         },
         items: [
-          'Earn/Reference/token-addresses'
+          'Earn/Reference/token-addresses',
+          'Earn/Reference/plc-mm',
         ],
         },
       ],

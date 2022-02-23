@@ -1,5 +1,5 @@
 ---
-title: Polkadot Liquid Staking
+title: 💧 Polkadot Liquid Staking
 id: dot-liquid-staking
 ---
 
