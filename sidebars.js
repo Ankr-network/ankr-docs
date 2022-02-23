@@ -308,26 +308,67 @@ earnSidebar: {
                ],
        },
       ],
-      },
-    ],     
     },
-
-
-
-  
-  governanceSidebar: 
+       {
+        type: 'category',
+        label: '🗂 Reference',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Earn/Reference/token-addresses'
+        ],
+        },
+      ],
+    },       
+  governanceSidebar: {
+    'Governance': [
+      {
+        type: 'category',
+        label: '⚖️ Governance',
+        link: {
+            type: 'generated-index',
+          },
+        items: [
+          'Tokens&Governance/about-ankr-tokens', 
+          'Tokens&Governance/governance',
+          'Tokens&Governance/tokenomics'
+        ],
+    },
+  ],
+}, 
+  communitySidebar: {
+  'Community': [
     {
-  'Tokens & Governance': ['Tokens&Governance/about-ankr-tokens', 'Tokens&Governance/governance','Tokens&Governance/tokenomics'],
-},
-
-
-  communitySidebar: 
-  {
-  'Community': ['Community/channels', 'Community/contribute', 'Community/grants']
+      type: 'category',
+      label: '👥 Community',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'Community/channels', 
+        'Community/contribute', 
+        'Community/grants'
+      ],
   },
-
-
-  tutorialsSidebar: {
-    'Resources': ['Tutorials/glossary', 'Tutorials/help']
+ ],
+},
+  tutorialSidebar: {
+    'Tutorials': [
+      {
+        type: 'category',
+        label: '🎓 Tutorials',
+        link: {
+            type: 'generated-index',
+          },
+        items: [
+        'Tutorials/submit-tutorial',
+        'Tutorials/simple-truffle', 
+        'Tutorials/connect-web3js',
+        'Tutorials/connect-web3py'
+      ],
     },
-};
+  ],
+},
+}
+
