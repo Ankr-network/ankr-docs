@@ -1,5 +1,5 @@
 ---
-title: Connect to RPCs - Javascript
+title: Connect to RPCs - Python
 id: connect-web3py
 ---
 

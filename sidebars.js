@@ -196,6 +196,7 @@ earnSidebar: {
       'Earn/Products/smart-staking',
       'Earn/Products/delegate-staking',
       'Earn/Products/parachain-crowdloans',
+      'Earn/Products/boost',
     ],
   },
     {
