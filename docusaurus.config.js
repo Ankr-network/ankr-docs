@@ -3,6 +3,7 @@
 (
   module.exports = {
     title: "Welcome to Ankr Docs",
+    staticDirectories: ['public', 'static'],
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://docs.ankr.com",
     baseUrl: "/",

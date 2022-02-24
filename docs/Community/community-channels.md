@@ -5,16 +5,9 @@ id: channels
 
 # Community
 
-Participate in the Ankr network and interact with our community.
-
-## Discord
+![Join the Ankr Community](@site/static/img/community_banner.png)
 
 
-## Telegram
 
 
-## Twitter
-
-
-## GitHub
 
