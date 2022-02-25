@@ -35,19 +35,17 @@ We’re going to be using the Rinkeby Testnet.
 You will probably want to make three requests so get at least 0.3 ETH to use in this tutorial. You can always come back for more if you need.
 
 
-1. In your MetaMask wallet, you can select the Rinkeby Testnet by clicking the top drop-down menu. 
+1. In your MetaMask wallet, select the Rinkeby Testnet by clicking the top drop-down menu. 
  
-![alt_text](images/image1.png "image_tooltip")
+<!-- ![alt_text](images/image1.png "image_tooltip") -->
 
 
 2. Copy your MetaMask Wallet address 
 
 
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image2.png "image_tooltip")
+<!-- ![alt_text](images/image2.png "image_tooltip") -->
 
 
 There are a number of sources of Testnet ETH
@@ -62,10 +60,10 @@ Paste your MetaMask Wallet address
 
     
 
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image3.png "image_tooltip")
+
+<!-- ![alt_text](images/image3.png "image_tooltip") -->
 
 
 
@@ -103,10 +101,8 @@ Remix is a great tool to learn and  get started with creating and testing solidi
 
     
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image4.png "image_tooltip")
+<!-- ![alt_text](images/image4.png "image_tooltip") -->
 
 
 2. Select **1_Storage.sol.** \
@@ -116,10 +112,9 @@ If you look at the comments in the file, you can see that this contract stores a
 
 
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image5.png "image_tooltip")
+<!-- ![alt_text](images/image5.png "image_tooltip") -->
 
 
 **Here is a detailed walkthrough of the Solidity file: **
@@ -151,10 +146,8 @@ Click ‘**Compile 1_Storage.sol’**’
 
     
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image6.png "image_tooltip")
+<!-- ![alt_text](images/image6.png "image_tooltip") -->
 
 
 
@@ -168,10 +161,9 @@ Click ‘**Compile 1_Storage.sol’**’
 
 
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image7.png "image_tooltip")
+<!-- ![alt_text](images/image7.png "image_tooltip") -->
 
 
 
@@ -186,12 +178,9 @@ In this step, we’re going to deploy our contract so that we can interact with 
 2. Switch the environment to **_‘Injected Web3_**’. \
 
 
-    
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image8.png "image_tooltip")
+<!-- ![alt_text](images/image8.png "image_tooltip") -->
 
 
 3. You are now  prompted to connect **Remix** with **MetaMask**.  \
@@ -199,10 +188,9 @@ In this step, we’re going to deploy our contract so that we can interact with 
 
     
 
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image9.png "image_tooltip")
+<!-- ![alt_text](images/image9.png "image_tooltip") -->
 
 
 * Click **_‘Next’_** to connect your **MetaMask** 
@@ -212,20 +200,14 @@ In this step, we’re going to deploy our contract so that we can interact with 
 
 
 
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image10.png "image_tooltip")
+<!-- ![alt_text](images/image10.png "image_tooltip") -->
     
 
 You can view the status on Etherscan by clicking **_‘View on block explorer_**’.
 
 
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
+<!-- ![alt_text](images/image11.png "image_tooltip") -->
 
 
 You can now experiment with calling functions in **Remix** if you like. Check out ‘**_Remix Commands’_** in the Remix  docs to do so. [https://remix-ide.readthedocs.io/en/latest/remix_commands.html#id1](https://remix-ide.readthedocs.io/en/latest/remix_commands.html#id1)  
@@ -238,12 +220,7 @@ In the next step we’re going to move over to setting up our dApp to interact w
 
 
 
-        
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
+<!-- ![alt_text](images/image12.png "image_tooltip") -->
 
 
 **NOTE: Understanding Gas Fees**
@@ -270,10 +247,9 @@ Ankr is a specialist provider of blockchain infrastructure. You can simplify the
 
     
 
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image13.png "image_tooltip")
+<!-- ![alt_text](images/image13.png "image_tooltip") -->
 
 
 
@@ -283,10 +259,8 @@ Ankr is a specialist provider of blockchain infrastructure. You can simplify the
 
     
 
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image14.png "image_tooltip")
+<!-- ![alt_text](images/image14.png "image_tooltip") -->
 
 
 
@@ -300,10 +274,8 @@ Ankr is a specialist provider of blockchain infrastructure. You can simplify the
 
     
 
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image15.png "image_tooltip")
+<!-- ![alt_text](images/image15.png "image_tooltip") -->
 
 
 
@@ -315,10 +287,9 @@ Ankr is a specialist provider of blockchain infrastructure. You can simplify the
 
     
 
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image16.png "image_tooltip")
+<!-- ![alt_text](images/image16.png "image_tooltip") -->
 
 
 
@@ -326,12 +297,9 @@ Ankr is a specialist provider of blockchain infrastructure. You can simplify the
 - Copy your endpoints to a text file. 
 
 
-    
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image17.png "image_tooltip")
+<!-- ![alt_text](images/image17.png "image_tooltip") -->
  \
 
 
@@ -412,10 +380,7 @@ v14.16.1
 
     
 
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image18.png "image_tooltip")
+<!-- ![alt_text](images/image18.png "image_tooltip") -->
 
 
 5. Inside the body tags insert the following code.  \

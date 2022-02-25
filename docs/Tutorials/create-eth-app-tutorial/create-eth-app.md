@@ -89,11 +89,7 @@ This folder contains information to connect smart contracts like ABIs and the Co
 REACT APP FOLDER
 
 
-
-<!-- <p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip") -->
+![React App folder](react-app-folder.png)
 
 
 This folder is a fork of** create-react-app **and contains all the react front-end code and two key libraries -  
@@ -107,7 +103,7 @@ SUBGRAPH FOLDER
 <!-- <p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image3.png "image_tooltip") -->
+<!-- ![alt_text](images/image3.png "image_tooltip") --> -->
 
 
 This folder contains code to query smart contracts in graphql by using the graph protocol.  You can also perform advanced queries and use sub-graphs by others. 
@@ -136,7 +132,7 @@ To create a production build, use npm run build.
 <p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image4.png "image_tooltip") -->
+<!-- ![alt_text](images/image4.png "image_tooltip") --> -->
 
 
 
@@ -161,7 +157,7 @@ Click **_‘Connect Wallet_**’ in your app and a pop up modal will appear.
 <!-- <p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image5.png "image_tooltip") -->
+<!-- ![alt_text](images/image5.png "image_tooltip") --> -->
 
 
 
@@ -169,7 +165,7 @@ Click **_‘Connect Wallet_**’ in your app and a pop up modal will appear.
 <!-- <p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image6.png "image_tooltip") -->
+<!-- ![alt_text](images/image6.png "image_tooltip") --> -->
 
 
 
@@ -177,7 +173,7 @@ Click **_‘Connect Wallet_**’ in your app and a pop up modal will appear.
 <!-- <p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image7.png "image_tooltip") -->
+<!-- ![alt_text](images/image7.png "image_tooltip") --> -->
 
 
 
@@ -194,7 +190,7 @@ You can change settings and code in App.js to suit your needs. It is based on
 <!-- <p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image8.png "image_tooltip") -->
+<!-- ![alt_text](images/image8.png "image_tooltip") --> -->
 
 
 
@@ -208,7 +204,7 @@ You can view the token balance.
 <!-- <p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image9.png "image_tooltip") -->
+<!-- ![alt_text](images/image9.png "image_tooltip") --> -->
 
 
 
