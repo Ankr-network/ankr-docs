@@ -1,9 +1,9 @@
 ---
-title: Connect to RPCs - Javascript
+title: Connect to RPCs - Python
 id: connect-web3py
 ---
 
-Use the web3.py library to connect and interact with Ethereum nodes.
+This tutorial explains how to use the web3.py library to connect and interact with Ethereum nodes.
 
 # 🐍 Use web3.py to interact with RPC Nodes
 

@@ -169,8 +169,7 @@ earnSidebar: {
         },
         items: [
           'Earn/Concepts/earn-overview',
-          'Earn/Concepts/earn-foundations',
-          'Earn/Concepts/earn-architecture'
+          'Earn/Concepts/earn-foundations'
         ],
     },
     {
@@ -193,9 +192,9 @@ earnSidebar: {
     },
     items: [
       'Earn/Products/liquid-staking',
-      'Earn/Products/smart-staking',
       'Earn/Products/delegate-staking',
       'Earn/Products/parachain-crowdloans',
+      'Earn/Products/boost',
     ],
   },
     {
@@ -256,6 +255,7 @@ earnSidebar: {
           id: 'Earn/Ecosystem/Fantom/fantom-eco',
         },
         items: [
+          'Earn/Ecosystem/Fantom/ftm-delegate-staking',
           'Earn/Ecosystem/Fantom/ftm-liquid-staking',
           'Earn/Ecosystem/Fantom/stake-ftm-00',
           'Earn/Ecosystem/Fantom/stake-ftm-01',
