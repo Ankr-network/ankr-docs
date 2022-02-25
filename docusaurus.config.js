@@ -6,7 +6,7 @@
     staticDirectories: ['public', 'static'],
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/docs',
+    baseUrl: '/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
