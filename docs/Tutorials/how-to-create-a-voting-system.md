@@ -7,19 +7,19 @@ id: movie-voting-web3
 
 _Disclaimer: This tutorial is for experienced programmers with basic knowledge about blockchains and web fundamentals._
 
-First things first, this post is not about political voting systems. This post is about implementing a simple voting system based on blockchain technologies. For the demonstration, we are going to vote for movies. Sounds simple, right?
+First things first, this tutorial is not about political voting systems. This tutorial is about implementing a simple voting system based on blockchain technologies. For the demonstration, we are going to vote for movies. Sounds simple, right?
 
 ## Prerequisites
 
-To implement our voting system, you will need Node.js installed and an account on Ankr. I assume you already know what Node.js is, but what is Ankr? Simply put, Ankr is a platform for developers and investors on every scale. With Ankr, we can effortlessly deploy an API server communicating with our favorite blockchain. Even better, we don't need to take care of its maintenance — which could cost a fortune.
+To implement our voting system, you will need Node.js installed and an account on Ankr. I assume you already know what Node.js is, but what is Ankr? Simply put, Ankr is a platform for developers and investors on every scale. With [Ankr](www.ankr.com), we can effortlessly deploy an API server communicating with our favorite blockchain. Even better, we don't need to take care of its maintenance — which could cost a fortune.
 
-Other than that, you will need a crypto wallet if you don't have one already. In this tutorial we use MetaMask, one of the most popular crypto wallets, to interact with our dApp. You can install MetaMask on Firefox, Chrome, Brave, iOS, Android, and many other operating systems and browsers. There is ample documentation about how to do so, therefore I won’t be guiding you through the basic MetaMask installation steps now, but I'll show you how to add fake accounts for testing later on.
+Other than that, you will need a crypto wallet if you don't have one already. In this tutorial we use [MetaMask](wwww.metamask.com), one of the most popular crypto wallets, to interact with our dApp. You can install MetaMask on Firefox, Chrome, Brave, iOS, Android, and many other operating systems and browsers. There is ample [documentation](https://metamask.zendesk.com/hc/en-us/articles/360015489531-Getting-started-with-MetaMask) about how to do so, therefore I won’t be guiding you through the basic MetaMask installation steps now, but I'll show you how to add fake accounts for testing later on.
 
 Before moving on, make sure you have installed the [latest LTS version](https://nodejs.org/en/download/) of Node.js, created an [account on Ankr](https://app.ankr.com/auth/sign-up), and installed [MetaMask](https://metamask.io/download/) in your browser.
 
 ## A Bit About Web3
 
-If you’re familiar with blockchain and related topics, you’ve probably already encountered the term "Web3." It is a hot topic nowadays. There are podcasts, webinars, and tons of articles dedicated to educating people about Web3. For those encountering this term for the first time, let me quote Wikipedia:
+If you’re familiar with blockchain and related topics, you’ve probably already encountered the term "Web3." It is a hot topic nowadays. There are podcasts, webinars, and many tutorials dedicated to educating people about Web3. For those encountering this term for the first time, let me quote Wikipedia:
 
 > Web3 (also known as Web 3.0 and sometimes stylized as web3) is an idea for a new iteration of the World Wide Web based on the blockchain, which incorporates concepts including decentralization and token-based economics. - [https://en.wikipedia.org/wiki/Web3](https://en.wikipedia.org/wiki/Web3)
 
