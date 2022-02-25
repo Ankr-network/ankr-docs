@@ -5,7 +5,14 @@ id: bnb-delegate-staking
 
 # BNB Delegate Staking
 
-BNB holders can earn 10-30% APR by delegating their BNB to [_Ankr\_BSC\_validator\_1_](https://www.binance.org/en/staking/validator/bva1xnudjls7x4p48qrk0j247htt7rl2k2dzp3mr3j).
+**Binance Smart Chain** relies on a system of 21 validators with Proof of Staked Authority (PoSA)
+
+You can become a delegator and stake your assets e.g. BNB to a validator of your choice e.g. Ankr Validators. 
+
+When you stake with your preferred validator and help them achieve a greater proportion of the staked distribution.  
+
+BNB holders can earn 10-30% APR by delegating their BNB  
+[Binance Delegation with Ankr_BSC_Validator_1](https://www.bnbchain.world/en/staking/validator/bva1xnudjls7x4p48qrk0j247htt7rl2k2dzp3mr3j)
 
 :::info
 ANKR takes 0% commission, allowing BNB holders to maximize earnings. Our Developer API paid service subsidizes our costs for running the validator.

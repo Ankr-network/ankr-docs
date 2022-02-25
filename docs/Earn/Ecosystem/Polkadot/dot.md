@@ -14,6 +14,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="Liquid Staking" label="Liquid Staking">
   You receive <strong>Liquidity tokens</strong> automatically upon completing <strong>Smart Staking</strong>.
   </TabItem>
+  <TabItem value="Parachain Liquid Crowdloans" label="Parachain Liquid Crowdloans" default>
+  </TabItem>
 </Tabs>
 
-Also, you can participate in **Polkadot Liquid Crowdloans** to support the project of your choice. 

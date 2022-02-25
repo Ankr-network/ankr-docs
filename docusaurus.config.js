@@ -4,8 +4,8 @@
   module.exports = {
     title: "Welcome to Ankr Docs",
     tagline: "Your single-source-of-truth on Ankr products and services",
-    url: "https://docs.ankr.com",
-    baseUrl: "/",
+    url: "https://www.ankr.com",
+    baseUrl: '/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
