@@ -1,6 +1,10 @@
 ---
 title: How to create a voting system on Ethereum using web3
 id: movie-voting-web3
+tags:
+  - Ethereum
+  - Truffle
+  - Ganache
 ---
 
 # How To Create a Voting System on Ethereum Using Web3
@@ -73,11 +77,11 @@ As you can see, we have a default config, contract, and a related migration. Wha
 
 Before moving on, we need to adjust the default config a bit. Start Ganache to gather the necessary information. On the welcome screen, select "Quickstart" to get started.
 
-![ganache-welcome-screen](assets/how-to-create-a-voting-system/img/ganache-welcome-screen.png)
+![ganache-welcome-screen](ganache-welcome-screen.png)
 
 After clicking “Quickstart,” you will see the default setup for Ganache. It shows some accounts with Ether in their wallets, seen here: 
 
-![ganache-default-screen](assets/how-to-create-a-voting-system/img/ganache-default-screen.png)
+![ganache-default-screen](ganache-default-screen.png)
 
 It’s good to keep in mind that, by default, Ganache uses the first account when we run migrations. Take note of the network ID and the RPC server's address.
 
@@ -97,7 +101,7 @@ Now the only thing left to do for this step is to compile the smart contract and
 
 Now, execute `truffle migrate` to deploy our initial smart contract to Ganache. Executing the command will result in a relatively long output containing the deployment summary. If we take a closer look at Ganache, we will see that the first account's balance has been reduced by 0.01 ETH. Although reading costs nothing on the blockchain, writing always has some associated gas fees. That's one of the many reasons why we are using Ganache for development.
 
-![ganache-after-migration](assets/how-to-create-a-voting-system/img/ganache-after-migration.png)
+![ganache-after-migration](ganache-after-migration.png)
 
 So far, so good! We are ready to write our Smart Contract that will handle voting.
 
@@ -390,7 +394,7 @@ Stop here and take a look at the latest snippet: the last three imports need som
 
 If you followed patiently, you should see the following after running `yarn dev`.
 
-![default-page](assets/how-to-create-a-voting-system/img/default-page.png)
+![default-page](default-page.png)
 
 ## Add Some Interaction
 
@@ -656,11 +660,11 @@ To vote, we need to add a new movie:
 1. After confirmation, the new movie will be added to the list, and the form is cleared.
 
 
-![movie-added](assets/how-to-create-a-voting-system/img/movie-added.png)
+![movie-added](movie-added.png)
 
 Hooray! The smart contract has been called, we confirmed that the transaction succeeded, and that our vote was placed. We could add more movies or keep voting on existing ones. Let's add another movie and vote on an existing one. When we vote, we will see the movie proposal form disappear, and notice that one of the movies has two votes.
 
-![no-more-votes](assets/how-to-create-a-voting-system/img/no-more-votes.png)
+![no-more-votes](no-more-votes.png)
 
 Congratulations! We successfully created a basic voting dApp where we can vote on movies. The last step is to deploy the smart contract on an Ethereum test network.
 
@@ -680,7 +684,7 @@ Jump right in and create a new API to connect to an Ethereum test network:
 1. Select the "Ropsten" test network, and click "Create"
 1. Choose “token” for authentication type and click "Create" again
 
-![ankr-page](assets/how-to-create-a-voting-system/img/ankr-page.png)
+![ankr-page](ankr-page.png)
 
 By clicking on the API name, we can access its settings. Select the "Settings" tab and copy the endpoint starting with "https".
 
