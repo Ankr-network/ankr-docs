@@ -18,8 +18,6 @@ Create Eth App is a Node.js package. You can find its repo here :
 
 Ensure you have the following dependencies installed. 
 
-
-
 1. Node.js >= version 14
 
 
@@ -28,8 +26,6 @@ $ node -v
 v14.16.1
 
 ```
-
-
 
 2. Node Package Manager (NPM) installed \
 
@@ -52,8 +48,6 @@ $ yarn --version
 1.22.11
 ```
 
-
-.
 
 
 ## Get Started
@@ -87,13 +81,7 @@ There are 3 main folders
 CONTRACTS FOLDER
 ```
 
-
-
-<!-- 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](img/image1.png "image_tooltip") -->
+![contracts folder](smart-contract-folder.png)
 
 
 This folder contains information to connect smart contracts like ABIs and the Contract Addresses. The ABI is an interface allowing you to interact with the smart contract deployed on the Ethereum network.

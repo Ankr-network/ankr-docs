@@ -11,17 +11,13 @@ Validators with the most delegated assets have the greatest chance of validating
 
 This means that the chosen validator has a greater share of earnings to distribute to Delegators.
 
-:::tip
-Ankr is consistently in the top 3 Validators on Binance Smart Chain.
-:::
+Ankr Nodes can be delegated to with **Binance**, **Fantom** and **Polygon**.
 
-### Binance
 
-Binance Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA)
 
-You can become a delegator and stake your assets e.g. BNB to a validator of your choice e.g. Ankr Validators. 
 
-When you stake with your preferred validator and help them achieve a greater proportion of the staked distribution.  
+
+
 
 
 
