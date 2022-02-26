@@ -1,0 +1,58 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Target
+        required: true
+        options:
+          - STAGE # www-stage.ankr.com/docs/
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: egordm/gha-yarn-node-cache@v1
+      - uses: nelonoel/branch-name@v1.0.1
+
+      - name: Get deployment information
+        run: |
+          echo "Branch: ${BRANCH_NAME}"
+          echo "Domain: ${{github.event.inputs.environment}}"
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: '16.13.0'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        working-directory: .
+        run: |
+          yarn build
+
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Copy files to the production website with the AWS CLI
+        working-directory: .
+        env:
+          DOMAIN: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DOMAIN')] }}
+          DISTRIBUTION_ID: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DISTRIBUTION_ID')] }}
+        run: |
+          aws s3 sync --delete ./build s3://$DOMAIN/docs/ --acl public-read --cache-control "public,max-age=600,s-maxage=3600"
+          aws configure set preview.cloudfront true
+          echo "Invalidating CDN network"
+          INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*' | jq -r '.Invalidation.Id'`
+          echo "Invalidation ID is $INVALIDATION_ID"
+          echo "CDN Invalidation request is sent."
