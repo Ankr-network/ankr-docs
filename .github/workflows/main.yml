@@ -8,8 +8,8 @@ on:
         description: Target
         required: true
         options:
-          - PROD # www.ankr.com/docs/
           - STAGE # www-stage.ankr.com/docs/
+          - PROD # www.ankr.com/docs/
 
 jobs:
   deploy:
