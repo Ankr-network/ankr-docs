@@ -6,7 +6,6 @@
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com/",
     baseUrl: '/docs/',
-    routeBasePath: '/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -29,6 +28,7 @@
         /** @type {import('@docusaurus/preset-classic').Options} */
         ({
           docs: {
+            routeBasePath: '/',
             sidebarPath: require.resolve("./sidebars.js"),
             // Please change this to your repo.
             editUrl: "https://github.com/ankr-network/ankr-docs",
