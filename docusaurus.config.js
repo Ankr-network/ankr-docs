@@ -21,6 +21,7 @@
         defer: true,
       },
     ],
+    plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
     themes: ['@docusaurus/theme-live-codeblock'],
     presets: [
       [
