@@ -10,9 +10,6 @@ For EVM-compatible chains, Ankr supports the following methods:
 * `Subscribe`
 * `Unsubscribe`
 
-View [Code Samples](examples/#websocket-endpoint-examples) for examples
-{% endhint %}
-
 ## web3_clientVersion
 
 Returns the current client version.
