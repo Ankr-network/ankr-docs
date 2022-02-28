@@ -1,9 +1,8 @@
 ---
-title: Polygon
+title: Polygon RPC
 id: polygon
 ---
 
-# Polygon
 
 # Polygon RPC
 

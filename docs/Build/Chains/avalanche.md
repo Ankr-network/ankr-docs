@@ -7,7 +7,7 @@ id: avalanche
 
 Avalanche is an **ecosystem** made up of three core Blockchains optimized for specific tasks within the network. The **Exchange Chain** (X-Chain), **Platform Chain** (P-Chain), and **Contract Chain** (C-Chain).
 
-The **C-Chain** is accessible via Avalanche RPC.
+The **C-Chain** is available via Avalanche RPC.
 
 Avalanche was built specifically with Defi dApps and protocols in mind, focusing on security, low latency & high throughput. Avalanche uses a novel consensus protocol by utilizing two different consensus mechanisms. The consensus protocol ensures a high degree of security and fast finality even with multiple chains running simultaneously.
 
@@ -40,7 +40,7 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 
 # Integrate Code
 
-:::Tip
+:::tip
 
 **Avalanche** supports [standard JSON RPC calls](../Guides/evm-supported-requests.md) identical to [Geth's API](https://geth.ethereum.org/docs/rpc/server) for the following services:
 
@@ -48,6 +48,8 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 - `net_`
 - `eth_`
 - `personal_`
+
+:::
 
 ## Avalanche
 
@@ -141,7 +143,7 @@ import (
 
 func main() {
 
-  url := "http://rpc.ankr.com/avax"
+  url := "http://rpc.ankr.com/avalanche"
   method := "POST"
 
   payload := strings.NewReader(`{

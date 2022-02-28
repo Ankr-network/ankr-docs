@@ -1,5 +1,5 @@
 ---
-title: Solana
+title: Solana RPC
 id: solana
 ---
 

@@ -153,6 +153,7 @@ module.exports = {
         items: [
           'Build/Guides/json-methods',
           'Build/Guides/libraries',
+          'Build/Guides/websocket-premium',
           'Build/Guides/rpcapi'
         ],
       },

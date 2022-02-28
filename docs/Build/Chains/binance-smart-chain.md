@@ -1,11 +1,9 @@
 ---
-Title: Binance Smart Chain
+Title: Binance Smart Chain RPC
 id: binance-smart-chain
 ---
 
-# Binance Smart Chain
-
-## Binance Smart Chain RPC
+# Binance Smart Chain RPC
 
 **Binance Smart Chain** is an EVM compatible chain designed to work alongside Binance Chain. 
 

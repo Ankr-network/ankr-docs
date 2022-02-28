@@ -13,7 +13,7 @@ For EVM-compatible chains, Ankr supports the following methods:
 View [Code Samples](examples/#websocket-endpoint-examples) for examples
 {% endhint %}
 
-## web3\_clientVersion
+## web3_clientVersion
 
 Returns the current client version.
 
@@ -157,7 +157,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":83
 }
 ```
 
-## \*\* eth\_estimateGas\*\*
+## eth_estimateGas
 
 Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
