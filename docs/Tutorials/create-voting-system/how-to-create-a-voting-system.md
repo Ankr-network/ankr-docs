@@ -1,5 +1,5 @@
 ---
-title: How to create a voting system on Ethereum using web3
+title:  Create a voting system on Ethereum using web3
 id: movie-voting-web3
 tags:
   - Ethereum
@@ -7,7 +7,11 @@ tags:
   - Ganache
 ---
 
-# How To Create a Voting System on Ethereum Using Web3
+# Create a Voting System on Ethereum Using Web3
+
+**By Gábor Boros**
+
+![Gábor Boros](gabor.jpeg)
 
 _Disclaimer: This tutorial is for experienced programmers with basic knowledge about blockchains and web fundamentals._
 

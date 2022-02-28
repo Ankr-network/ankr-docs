@@ -1,24 +1,24 @@
 ---
-title: How to create a dApp front end with create-eth-app
+title: Create a dApp front end with create-eth-app
 id: create-eth-app
 ---
 
-# Easy Front-end for your dApp using Create-ETH-App
+# Create an easy dApp front end with `create-eth-app`
 
 **Create-eth-app** makes it super easy to spin up front ends for dApps with. Create-eth-app is a fork of ‘create-react-app’ and 
 
-works on macOS, Windows, and Linux. It is a swift alternative to writing your own code with web3 libraries or Truffle Suite Box for React. It comes bundled with ethers.js and Web3Modal to connect with wallets as well as examples on how to interface with Smart Contracts. 
+works on macOS, Windows, and Linux. It is a swift alternative to writing your own code with web3 libraries or Truffle Suite Box for React. It comes bundled with [ethers.js](https://docs.ethers.io/) and Web3Modal to connect with wallets as well as examples on how to interface with Smart Contracts. 
 
-Create Eth App is a Node.js package. You can find its repo here : 
+`create-eth-app` is a Node.js package. You can find its repo here : 
 
-[https://github.com/paulrberg/create-eth-app](https://github.com/paulrberg/create-eth-app)
+[Create-eth-app Repo](https://github.com/paulrberg/create-eth-app)
 
 
-## Before you Start
+## 00 Before you Start
 
 Ensure you have the following dependencies installed. 
 
-1. Node.js >= version 14
+1 Node.js >= version 14
 
 
 ```
@@ -27,7 +27,7 @@ v14.16.1
 
 ```
 
-2. Node Package Manager (NPM) installed \
+2 Node Package Manager (NPM) installed \
 
 
 
@@ -39,7 +39,7 @@ $ npm -v
 
 
 
-3. Yarn (to enable Yarn Workspaces) \
+3 Yarn (to enable Yarn Workspaces) \
 
 
 
@@ -50,10 +50,10 @@ $ yarn --version
 
 
 
-## Get Started
+## 01 Get Started
 
 
-### STEP ONE Install Create Eth App
+### Install Create Eth App
 
 In Terminal/CLI
 
@@ -66,7 +66,7 @@ yarn create eth-app my-eth-app
 This creates a basic blockchain project. Open the project in your code editor e.g. VS Code.
 
 
-### STEP TWO View Folders
+## 02 View Folders
 
 
 ```
@@ -77,16 +77,16 @@ cd my-eth-app
 There are 3 main folders
 
 
-```
-CONTRACTS FOLDER
-```
+
+- **CONTRACTS FOLDER**
+
 
 ![contracts folder](smart-contract-folder.png)
 
 
 This folder contains information to connect smart contracts like ABIs and the Contract Addresses. The ABI is an interface allowing you to interact with the smart contract deployed on the Ethereum network.
 
-REACT APP FOLDER
+- **REACT APP FOLDER**
 
 
 ![React App folder](react-app-folder.png)
@@ -95,21 +95,15 @@ REACT APP FOLDER
 This folder is a fork of** create-react-app **and contains all the react front-end code and two key libraries -  
 **Ethers.js** to connect the app to EVM compatible blockchains and **Web3modal**.  Web3modal provides support for injected providers e.g. MetaMask and WalletConnect
 
-SUBGRAPH FOLDER 
+- **SUBGRAPH FOLDER** 
 
-
-
-
-<!-- <p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-<!-- ![alt_text](images/image3.png "image_tooltip") --> -->
+![Subgraph Folder](subgraph-folder.png)
 
 
 This folder contains code to query smart contracts in graphql by using the graph protocol.  You can also perform advanced queries and use sub-graphs by others. 
 
 
-### STEP THREE Spin up the App with default settings
+## 03 Spin up the App with default settings
 
 
 ```
@@ -126,17 +120,11 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 ```
 
-
-
-<!-- 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-<!-- ![alt_text](images/image4.png "image_tooltip") --> -->
+![React app](app.png)
 
 
 
-### STEP FOUR Connect Wallet
+## 04 Connect Wallet
 
 Out of the box we can connect a wallet to our app. You can use MetaMask or WalletConnect. 
 
@@ -153,82 +141,45 @@ Click **_‘Connect Wallet_**’ in your app and a pop up modal will appear.
 5. The App now states your wallet address.
 
 
+![connect wallet1](connect-metamask1.png)
 
-<!-- <p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+![connect wallet2](connect-metamask2.png)
 
+![connect wallet3](connect-metamask3.png)
 
-<!-- ![alt_text](images/image5.png "image_tooltip") --> -->
+![connected metamask 4](connected-metamask4.png)
 
+## 05 Modify app.js
 
-
-
-<!-- <p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-<!-- ![alt_text](images/image6.png "image_tooltip") --> -->
-
-
-
-
-<!-- <p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-<!-- ![alt_text](images/image7.png "image_tooltip") --> -->
-
-
-
-### STEP FIVE Modify app.js
-
-You can change settings and code in App.js to suit your needs. It is based on 
-
+You can change settings and code in App.js to suit your needs. 
 
 
 1. Open the** App.js** file and follow the instructions to remove the hidden prop. 
 
-
-
-<!-- <p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-<!-- ![alt_text](images/image8.png "image_tooltip") --> -->
-
-
-
+![remove hidden button](remove-hidden-button.png)
 
 2. With the Console open in the browser, click the now visible button “**_Read On-Chain Balance_**” and see what happens.
 
 You can view the token balance. 
 
 
+## 06  Add templates
 
-<!-- <p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+```create-eth-app``` comes with a range of decentralized finance templates pre-filled with contract ABIs, addresses and subgraphs. Checkout the [templates](https://github.com/paulrberg/create-eth-app/blob/develop/templates) folder. 
 
+You can choose from [Aave](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/aave),[Balancer](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/balancer),[Compound](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/compound), [Kyber](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/kyber), [Maker](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/maker),[Sablier](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/sablier-v1)[Synthetix](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/synthetix), [Uniswap-v1](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/uniswap-v1) and [Uniswap-v2](https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/uniswap-v2)
 
-<!-- ![alt_text](images/image9.png "image_tooltip") --> -->
+These come in ``react`` and ```vue``` frameworks. Select your preferred framework and see what templates are available.
 
+Add the template as follows:
 
-
-
-3. As you can see we have exceeded our request rate limit.
-
-
-### STEP SIX  Configure your App to use Ankr RPC API
-
-Ankr Public RPC APIs are super fast with a market leading request rate limit. 
-
-Plus they are free to use. If you want to go further, you can use the Premium RPCs. 
-
-Let’s get started using the free Public RPC API on Ankr Protocol.  
-
-
+```bash
+yarn create eth-app my-eth-app --template compound
 ```
-// If you don't specify a //url//, Ethers connects to the default 
-// (i.e. ``http:/\/localhost:8545``)
-const provider = new ethers.providers.rpc.ankr.com/eth();
 
-// The provider also allows signing transactions to
-// send ether and pay to change state within the blockchain.
-// For this, we need the account signer...
-const signer = provider.getSigner()
-```
+
+
+
+
+
 
