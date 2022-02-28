@@ -375,6 +375,7 @@ earnSidebar: {
         items: [
         'Tutorials/submit-tutorial',
         'Tutorials/create-voting-system/movie-voting-web3',
+        'Tutorials/create-eth-app-tutorial/create-eth-app',
         'Tutorials/simple-truffle', 
         'Tutorials/connect-web3js',
         'Tutorials/connect-web3py'

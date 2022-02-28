@@ -64,14 +64,16 @@ You can use the Ankr Public RPC node for free with any of our open access public
 
 In this example, we'll be interacting with the Ethereum Network.
 
-**`https://rpc.ankr.com/eth`**
-{% endhint %}
+```https://rpc.ankr.com/eth```
 
-1. **Connect to public RPC URL**
+
+**Connect to public RPC URL**
 
 Add the following to your script (add the chain you wish you to connect to).
 
-`const url = "https://rpc.ankr.com/eth";`
+```
+const url = "https://rpc.ankr.com/eth";
+```
 
 ## 02 Let's make some requests
 
@@ -89,7 +91,7 @@ Now run your **test-rpc.js** script
 
 **Example Response**
 
-<!-- ![](@site/static/img/Screenshot 2021-12-14 at 14.44.55.png>) -->
+![Example Response](example-js.png)
 
 ### 03 Summary
 
