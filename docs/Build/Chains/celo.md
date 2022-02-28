@@ -1,9 +1,7 @@
 ---
-Title: Celo
+Title: Celo RPC
 id: celo
 ---
-
-# Celo
 
 # Celo RPC
 

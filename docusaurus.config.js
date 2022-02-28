@@ -21,8 +21,6 @@
         defer: true,
       },
     ],
-    plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
-    themes: ['@docusaurus/theme-live-codeblock'],
     presets: [
       [
         "@docusaurus/preset-classic",
@@ -143,14 +141,6 @@
                 {
                   to: "docs/Community/channels",
                   label: "Community Channels",
-                },
-                {
-                  to: "docs/Community/contribute",
-                  label: "Contribute",
-                },
-                {
-                  to: "docs/Community/grants",
-                  label: "Grants",
                 },
               ],
             },
