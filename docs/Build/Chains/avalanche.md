@@ -3,13 +3,11 @@ Title: Avalanche
 id: avalanche
 ---
 
-# Avalanche
-
 # Avalanche RPC
 
-Avalanche is an **ecosystem** made up of three core Blockchains optimized for specific tasks within the network. The **Exchange Chain** (X-Chain), **Platform Chain** (P-Chain), and **Contract Chain** (C-Chain).&#x20;
+Avalanche is an **ecosystem** made up of three core Blockchains optimized for specific tasks within the network. The **Exchange Chain** (X-Chain), **Platform Chain** (P-Chain), and **Contract Chain** (C-Chain).
 
-All 3 blockchains are validated and secured by the Primary Network.
+The **C-Chain** is accessible via Avalanche RPC.
 
 Avalanche was built specifically with Defi dApps and protocols in mind, focusing on security, low latency & high throughput. Avalanche uses a novel consensus protocol by utilizing two different consensus mechanisms. The consensus protocol ensures a high degree of security and fast finality even with multiple chains running simultaneously.
 
@@ -42,15 +40,20 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 
 # Integrate Code
 
+:::Tip
+
+**Avalanche** supports [standard JSON RPC calls](../Guides/evm-supported-requests.md) identical to [Geth's API](https://geth.ethereum.org/docs/rpc/server) for the following services:
+
+- `web3_`
+- `net_`
+- `eth_`
+- `personal_`
+
 ## Avalanche
 
 ## web3 library
 
-clientVersion
-
-```
-https://rpc.ankr.com/avalanche
-```
+**clientVersion**
 
 ### Example Request
 
@@ -69,7 +72,7 @@ curl https://rpc.ankr.com/avalanche \
 
 ## net library
 
-###  net\_version
+**net_version**
 
 ```
 https://rpc.ankr.com/avalanche
@@ -77,38 +80,7 @@ https://rpc.ankr.com/avalanche
 
 Returns the current client versions
 
-### Parameters
 
-none
-
-### Returns
-
-`String` - The current client version
-
-`"1"`: Ethereum Mainnet
-
-`"2"`: Morden Testnet (deprecated)
-
-`"3"`: Ropsten Testnet
-
-`"4"`: Rinkeby Testnet
-
-`"42"`: Kovan Testnet
-
-### HEADERS
-
-**Content-Type** application/json
-
-### BODY raw
-
-```json
-{
-	"jsonrpc":"2.0",
-	"method":"net_version",
-	"params":[],
-	"id":67
-}
-```
 
 ### Example Request
 
@@ -123,21 +95,39 @@ none
 ### Example Response
 
 ```javascript
-{"jsonrpc":"2.0","id":67,"result":"1"}
+{"jsonrpc":"2.0","id":67,"result":"43114"}
 ```
 
 ## eth library
 
+### Example Request
+
+```shell
+
+curl https://rpc.ankr.com/avalanche \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
+```
+
+### Example Response
+
+```shell
+{"jsonrpc":"2.0","id":67,"result":"0xaf7bf1"}
+```
+
 ---
 # Integrate Code
 
-### Example Requests
+## web3 
 
-#### web3 
-clientVersion
+**clientVersion**
 
-{% tabs %}
-{% tab title="Go" %}
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="go" label="Go">
 
 ```go
 package main
@@ -186,6 +176,6 @@ func main() {
   fmt.Println(string(body))
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
