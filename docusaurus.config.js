@@ -3,7 +3,7 @@
 (
   module.exports = {
     title: "Welcome to Ankr Docs",
-    tagline: "Your single-source-of-truth on Ankr products and services",
+    tagline: "Your Source of Truth for Products and Services by Ankr",
     url: "https://www.ankr.com/",
     baseUrl: '/',
     onBrokenLinks: "throw",
@@ -52,7 +52,7 @@
           items: [
             {
               type: "dropdown",
-              label: "⚓️  About",
+              label: '⚓️' + Array(2).fill('\xa0').join('') + 'About',
               position: "right",
               items: [
                 {
@@ -61,30 +61,30 @@
                 },
                 {
                   to: "docs/about/ankr-vision",
-                  label: "Ankr Vision",
+                  label: "Our Vision",
                 },
                 {
                   to: "docs/about/ankr-approach",
-                  label: "Ankr Principles",
+                  label: "Our Principles",
                 },
                 {
                   to: "docs/about/ankr-solutions",
-                  label: "Ankr Solutions",
+                  label: "Our Solutions",
                 },
               ],
             },
             {
               type: "dropdown",
-              label: "🔨 Build",
+              label: '🔨' + Array(2).fill('\xa0').join('') + 'Build',
               position: "right",
               items: [
                 {
-                  to: "docs/category/concepts",
-                  label: "Concepts",
-                },
-                {
                   to: "docs/category/get-started",
                   label: "Get Started",
+                },
+                {
+                  to: "docs/category/concepts",
+                  label: "Concepts",
                 },
                 {
                   to: "docs/category/chains-v2",
@@ -102,7 +102,7 @@
             },
             {
               type: "dropdown",
-              label: " 💰 Earn",
+              label: '💲' + Array(2).fill('\xa0').join('') + 'Earn',
               position: "right",
               items: [
                 {
@@ -127,15 +127,9 @@
                 },
               ],
             },
-              {
-                type: "docSidebar",
-                sidebarId: "governanceSidebar",
-                position: "right",
-                label: "⚖️ Tokens-Governance"
-              },
             {
               type: "dropdown",
-              label: "👥 Community",
+              label: '👥' + Array(2).fill('\xa0').join('') + 'Community',
               position: "right",
               items: [
                 {
@@ -144,11 +138,17 @@
                 },
               ],
             },
+              {
+                type: "docSidebar",
+                sidebarId: "governanceSidebar",
+                position: "right",
+                label: '⚖️' + Array(2).fill('\xa0').join('') + 'Tokens & Governance',
+              },
             {
               type: "docSidebar",
               sidebarId: "tutorialSidebar",
               position: "right",
-              label: "🎓 Tutorials",           
+              label: '📚' + Array(2).fill('\xa0').join('') + 'Tutorials',           
             },
           ],
         },

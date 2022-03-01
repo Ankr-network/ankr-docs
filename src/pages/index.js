@@ -22,10 +22,10 @@ function HomepageHeader() {
               to="http://www.ankr.com"
               target="_blank"
             >
-              Meet Ankr
+              Experience Ankr
             </Link>
             <Link className={styles.button} to="https://github.com/Ankr-network/ankr-docs/issues/new?labels=Tutorial&template=submit-a-tutorial.md">
-              Submit a tutorial
+              Contribute to Ankr Docs
             </Link>
           </div>
         </div>
@@ -35,7 +35,7 @@ function HomepageHeader() {
   );
 }
 
-export default function Home() {
+export default function Home() { 
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout title={`${siteConfig.title}`} description="Ankr Docs">
