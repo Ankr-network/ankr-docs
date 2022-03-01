@@ -1,6 +1,6 @@
 ---
-Title: Optimism
-id: optimism
+Title: Optimism API
+id: optimism-api
 ---
 
-# Optimism
+# Optimism API

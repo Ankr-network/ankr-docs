@@ -1,38 +1,32 @@
 ---
-Title: Polkadot API
-id: polkadot-api
+Title: Kusama API
+id: kusama-api
 ---
 
-# Polkadot API
+# Kusama API
 
-# Develop on Polkadot
+# Develop on Kusama
 
-Ankr allows users to create their own APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
+Ankr allows users to create their own **Kusama relay chain APIs** with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 
-### Get started on Polkadot
+### Get started on **Kusama**
 
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### Network Types Available on Ankr
+### **Nodes Available on Ankr**
 
-* Mainnet
+* Kusama Relay Chain
 
-### Node Types Available on Ankr
+### **Networks Available on Ankr**
 
-* Relaychain
+* Kusama Relay Mainnet
 
-### Explorer links
+### JSON RPC Methods
 
-Polkadot Explorer: [https://polkascan.io/polkadot](https://polkascan.io/polkadot)
+Kusama's approach to JSON-RPC methods is unique and not the same as the standard** **Ethereum JSON-RPC methods.
 
-Polkadot Substrate based explorer [https://polkadot.subscan.io/](https://polkadot.subscan.io)​
-
-### JSON-RPC Methods
-
-Polkadot's approach to JSON-RPC methods is unique and not the same as the standard** **Ethereum JSON-RPC methods.
-
-You can call the `rpc_methods` method to view the list of methods supported by Polkadot.
+You can call the `rpc_methods` method to view the list of methods supported by Kusama.
 
 View [Substrate RPC client in Go documentation ](https://pkg.go.dev/github.com/centrifuge/go-substrate-rpc-client#section-documentation)for calling RPC methods.&#x20;
 
@@ -40,7 +34,7 @@ You can also use [Polkadot-JS-Apps](https://polkadot.js.org/docs/) to interact. 
 
 ### Example Calls
 
-#### API HTTPS Endpoint
+#### API HTTPS endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -62,8 +56,8 @@ import (
 
 
 func main() {
-    const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/polkadot/full/main"    // authentication
-    const url_token = "https://apis.ankr.com/xxxxx/xxxxx/polkadot/full/main"                     // token
+    const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/kusama/full/main"    // authentication
+    const url_token = "https://apis.ankr.com/xxxxx/xxxxx/kusama/full/main"                     // token
     
     cl,err := client.Connect("choose url_auth or url_token by your created type")
     
@@ -105,20 +99,21 @@ func NewRPC(cl client.Client) (*RPC, error) {
 }
 ```
 </TabItem>
-<TabItem value="curl" label="Curl">
+<TabItem value="curl" label="curl">
 
 ```bash
 # authentication
-$ curl -H "Content-Type: application/json" -u "username:password" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/polkadot/full/main
-$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://username:password@apis.ankr.com/xxxxx/xxxxx/polkadot/full/main
+$ curl -H "Content-Type: application/json" -u "username:password" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/kusama/full/main
+$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://username:password@apis.ankr.com/xxxxx/xxxxx/kusama/full/main
 
 # token
-$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/polkadot/full/main
+$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/kusama/full/main
+
 ```
 </TabItem>
 </Tabs>
 
-#### Websocket Endpoint
+#### Websocket endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">
@@ -138,8 +133,8 @@ import (
 
 
 func main() {
-    const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main"    // authentication
-    const url_token = "wss://apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main"                     // token
+    const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/kusama/full/main"    // authentication
+    const url_token = "wss://apis.ankr.com/wss/xxxxx/xxxxx/kusama/full/main"                     // token
     
     cl,err := client.Connect("choose url_auth or url_token by your created type")
     
@@ -195,15 +190,15 @@ func NewWebsocket(cl client.Client) (*Websocket, error) {
 }
 ```
 </TabItem>
-<TabItem value="js" label="Javascript">
+<TabItem value="javascript" label="javascript">
 
 ```javascript
 const { ApiPromise, WsProvider } = require('@polkadot/api');
 
 async function main() {
 
-    const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main'    // authentication
-    const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main'                   // token
+    const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/kusama/full/main'    // authentication
+    const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/kusama/full/main'                   // token
 
     const api = await ApiPromise.create({ 'choose url_auth or url_token by your created type' });
     const lastHdr = await api.rpc.chain.getHeader();
@@ -218,10 +213,10 @@ main().catch(console.error).finally(() => process.exit());
 
 ```bash
 # authentication
-$ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main
+$ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/kusama/full/main
 
 # token
-$ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main
+$ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/kusama/full/main
 
 wait connected...
 
@@ -233,3 +228,9 @@ wait connected...
 ```
 </TabItem>
 </Tabs>
+
+### Explorers
+
+Use [https://polkadot.js.org/apps/#/explorer](https://polkadot.js.org/apps/#/explorer)&#x20;
+
+Kusama Explorer [https://polkascan.io/kusama](https://polkascan.io/kusama)
