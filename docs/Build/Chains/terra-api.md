@@ -39,7 +39,8 @@ The official document has more detailed information :
 
 ### Terra RPC Methods
 
-Use our [supported RPC Methods](../../blockchain-apis/making-requests/supported-json-rpc-methods.md) to interact with the Terra Network.
+Terra uses standard JSON RPC methods. 
+View [Supported JSON RPC Methods](@site/docs/Build/Guides/evm-supported-requests.md)
 
 ### Example Calls
 
