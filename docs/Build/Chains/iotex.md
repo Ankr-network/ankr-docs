@@ -1,5 +1,5 @@
 ---
-title: IoTex
+title: IoTex RPC
 id: iotex
 ---
 

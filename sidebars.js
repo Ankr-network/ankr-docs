@@ -151,7 +151,9 @@ module.exports = {
           type: 'generated-index',
         },
         items: [
+          'Build/Guides/json-methods',
           'Build/Guides/libraries',
+          'Build/Guides/websocket-premium',
           'Build/Guides/rpcapi'
         ],
       },
@@ -357,9 +359,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-        'Community/channels', 
-        'Community/contribute', 
-        'Community/grants'
+        'Community/channels'
       ],
   },
  ],

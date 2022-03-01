@@ -142,14 +142,6 @@
                   to: "docs/Community/channels",
                   label: "Community Channels",
                 },
-                {
-                  to: "docs/Community/contribute",
-                  label: "Contribute",
-                },
-                {
-                  to: "docs/Community/grants",
-                  label: "Grants",
-                },
               ],
             },
             {

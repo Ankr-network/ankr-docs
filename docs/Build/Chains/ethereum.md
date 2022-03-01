@@ -1,9 +1,8 @@
 ---
-Title: Ethereum
+Title: Ethereum RPC
 id: ethereum
 ---
 
-# Ethereum
 # Ethereum RPC
 
 **Ethereum** is a decentralized, open-source blockchain with smart contract functionality. **Ether** (**ETH**) is the native cryptocurrency of the platform.&#x20;
