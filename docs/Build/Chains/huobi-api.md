@@ -1,39 +1,39 @@
 ---
-title: Binance API
-id: bsc-api
+Title: Huobi API
+id: huobi-api
 ---
 
-# Develop on Binance Smart Chain (BSC)
+# Huobi API
 
-In addition to Ankr’s free and public [Binance Smart Chain RPC](https://rpc.ankr.com/bsc), Ankr allows users to create their own full and archive APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.&#x20;
+# Develop on Heco
 
-## Get started on Binance Smart Chain
+Ankr allows users to create their own Heco Tinder and Heco Tinder Archive APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 
-1. Login or set up an account on &#x20; [app.ankr.com](https://app.ankr.com/api/)
+### Get started on Heco
+
+1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-## Node Types Available on Ankr
+### Network Types Available
 
-* BSC Full
-* BSC Archive
+* Mainnet
 
-## Network Types Available on Ankr
+### Nodes Available
 
-* Mainnet - Full & Archive
-* Testnet - Full
+* Heco Tinder
+* Heco Tinder Archive
 
-## Explorer Links <a href="#explorer-links" id="explorer-links"></a>
+### Heco Explorers
 
-Mainnet - [https://bscscan.com/](https://bscscan.com)​
+Official Heco Explorer [https://hecoinfo.com/](https://hecoinfo.com)
 
-Testnet - [https://testnet.bscscan.com/](https://testnet.bscscan.com)​
+### JSON RPC&#x20;
 
-### Endpoints Available
+Heco is compatible with Ethereum's ecosystem. It supports Ethereum's RPC API and SDK.
 
-* JSON RPC API;
-* Websockets;
+View [JSON RPC API ](https://eth.wiki/json-rpc/api)docs
 
-## Examples
+### Example Calls
 
 #### API (HTTPS) Endpoint
 
@@ -54,8 +54,8 @@ import (
 
 
 func main() {
-    const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/binance/full/main"    // authentication
-    const url_token = "https://apis.ankr.com/xxxxx/xxxxx/binance/full/main"                     // token
+    const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/heco/fast/main"    // authentication
+    const url_token = "https://apis.ankr.com/xxxxx/xxxxx/heco/fast/main"                     // token
     
     rpcClient,err := ethclient.Dial("choose url_auth or url_token by your created type")
     
@@ -73,14 +73,14 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="js" label="JavaScript">
+<TabItem value="js" label="web3.js">
 
 ```javascript
 const Web3 = require('web3');
 
 
-const url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/binance/full/main'    // authentication
-const url_token = 'https://apis.ankr.com/xxxxx/xxxxx/binance/full/main'                     // token
+const url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/heco/fast/main'    // authentication
+const url_token = 'https://apis.ankr.com/xxxxx/xxxxx/heco/fast/main'                     // token
 
 const web3 = new Web3(new Web3.providers.HttpProvider('choose url_auth or url_token by your created type'));
 
@@ -100,8 +100,8 @@ from web3 import Web3
 
 
 def test_block_number(self):
-    url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/binance/full/main'  # authentication
-    url_token = 'https://apis.ankr.com/xxxxx/xxxxx/binance/full/main'                   # token
+    url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/heco/fast/main'  # authentication
+    url_token = 'https://apis.ankr.com/xxxxx/xxxxx/heco/fast/main'                   # token
     
     web3 = Web3(HTTPProvider('choose url_auth or url_token by your created type'))
     print(web3.eth.block_number)
@@ -111,41 +111,21 @@ def test_block_number(self):
 
 ```bash
 # authentication
-$ curl -H "Content-Type: application/json" -u "username:password" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/binance/full/main
-$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://username:password@apis.ankr.com/xxxxx/xxxxx/binance/full/main
+$ curl -H "Content-Type: application/json" -u "username:password" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/heco/fast/main
+$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://username:password@apis.ankr.com/xxxxx/xxxxx/heco/fast/main
 
 # token
-$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/binance/full/main
-```
-</TabItem>
-<TabItem value="truffle" label="truffle">
-
-```java
-    const fs = require('fs');
-    const mnemonic = fs.readFileSync(".secret").toString().trim();//.secret   Mnemonic Phrase
-    var HDWalletProvider = require("truffle-hdwallet-provider");
-    require('babel-register');
-
-    networkName: {
-        provider: () => new HDWalletProvider(mnemonic, `https://apis.ankr.com/xxxxx/xxxxx/binance/archive/main`),
-        network_id: 56, // Chain id
-        gas: 4612388, // Chain has a lower block limit than mainnet
-        confirmations: 2, // # of confs to wait between deployments. (default: 0)
-        timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
-        skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
-    }
+$ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/heco/fast/main
 ```
 </TabItem>
 </Tabs>
 
 #### Websocket (WSS) Endpoint
 
-
 <Tabs>
 <TabItem value="go" label="Go">
 
 ```go
-
 package main
 
 import (
@@ -158,8 +138,8 @@ import (
 
 
 func main() {
-    const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main" // authentication
-    const url_token = "wss://apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main"                  // token
+    const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main" // authentication
+    const url_token = "wss://apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main"                  // token
     
     client, err := ethclient.Dial(`choose url_auth or url_token by your created type`)
     
@@ -193,13 +173,13 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="ethers.js" label="ethers.js">
+<TabItem value="js" label="Ethers.js">
 
 ```javascript
 const ethers = require("ethers");
 
-const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'    // authentication
-const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'                   // token
+const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main'    // authentication
+const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main'                   // token
 
 const init = function () {
 
@@ -223,8 +203,8 @@ init();
 ```javascript
 const WebSocket = require('ws');
 
-const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'    // authentication
-const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'                   // token
+const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main'    // authentication
+const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main'                   // token
 
 const request = '{"id": 1, "method": "eth_subscribe", "params": ["newPendingTransactions"]}';  
 
@@ -249,10 +229,10 @@ ws.on('message', function incoming(data) {
 
 ```bash
 # authentication
-$ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main
+$ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main
 
 # token
-$ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main
+$ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/heco/fast/main
 
 wait connected...
 
@@ -272,8 +252,8 @@ const fs = require('fs');
     require('babel-register');
 
     networkName: {
-        provider: () => new HDWalletProvider(mnemonic, `wss://apis.ankr.com/xxxxx/xxxxx/binance/archive/main`),
-        network_id: 56, // Chain id
+        provider: () => new HDWalletProvider(mnemonic, `https://apis.ankr.com/xxxxx/xxxxx/heco/archive/main`),
+        network_id: 128, // Chain id
         gas: 4612388, // Chain has a lower block limit than mainnet
         confirmations: 2, // # of confs to wait between deployments. (default: 0)
         timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)

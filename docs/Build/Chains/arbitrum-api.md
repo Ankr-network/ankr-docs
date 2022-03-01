@@ -11,8 +11,8 @@ Ankr allows users to create their own Arbitrum full APIs with a variety of optio
 
 ## Get started on Arbitrum
 
-1. Login or set up an account on app.ankr.com
-2. [**Create API**](https://app.ankr.com/api/create/arbitrum%20full)
+1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
+2. [**Create API**](https://app.ankr.com/apps/api)
 
 ### **Node Types Available on Ankr**
 
@@ -30,8 +30,6 @@ Ankr allows users to create their own Arbitrum full APIs with a variety of optio
 ### **View Available Endpoints**
 
 Select 'Settings' to view API & & Websocket endpoints
-
-![](@site/static/img/arb-api.png)
 
 ### JSON-RPC Methods
 

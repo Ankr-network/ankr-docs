@@ -3,30 +3,30 @@ Title: Clover API
 id: clover-api
 ---
 
-# Develop on Clover Finance
+# Clover API
 
 The Clover Finance chain is a powerful multi-chain tool that helps to enable a more interconnected Web 3.0 environment. They also offer a developer incentive program to encourage building on the platform.
 
 Ankr allows users to create their own full Clover APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 
-### Get started on Clover
+## Get started on Clover
 
-1. Login or set up an account on app.ankr.com
-2. [Create API ](https://app.ankr.com/api/create/clover%20full)
+1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
+2. [**Create API**](https://app.ankr.com/apps/api)
 
-### Network Types Available on Clover
+## Network Types Available on Clover
 
 * Mainnet
 
-### Node Modes Available on Ankr
+## Node Modes Available on Ankr
 
 * Full Node
 
-### Explorer links
+## Explorer links
 
 Clover Cross-Chain Explorer ([https://tx.clover.finance/](https://tx.clover.finance)) shows information about cross chain transactions​.
 
-### JSON-RPC Methods
+## JSON-RPC Methods
 
 Clover's approach to JSON-RPC methods is unique and not the same as the standard Ethereum JSON-RPC methods.
 
@@ -35,7 +35,7 @@ Clover's approach to JSON-RPC methods is unique and not the same as the standard
 * [gsrpc-docs](https://pkg.go.dev/github.com/centrifuge/go-substrate-rpc-client)
 * [rpc-call](https://apps-ivy.clover.finance/#/rpc)
 
-### Example Calls
+## Example Calls
 
 #### API (HTTPS) Endpoint
 
