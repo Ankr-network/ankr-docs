@@ -96,7 +96,6 @@ module.exports = {
           'Build/Chains/bsc-api',
           'Build/Chains/clover-api',
           'Build/Chains/ethereum-api',
-          'Build/Chains/ethereum-2-api',
           'Build/Chains/fantom-api',
           'Build/Chains/huobi-api',
           'Build/Chains/kusama-api',
