@@ -3,7 +3,7 @@ Title: XDai API
 id: xdai-api
 ---
 
-# XDai API
+# XDai API 
 
 # Develop on xDai
 

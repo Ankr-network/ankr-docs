@@ -5,6 +5,8 @@ id: ethereum-api
 
 # Ethereum API
 
+# Develop on Ethereum
+
 Ethereum offers a decentralized platform on which to build dApps using Solidity scripting language and the Ethereum Virtual Machine (EVM). Smart Contracts execute and verify application code across the network and allow decentralized transactions. 
 
 Developers benefit from the rich Ethereum Ecosystem of frameworks, tooling and libraries. 

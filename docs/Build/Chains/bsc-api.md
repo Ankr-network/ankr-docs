@@ -2,6 +2,7 @@
 title: Binance API
 id: bsc-api
 ---
+# Binance Smart Chain API
 
 # Develop on Binance Smart Chain (BSC)
 
