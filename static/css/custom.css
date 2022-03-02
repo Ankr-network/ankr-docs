@@ -124,7 +124,7 @@ main .container {
 }
 @media (max-width: 960px) {
   main .container {
-    padding: 32px 16px 0 16px !important;
+    padding: 32px 16px 46px 16px !important;
   }
 }
 aside {
