@@ -51,7 +51,7 @@ jobs:
           DOMAIN: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DOMAIN')] }}
           DISTRIBUTION_ID: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DISTRIBUTION_ID')] }}
         run: |
-          aws s3 sync --delete ./build s3://$DOMAIN/docs/ --acl public-read --cache-control "public,max-age=600,s-maxage=3600"
+          aws s3 sync --delete ./build s3://$DOMAIN/ --acl public-read --cache-control "public,max-age=600,s-maxage=3600"
           aws configure set preview.cloudfront true
           echo "Invalidating CDN network"
           INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*' | jq -r '.Invalidation.Id'`
