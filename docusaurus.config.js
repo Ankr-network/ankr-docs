@@ -103,7 +103,7 @@
             },
             {
               type: "dropdown",
-              label: '💲' + Array(2).fill('\xa0').join('') + 'Earn',
+              label: '💰' + Array(2).fill('\xa0').join('') + 'Earn',
               position: "right",
               items: [
                 {
