@@ -139,7 +139,7 @@ module.exports = {
           'Build/Chains/tezos',
           'Build/Chains/tron',
           'Build/Chains/vitae',
-          'Build/Chains/xdai',
+          'Build/Chains/xdai-api',
           'Build/Chains/zcash'
               ],
       },
