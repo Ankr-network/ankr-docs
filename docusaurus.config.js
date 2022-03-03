@@ -5,7 +5,7 @@
     title: "Welcome to Ankr Docs",
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/docs/',
+    baseUrl: '/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -47,7 +47,7 @@
           title: "Docs",
           logo: {
             alt: "Ankr Logo",
-            src: "img/ankr-logo.svg",
+            src: "/docs/img/ankr-logo.svg",
           },
           items: [
             {
