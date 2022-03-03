@@ -91,7 +91,7 @@ module.exports = {
           type: 'generated-index',
         },
         items: [
-          'Build/Chains/arbitrum-api',
+          'Build/Chains/arb-api',
           'Build/Chains/avax-api',
           'Build/Chains/bsc-api',
           'Build/Chains/clover-api',

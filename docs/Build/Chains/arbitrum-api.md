@@ -1,6 +1,6 @@
 ---
 Title: Arbitrum API
-id: arbitrum-api
+id: arb-api
 ---
 
 # Arbitrum API
