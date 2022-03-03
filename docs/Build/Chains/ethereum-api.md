@@ -7,6 +7,7 @@ id: ethereum-api
 
 # Develop on Ethereum
 
+
 Ethereum offers a decentralized platform on which to build dApps using Solidity scripting language and the Ethereum Virtual Machine (EVM). Smart Contracts execute and verify application code across the network and allow decentralized transactions. 
 
 Developers benefit from the rich Ethereum Ecosystem of frameworks, tooling and libraries. 
@@ -61,11 +62,13 @@ import TabItem from '@theme/TabItem';
 
 ```go
 package main
+
 import (
     "context"
     "fmt"
     "github.com/ethereum/go-ethereum/ethclient"
 )
+
 func main() {
     const basic url = 'https://projectname:password@apis.ankr.com/xxxxx/xxxxx/eth/fast/rinkeby' // base authentication url
     const token url = "https://apis.ankr.com/TOKEN-ENDPOINT/eth/fast/rinkeby"  // token authentication url 
@@ -93,6 +96,7 @@ const Web3 = require('web3');
 const basic_url = 'https://projectname:password@apis.ankr.com/xxxxx/xxxxx/eth/fast/rinkeby' // base authentication url
 const token_url = "https://apis.ankr.com/TOKEN-ENDPOINT/eth/fast/rinkeby"  // token authentication url 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
 web3.eth.getBlockNumber((error, blockNumber) => {
     if(!error){
         console.log(blockNumber);
@@ -119,7 +123,8 @@ def test_block_number(self):
 
 ```bash
 curl -X POST https://projectname:passwor@apis.ankr.com/xxxxx/xxxxx/eth/fast/rinkeby -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' # base authentication url
-curl -X POST https://apis.ankr.com/xxxxx/xxxxx/eth/fast/rinkeby -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+
+curl -X POST https://apis.ankr.com/xxxxx/xxxxx/eth/fast/rinkeby -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'# token authentication
 ```
 </TabItem>
 </Tabs>
