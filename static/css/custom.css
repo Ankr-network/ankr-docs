@@ -239,7 +239,6 @@ aside nav {
   color: #1f2226;
   opacity: 0.8;
   display: inline;
-  position: relative;
   float: right;
   max-width: 300px;
   white-space: nowrap;
@@ -247,7 +246,7 @@ aside nav {
   text-overflow: ellipsis;
 }
 
-.pagination-nav__label:after {
+.pagination-nav__label::after {
   content: " ";
   width: 10px;
   height: 20px;
