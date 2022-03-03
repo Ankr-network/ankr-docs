@@ -54,7 +54,6 @@ import (
     "github.com/ethereum/go-ethereum/ethclient"
 )
 
-
 func main() {
     const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/polygon/full/main"    // authentication
     const url_token = "https://apis.ankr.com/xxxxx/xxxxx/polygon/full/main"                     // token
@@ -79,11 +78,8 @@ func main() {
 
 ```javascript
 const Web3 = require('web3');
-
-
 const url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/polygon/full/main'    // authentication
 const url_token = 'https://apis.ankr.com/xxxxx/xxxxx/polygon/full/main'                     // token
-
 const web3 = new Web3(new Web3.providers.HttpProvider('choose url_auth or url_token by your created type'));
 
 web3.eth.getBlockNumber((error, blockNumber) => {
@@ -99,7 +95,6 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 
 ```python
 from web3 import Web3
-
 
 def test_block_number(self):
     url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/polygon/full/main'  # authentication
@@ -137,7 +132,6 @@ import (
     "github.com/ethereum/go-ethereum/ethclient"
     "time"
 )
-
 
 func main() {
     const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polygon/full/main" // authentication
@@ -182,9 +176,7 @@ const ethers = require("ethers");
 
 const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polygon/full/main'    // authentication
 const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/polygon/full/main'                   // token
-
 const init = function () {
-
     const wsProvider = new ethers.providers.WebSocketProvider('choose url_auth or url_token by your created type');
 
     wsProvider.on("pending", (tx) => {
@@ -194,9 +186,7 @@ const init = function () {
         }, 1000);
 
     });
-
 };
-
 init();
 ```
 </TabItem>
@@ -207,9 +197,7 @@ const WebSocket = require('ws');
 
 const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polygon/full/main'    // authentication
 const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/polygon/full/main'                   // token
-
 const request = '{"id": 1, "method": "eth_subscribe", "params": ["newPendingTransactions"]}';  
-
 const ws = new WebSocket('choose url_auth or url_token by your created type');
 
 ws.on('open', function open() {
@@ -235,9 +223,7 @@ $ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polygon/full/ma
 
 # token
 $ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/polygon/full/main
-
 wait connected...
-
 # subscribe
 > {"jsonrpc":"2.0","method":"eth_subscribe","params":["newHeads"],"id":1}
 

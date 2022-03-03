@@ -88,7 +88,6 @@ const Web3 = require('web3');
 
 const url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/terra/full/columbus'    // authentication
 const url_token = 'https://apis.ankr.com/xxxxx/xxxxx/terra/full/columbus'                     // token
-
 const web3 = new Web3(new Web3.providers.HttpProvider("choose url_auth or url_token by your created type"));
 
 web3.eth.getBlockNumber((error, blockNumber) => {
@@ -124,5 +123,3 @@ $ curl -X POST -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":
 ```
 </TabItem>
 </Tabs>
-
-

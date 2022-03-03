@@ -3,6 +3,9 @@ title: Binance API
 id: bsc-api
 ---
 
+# Binance Smart Chain API
+
+
 # Develop on Binance Smart Chain (BSC)
 
 In addition to Ankr’s free and public [Binance Smart Chain RPC](https://rpc.ankr.com/bsc), Ankr allows users to create their own full and archive APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.&#x20;
@@ -51,8 +54,6 @@ import (
     "fmt"
     "github.com/ethereum/go-ethereum/ethclient"
 )
-
-
 func main() {
     const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/binance/full/main"    // authentication
     const url_token = "https://apis.ankr.com/xxxxx/xxxxx/binance/full/main"                     // token
@@ -77,11 +78,8 @@ func main() {
 
 ```javascript
 const Web3 = require('web3');
-
-
 const url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/binance/full/main'    // authentication
 const url_token = 'https://apis.ankr.com/xxxxx/xxxxx/binance/full/main'                     // token
-
 const web3 = new Web3(new Web3.providers.HttpProvider('choose url_auth or url_token by your created type'));
 
 web3.eth.getBlockNumber((error, blockNumber) => {
@@ -97,7 +95,6 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 
 ```python
 from web3 import Web3
-
 
 def test_block_number(self):
     url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/binance/full/main'  # authentication
@@ -125,7 +122,6 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
     const mnemonic = fs.readFileSync(".secret").toString().trim();//.secret   Mnemonic Phrase
     var HDWalletProvider = require("truffle-hdwallet-provider");
     require('babel-register');
-
     networkName: {
         provider: () => new HDWalletProvider(mnemonic, `https://apis.ankr.com/xxxxx/xxxxx/binance/archive/main`),
         network_id: 56, // Chain id
@@ -139,7 +135,6 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
 </Tabs>
 
 #### Websocket (WSS) Endpoint
-
 
 <Tabs>
 <TabItem value="go" label="Go">
@@ -156,9 +151,9 @@ import (
     "time"
 )
 
-
 func main() {
     const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main" // authentication
+
     const url_token = "wss://apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main"                  // token
     
     client, err := ethclient.Dial(`choose url_auth or url_token by your created type`)
@@ -175,7 +170,6 @@ func main() {
     }
     
     fmt.Println("---subscribe-----")
-
     go func() {
         time.Sleep(10 * time.Second)
         fmt.Println("---unsubscribe-----")
@@ -197,14 +191,10 @@ func main() {
 
 ```javascript
 const ethers = require("ethers");
-
 const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'    // authentication
 const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'                   // token
-
 const init = function () {
-
     const wsProvider = new ethers.providers.WebSocketProvider('choose url_auth or url_token by your created type');
-
     wsProvider.on("pending", (tx) => {
         console.log("tx", tx)
         setTimeout(function () {
@@ -222,12 +212,9 @@ init();
 
 ```javascript
 const WebSocket = require('ws');
-
 const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'    // authentication
 const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main'                   // token
-
 const request = '{"id": 1, "method": "eth_subscribe", "params": ["newPendingTransactions"]}';  
-
 const ws = new WebSocket('choose url_auth or url_token by your created type');
 
 ws.on('open', function open() {
@@ -251,6 +238,7 @@ ws.on('message', function incoming(data) {
 # authentication
 $ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main
 
+
 # token
 $ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/binance/full/main
 
@@ -258,6 +246,7 @@ wait connected...
 
 # subscribe
 > {"jsonrpc":"2.0","method":"eth_subscribe","params":["newHeads"],"id":1}
+
 
 # unsubscribe
 > {"jsonrpc":"2.0","method":"eth_unsubscribe","params":["0xxxxxxxxxxxxxxx"],"id":1}
@@ -270,7 +259,6 @@ const fs = require('fs');
     const mnemonic = fs.readFileSync(".secret").toString().trim();//.secret   Mnemonic Phrase
     var HDWalletProvider = require("truffle-hdwallet-provider");
     require('babel-register');
-
     networkName: {
         provider: () => new HDWalletProvider(mnemonic, `wss://apis.ankr.com/xxxxx/xxxxx/binance/archive/main`),
         network_id: 56, // Chain id
