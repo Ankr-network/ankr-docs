@@ -50,7 +50,6 @@ import TabItem from '@theme/TabItem';
 
 ```go
 package main
-
 import (
     "fmt"
     "github.com/centrifuge/go-substrate-rpc-client/client"
@@ -59,8 +58,6 @@ import (
     "github.com/centrifuge/go-substrate-rpc-client/rpc/state"
     "github.com/centrifuge/go-substrate-rpc-client/rpc/system"
 )
-
-
 func main() {
     const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/polkadot/full/main"    // authentication
     const url_token = "https://apis.ankr.com/xxxxx/xxxxx/polkadot/full/main"                     // token
@@ -70,21 +67,16 @@ func main() {
     if err != nil {
         panic(err)
     }
-
     newRPC, err := NewRPC(cl)
     if err != nil {
         panic(err)
     }
-
     hash, err := newRPC.Chain.GetFinalizedHead()
     if err != nil {
         panic(err)
     }
-
     fmt.Println(hash.Hex())
-
 }
-
 type RPC struct {
     Author *author.Author
     Chain *chain.Chain
@@ -92,7 +84,6 @@ type RPC struct {
     System *system.System
     Client *client.Client
 }
-
 func NewRPC(cl client.Client) (*RPC, error) {
     st := state.NewState(cl)
     return &RPC{
@@ -111,7 +102,6 @@ func NewRPC(cl client.Client) (*RPC, error) {
 # authentication
 $ curl -H "Content-Type: application/json" -u "username:password" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/polkadot/full/main
 $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://username:password@apis.ankr.com/xxxxx/xxxxx/polkadot/full/main
-
 # token
 $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_getBlock","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/polkadot/full/main
 ```
@@ -125,7 +115,6 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_
 
 ```go
 package main
-
 import (
     "fmt"
     "github.com/centrifuge/go-substrate-rpc-client/client"
@@ -135,8 +124,6 @@ import (
     "github.com/centrifuge/go-substrate-rpc-client/rpc/system"
     "time"
 )
-
-
 func main() {
     const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main"    // authentication
     const url_token = "wss://apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main"                     // token
@@ -146,35 +133,27 @@ func main() {
     if err != nil {
         panic(err)
     }
-
     newRPC, err := NewWebsocket(cl)
     if err != nil {
         panic(err)
     }
-
     sub, err := newRPC.Chain.SubscribeNewHeads()
     if err != nil {
         panic(err)
     }
-
     fmt.Println("---subscribe-----")
-
     go func() {
         time.Sleep(10 * time.Second)
         fmt.Println("---unsubscribe-----")
         sub.Unsubscribe()
     }()
-
     go func() {
         for c := range sub.Chan {
             fmt.Println(c.Number)
         }
     }()
-
     <-sub.Err()
-
 }
-
 type Websocket struct {
     Author *author.Author
     Chain *chain.Chain
@@ -182,7 +161,6 @@ type Websocket struct {
     System *system.System
     Client *client.Client
 }
-
 func NewWebsocket(cl client.Client) (*Websocket, error) {
     st := state.NewState(cl)
     return &Websocket{
@@ -199,18 +177,13 @@ func NewWebsocket(cl client.Client) (*Websocket, error) {
 
 ```javascript
 const { ApiPromise, WsProvider } = require('@polkadot/api');
-
 async function main() {
-
     const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main'    // authentication
     const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main'                   // token
-
     const api = await ApiPromise.create({ 'choose url_auth or url_token by your created type' });
     const lastHdr = await api.rpc.chain.getHeader();
-
     console.log(`The blockNumber is ${lastHdr.number}`);
 }
-
 main().catch(console.error).finally(() => process.exit());
 ```
 </TabItem>
@@ -219,15 +192,11 @@ main().catch(console.error).finally(() => process.exit());
 ```bash
 # authentication
 $ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main
-
 # token
 $ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/polkadot/full/main
-
 wait connected...
-
 # subscribe
 > {"jsonrpc":"2.0","method":"chain_subscribeNewHeads","params":[],"id":1}
-
 # unsubscribe
 > {"jsonrpc":"2.0","method":"chain_unsubscribeNewHeads","params":["0xxxxxxxxxxxxxxx"],"id":1}
 ```

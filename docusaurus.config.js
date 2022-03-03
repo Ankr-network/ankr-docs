@@ -3,9 +3,10 @@
 (
   module.exports = {
     title: "Welcome to Ankr Docs",
+
     tagline: "Your Source of Truth for Products and Services by Ankr",
     url: "https://www.ankr.com/",
-    baseUrl: '/',
+    baseUrl: '/docs/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",

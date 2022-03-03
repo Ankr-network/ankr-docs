@@ -5,6 +5,9 @@ id: clover-api
 
 # Clover API
 
+
+# Develop on Clover
+
 The Clover Finance chain is a powerful multi-chain tool that helps to enable a more interconnected Web 3.0 environment. They also offer a developer incentive program to encourage building on the platform.
 
 Ankr allows users to create their own full Clover APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
@@ -56,7 +59,6 @@ import (
     "github.com/centrifuge/go-substrate-rpc-client/rpc/state"
     "github.com/centrifuge/go-substrate-rpc-client/rpc/system"
 )
-
 
 func main() {
     const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/clover/full/main"    // authentication
@@ -133,7 +135,6 @@ import (
     "time"
 )
 
-
 func main() {
     const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/clover/full/main"    // authentication
     const url_token = "wss://apis.ankr.com/wss/xxxxx/xxxxx/clover/full/main"                     // token
@@ -169,7 +170,6 @@ func main() {
     }()
 
     <-sub.Err()
-
 }
 
 type Websocket struct {
@@ -198,6 +198,7 @@ func NewWebsocket(cl client.Client) (*Websocket, error) {
 # authentication
 $ wscat -c wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/clover/full/main
 
+
 # token
 $ wscat -c wss://apis.ankr.com/wss/xxxxx/xxxxx/clover/full/main
 
@@ -205,6 +206,7 @@ wait connected...
 
 # subscribe
 > {"jsonrpc":"2.0","method":"chain_subscribeNewHeads","params":[],"id":1}
+
 
 # unsubscribe
 > {"jsonrpc":"2.0","method":"chain_unsubscribeNewHeads","params":["0xxxxxxxxxxxxxxx"],"id":1}

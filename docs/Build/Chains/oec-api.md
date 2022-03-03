@@ -47,13 +47,11 @@ import TabItem from '@theme/TabItem';
 
 ```go
 package main
-
 import (
     "context"
     "fmt"
     "github.com/ethereum/go-ethereum/ethclient"
 )
-
 
 func main() {
     const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/okexchain/full/main"    // authentication
@@ -79,11 +77,8 @@ func main() {
 
 ```javascript
 const Web3 = require('web3');
-
-
 const url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/okexchain/full/main'    // authentication
 const url_token = 'https://apis.ankr.com/xxxxx/xxxxx/okexchain/full/main'                     // token
-
 const web3 = new Web3(new Web3.providers.HttpProvider('choose url_auth or url_token by your created type'));
 
 web3.eth.getBlockNumber((error, blockNumber) => {
@@ -99,7 +94,6 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 
 ```python
 from web3 import Web3
-
 
 def test_block_number(self):
     url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/okexchain/full/main'  # authentication
@@ -137,7 +131,6 @@ import (
     "github.com/ethereum/go-ethereum/ethclient"
     "time"
 )
-
 
 func main() {
     const url_auth = "wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/okexchain/full/main" // authentication
@@ -182,9 +175,7 @@ const ethers = require("ethers");
 
 const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/okexchain/full/main'    // authentication
 const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/okexchain/full/main'                   // token
-
 const init = function () {
-
     const wsProvider = new ethers.providers.WebSocketProvider('choose url_auth or url_token by your created type');
 
     wsProvider.on("pending", (tx) => {
@@ -192,6 +183,7 @@ const init = function () {
         setTimeout(function () {
             wsProvider.destroy()
         }, 1000);
+
 
     });
 
@@ -204,12 +196,9 @@ init();
 
 ```javascript
 const WebSocket = require('ws');
-
 const url_auth = 'wss://username:password@apis.ankr.com/wss/xxxxx/xxxxx/okexchain/full/main'    // authentication
 const url_token = 'wss://d@apis.ankr.com/wss/xxxxx/xxxxx/okexchain/full/main'                   // token
-
 const request = '{"id": 1, "method": "eth_subscribe", "params": ["newPendingTransactions"]}';  
-
 const ws = new WebSocket('choose url_auth or url_token by your created type');
 
 ws.on('open', function open() {

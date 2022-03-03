@@ -5,11 +5,16 @@ id: avax-api
 
 # Avalanche API
 
+
+# Develop on Avalanche
+
 Ankr allows users to create their own Avalanche APIs with a variety of options for request call limits, archived data, and more. Ankr also offers full API capabilities with Ortelius, the Avalanche indexer that provides users with archived information. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 
 ## Get started on Avalanche
 
-1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
+
+1. Login or set up an account on [**app.ankr.com**](https://app.ankr.com/api/)
+
 2. [**Create API**](https://app.ankr.com/apps/api)
 
 ## Network Types Available on Ankr
