@@ -54,11 +54,13 @@ import TabItem from '@theme/TabItem';
 
 ```go
 package main
+
 import (
     "context"
     "fmt"
     "github.com/ethereum/go-ethereum/ethclient"
 )
+
 func main() {
     const url_auth = "https://username:password@apis.ankr.com/xxxxx/xxxxx/terra/full/columbus"    // authentication
     const url_token = "https://apis.ankr.com/xxxxx/xxxxx/terra/full/columbus"                     // token
@@ -83,9 +85,11 @@ func main() {
 
 ```javascript
 const Web3 = require('web3');
+
 const url_auth = 'https://username:password@apis.ankr.com/xxxxx/xxxxx/terra/full/columbus'    // authentication
 const url_token = 'https://apis.ankr.com/xxxxx/xxxxx/terra/full/columbus'                     // token
 const web3 = new Web3(new Web3.providers.HttpProvider("choose url_auth or url_token by your created type"));
+
 web3.eth.getBlockNumber((error, blockNumber) => {
     if(!error){
         console.log(blockNumber);
@@ -113,6 +117,7 @@ def test_block_number(self):
 ```bash
 # authentication
 $ curl -X POST -H "Authorization: Basic MTIzNDU2OjEyMzQ1Ng==" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/terra/full/columbus
+
 # token
 $ curl -X POST -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' https://apis.ankr.com/xxxxx/xxxxx/terra/full/columbus
 ```
