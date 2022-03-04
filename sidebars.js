@@ -1,21 +1,11 @@
 module.exports = {
-  aboutSidebar: {
-  'About': [
+  aboutSidebar: [
     {
-        type: 'category',
-        label: 'About',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-    'About/about-ankr', 
-    'About/ankr-vision',
-    'About/ankr-approach', 
-    'About/ankr-solutions'
-               ],
+      type: 'doc',
+      id: 'About/about-ankr',
+      label: '⚓️ About Ankr',
     },
-            ],
-                },
+    ],
   buildSidebar: {
   'Build': [
     {
