@@ -5,7 +5,7 @@
     title: "Welcome to Ankr Docs",
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/docs/',
+    baseUrl: '/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -51,27 +51,10 @@
           },
           items: [
             {
-              type: "dropdown",
-              label: "⚓️  About",
+              type: "doc",
+              docId: "About/about-ankr",
               position: "right",
-              items: [
-                {
-                  to: "docs/category/about",
-                  label: "About Ankr",
-                },
-                {
-                  to: "docs/about/ankr-vision",
-                  label: "Ankr Vision",
-                },
-                {
-                  to: "docs/about/ankr-approach",
-                  label: "Ankr Principles",
-                },
-                {
-                  to: "docs/about/ankr-solutions",
-                  label: "Ankr Solutions",
-                },
-              ],
+              label: "⚓️ About Ankr",           
             },
             {
               type: "dropdown",
