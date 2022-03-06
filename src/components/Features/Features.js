@@ -4,47 +4,51 @@ import styles from "./Features.module.css";
 import ArrowIcon from '../../../static/img/feature/arrow.svg';
 
 const FeatureList = [
-  {
-    title: "Connect and Build",
+  { 
+    title: "Connect ＆ Build",
     icon: require("../../../static/img/feature/build-icon.png").default,
     list: [
-      'For Developers, Product Owners and Providers',
-      'Easy access to our Multi-Chain RPC & Ankr Protocol',
-      '40+ Nodes',
-      'Docs, Guides and Tutorials'
+
+      'Access Premium APIs and RPC endpoints with WebSockets',
+      'Seamless interaction with 40+ supported blockchains',
+      'Expansive library of docs, tutorials, and learning resources',
+      'Suitable for web3 developers and enthusiasts of all skill levels',
     ],
     link: 'https://www.ankr.com/docs/docs/Build/Concepts/build-concepts',
+
   },
   {
-    title: "Stake and Earn",
+    title: "Stake ＆ Earn",
     icon: require("../../../static/img/feature/earn-icon.png").default,
     list: [
-      'For Individuals, Integrators and Institutions',
-      'Multi-Chain staking solutions that bridge PoS to DeFi',
-      'Decentralized & Secure',
-      'Docs, Guides and Tutorials'
+      'Easily stake 5+ tokens on a secure, decentralized network',
+      'Earn rewards on tokens without needing technical knowledge',
+      'Connect staking rewards to DeFi to trade/interact with dApps',
+      'Make use of our multi-chain toolkit bridging DeFi with PoS',
     ],
+
     link: 'https://www.ankr.com/docs/docs/Earn/Concepts/earn-overview',
+
   },
   {
-    title: "Tokens and Governance",
+    title: "Tokens ＆ Governance",
     icon: require("../../../static/img/feature/token-icon.png").default,
     list: [
-      'For Ankr Community Token Holders',
-      'ANKR Token utility across the Ankr Product Suite',
-      'ANKR Tokens and Governance',
-      'Tokenomics'
+      'Get the latest updates on $ANKR tokenomics',
+      'Utilize $ANKR token utility across our product suite',
+      'Participate in on-chain governance by holding $ANKR',
+      'Pay for services on the Ankr platform with $ANKR',
     ],   
     link: 'https://www.ankr.com/docs/docs/category/%EF%B8%8F-governance',
   },
   {
-    title: "Community",
+    title: "Ankr Community",
     icon: require("../../../static/img/feature/community-icon.png").default,
     list: [
-      'For Everyone',
-      'Connect with the Ankr Community',
-      'Find out how to contribute to the Ankr Project',
-      'Find out more about Ankr Grants'
+      'Connect with a global community of Ankr enthusiasts',
+      'Get the latest updates on all things Ankr',
+      'Support the growth and development of web3 infrastructure',
+      'Discover opportunities for grants, partnerships, and more', 
     ],
     link: 'https://www.ankr.com/docs/docs/Community/channels',
   }
@@ -68,7 +72,7 @@ function Feature({ icon, title, list, description, link }) {
   );
 }
 
-export default function Features() {
+export default function Features() { 
   return (
     <section className={styles.features}>
       <div className={styles.container}>
