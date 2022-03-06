@@ -4,7 +4,7 @@ id: welcome
 slug: /
 ---
 # Welcome to Ankr Docs
-Your single-source-of-truth on Ankr products and services.
+## Your Source of Truth for Ankr's Products and Services
 
 This documentation is to support you to get up and running with Ankr Solutions.
 

@@ -288,7 +288,7 @@ earnSidebar: {
       ],
     },       
   governanceSidebar: {
-    'Governance': [
+    'Tokens+Governance': [
       {
         type: 'category',
         label: '⚖️ Governance',
