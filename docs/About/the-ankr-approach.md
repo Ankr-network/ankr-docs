@@ -4,7 +4,7 @@ id: ankr-approach
 ---
 # The Ankr Approach
 
-# We are Chain Neutral
+## We are Chain Neutral
 
 Ankr is a single platform that provides multiple different chains without advocating for any particular chain over another. 
 
@@ -19,7 +19,7 @@ One consideration is whether they want users to hold crypto assets on ETH (ERC20
 
 Ankr is at the forefront of addressing these limitations. By working closely with developers, Ankr has pioneered the building of tools for cross-chain interoperability.
 
-# We are committed to Full Decentralization
+## We are committed to Full Decentralization
 
 Decentralization is a corner stone of Ankr's purpose.
 
@@ -41,12 +41,12 @@ Since then, Ankr has evolved to focus exclusively on serving the crypto economy 
 
 * The Community owns and secures the service.
 
-# We are on a path towards being a DAO.
+## We are on a path towards being a DAO.
 
 Ankr is on a solid pathway towards being governed by its community through the ANKR DAO (Decentralized Autonomous Organization). Institutional investors will not be allowed to buy up the majority of tokens, hence ensuring the community is in power. 
 
 
-# Web 3.0
+## Web 3.0
 
 Web 3.0 - The Next Generation of Internet
 Mass adoption of Web 3.0 by individuals, developers and enterprises is key to securing the next stage of the internet.
@@ -57,4 +57,3 @@ The key innovation of these networks is the creation of platforms that no single
 Blockchain technology underlies the decentralization that is essential to the formation of Web 3.0 because it is open, trustless and permissionless. Decentralization and the enablement of value transfers between peers are the key building blocks of Web 3.0.
 
 Ankr provides Web 3.0 infrastructure for individuals, developers, and enterprises.
-

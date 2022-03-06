@@ -17,15 +17,10 @@ function HomepageHeader() {
           <h1 className={styles.title}>{siteConfig.title}</h1>
           <p className={styles.subTitle}>{siteConfig.tagline}</p>{" "}
           <div className={styles.buttons}>
-            <Link
-              className={styles.button}
-              to="http://www.ankr.com"
-              target="_blank"
-            >
-              Meet Ankr
-            </Link>
-            <Link className={styles.button} to="https://github.com/Ankr-network/ankr-docs/issues/new?labels=Tutorial&template=submit-a-tutorial.md">
-              Submit a tutorial
+            
+
+            <Link className={styles.button} to="https://www.ankr.com/docs/docs/Tutorials/submit-tutorial">
+              Contribute to Ankr Docs
             </Link>
           </div>
         </div>
@@ -35,7 +30,7 @@ function HomepageHeader() {
   );
 }
 
-export default function Home() {
+export default function Home() { 
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout title={`${siteConfig.title}`} description="Ankr Docs">
