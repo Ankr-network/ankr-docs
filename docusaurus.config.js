@@ -4,9 +4,10 @@
   module.exports = {
     title: "Welcome to Ankr Docs",
 
-    tagline: "Your Source of Truth for Products and Services by Ankr",
-    url: "https://www.ankr.com/",
-    baseUrl: '/docs/',
+    tagline: "Your single-source-of-truth on Ankr products and services",
+    url: "https://www.ankr.com",
+    baseUrl: '/',
+
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -52,27 +53,11 @@
           },
           items: [
             {
-              type: "dropdown",
-              label: '⚓️' + Array(2).fill('\xa0').join('') + 'About',
+
+              type: "doc",
+              docId: "About/about-ankr",
               position: "right",
-              items: [
-                {
-                  to: "docs/category/about",
-                  label: "About Ankr",
-                },
-                {
-                  to: "docs/about/ankr-vision",
-                  label: "Our Vision",
-                },
-                {
-                  to: "docs/about/ankr-approach",
-                  label: "Our Principles",
-                },
-                {
-                  to: "docs/about/ankr-solutions",
-                  label: "Our Solutions",
-                },
-              ],
+              label: "⚓️ About Ankr",           
             },
             {
               type: "dropdown",

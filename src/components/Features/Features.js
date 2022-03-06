@@ -8,12 +8,14 @@ const FeatureList = [
     title: "Connect ＆ Build",
     icon: require("../../../static/img/feature/build-icon.png").default,
     list: [
-      'Access Premium APIs  and RPC endpoints with WebSockets',
+
+      'Access Premium APIs and RPC endpoints with WebSockets',
       'Seamless interaction with 40+ supported blockchains',
       'Expansive library of docs, tutorials, and learning resources',
       'Suitable for web3 developers and enthusiasts of all skill levels',
     ],
-    link: ' ',
+    link: 'https://www.ankr.com/docs/docs/Build/Concepts/build-concepts',
+
   },
   {
     title: "Stake ＆ Earn",
@@ -24,7 +26,9 @@ const FeatureList = [
       'Connect staking rewards to DeFi to trade/interact with dApps',
       'Make use of our multi-chain toolkit bridging DeFi with PoS',
     ],
-    link: ' ',
+
+    link: 'https://www.ankr.com/docs/docs/Earn/Concepts/earn-overview',
+
   },
   {
     title: "Tokens ＆ Governance",
@@ -35,7 +39,7 @@ const FeatureList = [
       'Participate in on-chain governance by holding $ANKR',
       'Pay for services on the Ankr platform with $ANKR',
     ],   
-    link: '',
+    link: 'https://www.ankr.com/docs/docs/category/%EF%B8%8F-governance',
   },
   {
     title: "Ankr Community",
@@ -46,7 +50,7 @@ const FeatureList = [
       'Support the growth and development of web3 infrastructure',
       'Discover opportunities for grants, partnerships, and more', 
     ],
-    link: '',
+    link: 'https://www.ankr.com/docs/docs/Community/channels',
   }
 ];
 
