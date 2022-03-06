@@ -9,11 +9,11 @@ const FeatureList = [
     icon: require("../../../static/img/feature/build-icon.png").default,
     list: [
       'For Developers, Product Owners and Providers',
-      'Easy access tp our Multi-Chain RPC & Ankr Protocol',
+      'Easy access to our Multi-Chain RPC & Ankr Protocol',
       '40+ Nodes',
       'Docs, Guides and Tutorials'
     ],
-    link: '',
+    link: 'https://www.ankr.com/docs/docs/Build/Concepts/build-concepts',
   },
   {
     title: "Stake and Earn",
@@ -24,7 +24,7 @@ const FeatureList = [
       'Decentralized & Secure',
       'Docs, Guides and Tutorials'
     ],
-    link: '',
+    link: 'https://www.ankr.com/docs/docs/Earn/Concepts/earn-overview',
   },
   {
     title: "Tokens and Governance",
@@ -35,7 +35,7 @@ const FeatureList = [
       'ANKR Tokens and Governance',
       'Tokenomics'
     ],   
-    link: '',
+    link: 'https://www.ankr.com/docs/docs/category/%EF%B8%8F-governance',
   },
   {
     title: "Community",
@@ -46,7 +46,7 @@ const FeatureList = [
       'Find out how to contribute to the Ankr Project',
       'Find out more about Ankr Grants'
     ],
-    link: '',
+    link: 'https://www.ankr.com/docs/docs/Community/channels',
   }
 ];
 
