@@ -9,7 +9,7 @@ Ankr Premium gives you all the benefits of Public RPCs with additional exclusive
 
 ### Premium Plan
 
-Deposit 10000 ANKR for 1 year.
+Annual Fee: 10000 ANKR
 
 :::note
 
