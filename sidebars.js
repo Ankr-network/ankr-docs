@@ -26,6 +26,7 @@ module.exports = {
         },
         items: [
           'Build/Get-Started/build-start',
+          'Build/Get-Started/pricing',
         ],
       },
       {
