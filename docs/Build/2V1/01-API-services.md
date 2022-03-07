@@ -23,10 +23,8 @@ Connecting to chains requires using JSON-RPC API from a client to query smart co
 The following refers to the Architecture diagram below:
 
 1. Chains being validated 
-
-​ 
+ 
 2. Nodes A, B, C are distinct nodes providing validation of transactions and finality.
-
 ​ 
 3. The Node Cluster ensures the redirection of data from any nodes in an error state to a working node. It provides API Endpoints to interface with the Developer API and automatically syncs in real-time with it.
 
