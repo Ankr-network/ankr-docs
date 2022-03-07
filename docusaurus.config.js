@@ -6,7 +6,7 @@
 
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/',
+    baseUrl: '/docs/',
 
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
