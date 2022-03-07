@@ -5,15 +5,15 @@ id: pricing
 
 # Product Pricing Plans
 
-## V2 - Public RPCs
+## 📌 V2 - Public RPCs
 
-Free
+**Free**
 
-## V2 - Premium RPCs
+## 📌 V2 - Premium RPCs
 
-Annual Fee: 10000 ANKR 
+Annual Fee: **10000 ANKR** 
 
-## V1 - API Services
+## 📌 V1 - API Services
 
 We offer 5 flexible options and pricing plans to suit all budgets and
 requirements.
