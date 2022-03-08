@@ -12,7 +12,7 @@ NEAR developers can host serverless applications and smart contracts that easily
 Near is not compatible with the Ethereum Virtual Machine.  All contract code is deployed and run inside a WASM Compatible Virtual Machine. 
 :::
 
-# Quick Links
+## Quick Links
 
 [**Near Protocol**](https://near.org/)
 
@@ -20,7 +20,9 @@ Near is not compatible with the Ethereum Virtual Machine.  All contract code is 
 
 [**Github**](https://github.com/near)
 
-# Connect Wallet
+---
+
+## Connect Wallet
 
 The NEAR Protocol has its own NEAR Wallet. This is an in-browser, web-based wallet for creating and interacting with NEAR accounts.&#x20;
 

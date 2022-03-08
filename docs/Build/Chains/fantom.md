@@ -15,7 +15,9 @@ id: fantom
 
 [**Github**](https://github.com/Fantom-Foundation)
 
-# Integrate Wallet
+---
+
+## Connect Wallet
 
 You can set up your **MetaMask wallet** to connect to Fantom RPC. You can then perform transactions and interact with the network.
 

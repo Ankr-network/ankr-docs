@@ -19,7 +19,9 @@ EVM-compatibility permits support for Ethereum tools and DApps.&#x20;
 
 [**Github**](https://github.com/binance-chain)
 
-# Integrate Wallet
+---
+
+## Connect Wallet
 
 You can set up your **MetaMask wallet** to connect to BSC RPC. You can then perform transactions and interact with the network.
 
