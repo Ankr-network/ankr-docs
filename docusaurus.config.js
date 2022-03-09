@@ -37,9 +37,8 @@
         }),
       ],
     ],
-    themeConfig:
+    themeConfig: {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-      {
         algolia: {
           // The application ID provided by Algolia
           appId: '1QEPYCGV3Q',
