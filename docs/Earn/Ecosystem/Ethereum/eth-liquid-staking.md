@@ -1,5 +1,5 @@
 ---
-title: Eth Liquid Staking
+title: ETH Liquid Staking
 id: eth-liquid-staking
 ---
 

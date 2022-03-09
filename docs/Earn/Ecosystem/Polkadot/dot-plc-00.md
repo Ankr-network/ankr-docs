@@ -1,9 +1,9 @@
 ---
-title: 00 Before you Start
+title: 00 - Before you Start
 id: dot-plc-00
 ---
 
-# 00 **Before you Start**
+# 00 - **Before you Start**
 
 Let's get you prepared for Polkadot Slot Auctions and Parachain Liquid Crowdloans.
 
@@ -17,7 +17,7 @@ Let's get you prepared for Polkadot Slot Auctions and Parachain Liquid Crowdloan
 5. OPTION: You can use a Ledger Nano X
 :::
 
-## 01 Install Polkadot Wallet
+## 01 - Install Polkadot Wallet
 
 1. Go to the [**Chrome Store and access the Polkadot Wallet**](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
 
@@ -29,7 +29,7 @@ Let's get you prepared for Polkadot Slot Auctions and Parachain Liquid Crowdloan
 
 5. Give your wallet a name and select ‘_**Any Chain**_'‌
 
-## 02 Transfer DOT to your Polkadot extension wallet
+## 02 - Transfer DOT to your Polkadot extension wallet
 
 :::info
 **Wallets to use to transfer Polkadot**

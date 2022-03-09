@@ -5,7 +5,7 @@ id: terra-api
 
 # Terra API
 
-# Develop on Terra
+## Develop on Terra
 
 Ankr allows users to create their own Terra ‘Columbus-4’ network APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 

@@ -5,7 +5,7 @@ id: fantom-api
 
 # Fantom API
 
-# Develop on Fantom
+## Develop on Fantom
 
 Ankr allows users to create their own full Fantom APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 

@@ -4,12 +4,12 @@ id: earn-wallets
 ---
 
 The following hot wallets are compatible with Ankr Earn: 
-* MetaMask
-* imToken
-* WalletConnect
-* Math Wallet
-* Trust Wallet
-* Huobi Wallet
+* [MetaMask](https://metamask.io)
+* [imToken](https://www.token.im/)
+* [WalletConnect](https://walletconnect.com/)
+* [Math Wallet](https://www.mathwallet.org/)
+* [Trust Wallet](https://trustwallet.com/)
+* [Huobi Wallet](https://www.huobiwallet.io/)
 
 You can also use **Ledger Nano S** cold wallet. 
 

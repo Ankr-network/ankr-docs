@@ -1,9 +1,9 @@
 ---
-title: 01 Stake Matic
+title: 01 - Stake Matic
 id: stake-matic-01
 ---
 
-## 01 Connect your Wallet
+## 01 - Connect your Wallet
 
 1. Navigate to the [Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) platform.
 
@@ -12,7 +12,7 @@ id: stake-matic-01
 4. Select the wallet you wish to connect to and **authorize** the connection to proceed.
 5. Successful connection to **Ankr Earn** is indicated at top right corner.
 
-## 02 Stake your MATIC
+## 02 - Stake your MATIC
 
 1. From the **Staking Dashboard**, click the '**+**' button to stake MATIC.
 

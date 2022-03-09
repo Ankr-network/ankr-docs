@@ -6,7 +6,7 @@ id: clover-api
 # Clover API
 
 
-# Develop on Clover
+## Develop on Clover
 
 The Clover Finance chain is a powerful multi-chain tool that helps to enable a more interconnected Web 3.0 environment. They also offer a developer incentive program to encourage building on the platform.
 

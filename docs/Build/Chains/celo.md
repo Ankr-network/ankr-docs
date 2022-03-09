@@ -41,9 +41,9 @@ You can set up your **MetaMask wallet** to connect to Celo RPC. You can then per
 |           | SYMBOL:                 | CELO                                                   |
 |           | BLOCK EXPLORER URL:     | [https://explorer.celo.org](https://explorer.celo.org) |
 
-# Integrate CLI
+## Integrate CLI
 
-## web3 library
+### web3 library
 
 clientVersion
 

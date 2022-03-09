@@ -1,5 +1,5 @@
 ---
-title: 01 Stake KSM
+title: 01 - Stake KSM
 id: stake-ksm-01
 ---
 
@@ -13,7 +13,7 @@ If not, check out[KSM - 00 Before you Start](ksm-staking-00.md) for guidance.
 
 :::
 
-## 01 Connect your Wallet
+## 01 - Connect your Wallet
 
 1. Visit  [**Ankr Earn**](https://stakefi.ankr.com/) and click the *'Launchpad'* button.
 
@@ -22,7 +22,7 @@ If not, check out[KSM - 00 Before you Start](ksm-staking-00.md) for guidance.
 3. Your ```Polkadot.js wallet``` pops up requesting **'authorization'** to connect to Ankr Earn.
 Click to allow access.
 
-## 02 Stake Desired Amount
+## 02 - Stake Desired Amount
 
 1. The **KSM Staking Dashboard** opens
 

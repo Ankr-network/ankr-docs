@@ -16,6 +16,7 @@ id: polygon
 
 [**Github**](https://github.com/maticnetwork/)
 
+
 ---
 
 ## Connect Wallet
@@ -40,9 +41,9 @@ You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then 
 ## Integrate Code
 
 
-## web3 library
+### web3 library
 
- clientVersion
+POST clientVersion
 
 ```
 https://rpc.ankr.com/polygon
@@ -58,11 +59,11 @@ none
 
 `String` - The current client version
 
-#### HEADERS
+#### Header
 
 **Content-Type** application/json
 
-**BODY**
+#### Body
 
 raw
 

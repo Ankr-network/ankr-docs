@@ -1,5 +1,5 @@
 ---
-title: 01 Participate in Crowdloan
+title: 01 - Participate in Crowdloan
 id: dot-plc-01
 ---
 
@@ -18,7 +18,7 @@ This walkthrough assumes you have:
 If not, check out [Before you Start](dot-plc-00.md) for guidance.
 :::
 
-## 01 Open the Parachain Liquid Crowdloans App
+## 01 - Open the Parachain Liquid Crowdloans App
 
 1. Visit the [Parachain Liquid Crowdloans](https://stakefi.ankr.com/parachain-bonds) website and click ‘_Launch App_’
 
@@ -26,7 +26,7 @@ If not, check out [Before you Start](dot-plc-00.md) for guidance.
 
 ![Parachain App](@site/static/img/parachain-app.png)
 
-## 02 Connect your Wallets
+## 02 - Connect your Wallets
 
 - Select ‘_**Connect Polkadot Wallet** '_ to open the **Wallet** popup.
 
@@ -44,7 +44,7 @@ A successful connection is indicated by the upper right hand corner displaying y
 - Select the **polkadot address** you wish to use to make a deposit.
 
 
-## 03 Contribute to the desired Project
+## 03 - Contribute to the desired Project
 
 1 Select the **Project** you want to support and click '**Contribute DOT**'. 
 - Enter the amount of DOT to contribute

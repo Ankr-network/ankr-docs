@@ -1,5 +1,5 @@
 ---
-title: 02 Claim Liquidity Tokens
+title: 02 - Claim Liquidity Tokens
 id: stake-dot-02
 ---
 
