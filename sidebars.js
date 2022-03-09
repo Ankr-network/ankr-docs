@@ -26,6 +26,7 @@ module.exports = {
         },
         items: [
           'Build/Get-Started/build-start',
+          'Build/Get-Started/pricing',
         ],
       },
       {
@@ -288,7 +289,7 @@ earnSidebar: {
       ],
     },       
   governanceSidebar: {
-    'Governance': [
+    'Tokens+Governance': [
       {
         type: 'category',
         label: '⚖️ Governance',

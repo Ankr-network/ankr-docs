@@ -11,7 +11,7 @@ tags:
 
 **By Gábor Boros**
 
-![Gábor Boros](gabor.jpeg)
+![Gábor Boros](gabor.png)
 
 _Disclaimer: This tutorial is for experienced programmers with basic knowledge about blockchains and web fundamentals._
 
