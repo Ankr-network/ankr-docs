@@ -3,7 +3,7 @@ title: Premium APIs
 id: premium-apis
 ---
 
-Premium APIs are a collection of exclusive API endpoints exclusively for Premium Subscribers. 
+**Premium APIs** are a collection of exclusive API endpoints exclusively for Premium Subscribers. 
 
 These APIs have been designed to:
 
@@ -40,11 +40,9 @@ Find your keys on the [Ankr Protocol Premium Plan](https://www.ankr.com/protocol
 
 ### Rate Limits
 
-Maximum volume of requests?
-
 For example: 
 
-```
+```js
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -66,6 +64,7 @@ For example:
 
 #### Example Error object
 
+```js
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -74,18 +73,18 @@ For example:
         "message": "blocks range can't be greater than 100"
     }
 }
+```
 
 
 #### Error codes and fixes
 
-<Exhaustive list of error codes needed>
 
 |Message  | Solution |
 |---------|----------|
 |blocks range can't be greater than 100 | try again |
 
 
-# ADVANCED API ENDPOINTS
+## Premium Endpoints
 
 ## **ankr_getBlocksRange**
 
@@ -109,6 +108,7 @@ For example:
 
 #### Example Request
 
+```js
 {
     "jsonrpc": "2.0",
     "method": "ankr_getBlocksRange",
@@ -119,10 +119,11 @@ For example:
     },
     "id": 67
 }
+```
 
 #### Example Response (Extract)
 
-```
+```js
 {
     "jsonrpc": "2.0",
     "id": 67,
@@ -189,7 +190,7 @@ For example:
 
 TBD Attributes to be explained (see Solidity Docs)
 
-##**ankr_getNFTsByOwner**
+## **ankr_getNFTsByOwner**
 
 Obtains detailed information about NFTs from a wallet address across multiple chains (currently 5 chains: Polygon, Avalanche, Ethereum, Binance Smart Chain, <other chain?>
 
@@ -209,7 +210,7 @@ Obtains detailed information about NFTs from a wallet address across multiple ch
 
 #### Example Request
 
-```
+```js
 {
     "jsonrpc": "2.0",
     "method": "ankr_getNFTsByOwner",
@@ -222,7 +223,7 @@ Obtains detailed information about NFTs from a wallet address across multiple ch
 
 #### Example Response (Extract)
 
-```
+```js
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -250,17 +251,15 @@ Obtains detailed information about NFTs from a wallet address across multiple ch
 
 TBD Attributes to be explained (see Solidity Docs)
 
-"blockchain": 
-"name": 
-"tokenId": 
-"imageUrl": 
-"collectionName": "",
-"symbol": "",
-"contractType": 
-"contractAddress": 
-"traits": []
-"nextPageToken":
-
-
-
-
+|Attribute | Description|
+|----------|------------|
+|"blockchain":|-|
+|"name":|-|
+|"tokenId":|-|
+|"imageUrl":|-|
+|"collectionName":| ""|
+|"symbol":| ""|
+|"contractType": |-|
+|"contractAddress": |-|
+|"traits":| [] |
+|"nextPageToken":|-|

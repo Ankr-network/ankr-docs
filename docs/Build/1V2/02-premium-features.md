@@ -1,5 +1,5 @@
 ---
-title: 02 Premium
+title: 02 Premium RPCs
 id: premium-rpc
 ---
 
