@@ -64,7 +64,7 @@ module.exports = {
         },
       {
         type: 'category',
-        label: '❏ V1 Products',
+        label: 'V1 Products',
         link: {
           type: 'generated-index',
         },

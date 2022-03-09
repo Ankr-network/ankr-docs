@@ -17,7 +17,7 @@ The Ethereum network is one of the most popular platforms for building dApps and
 
 [**Github**](https://github.com/ethereum/eth1.0-apis)
 
-# Integrate Wallet
+## Integrate Wallet
 
 You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then perform transactions and interact with the network.
 
@@ -36,11 +36,9 @@ You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then
 |           | BLOCK EXPLORER URL:     | https://etherscan.io/     |
 
 
-# Integrate CLI
+## Integrate CLI
 
-## Ethereum
-
-## web3 library
+### web3 library
 
  clientVersion
 

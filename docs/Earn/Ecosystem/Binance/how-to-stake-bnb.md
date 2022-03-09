@@ -1,5 +1,5 @@
 ---
-title: 01 Stake BNB
+title: 01 - Stake BNB
 id: stake-bnb-01
 ---
 

@@ -15,7 +15,7 @@ id: fantom
 
 [**Github**](https://github.com/Fantom-Foundation)
 
-# Integrate Wallet
+## Integrate Wallet
 
 You can set up your **MetaMask wallet** to connect to Fantom RPC. You can then perform transactions and interact with the network.
 
@@ -34,11 +34,9 @@ You can set up your **MetaMask wallet** to connect to Fantom RPC. You can then p
 |        |   BLOCK EXPLORER:   | [https://explorer.fantom.network/](https://explorer.fantom.network) |
 
 
-# Integrate CLI
+## Integrate CLI
 
-## Fantom
-
-## web3
+### web3
 
 clientVersion
 

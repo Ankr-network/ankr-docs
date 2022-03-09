@@ -5,7 +5,7 @@ id: huobi-api
 
 # Huobi API
 
-# Develop on Heco
+## Develop on Heco
 
 Ankr allows users to create their own Heco Tinder and Heco Tinder Archive APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 

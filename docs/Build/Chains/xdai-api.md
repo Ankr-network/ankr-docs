@@ -5,7 +5,7 @@ id: xdai-api
 
 # XDai API
 
-# Develop on xDai
+## Develop on xDai
 
 Ankr allows users to create their own full and archive xDai Stablechain APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users. \
 

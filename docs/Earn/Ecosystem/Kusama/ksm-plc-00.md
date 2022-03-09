@@ -1,9 +1,9 @@
 ---
-title: 00 Before you Start
+title: 00 - Before you Start
 id: ksm-plc-00
 ---
 
-# 00 Before you Start
+# 00 - Before you Start
 
 :::info Ensure the following:
 
@@ -17,7 +17,7 @@ You have the required amount of KSM you wish to contribute in your Polkadot wall
 You have a Metamask wallet.
 :::
 
-## 01 Install Polkadot Wallet
+## 01 - Install Polkadot Wallet
 
 1. Go to the [Chrome Store and access the Polkadot Wallet](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
 
@@ -31,7 +31,7 @@ You have a Metamask wallet.
 
 
 
-## 02 Transfer KSM to your Polkadot extension wallet
+## 02 - Transfer KSM to your Polkadot extension wallet
 
 :::info Wallets to use to transfer Polkadot
 

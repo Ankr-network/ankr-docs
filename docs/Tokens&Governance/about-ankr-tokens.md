@@ -22,5 +22,5 @@ ANKR tokens are for anyone interested in Web 3.0 and Ankr Projects.
 
 * ANKR tokens are a way to commit to the future progress of the Ankr Network.. If you want to have a say in the network, ANKR holders can participate in governance and vote on upgrades and technical changes to the network.
 
-# ANKR Market Information
+## ANKR Market Information
 Check out [Etherscan](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4) to find real-time data on ANKR tokens
