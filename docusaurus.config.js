@@ -45,7 +45,6 @@
     
           // Public API key: it is safe to commit it
           apiKey: 'f4be66fb86f3b7f7abddb567e980f14c',
-    
           indexName: 'ankr-docs',
         },
         colorMode: {
