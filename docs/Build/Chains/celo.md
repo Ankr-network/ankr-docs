@@ -19,6 +19,7 @@ All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that whil
 
 [**Github**](https://github.com/celo-org)
 
+---
 
 ## Connect Wallet
 
