@@ -38,6 +38,7 @@ module.exports = {
             'Build/1V2/protocol',
             'Build/1V2/public-rpc',
             'Build/1V2/premium-rpc',
+            'Build/1V2/premium-apis',
             'Build/1V2/node-ops',
             'Build/1V2/scan'
           ],
