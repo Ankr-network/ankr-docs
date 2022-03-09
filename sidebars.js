@@ -147,6 +147,7 @@ earnSidebar: {
       type: 'generated-index',
     },
     items: [
+
       'Earn/Products/liquid-staking',
       'Earn/Products/delegate-staking',
       'Earn/Products/parachain-crowdloans',
@@ -284,6 +285,7 @@ earnSidebar: {
         items: [
           'Earn/Reference/token-addresses',
           'Earn/Reference/plc-mm',
+          'Earn/Reference/bnb-liquid-staking-mech',
         ],
         },
       ],

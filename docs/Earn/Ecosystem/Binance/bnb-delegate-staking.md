@@ -28,7 +28,7 @@ Ankr is one of the most profitable ways to stake BNB as we are the only validato
 
 #### Delegate Tutorials:
 
-TrustWallet: [https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243](https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243)
+TrustWallet: [BNB Staking with TrustWallet](https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243)
 
 The Binance Chain uses a **proof-of-staked-authority (PoSA**) consensus mechanism updated and operated by 21 validators. Validators must also be elected every 24 hours by **delegators**.
 
