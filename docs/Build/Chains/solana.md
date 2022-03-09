@@ -18,7 +18,7 @@ The Solana architecture combines a set of software algorithms to remove software
 [**Github**](https://github.com/solana-labs/solana)
 
 ---
-# Connect Wallet
+## Connect Wallet
 
 **Solana** is not evm-compatible and therefore MetaMask cannot currently be configured to work with Solana.
 
@@ -26,7 +26,7 @@ Solana does support several types of wallets via usage of the the [Solana native
 
 For developers, [command-line wallets](https://docs.solana.com/wallet-guide/cli) are recommended as new features on the Solana blockchain are supported on the command line first before being integrated into third-party solutions.
 
-# Integrate CLI
+## Integrate CLI
 
 Solana uses it's own command-line tools to interact with a Solana cluster.
 

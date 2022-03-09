@@ -16,7 +16,9 @@ id: polygon
 
 [**Github**](https://github.com/maticnetwork/)
 
-# Integrate Wallet
+---
+
+## Connect Wallet
 
 You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then perform transactions and interact with the network.
 
@@ -35,9 +37,8 @@ You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then 
 |         |   BLOCK EXPLORER:   | [https://explorer.matic.network/](https://explorer.matic.network) |
 
 
-# Integrate Code
+## Integrate Code
 
-## Polygon
 
 ## web3 library
 

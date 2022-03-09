@@ -19,7 +19,9 @@ Avalanche was built specifically with Defi dApps and protocols in mind, focusing
 
 [**Github**](https://github.com/ava-labs)
 
-# Integrate Wallet
+---
+
+## Connect Wallet
 
 You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can then perform transactions and interact with the network.
 

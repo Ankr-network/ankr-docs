@@ -50,6 +50,7 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
+            'Build/Chains/arbitrum',
             'Build/Chains/avalanche',
             'Build/Chains/binance-smart-chain',
             'Build/Chains/celo',
