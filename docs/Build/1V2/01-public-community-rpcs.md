@@ -9,7 +9,7 @@ Public Community RPCs are central to the Ankr vision of mass adoption in Web 3.0
 
 Check out the latest chains at https://www.ankr.com/protocol/public/
 
-Connect to [Chains V2](docs/category/chains-v2)
+Connect to [Chains V2](§category/chains-v2)
 
 Enjoy the following benefits:
 
