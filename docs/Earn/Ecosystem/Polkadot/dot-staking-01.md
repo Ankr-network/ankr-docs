@@ -1,5 +1,5 @@
 ---
-title: 01 Stake DOT
+title: 01 - Stake DOT
 id: stake-dot-01
 ---
 
@@ -13,7 +13,7 @@ If not, check out [DOT - 00 Before you Start](dot-staking-00.md) for guidance.
 
 :::
 
-## 01 Connect your Wallet
+## 01 - Connect your Wallet
 
 1. Visit  [**Ankr Earn**](https://stakefi.ankr.com/) and click the *'Launchpad'* button.
 
@@ -22,7 +22,7 @@ If not, check out [DOT - 00 Before you Start](dot-staking-00.md) for guidance.
 3. Your ```Polkadot.js wallet``` pops up requesting **'authorization'** to connect to Ankr Earn.
 Click to allow access.
 
-## 02 Stake Desired Amount
+## 02 - Stake Desired Amount
 
 1. The **DOT Staking Dashboard** opens
 

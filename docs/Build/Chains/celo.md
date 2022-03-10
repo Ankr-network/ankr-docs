@@ -19,8 +19,9 @@ All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that whil
 
 [**Github**](https://github.com/celo-org)
 
+---
 
-# Connect Wallet
+## Connect Wallet
 
 You can set up your **MetaMask wallet** to connect to Celo RPC. You can then perform transactions and interact with the network.
 
@@ -40,9 +41,9 @@ You can set up your **MetaMask wallet** to connect to Celo RPC. You can then per
 |           | SYMBOL:                 | CELO                                                   |
 |           | BLOCK EXPLORER URL:     | [https://explorer.celo.org](https://explorer.celo.org) |
 
-# Integrate CLI
+## Integrate CLI
 
-## web3 library
+### web3 library
 
 clientVersion
 

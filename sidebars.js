@@ -50,6 +50,7 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
+            'Build/Chains/arbitrum',
             'Build/Chains/avalanche',
             'Build/Chains/binance-smart-chain',
             'Build/Chains/celo',
@@ -64,7 +65,7 @@ module.exports = {
         },
       {
         type: 'category',
-        label: '❏ V1 Products',
+        label: 'V1 Products',
         link: {
           type: 'generated-index',
         },

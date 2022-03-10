@@ -124,7 +124,7 @@ main .container {
 }
 @media (max-width: 960px) {
   main .container {
-    padding: 32px 16px 46px 16px !important;
+    padding: 32px 16px 0 16px !important;
   }
 }
 aside {
@@ -239,7 +239,7 @@ aside nav {
   color: #1f2226;
   opacity: 0.8;
   display: inline;
-  position: static;
+  position: relative;
   float: right;
   max-width: 300px;
   white-space: nowrap;

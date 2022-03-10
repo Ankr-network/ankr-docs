@@ -1,5 +1,5 @@
 ---
-title: 02 What Next?
+title: 02 - What's Next?
 id: ksm-plc-02
 ---
 
