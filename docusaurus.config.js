@@ -119,7 +119,7 @@
                   label: "Switch",
                 },
                 {
-                  to: "category/-reference",
+                  to: "category/reference",
                   label: "Reference",
                 },
               ],

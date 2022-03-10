@@ -50,6 +50,6 @@ Estimate the fair value of Parachain Liquid Crowdloan tokens and buy below your 
 
 Parachain Liquid Crowdloans are available [here](https://stakefi.ankr.com/parachain-bonds)!
 
-Read about [Parachain Liquid Crowdloan Market Makers](../Reference/parachain-market-makers.md)
+Read about Parachain Liquid Crowdloan Market Makers
 
 

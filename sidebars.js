@@ -177,18 +177,16 @@ earnSidebar: {
       items: [
       ]
     },
-    {
-        type: 'category',
-        label: 'Reference',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-          'Earn/reference/token-addresses',
-          'Earn/reference/plc-mm',
-          'Earn/reference/bnb-liquid-staking-mech',
-        ],
-        },
+        {
+      type: 'category',
+      label: 'Reference',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+       'Earn/reference/liquidity-tokens',
+      ]
+    },
       ],
     },       
   governanceSidebar: {
