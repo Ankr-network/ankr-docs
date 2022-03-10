@@ -119,174 +119,74 @@ module.exports = {
 earnSidebar: {
   'Earn': [
     {
-        type: 'category',
-        label: '💡 Concepts',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-          'Earn/Concepts/earn-overview',
-          'Earn/Concepts/earn-foundations'
-        ],
-    },
-    {
       type: 'category',
-      label: '📚 Guides',
+      label: 'Liquid Staking',
       link: {
         type: 'generated-index',
       },
       items: [
-        'Earn/Guides/earn-wallets',
-        'Earn/Guides/liquidity-dex',
-        'Earn/Guides/earn-yield'
-      ]
-  },
-  {
-    type: 'category',
-    label: '🛍 Products',
-    link: {
-      type: 'generated-index',
-    },
-    items: [
-
-      'Earn/Products/liquid-staking',
-      'Earn/Products/delegate-staking',
-      'Earn/Products/parachain-crowdloans',
-      'Earn/Products/boost',
-    ],
-  },
-    {
+        'Earn/liquid-staking/liquid-staking-overview',
+      {
       type: 'category',
-      label: '🌳 Ecosystems',
+      label: 'BNB',
       link: {
         type: 'generated-index',
-    },
+      },
       items: [
-        {
-        type: 'category',
-        label: 'Binance',
-        link: {
-          type: 'doc',
-          id: 'Earn/Ecosystem/Binance/binance-eco',
-        },
-        items: [
-          'Earn/Ecosystem/Binance/bnb-delegate-staking',
-          'Earn/Ecosystem/Binance/bnb-liquid-staking',
-          'Earn/Ecosystem/Binance/stake-bnb-00',
-          'Earn/Ecosystem/Binance/stake-bnb-01',
-          'Earn/Ecosystem/Binance/stake-bnb-02',
-               ],
-       },
-       {
-        type: 'category',
-        label: 'Avalanche',
-        link: {
-          type: 'doc',
-          id: 'Earn/Ecosystem/Avalanche/avalanche-eco',
-        },
-        items: [
-          'Earn/Ecosystem/Avalanche/avax-smart-staking',
-          'Earn/Ecosystem/Avalanche/avax-liquid-staking',
-          'Earn/Ecosystem/Avalanche/stake-avax-00',
-          'Earn/Ecosystem/Avalanche/stake-avax-01',
-          'Earn/Ecosystem/Avalanche/stake-avax-02',
-               ],
-       },
-       {
-        type: 'category',
-        label: 'Ethereum',
-        link: {
-          type: 'doc',
-          id: 'Earn/Ecosystem/Ethereum/ethereum-eco',
-        },
-        items: [
-          'Earn/Ecosystem/Ethereum/eth-liquid-staking',
-          'Earn/Ecosystem/Ethereum/stake-eth-01',
-          'Earn/Ecosystem/Ethereum/stake-eth-02',
-               ],
-       },
-       {
-        type: 'category',
-        label: 'Fantom',
-        link: {
-          type: 'doc',
-          id: 'Earn/Ecosystem/Fantom/fantom-eco',
-        },
-        items: [
-          'Earn/Ecosystem/Fantom/ftm-delegate-staking',
-          'Earn/Ecosystem/Fantom/ftm-liquid-staking',
-          'Earn/Ecosystem/Fantom/stake-ftm-00',
-          'Earn/Ecosystem/Fantom/stake-ftm-01',
-          'Earn/Ecosystem/Fantom/stake-ftm-02',
-          'Earn/Ecosystem/Fantom/stake-ftm-faq',
-               ],
-       },
-       {
-        type: 'category',
-        label: 'Kusama',
-        link: {
-          type: 'doc',
-          id: 'Earn/Ecosystem/Kusama/ksm-eco',
-        },
-        items: [
-          'Earn/Ecosystem/Kusama/ksm-liquid-staking',
-          'Earn/Ecosystem/Kusama/stake-ksm-00',
-          'Earn/Ecosystem/Kusama/stake-ksm-01',
-          'Earn/Ecosystem/Kusama/stake-ksm-02',
-          'Earn/Ecosystem/Kusama/stake-ksm-faq',
-          'Earn/Ecosystem/Kusama/ksm-plc',
-          'Earn/Ecosystem/Kusama/ksm-plc-00',
-          'Earn/Ecosystem/Kusama/ksm-plc-01',
-               ],
-       },
-       {
-        type: 'category',
-        label: 'Polygon',
-        link: {
-          type: 'doc',
-          id: 'Earn/Ecosystem/Polygon/polygon-eco',
-        },
-        items: [
-          'Earn/Ecosystem/Polygon/matic-liquid-staking',
-          'Earn/Ecosystem/Polygon/stake-matic-00',
-          'Earn/Ecosystem/Polygon/stake-matic-01',
-          'Earn/Ecosystem/Polygon/stake-matic-02',
-          'Earn/Ecosystem/Polygon/stake-matic-03',
-          'Earn/Ecosystem/Polygon/stake-matic-faq',
-               ],
-       },
-       {
-        type: 'category',
-        label: 'Polkadot',
-        link: {
-          type: 'doc',
-          id: 'Earn/Ecosystem/Polkadot/dot-eco',
-        },
-        items: [
-          'Earn/Ecosystem/Polkadot/dot-liquid-staking',
-          'Earn/Ecosystem/Polkadot/stake-dot-00',
-          'Earn/Ecosystem/Polkadot/stake-dot-01',
-          'Earn/Ecosystem/Polkadot/stake-dot-02',
-          'Earn/Ecosystem/Polkadot/stake-dot-faq',
-          'Earn/Ecosystem/Polkadot/dot-plc',
-          'Earn/Ecosystem/Polkadot/dot-plc-00',
-          'Earn/Ecosystem/Polkadot/dot-plc-01',
-          'Earn/Ecosystem/Polkadot/dot-plc-02'
+        'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
+        'Earn/liquid-staking/bnb/stake-bnb',
 
-               ],
-       },
-      ],
+      ]
     },
-       {
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Liquid Crowdloan',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'Earn/liquid-crowdloan/liquid-crowdloan',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'DeFi',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Bridge',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Switch',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+      ]
+    },
+    {
         type: 'category',
-        label: '🗂 Reference',
+        label: 'Reference',
         link: {
           type: 'generated-index',
         },
         items: [
-          'Earn/Reference/token-addresses',
-          'Earn/Reference/plc-mm',
-          'Earn/Reference/bnb-liquid-staking-mech',
+          'Earn/reference/token-addresses',
+          'Earn/reference/plc-mm',
+          'Earn/reference/bnb-liquid-staking-mech',
         ],
         },
       ],

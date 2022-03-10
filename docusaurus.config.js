@@ -6,7 +6,7 @@
 
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/docs',
+    baseUrl: '/docs/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -99,20 +99,24 @@
               position: "right",
               items: [
                 {
-                  to: "category/-concepts",
-                  label: "Concepts",
+                  to: "category/liquid-staking/",
+                  label: "Liquid Staking",
                 },
                 {
-                  to: "category/-guides",
-                  label: "Guides",
+                  to: "category/liquid-crowdloan",
+                  label: "Liquid Crowdloan",
                 },
                 {
-                  to: "category/-products",
-                  label: "Products",
+                  to: "category/defi",
+                  label: "DeFi",
                 },
                 {
-                  to: "category/-ecosystems",
-                  label: "Ecosystems",
+                  to: "category/bridge",
+                  label: "Bridge",
+                },
+                {
+                  to: "category/switch",
+                  label: "Switch",
                 },
                 {
                   to: "category/-reference",
