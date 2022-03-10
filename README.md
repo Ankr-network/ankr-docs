@@ -2,8 +2,8 @@ This documentation is built using [Docusaurus 2](https://docusaurus.io/), a mode
 
 ## Prerequisites:
 
-* GitHub account. Sign up [GitHub.com](https://github.com/).
-* Markdown editor e.g. [Visual Studio Code](https://code.visualstudio.com/download).
+* [GitHub.com](https://github.com/) account. 
+* Markdown editor. For example, [Visual Studio Code](https://code.visualstudio.com/download).
 * Installed and set up [Docusaurus 2](https://docusaurus.io/).
 
 ### Installation
