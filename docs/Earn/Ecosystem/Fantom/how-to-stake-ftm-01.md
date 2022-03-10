@@ -1,11 +1,11 @@
 ---
-title: 01 Stake FTM
+title: 01 - Stake FTM
 id: stake-ftm-01
 ---
 
 # How to stake FTM
 
-## 01 Connect your Wallet
+## 01 - Connect your Wallet
 
 1 . Navigate to the [Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) platform. 
  
@@ -17,7 +17,7 @@ id: stake-ftm-01
 
 5 . Successful connection to **Ankr Earn** is indicated at top right corner.
 
-## 02 Stake your FTM
+## 02 - Stake your FTM
 
 1. From the **Staking Dashboard**, click the '**+**' button to stake FTM.
 

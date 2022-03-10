@@ -1,10 +1,10 @@
 ---
-title: 02 Claim Liquidity Tokens
+title: 02 - Claim Liquidity Tokens
 id: stake-avax-02
 ---
 
 
-## 03 Claim aAVAXb Liquid Staking tokens
+## Claim aAVAXb Liquid Staking tokens
 
 Successful staking results in the issue of **Ankr Reward-Earning Staked AVAX (aAVAXb).**
 

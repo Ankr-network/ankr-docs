@@ -1,11 +1,11 @@
 ---
-title: 01 Participate in Crowdloan
+title: 01 - Participate in Crowdloan
 id: ksm-plc-01
 ---
 
 # Parachain KSM - Get Started
 
-## 01 Open the Parachain Liquid Crowdloans App
+## 01 - Open the Parachain Liquid Crowdloans App
 
 1. Visit the [Parachain Liquid Crowdloans](https://stakefi.ankr.com/parachain-bonds) website and click ‘_Launch App_’\
 
@@ -17,7 +17,7 @@ id: ksm-plc-01
 
 ![Parachain Marketplace](@site/static/img/parachain-market.png)
 
-## 02 Connect your Wallet
+## 02 - Connect your Wallet
 
 1 Select ‘_Connect Polkadot Wallet '_ to open the **Wallet** popup.
 

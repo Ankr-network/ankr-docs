@@ -27,7 +27,7 @@ Use **web3.js** to do the second. That is to write code that reads and writes da
 
 Web3.js is written in NodeJS. You can use it server-side or in a web browser.
 
-## 00 Let’s get started
+## 00 - Let’s get started
 
 1) **Install dependencies**
 
@@ -51,7 +51,7 @@ Add the following to your script to import web3.js
 const Web3 = require('web3');
 ```
 
-## 01 Connect to a Public RPC URL
+## 01 - Connect to a Public RPC URL
 
 :::caution
 
@@ -75,7 +75,7 @@ Add the following to your script (add the chain you wish you to connect to).
 const url = "https://rpc.ankr.com/eth";
 ```
 
-## 02 Let's make some requests
+## 02 - Let's make some requests
 
 Let's display the current block number
 
@@ -93,7 +93,7 @@ Now run your **test-rpc.js** script
 
 ![Example Response](example-js.png)
 
-### 03 Summary
+## 03 - Summary
 
 Here is _**test-rpc.js**_
 

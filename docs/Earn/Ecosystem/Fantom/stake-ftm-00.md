@@ -1,5 +1,5 @@
 ---
-title: 00 Before you Start
+title: 00 - Before you Start
 id: stake-ftm-00
 ---
 

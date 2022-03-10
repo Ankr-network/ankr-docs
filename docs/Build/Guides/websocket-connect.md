@@ -5,7 +5,7 @@ id: websocket-premium
 
 # Connect to Premium Websockets
 
-## 01 Access your premium websocket (wss) endpoint 
+## 01 - Access your premium websocket (wss) endpoint 
 
 Copy your wss endpoint from the [Premium Plan](https://www.ankr.com/protocol/plan/) page.
 
@@ -31,13 +31,13 @@ Premium websockets are of the following format:
 
 :::
 
-## 02 Test with `wscat`
+## 02 - Test with `wscat`
 
 The easiest way to test out your websocket endpoint is to install a command line tool such as [`wscat`](https://github.com/websockets/wscat)
 
 Use `wscat` to send Curl requests as in the Curl example below
 
-## 03 Websocket Endpoint Examples
+## 03 - Websocket Endpoint Examples
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

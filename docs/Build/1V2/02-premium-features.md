@@ -1,13 +1,13 @@
 ---
-title: 02 Premium RPCs
+title: 02 - Premium RPCs
 id: premium-rpc
 ---
 
-# 02 Premium RPCs
+# 02 - Premium RPCs
 
 Ankr Premium gives you all the benefits of Public RPCs with additional exclusive features.
 
-### Premium Plan
+## Premium Plan
 
 Annual Fee: 10000 ANKR
 
@@ -16,7 +16,7 @@ Annual Fee: 10000 ANKR
 Fully refundable if you change your mind within 3 days.
 :::
 
-#### Features
+## Features
 
 1. Exclusive RPC API (https) endpoint
 2. Exclusive Websocket (wss) endpoint

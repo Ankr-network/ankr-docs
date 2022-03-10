@@ -23,7 +23,19 @@ This adds EVM-compatibility by integrating an EVM engine for running Ethereum Sm
 2. Layer Godwoken Chain
 :::
 
-## Integrate Wallet
+## Quick Links
+
+[**Nervos Protocol**](https://www.nervos.org/)
+
+[**Nervos CKB Docs**](https://docs.nervos.org/docs/reference/rpc/)
+
+[**Nervos Godwoken Docs**](https://docs.godwoken.io/)
+
+[**Github**](https://github.com/nervosnetwork/godwoken)
+
+---
+
+## Connect Wallet
 
 ### Layer 1 CKB Chain
 
