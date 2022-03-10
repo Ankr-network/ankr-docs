@@ -155,6 +155,7 @@ aside nav {
 }
 
 .menu__link {
+  padding: 0;
   margin: 10px;
 }
 
@@ -177,6 +178,7 @@ aside nav {
   background: url("../../static/img/dropdown.svg") 0 0 no-repeat;
   transform: none;
 }
+
 .menu__list-item--collapsed .menu__link--sublist:after {
   transform: rotate(-90deg);
   margin-top: -5px;
