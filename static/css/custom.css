@@ -161,6 +161,10 @@ aside nav {
   margin: 0;
 }
 
+.menu__caret {
+  padding: 10px;
+}
+
 .menu__link--active:not(.menu__link--sublist),
 .menu__link:hover {
   color: #356df3;
