@@ -1,5 +1,5 @@
 ---
-title: 01 Stake AVAX
+title: 01 - Stake AVAX
 id: stake-avax-01
 ---
 

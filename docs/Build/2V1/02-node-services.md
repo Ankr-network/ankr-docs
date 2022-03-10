@@ -1,5 +1,5 @@
 ---
-title: 02 Node Services
+title: 02 - Node Services
 id: node-services
 ---
 

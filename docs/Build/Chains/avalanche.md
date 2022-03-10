@@ -19,11 +19,12 @@ Avalanche was built specifically with Defi dApps and protocols in mind, focusing
 
 [**Github**](https://github.com/ava-labs)
 
-# Integrate Wallet
+
+## Connect Wallet
 
 You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can then perform transactions and interact with the network.
 
-### Get Started
+## Get Started
 
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.&#x20;
 2. Select '_**Custom RPC**_'.&#x20;
@@ -38,7 +39,7 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 |           |   BLOCK EXPLORER:   | [https://cchain.explorer.avax.network/](https://cchain.explorer.avax.network) |
 
 
-# Integrate Code
+## Integrate Code
 
 :::tip
 
@@ -53,11 +54,11 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 
 ## Avalanche
 
-## web3 library
+### web3 library
 
-**clientVersion**
+- **clientVersion**
 
-### Example Request
+#### Example Request
 
 ```shell
 curl https://rpc.ankr.com/avalanche \
@@ -66,15 +67,15 @@ curl https://rpc.ankr.com/avalanche \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-### Example Response
+#### Example Response
 
 ```javascript
 {"jsonrpc":"2.0","id":1,"result":"v0.7.2-rc.1"}
 ```
 
-## net library
+#### net library
 
-**net_version**
+- **net_version**
 
 ```
 https://rpc.ankr.com/avalanche
@@ -83,8 +84,7 @@ https://rpc.ankr.com/avalanche
 Returns the current client versions
 
 
-
-### Example Request
+#### Example Request
 
 ```shell
   
@@ -94,7 +94,7 @@ Returns the current client versions
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-### Example Response
+#### Example Response
 
 ```javascript
 {"jsonrpc":"2.0","id":67,"result":"43114"}
@@ -119,11 +119,11 @@ curl https://rpc.ankr.com/avalanche \
 ```
 
 ---
-# Integrate Code
+## Integrate Code
 
-## web3 
+### web3 
 
-**clientVersion**
+- **clientVersion**
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

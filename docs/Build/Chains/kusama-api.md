@@ -5,7 +5,7 @@ id: kusama-api
 
 # Kusama API
 
-# Develop on Kusama
+## Develop on Kusama
 
 Ankr allows users to create their own **Kusama relay chain APIs** with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 

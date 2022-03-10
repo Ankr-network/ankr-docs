@@ -1,5 +1,5 @@
 ---
-title: 00 Before you Start
+title: 00 - Before you Start
 id: stake-avax-00
 ---
 
@@ -29,17 +29,17 @@ id: stake-avax-00
 :x: **Huobi wallet**: Avalanche is not supported
 :::
 
-# Where to get AVAX tokens
+## Where to get AVAX tokens
 
 There are several ways how to buy AVAX tokens:
 
-## A. Centralized exchanges 
+### A. Centralized exchanges 
 (e.g. Coinbase, Binance) supporting withdrawals to AVAX C-Chain
 
 * Buy AVAX on a centralized exchange
 * Withdraw **AVAX** to **AVAX C-Chain**
 
-## B. Centralized exchanges NOT supporting withdrawals to AVAX C-Chain
+### B. Centralized exchanges NOT supporting withdrawals to AVAX C-Chain
 
 * If the exchange you are using does not support AVAX C-Chain, you must withdraw to **AVAX X-Chain** address using [AVAX Wallet](https://wallet.avax.network).
 
@@ -63,7 +63,7 @@ Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
 
 4. Confirm, and finalize the transaction.
 
-## C. Use [**Avalanche Bridge**](https://bridge.avax.network/login) 
+### C. Use [**Avalanche Bridge**](https://bridge.avax.network/login) 
 
 Get free AVAX to trade on decentralized exchange on the Avalanche network.
 

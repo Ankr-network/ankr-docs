@@ -18,7 +18,7 @@ Truffle also requires that you have a running Ethereum client which supports sta
 
 See [Choosing an Ethereum Client ](https://www.trufflesuite.com/docs/truffle/reference/choosing-an-ethereum-client)(External Link)
 
-## 01 Setting up
+## 01 - Setting up
 
 ### 1. Install Truffle
 
@@ -36,7 +36,7 @@ npm install -g truffle
 npm install -g webpack
 ```
 
-## 02 Create a Project
+## 02 - Create a Project
 
 To use most Truffle commands, you need to run them against an existing Truffle project. So the first step is to create a bare metal Truffle project.
 
@@ -61,7 +61,7 @@ Once completed, you'll have a project structure with the following items:
 * `test/`: Directory for test files for testing your application and contracts
 * `truffle-config.js`: Truffle configuration file
 
-## 03 Create a Contract
+## 03 - Create a Contract
 
 Contracts are written in [Solidity](https://solidity.readthedocs.io/en/develop/), all files containing contracts will have a file extension of `.sol`
 
@@ -79,7 +79,7 @@ contract newContract{
 }
 ```
 
-## 04. Set up Contract Deployment
+## 04 - Set up Contract Deployment
 
 These files are responsible for staging your deployment tasks. They are written under the assumption that your deployment needs will change over time.
 
@@ -107,7 +107,7 @@ module.exports = async function(deployer) {
 };
 ```
 
-## 05 Create a wallet to sign transactions
+## 05 - Create a wallet to sign transactions
 
 Set up a HD Wallet-enabled Web3 provider. Use it to sign transactions for addresses derived from a 12-word mnemonic.
 
@@ -119,7 +119,7 @@ npm init
 npm install babel-register truffle-hdwallet-provider --save
 ```
 
-## 06 Create an API on Ankr
+## 06 - Create an API on Ankr
 
 Check out [app.ankr.com](https://app.ankr.com/api) to **Create an API **and get your API keys.
 
@@ -131,7 +131,7 @@ You can view your successfully created APIs inside [app.ankr.com](https://app.an
 * The display of the API upgrade plan (please refer to the [upgrade plan](https://ankr-network.github.io/faq-hugo-source/basics/view\_api/#plan-settings))
 * Status of the API.
 
-## 07 Configure your Truffle Project
+## 07 - Configure your Truffle Project
 
 Modify the `truffle-config.js` file to configure your truffle project. It's seeded with some common settings for different networks and features like migrations, compilation and testing.
 
@@ -258,7 +258,7 @@ module.exports = {
 
 ```
 
-## 08 Compile the contract
+## 08 - Compile the contract
 
 To compile a Truffle project, change to the root of the directory where the project is located and then type the following into a terminal:
 
@@ -268,7 +268,7 @@ truffle compile
 
 Upon first run, all contracts will be compiled. Upon subsequent runs, Truffle will compile only the contracts that have been changed since the last compile. If you'd like to override this behavior, run the above command with the `--all` option.
 
-## 09 Deploy to network
+## 09 - Deploy to network
 
 ```
 truffle migrate --network networkName

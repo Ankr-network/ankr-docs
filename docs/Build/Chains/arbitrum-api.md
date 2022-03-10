@@ -5,7 +5,7 @@ id: arb-api
 
 # Arbitrum API
 
-# Develop on Arbitrum
+## Develop on Arbitrum
 
 Ankr allows users to create their own Arbitrum full APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 

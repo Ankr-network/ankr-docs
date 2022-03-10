@@ -1,11 +1,11 @@
 ---
-title: 01 Stake ETH
+title: 01 - Stake ETH
 id: stake-eth-01
 ---
 
 # How to stake ETH
 
-## 01 Connect your Wallet
+## 01 - Connect your Wallet
 
 :::caution
 
@@ -28,7 +28,7 @@ id: stake-eth-01
 **BE SURE: to allow sufficient ETH to cover gas fees.**
 :::
 
-## 02 Stake your ETH
+## 02 - Stake your ETH
 
 1. Click the **'+'** button to stake ETH
 
