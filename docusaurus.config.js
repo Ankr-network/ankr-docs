@@ -31,7 +31,6 @@
             sidebarPath: require.resolve("./sidebars.js"),
             routeBasePath: "/",
             // Please change this to your repo.
-            routeBasePath: "/",
             editUrl: "https://github.com/ankr-network/ankr-docs",
           },
           theme: {
