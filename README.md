@@ -6,12 +6,12 @@ This documentation is built using [Docusaurus 2](https://docusaurus.io/), a mode
 * Markdown editor. For example, [Visual Studio Code](https://code.visualstudio.com/download).
 * Installed and set up [Docusaurus 2](https://docusaurus.io/).
 
-### Installation
+### Install
 
 1. Clone the repo.
 2. `cd` to it and run `yarn` to install the required modules. 
 
-### Local Development
+### Develop locally
 
 From the cloned repo directory, run `yarn start` to fire up a local dev server and auto-open up the built docs instance in your default browser.
 
@@ -19,9 +19,11 @@ Most changes are reflected live, as soon as you present them, without having to 
 
 ### Build
 
-To generate static content in the `build` directory, run `yarn build`. You can then serve the content using any static contents hosting service.
+If you need to, generate static content in the `build` directory running `yarn build`. 
 
-### Deployment
+You can then serve the content using any static contents hosting service.
+
+### Deploy
 
 To deploy:
 1. Navigate to the Actions tab on the repo page.
@@ -31,9 +33,9 @@ To deploy:
    2. When tested and ready, deploy to `PROD` available to general public. 
 4. Click the green `Run workflow` button right below the chosen values.
 
-## GitFlow
+## Gitflow
 
-Currently, we're using the following GitFlow:
+Currently, we're using the following Gitflow:
 
 1. Create a feature branch from the `develop` folder.
 2. Work on the documentation for the feature.
