@@ -1,6 +1,6 @@
 ---
 title: Token Addresses
-id: token-addresses
+id: liquid-staking-token-addresses
 ---
 
 # Token Addresses

@@ -184,7 +184,6 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-       'Earn/reference/liquid-staking-token-addresses',
       ]
     },
       ],
