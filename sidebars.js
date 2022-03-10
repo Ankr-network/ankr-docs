@@ -157,6 +157,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
+          'Earn/defi/defi-overview',
       ]
     },
     {
@@ -166,6 +167,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
+          'Earn/bridge/bridge-overview',
       ]
     },
     {
@@ -175,6 +177,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
+          'Earn/switch/switch-overview',
       ]
     },
         {
@@ -184,6 +187,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
+          'Earn/reference/reference-overview',
       ]
     },
       ],
