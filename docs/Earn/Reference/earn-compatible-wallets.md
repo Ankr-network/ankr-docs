@@ -1,6 +1,6 @@
 ---
 title: Wallets
-id: earn-wallets
+id: earn-compatible-wallets
 ---
 
 The following hot wallets are compatible with Ankr Earn: 
