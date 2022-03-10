@@ -72,23 +72,23 @@
               position: "right",
               items: [
                 {
-                  to: "docs/category/get-started",
+                  to: "category/get-started",
                   label: "Get Started",
                 },
                 {
-                  to: "docs/category/concepts",
+                  to: "category/concepts",
                   label: "Concepts",
                 },
                 {
-                  to: "docs/category/chains-v2",
+                  to: "category/chains-v2",
                   label: "Chains",
                 },
                 {
-                  to: "docs/category/guides",
+                  to: "category/guides",
                   label: "Guides",
                 },
                 {
-                  to: "docs/Build/Support/get-support",
+                  to: "Build/Support/get-support",
                   label: "Support",
                 },
               ],
@@ -99,23 +99,23 @@
               position: "right",
               items: [
                 {
-                  to: "docs/category/-concepts",
+                  to: "category/-concepts",
                   label: "Concepts",
                 },
                 {
-                  to: "docs/category/-guides",
+                  to: "category/-guides",
                   label: "Guides",
                 },
                 {
-                  to: "docs/category/-products",
+                  to: "category/-products",
                   label: "Products",
                 },
                 {
-                  to: "docs/category/-ecosystems",
+                  to: "category/-ecosystems",
                   label: "Ecosystems",
                 },
                 {
-                  to: "docs/category/-reference",
+                  to: "category/-reference",
                   label: "Reference",
                 },
               ],
@@ -126,7 +126,7 @@
               position: "right",
               items: [
                 {
-                  to: "docs/Community/channels",
+                  to: "Community/channels",
                   label: "Community Channels",
                 },
               ],
