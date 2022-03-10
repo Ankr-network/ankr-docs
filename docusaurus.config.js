@@ -6,7 +6,7 @@
 
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/',
+    baseUrl: '/docs/',
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -30,7 +30,7 @@
           docs: {
             sidebarPath: require.resolve("./sidebars.js"),
             // Please change this to your repo.
-            routeBasePath: "/docs",
+            routeBasePath: "/",
             editUrl: "https://github.com/ankr-network/ankr-docs",
           },
           theme: {
