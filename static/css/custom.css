@@ -153,14 +153,20 @@ aside nav {
   margin-left: 0;
   padding-left: 12px;
 }
+
 .menu__link {
-  padding: 0;
-  margin-bottom: 20px;
+  margin: 10px;
 }
+
+.menu__caret {
+  padding: 10px;
+}
+
 .menu__list-item {
   margin: 0;
 }
 
+.menu__caret
 .menu__link--active:not(.menu__link--sublist),
 .menu__link:hover {
   color: #356df3;
@@ -172,9 +178,9 @@ aside nav {
   transform: none;
 }
 .menu__list-item--collapsed .menu__link--sublist:after {
-  transform: rotate(180deg);
-  margin-top: -10px;
-  margin-right: 10px;
+  transform: rotate(-90deg);
+  margin-top: -5px;
+  margin-right: 5px;
 }
 
 @media (max-width: 680px) {
