@@ -192,7 +192,10 @@ earnSidebar: {
           'Earn/reference/earn-compatible-wallets',
           'Earn/reference/earn-principles',
           'Earn/reference/liquid-staking-token-addresses',
-         'Earn/reference/liquidity-tokens',
+          'Earn/reference/liquidity-tokens',
+          'Earn/reference/micropools',
+          'Earn/reference/liquid-crowdloan-market-makers',
+          'Earn/reference/parachain-sdk',
       ]
     },
       ],
