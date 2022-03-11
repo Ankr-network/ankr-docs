@@ -157,7 +157,6 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-          'Earn/defi/defi-overview',
           'Earn/defi/yeld-farm',
           'Earn/defi/provide-liquidity-dex',
       ]
