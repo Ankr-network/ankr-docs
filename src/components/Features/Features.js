@@ -27,7 +27,6 @@ const FeatureList = [
       'Make use of our multi-chain toolkit bridging DeFi with PoS',
     ],
 
-    link: 'https://www.ankr.com/docs/docs/Earn/Concepts/earn-overview',
 
   },
   {
