@@ -40,7 +40,7 @@
   --ifm-color-primary-light: rgb(192, 199, 197);
   --ifm-color-primary-lighter: rgb(201, 207, 206);
   --ifm-color-primary-lightest: rgb(223, 226, 226);
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 85%;
   --ifm-color-primary: #356df3;
   --ifm-link-color: #356df3;
 }
@@ -311,18 +311,18 @@ table td {
 }
 .markdown h1 {
   font-weight: bold;
-  font-size: 48px;
+  font-size: 32px;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 .markdown h2 {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.45;
 }
 .markdown h3 {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.45;
 }
 .markdown p {

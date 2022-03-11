@@ -1,9 +1,9 @@
 ---
-title: Stake DOT on ankr.com
-id: stake-dot
+title: Stake KSM on ankr.com
+id: stake-ksm
 ---
 
-## Before you Start
+# Before you Start
 
 :::info Ensure the following:
 
@@ -12,7 +12,7 @@ You are using a Chrome Browser.
 
 You have a **Polkadot wallet **chrome extension installed.
 
-You have the required amount of DOT you wish to contribute in your Polkadot wallet (chrome extension) plus an amount for gas fees.
+You have the required amount of KSM you wish to contribute in your Polkadot wallet (chrome extension) plus an amount for gas fees.
 
 You have a Metamask wallet.
 :::
@@ -29,7 +29,7 @@ You have a Metamask wallet.
 4. Generate a secure password and create your wallet.
 5. Give your wallet a name and select ‘Any Chain'‌
 
-## Transfer DOT to your Polkadot extension wallet
+## Transfer KSM to your Polkadot extension wallet
 
 :::info Wallets to use to transfer Polkadot
 
@@ -47,14 +47,18 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 3. You can then view your balance and/or make a transfer if required.
 
+---
+title: 01 - Stake KSM
+id: stake-ksm-01
+---
 
 :::info Checklist
 
 This walkthrough assumes you have:
-- A _polkadot.jswallet_ installed in your Chrome Browser
-- Sufficient DOT tokens for staking AND gas fees.
+- A_polkadot.jswallet_ installed in your Chrome Browser
+- Sufficient KSM tokens for staking AND gas fees.
 
-If not, check out [DOT - 00 Before you Start](dot-staking-00.md) for guidance.
+If not, check out[KSM - 00 Before you Start](ksm-staking-00.md) for guidance.
 
 :::
 
@@ -62,24 +66,25 @@ If not, check out [DOT - 00 Before you Start](dot-staking-00.md) for guidance.
 
 1. Visit  [**Ankr Earn**](https://stakefi.ankr.com/) and click the *'Launchpad'* button.
 
-2. Locate the *‘Stake DOT* box and click *‘Start staking’*.
+2. Locate the *‘Stake KSM’* box and click *‘Start staking’*.
 
 3. Your ```Polkadot.js wallet``` pops up requesting **'authorization'** to connect to Ankr Earn.
 Click to allow access.
 
 ## Stake Desired Amount
 
-1. The **DOT Staking Dashboard** opens
+1. The **KSM Staking Dashboard** opens
 
 2. To stake, click the **'+'** icon.
 
 3. Select the desired amount to stake and click *'Stake'*
 
-4. Your Polkadot.js wallet pops up requesting authorization. Click to authorize if you wish to proceed.
+4. Your Polkadot wallet pops up requesting authorization. Click to authorize if you wish to proceed.
 
 5. The Staking Dashboard updates to reflect your staked amount.
 
-## Claim Instant Liquidity aDOTb Tokens
+
+## CLaim Instant Liquidity aKSMb Tokens
 
 1. Click *'Connect'* to connect to an EVM Wallet e.g. MetaMask
 
@@ -91,6 +96,8 @@ Click to allow access.
 
 :::info success
 
-Successful access to aDOTb Tokens
-Success is indicated by your Ethereum Wallet updating with aDOTb tokens.
-You are now free to utilize your aDOTb on other DeFi Platforms.
+Successful access to aKSMb Tokens
+Success is indicated by your Ethereum Wallet updating with aKSMb tokens.
+You are now free to utilize your aKSMb on other DeFi Platforms.
+
+:::

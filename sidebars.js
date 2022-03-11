@@ -147,6 +147,18 @@ earnSidebar: {
     },
     {
       type: 'category',
+      label: 'DOT',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/dot/dot-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
+        'Earn/liquid-staking/dot/stake-dot',
+      ]
+    },
+    {
+      type: 'category',
       label: 'FTM',
       link: {
         type: 'doc',
@@ -159,24 +171,14 @@ earnSidebar: {
     },
     {
       type: 'category',
-      label: 'DOT',
-      link: {
-        type: 'doc',
-        id: 'Earn/liquid-staking/dot/dot-liquid-staking-introduction',
-      },
-      items: [
-        'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
-        'Earn/liquid-staking/bnb/stake-bnb',
-      ]
-    },
-    {
-      type: 'category',
       label: 'KSM',
       link: {
         type: 'doc',
         id: 'Earn/liquid-staking/ksm/ksm-liquid-staking-introduction',
       },
       items: [
+        'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
+        'Earn/liquid-staking/ksm/stake-ksm',
       ]
     },
       ]
@@ -207,7 +209,7 @@ earnSidebar: {
           'Earn/defi/provide-liquidity-dex',
       ]
     },
-    {
+   /* {
       type: 'category',
       label: 'Bridge',
       collapsible: true,
@@ -230,7 +232,7 @@ earnSidebar: {
       },
       items: [
       ]
-    },
+    }, */
         {
       type: 'category',
       label: 'Reference',
