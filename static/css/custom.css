@@ -361,7 +361,7 @@ table td {
 }
 .markdown ol li {
   position: relative;
-  display: flex;
+  display: block;
   align-items: flex-start;
   justify-content: flex-start;
   margin-top: 0;
@@ -443,7 +443,7 @@ table td {
     /* Footer */
     --docsearch-footer-background: var(--ifm-color-white);
   }
-  
+
   [data-theme='dark'] .DocSearch {
     --docsearch-text-color: var(--ifm-font-color-base);
     --docsearch-muted-color: var(--ifm-color-secondary-darkest);

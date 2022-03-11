@@ -137,13 +137,46 @@ earnSidebar: {
       type: 'category',
       label: 'BNB',
       link: {
-        type: 'generated-index',
-        keywords: ['binance, bnb, liquid, staking'],
+        type: 'doc',
+        id: 'Earn/liquid-staking/bnb/bnb-liquid-staking-introduction',
       },
       items: [
         'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
         'Earn/liquid-staking/bnb/stake-bnb',
-
+      ]
+    },
+    {
+      type: 'category',
+      label: 'FTM',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/ftm/ftm-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
+        'Earn/liquid-staking/bnb/stake-bnb',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'DOT',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/dot/dot-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
+        'Earn/liquid-staking/bnb/stake-bnb',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'KSM',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/ksm/ksm-liquid-staking-introduction',
+      },
+      items: [
       ]
     },
       ]
@@ -211,7 +244,6 @@ earnSidebar: {
           'Earn/reference/earn-compatible-wallets',
           'Earn/reference/earn-principles',
           'Earn/reference/liquid-staking-token-addresses',
-          'Earn/reference/liquidity-tokens',
           'Earn/reference/micropools',
           'Earn/reference/liquid-crowdloan-market-makers',
           'Earn/reference/parachain-sdk',
