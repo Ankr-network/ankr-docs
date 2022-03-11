@@ -190,7 +190,7 @@ earnSidebar: {
       },
       items: [
           'Earn/reference/earn-compatible-wallets',
-         'Earn/reference/ earn-principles',
+          'Earn/reference/earn-principles',
       ]
     },
       ],
