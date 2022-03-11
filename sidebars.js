@@ -156,7 +156,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-        'Earn/liquid-crowdloan/liquid-crowdloans',
+        'Earn/liquid-crowdloans/liquid-crowdloans',
       ]
     },
     {
