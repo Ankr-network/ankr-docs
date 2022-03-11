@@ -99,7 +99,7 @@
               position: "right",
               items: [
                 {
-                  to: "category/liquid-staking/",
+                  to: "Earn/liquid-staking/",
                   label: "Liquid Staking",
                 },
                 {
@@ -107,15 +107,15 @@
                   label: "Liquid Crowdloan",
                 },
                 {
-                  to: "category/defi",
+                  to: "Earn/defi/defi-introduction",
                   label: "DeFi",
                 },
                 {
-                  to: "category/bridge",
+                  to: "Earn/bridge/bridge-introduction",
                   label: "Bridge",
                 },
                 {
-                  to: "category/switch",
+                  to: "Earn/switch/switch-introduction",
                   label: "Switch",
                 },
                 {

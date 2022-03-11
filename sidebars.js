@@ -129,11 +129,10 @@ earnSidebar: {
       collapsible: true,
       collapsed: true,
       link: {
-        type: 'generated-index',
-        keywords: ['liquid, staking'],
+        type: 'doc',
+        id: 'Earn/liquid-staking/liquid-staking',
       },
       items: [
-        'Earn/liquid-staking/liquid-staking-introduction',
       {
       type: 'category',
       label: 'BNB',
@@ -168,11 +167,10 @@ earnSidebar: {
       collapsible: true,
       collapsed: true,
       link: {
-        type: 'generated-index',
-        keywords: ['defi'],
+        type: 'doc',
+        id: 'Earn/defi/defi-introduction',
       },
       items: [
-          'Earn/defi/defi-introduction',
           'Earn/defi/yeld-farm',
           'Earn/defi/provide-liquidity-dex',
       ]
@@ -183,11 +181,10 @@ earnSidebar: {
       collapsible: true,
       collapsed: true,
       link: {
-        type: 'generated-index',
-        keywords: ['bridge'],
+        type: 'doc',
+        id: 'Earn/bridge/bridge-introduction',
       },
       items: [
-          'Earn/bridge/bridge-introduction',
       ]
     },
     {
@@ -196,11 +193,10 @@ earnSidebar: {
       collapsible: true,
       collapsed: true,
       link: {
-        type: 'generated-index',
-        keywords: ['switch'],
+        type: 'doc',
+        id: 'Earn/switch/switch-introduction',
       },
       items: [
-          'Earn/switch/switch-introduction',
       ]
     },
         {

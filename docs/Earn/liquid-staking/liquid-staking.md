@@ -1,9 +1,7 @@
 ---
-title: Introduction
-id: liquid-staking-introduction
+title: Liquid Staking
+id: liquid-staking
 ---
-
-# Introduction
 
 Liquid Staking provides instant liquidity for staked assets in the form of liquid staking tokens. 
 
