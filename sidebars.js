@@ -191,6 +191,8 @@ earnSidebar: {
       items: [
           'Earn/reference/earn-compatible-wallets',
           'Earn/reference/earn-principles',
+          'Earn/reference/liquid-staking-token-addresses',
+         'Earn/reference/liquidity-tokens',
       ]
     },
       ],
