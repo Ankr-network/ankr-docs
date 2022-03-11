@@ -11,4 +11,4 @@ Pooled staking removes the barriers to entry for people who want to participate 
 
 We currently offer **ETH, AVAX & BNB** Staking with more opportunities coming soon.
 
-# [Get started with Pooled Staking](https://stakefi.ankr.com/internet-bonds/launchpad)
+[**Get started with Pooled Staking**](https://stakefi.ankr.com/internet-bonds/launchpad)
