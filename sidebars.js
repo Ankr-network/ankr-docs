@@ -119,6 +119,11 @@ module.exports = {
 earnSidebar: {
   'Earn': [
     {
+      type: 'doc',
+      id: 'Earn/earn-introduction',
+      label: 'Introduction',
+    },
+    {
       type: 'category',
       label: 'Liquid Staking',
       link: {
