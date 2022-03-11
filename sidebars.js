@@ -125,7 +125,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-        'Earn/liquid-staking/liquid-staking-overview',
+        'Earn/liquid-staking/liquid-staking-introduction',
       {
       type: 'category',
       label: 'BNB',
@@ -157,6 +157,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
+          'Earn/defi/defi-introduction',
           'Earn/defi/yeld-farm',
           'Earn/defi/provide-liquidity-dex',
       ]

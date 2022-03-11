@@ -1,6 +1,6 @@
 ---
-title: Overview
-id: liquid-staking-overview
+title: Introduction
+id: liquid-staking-introduction
 ---
 
 # Overview

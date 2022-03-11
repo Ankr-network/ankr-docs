@@ -3,7 +3,7 @@ title: Yield Farm
 id: yeld-farm
 ---
 
-# How to Yield Farm with Liquid Staking tokens
+# Yield Farm with Liquid Staking tokens
 
 ## Yield Farming
 Currently, you can yield farm on the following platforms
