@@ -1,9 +1,9 @@
 ---
-title: Stake BNB On ankr.com
+title: Stake BNB on ankr.com
 id: stake-bnb
 ---
 
-# Stake BNB On ankr.com
+# Stake BNB on ankr.com
 
 ## Prerequisites
 

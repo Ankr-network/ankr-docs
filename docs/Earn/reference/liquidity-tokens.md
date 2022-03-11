@@ -1,5 +1,5 @@
 ---
-title: Liquidity Staking Tokens
+title: Liquid Staking Tokens
 id: liquidity-tokens
 ---
 
@@ -7,15 +7,15 @@ id: liquidity-tokens
 
 There are two types of Liquidity Tokens:
 
-• Reward Earning Certificates e.g. aETHc formerly aETH
-• Reward Earning Tokens e.g. aAVAXb and aETHb (formerly fETH.)
+• Reward Bearing Tokens, e.g. aETHc formerly aETH
+• Reward Earning Tokens, e.g. aAVAXb and aETHb (formerly fETH.)
 
-## Reward Earning Certificates
-These are automatically issued to your StakeFi Dashboard upon successful ETH2 staking.
+## Reward Earning
+These are automatically issued to your ANKR Earn Dashboard upon successful ETH2 staking.
 
 The amount of aETHc issued is equivalent to the amount of staked ETH.
 
-Reward Earning Certificates represents the amount of ETH staked at issuance PLUS future staking rewards.
+Reward bearing tokens represents the amount of ETH staked at issuance PLUS future staking rewards.
 
 At the end of the ETH2 staking period (when the beacon chain merges with the mainnet), aETHc holders can redeem aETHc for their original ETH stake plus all accumulated staking rewards.
 
@@ -27,6 +27,6 @@ Fair Value is your stake plus the rewards that have not yet been distributed. Th
 The Market Price is the price that traders are willing to buy and sell internet bonds knowing that they don't have access to the Fair Value until 2022. 
 
 ## Reward Earning Tokens
-These are automatically issued to your StakeFi Dashboard upon successful ETH2 and/or AVAX staking.
+These are automatically issued to your ANKR Earn Dashboard upon successful ETH2 and/or AVAX staking.
 
 Daily rewards are automatically updated in Bond holders’ wallets. The amount of aETHb/aAVAX held automatically increases with every daily rebase.
