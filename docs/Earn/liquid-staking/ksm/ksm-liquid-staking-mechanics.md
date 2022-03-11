@@ -5,7 +5,7 @@ id: ksm-liquid-staking-mechanics
 # Kusama Staking Mechanics
 
 :::note
-KSM Liquid Staking is almost identical to DOT Liquid Staking.
+KSM Liquid Staking is almost identical to DOT Liquid Staking, so it isn't a typo when you notice `Polkadot` at the end of this document.
 :::
 
 KSM Liquid Staking lets the user stake their funds through the ANKR deposit address on the Polkadot network, accumulate rewards, and receive their stake+rewards when unstaking.
