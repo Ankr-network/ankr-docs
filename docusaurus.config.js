@@ -29,8 +29,8 @@
         ({
           docs: {
             sidebarPath: require.resolve("./sidebars.js"),
-            // Please change this to your repo.
             routeBasePath: "/",
+            // Please change this to your repo.
             editUrl: "https://github.com/ankr-network/ankr-docs",
           },
           theme: {
@@ -48,6 +48,7 @@
           // Public API key: it is safe to commit it
           apiKey: 'f4be66fb86f3b7f7abddb567e980f14c',
           indexName: 'ankr-docs',
+          contextualSearch: true,
         },
         colorMode: {
           disableSwitch: true,
@@ -110,7 +111,7 @@
                   to: "Earn/defi/defi-introduction",
                   label: "DeFi",
                 },
-             /*   {
+               /* {
                   to: "Earn/bridge/bridge-introduction",
                   label: "Bridge",
                 },

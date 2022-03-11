@@ -153,14 +153,21 @@ aside nav {
   margin-left: 0;
   padding-left: 12px;
 }
+
 .menu__link {
   padding: 0;
   margin: 10px;
 }
+
+.menu__caret {
+  padding: 10px;
+}
+
 .menu__list-item {
   margin: 0;
 }
 
+.menu__caret
 .menu__link--active:not(.menu__link--sublist),
 .menu__link:hover {
   color: #356df3;
