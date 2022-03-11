@@ -154,11 +154,10 @@ earnSidebar: {
       collapsible: true,
       collapsed: true,
       link: {
-        type: 'generated-index',
-        keywords: ['liquid, crowdloans'],
+        type: 'doc',
+        id: 'earn/liquid-crowdloans/liquid-crowdloans',
       },
       items: [
-        'earn/liquid-crowdloans/liquid-crowdloans',
       ]
     },
     {

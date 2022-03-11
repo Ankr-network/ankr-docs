@@ -103,7 +103,7 @@
                   label: "Liquid Staking",
                 },
                 {
-                  to: "category/liquid-crowdloans",
+                  to: "earn/liquid-crowdloans/liquid-crowdloans",
                   label: "Liquid Crowdloan",
                 },
                 {
