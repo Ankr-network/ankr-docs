@@ -130,6 +130,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'generated-index',
+        keywords: ['liquid, staking'],
       },
       items: [
         'Earn/liquid-staking/liquid-staking-introduction',
@@ -138,6 +139,7 @@ earnSidebar: {
       label: 'BNB',
       link: {
         type: 'generated-index',
+        keywords: ['binance, bnb, liquid, staking'],
       },
       items: [
         'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
@@ -154,6 +156,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'generated-index',
+        keywords: ['liquid, crowdloans'],
       },
       items: [
         'Earn/liquid-crowdloans/liquid-crowdloans',
@@ -166,6 +169,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'generated-index',
+        keywords: ['defi'],
       },
       items: [
           'Earn/defi/defi-introduction',
@@ -180,6 +184,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'generated-index',
+        keywords: ['bridge'],
       },
       items: [
           'Earn/bridge/bridge-introduction',
@@ -192,6 +197,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'generated-index',
+        keywords: ['switch'],
       },
       items: [
           'Earn/switch/switch-introduction',
@@ -204,6 +210,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'generated-index',
+        keywords: ['reference, wallets, token, addresses, tokens, micropools, makers, sdk, principles'],
       },
       items: [
           'Earn/reference/earn-compatible-wallets',
