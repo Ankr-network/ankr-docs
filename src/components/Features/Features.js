@@ -14,7 +14,7 @@ const FeatureList = [
       'Expansive library of docs, tutorials, and learning resources',
       'Suitable for web3 developers and enthusiasts of all skill levels',
     ],
-    link: 'https://www.ankr.com/docs/docs/Build/Concepts/build-concepts',
+    link: 'https://www.ankr.com/docs/Build/Concepts/build-concepts',
 
   },
   {
@@ -26,6 +26,7 @@ const FeatureList = [
       'Connect staking rewards to DeFi to trade/interact with dApps',
       'Make use of our multi-chain toolkit bridging DeFi with PoS',
     ],
+
 
     link: 'https://www.ankr.com/docs/docs/Earn/earn-introduction',
 
@@ -39,7 +40,7 @@ const FeatureList = [
       'Participate in on-chain governance by holding $ANKR',
       'Pay for services on the Ankr platform with $ANKR',
     ],   
-    link: 'https://www.ankr.com/docs/docs/category/%EF%B8%8F-governance',
+    link: 'https://www.ankr.com/docs/category/%EF%B8%8F-governance',
   },
   {
     title: "Ankr Community",
@@ -50,7 +51,7 @@ const FeatureList = [
       'Support the growth and development of web3 infrastructure',
       'Discover opportunities for grants, partnerships, and more', 
     ],
-    link: 'https://www.ankr.com/docs/docs/Community/channels',
+    link: 'https://www.ankr.com/docs/Community/channels',
   }
 ];
 
