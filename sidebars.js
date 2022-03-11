@@ -120,7 +120,7 @@ earnSidebar: {
   'Earn': [
     {
       type: 'doc',
-      id: 'earn/earn-introduction',
+      id: 'Earn/earn-introduction',
       label: 'Introduction',
     },
     {
