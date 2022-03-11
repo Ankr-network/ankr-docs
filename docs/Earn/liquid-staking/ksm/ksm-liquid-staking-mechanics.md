@@ -1,5 +1,5 @@
 ---
-title: Polkadot Staking Mechanics
+title: Kusama Staking Mechanics
 id: ksm-liquid-staking-mechanics
 ---
 # Kusama Staking Mechanics
