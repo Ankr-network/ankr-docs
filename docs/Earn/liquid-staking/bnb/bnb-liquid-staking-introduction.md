@@ -15,6 +15,8 @@ Ankr Earn can connect you to the best ways to earn more crypto by staking, arbit
 
 Instant Liquidity Using Ankr Earn is the best way to stake BNB as you can access instant liquidity in the form of the aBNBb token. Avoiding locking your tokens up with the BSC network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
 
+Read the [Medium article](https://medium.com/ankr-network/ankr-x-ellipsis-staking-liquidity-mining-ankr-rewards-f49a76fd50cc) about staking and liquidity mining to learn more benefits!
+
 ### Boosted Yields&#x20;
 
 As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-of-stake networks, it offers a way to earn additional rewards on your staked BNB, enabling new yield farming strategies. The main components of BNB Liquid Staking will be:
