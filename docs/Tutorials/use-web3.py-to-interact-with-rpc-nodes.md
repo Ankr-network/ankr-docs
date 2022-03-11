@@ -3,6 +3,7 @@ title: Connect to RPCs - Python
 id: connect-web3py
 ---
 
+By Anita Diamond
 
 # 🐍 Use web3.py to interact with RPC Nodes
 
