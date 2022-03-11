@@ -3,6 +3,8 @@ title: Connect to RPCs - Javascript
 id: connect-web3js 
 ---
 
+By Anita Diamond
+
 # ☕ Use Web3.js to interact with RPC Nodes
 
 Use the web3.js library to connect and interact with Ethereum and all EVM

@@ -3,6 +3,9 @@ title: Create a dApp front end with create-eth-app
 id: create-eth-app
 ---
 
+**By Anita Diamond**
+
+
 # Create an easy dApp front end with `create-eth-app`
 
 **Create-eth-app** makes it super easy to spin up front ends for dApps with. Create-eth-app is a fork of ‘create-react-app’ and 

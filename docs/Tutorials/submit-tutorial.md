@@ -3,6 +3,8 @@ title: Submit Tutorial
 id: submit-tutorial
 ---
 
+💡  Find out More
+
 If you've got an idea for a Tutorial then go ahead and submit an issue. 
 
 [Submit Tutorial Idea](https://github.com/Ankr-network/ankr-docs/issues/new?assignees=&labels=&template=propose-new-content.md&title=)

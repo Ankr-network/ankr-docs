@@ -209,7 +209,7 @@ earnSidebar: {
           'Earn/defi/provide-liquidity-dex',
       ]
     },
-   /* {
+/*    {
       type: 'category',
       label: 'Bridge',
       collapsible: true,
