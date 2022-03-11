@@ -130,7 +130,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'earn/liquid-staking/liquid-staking',
+        id: 'Earn/liquid-staking/liquid-staking',
       },
       items: [
       {
@@ -141,8 +141,8 @@ earnSidebar: {
         keywords: ['binance, bnb, liquid, staking'],
       },
       items: [
-        'earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
-        'earn/liquid-staking/bnb/stake-bnb',
+        'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
+        'Earn/liquid-staking/bnb/stake-bnb',
 
       ]
     },
@@ -155,7 +155,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'earn/liquid-crowdloans/liquid-crowdloans',
+        id: 'Earn/liquid-crowdloans/liquid-crowdloans',
       },
       items: [
       ]
@@ -167,11 +167,11 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'earn/defi/defi-introduction',
+        id: 'Earn/defi/defi-introduction',
       },
       items: [
-          'earn/defi/yeld-farm',
-          'earn/defi/provide-liquidity-dex',
+          'Earn/defi/yeld-farm',
+          'Earn/defi/provide-liquidity-dex',
       ]
     },
     {
@@ -181,7 +181,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'earn/bridge/bridge-introduction',
+        id: 'Earn/bridge/bridge-introduction',
       },
       items: [
       ]
@@ -193,7 +193,7 @@ earnSidebar: {
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'earn/switch/switch-introduction',
+        id: 'Earn/switch/switch-introduction',
       },
       items: [
       ]
@@ -208,13 +208,13 @@ earnSidebar: {
         keywords: ['reference, wallets, token, addresses, tokens, micropools, makers, sdk, principles'],
       },
       items: [
-          'earn/reference/earn-compatible-wallets',
-          'earn/reference/earn-principles',
-          'earn/reference/liquid-staking-token-addresses',
-          'earn/reference/liquidity-tokens',
-          'earn/reference/micropools',
-          'earn/reference/liquid-crowdloan-market-makers',
-          'earn/reference/parachain-sdk',
+          'Earn/reference/earn-compatible-wallets',
+          'Earn/reference/earn-principles',
+          'Earn/reference/liquid-staking-token-addresses',
+          'Earn/reference/liquidity-tokens',
+          'Earn/reference/micropools',
+          'Earn/reference/liquid-crowdloan-market-makers',
+          'Earn/reference/parachain-sdk',
       ]
     },
       ],
