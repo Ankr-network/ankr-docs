@@ -126,6 +126,8 @@ earnSidebar: {
     {
       type: 'category',
       label: 'Liquid Staking',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'generated-index',
       },
@@ -148,6 +150,8 @@ earnSidebar: {
     {
       type: 'category',
       label: 'Liquid Crowdloan',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'generated-index',
       },
@@ -158,6 +162,8 @@ earnSidebar: {
     {
       type: 'category',
       label: 'DeFi',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'generated-index',
       },
@@ -170,6 +176,8 @@ earnSidebar: {
     {
       type: 'category',
       label: 'Bridge',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'generated-index',
       },
@@ -180,6 +188,8 @@ earnSidebar: {
     {
       type: 'category',
       label: 'Switch',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'generated-index',
       },
@@ -190,6 +200,8 @@ earnSidebar: {
         {
       type: 'category',
       label: 'Reference',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'generated-index',
       },
