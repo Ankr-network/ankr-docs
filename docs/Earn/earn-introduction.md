@@ -1,5 +1,5 @@
 ---
-title: ANKR Earn Introduction
+title: Introduction
 id: earn-introduction
 ---
 

@@ -1,4 +1,4 @@
 ---
-title: Bridge Introduction
+title: Introduction
 id: bridge-introduction
 ---

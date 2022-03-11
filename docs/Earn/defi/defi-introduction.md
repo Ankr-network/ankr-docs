@@ -1,5 +1,5 @@
 ---
-title: DeFi Introduction
+title: Introduction
 id: defi-introduction
 ---
 
