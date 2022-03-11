@@ -189,7 +189,8 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-          'Earn/reference/reference-overview',
+          'Earn/reference/earn-compatible-wallets',
+         'Earn/reference/ earn-principles',
       ]
     },
       ],
