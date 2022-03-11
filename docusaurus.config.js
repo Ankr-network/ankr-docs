@@ -99,23 +99,27 @@
               position: "right",
               items: [
                 {
-                  to: "category/-concepts",
-                  label: "Concepts",
+                  to: "Earn/liquid-staking/",
+                  label: "Liquid Staking",
                 },
                 {
-                  to: "category/-guides",
-                  label: "Guides",
+                  to: "Earn/liquid-crowdloans/liquid-crowdloans",
+                  label: "Liquid Crowdloan",
                 },
                 {
-                  to: "category/-products",
-                  label: "Products",
+                  to: "Earn/defi/defi-introduction",
+                  label: "DeFi",
                 },
                 {
-                  to: "category/-ecosystems",
-                  label: "Ecosystems",
+                  to: "Earn/bridge/bridge-introduction",
+                  label: "Bridge",
                 },
                 {
-                  to: "category/-reference",
+                  to: "Earn/switch/switch-introduction",
+                  label: "Switch",
+                },
+                {
+                  to: "category/reference",
                   label: "Reference",
                 },
               ],
