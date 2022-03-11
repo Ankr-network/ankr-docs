@@ -1,11 +1,11 @@
 ---
-title: Parachain Liquid Crowdloan
-id: liquid-crowdloan
+title: Parachain Liquid Crowdloans
+id: liquid-crowdloans
 ---
 
-# Parachain Liquid Crowdloan
+# Parachain Liquid Crowdloans
 
-## What are Kusama and Polkadot Parachain Liquid Crowdloan
+## What are Kusama and Polkadot Parachain Liquid Crowdloans
 
 Kusama and Polkadot Parachain slot auctions are among the most widely discussed and anticipated events in the blockchain space. They provide the winning projects with access to innovative multi-chain infrastructure while offering an opportunity for regular audiences to be involved in the vibrant Polkadot ecosystem. Through crowdloan campaigns, anyone can contribute KSM and DOT to support the bids of their favorite projects, and receive their tokens as a reward.
 

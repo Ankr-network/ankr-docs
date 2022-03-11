@@ -149,14 +149,14 @@ earnSidebar: {
     },
     {
       type: 'category',
-      label: 'Liquid Crowdloan',
+      label: 'Liquid Crowdloans',
       collapsible: true,
       collapsed: true,
       link: {
         type: 'generated-index',
       },
       items: [
-        'Earn/liquid-crowdloan/liquid-crowdloan',
+        'Earn/liquid-crowdloan/liquid-crowdloans',
       ]
     },
     {

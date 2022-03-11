@@ -3,7 +3,7 @@ title: Introduction
 id: earn-introduction
 ---
 
-# Earn Overview
+# Introduction
 
 Ankr Earn aims to bring the benefits of DeFi to the masses with the following solutions. 
 
