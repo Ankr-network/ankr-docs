@@ -182,7 +182,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-          'Earn/bridge/bridge-overview',
+          'Earn/bridge/bridge-introduction',
       ]
     },
     {
@@ -194,7 +194,7 @@ earnSidebar: {
         type: 'generated-index',
       },
       items: [
-          'Earn/switch/switch-overview',
+          'Earn/switch/switch-introduction',
       ]
     },
         {

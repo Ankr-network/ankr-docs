@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Liquid Staking Introduction
 id: liquid-staking-introduction
 ---
 
