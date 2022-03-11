@@ -157,7 +157,7 @@ earnSidebar: {
         'Earn/liquid-staking/dot/stake-dot',
       ]
     },
-    {
+   /* {
       type: 'category',
       label: 'FTM',
       link: {
@@ -168,7 +168,7 @@ earnSidebar: {
         'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
         'Earn/liquid-staking/bnb/stake-bnb',
       ]
-    },
+    }, */
     {
       type: 'category',
       label: 'KSM',
