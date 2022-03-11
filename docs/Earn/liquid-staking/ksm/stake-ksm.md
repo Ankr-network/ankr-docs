@@ -47,21 +47,6 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 3. You can then view your balance and/or make a transfer if required.
 
----
-title: 01 - Stake KSM
-id: stake-ksm-01
----
-
-:::info Checklist
-
-This walkthrough assumes you have:
-- A_polkadot.jswallet_ installed in your Chrome Browser
-- Sufficient KSM tokens for staking AND gas fees.
-
-If not, check out[KSM - 00 Before you Start](ksm-staking-00.md) for guidance.
-
-:::
-
 ## Connect your Wallet
 
 1. Visit  [**Ankr Earn**](https://stakefi.ankr.com/) and click the *'Launchpad'* button.
