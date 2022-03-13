@@ -16,7 +16,7 @@ id: submit-tutorial
 - 🏷 Tags (Ethereum, Ankr Advanced API, Hardhat, etc.)
 - 🔗 Tutorial written in markdown
 - 👩‍💻 Skill level - beginner, intermediate, or advanced
-- ⏰ Estimate time to completion
+- ⏰ Estimated time to completion
 
 #### 🤝 Ankr Community
 💪 Our documentation is community-driven. The Community Tutorials team will review your tutorial submission and we'll merge your pull request to show your tutorial on the site (as long as it builds and ships)!
