@@ -42,7 +42,7 @@ Here's how to set up your  **MetaMask wallet** to connect to Arbitrum RPC. You c
 |          |   BLOCK EXPLORER:   |            [https://arbiscan.io](https://arbiscan.io)           |
 
 
-## Integrate
+## Integrate Code
 
 ### web3 library
 
