@@ -35,7 +35,7 @@ You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then 
 |         |     NEW RPC URL:    |    [https://rpc.ankr.com/polygon](https://rpc.ankr.com/polygon)   |
 |         |      CHAIN ID:      |                                137                                |
 |         |       SYMBOL:       |                               MATIC                               |
-|    
+   
 
 ----
 
