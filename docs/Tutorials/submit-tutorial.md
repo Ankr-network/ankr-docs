@@ -4,7 +4,7 @@ id: submit-a-tutorial
 ---
 
 ### 💡 Looking to contribute your tutorial to the [Ankr Docs](https://ankr.com/docs/) using our stack? 👀
-🏗 Join our community of builders and contribute to the open-source development of the Ankr Protocol by accellerating the education of Web3 builders. 
+🏗 Join our community of builders and contribute to the open-source development of the Ankr Protocol by accelerating the education of Web3 builders. 
 
 🧾 Open source software without documentation will be the Achilles heel of Web3. If you see an issue or edit that needs made, create a pull request on the [🔃 Ankr Docs Github](https://github.com/Ankr-network/ankr-docs).
 
