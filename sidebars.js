@@ -169,6 +169,18 @@ earnSidebar: {
         'Earn/liquid-staking/dot/stake-dot',
       ]
     },
+         {
+      type: 'category',
+      label: 'ETH',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/eth/eth-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
+        'Earn/liquid-staking/eth/stake-eth',
+      ]
+    },
    {
       type: 'category',
       label: 'FTM',
