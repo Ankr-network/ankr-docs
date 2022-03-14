@@ -1,6 +1,6 @@
 ---
-title: Submit Tutorial
-id: submit-tutorial
+title: Submit aTutorial
+id: submit-a-tutorial
 ---
 
 ### 💡 Looking to contribute your tutorial to the [Ankr Docs](https://ankr.com/docs/) using our stack? 👀
