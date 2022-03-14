@@ -157,7 +157,7 @@ earnSidebar: {
         'Earn/liquid-staking/dot/stake-dot',
       ]
     },
-   /* {
+   {
       type: 'category',
       label: 'FTM',
       link: {
@@ -165,10 +165,10 @@ earnSidebar: {
         id: 'Earn/liquid-staking/ftm/ftm-liquid-staking-introduction',
       },
       items: [
-        'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
-        'Earn/liquid-staking/bnb/stake-bnb',
+        'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
+        'Earn/liquid-staking/ftm/stake-ftm',
       ]
-    }, */
+    },
     {
       type: 'category',
       label: 'KSM',
@@ -179,6 +179,19 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
         'Earn/liquid-staking/ksm/stake-ksm',
+      ]
+    },
+       {
+      type: 'category',
+      label: 'MATIC',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/matic/matic-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/matic/matic-liquid-staking-mechanics',
+        'Earn/liquid-staking/matic/stake-matic',
+        'Earn/liquid-staking/matic/unstake-matic',
       ]
     },
       ]

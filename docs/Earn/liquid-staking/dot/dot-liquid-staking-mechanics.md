@@ -16,11 +16,11 @@ ANKR principles for the staking are:
 
 * aDOTb ratio changes, thus all aDOTb balances “automatically” grow.
 
-Staking is well-described by its requirement, fees, rewards, validators, as well as smart contracts and workflow that shows the API endpoints to call to interact with these smart contracts.
+It is well-described by its requirement, fees, rewards, validators, as well as smart contracts and workflow that shows the functions to call to interact with these smart contracts.
 
 ## Requirements
 
-The minimum requirements when staking are:
+The requirements when staking are:
 
 * Minimum value to stake — 1 DOT.
 
@@ -28,7 +28,7 @@ The minimum requirements when staking are:
 
 Staking can be repeated anytime, without waiting for the current staking to completed as staking on Polkadot is done by the ANKR-owned wallet where users send their stake directly.
 
-The minimum requirements when unstaking are:
+The requirements when unstaking are:
 
 * Minimum value to unstake — 0 DOT.
 
@@ -44,7 +44,7 @@ When staking, the user pays:
 
 When unstaking, the user pays no fees.
 
-The users must also count in the cost for outgoing transactions.
+The user must also count in the cost for outgoing transactions.
 
 ## Rewards
 

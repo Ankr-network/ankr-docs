@@ -12,13 +12,13 @@ It is well-described by its requirement, fees, rewards, validators, as well as s
 
 ## Requirements
 
-The minimum requirements when staking are:
+The requirements when staking are:
 
 * Minimum value to stake — 1 BNB.
 
 * Maximum value to stake — unlimited, at the user’s discretion.
 
-The minimum requirements when unstaking are:
+The requirements when unstaking are:
 
 * Minimum value to unstake — 1BNB.
 

@@ -5,10 +5,10 @@ id: ksm-liquid-staking-mechanics
 # Kusama Staking Mechanics
 
 :::note
-KSM Liquid Staking is almost identical to DOT Liquid Staking, so it isn't a typo when you notice `Polkadot` at the end of this document.
+Kusama is Polkadot's canary network, so it isn't a typo when you notice `Polkadot` at the end of this document.
 :::
 
-KSM Liquid Staking lets the user stake their funds through the ANKR deposit address on the Polkadot network, accumulate rewards, and receive their stake+rewards when unstaking.
+KSM Liquid Staking lets the user stake their funds through the ANKR deposit address on the Kusama network, accumulate rewards, and receive their stake+rewards when unstaking.
 
 ANKR principles for the staking are:
 
@@ -20,11 +20,11 @@ ANKR principles for the staking are:
 
 * aKSMb ratio changes, thus all aKSMb balances “automatically” grow.
 
-Staking is well-described by its requirement, fees, rewards, validators, as well as smart contracts and workflow that shows the API endpoints to call to interact with these smart contracts.
+It is well-described by its requirement, fees, rewards, validators, as well as smart contracts and workflow that shows the functions to call to interact with these smart contracts.
 
 ## Requirements
 
-The minimum requirements when staking are:
+The requirements when staking are:
 
 * Minimum value to stake — 1 KSM.
 
@@ -32,7 +32,7 @@ The minimum requirements when staking are:
 
 Staking can be repeated anytime, without waiting for the current staking to completed as staking on Polkadot is done by the ANKR-owned wallet where users send their stake directly.
 
-The minimum requirements when unstaking are:
+The requirements when unstaking are:
 
 * Minimum value to unstake — 0 aKSMb.
 
@@ -48,7 +48,7 @@ When staking, the user pays:
 
 When unstaking, the user pays no fees.
 
-The users must also count in the cost for outgoing transactions.
+The user must also count in the cost for outgoing transactions.
 
 ## Rewards
 
