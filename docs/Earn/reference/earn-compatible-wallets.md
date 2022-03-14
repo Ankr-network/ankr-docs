@@ -1,5 +1,5 @@
 ---
-title: Compatible Hot Wallets
+title: Compatible Wallets
 id: earn-compatible-wallets
 ---
 

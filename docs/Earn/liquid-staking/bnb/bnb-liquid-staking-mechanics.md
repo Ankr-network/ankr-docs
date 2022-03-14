@@ -5,7 +5,7 @@ id: bnb-liquid-staking-mechanics
 
 # Staking Mechanics
 
-ANKR Liquid Staking lets the user stake their funds through the corresponding smart contracts on ANKR, accumulate rewards for it, and receive their stake and rewards when unstaking.
+BNB Liquid Staking lets the user stake their funds through the corresponding smart contracts on the Binance network, accumulate rewards for it, and receive their stake and rewards when unstaking.
 
 It is well-described by its requirement, fees, rewards, validators, as well as smart contracts and workflow that shows the functions to call to interact with these smart contracts.
 
@@ -73,7 +73,7 @@ There are few entities involved:
 
 ## Validators
 
-There is a single [ANKR validator on Binance](https://www.bnbchain.world/en/staking/validator/bva1xnudjls7x4p48qrk0j247htt7rl2k2dzp3mr3j).
+[ANKR validator on Binance](https://www.bnbchain.world/en/staking/validator/bva1xnudjls7x4p48qrk0j247htt7rl2k2dzp3mr3j) — ANKR node that secures network, creates blocks, and processes transactions during the validation period.
 
 
 ## Staking workflow

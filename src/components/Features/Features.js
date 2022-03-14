@@ -28,7 +28,7 @@ const FeatureList = [
     ],
 
 
-    link: 'https://www.ankr.com/docs/docs/Earn/earn-introduction',
+    link: 'https://www.ankr.com/docs/Earn/earn-introduction',
 
   },
   {
