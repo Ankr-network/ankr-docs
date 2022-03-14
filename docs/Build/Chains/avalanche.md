@@ -58,9 +58,11 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 
 - **clientVersion**
 
+Returns the current client version.
+
 #### Example Request
 
-```shell
+```js
 curl https://rpc.ankr.com/avalanche \
   -X POST \
   -H "Content-Type: application/json" \
@@ -69,24 +71,20 @@ curl https://rpc.ankr.com/avalanche \
 
 #### Example Response
 
-```javascript
+```js
 {"jsonrpc":"2.0","id":1,"result":"v0.7.2-rc.1"}
 ```
 
-#### net library
+### net library
 
 - **net_version**
 
-```
-https://rpc.ankr.com/avalanche
-```
-
-Returns the current client versions
+Returns the current network id.
 
 
 #### Example Request
 
-```shell
+```js
   
   curl https://rpc.ankr.com/avalanche \
   -X POST \
@@ -96,15 +94,15 @@ Returns the current client versions
 
 #### Example Response
 
-```javascript
+```js
 {"jsonrpc":"2.0","id":67,"result":"43114"}
 ```
 
-## eth library
+### eth library
 
 ### Example Request
 
-```shell
+```js
 
 curl https://rpc.ankr.com/avalanche \
   -X POST \
@@ -114,7 +112,7 @@ curl https://rpc.ankr.com/avalanche \
 
 ### Example Response
 
-```shell
+```js
 {"jsonrpc":"2.0","id":67,"result":"0xaf7bf1"}
 ```
 

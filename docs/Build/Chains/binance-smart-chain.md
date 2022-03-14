@@ -46,25 +46,67 @@ You can set up your **MetaMask wallet** to connect to BSC RPC. You can then perf
 
 ## Integrate Code
 
-### web3.js library
+### web3 library
 
-clientVersion
+- **clientVersion**
 
-```
-https://rpc.ankr.com/bsc
-```
+Returns the current client version.
 
-### Example Request
+#### Example Request
 
-```javascript
+```js
 curl https://rpc.ankr.com/bsc \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-### Example Response
+#### Example Response
 
-```javascript
+```js
 {"jsonrpc":"2.0","id":1,"result":"Geth/v1.1.7-74f6b613/linux-amd64/go1.16.10"}
 ```
+
+### net library
+
+- **net_version**
+
+Returns the current network id.
+
+
+#### Example Request
+
+```js
+  
+  curl https://rpc.ankr.com/bsc \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
+```
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"56"}
+```
+
+### eth library
+
+### Example Request
+
+```js
+
+curl https://rpc.ankr.com/bsc \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
+```
+
+### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"0xf50e1c"}
+```
+
+
+

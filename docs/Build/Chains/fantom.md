@@ -36,54 +36,65 @@ You can set up your **MetaMask wallet** to connect to Fantom RPC. You can then p
 |        |   BLOCK EXPLORER:   | [https://explorer.fantom.network/](https://explorer.fantom.network) |
 
 
-## Integrate CLI
+## Integrate Code
 
-### web3
+### web3 library
 
-clientVersion
+- **clientVersion**
 
-```
-https://rpc.ankr.com/fantom
-```
+Returns the current client version.
 
-Returns the current client versions
+#### Example Request
 
-### Parameters
-
-none
-
-### Returns
-
-`String` - The current client version
-
-#### HEADERS
-
-**Content-Type** application/json
-
-**BODY** raw
-
-```json
-{
-	"jsonrpc":"2.0",
-	"method":"web3_clientVersion",
-	"params":[],
-	"id":1
-} 
-```
-
-### Example Request
-
-### Example Request
-
-```
+```js
 curl https://rpc.ankr.com/fantom \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-### Example Response
+#### Example Response
 
-```javascript
-{"jsonrpc":"2.0","id":1,"result":"v0.7.2-rc.1"}
+```js
+{"jsonrpc":"2.0","id":1,"result":"go-opera/v1.1.0-rc.3-4f960171-1645028798/linux-amd64/go1.17.7"}
+```
+
+### net library
+
+- **net_version**
+
+Returns the current network id.
+
+#### Example Request
+
+```js
+  
+  curl https://rpc.ankr.com/fantom\
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
+```
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"250"}
+```
+
+### eth library
+
+#### Example Request
+
+```js
+
+curl https://rpc.ankr.com/fantom \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
+```
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"0x1fe0cee"}
 ```

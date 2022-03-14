@@ -44,27 +44,70 @@ Here's how to set up your  **MetaMask wallet** to connect to Arbitrum RPC. You c
 
 ## Integrate
 
-### clientVersion
+### web3 library
 
-```
-https://rpc.ankr.com/arbitrum
-```
+- **clientVersion**
 
+Returns the client version
 
+#### Example Request
 
-### Example Request
-
-```shell
+```js
 curl https://rpc.ankr.com/arbitrum \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-### Example Response
+#### Example Response
 
-```javascript
+```js
 {"jsonrpc":"2.0","id":1,"result":"arb-rpc-node/v0.8.0"}
 ```
+
+### net library
+
+- **net_version**
+
+Returns the current network id.
+
+
+#### Example Request
+
+```js
+  
+  curl https://rpc.ankr.com/arbitrum \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
+```
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"42161"}
+```
+
+### eth library
+
+### Example Request
+
+```js
+
+curl https://rpc.ankr.com/arbitrum \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
+```
+
+### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"0x788e6b"}
+```
+
+
+
+
 
 

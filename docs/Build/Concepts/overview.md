@@ -5,6 +5,8 @@ id: build-concepts
 
 # Build - Overview
 
+Start here for Build.
+
 As Web 3.0 gains in popularity, increasing numbers are seeking opportunities to develop innovative products and features with Web 3.0 blockchain technology. 
 
 A real barrier to entering this space is navigating the technical complexity and cost of running blockchain infrastructure. 
