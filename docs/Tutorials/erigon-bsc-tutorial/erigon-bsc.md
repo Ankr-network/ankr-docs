@@ -1,7 +1,9 @@
 ---
-title: Launching a Full Node on Binance Smart Chain with Erigon
-id: launching-a-full-node-on-binance-smart-chain-with-erigon
+title: BSC Full Node with Erigon
+id: erigon-bsc
 ---
+
+By Corey Wooten
 
 ![Erigon Ankr Binance banner](https://i.imgur.com/S3k5JAw.png)
 
@@ -38,79 +40,68 @@ id: launching-a-full-node-on-binance-smart-chain-with-erigon
 
 To access the remote server, the user must enable Secure Shell (SSH) on their system.
 
-```Shell
+```shell
 # Enable SSH
-
 sudo systemsetup -setremotelogin on
 Password: [*****]   # System password
 ```
 
-```Shell
+```shell
 # Disable SSH
-
 sudo systemsetup -setremotelogin off
 ```
 
 ## **01 Updating and Configuring the Server**
 
-### 1.1 Connect to the Server via SSH
+### **1.1 Connect to the Server via SSH**
 
-```Shell
+```shell
 # Log in with your server admin credentials
 
 ssh <your_username>@<server_ip_address>
 Password: [*****]
 ```
 
-**Tip:**
+_Tip:_
 
-```Shell
+```shell
 # To suspend the connection...
-
-[CTRL]+[Z]    # For Windows/Linux
-[CMD]+[Z]     # For Mac
+CTRL+Z  # For Windows/Linux
+CMD+Z   # For Mac
 ```
 
-### 1.2 System Updates and Installations
+### **1.2 System Updates and Installations**
 
 #### 1.2.1 Run Linux Updates
 
-```Shell
-# Update Linux OS
-# Upgrade packages
-# Remove outdated programs
-
+```shell
+# Update Linux OS, upgrade packages, remove outdated programs
 sudo apt update && sudo apt-dist upgrade -y && sudo apt autoremove -y
 ```
 
-#### 1.2.2 Install Go – ([_Get it Here_](https://go.dev/doc/install))
+#### 1.2.2 Install Go – ([Get it Here](https://go.dev/doc/install))
 
-```Shell
-# Download & extract the latest version of Go
-# Current: v1.17.8
-
+```shell
+# Download & extract the latest version of Go (current: v1.17.8)
 wget -c https://go.dev/dl/go1.17.8.linux-amd64.tar.gz && sudo tar -C /usr/local -xzf go1.17.8.linux-amd64.tar.gz
 ```
 
-```Shell
+```shell
 # Create a new directory
 # Set the $GOPATH environment variable
 # Set the $PATH variable to include $GOROOT and $GOPATH
 
 mkdir ~/.go
-
 GOROOT=/usr/local/go && GOPATH=~/.go && PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
-```Shell
+```shell
 # Replace existing Go version with the latest version
-
 sudo update-alternatives --install "/usr/bin/go" "go" "/usr/local/go/bin/go" 0 && update-alternatives --set go /usr/local/go/bin/go
 ```
 
-```Shell
+```shell
 # Check for updated version
-
 go version
 ```
 
@@ -118,13 +109,13 @@ go version
 
 #### 1.2.3 Create the Server's Home Folder
 
-```Shell
+```shell
 mkdir ~/srv/svc && cd srv/svc
 ```
 
 #### 1.2.4 Install the Essential Ubuntu Packages
 
-```Shell
+```shell
 # Run as super ('sudo') user
 
 apt install snap
@@ -140,28 +131,28 @@ snap install axel
 
 ## **02 Building the Erigon Client**
 
-### 2.1 Install Build Essentials
+### **2.1 Install Build Essentials**
 
-```Shell
+```shell
 apt install build-essential
 ```
 
-### 2.2 Clone the Erigon Repository
+### **2.2 Clone the Erigon Repository**
 
-```Shell
+```shell
 git clone https://github.com/ledgerwatch/erigon --recursive
 ```
 
 ![github repo](https://i.imgur.com/0iHCODNl.jpg)
 
-### 2.3 Create a New Folder to Run Erigon
+### **2.3 Create a New Folder to Run Erigon**
 
-```Shell
+```shell
 mkdir erigon && cd erigon
 make all
 ```
 
-### 2.4 Review the Erigon Files
+### **2.4 Review the Erigon Files**
 
 ```shell
 cd build/bin
@@ -171,26 +162,26 @@ ls -ai
 
 ![Erigon Directory](https://i.imgur.com/UsjQJoWl.jpg)
 
-### 2.5 Copy the Erigon Files to the Local Directory
+### **2.5 Copy the Erigon Files to the Local Directory**
 
 ```shell
 sudo cp ./* /usr/local/bin
 ```
 
-### 2.6 Move Back into the Erigon Folder
+### **2.6 Move Back into the Erigon Folder**
 
 ```shell
 cd ~/srv/svc/erigon/
 cd ..
 ```
 
-### 2.7 Verify the Launch Path
+### **2.7 Verify the Launch Path**
 
 ```shell
 which erigon
 ```
 
-### 2.8 List Erigon Commands
+### **2.8 Show Erigon Commands**
 
 ```shell
 erigon --help
@@ -198,7 +189,7 @@ erigon --help
 
 ## **03 Running the BSC Node with Erigon**
 
-### 3.1 Update Your Server's Security Settings
+### **3.1 Update Your Server's Security Settings**
 
 #### 3.1.1 Block Unauthorized Access with Fail2Ban
 
@@ -218,9 +209,8 @@ sudo ufw allow ssh
 
 ![UFW](https://i.imgur.com/ur9Y2qyl.jpg)
 
-### 3.2 Sync with Binance Smart Chain
-
-_Important: This step will likely take a while to complete._
+### **3.2 Sync with Binance Smart Chain**
+_This step will likely take a while to complete._
 
 #### 3.2.1 Sync Normally
 
@@ -236,7 +226,7 @@ nohup bash -c 'erigon --chain=bsc --datadir=/srv/svc --metrics --metrics.addr=0.
 
 ![BSC Sync](https://i.imgur.com/b5d6ZHTl.jpg)
 
-### 3.3 Monitor Your Node's Performance with [NetData](https://netdata.cloud/) (Optional)
+### **3.3 Monitor Your Node's Performance with [NetData](https://netdata.cloud/) (Optional)**
 
 1. Register for a free account.
 2. Log into the user portal and select "**Connect Nodes.**"
