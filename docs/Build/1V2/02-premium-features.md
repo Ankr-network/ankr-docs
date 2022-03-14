@@ -21,17 +21,16 @@ Fully refundable if you change your mind within 3 days.
 1. Exclusive RPC API (https) endpoint
 2. Exclusive Websocket (wss) endpoint
 
+## Benefits
 
-    Enjoy the following benefits:&#x20;
-
-3. testing out ordered list
+Enjoy the following benefits:&#x20;
 
 * At times of network congestion, Ankr Premium requests are prioritized.&#x20;
 * Establish a durable, low-latency connection via the websocket endpoint and have data pushed incrementally directly to you as soon as it is available. This makes it ideal for real-time data analytics
 
 :::warning
 
-The Websocket API limits the maximum number of simultaneous connections to provide protection against misuse e.g. DDoS attacks, for example). If your Websocket client makes too many connections at the same time, an error message will be received.
+The Websocket API limits the maximum number of simultaneous connections to provide protection against misuse e.g. DDoS attacks, for example. If your Websocket client makes too many connections at the same time, an error message will be received.
 :::
 
 <!-- ### Ankr Premium - Project

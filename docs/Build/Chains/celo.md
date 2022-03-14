@@ -41,27 +41,66 @@ You can set up your **MetaMask wallet** to connect to Celo RPC. You can then per
 |           | SYMBOL:                 | CELO                                                   |
 |           | BLOCK EXPLORER URL:     | [https://explorer.celo.org](https://explorer.celo.org) |
 
-## Integrate CLI
+## Integrate Code
 
 ### web3 library
 
-clientVersion
+- **clientVersion**
 
-```
-https://rpc.ankr.com/celo
-```
+Returns the current client version.
 
-### Example Request
+#### Example Request
 
-```shell
+```js
 curl https://rpc.ankr.com/celo \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-### Example Response
+#### Example Response
 
-```javascript
-{"jsonrpc":"2.0","id":1,"result":"celo/v1.4.1-stable-0a6286b2/linux-amd64/go1.17.3"
+```js
+{"jsonrpc":"2.0","id":1,"result":"celo/v1.5.2-stable-1bd6b188/linux-amd64/go1.17.3"}
 ```
+
+### net library
+
+- **net_version**
+
+Returns the current network id.
+
+#### Example Request
+
+```js
+  
+  curl https://rpc.ankr.com/celo\
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
+```
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"42220"}
+```
+
+### eth library
+
+#### Example Request
+
+```js
+
+curl https://rpc.ankr.com/celo \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
+```
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"0xb63607"}
+```
+
