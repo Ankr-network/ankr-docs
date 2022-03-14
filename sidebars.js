@@ -297,8 +297,8 @@ earnSidebar: {
         'Tutorials/create-eth-app-tutorial/create-eth-app',
         'Tutorials/simple-truffle', 
         'Tutorials/connect-web3js',
-          'Tutorials/connect-web3py',
-        'Tutorials/bsc-erigon/bsc-node-erigon'
+        'Tutorials/erigon-bsc-tutorial/erigon-bsc',
+        'Tutorials/connect-web3py'
       ],
     },
   ],
