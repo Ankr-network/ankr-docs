@@ -135,6 +135,18 @@ earnSidebar: {
       items: [
       {
       type: 'category',
+      label: 'AVAX',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/avax/avax-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/avax/avax-liquid-staking-mechanics',
+        'Earn/liquid-staking/avax/stake-avax',
+      ]
+    },
+      {
+      type: 'category',
       label: 'BNB',
       link: {
         type: 'doc',

@@ -52,9 +52,15 @@ The user must also count in the cost for outgoing transactions.
 
 
 ## Rewards
-Validators receive rewards on the regular basis. 
+User's aMATICb balance grows daily. It can be desribed as `daily rewards / total share * user's share`.
+
+Validators receive rewards on the regular basis at the end of each epoch.
 
 The APY is calculated from the validators' rewards.
+
+## Validators
+
+There is a single [ANKR validator on Polygon](https://wallet.polygon.technology/staking/validators/31). 
 
 
 ## Smart contracts
