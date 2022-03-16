@@ -1,9 +1,9 @@
 ---
-title: Premium APIs
+title: Advanced APIs
 id: premium-apis
 ---
 
-**Premium APIs** are a collection of exclusive API endpoints exclusively for Premium Subscribers. 
+**Advanced APIs** are a collection of exclusive API endpoints exclusively for Premium Subscribers. 
 
 These APIs have been designed to:
 
@@ -17,7 +17,11 @@ Currently, the following methods are available:
 Obtains detailed information about blocks from a specific range for a specific chain. 
 
 ## **ankr_getNFTsByOwner**
-Obtains detailed information about NFTs from a wallet address across multiple chains (currently 5 chains: Polygon, Avalanche, Ethereum, Binance Smart Chain, Fantom
+Obtains detailed information about NFTs from a wallet address across multiple chains (currently 5 chains: Polygon, Avalanche, Ethereum, Binance Smart Chain, 
+
+## **ankr_getLogs**
+
+Check Postman
 
 ## Get Started
 
@@ -38,7 +42,11 @@ Find your keys on the [Ankr Protocol Premium Plan](https://www.ankr.com/protocol
 
 ### Client libraries
 
+Advanced API SDK Coming Soon
+
 ### Rate Limits
+
+There are no rate limits.
 
 For example: 
 
@@ -89,6 +97,8 @@ For example:
 ## **ankr_getBlocksRange**
 
 *ankr_getBlocksRange* retrieves detailed information about each block within a specific range very quickly including event logs and topics. 
+
+This is available for up to 100 blocks
 
 #### Chains
 
