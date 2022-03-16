@@ -25,6 +25,12 @@ jobs:
       - uses: nelonoel/branch-name@v1.0.1
 
       - name: Get deployment information
+        if: ${{ github.event.inputs.api == 'PROD' && github.ref != 'main' }}
+        run: |
+          echo "Production deployment is possible only from the `main` branch"
+          exit 1
+
+      - name: Get deployment information
         run: |
           echo "Branch: ${BRANCH_NAME}"
           echo "Domain: ${{github.event.inputs.environment}}"
