@@ -24,7 +24,7 @@ jobs:
       - uses: egordm/gha-yarn-node-cache@v1
       - uses: nelonoel/branch-name@v1.0.1
 
-      - name: Get deployment information
+      - name: Prevent wrong version releasing
         if: ${{ github.event.inputs.api == 'STAGE' && github.ref != 'main' }}
         run: |
           echo "Production deployment is possible only from the `main` branch"
