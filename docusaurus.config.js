@@ -111,11 +111,11 @@
                   to: "Earn/defi/defi-introduction",
                   label: "DeFi",
                 },
-               /* {
+               {
                   to: "Earn/bridge/bridge-introduction",
                   label: "Bridge",
                 },
-                {
+                /* {
                   to: "Earn/switch/switch-introduction",
                   label: "Switch",
                 }, */

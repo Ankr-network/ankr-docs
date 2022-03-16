@@ -29,7 +29,7 @@ Unstaking means that aAVAXb has an **elastic supply** contributing to a **robust
 
 ### 3. Access **Instant Liquidity Pools** 
 
-* ANKR token holders can soon gain access to instant liquidity pools. This allows them to sell 1 aAVAXb against 1 AVAX instantly and subject to the instant liquidity pool capacity. 
+* Ankr token holders can soon gain access to instant liquidity pools. This allows them to sell 1 aAVAXb against 1 AVAX instantly and subject to the instant liquidity pool capacity. 
 
 * 3% of the allocated AVAX tokens to Ankr Earn will not be staked and will remain unstaked.
 

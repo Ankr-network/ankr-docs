@@ -11,7 +11,7 @@ There are two types of Liquidity Tokens:
 • Reward Earning Tokens, e.g. aAVAXb and aETHb (formerly fETH.)
 
 ## Reward Earning
-These are automatically issued to your ANKR Earn Dashboard upon successful ETH2 staking.
+These are automatically issued to your Ankr Earn Dashboard upon successful ETH2 staking.
 
 The amount of aETHc issued is equivalent to the amount of staked ETH.
 
@@ -27,6 +27,6 @@ Fair Value is your stake plus the rewards that have not yet been distributed. Th
 The Market Price is the price that traders are willing to buy and sell internet bonds knowing that they don't have access to the Fair Value until 2022. 
 
 ## Reward Earning Tokens
-These are automatically issued to your ANKR Earn Dashboard upon successful ETH2 and/or AVAX staking.
+These are automatically issued to your Ankr Earn Dashboard upon successful ETH2 and/or AVAX staking.
 
 Daily rewards are automatically updated in Bond holders’ wallets. The amount of aETHb/aAVAX held automatically increases with every daily rebase.

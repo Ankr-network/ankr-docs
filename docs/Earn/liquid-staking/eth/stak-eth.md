@@ -1,5 +1,5 @@
 ---
-title: Stake ETH on ankr.com
+title: Stake ETH in Ankr Earn
 id: stake-eth
 ---
 
@@ -13,7 +13,7 @@ id: stake-eth
 
 :::
 
-1. Visit the [Ankr Earn](https://stakefi.ankr.com)app and click the '_**Launchpad**_**' button.
+1. Visit the [Ankr Earn](https://stakefi.Ankr.com)app and click the '_**Launchpad**_**' button.
 
 2. Locate the ‘**Stake ETH**’ box and click ‘_**Start staking**_’.
 

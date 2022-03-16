@@ -1,9 +1,9 @@
 ---
-title: Stake BNB on ankr.com
+title: Stake BNB in Ankr Earn
 id: stake-bnb
 ---
 
-# Stake BNB on ankr.com
+# Stake BNB in Ankr Earn
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ id: stake-bnb
 
 ### Connect your Wallet
 
-1. Navigate to the [Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) platform.
+1. Navigate to the [Ankr Earn](https://stakefi.Ankr.com/liquid-staking/launchpad) platform.
 
 2. Locate the ‘**Stake BNB**’ card and select ‘_**Start staking**_’.
 3. You are prompted to grant **Ankr Earn** access to your wallet. Click '_**Grant Access**_**'** to proceed.

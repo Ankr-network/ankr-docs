@@ -9,13 +9,13 @@ Binance Coin (BNB) Liquid Staking from Ankr Earn offers **instant liquidity** fo
 
 BNB Liquid Staking enables you to earn \*\*alpha. \*\* (The _return on investment that goes far beyond normal increases in the crypto market index_).&#x20;
 
-Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, **** yield farming, and much more.
+Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
 ### Benefits of BNB Liquid Staking&#x20;
 
 Instant Liquidity Using Ankr Earn is the best way to stake BNB as you can access instant liquidity in the form of the aBNBb token. Avoiding locking your tokens up with the BSC network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
 
-Read the [Medium article](https://medium.com/ankr-network/ankr-x-ellipsis-staking-liquidity-mining-ankr-rewards-f49a76fd50cc) about staking and liquidity mining to learn more benefits!
+Read the [Medium article](https://medium.com/Ankr-network/Ankr-x-ellipsis-staking-liquidity-mining-Ankr-rewards-f49a76fd50cc) about staking and liquidity mining to learn more benefits!
 
 ### Boosted Yields&#x20;
 

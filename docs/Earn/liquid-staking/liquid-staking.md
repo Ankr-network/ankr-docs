@@ -22,14 +22,14 @@ You can harvest the farmed tokens and stake those tokens as well to earn more yi
 
 Ready to get started?
 
-Check out [**Ankr Earn**](https://stakefi.ankr.com)
+Check out [**Ankr Earn**](https://stakefi.Ankr.com)
 :::
 
 ## How do I get Liquid Staking Tokens?
 
 Liquid Staking tokens are automatically issued to your Ankr Earn Dashboard when you successfully stake assets such as ETH, AVAX, FTM, BNB. 
 
-Check out [**Ankr Earn**](https://stakefi.ankr.com)
+Check out [**Ankr Earn**](https://stakefi.Ankr.com)
 
 For example,
 
@@ -42,7 +42,7 @@ For example,
 :::info
 There are two types of liquid staking tokens:
 
-1. Reward bearing tokens (e.g. aETHc, formerly known as aETH or ankrETH)
+1. Reward bearing tokens (e.g. aETHc, formerly known as aETH or AnkrETH)
 2. Reward earning tokens (e.g. aAVAXb or aETHb, formerly known as fETH)
 
 :::
@@ -71,6 +71,6 @@ ETH liquid staking price stability is based mainly on the amount of liquidity in
 :::tip
 Ready to get started?
 
-Check out [**Ankr Earn**](https://stakefi.ankr.com)
+Check out [**Ankr Earn**](https://stakefi.Ankr.com)
 :::
 

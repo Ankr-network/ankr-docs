@@ -4,11 +4,11 @@ id: dot-liquid-staking-mechanics
 ---
 # Polkadot Staking Mechanics
 
-DOT Liquid Staking lets the user stake their funds through the ANKR deposit address on the Polkadot network, accumulate rewards, and receive their stake+rewards when unstaking.
+DOT Liquid Staking lets the user stake their funds through the Ankr deposit address on the Polkadot network, accumulate rewards, and receive their stake+rewards when unstaking.
 
-ANKR principles for the staking are:
+Ankr principles for the staking are:
 
-* Receive DOT from the user to the ANKR deposit address.
+* Receive DOT from the user to the Ankr deposit address.
 
 * Mint aDOTb on Ethereum. Make all claiming aDOTb transactions on the Ethereum network.
 
@@ -16,7 +16,7 @@ ANKR principles for the staking are:
 
 * aDOTb ratio changes, thus all aDOTb balances “automatically” grow.
 
-It is well-described by its requirement, fees, rewards, validators, as well as smart contracts and workflow that shows the functions to call to interact with these smart contracts.
+The following section explains staking requirements, fees, rewards, validators, smart contracts and function calls to interact with these smart contracts.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ The requirements when staking are:
 
 * Maximum value to stake — unlimited, at the user’s discretion.
 
-Staking can be repeated anytime, without waiting for the current staking to completed as staking on Polkadot is done by the ANKR-owned wallet where users send their stake directly.
+Staking can be repeated anytime, without waiting for the current staking to completed as staking on Polkadot is done by the Ankr-owned wallet where users send their stake directly.
 
 The requirements when unstaking are:
 
@@ -40,21 +40,21 @@ The requirements when unstaking are:
 
 When staking, the user pays:
 
-* 2% commission on the reward, to ANKR.
+* 2% commission on the reward, to Ankr.
 
 When unstaking, the user pays no fees.
 
-The user must also count in the cost for outgoing transactions.
+The user must also count in the gas price for outgoing transactions.
 
 ## Rewards
 
 Validators/delegators receive rewards daily.
 
-ANKR backend calculates the ratio of rewards to the total stake amount weekly and publishes it to the aDOTb smart contract respectively.
+Ankr backend calculates the ratio of rewards to the total stake amount weekly and publishes it to the aDOTb smart contract respectively.
 
 ## Validators
 
-ANKR delegates the staked funds to trusted validators from Polkadot, which may change in 1 day or longer.
+Ankr delegates the staked funds to trusted validators from Polkadot. Specific validators may change in >= 1 day.
 
 ## Smart contract
 
@@ -62,7 +62,7 @@ Smart contracts addresses involved in DOT staking are:
 
 Polkadot deposit address:
 
-[ANKR deposit address](https://polkadot.subscan.io/account/11XAoN3fgVLJUmK4Ty2q2H5dGYYzRZe82F247SyzfwZbHpV) — address that receives the staked DOTs on Polkadot.
+[Ankr deposit address](https://polkadot.subscan.io/account/11XAoN3fgVLJUmK4Ty2q2H5dGYYzRZe82F247SyzfwZbHpV) — address that receives the staked DOTs on Polkadot.
 
 Ethereum:
 
@@ -76,35 +76,35 @@ The flow consists of two parts: staking DOT and claiming aDOTb.
 
 ### Staking DOT
 
-The workflow is both user- and ANKR-driven. The user part is Step 1 through 3, while the ANKR part is Step 3 through 5. User interacts with ANKR and Polkadot via the ANKR frontend. 
+The workflow is both user and Ankr-driven. The user part is Steps 1–3, the Ankr part is Steps 3–5. User interacts with Ankr and Polkadot via the Ankr Earn Dashboard. 
 
-Due to Polkadot backend architecture, we currently do not disclose our API endpoints to avoid scams or unregulated heavy traffic to the ANKR backend. 
+Due to Polkadot backend architecture, we currently do not disclose our API endpoints to avoid scams or unregulated heavy traffic to the Ankr backend. 
 
-1. User requests the ANKR deposit address via the ANKR backend.
+1. User requests the Ankr deposit address via the Ankr backend.
 
-2. User sends DOTs to the obtained ANKR deposit address via the ANKR backend.
+2. User sends DOTs to the obtained Ankr deposit address via the Ankr backend.
 
-3. User sends their extrinsic id to the ANKR backend.
+3. User sends their extrinsic id to the Ankr backend. In Substate, an extrinsic is a piece of information that comes from outside the chain and is included in a block.
 
 4. Once the transaction has been finalized, the user can see their DOT balance on the StakeFi page the stake was made from.
 
-5. ANKR backend monitor deposits to the ANKR deposit address. Once new DOTs are available for staking, the backend:
-   1. Transfer the DOTs to one of our treasury accounts if necessary. 
-   2. Bond DOTs for staking
-   3. Constantly nominate a subset of validators.
+5. Ankr backend monitor deposits to the Ankr deposit address. Once new DOTs are available for staking, the backend:
+   1. Transfers the DOTs to one of the Ankr dedicated accounts if necessary.
+   2. Bonds DOTs for staking.
+   3. Constantly nominates a subset of validators.
 
 ### Claiming aDOTb
 
-The workflow is user-driven. User interacts with ANKR and Polkadot via ANK frontend. 
+The workflow is user-driven. User interacts with Ankr and Polkadot via ANK frontend. 
 
-1. User sees their claimable balance on the DOT staking dashboard. The balance is obtained from the ANKR backend; the user `address` is extracted from their Polkadot.js wallet; `claimable` is the amount that can be currently claimed and is an aggregate of the stake and reward.
+1. User sees their claimable balance on the DOT staking dashboard. The balance is obtained from the Ankr backend; the user `address` is extracted from their Polkadot.js wallet; `claimable` is the amount that can be currently claimed and is an aggregate of the stake and reward.
 
 2. User sees their staking history on the DOT staking dashboard. 
 
 3. For claimable aDOTb, the user sees a suggestion to claim them. In order to claim, the user must unlock and connect their Metamask or another compatible Ethereum wallet to the Ethereum network.
 
-4. When claiming, the user sees the claming form and inputs the amount of aDOTb to be claimed along with the user’s Ethereum address. By default, ANKR suggests the max possible claim and address from the connected user’s Ethereum wallet.  
-   Upon claim confirmation, the user interacts with Polkadot.js extension to send a request to the ANKR backend to get a notarization signature. To send the request, the user needs to include a signature in it. The signature is created by signing the marshalled message `<Bytes>StakeFi Signed Message:\n[POLKADOT_PUBLIC_KEY_HEX]\n[ETHEREUM_ADDRESS]\n[CURRENT_TIMESTAMP]</Bytes>`. The resulting signature is included in the request.
+4. When claiming, the user sees the claiming form and inputs the amount of aDOTb to be claimed along with the user’s Ethereum address. By default, Ankr suggests the max possible claim and address from the connected user’s Ethereum wallet.  
+   Upon claim confirmation, the user interacts with the Polkadot.js extension to send a request to the Ankr backend to get a notarization signature. To send the request, the user creates a signature and includes it in the request.
 
 6. The `claim` object in the reply contains the following fields: 
 
@@ -160,7 +160,7 @@ PolkadotPool::claimBonds(
 
 ### Daily exchange rate updates
 
-To update the ratio, the ANKR backend:
+To update the ratio, the Ankr backend:
 
 1. Collects information about all stakes in progress and rewards to be received by the end of the current validation period.
 
@@ -174,10 +174,10 @@ To update the ratio, the ANKR backend:
 
 1. User calls `PolkadotPool::burnBond(address bond, uint256 amount, bytes calldata polkadotRecipient)` where `bond` is the aDOTb contract address, `amount` is the amount to burn, and `polkadotRecipient` is the user’s address on Polkadot.
 
-2. ANKR backend catches a `TokensBurned` event, emitted by `PolkadotPool` and saves the unstaking request to the database.
+2. Ankr backend sees a `TokensBurned` event, emitted by `PolkadotPool`, and saves the unstaking request to the database.
 
-3. If ANKR deposit address doesn’t have the corresponding number of DOT at the moment, the ANKR backend sends an unbonding request to the Polkadot network.
+3. If Ankr deposit address doesn’t have the corresponding number of DOT at the moment, the Ankr backend sends an unbonding request to the Polkadot network.
 
-4. When the ANKR deposit address has enough DOTs available to fulfill the request, the funds are sent to the user’s address on Polkadot.
+4. When the Ankr deposit address has enough DOTs available to fulfill the request, the funds are sent to the user’s address on Polkadot.
 
 5. The user sees a new `UNSTAKE` entry in their staking history on the staking dashboard.

@@ -1,5 +1,5 @@
 ---
-title: Stake MATIC on ankr.com
+title: Stake MATIC in Ankr Earn
 id: stake-matic
 ---
 
@@ -24,7 +24,7 @@ A very small amount of ETH is used to perform the transaction
 
 Network Name: Polygon
 
-New RPC URL: https://rpc.ankr.com/polygon
+New RPC URL: https://rpc.Ankr.com/polygon
 
 ChainID: 137
 
@@ -34,7 +34,7 @@ Explorer: https://polygonscan.com/
 
 ## Connect your Wallet
 
-1. Navigate to the [Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) platform.
+1. Navigate to the [Ankr Earn](https://stakefi.Ankr.com/liquid-staking/launchpad) platform.
 
 2. Locate the ‘**Stake MATIC**’ card and select ‘_**Start staking**_’.
 3. You are prompted to grant **Ankr Earn** access to your wallet. Click '_**Grant Access**_**'** to proceed.

@@ -5,9 +5,9 @@ id: avax-liquid-staking-mechanics
 
 ## Staking Mechanics
 
-AVAX Liquid Staking lets the user stake their funds through the ANKR deposit address on the Avalanche network, accumulate rewards, and receive their stake+rewards when unstaking.
+AVAX Liquid Staking lets the user stake their funds through the Ankr deposit address on the Avalanche network, accumulate rewards, and receive their stake+rewards when unstaking.
 
-It is well-described by its requirement, fees, rewards, validators, as well as smart contracts and workflow that shows the functions to call to interact with these smart contracts.
+The following section explains staking requirements, fees, rewards, validators, smart contracts and function calls to interact with these smart contracts.
 
 
 ## Requirements
@@ -31,7 +31,7 @@ The requirements when unstaking are:
 
 The user pays 2% fee from the staking reward.
 
-The user must also count in the cost for outgoing transactions.
+The user must also count in the gas price for outgoing transactions.
 
 
 ## Rewards
@@ -43,7 +43,7 @@ Validators that work correctly and are online at least 80% of their validating p
 
 ## Validators
 
-On Avalanche, ANKR has two validators. 
+On Avalanche, Ankr has two validators. 
 
 In case you want to integrate with us, drop us a line for further details.
 
@@ -65,26 +65,30 @@ Smart contracts code lives by the links above, at the **Contract** tab on the pa
 
 ## Staking workflow
 
-1. User sends AVAX to `AvalanchePool` on the Avalanche blockchain via the ANKR frontend and Metamask connected to the Avalanche blockchain. The function effectively called is `AlavalchePool::stake()`. 
+The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–5. 
+
+1. User sends AVAX to `AvalanchePool` on the Avalanche blockchain via the Ankr Earn Dashboard and Metamask connected to the Avalanche blockchain. The function effectively called is `AlavalchePool::stake()`. 
 
 2. `AvalanchePool` emits an event saying the stake is received: `AlavalchePool::StakePending(address indexed staker, uint256 amount)`.
 
 3. `AvalanchePool` calculates and stores/updates the number of aAVAXb the user can claim, equal to the staked AVAX.
 
-4. ANKR backend collects the staked AVAX transferring them from the smart contract to the deposit address controlled by ANKR. Then it makes a delegator or validator stake on the Avalanche blockchain.
+4. Ankr backend collects the staked AVAX transferring them from the smart contract to the deposit address controlled by Ankr. Then it makes a delegator or validator stake on the Avalanche blockchain.
 
 5. aAVAXb is minted automatically to the user's address.
 
 ## Ratio updates
 
-ANKR backend updates the ratio daily and the user can see their updated aAVAXb balance.
+Ankr backend updates the ratio daily and the user can see their updated aAVAXb balance.
 
 ## Unstaking workflow
 
-1. When the user decides to unstake some amount of aAVAXb, they input the number on the ANKR frontend, and the frontend sends a request to the `AvalanchePool::claim(uint256 amount)` smart contract to claim the AVAX.
+The workflow is both user and Ankr-driven. The user part is Steps 1-2, the Ankr part is Steps 3–4. 
+
+1. When the user decides to unstake some amount of aAVAXb, they input the number on the Ankr Earn Dashboard, and the frontend sends a request to the `AvalanchePool::claim(uint256 amount)` smart contract to claim the AVAX.
 
 2. `AvalanchePool` burns aAVAXb to "convert" them to AVAX and stores the convert request.
 
-3. When the current validation period is over, ANKR backend checks if there any aAVAXb-to-AVAX convert requests pending and requests `AvalanchePool` to serve them providing AVAX from unblocked stakes and received rewards, at the end of the current validating period.
+3. When the current validation period is over, Ankr backend checks if there any aAVAXb-to-AVAX convert requests pending and requests `AvalanchePool` to serve them providing AVAX from unblocked stakes and received rewards, at the end of the current validating period.
 
-4. `AvalanchePool` uses the AVAX received from the ANKR dedicated address to serve the pending convert requests. 
+4. `AvalanchePool` uses the AVAX received from the Ankr dedicated address to serve the pending convert requests. 

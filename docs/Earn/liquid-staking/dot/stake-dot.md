@@ -1,5 +1,5 @@
 ---
-title: Stake DOT on ankr.com
+title: Stake DOT in Ankr Earn
 id: stake-dot
 ---
 
@@ -49,7 +49,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 ## Connect your Wallet
 
-1. Visit  [**Ankr Earn**](https://stakefi.ankr.com/) and click the *'Launchpad'* button.
+1. Visit  [**Ankr Earn**](https://stakefi.Ankr.com/) and click the *'Launchpad'* button.
 
 2. Locate the *‘Stake DOT* box and click *‘Start staking’*.
 

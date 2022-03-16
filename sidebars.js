@@ -246,7 +246,7 @@ earnSidebar: {
           'Earn/defi/provide-liquidity-dex',
       ]
     },
-/*    {
+    {
       type: 'category',
       label: 'Bridge',
       collapsible: true,
@@ -256,9 +256,10 @@ earnSidebar: {
         id: 'Earn/bridge/bridge-introduction',
       },
       items: [
+          'Earn/bridge/bridge-mechanics',
       ]
     },
-    {
+/*    {
       type: 'category',
       label: 'Switch',
       collapsible: true,

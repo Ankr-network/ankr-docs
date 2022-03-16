@@ -1,5 +1,5 @@
 ---
-title: Stake FTM on ankr.com
+title: Stake FTM in Ankr Earn
 id: stake-ftm
 ---
 
@@ -19,7 +19,7 @@ id: stake-ftm
 * **New RPC URL**: [https://rpc.ftm.tools](https://rpc.ftm.tools)
 * **ChainID**: 250
 * **Symbol**: FTM
-* **Explorer**: [https://ankrscan.io/](https://ankrscan.io)
+* **Explorer**: [https://Ankrscan.io/](https://Ankrscan.io)
 
 ### Other wallets that support Fantom
 
@@ -41,7 +41,7 @@ id: stake-ftm
 
 ### Connect your Wallet
 
-1 . Navigate to the [Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) platform. 
+1 . Navigate to the [Ankr Earn](https://stakefi.Ankr.com/liquid-staking/launchpad) platform. 
  
 2 . Locate the ‘**Stake FTM**’ card and select ‘_**Start staking**_’.
 

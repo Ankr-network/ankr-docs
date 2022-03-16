@@ -3,7 +3,7 @@ title: ETH Liquid Staking
 id: eth-liquid-staking-introduction
 ---
 
-[Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) offers ETH holders the opportunity to stake ETH and claim aETHb.
+[Ankr Earn](https://stakefi.Ankr.com/liquid-staking/launchpad) offers ETH holders the opportunity to stake ETH and claim aETHb.
 
 aETHb is a reward-earning token, meaning that rewards from Ethereum staking will be distributed daily through rebasing and aETHb holders' balance in their wallet will increase on a daily basis.
 

@@ -1,5 +1,5 @@
 ---
-title: Stake AVAX on ankr.com
+title: Stake AVAX in Ankr Earn
 id: stake-avax
 ---
 
@@ -92,7 +92,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 :x: **Huobi wallet**: Avalanche is not supported
 :::
 
-1. Visit the [Ankr Earn](https://stakefi.ankr.com)app and click the '**Launchpad**'button.
+1. Visit the [Ankr Earn](https://stakefi.Ankr.com)app and click the '**Launchpad**'button.
 
 2. Locate the ‘**Stake AVAX**’ box and click ‘Start staking’.
 
