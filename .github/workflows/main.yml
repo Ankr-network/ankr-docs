@@ -25,9 +25,9 @@ jobs:
       - uses: nelonoel/branch-name@v1.0.1
 
       - name: Prevent wrong version releasing
-        if: ${{ github.event.inputs.environment == 'STAGE' && github.ref != 'refs/heads/stage' }}
+        if: ${{ github.event.inputs.environment == 'PROD' && github.ref != 'refs/heads/main' }}
         run: |
-          echo "Production deployment is possible only from the `main` branch"
+          echo "Production deployment is possible only from the main branch"
           exit 1
 
       - name: Get deployment information
