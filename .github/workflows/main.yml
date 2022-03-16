@@ -24,8 +24,15 @@ jobs:
       - uses: egordm/gha-yarn-node-cache@v1
       - uses: nelonoel/branch-name@v1.0.1
 
+      - name: Prevent wrong version releasing
+        if: ${{ github.event.inputs.environment == 'PROD' && github.ref != 'refs/heads/main' }}
+        run: |
+          echo "Production deployment is possible only from the main branch"
+          exit 1
+
       - name: Get deployment information
         run: |
+          echo "Ref: ${{ github.ref }}"
           echo "Branch: ${BRANCH_NAME}"
           echo "Domain: ${{github.event.inputs.environment}}"
 
