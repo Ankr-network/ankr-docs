@@ -17,22 +17,21 @@ It allows you to transfer your Ankr Liquid Tokens, obtained when staking your or
 Having staked your funds in Ankr Earn, you may find that you need them on the spot for some exciting opportunity you don't want to miss.
 However, unstaking may apply different release time for different tokens, and you may miss this opportunity.
 
-In this case, you can transfer your Ankr Liquid Tokens to the network native to the funds you staked, via Ankr Bridge.
-Then you can trade the native tokens for your liquid tokens on a DEX, via Ankr DeFi on ankr.com. Be aware, DEX fees may apply. 
+In this case, you can transfer your Ankr Liquid Tokens to any networks via Ankr Bridge.
+You can then use other Ankr Earn tools to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
+As a part of that, you can trade the native tokens for your liquid tokens on a DEX, via Ankr DeFi on ankr.com (DEX fees may apply). 
 
 ### Ankr's point
 
 Why did we need our own bridge instead of using existing solutions? 
 
-* Almost all bridges are centralized and we’d like to manage and monetize our own solution.
+* Almost all bridges are centralized and we’d like to manage our own solution.
 
 * Almost all bridges support only well-known ERC20 tokens, like the TOP30, and they don’t allow to bridge any ERC-20 compatible asset.
 
 * They don’t support NFT’s standards, such as ERC721.
 
 * They don’t support Ankr Liquid Tokens that have the dynamic balance change feature. And when staking, user may want to transfer Ankr Liquid Tokens to other networks to sell them on DEXs.
-
-* Last but not least, we can use this bridge as a foundation for Ankr Protocol product.
 
 As you know, a cross-chain bridge uses wrapping or pegging mechanisms for bridging tokens. 
 It requires locking or burning funds in one of the chains as the proof of lock of proof of burn. 
@@ -47,6 +46,8 @@ We can, of course, in the future, extend Ankr Bridge functionality by supporting
 Currently, Ankr Bridge supports the following native Ankr Liquid Tokens and allows you to transfer them between these networks:
 
 * aMATICb — Polygon <-> Ethereum. 
+
+We're planning to support BNB, FTM, AVAX soon. 
 
 
 ## Aditional information

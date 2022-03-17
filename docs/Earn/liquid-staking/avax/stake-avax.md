@@ -23,8 +23,7 @@ You have a Metamask wallet.
 
 There are several ways how to buy AVAX tokens:
 
-### A. Centralized exchanges 
-(e.g. Coinbase, Binance) supporting withdrawals to AVAX C-Chain
+### A. Centralized exchanges  like Coinbase or Binance supporting withdrawals to AVAX C-Chain
 
 * Buy AVAX on a centralized exchange
 * Withdraw **AVAX** to **AVAX C-Chain**
@@ -118,7 +117,7 @@ You will need to make the following interactions in your wallet:
 
 :::success
 
-Your aMATICb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aMATICb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aMATICb section.
+Your aAVAXb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aAVAXb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aMATICb section.
 
 ### If you don't see your aAVAXb balance
 

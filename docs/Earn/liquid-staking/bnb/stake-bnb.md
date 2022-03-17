@@ -18,9 +18,9 @@ You have a Metamask wallet.
 
 1. Create a BNB address using Metamask.
 
-2.Purchase BNB at [https://www.binance.com/](https://www.binance.com) and other exchanges.
+2. Purchase BNB at [https://www.binance.com/](https://www.binance.com) and other exchanges.
 
-3. Send the BNB (BEP-2) to your to your Binance Chain address from Metamask.
+3. Send BNB to your Binance Smart Chain (BSC) address from Metamask.
 
 ## Connect your Wallet
 

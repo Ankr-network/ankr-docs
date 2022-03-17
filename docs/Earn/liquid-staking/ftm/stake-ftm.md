@@ -91,7 +91,7 @@ You will need to make the following interactions in your wallet:
 
 :::success
 
-Your aFTMb balance automatically increases by a small amount, daily, to reflect your Fantom Staking rewards. You can now use your aMATICb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aFTMb section.
+Your aFTMb balance automatically increases by a small amount, daily, to reflect your Fantom Staking rewards. You can now use your aFTMb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aFTMb section.
 
 ### If you don't see your aFTMb balance
 
