@@ -1,6 +1,6 @@
 ---
 title: Advanced APIs
-id: premium-apis
+id: advanced-apis
 ---
 
 **Advanced APIs** are a collection of exclusive API endpoints exclusively for Premium Subscribers. 
