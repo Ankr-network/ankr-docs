@@ -3,12 +3,11 @@ title: Stake AVAX
 id: stake-avax
 ---
 
-## Use A Supported Browser Extension With Avalanche Network
+## Use a supported browser extension with the Avalanche network
 
-## Before you Start
+## Before you tart
 
 :::info Ensure the following:
-
 
 You are using a Chrome Browser.
 
@@ -19,11 +18,11 @@ You have the required amount of DOT you wish to contribute in your Polkadot wall
 You have a Metamask wallet.
 :::
 
-## Get AVAX Tokens To Stake
+## Get AVAX tokens to stake
 
 There are several ways how to buy AVAX tokens:
 
-### A. Centralized exchanges  like Coinbase or Binance supporting withdrawals to AVAX C-Chain
+### A. Centralized exchanges like Coinbase or Binance supporting withdrawals to AVAX C-Chain
 
 * Buy AVAX on a centralized exchange
 * Withdraw **AVAX** to **AVAX C-Chain**
@@ -42,13 +41,13 @@ There are several ways how to buy AVAX tokens:
 
 ### Send AVAX
 
-Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
+Now you can send the AVAX from your Avalanche wallet to your MetaM=mask wallet.
 
 1. Select "**Send**"
 
 2. Select "**C Contract**" as the Source Chain
 
-3. Enter your MetaMask wallet address by copying and pasting it into the **To Address** field on your Avalanche wallet.
+3. Enter your Metamask wallet address by copying and pasting it into the **To Address** field on your Avalanche wallet.
 
 4. Confirm, and finalize the transaction.
 

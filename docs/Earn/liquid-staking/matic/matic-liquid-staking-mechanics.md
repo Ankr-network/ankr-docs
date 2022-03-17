@@ -3,7 +3,7 @@ title: Liquid Staking Mechanics
 id: matic-liquid-staking-mechanics
 ---
 
-# Staking Mechanics
+# Staking mechanics
 MATIC Liquid Staking lets the user stake their funds through the corresponding smart contracts on the Polygon network, accumulate rewards, and receive their stake and rewards when unstaking.
 
 Ankr principles for the staking are:
@@ -75,7 +75,7 @@ Smart contracts and addresses involved in MATIC Liquid Staking are:
 Smart contracts code lives by the links above, at the **Contract** tab on the page.
 
 
-## Staking Workflow
+## Staking workflow
 The workflow is both user and Ankr-driven. The user part is Steps 1–2, the Ankr part is Steps 3–7.
 
 User calls `Matic::approve(address spender, uint256 amountToSpend)` to approve the chosen MATIC amount to be sent to the `PolygonPool` smart contract.
@@ -101,7 +101,7 @@ ANK backend will monitor blockchain events coming from the `PolygonPool` smart c
 3. The Ankr backed monitors staking status and rewards, and restakes the rewards when the sum of the staked MATIC reward is > threshold. The threshold is a config parameter.
 
 
-## Daily exchange rate updates
+## Daily exchange ratio updates
 To update the rates, the Ankr backend:
 
 1. Collects information about the total supply of aMATICb.

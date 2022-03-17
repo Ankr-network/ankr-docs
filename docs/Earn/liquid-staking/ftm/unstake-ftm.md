@@ -18,7 +18,7 @@ Unstaking FTM tokens is a multi-step process involving sending several transacti
 FTM tokens are transferred to your wallet automatically when the unstaking process completes. There is no additional cost for this.
 :::
 
-## Unstake BNB
+## Unstake FTM
 
 :::caution fees
 

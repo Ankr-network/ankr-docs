@@ -3,13 +3,13 @@ title: Stake FTM
 id: stake-ftm
 ---
 
-## Configuring MetaMask & other wallet support
+## Configuring Metamask & other wallet support
 
-### Configure your wallet to the Fantom Network
+### Configure your wallet to the Fantom network
 
-#### MetaMask
+#### Metamask
 
-1. Log in to MetaMask
+1. Log in to Metamask
 
 2. Click the **Network** drop-down and select "*Custom RPC*"
     
@@ -25,7 +25,7 @@ id: stake-ftm
 
 :::info
 
-:white_check_mark: **MetaMask**: Fantom supported
+:white_check_mark: **Metamask**: Fantom supported
 
 :white_check_mark: **MathWallet**: Fantom supported
 
@@ -39,7 +39,7 @@ id: stake-ftm
 
 ## How to stake FTM
 
-### Connect your Wallet
+### Connect your wallet
 
 1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
 

@@ -3,7 +3,7 @@ title: Stake KSM
 id: stake-ksm
 ---
 
-# Before you Start
+# Before you start
 
 :::info Ensure the following:
 
@@ -17,7 +17,7 @@ You have the required amount of KSM you wish to contribute in your Polkadot wall
 You have a Metamask wallet.
 :::
 
-## Install Polkadot Wallet
+## Install Polkadot wallet
 
 1.Go to the [Chrome Store and access the Polkadot Wallet](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
 
@@ -29,7 +29,7 @@ You have a Metamask wallet.
 4. Generate a secure password and create your wallet.
 5. Give your wallet a name and select ‘Any Chain'‌
 
-## Transfer KSM to your Polkadot extension wallet
+## Transfer KSM to your Polkadot wallet
 
 :::info Wallets to use to transfer Polkadot
 
@@ -47,7 +47,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 3. You can then view your balance and/or make a transfer if required.
 
-## Connect your Wallet
+## Connect your wallet
 
 1. Visit  [**Ankr Earn**](https://www.ankr.com/earn/) and click the *'Launchpad'* button.
 
@@ -56,7 +56,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 3. Your ```Polkadot.js wallet``` pops up requesting **'authorization'** to connect to Ankr Earn.
 Click to allow access.
 
-## Stake Desired Amount
+## Stake desired amount
 
 1. The **KSM Staking Dashboard** opens
 
@@ -69,9 +69,9 @@ Click to allow access.
 5. The Staking Dashboard updates to reflect your staked amount.
 
 
-## CLaim Instant Liquidity aKSMb Tokens
+## Claim Liquid aKSMb Tokens
 
-1. Click *'Connect'* to connect to an EVM Wallet e.g. MetaMask
+1. Click *'Connect'* to connect to an EVM Wallet e.g. Metamask
 
 2. Select your Wallet type and connect.
 

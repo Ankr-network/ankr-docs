@@ -5,7 +5,7 @@ id: stake-eth
 
 # How to stake ETH
 
-## Connect your Wallet
+## Connect your wallet
 
 :::caution
 

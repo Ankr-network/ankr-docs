@@ -3,7 +3,7 @@ title: Unstake ETH
 id: unstake-eth
 ---
 
-# How to unstake ETH
+# Unstake ETH
 
 Unstaking ETH is currently unavailable due to the restrictions of Ethereum Network.
 

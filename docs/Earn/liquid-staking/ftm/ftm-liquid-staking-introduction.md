@@ -27,13 +27,13 @@ As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-o
 * **Yield aggregators and vaults** can automate yield farming rewards and enable compounding returns with next to no effort from users. This is a great method for maximizing your passive income strategy.
 * **More trading opportunities** are enabled thanks to the elastic supply nature of aFTMb, meaning that you could potentially buy aFTMb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Earn to extract its fair value back in up to 28 days (the Fantom Liquid Staking unbonding period).
 
-### **More Flexibility**
+### **More flexibility**
 
 If you would like to unstake your FTM, you can choose the “unstake” option at any time on the Ankr Earn platform. After you select unstake, you will need to wait up to 28 days unbonding period before you can claim your funds. During this time, your FTM will still be earning staking rewards. This creates a more robust price stability mechanism for Fantom Liquid Staking, where any price deviation of aFTMb vs. its fair value will create trading opportunities that can be exploited by redeeming aFTMb (unstaking FTM) or minting aFTMb (staking FTM).
 
 That means if you buy aFTMb at a discount on a DEX and unstake it on Ankr Earn at its fair value, you will make a profit! Therefore, aFTMb price stability will be less dependent on the size of liquidity pools and associated rewards.
 
-### Borrowing and Lending
+### Borrowing and lending
 
 The aFTMb tokens will also allow users to borrow against their aFTMb assets in exchange for assets like FTM that can be restaked or used for additional earning strategies. Or, lend your aFTMb assets in return for interest paid by borrowers.
 

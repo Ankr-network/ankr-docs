@@ -11,7 +11,7 @@ aAVAXb, similarly to aETHb, is a reward-earning token, meaning that rewards from
 
 Contrary to ETH staking, it is also possible to unstake AVAX tokens. Therefore, aAVAXb will benefit from the following aAVAXb liquidity options:
 
-### 1. Market Liquidity
+### 1. Market liquidity
 
 aAVAXb is tradable on the following Decentralized Exchanges on Avalanche network:
 

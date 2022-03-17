@@ -2,7 +2,7 @@
 title: Liquid Staking Mechanics
 id: ksm-liquid-staking-mechanics
 ---
-# Kusama Staking Mechanics
+# Staking mechanics
 
 :::note
 Kusama is Polkadot's canary network, so it isn't a typo when you notice `Polkadot` at the end of this document.
@@ -60,7 +60,7 @@ Ankr backend calculates the ratio of rewards to the total stake amount weekly an
 
 Ankr delegates the staked funds to trusted validators from Kusama. Specific validators may change in >= 1 day.
 
-## Smart contract
+## Smart contracts
 
 Smart contracts addresses involved in KSM staking are:
 
@@ -74,7 +74,7 @@ Ethereum:
 
 [PolkadotPool](https://etherscan.io/address/0x59f767EC659E9FE01ebCf930465E2aD4Cc0F208e) — contract on the Ethereum network where the user sends their request to mint or burn aKSMb.
 
-## Staking Flow
+## Staking flow
 
 The flow consists of two parts: staking KSM and claiming aKSMb.
 
@@ -162,7 +162,7 @@ PolkadotPool::claimBonds(
 
 7. Once the transaction is successful, `PolkadotPool` mints aKSMb to the user's wallet. The balance shows on the staking dashboard and in Metamask (only if user added the token) via a call to `aKSMb::balanceOf(address)`.
 
-### Daily exchange rate updates
+### Daily exchange ratio updates
 
 To update the ratio, the Ankr backend:
 
@@ -172,9 +172,9 @@ To update the ratio, the Ankr backend:
 
 3. Collects information about the total supply of aKSMb from `aKSMb`.
 
-4. Recalculates the aKSMb share — the aDOTb exchange rate. The share is an analog of aETHc (which historically was aETH), but for Kusama. For example, user has 1 share, but due to ratio change, aKSMb balance grows daily.
+4. Recalculates the aKSMb share — the aDOTb exchange ratio. The share is an analog of aETHc (which historically was aETH), but for Kusama. For example, user has 1 share, but due to ratio change, aKSMb balance grows daily.
 
-## Unstaking Flow
+## Unstaking flow
 
 1. User calls `PolkadotPool::burnBond(address bond, uint256 amount, bytes calldata polkadotRecipient)` where `bond` is the aKSMb contract address, `amount` is the amount to burn, and `polkadotRecipient` is the user’s address on Kusama.
 

@@ -7,10 +7,10 @@ id: defi-introduction
 
 The number of DeFi projects continues to grow as we enter another wave of decentralized finance applications. 
 
-Ankr DeFi can support you with finding use cases for liquidity tokens and assets. 
+Ankr DeFi can support you with finding use cases for liquid tokens and assets. 
 
 
-### What is Redemption Value of Liquidity Tokens?
+### What is Redemption Value of Liquid Tokens?
 
 The Redemption Value or Fair Value represents the ratio at which users can stake/unstake 1 token. For reward earning tokens i.e. aETHb the ratio is always 1. This is because any difference is passed to your wallet as a type of staking reward resulting from rebasing.
 

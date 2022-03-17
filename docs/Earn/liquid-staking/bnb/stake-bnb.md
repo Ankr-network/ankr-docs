@@ -5,7 +5,7 @@ id: stake-bnb
 
 # Stake BNB in Ankr Earn
 
-## Before you Start
+## Before you start
 
 :::info Ensure the following:
 
@@ -22,7 +22,7 @@ You have a Metamask wallet.
 
 3. Send BNB to your Binance Smart Chain (BSC) address from Metamask.
 
-## Connect your Wallet
+## Connect your wallet
 
 1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
 

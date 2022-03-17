@@ -2,7 +2,7 @@
 title: Liquid Staking Mechanics
 id: dot-liquid-staking-mechanics
 ---
-# Polkadot Staking Mechanics
+# Staking mechanics
 
 DOT Liquid Staking lets the user stake their funds through the Ankr deposit address on the Polkadot network, accumulate rewards, and receive their stake+rewards when unstaking.
 
@@ -56,7 +56,7 @@ Ankr backend calculates the ratio of rewards to the total stake amount weekly an
 
 Ankr delegates the staked funds to trusted validators from Polkadot. Specific validators may change in >= 1 day.
 
-## Smart contract
+## Smart contracts
 
 Smart contracts addresses involved in DOT staking are:
 
@@ -70,7 +70,7 @@ Ethereum:
 
 [PolkadotPool](https://etherscan.io/address/0x59f767EC659E9FE01ebCf930465E2aD4Cc0F208e) — contract on the Ethereum network where the user sends their request to mint or burn aDOTb.
 
-## Staking Flow
+## Staking flow
 
 The flow consists of two parts: staking DOT and claiming aDOTb.
 
@@ -158,7 +158,7 @@ PolkadotPool::claimBonds(
 
 7. Once the transaction is successful, `PolkadotPool` mints aDOTb to the user's wallet. The balance shows on the staking dashboard and in Metamask (only if user added the token) via a call to `aDOTb::balanceOf(address)`.
 
-### Daily exchange rate updates
+### Daily exchange ratio updates
 
 To update the ratio, the Ankr backend:
 
@@ -168,9 +168,9 @@ To update the ratio, the Ankr backend:
 
 3. Collects information about the total supply of aDOTb from `aDOTb`.
 
-4. Recalculates the aDOTb share — the aDOTb exchange rate. The share is an analog of aETHc (which historically was aETH), but for Polkadot. For example, user has 1 share, but due to ratio change, aDOTb balance grows daily.
+4. Recalculates the aDOTb share — the aDOTb exchange ratio. The share is an analog of aETHc (which historically was aETH), but for Polkadot. For example, user has 1 share, but due to ratio change, aDOTb balance grows daily.
 
-## Unstaking Flow
+## Unstaking flow
 
 1. User calls `PolkadotPool::burnBond(address bond, uint256 amount, bytes calldata polkadotRecipient)` where `bond` is the aDOTb contract address, `amount` is the amount to burn, and `polkadotRecipient` is the user’s address on Polkadot.
 

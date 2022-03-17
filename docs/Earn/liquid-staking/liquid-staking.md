@@ -10,7 +10,7 @@ Liquid staking tokens represent the value of your staked assets but the tokens a
 For example,
 
 1. **Provide liquidity on Decentralized Exchanges**
-Pairs of tokens for example liquidity token aAVAXb and AVAX can be deposited in liquidity pools on a number of DEXs such as Uniswap. By providing liquidity, you can earn additional rewards.  As more people trade, you can earn a share of transaction fees (Liquidity Mining), on top of your AVAX staking rewards from aAVAXb.
+Pairs of tokens for example liquid token aAVAXb and AVAX can be deposited in liquidity pools on a number of DEXs such as Uniswap. By providing liquidity, you can earn additional rewards.  As more people trade, you can earn a share of transaction fees (Liquidity Mining), on top of your AVAX staking rewards from aAVAXb.
 
 2. **Receiving additional tokens from DEXs**
 By providing liquidity, you also have the possibility of receiving farming rewards or tokens on top of Liquidity Pool tokens, representing your share of a liquidity pool on a DEX.
@@ -53,14 +53,13 @@ The benefits of Liquid Staking depend on your choice of staked asset.
 
 #### 1. Liquidity
 
-When you stake ETH and receive Liquidity Tokens (aETHb, aETHc) the main benefit is the liquidity as it is not possible to unstake ETH for the moment until phase 1.5 of Ethereum 2.0.
+When you stake ETH and receive Liquid Tokens (aETHb, aETHc) the main benefit is the liquidity as it is not possible to unstake ETH for the moment until phase 1.5 of Ethereum 2.0.
 
 #### 2. Elastic Supply
 
-
 For chains that allow unstaking such as Avalanche, the beneift is the elastic supply of Liquid Staking tokens. 
 
-*Elastic Supply Tokens* work in such a way that the circulating supply expands or contracts to offset changes in a token's price via rebasing. When you stake AVAX and receive liquidity tokens aAVAXb, the circulating supply of aAVAXb increases. When you want to unstake your AVAX, you must return your aAVAXb to Ankr Earn. Your aAVAXb is burnt and AVAX is returned to you.The circulating supply of aAVAXb decreases. 
+*Elastic Supply Tokens* work in such a way that the circulating supply expands or contracts to offset changes in a token's price via rebasing. When you stake AVAX and receive liquid tokens aAVAXb, the circulating supply of aAVAXb increases. When you want to unstake your AVAX, you must return your aAVAXb to Ankr Earn. Your aAVAXb is burnt and AVAX is returned to you.The circulating supply of aAVAXb decreases. 
 
 #### 3. Price Stability 
 

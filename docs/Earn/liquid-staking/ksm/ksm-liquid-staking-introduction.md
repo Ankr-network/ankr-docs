@@ -23,33 +23,33 @@ Using Ankr Earn is the best way to stake KSM as you can access instant liquidity
 
 As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-of-stake networks, it offers a way to earn additional rewards on your staked KSM, enabling new yield farming strategies. The main benefits of KSM Liquid Staking are:
 
-* **Liquidity mining opportunities** are enabled by providing liquidity for pools in decentralized exchanges. The first main liquidity pools are expected to be aFTMb/ETH.
+* **Liquidity mining opportunities** are enabled by providing liquidity for pools in decentralized exchanges. The first main liquidity pools are expected to be aKSMb/ETH.
 * **Farming rewards for liquidity providers:** Liquid Staking presents several yield farming strategies for users to contribute to liquidity pools and gain a share of the trading fees and governance tokens. These new LP tokens can be used to generate yet another layer of earnings.
 * **Staking rewards on farmed tokens:** After using yield farming strategies, users can also reinvest their farmed LP tokens into more staking opportunities. This is a highly repeatable process as layers of rewards from farming and staking will quickly stack up.
 * **Yield aggregators and vaults** can automate yield farming rewards and enable compounding returns with next to no effort from users. This is a great method for maximizing your passive income strategy.
-* **More trading opportunities** are enabled thanks to the elastic supply nature of aFTMb, meaning that you could potentially buy aFTMb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Earn to extract its fair value back in up to 28 days (the Fantom Liquid Staking unbonding period).
+* **More trading opportunities** are enabled thanks to the elastic supply nature of aKSMb, meaning that you could potentially buy aKSMb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Earn to extract its fair value back in up to 28 days (the Kusama Liquid Staking unbonding period).
 
-### **More Flexibility**
+### **More flexibility**
 
-If you would like to unstake your FTM, you can choose the “unstake” option at any time on the Ankr Earn platform. After you select unstake, you will need to wait up to 28 days unbonding period before you can claim your funds. During this time, your FTM will still be earning staking rewards. This creates a more robust price stability mechanism for Fantom Liquid Staking, where any price deviation of aFTMb vs. its fair value will create trading opportunities that can be exploited by redeeming aFTMb (unstaking FTM) or minting aFTMb (staking FTM).
+If you would like to unstake your KSM, you can choose the “unstake” option at any time on the Ankr Earn platform. After you select unstake, you will need to wait up to 28 days unbonding period before you can claim your funds. During this time, your KSM will still be earning staking rewards. This creates a more robust price stability mechanism for Kusama Liquid Staking, where any price deviation of aKSMb vs. its fair value will create trading opportunities that can be exploited by redeeming aKSMb (unstaking KSM) or minting aKSMb (staking KSM).
 
-That means if you buy aFTMb at a discount on a DEX and unstake it on Ankr Earn at its fair value, you will make a profit! Therefore, aFTMb price stability will be less dependent on the size of liquidity pools and associated rewards.
+That means if you buy aKSMb at a discount on a DEX and unstake it on Ankr Earn at its fair value, you will make a profit! Therefore, aKSMb price stability will be less dependent on the size of liquidity pools and associated rewards.
 
 ### Borrowing and Lending
 
-The aFTMb tokens will also allow users to borrow against their aFTMb assets in exchange for assets like FTM that can be restaked or used for additional earning strategies. Or, lend your aFTMb assets in return for interest paid by borrowers.
+The aKSMb tokens will also allow users to borrow against their aKSMb assets in exchange for assets like KSM that can be restaked or used for additional earning strategies. Or, lend your aKSMb assets in return for interest paid by borrowers.
 
 ### No technical knowledge required
 
-Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your FTM for the reward-earning aFTMb token.
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your KSM for the reward-earning aKSMb token.
 
 ### Enhanced decentralization
 
-Our Fantom Liquid Staking will not be using only Ankr validator nodes to stake the FTM from users. Ankr Earn will select several suitable and reliable Fantom validators, making Fantom Liquid Staking as decentralized as possible. This means that Ankr will not contribute to giving any party more influence over the Fantom network as the FTM will be spread over a wide variety of nodes. Ultimately, the end-goal is having Ankr governance decide on the target allocation to different validator nodes.
+Our Kusama Liquid Staking will not be using only Ankr validator nodes to stake the KSM from users. Ankr Earn will select several suitable and reliable Kusama validators, making Kusama Liquid Staking as decentralized as possible. This means that Ankr will not contribute to giving any party more influence over the Kusama network as the KSM will be spread over a wide variety of nodes. Ultimately, the end-goal is having Ankr governance decide on the target allocation to different validator nodes.
 
-### Contribute to the security of the Fantom network
+### Contribute to the security of the KSM network
 
-Staking with Fantom Liquid Staking allows you to play an important role in boosting the network’s security as a whole. Ankr’s Fantom staking system distributes staked tokens intelligently across the Fantom ecosystem to help the network achieve optimal decentralization. Diversity and decentralization of active validators both ensure the network remains as secure as possible.
+Staking with Kusama Liquid Staking allows you to play an important role in boosting the network’s security as a whole. Ankr’s Kusama staking system distributes staked tokens intelligently across the Kusama ecosystem to help the network achieve optimal decentralization. Diversity and decentralization of active validators both ensure the network remains as secure as possible.
 
 Ankr Earn offers instant liquidity for your staked DOT, enabling you to connect your tokens with DeFi and create an opportunity to earn several other layers of rewards.
 

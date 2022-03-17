@@ -14,11 +14,11 @@ MATIC is available on many of the leading centralized and decentralized exchange
 
 ## Ensure you have some ETH for gas fees
 
-A very small amount of ETH is used as gas fee to perform a transaction. Normally, it is around 0.0005 ETH, but may vary depending on the network transaction load.
+A very small amount of ETH is used as gas fee to perform a transaction. Normally, it is around 0.0005 ETH, but may vary depending on the transaction complexity and network transaction load.
 
-## Configure MetaMask
+## Configure Metamask
 
-1. Log in to MetaMask.
+1. Log in to Metamask.
 2. Click the Network drop-down and select **Custom RPC**.
 3. Enter the following details:
 
@@ -34,7 +34,7 @@ Explorer: https://polygonscan.com/
 
 ## How to stake MATIC
 
-### Connect your Wallet
+### Connect your wallet
 
 1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
 

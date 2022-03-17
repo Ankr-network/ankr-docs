@@ -3,9 +3,9 @@ title: Liquid Staking Tokens
 id: liquidity-tokens
 ---
 
-# Types of Liquidity Tokens
+# Types of Liquid Tokens
 
-There are two types of Liquidity Tokens:
+There are two types of Liquid Tokens:
 
 • Reward Bearing Tokens, e.g. aETHc formerly aETH
 • Reward Earning Tokens, e.g. aAVAXb and aETHb (formerly fETH.)
