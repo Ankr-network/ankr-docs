@@ -1,5 +1,5 @@
 ---
-title: Matic Staking
+title: Matic Liquid Staking
 id: matic-liquid-staking-introduction
 ---
 
@@ -22,3 +22,7 @@ Polygon Liquid Staking enables you to earn **alpha**. (Alpha is a return on inve
 * **Support & Secure Polygon**: Staking MATIC directly supports the Polygon network and helps validate transactions. Ankr’s staking system distributes staked tokens intelligently across the Polygon ecosystem to achieve optimal decentralization.
 
 * **Elastic Supply**: Users will be able to trade in their aMATICb tokens for their staked MATIC at any time on a one-to-one basis (1 MATIC = 1 aMATICb). You will need to wait for 7 days for this transaction to complete.
+
+## Do more with your stake
+
+For more information, read [how to stake and bridge](https://medium.com/ankr-network/how-to-get-matic-liquid-staking-on-polygon-network-bcda9ef501a).

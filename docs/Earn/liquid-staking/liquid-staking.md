@@ -22,14 +22,14 @@ You can harvest the farmed tokens and stake those tokens as well to earn more yi
 
 Ready to get started?
 
-Check out [**Ankr Earn**](https://stakefi.Ankr.com)
+Check out [**Ankr Earn**](https://www.ankr.com/earn/)
 :::
 
 ## How do I get Liquid Staking Tokens?
 
 Liquid Staking tokens are automatically issued to your Ankr Earn Dashboard when you successfully stake assets such as ETH, AVAX, FTM, BNB. 
 
-Check out [**Ankr Earn**](https://stakefi.Ankr.com)
+Check out [**Ankr Earn**](https://www.ankr.com/earn/)
 
 For example,
 
@@ -71,6 +71,6 @@ ETH liquid staking price stability is based mainly on the amount of liquidity in
 :::tip
 Ready to get started?
 
-Check out [**Ankr Earn**](https://stakefi.Ankr.com)
+Check out [**Ankr Earn**](https://www.ankr.com/earn/)
 :::
 

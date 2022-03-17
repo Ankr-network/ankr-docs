@@ -1,5 +1,5 @@
 ---
-title: Kusama Staking Mechanics
+title: Liquid Staking Mechanics
 id: ksm-liquid-staking-mechanics
 ---
 # Kusama Staking Mechanics
@@ -90,7 +90,7 @@ Due to Polkadot backend architecture, we currently do not disclose our API endpo
 
 3. User sends their extrinsic id to the Ankr backend. In Substate, an extrinsic is a piece of information that comes from outside the chain and is included in a block.
 
-4. Once the transaction has been finalized, the user can see their KSM balance on the StakeFi page the stake was made from.
+4. Once the transaction has been finalized, the user can see their KSM balance in Ankr Earn.
 
 5. Ankr backend monitor deposits to the Ankr deposit address. Once new KSMs are available for staking, the backend:
    1. Transfers the KSMs to one of the Ankr dedicated accounts if necessary.

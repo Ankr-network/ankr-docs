@@ -27,8 +27,6 @@ When using DEXs, make sure the ANKR token contract matches the official ERC20 to
 
 ### Official Synthetic Token Liquidity Pools:
 
-See [how to stake internet bonds](https://app.gitbook.com/@ankr/s/v2/earn-ankr-stakefi/internet-bonds/how-to-stake-internet-bonds).
-
 ### Examples of compatible wallets:
 
 Any ERC20 compatible wallet should work with the ANKR ERC20 token. Our team has tested compatibility with:

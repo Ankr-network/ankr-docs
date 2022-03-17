@@ -1,5 +1,5 @@
 ---
-title: Staking Mechanics
+title: Liquid Staking Mechanics
 id: bnb-liquid-staking-mechanics
 ---
 
@@ -20,7 +20,7 @@ The requirements when staking are:
 
 The requirements when unstaking are:
 
-* Minimum value to unstake — 1BNB.
+* Minimum value to unstake — 1 BNB.
 
 * Maximum value to stake — up to the initial stake+accumulated rewards.
 
@@ -82,7 +82,8 @@ There are few entities involved:
 
 1. User sends a request to the `BinancePool::stake({value:stake+relayer_fee})` on Binance Smart Chain. `stake` specifies the staked amount and should meet the requirements described above, while `fee` specifies the fee deducted from the user’s wallet for the staking. 
 
-2. `BinancePool` verifies the request checking the `minimal_stake_value` and the user-paid `relayer_fee`, then executes `TokenHub::transferOut()` to make a cross-chain transaction to Binance Chain, and then issues a `Staked()` event with the `sender`, `stake`, `intermediary` parameters. 
+2. `BinancePool` verifies the request checking the `minimal_stake_value` and the user-paid `relayer_fee`, executes `TokenHub::transferOut()` to make a cross-chain transaction to Binance Chain, mints aBNBb/aBNBc to the user in 1:1 rate to the staked BNB, and then issues a `Staked()` event with the `sender`, `stake`, `intermediary` parameters. 
+   1. Actual minting is internal and is done via a call from `BinancePool` to `aBNBb::mint(userAddress, stake)`/`aBNBc::mint()`.
 
 3. BNB backend service detects the issued `Staked()` event and creates a record in its Postgres database, then waits for the successful cross-chain transaction completion to Binance Chain, which usually takes around 45s.
 

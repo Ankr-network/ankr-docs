@@ -1,5 +1,5 @@
 ---
-title: FTM Liquid Staking Mechanics
+title: Liquid Staking Mechanics
 id: ftm-liquid-staking-mechanics
 ---
 

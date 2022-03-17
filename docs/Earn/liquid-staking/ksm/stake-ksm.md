@@ -1,5 +1,5 @@
 ---
-title: Stake KSM in Ankr Earn
+title: Stake KSM
 id: stake-ksm
 ---
 
@@ -49,7 +49,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 ## Connect your Wallet
 
-1. Visit  [**Ankr Earn**](https://stakefi.Ankr.com/) and click the *'Launchpad'* button.
+1. Visit  [**Ankr Earn**](https://www.ankr.com/earn/) and click the *'Launchpad'* button.
 
 2. Locate the *‘Stake KSM’* box and click *‘Start staking’*.
 
@@ -86,3 +86,11 @@ Success is indicated by your Ethereum Wallet updating with aKSMb tokens.
 You are now free to utilize your aKSMb on other DeFi Platforms.
 
 :::
+
+## If you don't see your aKSMb balance
+
+If you don't see the balance in your wallet, do the following:
+
+1. Visit [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard) 
+2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+3. Insert the token address directly into your wallet (e.g. Metamask).

@@ -155,6 +155,7 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
         'Earn/liquid-staking/bnb/stake-bnb',
+        'Earn/liquid-staking/bnb/unstake-bnb',
       ]
     },
     {
@@ -167,6 +168,7 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
         'Earn/liquid-staking/dot/stake-dot',
+        'Earn/liquid-staking/dot/unstake-dot',
       ]
     },
          {
@@ -179,6 +181,7 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
         'Earn/liquid-staking/eth/stake-eth',
+        'Earn/liquid-staking/eth/unstake-eth',
       ]
     },
    {
@@ -191,6 +194,7 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
         'Earn/liquid-staking/ftm/stake-ftm',
+        'Earn/liquid-staking/ftm/unstake-ftm',
       ]
     },
     {
@@ -203,6 +207,7 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
         'Earn/liquid-staking/ksm/stake-ksm',
+        'Earn/liquid-staking/ksm/unstake-ksm',
       ]
     },
        {
@@ -257,6 +262,7 @@ earnSidebar: {
       },
       items: [
           'Earn/bridge/bridge-mechanics',
+          'Earn/bridge/bridge-tokens',
       ]
     },
 /*    {

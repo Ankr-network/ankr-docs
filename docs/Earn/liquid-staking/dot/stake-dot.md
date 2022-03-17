@@ -1,5 +1,5 @@
 ---
-title: Stake DOT in Ankr Earn
+title: Stake DOT
 id: stake-dot
 ---
 
@@ -49,16 +49,37 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 ## Connect your Wallet
 
-1. Visit  [**Ankr Earn**](https://stakefi.Ankr.com/) and click the *'Launchpad'* button.
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake**.
 
-2. Locate the *‘Stake DOT* box and click *‘Start staking’*.
+2. Locate the **Stake DOT** box and click *Stake* in it.
 
 3. Your ```Polkadot.js wallet``` pops up requesting **'authorization'** to connect to Ankr Earn.
 Click to allow access.
 
-## Stake Desired Amount
+## Stake your DOT
 
-1. The **DOT Staking Dashboard** opens
+1. Enter the desired amount of AVAX to stake. If you already have some staked AVAX and want to add more, click the **'+'** button.
+
+2. Your wallet pops with details of the transaction including a suggested gas fee.
+
+3. Click ‘**Confirm**’ to proceed.
+
+4. The status of the transaction updates in your wallet.
+
+5. When staking is finalized, the **Staking Dashboard** updates.
+
+
+1. Enter the desired amount of AVAX to stake. If you already have some staked AVAX and want to add more, click the **'+'** button.
+
+2. Your wallet pops with details of the transaction including a suggested gas fee.
+
+3. Click ‘**Confirm**’ to proceed.
+
+4. The status of the transaction updates in your wallet.
+
+5. When staking is finalized, the **Staking Dashboard** updates.
+
+1. The **DOT Staking Dashboard** opens.
 
 2. To stake, click the **'+'** icon.
 
@@ -83,3 +104,11 @@ Click to allow access.
 Successful access to aDOTb Tokens
 Success is indicated by your Ethereum Wallet updating with aDOTb tokens.
 You are now free to utilize your aDOTb on other DeFi Platforms.
+
+## If you don't see your aDOTb balance
+
+If you don't see the balance in your wallet, do the following:
+
+1. Visit [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard) 
+2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+3. Insert the token address directly into your wallet (e.g. Metamask).

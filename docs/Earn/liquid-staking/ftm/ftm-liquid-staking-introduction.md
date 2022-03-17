@@ -1,5 +1,5 @@
 ---
-title: FTM Liquid Staking
+title: Fantom Liquid Staking
 id: ftm-liquid-staking-introduction
 ---
 

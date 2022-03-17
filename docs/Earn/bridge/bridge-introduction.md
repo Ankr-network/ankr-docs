@@ -49,6 +49,10 @@ Currently, Ankr Bridge supports the following native Ankr Liquid Tokens and allo
 * aMATICb — Polygon <-> Ethereum. 
 
 
+## Aditional information
+
+If you want to know more, we have an interesting [article about Ankr Bridge](https://medium.com/ankr-network/ankr-bridge-now-on-ankr-earn-cf20bade7317) on Medium.
+
 
 
 

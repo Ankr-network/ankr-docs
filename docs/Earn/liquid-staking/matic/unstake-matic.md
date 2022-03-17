@@ -1,17 +1,15 @@
 ---
-title: Unstake MATIC in Ankr Earn
+title: Unstake MATIC
 id: unstake-matic
 ---
 
 ## Overview
 
-To unstake your MATIC, simply choose the 'Unstake' option at any time on the [Ankr Earn](https://stakefi.Ankr.com) platform.
-
 If you decide to unstake, it can take 3-4 days before you can claim your funds. Throughout this period, your MATIC will continue to **earn staking rewards**.
 
 :::info Before you start
 
-Ensure you have 10 Ankr fee to unstake plus a small (variable) ETH transaction fee approximately 0.0005 ETH.
+Ensure you have ANKR for the unstaking fee (500–3500 on average) and a small amount of WEI for the dynamic gas fee (approx. 0.0005 ETH).
 
 Unstaking MATIC tokens is a multi-step process involving sending several transactions to the MATIC smart-contracts deployed in Ethereum.
 
@@ -24,20 +22,27 @@ MATIC tokens are transferred to your wallet automatically when the unstaking pro
 
 :::caution fees
 
-There is a small Ankr token fee to unstake plus a small (variable) ETH transaction fee
+The following fees applied when unstaking:
+* ANKR fee.
+* Ethereum gas fee. 
 
 :::
 
+1. Open [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard/).
+3. Locate the aMATICb box and click the **'-'** icon to unstake.
+4. Enter the amount to unstake and click *'Unstake'*.
 
-1. Open [Ankr Earn](https://stakefi.Ankr.com)
-2. Click *'Grant Access'* to connect to your wallet.
-3. Click the **'-'** icon to unstake.
-4. Select the amount to unstake click *'Unstake'*
-5. You will need to *'Confirm'* the Ankr fee transaction in your wallet.
+You will need to make the following interactions in your wallet:
+
+:thumbsup: **Grant access** to grant access to your wallet.
+
+:thumbsup: **Approve** the ANKR fee transaction.
+
+:thumbsup: **Confirm** the unstaking transaction.
 
 :::tip success
 
-Once transaction is confirmed, the Staking Dashboard updates to show '_Unstaking in progress'_
+Once transaction is confirmed, Ankr Earn Dashboard updates to show *Unstaking in progress*.
 
 :::
 

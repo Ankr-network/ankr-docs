@@ -1,5 +1,5 @@
 ---
-title: ETH Liquid Staking Mechanics
+title: Liquid Staking Mechanics
 id: eth-liquid-staking-mechanics
 ---
 

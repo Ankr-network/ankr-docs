@@ -1,5 +1,5 @@
 ---
-title: MATIC Liquid Staking Mechanics
+title: Liquid Staking Mechanics
 id: matic-liquid-staking-mechanics
 ---
 
@@ -117,7 +117,7 @@ To update the rates, the Ankr backend:
 
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–11.
 
-1. User navigates to the dedicated page on StakeFi and unstakes their MATIC.
+1. User navigates to the dedicated page in Ankr Earn and unstakes their MATIC.
 
 2. Ankr Earn Dashboard checks the user’s aMATICb balance and shows the user a form to enter the number of MATICs to unstake.
 

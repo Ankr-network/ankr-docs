@@ -1,5 +1,5 @@
 ---
-title: AVAX Liquid Staking Mechanics
+title: Liquid Staking Mechanics
 id: avax-liquid-staking-mechanics
 ---
 

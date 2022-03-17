@@ -38,3 +38,7 @@ Receive an easier staking experience with no technical knowledge necessary. Liqu
 ### Contribute to the security of the BSC network&#x20;
 
 Staking with BNB Liquid Staking allows you to play an important role in boosting the network’s security as a whole. Ankr’s BNB staking system distributes staked tokens intelligently across the BSC ecosystem to help the network achieve optimal decentralization. Diversity and decentralization of active validators both ensure the network remains as secure as possible.
+
+### Aditional yield
+
+If you want to get additional yield on your BNB stake, read [how to receive more rewards](https://medium.com/ankr-network/ankr-x-ellipsis-staking-liquidity-mining-ankr-rewards-f49a76fd50cc).

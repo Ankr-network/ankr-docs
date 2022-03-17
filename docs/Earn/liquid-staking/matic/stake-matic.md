@@ -1,5 +1,5 @@
 ---
-title: Stake MATIC in Ankr Earn
+title: Stake MATIC
 id: stake-matic
 ---
 
@@ -12,14 +12,14 @@ MATIC is available on many of the leading centralized and decentralized exchange
 
 <a href="https://polygon.technology/matic-token/" target="_blank">Check out the listings of platforms to acquire MATIC</a>
 
-## Ensure you have some ETH
+## Ensure you have some ETH for gas fees
 
-A very small amount of ETH is used to perform the transaction
+A very small amount of ETH is used as gas fee to perform a transaction. Normally, it is around 0.0005 ETH, but may vary depending on the network transaction load.
 
 ## Configure MetaMask
 
-1. Log in to MetaMask
-2. Click the Network drop-down and select **Custom RPC**
+1. Log in to MetaMask.
+2. Click the Network drop-down and select **Custom RPC**.
 3. Enter the following details:
 
 Network Name: Polygon
@@ -32,28 +32,51 @@ Symbol: MATIC
 
 Explorer: https://polygonscan.com/
 
-## Connect your Wallet
+## How to stake MATIC
 
-1. Navigate to the [Ankr Earn](https://stakefi.Ankr.com/liquid-staking/launchpad) platform.
+### Connect your Wallet
 
-2. Locate the ‘**Stake MATIC**’ card and select ‘_**Start staking**_’.
-3. You are prompted to grant **Ankr Earn** access to your wallet. Click '_**Grant Access**_**'** to proceed.
-4. Select the wallet you wish to connect to and **authorize** the connection to proceed.
-5. Successful connection to **Ankr Earn** is indicated at top right corner.
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
 
-## Stake your MATIC
+2. Locate the **Polygon (MATIC)** box and click *Stake* in it.
 
-1. From the **Staking Dashboard**, click the '**+**' button to stake MATIC.
+3. You are prompted to grant **Ankr Earn** access to your wallet.
 
-2. Enter the desired amount of **MATIC** to stake and select '_**Stake**_'
+4. Select the **Polygon supported wallet** you wish to connect to, e.g., Metamask.
+
+5. If you are on a different network, you may be prompted to switch to the correct one. Click the correct network on the page, then allow Metamask to switch to it.
+
+6. Successful connection to **Ankr Earn** is indicated at top right corner.
+
+You will need to make the following interactions in your wallet:
+
+:thumbsup: **Grant access** to grant access to your wallet.
+
+:thumbsup: **Approve** to add a new network.
+
+:thumbsup: **Switch network** to switch to the corret network.
+
+### Stake your MATIC
+
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu. 
+
+2. Locate the **Polygon (MATIC)** box and click *Stake* in it.
+
+3. Enter the desired amount of MATIC to stake and click *Get aMATICb*.
+
+4. Confirm the transaction in your wallet.
+
+5. Add aMATICb to your wallet, clicking  *Add aMATICb to wallet*.
+
+6. Click *Go to dashboard* to see the received aMATICb in Ankr Earn. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
 
 :::info
 
-A small **transaction fee** will be charged.
+As mentioned before, a gas fee is incurred to finalize the staking transaction.
 
 :::
 
-3. You will need to make the following interactions in your wallet:
+You will need to make the following interactions in your wallet:
 
 :thumbsup:**Authorize** to confirm the connection.
 
@@ -61,22 +84,14 @@ A small **transaction fee** will be charged.
 
 :thumbsup: **Confirm** the transaction.
 
-:::info
-
-A **Gas fee** is incurred to finalize the staking transaction.
-
-:::
-
-4. When the transaction is finalized, the **Staking Dashboard** automatically updates.
-
-## Claim your Liquidity Tokens 
-
-1. From **Ankr Earn**, view the **Staking Dashboard**. 
-
-2. You can view your liquidity tokens named **aFTMb**. 
-
-3. You are prompted to add your **aFTMb** token to your wallet. Click '**Add Token'**.
-
 :::success
 
-Your aFTMb balance will automatically increase by a small amount daily to reflect your Fantom Staking rewards. You can now use your aFTMb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in Ankr Boost under the aFTMb section.
+Your aMATICb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aMATICb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aMATICb section.
+
+### If you don't see your aMATICb balance
+
+If you don't see the balance in your wallet, do the following:
+
+1. Visit [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard) 
+2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+3. Insert the token address directly into your wallet (e.g. Metamask).

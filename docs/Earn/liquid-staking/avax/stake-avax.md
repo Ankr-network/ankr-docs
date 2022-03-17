@@ -1,35 +1,25 @@
 ---
-title: Stake AVAX in Ankr Earn
+title: Stake AVAX
 id: stake-avax
 ---
 
-# Configure Metamask To Avalanche Network
+## Use A Supported Browser Extension With Avalanche Network
 
-1. Log in to MetaMask 
-2. Click the **Network** drop-down and select **Custom RPC**
-3. Enter the following details:
-* **Network Name**: Avalanche Network
-* **New RPC URL**: [https://api.avax.network/ext/bc/C/rpc](https://api.avax.network/ext/bc/C/rpc)
-* **ChainID**: 43114
-* **Symbol**: AVAX
-* **Explorer**: [https://cchain.explorer.avax.network/](https://cchain.explorer.avax.network)
+## Before you Start
 
-## Supported browser extensions with Avalanche Network
+:::info Ensure the following:
 
-:::info
 
-:white_check_mark: **Metamask**: Avalanche supported
+You are using a Chrome Browser.
 
-:white_check_mark: **MathWallet**: Avalanche supported
+You have a **Polkadot wallet **chrome extension installed.
 
-:x: **TrustWallet**: looks like Avalanche is not supported
+You have the required amount of DOT you wish to contribute in your Polkadot wallet (chrome extension) plus an amount for gas fees.
 
-:x: **ImToken**: Avalanche not supported
-
-:x: **Huobi wallet**: Avalanche is not supported
+You have a Metamask wallet.
 :::
 
-## Where to get AVAX tokens
+## Get AVAX Tokens To Stake
 
 There are several ways how to buy AVAX tokens:
 
@@ -75,35 +65,23 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 [Lydia Finance](https://www.lydia.finance), 
 [TraderJoe](https://www.traderjoexyz.com/#/home))
 
-## Connect your Wallet
+## How to stake AVAX
 
-:::info **Avalanche Supported Wallets:**
+### Connect your wallet
 
-**Ensure you are connected to the Avalanche Network**
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake**.
 
-:white_check_mark: **Metamask**: Avalanche supported
-
-:white_check_mark: **MathWallet**: Avalanche supported
-
-:x: **TrustWallet**: looks like Avalanche is not supported
-
-:x: **ImToken**: Avalanche not supported
-
-:x: **Huobi wallet**: Avalanche is not supported
-:::
-
-1. Visit the [Ankr Earn](https://stakefi.Ankr.com)app and click the '**Launchpad**'button.
-
-2. Locate the ‘**Stake AVAX**’ box and click ‘Start staking’.
+2. Locate the **Avalanche (AVAX)** box and click *Stake* in it.
 
 3. You are prompted to grant **Ankr Earn** access to your wallet. Click *Grant Access* to proceed.
 
-4. Select the **Avalanche supported wallet** you wish to connect to e.g. Metamask.
+4. Select the **Avalanche supported wallet** you wish to connect to, e.g., Metamask.
 
-5. Successful connection to **Ankr Earn** is indicated at top right corner.
+5. If you are on a different network, you may be prompted to switch to the correct one. Select the correct network by clicking on its icon on the page then allow Metamask to switch to it.
 
+6. Successful connection to **Ankr Earn** is indicated at top right corner.
 
-## Stake your AVAX
+### Stake your AVAX
 
 :::caution BE SURE
 
@@ -112,36 +90,41 @@ To allow sufficient AVAX to cover gas fees AVAX - from 0.025 to 0.1 AVAX
 [_**Find out more**_](https://docs.avax.network/learn/platform-overview/transaction-fees)
 
 :::
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu. 
 
-1. Click the **'+'** button to stake AVAX.
+2. Locate the **Avalanche (AVAX)** box and click *Stake* in it.
 
-2. Enter the desired amount of AVAX to stake.
+3. Enter the desired amount of AVAX to stake and click *Get aAVAXb*.
 
-3. Your wallet pops with details of the transaction including a suggested gas fee.
+4. Confirm the transaction in your wallet.
 
-4. Click ‘**Confirm**’ to proceed.
+5. Add aAVAXb to your wallet, clicking  *Add aAVAXb to wallet*.
 
-5. The status of the transaction updates in your wallet.
+6. Click *Go to dashboard* to see the received aAVAXb in Ankr Earn. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update.
 
-6. When staking is finalized, the **Staking Dashboard** updates.
+:::info
 
-
-## Claim aAVAXb Liquid Staking tokens
-
-Successful staking results in the issue of **Ankr Reward-Earning Staked AVAX (aAVAXb).**
-
-1. From **Ankr Earn**, view the **Staking Dashboard**. 
-
-2. You can view your liquidity tokens named **aAVAXb**. 
-
-3. You are prompted to add your **aAVAXb** token to your wallet. Click '**Add Token'**.
-
-:::tip
-
-**If you don't see the balance in your wallet, do the following:**
-
-Insert the aAVAXb token address directly into your wallet (e.g. Metamask) in case you do not see it in the balance of your wallet.
-
-**0x6C6f910A79639dcC94b4feEF59Ff507c2E843929**
+As mentioned before, a gas fee is incurred to finalize the staking transaction.
 
 :::
+
+You will need to make the following interactions in your wallet:
+
+:thumbsup:**Authorize** to confirm the connection.
+
+:thumbsup: **Approve** the transaction.
+
+:thumbsup: **Confirm** the transaction.
+
+:::success
+
+Your aMATICb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aMATICb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aMATICb section.
+
+### If you don't see your aAVAXb balance
+
+If you don't see the balance in your wallet, do the following:
+
+1. Visit [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard) 
+2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+3. Insert the token address directly into your wallet (e.g. Metamask).
+
