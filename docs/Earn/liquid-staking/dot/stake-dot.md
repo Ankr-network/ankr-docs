@@ -1,9 +1,9 @@
 ---
-title: Stake DOT on ankr.com
+title: Stake DOT
 id: stake-dot
 ---
 
-## Before you Start
+## Before you start
 
 :::info Ensure the following:
 
@@ -17,7 +17,7 @@ You have the required amount of DOT you wish to contribute in your Polkadot wall
 You have a Metamask wallet.
 :::
 
-## Install Polkadot Wallet
+## Install Polkadot wallet
 
 1.Go to the [Chrome Store and access the Polkadot Wallet](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
 
@@ -29,7 +29,7 @@ You have a Metamask wallet.
 4. Generate a secure password and create your wallet.
 5. Give your wallet a name and select ‘Any Chain'‌
 
-## Transfer DOT to your Polkadot extension wallet
+## Transfer DOT to your Polkadot wallet
 
 :::info Wallets to use to transfer Polkadot
 
@@ -47,18 +47,39 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 3. You can then view your balance and/or make a transfer if required.
 
-## Connect your Wallet
+## Connect your wallet
 
-1. Visit  [**Ankr Earn**](https://stakefi.ankr.com/) and click the *'Launchpad'* button.
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake**.
 
-2. Locate the *‘Stake DOT* box and click *‘Start staking’*.
+2. Locate the **Stake DOT** box and click *Stake* in it.
 
 3. Your ```Polkadot.js wallet``` pops up requesting **'authorization'** to connect to Ankr Earn.
 Click to allow access.
 
-## Stake Desired Amount
+## Stake your DOT
 
-1. The **DOT Staking Dashboard** opens
+1. Enter the desired amount of AVAX to stake. If you already have some staked AVAX and want to add more, click the **'+'** button.
+
+2. Your wallet pops with details of the transaction including a suggested gas fee.
+
+3. Click ‘**Confirm**’ to proceed.
+
+4. The status of the transaction updates in your wallet.
+
+5. When staking is finalized, the **Staking Dashboard** updates.
+
+
+1. Enter the desired amount of AVAX to stake. If you already have some staked AVAX and want to add more, click the **'+'** button.
+
+2. Your wallet pops with details of the transaction including a suggested gas fee.
+
+3. Click ‘**Confirm**’ to proceed.
+
+4. The status of the transaction updates in your wallet.
+
+5. When staking is finalized, the **Staking Dashboard** updates.
+
+1. The **DOT Staking Dashboard** opens.
 
 2. To stake, click the **'+'** icon.
 
@@ -68,7 +89,7 @@ Click to allow access.
 
 5. The Staking Dashboard updates to reflect your staked amount.
 
-## Claim Instant Liquidity aDOTb Tokens
+## Claim Liquid aDOTb Tokens
 
 1. Click *'Connect'* to connect to an EVM Wallet e.g. MetaMask
 
@@ -83,3 +104,11 @@ Click to allow access.
 Successful access to aDOTb Tokens
 Success is indicated by your Ethereum Wallet updating with aDOTb tokens.
 You are now free to utilize your aDOTb on other DeFi Platforms.
+
+## If you don't see your aDOTb balance
+
+If you don't see the balance in your wallet, do the following:
+
+1. Visit [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard) 
+2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+3. Insert the token address directly into your wallet (e.g. Metamask).
