@@ -47,7 +47,7 @@ Currently, Ankr Bridge supports the following native Ankr Liquid Tokens and allo
 
 * aMATICb — Polygon <-> Ethereum. 
 
-We're planning to support BNB, FTM, AVAX soon. 
+We're planning to add support for BNB, FTM, AVAX soon. 
 
 
 ## Aditional information
