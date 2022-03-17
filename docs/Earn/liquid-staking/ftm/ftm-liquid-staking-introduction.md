@@ -7,7 +7,7 @@ id: ftm-liquid-staking-introduction
 
 Fantom Liquid Staking from Ankr Earn offers **instant liquidity** for your staked **FTM**, enabling you to connect your new aFTMb tokens with DeFi platforms and earn several more layers of rewards.
 
-Fantom Liquid Staking enables you to earn **alpha** (The _return on investment that goes far beyond normal increases in the crypto market index_).
+Fantom Liquid Staking enables you to earn **alpha** (the _return on investment that goes far beyond normal increases in the crypto market index_).
 
 Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
@@ -39,7 +39,7 @@ The aFTMb tokens will also allow users to borrow against their aFTMb assets in e
 
 ### No technical knowledge required
 
-Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your FTM for the reward-earning aFTMb token.
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your FTM for the reward earning aFTMb token.
 
 ### Enhanced decentralization
 

@@ -2,26 +2,7 @@
 title: Stake FTM
 id: stake-ftm
 ---
-
-## Configuring Metamask & other wallet support
-
-### Configure your wallet to the Fantom network
-
-#### Metamask
-
-1. Log in to Metamask
-
-2. Click the **Network** drop-down and select "*Custom RPC*"
-    
-3. Enter the following details:
-
-* **Network Name**: Fantom Opera
-* **New RPC URL**: [https://rpc.ftm.tools](https://rpc.ftm.tools)
-* **ChainID**: 250
-* **Symbol**: FTM
-* **Explorer**: [https://Ankrscan.io/](https://Ankrscan.io)
-
-### Other wallets that support Fantom
+### Wallets that support Fantom
 
 :::info
 
@@ -91,7 +72,7 @@ You will need to make the following interactions in your wallet:
 
 :::success
 
-Your aFTMb balance automatically increases by a small amount, daily, to reflect your Fantom Staking rewards. You can now use your aFTMb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aFTMb section.
+Your aFTMb balance automatically increases by a small amount, daily, to reflect your Fantom Staking rewards. You can now use your aFTMb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aFTMb section.
 
 ### If you don't see your aFTMb balance
 

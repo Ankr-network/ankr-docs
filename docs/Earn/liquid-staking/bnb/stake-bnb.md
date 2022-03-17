@@ -68,7 +68,7 @@ As mentioned before, a gas fee is incurred to finalize the staking transactions.
 **Success**
 
 Your aBNBb balance will automatically increase by a small amount daily to reflect your Binance Coin Staking rewards. 
-You can now use your aBNBb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aBNBb section.
+You can now use your aBNBb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aBNBb section.
 :::
 
 ### If you don't see your aBNBb balance

@@ -5,9 +5,9 @@ id: bnb-liquid-staking-introduction
 
 # BNB Liquid Staking
 
-Binance Coin (BNB) Liquid Staking from Ankr Earn offers **instant liquidity** for your staked **BNB**, enabling you to connect your new aBNBb tokens with DeFi platforms and earn several more layers of rewards.&#x20;
+Binance Liquid Staking from Ankr Earn offers **instant liquidity** for your staked **BNB**, enabling you to connect your new aBNBb tokens with DeFi platforms and earn several more layers of rewards.&#x20;
 
-BNB Liquid Staking enables you to earn \*\*alpha. \*\* (The _return on investment that goes far beyond normal increases in the crypto market index_).&#x20;
+Binance Liquid Staking enables you to earn **alpha**. (the _return on investment that goes far beyond normal increases in the crypto market index_).
 
 Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
@@ -33,7 +33,7 @@ If you would like to unstake your BNB, you can choose the “unstake” option a
 
 ### **No technical knowledge required**
 
-Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your BNB for the reward-earning aBNBb token. Enhanced decentralization Our BNB Liquid Staking will not be using only Ankr validator nodes to stake the BNB from users. Ankr Earn will select several suitable and reliable BSC validators, making BNB Liquid Staking as decentralized as possible. This means that Ankr will not contribute to giving any party more influence over the BSC network as the BNB will be spread over a wide variety of nodes. Ultimately, the end goal is having Ankr governance decide on the target allocation to different validator nodes.
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your BNB for the reward earning aBNBb token. Enhanced decentralization Our BNB Liquid Staking will not be using only Ankr validator nodes to stake the BNB from users. Ankr Earn will select several suitable and reliable BSC validators, making BNB Liquid Staking as decentralized as possible. This means that Ankr will not contribute to giving any party more influence over the BSC network as the BNB will be spread over a wide variety of nodes. Ultimately, the end goal is having Ankr governance decide on the target allocation to different validator nodes.
 
 ### Contribute to the security of the BSC network
 

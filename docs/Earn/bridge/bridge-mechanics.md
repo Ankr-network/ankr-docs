@@ -9,7 +9,7 @@ id: bridge-mechanics
 
 The mechanics of what's going on under the hood when a user transfers their funds between network can be described as following:
 
-1. The user has Ankr Liquid Tokens on the network where our Staking smart contract minted them for said user.
+1. The user has Ankr Liquid Staking tokens on the network where our Staking smart contract minted them for said user.
 
 2. The users wants to transfer them on another network. For that they visit [Ankr Bridge](https://www.ankr.com/earn/bridge/), choose the amount to be transferred and click **Approve**. 
    That causes Ankr Bridge to call the `approve()` function of the briding smart contract to allow transferring the assets. From the user's side, it looks like they approve the operation in their Metamask.  

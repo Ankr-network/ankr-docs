@@ -13,7 +13,7 @@ id: stake-eth
 
 :::
 
-1. 1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
 
 2. Locate the **Ethereum (ETH)** box and click *Stake at old version* in it.
 
@@ -29,7 +29,7 @@ id: stake-eth
 **BE SURE: to allow sufficient ETH to cover gas fees.**
 :::
 
-1. Choose the type of Ankr Liquid Tokens you want to receive: aETHb grow in quantity, and aETHc grow in value. 
+1. Choose the type of Ankr Liquid Staking tokens you want to receive: aETHb grow in quantity, and aETHc grow in value. 
     
 2. Click the **'+'** button to stake ETH.
 

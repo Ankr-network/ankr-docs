@@ -16,22 +16,6 @@ MATIC is available on many of the leading centralized and decentralized exchange
 
 A very small amount of ETH is used as gas fee to perform a transaction. Normally, it is around 0.0005 ETH, but may vary depending on the transaction complexity and network transaction load.
 
-## Configure Metamask
-
-1. Log in to Metamask.
-2. Click the Network drop-down and select **Custom RPC**.
-3. Enter the following details:
-
-Network Name: Polygon
-
-New RPC URL: https://rpc.Ankr.com/polygon
-
-ChainID: 137
-
-Symbol: MATIC
-
-Explorer: https://polygonscan.com/
-
 ## How to stake MATIC
 
 ### Connect your wallet
@@ -86,7 +70,7 @@ You will need to make the following interactions in your wallet:
 
 :::success
 
-Your aMATICb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aMATICb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aMATICb section.
+Your aMATICb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aMATICb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aMATICb section.
 
 ### If you don't see your aMATICb balance
 

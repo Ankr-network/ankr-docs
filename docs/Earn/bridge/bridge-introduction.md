@@ -8,7 +8,7 @@ id: bridge-introduction
 
 Ankr Bridge is an Ankr product for bridging assets between networks. 
 
-It allows you to transfer your Ankr Liquid Tokens, obtained when staking your original assets, to a different network where they remain a valid stake and continue to accumulate rewards.
+It allows you to transfer your Ankr Liquid Staking tokens, obtained when staking your original assets, to a different network where they remain a valid stake and continue to accumulate rewards.
 
 ## Why Ankr Bridge?
 
@@ -17,9 +17,9 @@ It allows you to transfer your Ankr Liquid Tokens, obtained when staking your or
 Having staked your funds in Ankr Earn, you may find that you need them on the spot for some exciting opportunity you don't want to miss.
 However, unstaking may apply different release time for different tokens, and you may miss this opportunity.
 
-In this case, you can transfer your Ankr Liquid Tokens to any networks via Ankr Bridge.
+In this case, you can transfer your Ankr Liquid Staking tokens to any networks via Ankr Bridge.
 You can then use other Ankr Earn tools to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
-As a part of that, you can trade the native tokens for your liquid tokens on a DEX, via Ankr DeFi on ankr.com (DEX fees may apply). 
+As a part of that, you can trade the native tokens for your Liquid Staking tokens on a DEX, via Ankr DeFi on ankr.com (DEX fees may apply). 
 
 ### Ankr's point
 
@@ -31,7 +31,7 @@ Why did we need our own bridge instead of using existing solutions?
 
 * They don’t support NFT’s standards, such as ERC721.
 
-* They don’t support Ankr Liquid Tokens that have the dynamic balance change feature. And when staking, user may want to transfer Ankr Liquid Tokens to other networks to sell them on DEXs.
+* They don’t support Ankr Liquid Staking tokens that have the dynamic balance change feature. And when staking, user may want to transfer Ankr Liquid Tokens to other networks to sell them on DEXs.
 
 As you know, a cross-chain bridge uses wrapping or pegging mechanisms for bridging tokens. 
 It requires locking or burning funds in one of the chains as the proof of lock of proof of burn. 

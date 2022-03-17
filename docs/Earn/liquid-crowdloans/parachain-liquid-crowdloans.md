@@ -30,7 +30,7 @@ By solving the capital inefficiency of Parachain slot auctions with Parachain Li
 4.  **Opportunity to become a DeFi Parachain Crowdloan Market Maker**
 Estimate the fair value of Parachain Liquid Crowdloan tokens and buy below your fair value and sell above your fair value. The bid-ask spread (difference between your buy and sell price) will become your market marking revenue.
 
-### **How Parachain Liquid Crowdloans Work**
+### **How Parachain Liquid Crowdloans work**
 
 ![Parachain Crowdloans](@site/static/img/dotksm-plc.png)
 

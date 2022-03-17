@@ -50,7 +50,7 @@ Currently, you can trade and provide liquidity to the following DEXs:
 
 ![](https://lh6.googleusercontent.com/hZw1As67M12yHFac4WSCQxopoyHPRQmfai9jE\_v22IL3AIckeC4F-A1\_nS-FX5jUY3LLAmg-NAbtOnPkWyXqqA8z\_ieu1pd08S9MDlHaf\_rGjlrl48r2yja2rlkx\_M58LzFjJ7Qe)
 
-### **Next Steps**
+### **Next steps**
 
 * Earn SUSHI farming rewards by adding liquidity to aETH/ETH.
 * Earn further rewards by staking SUSHI in another DEX pool.\\

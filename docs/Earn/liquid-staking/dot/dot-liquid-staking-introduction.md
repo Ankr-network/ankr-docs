@@ -7,7 +7,7 @@ Polkadot Staking uses nominated proof-of-stake (NPoS) as its foundation consensu
 
 Polkadot Liquid Staking from **Ankr Earn** offers instant liquidity for your staked **DOT**.
 
-DOT Liquid Staking enables you to earn **alpha** (The _return on investment that goes beyond normal increases in the crypto market index_).
+Polkadot Liquid Staking enables you to earn **alpha** (the _return on investment that goes beyond normal increases in the crypto market index_).
 
 Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
@@ -15,13 +15,13 @@ Ankr Earn can connect you to the best ways to earn more crypto by staking, arbit
 
 ### **Instant liquidity**
 
-Staked assets are illiquid. Stakers must wait 7 days to unstake KSM. Also, during the unstaking period, unstaking assets are not entitled to additional reward. This creates an opportunity cost in time and capital for the user. Only after unstaking does KSM become redeemable and available for reinvestment. 
+Staked assets are illiquid. Stakers must wait 7 days to unstake DOT. Also, during the unstaking period, unstaking assets are not entitled to additional reward. This creates an opportunity cost in time and capital for the user. Only after unstaking does DOT become redeemable and available for reinvestment. 
 
-Using Ankr Earn is the best way to stake KSM as you can access instant liquidity in the form of the aKSMb token. Avoiding locking your KSM up with the Kusama network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
+Using Ankr Earn is the best way to stake DOT as you can access instant liquidity in the form of the aDOTb token. Avoiding locking your DOT up with the Polkadot network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
 
 ### **Boosted yields**
 
-As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-of-stake networks, it offers a way to earn additional rewards on your staked KSM, enabling new yield farming strategies. The main benefits of KSM Liquid Staking are:
+As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-of-stake networks, it offers a way to earn additional rewards on your staked DOT, enabling new yield farming strategies. The main benefits of DOT Liquid Staking are:
 
 * **Liquidity mining opportunities** are enabled by providing liquidity for pools in decentralized exchanges. The first main liquidity pools are expected to be aDOTb/ETH.
 * **Farming rewards for liquidity providers:** Liquid Staking presents several yield farming strategies for users to contribute to liquidity pools and gain a share of the trading fees and governance tokens. These new LP tokens can be used to generate yet another layer of earnings.
@@ -35,7 +35,7 @@ The aDOTb tokens will also allow users to borrow against their aDOTb assets in e
 
 ### No technical knowledge required
 
-Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your DOT for the reward-earning aDOTb token.
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your DOT for the reward earning aDOTb token.
 
 ### Enhanced decentralization
 
@@ -48,9 +48,7 @@ Staking with Polkadot Liquid Staking allows you to play an important role in boo
 Ankr Earn offers instant liquidity for your staked DOT, enabling you to connect your tokens with DeFi and create an opportunity to earn several other layers of rewards.
 
 ### How does it Work?
-Stake a minimum of 1 KSM and Ankr stakes your KSM tokens with validator nodes we’ve selected.
-Instant Liquidity!!! We return an equivalent amount of aKSMb tokens to you. These are reward earning tokens that distribute staking rewards to your wallet on a daily basis. You can watch the aKSMb balance in your wallet automatically increase everyday.
+Stake a minimum of 1 DOT and Ankr stakes your DOT tokens with validator nodes we’ve selected.
+Instant Liquidity!!! We return an equivalent amount of aDOTb tokens to you. These are reward earning tokens that distribute staking rewards to your wallet on a daily basis. You can watch the aDOTb balance in your wallet automatically increase everyday.
 You can use your aDOTb to generate further yield by liquidity mining, lending, and/or other strategies on DeFi platforms such as:
-OnX,
-Uniswap,
-Compound.
+OnX, Uniswap, Compound.

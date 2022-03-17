@@ -7,7 +7,7 @@ id: avax-liquid-staking-introduction
 
 Ankr Earn offers Avalanche token holders the opportunity to stake AVAX and in return claim Ankr Avalanche Liquid Staking tokens (aAVAXb).
 
-aAVAXb, similarly to aETHb, is a reward-earning token, meaning that rewards from Avalanche staking will be distributed daily through rebasing. In other words, the balance of aAVAXb tokens will increase daily in every holder’s wallet.
+aAVAXb, similarly to aETHb, is a reward earning token, meaning that rewards from Avalanche staking will be distributed daily through rebasing. In other words, the balance of aAVAXb tokens will increase daily in every holder’s wallet.
 
 Contrary to ETH staking, it is also possible to unstake AVAX tokens. Therefore, aAVAXb will benefit from the following aAVAXb liquidity options:
 

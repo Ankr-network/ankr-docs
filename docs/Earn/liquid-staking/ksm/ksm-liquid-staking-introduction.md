@@ -7,7 +7,7 @@ Kusama Staking uses nominated proof-of-stake (NPoS) as its foundation consensus 
 
 Kusama Liquid Staking from **Ankr Earn** offers instant liquidity for your staked **KSM**.
 
-KSM Liquid Staking enables you to earn **alpha** (The _return on investment that goes beyond normal increases in the crypto market index_).
+Kusama Liquid Staking enables you to earn **alpha** (the _return on investment that goes beyond normal increases in the crypto market index_).
 
 Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
@@ -41,7 +41,7 @@ The aKSMb tokens will also allow users to borrow against their aKSMb assets in e
 
 ### No technical knowledge required
 
-Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your KSM for the reward-earning aKSMb token.
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your KSM for the reward earning aKSMb token.
 
 ### Enhanced decentralization
 
@@ -57,6 +57,4 @@ Ankr Earn offers instant liquidity for your staked DOT, enabling you to connect 
 Stake a minimum of 1 KSM and Ankr stakes your KSM tokens with validator nodes we’ve selected.
 Instant Liquidity!!! We return an equivalent amount of aKSMb tokens to you. These are reward earning tokens that distribute staking rewards to your wallet on a daily basis. You can watch the aKSMb balance in your wallet automatically increase everyday.
 You can use your aDOTb to generate further yield by liquidity mining, lending, and/or other strategies on DeFi platforms such as:
-OnX,
-Uniswap,
-Compound.
+OnX, Uniswap, Compound.
