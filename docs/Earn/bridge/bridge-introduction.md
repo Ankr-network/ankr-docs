@@ -12,7 +12,7 @@ It allows you to transfer your Ankr Liquid Staking tokens, obtained when staking
 
 ## Why Ankr Bridge?
 
-### User's point
+### User benefits
 
 Having staked your funds in Ankr Earn, you may find that you need them on the spot for some exciting opportunity you don't want to miss.
 However, unstaking may apply different release time for different tokens, and you may miss this opportunity.
@@ -21,7 +21,7 @@ In this case, you can transfer your Ankr Liquid Staking tokens to any networks v
 You can then use other Ankr Earn tools to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 As a part of that, you can trade the native tokens for your Liquid Staking tokens on a DEX, via Ankr DeFi on ankr.com (DEX fees may apply). 
 
-### Ankr's point
+### Ankr benefits
 
 Why did we need our own bridge instead of using existing solutions? 
 
