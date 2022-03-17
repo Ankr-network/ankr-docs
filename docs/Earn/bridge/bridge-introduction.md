@@ -14,9 +14,7 @@ It allows you to transfer your Ankr Liquid Tokens, obtained when staking your or
 
 ### User's point
 
-First, why you need Ankr Bridge. 
-
-Having staked your funds, you may find that you need them on the spot for some exciting opportunity you don't want to miss.
+Having staked your funds in Ankr Earn, you may find that you need them on the spot for some exciting opportunity you don't want to miss.
 However, unstaking may apply different release time for different tokens, and you may miss this opportunity.
 
 In this case, you can transfer your Ankr Liquid Tokens to the network native to the funds you staked, via Ankr Bridge.
