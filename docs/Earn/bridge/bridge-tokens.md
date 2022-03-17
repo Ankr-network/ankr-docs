@@ -21,7 +21,7 @@ Current Bridge version supports bridging aMATICb. Other assets will be added in 
    1. We recommend choosing the high fee value for faster transaction mining time.
 6. Ankr Bridge shows you the sending progress. Wait till the cross-chain transaction successfully finishes. 
    1. Please stay on the page until sending is completed, since next you need to **receive** the bridged tokens. If navigated away, closed the tab, or Ankr Bridge failed during the bridging process, read the **Finish Bridge** section below.
-7. To receive the bridged aMATICb on the destination network, switch to it network by clicking *Switch to **** and confirm switching in your wallet.
+7. To receive the bridged aMATICb on the destination network, switch to it network by clicking *Switch to network-name* and confirm switching in your wallet.
 8. Receive aMATICb on the destination network clicking *Receive* and confirming it in your wallet. Gas fee applies.
    1. You can see the transaction in the explorer by clicking the *go-to* button next to the transaction hash.
 
