@@ -5,7 +5,8 @@ id: liquid-staking
 
 Liquid Staking provides instant liquidity for staked assets in the form of Liquid Staking tokens. 
 
-Liquid Staking tokens represent the value of your staked assets but the tokens are portable, accessible and thus liquid. They can now be utilized in a number of ways.
+Liquid Staking tokens represent the value of your staked assets but the tokens are portable, accessible and thus liquid. 
+They can now be utilized in a number of ways.
 
 For example,
 

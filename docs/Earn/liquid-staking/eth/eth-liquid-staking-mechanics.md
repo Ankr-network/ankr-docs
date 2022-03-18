@@ -48,7 +48,7 @@ Smart contracts and addresses involved in ETH Liquid Staking are:
 
 [aETHc](https://etherscan.io/token/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb) — contract that implements the ERC-20-like token aETHc. aETHc doesn't grow in number, but grows in value.
 
-Smart contracts code lives by the links above, at the **Contract** tab on the page.
+Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 
 ## Staking workflow
 
