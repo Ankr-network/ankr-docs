@@ -35,8 +35,8 @@ const LINKS = [
         link: "https://www.ankr.com/build/nodes/",
       },
       {
-        name: "Ankr Stakefi",
-        link: "https://stakefi.ankr.com/liquid-staking",
+        name: "Ankr Earn",
+        link: "https://www.ankr.com/earn/",
       },
       {
         name: "Ankr Protocol",
