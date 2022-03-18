@@ -62,7 +62,7 @@ Smart contracts addresses involved in DOT staking are:
 
 Polkadot deposit address:
 
-[Ankr deposit address](https://polkadot.subscan.io/account/11XAoN3fgVLJUmK4Ty2q2H5dGYYzRZe82F247SyzfwZbHpV) — address that receives the staked DOTs on Polkadot.
+[Ankr deposit address](https://polkadot.subscan.io/account/11XAoN3fgVLJUmK4Ty2q2H5dGYYzRZe82F247SyzfwZbHpV) — address that receives the staked DOT on Polkadot.
 
 Ethereum:
 
@@ -82,15 +82,15 @@ Due to Polkadot backend architecture, we currently do not disclose our API endpo
 
 1. User requests the Ankr deposit address via the Ankr backend.
 
-2. User sends DOTs to the obtained Ankr deposit address via the Ankr backend.
+2. User sends DOT to the obtained Ankr deposit address via the Ankr backend.
 
 3. User sends their extrinsic id to the Ankr backend. In Substate, an extrinsic is a piece of information that comes from outside the chain and is included in a block.
 
 4. Once the transaction has been finalized, the user can see their DOT balance in Akr Earn.
 
-5. Ankr backend monitor deposits to the Ankr deposit address. Once new DOTs are available for staking, the backend:
-   1. Transfers the DOTs to one of the Ankr dedicated accounts if necessary.
-   2. Bonds DOTs for staking.
+5. Ankr backend monitor deposits to the Ankr deposit address. Once new DOT are available for staking, the backend:
+   1. Transfers the DOT to one of the Ankr dedicated accounts if necessary.
+   2. Bonds DOT for staking.
    3. Constantly nominates a subset of validators.
 
 ### Claiming aDOTb
@@ -178,6 +178,6 @@ To update the ratio, the Ankr backend:
 
 3. If Ankr deposit address doesn’t have the corresponding number of DOT at the moment, the Ankr backend sends an unbonding request to the Polkadot network.
 
-4. When the Ankr deposit address has enough DOTs available to fulfill the request, the funds are sent to the user’s address on Polkadot.
+4. When the Ankr deposit address has enough DOT available to fulfill the request, the funds are sent to the user’s address on Polkadot.
 
 5. The user sees a new `UNSTAKE` entry in their staking history on the staking dashboard.

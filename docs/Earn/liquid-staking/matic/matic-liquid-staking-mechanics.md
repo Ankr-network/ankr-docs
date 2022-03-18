@@ -40,7 +40,7 @@ The requirements when staking are:
 
 * Minimum fee — 100 Ankr tokens. Typical fee range is 500 to 2500 Ankr tokens.
 
-* User can unstake a part of or all the staked MATICS anytime.
+* User can unstake a part of or all the staked MATIC anytime.
 
 
 ## Fees
@@ -88,13 +88,13 @@ Upon receiving the stake, the `Polygon Pool` smart contract calculates the equiv
 
 On the Ankr Earn Dashbaord, the user can import the received aMATICb tokens to Metamask or another wallet connected to Ethereum.
 
-Ankr backend collects the MATICs staked by users, transferring them from the smart contract to the address controlled by the platform, and makes a validator stake on the Ankr Matic Validator node if the conditions below are met.
+Ankr backend collects the MATIC staked by users, transferring them from the smart contract to the address controlled by the platform, and makes a validator stake on the Ankr MATIC Validator node if the conditions below are met.
 
 Ankr Earn Dashboard can call `aMATICb::balanceOf(address account)` to check the user’s current aMATICb balance.
 
 The Ankr backend monitors blockchain events coming from the `PolygonPool` smart contract. Upon a new staking event, the backend:
 
-1. Checks if the newly available MATIC number (*N*) is >= to the minimum threshold. If yes, the available MATICs are sent from the `PolygonPool`  smart contract to the address managed by Ankr. Else, the backend waits for the next stake event from `PolygonPool`. *N* is a config parameter.
+1. Checks if the newly available MATIC number (*N*) is >= to the minimum threshold. If yes, the available MATIC are sent from the `PolygonPool`  smart contract to the address managed by Ankr. Else, the backend waits for the next stake event from `PolygonPool`. *N* is a config parameter.
 
 2. At the point when MATIC tokens become available at the Ankr address, a staking transaction is issued.
 
@@ -106,9 +106,9 @@ To update the rates, the Ankr backend:
 
 1. Collects information about the total supply of aMATICb.
 
-2. Collects information about MATICs available as stakes on the `MaticPool` smart contract, at the addresses controlled by Ankr, MATICs staked on the Validator node, and MATICs received as reward.
+2. Collects information about MATIC available as stakes on the `MaticPool` smart contract, at the addresses controlled by Ankr, MATICs staked on the Validator node, and MATICs received as reward.
 
-3. Calculates MATIC ratio, diving the MATIC share by the MATICs involved in the staking.
+3. Calculates MATIC ratio, diving the MATIC share by the MATIC involved in the staking.
 
 4. Sends a ratio update request to `aMATICb::function updateRatioAndFee(uint256 newRatio, uint256 newFee)`.
 
@@ -119,13 +119,13 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 
 1. User navigates to the dedicated page in Ankr Earn and unstakes their MATIC.
 
-2. Ankr Earn Dashboard checks the user’s aMATICb balance and displays a form to enter the number of MATICs to unstake.
+2. Ankr Earn Dashboard checks the user’s aMATICb balance and displays a form to enter the number of MATIC to unstake.
 
 Frontend gets the unstake fee information from Ankr backend:
 
 4. Ankr Earn Dashboard calls Ankr smart contract to approve the transfer fee in Ankr tokens from the user address to the PolygonPool smart contract address. The fee is needed to compensate Ankr for the unstaking expenses.
 
-5. Ankr Earn Dashboard calls `PolygonPool::unstake(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)` to unstake the specified amount of MATICs.
+5. Ankr Earn Dashboard calls `PolygonPool::unstake(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)` to unstake the specified amount of MATIC.
 
 6. `PolygonPool` transfers the equal amount of aMATICb from the user to itself (technically, it locks the amount of aMATICb to unstake in the user’s account).
 
@@ -135,6 +135,6 @@ Frontend gets the unstake fee information from Ankr backend:
 
 9. Ankr backend detects the unstake event and sends an unstake request to the MATIC smart contract on the Ethereum blockchain.
 
-10. When unstake is completed and MATIC received at the platform address, the backend sends the MATICs to the Polygon Pool smart contract: `PolygonPool::serveClaims()`.
+10. When unstake is completed and MATIC received at the platform address, the backend sends the MATIC to the Polygon Pool smart contract: `PolygonPool::serveClaims()`.
 
-11. `PolygonPool` sends the MATICs to the user address, burns the aMATICb tokens, and issues an event saying the unstake request has been completed.
+11. `PolygonPool` sends the MATIC to the user address, burns the aMATICb tokens, and issues an event saying the unstake request has been completed.

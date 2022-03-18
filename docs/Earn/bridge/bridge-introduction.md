@@ -29,7 +29,7 @@ However, unstaking may apply different release times for different tokens, and y
 
 In this case, you can transfer your Ankr Liquid Staking tokens to any network via Ankr Bridge.
 You can then use other Ankr Earn tools to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
-As a part of that, you can trade the native tokens for your Liquid Staking tokens on a DEX, via Ankr DeFi on ankr.com (DEX fees may apply). 
+You can also trade the native tokens for your Liquid Staking tokens on a DEX, via Ankr DeFi on ankr.com (DEX fees may apply). 
 
 ### Ankr benefits
 
@@ -37,7 +37,7 @@ Why did we need our own bridge instead of using existing solutions?
 
 * Almost all bridges are centralized and we’d like to manage our own solution.
 
-* Almost all bridges support only well-known ERC20 tokens, like the TOP30, and they don’t allow to bridge any ERC-20 compatible asset.
+* Almost all bridges support only well-known ERC20 tokens, like the TOP30, and they don't support bridging for other ERC-20 compatible assets.
 
 * They don’t support NFT standards, such as ERC721.
 

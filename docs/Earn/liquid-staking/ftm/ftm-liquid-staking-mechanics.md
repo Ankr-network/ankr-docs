@@ -76,7 +76,7 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 
 1. User calls `aFTMb::function burn(uint256 amount)`. 
 
-2. If the transaction is successful, aFTMbs are automatically burned and removed from the user’s address. An event `TokensBurned(address indexed account, uint256 amount, uint256 shares, uint256 burnFee, uint256 indexed wrId)` is emitted, and the user receives `amount - burnFee` FTMs within the period of up to 35 days. 
+2. If the transaction is successful, aFTMbs are automatically burned and removed from the user’s address. An event `TokensBurned(address indexed account, uint256 amount, uint256 shares, uint256 burnFee, uint256 indexed wrId)` is emitted, and the user receives `amount - burnFee` FTM within the period of up to 35 days. 
 The fee depends on unstaked amount and can be shown to the user via `getBurnFee(uint256 amount) external view returns (uint256)`, which changes from time to time based on the current available liquidity. 
 
 3. Then `FantomPool` saves the request in the form of a `WithdrawalRequest {address payable staker; uint256 amount;}` struct.  Within up to 35 days the Ankr backend calls `withdrawLast()` to send the staked funds back to the user, and a `Withdrawn(address indexed staker, uint256 amount, uint256 indexed wrId)` event is emitted.
