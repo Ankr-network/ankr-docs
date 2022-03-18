@@ -40,6 +40,7 @@ module.exports = {
             'Build/1V2/public-rpc',
             'Build/1V2/premium-rpc',
             'Build/1V2/advanced-apis',
+            'Build/1V2/add-endpoints',
             'Build/1V2/node-ops',
             'Build/1V2/scan'
           ],
