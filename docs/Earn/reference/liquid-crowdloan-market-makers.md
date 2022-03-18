@@ -3,13 +3,13 @@ title: Parachain Liquid Crowdloan Market Makers
 id: liquid-crowdloan-market-makers
 ---
 
-# Parachain Liquid Crowdloan Market Makers
+# Parachain Liquid Crowdloan market makers
 
-### Traditional Finance & Fair Value Estimation
+### Traditional finance & fair value estimation
 
 In traditional finance, bond trading is enabled by market makers who provide liquidity to the market. Banks and Brokers usually operate as market makers, estimating the fair value of a specific bond, which depends on several factors such as credit risk, sensitivity to changes in interest rates (duration risk) and liquidity risk (some bonds are more liquid than others). Duration risk is also positively correlated to the maturity of the bonds.
 
-### Parachain Liquid Crowdloans & Fair Value Estimation
+### Parachain Liquid Crowdloans & fair value estimation
 
 For Parachain Liquid Crowdloans, fair value estimation depends on factors different from traditional finance. However, the spirit of Fair Value estimation is similar.
 
@@ -19,7 +19,7 @@ Here is how we ascertain price of 1 Parachain Liquid Bonding token:
 
 Some of the elements of the formula depend on the user's personal risk tolerance, such as the required risk premium. Other factors could also be considered if a user is willing, for example the perceived risk associated with Ankr.
 
-### Market Makers
+### Market makers
 
 The need for market makers arises due to the complexity of estimating the fair value of a product. For example the need to make informed decisions and assumptions.
 

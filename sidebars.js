@@ -136,6 +136,18 @@ earnSidebar: {
       items: [
       {
       type: 'category',
+      label: 'AVAX',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/avax/avax-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/avax/avax-liquid-staking-mechanics',
+        'Earn/liquid-staking/avax/stake-avax',
+      ]
+    },
+      {
+      type: 'category',
       label: 'BNB',
       link: {
         type: 'doc',
@@ -144,6 +156,7 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
         'Earn/liquid-staking/bnb/stake-bnb',
+        'Earn/liquid-staking/bnb/unstake-bnb',
       ]
     },
     {
@@ -156,9 +169,23 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
         'Earn/liquid-staking/dot/stake-dot',
+        'Earn/liquid-staking/dot/unstake-dot',
       ]
     },
-   /* {
+         {
+      type: 'category',
+      label: 'ETH',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/eth/eth-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
+        'Earn/liquid-staking/eth/stake-eth',
+        'Earn/liquid-staking/eth/unstake-eth',
+      ]
+    },
+   {
       type: 'category',
       label: 'FTM',
       link: {
@@ -166,10 +193,11 @@ earnSidebar: {
         id: 'Earn/liquid-staking/ftm/ftm-liquid-staking-introduction',
       },
       items: [
-        'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
-        'Earn/liquid-staking/bnb/stake-bnb',
+        'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
+        'Earn/liquid-staking/ftm/stake-ftm',
+        'Earn/liquid-staking/ftm/unstake-ftm',
       ]
-    }, */
+    },
     {
       type: 'category',
       label: 'KSM',
@@ -180,6 +208,20 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
         'Earn/liquid-staking/ksm/stake-ksm',
+        'Earn/liquid-staking/ksm/unstake-ksm',
+      ]
+    },
+       {
+      type: 'category',
+      label: 'MATIC',
+      link: {
+        type: 'doc',
+        id: 'Earn/liquid-staking/matic/matic-liquid-staking-introduction',
+      },
+      items: [
+        'Earn/liquid-staking/matic/matic-liquid-staking-mechanics',
+        'Earn/liquid-staking/matic/stake-matic',
+        'Earn/liquid-staking/matic/unstake-matic',
       ]
     },
       ]
@@ -210,7 +252,7 @@ earnSidebar: {
           'Earn/defi/provide-liquidity-dex',
       ]
     },
-/*    {
+    {
       type: 'category',
       label: 'Bridge',
       collapsible: true,
@@ -220,6 +262,8 @@ earnSidebar: {
         id: 'Earn/bridge/bridge-introduction',
       },
       items: [
+          'Earn/bridge/bridge-mechanics',
+          'Earn/bridge/bridge-tokens',
       ]
     },
     {
@@ -232,8 +276,9 @@ earnSidebar: {
         id: 'Earn/switch/switch-introduction',
       },
       items: [
+           'Earn/switch/switch-mechanics',
       ]
-    }, */
+    },
         {
       type: 'category',
       label: 'Reference',

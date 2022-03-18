@@ -3,15 +3,15 @@ title: Yield Farm
 id: yeld-farm
 ---
 
-# Yield Farm with Liquid Staking tokens
+# Yield farm with Liquid Staking tokens
 
-## Yield Farming
+## Yield farming
 Currently, you can yield farm on the following platforms
 
 | Token                                                                                                                  | Platform                                          | Farming rewards                                                                                                                                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ANKR/ETH SLP](https://app.sushi.com/add/0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4/ETH)                               | [SushiSwap](https://app.sushi.com/farm)           | [SUSHI](https://etherscan.io/token/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2)                                                                                                                                                              |
-| ANKR/ETH SLP OnX Alpha Vault                                                                                           | [OnX Finance](https://app.onx.finance/vaults)     | [xSUSHI](https://etherscan.io/token/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272) + [sONX](https://etherscan.io/token/0xa99f0ad2a539b2867fcfea47f7e71f240940b47c)                                                                             |
+| [Ankr/ETH SLP](https://app.sushi.com/add/0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4/ETH)                               | [SushiSwap](https://app.sushi.com/farm)           | [SUSHI](https://etherscan.io/token/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2)                                                                                                                                                              |
+| Ankr/ETH SLP OnX Alpha Vault                                                                                           | [OnX Finance](https://app.onx.finance/vaults)     | [xSUSHI](https://etherscan.io/token/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272) + [sONX](https://etherscan.io/token/0xa99f0ad2a539b2867fcfea47f7e71f240940b47c)                                                                             |
 | [aETHc/ETH LP (Uniswap v2)](https://app.uniswap.org/#/add/v2/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb/ETH)           | [OnX Finance](https://app.onx.finance/farming)    | [ONS](https://etherscan.io/token/0xfC97C0c12438B6E4CF246cD831b02FeF4950DCAD#balances)                                                                                                                                                       |
 | [aETHc/ETH SLP (Sushiswap)](https://app.sushi.com/add/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb/ETH)                  | [SushiSwap](https://app.sushi.com/farm)           | [SUSHI](https://etherscan.io/token/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2)                                                                                                                                                              |
 | aETHc/ETH SLP OnX Alpha Vault                                                                                          | [OnX Finance](https://app.onx.finance/vaults)     | [xSUSHI](https://etherscan.io/token/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272) + [sONX](https://etherscan.io/token/0xa99f0ad2a539b2867fcfea47f7e71f240940b47c)                                                                             |
