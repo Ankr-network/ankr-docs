@@ -15,10 +15,13 @@ They are tokens issued to you by Ankr when staking with Arnk Earn.  These tokens
 
 There are two types of Liquid Staking tokens:
 
-* Reward earning tokens — represent the staked assets plus all future staking rewards. These grow in value as they accumulate rewards.  
-* Rewards bearing tokens — represent the staked assets. These grow in number as they accumulate rewards.  
+* Reward bearing tokens e.g. aETHc have a  fair value of 1 aETHc token: ETH i.e. 1:1 ratio. Staking rewards accumulate for reward-bearing tokens so when you redeem your stake, you receive your stake plus  accumulated staking rewards.  
+* Reward earning tokens e.g. aETHb, receive daily rewards distributed through rebasing. These appear directly in your wallet and you can see your balance adjust on a daily basis.  
 
-The main difference between reward earning and reward bearing tokens is the former distribute staking rewards through a rebasing process on a daily basis, meaning that its fair value should be equal to original asset price, contrary to the latter, whose fair price is original asset + staking rewards.
+The main difference between reward earning and reward bearing tokens 
+is that the first distribute staking rewards through a rebasing process on a daily basis, 
+meaning the fair value upon redemption should be equal to the original asset price, 
+whereas the value of the second should be the original asset + staking rewards.
 
 ### Supported tokens
 
