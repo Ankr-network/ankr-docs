@@ -25,8 +25,6 @@ Uniswap v2: [https://v2.info.uniswap.org/pair/0x5201883feeb05822ce25c9af8ab41fc7
 When using DEXs, make sure the ANKR token contract matches the official ERC20 token contract: [0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4](https://etherscan.io/address/0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4)
 :::
 
-### Official Synthetic Token Liquidity Pools:
-
 ### Examples of compatible wallets:
 
 Any ERC20 compatible wallet should work with the ANKR ERC20 token. Our team has tested compatibility with:
