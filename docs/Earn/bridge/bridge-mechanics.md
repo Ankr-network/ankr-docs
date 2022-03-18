@@ -3,7 +3,7 @@ title: Ankr Bridge Mechahics
 id: bridge-mechanics
 ---
 
-# Ankr Bridge Mechahics
+# Ankr Bridge mechahics
 
 # Briding workflow
 

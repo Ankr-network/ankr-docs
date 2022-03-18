@@ -3,9 +3,9 @@ title: Yield Farm
 id: yeld-farm
 ---
 
-# Yield Farm with Liquid Staking Tokens
+# Yield farm with Liquid Staking tokens
 
-## Yield Farming
+## Yield farming
 Currently, you can yield farm on the following platforms
 
 | Token                                                                                                                  | Platform                                          | Farming rewards                                                                                                                                                                                                                             |

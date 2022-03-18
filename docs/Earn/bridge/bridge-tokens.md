@@ -3,7 +3,7 @@ title: Bridge Tokens
 id: bridge-tokens
 ---
 
-# Bridge Tokens
+# Bridge tokens
 
 :::info
 
@@ -27,7 +27,7 @@ Current Bridge version supports bridging aMATICb. Other assets will be added in 
 
 ## Finish Bridge
 
-*Finish Bridge* allows you to get back to the bridging process if anything failed. 
+The *Finish Bridge* functionality allows you to get back to the bridging process if anything failed. 
 
 Brinding process may fail due to: 
 * You navigating away from the Bridge page anytime during the process.
