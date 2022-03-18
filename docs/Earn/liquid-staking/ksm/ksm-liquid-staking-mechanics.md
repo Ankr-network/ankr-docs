@@ -66,7 +66,7 @@ Smart contracts addresses involved in KSM staking are:
 
 Kusama deposit address:
 
-[Ankr deposit address](https://kusama.subscan.io/account/GUDy5gwmUTaHxcX8v2U3wyYdjSF8Zswnt47ZhYBuTCobDqX) — address that receives the staked KSMs on Kusama.
+[Ankr deposit address](https://kusama.subscan.io/account/GUDy5gwmUTaHxcX8v2U3wyYdjSF8Zswnt47ZhYBuTCobDqX) — address that receives the staked KSM on Kusama.
 
 Ethereum:
 
@@ -86,15 +86,15 @@ Due to Polkadot backend architecture, we currently do not disclose our API endpo
 
 1. User requests the Ankr deposit address via the Ankr backend.
 
-2. User sends KSMs to the obtained Ankr deposit address via the Ankr backend.
+2. User sends KSM to the obtained Ankr deposit address via the Ankr backend.
 
 3. User sends their extrinsic id to the Ankr backend. In Substate, an extrinsic is a piece of information that comes from outside the chain and is included in a block.
 
 4. Once the transaction has been finalized, the user can see their KSM balance in Ankr Earn.
 
-5. Ankr backend monitor deposits to the Ankr deposit address. Once new KSMs are available for staking, the backend:
-   1. Transfers the KSMs to one of the Ankr dedicated accounts if necessary.
-   2. Bonds KSMs for staking.
+5. Ankr backend monitor deposits to the Ankr deposit address. Once new KSM are available for staking, the backend:
+   1. Transfers the KSM to one of the Ankr dedicated accounts if necessary.
+   2. Bonds KSM for staking.
    3. Constantly nominates a subset of validators.
 
 ### Claiming aKSMb
@@ -182,6 +182,6 @@ To update the ratio, the Ankr backend:
 
 3. If Ankr deposit address doesn’t have the corresponding number of KSM at the moment, the Ankr backend sends an unbonding request to the Kusama network.
 
-4. When the Ankr deposit address has enough KSMs available to fulfill the request, the funds are sent to the user’s address on Kusama.
+4. When the Ankr deposit address has enough KSM available to fulfill the request, the funds are sent to the user’s address on Kusama.
 
 5. The user sees a new `UNSTAKE` entry in their staking history on the staking dashboard.
