@@ -265,7 +265,7 @@ earnSidebar: {
           'Earn/bridge/bridge-tokens',
       ]
     },
-/*    {
+    {
       type: 'category',
       label: 'Switch',
       collapsible: true,
@@ -275,8 +275,9 @@ earnSidebar: {
         id: 'Earn/switch/switch-introduction',
       },
       items: [
+           'Earn/switch/switch-mechanics',
       ]
-    }, */
+    },
         {
       type: 'category',
       label: 'Reference',

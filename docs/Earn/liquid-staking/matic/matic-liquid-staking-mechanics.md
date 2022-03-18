@@ -72,7 +72,7 @@ Smart contracts and addresses involved in MATIC Liquid Staking are:
 
 * [aMATICb](https://etherscan.io/address/0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe) — contract on Ethereum that mints aMATICb tokens for the user in 1:1 ratio with the staked amount.
 
-Smart contracts code lives by the links above, at the **Contract** tab on the page.
+Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 
 
 ## Staking workflow
@@ -80,25 +80,25 @@ The workflow is both user and Ankr-driven. The user part is Steps 1–2, the Ank
 
 User calls `Matic::approve(address spender, uint256 amountToSpend)` to approve the chosen MATIC amount to be sent to the `PolygonPool` smart contract.
 
-User sends a request to Ankr `PolygonPool` smart contract on Ethereum, calling `PolygonPool::stake(uint256 amount)`. The request is sent via the Ankr Earn Dashboard and Metamask or another wallet connected to Ethereum.
+User sends a request to Ankr `PolygonPool` smart contract on Ethereum, calling `PolygonPool::stake(uint256 amount)`. The request is sent via Ankr Earn and Metamask or another wallet connected to Ethereum.
 
 Upon receiving the stake, the `Polygon Pool` smart contract calculates the equivalent amount of aMATICb and mints them to the user’s address in the stake transaction.
 
 `Polygon Pool` emits a `StakePending(msg.sender, amount)` event.
 
-Ankr Earn Dashboard allows the user to register (import) the received aMATICb tokens to Metamask or another wallet connected to Ethereum.
+On the Ankr Earn Dashbaord, the user can import the received aMATICb tokens to Metamask or another wallet connected to Ethereum.
 
 Ankr backend collects the MATICs staked by users, transferring them from the smart contract to the address controlled by the platform, and makes a validator stake on the Ankr Matic Validator node if the conditions below are met.
 
 Ankr Earn Dashboard can call `aMATICb::balanceOf(address account)` to check the user’s current aMATICb balance.
 
-ANK backend will monitor blockchain events coming from the `PolygonPool` smart contract. Upon a new staking event, the backend:
+The Ankr backend monitors blockchain events coming from the `PolygonPool` smart contract. Upon a new staking event, the backend:
 
 1. Checks if the newly available MATIC number (*N*) is >= to the minimum threshold. If yes, the available MATICs are sent from the `PolygonPool`  smart contract to the address managed by Ankr. Else, the backend waits for the next stake event from `PolygonPool`. *N* is a config parameter.
 
-2. When MATIC tokens become available at the Ankr address, staking transaction is issued.
+2. At the point when MATIC tokens become available at the Ankr address, a staking transaction is issued.
 
-3. The Ankr backed monitors staking status and rewards, and restakes the rewards when the sum of the staked MATIC reward is > threshold. The threshold is a config parameter.
+3. The Ankr backend monitors staking status and rewards, and restakes the rewards when the sum of the staked MATIC reward is > threshold. The threshold is a config parameter.
 
 
 ## Daily exchange ratio updates
@@ -119,7 +119,7 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 
 1. User navigates to the dedicated page in Ankr Earn and unstakes their MATIC.
 
-2. Ankr Earn Dashboard checks the user’s aMATICb balance and shows the user a form to enter the number of MATICs to unstake.
+2. Ankr Earn Dashboard checks the user’s aMATICb balance and displays a form to enter the number of MATICs to unstake.
 
 Frontend gets the unstake fee information from Ankr backend:
 
@@ -131,7 +131,7 @@ Frontend gets the unstake fee information from Ankr backend:
 
 7. `PolygonPool` issues an unstake event `MaticClaimPending(msg.sender, amount)`.
 
-8. Ankr Earn Dashboard shows a notification to the user, informing about successful unstake request registration.
+8. Ankr Earn Dashboard displays a notification to the user to indicate the unstaking request has been registered.
 
 9. Ankr backend detects the unstake event and sends an unstake request to the MATIC smart contract on the Ethereum blockchain.
 

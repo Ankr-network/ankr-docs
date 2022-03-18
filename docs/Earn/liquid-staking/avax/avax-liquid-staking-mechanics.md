@@ -61,7 +61,7 @@ Addresses of these smart contracts are:
 
 * [AvalanchePool](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
   
-Smart contracts code lives by the links above, at the **Contract** tab on the page.
+Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 
 ## Staking workflow
 

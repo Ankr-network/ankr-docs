@@ -58,32 +58,11 @@ Click to allow access.
 
 ## Stake your DOT
 
-1. Enter the desired amount of AVAX to stake. If you already have some staked AVAX and want to add more, click the **'+'** button.
-
-2. Your wallet pops with details of the transaction including a suggested gas fee.
-
-3. Click ‘**Confirm**’ to proceed.
-
-4. The status of the transaction updates in your wallet.
-
-5. When staking is finalized, the **Staking Dashboard** updates.
-
-
-1. Enter the desired amount of AVAX to stake. If you already have some staked AVAX and want to add more, click the **'+'** button.
-
-2. Your wallet pops with details of the transaction including a suggested gas fee.
-
-3. Click ‘**Confirm**’ to proceed.
-
-4. The status of the transaction updates in your wallet.
-
-5. When staking is finalized, the **Staking Dashboard** updates.
-
 1. The **DOT Staking Dashboard** opens.
 
 2. To stake, click the **'+'** icon.
 
-3. Select the desired amount to stake and click *'Stake'*
+3. Select the desired amount to stake and click *Stake*.
 
 4. Your Polkadot.js wallet pops up requesting authorization. Click to authorize if you wish to proceed.
 
@@ -101,8 +80,8 @@ Click to allow access.
 
 :::info success
 
-Successful access to aDOTb Tokens
-Success is indicated by your Ethereum Wallet updating with aDOTb tokens.
+This enables access to aDOTb Tokens.
+Successful addition to your wallet is indicated by your Ethereum Wallet updating with aDOTb tokens.
 You are now free to utilize your aDOTb on other DeFi Platforms.
 
 ## If you don't see your aDOTb balance

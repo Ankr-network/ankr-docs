@@ -57,7 +57,7 @@ FantomStub — contract that delegates stakes to a validator from the validator 
 
 [Operator address](https://ftmscan.com/address/0x4069d8a3de3a72eca86ca5e0a4b94619085e7362) — address of the Ankr backend on Fantom Chain that
 
-Smart contracts code lives by the links above, at the **Contract** tab on the page.
+Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 
 ## Staking workflow
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–3.

@@ -48,7 +48,7 @@ The APY is calculated from the validators' rewards.
 
 To undestand BNB Liquid Staking, you need to know the entities and understand the workflow under the hood.
 
-There are few entities involved:
+The following entities are involved:
 * Smart contracts
 * Ankr addresses
 * Ankr validators

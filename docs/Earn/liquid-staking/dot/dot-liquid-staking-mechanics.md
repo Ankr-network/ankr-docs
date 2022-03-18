@@ -95,7 +95,7 @@ Due to Polkadot backend architecture, we currently do not disclose our API endpo
 
 ### Claiming aDOTb
 
-The workflow is user-driven. User interacts with Ankr and Polkadot via ANK frontend. 
+The workflow is user-driven. User interacts with Ankr and Polkadot via Ankr frontend. 
 
 1. User sees their claimable balance on the DOT staking dashboard. The balance is obtained from the Ankr backend; the user `address` is extracted from their Polkadot.js wallet; `claimable` is the amount that can be currently claimed and is an aggregate of the stake and reward.
 
