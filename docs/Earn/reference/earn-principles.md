@@ -5,7 +5,7 @@ id: earn-principles
 
 Ankr Earn solves the problems of Traditional Staking by enabling liquidity, portability and access to value. 
 
-1. **Solving Capital Inefficiency**
+1. **Solving capital inefficiency**
 
 Proof of Stake is a consensus mechanism used to validate crypto asset transactions. Typically assets are staked and contributed to a validator. on Proof-of-Stake networks they are used to secure the network and verify transactions. 
 solve the problem of locked up liquidity when staking assets on Proof-of-Stake networks.
