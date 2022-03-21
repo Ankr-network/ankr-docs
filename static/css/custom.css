@@ -89,7 +89,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 .navbar__link {
   color: #1f2226;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .dropdown {
@@ -245,7 +245,7 @@ aside nav {
   font-size: 16px;
   font-weight: 500;
   color: #1f2226;
-  opacity: 0.8;
+  opacity: 0.75;
   display: inline;
   position: static;
   float: right;

@@ -3,7 +3,7 @@ module.exports = {
     {
       type: 'doc',
       id: 'About/about-ankr',
-      label: '⚓️ About Ankr',
+      label: 'About Ankr',
     },
     ],
   buildSidebar: {
@@ -80,7 +80,7 @@ module.exports = {
 
       {
         type: 'category',
-        label: '⛓ Chains V1',
+        label: 'Chains V1',
         link: {
           type: 'generated-index',
         },
@@ -304,7 +304,7 @@ earnSidebar: {
     'Tokens+Governance': [
       {
         type: 'category',
-        label: '⚖️ Governance',
+        label: 'Governance',
         link: {
             type: 'generated-index',
           },
@@ -334,7 +334,7 @@ earnSidebar: {
     'Tutorials': [
       {
         type: 'category',
-        label: '🎓 Tutorials',
+        label: 'Tutorials',
         link: {
             type: 'generated-index',
           },

@@ -5,7 +5,7 @@
     title: "Welcome to Ankr Docs",
 
 
-    tagline: "Your single-source-of-truth on Ankr products and services",
+    tagline: "Your Go-To Resource for Web3 Education",
 
     url: "https://www.ankr.com",
     baseUrl: '/docs/',
@@ -63,15 +63,8 @@
           },
           items: [
             {
-
-              type: "doc",
-              docId: "About/about-ankr",
-              position: "right",
-              label: "⚓️ About Ankr",           
-            },
-            {
               type: "dropdown",
-              label: '🔨' + Array(2).fill('\xa0').join('') + 'Build',
+              label: '🏗' + Array(3).fill('\xa0').join('') + 'Build',
               position: "right",
               items: [
                 {
@@ -98,7 +91,7 @@
             },
             {
               type: "dropdown",
-              label: '💰' + Array(2).fill('\xa0').join('') + 'Earn',
+              label: '💲' + Array(3).fill('\xa0').join('') + 'Earn',
               position: "right",
               items: [
                 {
@@ -127,28 +120,30 @@
                 },
               ],
             },
+
+
             {
               type: "dropdown",
-              label: '👥' + Array(2).fill('\xa0').join('') + 'Community',
+              label: '📚' + Array(3).fill('\xa0').join('') + 'Learn',
               position: "right",
               items: [
                 {
+                  to: "About",
+                  label: 'About Ankr',
+                },
+                {
                   to: "Community/channels",
-                  label: "Community Channels",
+                  label: 'Community Channels',
+                },
+                {
+                  to: "category/governance",
+                  label: 'Token Utility',
+                },
+                {
+                  to: "category/tutorials",
+                  label: 'Web3 Tutorials',
                 },
               ],
-            },
-              {
-                type: "docSidebar",
-                sidebarId: "governanceSidebar",
-                position: "right",
-                label: '⚖️' + Array(2).fill('\xa0').join('') + 'Tokens & Governance',
-              },
-            {
-              type: "docSidebar",
-              sidebarId: "tutorialSidebar",
-              position: "right",
-              label: '📚' + Array(2).fill('\xa0').join('') + 'Tutorials',           
             },
           ],
         },
