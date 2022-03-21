@@ -145,6 +145,11 @@
                 },
               ],
             },
+            {
+              href: 'https://www.ankr.com/',
+              label: '🌐' + Array(3).fill('\xa0').join('') + 'Ankr.com' + Array(1).fill('\xa0').join(''),
+              position: "right",
+            },
           ],
         },
       },

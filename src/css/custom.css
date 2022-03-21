@@ -89,7 +89,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 .navbar__link {
   color: #1f2226;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .dropdown {
@@ -106,11 +106,11 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   text-align: left;
 }
 .dropdown__link {
-  color: rgba(31, 34, 38, 0.5);
+  color: default;
 }
 .dropdown__link:hover,
 .dropdown__link--active {
-  background-color: transparent;
+  background-color: default;
   color: #356df3;
 }
 
