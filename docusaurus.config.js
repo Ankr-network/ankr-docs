@@ -53,7 +53,9 @@
           contextualSearch: true,
         },
         colorMode: {
-          disableSwitch: true,
+          defaultMode: 'light',
+          disableSwitch: false,
+          respectPrefersColorScheme: false,
         },
         navbar: {
           title: "Docs",

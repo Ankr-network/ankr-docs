@@ -56,10 +56,6 @@ a {
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 .navbar {
   width: 100%;
   height: 128px;
@@ -81,7 +77,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 .navbar__brand b {
   font-weight: 400;
-  color: rgba(46, 46, 46, 0.8);
+  color: default;
 }
 
 .navbar__item {
@@ -110,7 +106,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 .dropdown__link:hover,
 .dropdown__link--active {
-  background-color: transparent;
+  background-color: default;
   color: #356df3;
 }
 
@@ -294,7 +290,7 @@ table th {
   padding: 16px 8px 16px;
 }
 table tr:nth-child(2n) {
-  background-color: transparent;
+  background-color: default;
 }
 table td {
   border-width: 0 0 1px 0;

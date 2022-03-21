@@ -56,10 +56,6 @@ a {
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 .navbar {
   width: 100%;
   height: 128px;
@@ -81,14 +77,14 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 .navbar__brand b {
   font-weight: 400;
-  color: rgba(46, 46, 46, 0.8);
+  color: default;
 }
 
 .navbar__item {
   cursor: pointer;
 }
 .navbar__link {
-  color: #1f2226;
+  color: default;
   opacity: 0.5;
 }
 
