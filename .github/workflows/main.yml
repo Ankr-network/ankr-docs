@@ -46,6 +46,8 @@ jobs:
 
       - name: Build
         working-directory: .
+        env:
+          TYPESENSE_SEARCH_ONLY_API_KEY: ${{ secrets.TYPESENSE_SEARCH_ONLY_API_KEY }}
         run: |
           yarn build
 
