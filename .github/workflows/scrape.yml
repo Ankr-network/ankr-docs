@@ -22,15 +22,11 @@ jobs:
 #    container:
 #      image: typesense/docsearch-scraper:latest
     steps:
+      - uses: actions/checkout@v2
       - name: Get DocSearch configuration
         id: docsearch-config
         run: |
           echo "::set-output name=json::$(cat config.json | jq -r tostring)"
-          pwd
-          ls
-          cd ..
-          pwd
-          ls
       - name: Get docsearch scraper docker image
         run: docker pull typesense/docsearch-scraper:latest
       - name: Indexing
