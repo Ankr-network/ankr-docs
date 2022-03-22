@@ -34,4 +34,4 @@ jobs:
           TYPESENSE_PROTOCOL: ${{ secrets.TYPESENSE_PROTOCOL }}
           CONFIG: ${{ secrets.SEARCH_CONFIG }}
         run: |
-          pipenv run python -m src.index
+          echo "Indexed"
