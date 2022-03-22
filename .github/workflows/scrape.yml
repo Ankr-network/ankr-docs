@@ -24,7 +24,10 @@ jobs:
     steps:
       - name: Get DocSearch configuration
         id: docsearch-config
-        run: echo "$(cat config.json | jq -r tostring)"
+        run: |
+          echo "::set-output name=json::$(cat config.json | jq -r tostring)"
+          pwd
+          ls
       - name: Get docsearch scraper docker image
         run: docker pull typesense/docsearch-scraper:latest
       - name: Indexing
