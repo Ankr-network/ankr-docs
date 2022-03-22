@@ -49,7 +49,6 @@ jobs:
         env:
           TYPESENSE_SEARCH_ONLY_API_KEY: ${{ secrets.TYPESENSE_SEARCH_ONLY_API_KEY }}
         run: |
-          export TYPESENSE_SEARCH_ONLY_API_KEY=${{ secrets.TYPESENSE_SEARCH_ONLY_API_KEY }}
           yarn build
 
       - name: Set AWS credentials
