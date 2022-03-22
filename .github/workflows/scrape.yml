@@ -32,6 +32,6 @@ jobs:
       - name: Indexing
         run: |
           ls -a
-          docker run -i --env-file=".env" -e "CONFIG=$(cat scrapper-config.json | jq -r tostring)" typesense/docsearch-scraper
+          docker run -i --env-file=.env -e "CONFIG=$(cat scrapper-config.json | jq -r tostring)" typesense/docsearch-scraper
 
 
