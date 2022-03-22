@@ -3,10 +3,7 @@
 (
   module.exports = {
     title: "Welcome to Ankr Docs",
-
-
     tagline: "Your single-source-of-truth on Ankr products and services",
-
     url: "https://www.ankr.com",
     baseUrl: "/docs/",
     onBrokenLinks: "throw",
@@ -55,7 +52,6 @@
       // },
       typesense: {
         typesenseCollectionName: "ankr-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-
         typesenseServerConfig: {
           nodes: [
             {
