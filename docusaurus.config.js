@@ -59,7 +59,7 @@
         typesenseServerConfig: {
           nodes: [
             {
-              host: "hlzruk43iwax2egop-1.a1.typesense.net",
+              host: "qzgv7l0sbumwafy3p-1.a1.typesense.net",
               port: 443,
               protocol: "https",
             },
