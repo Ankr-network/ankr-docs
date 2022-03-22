@@ -28,9 +28,8 @@ jobs:
       - name: Get docsearch scraper docker image
         run: docker pull typesense/docsearch-scraper:latest
       - name: Indexing
-        working-directory: /root
         env:
-          HOME: /root
+          TZ: UTC
           TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
           TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
           TYPESENSE_PORT: ${{ secrets.TYPESENSE_PORT }}
