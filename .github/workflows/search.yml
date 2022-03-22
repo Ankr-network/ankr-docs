@@ -19,7 +19,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     container:
-      image: typesense:docsearch-scraper
+      image: typesense/docsearch-scraper:latest
 
     steps:
       - uses: actions/checkout@v2
