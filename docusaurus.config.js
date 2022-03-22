@@ -59,12 +59,12 @@
         typesenseServerConfig: {
           nodes: [
             {
-              host: "qzgv7l0sbumwafy3p-1.a1.typesense.net",
+              host: "hlzruk43iwax2egop-1.a1.typesense.net",
               port: 443,
               protocol: "https",
             },
           ],
-          apiKey: "C8tEWf8mBsxiaQChDiJZC6TYATk9X2lK",
+          apiKey: process.env.TYPESENSE_API_KEY,
         },
 
         // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.md#search-parameters
