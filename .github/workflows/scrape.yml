@@ -38,5 +38,5 @@ jobs:
           TYPESENSE_PROTOCOL: https
           CONFIG: ${{ steps.docsearch-config.outputs.json }}
         run: |
-          echo "CONFIG=$CONFIG"
-          docker run -e CONFIG -e TZ -e TYPESENSE_API_KEY -e TYPESENSE_HOST -e TYPESENSE_PORT -e TYPESENSE_PROTOCOL  typesense/docsearch-scraper
+          docker run -e "TYPESENSE_API_KEY=${{ secrets.TYPESENSE_API_KEY }}" -e "TYPESENSE_HOST=${{ secrets.TYPESENSE_HOST }}" -e "TYPESENSE_PORT=443" -e "TYPESENSE_PROTOCOL=https"  -e "CONFIG=$(cat $GITHUB_WORKSPACE/scrapper_config.json | jq -r tostring)" typesense/docsearch-scraper
+
