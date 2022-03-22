@@ -19,8 +19,8 @@ jobs:
   scrape:
     name: Rebuild Index
     runs-on: ubuntu-latest
-    container:
-      image: typesense/docsearch-scraper:latest
+#    container:
+#      image: typesense/docsearch-scraper:latest
     steps:
       - name: Get DocSearch configuration
         id: docsearch-config
