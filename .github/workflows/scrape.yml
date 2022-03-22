@@ -23,20 +23,14 @@ jobs:
 #      image: typesense/docsearch-scraper:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get DocSearch configuration
-        id: docsearch-config
-        run: |
-          echo "::set-output name=json::$(cat config.json | jq -r tostring)"
-      - name: Get docsearch scraper docker image
-        run: docker pull typesense/docsearch-scraper:latest
+#      - name: Get DocSearch configuration
+#        id: docsearch-config
+#        run: |
+#          echo "::set-output name=json::$(cat config.json | jq -r tostring)"
+#      - name: Get docsearch scraper docker image
+#        run: docker pull typesense/docsearch-scraper:latest
       - name: Indexing
-        env:
-          TZ: UTC
-          TYPESENSE_API_KEY: moRF0AiCbLA5XuPxN4ScOBv23u6Hk7a9
-          TYPESENSE_HOST: qzgv7l0sbumwafy3p-1.a1.typesense.net
-          TYPESENSE_PORT: 443
-          TYPESENSE_PROTOCOL: https
-          CONFIG: ${{ steps.docsearch-config.outputs.json }}
         run: |
-          docker run -e "TYPESENSE_API_KEY=${{ secrets.TYPESENSE_API_KEY }}" -e "TYPESENSE_HOST=${{ secrets.TYPESENSE_HOST }}" -e "TYPESENSE_PORT=443" -e "TYPESENSE_PROTOCOL=https"  -e "CONFIG=$(cat $GITHUB_WORKSPACE/scrapper_config.json | jq -r tostring)" typesense/docsearch-scraper
+          docker run -it --env-file=.env -e "CONFIG=$(cat config.json | jq -r tostring)" typesense/docsearch-scraper
+
 
