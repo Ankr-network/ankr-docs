@@ -32,10 +32,10 @@ jobs:
       - name: Indexing
         env:
           TZ: UTC
-          TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
-          TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
-          TYPESENSE_PORT: ${{ secrets.TYPESENSE_PORT }}
-          TYPESENSE_PROTOCOL: ${{ secrets.TYPESENSE_PROTOCOL }}
+          TYPESENSE_API_KEY: moRF0AiCbLA5XuPxN4ScOBv23u6Hk7a9
+          TYPESENSE_HOST: qzgv7l0sbumwafy3p-1.a1.typesense.net
+          TYPESENSE_PORT: 443
+          TYPESENSE_PROTOCOL: https
           CONFIG: ${{ steps.docsearch-config.outputs.json }}
         run: |
           echo "CONFIG=$CONFIG"
