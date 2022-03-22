@@ -105,7 +105,7 @@
                 },
                 {
                   to: "Earn/liquid-crowdloans/liquid-crowdloans",
-                  label: "Liquid Crowdloan",
+                  label: "Liquid Crowdloans",
                 },
                 {
                   to: "Earn/defi/defi-introduction",
