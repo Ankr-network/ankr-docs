@@ -27,11 +27,11 @@ jobs:
 #        id: docsearch-config
 #        run: |
 #          echo "::set-output name=json::$(cat config.json | jq -r tostring)"
-#      - name: Get docsearch scraper docker image
-#        run: docker pull typesense/docsearch-scraper:latest
+      - name: Get docsearch scraper docker image
+        run: docker pull typesense/docsearch-scraper:latest
       - name: Indexing
         run: |
-          ls
+          ls -a
           docker run -it --env-file=".env" -e "CONFIG=$(cat scrapper-config.json | jq -r tostring)" typesense/docsearch-scraper
 
 
