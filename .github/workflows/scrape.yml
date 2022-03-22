@@ -22,8 +22,6 @@ jobs:
     container:
       image: typesense/docsearch-scraper:latest
     steps:
-      - uses: actions/checkout@v2
-
       - name: Indexing
         working-directory: /root
         env:
