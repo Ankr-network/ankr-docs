@@ -1,4 +1,4 @@
-name: 'Search indexing'
+name: 'Scrape'
 
 on:
   workflow_dispatch:
@@ -16,20 +16,22 @@ on:
           - PROD # www.ankr.com/docs/
 
 jobs:
-  deploy:
+  scrape:
+    name: Rebuild Index
     runs-on: ubuntu-latest
     container:
       image: typesense/docsearch-scraper:latest
-
     steps:
       - uses: actions/checkout@v2
 
       - name: Indexing
+        working-directory: /root
         env:
+          HOME: /root
           TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
           TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
           TYPESENSE_PORT: ${{ secrets.TYPESENSE_PORT }}
           TYPESENSE_PROTOCOL: ${{ secrets.TYPESENSE_PROTOCOL }}
           CONFIG: ${{ secrets.SEARCH_CONFIG }}
         run: |
-          echo "indexed"
+          pipenv run python -m src.index
