@@ -1,0 +1,35 @@
+name: 'Search indexing'
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Target
+        required: true
+        options:
+          - STAGE # www-stage.ankr.com/docs/
+          - BS1 # https://bs-1-stage.dccn.ankr.com/docs/
+          - BS2 # https://bs-2-stage.dccn.ankr.com/docs/
+          - BS3 # https://bs-3-stage.dccn.ankr.com/docs/
+          - BS4 # https://bs-4-stage.dccn.ankr.com/docs/
+          - PROD # www.ankr.com/docs/
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: typesense:docsearch-scraper
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Indexing
+        env:
+          TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+          TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+          TYPESENSE_PORT: ${{ secrets.TYPESENSE_PORT }}
+          TYPESENSE_PROTOCOL: ${{ secrets.TYPESENSE_PROTOCOL }}
+          CONFIG: ${{ secrets.SEARCH_CONFIG }}
+        run: |
+          echo "indexed"
