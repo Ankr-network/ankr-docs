@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "env-cmd -f .env docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -32,6 +32,9 @@
     "react-simple-code-editor": "^0.11.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.69.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
   },
   "browserslist": {
     "production": [
