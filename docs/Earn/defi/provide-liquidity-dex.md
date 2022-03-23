@@ -35,7 +35,7 @@ Choose from the table below a DEx and a pair to trade and provide liquidity to:
 
 ### Add liquidity to a pool
 
-Here is how to add liquidity to pool, using two widely visited DEXs and ETH—aETH as examples . 
+Here is how to add liquidity to pool, using two widely visited DEXs and ETH—aETH (aETHс) as examples . 
 
 **Uniswap**
 
