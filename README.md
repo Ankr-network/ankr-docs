@@ -53,4 +53,4 @@ Currently, we're using the following Gitflow:
 
 ## Search
 
-Github secrets `SEARCH_CONFIG` variable contains plain (`cat config.json | jq -r tostring`) `config.json` file.
+[The job](https://github.com/Ankr-network/ankr-docs/actions/workflows/scrape.yml) must be triggered manually when [https://www.ankr.com/docs/](https://www.ankr.com/docs/) updated.
