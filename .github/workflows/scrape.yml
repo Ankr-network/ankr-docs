@@ -22,8 +22,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Indexing
-        env:
-          SEARCH_API_KEY: ${{ secrets.SEARCH_API_KEY }}
         run: |
-          ls -a
-          docker run -i --env-file=.env -e "CONFIG=$(cat scrapper-config.json | jq -r tostring)" typesense/docsearch-scraper
+          docker run -i --env-file=.env -e "TYPESENSE_API_KEY=${{ secrets.SEARCH_API_KEY }}" -e "CONFIG=$(cat scrapper-config.json | jq -r tostring)" typesense/docsearch-scraper
