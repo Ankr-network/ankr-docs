@@ -1,5 +1,5 @@
 ---
-title: Matic Liquid Staking
+title: MATIC Liquid Staking
 id: matic-liquid-staking-introduction
 ---
 

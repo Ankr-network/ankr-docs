@@ -182,6 +182,7 @@ earnSidebar: {
         'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
         'Earn/liquid-staking/eth/stake-eth',
         'Earn/liquid-staking/eth/unstake-eth',
+        'Earn/liquid-staking/eth/eth-liquid-staking-faq',
       ]
     },
    {
@@ -227,12 +228,12 @@ earnSidebar: {
     },
     {
       type: 'category',
-      label: 'Liquid Crowdloans',
+      label: 'Liquid Crowdloan',
       collapsible: true,
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'Earn/liquid-crowdloans/liquid-crowdloans',
+        id: 'Earn/liquid-crowdloan/liquid-crowdloan',
       },
       items: [
       ]
@@ -248,7 +249,7 @@ earnSidebar: {
       },
       items: [
           'Earn/defi/yeld-farm',
-          'Earn/defi/provide-liquidity-dex',
+          'Earn/defi/provide-liquidity-to-dex',
       ]
     },
     {
@@ -288,12 +289,14 @@ earnSidebar: {
         keywords: ['reference, wallets, token, addresses, tokens, micropools, makers, sdk, principles'],
       },
       items: [
+          'Earn/reference/earn-glossary',
           'Earn/reference/earn-compatible-wallets',
           'Earn/reference/earn-principles',
           'Earn/reference/liquid-staking-token-addresses',
           'Earn/reference/micropools',
           'Earn/reference/liquid-crowdloan-market-makers',
           'Earn/reference/parachain-sdk',
+          'Earn/reference/brand-assets',
       ]
     },
       ],
