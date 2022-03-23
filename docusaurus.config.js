@@ -6,7 +6,7 @@
 
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/docs/',
+    baseUrl: "/docs/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -18,7 +18,7 @@
     ],
     scripts: [
       {
-        src: 'https://crypto.com/price/static/widget/index.js',
+        src: "https://crypto.com/price/static/widget/index.js",
         defer: true,
       },
     ],
@@ -31,7 +31,6 @@
             sidebarPath: require.resolve("./sidebars.js"),
             routeBasePath: "/",
             // Please change this to your repo.
-            editUrl: "https://github.com/ankr-network/ankr-docs",
           },
           theme: {
             customCss: require.resolve("./static/css/custom.css"),
@@ -41,77 +40,76 @@
     ],
     themeConfig: {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-        algolia: {
-          // The application ID provided by Algolia
-          appId: '1QEPYCGV3Q',
-    
-          // Public API key: it is safe to commit it
-          apiKey: 'f4be66fb86f3b7f7abddb567e980f14c',
-          indexName: 'ankr-docs',
-          contextualSearch: true,
-        },
-        colorMode: {
-          disableSwitch: true,
-        },
-        navbar: {
-          title: "Docs",
-          logo: {
-            alt: "Ankr Logo",
-            src: "img/ankr-logo.svg",
-          },
-          items: [
-            {
+      algolia: {
+        // The application ID provided by Algolia
+        appId: "1QEPYCGV3Q",
 
-              type: "doc",
-              docId: "About/about-ankr",
-              position: "right",
-              label: "⚓️ About Ankr",           
-            },
-            {
-              type: "dropdown",
-              label: '🔨' + Array(2).fill('\xa0').join('') + 'Build',
-              position: "right",
-              items: [
-                {
-                  to: "category/get-started",
-                  label: "Get Started",
-                },
-                {
-                  to: "category/concepts",
-                  label: "Concepts",
-                },
-                {
-                  to: "category/chains-v2",
-                  label: "Chains",
-                },
-                {
-                  to: "category/guides",
-                  label: "Guides",
-                },
-                {
-                  to: "Build/Support/get-support",
-                  label: "Support",
-                },
-              ],
-            },
-            {
-              type: "dropdown",
-              label: '💰' + Array(2).fill('\xa0').join('') + 'Earn',
-              position: "right",
-              items: [
-                {
-                  to: "Earn/liquid-staking/",
-                  label: "Liquid Staking",
-                },
-                {
-                  to: "Earn/liquid-crowdloans/liquid-crowdloans",
-                  label: "Liquid Crowdloan",
-                },
-                {
-                  to: "Earn/defi/defi-introduction",
-                  label: "DeFi",
-                },
-               /* {
+        // Public API key: it is safe to commit it
+        apiKey: "f4be66fb86f3b7f7abddb567e980f14c",
+        indexName: "ankr-docs",
+        contextualSearch: true,
+      },
+      colorMode: {
+        disableSwitch: true,
+      },
+      navbar: {
+        title: "Docs",
+        logo: {
+          alt: "Ankr Logo",
+          src: "img/ankr-logo.svg",
+        },
+        items: [
+          {
+            type: "doc",
+            docId: "About/about-ankr",
+            position: "right",
+            label: "⚓️ About Ankr",
+          },
+          {
+            type: "dropdown",
+            label: "🔨" + Array(2).fill("\xa0").join("") + "Build",
+            position: "right",
+            items: [
+              {
+                to: "category/get-started",
+                label: "Get Started",
+              },
+              {
+                to: "category/concepts",
+                label: "Concepts",
+              },
+              {
+                to: "category/chains-v2",
+                label: "Chains",
+              },
+              {
+                to: "category/guides",
+                label: "Guides",
+              },
+              {
+                to: "Build/Support/get-support",
+                label: "Support",
+              },
+            ],
+          },
+          {
+            type: "dropdown",
+            label: "💰" + Array(2).fill("\xa0").join("") + "Earn",
+            position: "right",
+            items: [
+              {
+                to: "Earn/liquid-staking/",
+                label: "Liquid Staking",
+              },
+              {
+                to: "Earn/liquid-crowdloans/liquid-crowdloans",
+                label: "Liquid Crowdloan",
+              },
+              {
+                to: "Earn/defi/defi-introduction",
+                label: "DeFi",
+              },
+              /* {
                   to: "Earn/bridge/bridge-introduction",
                   label: "Bridge",
                 },
@@ -119,36 +117,38 @@
                   to: "Earn/switch/switch-introduction",
                   label: "Switch",
                 }, */
-                {
-                  to: "category/reference",
-                  label: "Reference",
-                },
-              ],
-            },
-            {
-              type: "dropdown",
-              label: '👥' + Array(2).fill('\xa0').join('') + 'Community',
-              position: "right",
-              items: [
-                {
-                  to: "Community/channels",
-                  label: "Community Channels",
-                },
-              ],
-            },
               {
-                type: "docSidebar",
-                sidebarId: "governanceSidebar",
-                position: "right",
-                label: '⚖️' + Array(2).fill('\xa0').join('') + 'Tokens & Governance',
+                to: "category/reference",
+                label: "Reference",
               },
-            {
-              type: "docSidebar",
-              sidebarId: "tutorialSidebar",
-              position: "right",
-              label: '📚' + Array(2).fill('\xa0').join('') + 'Tutorials',           
-            },
-          ],
-        },
+            ],
+          },
+          {
+            type: "dropdown",
+            label: "👥" + Array(2).fill("\xa0").join("") + "Community",
+            position: "right",
+            items: [
+              {
+                to: "Community/channels",
+                label: "Community Channels",
+              },
+            ],
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "governanceSidebar",
+            position: "right",
+            label:
+              "⚖️" + Array(2).fill("\xa0").join("") + "Tokens & Governance",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "right",
+            label: "📚" + Array(2).fill("\xa0").join("") + "Tutorials",
+          },
+        ],
       },
-    })
+    },
+  }
+);
