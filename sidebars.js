@@ -248,7 +248,7 @@ earnSidebar: {
         id: 'Earn/defi/defi-introduction',
       },
       items: [
-          'Earn/defi/yeld-farm',
+          'Earn/defi/yield-farm',
           'Earn/defi/provide-liquidity-to-dex',
       ]
     },

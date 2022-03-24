@@ -20,7 +20,7 @@ Yes — there is a [user guide](https://www.ankr.com/docs/Earn/liquid-staking/et
 
 ### Is there a maximum amount I can stake?
 
-A: No, you can stake at your discretion, unlimited. You should know that currently staking starts once 32 ETH are accumulated, so if your stake is >32 ETH, it’ll be divided into chunks and the rule will apply to each of them. 
+No, you can stake at your discretion, unlimited. You should know that currently staking starts once 32 ETH are accumulated, so if your stake is >32 ETH, it’ll be divided into chunks and the rule will apply to each of them. 
 
 
 ### What is the unbonding period for aETHb/aETHc?

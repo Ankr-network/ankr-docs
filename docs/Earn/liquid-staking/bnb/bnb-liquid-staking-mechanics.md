@@ -29,9 +29,9 @@ The requirements when unstaking are:
 
 ## Fees
 
-When staking, you pay the relayer fee — 0.02 BNB.
+When staking, the user pays the relayer fee — 0.02 BNB.
 
-When unstaking, you pay nothing, while Ankr pays:
+When unstaking, the user pays nothing, while Ankr pays:
 
 * Unbonding transaction fee (undelegate_fee) — 0.004 BNB.
 
@@ -46,7 +46,7 @@ Validators receive rewards every day, at midnight, UTC.
 
 The APY is calculated from the validators' rewards.
 
-To undestand BNB Liquid Staking, you need to know the entities and understand the workflow under the hood.
+To understand BNB Liquid Staking, you need to know the entities and understand the workflow under the hood.
 
 The following entities are involved:
 * Smart contracts

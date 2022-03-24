@@ -16,7 +16,7 @@ Check the [Stake MATIC](https://www.ankr.com/docs/Earn/liquid-staking/matic/stak
 
 ### Is there a maximum amount I can stake?
 
-A: No, you can stake at your discretion, unlimited.  
+No, you can stake at your discretion, unlimited.  
 
 
 ### What is the unbonding period for aMATICb?
@@ -39,8 +39,7 @@ aMATICb rewards arrive in your wallet with every rebase. Rebasing occurs daily.
 
 ### Does Ankr charge for the service?
 
-* Staking — no fees.
-* Unstaking — the user pays a fee in ANKR that starts from 100 ANKR. Typical fee range is 500–3500 ANKR.
+When unstaking, the user pays a fee in ANKR that starts from 100 ANKR. Typical fee range is 500–3500 ANKR.
 
 
 ### What determines the amount of reward I receive each rebase of aMATICb?
