@@ -8,10 +8,10 @@
 
 @font-face {
   font-family: "Gilroy";
-	src: url('./gilroy-medium.woff2') format('woff2'),
-		url('./gilroy-medium.woff') format('woff');
-	font-style: normal;
-	font-display: swap;
+  src: url("./gilroy-medium.woff2") format("woff2"),
+    url("./gilroy-medium.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -23,12 +23,12 @@
 }
 
 @font-face {
-  font-family: 'TT-Firs-Neue-Demi-Bold';
-  src: local('TT Firs Neue Demi Bold'), local('TT-Firs-Neue-Demi-Bold'),
-      url('TTFirsNeue-DemiBold.woff2') format('woff2'),
-      url('TTFirsNeue-DemiBold.woff') format('woff');
-	font-style: normal;
-	font-display: swap;
+  font-family: "TT-Firs-Neue-Demi-Bold";
+  src: local("TT Firs Neue Demi Bold"), local("TT-Firs-Neue-Demi-Bold"),
+    url("TTFirsNeue-DemiBold.woff2") format("woff2"),
+    url("TTFirsNeue-DemiBold.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
   font-weight: 500;
 }
 
@@ -167,8 +167,7 @@ aside nav {
   margin: 0;
 }
 
-.menu__caret
-.menu__link--active:not(.menu__link--sublist),
+.menu__caret .menu__link--active:not(.menu__link--sublist),
 .menu__link:hover {
   color: #356df3;
   background-color: transparent;
@@ -312,7 +311,12 @@ table td {
   color: #1f2226;
 }
 
-.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
   font-family: "Helvetica Neue";
   color: #1f2226;
 }
@@ -407,6 +411,12 @@ table td {
     justify-content: space-between;
   }
   .navbar__items--right {
+    height: 36px;
+    position: absolute;
+    right: 45px;
+    top: 13px;
+  }
+  .navbar__items--right .navbar__item {
     display: none;
   }
   .navbar-sidebar__item {
@@ -433,7 +443,7 @@ table td {
     margin-bottom: 12px;
   }
 
-  [data-theme='light'] .DocSearch {
+  [data-theme="light"] .DocSearch {
     /* --docsearch-primary-color: var(--ifm-color-primary); */
     /* --docsearch-text-color: var(--ifm-font-color-base); */
     --docsearch-muted-color: var(--ifm-color-secondary-darkest);
@@ -451,7 +461,7 @@ table td {
     --docsearch-footer-background: var(--ifm-color-white);
   }
 
-  [data-theme='dark'] .DocSearch {
+  [data-theme="dark"] .DocSearch {
     --docsearch-text-color: var(--ifm-font-color-base);
     --docsearch-muted-color: var(--ifm-color-secondary-darkest);
     --docsearch-container-background: rgba(47, 55, 69, 0.7);
@@ -471,5 +481,5 @@ table td {
       var(--ifm-color-emphasis-200) 0%,
       var(--ifm-color-emphasis-100) 100%
     );
-}
+  }
 }

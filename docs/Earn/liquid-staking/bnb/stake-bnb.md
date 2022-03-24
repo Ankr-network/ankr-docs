@@ -1,69 +1,80 @@
 ---
-title: Stake BNB on ankr.com
+title: Stake BNB
 id: stake-bnb
 ---
 
-# Stake BNB on ankr.com
+# Stake BNB in Ankr Earn
 
-## Prerequisites
+## Before you start
 
-1. Visit [Metamask download page](https://metamask.io/download/) and install it as an extension for your browser. 
+:::info Ensure the following:
 
-2. Create a BNB address using Metamask.
+You are using a Chrome Browser.
 
-1. Purchase BNB at [https://www.binance.com/](https://www.binance.com) and other exchanges.
+You have a Metamask wallet.
+:::
 
-3. Send the BNB (BEP 2) to your to your Binance Chain address from Metamask.
+## Purchase BNB
 
-## Stake BNB
+1. Create a BNB address using Metamask.
 
-### Connect your Wallet
+2. Purchase BNB at [https://www.binance.com/](https://www.binance.com) and other exchanges.
 
-1. Navigate to the [Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) platform.
+3. Send BNB to your Binance Smart Chain (BSC) address from Metamask.
 
-2. Locate the ‘**Stake BNB**’ card and select ‘_**Start staking**_’.
-3. You are prompted to grant **Ankr Earn** access to your wallet. Click '_**Grant Access**_**'** to proceed.
-4. Select the wallet you wish to connect to and **authorize** the connection to proceed.
-5. Successful connection to **Ankr Earn** is indicated at top right corner.
+## Connect your wallet
 
-### Stake your BNB
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
 
-1. From the&nbsp;**Staking Dashboard**, click the '**+**' button to stake BNB.
+2. Locate the **Binance (BNB)** box and click *Stake* in it.
 
-&#x20; 2\. Enter the desired amount of **BNB** to stake and select '_**Stake**_'
+3. You are prompted to grant **Ankr Earn** access to your wallet.
+
+4. Select the **Binance supported wallet** you wish to connect to, i.e., Metamask.
+
+5. If you are on a different network, you may be prompted to switch to the correct one. Click the correct network on the page, then allow Metamask to switch to it.
+
+6. Successful connection to **Ankr Earn** is indicated at top right corner.
+
+You will need to make the following interactions in your wallet:
+
+:thumbsup: **Grant access** to grant access to your wallet.
+
+:thumbsup: **Approve** to add a new network.
+
+:thumbsup: **Switch network** to switch to the corret network.
+
+## Stake your BNB
+
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu. 
+
+2. Locate the **Binance (BNB)** box and click *Stake* in it.
+
+3. Enter the desired amount of BNB to stake and click *Get aBNBb*.
+
+4. Confirm the transaction in your wallet.
+
+5. Add aBNBb to your wallet, clicking  *Add aBNBb to wallet*.
+
+6. Click *Go to dashboard* to see the received aBNBb in Ankr Earn. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
 
 :::info
 
-A small **transaction fee** will be charged.
+As mentioned before, a gas fee is incurred to finalize the staking transactions.
 
 :::
-
-3\. You will need to make the following interactions in your wallet:
-
-:thumbsup:**Authorize** to confirm the connection.
-
-:thumbsup: **Approve** the transaction.
-
-:thumbsup: **Confirm** the transaction.
-
-:::info
-
-A **Gas fee** is incurred to finalize the staking transaction.
-
-:::
-
-4\. When the transaction is finalized, the **Staking Dashboard** automatically updates.
-
-## Claim your liquidity tokens
-
-1. From **Ankr Earn**, view the **Staking Dashboard**. 
-
-2. You can view your liquidity tokens named **aBNBb**. 
-
-3. You are prompted to add your **aBNBb** token to your wallet. Click '**Add Token'**.
 
 :::success
 **Success**
 
-Your aBNBb balance will automatically increase by a small amount daily to reflect your Binance Coin Staking rewards. You can now use your aBNBb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in Ankr Boost under the aBNBb section.
+Your aBNBb balance will automatically increase by a small amount daily to reflect your Binance Coin Staking rewards. 
+You can now use your aBNBb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aBNBb section.
 :::
+
+### If you don't see your aBNBb balance
+
+If you don't see the balance in your wallet, do the following:
+
+1. Visit [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard) 
+2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+3. Insert the token address directly into your wallet (e.g. Metamask).

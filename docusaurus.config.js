@@ -3,7 +3,6 @@
 (
   module.exports = {
     title: "Welcome to Ankr Docs",
-
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
     baseUrl: "/docs/",
@@ -38,6 +37,7 @@
         }),
       ],
     ],
+    themes: ["docusaurus-theme-search-typesense"],
     themeConfig: {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       algolia: {

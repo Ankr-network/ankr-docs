@@ -11,6 +11,3 @@ Visit our [Ankr Community Discord Channel](https://discord.com/channels/79563452
 
 Check out the [Ankr Developer API Reddit Channel](https://www.reddit.com/r/Ankrofficial/search/?q=developer%20api&source=recent&restrict_sr=1)​
 
-## Open a Support Ticket
-
-Open a Support ticket from the Ankr website or inside the [Ankr App](https://app.ankr.com/) by clicking the **Help** icon. 

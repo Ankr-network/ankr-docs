@@ -5,20 +5,34 @@ id: pricing
 
 # Product Pricing Plans
 
-## 📌 V2 - Public RPCs
+## 📌 V2 Pricing 
 
-**Free**
+### Public RPCs and Premium Plan
 
-## 📌 V2 - Premium RPCs
+:::info v2 Protocol Pricing
 
-Annual Fee: **10000 ANKR** 
+
+| **Feature**                    | Public RPCs  | Premium RPCs    | 
+| ------------------------------ | ----------- | ------------- |
+| Cost                           | **FREE**    | **10000 ANKR** (approx. $717.44)      | 
+| Rate limit per second          | Limited during high traffic         | Unlimited      | 
+| Requests per day               | Gradual capping after 1 mil  | Unlimited |
+| Advanced APIs                  | ❌ |A range of specialist APIs |
+| Websockets wss                 | ❌ |✅ |
+| Requests per month in millions | 5.1m        | 30m           | 
+| Full and Archive Data          | ✅          | ✅           |
+| Terms                          | No Contract | No Contract   |
+:::
+
 
 ## 📌 V1 - API Services
 
 We offer 5 flexible options and pricing plans to suit all budgets and
 requirements.
 
-**API Pricing Plans**
+### API Pricing Plan
+
+:::info v1 Pricing
 
 
 | **Feature**                    | **Intro**   | **Basic**     | **Builder**   | **Pro**     | **Growth**    | **Enterprise**     |
@@ -29,6 +43,8 @@ requirements.
 | Requests per month in millions | 5.1m        | 30m           | 150m          | 300m        | 600m          | Unlimited          |
 | Archive Mode (Historical Data) | No          | No            | No            | :white_check_mark:YES | :white_check_mark:YES | :white_check_mark:YES |
 | Terms                          | No Contract | No Contract   | No Contract   | No Contract  | No Contract  | Contract Required       |
+:::
+
 
 :::tip
 

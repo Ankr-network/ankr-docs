@@ -1,31 +1,12 @@
 ---
-title: Stake FTM on ankr.com
+title: Stake FTM
 id: stake-ftm
 ---
-
-## Configuring MetaMask & other wallet support
-
-### Configure your wallet to the Fantom Network
-
-#### MetaMask
-
-1. Log in to MetaMask
-
-2. Click the **Network** drop-down and select "*Custom RPC*"
-    
-3. Enter the following details:
-
-* **Network Name**: Fantom Opera
-* **New RPC URL**: [https://rpc.ftm.tools](https://rpc.ftm.tools)
-* **ChainID**: 250
-* **Symbol**: FTM
-* **Explorer**: [https://ankrscan.io/](https://ankrscan.io)
-
-### Other wallets that support Fantom
+### Wallets that support Fantom
 
 :::info
 
-:white_check_mark: **MetaMask**: Fantom supported
+:white_check_mark: **Metamask**: Fantom supported
 
 :white_check_mark: **MathWallet**: Fantom supported
 
@@ -39,30 +20,49 @@ id: stake-ftm
 
 ## How to stake FTM
 
-### Connect your Wallet
+### Connect your wallet
 
-1 . Navigate to the [Ankr Earn](https://stakefi.ankr.com/liquid-staking/launchpad) platform. 
- 
-2 . Locate the ‘**Stake FTM**’ card and select ‘_**Start staking**_’.
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu.
 
-3 . You are prompted to grant **Ankr Earn** access to your wallet. Click '_**Grant Access**_**'** to proceed.
+2. Locate the **Fantom (FTM)** box and click *Stake* in it.
 
-4 . Select the wallet you wish to connect to and **authorize** the connection to proceed.
+3. You are prompted to grant **Ankr Earn** access to your wallet.
 
-5 . Successful connection to **Ankr Earn** is indicated at top right corner.
+4. Select the **Fantom supported wallet** you wish to connect to, e.g., Metamask.
+
+5. If you are on a different network, you may be prompted to switch to the correct one. Click the correct network on the page, then allow Metamask to switch to it.
+
+6. Successful connection to **Ankr Earn** is indicated at top right corner.
+
+You will need to make the following interactions in your wallet:
+
+:thumbsup: **Grant access** to grant access to your wallet.
+
+:thumbsup: **Approve** to add a new network.
+
+:thumbsup: **Switch network** to switch to the corret network.
 
 ### Stake your FTM
 
-1. From the **Staking Dashboard**, click the '**+**' button to stake FTM.
+1. Visit [Ankr Earn](https://www.ankr.com/earn/) and click **Stake** in the product menu. 
 
-2 . Enter the desired amount of **FTM** to stake and select '_**Stake**_'
+2. Locate the **Fantom (FTM)** box and click *Stake* in it.
 
-:::caution
+3. Enter the desired amount of aFTMb to stake and click *Get aFTMb*.
 
-A small **transaction fee** is charged in ETH
+4. Confirm the transaction in your wallet.
+
+5. Add aMATICb to your wallet, clicking  *Add aFTMb to wallet*.
+
+6. Click *Go to dashboard* to see the received aFTMb in Ankr Earn. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
+
+:::info
+
+Gas fees are incurred to finalize the staking transactions.
+
 :::
 
-3. You will need to make the following interactions in your wallet:
+You will need to make the following interactions in your wallet:
 
 :thumbsup:**Authorize** to confirm the connection.
 
@@ -70,23 +70,14 @@ A small **transaction fee** is charged in ETH
 
 :thumbsup: **Confirm** the transaction.
 
-:::caution
-
-**Gas fees** are incurred to finalize the staking transaction.
-
-:::
-
-4. When the transaction is finalized, the **Staking Dashboard** automatically updates.
-
-## How to obtain your Liquidity Tokens 
-
-1. From **Ankr Earn**, view the **Staking Dashboard**. 
-
-2. You can view your liquidity tokens named **aFTMb**. 
-
-3. You are prompted to add your **aFTMb** token to your wallet. Click '**Add Token'**.
-
 :::success
 
-Your aFTMb balance will automatically increase by a small amount daily to reflect your Fantom Staking rewards. You can now use your aFTMb reward-earning tokens to earn additional layers of rewards on other DeFi platforms listed in Ankr Boost under the aFTMb section.
-:::
+Your aFTMb balance automatically increases by a small amount, daily, to reflect your Fantom Staking rewards. You can now use your aFTMb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/earn/defi/) under the aFTMb section.
+
+### If you don't see your aFTMb balance
+
+If you don't see the balance in your wallet, do the following:
+
+1. Visit [Ankr Earn Dashboard](https://www.ankr.com/earn/dashboard) 
+2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+3. Insert the token address directly into your wallet (e.g. Metamask).

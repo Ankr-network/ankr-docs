@@ -51,42 +51,6 @@ Currently, we're using the following Gitflow:
 1. Create a new markdown file in a related folder that lives under the `docs` folder, e.g. `staking.md` should live somewhere in `docs/Earn`, as it's related to ANKR Earn.
 2. At the beginning of the file, insert ***yaml front matter*** with the page **title** and a unique **id** (emphasis on the word **unique**). For example:
 
-```
----
-title: About StakeFi
-id: about-stakefi
----
-```
-3. Add content using the standard Markdown flavor. Adding admonitions, follow this syntax:
+## Search
 
-```
-:::note
-
-Some **content** with _markdown_ `syntax`. Check [this `api`](#).
-
-:::
-
-:::tip
-
-Some **content** with _markdown_ `syntax`. Check [this `api`](#).
-
-:::
-
-:::info
-
-Some **content** with _markdown_ `syntax`. Check [this `api`](#).
-
-:::
-
-:::caution
-
-Some **content** with _markdown_ `syntax`. Check [this `api`](#).
-
-:::
-
-:::danger
-
-Some **content** with _markdown_ `syntax`. Check [this `api`](#).
-
-:::
-```
+[The job](https://github.com/Ankr-network/ankr-docs/actions/workflows/scrape.yml) must be triggered manually when [https://www.ankr.com/docs/](https://www.ankr.com/docs/) updated.
