@@ -30,7 +30,6 @@
             sidebarPath: require.resolve("./sidebars.js"),
             routeBasePath: "/",
             // Please change this to your repo.
-            editUrl: "https://github.com/ankr-network/ankr-docs",
           },
           theme: {
             customCss: require.resolve("./static/css/custom.css"),
@@ -41,32 +40,13 @@
     themes: ["docusaurus-theme-search-typesense"],
     themeConfig: {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-      // algolia: {
-      //   // The application ID provided by Algolia
-      //   appId: "1QEPYCGV3Q",
+      algolia: {
+        // The application ID provided by Algolia
+        appId: "1QEPYCGV3Q",
 
-      //   // Public API key: it is safe to commit it
-      //   apiKey: "f4be66fb86f3b7f7abddb567e980f14c",
-      //   indexName: "ankr-docs",
-      //   contextualSearch: true,
-      // },
-      typesense: {
-        typesenseCollectionName: "ankr-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-        typesenseServerConfig: {
-          nodes: [
-            {
-              host: "qzgv7l0sbumwafy3p-1.a1.typesense.net",
-              port: 443,
-              protocol: "https",
-            },
-          ],
-          apiKey: process.env.TYPESENCE_PUBLIC_API_KEY,
-        },
-
-        // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.md#search-parameters
-        typesenseSearchParameters: {},
-
-        // Optional
+        // Public API key: it is safe to commit it
+        apiKey: "f4be66fb86f3b7f7abddb567e980f14c",
+        indexName: "ankr-docs",
         contextualSearch: true,
       },
       colorMode: {
@@ -129,14 +109,14 @@
                 to: "Earn/defi/defi-introduction",
                 label: "DeFi",
               },
-              {
-                to: "Earn/bridge/bridge-introduction",
-                label: "Bridge",
-              },
-              {
-                to: "Earn/switch/switch-introduction",
-                label: "Switch",
-              },
+              /* {
+                  to: "Earn/bridge/bridge-introduction",
+                  label: "Bridge",
+                },
+                {
+                  to: "Earn/switch/switch-introduction",
+                  label: "Switch",
+                }, */
               {
                 to: "category/reference",
                 label: "Reference",
