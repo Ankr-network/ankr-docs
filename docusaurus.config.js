@@ -54,9 +54,9 @@
         typesenseServerConfig: {
           nodes: [
             {
-              host: "qzgv7l0sbumwafy3p-1.a1.typesense.net",
-              port: 443,
-              protocol: "https",
+              host: process.env.TYPESENSE_HOST,
+              port: process.env.TYPESENSE_PORT,
+              protocol: process.env.TYPESENSE_PROTOCOL,
             },
           ],
           apiKey: process.env.TYPESENCE_PUBLIC_API_KEY,
