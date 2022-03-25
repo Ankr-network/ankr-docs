@@ -143,6 +143,8 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/avax/avax-liquid-staking-mechanics',
         'Earn/liquid-staking/avax/stake-avax',
+        'Earn/liquid-staking/avax/unstake-avax',
+        'Earn/liquid-staking/avax/avax-liquid-staking-faq',
       ]
     },
       {
@@ -156,6 +158,7 @@ earnSidebar: {
         'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
         'Earn/liquid-staking/bnb/stake-bnb',
         'Earn/liquid-staking/bnb/unstake-bnb',
+        'Earn/liquid-staking/bnb/bnb-liquid-staking-faq',
       ]
     },
     {
@@ -169,6 +172,7 @@ earnSidebar: {
         'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
         'Earn/liquid-staking/dot/stake-dot',
         'Earn/liquid-staking/dot/unstake-dot',
+        'Earn/liquid-staking/dot/dot-liquid-staking-faq',
       ]
     },
          {
@@ -196,6 +200,7 @@ earnSidebar: {
         'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
         'Earn/liquid-staking/ftm/stake-ftm',
         'Earn/liquid-staking/ftm/unstake-ftm',
+        'Earn/liquid-staking/ftm/ftm-liquid-staking-faq',
       ]
     },
     {
@@ -209,6 +214,7 @@ earnSidebar: {
         'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
         'Earn/liquid-staking/ksm/stake-ksm',
         'Earn/liquid-staking/ksm/unstake-ksm',
+        'Earn/liquid-staking/ksm/ksm-liquid-staking-faq',
       ]
     },
        {
@@ -222,6 +228,7 @@ earnSidebar: {
         'Earn/liquid-staking/matic/matic-liquid-staking-mechanics',
         'Earn/liquid-staking/matic/stake-matic',
         'Earn/liquid-staking/matic/unstake-matic',
+        'Earn/liquid-staking/matic/matic-liquid-staking-faq',
       ]
     },
       ]
