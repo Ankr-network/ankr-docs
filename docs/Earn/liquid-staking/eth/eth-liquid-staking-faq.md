@@ -42,7 +42,9 @@ aETHb will increase with every rebase; rebasing occurs daily. aETHc will increas
 
 ### Does Ankr charge for the service?
 
-ANKR does not charge any service fees for ETH Liquid Staking. However, validators charge a fee deducted from your rewards (Ankr’s validator node charges 10%), representing an indirect cost for liquid staking token holders. Ankr's income comes from running one of the several validator nodes that will be used to stake ETH.
+ANKR does not charge any service fees for ETH Liquid Staking. 
+However, validators charge a fee deducted from your rewards (Ankr’s validator node charges 10%), representing an indirect cost for liquid staking token holders. 
+Ankr's income comes from running one of the several validator nodes that will be used to stake ETH.
 
 
 ### What determines the amount of reward I receive each rebase of aETHb or appreciation of aETHc?
@@ -53,7 +55,10 @@ View the [current amount of staked ETH](https://launchpad.ethereum.org/).
 
 ### Is there any risk from staking, like slashing or any penalties?
 
-The only risk for stakers is missing out on rewards during any time a validator they staked with is slashed. Slashing is a protocol-level penalty associated with a validator failure if it validates an invalid transaction or goes offline. The delegated staked ETH is not slashed — slashing impacts only the self-stake of the validator. Ankr only delegates to trusted and reputable validator nodes to avoid any validator that would act maliciously.
+The only risk for stakers is missing out on rewards during any time a validator they staked with is slashed. 
+Slashing is a protocol-level penalty associated with a validator failure if it validates an invalid transaction or goes offline. 
+The delegated staked ETH is not slashed — slashing impacts only the self-stake of the validator. 
+Ankr only delegates to trusted and reputable validator nodes to avoid any validator that would act maliciously.
 
 
 ### Is there any liquidity for aETHb/aETHc anywhere currently?
