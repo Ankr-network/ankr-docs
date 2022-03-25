@@ -14,7 +14,9 @@ The following section explains staking requirements, fees, rewards, validators, 
 
 The requirements when staking are:
 
-* Minimum value to stake (minimumStake) — 0.1 ETH.
+* Minimum value to stake (minimumStake) — 0.5 ETH.
+
+* Stake change interval — 0.5 ETH. The user can stake 0.5, 1.0, 1.5 ETH, but cannot stake, for example, 0.55, 1.1, 1.88 ETH.
 
 * Maximum value to stake — unlimited, at the user’s discretion. 
 
@@ -32,7 +34,7 @@ User's aETHb balance grows daily. It can be desribed as `total share supply / (t
 
 Validators receive rewards when Ethereum has their unstaking functionality released in their 2.0 version.
 
-The current APY is 4.8%.
+The current APY is 4.97%.
 
 
 ## Validators

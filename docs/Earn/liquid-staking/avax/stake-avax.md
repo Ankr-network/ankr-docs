@@ -71,7 +71,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 
 2. Locate the **Avalanche (AVAX)** box and click *Stake* in it.
 
-3. You are prompted to grant **Ankr Earn** access to your wallet. Click *Grant Access* to proceed.
+3. You are prompted to grant **Ankr Earn** access to your wallet. Click **Grant Access** to proceed.
 
 4. Select the **Avalanche supported wallet** you wish to connect to, e.g., Metamask.
 

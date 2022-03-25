@@ -104,7 +104,7 @@
                   label: "Liquid Staking",
                 },
                 {
-                  to: "Earn/liquid-crowdloans/liquid-crowdloans",
+                  to: "Earn/liquid-crowdloan/liquid-crowdloan",
                   label: "Liquid Crowdloan",
                 },
                 {

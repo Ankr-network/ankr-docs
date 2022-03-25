@@ -17,7 +17,7 @@ id: stake-eth
 
 2. Locate the **Ethereum (ETH)** box and click *Stake at old version* in it.
 
-3. You are prompted to grant **Ankr Earn** access to your wallet. Click '_**Grant Access**_**'** to proceed.
+3. You are prompted to grant **Ankr Earn** access to your wallet. Click **Grant Access** to proceed.
 
 4. Select a wallet to connect.
 

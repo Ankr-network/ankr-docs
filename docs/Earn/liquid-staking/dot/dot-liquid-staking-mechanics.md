@@ -38,11 +38,7 @@ The requirements when unstaking are:
 
 ## Fees
 
-When staking, the user pays:
-
-* 2% commission on the reward, to Ankr.
-
-When unstaking, the user pays no fees.
+The user pays 2% fee from the staking reward.
 
 The user must also count in the gas price for outgoing transactions.
 
