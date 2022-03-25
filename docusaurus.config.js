@@ -49,6 +49,25 @@
         indexName: "ankr-docs",
         contextualSearch: true,
       },
+      typesense: {
+        typesenseCollectionName: "ankr-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: process.env.TYPESENSE_HOST,
+              port: process.env.TYPESENSE_PORT,
+              protocol: process.env.TYPESENSE_PROTOCOL,
+            },
+          ],
+          apiKey: process.env.TYPESENCE_PUBLIC_API_KEY,
+        },
+
+        // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.md#search-parameters
+        typesenseSearchParameters: {},
+
+        // Optional
+        contextualSearch: true,
+      },
       colorMode: {
         disableSwitch: true,
       },

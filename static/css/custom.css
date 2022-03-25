@@ -5,15 +5,6 @@
  */
 
 /* You can override the default Infima variables here. */
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("./gilroy-medium.woff2") format("woff2"),
-    url("./gilroy-medium.woff") format("woff");
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Helvetica Neue";
   src: url("Helvetica Neue Medium Extended.otf") format("otf"),
@@ -23,17 +14,39 @@
 }
 
 @font-face {
-  font-family: "TT-Firs-Neue-Demi-Bold";
-  src: local("TT Firs Neue Demi Bold"), local("TT-Firs-Neue-Demi-Bold"),
-    url("TTFirsNeue-DemiBold.woff2") format("woff2"),
-    url("TTFirsNeue-DemiBold.woff") format("woff");
-  font-style: normal;
-  font-display: swap;
+    font-family: 'TT Firs Neue';
+    src: url('TTFirsNeue-DemiBold.woff2') format('woff2'),
+    url('TTFirsNeue-DemiBold.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Medium.ttf') format('opentype');
   font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Bold.ttf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
 }
 
 :root {
-  --ifm-color-primary: #2c59d6;
   --ifm-color-primary-dark: rgb(33, 54, 175);
   --ifm-color-primary-darker: rgb(9, 24, 110);
   --ifm-color-primary-darkest: rgb(4, 3, 85);
@@ -46,7 +59,7 @@
 }
 
 a {
-  font-family: "Gilroy";
+  font-family: "Inter";
 }
 
 .docusaurus-highlight-code-line {
@@ -93,7 +106,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 .dropdown {
-  font-family: "Gilroy";
+  font-family: "Inter";
 }
 .dropdown > .navbar__link:after {
   width: 14px;
@@ -122,7 +135,7 @@ main .container {
   padding: 46px 0 46px 92px !important;
   max-width: 100%;
 }
-@media (max-width: 960px) {
+@media (max-width: 1235px) {
   main .container {
     padding: 32px 16px 46px 16px !important;
   }
@@ -184,7 +197,7 @@ aside nav {
   margin-right: 5px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1235px) {
   .pagination-nav {
     flex-direction: column;
   }
@@ -393,12 +406,12 @@ table td {
   counter-increment: ul;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1235px) {
   .navbar__inner {
     padding: 0 0 0 60px;
   }
 }
-@media (max-width: 960px) {
+@media (max-width: 1235px) {
   .navbar {
     height: 64px;
   }
