@@ -6,6 +6,17 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+@media (max-width: 1235px) {
+  .container {
+    max-width: 600px;
+    padding: 16px;
+  }
+}
+.wrapper {
+  margin-left: -10px;
+  margin-right: -10px;
+
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -20,9 +31,8 @@
   margin: 0 10px 40px 10px;
   width: calc(50% - 20px);
 }
-
 .title {
-  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
+  font-family: 'TT Firs Neue', sans-serif;
   color: #1F2226;
   font-size: 32px;
   line-height: 1.2;
@@ -33,6 +43,12 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+@media (max-width: 1235px) {
+  .title {
+    font-size: 24px;
+  }
 }
 
 .description {
@@ -49,6 +65,7 @@
 .listItem {
   padding-left: 20px;
   margin-bottom: 16px;
+  font-family: 'Inter';
   font-size: 16px;
   line-height: 1.2;
   position: relative;
@@ -65,23 +82,38 @@
 }
 
 .learnMore {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
   height: 22px;
-  display: flex;
-  align-items: center;
-  color:rgba(31, 34, 38, 1);
+    /*color:rgba(31, 34, 38, 1);*/
+
   position: absolute;
   left: 52px;
   bottom: 50px;
+
+  display: flex;
+  align-items: center;
+
+  font-family: 'Inter';
+  font-weight: 700;
+  color: #356DF3;
+  font-size: 18px;
+  line-height: 22px;
 }
 .learnMore:hover {
-  color: inherit;
+  color: #1F2226;
   text-decoration: none;
+}
+.learnMore:hover svg {
+    transform: translateX(5px);
+    fill: #1F2226;;
+    stroke: #1F2226;;
 }
 .learnMore svg {
   margin-left: 10px;
+
+  transition: 225ms;
+
+  fill: #356DF3;
+  stroke: #356DF3;
 }
 
 .button {
@@ -100,7 +132,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1235px) {
   .container {
     flex-direction: column;
   }

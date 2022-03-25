@@ -38,8 +38,10 @@ export const socialList = [
 export default function Social() {
   return (
     <section className={styles.container}>
-      <div className={styles.title}>Join a passionate, global community across our social networks</div>
+     <div className={styles.wrapper}>
+      <div className={styles.title}>Join a passionate, global community in our socials</div>
       <div className={styles.social}>
+        <div className={styles.socialWrapper}>
         {socialList.map((item) => (
           <Link
             to={item.url}
@@ -54,7 +56,9 @@ export default function Social() {
             </div>
           </Link>
         ))}
+        </div>
       </div>
+     </div>
     </section>
   );
 }
