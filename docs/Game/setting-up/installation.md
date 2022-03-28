@@ -18,3 +18,9 @@ id: setting-up
 
 ## What's inside
 
+The SDK has a wide range of 
+* Examples
+* Scripts - to connect 
+* Plug-ins - to support mobile integration and more 
+
+<iframe width="600" height="330" src="https://www.youtube.com/embed/nuU-OvP1p1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

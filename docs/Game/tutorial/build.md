@@ -1,5 +1,5 @@
 ---
-title: build a game
+title: Build a Game Tutorial
 id: game-tutorial
 ---
 
