@@ -121,14 +121,15 @@
                 label: "Liquid Staking",
               },
               {
-                to: "Earn/liquid-crowdloans/liquid-crowdloans",
+                to: "Earn/liquid-crowdloan/liquid-crowdloan",
                 label: "Liquid Crowdloan",
               },
               {
                 to: "Earn/defi/defi-introduction",
                 label: "DeFi",
               },
-              {
+
+               {
                   to: "Earn/bridge/bridge-introduction",
                   label: "Bridge",
                 },
