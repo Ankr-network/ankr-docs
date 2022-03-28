@@ -47,9 +47,8 @@ For example, if you stake 1 ETH, you are issued 1 aETHb. Every 24 hours your aET
 
 ### Reward bearing tokens
 
-Reward bearing tokens represent the staked asset plus all future staking rewards. 
-They don't grow in number but grow in value. 
-For example, the fair value of 1 aETHc token vs. 1 ETH increases over time as staking rewards accumulate, meaning 1 aETHc becomes worth increasingly more than 1 ETH.
+Reward bearing tokens represent the staked asset plus all future staking rewards. They don't grow in number but grow in value. 
+For example, the fair value of 1 aETHc token vs. ETH increases over time as staking rewards accumulate, i.e. 1 aETHc becomes worth increasingly more than 1 ETH.
 
 ## How do I get Liquid Staking tokens?
 
