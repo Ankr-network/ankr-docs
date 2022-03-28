@@ -37,10 +37,13 @@ There are two types of Liquid Staking tokens: reward earning tokens and reward b
 
 ### Reward earning tokens
 
-Reward earning tokens, aka rebase tokens, represent the staked asset. They distribute staking rewards through a rebasing process on a daily basis, i.e. grow in number.
-For example, rewards from Ethereum staking will be distributed daily through rebasing, and aETHb holders' balance in their wallet will increase on a daily basis.
+Reward earning tokens, aka rebase tokens, represent the staked asset. 
+They resemble stablecoins, in the sense they both have price targets. 
+However, unlike stablecoins, reward earning tokens have an elastic supply.
+Rewards occur through the rebasing process where more tokens are issued to the stakers' wallet, increasing the number of tokens without changing their price.
+The rebasing process happens routinely, every 24 hours.
 
-For more detail, read [about rebase on CoinMarketCap](https://coinmarketcap.com/alexandria/glossary/rebase).
+For example, if you stake 1 ETH, you are issued 1 aETHb. Every 24 hours your aETHb balance increases — a portion of aETHb is added to your wallet, according to your stake amount and the current yield value.
 
 ### Reward bearing tokens
 
