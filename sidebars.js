@@ -309,7 +309,27 @@ earnSidebar: {
       ]
     },
       ],
-    },       
+    },    
+    gameSidebar: {
+      'Game': [
+        {
+          type: 'category',
+          label: 'Ankr Unity SDK',
+          link: {
+              type: 'generated-index',
+            },
+          items: [
+            'Game/overview/about-game',
+            'Game/setting-up/setting-up',
+            'Game/tutorial/game-tutorial',
+            'Game/getting-started/get-started-game',
+            'Game/how-tos/wallet-game',
+            'Game/reference/token-standards',
+          ],
+      },
+    ],
+  },   
+    
   governanceSidebar: {
     'Tokens+Governance': [
       {
