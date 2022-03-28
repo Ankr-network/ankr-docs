@@ -2,33 +2,65 @@
   background-color: #f2f5fa;
   padding-bottom: 120px;
 }
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .title {
-  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
+  font-family: 'TT Firs Neue', sans-serif;
   text-align: center;
   margin-bottom: 60px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 40px;
+  line-height: 120%;
+}
+@media (max-width: 1235px) {
+  .wrapper {
+    max-width: 600px;
+    padding: 0 16px;
+  }
+  .title {
+    font-size: 30px;
+  }
 }
 .social {
-  max-width: 1240px;
-  margin: 0 auto;
+}
+.socialWrapper {
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-bottom: 20px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   flex-wrap: wrap;
 }
 
 .item {
-  height: 180px;
+  height: 184px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  max-width: 217px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  position: relative;
+
+  transition: 225ms;
+
   background-color: white;
   border-radius: 21px;
-  flex: 1;
-  margin: 0 20px;
-  text-align: left;
-  padding: 20px;
-  position: relative;
-  margin-bottom: 20px;
+}
+@media (max-width: 1235px) {
+  .item {
+    max-width: 104px;
+    height: 160px;
+    padding: 16px 10px;
+  }
 }
 .item:hover {
   text-decoration: none;
@@ -36,29 +68,45 @@
 }
 
 .name {
+  font-family: 'Inter';
   font-size: 18px;
   line-height: 1.2;
   font-weight: 700;
   margin-bottom: 10px;
   color: #1f2226;
 }
+@media (max-width: 1235px) {
+  .name{
+    margin-bottom: 5px;
+
+    font-size: 15px;
+  }
+}
 
 .text {
+  font-family: 'Inter';
   font-size: 15px;
   line-height: 1.35;
   font-weight: 500;
   color: #1f2226;
   opacity: 0.5;
 }
-
-.icon {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+@media (max-width: 1235px) {
+  .text {
+    font-size: 14px;
+  }
 }
 
-@media (max-width: 600px) {
+.icon {
+  margin-left: auto;
+  margin-top: auto;
+  width: 46px;
+
+  display: block;
+}
+
+@media (max-width: 1235px) {
   .icon {
-    left: 20px;
+    width: 34px;
   }
 }

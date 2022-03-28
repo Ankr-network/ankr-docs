@@ -39,95 +39,78 @@ You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then
 |           | BLOCK EXPLORER URL:     | https://etherscan.io/     |
 
 
-## Integrate CLI
+## Integrate Code
 
 ### web3 library
 
- clientVersion
+- **clientVersion**
 
+Returns the current client version
+
+#### Example Request
+
+```js
+curl https://rpc.ankr.com/eth \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'
 ```
-https://rpc.ankr.com/eth
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":1,"result":"Geth/v1.1.7-74f6b613/linux-amd64/go1.16.10"}
 ```
 
-Returns the current client versions
+### net library
 
-### Parameters
+- **net_version**
 
-none
+Returns the current network id.
 
-### Returns
 
-`String` - The current client version
+#### Example Request
 
-#### HEADERS
-
-**Content-Type** application/json
-
-### BODY
-
-raw
-
-```json
-{
-	"jsonrpc":"2.0",
-	"method":"web3_clientVersion",
-	"params":[],
-	"id":1
-} 
+```js
+  
+  curl https://rpc.ankr.com/eth \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"1"}
+```
+
+"1": Ethereum Mainnet
+
+"2": Morden Testnet (deprecated)
+
+"3": Ropsten Testnet
+
+"4": Rinkeby Testnet
+
+"42": Kovan Testnet
+
+### eth library
 
 ### Example Request
 
-```bash
+```js
+
 curl https://rpc.ankr.com/eth \
   -X POST \
   -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
 ### Example Response
 
-```javascript
-{"jsonrpc":"2.0","id":1,"result":"Geth/v1.10.11-stable-7231b3ef/linux-amd64/go1.17.2"}
+```js
+{"jsonrpc":"2.0","id":67,"result":"0xdb85e4"}
 ```
 
-## net library
 
-### listening
-
-Returns `true` if client is actively listening for network connections.
-
-```
-https://rpc.ankr.com/eth
-```
-
-### Parameters
-
-none
-
-### Returns
-
-`Boolean` - `true` when listening, otherwise `false`.
-
-#### HEADERS
-
-**Content-Type** application/json
-
-#### BODY
-
-#### raw
-
-### **Example Request**
-
-```bash
-curl https://rpc.ankr.com/eth \
-  -X POST \
-  -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":67}'
-```
-
-### Example Response
-
-```javascript
-{"jsonrpc":"2.0","id":67,"result":true}
-```
