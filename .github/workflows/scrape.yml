@@ -1,0 +1,14 @@
+name: 'Scrape'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    name: Rebuild Index
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Indexing
+        run: |
+          docker run -i --env-file=.env -e "TYPESENSE_API_KEY=${{ secrets.SEARCH_API_KEY }}" -e "CONFIG=$(cat scrapper-config.json | jq -r tostring)" typesense/docsearch-scraper
