@@ -43,9 +43,9 @@ Validators that work correctly and are online at least 80% of their validating p
 
 ## Validators
 
-On Avalanche, Ankr has two validators. 
-
-In case you want to integrate with us, drop us a line for further details.
+On Avalanche, Ankr has two validators:
+* [Validator #1](https://avascan.info/staking/validator/NodeID-955GU1MqWL8yXAtoc8AsE7FNx4nGC9JyL)
+* [Validator #2](https://avascan.info/staking/validator/NodeID-NcZtrWEjPY7XDT5PHgZbwXLCW3LGBjxui)
 
 
 ## Smart contracts

@@ -24,7 +24,7 @@ A very small amount of ETH is used as gas fee to perform a transaction. Normally
 
 2. Locate the **Polygon (MATIC)** box and click *Stake* in it.
 
-3. You are prompted to grant **Ankr Earn** access to your wallet.
+3. You are prompted to grant **Ankr Earn** access to your wallet. Click **Grant Access** to proceed.
 
 4. Select the **Polygon supported wallet** you wish to connect to, e.g., Metamask.
 

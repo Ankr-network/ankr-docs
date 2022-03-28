@@ -24,14 +24,14 @@ The requirements when unstaking are:
 
 * Maximum value to stake — up to the initial stake+accumulated rewards.
 
-* Release time — 7 days.
+* Release time — 7-15 days.
 
 
 ## Fees
 
-When staking, you pay the relayer fee — 0.02 BNB.
+When staking, the user pays the relayer fee — 0.02 BNB.
 
-When unstaking, you pay nothing, while Ankr pays:
+When unstaking, the user pays nothing, while Ankr pays:
 
 * Unbonding transaction fee (undelegate_fee) — 0.004 BNB.
 
@@ -46,7 +46,7 @@ Validators receive rewards every day, at midnight, UTC.
 
 The APY is calculated from the validators' rewards.
 
-To undestand BNB Liquid Staking, you need to know the entities and understand the workflow under the hood.
+To understand BNB Liquid Staking, you need to know the entities and understand the workflow under the hood.
 
 The following entities are involved:
 * Smart contracts
@@ -56,7 +56,7 @@ The following entities are involved:
 
 ## Smart contracts
 
-[BinancePool](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contract on Binance Smart Chain where the user sends their initial staking or unstaking request.
+[BinancePool Logic](https://bscscan.com/address/0x173645c3E0ed39d127A6861c7fDF4c7E5Fb94355) and [BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contracts on Binance Smart Chain where the user sends their initial staking or unstaking request.
 
 [aBNBb](https://bscscan.com/token/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d) — contract on Binance Smart Chain that mints or burns aBNBb tokens for the user in 1:1 ratio with the staked amount.
 

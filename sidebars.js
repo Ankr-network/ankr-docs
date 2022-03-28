@@ -145,6 +145,8 @@ earnSidebar: {
       items: [
         'Earn/liquid-staking/avax/avax-liquid-staking-mechanics',
         'Earn/liquid-staking/avax/stake-avax',
+        'Earn/liquid-staking/avax/unstake-avax',
+        'Earn/liquid-staking/avax/avax-liquid-staking-faq',
       ]
     },
       {
@@ -158,6 +160,7 @@ earnSidebar: {
         'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
         'Earn/liquid-staking/bnb/stake-bnb',
         'Earn/liquid-staking/bnb/unstake-bnb',
+        'Earn/liquid-staking/bnb/bnb-liquid-staking-faq',
       ]
     },
     {
@@ -171,6 +174,7 @@ earnSidebar: {
         'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
         'Earn/liquid-staking/dot/stake-dot',
         'Earn/liquid-staking/dot/unstake-dot',
+        'Earn/liquid-staking/dot/dot-liquid-staking-faq',
       ]
     },
          {
@@ -184,6 +188,7 @@ earnSidebar: {
         'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
         'Earn/liquid-staking/eth/stake-eth',
         'Earn/liquid-staking/eth/unstake-eth',
+        'Earn/liquid-staking/eth/eth-liquid-staking-faq',
       ]
     },
    {
@@ -197,6 +202,7 @@ earnSidebar: {
         'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
         'Earn/liquid-staking/ftm/stake-ftm',
         'Earn/liquid-staking/ftm/unstake-ftm',
+        'Earn/liquid-staking/ftm/ftm-liquid-staking-faq',
       ]
     },
     {
@@ -210,6 +216,7 @@ earnSidebar: {
         'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
         'Earn/liquid-staking/ksm/stake-ksm',
         'Earn/liquid-staking/ksm/unstake-ksm',
+        'Earn/liquid-staking/ksm/ksm-liquid-staking-faq',
       ]
     },
        {
@@ -223,18 +230,19 @@ earnSidebar: {
         'Earn/liquid-staking/matic/matic-liquid-staking-mechanics',
         'Earn/liquid-staking/matic/stake-matic',
         'Earn/liquid-staking/matic/unstake-matic',
+        'Earn/liquid-staking/matic/matic-liquid-staking-faq',
       ]
     },
       ]
     },
     {
       type: 'category',
-      label: 'Liquid Crowdloans',
+      label: 'Liquid Crowdloan',
       collapsible: true,
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'Earn/liquid-crowdloans/liquid-crowdloans',
+        id: 'Earn/liquid-crowdloan/liquid-crowdloan',
       },
       items: [
       ]
@@ -249,8 +257,8 @@ earnSidebar: {
         id: 'Earn/defi/defi-introduction',
       },
       items: [
-          'Earn/defi/yeld-farm',
-          'Earn/defi/provide-liquidity-dex',
+          'Earn/defi/yield-farm',
+          'Earn/defi/provide-liquidity-to-dex',
       ]
     },
     {
@@ -290,12 +298,14 @@ earnSidebar: {
         keywords: ['reference, wallets, token, addresses, tokens, micropools, makers, sdk, principles'],
       },
       items: [
+          'Earn/reference/earn-glossary',
           'Earn/reference/earn-compatible-wallets',
           'Earn/reference/earn-principles',
           'Earn/reference/liquid-staking-token-addresses',
           'Earn/reference/micropools',
           'Earn/reference/liquid-crowdloan-market-makers',
           'Earn/reference/parachain-sdk',
+          'Earn/reference/brand-assets',
       ]
     },
       ],

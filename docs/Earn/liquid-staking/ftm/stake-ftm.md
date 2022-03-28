@@ -26,7 +26,7 @@ id: stake-ftm
 
 2. Locate the **Fantom (FTM)** box and click *Stake* in it.
 
-3. You are prompted to grant **Ankr Earn** access to your wallet.
+3. You are prompted to grant **Ankr Earn** access to your wallet. Click **Grant Access** to proceed.
 
 4. Select the **Fantom supported wallet** you wish to connect to, e.g., Metamask.
 

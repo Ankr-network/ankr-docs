@@ -1,6 +1,6 @@
 ---
 title: Yield Farm
-id: yeld-farm
+id: yield-farm
 ---
 
 # Yield farm with Liquid Staking tokens
@@ -19,3 +19,9 @@ Currently, you can yield farm on the following platforms
 | [CRVaETHc LP (Curve Finance)](https://etherscan.io/address/0xaA17A236F2bAdc98DDc0Cf999AbB47D47Fc0A6Cf)                 | [Curve Finance](https://curve.fi/ankreth/deposit) | [CRV](https://etherscan.io/token/0xd533a949740bb3306d119cc777fa900ba034cd52) + [ANKR](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4) + [ONX](https://etherscan.io/token/0xe0ad1806fd3e7edf6ff52fdb822432e847411033) |
 | CRVaETHc LP SnowSwap vault                                                                                             | [SnowSwap](https://snowswap.org/crveth/deposit)   | [SNOW](https://etherscan.io/token/0xfe9a29ab92522d14fc65880d817214261d8479ae)                                                                                                                                                               |
 | [CRVaETHc LP Vault](https://etherscan.io/address/0x132d8D2C76Db3812403431fAcB00F3453Fc42125)                           | [Yearn Finance](https://yearn.finance/vaults)     | [CRV](https://etherscan.io/token/0xD533a949740bb3306d119CC777fa900bA034cd52) + [CVX](https://etherscan.io/token/0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b)                                                                                 |
+| [wBNB/aBNBb](https://ellipsis.finance/pool/6)                                                                          | [Ellipsis Finance](https://ellipsis.finance)      | [aBNBb/wBNB liquid pool on Ellipsis](https://bscscan.com/token/0xf71A0bCC3Ef8a8c5a28fc1BC245e394A8ce124ec#balances) + [aBNBb token](https://bscscan.com/token/0xBb1Aa6e59E5163D8722a122cd66EBA614b59df0d#balances)                          |
+| [wBNB/aBNBb](https://app.acryptos.com/stableswap/abnbb/)                                                               | [aCryptoS](https://app.acryptos.com/)             | [aBNBb/wBNB liquid pool token on aCrpytoS:](https://bscscan.com/token/0xBb1Aa6e59E5163D8722a122cd66EBA614b59df0d)                                                                                                                           |
+
+::: note
+No token given to the depositor in the farming vault on aCryptoS. 
+:::
