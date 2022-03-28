@@ -1,6 +1,6 @@
 ---
-title: Liquid Staking Smart Contract Addresses
-id: liquid-staking-token-addresses
+title: Liquid Staking Smart Contract Addresses (MainNet)
+id: ls-smart-contract-addresses-mn
 ---
 
 # Smart contract addresses
