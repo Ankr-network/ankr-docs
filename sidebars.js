@@ -39,6 +39,8 @@ module.exports = {
             'Build/1V2/protocol',
             'Build/1V2/public-rpc',
             'Build/1V2/premium-rpc',
+            'Build/1V2/advanced-apis',
+            'Build/1V2/add-endpoints',
             'Build/1V2/node-ops',
             'Build/1V2/scan'
           ],
@@ -352,6 +354,7 @@ earnSidebar: {
         'Tutorials/create-eth-app-tutorial/create-eth-app',
         'Tutorials/simple-truffle', 
         'Tutorials/connect-web3js',
+        'Tutorials/erigon-bsc-tutorial/erigon-bsc',
         'Tutorials/connect-web3py'
       ],
     },

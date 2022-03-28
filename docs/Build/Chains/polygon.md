@@ -35,99 +35,69 @@ You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then 
 |         |     NEW RPC URL:    |    [https://rpc.ankr.com/polygon](https://rpc.ankr.com/polygon)   |
 |         |      CHAIN ID:      |                                137                                |
 |         |       SYMBOL:       |                               MATIC                               |
-|         |   BLOCK EXPLORER:   | [https://explorer.matic.network/](https://explorer.matic.network) |
+   
 
+----
 
 ## Integrate Code
 
-
 ### web3 library
 
-POST clientVersion
+- **clientVersion**
 
-```
-https://rpc.ankr.com/polygon
-```
+Returns the current client version.
 
-Returns the current client versions
+#### Example Request
 
-### Parameters
-
-none
-
-### Returns
-
-`String` - The current client version
-
-#### Header
-
-**Content-Type** application/json
-
-#### Body
-
-raw
-
-```json
-{
-	"jsonrpc":"2.0",
-	"method":"web3_clientVersion",
-	"params":[],
-	"id":1
-} 
-```
-
-### Example Request
-
-```bash
+```js
 curl https://rpc.ankr.com/polygon \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-### Example Response
+#### Example Response
 
-```javascript
-{"jsonrpc":"2.0","id":1,"result":"bor/v1.10.8-stable-045e5c2c/linux-amd64/go1.16.3"}
+```js
+{"jsonrpc":"2.0","id":1,"result":"bor/v0.2.14-stable-10c4e89f/linux-amd64/go1.17.3"}
 ```
 
-## net library
+### net library
 
-peerCount
+- **net_version**
 
-Returns `true` if client is actively listening for network connections.
+Returns the current network id.
 
+#### Example Request
+
+```js
+  
+  curl https://rpc.ankr.com/polygon\
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
-https://rpc.ankr.com/polygon
+
+#### Example Response
+
+```js
+{"jsonrpc":"2.0","id":67,"result":"137"}
 ```
 
-### Parameters
+### eth library
 
-none
+#### Example Request
 
-### Returns
+```js
 
-`Boolean` - `true` when listening, otherwise `false`.
-
-#### HEADERS
-
-**Content-Type** application/json
-
-#### BODY
-
-#### raw
-
-### **Example Request**
-
-```bash
 curl https://rpc.ankr.com/polygon \
   -X POST \
   -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":67}'
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
-### Example Response
+#### Example Response
 
-```javascript
-{"jsonrpc":"2.0","id":67,"result":"0xc8"}
+```js
+{"jsonrpc":"2.0","id":67,"result":"0x18be35a"}
 ```
