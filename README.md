@@ -37,14 +37,42 @@ To deploy:
 
 Currently, we're using the following Gitflow:
 
-1. Create a feature branch from the `stage` branch. The branch name format is `feature/<feature-name-from-Jira>`.
+1. Create a feature branch from the `stage` branch. Use the branch naming format described farther in this doc.
 2. Work on the documentation for the feature.
 3. When done, test your documentation deploying it to `STAGE`.
-4. When tested, create a pull request to the `stage` branch and add colleagues as reviews, at your discretion.
+4. When tested, create a pull request to the `stage` branch and add colleagues as reviews, at your discretion. Use the pull request naming format described farther in this doc.
 5. When merged, test the `stage` branch deploying it to `STAGE`.
 6. When ready, create a pull request to the `main` branch.
 7. When merged, test the `main` branch deploying it to `STAGE`.
 8. When tested, deploy the `main` branch to `PROD`.
+
+### Branch naming format 
+
+* `feature` — tasks, and stories.
+
+* `bugfix` — bugs.
+
+* `hotfix` — bugs to merge to `main` directly.
+
+Naming examples:
+
+* `feature/FOOBAR-1-short-description`
+
+* `bugfix/FOOBAR-1-short-description`
+
+* `hotfix/FOOBAR-1-short-description`
+
+### Pull request naming format
+
+The common pattern for a pull request title or commit message is <type>[optional scope]: <TASK-000 description>
+
+Naming examples:
+
+* feat: FOOBAR-555 add docs for Ankr Protocol.
+
+* fix(Fantom staking): FOOBAR-666 fix typos.
+
+* chore: FOOBAR-777 update smart contract addresses for Ankr Earn.
 
 ## How to add a new page
 
