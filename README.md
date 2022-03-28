@@ -48,31 +48,35 @@ Currently, we're using the following Gitflow:
 
 ### Branch naming format 
 
-* `feature` — tasks, and stories.
+The common pattern for a branch name `<type>/<JIRA-TASK-NUMBER-description>`.
 
-* `bugfix` — bugs.
+Types: 
 
-* `hotfix` — bugs to merge to `main` directly.
+* `feature` — tasks and stories
+
+* `bugfix` — bugs such as typos
+
+* `hotfix` — on-the-spot updates
 
 Naming examples:
 
-* `feature/FOOBAR-1-short-description`
+* `feature/FOOBAR-1-create-ankr-earn-docs`
 
-* `bugfix/FOOBAR-1-short-description`
+* `bugfix/FOOBAR-2-fix-typos`
 
-* `hotfix/FOOBAR-1-short-description`
+* `hotfix/FOOBAR-3-update-sc-addresses-for-earn`
 
 ### Pull request naming format
 
-The common pattern for a pull request title or commit message is <type>[optional scope]: <TASK-000 description>
+The common pattern for a pull request title or commit message is `<type>[optional scope]: <TASK-000 description>`.
 
 Naming examples:
 
-* feat: FOOBAR-555 add docs for Ankr Protocol.
+* `feat: FOOBAR-555 add docs for Ankr Protocol`
 
-* fix(Fantom staking): FOOBAR-666 fix typos.
+* `fix(Fantom staking): FOOBAR-666 fix typos`
 
-* chore: FOOBAR-777 update smart contract addresses for Ankr Earn.
+* `chore: FOOBAR-777 update smart contract addresses for Ankr Earn`
 
 ## How to add a new page
 
