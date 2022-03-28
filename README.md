@@ -37,11 +37,11 @@ To deploy:
 
 Currently, we're using the following Gitflow:
 
-1. Create a feature branch from the `develop` folder.
+1. Create a feature branch from the `stage` branch. The branch name format is `feature/<feature-name-from-Jira>`.
 2. Work on the documentation for the feature.
 3. When done, test your documentation deploying it to `STAGE`.
-4. When tested, create a pull request to the `develop` branch and add colleagues as reviews, at your discretion.
-5. When merged, test the `develop` branch deploying it to `STAGE`.
+4. When tested, create a pull request to the `stage` branch and add colleagues as reviews, at your discretion.
+5. When merged, test the `stage` branch deploying it to `STAGE`.
 6. When ready, create a pull request to the `main` branch.
 7. When merged, test the `main` branch deploying it to `STAGE`.
 8. When tested, deploy the `main` branch to `PROD`.
