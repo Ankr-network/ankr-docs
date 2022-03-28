@@ -9,7 +9,15 @@ Ankr Earn aims to bring the benefits of DeFi to the masses with the following so
 
 ## Liquid Staking
 
-Liquid Staking extends the Staking experience to solve the problem of loss of liquidity and capital inefficiency. When assets are staked, they are usually locked up on-chain helping to maintain the network. However, Liquid Staking provides instant access to Liquid Staking tokens that are equivalent in value to the stake in a 1:1 ratio. These portable Liquid Staking tokens e.g. aMATICb, aETHb, aETHc, aAVAXb can be utilized on additional DeFi platforms to earn further rewards.
+Liquid Staking extends the Staking experience to solve the problem of loss of liquidity and capital inefficiency. 
+When assets are staked, they are usually locked up on-chain helping to maintain the network. 
+However, Liquid Staking provides instant access to Liquid Staking tokens that are equivalent in value to the stake in a 1:1 ratio. 
+These portable Liquid Staking tokens e.g. aMATICb, aETHb, aETHc, aAVAXb can be utilized on additional DeFi platforms to earn further rewards.
+
+The clear benefits of Ankr Liquid Staking are: 
+* Minimum commitment costs
+* Immediate access to liquidity
+* Transfer of risks to Ankr experts
 
 ## Parachain Liquid Crowdloans
 **Parachain Liquid Crowdloans** provide similar benefits to *Staking*. 

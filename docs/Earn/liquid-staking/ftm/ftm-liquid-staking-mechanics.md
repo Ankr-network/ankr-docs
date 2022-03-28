@@ -30,7 +30,8 @@ The requirements when unstaking are:
 ## Fees
 When staking, the user pays no fees.
 
-Unstaknig applies a `burnFee` that depends on the current liquidity and amount to unstake, and is calculated by the `FantomPool` smart contract. The fee is deducted from the withdrawn amount.
+Unstaknig applies a `burnFee` that depends on the current liquidity and amount to unstake, and is calculated by the `FantomPool` smart contract. 
+The fee is deducted from the withdrawn amount.
 
 The user must also count in the gas price for outgoing transactions.
 

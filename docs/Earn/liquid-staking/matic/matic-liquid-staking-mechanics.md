@@ -28,17 +28,15 @@ The requirements when staking are:
 
 * Staking can be repeated anytime, without waiting for the current staking to complete.
 
-The requirements when staking are:
+The requirements when unstaking are:
 
 * Minimum value to unstake — 0 MATIC.
 
 * Maximum value to unstake — staked amount + % of the reward, up to the user’s balance.
 
-* Withdrawal period after unstaking — >= 80 epochs. Tipically, it’s around 1-2 days.
+* Withdrawal period after unstaking — >= 80 epochs. Typically, it’s around 1-2 days.
 
 * aMATICb to MATIC exchange ratio is 1:1.
-
-* Minimum fee — 100 Ankr tokens. Typical fee range is 500 to 2500 Ankr tokens.
 
 * User can unstake a part of or all the staked MATIC anytime.
 
@@ -46,9 +44,9 @@ The requirements when staking are:
 ## Fees
 Currently, the user pays no fees while staking.
 
-Currently, the user pays no fees while unstaking.
+When unstaking, the user pays a fee in ANKR that starts from 100 ANKR. Typical fee range is 500–3500 ANKR.
 
-The user must also count in the gas price for outgoing transactions.
+The user must also count in the gas price in ETH for outgoing transactions.
 
 
 ## Rewards

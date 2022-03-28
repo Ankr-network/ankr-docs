@@ -5,13 +5,16 @@ id: eth-liquid-staking-introduction
 
 [Ankr Earn](https://www.ankr.com/earn/) offers ETH holders the opportunity to stake ETH and claim two different type of ETH2 Liquid Staking tokens:
 
+![Acala Full Node](../../../../static/img/aethb-aethc-difference.jpeg)
+
 * aETHc is a reward-bearing token, meaning that the fair value of 1 aETHc token vs. ETH increases over time as staking rewards accumulate. When it will be possible to unstake ETH at phase 1.5 of Ethereum 2.0, users will have the option to redeem aETHc to Ankr StakeFi, and unstake ETH with accumulated staking rewards.
 
 * aETHb is a reward-earning token, meaning that rewards from Ethereum staking will be distributed daily through rebasing and aETHb holders' balance in their wallet will increase on a daily basis.
 
-:::caution Be Aware!
+Check our [blog article](https://medium.com/ankr-network/aeth-vs-feth-which-liquid-asset-to-choose-4c2be5dca977) explaining more about the difference. 
+:::caution Unstaking restrictions!
 
-It is not possible to unstake ETH until the Ethereum Network reaches phase 1.5 of its transition from Proof-of-Work to Proof-of-Stake. Phase 1.5 is expected in 2022, but the exact date is still unknown.
+It is not possible to unstake ETH until the Ethereum network reaches phase 1.5 of its transition from Proof-of-Work to Proof-of-Stake. Phase 1.5 is expected in 2022, but the exact date is still unknown.
 :::
 
 ## Two types of ETH2 Liquid Staking
