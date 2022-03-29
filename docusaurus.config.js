@@ -117,7 +117,7 @@
             position: "right",
             items: [
               {
-                to: "Earn/liquid-staking/",
+                to: "Earn/liquid-staking",
                 label: "Liquid Staking",
               },
               {
@@ -128,6 +128,7 @@
                 to: "Earn/defi/defi-introduction",
                 label: "DeFi",
               },
+
                {
                   to: "Earn/bridge/bridge-introduction",
                   label: "Bridge",
