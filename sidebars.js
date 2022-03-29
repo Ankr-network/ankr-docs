@@ -322,8 +322,31 @@ earnSidebar: {
             'Game/overview/about-game',
             'Game/setting-up/setting-up',
             'Game/tutorial/game-tutorial',
-            'Game/getting-started/get-started-game',
-            'Game/how-tos/wallet-game',
+            {
+              type: 'category',
+              label: 'Get Started',
+              link: {
+                type: 'doc',
+                id: 'Game/getting-started/get-started-game',
+              },
+              items: [
+                'Game/getting-started/game-00',
+                'Game/getting-started/game-01',
+                'Game/getting-started/game-02',
+                'Game/getting-started/game-03',
+                'Game/getting-started/game-04',
+              ],
+            },  
+            {
+              type: 'category',
+              label: 'How to...',
+              link: {
+                type: 'generated-index',
+              },
+              items: [
+                'Game/how-tos/wallet-game'
+              ],
+            },
             'Game/reference/token-standards',
           ],
       },
