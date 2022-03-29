@@ -27,8 +27,6 @@ No, you can stake at your discretion, unlimited.
 
 You receive the unstaked amount after the end of the current validating period. A validating period is 4 weeks.
 
-### 
-
 
 ### How do I receive rewards? 
 
