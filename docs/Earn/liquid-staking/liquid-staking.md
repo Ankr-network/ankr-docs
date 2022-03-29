@@ -31,6 +31,25 @@ Ready to get started?
 Check out [**Ankr Earn**](https://www.ankr.com/earn/)
 :::
 
+## Types of Liquid Staking tokens
+
+There are two types of Liquid Staking tokens: reward earning tokens and reward bearing tokens.
+
+### Reward earning tokens
+
+Reward earning tokens, aka rebase tokens, represent the staked asset. 
+They resemble stablecoins, in the sense they both have price targets. 
+However, unlike stablecoins, reward earning tokens have an elastic supply.
+Rewards occur through the rebasing process where more tokens are issued to the stakers' wallet, increasing the number of tokens without changing their price.
+The rebasing process happens routinely, every 24 hours.
+
+For example, if you stake 1 ETH, you are issued 1 aETHb. Every 24 hours your aETHb balance increases — a portion of aETHb is added to your wallet, according to your stake amount and the current yield value.
+
+### Reward bearing tokens
+
+Reward bearing tokens represent the staked asset plus all future staking rewards. They don't grow in number but grow in value. 
+For example, the fair value of 1 aETHc token vs. ETH increases over time as staking rewards accumulate, i.e. 1 aETHc becomes worth increasingly more than 1 ETH.
+
 ## How do I get Liquid Staking tokens?
 
 Liquid Staking tokens are automatically issued to your Ankr Earn Dashboard when you successfully stake assets such as ETH, AVAX, FTM, BNB. 
@@ -45,15 +64,7 @@ For example,
 
 3. You can harvest the farmed tokens and stake those tokens as well to earn more yield, or simply sell them to buy more AVAX and aAVAXb to generate more yield. Repeating this operation periodically will add a compounding effect on my yield.
 
-:::info
-There are two types of Liquid Staking tokens:
-
-1. Reward bearing tokens (e.g. aETHc, formerly known as aETH or AnkrETH)
-2. Reward earning tokens (e.g. aAVAXb or aETHb, formerly known as fETH)
-
-:::
-
-### Liquid Staking benefits
+## Liquid Staking benefits
 
 The benefits of Liquid Staking depend on your choice of staked asset.
 
