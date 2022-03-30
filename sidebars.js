@@ -348,7 +348,17 @@ earnSidebar: {
                 'Game/how-tos/wallet-game'
               ],
             },
-            'Game/reference/token-standards',
+            {
+              type: 'category',
+              label: 'Reference',
+              link: {
+                type: 'generated-index',
+              },
+              items: [
+                'Game/reference/game-reference',
+              ],
+            },
+            
           ],
       },
     ],
