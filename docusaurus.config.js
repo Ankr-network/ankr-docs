@@ -145,7 +145,7 @@
           },
           {
             type: "dropdown",
-            label: "🚀" + Array(2).fill("\xa0").join("") + "Game",
+            label: "🚀 Game",
             position: "right",
             items: [
               {
