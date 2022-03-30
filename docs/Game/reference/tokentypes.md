@@ -1,6 +1,6 @@
 ---
-title: Token standards
-id: token-standards
+title: Token Standards
+id: game-reference
 ---
 
 # Understanding Token Standards 

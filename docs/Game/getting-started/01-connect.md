@@ -3,7 +3,6 @@ title: 01 - Connect Wallet and Authenticate
 id: game-01
 ---
 
-## 01 - Connect MetaMask and Authenticate
 
 Connecting to a Web3 i.e. MetaMask wallet via **WalletConnect** provides a link between a **Wallet Address** and a user's **Game Account**. 
 

@@ -4,8 +4,6 @@ id: game-04
 ---
 
 
-## 04 - Update an NFT
-
 Making updates to the NFT e.g. adding a red hat to a character requires signing and sending a transaction.
 
 ### Signing Transactions

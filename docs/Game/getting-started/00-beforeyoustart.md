@@ -3,7 +3,6 @@ title: 00 - Before you Start
 id: game-00
 ---
 
-## 00 - Before you Start
 
 To get started, you need to have deployed your contract on to the blockchain and have the **ABI** and the **Contract Address**. 
 
