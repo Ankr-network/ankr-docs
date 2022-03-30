@@ -145,6 +145,29 @@
           },
           {
             type: "dropdown",
+            label: "🚀" + Array(2).fill("\xa0").join("") + "Game",
+            position: "right",
+            items: [
+              {
+                to: "Game/overview/about-game",
+                label: "Overview",
+              },
+              {
+                to: "Game/setting-up/installing",
+                label: "Setting up",
+              },
+              {
+                to: "Game/tutorial/build",
+                label: "Tutorial",
+              },
+              {
+                to: "Game/getting-started/prerequisites",
+                label: "Getting Started",
+              },
+            ],
+          },
+          {
+            type: "dropdown",
             label: "👥" + Array(2).fill("\xa0").join("") + "Community",
             position: "right",
             items: [
@@ -159,7 +182,7 @@
             sidebarId: "governanceSidebar",
             position: "right",
             label:
-              "⚖️" + Array(2).fill("\xa0").join("") + "Tokens & Governance",
+              "🏦" + Array(2).fill("\xa0").join("") + "Tokens & Governance",
           },
           {
             type: "docSidebar",
