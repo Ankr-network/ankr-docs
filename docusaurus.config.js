@@ -145,7 +145,7 @@
           },
           {
             type: "dropdown",
-            label: "🚀 Game",
+            label: "🚀" + Array(2).fill("\xa0").join("") + "Game",
             position: "right",
             items: [
               {
@@ -153,15 +153,15 @@
                 label: "Overview",
               },
               {
-                to: "Game/setting-up/installing",
+                to: "Game/setting-up/setting-up",
                 label: "Setting up",
               },
               {
-                to: "Game/tutorial/build",
+                to: "Game/tutorial/game-tutorial",
                 label: "Tutorial",
               },
               {
-                to: "Game/getting-started/prerequisites",
+                to: "Game/getting-started/get-started-game",
                 label: "Getting Started",
               },
             ],
