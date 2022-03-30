@@ -21,7 +21,7 @@ Check out Ankr Game channels in the [Ankr Discord](https://discord.gg/uYaNu23Ww7
 
 ## Example Integration
 
-![Meta-apes](@site/static/img/meta-apes.png)
+![Meta-apes](@site/static/img/metaapes.png)
 
 
 
