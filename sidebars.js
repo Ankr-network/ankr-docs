@@ -322,7 +322,6 @@ earnSidebar: {
           items: [
             'Game/overview/about-game',
             'Game/setting-up/setting-up',
-            'Game/tutorial/game-tutorial',
             {
               type: 'category',
               label: 'Get Started',
