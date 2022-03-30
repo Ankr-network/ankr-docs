@@ -16,7 +16,7 @@ namespace AnkrSDK.Examples.WearableNFTExample
 {
 	public class WearableNFTContractInformation
 	{
-		public const string ProviderURL = "https://rinkeby.infura.io/v3/c75f2ce78a4a4b64aa1e9c20316fda3e";
+		public const string ProviderURL = "https://rpc.ankr.com/eth";
 
 		public const string GameItemContractAddress = "0xD0eF33b38D8525728902D90b20d6e2F303B8dc2C";
 
