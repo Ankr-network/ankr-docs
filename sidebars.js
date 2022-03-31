@@ -65,6 +65,41 @@ module.exports = {
             'Build/Chains/solana',
                 ],
         },
+        {
+          type: 'category',
+          label: 'BAS',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'Build/Bas/about-bas',
+        },
+          items: [
+              {
+          type: 'category',
+          label: 'Architecture',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'Build/Bas/architecture/bas-architecture',
+        },
+          items: [
+            'Build/Bas/architecture/bas-modules',
+            'Build/Bas/architecture/bas-circ-model-native-bridge',
+            'Build/Bas/architecture/bas-native-bridge',
+            'Build/Bas/architecture/bas-fast-finality-bls-crypto',
+            'Build/Bas/architecture/bas-sys-smart-contracts',
+            'Build/Bas/architecture/bas-governance',
+            'Build/Bas/architecture/bas-runtime-upgrades',
+        ]
+       },
+        'Build/Bas/bas-how-to-launch',
+        'Build/Bas/bas-demo',
+        'Build/Bas/bas-faq',
+        'Build/Bas/bas-glossary',
+        ]
+       },
       {
         type: 'category',
         label: 'V1 Products',
@@ -76,8 +111,6 @@ module.exports = {
           'Build/2V1/node-services'
         ],
       },
-      
-
       {
         type: 'category',
         label: '⛓ Chains V1',
