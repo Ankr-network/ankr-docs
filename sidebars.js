@@ -303,58 +303,60 @@ module.exports = {
       ],
     },
   ],
-  gameSidebar: {
-    type: 'category',
-    label: 'Game',
-    collapsible: false,
-    link: {
-      type: 'generated-index',
-    },
-    items: [
-      {
-        type: 'category',
-        label: 'Ankr Unity SDK',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-          'Game/overview/about-game',
-          'Game/setting-up/setting-up',
-          {
-            type: 'category',
-            label: 'Get Started',
-            link: {
-              type: 'doc',
-              id: 'Game/getting-started/get-started-game',
-            },
-            items: [
-              'Game/getting-started/game-00',
-              'Game/getting-started/game-01',
-              'Game/getting-started/game-02',
-              'Game/getting-started/game-03',
-              'Game/getting-started/game-04',
-            ],
-          },
-          {
-            type: 'category',
-            label: 'How to...',
-            link: {
-              type: 'generated-index',
-            },
-            items: ['Game/how-tos/wallet-game'],
-          },
-          {
-            type: 'category',
-            label: 'Reference',
-            link: {
-              type: 'generated-index',
-            },
-            items: ['Game/reference/game-reference'],
-          },
-        ],
+  gameSidebar: [
+    {
+      type: 'category',
+      label: 'Game',
+      collapsible: false,
+      link: {
+        type: 'generated-index',
       },
-    ],
-  },
+      items: [
+        {
+          type: 'category',
+          label: 'Ankr Unity SDK',
+          link: {
+            type: 'generated-index',
+          },
+          items: [
+            'Game/overview/about-game',
+            'Game/setting-up/setting-up',
+            {
+              type: 'category',
+              label: 'Get Started',
+              link: {
+                type: 'doc',
+                id: 'Game/getting-started/get-started-game',
+              },
+              items: [
+                'Game/getting-started/game-00',
+                'Game/getting-started/game-01',
+                'Game/getting-started/game-02',
+                'Game/getting-started/game-03',
+                'Game/getting-started/game-04',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'How to...',
+              link: {
+                type: 'generated-index',
+              },
+              items: ['Game/how-tos/wallet-game'],
+            },
+            {
+              type: 'category',
+              label: 'Reference',
+              link: {
+                type: 'generated-index',
+              },
+              items: ['Game/reference/game-reference'],
+            },
+          ],
+        },
+      ],
+    },
+  ],
   governanceSidebar: [
     {
       type: 'category',
