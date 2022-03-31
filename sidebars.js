@@ -253,10 +253,7 @@ module.exports = {
             type: 'doc',
             id: 'Earn/defi/defi-introduction',
           },
-          items: [
-            'Earn/defi/yield-farm',
-            'Earn/defi/provide-liquidity-to-dex',
-          ]
+          items: ['Earn/defi/yield-farm', 'Earn/defi/provide-liquidity-to-dex'],
         },
         {
           type: 'category',
@@ -303,19 +300,19 @@ module.exports = {
             'Earn/reference/brand-assets',
           ],
         },
-  ],
+      ],
     },
   ],
   gameSidebar: {
-  type: 'category',
-    label: 'Game',
-  collapsible: false,
-  link: {
-  type: 'generated-index',
-},
-  items: [
-  {
     type: 'category',
+    label: 'Game',
+    collapsible: false,
+    link: {
+      type: 'generated-index',
+    },
+    items: [
+      {
+        type: 'category',
         label: 'Ankr Unity SDK',
         link: {
           type: 'generated-index',
@@ -344,9 +341,7 @@ module.exports = {
             link: {
               type: 'generated-index',
             },
-            items: [
-              'Game/how-tos/wallet-game'
-            ],
+            items: ['Game/how-tos/wallet-game'],
           },
           {
             type: 'category',
@@ -354,11 +349,8 @@ module.exports = {
             link: {
               type: 'generated-index',
             },
-            items: [
-              'Game/reference/game-reference',
-            ],
+            items: ['Game/reference/game-reference'],
           },
-
         ],
       },
     ],

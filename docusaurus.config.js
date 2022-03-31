@@ -120,7 +120,7 @@ module.exports = {
               label: 'Liquid Staking',
             },
             {
-              to: "Earn/liquid-crowdloan/liquid-crowdloan",
+              to: 'Earn/liquid-crowdloan/liquid-crowdloan',
               label: 'Liquid Crowdloan',
             },
             {
@@ -142,28 +142,28 @@ module.exports = {
           ],
         },
         {
-        type: "dropdown",
-  label: "🚀" + Array(2).fill("\xa0").join("") + "Game",
-  position: "right",
-  items: [
-  {
-    to: "Game/overview/about-game",
-    label: "Overview",
-  },
-  {
-    to: "Game/setting-up/setting-up",
-    label: "Setting up",
-  },
-  {
-    to: "Game/tutorial/game-tutorial",
-    label: "Tutorial",
-  },
-  {
-    to: "Game/getting-started/get-started-game",
-    label: "Getting Started",
-  },
-],
-},
+          type: 'dropdown',
+          label: '🚀' + Array(2).fill('\xa0').join('') + 'Game',
+          position: 'right',
+          items: [
+            {
+              to: 'Game/overview/about-game',
+              label: 'Overview',
+            },
+            {
+              to: 'Game/setting-up/setting-up',
+              label: 'Setting up',
+            },
+            {
+              to: 'Game/tutorial/game-tutorial',
+              label: 'Tutorial',
+            },
+            {
+              to: 'Game/getting-started/get-started-game',
+              label: 'Getting Started',
+            },
+          ],
+        },
         {
           type: 'dropdown',
           label: '👥' + Array(2).fill('\xa0').join('') + 'Community',
