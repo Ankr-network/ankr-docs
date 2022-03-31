@@ -28,7 +28,7 @@ You have a Metamask wallet.
 
 2. Locate the **Binance (BNB)** box and click *Stake* in it.
 
-3. You are prompted to grant **Ankr Earn** access to your wallet.
+3. You are prompted to grant **Ankr Earn** access to your wallet. Click **Grant Access** to proceed.
 
 4. Select the **Binance supported wallet** you wish to connect to, i.e., Metamask.
 

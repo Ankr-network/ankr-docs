@@ -144,6 +144,8 @@ module.exports = {
               items: [
                 'Earn/liquid-staking/avax/avax-liquid-staking-mechanics',
                 'Earn/liquid-staking/avax/stake-avax',
+                'Earn/liquid-staking/avax/unstake-avax',
+                'Earn/liquid-staking/avax/avax-liquid-staking-faq',
               ],
             },
             {
@@ -157,6 +159,7 @@ module.exports = {
                 'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
                 'Earn/liquid-staking/bnb/stake-bnb',
                 'Earn/liquid-staking/bnb/unstake-bnb',
+                'Earn/liquid-staking/bnb/bnb-liquid-staking-faq',
               ],
             },
             {
@@ -183,6 +186,7 @@ module.exports = {
                 'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
                 'Earn/liquid-staking/eth/stake-eth',
                 'Earn/liquid-staking/eth/unstake-eth',
+                'Earn/liquid-staking/eth/eth-liquid-staking-faq',
               ],
             },
             {
@@ -196,6 +200,7 @@ module.exports = {
                 'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
                 'Earn/liquid-staking/ftm/stake-ftm',
                 'Earn/liquid-staking/ftm/unstake-ftm',
+                'Earn/liquid-staking/ftm/ftm-liquid-staking-faq',
               ],
             },
             {
@@ -209,6 +214,7 @@ module.exports = {
                 'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
                 'Earn/liquid-staking/ksm/stake-ksm',
                 'Earn/liquid-staking/ksm/unstake-ksm',
+                'Earn/liquid-staking/ksm/ksm-liquid-staking-faq',
               ],
             },
             {
@@ -222,18 +228,19 @@ module.exports = {
                 'Earn/liquid-staking/matic/matic-liquid-staking-mechanics',
                 'Earn/liquid-staking/matic/stake-matic',
                 'Earn/liquid-staking/matic/unstake-matic',
+                'Earn/liquid-staking/matic/matic-liquid-staking-faq',
               ],
             },
           ],
         },
         {
           type: 'category',
-          label: 'Liquid Crowdloans',
+          label: 'Liquid Crowdloan',
           collapsible: true,
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'Earn/liquid-crowdloans/liquid-crowdloans',
+            id: 'Earn/liquid-crowdloan/liquid-crowdloan',
           },
           items: [],
         },
@@ -246,7 +253,10 @@ module.exports = {
             type: 'doc',
             id: 'Earn/defi/defi-introduction',
           },
-          items: ['Earn/defi/yeld-farm', 'Earn/defi/provide-liquidity-dex'],
+          items: [
+            'Earn/defi/yield-farm',
+            'Earn/defi/provide-liquidity-to-dex',
+          ]
         },
         {
           type: 'category',
@@ -282,17 +292,77 @@ module.exports = {
             ],
           },
           items: [
+            'Earn/reference/earn-glossary',
             'Earn/reference/earn-compatible-wallets',
             'Earn/reference/earn-principles',
-            'Earn/reference/liquid-staking-token-addresses',
+            'Earn/reference/ls-smart-contract-addresses-mn',
+            'Earn/reference/ls-smart-contract-addresses-tn',
             'Earn/reference/micropools',
             'Earn/reference/liquid-crowdloan-market-makers',
             'Earn/reference/parachain-sdk',
+            'Earn/reference/brand-assets',
           ],
         },
-      ],
+  ],
     },
   ],
+  gameSidebar: {
+  type: 'category',
+    label: 'Game',
+  collapsible: false,
+  link: {
+  type: 'generated-index',
+},
+  items: [
+  {
+    type: 'category',
+        label: 'Ankr Unity SDK',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Game/overview/about-game',
+          'Game/setting-up/setting-up',
+          {
+            type: 'category',
+            label: 'Get Started',
+            link: {
+              type: 'doc',
+              id: 'Game/getting-started/get-started-game',
+            },
+            items: [
+              'Game/getting-started/game-00',
+              'Game/getting-started/game-01',
+              'Game/getting-started/game-02',
+              'Game/getting-started/game-03',
+              'Game/getting-started/game-04',
+            ],
+          },
+          {
+            type: 'category',
+            label: 'How to...',
+            link: {
+              type: 'generated-index',
+            },
+            items: [
+              'Game/how-tos/wallet-game'
+            ],
+          },
+          {
+            type: 'category',
+            label: 'Reference',
+            link: {
+              type: 'generated-index',
+            },
+            items: [
+              'Game/reference/game-reference',
+            ],
+          },
+
+        ],
+      },
+    ],
+  },
   governanceSidebar: [
     {
       type: 'category',
