@@ -62,6 +62,64 @@ a {
   font-family: "Inter";
 }
 
+.pagination-nav__label::before {
+  content: unset !important;
+}
+.navbar {
+  height: 60px !important;
+}
+.menu__link {
+  background: transparent !important;
+}
+.menu__list-item-collapsible {
+  background: transparent !important;
+}
+.menu__caret:hover {
+  background: transparent !important;
+}
+.menu__caret:before {
+  width: 10px;
+  height: 10px;
+}
+.card {
+  padding: 25px !important;
+  height: unset !important;
+  box-shadow: unset !important;
+  border: 0 solid black !important;
+
+  position: relative;
+}
+.main-wrapper {
+  display: flex;
+}
+.card:after {
+  width: 15px;
+  height: 14px;
+
+  content: '';
+  position: absolute;
+  top:50%;
+  right:25px;
+  transform: translateY(-50%);
+  transition: 225ms;
+
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNSAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjA5MiAxMS45MDhMMTMuMDkyIDEuNDY0NThNMTMuMDkyIDEuNDY0NThMMi42NDg1NyAxLjQ2NDU4TTEzLjA5MiAxLjQ2NDU4TDEuNzc4MjkgMTIuNzc4MyIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyLjQiLz4KPC9zdmc+Cg==");
+
+}
+.card h2 {
+  margin-bottom: 0;
+  transition: 225ms;
+}
+.card:hover h2{
+  color: #356DF3 !important;
+}
+.card:hover:after {
+  filter: invert(35%) sepia(96%) saturate(2669%) hue-rotate(213deg) brightness(96%) contrast(98%);
+}
+.card p {
+  display: none;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -132,7 +190,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   font-family: "Helvetica Neue";
 }
 main .container {
-  padding: 46px 0 46px 92px !important;
+  padding: 46px var(--ifm-spacing-horizontal) 46px 92px !important;
   max-width: 100%;
 }
 @media (max-width: 1235px) {

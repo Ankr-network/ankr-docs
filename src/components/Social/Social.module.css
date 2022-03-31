@@ -1,6 +1,6 @@
 .container {
   background-color: #f2f5fa;
-  padding-bottom: 120px;
+  padding: 0 16px 70px;
 }
 .wrapper {
   max-width: 1200px;
@@ -17,7 +17,6 @@
 @media (max-width: 1235px) {
   .wrapper {
     max-width: 600px;
-    padding: 0 16px;
   }
   .title {
     font-size: 30px;
@@ -43,7 +42,7 @@
   margin-bottom: 20px;
   padding: 20px;
 
-  max-width: 217px;
+  max-width: 224px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
