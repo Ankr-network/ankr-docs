@@ -102,6 +102,10 @@
                 label: "Chains",
               },
               {
+                to: "Build/Bas/about-bas",
+                label: "BAS",
+              },
+              {
                 to: "category/guides",
                 label: "Guides",
               },
