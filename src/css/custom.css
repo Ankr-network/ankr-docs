@@ -85,7 +85,12 @@ a {
   padding: 25px !important;
   height: unset !important;
   box-shadow: unset !important;
+  border: 0 solid black !important;
+
   position: relative;
+}
+.main-wrapper {
+  display: flex;
 }
 .card:after {
   width: 15px;
@@ -111,9 +116,7 @@ a {
 .card:hover:after {
   filter: invert(35%) sepia(96%) saturate(2669%) hue-rotate(213deg) brightness(96%) contrast(98%);
 }
-
-
-.card div {
+.card p {
   display: none;
 }
 
