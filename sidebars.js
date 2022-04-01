@@ -67,7 +67,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'BAS',
+          label: 'BSC Application Sidechain',
           collapsible: true,
           collapsed: true,
           link: {
