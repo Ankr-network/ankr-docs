@@ -103,7 +103,7 @@
               },
               {
                 to: "Build/Bas/about-bas",
-                label: "BAS",
+                label: "BSC Application Sidechain",
               },
               {
                 to: "category/guides",
