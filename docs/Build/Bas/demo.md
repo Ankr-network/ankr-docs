@@ -18,3 +18,7 @@ New RPC URL: https://rpc.dev-01.bas.ankr.com/
 Chain ID: 14000 
 Current Symbol: BAS
 ```
+
+:::info
+If you want to see BAS source code, check the [BAS codebase](https://github.com/Ankr-network?q=bas). 
+:::
