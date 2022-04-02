@@ -19,4 +19,6 @@ Chain ID: 14000
 Current Symbol: BAS
 ```
 
-To see the codebase, visit the [BAS repos](https://github.com/Ankr-network?q=bas). 
+:::info
+If you want to see BAS source code, check the [BAS codebase](https://github.com/Ankr-network?q=bas). 
+:::

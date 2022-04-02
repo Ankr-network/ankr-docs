@@ -11,7 +11,11 @@ The main BAS task is to allow any developer to raise their blockchain in a matte
 
 The validator set can run with fewer validators than BNB Chain, depending on the BAS deployer. The validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BAS.  
 
-We can say this is a standard on which you can build simple but functional blockchain projects. Developers and teams can create simple blockchains with their own business rules and economies. Most importantly, they can extend the existing functionality. 
+We can say this is a standard on which you can build simple but functional blockchain projects. Developers and teams can create simple blockchains with their own business rules and economies. Most importantly, they can extend the existing functionality.
+
+:::info
+Check out the [BAS codebase on GitHub](https://github.com/Ankr-network?q=bas). 
+:::
 
 
 ## Why BAS?
