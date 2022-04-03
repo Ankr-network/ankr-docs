@@ -33,9 +33,19 @@ module.exports = {
           items: [
             'Build/1V2/protocol',
             'Build/1V2/public-rpc',
-            'Build/1V2/premium-rpc',
-            'Build/1V2/advanced-apis',
-            'Build/1V2/add-endpoints',
+             {
+              type: 'category',
+              label: '02 - Premium Plan',
+              link: {
+                type: 'generated-index',
+              },
+              items: [
+                'Build/1V2/premium-plan',
+                'Build/1V2/advanced-apis',
+                'Build/1V2/add-endpoints',
+            ],
+            },
+            
             'Build/1V2/node-ops',
             'Build/1V2/scan',
           ],
@@ -375,8 +385,22 @@ module.exports = {
           },
           items: [
             'Tokens&Governance/about-ankr-tokens',
-            'Tokens&Governance/governance',
+            'Tokens&Governance/buy-ankr',
             'Tokens&Governance/tokenomics',
+            {
+              type: 'category',
+              label: 'Governance',
+              link: {
+                type: 'doc',
+                id: 'Tokens&Governance/governance',
+              },
+              items: [
+                'Tokens&Governance/write-proposal',
+                'Tokens&Governance/vote-proposal',
+            ],
+            },
+            
+            
           ],
         },
       ],

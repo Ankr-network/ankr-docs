@@ -9,7 +9,8 @@ id: protocol
 
 The (r)evolutionary Ankr protocol brings increasing definition to Ankr’s vision of Web 3.0 mass adoption.
 
-Featuring open access to a Public Multi-Chain RPC layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
+Featuring:
+open access to a public multi-chain RPC layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
 “Join a decentralized community and economy”.
 
