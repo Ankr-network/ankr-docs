@@ -312,6 +312,7 @@ module.exports = {
         type: 'generated-index',
       },
       items: [
+          'Game/ankr-game',
         {
           type: 'category',
           label: 'Ankr Unity SDK',
@@ -352,6 +353,32 @@ module.exports = {
               },
               items: ['Game/reference/game-reference'],
             },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Ankr Unreal SDK',
+          link: {
+            type: 'generated-index',
+          },
+          items: [
+            'Game/Unreal/about-unreal',
+            'Game/Unreal/setting-up-unreal',
+            {
+              type: 'category',
+              label: 'Get Started',
+              link: {
+                type: 'doc',
+                id: 'Game/getting-started/get-started-game',
+              },
+              items: [
+                'Game/Unreal/getting-started/unreal-before',
+                'Game/Unreal/getting-started/unreal-connect-wallet',
+                'Game/Unreal/getting-started/unreal-update-nft',
+                'Game/Unreal/getting-started/unreal-mint-nft',
+              ],
+            },
+           
           ],
         },
       ],
