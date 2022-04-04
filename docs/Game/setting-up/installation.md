@@ -125,9 +125,9 @@ void ReceiptReceived(TransactionReceipt receipt);
 
 #### GetAllChanges
 
-    ```c
-    Task<List<EventLog<TEvDto>>> GetAllChanges<TEvDto>(EventFilterData evFilter) where TEvDto : IEventDTO, new()
-    ```
+```c
+Task<List<EventLog<TEvDto>>> GetAllChanges<TEvDto>(EventFilterData evFilter) where TEvDto : IEventDTO, new()
+```
 
 Input:
 
@@ -140,10 +140,10 @@ EventFilterData allows you to filter event by topics (3 max) and "To Block" with
 
 #### GetData
 
-    ```c
-    Task<TReturnType> GetData<TFieldData, TReturnType>(TFieldData requestData = null)
-                where TFieldData : FunctionMessage, new()
-    ```
+```c
+Task<TReturnType> GetData<TFieldData, TReturnType>(TFieldData requestData = null)
+            where TFieldData : FunctionMessage, new()
+```
 
 Queries a request to get data from contract
 
