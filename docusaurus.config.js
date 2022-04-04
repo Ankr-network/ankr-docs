@@ -132,15 +132,14 @@
                 to: "Earn/defi/defi-introduction",
                 label: "DeFi",
               },
-
-               {
-                  to: "Earn/bridge/bridge-introduction",
-                  label: "Bridge",
-                },
-                {
-                  to: "Earn/switch/switch-introduction",
-                  label: "Switch",
-                }, 
+              {
+                to: "Earn/bridge/bridge-introduction",
+                label: "Bridge",
+              },
+              {
+                to: "Earn/switch/switch-introduction",
+                label: "Switch",
+              }, 
             {
               to: 'category/reference',
               label: 'Reference',
@@ -165,34 +164,7 @@
               label: 'Unreal SDK',
             },
           ],
-        },
-        {
-          type: 'dropdown',
-          label: '👥' + Array(2).fill('\xa0').join('') + 'Community',
-          position: 'right',
-          items: [
-            {
-              to: 'Community/channels',
-              label: 'Community Channels',
-            },
-          ],
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'governanceSidebar',
-          position: 'right',
-          label: '⚖️' + Array(2).fill('\xa0').join('') + 'Tokens & Governance',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'right',
-          label: '📚' + Array(2).fill('\xa0').join('') + 'Tutorials',
-        },
-      ],
-      }, 
-        ],
-          },
+        }, 
           {
             type: "dropdown",
             label: "👥" + Array(2).fill("\xa0").join("") + "Community",
