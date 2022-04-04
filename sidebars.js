@@ -355,21 +355,20 @@ earnSidebar: {
               type: 'generated-index',
             },
           items: [
-            'Game/overview/about-game',
-            'Game/setting-up/setting-up',
+            'Game/Unity/about-unity',
+            'Game/Unity/setting-up',
             {
               type: 'category',
               label: 'Get Started',
               link: {
-                type: 'doc',
-                id: 'Game/getting-started/get-started-game',
+                type: 'generated-index',
               },
               items: [
-                'Game/getting-started/game-00',
-                'Game/getting-started/game-01',
-                'Game/getting-started/game-02',
-                'Game/getting-started/game-03',
-                'Game/getting-started/game-04',
+                'Game/Unity/getting-started/game-00',
+                'Game/Unity/getting-started/game-01',
+                'Game/Unity/getting-started/game-02',
+                'Game/Unity/getting-started/game-03',
+                'Game/Unity/getting-started/game-04',
               ],
             },
             {
@@ -378,20 +377,8 @@ earnSidebar: {
               link: {
                 type: 'generated-index',
               },
-              items: [
-                'Game/how-tos/wallet-game'
-              ],
+              items: ['Game/Unity/how-tos/wallet-game'],
             },
-            {
-              type: 'category',
-              label: 'Reference',
-              link: {
-                type: 'generated-index',
-              },
-              items: [
-                'Game/reference/game-reference',
-              ],
-            },            
           ],
         },
         {
@@ -407,8 +394,7 @@ earnSidebar: {
               type: 'category',
               label: 'Get Started',
               link: {
-                type: 'doc',
-                id: 'Game/getting-started/get-started-game',
+                type: 'generated-index',
               },
               items: [
                 'Game/Unreal/getting-started/unreal-before',
@@ -418,6 +404,14 @@ earnSidebar: {
               ],
             },
           ],
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          link: {
+            type: 'generated-index',
+          },
+          items: ['Game/reference/game-reference'],
         },
       ],
     },

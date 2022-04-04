@@ -156,7 +156,7 @@
               label: 'Overview',
             },
             {
-              to: 'Game/overview/about-game',
+              to: 'Game/Unity/about-unity',
               label: 'Unity SDK',
             },
             {
