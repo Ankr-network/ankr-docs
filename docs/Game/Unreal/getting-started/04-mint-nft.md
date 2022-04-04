@@ -1,5 +1,5 @@
 ---
-title: 03 Mint Wearables NFT
+title: 04 Mint Wearables NFT
 id: unreal-mint-nft
 ---
 

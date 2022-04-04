@@ -400,6 +400,7 @@ earnSidebar: {
               items: [
                 'Game/Unreal/getting-started/unreal-before',
                 'Game/Unreal/getting-started/unreal-connect-wallet',
+                'Game/Unreal/getting-started/unreal-send-retrieve',
                 'Game/Unreal/getting-started/unreal-update-nft',
                 'Game/Unreal/getting-started/unreal-mint-nft',
               ],
