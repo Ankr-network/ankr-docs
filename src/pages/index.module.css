@@ -79,6 +79,7 @@
     height: auto;
   }
   .root {
+    padding-top: 12px;
     padding-bottom: 100px;
     flex-direction: column-reverse;
     justify-content: space-between;
@@ -110,9 +111,8 @@
   }
   .buttons {
     flex-direction: column;
+    padding: 0 60px;
   }
   .button {
-    padding: 0 60px;
-    width: unset;
   }
 }
