@@ -147,20 +147,16 @@ module.exports = {
           position: 'right',
           items: [
             {
-              to: 'Game/overview/about-game',
+              to: 'Game/ankr-game',
               label: 'Overview',
             },
             {
-              to: 'Game/setting-up/setting-up',
-              label: 'Setting up',
+              to: 'Game/Unity/about-unity',
+              label: 'Unity SDK',
             },
             {
-              to: 'Game/tutorial/game-tutorial',
-              label: 'Tutorial',
-            },
-            {
-              to: 'Game/getting-started/get-started-game',
-              label: 'Getting Started',
+              to: 'Game/Unreal/about-unreal',
+              label: 'Unreal SDK',
             },
           ],
         },
