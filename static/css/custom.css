@@ -131,9 +131,12 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: #f2f5fa;
   font-family: "Helvetica Neue";
 }
+
 main .container {
   padding: 46px 0 46px 92px !important;
   max-width: 100%;
+  font-family: "Inter";
+
 }
 @media (max-width: 1235px) {
   main .container {
