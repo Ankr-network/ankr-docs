@@ -348,6 +348,7 @@ earnSidebar: {
     },    
     gameSidebar: {
       'Game': [
+        'Game/ankr-game',
         {
           type: 'category',
           label: 'Ankr Unity SDK',
