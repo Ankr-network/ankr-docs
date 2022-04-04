@@ -41,7 +41,7 @@ This is an example from the SDK to link a Web3 wallet to a player account.
     string signature = await web3.Sign(message); //returns the signature.
     ```
 
-3. The next step involves the backend serverside. You can view an example script here (https://github.com/mirage-xyz/mirage-serverside-demo/blob/main/backends/signing-go/main.go) It returns a signature if authentication is successful. Below is an ***extract*** from this script:
+3. The next step involves the backend serverside. You can view an example script [here](https://github.com/mirage-xyz/mirage-serverside-demo/blob/main/backends/signing-go/main.go). It returns a signature if authentication is successful. Below is an ***extract*** from this script:
 
     ```js
     package main
