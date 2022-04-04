@@ -371,7 +371,7 @@ earnSidebar: {
                 'Game/getting-started/game-03',
                 'Game/getting-started/game-04',
               ],
-            },  
+            },
             {
               type: 'category',
               label: 'How to...',
@@ -417,13 +417,10 @@ earnSidebar: {
                 'Game/Unreal/getting-started/unreal-mint-nft',
               ],
             },
-           
           ],
         },
       ],
     },
-  ],
- 
   governanceSidebar: {
     'Tokens+Governance': [
       {
