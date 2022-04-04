@@ -378,7 +378,7 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Governance',
+          label: 'Tokens',
           collapsed: false,
           link: {
             type: 'generated-index',
@@ -387,25 +387,23 @@ module.exports = {
             'Tokens&Governance/about-ankr-tokens',
             'Tokens&Governance/buy-ankr',
             'Tokens&Governance/tokenomics',
-            {
-              type: 'category',
-              label: 'Governance',
-              link: {
-                type: 'doc',
-                id: 'Tokens&Governance/governance',
-              },
-              items: [
-                'Tokens&Governance/write-proposal',
-                'Tokens&Governance/vote-proposal',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Governance',
+          link: {
+            type: 'generated-index',
+          },
+          items: [
+            'Tokens&Governance/governance',
+            'Tokens&Governance/write-proposal',
+            'Tokens&Governance/vote-proposal',
             ],
-            },
-            
-            
+        }, 
           ],
         },
       ],
-    },
-  ],
   communitySidebar: [
     {
       type: 'category',
