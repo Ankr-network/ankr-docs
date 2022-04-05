@@ -5,7 +5,7 @@ id: bridge-mechanics
 
 # Ankr Bridge mechahics
 
-# Smart contracts
+## Smart contracts
 
 Smart contracts involved in bridging Liquid Staking tokens are:
 * [Ankr Ethereum bridge](https://etherscan.io/address/0xc437df90b37c1db6657339e31bfe54627f0e7181) — bridges (`deposit`) assets to other blockchains and receives (`withdraw`) assets bridged to Ethereum. 
