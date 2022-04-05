@@ -132,44 +132,39 @@
                 to: "Earn/defi/defi-introduction",
                 label: "DeFi",
               },
-
-               {
-                  to: "Earn/bridge/bridge-introduction",
-                  label: "Bridge",
-                },
-                {
-                  to: "Earn/switch/switch-introduction",
-                  label: "Switch",
-                }, 
               {
-                to: "category/reference",
-                label: "Reference",
-              },
-            ],
-          },
-          {
-            type: "dropdown",
-            label: "🚀" + Array(2).fill("\xa0").join("") + "Game",
-            position: "right",
-            items: [
-              {
-                to: "Game/overview/about-game",
-                label: "Overview",
+                to: "Earn/bridge/bridge-introduction",
+                label: "Bridge",
               },
               {
-                to: "Game/setting-up/setting-up",
-                label: "Setting up",
-              },
-              {
-                to: "Game/tutorial/game-tutorial",
-                label: "Tutorial",
-              },
-              {
-                to: "Game/getting-started/get-started-game",
-                label: "Getting Started",
-              },
-            ],
-          },
+                to: "Earn/switch/switch-introduction",
+                label: "Switch",
+              }, 
+            {
+              to: 'category/reference',
+              label: 'Reference',
+            },
+          ],
+        },
+        {
+          type: 'dropdown',
+          label: '🚀' + Array(2).fill('\xa0').join('') + 'Game',
+          position: 'right',
+          items: [
+            {
+              to: 'Game/ankr-game',
+              label: 'Overview',
+            },
+            {
+              to: 'Game/Unity/about-unity',
+              label: 'Unity SDK',
+            },
+            {
+              to: 'Game/Unreal/about-unreal',
+              label: 'Unreal SDK',
+            },
+          ],
+        }, 
           {
             type: "dropdown",
             label: "👥" + Array(2).fill("\xa0").join("") + "Community",
