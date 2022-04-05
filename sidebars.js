@@ -87,13 +87,13 @@ module.exports = {
                 'Build/Bas/architecture/bas-sys-smart-contracts',
                 'Build/Bas/architecture/bas-governance',
                 'Build/Bas/architecture/bas-runtime-upgrades',
-              ]
+              ],
             },
             'Build/Bas/bas-how-to-launch',
             'Build/Bas/bas-demo',
             'Build/Bas/bas-faq',
             'Build/Bas/bas-glossary',
-          ]
+          ],
         },
         {
           type: 'category',
