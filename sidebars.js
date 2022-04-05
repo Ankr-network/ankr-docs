@@ -2,7 +2,7 @@ module.exports = {
   buildSidebar: [
     {
       type: 'category',
-      label: 'Build',
+      label: '🔨 Build',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -113,7 +113,7 @@ module.exports = {
   earnSidebar: [
     {
       type: 'category',
-      label: 'Earn',
+      label: '💰 Earn',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -306,7 +306,7 @@ module.exports = {
   gameSidebar: [
     {
       type: 'category',
-      label: 'Game',
+      label: '🚀 Game',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -360,7 +360,7 @@ module.exports = {
   governanceSidebar: [
     {
       type: 'category',
-      label: 'Tokens+Governance',
+      label: '⚖️ Tokens+Governance',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -385,7 +385,7 @@ module.exports = {
   communitySidebar: [
     {
       type: 'category',
-      label: 'Community',
+      label: '👥 Community',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -406,7 +406,7 @@ module.exports = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'Tutorials',
+      label: '📚 Tutorials',
       collapsible: false,
       link: {
         type: 'generated-index',

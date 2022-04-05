@@ -56,6 +56,7 @@
   --ifm-code-font-size: 85%;
   --ifm-color-primary: #356df3;
   --ifm-link-color: #356df3;
+  --ifm-heading-font-family: 'Inter'
 }
 
 a {
@@ -91,6 +92,12 @@ a {
 }
 .main-wrapper {
   display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+
+}
+.main-wrapper > div {
+  flex-grow: 1;
 }
 .card:after {
   width: 15px;
@@ -187,7 +194,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 
 .docs-wrapper {
   background-color: #f2f5fa;
-  font-family: "Helvetica Neue";
+  font-family: "Inter";
 }
 main .container {
   padding: 46px var(--ifm-spacing-horizontal) 46px 92px !important;
@@ -202,10 +209,11 @@ aside {
   border-right: none !important;
   margin-top: 0 !important;
   background-color: #fff !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 aside > div {
   padding-top: 40px !important;
+  top: 60px !important;
+  height: auto !important;
 }
 
 aside nav {
@@ -388,8 +396,9 @@ table td {
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  font-family: "Helvetica Neue";
   color: #1f2226;
+  font-family: 'TT Firs Neue';
+  font-weight: 600 !important;
 }
 .markdown h1 {
   font-weight: bold;
