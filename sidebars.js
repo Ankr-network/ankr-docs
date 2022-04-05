@@ -339,72 +339,67 @@ module.exports = {
       ],
     },
   ],
-  gameSidebar: [
-    {
-      type: 'category',
-      label: '🚀 Game',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
+  gameSidebar: {
+    'Game': [
+      'Game/ankr-game',
+      {
+        type: 'category',
+        label: 'Ankr Unity SDK',
+        link: {
+            type: 'generated-index',
+          },
+        items: [
+          'Game/Unity/about-unity',
+          'Game/Unity/setting-up',
+          {
+            type: 'category',
+            label: 'Get Started',
+            link: {
+              type: 'generated-index',
+            },
+            items: [
+              'Game/Unity/getting-started/game-00',
+              'Game/Unity/getting-started/game-01',
+              'Game/Unity/getting-started/game-02',
+              'Game/Unity/getting-started/game-03',
+              'Game/Unity/getting-started/game-04',
+            ],
+          },
+          {
+            type: 'category',
+            label: 'How to...',
+            link: {
+              type: 'generated-index',
+            },
+            items: ['Game/Unity/how-tos/wallet-game'],
+          },
+        ],
       },
-      items: [
-        'Game/ankr-game',
-        {
-          type: 'category',
-          label: 'Ankr Unity SDK',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Game/Unity/about-unity',
-            'Game/Unity/setting-up',
-            {
-              type: 'category',
-              label: 'Get Started',
-              link: {
-                type: 'generated-index',
-              },
-              items: [
-                'Game/Unity/getting-started/game-00',
-                'Game/Unity/getting-started/game-01',
-                'Game/Unity/getting-started/game-02',
-                'Game/Unity/getting-started/game-03',
-                'Game/Unity/getting-started/game-04',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'How to...',
-              link: {
-                type: 'generated-index',
-              },
-              items: ['Game/Unity/how-tos/wallet-game'],
-            },
-              {
-          type: 'category',
-          label: 'Ankr Unreal SDK',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Game/Unreal/about-unreal',
-            'Game/Unreal/setting-up-unreal',
-            {
-              type: 'category',
-              label: 'Get Started',
-              link: {
-                type: 'generated-index',
-              },
-              items: [
-                'Game/Unreal/getting-started/unreal-before',
-                'Game/Unreal/getting-started/unreal-connect-wallet',
-                'Game/Unreal/getting-started/unreal-send-retrieve',
-                'Game/Unreal/getting-started/unreal-update-nft',
-                'Game/Unreal/getting-started/unreal-mint-nft',
-              ],
-            },
-          ],
+      {
+        type: 'category',
+        label: 'Ankr Unreal SDK',
+        link: {
+          type: 'generated-index',
         },
+        items: [
+          'Game/Unreal/about-unreal',
+          'Game/Unreal/setting-up-unreal',
+          {
+            type: 'category',
+            label: 'Get Started',
+            link: {
+              type: 'generated-index',
+            },
+            items: [
+              'Game/Unreal/getting-started/unreal-before',
+              'Game/Unreal/getting-started/unreal-connect-wallet',
+              'Game/Unreal/getting-started/unreal-send-retrieve',
+              'Game/Unreal/getting-started/unreal-update-nft',
+              'Game/Unreal/getting-started/unreal-mint-nft',
+            ],
+          },
+        ],
+      },
             {
               type: 'category',
               label: 'Reference',
@@ -412,12 +407,9 @@ module.exports = {
                 type: 'generated-index',
               },
               items: ['Game/reference/game-reference'],
-            },
-          ],
-        },
-      ],
-    },
-  ],
+          },
+        ],
+      },
   governanceSidebar: [
     {
       type: 'category',
