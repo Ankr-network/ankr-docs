@@ -15,7 +15,7 @@ Ankr Game SDKs provide Web3 capabilities to the two biggest players in the indus
 
 ## Ankr Unity SDK  
 
-<img src={require('/img/unity.png').default} alt="Unity Engine" width="820" />
+<img src={require('/img/Unity.png').default} alt="Unity Engine" width="820" />
 
 **Unity** is the most popular engine for independent developers and game studios. 
 
