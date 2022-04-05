@@ -3,7 +3,6 @@ title: 02 - Read NFT Data
 id: game-02
 ---
 
-
 In this step, we want to check if the player owns any existing NFT characters. If they do, they can use them in the game. 
 
 ### 👀 Example - Read NFT Data for a Game Character

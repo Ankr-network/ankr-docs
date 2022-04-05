@@ -62,6 +62,41 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'BSC Application Sidechain',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'Build/Bas/about-bas',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Architecture',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'Build/Bas/architecture/bas-architecture',
+              },
+              items: [
+                'Build/Bas/architecture/bas-modules',
+                'Build/Bas/architecture/bas-circ-model-native-bridge',
+                'Build/Bas/architecture/bas-native-bridge',
+                'Build/Bas/architecture/bas-fast-finality-bls-crypto',
+                'Build/Bas/architecture/bas-sys-smart-contracts',
+                'Build/Bas/architecture/bas-governance',
+                'Build/Bas/architecture/bas-runtime-upgrades',
+              ]
+            },
+            'Build/Bas/bas-how-to-launch',
+            'Build/Bas/bas-demo',
+            'Build/Bas/bas-faq',
+            'Build/Bas/bas-glossary',
+          ]
+        },
+        {
+          type: 'category',
           label: 'V1 Products',
           link: {
             type: 'generated-index',
@@ -173,6 +208,7 @@ module.exports = {
                 'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
                 'Earn/liquid-staking/dot/stake-dot',
                 'Earn/liquid-staking/dot/unstake-dot',
+                'Earn/liquid-staking/dot/dot-liquid-staking-faq',
               ],
             },
             {
@@ -312,6 +348,7 @@ module.exports = {
         type: 'generated-index',
       },
       items: [
+        'Game/ankr-game',
         {
           type: 'category',
           label: 'Ankr Unity SDK',
@@ -319,21 +356,20 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Game/overview/about-game',
-            'Game/setting-up/setting-up',
+            'Game/Unity/about-unity',
+            'Game/Unity/setting-up',
             {
               type: 'category',
               label: 'Get Started',
               link: {
-                type: 'doc',
-                id: 'Game/getting-started/get-started-game',
+                type: 'generated-index',
               },
               items: [
-                'Game/getting-started/game-00',
-                'Game/getting-started/game-01',
-                'Game/getting-started/game-02',
-                'Game/getting-started/game-03',
-                'Game/getting-started/game-04',
+                'Game/Unity/getting-started/game-00',
+                'Game/Unity/getting-started/game-01',
+                'Game/Unity/getting-started/game-02',
+                'Game/Unity/getting-started/game-03',
+                'Game/Unity/getting-started/game-04',
               ],
             },
             {
@@ -342,7 +378,31 @@ module.exports = {
               link: {
                 type: 'generated-index',
               },
-              items: ['Game/how-tos/wallet-game'],
+              items: ['Game/Unity/how-tos/wallet-game'],
+            },
+            {
+              type: 'category',
+              label: 'Ankr Unreal SDK',
+              link: {
+                type: 'generated-index',
+              },
+              items: [
+                'Game/Unreal/about-unreal',
+                'Game/Unreal/setting-up-unreal',
+                {
+                  type: 'category',
+                  label: 'Get Started',
+                  link: {
+                    type: 'generated-index',
+                  },
+                  items: [
+                    'Game/Unreal/getting-started/unreal-before',
+                    'Game/Unreal/getting-started/unreal-connect-wallet',
+                    'Game/Unreal/getting-started/unreal-update-nft',
+                    'Game/Unreal/getting-started/unreal-mint-nft',
+                  ],
+                },
+              ],
             },
             {
               type: 'category',

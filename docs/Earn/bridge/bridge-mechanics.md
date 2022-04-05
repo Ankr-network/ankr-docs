@@ -1,5 +1,5 @@
 ---
-title: Ankr Bridge Mechahics
+title: Ankr Bridge Mechanics
 id: bridge-mechanics
 ---
 

@@ -197,7 +197,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   font-family: "Inter";
 }
 main .container {
-  padding: 46px var(--ifm-spacing-horizontal) 46px 92px !important;
+  padding: 46px 0 46px 92px !important;
   max-width: 100%;
 }
 @media (max-width: 1235px) {
