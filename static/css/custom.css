@@ -459,6 +459,11 @@ table td {
     margin-bottom: 12px;
   }
 
+.responsive-pic {
+  max-width: 100%;
+  height: auto;
+}
+
   [data-theme="light"] .DocSearch {
     /* --docsearch-primary-color: var(--ifm-color-primary); */
     /* --docsearch-text-color: var(--ifm-font-color-base); */
