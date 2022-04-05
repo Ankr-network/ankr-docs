@@ -22,14 +22,14 @@ The requirements when unstaking are:
 
 * Minimum value to unstake — 1 BNB.
 
-* Maximum value to stake — up to the initial stake+accumulated rewards.
+* Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for aBNBc.
 
 * Release time — 7-15 days.
 
 
 ## Fees
 
-When staking, the user pays the relayer fee — 0.02 BNB.
+When staking, the user pays the relayer fee — 0.002 BNB.
 
 When unstaking, the user pays nothing, while Ankr pays:
 
@@ -56,9 +56,11 @@ The following entities are involved:
 
 ## Smart contracts
 
-[BinancePool Logic](https://bscscan.com/address/0x173645c3E0ed39d127A6861c7fDF4c7E5Fb94355) and [BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contracts on Binance Smart Chain where the user sends their initial staking or unstaking request.
+[BinancePool Implementation](https://bscscan.com/address/0x173645c3E0ed39d127A6861c7fDF4c7E5Fb94355) and [BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contracts on Binance Smart Chain where the user sends their initial staking or unstaking request.
 
-[aBNBb](https://bscscan.com/token/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d) — contract on Binance Smart Chain that mints or burns aBNBb tokens for the user in 1:1 ratio with the staked amount.
+[aBNBb Implementation](https://bscscan.com/address/0xf1e6e6247aaaf7e32850003c8e32d955e95b57a7) and [aBNBb Proxy](https://bscscan.com/address/0xBb1Aa6e59E5163D8722a122cd66EBA614b59df0d) — contract on Binance Smart Chain that mints or burns aBNBb tokens for the user in 1:1 ratio with the staked amount. All interactions go through the Proxy part.
+
+[aBNBc Implementation](https://bscscan.com/address/0xd08ca0fad83e83455e6db550dc5988e17be083bc) and [aBNBc Proxy](https://bscscan.com/address/0xE85aFCcDaFBE7F2B096f268e31ccE3da8dA2990A) — contract on Binance Smart Chain that mints or burns aBNBc tokens for the user in 1:1 ratio with the staked amount. All interactions go through the Proxy part.
 
 [TokenHub](https://bscscan.com/address/0x0000000000000000000000000000000000001004) — contract on Binance Smart Chain that makes cross-chain transfers between Binance Smart Chain and Binance Chain.
 
@@ -91,15 +93,19 @@ The following entities are involved:
 
 ## Unstaking workflow
 
-1. User sends a request to the `BinancePool::unstake(amount)` on Binance Smart Chain. `amount` specifies the amount to be released back to the user.
+Unstaking aBNBc adds an additional approval step — Step 1. Unstaking aBNBb workflow starts from Step 2. 
 
-2. BinancePool verifies the request checking the `minimal_stake_value` and `balance_of_user`, then executes `aBNBb::burn()` to burn the bond tokens that are equivalent to the initial stake+accumulated reward. Then `BinancePool` issues an `UnstakePending()` event with the staker and amount parameters. 
+1. For aBNBc only, user sends a request to the `aBNBc::approve(aBNBb.address, amount)` to let the `aBNBb` smart contract transfer the user's Liquid tokens.  
 
-3. BNB backend service detects the `UnstakePending()` event and creates a record in Postgres database, then starts to check the database for new `Unstake` requests every day at 00:00. If it finds a new `Unstake` request, it executes `sideChainUnbond(bsc, validatorAddress, totalPendingAmount)` on the Binance Chain where `totalPendingAmount` specifies the aggregate pending amount to unstake for different users and `validatorAddress` specifies the address of one of the validators from the Ankr set to get `totalPendingAmount` from. 
+2. User sends a request to the `BinancePool::unstake(amount)` on Binance Smart Chain. `amount` specifies the amount to be released back to the user.
 
-4. After the `UnbondTime`, `intermediaryAddress` receives `undelegated(unbonded)` funds. Then the BNB backend service makes a cross-chain transaction to `operatorAddress` on Binance Smart Chain.
+3. BinancePool verifies the request checking the `minimal_stake_value` and `balance_of_user`, then executes `aBNBb::burn()` to burn the bond tokens that are equivalent to the initial stake+accumulated reward. Then `BinancePool` issues an `UnstakePending()` event with the staker and amount parameters. 
 
-5. Upon the cross-transaction completion, the unstaked amount ends up at `operatorAddress`. Then the BNB backend service executes `BinancePool::distributeRewards({value: totalPendingAmount})` on Binance Smart Chain to distribute stakes and rewards to the users.
+4. BNB backend service detects the `UnstakePending()` event and creates a record in Postgres database, then starts to check the database for new `Unstake` requests every day at 00:00. If it finds a new `Unstake` request, it executes `sideChainUnbond(bsc, validatorAddress, totalPendingAmount)` on the Binance Chain where `totalPendingAmount` specifies the aggregate pending amount to unstake for different users and `validatorAddress` specifies the address of one of the validators from the Ankr set to get `totalPendingAmount` from. 
+
+5. After the `UnbondTime`, `intermediaryAddress` receives `undelegated(unbonded)` funds. Then the BNB backend service makes a cross-chain transaction to `operatorAddress` on Binance Smart Chain.
+
+6. Upon the cross-transaction completion, the unstaked amount ends up at `operatorAddress`. Then the BNB backend service executes `BinancePool::distributeRewards({value: totalPendingAmount})` on Binance Smart Chain to distribute stakes and rewards to the users.
 
 ## Additional information
 
