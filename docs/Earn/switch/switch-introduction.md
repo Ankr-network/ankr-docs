@@ -28,6 +28,7 @@ whereas the value of the second should be the original asset + staking rewards.
 Currently, Ankr Switch supports switching between:
 
 * aETHb–aETHc — both directions.
+* aBNBb–aBNBc — both directions.
 
 ## Why Ankr Switch?
 
