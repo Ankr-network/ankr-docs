@@ -7,15 +7,15 @@ The following methods can be used to mint new characters and wearable NFTs.
 
 :::tip
 
-All 'write' functions such as minting a character or wearable incur gas fees to cover smart contract operations. Tickets are issued for these and approval needed via MetaMask.
+All write method calls such as minting a character or wearable incur gas fees to cover smart contract operations. Tickets are issued for these and approval needed via MetaMask.
 
-All 'read' functions such as retrieving a balance do NOT incur gas fees.
+All read data method calls such as retrieving a balance do NOT incur gas fees.
 
 :::
 
 ## Mint Character
 
-**MintCharacter** is used to send a request to mint a new character on the blockchain.
+`MintCharacter` is used to send a request to mint a new character on the blockchain.
 
 The following body is sent to POST http://45.77.189.28:5000/send/transaction
 
@@ -69,7 +69,7 @@ void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FMirageDel
 
 ## Mint Items
 
-**MintItems** is used to send a request to mint new items on the blockchain. 
+`MintItems` is used to send a request to mint new items on the blockchain. 
 
 The following body is sent to POST http://45.77.189.28:5000/send/transaction
 
@@ -126,7 +126,7 @@ void UWearableNFTExample::MintItems(FString abi_hash, FString to, FMirageDelegat
 
 ## Game Item Set Approval
 
-**GameItemSetApproval** is used to confirm an update of a game item.
+`GameItemSetApproval` is used to confirm an update of a game item.
 
 The following body is sent to POST http://45.77.189.28:5000/send/transaction
 
@@ -134,7 +134,7 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 { 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["0xoperatorContractAddress", true] }
 ```
 
-The response is a 'ticket'. 
+The response is a `ticket`. 
 
 The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
@@ -186,7 +186,7 @@ void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOper
 
 ## Get Character Balance
 
-**GetCharacterBalance** is used to check whether a user holds any NFTs. 
+`GetCharacterBalance` is used to check whether a user holds any NFTs. 
 
 The following body is sent to POST http://45.77.189.28:5000/call/method 
 
@@ -230,7 +230,7 @@ void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address,
 
 ## Get Character Token Id
 
-**GetCharacterTokenId** retrieves the unique identifier for a specific Character Token. 
+`GetCharacterTokenId` retrieves the unique identifier for a specific Character Token. 
 
 The following body is sent to POST http://45.77.189.28:5000/result
 
@@ -280,7 +280,7 @@ void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance
 
 ## Change Hat
 
-**ChangeHat** sends a request to alter the hat wearable to red (if the hat is currently blue) or blue (if the hat is currently red).
+`ChangeHat` sends a request to alter the hat wearable to red (if the hat is currently blue) or blue (if the hat is currently red).
 
 The following body is sent to POST http://45.77.189.28:5000/send/transaction
 
@@ -347,7 +347,7 @@ void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasH
 
 ## Get Hat
 
-**GetHat** is used to retrieve the token address for a hat NFT.
+`GetHat` is used to retrieve the token address for a hat NFT.
 
 The following body is sent to POST http://45.77.189.28:5000/call/method
 
@@ -392,7 +392,7 @@ void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FMirageDeleg
 
 ## Get Ticket Result
 
-**GetTicketResult** is used to retrieve the status of a ticket and to see whether a transaction has been successful or not. 
+`GetTicketResult` is used to retrieve the status of a ticket and to see whether a transaction has been successful or not. 
 
 The following body is sent to POST http://45.77.189.28:5000/result
 
@@ -444,7 +444,7 @@ void UWearableNFTExample::GetTicketResult(FString ticketId, FMirageTicketResult 
 
 ## Get Items Balance
 
-**GetItemsBalance** is used to retrieve the number of items for each item type. 
+`GetItemsBalance` is used to retrieve the number of items for each item type. 
 
 The following body is sent to POST http://45.77.189.28:5000/call/method
 

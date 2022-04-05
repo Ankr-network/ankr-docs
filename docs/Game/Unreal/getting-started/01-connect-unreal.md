@@ -16,7 +16,7 @@ baseUrl = "http://45.77.189.28:5000/";
 
 #### STEP TWO
 
-Use the **GetClient** method to send a request to http://45.77.189.28:5000/connect. 
+Use the `GetClient` method to send a request to http://45.77.189.28:5000/connect. 
 Include the `device_id` as a parameter in the body. 
 A response object is returned containing:
 * `uri` deeplink to open metamask, 
@@ -77,7 +77,7 @@ bool UMirageClient::GetClient(FMirageConnectionStatus Status)
 
 #### STEP THREE
 
-If Login via MetaMask is required to authenticate the session. A connection request is sent to metamask with `uri` as a deeplink.
+If login via MetaMask is required to authenticate the session, a connection request is sent to metamask with `uri` as a deeplink.
 
 ```cpp
 FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);

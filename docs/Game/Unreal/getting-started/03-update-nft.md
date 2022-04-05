@@ -3,13 +3,13 @@ title: 03 Update an NFT
 id: unreal-update-nft
 ---
 
-This section describes methods and functions to get NFTs and make updates to them e.g. adding a red hat to a character
+This section describes methods to get NFTs and make updates to them e.g. adding a red hat to a character.
 
 Get NFT Info
 ---
 ---
 
-**GetNFTInfo** is used to retrieve details about an NFT
+`GetNFTInfo` is used to retrieve details about an NFT.
 
 ### URL
 
@@ -71,7 +71,7 @@ Update NFT
 ---
 ---
 
-**UpdateNFT** is used to change NFT characteristics on the blockchain
+`UpdateNFT` is used to change NFT characteristics on the blockchain.
 
 
 ### URL 
@@ -90,7 +90,7 @@ http://45.77.189.28:5000/send/transaction
 
 A `ticket`
 
-The session saved during Init will be used to open metamask. Metamask will show popup to sign or confirm the transaction for that ticket.
+The session saved during a call to `Init` will be used to open metamask. Metamask will show popup to sign or confirm the transaction for that ticket.
 
 ```cpp
 
