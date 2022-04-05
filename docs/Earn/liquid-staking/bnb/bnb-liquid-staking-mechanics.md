@@ -95,7 +95,7 @@ The following entities are involved:
 
 Unstaking aBNBc adds an additional approval step — Step 1. Unstaking aBNBb workflow starts from Step 2. 
 
-1. For aBNBc only, user sends a request to the `aBNBc::approve(aBNBb.address, amount)` to let the `aBNBb` smart contract transfer the user's Liquid tokens.  
+1. For aBNBc only, the user sends a request to the `aBNBc::approve(aBNBb.address, amount)` to let the `aBNBb` smart contract transfer the user's Liquid tokens.  
 
 2. User sends a request to the `BinancePool::unstake(amount)` on Binance Smart Chain. `amount` specifies the amount to be released back to the user.
 
