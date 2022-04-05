@@ -21,7 +21,7 @@ You will need **Unreal Engine** to be installed on your computer. If you don’t
 
 ### Project installation
 
-1. Download 'AnkrSDK.zip' package from "https://github.com/Ankr-network/game-unreal-sdk/tree/main/UnrealPackage".
+1. Download the latest release of 'AnkrSDK.zip' package from https://github.com/Ankr-network/game-unreal-sdk/releases.
 
 2. Open your project folder '[ProjectName].uproject'
 
