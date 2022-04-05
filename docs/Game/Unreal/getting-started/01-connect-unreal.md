@@ -5,40 +5,88 @@ id: unreal-connect-wallet
 
 This section assumes you have already deployed the relevant smart contracts to the blockchain and have smart contract addresses and ABI.
 
+#### STEP ONE
 
-1. Upon initialization, the client is called and a `device_id` is created.  
+Upon initialization, a unique `deviceId` is generated.
 
-	```js
-	deviceId = load->UniqueId;
-	baseUrl = "http://45.77.189.28:5000/";
-	```
+```js
+deviceId = load->UniqueId;
+baseUrl = "http://45.77.189.28:5000/";
+```
 
-2. The Connection status is queried and a `sessionId`is assigned subject to the Login Status.
+#### STEP TWO
 
-	```js
-	GetClient(FMirageConnectionStatus Status)
-	```
+Use the `GetClient` method to send a request to http://45.77.189.28:5000/connect. 
+Include the `device_id` as a parameter in the body. 
+A response object is returned containing:
+* `uri` deeplink to open metamask, 
+* `session`
+* `login` details.
 
-	```js
-	FString recievedUri = JsonObject->GetStringField("uri");
-					FString sessionId = JsonObject->GetStringField("session");
-					bool needLogin = JsonObject->GetBoolField("login");
-					session = sessionId;
-	```
+The 'uri' deeplink only works for mobile devices. For desktop, a QR Code is generated at the time the login button is pressed. The session is saved to a variable for later use.
 
-2. Login via MetaMask is required to authenticate the session. A connection request is sent with the `device_id` as a parameter.
+```cpp
+	
+bool UMirageClient::GetClient(FMirageConnectionStatus Status)
+{
+	http = &FHttpModule::Get();
 
-	```js
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+	Request->OnProcessRequestComplete().BindLambda([Status, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+		{
+			TSharedPtr<FJsonObject> JsonObject;
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
+			
+			if (FJsonSerializer::Deserialize(Reader, JsonObject))
+			{
+				FString recievedUri = JsonObject->GetStringField("uri");
+				FString sessionId	= JsonObject->GetStringField("session");
+				bool needLogin		= JsonObject->GetBoolField("login");
+				session				= sessionId;
+
+				updateNFTExample->Init(deviceId, baseUrl, session);
+				wearableNFTExample->Init(deviceId, baseUrl, session);
+
+				if (needLogin) 
+				{
+#if PLATFORM_ANDROID
+					FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);
+#endif
+				}
+				Status.ExecuteIfBound(true);
+			}
+			else 
+			{
+				Status.ExecuteIfBound(false);
+			}
+
+		});
+
 	FString url = baseUrl + "connect";
-		GEngine->AddOnScreenDebugMessage(1, 2.0f, FColor::Green, url);
 
-		Request->SetURL(url);
-		Request->SetVerb("POST");
-		Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-		Request->SetHeader("Content-Type", TEXT("application/json"));
-		Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\"}");
-		Request->ProcessRequest();
-		return true;
-	```
+	Request->SetURL(url);
+	Request->SetVerb("POST");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\"}");
+	Request->ProcessRequest();
+	return true;
+}
 
-3. If successful, a JSON object is returned with the `session_id` and `URI`. This is now a valid session and any transaction to the blockchain can be performed.  
+```
+
+#### STEP THREE
+
+If login via MetaMask is required to authenticate the session, a connection request is sent to metamask with `uri` as a deeplink.
+
+```cpp
+FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);
+```
+
+If already logged in, a JSON object is returned with the `session_id` and `URI`. This is now a valid session and any transaction to the blockchain can be performed.
+
+---
+
+
+
+
