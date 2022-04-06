@@ -47,7 +47,7 @@ export default function () {
   // }, [portalRoot])
 
   return createPortal(
-    <GlobalMenu isMobile={isMobile} locale="en-US" />,
+    <GlobalMenu project="docs" isMobile={isMobile} locale="en-US" />,
     portalContainer,
   )
 }
