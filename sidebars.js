@@ -2,7 +2,7 @@ module.exports = {
   buildSidebar: [
     {
       type: 'category',
-      label: 'Build',
+      label: '🔨 Build',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -33,19 +33,9 @@ module.exports = {
           items: [
             'Build/1V2/protocol',
             'Build/1V2/public-rpc',
-             {
-              type: 'category',
-              label: '02 - Premium Plan',
-              link: {
-                type: 'generated-index',
-              },
-              items: [
-                'Build/1V2/premium-plan',
-                'Build/1V2/advanced-apis',
-                'Build/1V2/add-endpoints',
-            ],
-            },
-            
+            'Build/1V2/premium-rpc',
+            'Build/1V2/advanced-apis',
+            'Build/1V2/add-endpoints',
             'Build/1V2/node-ops',
             'Build/1V2/scan',
           ],
@@ -68,6 +58,41 @@ module.exports = {
             'Build/Chains/nervos',
             'Build/Chains/polygon',
             'Build/Chains/solana',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'BSC Application Sidechain',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'Build/Bas/about-bas',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Architecture',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'Build/Bas/architecture/bas-architecture',
+              },
+              items: [
+                'Build/Bas/architecture/bas-modules',
+                'Build/Bas/architecture/bas-circ-model-native-bridge',
+                'Build/Bas/architecture/bas-native-bridge',
+                'Build/Bas/architecture/bas-fast-finality-bls-crypto',
+                'Build/Bas/architecture/bas-sys-smart-contracts',
+                'Build/Bas/architecture/bas-governance',
+                'Build/Bas/architecture/bas-runtime-upgrades',
+              ],
+            },
+            'Build/Bas/bas-how-to-launch',
+            'Build/Bas/bas-demo',
+            'Build/Bas/bas-faq',
+            'Build/Bas/bas-glossary',
           ],
         },
         {
@@ -123,7 +148,7 @@ module.exports = {
   earnSidebar: [
     {
       type: 'category',
-      label: 'Earn',
+      label: '💰 Earn',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -183,6 +208,7 @@ module.exports = {
                 'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
                 'Earn/liquid-staking/dot/stake-dot',
                 'Earn/liquid-staking/dot/unstake-dot',
+                'Earn/liquid-staking/dot/dot-liquid-staking-faq',
               ],
             },
             {
@@ -313,47 +339,67 @@ module.exports = {
       ],
     },
   ],
-  gameSidebar: [
-    {
-      type: 'category',
-      label: 'Game',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
-        {
-          type: 'category',
-          label: 'Ankr Unity SDK',
-          link: {
+  gameSidebar: {
+    'Game': [
+      'Game/ankr-game',
+      {
+        type: 'category',
+        label: 'Ankr Unity SDK',
+        link: {
             type: 'generated-index',
           },
-          items: [
-            'Game/overview/about-game',
-            'Game/setting-up/setting-up',
-            {
-              type: 'category',
-              label: 'Get Started',
-              link: {
-                type: 'doc',
-                id: 'Game/getting-started/get-started-game',
-              },
-              items: [
-                'Game/getting-started/game-00',
-                'Game/getting-started/game-01',
-                'Game/getting-started/game-02',
-                'Game/getting-started/game-03',
-                'Game/getting-started/game-04',
-              ],
+        items: [
+          'Game/Unity/about-unity',
+          'Game/Unity/setting-up',
+          {
+            type: 'category',
+            label: 'Get Started',
+            link: {
+              type: 'generated-index',
             },
-            {
-              type: 'category',
-              label: 'How to...',
-              link: {
-                type: 'generated-index',
-              },
-              items: ['Game/how-tos/wallet-game'],
+            items: [
+              'Game/Unity/getting-started/game-00',
+              'Game/Unity/getting-started/game-01',
+              'Game/Unity/getting-started/game-02',
+              'Game/Unity/getting-started/game-03',
+              'Game/Unity/getting-started/game-04',
+            ],
+          },
+          {
+            type: 'category',
+            label: 'How to...',
+            link: {
+              type: 'generated-index',
             },
+            items: ['Game/Unity/how-tos/wallet-game'],
+          },
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Ankr Unreal SDK',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Game/Unreal/about-unreal',
+          'Game/Unreal/setting-up-unreal',
+          {
+            type: 'category',
+            label: 'Get Started',
+            link: {
+              type: 'generated-index',
+            },
+            items: [
+              'Game/Unreal/getting-started/unreal-before',
+              'Game/Unreal/getting-started/unreal-connect-wallet',
+              'Game/Unreal/getting-started/unreal-send-retrieve',
+              'Game/Unreal/getting-started/unreal-update-nft',
+              'Game/Unreal/getting-started/unreal-mint-nft',
+            ],
+          },
+        ],
+      },
             {
               type: 'category',
               label: 'Reference',
@@ -361,16 +407,13 @@ module.exports = {
                 type: 'generated-index',
               },
               items: ['Game/reference/game-reference'],
-            },
-          ],
-        },
-      ],
-    },
-  ],
+          },
+        ],
+      },
   governanceSidebar: [
     {
       type: 'category',
-      label: 'Tokens+Governance',
+      label: '⚖️ Tokens+Governance',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -378,36 +421,24 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Tokens',
+          label: 'Governance',
           collapsed: false,
           link: {
             type: 'generated-index',
           },
           items: [
             'Tokens&Governance/about-ankr-tokens',
-            'Tokens&Governance/buy-ankr',
+            'Tokens&Governance/governance',
             'Tokens&Governance/tokenomics',
           ],
         },
-        {
-          type: 'category',
-          label: 'Governance',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Tokens&Governance/governance',
-            'Tokens&Governance/write-proposal',
-            'Tokens&Governance/vote-proposal',
-            ],
-        }, 
-          ],
-        },
       ],
+    },
+  ],
   communitySidebar: [
     {
       type: 'category',
-      label: 'Community',
+      label: '👥 Community',
       collapsible: false,
       link: {
         type: 'generated-index',
@@ -428,7 +459,7 @@ module.exports = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'Tutorials',
+      label: '📚 Tutorials',
       collapsible: false,
       link: {
         type: 'generated-index',
