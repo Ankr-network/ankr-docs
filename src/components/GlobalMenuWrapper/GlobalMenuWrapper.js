@@ -1,32 +1,27 @@
 import { GlobalMenu } from '@ankr.com/global-menu'
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './GlobalMenuWrapper.module.css'
 
-const getIsMobile = () => window.innerWidth <= 1235
+const getIsMobile = () => window.innerWidth <= 996
 
 export default function () {
   const [isVisible, setVisible] = useState(false)
-  const portalContainer = document.createElement('div')
+
+  const portalContainer = useMemo(() => document.createElement('div'), [])
   portalContainer.classList.add(styles.root)
+
   const [isMobile, setMobile] = useState(getIsMobile())
 
-  const renderMenu = ({ before }) => {
-    const portalRoot = document.querySelector('.navbar__brand')
+  const renderMenu = () => {
+    const portalRoot = document.querySelector('.navbar__logo')
     if (portalRoot) {
-      if (before) {
-        portalRoot.parentNode.insertBefore(portalContainer, portalRoot)
-      } else {
-        portalRoot.parentNode.insertBefore(
-          portalContainer,
-          portalRoot.nextSibling,
-        )
-      }
+      portalRoot.parentNode.insertBefore(portalContainer, portalRoot)
     }
   }
 
   const handleResize = () => {
-    renderMenu({ before: !getIsMobile() })
+    renderMenu()
     setMobile(getIsMobile())
   }
 
@@ -41,10 +36,6 @@ export default function () {
       window.removeEventListener('resize', handleResize)
     }
   }, [isVisible, isMobile])
-
-  // useLayoutEffect(() => {
-  //   renderMenu({ before: true })
-  // }, [portalRoot])
 
   return createPortal(
     <GlobalMenu project="docs" isMobile={isMobile} locale="en-US" />,
