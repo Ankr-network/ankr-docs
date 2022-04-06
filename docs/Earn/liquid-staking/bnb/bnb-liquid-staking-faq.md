@@ -17,6 +17,7 @@ Yes — there is a [user guide](https://docs.binance.org/smart-chain/wallet/meta
  
 1.002 BNB: 1 BNB, plus the relayer fee — 0.002 BNB. You must also count in the gas fee on top for sending the transaction.
 
+
 ### Why do I get less aBNBc than aBNBb for my 1 BNB?
 
 aBNBb is a rebasing token that changes in number, which is why we decided 1 aBNBb is equal to 1 BNB. 
