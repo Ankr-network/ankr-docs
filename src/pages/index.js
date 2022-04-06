@@ -7,6 +7,7 @@ import Features from '../components/Features/Features'
 import Social from '../components/Social/Social'
 import Footer from '../components/Footer/Footer'
 import GlobalMenuWrapper from '../components/GlobalMenuWrapper/GlobalMenuWrapper'
+import BrowserOnly from '@docusaurus/BrowserOnly'
 const Holder = require('../../static/img/hero.svg').default
 
 function HomepageHeader() {
@@ -36,7 +37,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext()
   return (
     <Layout title={`${siteConfig.title}`} description="Ankr Docs">
-      <GlobalMenuWrapper />
+      <BrowserOnly>{() => <GlobalMenuWrapper />}</BrowserOnly>
       <HomepageHeader />
       <main>
         <Features />
