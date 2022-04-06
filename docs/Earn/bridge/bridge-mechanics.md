@@ -5,7 +5,14 @@ id: bridge-mechanics
 
 # Ankr Bridge mechahics
 
-# Briding workflow
+## Smart contracts
+
+Smart contracts involved in bridging Liquid Staking tokens are:
+* [Ankr Ethereum bridge](https://etherscan.io/address/0xc437df90b37c1db6657339e31bfe54627f0e7181) — sends assets to other blockchains and receives assets sent to Ethereum.
+* [Ankr Polygon bridge](https://polygonscan.com/address/0x31be0fa706e391a88c3a09cc13112bd55e0887f5) — sends assets to other blockchains and receives assets sent to Polygon.
+* [Ankr Binance bridge](https://bscscan.com/address/0xc437df90b37c1db6657339e31bfe54627f0e7181) — sends assets to other blockchains and receives assets sent to Binance.
+
+## Briding workflow
 
 The mechanics of what's going on under the hood when a user transfers their funds between network can be described as following:
 
@@ -28,7 +35,7 @@ The mechanics of what's going on under the hood when a user transfers their fund
 
 8. The user sees the transferred assets deposited to their wallet on the detination network.
 
-To sum up, the flow in any direction is the same: `approve` (if necessary) -> `deposit` -> `notarize` -> `withdraw`.
+To sum up, the flow in any direction is the same: `approve()` (if necessary) -> `deposit()` -> `notarize` -> `withdraw()`.
 
 ## Additional information
 
