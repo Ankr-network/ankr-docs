@@ -156,13 +156,14 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@ankr.com/global-menu@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@ankr.com/global-menu/-/global-menu-1.0.10.tgz#9fdcbfbf688314b91bd28141b17a34ab9cfe3db4"
-  integrity sha512-MzgkosqOrSdNLSCgzjN3G/OO1bSSxkVqa6zhzpNkCZM9yOnEZCckBA4QSxRvP7lI55zHxVfPC39StWi8VT8nZg==
+"@ankr.com/global-menu@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@ankr.com/global-menu/-/global-menu-1.0.14.tgz#d9693f2c3296ae8850c948864f5267552998e553"
+  integrity sha512-RhJHi55WJnQkhKFOZmFPUg+7xC/42oS2vs9lFZMBzYksfKapZODm4kZzV6VZTxVw0pRe43kGO4fQ91Vua/cBpQ==
   dependencies:
     "@material-ui/core" "^4.12.3"
     "@material-ui/styles" "^4.11.4"
+    "@types/react-custom-scrollbars" "4.0.10"
     classnames "^2.3.1"
     jss "^10.9.0"
     react-custom-scrollbars "^4.2.1"
@@ -2520,6 +2521,13 @@
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
+
+"@types/react-custom-scrollbars@4.0.10":
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@types/react-custom-scrollbars/-/react-custom-scrollbars-4.0.10.tgz#f31289df0da95cdb0dfa2a6bdccda7bc909690e6"
+  integrity sha512-1T430E+usndUjymkXB8k/zGpWehggircq/QaQMuFLMJceccAcD9vcmbUXF1LjeVP/+P4wI/bad6BF1E+7IGlqA==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-router-config@*":
   version "5.0.6"
