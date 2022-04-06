@@ -1,6 +1,6 @@
 .features {
   background-color: #f2f5fa;
-  padding: 0 16px 70px;
+  padding-bottom: 100px;
 }
 
 .container {
@@ -10,6 +10,7 @@
 @media (max-width: 1235px) {
   .container {
     max-width: 600px;
+    padding: 16px;
   }
 }
 .wrapper {
@@ -27,7 +28,7 @@
   background-color: white;
   border-radius: 30px;
   padding: 32px 60px 72px 50px;
-  margin: 0 10px 32px 10px;
+  margin: 0 10px 40px 10px;
   width: calc(50% - 20px);
 }
 .title {
@@ -137,7 +138,6 @@
   }
 
   .item {
-    margin-bottom: 20px;
     width: calc(100% - 20px);
   }
 }
