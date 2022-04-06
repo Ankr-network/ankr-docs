@@ -15,7 +15,14 @@ Yes — there is a [user guide](https://docs.binance.org/smart-chain/wallet/meta
 
 ### What is the minimum amount of BNB I can stake?
  
-1 BNB. A relayer fee is added on top of it — 0.002 BNB. Effectively, when staking 1 BNB, you send out 1.002 BNB..
+1.002 BNB: 1 BNB, plus the relayer fee — 0.002 BNB. You must also count in the gas fee on top for sending the transaction.
+
+
+### Why do I get less aBNBc than aBNBb for my 1 BNB?
+
+aBNBb is a rebasing token that changes in number, which is why we decided 1 aBNBb is equal to 1 BNB. 
+However, aBNBc only changes in value, which is why the amount of aBNBc you get when staking is calculated by the formula `stake * exchange_ratio`. 
+The exchange ratio is calculated like this: `totals_supply_of_abnbc / (total_staked_bnb + total_rewards_for_staked_bnb - total_unstaked_abnbb_and_abnbc)`. 
 
 
 ### Is there a maximum amount I can stake?
