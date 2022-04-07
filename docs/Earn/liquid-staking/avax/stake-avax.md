@@ -5,18 +5,7 @@ id: stake-avax
 
 ## Use a supported browser extension with the Avalanche network
 
-## Before you tart
-
-:::info Ensure the following:
-
-You are using a Chrome Browser.
-
-You have a **Polkadot wallet **chrome extension installed.
-
-You have the required amount of DOT you wish to contribute in your Polkadot wallet (chrome extension) plus an amount for gas fees.
-
-You have a Metamask wallet.
-:::
+The choice is up to you. We recommend using Chrome Browser and Metamask wallet extension.
 
 ## Get AVAX tokens to stake
 
@@ -41,7 +30,7 @@ There are several ways how to buy AVAX tokens:
 
 ### Send AVAX
 
-Now you can send the AVAX from your Avalanche wallet to your MetaM=mask wallet.
+Now you can send the AVAX from your Avalanche wallet to your Metamask wallet.
 
 1. Select "**Send**"
 
@@ -57,11 +46,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 
 1. Transfer tokens through [Avalanche Bridge](https://bridge.avax.network/login) using your Metamask browser extension (Ethereum network).
 2. Once you transferred tokens to Avalanche network using Avalanche Bridge, make sure that your Metamask browser extension is connected using Avalanche network.
-3. Sell the token that you bridged from Ethereum to Avalanche network in a decentralized exchange on Avalanche network. For example:
-
-[Pangolin](https://pangolin.exchange), 
-[Lydia Finance](https://www.lydia.finance), 
-[TraderJoe](https://www.traderjoexyz.com/#/home))
+3. Sell the token that you bridged from Ethereum to Avalanche network in a decentralized exchange on Avalanche network. For example, [Pangolin](https://pangolin.exchange), [Lydia Finance](https://www.lydia.finance), or [TraderJoe](https://www.traderjoexyz.com/#/home).
 
 ## How to stake AVAX
 
