@@ -22,6 +22,6 @@ Currently, you can yield farm on the following platforms
 | [wBNB/aBNBb](https://ellipsis.finance/pool/6)                                                                          | [Ellipsis Finance](https://ellipsis.finance)      | [aBNBb/wBNB liquid pool on Ellipsis](https://bscscan.com/token/0xf71A0bCC3Ef8a8c5a28fc1BC245e394A8ce124ec#balances) + [aBNBb token](https://bscscan.com/token/0xBb1Aa6e59E5163D8722a122cd66EBA614b59df0d#balances)                          |
 | [wBNB/aBNBb](https://app.acryptos.com/stableswap/abnbb/)                                                               | [aCryptoS](https://app.acryptos.com/)             | [aBNBb/wBNB liquid pool token on aCrpytoS:](https://bscscan.com/token/0xBb1Aa6e59E5163D8722a122cd66EBA614b59df0d)                                                                                                                           |
 
-::: note
+:::note
 No token given to the depositor in the farming vault on aCryptoS. 
 :::
