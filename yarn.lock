@@ -156,10 +156,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@ankr.com/global-menu@^1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@ankr.com/global-menu/-/global-menu-1.0.14.tgz#d9693f2c3296ae8850c948864f5267552998e553"
-  integrity sha512-RhJHi55WJnQkhKFOZmFPUg+7xC/42oS2vs9lFZMBzYksfKapZODm4kZzV6VZTxVw0pRe43kGO4fQ91Vua/cBpQ==
+"@ankr.com/global-menu@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@ankr.com/global-menu/-/global-menu-1.0.17.tgz#7d39f80193d05ad0bf8b7dad16c357efe71d1b4c"
+  integrity sha512-b5yeg8a2KSIKj4iCAJeMTpWgRsgP3REiu4TxL0bShNOV6MYQpW0lmJH5FQ743nw0amjCsVxk7iNWTZVTSee0yA==
   dependencies:
     "@material-ui/core" "^4.12.3"
     "@material-ui/styles" "^4.11.4"
