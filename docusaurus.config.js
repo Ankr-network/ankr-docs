@@ -72,7 +72,6 @@
         disableSwitch: true,
       },
       navbar: {
-        title: "Docs",
         logo: {
           alt: "Ankr Logo",
           src: "img/ankr-logo.svg",
