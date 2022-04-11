@@ -5,11 +5,7 @@ id: bridge-tokens
 
 # Bridge tokens
 
-:::info
-
-Current Bridge version supports bridging aMATICb. Other assets will be added in later releases. 
-
-:::
+We're going to explain bridging, using aMATICb.
 
 ## Bridge aMATICb
 
@@ -23,8 +19,8 @@ Current Bridge version supports bridging aMATICb. Other assets will be added in 
 6. Ankr Bridge shows you the sending progress. Wait till the cross-chain transaction successfully finishes. 
    
    :::caution
-   :::
    Stay on the page until sending has completed in order to receive the bridged tokens. Do not navigate away or close the tab. If bridging fails for any reason, see the **Finish Bridge** section below.
+   :::
 7. To receive the bridged aMATICb on the destination network, switch to it by clicking *Switch to network-name* and click *Confirm* in your wallet.
 8. Receive aMATICb on the destination network by clicking *Receive* and confirming it in your wallet. Gas fee applies.
    
