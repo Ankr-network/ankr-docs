@@ -156,16 +156,15 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@ankr.com/global-menu@^1.0.32":
-  version "1.0.32"
-  resolved "https://registry.yarnpkg.com/@ankr.com/global-menu/-/global-menu-1.0.32.tgz#078f2d7b080e64b2b85ac89294ef05c9c846057b"
-  integrity sha512-BInlyCdDl2fCZnueiOgpIYbk4jAJPW6vS6NA6GPuANRgPUlzWOXDbMQCF7L/0CWaBsF8sM67PIGJwVjhXvOaig==
+"@ankr.com/global-menu@^1.0.41":
+  version "1.0.41"
+  resolved "https://registry.yarnpkg.com/@ankr.com/global-menu/-/global-menu-1.0.41.tgz#41594047eabf2be4827e575a089624012522f0c5"
+  integrity sha512-xRApZ4mWaznX7G94irDPBidle0s0BgA2kS1FbZAY+wNNbbfTWV/f7wtdo8Cp7vQxb/yLk/sb7BbRK53o+6qYxA==
   dependencies:
     "@material-ui/core" "^4.12.3"
     "@material-ui/styles" "^4.11.4"
     "@types/react-custom-scrollbars" "4.0.10"
     classnames "^2.3.1"
-    jss "^10.9.0"
     react-custom-scrollbars "^4.2.1"
     react-intl-universal "^2.4.5"
     react-router "^5.2.1"
@@ -5926,7 +5925,7 @@ jss-plugin-vendor-prefixer@^10.5.1:
     css-vendor "^2.0.8"
     jss "10.9.0"
 
-jss@10.9.0, jss@^10.5.1, jss@^10.9.0:
+jss@10.9.0, jss@^10.5.1:
   version "10.9.0"
   resolved "https://registry.yarnpkg.com/jss/-/jss-10.9.0.tgz#7583ee2cdc904a83c872ba695d1baab4b59c141b"
   integrity sha512-YpzpreB6kUunQBbrlArlsMpXYyndt9JATbt95tajx0t4MTJJcCJdd4hdNpHmOIDiUJrF/oX5wtVFrS3uofWfGw==
