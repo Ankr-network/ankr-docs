@@ -156,7 +156,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'Earn/earn-introduction',
+          id: 'earn/earn-introduction',
           label: 'Introduction',
         },
         {
@@ -166,7 +166,7 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'Earn/liquid-staking/liquid-staking',
+            id: 'earn/liquid-staking/liquid-staking',
           },
           items: [
             {
@@ -174,13 +174,13 @@ module.exports = {
               label: 'AVAX',
               link: {
                 type: 'doc',
-                id: 'Earn/liquid-staking/avax/avax-liquid-staking-introduction',
+                id: 'earn/liquid-staking/avax/avax-liquid-staking-introduction',
               },
               items: [
-                'Earn/liquid-staking/avax/avax-liquid-staking-mechanics',
-                'Earn/liquid-staking/avax/stake-avax',
-                'Earn/liquid-staking/avax/unstake-avax',
-                'Earn/liquid-staking/avax/avax-liquid-staking-faq',
+                'earn/liquid-staking/avax/avax-liquid-staking-mechanics',
+                'earn/liquid-staking/avax/stake-avax',
+                'earn/liquid-staking/avax/unstake-avax',
+                'earn/liquid-staking/avax/avax-liquid-staking-faq',
               ],
             },
             {
@@ -188,13 +188,13 @@ module.exports = {
               label: 'BNB',
               link: {
                 type: 'doc',
-                id: 'Earn/liquid-staking/bnb/bnb-liquid-staking-introduction',
+                id: 'earn/liquid-staking/bnb/bnb-liquid-staking-introduction',
               },
               items: [
-                'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
-                'Earn/liquid-staking/bnb/stake-bnb',
-                'Earn/liquid-staking/bnb/unstake-bnb',
-                'Earn/liquid-staking/bnb/bnb-liquid-staking-faq',
+                'earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
+                'earn/liquid-staking/bnb/stake-bnb',
+                'earn/liquid-staking/bnb/unstake-bnb',
+                'earn/liquid-staking/bnb/bnb-liquid-staking-faq',
               ],
             },
             {
@@ -202,13 +202,13 @@ module.exports = {
               label: 'DOT',
               link: {
                 type: 'doc',
-                id: 'Earn/liquid-staking/dot/dot-liquid-staking-introduction',
+                id: 'earn/liquid-staking/dot/dot-liquid-staking-introduction',
               },
               items: [
-                'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
-                'Earn/liquid-staking/dot/stake-dot',
-                'Earn/liquid-staking/dot/unstake-dot',
-                'Earn/liquid-staking/dot/dot-liquid-staking-faq',
+                'earn/liquid-staking/dot/dot-liquid-staking-mechanics',
+                'earn/liquid-staking/dot/stake-dot',
+                'earn/liquid-staking/dot/unstake-dot',
+                'earn/liquid-staking/dot/dot-liquid-staking-faq',
               ],
             },
             {
@@ -216,13 +216,13 @@ module.exports = {
               label: 'ETH',
               link: {
                 type: 'doc',
-                id: 'Earn/liquid-staking/eth/eth-liquid-staking-introduction',
+                id: 'earn/liquid-staking/eth/eth-liquid-staking-introduction',
               },
               items: [
-                'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
-                'Earn/liquid-staking/eth/stake-eth',
-                'Earn/liquid-staking/eth/unstake-eth',
-                'Earn/liquid-staking/eth/eth-liquid-staking-faq',
+                'earn/liquid-staking/eth/eth-liquid-staking-mechanics',
+                'earn/liquid-staking/eth/stake-eth',
+                'earn/liquid-staking/eth/unstake-eth',
+                'earn/liquid-staking/eth/eth-liquid-staking-faq',
               ],
             },
             {
@@ -230,13 +230,13 @@ module.exports = {
               label: 'FTM',
               link: {
                 type: 'doc',
-                id: 'Earn/liquid-staking/ftm/ftm-liquid-staking-introduction',
+                id: 'earn/liquid-staking/ftm/ftm-liquid-staking-introduction',
               },
               items: [
-                'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
-                'Earn/liquid-staking/ftm/stake-ftm',
-                'Earn/liquid-staking/ftm/unstake-ftm',
-                'Earn/liquid-staking/ftm/ftm-liquid-staking-faq',
+                'earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
+                'earn/liquid-staking/ftm/stake-ftm',
+                'earn/liquid-staking/ftm/unstake-ftm',
+                'earn/liquid-staking/ftm/ftm-liquid-staking-faq',
               ],
             },
             {
@@ -244,13 +244,13 @@ module.exports = {
               label: 'KSM',
               link: {
                 type: 'doc',
-                id: 'Earn/liquid-staking/ksm/ksm-liquid-staking-introduction',
+                id: 'earn/liquid-staking/ksm/ksm-liquid-staking-introduction',
               },
               items: [
-                'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
-                'Earn/liquid-staking/ksm/stake-ksm',
-                'Earn/liquid-staking/ksm/unstake-ksm',
-                'Earn/liquid-staking/ksm/ksm-liquid-staking-faq',
+                'earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
+                'earn/liquid-staking/ksm/stake-ksm',
+                'earn/liquid-staking/ksm/unstake-ksm',
+                'earn/liquid-staking/ksm/ksm-liquid-staking-faq',
               ],
             },
             {
@@ -258,13 +258,13 @@ module.exports = {
               label: 'MATIC',
               link: {
                 type: 'doc',
-                id: 'Earn/liquid-staking/matic/matic-liquid-staking-introduction',
+                id: 'earn/liquid-staking/matic/matic-liquid-staking-introduction',
               },
               items: [
-                'Earn/liquid-staking/matic/matic-liquid-staking-mechanics',
-                'Earn/liquid-staking/matic/stake-matic',
-                'Earn/liquid-staking/matic/unstake-matic',
-                'Earn/liquid-staking/matic/matic-liquid-staking-faq',
+                'earn/liquid-staking/matic/matic-liquid-staking-mechanics',
+                'earn/liquid-staking/matic/stake-matic',
+                'earn/liquid-staking/matic/unstake-matic',
+                'earn/liquid-staking/matic/matic-liquid-staking-faq',
               ],
             },
           ],
@@ -276,7 +276,7 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'Earn/liquid-crowdloan/liquid-crowdloan',
+            id: 'earn/liquid-crowdloan/liquid-crowdloan',
           },
           items: [],
         },
@@ -287,9 +287,9 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'Earn/defi/defi-introduction',
+            id: 'earn/defi/defi-introduction',
           },
-          items: ['Earn/defi/yield-farm', 'Earn/defi/provide-liquidity-to-dex'],
+          items: ['earn/defi/yield-farm', 'earn/defi/provide-liquidity-to-dex'],
         },
         {
           type: 'category',
@@ -298,9 +298,9 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'Earn/bridge/bridge-introduction',
+            id: 'earn/bridge/bridge-introduction',
           },
-          items: ['Earn/bridge/bridge-mechanics', 'Earn/bridge/bridge-tokens'],
+          items: ['earn/bridge/bridge-mechanics', 'earn/bridge/bridge-tokens'],
         },
         {
           type: 'category',
@@ -309,9 +309,9 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'Earn/switch/switch-introduction',
+            id: 'earn/switch/switch-introduction',
           },
-          items: ['Earn/switch/switch-mechanics'],
+          items: ['earn/switch/switch-mechanics'],
         },
         {
           type: 'category',
@@ -319,21 +319,19 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           link: {
-            type: 'generated-index',
-            keywords: [
-              'reference, wallets, token, addresses, tokens, micropools, makers, sdk, principles',
-            ],
+            type: 'doc',
+            id: 'earn/reference/introduction',
           },
           items: [
-            'Earn/reference/earn-glossary',
-            'Earn/reference/earn-compatible-wallets',
-            'Earn/reference/earn-principles',
-            'Earn/reference/ls-smart-contract-addresses-mn',
-            'Earn/reference/ls-smart-contract-addresses-tn',
-            'Earn/reference/micropools',
-            'Earn/reference/liquid-crowdloan-market-makers',
-            'Earn/reference/parachain-sdk',
-            'Earn/reference/brand-assets',
+            'earn/reference/earn-glossary',
+            'earn/reference/earn-compatible-wallets',
+            'earn/reference/earn-principles',
+            'earn/reference/ls-smart-contract-addresses-mn',
+            'earn/reference/ls-smart-contract-addresses-tn',
+            'earn/reference/micropools',
+            'earn/reference/liquid-crowdloan-market-makers',
+            'earn/reference/parachain-sdk',
+            'earn/reference/brand-assets',
           ],
         },
       ],

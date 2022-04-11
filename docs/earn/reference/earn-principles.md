@@ -1,5 +1,5 @@
 ---
-title: ANRK Earn Principles
+title: Earn Principles
 id: earn-principles
 ---
 

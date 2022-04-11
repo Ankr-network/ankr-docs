@@ -120,27 +120,27 @@
             position: "right",
             items: [
               {
-                to: "Earn/liquid-staking",
+                to: "earn/liquid-staking",
                 label: "Liquid Staking",
               },
               {
-                to: "Earn/liquid-crowdloan/liquid-crowdloan",
+                to: "earn/liquid-crowdloan/liquid-crowdloan",
                 label: "Liquid Crowdloan",
               },
               {
-                to: "Earn/defi/defi-introduction",
+                to: "earn/defi/defi-introduction",
                 label: "DeFi",
               },
               {
-                to: "Earn/bridge/bridge-introduction",
+                to: "earn/bridge/bridge-introduction",
                 label: "Bridge",
               },
               {
-                to: "Earn/switch/switch-introduction",
+                to: "earn/switch/switch-introduction",
                 label: "Switch",
               }, 
             {
-              to: 'category/reference',
+              to: 'earn/reference/introduction',
               label: 'Reference',
             },
           ],
