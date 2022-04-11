@@ -1,6 +1,6 @@
 ---
 title: Introduction
-id: defi-introduction
+id: introduction
 ---
 
 ## What is Ankr DeFi?

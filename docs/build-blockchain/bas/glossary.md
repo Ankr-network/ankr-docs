@@ -1,6 +1,6 @@
 ---
 title: Glossary
-id: bas-glossary
+id: glossary
 ---
 
 ### BAS

@@ -1,6 +1,6 @@
 ---
 title: Ankr Bridge
-id: bridge-introduction
+id: introduction
 ---
 # Ankr Bridge
 

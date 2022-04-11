@@ -1,6 +1,6 @@
 ---
 title: FTM FAQ
-id: ftm-liquid-staking-faq
+id: faq
 ---
 
 ### Which wallets are compatible with the aFTMb tokens?

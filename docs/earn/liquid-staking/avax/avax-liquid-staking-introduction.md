@@ -1,6 +1,6 @@
 ---
 title: Avalanche Liquid Staking
-id: avax-liquid-staking-introduction
+id: introduction
 ---
 
 # Avalanche Liquid Staking

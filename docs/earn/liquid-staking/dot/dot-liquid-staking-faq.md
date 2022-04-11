@@ -1,6 +1,6 @@
 ---
 title: DOT FAQ
-id: dot-liquid-staking-faq
+id: faq
 ---
 
 ### Which wallets are compatible with the aDOTb tokens?

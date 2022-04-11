@@ -1,6 +1,6 @@
 ---
 title: Kusama Liquid Staking
-id: ksm-liquid-staking-introduction
+id: introduction
 ---
 
 Kusama Staking uses nominated proof-of-stake (NPoS) as its foundation consensus mechanism. By staking KSM on the Kusama blockchain, participants earn rewards and help to bring economic security to the networks. 

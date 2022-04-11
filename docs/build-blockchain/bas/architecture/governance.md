@@ -1,6 +1,6 @@
 ---
 title: Governance
-id: bas-governance
+id: governance
 ---
 
 Each BAS should have on-chain governance to let users vote for the new proposal on the chain. 

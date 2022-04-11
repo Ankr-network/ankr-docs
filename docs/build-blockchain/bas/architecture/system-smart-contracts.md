@@ -1,6 +1,6 @@
 ---
 title: System Smart Contracts
-id: bas-sys-smart-contracts
+id: sys-smart-contracts
 ---
 
 Each BAS sidechain is technology-agnostic, meaning that it’s able to include or modify any module inside BAS and bring any consensus or runtime execution environment. By default, BAS provides an EVM execution environment with a predefined set of system smart contracts for platform operation. If BAS developers want to bring more functionality to their sidechain then they should implement it on their own or contribute it to the BAS official template to extend the default module set with additional extensions that can be used by other developers in the future.

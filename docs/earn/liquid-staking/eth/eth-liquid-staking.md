@@ -1,6 +1,6 @@
 ---
 title: Ethereum Liquid Staking
-id: eth-liquid-staking-introduction
+id: introduction
 ---
 
 [Ankr Earn](https://www.ankr.com/earn/) offers ETH holders the opportunity to stake ETH and claim two different types of ETH2 Liquid Staking tokens:

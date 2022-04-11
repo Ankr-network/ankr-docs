@@ -1,6 +1,6 @@
 ---
 title: AVAX FAQ
-id: avax-liquid-staking-faq
+id: faq
 ---
 
 ### Which wallets are compatible with the aAVAXb tokens?

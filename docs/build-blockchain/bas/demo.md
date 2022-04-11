@@ -1,6 +1,6 @@
 ---
 title: Demo
-id: bas-demo
+id: demo
 ---
 
 There is a demo application where you can try BAS. 

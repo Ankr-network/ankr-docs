@@ -1,6 +1,6 @@
 ---
 title: Liquid Staking Mechanics
-id: ksm-liquid-staking-mechanics
+id: staking-mechanics
 ---
 # Staking mechanics
 

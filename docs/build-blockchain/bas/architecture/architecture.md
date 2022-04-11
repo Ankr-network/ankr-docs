@@ -1,6 +1,6 @@
 ---
 title: BAS Architecture
-id: bas-architecture
+id: architecture
 ---
 
 BAS is a modular framework for creating BSC-compatible sidechains. 

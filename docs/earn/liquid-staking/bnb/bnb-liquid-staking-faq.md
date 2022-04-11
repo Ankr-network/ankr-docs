@@ -1,6 +1,6 @@
 ---
 title: BNB FAQ
-id: bnb-liquid-staking-faq
+id: faq
 ---
 
 ### Which wallets are compatible with the aBNBb/aBNBc tokens?

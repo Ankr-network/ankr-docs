@@ -1,6 +1,6 @@
 ---
 title: How to Launch a BAS
-id: bas-how-to-launch
+id: how-to-launch
 ---
 
 To launch a BAS, follow these steps:

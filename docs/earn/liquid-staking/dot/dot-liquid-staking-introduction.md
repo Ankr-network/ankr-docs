@@ -1,6 +1,6 @@
 ---
 title: Polkadot Liquid Staking
-id: dot-liquid-staking-introduction
+id: introduction
 ---
 
 Polkadot Staking uses nominated proof-of-stake (NPoS) as its foundation consensus mechanism. By staking DOT on the Polkadot blockchain, participants earn rewards and help to bring security to the network. 

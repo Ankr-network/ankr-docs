@@ -1,6 +1,6 @@
 ---
 title: ETH FAQ
-id: eth-liquid-staking-faq
+id: faq
 ---
 
 ### Are there any docs about the ETH staking and how I set up my wallet etc.?

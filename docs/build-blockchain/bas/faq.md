@@ -1,6 +1,6 @@
 ---
 title: FAQ
-id: bas-faq
+id: faq
 ---
 
 ### What is BAS? 

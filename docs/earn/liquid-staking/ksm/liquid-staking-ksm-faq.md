@@ -1,6 +1,6 @@
 ---
 title: KSM FAQ
-id: ksm-liquid-staking-faq
+id: faq
 ---
 
 ### Which wallets are compatible with the aKSMb tokens?

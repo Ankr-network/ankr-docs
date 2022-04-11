@@ -1,6 +1,6 @@
 ---
 title: Liquid Staking
-id: liquid-staking
+id: introduction
 ---
 
 Liquid Staking solves the problem of locked up liquidity when staking assets on Proof-of-Stake networks.

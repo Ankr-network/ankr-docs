@@ -79,14 +79,14 @@
         items: [
           {
             type: "doc",
-            docId: "About/about-ankr",
-            position: "right",
+            docId: "about/about-ankr",
+            position: "left",
             label: "⚓️ About Ankr",
           },
           {
             type: "dropdown",
             label: "🔨" + Array(2).fill("\xa0").join("") + "Build",
-            position: "right",
+            position: "left",
             items: [
               {
                 to: "category/get-started",
@@ -101,7 +101,7 @@
                 label: "Chains",
               },
               {
-                to: "Build/Bas/about-bas",
+                to: "build-blockchain/bas/introduction",
                 label: "BSC Application Sidechain",
               },
               {
@@ -109,7 +109,7 @@
                 label: "Guides",
               },
               {
-                to: "Build/Support/get-support",
+                to: "build-blockchain/support/get-support",
                 label: "Support",
               },
             ],
@@ -117,28 +117,28 @@
           {
             type: "dropdown",
             label: "💰" + Array(2).fill("\xa0").join("") + "Earn",
-            position: "right",
+            position: "left",
             items: [
               {
-                to: "earn/liquid-staking",
+                to: "earn/liquid-staking/",
                 label: "Liquid Staking",
               },
               {
-                to: "earn/liquid-crowdloan/liquid-crowdloan",
-                label: "Liquid Crowdloan",
-              },
-              {
-                to: "earn/defi/defi-introduction",
+                to: "earn/defi/introduction",
                 label: "DeFi",
               },
               {
-                to: "earn/bridge/bridge-introduction",
+                to: "earn/bridge/introduction",
                 label: "Bridge",
               },
               {
-                to: "earn/switch/switch-introduction",
+                to: "earn/switch/introduction",
                 label: "Switch",
-              }, 
+              },
+              {
+                to: "earn/liquid-crowdloan/introduction",
+                label: "Liquid Crowdloan",
+              },
             {
               to: 'earn/reference/introduction',
               label: 'Reference',
@@ -148,44 +148,33 @@
         {
           type: 'dropdown',
           label: '🚀' + Array(2).fill('\xa0').join('') + 'Game',
-          position: 'right',
+          position: 'left',
           items: [
             {
-              to: 'Game/ankr-game',
+              to: 'game/ankr-game',
               label: 'Overview',
             },
             {
-              to: 'Game/Unity/about-unity',
+              to: 'game/unity/about-unity',
               label: 'Unity SDK',
             },
             {
-              to: 'Game/Unreal/about-unreal',
+              to: 'game/unreal/about-unreal',
               label: 'Unreal SDK',
             },
           ],
-        }, 
-          {
-            type: "dropdown",
-            label: "👥" + Array(2).fill("\xa0").join("") + "Community",
-            position: "right",
-            items: [
-              {
-                to: "Community/channels",
-                label: "Community Channels",
-              },
-            ],
-          },
+        },
           {
             type: "docSidebar",
             sidebarId: "governanceSidebar",
-            position: "right",
+            position: "left",
             label:
               "🏦" + Array(2).fill("\xa0").join("") + "Tokens & Governance",
           },
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
-            position: "right",
+            position: "left",
             label: "📚" + Array(2).fill("\xa0").join("") + "Tutorials",
           },
         ],

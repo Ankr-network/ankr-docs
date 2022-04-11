@@ -33,7 +33,7 @@ Mumbai Testnet- [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com
 ### Polygon RPC Methods​
 
 Polygon uses standard JSON RPC methods. \
-View [Supported JSON RPC Methods](@site/docs/Build/Guides/evm-supported-requests.md)
+View [Supported JSON RPC Methods](@site/docs/build-blockchain/guides/evm-supported-requests.md)
 
 ### Examples
 

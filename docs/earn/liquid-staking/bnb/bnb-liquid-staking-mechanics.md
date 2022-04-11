@@ -1,6 +1,6 @@
 ---
 title: Liquid Staking Mechanics
-id: bnb-liquid-staking-mechanics
+id: staking-mechanics
 ---
 
 # Staking mechanics

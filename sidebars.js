@@ -14,7 +14,7 @@ module.exports = {
           link: {
             type: 'generated-index',
           },
-          items: ['Build/Concepts/build-concepts'],
+          items: ['build-blockchain/concepts/build-concepts'],
         },
         {
           type: 'category',
@@ -22,7 +22,7 @@ module.exports = {
           link: {
             type: 'generated-index',
           },
-          items: ['Build/Get-Started/build-start', 'Build/Get-Started/pricing'],
+          items: ['build-blockchain/get-started/build-start', 'build-blockchain/get-started/pricing'],
         },
         {
           type: 'category',
@@ -31,13 +31,13 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Build/1V2/protocol',
-            'Build/1V2/public-rpc',
-            'Build/1V2/premium-rpc',
-            'Build/1V2/advanced-apis',
-            'Build/1V2/add-endpoints',
-            'Build/1V2/node-ops',
-            'Build/1V2/scan',
+            'build-blockchain/1V2/protocol',
+            'build-blockchain/1V2/public-rpc',
+            'build-blockchain/1V2/premium-rpc',
+            'build-blockchain/1V2/advanced-apis',
+            'build-blockchain/1V2/add-endpoints',
+            'build-blockchain/1V2/node-ops',
+            'build-blockchain/1V2/scan',
           ],
         },
         {
@@ -47,17 +47,17 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Build/Chains/arbitrum',
-            'Build/Chains/avalanche',
-            'Build/Chains/binance-smart-chain',
-            'Build/Chains/celo',
-            'Build/Chains/ethereum',
-            'Build/Chains/fantom',
-            'Build/Chains/iotex',
-            'Build/Chains/near',
-            'Build/Chains/nervos',
-            'Build/Chains/polygon',
-            'Build/Chains/solana',
+            'build-blockchain/chains/arbitrum',
+            'build-blockchain/chains/avalanche',
+            'build-blockchain/chains/binance-smart-chain',
+            'build-blockchain/chains/celo',
+            'build-blockchain/chains/ethereum',
+            'build-blockchain/chains/fantom',
+            'build-blockchain/chains/iotex',
+            'build-blockchain/chains/near',
+            'build-blockchain/chains/nervos',
+            'build-blockchain/chains/polygon',
+            'build-blockchain/chains/solana',
           ],
         },
         {
@@ -67,7 +67,7 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'Build/Bas/about-bas',
+            id: 'build-blockchain/bas/introduction',
           },
           items: [
             {
@@ -77,22 +77,22 @@ module.exports = {
               collapsed: true,
               link: {
                 type: 'doc',
-                id: 'Build/Bas/architecture/bas-architecture',
+                id: 'build-blockchain/bas/architecture/architecture',
               },
               items: [
-                'Build/Bas/architecture/bas-modules',
-                'Build/Bas/architecture/bas-circ-model-native-bridge',
-                'Build/Bas/architecture/bas-native-bridge',
-                'Build/Bas/architecture/bas-fast-finality-bls-crypto',
-                'Build/Bas/architecture/bas-sys-smart-contracts',
-                'Build/Bas/architecture/bas-governance',
-                'Build/Bas/architecture/bas-runtime-upgrades',
+                'build-blockchain/bas/architecture/modules',
+                'build-blockchain/bas/architecture/circ-model-native-bridge',
+                'build-blockchain/bas/architecture/native-bridge',
+                'build-blockchain/bas/architecture/fast-finality-bls-crypto',
+                'build-blockchain/bas/architecture/sys-smart-contracts',
+                'build-blockchain/bas/architecture/governance',
+                'build-blockchain/bas/architecture/runtime-upgrades',
               ],
             },
-            'Build/Bas/bas-how-to-launch',
-            'Build/Bas/bas-demo',
-            'Build/Bas/bas-faq',
-            'Build/Bas/bas-glossary',
+            'build-blockchain/bas/how-to-launch',
+            'build-blockchain/bas/demo',
+            'build-blockchain/bas/faq',
+            'build-blockchain/bas/glossary',
           ],
         },
         {
@@ -101,7 +101,7 @@ module.exports = {
           link: {
             type: 'generated-index',
           },
-          items: ['Build/2V1/about-api-services', 'Build/2V1/node-services'],
+          items: ['build-blockchain/2V1/about-api-services', 'build-blockchain/2V1/node-services'],
         },
 
         {
@@ -111,19 +111,19 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Build/Chains/arb-api',
-            'Build/Chains/avax-api',
-            'Build/Chains/bsc-api',
-            'Build/Chains/clover-api',
-            'Build/Chains/ethereum-api',
-            'Build/Chains/fantom-api',
-            'Build/Chains/huobi-api',
-            'Build/Chains/kusama-api',
-            'Build/Chains/oec-api',
-            'Build/Chains/polkadot-api',
-            'Build/Chains/polygon-api',
-            'Build/Chains/terra-api',
-            'Build/Chains/xdai-api',
+            'build-blockchain/chains/arb-api',
+            'build-blockchain/chains/avax-api',
+            'build-blockchain/chains/bsc-api',
+            'build-blockchain/chains/clover-api',
+            'build-blockchain/chains/ethereum-api',
+            'build-blockchain/chains/fantom-api',
+            'build-blockchain/chains/huobi-api',
+            'build-blockchain/chains/kusama-api',
+            'build-blockchain/chains/oec-api',
+            'build-blockchain/chains/polkadot-api',
+            'build-blockchain/chains/polygon-api',
+            'build-blockchain/chains/terra-api',
+            'build-blockchain/chains/xdai-api',
           ],
         },
 
@@ -134,14 +134,14 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Build/Guides/json-methods',
-            'Build/Guides/libraries',
-            'Build/Guides/websocket-premium',
-            'Build/Guides/rpcapi',
+            'build-blockchain/guides/json-methods',
+            'build-blockchain/guides/libraries',
+            'build-blockchain/guides/websocket-premium',
+            'build-blockchain/guides/rpcapi',
           ],
         },
 
-        'Build/Support/get-support',
+        'build-blockchain/support/get-support',
       ],
     },
   ],
@@ -156,7 +156,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'earn/earn-introduction',
+          id: 'earn/introduction',
           label: 'Introduction',
         },
         {
@@ -166,7 +166,7 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'earn/liquid-staking/liquid-staking',
+            id: 'earn/liquid-staking/introduction',
           },
           items: [
             {
@@ -174,13 +174,13 @@ module.exports = {
               label: 'AVAX',
               link: {
                 type: 'doc',
-                id: 'earn/liquid-staking/avax/avax-liquid-staking-introduction',
+                id: 'earn/liquid-staking/avax/introduction',
               },
               items: [
-                'earn/liquid-staking/avax/avax-liquid-staking-mechanics',
+                'earn/liquid-staking/avax/staking-mechanics',
                 'earn/liquid-staking/avax/stake-avax',
                 'earn/liquid-staking/avax/unstake-avax',
-                'earn/liquid-staking/avax/avax-liquid-staking-faq',
+                'earn/liquid-staking/avax/faq',
               ],
             },
             {
@@ -188,13 +188,13 @@ module.exports = {
               label: 'BNB',
               link: {
                 type: 'doc',
-                id: 'earn/liquid-staking/bnb/bnb-liquid-staking-introduction',
+                id: 'earn/liquid-staking/bnb/introduction',
               },
               items: [
-                'earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
+                'earn/liquid-staking/bnb/staking-mechanics',
                 'earn/liquid-staking/bnb/stake-bnb',
                 'earn/liquid-staking/bnb/unstake-bnb',
-                'earn/liquid-staking/bnb/bnb-liquid-staking-faq',
+                'earn/liquid-staking/bnb/faq',
               ],
             },
             {
@@ -202,13 +202,13 @@ module.exports = {
               label: 'DOT',
               link: {
                 type: 'doc',
-                id: 'earn/liquid-staking/dot/dot-liquid-staking-introduction',
+                id: 'earn/liquid-staking/dot/introduction',
               },
               items: [
-                'earn/liquid-staking/dot/dot-liquid-staking-mechanics',
+                'earn/liquid-staking/dot/staking-mechanics',
                 'earn/liquid-staking/dot/stake-dot',
                 'earn/liquid-staking/dot/unstake-dot',
-                'earn/liquid-staking/dot/dot-liquid-staking-faq',
+                'earn/liquid-staking/dot/faq',
               ],
             },
             {
@@ -216,13 +216,13 @@ module.exports = {
               label: 'ETH',
               link: {
                 type: 'doc',
-                id: 'earn/liquid-staking/eth/eth-liquid-staking-introduction',
+                id: 'earn/liquid-staking/eth/introduction',
               },
               items: [
-                'earn/liquid-staking/eth/eth-liquid-staking-mechanics',
+                'earn/liquid-staking/eth/staking-mechanics',
                 'earn/liquid-staking/eth/stake-eth',
                 'earn/liquid-staking/eth/unstake-eth',
-                'earn/liquid-staking/eth/eth-liquid-staking-faq',
+                'earn/liquid-staking/eth/faq',
               ],
             },
             {
@@ -230,13 +230,13 @@ module.exports = {
               label: 'FTM',
               link: {
                 type: 'doc',
-                id: 'earn/liquid-staking/ftm/ftm-liquid-staking-introduction',
+                id: 'earn/liquid-staking/ftm/introduction',
               },
               items: [
-                'earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
+                'earn/liquid-staking/ftm/staking-mechanics',
                 'earn/liquid-staking/ftm/stake-ftm',
                 'earn/liquid-staking/ftm/unstake-ftm',
-                'earn/liquid-staking/ftm/ftm-liquid-staking-faq',
+                'earn/liquid-staking/ftm/faq',
               ],
             },
             {
@@ -244,13 +244,13 @@ module.exports = {
               label: 'KSM',
               link: {
                 type: 'doc',
-                id: 'earn/liquid-staking/ksm/ksm-liquid-staking-introduction',
+                id: 'earn/liquid-staking/ksm/introduction',
               },
               items: [
-                'earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
+                'earn/liquid-staking/ksm/staking-mechanics',
                 'earn/liquid-staking/ksm/stake-ksm',
                 'earn/liquid-staking/ksm/unstake-ksm',
-                'earn/liquid-staking/ksm/ksm-liquid-staking-faq',
+                'earn/liquid-staking/ksm/faq',
               ],
             },
             {
@@ -258,27 +258,16 @@ module.exports = {
               label: 'MATIC',
               link: {
                 type: 'doc',
-                id: 'earn/liquid-staking/matic/matic-liquid-staking-introduction',
+                id: 'earn/liquid-staking/matic/introduction',
               },
               items: [
-                'earn/liquid-staking/matic/matic-liquid-staking-mechanics',
+                'earn/liquid-staking/matic/staking-mechanics',
                 'earn/liquid-staking/matic/stake-matic',
                 'earn/liquid-staking/matic/unstake-matic',
-                'earn/liquid-staking/matic/matic-liquid-staking-faq',
+                'earn/liquid-staking/matic/faq',
               ],
             },
           ],
-        },
-        {
-          type: 'category',
-          label: 'Liquid Crowdloan',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'earn/liquid-crowdloan/liquid-crowdloan',
-          },
-          items: [],
         },
         {
           type: 'category',
@@ -287,7 +276,7 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'earn/defi/defi-introduction',
+            id: 'earn/defi/introduction',
           },
           items: ['earn/defi/yield-farm', 'earn/defi/provide-liquidity-to-dex'],
         },
@@ -298,7 +287,7 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'earn/bridge/bridge-introduction',
+            id: 'earn/bridge/introduction',
           },
           items: ['earn/bridge/bridge-mechanics', 'earn/bridge/bridge-tokens'],
         },
@@ -309,9 +298,20 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'earn/switch/switch-introduction',
+            id: 'earn/switch/introduction',
           },
           items: ['earn/switch/switch-mechanics'],
+        },
+        {
+          type: 'category',
+          label: 'Liquid Crowdloan',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'earn/liquid-crowdloan/introduction',
+          },
+          items: [],
         },
         {
           type: 'category',
@@ -339,7 +339,7 @@ module.exports = {
   ],
   gameSidebar: {
     'Game': [
-      'Game/ankr-game',
+      'game/ankr-game',
       {
         type: 'category',
         label: 'Ankr Unity SDK',
@@ -347,8 +347,8 @@ module.exports = {
             type: 'generated-index',
           },
         items: [
-          'Game/Unity/about-unity',
-          'Game/Unity/setting-up',
+          'game/unity/about-unity',
+          'game/unity/setting-up',
           {
             type: 'category',
             label: 'Get Started',
@@ -356,11 +356,11 @@ module.exports = {
               type: 'generated-index',
             },
             items: [
-              'Game/Unity/getting-started/game-00',
-              'Game/Unity/getting-started/game-01',
-              'Game/Unity/getting-started/game-02',
-              'Game/Unity/getting-started/game-03',
-              'Game/Unity/getting-started/game-04',
+              'game/unity/getting-started/game-00',
+              'game/unity/getting-started/game-01',
+              'game/unity/getting-started/game-02',
+              'game/unity/getting-started/game-03',
+              'game/unity/getting-started/game-04',
             ],
           },
           {
@@ -369,7 +369,7 @@ module.exports = {
             link: {
               type: 'generated-index',
             },
-            items: ['Game/Unity/how-tos/wallet-game'],
+            items: ['game/unity/how-tos/wallet-game'],
           },
         ],
       },
@@ -380,8 +380,8 @@ module.exports = {
           type: 'generated-index',
         },
         items: [
-          'Game/Unreal/about-unreal',
-          'Game/Unreal/setting-up-unreal',
+          'game/unreal/about-unreal',
+          'game/unreal/setting-up-unreal',
           {
             type: 'category',
             label: 'Get Started',
@@ -389,11 +389,11 @@ module.exports = {
               type: 'generated-index',
             },
             items: [
-              'Game/Unreal/getting-started/unreal-before',
-              'Game/Unreal/getting-started/unreal-connect-wallet',
-              'Game/Unreal/getting-started/unreal-send-retrieve',
-              'Game/Unreal/getting-started/unreal-update-nft',
-              'Game/Unreal/getting-started/unreal-mint-nft',
+              'game/unreal/getting-started/unreal-before',
+              'game/unreal/getting-started/unreal-connect-wallet',
+              'game/unreal/getting-started/unreal-send-retrieve',
+              'game/unreal/getting-started/unreal-update-nft',
+              'game/unreal/getting-started/unreal-mint-nft',
             ],
           },
         ],
@@ -404,53 +404,23 @@ module.exports = {
               link: {
                 type: 'generated-index',
               },
-              items: ['Game/reference/game-reference'],
+              items: ['game/reference/game-reference'],
           },
         ],
       },
   governanceSidebar: [
     {
       type: 'category',
-      label: '⚖️ Tokens+Governance',
-      collapsible: false,
+      label: '🏦 Tokens & Governance',
+          collapsible: true,
+          collapsed: true,
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'learn/tokens-governance/about-ankr-tokens',
       },
       items: [
-        {
-          type: 'category',
-          label: 'Governance',
-          collapsed: false,
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Tokens&Governance/about-ankr-tokens',
-            'Tokens&Governance/governance',
-            'Tokens&Governance/tokenomics',
-          ],
-        },
-      ],
-    },
-  ],
-  communitySidebar: [
-    {
-      type: 'category',
-      label: '👥 Community',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
-        {
-          type: 'category',
-          label: 'Community',
-          collapsed: false,
-          link: {
-            type: 'generated-index',
-          },
-          items: ['Community/channels'],
-        },
+            'learn/tokens-governance/governance',
+            'learn/tokens-governance/tokenomics',
       ],
     },
   ],
@@ -471,13 +441,13 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Tutorials/submit-tutorial',
-            'Tutorials/create-voting-system/movie-voting-web3',
-            'Tutorials/create-eth-app-tutorial/create-eth-app',
-            'Tutorials/simple-truffle',
-            'Tutorials/connect-web3js',
-            'Tutorials/erigon-bsc-tutorial/erigon-bsc',
-            'Tutorials/connect-web3py',
+            'learn/tutorials/submit-tutorial',
+            'learn/tutorials/create-voting-system/movie-voting-web3',
+            'learn/tutorials/create-eth-app-tutorial/create-eth-app',
+            'learn/tutorials/simple-truffle',
+            'learn/tutorials/connect-web3js',
+            'learn/tutorials/erigon-bsc-tutorial/erigon-bsc',
+            'learn/tutorials/connect-web3py',
           ],
         },
       ],

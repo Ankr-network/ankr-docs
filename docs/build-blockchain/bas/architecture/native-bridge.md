@@ -1,6 +1,6 @@
 ---
 title: Native Asset Bridge
-id: bas-native-bridge
+id: native-bridge
 ---
 
 BAS brings a native cross-chain bridge that is embedded to BAS as a system smart contract. Here we specify interfaces for the EVM version of BAS:

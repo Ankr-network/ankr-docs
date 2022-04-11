@@ -1,6 +1,6 @@
 ---
 title: MATIC Liquid Staking
-id: matic-liquid-staking-introduction
+id: introduction
 ---
 
 ## Polygon Liquid Staking

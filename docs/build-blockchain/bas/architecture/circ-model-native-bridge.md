@@ -1,6 +1,6 @@
 ---
 title: Circulation Model and Native Asset Bridge
-id: bas-circ-model-native-bridge
+id: circ-model-native-bridge
 ---
 
 The key features of each BAS application are the native token circulation model and cross-chain bridge for native assets. 

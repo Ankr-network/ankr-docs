@@ -1,6 +1,6 @@
 ---
 title: Introduction
-id: earn-introduction
+id: introduction
 ---
 
 # Introduction

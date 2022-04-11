@@ -1,6 +1,6 @@
 ---
 title: Modules
-id: bas-modules
+id: modules
 ---
 
 BAS brings with it programmable and configurable modules that can be used or modified by developers to reach their business goals, for example:

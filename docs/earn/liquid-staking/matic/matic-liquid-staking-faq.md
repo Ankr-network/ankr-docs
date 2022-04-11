@@ -1,6 +1,6 @@
 ---
 title: MATIC FAQ
-id: matic-liquid-staking-faq
+id: faq
 ---
 
 

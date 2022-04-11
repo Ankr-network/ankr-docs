@@ -1,6 +1,6 @@
 ---
 title: Ankr Switch
-id: switch-introduction
+id: introduction
 ---
 
 # Ankr Switch

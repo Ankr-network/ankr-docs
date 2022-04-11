@@ -32,7 +32,7 @@ GraphQL: [https://blockscout.com/poa/xdai/graphiql](https://blockscout.com/poa/x
 
 ### XDAI uses standard JSON RPC methods. 
 
-View [Supported JSON RPC Methods](@site/docs/Build/Guides/evm-supported-requests.md)
+View [Supported JSON RPC Methods](@site/docs/build-blockchain/guides/evm-supported-requests.md)
 
 Postman: [https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest](https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest)
 
