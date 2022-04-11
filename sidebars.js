@@ -8,14 +8,7 @@ module.exports = {
         type: 'generated-index',
       },
       items: [
-        {
-          type: 'category',
-          label: 'Concepts',
-          link: {
-            type: 'generated-index',
-          },
-          items: ['Build/Concepts/build-concepts'],
-        },
+        'Build/Concepts/build-overview',
         {
           type: 'category',
           label: 'Get Started',
@@ -33,9 +26,18 @@ module.exports = {
           items: [
             'Build/1V2/protocol',
             'Build/1V2/public-rpc',
-            'Build/1V2/premium-rpc',
-            'Build/1V2/advanced-apis',
-            'Build/1V2/add-endpoints',
+            {
+              type: 'category',
+              label: 'Premium Plan',
+              link: {
+                type: 'generated-index',
+              },
+              items: [
+                'Build/1V2/premium-plan',
+                'Build/1V2/advanced-apis',
+                'Build/1V2/add-endpoints',
+              ],
+            },
             'Build/1V2/node-ops',
             'Build/1V2/scan',
           ],

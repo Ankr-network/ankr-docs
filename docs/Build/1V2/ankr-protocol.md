@@ -5,7 +5,6 @@ id: protocol
 
 # About Ankr Protocol
 
-## The Ankr Protocol
 
 The (r)evolutionary Ankr protocol brings increasing definition to Ankr’s vision of Web 3.0 mass adoption.
 
