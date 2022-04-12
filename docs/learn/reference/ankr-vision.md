@@ -3,7 +3,7 @@ Title: Our Vision
 id: ankr-vision
 ---
 
-# Our Vision
+# Ankr Vision
 
 At Ankr we believe that Web 3.0 and the crypto economy should be available to anyone and everyone on the planet with access to the internet.
 

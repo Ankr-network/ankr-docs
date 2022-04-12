@@ -413,9 +413,10 @@ module.exports = {
           collapsed: true,
       link: {
         type: 'doc',
-        id: 'learn/tokens-governance/about-ankr-tokens',
+        id: 'learn/tokens-governance/overview',
       },
       items: [
+            'learn/tokens-governance/ankr-tokens',
             'learn/tokens-governance/governance',
             'learn/tokens-governance/tokenomics',
       ],
@@ -445,11 +446,10 @@ module.exports = {
           collapsed: true,
       link: {
         type: 'doc',
-        id: 'learn/reference/ankr-vision',
+        id: 'learn/reference/overview',
       },
       items: [
-          'learn/reference/ankr-solutions',
-          'learn/reference/ankr-approach',
+          'learn/reference/ankr-vision',
           ],
         },
   ],

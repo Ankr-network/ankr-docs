@@ -168,7 +168,7 @@
             position: "left",
             items: [
             {
-              to: 'learn/tokens-governance/about-ankr-tokens',
+              to: 'learn/tokens-governance/overview',
               label: 'Tokens & Governance',
             },
             {
@@ -176,7 +176,7 @@
               label: 'Tutorials',
             },
             {
-              to: 'learn/reference/ankr-vision',
+              to: 'learn/reference/overview',
               label: 'Reference',
             },
            ],

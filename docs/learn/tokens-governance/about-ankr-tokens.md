@@ -1,8 +1,10 @@
 ---
 title: About ANKR Tokens
-id: about-ankr-tokens
+id: ankr-tokens
 ---
-## What they are
+
+# Ankr Tokens 
+
 * The ANKR token is the native utility and governance token for the ANKR network. 
 * ANKR tokens are used to pay for services within the ANKR ecosystem. 
 * There is a limited supply of 10 billion tokens with approximately 27000 holders of ANKR tokens (as of July 2021).
