@@ -3,25 +3,56 @@ title: 01 - Connect Wallet and Authenticate
 id: game-01
 ---
 
+Connecting to a Web3 wallet such as MetaMask via **WalletConnect** provides a link between a **Wallet Address** and a user's **Game Account**. 
 
-Connecting to a Web3 i.e. MetaMask wallet via **WalletConnect** provides a link between a **Wallet Address** and a user's **Game Account**. 
+There are two ways to get a **Session Key** from your wallet. You can connect with `QRCode` or using `WalletConnect.Instance.OpenMobileWallet`. The easiest way to connect is with `QRCode`.
 
-There are two ways to get a **Session Key** from your wallet. 
 Both of these methods generate a **linking url** that creates a request in a **MetaMask wallet** to connect.
 
-1. Connect with **QRCode** using ```QRCodeImage component``` OR using ```WalletConnect.Instance.OpenMobileWallet```
+## 01 Connect with QRCode
 
-2. If you agree to connect, a **Session Key** is saved in **PlayerPrefs** for future use.
+1. To connect with **QRCode**, use a ```QRCodeImage component```.
+This component already comes with a QRCode generator and a function that handles everything. 
 
-3. Create an instance of a AnkrSDKWrapper class via AnkrSDKWrapper.GetSDKInstance(...) method after successful connection to your wallet.
+2. Call `UpdateQRCode(string url)` by giving it a URL. 
+You can then use `.SetImageActive(bool)` to activate/deactivate the QRCode.
+
+Here is the way it is implemented in our **Examples**.
+We get the `ConnectURL` from `walletconnect` Instance. Then we generate the `QRCode` from it and activate the QRCode's image so it can be scanned: 
+
+```C#
+
+var connectURL = WalletConnect.Instance.ConnectURL;
+_qrCodeImage.UpdateQRCode(connectURL);
+_qrCodeImage.SetImageActive(true);
+
+```
+
+This `QRCode` should be scanned from you MetaMask mobile app. (It asks you to connect the same way you would with the non QRCode version). 
+
+At this point, you are connected and any transactions that require the user signing a message will pop up in their MetaMask app on their phone. 
+
+:::tip
+
+Occasionally, the MetaMask mobile app does not pop up by itself. Should this be case, open the app manually.
+
+:::
+
+## 02 Accept Connection
+
+If you agree to connect, a `Session Key` is saved in `PlayerPrefs` for future use.
+
+## 03 Create instance of `AnkrSDKWrapper`
+
+Create an instance of a `AnkrSDKWrapper` class via `AnkrSDKWrapper.GetSDKInstance(...)` method after successful connection to your wallet.
 
     ```js
     var ankrSdk = AnkrSDKWrapper.GetSDKInstance("<ethereum node url>");
     ```
 
-Inside (AnkrSDK/Examples/UseCases/LinkingAccountWallet) is an example script demonstrating how to link a Web3 wallet (MetaMask) to a player account.
+Inside ***(AnkrSDK/Examples/UseCases/LinkingAccountWallet)*** is an example script demonstrating how to link a Web3 wallet (MetaMask) to a player account.
 
-### 👀 Example Connect Wallet to Account
+## 👀 Example Connect Wallet to Account
 
 This is an example from the SDK to link a Web3 wallet to a player account.
 
