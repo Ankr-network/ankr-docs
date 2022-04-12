@@ -5,7 +5,10 @@ id: game-01
 
 Connecting to a Web3 wallet such as MetaMask via **WalletConnect** provides a link between a **Wallet Address** and a user's **Game Account**. 
 
-There are two ways to get a **Session Key** from your wallet. You can connect with `QRCode` or using `WalletConnect.Instance.OpenMobileWallet`. The easiest way to connect is with `QRCode`.
+There are two ways to get a **Session Key** from your wallet. 
+
+* Connect with `QRCode` when building Desktop-based applications
+* Connect with `WalletConnect.Instance.OpenMobileWallet` when building Android/iOs based applications. 
 
 Both of these methods generate a **linking url** that creates a request in a **MetaMask wallet** to connect.
 
