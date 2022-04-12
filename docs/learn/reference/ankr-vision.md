@@ -1,15 +1,25 @@
 ---
-Title: About Ankr
-id: about-ankr
+Title: Our Vision
+id: ankr-vision
 ---
 
-# About Ankr
+# Our Vision
+
+At Ankr we believe that Web 3.0 and the crypto economy should be available to anyone and everyone on the planet with access to the internet.
+
+* We want to empower mass adoption in the Web 3.0 (r)evolution underpinning Decentralized Finance (DeFi).
+
+* We want to liberate people from complexity with user-friendly tools that enable easy participation.
+
+* We want to remove the barriers to participation in the crypto economy for both individuals and organizations alike.
+
+## What is Ankr?
 
 **Ankr Web 3.0 infrastructure | Blockchain nodes & APIs | Ankr**
 
-Ankr makes accessing Web 3.0 easy. We offer distributed, multi-cloud blockchain infrastructure for one-click node deployment and management as well as instant API access to major blockchains and DeFi protocols for developers.
+Ankr is a Web 3.0 infrastructure provider. We offer a globally distributed network of nodes for multi-chain access across 40+ blockchains.
 
-Ankr is a Web 3.0 infrastructure provider. We offer a globally distributed network of nodes for multi-chain access across 40+ blockchains. 
+Ankr makes accessing Web 3.0 easy. We offer distributed, multi-cloud blockchain infrastructure for one-click node deployment and management as well as instant API access to major blockchains and DeFi protocols for developers.
 
 Built on top of this multi-chain node foundation, the Ankr platform provides one-click node deployment and management as well as instant API access to all the major blockchains and protocols.
 
@@ -26,16 +36,6 @@ Ankr built a unique niche for itself as the only platform that combines node inf
 The team has since launched 25,000+ nodes on 50+ blockchains and processes over $1 billion in crypto transactions every month, serving more than 10 million unique users.
 
 Ankr has continued to innovate and evolve its product offering in response to customer demand.
-
-## Our Vision
-
-At Ankr we believe that Web 3.0 and the crypto economy should be available to anyone and everyone on the planet with access to the internet.
-
-* We want to empower mass adoption in the Web 3.0 (r)evolution underpinning Decentralized Finance (DeFi).
-
-* We want to liberate people from complexity with user-friendly tools that enable easy participation.
-
-* We want to remove the barriers to participation in the crypto economy for both individuals and organizations alike.
 
 ## Key Principles
 

@@ -9,12 +9,9 @@ module.exports = {
       },
       items: [
         {
-          type: 'category',
-          label: 'Concepts',
-          link: {
-            type: 'generated-index',
-          },
-          items: ['build-blockchain/concepts/build-concepts'],
+          type: 'doc',
+          id: 'build-blockchain/overview',
+          label: 'Overview',
         },
         {
           type: 'category',
@@ -156,8 +153,8 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'earn/introduction',
-          label: 'Introduction',
+          id: 'earn/overview',
+          label: 'Overview',
         },
         {
           type: 'category',
@@ -408,10 +405,10 @@ module.exports = {
           },
         ],
       },
-  governanceSidebar: [
+  learnSidebar: [
     {
       type: 'category',
-      label: '🏦 Tokens & Governance',
+      label: 'Tokens & Governance',
           collapsible: true,
           collapsed: true,
       link: {
@@ -423,25 +420,16 @@ module.exports = {
             'learn/tokens-governance/tokenomics',
       ],
     },
-  ],
-  tutorialSidebar: [
-    {
+      {
       type: 'category',
-      label: '📚 Tutorials',
-      collapsible: false,
+      label: 'Tutorials',
+          collapsible: true,
+          collapsed: true,
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'learn/tutorials/introduction',
       },
       items: [
-        {
-          type: 'category',
-          label: 'Tutorials',
-          collapsed: false,
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'learn/tutorials/submit-tutorial',
             'learn/tutorials/create-voting-system/movie-voting-web3',
             'learn/tutorials/create-eth-app-tutorial/create-eth-app',
             'learn/tutorials/simple-truffle',
@@ -450,7 +438,19 @@ module.exports = {
             'learn/tutorials/connect-web3py',
           ],
         },
-      ],
-    },
+      {
+      type: 'category',
+      label: 'Reference',
+          collapsible: true,
+          collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'learn/reference/ankr-vision',
+      },
+      items: [
+          'learn/reference/ankr-solutions',
+          'learn/reference/ankr-approach',
+          ],
+        },
   ],
 }

@@ -78,23 +78,17 @@
         },
         items: [
           {
-            type: "doc",
-            docId: "about/about-ankr",
-            position: "left",
-            label: "⚓️ About Ankr",
-          },
-          {
             type: "dropdown",
             label: "🔨" + Array(2).fill("\xa0").join("") + "Build",
             position: "left",
             items: [
               {
-                to: "category/get-started",
-                label: "Get Started",
+                to: "build-blockchain/overview",
+                label: "Overview",
               },
               {
-                to: "category/concepts",
-                label: "Concepts",
+                to: "category/get-started",
+                label: "Get Started",
               },
               {
                 to: "category/chains-v2",
@@ -119,6 +113,10 @@
             label: "💰" + Array(2).fill("\xa0").join("") + "Earn",
             position: "left",
             items: [
+              {
+                to: "earn/overview/",
+                label: "Overview",
+              },
               {
                 to: "earn/liquid-staking/",
                 label: "Liquid Staking",
@@ -165,17 +163,23 @@
           ],
         },
           {
-            type: "docSidebar",
-            sidebarId: "governanceSidebar",
+            type: 'dropdown',
+            label: "📚" + Array(2).fill("\xa0").join("") + 'Learn',
             position: "left",
-            label:
-              "🏦" + Array(2).fill("\xa0").join("") + "Tokens & Governance",
-          },
-          {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "📚" + Array(2).fill("\xa0").join("") + "Tutorials",
+            items: [
+            {
+              to: 'learn/tokens-governance/about-ankr-tokens',
+              label: 'Tokens & Governance',
+            },
+            {
+              to: 'learn/tutorials/introduction',
+              label: 'Tutorials',
+            },
+            {
+              to: 'learn/reference/ankr-vision',
+              label: 'Reference',
+            },
+           ],
           },
         ],
       },

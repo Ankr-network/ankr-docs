@@ -1,7 +1,9 @@
 ---
-title: Ankr Game
+title: Overview
 id: ankr-game
 ---
+
+# Ankr Game
 
 In recent years, the number of blockchain-based video games with active users has skyrocketed thanks to play-to-earn (P2E) value models and the success demonstrated by early Web3 gaming projects like Axie Infinity.
 
