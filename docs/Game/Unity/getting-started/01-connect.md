@@ -21,7 +21,7 @@ This component already comes with a QRCode generator and a function that handles
 You can then use `.SetImageActive(bool)` to activate/deactivate the QRCode.
 
 Here is the way it is implemented in our **Examples**.
-We get the `ConnectURL` from `walletconnect` Instance. Then we generate the `QRCode` from it and activate the QRCode's image so it can be scanned: 
+We get the `ConnectURL` from a `walletconnect` Instance. Then we generate the `QRCode` from it and activate the QRCode's image so it can be scanned: 
 
 ```C#
 
@@ -41,7 +41,7 @@ Occasionally, the MetaMask mobile app does not pop up by itself. Should this be 
 
 :::
 
-## 02 Accept Connection
+## 02 Accept connection
 
 If you agree to connect, a `Session Key` is saved in `PlayerPrefs` for future use.
 
@@ -55,7 +55,7 @@ Create an instance of a `AnkrSDKWrapper` class via `AnkrSDKWrapper.GetSDKInstanc
 
 Inside ***(AnkrSDK/Examples/UseCases/LinkingAccountWallet)*** is an example script demonstrating how to link a Web3 wallet (MetaMask) to a player account.
 
-## 👀 Example Connect Wallet to Account
+## 👀 Example - connect wallet to account
 
 This is an example from the SDK to link a Web3 wallet to a player account.
 
