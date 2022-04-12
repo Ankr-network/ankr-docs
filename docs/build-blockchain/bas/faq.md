@@ -41,10 +41,10 @@ Also, read [BNB Chain 2022: Build N’ Build](https://www.bnbchain.world/en/blog
 
 ### If developers have questions about BAS deployment, where can they ask them?
 We will soon set up a Discord channel for questions and organize a Twitter space to share more details. 
-For now, they can read ["How to Launch a BAS"](../Bas/bas-how-to-launch).
+For now, they can read ["How to Launch a BAS"](../bas/bas-how-to-launch).
 
 ### I have read the proposal and want to take the next step toward deployment. Who can I talk to? 
-For now, read ["How to Launch a BAS"](../Bas/bas-how-to-launch). For other business and technical details, wait till the Discord channel is set up. You'll be able to ask your questions there.
+For now, read ["How to Launch a BAS"](../bas/bas-how-to-launch). For other business and technical details, wait till the Discord channel is set up. You'll be able to ask your questions there.
 
 ### If a project already has its own private chain, what’s the process to integrate it as a BAS? And what does “integrate” mean? 
 Such a project will have to implement BAS modules following our standards to align with our BAS framework. "Integrate" means to become a BAS-compatible blockchain that can use all the specter of BAS products.
