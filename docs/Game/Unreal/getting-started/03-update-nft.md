@@ -36,7 +36,7 @@ A data object for the NFT specifying the following:
 
 ```cpp
 
-void UUpdateNFTExample::GetNFTInfo(FString abi_hash, int tokenId, FMirageDelegate Result)
+void UUpdateNFTExample::GetNFTInfo(FString abi_hash, int tokenId, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -60,7 +60,7 @@ void UUpdateNFTExample::GetNFTInfo(FString abi_hash, int tokenId, FMirageDelegat
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString(content);
 	Request->ProcessRequest();
@@ -94,7 +94,7 @@ The session saved during a call to `Init` will be used to open metamask. Metamas
 
 ```cpp
 
-void UUpdateNFTExample::UpdateNFT(FString abi_hash, FItemInfoStructure _item, FMirageDelegate Result)
+void UUpdateNFTExample::UpdateNFT(FString abi_hash, FItemInfoStructure _item, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -121,7 +121,7 @@ void UUpdateNFTExample::UpdateNFT(FString abi_hash, FItemInfoStructure _item, FM
 			FString url = baseUrl + "send/transaction";
 			Request->SetURL(url);
 			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+			Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 			Request->SetHeader("Content-Type", TEXT("application/json"));
 
 			FRequestBodyStruct requestBody{};

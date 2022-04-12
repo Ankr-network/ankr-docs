@@ -27,7 +27,7 @@ The 'uri' deeplink only works for mobile devices. For desktop, a QR Code is gene
 
 ```cpp
 	
-bool UMirageClient::GetClient(FMirageConnectionStatus Status)
+bool UAnkrClient::GetClient(FAnkrConnectionStatus Status)
 {
 	http = &FHttpModule::Get();
 
@@ -66,7 +66,7 @@ bool UMirageClient::GetClient(FMirageConnectionStatus Status)
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\"}");
 	Request->ProcessRequest();

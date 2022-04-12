@@ -27,7 +27,7 @@ The response is a 'ticket'.
 The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FMirageDelegate Result)
+void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -55,7 +55,7 @@ void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FMirageDel
 			FString url = baseUrl + "send/transaction";
 			Request->SetURL(url);
 			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+			Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 			Request->SetHeader("Content-Type", TEXT("application/json"));
 			Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + safeMintMethodName + "\", \"args\": [\"" + to + "\"]}");
 			Request->ProcessRequest();
@@ -81,7 +81,7 @@ The response is a 'ticket'.
 The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::MintItems(FString abi_hash, FString to, FMirageDelegate Result)
+void UWearableNFTExample::MintItems(FString abi_hash, FString to, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -112,7 +112,7 @@ void UWearableNFTExample::MintItems(FString abi_hash, FString to, FMirageDelegat
 			FString url = baseUrl + "send/transaction";
 			Request->SetURL(url);
 			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+			Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 			Request->SetHeader("Content-Type", TEXT("application/json"));
 			Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + mintBatchMethodName + "\", \"args\": " + json + "}");
 			Request->ProcessRequest();
@@ -139,7 +139,7 @@ The response is a `ticket`.
 The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOperator, bool approved, FMirageDelegate Result)
+void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOperator, bool approved, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -170,7 +170,7 @@ void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOper
 			FString url = baseUrl + "send/transaction";
 			Request->SetURL(url);
 			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+			Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 			Request->SetHeader("Content-Type", TEXT("application/json"));
 			FString body = "{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + setApprovalForAllMethodName + "\", \"args\": [\"" + GameCharacterContractAddress + "\", true ]}";
 			
@@ -197,7 +197,7 @@ The following body is sent to POST http://45.77.189.28:5000/call/method
 The response is a 'data' object detailing the number of tokens that the user holds.
 
 ```c++
-void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address, FMirageDelegate Result)
+void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -221,7 +221,7 @@ void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address,
 	FString url = baseUrl + "call/method";
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + balanceOfMethodName + "\", \"args\": [\"" + address + "\"]}");
 	Request->ProcessRequest();
@@ -241,7 +241,7 @@ The following body is sent to POST http://45.77.189.28:5000/result
 The response is a 'data' object containing the id of the character.
 
 ```c++
-void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance, FString owner, FString index, FMirageDelegate Result)
+void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance, FString owner, FString index, FAnkrDelegate Result)
 {
 	if (tokenBalance <= 0)
 	{
@@ -271,7 +271,7 @@ void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance
 	FString url = baseUrl + "call/method";
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + tokenOfOwnerByIndexMethodName + "\", \"args\": [\"" + owner + "\", \"" + index + "\"]}");
 	Request->ProcessRequest();
@@ -290,7 +290,7 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasHat, FString hatAddress, FMirageDelegate Result)
+void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasHat, FString hatAddress, FAnkrDelegate Result)
 {
 	if (!hasHat || characterId == -1)
 	{
@@ -331,7 +331,7 @@ void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasH
 			FString url = baseUrl + "send/transaction";
 			Request->SetURL(url);
 			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+			Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 			Request->SetHeader("Content-Type", TEXT("application/json"));
 			FString body = "{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + changeHatMethodName + "\", \"args\": [\"" + FString::FromInt(characterId) + "\", \"" + BlueHatAddress + "\"]}";
 			
@@ -358,7 +358,7 @@ The following body is sent to POST http://45.77.189.28:5000/call/method
 The response is a 'data' object containing a string for the token address that the player has.
 
 ```c++
-void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FMirageDelegate Result)
+void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -383,7 +383,7 @@ void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FMirageDeleg
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + getHatMethodName + "\", \"args\": [\"" + FString::FromInt(characterId) + "\"]}");
 	Request->ProcessRequest();
@@ -403,7 +403,7 @@ The following body is sent to POST http://45.77.189.28:5000/result
 A 'data' object is returned with a 'code' number to indicate success or failure.
 
 ```c++
-void UWearableNFTExample::GetTicketResult(FString ticketId, FMirageTicketResult Result)
+void UWearableNFTExample::GetTicketResult(FString ticketId, FAnkrTicketResult Result)
 {
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
 	Request->OnProcessRequestComplete().BindLambda([Result, ticketId, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
@@ -435,7 +435,7 @@ void UWearableNFTExample::GetTicketResult(FString ticketId, FMirageTicketResult 
 	FString url = baseUrl + "result";
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"ticket\": \"" + ticketId + "\" }");
 	Request->ProcessRequest();
@@ -455,7 +455,7 @@ The following body is sent to POST http://45.77.189.28:5000/call/method
 The response is a 'data' object containing an array of balances for each token. The balances for each token are returned in the order in which they were sent as a request.  
 
 ```c++
-void UWearableNFTExample::GetItemsBalance(FString abi_hash, FString address, FMirageDelegate Result)
+void UWearableNFTExample::GetItemsBalance(FString abi_hash, FString address, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -482,7 +482,7 @@ void UWearableNFTExample::GetItemsBalance(FString abi_hash, FString address, FMi
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + balanceOfBatchMethodName + "\", \"args\": " + body + "}");
 	Request->ProcessRequest();
