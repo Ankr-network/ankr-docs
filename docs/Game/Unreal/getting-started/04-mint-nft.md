@@ -13,7 +13,7 @@ All read data method calls such as retrieving a balance do NOT incur gas fees.
 
 :::
 
-## Mint Character
+## Mint character
 
 `MintCharacter` is used to send a request to mint a new character on the blockchain.
 
@@ -24,10 +24,10 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 ```
 The response is a 'ticket'.
 
-The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
+The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FMirageDelegate Result)
+void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -67,7 +67,7 @@ void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FMirageDel
 }
 ```
 
-## Mint Items
+## Mint items
 
 `MintItems` is used to send a request to mint new items on the blockchain. 
 
@@ -78,10 +78,10 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 ```
 The response is a 'ticket'.
 
-The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
+The session saved during `Init` will be used to open MetaMask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::MintItems(FString abi_hash, FString to, FMirageDelegate Result)
+void UWearableNFTExample::MintItems(FString abi_hash, FString to, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -124,7 +124,7 @@ void UWearableNFTExample::MintItems(FString abi_hash, FString to, FMirageDelegat
 }
 ```
 
-## Game Item Set Approval
+## Game item set approval
 
 `GameItemSetApproval` is used to confirm an update of a game item.
 
@@ -136,10 +136,10 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 
 The response is a `ticket`. 
 
-The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
+The session saved during `Init` will be used to open MetaMask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOperator, bool approved, FMirageDelegate Result)
+void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOperator, bool approved, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -184,7 +184,7 @@ void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOper
 }
 ```
 
-## Get Character Balance
+## Get character balance
 
 `GetCharacterBalance` is used to check whether a user holds any NFTs. 
 
@@ -197,7 +197,7 @@ The following body is sent to POST http://45.77.189.28:5000/call/method
 The response is a 'data' object detailing the number of tokens that the user holds.
 
 ```c++
-void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address, FMirageDelegate Result)
+void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -228,7 +228,7 @@ void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address,
 }
 ```
 
-## Get Character Token Id
+## Get character token Id
 
 `GetCharacterTokenId` retrieves the unique identifier for a specific Character Token. 
 
@@ -241,7 +241,7 @@ The following body is sent to POST http://45.77.189.28:5000/result
 The response is a 'data' object containing the id of the character.
 
 ```c++
-void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance, FString owner, FString index, FMirageDelegate Result)
+void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance, FString owner, FString index, FAnkrDelegate Result)
 {
 	if (tokenBalance <= 0)
 	{
@@ -278,7 +278,7 @@ void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance
 }
 ```
 
-## Change Hat
+## Change hat
 
 `ChangeHat` sends a request to alter the hat wearable to red (if the hat is currently blue) or blue (if the hat is currently red).
 
@@ -287,10 +287,10 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 ```json
 { 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["characterId", "tokenAddress"] }
 ```
-The session saved during Init will be used to open metamask. Metamask will show a popup to sign or confirm the transaction for that ticket.
+The session saved during `Init` will be used to open MetaMask. Metamask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
-void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasHat, FString hatAddress, FMirageDelegate Result)
+void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasHat, FString hatAddress, FAnkrDelegate Result)
 {
 	if (!hasHat || characterId == -1)
 	{
@@ -345,7 +345,7 @@ void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasH
 }
 ```
 
-## Get Hat
+## Get hat
 
 `GetHat` is used to retrieve the token address for a hat NFT.
 
@@ -358,7 +358,7 @@ The following body is sent to POST http://45.77.189.28:5000/call/method
 The response is a 'data' object containing a string for the token address that the player has.
 
 ```c++
-void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FMirageDelegate Result)
+void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -390,7 +390,7 @@ void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FMirageDeleg
 }
 ```
 
-## Get Ticket Result
+## Get ticket result
 
 `GetTicketResult` is used to retrieve the status of a ticket and to see whether a transaction has been successful or not. 
 
@@ -403,7 +403,7 @@ The following body is sent to POST http://45.77.189.28:5000/result
 A 'data' object is returned with a 'code' number to indicate success or failure.
 
 ```c++
-void UWearableNFTExample::GetTicketResult(FString ticketId, FMirageTicketResult Result)
+void UWearableNFTExample::GetTicketResult(FString ticketId, FAnkrTicketResult Result)
 {
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
 	Request->OnProcessRequestComplete().BindLambda([Result, ticketId, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
@@ -442,7 +442,7 @@ void UWearableNFTExample::GetTicketResult(FString ticketId, FMirageTicketResult 
 }
 ```
 
-## Get Items Balance
+## Get items balance
 
 `GetItemsBalance` is used to retrieve the number of items for each item type. 
 
@@ -455,7 +455,7 @@ The following body is sent to POST http://45.77.189.28:5000/call/method
 The response is a 'data' object containing an array of balances for each token. The balances for each token are returned in the order in which they were sent as a request.  
 
 ```c++
-void UWearableNFTExample::GetItemsBalance(FString abi_hash, FString address, FMirageDelegate Result)
+void UWearableNFTExample::GetItemsBalance(FString abi_hash, FString address, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
