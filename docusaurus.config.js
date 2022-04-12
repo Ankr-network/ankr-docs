@@ -137,10 +137,6 @@
                 to: "earn/liquid-crowdloan/overview",
                 label: "Liquid Crowdloan",
               },
-            {
-              to: 'earn/reference/earn-compatible-wallets',
-              label: 'Reference',
-            },
           ],
         },
         {
