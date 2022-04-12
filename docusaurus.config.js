@@ -138,7 +138,7 @@
                 label: "Liquid Crowdloan",
               },
             {
-              to: 'earn/reference/introduction',
+              to: 'earn/reference/overview',
               label: 'Reference',
             },
           ],

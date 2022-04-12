@@ -317,7 +317,7 @@ module.exports = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'earn/reference/introduction',
+            id: 'earn/reference/overview',
           },
           items: [
             'earn/reference/earn-glossary',
