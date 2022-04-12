@@ -3,7 +3,7 @@ title: 00 - Before you Start
 id: unreal-before
 ---
 
-## 👉🏻 Getting Started
+## 👉🏻 Getting started
 
 The Unreal Engine gets the back end client to connect and interact with the blockchain to send and retrieve data.
 
@@ -15,7 +15,7 @@ The baseURL is: http://45.77.189.28:5000/
 
 Currently, the Unreal Engine serves three Use Cases.
 
-### 💫 Use Cases
+### 💫 Use cases
 
 1. Connect Wallet (MetaMask) and Authenticate User
 2. Update NFT by signing and sending Transactions

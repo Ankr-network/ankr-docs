@@ -13,7 +13,7 @@ All read data method calls such as retrieving a balance do NOT incur gas fees.
 
 :::
 
-## Mint Character
+## Mint character
 
 `MintCharacter` is used to send a request to mint a new character on the blockchain.
 
@@ -67,7 +67,7 @@ void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FAnkrDeleg
 }
 ```
 
-## Mint Items
+## Mint items
 
 `MintItems` is used to send a request to mint new items on the blockchain. 
 
@@ -124,7 +124,7 @@ void UWearableNFTExample::MintItems(FString abi_hash, FString to, FAnkrDelegate 
 }
 ```
 
-## Game Item Set Approval
+## Game item set approval
 
 `GameItemSetApproval` is used to confirm an update of a game item.
 
@@ -184,7 +184,7 @@ void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOper
 }
 ```
 
-## Get Character Balance
+## Get character balance
 
 `GetCharacterBalance` is used to check whether a user holds any NFTs. 
 
@@ -228,7 +228,7 @@ void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address,
 }
 ```
 
-## Get Character Token Id
+## Get character token Id
 
 `GetCharacterTokenId` retrieves the unique identifier for a specific Character Token. 
 
@@ -278,7 +278,7 @@ void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance
 }
 ```
 
-## Change Hat
+## Change hat
 
 `ChangeHat` sends a request to alter the hat wearable to red (if the hat is currently blue) or blue (if the hat is currently red).
 
@@ -345,7 +345,7 @@ void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasH
 }
 ```
 
-## Get Hat
+## Get hat
 
 `GetHat` is used to retrieve the token address for a hat NFT.
 
@@ -390,7 +390,7 @@ void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FAnkrDelegat
 }
 ```
 
-## Get Ticket Result
+## Get ticket result
 
 `GetTicketResult` is used to retrieve the status of a ticket and to see whether a transaction has been successful or not. 
 
@@ -442,7 +442,7 @@ void UWearableNFTExample::GetTicketResult(FString ticketId, FAnkrTicketResult Re
 }
 ```
 
-## Get Items Balance
+## Get items balance
 
 `GetItemsBalance` is used to retrieve the number of items for each item type. 
 
