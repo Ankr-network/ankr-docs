@@ -80,7 +80,7 @@
           {
             type: "dropdown",
             label: "🔨" + Array(2).fill("\xa0").join("") + "Build",
-            position: "left",
+            position: "right",
             items: [
               {
                 to: "build-blockchain/overview",
@@ -111,7 +111,7 @@
           {
             type: "dropdown",
             label: "💰" + Array(2).fill("\xa0").join("") + "Earn",
-            position: "left",
+            position: "right",
             items: [
               {
                 to: "earn/overview/",
@@ -146,7 +146,7 @@
         {
           type: 'dropdown',
           label: '🚀' + Array(2).fill('\xa0').join('') + 'Game',
-          position: 'left',
+          position: 'right',
           items: [
             {
               to: 'game/ankr-game',
@@ -165,7 +165,7 @@
           {
             type: 'dropdown',
             label: "📚" + Array(2).fill("\xa0").join("") + 'Learn',
-            position: "left",
+            position: "right",
             items: [
               {
                 to: 'learn/tokens-governance/ankr-tokens',
