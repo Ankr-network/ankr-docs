@@ -37,7 +37,7 @@ Official Fantom Explorers: [explorer.fantom.network](https://explorer.fantom.net
 
 Fantom uses standard JSON RPC methods. 
 
-View [Supported JSON RPC Methods](@site/docs/Build/Guides/evm-supported-requests.md)
+View [Supported JSON RPC Methods](@site/docs/blockchain-build/guides/evm-supported-requests.md)
 
 ### Example Calls
 
