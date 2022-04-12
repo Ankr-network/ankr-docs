@@ -60,7 +60,7 @@ void UUpdateNFTExample::GetNFTInfo(FString abi_hash, int tokenId, FAnkrDelegate 
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString(content);
 	Request->ProcessRequest();
@@ -121,7 +121,7 @@ void UUpdateNFTExample::UpdateNFT(FString abi_hash, FItemInfoStructure _item, FA
 			FString url = baseUrl + "send/transaction";
 			Request->SetURL(url);
 			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 			Request->SetHeader("Content-Type", TEXT("application/json"));
 
 			FRequestBodyStruct requestBody{};

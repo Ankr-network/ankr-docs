@@ -66,7 +66,7 @@ bool UAnkrClient::GetClient(FAnkrConnectionStatus Status)
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\"}");
 	Request->ProcessRequest();

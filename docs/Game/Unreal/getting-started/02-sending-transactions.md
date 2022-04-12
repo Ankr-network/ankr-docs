@@ -65,7 +65,7 @@ void UAnkrClient::SendTransaction(FString contract, FString abi_hash, FString me
 
             Request->SetURL(url);
             Request->SetVerb("POST");
-            Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+            Request->SetHeader(TEXT("User-"), "X-MirageSDK-Agent");
             Request->SetHeader("Content-Type", TEXT("application/json"));
             Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + contract + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + method + "\", \"args\": \"" + args + "\"}");
             Request->ProcessRequest();
@@ -137,7 +137,7 @@ void UAnkrClient::GetData(FString contract, FString abi_hash, FString method, FS
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + contract + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + method + "\", \"args\": \"" + args + "\"}");
 	Request->ProcessRequest();
@@ -185,7 +185,7 @@ void UAnkrClient::SendABI(FString abi, FAnkrDelegate Result)
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 
 	const TCHAR* find = TEXT("\"");
@@ -242,7 +242,7 @@ void UAnkrClient::SignMessage(FString message, FAnkrDelegate Result)
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"message\":\"" + message + "\"}"); // erc20 abi
 	Request->ProcessRequest();
@@ -298,7 +298,7 @@ void UAnkrClient::GetSignature(FString ticket, FAnkrDelegate Result)
 
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"ticket\":\"" + ticket + "\"}");
 	Request->ProcessRequest();
@@ -345,7 +345,7 @@ void UAnkrClient::VerifyMessage(FString message, FString signature, FAnkrDelegat
 	FString url = baseUrl + "verify/message";
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-AnkrSDK-Agent");
+	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
 	Request->SetHeader("Content-Type", TEXT("application/json"));
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"message\":\"" + message + "\", \"signature\":\"" + signature + "\"}");
 	Request->ProcessRequest();
