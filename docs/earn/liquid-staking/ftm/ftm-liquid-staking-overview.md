@@ -1,6 +1,6 @@
 ---
-title: Fantom Liquid Staking
-id: introduction
+title: Overview
+id: overview
 ---
 
 # Fantom Liquid Staking

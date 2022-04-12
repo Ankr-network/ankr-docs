@@ -1,6 +1,6 @@
 ---
-title: Tutorials
-id: introduction
+title: Submit a tutorial
+id: submit-tutorial
 ---
 
 ![Learn How to Contribute to Ankr Docs](https://i.imgur.com/J4rMRUBl.png)
@@ -11,15 +11,14 @@ Ankr tutorials are for people, by people. They explain how to build projects, si
 
 They are written by us and our community, and we promote this opportunity to you.
 
-## **Submit a tutorial**
-
 **Have a great idea for a tutorial topic on Web3 or DeFi?**
-
-We would love to feature your contribution in Ankr Docs!
 
 [![Submit Tutorial Idea](https://i.imgur.com/2WgRzPe.png)](https://github.com/Ankr-network/ankr-docs/issues/new?assignees=&labels=&template=propose-new-content.md&title=)
 
-**How to submit**
-1. Click "Submit Your Tutorial" to complete the form and request a review.
+## How to submit
+
+1. Click "Submit Your Tutorial" above to complete the form and request a review.
 2. The Community Tutorials team can then check out your idea. 
 3. If your tutorial fulfills our criteria, we will assist you with the next steps.
+
+

@@ -1,4 +1,5 @@
-module.exports = {
+module.exports =
+{
   buildSidebar: [
     {
       type: 'category',
@@ -142,38 +143,15 @@ module.exports = {
       ],
     },
   ],
-  earnSidebar: [
-    {
-      type: 'category',
-      label: '💰 Earn',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
+  earnSidebar: {
+    'Earn': [
+     'earn/overview',
         {
-          type: 'doc',
-          id: 'earn/overview',
-          label: 'Overview',
-        },
-        {
-          type: 'category',
-          label: 'Liquid Staking',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'earn/liquid-staking/introduction',
-          },
-          items: [
+          'Liquid Staking': [
+            'earn/liquid-staking/overview',
             {
-              type: 'category',
-              label: 'AVAX',
-              link: {
-                type: 'doc',
-                id: 'earn/liquid-staking/avax/introduction',
-              },
-              items: [
+              'AVAX': [
+                'earn/liquid-staking/avax/overview',
                 'earn/liquid-staking/avax/staking-mechanics',
                 'earn/liquid-staking/avax/stake-avax',
                 'earn/liquid-staking/avax/unstake-avax',
@@ -181,13 +159,8 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'BNB',
-              link: {
-                type: 'doc',
-                id: 'earn/liquid-staking/bnb/introduction',
-              },
-              items: [
+              'BNB': [
+                'earn/liquid-staking/bnb/overview',
                 'earn/liquid-staking/bnb/staking-mechanics',
                 'earn/liquid-staking/bnb/stake-bnb',
                 'earn/liquid-staking/bnb/unstake-bnb',
@@ -195,13 +168,8 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'DOT',
-              link: {
-                type: 'doc',
-                id: 'earn/liquid-staking/dot/introduction',
-              },
-              items: [
+              'DOT': [
+               'earn/liquid-staking/dot/overview',
                 'earn/liquid-staking/dot/staking-mechanics',
                 'earn/liquid-staking/dot/stake-dot',
                 'earn/liquid-staking/dot/unstake-dot',
@@ -209,13 +177,8 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'ETH',
-              link: {
-                type: 'doc',
-                id: 'earn/liquid-staking/eth/introduction',
-              },
-              items: [
+              'ETH': [
+               'earn/liquid-staking/eth/overview',
                 'earn/liquid-staking/eth/staking-mechanics',
                 'earn/liquid-staking/eth/stake-eth',
                 'earn/liquid-staking/eth/unstake-eth',
@@ -223,13 +186,8 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'FTM',
-              link: {
-                type: 'doc',
-                id: 'earn/liquid-staking/ftm/introduction',
-              },
-              items: [
+              'FTM': [
+                'earn/liquid-staking/ftm/overview',
                 'earn/liquid-staking/ftm/staking-mechanics',
                 'earn/liquid-staking/ftm/stake-ftm',
                 'earn/liquid-staking/ftm/unstake-ftm',
@@ -237,13 +195,8 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'KSM',
-              link: {
-                type: 'doc',
-                id: 'earn/liquid-staking/ksm/introduction',
-              },
-              items: [
+              'KSM': [
+               'earn/liquid-staking/ksm/overview',
                 'earn/liquid-staking/ksm/staking-mechanics',
                 'earn/liquid-staking/ksm/stake-ksm',
                 'earn/liquid-staking/ksm/unstake-ksm',
@@ -251,13 +204,8 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'MATIC',
-              link: {
-                type: 'doc',
-                id: 'earn/liquid-staking/matic/introduction',
-              },
-              items: [
+              'MATIC': [
+               'earn/liquid-staking/matic/overview',
                 'earn/liquid-staking/matic/staking-mechanics',
                 'earn/liquid-staking/matic/stake-matic',
                 'earn/liquid-staking/matic/unstake-matic',
@@ -267,92 +215,53 @@ module.exports = {
           ],
         },
         {
-          type: 'category',
-          label: 'DeFi',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'earn/defi/introduction',
-          },
-          items: ['earn/defi/yield-farm', 'earn/defi/provide-liquidity-to-dex'],
+           'DeFi': [
+            'earn/defi/overview',
+            'earn/defi/yield-farm',
+            'earn/defi/provide-liquidity-to-dex'
+          ],
         },
         {
-          type: 'category',
-          label: 'Bridge',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'earn/bridge/introduction',
-          },
-          items: ['earn/bridge/bridge-mechanics', 'earn/bridge/bridge-tokens'],
+          'Bridge': [
+           'earn/bridge/overview',
+           'earn/bridge/bridge-mechanics',
+            'earn/bridge/bridge-tokens'
+          ],
         },
         {
-          type: 'category',
-          label: 'Switch',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'earn/switch/introduction',
-          },
-          items: ['earn/switch/switch-mechanics'],
+          'Switch': ['earn/switch/overview',
+            'earn/switch/switch-mechanics'
+          ],
         },
         {
-          type: 'category',
-          label: 'Liquid Crowdloan',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'earn/liquid-crowdloan/introduction',
-          },
-          items: [],
+          'Liquid Crowdloan': [
+            'earn/liquid-crowdloan/overview',
+          ],
         },
         {
-          type: 'category',
-          label: 'Reference',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'earn/reference/overview',
-          },
-          items: [
-            'earn/reference/earn-glossary',
+          'Reference': [
             'earn/reference/earn-compatible-wallets',
-            'earn/reference/earn-principles',
             'earn/reference/ls-smart-contract-addresses-mn',
             'earn/reference/ls-smart-contract-addresses-tn',
             'earn/reference/micropools',
             'earn/reference/liquid-crowdloan-market-makers',
             'earn/reference/parachain-sdk',
             'earn/reference/brand-assets',
+            'earn/reference/earn-glossary',
+            'earn/reference/earn-principles',
           ],
         },
-      ],
-    },
-  ],
+     ],
+  },
   gameSidebar: {
     'Game': [
       'game/ankr-game',
       {
-        type: 'category',
-        label: 'Ankr Unity SDK',
-        link: {
-            type: 'generated-index',
-          },
-        items: [
+        'Ankr Unity SDK': [
           'game/unity/about-unity',
           'game/unity/setting-up',
           {
-            type: 'category',
-            label: 'Get Started',
-            link: {
-              type: 'generated-index',
-            },
-            items: [
+             'Get Started': [
               'game/unity/getting-started/game-00',
               'game/unity/getting-started/game-01',
               'game/unity/getting-started/game-02',
@@ -361,31 +270,18 @@ module.exports = {
             ],
           },
           {
-            type: 'category',
-            label: 'How to...',
-            link: {
-              type: 'generated-index',
-            },
-            items: ['game/unity/how-tos/wallet-game'],
+             'How to...': [
+              'game/unity/how-tos/wallet-game'
+            ],
           },
         ],
       },
       {
-        type: 'category',
-        label: 'Ankr Unreal SDK',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
+        'Ankr Unreal SDK': [
           'game/unreal/about-unreal',
           'game/unreal/setting-up-unreal',
           {
-            type: 'category',
-            label: 'Get Started',
-            link: {
-              type: 'generated-index',
-            },
-            items: [
+              'Get Started': [
               'game/unreal/getting-started/unreal-before',
               'game/unreal/getting-started/unreal-connect-wallet',
               'game/unreal/getting-started/unreal-send-retrieve',
@@ -395,62 +291,38 @@ module.exports = {
           },
         ],
       },
-            {
-              type: 'category',
-              label: 'Reference',
-              link: {
-                type: 'generated-index',
-              },
-              items: ['game/reference/game-reference'],
-          },
+      {
+        'Reference': [
+          'game/reference/game-reference'
         ],
       },
-  learnSidebar: [
-    {
-      type: 'category',
-      label: 'Tokens & Governance',
-          collapsible: true,
-          collapsed: true,
-      link: {
-        type: 'doc',
-        id: 'learn/tokens-governance/overview',
-      },
-      items: [
-            'learn/tokens-governance/ankr-tokens',
-            'learn/tokens-governance/governance',
-            'learn/tokens-governance/tokenomics',
-      ],
-    },
+    ],
+  },
+    learnSidebar: {
+    'Learn': [
       {
-      type: 'category',
-      label: 'Tutorials',
-          collapsible: true,
-          collapsed: true,
-      link: {
-        type: 'doc',
-        id: 'learn/tutorials/introduction',
+         'Tokens & Governance': [
+          'learn/tokens-governance/ankr-tokens',
+          'learn/tokens-governance/governance',
+          'learn/tokens-governance/tokenomics',
+        ],
       },
-      items: [
-            'learn/tutorials/create-voting-system/movie-voting-web3',
-            'learn/tutorials/create-eth-app-tutorial/create-eth-app',
-            'learn/tutorials/simple-truffle',
-            'learn/tutorials/connect-web3js',
-            'learn/tutorials/erigon-bsc-tutorial/erigon-bsc',
-            'learn/tutorials/connect-web3py',
-          ],
-        },
-      {
-      type: 'category',
-      label: 'Reference',
-          collapsible: true,
-          collapsed: true,
-      link: {
-        type: 'doc',
-        id: 'learn/reference/overview',
+     {
+         'Tutorials': [
+          'learn/tutorials/submit-tutorial',
+          'learn/tutorials/create-voting-system/movie-voting-web3',
+          'learn/tutorials/create-eth-app-tutorial/create-eth-app',
+          'learn/tutorials/simple-truffle',
+          'learn/tutorials/connect-web3js',
+          'learn/tutorials/erigon-bsc-tutorial/erigon-bsc',
+          'learn/tutorials/connect-web3py',
+        ],
       },
-      items: [
+     {
+         'Reference': [
           'learn/reference/ankr-vision',
-          ],
-        },
-  ],
+        ],
+      },
+    ],
+  },
 }

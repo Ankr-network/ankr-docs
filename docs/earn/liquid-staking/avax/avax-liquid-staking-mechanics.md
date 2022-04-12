@@ -1,5 +1,5 @@
 ---
-title: Liquid Staking Mechanics
+title: Staking Mechanics
 id: staking-mechanics
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: MATIC Liquid Staking
-id: introduction
+title: Overview
+id: overview
 ---
 
-## Polygon Liquid Staking
+# Polygon Liquid Staking
 
 **Polygon Liquid Staking** from Ankr Earn offers instant liquidity for your staked MATIC, enabling you to connect your tokens with DeFi platforms and earn several more layers of rewards.
 

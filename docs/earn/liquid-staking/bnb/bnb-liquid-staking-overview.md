@@ -1,6 +1,6 @@
 ---
-title: BNB Liquid Staking
-id: introduction
+title: Overview
+id: overview
 ---
 
 # BNB Liquid Staking

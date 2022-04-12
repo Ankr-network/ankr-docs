@@ -1,5 +1,5 @@
 ---
-title: ETH FAQ
+title: FAQ
 id: faq
 ---
 

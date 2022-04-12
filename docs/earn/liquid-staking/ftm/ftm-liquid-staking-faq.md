@@ -1,5 +1,5 @@
 ---
-title: FTM FAQ
+title: FAQ
 id: faq
 ---
 

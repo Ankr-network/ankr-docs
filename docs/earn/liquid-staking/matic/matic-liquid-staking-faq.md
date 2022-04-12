@@ -1,5 +1,5 @@
 ---
-title: MATIC FAQ
+title: FAQ
 id: faq
 ---
 

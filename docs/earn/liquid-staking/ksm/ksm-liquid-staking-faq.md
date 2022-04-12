@@ -1,5 +1,5 @@
 ---
-title: KSM FAQ
+title: FAQ
 id: faq
 ---
 

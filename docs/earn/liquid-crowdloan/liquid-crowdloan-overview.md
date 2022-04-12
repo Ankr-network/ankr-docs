@@ -1,6 +1,6 @@
 ---
-title: Parachain Liquid Crowdloan
-id: introduction
+title: Overview
+id: overview
 ---
 
 # Parachain Liquid Crowdloan

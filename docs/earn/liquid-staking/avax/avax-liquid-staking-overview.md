@@ -1,6 +1,6 @@
 ---
-title: Avalanche Liquid Staking
-id: introduction
+title: Overview
+id: overview
 ---
 
 # Avalanche Liquid Staking

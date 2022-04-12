@@ -1,5 +1,5 @@
 ---
-title: DOT FAQ
+title: FAQ
 id: faq
 ---
 

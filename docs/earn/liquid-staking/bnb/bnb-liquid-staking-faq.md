@@ -1,5 +1,5 @@
 ---
-title: BNB FAQ
+title: FAQ
 id: faq
 ---
 

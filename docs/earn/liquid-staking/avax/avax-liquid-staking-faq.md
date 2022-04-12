@@ -1,5 +1,5 @@
 ---
-title: AVAX FAQ
+title: FAQ
 id: faq
 ---
 

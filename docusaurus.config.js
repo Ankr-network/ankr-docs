@@ -118,27 +118,27 @@
                 label: "Overview",
               },
               {
-                to: "earn/liquid-staking/",
+                to: "earn/liquid-staking/overview",
                 label: "Liquid Staking",
               },
               {
-                to: "earn/defi/introduction",
+                to: "earn/defi/overview",
                 label: "DeFi",
               },
               {
-                to: "earn/bridge/introduction",
+                to: "earn/bridge/overview",
                 label: "Bridge",
               },
               {
-                to: "earn/switch/introduction",
+                to: "earn/switch/overview",
                 label: "Switch",
               },
               {
-                to: "earn/liquid-crowdloan/introduction",
+                to: "earn/liquid-crowdloan/overview",
                 label: "Liquid Crowdloan",
               },
             {
-              to: 'earn/reference/overview',
+              to: 'earn/reference/earn-compatible-wallets',
               label: 'Reference',
             },
           ],
@@ -167,19 +167,19 @@
             label: "📚" + Array(2).fill("\xa0").join("") + 'Learn',
             position: "left",
             items: [
-            {
-              to: 'learn/tokens-governance/overview',
-              label: 'Tokens & Governance',
-            },
-            {
-              to: 'learn/tutorials/introduction',
-              label: 'Tutorials',
-            },
-            {
-              to: 'learn/reference/overview',
-              label: 'Reference',
-            },
-           ],
+              {
+                to: 'learn/tokens-governance/ankr-tokens',
+                label: 'Tokens & Governance',
+              },
+              {
+                to: 'learn/tutorials/submit-tutorial',
+                label: 'Tutorials',
+              },
+              {
+                to: 'learn/reference/ankr-vision',
+                label: 'Reference',
+              },
+            ],
           },
         ],
       },
