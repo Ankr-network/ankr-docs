@@ -14,7 +14,7 @@ const FeatureList = [
       'Build a fast and secure blockchain with BSC Application Sidechain (BAS)',
       'Suitable for web3 developers and enthusiasts of all skill levels',
     ],
-    link: 'https://www.ankr.com/docs/Build/Concepts/build-concepts',
+    link: 'https://www.ankr.com/docs/build-blockchain/overview',
 
   },
   {
@@ -28,7 +28,7 @@ const FeatureList = [
     ],
 
 
-    link: 'https://www.ankr.com/docs/Earn/earn-introduction',
+    link: 'https://www.ankr.com/docs/earn/overview/',
 
   },
   {
@@ -40,7 +40,7 @@ const FeatureList = [
       'Participate in on-chain governance by holding $ANKR',
       'Pay for services on the Ankr platform with $ANKR',
     ],
-    link: 'https://www.ankr.com/docs/category/%EF%B8%8F-governance',
+    link: 'https://www.ankr.com/docs/learn/tokens-governance/ankr-tokens',
   },
   {
     title: "Tutorials",
@@ -51,7 +51,7 @@ const FeatureList = [
       'Share your knowledge and submit your own tutorials',
       'Discover opportunities for grants, partnerships, and more',
     ],
-    link: 'https://www.ankr.com/docs/learn/tutorials',
+    link: 'https://www.ankr.com/docs/learn/tutorials/submit-tutorial',
   }
 ];
 

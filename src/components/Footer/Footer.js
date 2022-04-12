@@ -49,7 +49,7 @@ const LINKS = [
     list: [
       {
         name: "Our Vision",
-        link: "https://www.ankr.com/docs/learn/our-vision",
+        link: "https://www.ankr.com/docs/learn/reference/ankr-vision",
       },
       {
         name: "Our Story",
