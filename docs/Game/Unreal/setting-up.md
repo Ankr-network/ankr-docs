@@ -29,13 +29,13 @@ You will need **Unreal Engine** to be installed on your computer. If you don’t
 
 3. Unzip the **AnkrSDK.zip** folder into the **Plugins** folder.
 
-4. Delete **Binaries**, **Intermediate**, **Saved folders** and **Visual Studio Project file (.sln)** from Unreal Project (If any)
+4. Delete **Binaries**, **Intermediate**, **Saved folders** and **Visual Studio Project file (.sln)** from Unreal Project (If any).
 
 ## Generate a Visual Studio Project
 
-1. Generate a **Visual Studio Project** by Right-Clicking **'[ProjectName].uproject'** and selecting **Generate Visual Studio project files**
+1. Generate a **Visual Studio Project** by right-clicking **'[ProjectName].uproject'** and selecting **Generate Visual Studio project files**
 
-2. Open the generated **Visual Studio solution file (.sln)** and check if the plugin in included in the solution explorer.
+2. Open the generated **Visual Studio solution file (.sln)** and check if the plugin is included in the solution explorer.
 
 3. Locate **GameInstance.h** if already created. If not Add C++ class from **Content Browser**, check **Show All Classes** and select **GameInstance**. Name your class **'MyGameInstance'**.
 Open **MyGameInstance.h** and include the following code:
@@ -66,12 +66,12 @@ Open **MyGameInstance.h** and include the following code:
 
 ## Add AnkrSDK to Build.cs
 
-Add **AnkrSDK** to your Unreal Project/Source/Unreal Project/Build.cs as shown below:
+Add **AnkrSDK** to your `Unreal Project/Source/Unreal Project/Build.cs` as shown below:
 
 ```cpp
 PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AnkrSDK" });
 ```
 
-Click **Edit > Project Settings >Maps and Modes** and select your newly created or already created **'GameInstance'** from the **'GameInstance Class'** dropdown.
+Click **Edit > Project Settings > Maps and Modes** and select your newly created or already created **'GameInstance'** from the **'GameInstance Class'** dropdown.
 
-Now you can call all the functions in blueprint by getting **'GetGameInstance >GetAnkrClient'**.
+Now you can call all the functions in blueprint by getting **'GetGameInstance > GetAnkrClient'**.
