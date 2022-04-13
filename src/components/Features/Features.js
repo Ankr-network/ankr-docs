@@ -28,7 +28,7 @@ const FeatureList = [
     ],
 
 
-    link: 'https://www.ankr.com/docs/earn/overview/',
+    link: 'https://www.ankr.com/docs/earn/overview',
 
   },
   {
@@ -51,7 +51,7 @@ const FeatureList = [
       'Share your knowledge and submit your own tutorials',
       'Discover opportunities for grants, partnerships, and more',
     ],
-    link: 'https://www.ankr.com/docs/learn/tutorials/submit-tutorial',
+    link: 'https://www.ankr.com/docs/learn/tutorials/create-voting-system/movie-voting-web3',
   }
 ];
 
