@@ -87,24 +87,24 @@
                 label: "Overview",
               },
               {
-                to: "category/get-started",
+                to: "build-blockchain/get-started/choose-solution",
                 label: "Get Started",
               },
               {
-                to: "category/chains-v2",
+                to: "build-blockchain/chains/v2/arbitrum",
                 label: "Chains",
               },
               {
-                to: "build-blockchain/bas/introduction",
+                to: "build-blockchain/bas/overview",
                 label: "BSC Application Sidechain",
               },
               {
-                to: "category/guides",
+                to: "build-blockchain/guides/json-methods",
                 label: "Guides",
               },
               {
                 to: "build-blockchain/support/get-support",
-                label: "Support",
+                label: "Get Support",
               },
             ],
           },

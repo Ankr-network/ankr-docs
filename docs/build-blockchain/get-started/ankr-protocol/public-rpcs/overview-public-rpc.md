@@ -15,7 +15,7 @@ Simply copy the endpoint and start making calls.
 
 _**Read more:**_
 
-[01-public-community-rpcs.md](build-blockchain/1V2/01-public-community-rpcs.md)
+[01-public-community-rpcs.md](build-blockchain/products/v2/01-public-community-rpcs.md)
 
 
 ### Getting Started

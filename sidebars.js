@@ -2,82 +2,50 @@ module.exports =
 {
   buildSidebar: [
     {
-      type: 'category',
-      label: '🔨 Build',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
+      Build: [
         {
           type: 'doc',
           id: 'build-blockchain/overview',
           label: 'Overview',
         },
         {
-          type: 'category',
-          label: 'Get Started',
-          link: {
-            type: 'generated-index',
-          },
-          items: ['build-blockchain/get-started/build-start', 'build-blockchain/get-started/pricing'],
-        },
-        {
-          type: 'category',
-          label: 'V2 Product Suite',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'build-blockchain/1V2/protocol',
-            'build-blockchain/1V2/public-rpc',
-            'build-blockchain/1V2/premium-rpc',
-            'build-blockchain/1V2/advanced-apis',
-            'build-blockchain/1V2/add-endpoints',
-            'build-blockchain/1V2/node-ops',
-            'build-blockchain/1V2/scan',
+          'Get Started': [
+           'build-blockchain/get-started/choose-solution',
+           'build-blockchain/get-started/pricing',
           ],
         },
         {
-          type: 'category',
-          label: 'Chains V2',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'build-blockchain/chains/arbitrum',
-            'build-blockchain/chains/avalanche',
-            'build-blockchain/chains/binance-smart-chain',
-            'build-blockchain/chains/celo',
-            'build-blockchain/chains/ethereum',
-            'build-blockchain/chains/fantom',
-            'build-blockchain/chains/iotex',
-            'build-blockchain/chains/near',
-            'build-blockchain/chains/nervos',
-            'build-blockchain/chains/polygon',
-            'build-blockchain/chains/solana',
+          'Products': [
+            'build-blockchain/products/v2/protocol',
+            'build-blockchain/products/v2/public-rpc',
+            'build-blockchain/products/v2/premium-rpc',
+            'build-blockchain/products/v2/advanced-apis',
+            'build-blockchain/products/v2/add-endpoints',
+            'build-blockchain/products/v2/node-ops',
+            'build-blockchain/products/v2/scan',
           ],
         },
         {
-          type: 'category',
-          label: 'BSC Application Sidechain',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'build-blockchain/bas/introduction',
-          },
-          items: [
+          'Chains': [
+            'build-blockchain/chains/v2/arbitrum',
+            'build-blockchain/chains/v2/avalanche',
+            'build-blockchain/chains/v2/binance-smart-chain',
+            'build-blockchain/chains/v2/celo',
+            'build-blockchain/chains/v2/ethereum',
+            'build-blockchain/chains/v2/fantom',
+            'build-blockchain/chains/v2/iotex',
+            'build-blockchain/chains/v2/near',
+            'build-blockchain/chains/v2/nervos',
+            'build-blockchain/chains/v2/polygon',
+            'build-blockchain/chains/v2/solana',
+          ],
+        },
+        {
+            'BSC Application Sidechain': [
+            'build-blockchain/bas/overview',
             {
-              type: 'category',
-              label: 'Architecture',
-              collapsible: true,
-              collapsed: true,
-              link: {
-                type: 'doc',
-                id: 'build-blockchain/bas/architecture/architecture',
-              },
-              items: [
+                'Architecture': [
+                'build-blockchain/bas/architecture/overview',
                 'build-blockchain/bas/architecture/modules',
                 'build-blockchain/bas/architecture/circ-model-native-bridge',
                 'build-blockchain/bas/architecture/native-bridge',
@@ -94,51 +62,41 @@ module.exports =
           ],
         },
         {
-          type: 'category',
-          label: 'V1 Products',
-          link: {
-            type: 'generated-index',
-          },
-          items: ['build-blockchain/2V1/about-api-services', 'build-blockchain/2V1/node-services'],
-        },
-
-        {
-          type: 'category',
-          label: '⛓ Chains V1',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'build-blockchain/chains/arb-api',
-            'build-blockchain/chains/avax-api',
-            'build-blockchain/chains/bsc-api',
-            'build-blockchain/chains/clover-api',
-            'build-blockchain/chains/ethereum-api',
-            'build-blockchain/chains/fantom-api',
-            'build-blockchain/chains/huobi-api',
-            'build-blockchain/chains/kusama-api',
-            'build-blockchain/chains/oec-api',
-            'build-blockchain/chains/polkadot-api',
-            'build-blockchain/chains/polygon-api',
-            'build-blockchain/chains/terra-api',
-            'build-blockchain/chains/xdai-api',
-          ],
-        },
-
-        {
-          type: 'category',
-          label: 'Guides',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
+          'Guides': [
             'build-blockchain/guides/json-methods',
             'build-blockchain/guides/libraries',
             'build-blockchain/guides/websocket-premium',
             'build-blockchain/guides/rpcapi',
           ],
         },
+                  {
+              'Archive': [
 
+                  {
+                      'Products v1': [
+                          'build-blockchain/products/v1/about-api-services',
+                          'build-blockchain/products/v1/node-services'
+                      ],
+                  },
+                  {
+                      'Chains v1': [
+                          'build-blockchain/chains/v1/arb-api',
+                          'build-blockchain/chains/v1/avax-api',
+                          'build-blockchain/chains/v1/bsc-api',
+                          'build-blockchain/chains/v1/clover-api',
+                          'build-blockchain/chains/v1/ethereum-api',
+                          'build-blockchain/chains/v1/fantom-api',
+                          'build-blockchain/chains/v1/huobi-api',
+                          'build-blockchain/chains/v1/kusama-api',
+                          'build-blockchain/chains/v1/oec-api',
+                          'build-blockchain/chains/v1/polkadot-api',
+                          'build-blockchain/chains/v1/polygon-api',
+                          'build-blockchain/chains/v1/terra-api',
+                          'build-blockchain/chains/v1/xdai-api',
+                      ],
+                  },
+              ],
+          },
         'build-blockchain/support/get-support',
       ],
     },

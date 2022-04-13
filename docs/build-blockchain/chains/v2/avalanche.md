@@ -43,7 +43,7 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 
 :::tip
 
-**Avalanche** supports [standard JSON RPC calls](../guides/evm-supported-requests.md) identical to [Geth's API](https://geth.ethereum.org/docs/rpc/server) for the following services:
+**Avalanche** supports [standard JSON RPC calls](../../guides/evm-supported-requests.md) identical to [Geth's API](https://geth.ethereum.org/docs/rpc/server) for the following services:
 
 - `web3_`
 - `net_`

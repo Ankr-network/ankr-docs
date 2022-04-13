@@ -1,7 +1,9 @@
 ---
-title: BSC Application Sidechain (BAS)
-id: introduction
+title: Overview
+id: overview
 ---
+
+# BSC Application Sidechain (BAS)
 
 ## What is BAS?
 

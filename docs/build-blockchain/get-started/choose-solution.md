@@ -1,7 +1,9 @@
 ---
-title: Choose solution
-id: build-start
+title: Choose Solution
+id: choose-solution
 ---
+
+# Choose solution
 
 Choosing the right **Ankr Build** solution depends on who you are and your use case. 
 
@@ -28,13 +30,17 @@ Checkout the Node Provider program.
 
 ## Options
 
-### V2 Product Suite
+Version 1 is deprecated and doesn't have some of the current Ankr functionality.
+
+We strongly recommend you use version 2 of Ankr products.
+
+### Products v2
 https://www.ankr.com/protocol/public/
 * Ankr Protocol featuring Multi-Chain RPCs
 * Ankr Scan
 * Node Provider Program
 
-### V1 Products
+### Products v1
 https://app.ankr.com/auth/login
 * Blockchain APIs 
 * Full Nodes (as a service)
