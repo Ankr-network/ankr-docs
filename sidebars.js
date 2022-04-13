@@ -26,11 +26,11 @@ module.exports = {
               },
               items: [
                 'Build/v2/premium-plan',
+                'Build/v2/premium-endpoints',
                 'Build/v2/hybrid-infra',
                 'Build/v2/advanced-apis',
               ],
             },
-            'Build/v2/node-ops',
             'Build/v2/scan',
           ],
         },
