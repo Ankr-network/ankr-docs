@@ -50,6 +50,4 @@ The Unreal Engine is a cross-platform suite of game development tools but you ar
 
 You can use blueprints like building blocks for simple prototyping, however C++ is required for more sophisticated game logic. It is a more complex language to learn but there are extensive tutorials and an active and responsive community for support. 
 
-Unreal is the ideal choice for creating bigger budget, complex games with superb graphics and performance at scale. 
-
-
+Unreal is the ideal choice for creating bigger budget, complex games with superb graphics and performance at scale.

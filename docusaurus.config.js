@@ -89,12 +89,8 @@
                 label: "Overview",
               },
               {
-                to: "build-blockchain/get-started/choose-solution",
-                label: "Get Started",
-              },
-              {
                 to: "build-blockchain/chains/v2/arbitrum",
-                label: "Chains",
+                label: "Chains v2",
               },
               {
                 to: "build-blockchain/bas/overview",
@@ -103,10 +99,6 @@
               {
                 to: "build-blockchain/guides/json-methods",
                 label: "Guides",
-              },
-              {
-                to: "build-blockchain/support/get-support",
-                label: "Get Support",
               },
             ],
           },

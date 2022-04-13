@@ -119,10 +119,3 @@ This is an example from the SDK and illustrates how to update a GameItem NFT by 
     }
 
     ```
-
-
-
-
-
-
-

@@ -138,4 +138,3 @@ void UUpdateNFTExample::UpdateNFT(FString abi_hash, FItemInfoStructure _item, FA
 		});
 }
 ```
-

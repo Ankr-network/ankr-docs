@@ -1,5 +1,5 @@
 ---
-title: Governance
+title: How Governance Works
 id: governance
 ---
 

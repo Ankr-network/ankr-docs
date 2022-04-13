@@ -86,7 +86,3 @@ FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);
 If already logged in, a JSON object is returned with the `session_id` and `URI`. This is now a valid session and any transaction to the blockchain can be performed.
 
 ---
-
-
-
-

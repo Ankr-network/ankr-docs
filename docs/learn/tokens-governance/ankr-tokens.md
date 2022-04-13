@@ -1,5 +1,5 @@
 ---
-title: ANKR Tokens
+title: About ANKR Tokens
 id: ankr-tokens
 ---
 

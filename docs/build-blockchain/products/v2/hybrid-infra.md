@@ -1,9 +1,9 @@
 ---
-title: Add your own endpoints
-id: add-endpoints
+title: Hybrid Infrastructure
+id: hybrid-infra
 ---
 
-Premium Plan (v2) users now have the ability to add external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
+Premium Plan (v2) users now have the ability to create a Hybrid Infrastructure by adding external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
 
 Ankr can also support your specific use case to create a custom node cluster. You can then add an endpoint from this to your account. 
 
@@ -25,35 +25,37 @@ Ankr can also support your specific use case to create a custom node cluster. Yo
 
 ## Requirements
 
-1. **Functioning RPC Endpoints**
-- Only fully functioning RPC endpoints can be added.
-- The end-user must test the endpoint via the UI prior to adding it. 
+### Functioning RPC Endpoints
+  - Only fully functioning RPC endpoints can be added.
+  - The end-user must test the endpoint via the UI prior to adding it. 
 
-2. **Whitelisting**
-- Access must be restricted by whitelisting IPs/Referrer URLs
+### Whitelisting
+  - Access must be restricted by whitelisting IPs/Referrer URLs
 
 ## How does it work?
 
-### 01 Obtain additional endpoint
+![Add endpoints](@site/static/img/add-own-endpoint.png)
+
+## 01 Obtain additional endpoint
 
 You can add an RPC endpoint from:
 
 1. Other providers e.g. Infura, 
 2. Your own node running on your machine.
-3. A specially configured node cluster. (Contact [sales@ankr.com] to discuss your use case).
+3. A specially configured node cluster. (Contact sales@ankr.com to discuss your use case).
 
-### 02 Add your endpoint
+## 02 Add your endpoint
 
 1. From [Ankr Protocol](https://www.ankr.com/protocol/public/) select **Premium Plan**
 
 2. Select the Chain you want to add your endpoints to.
 
-3. Add your Endpoint to the '*My endpoints*' section and click '*+ Add Endpoint*'. 
+3. Add your Endpoint to the '**My endpoints**' section and click '**+ Add Endpoint**'. 
 - Add further endpoint URLs as desired.
 
-![Add endpoints](@site/static/img/add-own-endpoint.png)
 
-### 03 Set up security
+
+## 03 Set up security
 
 :::tip
 To protect your endpoints from unauthorized usage, we request that you whitelist referring URLs and/or IP addresses. 

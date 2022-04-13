@@ -43,8 +43,3 @@ If the process failed at Step 5 or later:
 3. Click *Finish Bridge*.
 4. Paste the deposit transation ID in the form and click *Proceed bridge*.
 5. Check that it brought you to the **Sending progress** page, then continue from Step 6 from **Bridge aMATICb**.
-
-
-
-
-

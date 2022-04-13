@@ -3,30 +3,24 @@ module.exports =
   buildSidebar: [
     {
       Build: [
+        'build-blockchain/overview',
+        'build-blockchain/concepts/pricing',
         {
-          type: 'doc',
-          id: 'build-blockchain/overview',
-          label: 'Overview',
-        },
-        {
-          'Get Started': [
-           'build-blockchain/get-started/choose-solution',
-           'build-blockchain/get-started/pricing',
-          ],
-        },
-        {
-          'Products': [
-            'build-blockchain/products/v2/protocol',
+          'Products v2': [
             'build-blockchain/products/v2/public-rpc',
-            'build-blockchain/products/v2/premium-rpc',
-            'build-blockchain/products/v2/advanced-apis',
-            'build-blockchain/products/v2/add-endpoints',
-            'build-blockchain/products/v2/node-ops',
+              {
+                '02 - Premium Plan': [
+                'build-blockchain/products/v2/premium-plan',
+                'build-blockchain/products/v2/premium-endpoints',
+                'build-blockchain/products/v2/hybrid-infra',
+                'build-blockchain/products/v2/advanced-apis',
+                ],
+              },
             'build-blockchain/products/v2/scan',
           ],
         },
         {
-          'Chains': [
+          'Chains v2': [
             'build-blockchain/chains/v2/arbitrum',
             'build-blockchain/chains/v2/avalanche',
             'build-blockchain/chains/v2/binance-smart-chain',
@@ -260,9 +254,20 @@ module.exports =
     'Learn': [
       {
          'Tokens & Governance': [
-          'learn/tokens-governance/ankr-tokens',
-          'learn/tokens-governance/governance',
-          'learn/tokens-governance/tokenomics',
+             {
+                'Tokens': [
+                    'learn/tokens-governance/ankr-tokens',
+                    'learn/tokens-governance/buy-ankr-cex',
+                    'learn/tokens-governance/buy-ankr-dex',
+                ],
+             },
+             {
+                'Governance': [
+                 'learn/tokens-governance/governance',
+                 'learn/tokens-governance/tokenomics',
+                ],
+             },
+
         ],
       },
      {
