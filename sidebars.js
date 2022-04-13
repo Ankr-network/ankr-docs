@@ -414,7 +414,7 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Governance',
+          label: 'Tokens',
           collapsed: false,
           link: {
             type: 'generated-index',
@@ -433,7 +433,6 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Tokens&Governance/about-ankr-tokens',
             'Tokens&Governance/governance',
             'Tokens&Governance/tokenomics',
           ],
