@@ -11,7 +11,7 @@ There is no inflation built into the ANKR token. For example, a user who owns 1,
 **Circulating Supply**
 Circulating supply refers to the amount of Ankr tokens available for use in the open market. Ankr plans to release the remaining supply for distribution programs, developer grants, and to provide liquidity to future exchange listings. One hundred percent of the token supply is scheduled to be unlocked by August, 2022, though Ankr reserves the right to change this at any time for any reason.
 
-**INITIAL TOKEN SUPPLY**_ _
+**INITIAL TOKEN SUPPLY**
 
 40%
 
@@ -19,13 +19,13 @@ Circulating supply refers to the amount of Ankr tokens available for use in the 
 
 60% over 36 months between August 2019-August 2022
 
-[**Ankr Token Distribution Smart Contract**](https://etherscan.io/address/0x9c2578bf9e37eb1d0ddf45a410723d95e554cbdd#code)** from 2019-02-21.**
+[**Ankr Token Distribution Smart Contract**](https://etherscan.io/address/0x9c2578bf9e37eb1d0ddf45a410723d95e554cbdd#code) **from 2019-02-21.**
 
 #### Why 10 billion tokens?
 
-ANKR chose this amount so that our token holders would not have to do fractional math**!**
+ANKR chose this amount so that our token holders would not have to do fractional math!
 
-It’s estimated there are around 25 million developers in the world today. As adoption increases, it is possible that ANKR could bring 4%, or 1 million developers into the Web 3.0 movement. Hypothetically, if the ANKR token was evenly distributed, 1 million developers could hold a maximum of 10,000 tokens each. This allows us to better utilize the token in whole numbers.
+It is estimated that there are around 25 million developers in the world today. As adoption increases, it is possible that ANKR could bring 4%, or 1 million developers into the Web 3.0 movement. Hypothetically, if the ANKR token was evenly distributed, 1 million developers could hold a maximum of 10,000 tokens each. This allows us to better utilize the token in whole numbers.
 
 #### **Burned Tokens**
 

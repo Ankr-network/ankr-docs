@@ -8,36 +8,30 @@ module.exports = {
         type: 'generated-index',
       },
       items: [
+        'Build/concepts/build-overview',
+        'Build/concepts/pricing',
         {
           type: 'category',
-          label: 'Concepts',
-          link: {
-            type: 'generated-index',
-          },
-          items: ['Build/Concepts/build-concepts'],
-        },
-        {
-          type: 'category',
-          label: 'Get Started',
-          link: {
-            type: 'generated-index',
-          },
-          items: ['Build/Get-Started/build-start', 'Build/Get-Started/pricing'],
-        },
-        {
-          type: 'category',
-          label: 'V2 Product Suite',
+          label: 'v2',
           link: {
             type: 'generated-index',
           },
           items: [
-            'Build/1V2/protocol',
-            'Build/1V2/public-rpc',
-            'Build/1V2/premium-rpc',
-            'Build/1V2/advanced-apis',
-            'Build/1V2/add-endpoints',
-            'Build/1V2/node-ops',
-            'Build/1V2/scan',
+            'Build/v2/public-rpc',
+            {
+              type: 'category',
+              label: '02 - Premium Plan',
+              link: {
+                type: 'generated-index',
+              },
+              items: [
+                'Build/v2/premium-plan',
+                'Build/v2/premium-endpoints',
+                'Build/v2/hybrid-infra',
+                'Build/v2/advanced-apis',
+              ],
+            },
+            'Build/v2/scan',
           ],
         },
         {
@@ -47,17 +41,17 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Build/Chains/arbitrum',
-            'Build/Chains/avalanche',
-            'Build/Chains/binance-smart-chain',
-            'Build/Chains/celo',
-            'Build/Chains/ethereum',
-            'Build/Chains/fantom',
-            'Build/Chains/iotex',
-            'Build/Chains/near',
-            'Build/Chains/nervos',
-            'Build/Chains/polygon',
-            'Build/Chains/solana',
+            'Build/chains/arbitrum',
+            'Build/chains/avalanche',
+            'Build/chains/binance-smart-chain',
+            'Build/chains/celo',
+            'Build/chains/ethereum',
+            'Build/chains/fantom',
+            'Build/chains/iotex',
+            'Build/chains/near',
+            'Build/chains/nervos',
+            'Build/chains/polygon',
+            'Build/chains/solana',
           ],
         },
         {
@@ -101,7 +95,7 @@ module.exports = {
           link: {
             type: 'generated-index',
           },
-          items: ['Build/2V1/about-api-services', 'Build/2V1/node-services'],
+          items: ['Build/v1/about-api-services', 'Build/v1/node-services'],
         },
 
         {
@@ -111,19 +105,19 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Build/Chains/arb-api',
-            'Build/Chains/avax-api',
-            'Build/Chains/bsc-api',
-            'Build/Chains/clover-api',
-            'Build/Chains/ethereum-api',
-            'Build/Chains/fantom-api',
-            'Build/Chains/huobi-api',
-            'Build/Chains/kusama-api',
-            'Build/Chains/oec-api',
-            'Build/Chains/polkadot-api',
-            'Build/Chains/polygon-api',
-            'Build/Chains/terra-api',
-            'Build/Chains/xdai-api',
+            'Build/chains/arb-api',
+            'Build/chains/avax-api',
+            'Build/chains/bsc-api',
+            'Build/chains/clover-api',
+            'Build/chains/ethereum-api',
+            'Build/chains/fantom-api',
+            'Build/chains/huobi-api',
+            'Build/chains/kusama-api',
+            'Build/chains/oec-api',
+            'Build/chains/polkadot-api',
+            'Build/chains/polygon-api',
+            'Build/chains/terra-api',
+            'Build/chains/xdai-api',
           ],
         },
 
@@ -134,10 +128,10 @@ module.exports = {
             type: 'generated-index',
           },
           items: [
-            'Build/Guides/json-methods',
-            'Build/Guides/libraries',
-            'Build/Guides/websocket-premium',
-            'Build/Guides/rpcapi',
+            'Build/guides/json-methods',
+            'Build/guides/libraries',
+            'Build/guides/websocket-premium',
+            'Build/guides/rpcapi',
           ],
         },
 
@@ -413,12 +407,24 @@ module.exports = {
   governanceSidebar: [
     {
       type: 'category',
-      label: '⚖️ Tokens+Governance',
-      collapsible: false,
+      label: '🏦 Tokens+Governance',
       link: {
         type: 'generated-index',
       },
       items: [
+        {
+          type: 'category',
+          label: 'Governance',
+          collapsed: false,
+          link: {
+            type: 'generated-index',
+          },
+          items: [
+            'Tokens&Governance/about-ankr-tokens',
+            'Tokens&Governance/buy-ankr-cex',
+            'Tokens&Governance/buy-ankr-dex',
+          ],
+        },
         {
           type: 'category',
           label: 'Governance',
