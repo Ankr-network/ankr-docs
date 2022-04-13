@@ -10,7 +10,7 @@
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
     organizationName: "ankr-network", // Usually your GitHub org/user name.
-    projectName: "Ankr-docs", // Usually your repo name.
+    projectName: "ankr-docs", // Usually your repo name.
     stylesheets: [
       "https://fonts.googleapis.com/css?family=Raleway|Source+Code+Pro",
       "https://at-ui.github.io/feather-font/css/iconfont.css",
@@ -39,6 +39,7 @@
     ],
     themes: ["docusaurus-theme-search-typesense"],
     themeConfig: {
+      //Deprecated Algolia Search, we're using Typesense instead
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       algolia: {
         // The application ID provided by Algolia
@@ -49,6 +50,7 @@
         indexName: "ankr-docs",
         contextualSearch: true,
       },
+      // Typesense Search implementation
       typesense: {
         typesenseCollectionName: "ankr-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
         typesenseServerConfig: {
@@ -73,7 +75,7 @@
       },
       navbar: {
         logo: {
-          alt: "Ankr Logo",
+          alt: "Ankr Documentation",
           src: "img/ankr-logo.svg",
         },
         items: [
