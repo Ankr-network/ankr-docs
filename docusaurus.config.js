@@ -90,11 +90,11 @@
             position: "right",
             items: [
               {
-                to: "blockchain-build/concepts/overview",
+                to: "Build/concepts/overview",
                 label: "Overview",
               },
               {
-                to: "blockchain-build/Bas/about-bas",
+                to: "Build/Bas/about-bas",
                 label: "BSC Application Sidechain",
               },
               {
@@ -102,7 +102,7 @@
                 label: "Guides",
               },
               {
-                to: "blockchain-build/Support/get-support",
+                to: "Build/Support/get-support",
                 label: "Support",
               },
             ],
