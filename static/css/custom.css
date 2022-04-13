@@ -4,7 +4,6 @@
  * work well for content-centric websites.
  */
 
-
 /* You can override the default Infima variables here. */
 @font-face {
   font-family: "Helvetica Neue";
@@ -158,6 +157,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 
 .navbar__logo {
   padding-right: 20px;
+  border-right: 1px solid #c4c4c4;
   margin-right: 20px;
 }
 .navbar__brand {

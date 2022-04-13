@@ -14,7 +14,7 @@ const FeatureList = [
       'Build a fast and secure blockchain with BSC Application Sidechain (BAS)',
       'Suitable for web3 developers and enthusiasts of all skill levels',
     ],
-    link: 'https://www.ankr.com/docs/build-blockchain/overview',
+    link: 'https://www.ankr.com/docs/Build/Concepts/build-concepts',
 
   },
   {
@@ -28,7 +28,7 @@ const FeatureList = [
     ],
 
 
-    link: 'https://www.ankr.com/docs/earn/overview',
+    link: 'https://www.ankr.com/docs/Earn/earn-introduction',
 
   },
   {
@@ -40,18 +40,18 @@ const FeatureList = [
       'Participate in on-chain governance by holding $ANKR',
       'Pay for services on the Ankr platform with $ANKR',
     ],
-    link: 'https://www.ankr.com/docs/learn/tokens-governance/ankr-tokens',
+    link: 'https://www.ankr.com/docs/category/%EF%B8%8F-governance',
   },
   {
-    title: "Tutorials",
-    icon: require("../../../static/img/feature/tutorials-icon.png").default,
+    title: "Ankr Community",
+    icon: require("../../../static/img/feature/community-icon.png").default,
     list: [
-      'Read practical tutorials to build projects',
-      'Build DeFi and Web3 projects, step by step',
-      'Share your knowledge and submit your own tutorials',
+      'Connect with a global community of Ankr enthusiasts',
+      'Get the latest updates on all things Ankr',
+      'Support the growth and development of web3 infrastructure',
       'Discover opportunities for grants, partnerships, and more',
     ],
-    link: 'https://www.ankr.com/docs/learn/tutorials/create-voting-system/movie-voting-web3',
+    link: 'https://www.ankr.com/docs/Community/channels',
   }
 ];
 

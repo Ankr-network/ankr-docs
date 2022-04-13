@@ -10,7 +10,7 @@
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
     organizationName: "ankr-network", // Usually your GitHub org/user name.
-    projectName: "ankr-docs", // Usually your repo name.
+    projectName: "Ankr-docs", // Usually your repo name.
     stylesheets: [
       "https://fonts.googleapis.com/css?family=Raleway|Source+Code+Pro",
       "https://at-ui.github.io/feather-font/css/iconfont.css",
@@ -39,7 +39,6 @@
     ],
     themes: ["docusaurus-theme-search-typesense"],
     themeConfig: {
-      //Deprecated Algolia Search, we're using Typesense instead
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       algolia: {
         // The application ID provided by Algolia
@@ -50,7 +49,6 @@
         indexName: "ankr-docs",
         contextualSearch: true,
       },
-      // Typesense Search implementation
       typesense: {
         typesenseCollectionName: "ankr-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
         typesenseServerConfig: {
@@ -75,29 +73,35 @@
       },
       navbar: {
         logo: {
-          alt: "Ankr Documentation",
+          alt: "Ankr Logo",
           src: "img/ankr-logo.svg",
         },
         items: [
+          {
+            type: "doc",
+            docId: "About/about-ankr",
+            position: "right",
+            label: "⚓️ About Ankr",
+          },
           {
             type: "dropdown",
             label: "🔨" + Array(2).fill("\xa0").join("") + "Build",
             position: "right",
             items: [
               {
-                to: "build-blockchain/overview",
-                label: "Overview",
+                to: "Build/concepts/build-overview",
+                label: "v2 Overview",
               },
               {
-                to: "build-blockchain/chains/v2/arbitrum",
-                label: "Chains v2",
+                to: "category/Chains-v2",
+                label: "v2 Chains",
               },
               {
-                to: "build-blockchain/bas/overview",
+                to: "Build/Bas/about-bas",
                 label: "BSC Application Sidechain",
               },
               {
-                to: "build-blockchain/guides/json-methods",
+                to: "category/guides",
                 label: "Guides",
               },
             ],
@@ -108,29 +112,29 @@
             position: "right",
             items: [
               {
-                to: "earn/overview/",
-                label: "Overview",
-              },
-              {
-                to: "earn/liquid-staking/overview",
+                to: "Earn/liquid-staking",
                 label: "Liquid Staking",
               },
               {
-                to: "earn/defi/overview",
+                to: "Earn/liquid-crowdloan/liquid-crowdloan",
+                label: "Liquid Crowdloan",
+              },
+              {
+                to: "Earn/defi/defi-introduction",
                 label: "DeFi",
               },
               {
-                to: "earn/bridge/overview",
+                to: "Earn/bridge/bridge-introduction",
                 label: "Bridge",
               },
               {
-                to: "earn/switch/overview",
+                to: "Earn/switch/switch-introduction",
                 label: "Switch",
-              },
-              {
-                to: "earn/liquid-crowdloan/overview",
-                label: "Liquid Crowdloan",
-              },
+              }, 
+            {
+              to: 'category/reference',
+              label: 'Reference',
+            },
           ],
         },
         {
@@ -139,37 +143,42 @@
           position: 'right',
           items: [
             {
-              to: 'game/ankr-game',
+              to: 'Game/ankr-game',
               label: 'Overview',
             },
             {
-              to: 'game/unity/about-unity',
+              to: 'Game/Unity/about-unity',
               label: 'Unity SDK',
             },
             {
-              to: 'game/unreal/about-unreal',
+              to: 'Game/Unreal/about-unreal',
               label: 'Unreal SDK',
             },
           ],
-        },
+        }, 
           {
-            type: 'dropdown',
-            label: "📚" + Array(2).fill("\xa0").join("") + 'Learn',
+            type: "dropdown",
+            label: "👥" + Array(2).fill("\xa0").join("") + "Community",
             position: "right",
             items: [
               {
-                to: 'learn/tokens-governance/ankr-tokens',
-                label: 'Tokens & Governance',
-              },
-              {
-                to: 'learn/tutorials/submit-tutorial',
-                label: 'Tutorials',
-              },
-              {
-                to: 'learn/reference/ankr-vision',
-                label: 'Reference',
+                to: "Community/channels",
+                label: "Community Channels",
               },
             ],
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "governanceSidebar",
+            position: "right",
+            label:
+              "🏦" + Array(2).fill("\xa0").join("") + "Tokens & Governance",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "right",
+            label: "📚" + Array(2).fill("\xa0").join("") + "Tutorials",
           },
         ],
       },
