@@ -35,7 +35,7 @@ BAS Testnet will be out at the end of March, 2022.
 BAS Mainnet will be ready at least 2 months after that.
 
 ### Where can we find more docs for BAS for our developers to read through? 
-Refer to [BAS Architecture](../bas/architecture/). 
+Refer to [BAS Architecture](../bas/architecture/overview). 
 
 Also, read [BNB Chain 2022: Build N’ Build](https://www.bnbchain.world/en/blog/bsc-2022-build-and-build/) and [BEP100 proposal for Binance Application Sidechain (BAS)](https://github.com/bnb-chain/BEPs/pull/132). 
 
