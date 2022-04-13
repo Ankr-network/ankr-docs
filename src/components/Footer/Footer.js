@@ -48,6 +48,10 @@ const LINKS = [
     name: "About us",
     list: [
       {
+        name: "Our Vision",
+        link: "https://www.ankr.com/docs/learn/reference/ankr-vision",
+      },
+      {
         name: "Our Story",
         link: "https://www.ankr.com/about/our-purpose/",
       },

@@ -21,7 +21,7 @@ function HomepageHeader() {
           <div className={styles.buttons}>
             <Link
               className={styles.button}
-              to="https://www.ankr.com/docs/Tutorials/submit-tutorial"
+              to="https://www.ankr.com/docs/learn/tutorials/submit-tutorial"
             >
               Contribute to Ankr Docs
             </Link>
