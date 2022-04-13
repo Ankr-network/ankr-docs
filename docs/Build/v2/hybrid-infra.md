@@ -42,7 +42,7 @@ You can add an RPC endpoint from:
 
 1. Other providers e.g. Infura, 
 2. Your own node running on your machine.
-3. A specially configured node cluster. (Contact [sales@ankr.com](sales@ankr.com) to discuss your use case).
+3. A specially configured node cluster. (Contact sales@ankr.com to discuss your use case).
 
 ## 02 Add your endpoint
 
