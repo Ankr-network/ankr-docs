@@ -33,8 +33,8 @@ If a proposal is approved, it is then voted upon over the number of days set by 
 
 The proposers’ ANKR is locked for 14 days.&#x20;
 
-Votes are cast by ANKR token-holders on the basis of 1 ANKR per vote, and ANKR used for the vote is locked for the duration of the vote. ANKR tokens locked for voting can be used to cast votes for multiple proposals.\
-\
-**STEP FIVE: Proposal Agreed (Subject to voting)**
+Votes are cast by ANKR token-holders on the basis of 1 ANKR per vote, and ANKR used for the vote is locked for the duration of the vote. ANKR tokens locked for voting can be used to cast votes for multiple proposals.
 
-If a Proposal is successfully voted for then it is implemented as a matter of priority by the Ankr team.\
+#### STEP FIVE: Proposal Agreed (Subject to voting)
+
+If a Proposal is successfully voted for then it is implemented as a matter of priority by the Ankr team.

@@ -89,16 +89,8 @@
             position: "right",
             items: [
               {
-                to: "category/get-started",
-                label: "Get Started",
-              },
-              {
-                to: "category/concepts",
-                label: "Concepts",
-              },
-              {
-                to: "category/chains-v2",
-                label: "Chains",
+                to: "Build/concepts/build-overview",
+                label: "Overview",
               },
               {
                 to: "Build/Bas/about-bas",
