@@ -5,7 +5,15 @@ id: build-overview
 
 # Build - Overview
 
-**Ankr Build** provides a truly distributed, multi-chain infrastructure network and toolkit to simplify the building of applications.
+**Ankr Build** provides a truly distributed, multi-chain infrastructure network and toolkit to simplify the building of applications. Build Products include the following:
+
+1. **Public Community RPC APIs** - Free and instant access to our range of Public Community RPC APIs. [read more](../v2/public-rpc)
+
+2. **Premium Plan** - Sign up to our Premium Plan with 10000 ANKR and get access to powerful features. [read more](../v2/premium-plan)
+
+3. **Ankr Scan** - Ankr Scan is a Multi-Chain Explorer allowing to view assets across chains as well as assigned to a specific wallet address. [read more](../v2/scan)
+
+4. **Node Services** Full, Archive and Validator/Staking nodes are available for 50+ chains. 
 
 ## Are you serious about decentralization?
 
@@ -32,39 +40,13 @@ Cloud service providers can experience service outages, be compelled by Governme
 
 Ankr is probably the most **distributed** web3 infrastructure company in the world. Without any dependency on centralized cloud providers, Ankr nodes are geographically distributed across independent data centres around the globe. 
 
-We are gradually making it easier for the community to add their own node(s) to the Ankr Network as well as enabling other node service providers and enterprises to contribute their node infrastructure to the network and benefit from rewards. This is part of the shift towards a DAO based **Ankr Protocol** and fully **decentralized** web3 infrastructure provision. 
-
-## Build - Products
-
-## 01 Public Community RPC APIs
-
-Start today with free and instant access to our range of Public Community RPC APIs. 
-
-Check out the URLs of our [Public RPCs](https://www.ankr.com/protocol/public/) and start making calls now. 
+We are gradually making it easier for the community to add their own node(s) to the Ankr Network as well as enabling other node service providers and enterprises to contribute their node infrastructure to the network and benefit from rewards. This is part of the shift towards a DAO based **Ankr Protocol** and fully **decentralized** web3 infrastructure provision.
 
 
-## 02 Premium Plan 
+## What is the difference between Centralized, Decentralized and Distributed Web3 infrastructure?
+Web3 Infrastructures are composed of a network of nodes that can be centralized, decentralized or distributed.
 
-Sign up to our Premium Plan with 10000 ANKR and get access to the following:
-
-- [Hybrid Infrastructure](../v2/hybrid-infra)
-
-- Private endpoints for https and wss
-
-- Unique API endpoints 
-
-
-## 03 Ankr Scan
-
-Ankr Scan is a Multi-Chain Explorer allowing to view assets across chains as well as assigned to a specific wallet address.  
-
-## 04 Node Services 
-
-Full, Archive and Validator/Staking nodes are available for 50+ chains. 
-
-## What is the difference between Centralized, Decentralized and Distributed infrastructure?
-
-A Network is a set of nodes and a set of edges, or interconnections between nodes. This means that it is possible to have a network that is made up of several islands of nodes, where no connections exist between nodes on different islands. These islands are called **Components**.
+A network is a set of nodes and a set of edges, or interconnections between nodes. This means that it is possible to have a network that is made up of several islands of nodes, where no connections exist between nodes on different islands. These islands are called **Components**.
 
 In general, there are three primary network architectures. **Centralized**, **Distributed** and **Decentralized**.
 
