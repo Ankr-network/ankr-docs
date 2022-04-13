@@ -27,7 +27,7 @@ The 'uri' deeplink only works for mobile devices. For desktop, a QR Code is gene
 
 ```cpp
 	
-bool UMirageClient::GetClient(FMirageConnectionStatus Status)
+bool UAnkrClient::GetClient(FAnkrConnectionStatus Status)
 {
 	http = &FHttpModule::Get();
 

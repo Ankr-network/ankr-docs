@@ -39,7 +39,7 @@ The session saved during the `GetClient`call is used to open Metamask. Metamask 
 
 ```cpp
 
-void UMirageClient::SendTransaction(FString contract, FString abi_hash, FString method, FString args, FMirageTicket Ticket)
+void UAnkrClient::SendTransaction(FString contract, FString abi_hash, FString method, FString args, FAnkrTicket Ticket)
 {
     http = &FHttpModule::Get();
 
@@ -65,7 +65,7 @@ void UMirageClient::SendTransaction(FString contract, FString abi_hash, FString 
 
             Request->SetURL(url);
             Request->SetVerb("POST");
-            Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
+            Request->SetHeader(TEXT("User-"), "X-MirageSDK-Agent");
             Request->SetHeader("Content-Type", TEXT("application/json"));
             Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + contract + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + method + "\", \"args\": \"" + args + "\"}");
             Request->ProcessRequest();
@@ -121,7 +121,7 @@ http://45.77.189.28:5000/wallet/call/method
 The data for a particular wallet and user from a contract is returned.
 
 ```cpp
-void UMirageClient::GetData(FString contract, FString abi_hash, FString method, FString args, FMirageDelegate Result)
+void UAnkrClient::GetData(FString contract, FString abi_hash, FString method, FString args, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -164,7 +164,7 @@ The ABI hash is returned.
 
 ```cpp
 
-void UMirageClient::SendABI(FString abi, FMirageDelegate Result)
+void UAnkrClient::SendABI(FString abi, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
@@ -218,7 +218,7 @@ A `ticketid` is returned.
 
 ```cpp
 
-void UMirageClient::SignMessage(FString message, FMirageDelegate Result)
+void UAnkrClient::SignMessage(FString message, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 	
@@ -278,7 +278,7 @@ A 'data' object with 'signature' string field.
 
 ```cpp
 
-void UMirageClient::GetSignature(FString ticket, FMirageDelegate Result)
+void UAnkrClient::GetSignature(FString ticket, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 	
@@ -327,7 +327,7 @@ Account 'address'. The account address for the connected wallet's public address
 
 ```cpp
 
-void UMirageClient::VerifyMessage(FString message, FString signature, FMirageDelegate Result)
+void UAnkrClient::VerifyMessage(FString message, FString signature, FAnkrDelegate Result)
 {
 	http = &FHttpModule::Get();
 
