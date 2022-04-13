@@ -13,3 +13,4 @@ Premium RPC Endpoints are **secure** and **private** endpoints exclusive to you.
 The Websocket API limits the maximum number of simultaneous connections to provide protection against misuse e.g. DDoS attacks, for example. If your Websocket client makes too many connections at the same time, an error message will be received.
 :::
 
+Check out [How to connect to Premium websockets](../guides/websocket-premium)

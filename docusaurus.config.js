@@ -90,7 +90,11 @@
             items: [
               {
                 to: "Build/concepts/build-overview",
-                label: "Overview",
+                label: "v2 Overview",
+              },
+              {
+                to: "category/Chains-v2",
+                label: "v2 Chains",
               },
               {
                 to: "Build/Bas/about-bas",
@@ -99,10 +103,6 @@
               {
                 to: "category/guides",
                 label: "Guides",
-              },
-              {
-                to: "Build/Support/get-support",
-                label: "Support",
               },
             ],
           },
