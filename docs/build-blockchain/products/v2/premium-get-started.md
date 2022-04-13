@@ -53,9 +53,9 @@ The Websocket API limits the maximum number of simultaneous connections to provi
 
 ## 01 Buy ANKR
 
-If not, here's [How to buy ANKR from a Centralized Exchange](../../Tokens&Governance/buy-ankr-cex) 
+If not, here's [How to buy ANKR from a Centralized Exchange](../../../learn/tokens-governance/buy-ankr-cex) 
 
-and heres's [How to buy ANKR from a Decentralized Exchange](../../Tokens&Governance/buy-ankr-dex) 
+and heres's [How to buy ANKR from a Decentralized Exchange](../../../learn/tokens-governance/buy-ankr-dex) 
 
 
 ## 02 Pay ANKR to access Premium Plan
