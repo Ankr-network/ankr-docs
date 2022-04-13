@@ -13,11 +13,11 @@ This section explains how to onboard to the Premium Plan so you can get started.
 
 ## Key features
 
-1. Unique Advanced API endpoints providing specialist data. [read more](../v2/premium-security)  
+1. Unique Advanced API endpoints providing specialist data. [read more](../../products/v2/premium-security)  
 
-2. Secure and Private endpoints for https and wss. [read more](../v2/premium-endpoints)
+2. Secure and Private endpoints for https and wss. [read more](../../products/v2/premium-endpoints)
 
-3. Hybrid Infrastructure** [read more](../v2/hybrid-infra)
+3. Hybrid Infrastructure** [read more](../../products/v2/hybrid-infra)
 
 
 
