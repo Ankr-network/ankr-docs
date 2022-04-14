@@ -22,7 +22,9 @@ For more detail, take a look at [**Ankr Token Distribution Smart Contract**](htt
 Ankr chose this amount so that our token holders would not have to do fractional math**!**
 
 It’s estimated there are around 25 million developers in the world today. 
-As adoption increases, it is possible that Ankr could bring 4%, or 1 million developers into the Web 3.0 movement. Hypothetically, if the ANKR token was evenly distributed, 1 million developers could hold a maximum of 10,000 tokens each. This allows us to better utilize the token in whole numbers.
+As adoption increases, it is possible that Ankr could bring 4%, or 1 million developers into the Web 3.0 movement. 
+Hypothetically, if the ANKR token was evenly distributed, 1 million developers could hold a maximum of 10,000 tokens each. 
+This allows us to better utilize the token in whole numbers.
 
 ## **Burned Tokens**
 

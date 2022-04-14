@@ -319,7 +319,7 @@ http://45.77.189.28:5000/verify/message
 
 `device_id`, 
 `message`, 
-`signature` } 
+`signature` 
 
 ### Response 
 
