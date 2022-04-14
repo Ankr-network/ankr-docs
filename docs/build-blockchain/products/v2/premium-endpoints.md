@@ -3,6 +3,8 @@ title: Premium Plan Endpoints
 id: premium-endpoints
 ---
 
+# Premium Plan endpoints
+
 Premium RPC Endpoints are **secure** and **private** endpoints exclusive to you. Premium endpoints provide greater reliability by interfacing with a fully distributed, ultra low latency node pool. This node network infrastructure is distinct from the public community RPC network infrastructure. 
 
 * At times of network congestion, Ankr Premium requests are prioritized.&#x20;

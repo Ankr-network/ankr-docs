@@ -14,7 +14,7 @@ Ankr allows users to create their own full Fantom APIs with a variety of options
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### ** Network Types**
+### ** Network types**
 
 * Mainnet
 * Testnet
@@ -27,21 +27,21 @@ Ankr allows users to create their own full Fantom APIs with a variety of options
 
 Official Fantom Explorers: [explorer.fantom.network](https://explorer.fantom.network) and [ftmscan.com](https://ftmscan.com)
 
-### GraphQL API Methods
+### GraphQL API methods
 
 [GraphQL docs](https://docs.fantom.foundation/api/schema-structure)
 
 [REST API docs](https://www.covalenthq.com/docs/api/#overview)
 
-### JSON RPC Methods
+### JSON RPC methods
 
 Fantom uses standard JSON RPC methods. 
 
 View [Supported JSON RPC Methods](@site/docs/build-blockchain/guides/evm-supported-requests.md)
 
-### Example Calls
+### Example calls
 
-#### API (HTTPS) Endpoint
+#### API (HTTPS) endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -122,7 +122,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
 </TabItem>
 </Tabs>
 
-#### Websocket (WSS) Endpoint&#x20;
+#### Websocket (WSS) endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">

@@ -3,7 +3,10 @@ title:  Create a Simple Project with Truffle
 id: simple-truffle
 ---
 
-By Staff Writers
+# Create a simple project with Truffle
+
+**By Staff Writers**
+<br/>
 
 Truffle is a development environment, testing framework and asset pipeline for
 blockchains using the Ethereum Virtual Machine (EVM)
@@ -38,7 +41,7 @@ npm install -g truffle
 npm install -g webpack
 ```
 
-## 02 - Create a Project
+## 02 - Create a project
 
 To use most Truffle commands, you need to run them against an existing Truffle project. So the first step is to create a bare metal Truffle project.
 
@@ -49,7 +52,7 @@ mkdir Truffle-project
 cd Truffle-project2. 
 ```
 
-### 2. Set up the truffle project
+### 2. Set up the Truffle project
 
 ```java
 truffle unbox webpack
@@ -63,7 +66,7 @@ Once completed, you'll have a project structure with the following items:
 * `test/`: Directory for test files for testing your application and contracts
 * `truffle-config.js`: Truffle configuration file
 
-## 03 - Create a Contract
+## 03 - Create a contract
 
 Contracts are written in [Solidity](https://solidity.readthedocs.io/en/develop/), all files containing contracts will have a file extension of `.sol`
 
@@ -81,7 +84,7 @@ contract newContract{
 }
 ```
 
-## 04 - Set up Contract Deployment
+## 04 - Set up contract deployment
 
 These files are responsible for staging your deployment tasks. They are written under the assumption that your deployment needs will change over time.
 
@@ -133,7 +136,7 @@ You can view your successfully created APIs inside [app.ankr.com](https://app.an
 * The display of the API upgrade plan (please refer to the [upgrade plan](https://ankr-network.github.io/faq-hugo-source/basics/view\_api/#plan-settings))
 * Status of the API.
 
-## 07 - Configure your Truffle Project
+## 07 - Configure your Truffle project
 
 Modify the `truffle-config.js` file to configure your truffle project. It's seeded with some common settings for different networks and features like migrations, compilation and testing.
 

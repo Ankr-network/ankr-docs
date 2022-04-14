@@ -12,7 +12,7 @@ NEAR developers can host serverless applications and smart contracts that easily
 Near is not compatible with the Ethereum Virtual Machine.  All contract code is deployed and run inside a WASM Compatible Virtual Machine. 
 :::
 
-## Quick Links
+## Quick links
 
 [**Near Protocol**](https://near.org/)
 
@@ -23,7 +23,7 @@ Near is not compatible with the Ethereum Virtual Machine.  All contract code is 
 
 ---
 
-## Connect Wallet
+## Connect wallet
 
 The NEAR Protocol has its own NEAR Wallet. This is an in-browser, web-based wallet for creating and interacting with NEAR accounts.&#x20;
 
@@ -37,17 +37,17 @@ Users must login to MetaMask and prove that their account has a balance higher t
 
 ---
 
-## Integrate Code
+## Integrate code
 
 Near is non-evm compatible and has its own native RPC methods.
 Check out the [Near RPC docs](https://docs.near.org/docs/api/rpc)
 Below are some examples
 
-### Gas Price
+### Gas price
 
 Returns gas price for a specific block_height or block_hash. Using [null] will return the most recent block's gas price.
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/near \
@@ -59,7 +59,7 @@ curl https://rpc.ankr.com/near \
    "params": [17824600]}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","result":{"gas_price":"100000000"},"id":"dontcare"}
@@ -73,7 +73,7 @@ Queries network and returns block details for given height or hash. You can also
 You may choose to search by a specific block or finality, you can not choose both.
 :::
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/near \
@@ -89,13 +89,13 @@ curl https://rpc.ankr.com/near \
 }'
 ```
 
-#### Example Response (Extract)
+#### Example response (Extract)
 
 ```js
 {"jsonrpc":"2.0","result":{"author":"moonlet.poolv1.near","header":{"height":61437572,"prev_height":61437571,"epoch_id":"9tqM9PSuQQXjvrAEhvRb45Q7XpDNS8itEcjr8yACDe2C","next_epoch_id":"2Ri3EriB9b5hBHmSPLLfJQhUyqCDx8Q8zsrpVK6aMFCo","hash":"GtGb4NnzLKxNYxWLum3eNhto6oWE1syc6ryrj9xAYqJU","prev_hash":"4LA5n9S72HCBbxwyR38gLZnZtcksc27kmFYZzZ2fQJob","prev_state_root":"AtdLpdibkTxhGu2CJRtgyWF5rGSpMeUEXH1Gb9SrjSQU","chunk_receipts_root":"CkUi6LaNxEeHrWsrm1QVj7vD...
 ```
 
-### Transaction Status
+### Transaction status
 
 Queries status of a transaction by hash and returns the final transaction result.
 
@@ -104,7 +104,7 @@ params:
 transaction hash (see NEAR Explorer for a valid transaction hash)
 sender account id
 
-#### Example Request 
+#### Example request 
 
 ```js
 curl https://rpc.ankr.com/near \

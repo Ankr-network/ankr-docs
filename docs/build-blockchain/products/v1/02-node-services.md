@@ -3,7 +3,7 @@ title: 02 - Node Services
 id: node-services
 ---
 
-# Node Services
+# Node services
 
 ## FULL NODES
 
@@ -15,7 +15,8 @@ Full Node Deployment gives you the ability to launch nodes to 45+ chains in minu
 
 This service deploys nodes in containers to bare metal servers.
 
-## Use Cases
+## Use cases
+
 Full Nodes are useful for building dApps without high performance requirements.
 
 * PROS
@@ -28,7 +29,7 @@ Full Nodes are useful for building dApps without high performance requirements.
     * Sync delays with blockchain after initialization. Syncing can take hours, days, and for archive modes, even weeks.
     * Individual nodes aren't optimized for sudden variations in traffic. This can lead to bottlenecks and/or errors.
 
-## Validator Nodes (Staking Nodes)
+## Validator nodes (staking nodes)
 
 Ankr offers validator nodes for these chains. These are accessible from [app.ankr.com](https://app.ankr.com/apps/validators) 
 

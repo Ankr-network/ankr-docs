@@ -14,12 +14,12 @@ Ankr allows users to create their own Polygon full and archive APIs with a varie
 1. Login or set up an account on app.ankr.com
 2. [**Create API **](https://app.ankr.com/apps/api)
 
-### Network Types Available on Ankr
+### Network types available on Ankr
 
 * Mainnet;
 * Mumbai Testnet;
 
-### Node Modes Available on Ankr
+### Node modes available on Ankr
 
 * Archive Nodes;
 * Full Nodes;
@@ -30,14 +30,14 @@ Mainnet - [https://polygonscan.com/](https://polygonscan.com)​
 
 Mumbai Testnet- [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com)
 
-### Polygon RPC Methods​
+### Polygon RPC methods
 
 Polygon uses standard JSON RPC methods. \
 View [Supported JSON RPC Methods](@site/docs/build-blockchain/guides/evm-supported-requests.md)
 
 ### Examples
 
-#### API HTTPS Endpoint
+#### API HTTPS endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -117,7 +117,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
 </TabItem>
 </Tabs>
 
-#### Websocket Endpoint
+#### Websocket endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">

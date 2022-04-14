@@ -11,7 +11,7 @@ Celo is a layer 1 protocol and blockchain platform. The Celo Mainnet is entirely
 
 All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that while they are not ERC-20 tokens on the Ethereum Mainnet, all familiar tooling and code that support ERC-20 tokens can be easily adapted for Celo assets, including the Celo Native Asset (CELO) and the Celo Dollar (cUSD).
 
-## Quick Links
+## Quick links
 
 [**Celo**](https://celo.org)
 
@@ -21,11 +21,11 @@ All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that whil
 
 ---
 
-## Connect Wallet
+## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Celo RPC. You can then perform transactions and interact with the network.
 
-### Get Started
+### Get started
 
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
@@ -41,7 +41,7 @@ You can set up your **MetaMask wallet** to connect to Celo RPC. You can then per
 |           | SYMBOL:                 | CELO                                                   |
 |           | BLOCK EXPLORER URL:     | [https://explorer.celo.org](https://explorer.celo.org) |
 
-## Integrate Code
+## Integrate code
 
 ### web3 library
 
@@ -49,7 +49,7 @@ You can set up your **MetaMask wallet** to connect to Celo RPC. You can then per
 
 Returns the current client version.
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/celo \
@@ -58,7 +58,7 @@ curl https://rpc.ankr.com/celo \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":1,"result":"celo/v1.5.2-stable-1bd6b188/linux-amd64/go1.17.3"}
@@ -70,7 +70,7 @@ curl https://rpc.ankr.com/celo \
 
 Returns the current network id.
 
-#### Example Request
+#### Example request
 
 ```js
   
@@ -80,7 +80,7 @@ Returns the current network id.
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"42220"}
@@ -88,7 +88,7 @@ Returns the current network id.
 
 ### eth library
 
-#### Example Request
+#### Example request
 
 ```js
 
@@ -98,7 +98,7 @@ curl https://rpc.ankr.com/celo \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"0xb63607"}

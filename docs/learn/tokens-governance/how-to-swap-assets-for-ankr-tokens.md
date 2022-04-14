@@ -11,7 +11,7 @@ Create an account on an exchange and buy the required amount of ANKR.
 
 This examples assumes you are using a MetaMask wallet.
 
-## Install Metamask
+## Install MetaMask
 
 1. Head over to [https://metamask.io/](https://metamask.io).&#x20;
 

@@ -17,11 +17,11 @@ Ankr allows users to create their own full Clover APIs with a variety of options
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-## Network Types Available on Clover
+## Network types available on Clover
 
 * Mainnet
 
-## Node Modes Available on Ankr
+## Node modes available on Ankr
 
 * Full Node
 
@@ -29,7 +29,7 @@ Ankr allows users to create their own full Clover APIs with a variety of options
 
 Clover Cross-Chain Explorer ([https://tx.clover.finance/](https://tx.clover.finance)) shows information about cross chain transactions​.
 
-## JSON-RPC Methods
+## JSON-RPC methods
 
 Clover's approach to JSON-RPC methods is unique and not the same as the standard Ethereum JSON-RPC methods.
 
@@ -38,9 +38,9 @@ Clover's approach to JSON-RPC methods is unique and not the same as the standard
 * [gsrpc-docs](https://pkg.go.dev/github.com/centrifuge/go-substrate-rpc-client)
 * [rpc-call](https://apps-ivy.clover.finance/#/rpc)
 
-## Example Calls
+## Example calls
 
-#### API (HTTPS) Endpoint
+#### API (HTTPS) endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -117,7 +117,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_
 </TabItem>
 </Tabs>
 
-#### Websocket (WSS) Endpoint
+#### Websocket (WSS) endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">

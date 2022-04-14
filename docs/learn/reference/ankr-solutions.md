@@ -56,7 +56,7 @@ b. Liquid Staking: Solving capital inefficiency of Proof-of-Stake
 
 c. Delegate Staking: stake without smart contract risk. 
 
-### Parachain Liquid Crowdloans:
+### Parachain Liquid Crowdloan:
 
 Solve the capital inefficiency of Parachain slot auctions.
 

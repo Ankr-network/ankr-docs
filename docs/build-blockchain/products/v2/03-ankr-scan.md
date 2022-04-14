@@ -21,7 +21,7 @@ id: scan
 
 ![Ankr Scan](@site/static/img/ankr-scan.png)
 
-## Block Data
+## Block data
 
 View individual block details for blocks held on multiple chains.
 
@@ -47,7 +47,7 @@ View individual block details for blocks held on multiple chains.
 
 ![Ankr Scan](@site/static/img/blockview-scan.png)
 
-## Transaction Data
+## Transaction data
 
 You can view detailed information for an individual transaction on supported blockchains.
 
@@ -75,7 +75,7 @@ You can view detailed information for an individual transaction on supported blo
 
 ![Ankr Scan](@site/static/img/tx-data-scan.png)
 
-## Address View
+## Address view
 
 By entering a specific wallet address you can gain a view of the following:
 

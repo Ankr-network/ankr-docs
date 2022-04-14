@@ -3,9 +3,9 @@ title: Pricing Plans
 id: pricing
 ---
 
-# Product Pricing Plans
+# Product pricing plans
 
-## 📌 Build v2 Pricing 
+## 📌 Build v2 pricing 
 
 ### Public RPCs and Premium Plan
 
@@ -25,12 +25,12 @@ id: pricing
 :::
 
 
-## 📌 Build v1 - API Services & Nodes
+## 📌 Build v1 - API services & nodes
 
 We offer 5 flexible options and pricing plans to suit all budgets and
 requirements.
 
-### API Pricing Plan
+### API pricing plan
 
 :::info v1 Pricing
 

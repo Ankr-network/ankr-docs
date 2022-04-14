@@ -9,7 +9,7 @@ id: ethereum
 
 The Ethereum network is one of the most popular platforms for building dApps and blockchain solutions. A series of upgrades are currently taking place as part of the transition from **Proof-of-Work** to a **Proof-of-Stake** consensus model. This shift allows network participants to stake ETH and earn rewards for supporting the network.&#x20;
 
-## Quick Links
+## Quick links
 
 ​[**Ethereum**](https://ethereum.org/en/developers/)
 
@@ -20,11 +20,11 @@ The Ethereum network is one of the most popular platforms for building dApps and
 
 ---
 
-## Connect Wallet
+## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then perform transactions and interact with the network.
 
-### Get Started
+### Get started
 
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.&#x20;
 2. Select '_**Custom RPC**_'.&#x20;
@@ -39,7 +39,7 @@ You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then
 |           | BLOCK EXPLORER URL:     | https://etherscan.io/     |
 
 
-## Integrate Code
+## Integrate code
 
 ### web3 library
 
@@ -47,7 +47,7 @@ You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then
 
 Returns the current client version
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/eth \
@@ -56,7 +56,7 @@ curl https://rpc.ankr.com/eth \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":1,"result":"Geth/v1.1.7-74f6b613/linux-amd64/go1.16.10"}
@@ -69,7 +69,7 @@ curl https://rpc.ankr.com/eth \
 Returns the current network id.
 
 
-#### Example Request
+#### Example request
 
 ```js
   
@@ -79,7 +79,7 @@ Returns the current network id.
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"1"}
@@ -97,7 +97,7 @@ Returns the current network id.
 
 ### eth library
 
-### Example Request
+### Example request
 
 ```js
 
@@ -107,7 +107,7 @@ curl https://rpc.ankr.com/eth \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
-### Example Response
+### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"0xdb85e4"}

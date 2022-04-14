@@ -3,7 +3,7 @@ title: Get Support
 id: get-support
 ---
 
-# Getting Support
+# Getting support
 
 ## If you're struggling with a problem
 

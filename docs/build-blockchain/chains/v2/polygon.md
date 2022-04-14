@@ -8,7 +8,7 @@ id: polygon
 
 **Polygon**, (formerly MATIC) is a protocol and a framework for building and connecting Ethereum-compatible blockchain networks. It aggregates scalable solutions on Ethereum supporting a multi-chain Ethereum ecosystem.
 
-## **Quick Links**
+## **Quick links**
 
 [**Polygon**](https://polygon.technology)
 
@@ -19,11 +19,11 @@ id: polygon
 
 ---
 
-## Connect Wallet
+## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then perform transactions and interact with the network.
 
-### Get Started
+### Get started
 
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.&#x20;
 2. Select '_**Custom RPC**_'.&#x20;
@@ -39,7 +39,7 @@ You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then 
 
 ----
 
-## Integrate Code
+## Integrate code
 
 ### web3 library
 
@@ -47,7 +47,7 @@ You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then 
 
 Returns the current client version.
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/polygon \
@@ -56,7 +56,7 @@ curl https://rpc.ankr.com/polygon \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":1,"result":"bor/v0.2.14-stable-10c4e89f/linux-amd64/go1.17.3"}
@@ -68,7 +68,7 @@ curl https://rpc.ankr.com/polygon \
 
 Returns the current network id.
 
-#### Example Request
+#### Example request
 
 ```js
   
@@ -78,7 +78,7 @@ Returns the current network id.
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"137"}
@@ -86,7 +86,7 @@ Returns the current network id.
 
 ### eth library
 
-#### Example Request
+#### Example request
 
 ```js
 
@@ -96,7 +96,7 @@ curl https://rpc.ankr.com/polygon \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"0x18be35a"}

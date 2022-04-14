@@ -5,7 +5,7 @@ id: unreal-update-nft
 
 This section describes methods to get NFTs and make updates to them e.g. adding a red hat to a character.
 
-Get NFT Info
+Get NFT info
 ---
 ---
 

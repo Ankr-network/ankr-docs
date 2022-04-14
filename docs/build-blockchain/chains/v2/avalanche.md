@@ -11,7 +11,7 @@ The **C-Chain** is available via Avalanche RPC.
 
 Avalanche was built specifically with Defi dApps and protocols in mind, focusing on security, low latency & high throughput. Avalanche uses a novel consensus protocol by utilizing two different consensus mechanisms. The consensus protocol ensures a high degree of security and fast finality even with multiple chains running simultaneously.
 
-## Quick Links
+## Quick links
 
 [**Avalanche**](https://www.avalabs.org)
 
@@ -20,11 +20,11 @@ Avalanche was built specifically with Defi dApps and protocols in mind, focusing
 [**Github**](https://github.com/ava-labs)
 
 
-## Connect Wallet
+## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can then perform transactions and interact with the network.
 
-## Get Started
+## Get started
 
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.&#x20;
 2. Select '_**Custom RPC**_'.&#x20;
@@ -39,7 +39,7 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 |           |   BLOCK EXPLORER:   | [https://cchain.explorer.avax.network/](https://cchain.explorer.avax.network) |
 
 
-## Integrate Code
+## Integrate code
 
 :::tip
 
@@ -60,7 +60,7 @@ You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can the
 
 Returns the current client version.
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/avalanche \
@@ -69,7 +69,7 @@ curl https://rpc.ankr.com/avalanche \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":1,"result":"v0.7.2-rc.1"}
@@ -82,7 +82,7 @@ curl https://rpc.ankr.com/avalanche \
 Returns the current network id.
 
 
-#### Example Request
+#### Example request
 
 ```js
   
@@ -92,7 +92,7 @@ Returns the current network id.
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"43114"}
@@ -100,7 +100,7 @@ Returns the current network id.
 
 ### eth library
 
-### Example Request
+### Example request
 
 ```js
 
@@ -110,14 +110,14 @@ curl https://rpc.ankr.com/avalanche \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
-### Example Response
+### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"0xaf7bf1"}
 ```
 
 ---
-## Integrate Code
+## Integrate code
 
 ### web3 
 

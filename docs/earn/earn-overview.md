@@ -19,8 +19,8 @@ The clear benefits of Ankr Liquid Staking are:
 * Immediate access to liquidity
 * Transfer of risks to Ankr experts
 
-## Parachain Liquid Crowdloans
-**Parachain Liquid Crowdloans** provide similar benefits to *Staking*. 
+## Parachain Liquid Crowdloan
+**Parachain Liquid Crowdloan** provide similar benefits to *Staking*. 
 
 1. **Bond DOT/KSM**
 Users bond DOT or KSM to a Polkadot project during a Parachain Slot Auction. 
@@ -42,3 +42,7 @@ DeFi provides a single dashboard view of use cases for Liquid Staking tokens.
 Ankr Bridge brings cross-chain liquid staking to multiple chains to enable users to increase their yield opportunities.
 
 Ankr Bridge is secured with ECDSA cryptography and a multi-party computation based Threshold Signature Scheme. This ensures that private keys are never exposed whilst mitigating against any single point of failure.
+
+## Ankr Switch
+
+Ankr Switch enables the exchange of Liquid Staking tokens: between reward earning tokens and reward bearing tokens for the same asset.

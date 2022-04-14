@@ -14,15 +14,15 @@ Ankr allows users to create their own **Kusama relay chain APIs** with a variety
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### **Nodes Available on Ankr**
+### **Nodes available on Ankr**
 
 * Kusama Relay Chain
 
-### **Networks Available on Ankr**
+### **Networks available on Ankr**
 
 * Kusama Relay Mainnet
 
-### JSON RPC Methods
+### JSON RPC methods
 
 Kusama's approach to JSON-RPC methods is unique and not the same as the standard** **Ethereum JSON-RPC methods.
 
@@ -32,7 +32,7 @@ View [Substrate RPC client in Go documentation ](https://pkg.go.dev/github.com/c
 
 You can also use [Polkadot-JS-Apps](https://polkadot.js.org/docs/) to interact. These are a collection of tools, utilities and libraries for interacting with the [Polkadot network](https://polkadot.network) from JavaScript. All code is made available on [Github](https://github.com/polkadot-js/) with a [permissive Apache-2.0 license](https://en.wikipedia.org/wiki/Apache\_License#Version\_2.0).
 
-### Example Calls
+### Example calls
 
 #### API HTTPS endpoint
 
