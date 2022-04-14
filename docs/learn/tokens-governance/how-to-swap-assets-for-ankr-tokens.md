@@ -53,4 +53,4 @@ KEEP YOUR SECRET PHRASE A SECRET
 
     <img src={require('/img/custom-token-fields.png').default} alt="custom token fields" width="250" />
 
-4. Click 'Import' to add to your wallet and view your ANKR tokens
+4. Click 'Import' to add to your wallet and view your ANKR tokens.

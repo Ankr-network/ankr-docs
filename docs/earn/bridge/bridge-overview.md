@@ -22,6 +22,11 @@ Currently, Ankr Bridge supports the following native Ankr Liquid Tokens and allo
 
 We're planning to add support for BNB, FTM, AVAX soon. 
 
+## Audit details
+
+FTM Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
+To learn more, view the [detailed audit repot](https://assets.ankr.com/earn/ankr_bridge_security_audit.pdf).
+
 ## Why Ankr Bridge?
 
 ### User benefits
