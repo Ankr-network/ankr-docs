@@ -3,7 +3,7 @@ title: Launch BAS
 id: launch-bas
 ---
 
-# How to launch a BAS
+# Launch BAS
 
 ## Prerequisites
 
