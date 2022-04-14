@@ -11,6 +11,11 @@ Fantom Liquid Staking enables you to earn **alpha** (the _return on investment t
 
 Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
+## Audit details
+
+FTM Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
+To learn more, view the [detailed audit repot](http://assets.ankr.com/earn/smart_contract_security_audit_ftm.pdf).
+
 ## **Benefits**
 
 ### **Instant liquidity**

@@ -36,7 +36,3 @@ The mechanics of what's going on under the hood when a user transfers their fund
 8. The user sees the transferred assets deposited to their wallet on the detination network.
 
 To sum up, the flow in any direction is the same: `approve()` (if necessary) -> `deposit()` -> `notarize` -> `withdraw()`.
-
-## Additional information
-
-Ankr Bridge has undergone external audit. To learn the details, view the [detailed audit repot](https://assets.ankr.com/earn/ankr_bridge_security_audit.pdf).

@@ -11,6 +11,11 @@ Binance Liquid Staking enables you to earn **alpha**. (the _return on investment
 
 Ankr Earn can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
+## Audit details
+
+BNB Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
+To learn more, view the [detailed audit repot](http://assets.ankr.com/earn/smart_contract_security_audit_bnb.pdf).
+
 ### Benefits of BNB Liquid Staking
 
 Instant Liquidity Using Ankr Earn is the best way to stake BNB as you can access instant liquidity in the form of the aBNBb token. Avoiding locking your tokens up with the BSC network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
