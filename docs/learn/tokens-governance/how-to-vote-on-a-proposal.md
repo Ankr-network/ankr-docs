@@ -14,4 +14,4 @@ How to participate in a vote:
 
 3. As the vote progresses, live results are visible on the Governance dashboard where users can see the result as it unfolds!
 
-4. When voting ends, the result is published and if successful, conveyed to the Ankr team for implementation. For simple parameter changes to the contract, this could be a matter of days, or for something more complex, a longer time frame is likely.&#x20;
+4. When voting ends, the result is published and if successful, conveyed to the Ankr team for implementation. For simple parameter changes to the contract, this could be a matter of days, or for something more complex, a longer time frame is likely.
