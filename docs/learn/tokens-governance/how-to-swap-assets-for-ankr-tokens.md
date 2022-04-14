@@ -35,7 +35,7 @@ KEEP YOUR SECRET PHRASE A SECRET
 
 5. Wait for the transaction to complete and see your new tokens automatically appear in your wallet (If the token does not appear in your wallet, you may need to click its “Add Token” button and follow the steps first.)
 
-## View ANKR tokens in MetaMask
+## View ANKR tokens in your MetaMask wallet
 
 1. Sign in to your wallet. 
 
