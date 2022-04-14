@@ -1,4 +1,4 @@
-# List of Supported Chains
+# List of supported chains
 
 Supported Chains
 This page provides details on chains, nodes and networks available for API services.

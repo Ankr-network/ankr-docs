@@ -3,6 +3,8 @@ title: Earn Glossary
 id: earn-glossary
 ---
 
+# Earn glossary
+
 ### Alpha
 Alpha refers to excess returns earned on an investment above a benchmark return.
 

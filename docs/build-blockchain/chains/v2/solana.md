@@ -9,7 +9,7 @@ id: solana
 
 The Solana architecture combines a set of software algorithms to remove software as a performance bottlenecks and allow transaction throughput to scale proportionally with network bandwidth. As a result, the Solana blockchain is **scalable**, **secure** and **decentralized**.
 
-## Quick Links
+## Quick links
 
 [**Solana**](https://solana.com)
 
@@ -18,7 +18,7 @@ The Solana architecture combines a set of software algorithms to remove software
 [**Github**](https://github.com/solana-labs/solana)
 
 ---
-## Connect Wallet
+## Connect wallet
 
 **Solana** is not evm-compatible and therefore MetaMask cannot currently be configured to work with Solana.
 

@@ -14,11 +14,11 @@ Ankr allows users to create their own Arbitrum full APIs with a variety of optio
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### **Node Types Available on Ankr**
+### **Node types available on Ankr**
 
 * Full Node
 
-## Network Types Available on Ankr
+## Network types available on Ankr
 
 * Mainnet
 * Testnet
@@ -27,19 +27,19 @@ Ankr allows users to create their own Arbitrum full APIs with a variety of optio
 
 [https://explorer.offchainlabs.com/](https://explorer.offchainlabs.com)​​
 
-### **View Available Endpoints**
+### **View available endpoints**
 
 Select 'Settings' to view API & & Websocket endpoints
 
-### JSON-RPC Methods
+### JSON-RPC methods
 
 Arbitrum nodes support the [Ethereum JSON-RPC API](https://eth.wiki/json-rpc/API)
 
 [**View Arbitrum Docs**](https://developer.offchainlabs.com/docs/developer\_quickstart)
 
-## **Example Calls**
+## **Example calls**
 
-**API (HTTPS) Endpoint**
+**API (HTTPS) endpoint**
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

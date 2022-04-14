@@ -1,5 +1,5 @@
 ---
-title: How to create a dApp with Remix
+title: How to Create a dApp with Remix
 id: dapp-remix
 ---
 

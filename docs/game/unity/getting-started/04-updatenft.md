@@ -3,18 +3,19 @@ title: 04 - Update an NFT
 id: game-04
 ---
 
+# Update an NFT
 
 Making updates to the NFT e.g. adding a red hat to a character requires signing and sending a transaction.
 
-### Signing Transactions
+### Signing transactions
 All updates are transactions that must be signed via a prompt from MetaMask.
 
-### Sending Transactions
+### Sending transactions
 
 There are two ways to make update transactions. 
 Using the **GetData** method and the **CallMethod**
 
-#### GetData Method
+#### GetData method
 
 Use the `GetData` method to retrieve information from the blockchain. (READ functions do NOT require mining.). Other non-standard `Get` functions are also available
 
@@ -59,7 +60,7 @@ public async void UpdateNFT()
 		}
 ```
 
-### 👀 Example - Update NFT
+### 👀 Example — update NFT
 
 This is an example from the SDK and illustrates how to update a GameItem NFT by user request.
 

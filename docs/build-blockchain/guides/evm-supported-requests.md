@@ -3,6 +3,8 @@ title: Supported JSON RPC Methods
 id: json-methods
 ---
 
+# Supported JSON RPC methods
+
 For EVM-compatible chains, Ankr supports the following methods:
 
 ### Websockets

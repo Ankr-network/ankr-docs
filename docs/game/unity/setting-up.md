@@ -1,7 +1,9 @@
 ---
-title: Setting up
+title: Setting Up
 id: setting-up
 ---
+
+# Setting up
 
 ## Installation
 

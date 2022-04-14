@@ -22,11 +22,11 @@ The official document has more detailed information :
 
 * [docs.terra](https://docs.terra.money)
 
-### Network Types Available on Ankr
+### Network types available on Ankr
 
 * Columbus 4
 
-### Node Modes Available on Ankr
+### Node modes available on Ankr
 
 * Terra
 
@@ -37,14 +37,14 @@ The official document has more detailed information :
 [Figment Hubble ](https://hubble.figment.io/terra/chains/columbus-4): Terra block explorer with advanced validator data and income report functionality\
 [Extraterrestria Finder ](https://finder.extraterrestrial.money): Terra block explorer with community driven features
 
-### Terra RPC Methods
+### Terra RPC methods
 
 Terra uses standard JSON RPC methods. 
 View [Supported JSON RPC Methods](@site/docs/build-blockchain/guides/evm-supported-requests.md)
 
-### Example Calls
+### Example calls
 
-#### API (HTTPS) Endpoint
+#### API (HTTPS) endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

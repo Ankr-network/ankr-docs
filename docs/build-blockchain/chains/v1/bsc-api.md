@@ -15,30 +15,30 @@ In addition to Ankr’s free and public [Binance Smart Chain RPC](https://rpc.an
 1. Login or set up an account on &#x20; [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-## Node Types Available on Ankr
+## Node types available on Ankr
 
 * BSC Full
 * BSC Archive
 
-## Network Types Available on Ankr
+## Network types available on Ankr
 
 * Mainnet - Full & Archive
 * Testnet - Full
 
-## Explorer Links <a href="#explorer-links" id="explorer-links"></a>
+## Explorer links <a href="#explorer-links" id="explorer-links"></a>
 
 Mainnet - [https://bscscan.com/](https://bscscan.com)​
 
 Testnet - [https://testnet.bscscan.com/](https://testnet.bscscan.com)​
 
-### Endpoints Available
+### Endpoints available
 
 * JSON RPC API;
 * Websockets;
 
 ## Examples
 
-#### API (HTTPS) Endpoint
+#### API (HTTPS) endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -134,7 +134,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
 </TabItem>
 </Tabs>
 
-#### Websocket (WSS) Endpoint
+#### Websocket (WSS) endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">

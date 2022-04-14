@@ -14,28 +14,28 @@ Ankr allows users to create their own Heco Tinder and Heco Tinder Archive APIs w
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### Network Types Available
+### Network types available
 
 * Mainnet
 
-### Nodes Available
+### Nodes available
 
 * Heco Tinder
 * Heco Tinder Archive
 
-### Heco Explorers
+### Heco explorers
 
 Official Heco Explorer [https://hecoinfo.com/](https://hecoinfo.com)
 
-### JSON RPC&#x20;
+### JSON RPC
 
 Heco is compatible with Ethereum's ecosystem. It supports Ethereum's RPC API and SDK.
 
 View [JSON RPC API ](https://eth.wiki/json-rpc/api)docs
 
-### Example Calls
+### Example calls
 
-#### API (HTTPS) Endpoint
+#### API (HTTPS) endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -116,7 +116,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
 </TabItem>
 </Tabs>
 
-#### Websocket (WSS) Endpoint
+#### Websocket (WSS) endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">

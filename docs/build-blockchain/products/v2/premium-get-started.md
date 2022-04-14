@@ -3,7 +3,7 @@ title: Get Started
 id: premium-plan
 ---
 
-# Get Started
+# Get started
 
 The **Premium Plan** gives you access to a range of exclusive features that allow you to build on a secure, reliable, ultra-fast multi-chain network. 
 
@@ -61,7 +61,7 @@ and heres's [How to buy ANKR from a Decentralized Exchange](../../../learn/token
 ## 02 Pay ANKR to access Premium Plan
 
 
-### STEP ONE: Connect Wallet
+### STEP ONE: Connect wallet
 
 1. From the Ankr Premium Landing page, select ‘**Connect Wallet**’
 
@@ -79,7 +79,7 @@ and heres's [How to buy ANKR from a Decentralized Exchange](../../../learn/token
 
 4.  Authorize your MetaMask extension to connect to Ankr Premium if you wish to continue.
 
-### STEP TWO: Perform the Deposit
+### STEP TWO: Perform the deposit
 
 1. Enter the amount you wish to deposit 10000 ANKR.
 

@@ -14,11 +14,11 @@ Ankr allows users to create their own APIs with a variety of options for request
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### Network Types Available on Ankr
+### Network types available on Ankr
 
 * Mainnet
 
-### Node Types Available on Ankr
+### Node types available on Ankr
 
 * Relaychain
 
@@ -28,7 +28,7 @@ Polkadot Explorer: [https://polkascan.io/polkadot](https://polkascan.io/polkadot
 
 Polkadot Substrate based explorer [https://polkadot.subscan.io/](https://polkadot.subscan.io)​
 
-### JSON-RPC Methods
+### JSON-RPC methods
 
 Polkadot's approach to JSON-RPC methods is unique and not the same as the standard** **Ethereum JSON-RPC methods.
 
@@ -38,9 +38,9 @@ View [Substrate RPC client in Go documentation ](https://pkg.go.dev/github.com/c
 
 You can also use [Polkadot-JS-Apps](https://polkadot.js.org/docs/) to interact. These are a collection of tools, utilities and libraries for interacting with the [Polkadot network](https://polkadot.network) from JavaScript. All code is made available on [Github](https://github.com/polkadot-js/) with a [permissive Apache-2.0 license](https://en.wikipedia.org/wiki/Apache\_License#Version\_2.0).
 
-### Example Calls
+### Example calls
 
-#### API HTTPS Endpoint
+#### API HTTPS endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -108,7 +108,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"chain_
 </TabItem>
 </Tabs>
 
-#### Websocket Endpoint
+#### Websocket endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">

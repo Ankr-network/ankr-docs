@@ -1,7 +1,9 @@
 ---
-title: Submit a tutorial
+title: Submit a Tutorial
 id: submit-tutorial
 ---
+
+# Submit a tutorial
 
 ![Learn How to Contribute to Ankr Docs](https://i.imgur.com/J4rMRUBl.png)
 

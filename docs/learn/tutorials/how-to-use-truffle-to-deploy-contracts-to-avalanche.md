@@ -3,9 +3,7 @@ title: How to use Truffle to Deploy contracts to both Avalanche Fuji and Mainnet
 id: truffle-fuji-mainnet
 ---
 
-
-
-# How to use Truffle to Deploy contracts to both Avalanche Fuji and Mainnet
+# How to use Truffle to deploy contracts to both Avalanche Fuji and Mainnet
 
 The Truffle Suite is a set of tools for dApp development. Truffle allows you to compile, test, debug and deploy Smart Contracts on the EVM.
 
@@ -16,7 +14,7 @@ Here at Ankr we needed to find a secure method to deploy the same contract secur
 This tutorial walks you through using Truffle to deploy contracts to the Avalanche Network. 
 
 
-## 00 Before you Start
+## 00 Before you start
 
 
 
@@ -32,7 +30,7 @@ This tutorial walks you through using Truffle to deploy contracts to the Avalanc
 ```npm install @truffle/hdwallet-provider```
 
 
-## 01 Get endpoints for Avalanche Node 
+## 01 Get endpoints for Avalanche node 
 
 Ankr Protocol offers a selection of Multi-Chain RPCs as both free and public offerings as well as premium.
 

@@ -3,6 +3,8 @@ title: 01 - Connect Wallet and Authenticate
 id: game-01
 ---
 
+# Connect wallet and authenticate
+
 Connecting to a Web3 wallet such as MetaMask via **WalletConnect** provides a link between a **Wallet Address** and a user's **Game Account**. 
 
 There are two ways to get a **Session Key** from your wallet. 
@@ -55,7 +57,7 @@ Create an instance of a `AnkrSDKWrapper` class via `AnkrSDKWrapper.GetSDKInstanc
 
 Inside ***(AnkrSDK/Examples/UseCases/LinkingAccountWallet)*** is an example script demonstrating how to link a Web3 wallet (MetaMask) to a player account.
 
-## 👀 Example - connect wallet to account
+## 👀 Example — connect wallet to account
 
 This is an example from the SDK to link a Web3 wallet to a player account.
 

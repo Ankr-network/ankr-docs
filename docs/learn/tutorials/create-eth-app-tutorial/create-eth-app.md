@@ -1,23 +1,18 @@
 ---
-title: Create a dApp front end with create-eth-app
+title: Create a dApp Frontend with create-eth-app
 id: create-eth-app
 ---
+# Create an easy dApp frontend with create-eth-app
 
 **By Anita Diamond**
+<br/>
+
+`create-eth-app` makes it super easy to spin up front ends for dApps with. `create-eth-app` is a fork of `create-react-app` and works on macOS, Windows, and Linux. It is a swift alternative to writing your own code with web3 libraries or Truffle Suite Box for React. It comes bundled with [ethers.js](https://docs.ethers.io/) and Web3Modal to connect with wallets as well as examples on how to interface with Smart Contracts. 
+
+`create-eth-app` is a Node.js package. You can find its repo here : [create-eth-app repo](https://github.com/paulrberg/create-eth-app).
 
 
-# Create an easy dApp front end with `create-eth-app`
-
-**Create-eth-app** makes it super easy to spin up front ends for dApps with. Create-eth-app is a fork of ‘create-react-app’ and 
-
-works on macOS, Windows, and Linux. It is a swift alternative to writing your own code with web3 libraries or Truffle Suite Box for React. It comes bundled with [ethers.js](https://docs.ethers.io/) and Web3Modal to connect with wallets as well as examples on how to interface with Smart Contracts. 
-
-`create-eth-app` is a Node.js package. You can find its repo here : 
-
-[Create-eth-app Repo](https://github.com/paulrberg/create-eth-app)
-
-
-## 00 - Before you Start
+## 00 - Before you start
 
 Ensure you have the following dependencies installed. 
 
@@ -53,10 +48,10 @@ $ yarn --version
 
 
 
-## 01 - Get Started
+## 01 - Get started
 
 
-### Install Create Eth App
+### Install create-eth-app
 
 In Terminal/CLI
 
@@ -69,7 +64,7 @@ yarn create eth-app my-eth-app
 This creates a basic blockchain project. Open the project in your code editor e.g. VS Code.
 
 
-## 02 - View Folders
+## 02 - View folders
 
 
 ```
@@ -127,7 +122,7 @@ To create a production build, use npm run build.
 
 
 
-## 04 - Connect Wallet
+## 04 - Connect wallet
 
 Out of the box we can connect a wallet to our app. You can use MetaMask or WalletConnect. 
 
@@ -179,10 +174,3 @@ Add the template as follows:
 ```bash
 yarn create eth-app my-eth-app --template compound
 ```
-
-
-
-
-
-
-

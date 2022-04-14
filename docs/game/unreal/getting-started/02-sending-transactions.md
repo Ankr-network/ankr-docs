@@ -3,6 +3,8 @@ title: 02 Sending Transactions & Retrieving Data
 id: unreal-send-retrieve
 ---
 
+# 02 Sending transactions & retrieving data
+
 This page lists the different methods you can use in your game. 
 
 :::tip in general
@@ -13,7 +15,7 @@ All read data method calls such as retrieving a balance do NOT incur gas fees.
 
 :::
 
-Send Transaction
+Send transaction
 ----------------
 ----------------
 The `SendTransaction` function interacts with the blockchain and incurs gas fees. Signing in Metamask is required. 
@@ -76,7 +78,7 @@ void UAnkrClient::SendTransaction(FString contract, FString abi_hash, FString me
     }
 ```
 
-Checking Status of Ticket
+Checking status of ticket
 ------------
 -----------
 
@@ -197,7 +199,7 @@ void UAnkrClient::SendABI(FString abi, FAnkrDelegate Result)
 }
 ```
 
-Sign Message
+Sign message
 ---
 ---
 
@@ -257,7 +259,7 @@ The Call is as follows:
 FString url = baseUrl + "sign/message";
 ```
 
-Get Signature
+Get signature
 ----
 ----
 
@@ -305,7 +307,7 @@ void UAnkrClient::GetSignature(FString ticket, FAnkrDelegate Result)
 }
 ```
 
-Verify Message
+Verify message
 ----
 ----
 
