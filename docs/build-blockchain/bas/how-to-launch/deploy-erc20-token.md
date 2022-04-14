@@ -3,6 +3,8 @@ title: Deploy ERC-20 Token
 id: deploy-erc20-token
 ---
 
+# Deploy ERC-20 token
+
 Deployment of ERC-20 token can be done though Remix IDE of locally using truffle. 
 Since BAS has EVM & Web3 support, it is compatible with Ethereum development toolsets. 
 Remix is the easiest way to deploy the ERC-20 smart contract into a BAS network.

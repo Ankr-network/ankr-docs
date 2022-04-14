@@ -3,6 +3,8 @@ title: Deploy ERC-721 Token
 id: deploy-erc721-token
 ---
 
+# Deploy ERC-721 token
+
 Deployment of ERC-721 token can be done though Remix IDE of locally using truffle. 
 Since BAS has EVM & Web3 support, it is compatible with Ethereum development toolsets. 
 Remix is the easiest way to deploy the ERC-721 smart contract into a BAS network.
