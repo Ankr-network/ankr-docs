@@ -3,10 +3,11 @@ title: 00 - Before you Start
 id: game-00
 ---
 
+# 00 - Before you start
 
 To get started, you need to have deployed your contract on to the blockchain and have the **ABI** and the **Contract Address**. 
 
-### Example Contract (ABI & Contract Address)
+### Example contract (ABI & contract address)
 
 The following example is a `WearableNFTExample` contract from the SDK. [Check it out](https://github.com/Ankr-network/game-unity-demo/blob/master/Assets/AnkrSDK/Examples/Scripts/WearableNFTExample/WearableNFTContractInformation.cs)
 

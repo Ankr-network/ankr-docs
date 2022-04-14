@@ -19,7 +19,7 @@ Ankr allows users to create their own Ethereum full and archive APIs with a vari
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### Network Types Available on Ankr
+### Network types available on Ankr
 
 ​[Geth Clients](https://github.com/ethereum/go-ethereum)​
 
@@ -29,7 +29,7 @@ Ankr allows users to create their own Ethereum full and archive APIs with a vari
 * Görli  Network;
 
 
-### Node Modes Available on Ankr
+### Node modes available on Ankr
 
 * Archive Node
 * Full Node
@@ -46,11 +46,11 @@ Gorli - [https://goerli.etherscan.io/](https://goerli.etherscan.io)​
 
 Kovan - [https://kovan.etherscan.io/](https://kovan.etherscan.io)​
 
-### JSON-RPC Methods
+### JSON-RPC methods
 
 Official RPC documentation: [https://eth.wiki/json-rpc/API](https://eth.wiki/json-rpc/API)​
 
-## **Example Calls**
+## **Example calls**
 
 **API (HTTPS) Endpoint**
 

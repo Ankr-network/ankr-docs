@@ -3,6 +3,8 @@ title: Compatible Wallets
 id: earn-compatible-wallets
 ---
 
+# Compatible wallets
+
 The following hot wallets are compatible with Ankr Earn: 
 * [Metamask](https://metamask.io)
 * [imToken](https://www.token.im/)

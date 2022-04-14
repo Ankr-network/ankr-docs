@@ -1,4 +1,4 @@
-# How to Integrate
+# How to integrate
 
 You can integrate with **RPC Chains** in 3 ways:
 
@@ -6,7 +6,7 @@ You can integrate with **RPC Chains** in 3 ways:
 
 Code samples are provided for each chain
 
-### TWO: Command Line
+### TWO: Command line
 
 Curl samples are provided for each chain.
 

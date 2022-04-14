@@ -3,7 +3,7 @@ title: 01 - API Services
 id: about-api-services
 ---
 
-# About API Services
+# About API services
 Ankr’s API service provides seamless HTTPS and Websocket access to a large selection of chains.
 The service is optimized via our load-balanced node clusters and Remote Procedure Call (RPC) Gateway. This robust architecture provides services and APIs with significantly better reliability and performance compared to running an individual node.
 

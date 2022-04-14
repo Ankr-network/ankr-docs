@@ -41,7 +41,7 @@ Make a Fiat Deposit by card, Deposit another Crypto Asset and pay with that. Use
 NOTE: These fund/payment options may vary depending on your location.
 :::
 
-## 04 Buy the desired amount of ANKR.
+## 04 Buy the desired amount of ANKR
 
 Ensure you buy enough to cover fees.
 

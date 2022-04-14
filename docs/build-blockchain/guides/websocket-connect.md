@@ -3,7 +3,7 @@ title: Connect to Premium Websockets
 id: websocket-premium
 ---
 
-# Connect to Premium Websockets
+# Connect to premium websockets
 
 ## 01 - Access your premium websocket (wss) endpoint 
 
@@ -37,7 +37,7 @@ The easiest way to test out your websocket endpoint is to install a command line
 
 Use `wscat` to send Curl requests as in the Curl example below
 
-## 03 - Websocket Endpoint Examples
+## 03 - Websocket endpoint examples
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

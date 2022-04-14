@@ -3,7 +3,7 @@ title: 01 - Public RPC Endpoints
 id: public-rpc
 ---
 
-# 01 - Public Community RPCs
+# 01 - Public community RPCs
 
 Public Community RPCs are central to the Ankr vision of mass adoption in Web 3.0 and the crypto economy. The Ankr Public RPC layer provides fast and reliable access via API endpoints to anybody in the world to connect to a growing number of networks:
 

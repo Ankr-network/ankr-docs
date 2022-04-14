@@ -3,6 +3,8 @@ title: Earn Principles
 id: earn-principles
 ---
 
+# Earn principles
+ 
 Ankr Earn solves the problems of Traditional Staking by enabling liquidity, portability and access to value. 
 
 1. **Solving capital inefficiency**

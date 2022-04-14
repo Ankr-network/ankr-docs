@@ -1,4 +1,4 @@
-# Understanding Node Types
+# Understanding node types
 
 Nodes are the devices and software used by individuals, organizations and institutions in a network to keep a copy of a blockchain and serve as communication points that execute various essential network functions.
 Full

@@ -3,6 +3,8 @@ title: 01 Connect Wallet and Authenticate
 id: unreal-connect-wallet
 ---
 
+# 01 Connect wallet and authenticate
+
 This section assumes you have already deployed the relevant smart contracts to the blockchain and have smart contract addresses and ABI.
 
 #### STEP ONE

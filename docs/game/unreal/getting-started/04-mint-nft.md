@@ -3,6 +3,8 @@ title: 04 Mint Wearables NFT
 id: unreal-mint-nft
 ---
 
+# 04 Mint wearables NFT
+
 The following methods can be used to mint new characters and wearable NFTs. 
 
 :::tip

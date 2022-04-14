@@ -3,11 +3,11 @@ title: Developer API Pricing Plans
 id: dev-pricing-plans
 ---
 
-# Pricing Plans
+# Pricing plans
 
 We offer 5 flexible options and pricing plans to suit all budgets and requirements.
 
-## Developer API Pricing Plans
+## Developer API pricing plans
 
 Feature | Intro | Basic | Builder | Pro | Growth | Enterprise
 ---|---|---|---|---|---

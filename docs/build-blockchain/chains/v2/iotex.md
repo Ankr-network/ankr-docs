@@ -7,7 +7,7 @@ id: iotex
 
 **IoTeX** is an EVM-compatible platform with a vision of the Internet of Trusted Things. It is a decentralized ecosystem set up to guarantee security and trust between humans and machines. Iotex supports self-sovereign users to solely own and control their devices, as well as the data and value they generate.&#x20;
 
-## Quick Links
+## Quick links
 
 [**IoTeX**](https://iotex.io/)
 
@@ -17,7 +17,7 @@ id: iotex
 
 ---
 
-## Integrate Code
+## Integrate code
 
 ### web3 library
 
@@ -25,7 +25,7 @@ id: iotex
 
 Returns the current client version.
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/iotex \
@@ -34,7 +34,7 @@ curl https://rpc.ankr.com/iotex \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":1,"result":"v1.6.4-rc0/go version go1.17.6 linux/amd64"}
@@ -46,7 +46,7 @@ curl https://rpc.ankr.com/iotex \
 
 Returns the current network id.
 
-#### Example Request
+#### Example request
 
 ```js
   
@@ -56,7 +56,7 @@ Returns the current network id.
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"4689"}
@@ -64,7 +64,7 @@ Returns the current network id.
 
 ### eth library
 
-#### Example Request
+#### Example request
 
 ```js
 
@@ -74,7 +74,7 @@ curl https://rpc.ankr.com/iotex \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"0xf93dc8"}

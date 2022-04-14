@@ -26,8 +26,8 @@ As adoption increases, it is possible that Ankr could bring 4%, or 1 million dev
 Hypothetically, if the ANKR token was evenly distributed, 1 million developers could hold a maximum of 10,000 tokens each. 
 This allows us to better utilize the token in whole numbers.
 
-## **Burned Tokens**
+## Burned tokens
 
-Approximately 2% of Ankr tokens have been[ burned](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4?a=0x000000000000000000000000000000000000dead). At this time, we are unlikely to burn more as it does not fit in with our long term strategy.
+Approximately 2% of Ankr tokens [have been burned](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4?a=0x000000000000000000000000000000000000dead). At this time, we are unlikely to burn more as it does not fit in with our long term strategy.
 
 
