@@ -12,7 +12,7 @@ Before running command you must do following steps:
 * Make sure you have a wildcard domain `*.example.com` set to your machine (use a dedicated machine with a public IP).
 * Modify the `config.json` file to update parameters as you need (you can find all addresses in the keystore folder).
 
-# Config file
+## Config file parameters
 
 The config file structure is as such:
 
@@ -32,6 +32,15 @@ The config file structure is as such:
 * `votingPeriod` — default voting period for the governance proposals.
 * `faucet` — map with initial balances for faucet and other needs.
 
+## Launch 
+
+You have two launching options:
+
+* Default option
+* Without a balance loader and SSL certificates
+
+### Default option
+
 You can check the Makefile to choose more interesting commands, but if you just need to set up everything, just run:
 ```
 apt update
@@ -50,10 +59,14 @@ Deployed services can be access though next endpoints:
 * https://faucet.${DOMAIN_NAME} (port 3000) - Faucet
 * https://staking.${DOMAIN_NAME} (port 3001) - Staking UI
 
+### Without a balance loader and SSL certificates 
+
 If you want to run a node without a load balancer and SSL certificates, run:
 ```
 make all-no-balancer
 ```
+
+## Exposed ports
 
 Docker Compose files expose next ports:
 * 7432 - Blockscout PostgreSQL database
