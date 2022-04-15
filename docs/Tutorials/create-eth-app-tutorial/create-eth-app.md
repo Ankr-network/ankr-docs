@@ -3,6 +3,9 @@ title: Create a dApp front end with create-eth-app
 id: create-eth-app
 ---
 
+**By Anita Diamond**
+
+
 # Create an easy dApp front end with `create-eth-app`
 
 **Create-eth-app** makes it super easy to spin up front ends for dApps with. Create-eth-app is a fork of ‘create-react-app’ and 
@@ -14,7 +17,7 @@ works on macOS, Windows, and Linux. It is a swift alternative to writing your ow
 [Create-eth-app Repo](https://github.com/paulrberg/create-eth-app)
 
 
-## 00 Before you Start
+## 00 - Before you Start
 
 Ensure you have the following dependencies installed. 
 
@@ -50,7 +53,7 @@ $ yarn --version
 
 
 
-## 01 Get Started
+## 01 - Get Started
 
 
 ### Install Create Eth App
@@ -66,7 +69,7 @@ yarn create eth-app my-eth-app
 This creates a basic blockchain project. Open the project in your code editor e.g. VS Code.
 
 
-## 02 View Folders
+## 02 - View Folders
 
 
 ```
@@ -103,7 +106,7 @@ This folder is a fork of** create-react-app **and contains all the react front-e
 This folder contains code to query smart contracts in graphql by using the graph protocol.  You can also perform advanced queries and use sub-graphs by others. 
 
 
-## 03 Spin up the App with default settings
+## 03 - Spin up the App with default settings
 
 
 ```
@@ -124,7 +127,7 @@ To create a production build, use npm run build.
 
 
 
-## 04 Connect Wallet
+## 04 - Connect Wallet
 
 Out of the box we can connect a wallet to our app. You can use MetaMask or WalletConnect. 
 
@@ -149,7 +152,7 @@ Click **_‘Connect Wallet_**’ in your app and a pop up modal will appear.
 
 ![connected metamask 4](connected-metamask4.png)
 
-## 05 Modify app.js
+## 05 - Modify app.js
 
 You can change settings and code in App.js to suit your needs. 
 
@@ -163,7 +166,7 @@ You can change settings and code in App.js to suit your needs.
 You can view the token balance. 
 
 
-## 06  Add templates
+## 06 - Add templates
 
 ```create-eth-app``` comes with a range of decentralized finance templates pre-filled with contract ABIs, addresses and subgraphs. Checkout the [templates](https://github.com/paulrberg/create-eth-app/blob/develop/templates) folder. 
 

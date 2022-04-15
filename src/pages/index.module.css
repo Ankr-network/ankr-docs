@@ -26,7 +26,8 @@
 }
 
 .title {
-  font-family: 'TT-Firs-Neue-Demi-Bold', sans-serif;
+  font-family: 'TT Firs Neue', sans-serif;
+  font-weight: 600;
   font-size: 52px;
   line-height: 62px;
   color: #1f2226;
@@ -34,6 +35,7 @@
 }
 
 .subTitle {
+  font-family: 'Inter';
   font-size: 20px;
   line-height: 28px;
   color: rgba(31, 34, 38, 0.5);
@@ -47,27 +49,37 @@
 }
 
 .button {
-  color: white;
-  background: linear-gradient(0deg, #1f2226, #1f2226), #356df3;
-  border-radius: 12px;
-  width: 212px;
+  width: 260px;
   height: 54px;
-  margin-right: 20px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  background: #1f2226;
+  border-radius: 12px;
+
+  font-family: 'Inter';
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 135%;
 }
+
 .button:hover {
   color: white;
   text-decoration: none;
+  background: #356DF3;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1235px) {
   .top {
     height: auto;
   }
   .root {
-    padding-top: 48px;
+    padding-top: 12px;
     padding-bottom: 100px;
     flex-direction: column-reverse;
     justify-content: space-between;
@@ -76,22 +88,31 @@
     align-items: center;
   }
 }
-@media (max-width: 570px) {
+@media (max-width: 1235px) {
   svg {
     max-width: 100%;
   }
+  .button {
+
+    font-size: 15px;
+  }
+  .title {
+    font-size: 36px;
+    line-height: 120%;
+  }
+  .subTitle {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
   .title,
   .subTitle {
-    padding: 0 20px;
+    padding: 0 16px;
     text-align: center;
   }
   .buttons {
     flex-direction: column;
-    width: 100%;
-    padding: 0 20px;
+    padding: 0 60px;
   }
   .button {
-    width: 100%;
-    margin: 0 0 20px 0;
   }
 }

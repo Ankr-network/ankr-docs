@@ -1,19 +1,19 @@
 ---
-title: Submit Tutorial
+title: Submit a Tutorial
 id: submit-tutorial
 ---
 
-If you've got an idea for a Tutorial then go ahead and submit an issue. 
+![Learn How to Contribute to Ankr Docs](https://i.imgur.com/J4rMRUBl.png)
 
-[Submit Tutorial Idea](https://github.com/Ankr-network/ankr-docs/issues/new?assignees=&labels=&template=propose-new-content.md&title=)
+## **Contributing to Ankr Docs**
 
-Complete the issue form and request a review.
+**Have a great idea for a tutorial topic on Web3 or DeFi?**
 
-The Community Tutorials team can then check out your idea and if it fulfils our criteria we'll encourage you to create a tutorial.
+We would love to feature your contribution in Ankr Docs!
 
+[![Submit Tutorial Idea](https://i.imgur.com/2WgRzPe.png)](https://github.com/Ankr-network/ankr-docs/issues/new?assignees=&labels=&template=propose-new-content.md&title=)
 
-
-
-
-
-
+**Instructions**
+1. Click "Submit Your Tutorial" to complete the form and request a review.
+2. The Community Tutorials team can then check out your idea. 
+3. If your tutorial fulfills our criteria we will assist you with the next steps.

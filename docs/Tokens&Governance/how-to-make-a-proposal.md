@@ -1,6 +1,7 @@
-# How to write a Proposal
-
-### How to write a Proposal
+---
+title: How to write a Proposal
+id: write-proposal
+---
 
 Each proposal contains:
 
@@ -10,6 +11,6 @@ Each proposal contains:
 
 Examples of proposals could be to:
 
-* Implement new features in the Ankr Staking platform such as enhancing a screen or adding content.&#x20;
+* Implement new features to Ankr Earn such as enhancing a screen or adding content.&#x20;
 * Changing the minimum ANKR amount required to become a provider.
 * Increasing the minimum amount of ANKR required to make a proposal in Governance

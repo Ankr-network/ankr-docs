@@ -3,10 +3,9 @@
 (
   module.exports = {
     title: "Welcome to Ankr Docs",
-
     tagline: "Your single-source-of-truth on Ankr products and services",
     url: "https://www.ankr.com",
-    baseUrl: '/docs/',
+    baseUrl: "/docs/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
@@ -18,7 +17,7 @@
     ],
     scripts: [
       {
-        src: 'https://crypto.com/price/static/widget/index.js',
+        src: "https://crypto.com/price/static/widget/index.js",
         defer: true,
       },
     ],
@@ -31,7 +30,6 @@
             sidebarPath: require.resolve("./sidebars.js"),
             routeBasePath: "/",
             // Please change this to your repo.
-            editUrl: "https://github.com/ankr-network/ankr-docs",
           },
           theme: {
             customCss: require.resolve("./static/css/custom.css"),
@@ -39,104 +37,151 @@
         }),
       ],
     ],
-    themeConfig:
+    themes: ["docusaurus-theme-search-typesense"],
+    themeConfig: {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-      {
-        colorMode: {
-          disableSwitch: true,
-        },
-        navbar: {
-          title: "Docs",
-          logo: {
-            alt: "Ankr Logo",
-            src: "img/ankr-logo.svg",
-          },
-          items: [
-            {
+      algolia: {
+        // The application ID provided by Algolia
+        appId: "1QEPYCGV3Q",
 
-              type: "doc",
-              docId: "About/about-ankr",
-              position: "right",
-              label: "⚓️ About Ankr",           
-            },
+        // Public API key: it is safe to commit it
+        apiKey: "f4be66fb86f3b7f7abddb567e980f14c",
+        indexName: "ankr-docs",
+        contextualSearch: true,
+      },
+      typesense: {
+        typesenseCollectionName: "ankr-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseServerConfig: {
+          nodes: [
             {
-              type: "dropdown",
-              label: '🔨' + Array(2).fill('\xa0').join('') + 'Build',
-              position: "right",
-              items: [
-                {
-                  to: "category/get-started",
-                  label: "Get Started",
-                },
-                {
-                  to: "category/concepts",
-                  label: "Concepts",
-                },
-                {
-                  to: "category/chains-v2",
-                  label: "Chains",
-                },
-                {
-                  to: "category/guides",
-                  label: "Guides",
-                },
-                {
-                  to: "Build/Support/get-support",
-                  label: "Support",
-                },
-              ],
+              host: process.env.TYPESENSE_HOST,
+              port: process.env.TYPESENSE_PORT,
+              protocol: process.env.TYPESENSE_PROTOCOL,
             },
-            {
-              type: "dropdown",
-              label: '💰' + Array(2).fill('\xa0').join('') + 'Earn',
-              position: "right",
-              items: [
-                {
-                  to: "category/-concepts",
-                  label: "Concepts",
-                },
-                {
-                  to: "category/-guides",
-                  label: "Guides",
-                },
-                {
-                  to: "category/-products",
-                  label: "Products",
-                },
-                {
-                  to: "category/-ecosystems",
-                  label: "Ecosystems",
-                },
-                {
-                  to: "category/-reference",
-                  label: "Reference",
-                },
-              ],
-            },
-            {
-              type: "dropdown",
-              label: '👥' + Array(2).fill('\xa0').join('') + 'Community',
-              position: "right",
-              items: [
-                {
-                  to: "Community/channels",
-                  label: "Community Channels",
-                },
-              ],
-            },
+          ],
+          apiKey: process.env.TYPESENCE_PUBLIC_API_KEY,
+        },
+
+        // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.md#search-parameters
+        typesenseSearchParameters: {},
+
+        // Optional
+        contextualSearch: true,
+      },
+      colorMode: {
+        disableSwitch: true,
+      },
+      navbar: {
+        logo: {
+          alt: "Ankr Logo",
+          src: "img/ankr-logo.svg",
+        },
+        items: [
+          {
+            type: "doc",
+            docId: "About/about-ankr",
+            position: "right",
+            label: "⚓️ About Ankr",
+          },
+          {
+            type: "dropdown",
+            label: "🔨" + Array(2).fill("\xa0").join("") + "Build",
+            position: "right",
+            items: [
               {
-                type: "docSidebar",
-                sidebarId: "governanceSidebar",
-                position: "right",
-                label: '⚖️' + Array(2).fill('\xa0').join('') + 'Tokens & Governance',
+                to: "Build/concepts/build-overview",
+                label: "Overview",
               },
+              {
+                to: "Build/Bas/about-bas",
+                label: "BSC Application Sidechain",
+              },
+              {
+                to: "category/guides",
+                label: "Guides",
+              },
+              {
+                to: "Build/Support/get-support",
+                label: "Support",
+              },
+            ],
+          },
+          {
+            type: "dropdown",
+            label: "💰" + Array(2).fill("\xa0").join("") + "Earn",
+            position: "right",
+            items: [
+              {
+                to: "Earn/liquid-staking",
+                label: "Liquid Staking",
+              },
+              {
+                to: "Earn/liquid-crowdloan/liquid-crowdloan",
+                label: "Liquid Crowdloan",
+              },
+              {
+                to: "Earn/defi/defi-introduction",
+                label: "DeFi",
+              },
+              {
+                to: "Earn/bridge/bridge-introduction",
+                label: "Bridge",
+              },
+              {
+                to: "Earn/switch/switch-introduction",
+                label: "Switch",
+              }, 
             {
-              type: "docSidebar",
-              sidebarId: "tutorialSidebar",
-              position: "right",
-              label: '📚' + Array(2).fill('\xa0').join('') + 'Tutorials',           
+              to: 'category/reference',
+              label: 'Reference',
             },
           ],
         },
+        {
+          type: 'dropdown',
+          label: '🚀' + Array(2).fill('\xa0').join('') + 'Game',
+          position: 'right',
+          items: [
+            {
+              to: 'Game/ankr-game',
+              label: 'Overview',
+            },
+            {
+              to: 'Game/Unity/about-unity',
+              label: 'Unity SDK',
+            },
+            {
+              to: 'Game/Unreal/about-unreal',
+              label: 'Unreal SDK',
+            },
+          ],
+        }, 
+          {
+            type: "dropdown",
+            label: "👥" + Array(2).fill("\xa0").join("") + "Community",
+            position: "right",
+            items: [
+              {
+                to: "Community/channels",
+                label: "Community Channels",
+              },
+            ],
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "governanceSidebar",
+            position: "right",
+            label:
+              "🏦" + Array(2).fill("\xa0").join("") + "Tokens & Governance",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "right",
+            label: "📚" + Array(2).fill("\xa0").join("") + "Tutorials",
+          },
+        ],
       },
-    })
+    },
+  }
+);

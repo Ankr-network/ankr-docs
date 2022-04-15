@@ -3,6 +3,7 @@ title: Connect to RPCs - Python
 id: connect-web3py
 ---
 
+By Anita Diamond
 
 # 🐍 Use web3.py to interact with RPC Nodes
 
@@ -34,7 +35,7 @@ Web3.py is a collection of libraries that enable you to create clients and appli
 
 Web3.py allows us to make RPC API requests to the Ethereum network with JSON RPC, (which stands for "Remote Procedure Call" protocol). It's very similar to making HTTP requests to a JSON API on a web server.
 
-## 00 Let's get Started
+## 00 - Let's get Started
 
 1) **Install Python or verify installation**
 
@@ -67,7 +68,7 @@ Install the Web3.py library with `pip` in your shell/terminal like this:
 pip3 install web3
 ```
 
-## 01 Connect to Ankr RPC Nodes
+## 01 - Connect to Ankr RPC Nodes
 
 You could run your own Ethereum node but this requires you to download a HUGE QUANTITY of data from the blockchain and keep it in sync. This is a huge headache if you've ever tried to do this before.
 
@@ -124,7 +125,7 @@ Add the following to your script:
 ankr_url = 'https://rpc.ankr.com/eth'
 ```
 
-## 02 Instantiate a live connection
+## 02 - Instantiate a live connection
 
 Now you can instantiate a live Web3 connection to communicate with the ethereum mainnet.
 
@@ -160,7 +161,7 @@ You should see `True` similar to this:
 We have now successfully connected to the Ankr Public RPC Ethereum Node.
 :::
 
-## 03 Let's make some requests
+## 03 - Let's make some requests
 
 Now we're set up, our instance allows us to get interesting information.
 
