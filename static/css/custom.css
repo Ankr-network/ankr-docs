@@ -64,6 +64,11 @@ a {
   font-family: "Inter";
 }
 
+.navbar__toggle {
+  position: absolute;
+  right: 0;
+}
+
 .pagination-nav__label::before {
   content: unset !important;
 }
@@ -159,6 +164,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 .navbar__logo {
   padding-right: 20px;
   margin-right: 20px;
+  margin-left: 40px;
 }
 .navbar__brand {
   font-size: 20px;
@@ -497,8 +503,6 @@ table td {
   }
   .navbar__items {
     width: 100%;
-    flex-direction: row-reverse;
-    justify-content: space-between;
   }
   .navbar__items--right {
     height: 36px;
