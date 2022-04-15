@@ -1,493 +1,297 @@
-module.exports = {
+module.exports =
+{
   buildSidebar: [
     {
-      type: 'category',
-      label: '🔨 Build',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
-        'Build/concepts/build-overview',
-        'Build/concepts/pricing',
+      Build: [
+        'build-blockchain/overview',
+        'build-blockchain/concepts/pricing',
         {
-          type: 'category',
-          label: 'v2',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Build/v2/public-rpc',
-            {
-              type: 'category',
-              label: '02 - Premium Plan',
-              link: {
-                type: 'generated-index',
+          'Products v2': [
+            'build-blockchain/products/v2/public-rpc',
+              {
+                '02 - Premium Plan': [
+                'build-blockchain/products/v2/premium-plan',
+                'build-blockchain/products/v2/premium-endpoints',
+                'build-blockchain/products/v2/hybrid-infra',
+                'build-blockchain/products/v2/advanced-apis',
+                ],
               },
-              items: [
-                'Build/v2/premium-plan',
-                'Build/v2/premium-endpoints',
-                'Build/v2/hybrid-infra',
-                'Build/v2/advanced-apis',
+            'build-blockchain/products/v2/scan',
+          ],
+        },
+        {
+          'Chains v2': [
+            'build-blockchain/chains/v2/arbitrum',
+            'build-blockchain/chains/v2/avalanche',
+            'build-blockchain/chains/v2/binance-smart-chain',
+            'build-blockchain/chains/v2/celo',
+            'build-blockchain/chains/v2/ethereum',
+            'build-blockchain/chains/v2/fantom',
+            'build-blockchain/chains/v2/iotex',
+            'build-blockchain/chains/v2/near',
+            'build-blockchain/chains/v2/nervos',
+            'build-blockchain/chains/v2/polygon',
+            'build-blockchain/chains/v2/solana',
+          ],
+        },
+        {
+            'BSC Application Sidechain': [
+            'build-blockchain/bas/overview',
+            {
+                'Architecture': [
+                'build-blockchain/bas/architecture/overview',
+                'build-blockchain/bas/architecture/modules',
+                'build-blockchain/bas/architecture/circ-model-native-bridge',
+                'build-blockchain/bas/architecture/native-bridge',
+                'build-blockchain/bas/architecture/fast-finality-bls-crypto',
+                'build-blockchain/bas/architecture/sys-smart-contracts',
+                'build-blockchain/bas/architecture/governance',
+                'build-blockchain/bas/architecture/runtime-upgrades',
               ],
             },
-            'Build/v2/scan',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Chains V2',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Build/chains/arbitrum',
-            'Build/chains/avalanche',
-            'Build/chains/binance-smart-chain',
-            'Build/chains/celo',
-            'Build/chains/ethereum',
-            'Build/chains/fantom',
-            'Build/chains/iotex',
-            'Build/chains/near',
-            'Build/chains/nervos',
-            'Build/chains/polygon',
-            'Build/chains/solana',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'BSC Application Sidechain',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'Build/Bas/about-bas',
-          },
-          items: [
             {
-              type: 'category',
-              label: 'Architecture',
-              collapsible: true,
-              collapsed: true,
-              link: {
-                type: 'doc',
-                id: 'Build/Bas/architecture/bas-architecture',
-              },
-              items: [
-                'Build/Bas/architecture/bas-modules',
-                'Build/Bas/architecture/bas-circ-model-native-bridge',
-                'Build/Bas/architecture/bas-native-bridge',
-                'Build/Bas/architecture/bas-fast-finality-bls-crypto',
-                'Build/Bas/architecture/bas-sys-smart-contracts',
-                'Build/Bas/architecture/bas-governance',
-                'Build/Bas/architecture/bas-runtime-upgrades',
-              ],
+                'How to launch BAS': [
+                 'build-blockchain/bas/how-to-launch/launch-bas',
+                 'build-blockchain/bas/how-to-launch/deploy-erc20-token',
+                 'build-blockchain/bas/how-to-launch/deploy-erc721-token',
+                ],
             },
-            'Build/Bas/bas-how-to-launch',
-            'Build/Bas/bas-demo',
-            'Build/Bas/bas-faq',
-            'Build/Bas/bas-glossary',
+            'build-blockchain/bas/demo',
+            'build-blockchain/bas/faq',
+            'build-blockchain/bas/glossary',
           ],
         },
         {
-          type: 'category',
-          label: 'V1 Products',
-          link: {
-            type: 'generated-index',
-          },
-          items: ['Build/v1/about-api-services', 'Build/v1/node-services'],
-        },
-
-        {
-          type: 'category',
-          label: '⛓ Chains V1',
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Build/chains/arb-api',
-            'Build/chains/avax-api',
-            'Build/chains/bsc-api',
-            'Build/chains/clover-api',
-            'Build/chains/ethereum-api',
-            'Build/chains/fantom-api',
-            'Build/chains/huobi-api',
-            'Build/chains/kusama-api',
-            'Build/chains/oec-api',
-            'Build/chains/polkadot-api',
-            'Build/chains/polygon-api',
-            'Build/chains/terra-api',
-            'Build/chains/xdai-api',
+          'Guides': [
+            'build-blockchain/guides/json-methods',
+            'build-blockchain/guides/libraries',
+            'build-blockchain/guides/websocket-premium',
+            'build-blockchain/guides/rpcapi',
           ],
         },
+                  {
+              'Archive': [
 
-        {
-          type: 'category',
-          label: 'Guides',
-          link: {
-            type: 'generated-index',
+                  {
+                      'Products v1': [
+                          'build-blockchain/products/v1/about-api-services',
+                          'build-blockchain/products/v1/node-services'
+                      ],
+                  },
+                  {
+                      'Chains v1': [
+                          'build-blockchain/chains/v1/arb-api',
+                          'build-blockchain/chains/v1/avax-api',
+                          'build-blockchain/chains/v1/bsc-api',
+                          'build-blockchain/chains/v1/clover-api',
+                          'build-blockchain/chains/v1/ethereum-api',
+                          'build-blockchain/chains/v1/fantom-api',
+                          'build-blockchain/chains/v1/huobi-api',
+                          'build-blockchain/chains/v1/kusama-api',
+                          'build-blockchain/chains/v1/oec-api',
+                          'build-blockchain/chains/v1/polkadot-api',
+                          'build-blockchain/chains/v1/polygon-api',
+                          'build-blockchain/chains/v1/terra-api',
+                          'build-blockchain/chains/v1/xdai-api',
+                      ],
+                  },
+              ],
           },
-          items: [
-            'Build/guides/json-methods',
-            'Build/guides/libraries',
-            'Build/guides/websocket-premium',
-            'Build/guides/rpcapi',
-          ],
-        },
-
-        'Build/Support/get-support',
+        'build-blockchain/support/get-support',
       ],
     },
   ],
-  earnSidebar: [
-    {
-      type: 'category',
-      label: '💰 Earn',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
+  earnSidebar: {
+    'Earn': [
+     'earn/overview',
         {
-          type: 'doc',
-          id: 'Earn/earn-introduction',
-          label: 'Introduction',
-        },
-        {
-          type: 'category',
-          label: 'Liquid Staking',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'Earn/liquid-staking/liquid-staking',
-          },
-          items: [
+          'Liquid Staking': [
+            'earn/liquid-staking/overview',
             {
-              type: 'category',
-              label: 'AVAX',
-              link: {
-                type: 'doc',
-                id: 'Earn/liquid-staking/avax/avax-liquid-staking-introduction',
-              },
-              items: [
-                'Earn/liquid-staking/avax/avax-liquid-staking-mechanics',
-                'Earn/liquid-staking/avax/stake-avax',
-                'Earn/liquid-staking/avax/unstake-avax',
-                'Earn/liquid-staking/avax/avax-liquid-staking-faq',
+              'AVAX': [
+                'earn/liquid-staking/avax/overview',
+                'earn/liquid-staking/avax/staking-mechanics',
+                'earn/liquid-staking/avax/stake-avax',
+                'earn/liquid-staking/avax/unstake-avax',
+                'earn/liquid-staking/avax/faq',
               ],
             },
             {
-              type: 'category',
-              label: 'BNB',
-              link: {
-                type: 'doc',
-                id: 'Earn/liquid-staking/bnb/bnb-liquid-staking-introduction',
-              },
-              items: [
-                'Earn/liquid-staking/bnb/bnb-liquid-staking-mechanics',
-                'Earn/liquid-staking/bnb/stake-bnb',
-                'Earn/liquid-staking/bnb/unstake-bnb',
-                'Earn/liquid-staking/bnb/bnb-liquid-staking-faq',
+              'BNB': [
+                'earn/liquid-staking/bnb/overview',
+                'earn/liquid-staking/bnb/staking-mechanics',
+                'earn/liquid-staking/bnb/stake-bnb',
+                'earn/liquid-staking/bnb/unstake-bnb',
+                'earn/liquid-staking/bnb/faq',
               ],
             },
             {
-              type: 'category',
-              label: 'DOT',
-              link: {
-                type: 'doc',
-                id: 'Earn/liquid-staking/dot/dot-liquid-staking-introduction',
-              },
-              items: [
-                'Earn/liquid-staking/dot/dot-liquid-staking-mechanics',
-                'Earn/liquid-staking/dot/stake-dot',
-                'Earn/liquid-staking/dot/unstake-dot',
-                'Earn/liquid-staking/dot/dot-liquid-staking-faq',
+              'DOT': [
+               'earn/liquid-staking/dot/overview',
+                'earn/liquid-staking/dot/staking-mechanics',
+                'earn/liquid-staking/dot/stake-dot',
+                'earn/liquid-staking/dot/unstake-dot',
+                'earn/liquid-staking/dot/faq',
               ],
             },
             {
-              type: 'category',
-              label: 'ETH',
-              link: {
-                type: 'doc',
-                id: 'Earn/liquid-staking/eth/eth-liquid-staking-introduction',
-              },
-              items: [
-                'Earn/liquid-staking/eth/eth-liquid-staking-mechanics',
-                'Earn/liquid-staking/eth/stake-eth',
-                'Earn/liquid-staking/eth/unstake-eth',
-                'Earn/liquid-staking/eth/eth-liquid-staking-faq',
+              'ETH': [
+               'earn/liquid-staking/eth/overview',
+                'earn/liquid-staking/eth/staking-mechanics',
+                'earn/liquid-staking/eth/stake-eth',
+                'earn/liquid-staking/eth/unstake-eth',
+                'earn/liquid-staking/eth/faq',
               ],
             },
             {
-              type: 'category',
-              label: 'FTM',
-              link: {
-                type: 'doc',
-                id: 'Earn/liquid-staking/ftm/ftm-liquid-staking-introduction',
-              },
-              items: [
-                'Earn/liquid-staking/ftm/ftm-liquid-staking-mechanics',
-                'Earn/liquid-staking/ftm/stake-ftm',
-                'Earn/liquid-staking/ftm/unstake-ftm',
-                'Earn/liquid-staking/ftm/ftm-liquid-staking-faq',
+              'FTM': [
+                'earn/liquid-staking/ftm/overview',
+                'earn/liquid-staking/ftm/staking-mechanics',
+                'earn/liquid-staking/ftm/stake-ftm',
+                'earn/liquid-staking/ftm/unstake-ftm',
+                'earn/liquid-staking/ftm/faq',
               ],
             },
             {
-              type: 'category',
-              label: 'KSM',
-              link: {
-                type: 'doc',
-                id: 'Earn/liquid-staking/ksm/ksm-liquid-staking-introduction',
-              },
-              items: [
-                'Earn/liquid-staking/ksm/ksm-liquid-staking-mechanics',
-                'Earn/liquid-staking/ksm/stake-ksm',
-                'Earn/liquid-staking/ksm/unstake-ksm',
-                'Earn/liquid-staking/ksm/ksm-liquid-staking-faq',
+              'KSM': [
+               'earn/liquid-staking/ksm/overview',
+                'earn/liquid-staking/ksm/staking-mechanics',
+                'earn/liquid-staking/ksm/stake-ksm',
+                'earn/liquid-staking/ksm/unstake-ksm',
+                'earn/liquid-staking/ksm/faq',
               ],
             },
             {
-              type: 'category',
-              label: 'MATIC',
-              link: {
-                type: 'doc',
-                id: 'Earn/liquid-staking/matic/matic-liquid-staking-introduction',
-              },
-              items: [
-                'Earn/liquid-staking/matic/matic-liquid-staking-mechanics',
-                'Earn/liquid-staking/matic/stake-matic',
-                'Earn/liquid-staking/matic/unstake-matic',
-                'Earn/liquid-staking/matic/matic-liquid-staking-faq',
+              'MATIC': [
+               'earn/liquid-staking/matic/overview',
+                'earn/liquid-staking/matic/staking-mechanics',
+                'earn/liquid-staking/matic/stake-matic',
+                'earn/liquid-staking/matic/unstake-matic',
+                'earn/liquid-staking/matic/faq',
               ],
             },
           ],
         },
         {
-          type: 'category',
-          label: 'Liquid Crowdloan',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'Earn/liquid-crowdloan/liquid-crowdloan',
-          },
-          items: [],
-        },
-        {
-          type: 'category',
-          label: 'DeFi',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'Earn/defi/defi-introduction',
-          },
-          items: ['Earn/defi/yield-farm', 'Earn/defi/provide-liquidity-to-dex'],
-        },
-        {
-          type: 'category',
-          label: 'Bridge',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'Earn/bridge/bridge-introduction',
-          },
-          items: ['Earn/bridge/bridge-mechanics', 'Earn/bridge/bridge-tokens'],
-        },
-        {
-          type: 'category',
-          label: 'Switch',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'Earn/switch/switch-introduction',
-          },
-          items: ['Earn/switch/switch-mechanics'],
-        },
-        {
-          type: 'category',
-          label: 'Reference',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'generated-index',
-            keywords: [
-              'reference, wallets, token, addresses, tokens, micropools, makers, sdk, principles',
-            ],
-          },
-          items: [
-            'Earn/reference/earn-glossary',
-            'Earn/reference/earn-compatible-wallets',
-            'Earn/reference/earn-principles',
-            'Earn/reference/ls-smart-contract-addresses-mn',
-            'Earn/reference/ls-smart-contract-addresses-tn',
-            'Earn/reference/micropools',
-            'Earn/reference/liquid-crowdloan-market-makers',
-            'Earn/reference/parachain-sdk',
-            'Earn/reference/brand-assets',
+           'DeFi': [
+            'earn/defi/overview',
+            'earn/defi/yield-farm',
+            'earn/defi/provide-liquidity-to-dex'
           ],
         },
-      ],
-    },
-  ],
+        {
+          'Bridge': [
+           'earn/bridge/overview',
+           'earn/bridge/bridge-mechanics',
+            'earn/bridge/bridge-tokens'
+          ],
+        },
+        {
+          'Switch': ['earn/switch/overview',
+            'earn/switch/switch-mechanics'
+          ],
+        },
+        {
+          'Liquid Crowdloan': [
+            'earn/liquid-crowdloan/overview',
+          ],
+        },
+        {
+          'Reference': [
+            'earn/reference/earn-compatible-wallets',
+            'earn/reference/ls-smart-contract-addresses-mn',
+            'earn/reference/ls-smart-contract-addresses-tn',
+            'earn/reference/micropools',
+            'earn/reference/liquid-crowdloan-market-makers',
+            'earn/reference/parachain-sdk',
+            'earn/reference/brand-assets',
+            'earn/reference/earn-glossary',
+            'earn/reference/earn-principles',
+          ],
+        },
+     ],
+  },
   gameSidebar: {
     'Game': [
-      'Game/ankr-game',
+      'game/ankr-game',
       {
-        type: 'category',
-        label: 'Ankr Unity SDK',
-        link: {
-            type: 'generated-index',
-          },
-        items: [
-          'Game/Unity/about-unity',
-          'Game/Unity/setting-up',
+        'Ankr Unity SDK': [
+          'game/unity/about-unity',
+          'game/unity/setting-up',
           {
-            type: 'category',
-            label: 'Get Started',
-            link: {
-              type: 'generated-index',
-            },
-            items: [
-              'Game/Unity/getting-started/game-00',
-              'Game/Unity/getting-started/game-01',
-              'Game/Unity/getting-started/game-02',
-              'Game/Unity/getting-started/game-03',
-              'Game/Unity/getting-started/game-04',
+             'Get Started': [
+              'game/unity/getting-started/game-00',
+              'game/unity/getting-started/game-01',
+              'game/unity/getting-started/game-02',
+              'game/unity/getting-started/game-03',
+              'game/unity/getting-started/game-04',
             ],
           },
           {
-            type: 'category',
-            label: 'How to...',
-            link: {
-              type: 'generated-index',
-            },
-            items: ['Game/Unity/how-tos/wallet-game'],
-          },
-        ],
-      },
-      {
-        type: 'category',
-        label: 'Ankr Unreal SDK',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-          'Game/Unreal/about-unreal',
-          'Game/Unreal/setting-up-unreal',
-          {
-            type: 'category',
-            label: 'Get Started',
-            link: {
-              type: 'generated-index',
-            },
-            items: [
-              'Game/Unreal/getting-started/unreal-before',
-              'Game/Unreal/getting-started/unreal-connect-wallet',
-              'Game/Unreal/getting-started/unreal-send-retrieve',
-              'Game/Unreal/getting-started/unreal-update-nft',
-              'Game/Unreal/getting-started/unreal-mint-nft',
+             'How to...': [
+              'game/unity/how-tos/wallet-game'
             ],
           },
         ],
       },
-            {
-              type: 'category',
-              label: 'Reference',
-              link: {
-                type: 'generated-index',
-              },
-              items: ['Game/reference/game-reference'],
+      {
+        'Ankr Unreal SDK': [
+          'game/unreal/about-unreal',
+          'game/unreal/setting-up-unreal',
+          {
+              'Get Started': [
+              'game/unreal/getting-started/unreal-before',
+              'game/unreal/getting-started/unreal-connect-wallet',
+              'game/unreal/getting-started/unreal-send-retrieve',
+              'game/unreal/getting-started/unreal-update-nft',
+              'game/unreal/getting-started/unreal-mint-nft',
+            ],
           },
         ],
       },
-  governanceSidebar: [
-    {
-      type: 'category',
-      label: '🏦 Tokens+Governance',
-      link: {
-        type: 'generated-index',
+      {
+        'Reference': [
+          'game/reference/game-reference'
+        ],
       },
-      items: [
-        {
-          type: 'category',
-          label: 'Tokens',
-          collapsed: false,
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Tokens&Governance/about-ankr-tokens',
-            'Tokens&Governance/buy-ankr-cex',
-            'Tokens&Governance/buy-ankr-dex',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Governance',
-          collapsed: false,
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Tokens&Governance/governance',
-            'Tokens&Governance/tokenomics',
-          ],
-        },
-      ],
-    },
-  ],
-  communitySidebar: [
-    {
-      type: 'category',
-      label: '👥 Community',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
+    ],
+  },
+    learnSidebar: {
+    'Learn': [
+      {
+         'Tokens & Governance': [
+             {
+                'Tokens': [
+                    'learn/tokens-governance/ankr-tokens',
+                    'learn/tokens-governance/buy-ankr-cex',
+                    'learn/tokens-governance/buy-ankr-dex',
+                ],
+             },
+             {
+                'Governance': [
+                 'learn/tokens-governance/governance',
+                 'learn/tokens-governance/tokenomics',
+                ],
+             },
+
+        ],
       },
-      items: [
-        {
-          type: 'category',
-          label: 'Community',
-          collapsed: false,
-          link: {
-            type: 'generated-index',
-          },
-          items: ['Community/channels'],
-        },
-      ],
-    },
-  ],
-  tutorialSidebar: [
-    {
-      type: 'category',
-      label: '📚 Tutorials',
-      collapsible: false,
-      link: {
-        type: 'generated-index',
+     {
+         'Tutorials': [
+          'learn/tutorials/submit-tutorial',
+          'learn/tutorials/create-voting-system/movie-voting-web3',
+          'learn/tutorials/create-eth-app-tutorial/create-eth-app',
+          'learn/tutorials/simple-truffle',
+          'learn/tutorials/connect-web3js',
+          'learn/tutorials/erigon-bsc-tutorial/erigon-bsc',
+          'learn/tutorials/connect-web3py',
+        ],
       },
-      items: [
-        {
-          type: 'category',
-          label: 'Tutorials',
-          collapsed: false,
-          link: {
-            type: 'generated-index',
-          },
-          items: [
-            'Tutorials/submit-tutorial',
-            'Tutorials/create-voting-system/movie-voting-web3',
-            'Tutorials/create-eth-app-tutorial/create-eth-app',
-            'Tutorials/simple-truffle',
-            'Tutorials/connect-web3js',
-            'Tutorials/erigon-bsc-tutorial/erigon-bsc',
-            'Tutorials/connect-web3py',
-          ],
-        },
-      ],
-    },
-  ],
+     {
+         'Reference': [
+          'learn/reference/ankr-vision',
+        ],
+      },
+    ],
+  },
 }
