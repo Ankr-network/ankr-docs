@@ -78,6 +78,7 @@ module.exports =
                     'Binance Smart Chain': [
                         'build-blockchain/nodes/bsc/overview',
                         'build-blockchain/nodes/bsc/erigon-bsc-testnet',
+                        'build-blockchain/nodes/bsc/run-bsc-node-on-erigon',
                     ],
                 },
                 {
@@ -121,7 +122,7 @@ module.exports =
                     ],
                 },
                 {
-                    'ETH 2.0': [
+                    'Eethreum 2': [
                         'build-blockchain/nodes/eth2/overview',
                         'build-blockchain/nodes/eth2/run-provider-nodes',
                         'build-blockchain/nodes/eth2/rewards-distribution',
