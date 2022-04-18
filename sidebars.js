@@ -62,6 +62,86 @@ module.exports =
           ],
         },
         {
+            'Nodes': [
+                {
+                    'Algorand': [
+                        'build-blockchain/nodes/algorand/overview',
+                        'build-blockchain/nodes/algorand/endpoints',
+                    ],
+                },
+                {
+                    'Binance Chain': [
+                        'build-blockchain/nodes/binance-chain/overview',
+                    ],
+                },
+                {
+                    'Binance Smart Chain': [
+                        'build-blockchain/nodes/bsc/overview',
+                        'build-blockchain/nodes/bsc/erigon-bsc-testnet',
+                    ],
+                },
+                {
+                    'Bitcoin': [
+                        'build-blockchain/nodes/bitcoin/overview',
+                    ],
+                },
+                {
+                    'Cardano': [
+                        'build-blockchain/nodes/cardano/overview',
+                    ],
+                },
+                {
+                    'Celo': [
+                        'build-blockchain/nodes/celo/overview',
+                    ],
+                },
+                {
+                    'Cosmos': [
+                        'build-blockchain/nodes/cosmos/overview',
+                    ],
+                },
+                {
+                    'Covalent': [
+                        'build-blockchain/nodes/covalent/overview',
+                    ],
+                },
+                {
+                    'Dash': [
+                        'build-blockchain/nodes/dash/overview',
+                    ],
+                },
+                {
+                    'Decred': [
+                        'build-blockchain/nodes/decred/overview',
+                    ],
+                },
+                {
+                    'Elastos': [
+                        'build-blockchain/nodes/elastos/overview',
+                    ],
+                },
+                {
+                    'ETH 2.0': [
+                        'build-blockchain/nodes/eth2/overview',
+                        'build-blockchain/nodes/eth2/run-provider-nodes',
+                        'build-blockchain/nodes/eth2/rewards-distribution',
+                    ],
+                },
+                {
+                    'Fantom': [
+                        'build-blockchain/nodes/fantom/overview',
+                        'build-blockchain/nodes/fantom/ftm-node-read-only',
+                        'build-blockchain/nodes/fantom/ftm-node-full',
+                    ],
+                },
+                {
+                    'Vite': [
+                        'build-blockchain/nodes/vite/overview-supernode',
+                    ],
+                },
+            ],
+        },
+        {
           'Guides': [
             'build-blockchain/guides/json-methods',
             'build-blockchain/guides/libraries',
