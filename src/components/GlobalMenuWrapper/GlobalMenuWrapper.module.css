@@ -1,3 +1,6 @@
 .root {
+  z-index: 99999;
   position: absolute;
 }
+
+

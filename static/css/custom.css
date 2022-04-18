@@ -235,7 +235,7 @@ aside nav {
   padding: 0 !important;
 }
 
-.navbar-sidebar--show .navbar-sidebar .navbar__brand {
+.navbar-sidebar--show .navbar__brand {
   visibility: hidden;
 }
 
