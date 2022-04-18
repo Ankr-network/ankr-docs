@@ -235,6 +235,10 @@ aside nav {
   padding: 0 !important;
 }
 
+.navbar-sidebar--show .navbar-sidebar .navbar__brand {
+  visibility: hidden;
+}
+
 .menu__list {
   padding: 0 20px 0 60px;
   color: rgba(31, 34, 38, 0.8);
