@@ -5,7 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import styles from './index.module.css'
 import Features from '../components/Features/Features'
 import Social from '../components/Social/Social'
-import Footer from '../components/Footer/Footer'
 import GlobalMenuWrapper from '../components/GlobalMenuWrapper/GlobalMenuWrapper'
 import BrowserOnly from '@docusaurus/BrowserOnly'
 const Holder = require('../../static/img/hero.svg').default
@@ -42,7 +41,6 @@ export default function Home() {
       <main>
         <Features />
         <Social />
-        <Footer />
       </main>
     </Layout>
   )
