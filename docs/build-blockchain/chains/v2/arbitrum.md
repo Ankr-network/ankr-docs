@@ -21,11 +21,11 @@ Arbitrum has three modes: **AnyTrust Channels**, **AnyTrust Sidechains,** and **
 
 ---
 
-## Connect Wallet
+## Connect wallet
 
 Here's how to set up your  **MetaMask wallet** to connect to Arbitrum RPC. You can then perform transactions and interact with the network.
 
-### Get Started
+### Get started
 
 1. Open your **MetaMask wallet** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
@@ -42,7 +42,7 @@ Here's how to set up your  **MetaMask wallet** to connect to Arbitrum RPC. You c
 |          |   BLOCK EXPLORER:   |            [https://arbiscan.io](https://arbiscan.io)           |
 
 
-## Integrate Code
+## Integrate code
 
 ### web3 library
 
@@ -50,7 +50,7 @@ Here's how to set up your  **MetaMask wallet** to connect to Arbitrum RPC. You c
 
 Returns the client version
 
-#### Example Request
+#### Example request
 
 ```js
 curl https://rpc.ankr.com/arbitrum \
@@ -59,7 +59,7 @@ curl https://rpc.ankr.com/arbitrum \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":1,"result":"arb-rpc-node/v0.8.0"}
@@ -72,7 +72,7 @@ curl https://rpc.ankr.com/arbitrum \
 Returns the current network id.
 
 
-#### Example Request
+#### Example request
 
 ```js
   
@@ -82,7 +82,7 @@ Returns the current network id.
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-#### Example Response
+#### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"42161"}
@@ -90,7 +90,7 @@ Returns the current network id.
 
 ### eth library
 
-### Example Request
+### Example request
 
 ```js
 
@@ -100,7 +100,7 @@ curl https://rpc.ankr.com/arbitrum \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}'
 ```
 
-### Example Response
+### Example response
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"0x788e6b"}

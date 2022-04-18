@@ -3,13 +3,13 @@ title: Overview
 id: about-unity
 ---
  
-# Ankr Unity
+# Ankr Unity SDK
 
 The Ankr Gaming Unity SDK provides a powerful toolkit for Game Developers and Studios to easily interact with Web3 and create an amazing gaming experience. 
 
 ![GameSDK](@site/static/img/ankr-game.png)
 
-## Key Features
+## Key features
 
 1. Create best-in-class NFT monetization strategies.
 2. Effortlessly interact with contracts deployed on multiple blockchains.
@@ -17,10 +17,10 @@ The Ankr Gaming Unity SDK provides a powerful toolkit for Game Developers and St
 3. In-built kit to create responsive games on Android and iOS. 
 4. Add blockchain interactivity to existing games. 
 
-## Community Support
+## Community support
 
 Check out Ankr Game channels in the [Ankr Discord](https://discord.gg/uYaNu23Ww7).
 
-## Example Integration
+## Example integration
 
 ![Meta-apes](@site/static/img/metaapes.png)

@@ -1,7 +1,8 @@
 ---
-title: Setting up
+title: Setting Up
 id: setting-up-unreal
 ---
+# Setting up
 
 Let's get started!
 

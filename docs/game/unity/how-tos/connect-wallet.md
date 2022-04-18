@@ -1,9 +1,9 @@
 ---
-title: Connect a wallet to the SDK
+title: Connect a Wallet to the SDK
 id: wallet-game
 ---
 
-# How to Connect a Wallet to the SDK
+# How to Connect a wallet to the SDK
 
 Connecting to an Ethereum i.e. MetaMask wallet provides a link between a wallet address and a user's game account. 
 

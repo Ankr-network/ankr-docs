@@ -3,7 +3,7 @@ Title: Our Vision
 id: ankr-vision
 ---
 
-# Ankr Vision
+# Ankr vision
 
 At Ankr we believe that Web 3.0 and the crypto economy should be available to anyone and everyone on the planet with access to the internet.
 
@@ -37,20 +37,20 @@ The team has since launched 25,000+ nodes on 50+ blockchains and processes over 
 
 Ankr has continued to innovate and evolve its product offering in response to customer demand.
 
-## Key Principles
+## Key principles
 
-#### ⛓ Chain Neutrality
+#### ⛓ Chain neutrality
 
-#### 🌍 Full Decentralization
+#### 🌍 Full decentralization
 
-#### 🕸 Web 3.0 Infrastructure
+#### 🕸 Web 3.0 infrastructure
 
 ## How we work to achieve this Vision
 
-### Users & Community First by Design
+### Users & community first by design
 We put the needs of users and the community at the forefront of our technology development. We create products and services that we know people want, we design our ecosystem offerings to be pleasurable and easy to engage with.
 
-### Removing Complexity
+### Removing complexity
 We work to simplify the complexity of blockchain and DeFi by providing the following:
 a) Robust web 3.0 multi-chain infrastructure that enables reliable, accurate communication and integration with multiple blockchains.
 b) One-click Staking solutions that enable you to start earning rewards with minimal effort.
@@ -58,9 +58,9 @@ b) One-click Staking solutions that enable you to start earning rewards with min
 ### Building an inclusive Web 3.0 blockchain infrastructure
 We want to empower developers with easy to use tools, services and interfaces to a multi-chain environment. 
 
-## Ankr Approach
+## Ankr approach
 
-### Chain Neutrality
+### Chain neutrality
 
 Ankr is a single platform that provides multiple different chains without advocating for any particular chain over another. 
 
@@ -75,7 +75,7 @@ One consideration is whether they want users to hold crypto assets on ETH (ERC20
 
 Ankr is at the forefront of addressing these limitations. By working closely with developers, Ankr has pioneered the building of tools for cross-chain interoperability.
 
-## Full Decentralization
+## Full decentralization
 
 Decentralization is a corner stone of Ankr's purpose.
 
@@ -101,9 +101,9 @@ Since then, Ankr has evolved to focus exclusively on serving the crypto economy 
 
 Ankr is on a solid pathway towards being governed by its community through the ANKR DAO (Decentralized Autonomous Organization). Institutional investors will not be allowed to buy up the majority of tokens, hence ensuring the community is in power. 
 
-## Web 3.0 Infrastructure Protocol
+## Web 3.0 infrastructure protocol
 
-### Web 3.0 - The Next Generation of Internet
+### Web 3.0 - the next generation of internet
 
 Mass adoption of Web 3.0 by individuals, developers and enterprises is key to securing the next stage of the internet.
 The third generation of the internet is here but still under construction. The Web 3.0 movement refers to the building of an internet of decentralized networks that no single entity controls. It is a movement away from the centralized corporations that currently dominate the web and profit from the data users generate.
@@ -114,7 +114,7 @@ Blockchain technology underlies the decentralization that is essential to the fo
 
 Ankr provides Web 3.0 infrastructure for individuals, developers, and enterprises.
 
-## Ankr Build Products
+## Ankr Build products
 
 **Ankr Build** offers developers simplified, reliable and cost-effective blockchain solutions that leave you free to focus efforts on building applications.
 
@@ -141,7 +141,7 @@ Full/Archive and Validator/Staking nodes are available for 50+ chains.
 Available UNLESS superseded by API services and/or Ankr Protocol.
 :::
 
-## Ankr Earn Products
+## Ankr Earn products
 
 The **Ankr Earn** platform seeks to enable user-friendly staking innovative products to allow more people to participate in decentralized finance. 
 
@@ -153,7 +153,7 @@ Liquid Staking: Solving capital inefficiency of Proof-of-Stake
 
 ### Delegate Staking: stake without smart contract risk. 
 
-### Parachain Liquid Crowdloans:
+### Parachain Liquid Crowdloan:
 
 Solve the capital inefficiency of Parachain slot auctions.
 
@@ -165,10 +165,13 @@ Ankr DeFi can support you with finding use cases for liquidity tokens and assets
 
 ### Ankr Bridge
 
-Ankr Bridge brings liquid staking to multiple chains.
+Ankr Bridge brings Liquid Staking to multiple chains.
 Participate in cross-chain staking, more yield opportunities across multiple chains and cross-chain arbitrage opportunities. 
 
+### Ankr Switch
 
+Ankr Switch enables the exchange of Liquid Staking tokens. 
+Switch between reward earning tokens and reward bearing tokens for the same asset for better liquidity.
 
 
 

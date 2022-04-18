@@ -15,7 +15,7 @@ Ankr allows users to create their own OKExChain full and archive APIs with a var
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### ** Network Types**
+### ** Network types**
 
 * Mainnet
 * Testnet
@@ -29,15 +29,15 @@ Ankr allows users to create their own OKExChain full and archive APIs with a var
 
 Official OKEx Explorer: [https://www.oklink.com/okexchain](https://www.oklink.com/okexchain)
 
-### JSON RPC & API Docs
+### JSON RPC & API docs
 
 JSON RPC API docs: [https://exchainrpc.okex.org/docs/en/#evm](https://exchainrpc.okex.org/docs/en/#evm)
 
 REST API docs: [https://exchainrpc.okex.org/docs/en/#overview](https://exchainrpc.okex.org/docs/en/#overview)
 
-### Example Calls
+### Example calls
 
-#### API (HTTPS) Endpoint
+#### API (HTTPS) endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -116,7 +116,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
 </TabItem>
 </Tabs>
 
-#### Websocket (WSS) Endpoint
+#### Websocket (WSS) endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">

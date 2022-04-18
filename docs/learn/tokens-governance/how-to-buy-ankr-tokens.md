@@ -41,7 +41,7 @@ Make a Fiat Deposit by card, Deposit another Crypto Asset and pay with that. Use
 NOTE: These fund/payment options may vary depending on your location.
 :::
 
-## 04 Buy the desired amount of ANKR.
+## 04 Buy the desired amount of ANKR
 
 Ensure you buy enough to cover fees.
 
@@ -91,7 +91,7 @@ The ANKR Contract Address is viewable on [Etherscan](https://etherscan.io/token/
 
     <img src={require('/img/custom-token-fields.png').default} alt="custom token fields" width="250" />
 
-4. Click 'Import' to add to your wallet and view your ANKR tokens
+4. Click 'Import' to add to your wallet and view your ANKR tokens.
 
 
 

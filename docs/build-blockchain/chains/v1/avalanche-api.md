@@ -17,11 +17,11 @@ Ankr allows users to create their own Avalanche APIs with a variety of options f
 
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-## Network Types Available on Ankr
+## Network types available on Ankr
 
 * Mainnet
 
-## Node Modes Available on Ankr
+## Node modes available on Ankr
 
 * Archive Node
 
@@ -29,6 +29,6 @@ Ankr allows users to create their own Avalanche APIs with a variety of options f
 
 [https://explorer.avax.network/](https://explorer.avax.network)​
 
-## API & JSON-RPC Methods
+## API & JSON-RPC methods
 
 Avalanche docs: [https://docs.avax.network/build/avalanchego-apis/issuing-api-calls](https://docs.avax.network/build/avalanchego-apis/issuing-api-calls)

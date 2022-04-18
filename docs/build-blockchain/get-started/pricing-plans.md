@@ -3,7 +3,7 @@ title: Pricing Plans
 id: pricing
 ---
 
-# Product Pricing Plans
+# Product pricing plans
 
 ## 📌 V2 Pricing 
 
@@ -25,12 +25,12 @@ id: pricing
 :::
 
 
-## 📌 V1 - API Services
+## 📌 V1 - API services
 
 We offer 5 flexible options and pricing plans to suit all budgets and
 requirements.
 
-### API Pricing Plan
+### API pricing plan
 
 :::info v1 Pricing
 

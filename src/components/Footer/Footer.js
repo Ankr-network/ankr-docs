@@ -98,6 +98,7 @@ const LINKS = [
 
 export default function Footer() {
   return (
+    <div className={styles.wrapper}>
     <div className={styles.container}>
       <div className={styles.info}>
         <div className={styles.partners}>
@@ -143,6 +144,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }

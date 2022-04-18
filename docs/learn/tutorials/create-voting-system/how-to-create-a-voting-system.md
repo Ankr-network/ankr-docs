@@ -1,5 +1,5 @@
 ---
-title:  Create a voting system on Ethereum using web3
+title:  Create a Voting System on Ethereum Using Web3
 id: movie-voting-web3
 tags:
   - Ethereum
@@ -7,11 +7,12 @@ tags:
   - Ganache
 ---
 
-# Create a Voting System on Ethereum Using Web3
+# Create a voting system on Ethereum using Web3
 
-**By Gábor Boros**
+**By Gábor Boros** 
 
 ![Gábor Boros](gabor.png)
+<br/>
 
 _Disclaimer: This tutorial is for experienced programmers with basic knowledge about blockchains and web fundamentals._
 
@@ -25,7 +26,7 @@ Other than that, you will need a crypto wallet if you don't have one already. In
 
 Before moving on, make sure you have installed the [latest LTS version](https://nodejs.org/en/download/) of Node.js, created an [account on Ankr](https://app.ankr.com/auth/sign-up), and installed [MetaMask](https://metamask.io/download/) in your browser.
 
-## A Bit About Web3
+## A bit about Web3
 
 If you’re familiar with blockchain and related topics, you’ve probably already encountered the term "Web3." It is a hot topic nowadays. There are podcasts, webinars, and tons of articles dedicated to educating people about Web3. For those encountering this term for the first time, let me quote Wikipedia:
 
@@ -35,7 +36,7 @@ There are ongoing debates as to whether or not Web3 has already arrived or not, 
 
 In this tutorial, when we say "Web3", we mean "[web3.js](https://www.npmjs.com/package/web3)," which is a JavaScript package designed to work more easily with the Ethereum blockchain. It has other implementations available for Ruby, Python, Java, etc., though we will not use them in this tutorial.
 
-## Create a New Truffle Project
+## Create a new Truffle project
 
 So far, we’ve talked about Web3 and how Ankr is related to our tutorial, but we need something to glue the pieces together. This is where [Truffle Suite](https://trufflesuite.com/) comes into the picture. Truffle Suite has three main components: Truffle, Ganache, and Drizzle.
 
@@ -109,7 +110,7 @@ Now, execute `truffle migrate` to deploy our initial smart contract to Ganache. 
 
 So far, so good! We are ready to write our Smart Contract that will handle voting.
 
-## Write the Voting Smart Contract
+## Write the voting smart contract
 
 When we ran the migration, we learned that writing to the blockchain has some costs. With that in mind, deploying a smart contract full of bugs could result in unplanned investment from our side — not only the time and energy needed to fix bugs, but actual fees too. To reduce the risk of bugs, we would want to write several tests for the smart contract, though this tutorial won't cover that topic. Testing itself could fill several standalone tutorials.
 
@@ -231,11 +232,11 @@ Although we originally used `moviesCount` in the `vote` function, here you can s
 
 That's it, the smart contract is done! But now we need to interact with it somehow.
 
-## Write a dApp Using Web3
+## Write a dApp using Web3
 
 Now that we have the contract in place, we can start working on a dApp to call it.
 
-### Setup the Environment
+### Setup the environment
 
 As mentioned earlier, we won't use React or Vue.js. To run the dApp locally, we will use `lite-server`, a lightweight development server for Node.js. To manage dependencies more easily, create a `package.json` file with the following content, and run `yarn install`, as seen here:
 
@@ -282,7 +283,7 @@ By now, we should have a folder structure like this:
 └── yarn.lock
 ```
 
-### Create the Website
+### Create the website
 
 Create a new directory in the project root, called `src`. Within the new directory, create two files: `index.html` and `app.js`. Starting with `index.html`, scaffold a file as shown below:
 
@@ -400,7 +401,7 @@ If you followed patiently, you should see the following after running `yarn dev`
 
 ![default-page](default-page.png)
 
-## Add Some Interaction
+## Add some interaction
 
 If we click the "add movie" button, nothing happens right now. It’s time to add some interaction and change that. Open the `app.js` file and add some helpers:
 

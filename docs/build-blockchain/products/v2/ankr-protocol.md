@@ -5,7 +5,6 @@ id: protocol
 
 # About Ankr Protocol
 
-
 The (r)evolutionary Ankr protocol brings increasing definition to Ankr’s vision of Web 3.0 mass adoption.
 
 Featuring:
@@ -32,7 +31,7 @@ Basically, you can utilize the Ankr Protocol to do the following:
 
 The Protocol optimises usage of the blockchain to provide the most efficient response possible by dynamically reducing latency between the user and the nodes.
 
-## Key Benefits
+## Key benefits
 
 The **Developer/Product Owner** or blockchain consumer gets faster, stable access to the blockchain through a fully decentralised protocol (more efficient than had they not used the Protocol to carry out the same action).
 
@@ -48,7 +47,7 @@ Initial blockchains supported are:**Avalanche, Arbitrum, Binance Smart Chain, Et
 
 By providing node services and receiving ANKR rewards, to building on multiple chains and receiving chain rewards. Anyone can build and earn on Web 3.0 from a DeFi newbie to a Crypto Degen.&#x20;
 
-## Key Features
+## Key features
 
 The Ankr Protocol is comprised of open access **Public Community RPCs**, **Ankr Premium** featuring private endpoints and **Providing** functionality.
 

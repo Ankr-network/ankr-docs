@@ -49,7 +49,13 @@ module.exports =
                 'build-blockchain/bas/architecture/runtime-upgrades',
               ],
             },
-            'build-blockchain/bas/how-to-launch',
+            {
+                'How to launch BAS': [
+                 'build-blockchain/bas/how-to-launch/launch-bas',
+                 'build-blockchain/bas/how-to-launch/deploy-erc20-token',
+                 'build-blockchain/bas/how-to-launch/deploy-erc721-token',
+                ],
+            },
             'build-blockchain/bas/demo',
             'build-blockchain/bas/faq',
             'build-blockchain/bas/glossary',

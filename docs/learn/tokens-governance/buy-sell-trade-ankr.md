@@ -3,11 +3,11 @@ title: Buy/Sell/Trade ANKR
 id: buy-ankr
 ---
 
-# How to Buy/Sell/Trade ANKR
+# How to buy/sell/trade ANKR
 
 ANKR can be traded at most popular crypto exchanges. As an ERC-20 token, ANKR can be stored on any EVM-compatible wallet.
 
-### Centralized Exchanges
+### Centralized exchanges
 
 Binance: [https://www.binance.com/en/trade/ankr_USDT](https://www.binance.com/en/trade/ankr_USDT)
 
@@ -23,7 +23,7 @@ Huobi: [https://www.huobi.com/en-us/exchange/ankr\_usdt](https://www.huobi.com/e
 
 Kraken: [https://www.kraken.com/en-us/prices/ankr-price-chart](https://www.kraken.com/en-us/prices/ankr-price-chart/)
 
-### Decentralized Exchanges
+### Decentralized exchanges
 
 1inch: [https://app.1inch.io/#/1/classic/swap/ANKR/ETH](https://app.1inch.io/#/1/classic/swap/ANKR/ETH)
 

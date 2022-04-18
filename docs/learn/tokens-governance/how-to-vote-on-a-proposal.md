@@ -3,7 +3,6 @@ title: How to vote on a proposal
 id: vote-proposal
 ---
 
-
 # How to vote
 
 How to participate in a vote:

@@ -1,8 +1,12 @@
-.container {
+.wrapper {
   background-color: white;
+}
+.container {
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 0 auto;
+  padding: 60px 0;
   position: relative;
+  width: 100%;
 }
 .info {
   width: 100%;

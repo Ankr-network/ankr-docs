@@ -3,7 +3,7 @@ title: Transfer ANKR to your MetaMask
 id: ankr-to-metamask
 ---
 
-# How to transfer ANKR Tokens to your MetaMask Wallet
+# How to transfer ANKR Tokens to your MetaMask wallet
 
 This section describes how to transfer **ANKR ERC-20 token**s to a **MetaMask wallet.**&#x20;
 

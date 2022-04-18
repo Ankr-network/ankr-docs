@@ -3,7 +3,7 @@ title: Overview
 id: overview
 ---
 
-# Parachain Liquid Crowdloan
+# Ankr Parachain Liquid Crowdloan
 
 ## What are Kusama and Polkadot Parachain Liquid Crowdloan
 
@@ -11,7 +11,7 @@ Kusama and Polkadot Parachain slot auctions are among the most widely discussed 
 
 However, these rewards have their limitations. Once a winning project secures a Parachain slot, crowdloan participants find their tokens locked up for up to two years with Polkadot, and 48 weeks with Kusama.
 
-To tackle this issue, Ankr introduces **Parachain Liquid Crowdloans** – an innovative instrument that unlocks the liquidity of bonded DOT, collects rewards from winning Parachain slot auctions, and distributes token rewards from the winning project’s to Parachain Liquid Crowdloan token holders.
+To tackle this issue, Ankr introduces **Parachain Liquid Crowdloan** – an innovative instrument that unlocks the liquidity of bonded DOT, collects rewards from winning Parachain slot auctions, and distributes token rewards from the winning project’s to Parachain Liquid Crowdloan token holders.
 
 Rewards from winning slot auctions are expected to become higher than Polkadot and Kusama staking rewards, which incentivizes more Parachain Liquid Crowdloan token holders to contribute their DOT and KSM tokens and benefit from a higher ROI.
 
@@ -48,7 +48,7 @@ Estimate the fair value of Parachain Liquid Crowdloan tokens and buy below your 
 
 **Get started**
 
-Parachain Liquid Crowdloans is available in [Ankr Earn](https://www.ankr.com/earn/liquid-crowdloan/)!
+Parachain Liquid Crowdloan is available in [Ankr Earn](https://www.ankr.com/earn/liquid-crowdloan/)!
 
 Read about Parachain Liquid Crowdloan Market Makers
 

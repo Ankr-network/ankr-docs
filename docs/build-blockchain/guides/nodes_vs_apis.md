@@ -1,4 +1,4 @@
-# Comparison of One-Click Nodes & Developer APIs
+# Comparison of one-click nodes & developer APIs
 
 Features| One-Click Node | Developer API
 ---|---|---

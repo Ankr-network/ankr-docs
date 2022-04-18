@@ -15,11 +15,11 @@ Ankr allows users to create their own full and archive xDai Stablechain APIs wit
 1. Login or set up an account on [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
-### Network Types Available on Ankr
+### Network types available on Ankr
 
 * Mainnet
 
-### Node Modes Available on Ankr
+### Node modes available on Ankr
 
 * Full
 * Archive
@@ -42,9 +42,9 @@ Eth RPC: [https://blockscout.com/xdai/mainnet/eth-rpc-api-docs](https://blocksco
 \
 Gas Price Oracle: [https://blockscout.com/xdai/mainnet/api/v1/gas-price-oracle](https://blockscout.com/xdai/mainnet/api/v1/gas-price-oracle)
 
-### Example Calls
+### Example calls
 
-#### API HTTPS Endpoint
+#### API HTTPS endpoint
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -125,7 +125,7 @@ $ curl -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_bl
 </TabItem>
 </Tabs>
 
-#### Websocket Endpoint
+#### Websocket endpoint
 
 <Tabs>
 <TabItem value="go" label="Go">
