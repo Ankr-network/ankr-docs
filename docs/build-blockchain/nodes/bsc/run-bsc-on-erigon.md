@@ -83,22 +83,22 @@ This section is still being tested. We recommend the Docker options whilst this 
     make all
     ```
 
-You can see the sequence of updates as follows:
-```
-Builds erigon
-Builds hack
-Builds rpctest
-Builds state
-Builds pics
-Builds rpcdaemon
-Builds integration tests
-Builds MDBX DB File
-Builds Sentry
-Builds txpool
-```
+   You can see the sequence of updates as follows:
+   ```
+   Builds erigon
+   Builds hack
+   Builds rpctest
+   Builds state
+   Builds pics
+   Builds rpcdaemon
+   Builds integration tests
+   Builds MDBX DB File
+   Builds Sentry
+   Builds txpool
+   ```
 
-To view all commands run the following
-`erigon --help`
+   To view all commands run the following
+   `erigon --help`
 
 ### 03 Run Node
 
