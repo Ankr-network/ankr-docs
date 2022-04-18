@@ -4,8 +4,16 @@
  * work well for content-centric websites.
  */
 
-
 /* You can override the default Infima variables here. */
+
+@font-face {
+  font-family: "Gilroy";
+	src: url('./gilroy-medium.woff2') format('woff2'),
+		url('./gilroy-medium.woff') format('woff');
+	font-style: normal;
+	font-display: swap;
+}
+
 @font-face {
   font-family: "Helvetica Neue";
   src: url("Helvetica Neue Medium Extended.otf") format("otf"),
@@ -15,129 +23,30 @@
 }
 
 @font-face {
-    font-family: 'TT Firs Neue';
-    src: url('TTFirsNeue-DemiBold.woff2') format('woff2'),
-    url('TTFirsNeue-DemiBold.woff') format('woff');
-    font-style: normal;
-    font-weight: 600;
-}
-@font-face {
-    font-family: 'Inter';
-    src: url('Inter-Regular.ttf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    font-variant: normal;
-}
-@font-face {
-  font-family: 'Inter';
-  src: url('Inter-Medium.ttf') format('opentype');
+  font-family: 'TT-Firs-Neue-Demi-Bold';
+  src: local('TT Firs Neue Demi Bold'), local('TT-Firs-Neue-Demi-Bold'),
+      url('TTFirsNeue-DemiBold.woff2') format('woff2'),
+      url('TTFirsNeue-DemiBold.woff') format('woff');
+	font-style: normal;
+	font-display: swap;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-variant: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('Inter-Bold.ttf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-stretch: normal;
-    font-variant: normal;
 }
 
 :root {
+  --ifm-color-primary: #2c59d6;
   --ifm-color-primary-dark: rgb(33, 54, 175);
   --ifm-color-primary-darker: rgb(9, 24, 110);
   --ifm-color-primary-darkest: rgb(4, 3, 85);
   --ifm-color-primary-light: rgb(192, 199, 197);
   --ifm-color-primary-lighter: rgb(201, 207, 206);
   --ifm-color-primary-lightest: rgb(223, 226, 226);
-  --ifm-code-font-size: 85%;
+  --ifm-code-font-size: 95%;
   --ifm-color-primary: #356df3;
   --ifm-link-color: #356df3;
-  --ifm-heading-font-family: 'Inter'
 }
 
 a {
-  font-family: "Inter";
-}
-
-.navbar__toggle {
-  position: absolute;
-  right: 0;
-}
-
-.pagination-nav__label::before {
-  content: unset !important;
-}
-.navbar {
-  height: 60px !important;
-}
-.menu__link {
-  background: transparent !important;
-}
-.menu__list-item-collapsible {
-  background: transparent !important;
-}
-.menu__caret:hover {
-  background: transparent !important;
-}
-.menu__caret:before {
-  width: 10px;
-  height: 10px;
-}
-.card {
-  padding: 25px !important;
-  height: unset !important;
-  box-shadow: unset !important;
-  border: 0 solid black !important;
-
-  position: relative;
-}
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-
-}
-.main-wrapper > div {
-  flex-grow: 1;
-}
-.card:after {
-  width: 15px;
-  height: 14px;
-
-  content: '';
-  position: absolute;
-  top:50%;
-  right:25px;
-  transform: translateY(-50%);
-  transition: 225ms;
-
-  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNSAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjA5MiAxMS45MDhMMTMuMDkyIDEuNDY0NThNMTMuMDkyIDEuNDY0NThMMi42NDg1NyAxLjQ2NDU4TTEzLjA5MiAxLjQ2NDU4TDEuNzc4MjkgMTIuNzc4MyIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyLjQiLz4KPC9zdmc+Cg==");
-
-}
-.card h2 {
-  margin-bottom: 0;
-  transition: 225ms;
-}
-.card:hover h2{
-  color: #356DF3 !important;
-}
-.card:hover:after {
-  filter: invert(35%) sepia(96%) saturate(2669%) hue-rotate(213deg) brightness(96%) contrast(98%);
-}
-.card p {
-  display: none;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  font-family: "Gilroy";
 }
 
 .docusaurus-highlight-code-line {
@@ -159,8 +68,8 @@ a {
 
 .navbar__logo {
   padding-right: 20px;
+  border-right: 1px solid #c4c4c4;
   margin-right: 20px;
-  margin-left: 40px;
 }
 .navbar__brand {
   font-size: 20px;
@@ -175,12 +84,12 @@ a {
   cursor: pointer;
 }
 .navbar__link {
-  color: #1f2226;
+  color: default;
   opacity: 0.5;
 }
 
 .dropdown {
-  font-family: "Inter";
+  font-family: "Gilroy";
 }
 .dropdown > .navbar__link:after {
   width: 14px;
@@ -197,49 +106,42 @@ a {
 }
 .dropdown__link:hover,
 .dropdown__link--active {
-  background-color: default;
+  background-color: transparent;
   color: #356df3;
 }
 
 .docs-wrapper {
   background-color: #f2f5fa;
-  font-family: "Inter";
+  font-family: "Helvetica Neue";
 }
-
 main .container {
   padding: 46px 0 46px 92px !important;
   max-width: 100%;
-
 }
-@media (max-width: 1235px) {
+@media (max-width: 960px) {
   main .container {
-    padding: 32px 16px 46px 16px !important;
+    padding: 32px 16px 0 16px !important;
   }
 }
 aside {
   border-right: none !important;
   margin-top: 0 !important;
   background-color: #fff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 aside > div {
   padding-top: 40px !important;
-  top: 60px !important;
-  height: auto !important;
 }
 
 aside nav {
   padding: 0 !important;
 }
 
-.navbar-sidebar--show .navbar__brand {
-  visibility: hidden;
-}
-
 .menu__list {
   padding: 0 20px 0 60px;
   color: rgba(31, 34, 38, 0.8);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -247,21 +149,15 @@ aside nav {
   margin-left: 0;
   padding-left: 12px;
 }
-
 .menu__link {
   padding: 0;
-  margin: 10px;
+  margin-bottom: 20px;
 }
-
-.menu__caret {
-  padding: 10px;
-}
-
 .menu__list-item {
   margin: 0;
 }
 
-.menu__caret .menu__link--active:not(.menu__link--sublist),
+.menu__link--active:not(.menu__link--sublist),
 .menu__link:hover {
   color: #356df3;
   background-color: transparent;
@@ -271,14 +167,13 @@ aside nav {
   background: url("../../static/img/dropdown.svg") 0 0 no-repeat;
   transform: none;
 }
-
 .menu__list-item--collapsed .menu__link--sublist:after {
-  transform: rotate(-90deg);
-  margin-top: -5px;
-  margin-right: 5px;
+  transform: rotate(180deg);
+  margin-top: -10px;
+  margin-right: 10px;
 }
 
-@media (max-width: 1235px) {
+@media (max-width: 680px) {
   .pagination-nav {
     flex-direction: column;
   }
@@ -340,7 +235,7 @@ aside nav {
   color: #1f2226;
   opacity: 0.8;
   display: inline;
-  position: static;
+  position: relative;
   float: right;
   max-width: 300px;
   white-space: nowrap;
@@ -387,7 +282,7 @@ table th {
   padding: 16px 8px 16px;
 }
 table tr:nth-child(2n) {
-  background-color: default;
+  background-color: transparent;
 }
 table td {
   border-width: 0 0 1px 0;
@@ -405,15 +300,9 @@ table td {
   color: #1f2226;
 }
 
-.markdown h1,
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5,
-.markdown h6 {
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+  font-family: "Helvetica Neue";
   color: #1f2226;
-  font-family: 'TT Firs Neue';
-  font-weight: 600 !important;
 }
 .markdown h1 {
   font-weight: bold;
@@ -430,7 +319,6 @@ table td {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.45;
-  font-family: 'Inter';
 }
 .markdown p {
   font-size: 16px;
@@ -468,7 +356,7 @@ table td {
 }
 .markdown ol li {
   position: relative;
-  display: block;
+  display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   margin-top: 0;
@@ -489,12 +377,12 @@ table td {
   counter-increment: ul;
 }
 
-@media (max-width: 1235px) {
+@media (max-width: 1200px) {
   .navbar__inner {
     padding: 0 0 0 60px;
   }
 }
-@media (max-width: 1235px) {
+@media (max-width: 960px) {
   .navbar {
     height: 64px;
   }
@@ -503,14 +391,10 @@ table td {
   }
   .navbar__items {
     width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
   .navbar__items--right {
-    height: 36px;
-    position: absolute;
-    right: 45px;
-    top: 13px;
-  }
-  .navbar__items--right .navbar__item {
     display: none;
   }
   .navbar-sidebar__item {
@@ -537,12 +421,7 @@ table td {
     margin-bottom: 12px;
   }
 
-.responsive-pic {
-  max-width: 100%;
-  height: auto;
-}
-
-  [data-theme="light"] .DocSearch {
+  [data-theme='light'] .DocSearch {
     /* --docsearch-primary-color: var(--ifm-color-primary); */
     /* --docsearch-text-color: var(--ifm-font-color-base); */
     --docsearch-muted-color: var(--ifm-color-secondary-darkest);
@@ -560,7 +439,7 @@ table td {
     --docsearch-footer-background: var(--ifm-color-white);
   }
 
-  [data-theme="dark"] .DocSearch {
+  [data-theme='dark'] .DocSearch {
     --docsearch-text-color: var(--ifm-font-color-base);
     --docsearch-muted-color: var(--ifm-color-secondary-darkest);
     --docsearch-container-background: rgba(47, 55, 69, 0.7);
@@ -580,5 +459,5 @@ table td {
       var(--ifm-color-emphasis-200) 0%,
       var(--ifm-color-emphasis-100) 100%
     );
-  }
+}
 }

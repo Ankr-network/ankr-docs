@@ -63,6 +63,7 @@
           ],
           apiKey: process.env.TYPESENCE_PUBLIC_API_KEY,
         },
+<<<<<<< HEAD
 
         // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.md#search-parameters
         typesenseSearchParameters: {},
@@ -77,6 +78,12 @@
         logo: {
           alt: "Ankr Documentation",
           src: "img/ankr-logo.svg",
+=======
+        colorMode: {
+          defaultMode: 'light',
+          disableSwitch: false,
+          respectPrefersColorScheme: false,
+>>>>>>> 941ebafeaec555321ff1fdcc0c3e7d53b55a70a1
         },
         items: [
           {
