@@ -7,7 +7,7 @@ id: about-unreal
 
 The Ankr Unreal Game SDK brings powerful functionality to the Unreal Engine, making it easy for game developers and studios to give their games full Web3 capabilities, including - integrating cryptocurrencies and non-fungible tokens (NFTs). These docs explain what Ankr’s Unreal Game SDK is, how to install it, and how to get started using it. Let’s dive in!
 
-## Key features
+## Key Features
 
 1. Create best-in-class NFT monetization strategies.
 2. Effortlessly interact with contracts deployed on multiple blockchains.
@@ -15,11 +15,11 @@ The Ankr Unreal Game SDK brings powerful functionality to the Unreal Engine, mak
 3. In-built kit to create responsive games on Android and iOS. 
 4. Add blockchain interactivity to existing games. 
 
-## Community support
+## Community Support
 
 Check out Ankr Game channels in the [Ankr Discord](https://discord.gg/uYaNu23Ww7).
 
-## What's inside
+## What's Inside
 
 The SDK is designed to make it super easy to get started with game development especially for Android and iOS mobile games development. 
 
