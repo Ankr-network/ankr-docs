@@ -17,11 +17,6 @@ The Ankr Gaming Unity SDK provides a powerful toolkit for Game Developers and St
 3. In-built kit to create responsive games on Android and iOS. 
 4. Add blockchain interactivity to existing games. 
 
-## Related Content
-[![Demo](https://i.imgur.com/9MxFGEEm.png)](https://youtu.be/BgfeTEsDp-g)
-[![YT Playlist](https://i.imgur.com/dcnQO6Mm.png)](https://www.youtube.com/playlist?list=PLFOf2ihR2i6kGKtBM9vdQJfB5WsrRPWrp)
-
-_Links will direct you to our YouTube channel._
 ## Community support
 
 Check out Ankr Game channels in the [Ankr Discord](https://discord.gg/uYaNu23Ww7).
