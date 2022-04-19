@@ -18,7 +18,7 @@ There are two types of nodes within the Algorand network
 * Relay Node
 * Participation Node
 
-## Explorer links
+## Explorer
 
 * [Algorand Explorer](https://algoexplorer.io/)
 

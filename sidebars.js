@@ -137,7 +137,31 @@ module.exports =
                 },
                 {
                     'Vite': [
-                        'build-blockchain/nodes/vite/overview-supernode',
+                        'build-blockchain/nodes/vite/supernode',
+                        'build-blockchain/nodes/vite/full-node',
+                    ],
+                },
+                {
+                    'Harmony': [
+                        'build-blockchain/nodes/harmony/overview',
+                        'build-blockchain/nodes/harmony/run-staking-node-on-ankr',
+                        'build-blockchain/nodes/harmony/faq',
+                    ],
+                },
+                {
+                    'Hathor': [
+                        'build-blockchain/nodes/hathor/overview',
+                        'build-blockchain/nodes/hathor/endpoints',
+                    ],
+                },
+                {
+                    'Hedera': [
+                        'build-blockchain/nodes/hedera/overview',
+                    ],
+                },
+                {
+                    'Horizen': [
+                        'build-blockchain/nodes/horizen/overview',
                     ],
                 },
             ],

@@ -1,6 +1,6 @@
 ---
 title: Vite Supernode
-id: overview-supernode
+id: supernode
 ---
 
 # Vite supernode
