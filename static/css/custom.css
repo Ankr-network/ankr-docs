@@ -147,6 +147,10 @@ a {
   padding: 0 var(--ifm-pre-padding);
 }
 
+html[data-theme="dark"] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .navbar {
   width: 100%;
   height: 128px;
@@ -168,7 +172,7 @@ a {
 }
 .navbar__brand b {
   font-weight: 400;
-  color: default;
+  color: rgba(46, 46, 46, 0.8);
 }
 
 .navbar__item {
@@ -197,7 +201,7 @@ a {
 }
 .dropdown__link:hover,
 .dropdown__link--active {
-  background-color: default;
+  background-color: transparent;
   color: #356df3;
 }
 
@@ -387,7 +391,7 @@ table th {
   padding: 16px 8px 16px;
 }
 table tr:nth-child(2n) {
-  background-color: default;
+  background-color: transparent;
 }
 table td {
   border-width: 0 0 1px 0;
