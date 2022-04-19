@@ -3,7 +3,7 @@ title: Overview
 id: overview
 ---
 
-# Horizen supernode
+# Horizen 
 
 Building a fair and inclusive ecosystem where everyone is empowered and rewarded for their contributions.
 

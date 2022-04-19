@@ -162,6 +162,19 @@ module.exports =
                 {
                     'Horizen': [
                         'build-blockchain/nodes/horizen/overview',
+                        'build-blockchain/nodes/horizen/run-node',
+                    ],
+                },
+                {
+                    'Elrond': [
+                        'build-blockchain/nodes/elrond/overview',
+                        'build-blockchain/nodes/elrond/run-staking-node',
+                    ],
+                },
+                {
+                    'IOST': [
+                        'build-blockchain/nodes/iost/overview',
+                        'build-blockchain/nodes/iost/run-node',
                     ],
                 },
             ],

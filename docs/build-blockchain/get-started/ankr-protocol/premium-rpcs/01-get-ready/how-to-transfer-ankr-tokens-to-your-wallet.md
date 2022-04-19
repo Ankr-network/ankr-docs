@@ -50,7 +50,7 @@ The example below refers to **withdrawing ETH**.
 
 ![](https://lh3.googleusercontent.com/QgP-fdoATmP33zp4Kb\_icGS9n-DA6rG9Sogfn9dneJbH7MQ0rV1NzwMFjanxgEArshV8AhGdFiBYlRTjld8BNjW0rUVPr9YZOgm1vOl9hy0C\_GASHYWVsQ\_iX8pH6gbbfY1ZgsdV=s1600)
 
-**07** Click "**Withdraw**".&#x20;
+**07** Click "**Withdraw**".
 
 Double check that all of the information is correct and then click "Withdraw".
 

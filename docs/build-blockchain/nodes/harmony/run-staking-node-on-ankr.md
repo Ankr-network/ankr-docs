@@ -24,9 +24,9 @@ Deploy a Harmony staking node on Ankr:
     ![Proceed to payment](../../../../static/img/nodes/harmony-proceed-to-payment.png)
 9. Select payment method (USDT, ANKR erc20 or add your credit card).
 10. For this tutorial we will choose **Add New Credit Card**.
-    ![Add credit card](../../../../static/img/nodes/harmony-add-card.png)
+    ![Add credit card](../../../../static/img/nodes/add-card.png)
 11. Provide all requested information and click **Pay with Credit Card**.
-    ![Pay with card](../../../../static/img/nodes/harmony-pay-with-card.png)
+    ![Pay with card](../../../../static/img/nodes/pay-with-card.png)
 12. If all information is provided successfully the deployment will of the node will start.
     ![Deployment in progress](../../../../static/img/nodes/harmony-deployment-in-progress.png)
 13. In order for your node to be eligible for a validator you will need at least 10.000 ONE Mainnet native tokens in your wallet on Shard 0 and the Node should be synched.
