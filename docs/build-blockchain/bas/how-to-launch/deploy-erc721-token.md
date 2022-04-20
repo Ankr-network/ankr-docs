@@ -32,6 +32,6 @@ contract MyERC20Token is ERC20 {
 
 MetaData URI is a link (usually on ipfs) that returns a JSON object with information about your NFT token.
 
-:::tip
+:::hint
 For more information on NFT (EIP-721) metadata, visit the [official EIP page](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md).
 :::
