@@ -56,6 +56,7 @@ module.exports =
                 ],
             },
             'build-blockchain/bas/staking',
+            'build-blockchain/bas/blockchain-security',
             'build-blockchain/bas/demo',
             'build-blockchain/bas/faq',
           ],
