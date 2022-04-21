@@ -36,5 +36,5 @@ An EVM hook must always verify that it's managed by a Solidity smart contract.
 For example, for the runtime upgrades hook the smart contract address is `0x0000000000000000000000000000000000007004`. 
 
 :::tip
-Here is an [example of a managing smart contract](https://github.com/Ankr-network/bas-genesis-config/blob/devel/contracts/RuntimeUpgrade.sol)
+Here is an [example of an example of smart contract that manages runtime upgrades](https://github.com/Ankr-network/bas-genesis-config/blob/devel/contracts/RuntimeUpgrade.sol)
 :::
