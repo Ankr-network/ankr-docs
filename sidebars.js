@@ -59,6 +59,7 @@ module.exports =
             'build-blockchain/bas/blockchain-security',
             'build-blockchain/bas/demo',
             'build-blockchain/bas/faq',
+            'build-blockchain/bas/glossary',
           ],
         },
         {

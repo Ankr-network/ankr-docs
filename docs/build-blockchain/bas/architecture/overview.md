@@ -27,7 +27,7 @@ After applying templates, BAS can be customized using programmable and configura
 
 The main goal of BAS is to build such a multi-modular blockchain architecture that it is flexible, convenient, and easy to use.
 
-As the current implementation of BAS is built on BSC, all existing modules are built into system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
+As the current implementation of BAS is built on BSC, all existing modules are built into the system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
 
 BAS brings with it programmable and configurable modules that can be used or modified by developers to reach their business goals, for example:
 * Networking — for p2p communication between different BAS nodes.
@@ -43,12 +43,8 @@ This modular architecture allows to re-use or enable/disable different modules. 
 
 ## Repositories
 
-0x0000000000000000000000000000000000000000000000000000000000000001
-
-You can find all BAS-related repositories in the official [Ankr's GitHub repository](https://github.com/Ankr-network?q=bas).
-
-Here is the list of all repositories:
-+ [bas-genesis-config](https://github.com/Ankr-network/bas-genesis-config) - genesis smart contracts and scripts for building genesis config
-+ [bas-template-bsc](https://github.com/Ankr-network/bas-template-bsc) - BAS-compatible BSC-based template
-+ [bas-javascript-monorepo](https://github.com/Ankr-network/bas-javascript-monorepo) - mono-repository with all frontend-related packages and SDKs
-+ [bas-devnet-setup](https://github.com/Ankr-network/bas-devnet-setup) - scripts for running BAS devnet
+Here is the list repositories:
+* [bas-genesis-config](https://github.com/Ankr-network/bas-genesis-config) — genesis smart contracts and scripts for building the genesis config.
+* [bas-template-bsc](https://github.com/Ankr-network/bas-template-bsc) — BAS-compatible BSC-based template.
+* [bas-javascript-monorepo](https://github.com/Ankr-network/bas-javascript-monorepo) — mono-repository with all frontend-related packages and SDKs.
+* [bas-devnet-setup](https://github.com/Ankr-network/bas-devnet-setup) — scripts for running BAS devnet.
