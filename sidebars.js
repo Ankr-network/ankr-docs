@@ -237,7 +237,8 @@ module.exports =
       {
         'Ankr Unreal SDK': [
           'game/unreal/about-unreal',
-          'game/unreal/setting-up-unreal',
+          'game/unreal/setting-up-v4',
+          'game/unreal/setting-up-v5',
           {
               'Get Started': [
               'game/unreal/getting-started/unreal-before',

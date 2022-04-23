@@ -485,11 +485,13 @@ table td {
   counter-reset: ol;
   padding-left: 2em;
 }
-.markdown ul {
-  counter-reset: ul;
-  padding-left: 2em;
+.markdown ul li:before {
+  color: #356df3;
+  display: inline-block;
+  width: 1em;
+  margin-left: -2em;  
 }
-.markdown li:before {
+.markdown ol li:before {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -519,10 +521,6 @@ table td {
 .markdown ol li:before {
   content: counter(ol);
   counter-increment: ol;
-}
-.markdown ul li:before {
-  content: counter(ul);
-  counter-increment: ul;
 }
 
 @media (max-width: 1235px) {
