@@ -46,7 +46,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 
 1. Transfer tokens through [Avalanche Bridge](https://bridge.avax.network/login) using your Metamask browser extension (Ethereum network).
 2. Once you transferred tokens to Avalanche network using Avalanche Bridge, make sure that your Metamask browser extension is connected using Avalanche network.
-3. Sell the token that you bridged from Ethereum to Avalanche network in a decentralized exchange on Avalanche network. For example, [Pangolin](https://pangolin.exchange), [Lydia Finance](https://www.lydia.finance), or [TraderJoe](https://www.traderjoexyz.com/#/home).
+3. Sell the token that you bridged from Ethereum to Avalanche network in a decentralized exchange on Avalanche network. For example, [Pangolin](https://pangolin.exchange), [Lydia Finance](https://www.lydia.finance), or [TraderJoe](https://www.traderjoexyz.com/).
 
 ## How to stake AVAX
 
