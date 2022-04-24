@@ -21,7 +21,7 @@ Once a block is produced by a validator, it propagates it though the network, us
 Today the Parlia consensus engine doesn't support fast-finality, this feature is still under development, that is why to prove the correctness of the produced block, the user must verify 2/3*N+1 blocks.
 
 To become a validator, the user must fit these requirements:
-* Have their own, fully synchronized, node running in the full-sync mode, with unlocked validator private key.
+* Have their own, fully synchronized, node running in the full-sync mode, with unlocked validator private key (`--unlock=` param).
 * Register their validator address in the staking smart contract via the `registerValidator(address validatorAddress, uint16 commissionRate)` function. Registering, the user must specify the validator's address and commission rate.
 * Ask one of existing validator owners to propose the user to become a validator.
 * Wait until 2/3 of the validators support the candidate.
@@ -46,25 +46,26 @@ To be released from jail, the validator's owner must invoke the function `releas
 
 ## Blocks & epochs
 
-When a delegator votes for a validator, they modify the total delegated amount. Effecticely, they also modify the share distribution between all delegators.
+When a delegator votes for a validator, they modify the total delegated amount. Effectively, they also modify the share distribution between all delegators.
 It makes share computation very complicated and requires dynamic recalculation of shares for each reward distribution. This may make the entire rewards distribution process very expensive.
 Since we're running the staking and reward distribution models fully on-chain, we want all computations to be optimized for the smart contracts.
 To reach this, we split the staking process into epochs.
 
-An **epoch** is an number of blocks, with N blocks inside.
-Theoretically, an epoch size can be equal to just one block. However, it can significantly increase storage size and bring no benefit.
+An **epoch** is an interval with N blocks inside.
+Theoretically, an epoch length can be equal to just one block. However, it can significantly increase storage size and bring no benefit.
 To solve this potential problem, we're looking for the most optimal epoch length.
 
-Epoch length should be optimal, as using the epoch model gains an overhead of the claiming rewards. On the other hand, it optimizes on-chain computations.
-In essence, we ask delegators to compute their rewards for each epoch when they want to claim it.
-That's why finding a balance the optimal epoch size is very important for both validators and delegators.
-We suggest to use the epoch size of 1 day. This number is optimal for both sides and does not bring any significant overhead of storage and gas consumption.
-1 day epoch allows to spend only 1.7 million gas a year per single user. Since block size is around 80 million gas, a delegator has ~40-50 years to claim their rewards before those can become unclaimable.
+Epoch length should be optimal, as using a non-optimal length can raise the cost of reward-claiming transactions. 
+On the other hand, it optimizes on-chain computations.
+In essence, we ask delegators to compute their rewards for each epoch when they want to claim them.
+That's why finding an optimal epoch length is very important for both validators and delegators.
+We suggest the epoch size of 1 day. This number is optimal for both sides and does not bring any significant overhead of storage and gas consumption.
+1 day epoch allows to spend only 1.7 million gas units a year per single user. Since block size is around 80 million gas units, a delegator has ~40-50 years to claim their rewards before those can become unclaimable.
 Different blockchains solve this problem in different ways. Some of them just burn all unclaimed rewards if the user doesn't claim those for a long enough time (usually 1-2 weeks).
 
 Since we don't want to burn rewards and don't want our clients to pay a lot of gas for the reward-claiming transactions, we introduce an optimized version of staking called `StakingPool`.
 Staking pool allows to use a different staking model where instead of delegating tokens to a validator, the user buys a share of the pool and validator rewards are distributed between delegators based on their share.
-As all users use the same pool, reward-claiming transaction is distributed between all delegators in the pool.
+As all users use the same pool, on average the cost of reward-claiming transactions is shared by all delegators in the pool.
 
 The key difference between these two models is that staking pool computations are not super "clean", i.e. they can cause dust in staking due to the rounding of numbers.
 Also, staking pools are not optimized for big staking amounts. So, for big staking amounts, we use direct staking, while for small — a staking pool.
@@ -74,7 +75,7 @@ Also, staking pools are not optimized for big staking amounts. So, for big staki
 ### Validator's rewards
 Validator can get rewards by executing transactions.
 Each transaction has execution cost and 15/16 of this cost goes to the validator, but 1/16 of the reward goes to the system treasury that can use these funds for the system needs, such as bridging cost coverage.
-Not all block rewards go to the validator's owner. They also get distributed between all delegators.
+Not all block rewards go to the validator's owner. A share of them is also distributed between delegators.
 
 When the validator's owner creates a new validator, the commission rate must be specified.
 The commission rate defines what percentage of the block reward go to the validator owner.
@@ -86,4 +87,4 @@ Delegators rewards are calculated based on their total staked amount at the vali
 
 The universal formula for delegator's reward distribution is `=rewardsPerBlock*myDelegatedAmount/totalDelegated`.
 
-The reward is  calculated per one validator. So, if a delegator stakes their tokens at different validators, you should calculate the sum of it.
+The reward is calculated per one validator. The total rewards for a delegator, if staked at different validators, is the sum or per-validator rewards.

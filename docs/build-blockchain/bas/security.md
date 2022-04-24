@@ -23,7 +23,7 @@ To proof the absence of vulnerabilities and bugs in the code, we're passing seve
 
 ### Staking
 
-We want BAS to be as decentralized as possible, so we have validators in the network that produce blocks and verify blocks of other validators.
+We want BAS to be as decentralized as possible, so while some validators in the network produce blocks, other validators verify these blocks.
 If a validator is underperforming, it gains less staking rewards and users are less incentivized to vote for such validator.
 Validators must optimize their environment to get bigger rewards and less commission rate to incentivize users to elect them.
 If a validator misses a block, it can be punished or even slashed and jailed for 1 week for bad performance.
