@@ -22,8 +22,6 @@ Moonbeam is EVM compatible to an extent but there are important Moonbeam differe
 
 You can set up your **MetaMask wallet** to connect to Celo RPC. You can then perform transactions and interact with the network.
 
-### Get started
-
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
 3. Enter the settings for the required project as follows in the table below:
@@ -37,16 +35,25 @@ You can set up your **MetaMask wallet** to connect to Celo RPC. You can then per
 |           | SYMBOL:                 | GLMR                                                  |
 |           | BLOCK EXPLORER URL:     | [https://moonscan.io/](https://moonscan.io/) |
 
-## Integrate code
+## Get Started
 
-Frontier is the Ethereum compatibility layer for Substrate based chains. It allows developers to run unmodified Ethereum DApps.
+### Integrate code
 
-However, not all Ethereum JSON RPC methods are supported, and some of the supported ones return default values. 
+Make sure you've got your endpoints.
+If you're using the Public RPCs, your endpoint is simply `https://rpc.ankr.com/moonbeam`.
+
+If you're using the Premium Plan, you can copy your two endpoints will have one for HTTPS and one for WSS. 
+
+Here's how to get started with 
 
 
 
 
 ### eth library
+
+Frontier is the Ethereum compatibility layer for Substrate based chains. It allows developers to run unmodified Ethereum DApps.
+
+However, not all Ethereum JSON RPC methods are supported, and some of the supported ones return default values. 
 
 The following methods are supported on the Moonbeam RPC. 
 
