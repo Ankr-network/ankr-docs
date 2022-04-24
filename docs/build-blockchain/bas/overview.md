@@ -53,8 +53,7 @@ Internally, BAS implements the following modules: Parlia consensus engine, staki
 
 Over time, the set of modules will increase and they will take on a more structured look. 
 
-
-## So, what's the goal again? And what is the future of BAS? 
+## So, what's the goal again? And what is the future of BAS?
 
 The main goal of BAS is to build such a multi-modular blockchain architecture that it is flexible, convenient, and easy to use.
 
