@@ -65,7 +65,7 @@ The next step is to stake the 1,000,000 VITE tokens in the [Vite Web Application
 5. The next step is to confirm the transaction in your mobile Vite wallet.
    ![Vite supernode running status](../../../../static/img/nodes/vite-sn-dashboard-confirm-transaction.png) 
 
-   Once confirmed, your Vite Supernode successfully registered and ready to receive rewards. Check your node on the [Vite SBP Ranking List](https://explorer.vite.net/SBPList).
+   Once confirmed, your Vite Supernode successfully registered and ready to receive rewards. Check your node on the [Vite SBP Ranking List](https://vitescan.io/sbps).
 
    <br></br>
    Please note that you will start receiving Supernode rewards after the node has been fully synced, which is expected to take up to 5 days.
