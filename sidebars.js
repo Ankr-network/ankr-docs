@@ -40,14 +40,13 @@ module.exports =
             {
                 'Architecture': [
                 'build-blockchain/bas/architecture/overview',
-                'build-blockchain/bas/architecture/modules',
                 'build-blockchain/bas/architecture/circ-model-native-bridge',
-                'build-blockchain/bas/architecture/native-bridge',
-                'build-blockchain/bas/architecture/fast-finality-bls-crypto',
-                'build-blockchain/bas/architecture/sys-smart-contracts',
-                'build-blockchain/bas/architecture/governance',
-                'build-blockchain/bas/architecture/runtime-upgrades',
-              ],
+                  'build-blockchain/bas/architecture/native-bridge',
+                  'build-blockchain/bas/architecture/fast-finality-bls-crypto',
+                  'build-blockchain/bas/architecture/sys-smart-contracts',
+                  'build-blockchain/bas/architecture/governance',
+                  'build-blockchain/bas/architecture/runtime-upgrades',
+                ],
             },
             {
                 'How to launch BAS': [
@@ -56,10 +55,198 @@ module.exports =
                  'build-blockchain/bas/how-to-launch/deploy-erc721-token',
                 ],
             },
+            'build-blockchain/bas/staking',
+            'build-blockchain/bas/blockchain-security',
             'build-blockchain/bas/demo',
             'build-blockchain/bas/faq',
             'build-blockchain/bas/glossary',
           ],
+        },
+        {
+            'Nodes': [
+                {
+                    'Algorand': [
+                        'build-blockchain/nodes/algorand/overview',
+                        'build-blockchain/nodes/algorand/endpoints',
+                    ],
+                },
+                {
+                    'Binance Chain': [
+                        'build-blockchain/nodes/binance-chain/overview',
+                    ],
+                },
+                {
+                    'Binance Smart Chain': [
+                        'build-blockchain/nodes/bsc/overview',
+                        'build-blockchain/nodes/bsc/erigon-bsc-testnet',
+                        'build-blockchain/nodes/bsc/run-bsc-node-on-erigon',
+                    ],
+                },
+                {
+                    'Bitcoin': [
+                        'build-blockchain/nodes/bitcoin/overview',
+                    ],
+                },
+                {
+                    'Cardano': [
+                        'build-blockchain/nodes/cardano/overview',
+                    ],
+                },
+                {
+                    'Celo': [
+                        'build-blockchain/nodes/celo/overview',
+                    ],
+                },
+                {
+                    'Cosmos': [
+                        'build-blockchain/nodes/cosmos/overview',
+                    ],
+                },
+                {
+                    'Covalent': [
+                        'build-blockchain/nodes/covalent/overview',
+                    ],
+                },
+                {
+                    'Dash': [
+                        'build-blockchain/nodes/dash/overview',
+                    ],
+                },
+                {
+                    'Decred': [
+                        'build-blockchain/nodes/decred/overview',
+                    ],
+                },
+                {
+                    'Elastos': [
+                        'build-blockchain/nodes/elastos/overview',
+                    ],
+                },
+                {
+                    'Eethreum 2': [
+                        'build-blockchain/nodes/eth2/overview',
+                        'build-blockchain/nodes/eth2/run-provider-nodes',
+                        'build-blockchain/nodes/eth2/rewards-distribution',
+                    ],
+                },
+                {
+                    'Fantom': [
+                        'build-blockchain/nodes/fantom/overview',
+                        'build-blockchain/nodes/fantom/ftm-node-read-only',
+                        'build-blockchain/nodes/fantom/ftm-node-full',
+                    ],
+                },
+                {
+                    'Vite': [
+                        'build-blockchain/nodes/vite/supernode',
+                        'build-blockchain/nodes/vite/full-node',
+                    ],
+                },
+                {
+                    'Harmony': [
+                        'build-blockchain/nodes/harmony/overview',
+                        'build-blockchain/nodes/harmony/run-staking-node-on-ankr',
+                        'build-blockchain/nodes/harmony/faq',
+                    ],
+                },
+                {
+                    'Hathor': [
+                        'build-blockchain/nodes/hathor/overview',
+                        'build-blockchain/nodes/hathor/endpoints',
+                    ],
+                },
+                {
+                    'Hedera': [
+                        'build-blockchain/nodes/hedera/overview',
+                    ],
+                },
+                {
+                    'Horizen': [
+                        'build-blockchain/nodes/horizen/overview',
+                        'build-blockchain/nodes/horizen/run-node',
+                    ],
+                },
+                {
+                    'Elrond': [
+                        'build-blockchain/nodes/elrond/overview',
+                        'build-blockchain/nodes/elrond/run-staking-node',
+                    ],
+                },
+                {
+                    'IOST': [
+                        'build-blockchain/nodes/iost/overview',
+                        'build-blockchain/nodes/iost/run-node',
+                    ],
+                },
+                {
+                    'LTO': [
+                        'build-blockchain/nodes/lto/overview',
+                        'build-blockchain/nodes/lto/run-node',
+                        'build-blockchain/nodes/lto/faq',
+                    ],
+                },
+                {
+                    'Neo': [
+                        'build-blockchain/nodes/neo/overview',
+                    ],
+                },
+                {
+                    'Near': [
+                        'build-blockchain/nodes/near/overview',
+                    ],
+                },
+                {
+                    'Nervos': [
+                        'build-blockchain/nodes/nervos/overview',
+                        'build-blockchain/nodes/nervos/run-node',
+                        'build-blockchain/nodes/nervos/endpoints',
+                    ],
+                },
+                {
+                    'NuCypher': [
+                        'build-blockchain/nodes/nucypher/overview',
+                        'build-blockchain/nodes/nucypher/run-node',
+                    ],
+                },
+                {
+                    'Nuls': [
+                        'build-blockchain/nodes/nuls/overview',
+                        'build-blockchain/nodes/nuls/endpoints',
+                    ],
+                },
+                {
+                    'OmiseGo': [
+                        'build-blockchain/nodes/omisego/overview',
+                        'build-blockchain/nodes/omisego/endpoints',
+                    ],
+                },
+                {
+                    'Pchain': [
+                        'build-blockchain/nodes/pchain/overview',
+                        'build-blockchain/nodes/pchain/run-node',
+                        'build-blockchain/nodes/pchain/faq',
+                    ],
+                },
+                {
+                    'Polygon': [
+                        'build-blockchain/nodes/polygon/overview',
+                        'build-blockchain/nodes/polygon/run-node',
+                    ],
+                },
+                {
+                    'Stafi': [
+                        'build-blockchain/nodes/stafi/overview',
+                        'build-blockchain/nodes/stafi/run-node',
+                    ],
+                },
+                {
+                    'TomoX': [
+                        'build-blockchain/nodes/tomochain/overview',
+                        'build-blockchain/nodes/tomochain/run-node-master',
+                        'build-blockchain/nodes/tomochain/run-node-tomox',
+                    ],
+                },
+            ],
         },
         {
           'Guides': [
