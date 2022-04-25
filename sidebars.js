@@ -307,6 +307,7 @@ module.exports =
               'BNB': [
                 'earn/liquid-staking/bnb/overview',
                 'earn/liquid-staking/bnb/staking-mechanics',
+                'earn/liquid-staking/bnb/dev-details',
                 'earn/liquid-staking/bnb/stake-bnb',
                 'earn/liquid-staking/bnb/unstake-bnb',
                 'earn/liquid-staking/bnb/faq',
