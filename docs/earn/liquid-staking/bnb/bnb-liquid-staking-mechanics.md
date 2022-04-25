@@ -60,7 +60,7 @@ The following entities are involved:
 
 ## Smart contracts and addresses
 
-[BinancePool Implementation](https://bscscan.com/address/0x173645c3E0ed39d127A6861c7fDF4c7E5Fb94355) and [BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contracts on Binance Smart Chain where the user sends their initial staking or unstaking request.
+[BinancePool Implementation](https://bscscan.com/address/0x2ffd8a0dcedd44c583098de439242b801903bf6b) and [BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contracts on Binance Smart Chain where the user sends their initial staking or unstaking request.
 
 [aBNBb Implementation](https://bscscan.com/address/0xf1e6e6247aaaf7e32850003c8e32d955e95b57a7) and [aBNBb Proxy](https://bscscan.com/address/0xBb1Aa6e59E5163D8722a122cd66EBA614b59df0d) — contract on Binance Smart Chain that mints or burns aBNBb tokens for the user in 1:1 rate with the staked amount. All interactions go through the Proxy part.
 
