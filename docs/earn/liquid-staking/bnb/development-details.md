@@ -9,13 +9,13 @@ To integrate with BNB Liquid Staking, use the functions, smart contract addresse
 
 ## Switch aBNBb to aBNBc
 
-### `unlockShares(uint256 shares)`
+### `unlockShares(shares)`
  
 Switches aBNBb to aBNBc. 
 
 #### Parameters 
 
-`shares` (uint256; required) — amount of aBNBb to be switched to aBNBc. 
+`shares` (uint256, required) — amount of aBNBb to be switched to aBNBc. 
 
 #### Smart contract
 
@@ -27,14 +27,14 @@ Switches aBNBb to aBNBc.
 
 ## Switch aBNBc to aBNBb
 
-### `approve(address spender, uint256 amount)`
+### `approve(spender, amount)`
  
 Lets the `aBNBb` smart contract transfer user's liquid tokens.  
 
 #### Parameters 
 
-* `address spender` (string; required) — address of the user switching their tokens. 
-* `uint256 amount` (uint256; required) —  amount of aBNBc to be switched to aBNBb. 
+* `spender` (address, required) — address of the user switching their tokens. 
+* `amount` (uint256, required) —  amount of aBNBc to be switched to aBNBb. 
 
 #### Smart contract
 
@@ -44,13 +44,13 @@ Lets the `aBNBb` smart contract transfer user's liquid tokens.
 
 [Live transaction example](https://bscscan.com/tx/0x5eb776f5120ad0fcefacc5325a35f50c1b65d40fab54660301bb75015daf7e94)<br /><br />
 
-### `lockShares(uint256 shares)`
+### `lockShares(shares)`
  
 Switches aBNBc to aBNBb.
 
 #### Parameters 
 
-`shares` (uint256; required) — amount of aBNBc to be switched to aBNBb. 
+`shares` (uint256, required) — amount of aBNBc to be switched to aBNBb. 
 
 #### Smart contract
 
@@ -62,11 +62,13 @@ Switches aBNBc to aBNBb.
 
 ## Stake BNB and claim aBNBb
 
-### `stakeAndClaimBonds()`
+### `stakeAndClaimBonds(payableAmount)`
  
 Stakes BNB and claims aBNBb for the staked BNB. 
 
 #### Parameters
+
+`payableAmount` (BNB, required) — amount of BNB to be staked.
 
 #### Smart contract
 
@@ -79,11 +81,13 @@ Stakes BNB and claims aBNBb for the staked BNB.
 
 ## Stake BNB and claim aBNBc
 
-### `stakeAndClaimCerts()`
+### `stakeAndClaimCerts(payableAmount)`
  
 Stakes BNB and claims aBNBc for the staked BNB. 
 
 #### Parameters
+
+`payableAmount` (BNB, required) — amount of BNB to be staked.
 
 #### Smart contract
 
@@ -92,8 +96,3 @@ Stakes BNB and claims aBNBc for the staked BNB.
 #### Example
 
 [Live transaction example](https://bscscan.com/tx/0xd8378256021c2a0928b9f13865dc2e6ed9f47a963805aa683930f1722a0b9424)
-
-
-
-
-
