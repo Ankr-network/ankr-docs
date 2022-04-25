@@ -20,7 +20,7 @@ Moonbeam is EVM compatible to an extent but there are important Moonbeam differe
 
 ## Connect wallet
 
-You can set up your **MetaMask wallet** to connect to Celo RPC. You can then perform transactions and interact with the network.
+You can set up your **MetaMask wallet** to connect to Moonbeam RPC. You can then perform transactions and interact with the network.
 
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
@@ -37,21 +37,11 @@ You can set up your **MetaMask wallet** to connect to Celo RPC. You can then per
 
 ## Get Started
 
-### Integrate code
+### Using Ethereum API Libraries
 
-Make sure you've got your endpoints.
-If you're using the Public RPCs, your endpoint is simply `https://rpc.ankr.com/moonbeam`.
+The Moonbeam API is very similar to the Ethereum API and is compatible with the majority of Ethereum-style JSON-RPC methods. Developers can leverage this compatibility and use the [**web3.js library**](https://web3js.readthedocs.io/en/v1.7.3/), [**ethers.js library**](https://docs.ethers.io/) and the [**web3.py library**](https://web3py.readthedocs.io/) to interact with a Moonbeam node as if they were doing so on Ethereum.
 
-If you're using the Premium Plan, you can copy your two endpoints will have one for HTTPS and one for WSS. 
-
-Here's how to get started with 
-
-
-
-
-### eth library
-
-Frontier is the Ethereum compatibility layer for Substrate based chains. It allows developers to run unmodified Ethereum DApps.
+:::warning 
 
 However, not all Ethereum JSON RPC methods are supported, and some of the supported ones return default values. 
 
@@ -90,6 +80,98 @@ The following methods are supported on the Moonbeam RPC.
  - **[eth_getWork](https://eth.wiki/json-rpc/API#eth_getwork)** — Returns `["0x0","0x0","0x0"]` by default
  - **[eth_submitWork](https://eth.wiki/json-rpc/API#eth_submitwork)** — Not supported
  - **[eth_submitHashrate](https://eth.wiki/json-rpc/API#eth_submithashrate)** — Not supported
+
+:::
+
+### How to integrate with Moonbeam
+
+If you're using the Public RPCs, your endpoint is `https://rpc.ankr.com/moonbeam`.
+
+If you're using the Premium Plan, you can copy your two endpoints for HTTPS and WSS from [Ankr Protocol](https://www.ankr.com/protocol/public/)
+
+:::tip
+
+In the code samples below, use **EITHER** the public endpoint **OR** the premium endpoint (if you have signed up to the Premium Plan)
+
+:::
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="web3.js" label="Web3.js">
+
+```js
+const Web3 = require('web3'); //Load Web3 library
+
+// Create local Web3 instance - set Moonbeam as provider
+const web3 = new Web3("https://rpc.ankr.com/moonbeam"); // Public RPC URL
+
+const web3 = new Web3("https://rpc.ankr.com/moonbeam/YOUR-API-KEY"); // Premium RPC URL
+
+```
+
+</TabItem>
+<TabItem value="ethers.js" label="Ethers.js">
+
+```js
+const ethers = require('ethers');
+
+const providerURL = "https://rpc.ankr.com/moonbeam"; // Public RPC URL
+
+const providerURL = "https://rpc.ankr.com/moonbeam/YOUR-API-KEY"; // Premium RPC URL
+
+// Define Provider
+const provider = new ethers.providers.StaticJsonRpcProvider(providerURL, {
+    chainId: 1284,
+    name: 'moonbeam'
+});
+```
+
+</TabItem>
+</Tabs>
+
+
+### Using Substrate API libraries
+
+[Polkadot.js API](https://polkadot.js.org/docs/api/) library allows application developers to query a Moonbeam node and interact with the node's Polkadot or Substrate interfaces using JavaScript. 
+
+1. **Install node.js (if not already installed)**
+
+    ```bash
+    # homebrew (https://docs.brew.sh/Installation)
+    brew install node
+
+    # nvm (https://github.com/nvm-sh/nvm)
+    nvm install node
+    ```
+
+2. **Install Polkadot.js API library**
+
+    You can install this through a package manager such as `yarn`. Install it in your project directory with the following command:
+
+    ```js
+    yarn add @polkadot/api
+
+    ```
+
+3. **Install Moonbeam Types Bundle**
+
+    To decode Moonbeam custom events and types, you need to include the [Moonbeam Types Bundle](https://www.npmjs.com/package/moonbeam-types-bundle) into your project by adding the following package information to your `package.json`:
+
+    ```js
+    "@polkadot/api": "^6.9.1",
+    "moonbeam-types-bundle": "^2.0.1",
+    "typescript": "4.3.2"
+    ```
+
+4. **Add this `import` statement**
+
+    Add this statement to the start of your project file. 
+
+    ```js
+    import { typesBundlePre900 } from "moonbeam-types-bundle"
+    ```
 
 
 
