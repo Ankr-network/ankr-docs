@@ -96,8 +96,3 @@ Stakes BNB and claims aBNBc for the staked BNB.
 #### Example
 
 [Live transaction example](https://bscscan.com/tx/0xd8378256021c2a0928b9f13865dc2e6ed9f47a963805aa683930f1722a0b9424)
-
-
-
-
-
