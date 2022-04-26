@@ -16,8 +16,8 @@ To integrate with MATIC Liquid Staking, use the functions, smart contract addres
 Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Parameters
-`spender` (address, required) — address of the PolygonPool contract.
-`value` (uint256, required) — amount of MATIC to be staked.
+* `spender` (address, required) — address of the PolygonPool contract.
+* `value` (uint256, required) — amount of MATIC to be staked.
 
 ##### Smart contract
 
@@ -49,8 +49,8 @@ Stakes MATIC and claims aMATICb for the staked MATIC.
 Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Parameters
-`spender` (address, required) — address of the PolygonPool contract.
-`value` (uint256, required) — amount of MATIC to be staked.
+* `spender` (address, required) — address of the PolygonPool contract.
+* `value` (uint256, required) — amount of MATIC to be staked.
 
 ##### Smart contract
 
