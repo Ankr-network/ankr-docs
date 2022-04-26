@@ -353,6 +353,7 @@ module.exports =
               'MATIC': [
                'earn/liquid-staking/matic/overview',
                 'earn/liquid-staking/matic/staking-mechanics',
+                'earn/liquid-staking/matic/dev-details',
                 'earn/liquid-staking/matic/stake-matic',
                 'earn/liquid-staking/matic/unstake-matic',
                 'earn/liquid-staking/matic/faq',
