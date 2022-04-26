@@ -5,6 +5,12 @@ id: hybrid-infra
 
 # Hybrid infrastructure
 
+:::note 
+
+This is currently a CLOSED testing feature and is not available to all clients.
+
+:::
+
 Premium Plan (v2) users now have the ability to create a Hybrid Infrastructure by adding external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
 
 Ankr can also support your specific use case to create a custom node cluster. You can then add an endpoint from this to your account. 
