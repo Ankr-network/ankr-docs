@@ -33,7 +33,7 @@ Lets the `aBNBb` smart contract transfer user's liquid tokens.
 
 #### Parameters 
 
-* `spender` (address, required) — address of the user switching their tokens. 
+* `spender` (address, required) — address of the BinancePool contract.
 * `amount` (uint256, required) —  amount of aBNBc to be switched to aBNBb. 
 
 #### Smart contract
