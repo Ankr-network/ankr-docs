@@ -7,8 +7,6 @@ id: dev-details
 
 To integrate with MATIC Liquid Staking, use the functions, smart contract addresses, and examples below.
 
-## Testnet
-
 ### Stake MATIC and claim aMATICb
 
 #### `approve(spender, value)`
@@ -25,7 +23,7 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Example
 
-[Live testnet transaction example](https://goerli.etherscan.io/tx/0xd21e17f7e2d2922754f89d680b57d5525d95b439834684707f7cb5ed040ed2be).
+[Testnet live transaction example](https://goerli.etherscan.io/tx/0xd21e17f7e2d2922754f89d680b57d5525d95b439834684707f7cb5ed040ed2be).
 
 #### `stakeAndClaimBonds(amount)`
 
@@ -40,7 +38,7 @@ Stakes MATIC and claims aMATICb for the staked MATIC.
 
 ##### Example
 
-[Live testnet transaction example](https://goerli.etherscan.io/tx/0x23c5a082e4e692cf16f5832ea319c31ec6fd0d0f7cc12b9bb7b9e69d3479d109).
+[Testnet live transaction example](https://goerli.etherscan.io/tx/0x23c5a082e4e692cf16f5832ea319c31ec6fd0d0f7cc12b9bb7b9e69d3479d109).
 
 ### Stake MATIC and claim aMATICc
 
@@ -58,7 +56,7 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Example
 
-[Live testnet transaction example](https://goerli.etherscan.io/tx/0xf16fc3ae51b460393f7bc8d2e7407fed4867a9c129c74eda674d86e3171003e8).
+[Testnet live transaction example](https://goerli.etherscan.io/tx/0xf16fc3ae51b460393f7bc8d2e7407fed4867a9c129c74eda674d86e3171003e8).
 
 #### `stakeAndClaimCerts(amount)`
 
@@ -74,4 +72,4 @@ Stakes MATIC and claims aMATICc for the staked MATIC.
 
 ##### Example
 
-[Live testnet transaction example](https://goerli.etherscan.io/tx/0xd45229eb00fd9e7bc78a0e1b71677735c80b989538d6b26670c27cde5bcd2be4).
+[Testnet live transaction example](https://goerli.etherscan.io/tx/0xd45229eb00fd9e7bc78a0e1b71677735c80b989538d6b26670c27cde5bcd2be4).
