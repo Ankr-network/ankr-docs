@@ -127,8 +127,8 @@ Lets the `aBNBb` smart contract transfer user's aBNBc tokens.
 
 #### Parameters
 
-`spender` (address, required) — address of the `aBNBb`smart contract.
-`rawAmount` (uint256, required) - amount of aBNBc to be unstaked.
+* `spender` (address, required) — address of the `aBNBb`smart contract.
+* `rawAmount` (uint256, required) - amount of aBNBc to be unstaked.
 
 #### Smart contract
 
