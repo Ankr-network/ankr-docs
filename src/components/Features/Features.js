@@ -19,7 +19,7 @@ const FeatureList = [
   },
   {
     title: "Stake ＆ Earn",
-    icon: require("../../../static/img/feature/earn-icon.png").default,
+    icon: require("../../../static/img/feature/staking-icon.png").default,
     list: [
       'Easily stake 5+ tokens on a secure, decentralized network',
       'Earn rewards on tokens without needing technical knowledge',
@@ -28,7 +28,7 @@ const FeatureList = [
     ],
 
 
-    link: 'https://www.ankr.com/docs/earn/overview',
+    link: 'https://www.ankr.com/docs/staking/overview',
 
   },
   {
