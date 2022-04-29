@@ -104,31 +104,31 @@
           },
           {
             type: "dropdown",
-            label: "💰" + Array(2).fill("\xa0").join("") + "Earn",
+            label: "💰" + Array(2).fill("\xa0").join("") + "Staking",
             position: "right",
             items: [
               {
-                to: "earn/overview/",
+                to: "staking/overview/",
                 label: "Overview",
               },
               {
-                to: "earn/liquid-staking/overview",
+                to: "staking/liquid-staking/overview",
                 label: "Liquid Staking",
               },
               {
-                to: "earn/defi/overview",
+                to: "staking/defi/overview",
                 label: "DeFi",
               },
               {
-                to: "earn/bridge/overview",
+                to: "staking/bridge/overview",
                 label: "Bridge",
               },
               {
-                to: "earn/switch/overview",
+                to: "staking/switch/overview",
                 label: "Switch",
               },
               {
-                to: "earn/liquid-crowdloan/overview",
+                to: "staking/liquid-crowdloan/overview",
                 label: "Liquid Crowdloan",
               },
           ],

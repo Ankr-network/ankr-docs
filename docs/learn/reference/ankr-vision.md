@@ -31,7 +31,7 @@ The Ankr team has deep expertise in enabling services like node hosting and API 
 
 In 2017, Ankr founders pioneered the harnessing of cloud computing power left idle in data centers all over the world and reallocating it to enabling services like node hosting and API access. The ANKR token was introduced as a payment method for services and became one of the top 20 traded tokens on Coinbase. 
 
-Ankr built a unique niche for itself as the only platform that combines node infrastructure and staking with DeFi to make developing and earning easy setting the stage for **Ankr Earn**. 
+Ankr built a unique niche for itself as the only platform that combines node infrastructure and staking with DeFi to make developing and earning easy setting the stage for **Ankr Staking**. 
 
 The team has since launched 25,000+ nodes on 50+ blockchains and processes over $1 billion in crypto transactions every month, serving more than 10 million unique users.
 
@@ -141,9 +141,9 @@ Full/Archive and Validator/Staking nodes are available for 50+ chains.
 Available UNLESS superseded by API services and/or Ankr Protocol.
 :::
 
-## Ankr Earn products
+## Ankr Staking products
 
-The **Ankr Earn** platform seeks to enable user-friendly staking innovative products to allow more people to participate in decentralized finance. 
+The **Ankr Staking** platform seeks to enable user-friendly staking innovative products to allow more people to participate in decentralized finance. 
 
 Our staking solutions open the gates for more crypto users to support Proof of Stake networks directly with: 
 
