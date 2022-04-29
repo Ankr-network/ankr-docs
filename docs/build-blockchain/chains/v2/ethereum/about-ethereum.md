@@ -1,13 +1,22 @@
 ---
-Title: Ethereum RPC
-id: ethereum
+title: Overview
+id: about-ethereum
 ---
 
 # Ethereum RPC
 
-**Ethereum** is a decentralized, open-source blockchain with smart contract functionality. **Ether** (**ETH**) is the native cryptocurrency of the platform.&#x20;
+**Ethereum** is a decentralized, open-source blockchain with smart contract functionality. **Ether** (**ETH**) is the native cryptocurrency of the platform.
 
-The Ethereum network is one of the most popular platforms for building dApps and blockchain solutions. A series of upgrades are currently taking place as part of the transition from **Proof-of-Work** to a **Proof-of-Stake** consensus model. This shift allows network participants to stake ETH and earn rewards for supporting the network.&#x20;
+The Ethereum network is one of the most popular platforms for building dApps and blockchain solutions. A series of upgrades are currently taking place as part of the transition from **Proof-of-Work** to a **Proof-of-Stake** consensus model. This shift allows network participants to stake ETH and earn rewards for supporting the network.
+
+To connect to an Ethereum node, every Ethereum Client e.g. [Geth](https://geth.ethereum.org/) or [Erigon](https://github.com/ledgerwatch/erigon) implements a JSON-RPC specification. The [Ethereum JSON-RPC Specification](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/eth1.0-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=true&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false) is a collection of methods that all clients implement. 
+
+The following networks are supported by Ankr. 
+
+* Ethereum Mainnet
+* Rinkeby Testnet
+* Ropsten Testnet
+* Goerli Testnet
 
 ## Quick links
 
@@ -16,6 +25,7 @@ The Ethereum network is one of the most popular platforms for building dApps and
 [**Docs**](https://ethereum.org/en/developers/docs/apis/json-rpc/)
 
 [**Github**](https://github.com/ethereum/eth1.0-apis)
+
 
 
 ---
@@ -30,13 +40,7 @@ You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then
 2. Select '_**Custom RPC**_'.&#x20;
 3. Enter the settings for the required project as follows in the table below:
 
-| **Chain** | **Custom RPC Category** | **Details**               |
-| --------- | ----------------------- | ------------------------- |
-| Ethereum  | NETWORK NAME:           | Ethereum RPC              |
-|           | NEW RPC URL:            | https://rpc.ankr.com/eth/ |
-|           | CHAIN ID:               | 1                         |
-|           | SYMBOL:                 | ETH                       |
-|           | BLOCK EXPLORER URL:     | https://etherscan.io/     |
+
 
 
 ## Integrate code

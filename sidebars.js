@@ -25,7 +25,17 @@ module.exports =
             'build-blockchain/chains/v2/avalanche',
             'build-blockchain/chains/v2/binance-smart-chain',
             'build-blockchain/chains/v2/celo',
-            'build-blockchain/chains/v2/ethereum',
+            {
+              'Ethereum RPC': [
+              'build-blockchain/chains/v2/ethereum/about-ethereum',
+              {
+                'How to':  [
+                'build-blockchain/chains/v2/ethereum/how-to/connect-ethereum',
+                'build-blockchain/chains/v2/ethereum/how-to/ethereum-requests',
+                          ],
+               },
+              ],
+            },
             'build-blockchain/chains/v2/fantom',
             'build-blockchain/chains/v2/iotex',
             'build-blockchain/chains/v2/near',
