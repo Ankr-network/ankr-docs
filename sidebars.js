@@ -289,7 +289,7 @@ module.exports =
     },
   ],
   earnSidebar: {
-    'Earn': [
+    'Staking': [
      'staking/overview',
         {
           'Liquid Staking': [
