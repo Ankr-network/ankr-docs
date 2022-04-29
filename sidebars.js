@@ -289,7 +289,7 @@ module.exports =
     },
   ],
   earnSidebar: {
-    'Earn': [
+    'Staking': [
      'staking/overview',
         {
           'Liquid Staking': [
@@ -376,7 +376,8 @@ module.exports =
           ],
         },
         {
-          'Switch': ['staking/switch/overview',
+          'Switch': [
+            'staking/switch/overview',
             'staking/switch/switch-mechanics'
           ],
         },
