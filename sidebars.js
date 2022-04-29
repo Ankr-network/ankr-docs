@@ -376,7 +376,8 @@ module.exports =
           ],
         },
         {
-          'Switch': ['staking/switch/overview',
+          'Switch': [
+            'staking/switch/overview',
             'staking/switch/switch-mechanics'
           ],
         },
