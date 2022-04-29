@@ -26,32 +26,16 @@ The following networks are supported by Ankr.
 
 [**Github**](https://github.com/ethereum/eth1.0-apis)
 
-
-
 ---
 
 ## Connect wallet
 
-You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then perform transactions and interact with the network.
-
-### Get started
-
-1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.&#x20;
-2. Select '_**Custom RPC**_'.&#x20;
-3. Enter the settings for the required project as follows in the table below:
+You can set up your **MetaMask wallet** to connect to Ethereum RPC. You can then perform transactions and interact with the network. 
 
 
+#### Example request - web3_clientVersion
 
-
-## Integrate code
-
-### web3 library
-
-- **clientVersion**
-
-Returns the current client version
-
-#### Example request
+This request gets the Client version being used. 
 
 ```js
 curl https://rpc.ankr.com/eth \
@@ -60,20 +44,17 @@ curl https://rpc.ankr.com/eth \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'
 ```
 
-#### Example response
+#### Example response - Geth Client version
+
+The response shows Geth Client v1.1.7-74 is used.
 
 ```js
 {"jsonrpc":"2.0","id":1,"result":"Geth/v1.1.7-74f6b613/linux-amd64/go1.16.10"}
 ```
 
-### net library
+#### Example request - net_version
 
-- **net_version**
-
-Returns the current network id.
-
-
-#### Example request
+This request returns the current network id.
 
 ```js
   
@@ -83,7 +64,7 @@ Returns the current network id.
   --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
 ```
 
-#### Example response
+#### Example response - Ethereum Mainnet ID is returned 
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"1"}
@@ -99,9 +80,7 @@ Returns the current network id.
 
 "42": Kovan Testnet
 
-### eth library
-
-### Example request
+### Example request - Uses eth_ to request the latest block number
 
 ```js
 
@@ -112,6 +91,8 @@ curl https://rpc.ankr.com/eth \
 ```
 
 ### Example response
+
+The latest block number is returned in hex
 
 ```js
 {"jsonrpc":"2.0","id":67,"result":"0xdb85e4"}

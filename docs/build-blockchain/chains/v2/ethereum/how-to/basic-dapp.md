@@ -1,67 +1,9 @@
 ---
-title: Start making requests
-id: ethereum-requests
+title: Build a basic dapp
+id: build-eth-dapp
 ---
 
-In this section, we'll create a simple script using Ethereum Mainnet RPC and Web3.js library to make requests. 
-
-1. Create a new project directory
-
-    ```bash
-
-    mkdir eth-requests && cd eth-requests
-
-    ```
-
-2. Install [web3.js](https://web3js.readthedocs.io/en/v1.2.7/index.html) library
-* Libraries simplify connecting an application to the Ethereum blockchain. You need to connect to Ethereum in order to read blockchain data and/or send transactions to the network.
-
-    ```bash
-
-    npm install web3
-
-    ```
-
-3. Create a landing page for your file and open it in your preferred code editor.
-
-    ```bash
-    touch index.js 
-    ```
-
-4. Now add the script below to `index.js`. The script does the following:
-    - Creates a web3 instance,     
-    - Sets the provider to an Ankr RPC
-    - Makes a request to get the latest Block Number. 
-
-    ```js
-    
-    const Web3 = require('web3');
-    const web3 = new Web3("https://rpc.ankr.com/eth"); // For Premium endpoints append API key to url "https://rpc.ankr.com/eth/APIKEY"
-    web3.eth.getBlockNumber()
-    .then(console.log);
-
-    ```
-
-5. Run the script in your code editor or in terminal/command-line as below:
-
-    ````js
-    node index.js
-    14679276
-    ```
-
-6. You should see the latest Block Number!
-
-:::tip
-
-## 🎉 Nice work!!
-
-:::
-
-
-
-
-
-Let's get started with a super simple project.
+Let's get started with a super simple project using node and truffle
 
 ## 00 Before you start
 
@@ -89,6 +31,8 @@ In your terminal or command prompt do the following:
     ```bash
     npm init -y
     ```
+
+## 02 Add truffle
 
 3. Install [Truffle](https://trufflesuite.com/). This will allow us to deploy a smart contract to a blockchain. Truffle can be installed locally inside your project using `npx` to install an executable. This makes it easier to manage versions for each project you build. 
 

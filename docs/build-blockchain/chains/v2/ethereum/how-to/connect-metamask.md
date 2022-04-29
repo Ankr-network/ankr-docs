@@ -3,10 +3,10 @@ title: Connect your wallet
 id: connect-ethereum
 ---
 
-MetaMask uses `window.ethereum` to 
+This section walks you through how to connect a MetaMask wallet to Ethereum Mainnet and Testnets.
 
 
-## MAINNET
+# Mainnet
 
 This is the primary Ethereum production blockchain. Transactions on the Ethereum Mainnet occur on the blockchain and incur costs (ETH).
 
@@ -36,7 +36,7 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Mainn
 
 
 
-## TESTNETS
+# Testnet
 
 For building dapps, it is important to validate contract code on a Testnet before deploying to Mainnet. Most testnets use a proof-of-authority consensus mechanism. Using Test ETH incurs no real value. 
 
