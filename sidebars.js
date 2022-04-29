@@ -290,112 +290,112 @@ module.exports =
   ],
   earnSidebar: {
     'Earn': [
-     'earn/overview',
+     'staking/overview',
         {
           'Liquid Staking': [
-            'earn/liquid-staking/overview',
+            'staking/liquid-staking/overview',
             {
               'AVAX': [
-                'earn/liquid-staking/avax/overview',
-                'earn/liquid-staking/avax/staking-mechanics',
-                'earn/liquid-staking/avax/stake-avax',
-                'earn/liquid-staking/avax/unstake-avax',
-                'earn/liquid-staking/avax/faq',
+                'staking/liquid-staking/avax/overview',
+                'staking/liquid-staking/avax/staking-mechanics',
+                'staking/liquid-staking/avax/stake-avax',
+                'staking/liquid-staking/avax/unstake-avax',
+                'staking/liquid-staking/avax/faq',
               ],
             },
             {
               'BNB': [
-                'earn/liquid-staking/bnb/overview',
-                'earn/liquid-staking/bnb/staking-mechanics',
-                'earn/liquid-staking/bnb/dev-details',
-                'earn/liquid-staking/bnb/stake-bnb',
-                'earn/liquid-staking/bnb/unstake-bnb',
-                'earn/liquid-staking/bnb/faq',
+                'staking/liquid-staking/bnb/overview',
+                'staking/liquid-staking/bnb/staking-mechanics',
+                'staking/liquid-staking/bnb/dev-details',
+                'staking/liquid-staking/bnb/stake-bnb',
+                'staking/liquid-staking/bnb/unstake-bnb',
+                'staking/liquid-staking/bnb/faq',
               ],
             },
             {
               'DOT': [
-               'earn/liquid-staking/dot/overview',
-                'earn/liquid-staking/dot/staking-mechanics',
-                'earn/liquid-staking/dot/stake-dot',
-                'earn/liquid-staking/dot/unstake-dot',
-                'earn/liquid-staking/dot/faq',
+               'staking/liquid-staking/dot/overview',
+                'staking/liquid-staking/dot/staking-mechanics',
+                'staking/liquid-staking/dot/stake-dot',
+                'staking/liquid-staking/dot/unstake-dot',
+                'staking/liquid-staking/dot/faq',
               ],
             },
             {
               'ETH': [
-               'earn/liquid-staking/eth/overview',
-                'earn/liquid-staking/eth/staking-mechanics',
-                'earn/liquid-staking/eth/stake-eth',
-                'earn/liquid-staking/eth/unstake-eth',
-                'earn/liquid-staking/eth/faq',
+               'staking/liquid-staking/eth/overview',
+                'staking/liquid-staking/eth/staking-mechanics',
+                'staking/liquid-staking/eth/stake-eth',
+                'staking/liquid-staking/eth/unstake-eth',
+                'staking/liquid-staking/eth/faq',
               ],
             },
             {
               'FTM': [
-                'earn/liquid-staking/ftm/overview',
-                'earn/liquid-staking/ftm/staking-mechanics',
-                'earn/liquid-staking/ftm/stake-ftm',
-                'earn/liquid-staking/ftm/unstake-ftm',
-                'earn/liquid-staking/ftm/faq',
+                'staking/liquid-staking/ftm/overview',
+                'staking/liquid-staking/ftm/staking-mechanics',
+                'staking/liquid-staking/ftm/stake-ftm',
+                'staking/liquid-staking/ftm/unstake-ftm',
+                'staking/liquid-staking/ftm/faq',
               ],
             },
             {
               'KSM': [
-               'earn/liquid-staking/ksm/overview',
-                'earn/liquid-staking/ksm/staking-mechanics',
-                'earn/liquid-staking/ksm/stake-ksm',
-                'earn/liquid-staking/ksm/unstake-ksm',
-                'earn/liquid-staking/ksm/faq',
+               'staking/liquid-staking/ksm/overview',
+                'staking/liquid-staking/ksm/staking-mechanics',
+                'staking/liquid-staking/ksm/stake-ksm',
+                'staking/liquid-staking/ksm/unstake-ksm',
+                'staking/liquid-staking/ksm/faq',
               ],
             },
             {
               'MATIC': [
-               'earn/liquid-staking/matic/overview',
-                'earn/liquid-staking/matic/staking-mechanics',
-                'earn/liquid-staking/matic/dev-details',
-                'earn/liquid-staking/matic/stake-matic',
-                'earn/liquid-staking/matic/unstake-matic',
-                'earn/liquid-staking/matic/faq',
+               'staking/liquid-staking/matic/overview',
+                'staking/liquid-staking/matic/staking-mechanics',
+                'staking/liquid-staking/matic/dev-details',
+                'staking/liquid-staking/matic/stake-matic',
+                'staking/liquid-staking/matic/unstake-matic',
+                'staking/liquid-staking/matic/faq',
               ],
             },
           ],
         },
         {
            'DeFi': [
-            'earn/defi/overview',
-            'earn/defi/yield-farm',
-            'earn/defi/provide-liquidity-to-dex'
+            'staking/defi/overview',
+            'staking/defi/yield-farm',
+            'staking/defi/provide-liquidity-to-dex'
           ],
         },
         {
           'Bridge': [
-           'earn/bridge/overview',
-           'earn/bridge/bridge-mechanics',
-            'earn/bridge/bridge-tokens'
+           'staking/bridge/overview',
+           'staking/bridge/bridge-mechanics',
+            'staking/bridge/bridge-tokens'
           ],
         },
         {
-          'Switch': ['earn/switch/overview',
-            'earn/switch/switch-mechanics'
+          'Switch': ['staking/switch/overview',
+            'staking/switch/switch-mechanics'
           ],
         },
         {
           'Liquid Crowdloan': [
-            'earn/liquid-crowdloan/overview',
+            'staking/liquid-crowdloan/overview',
           ],
         },
         {
           'Reference': [
-            'earn/reference/earn-compatible-wallets',
-            'earn/reference/ls-smart-contract-addresses-mn',
-            'earn/reference/ls-smart-contract-addresses-tn',
-            'earn/reference/micropools',
-            'earn/reference/liquid-crowdloan-market-makers',
-            'earn/reference/parachain-sdk',
-            'earn/reference/brand-assets',
-            'earn/reference/earn-glossary',
-            'earn/reference/earn-principles',
+            'staking/reference/staking-compatible-wallets',
+            'staking/reference/ls-smart-contract-addresses-mn',
+            'staking/reference/ls-smart-contract-addresses-tn',
+            'staking/reference/micropools',
+            'staking/reference/liquid-crowdloan-market-makers',
+            'staking/reference/parachain-sdk',
+            'staking/reference/brand-assets',
+            'staking/reference/staking-glossary',
+            'staking/reference/staking-principles',
           ],
         },
      ],

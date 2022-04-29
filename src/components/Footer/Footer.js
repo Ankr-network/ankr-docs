@@ -35,8 +35,8 @@ const LINKS = [
         link: "https://www.ankr.com/build/nodes/",
       },
       {
-        name: "Ankr Earn",
-        link: "https://www.ankr.com/earn/",
+        name: "Ankr Staking",
+        link: "https://www.ankr.com/staking/",
       },
       {
         name: "Ankr Protocol",
