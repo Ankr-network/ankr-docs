@@ -7,7 +7,16 @@ id: hybrid-infra
 
 :::note 
 
-This is currently a CLOSED testing feature and is not available to all clients.
+This is currently a **CLOSED** testing feature and is not available to all clients. 
+
+If you would like to add this feature and you are a Premium Plan subscriber, send an email to 
+premiumsupport@ankr.com
+
+Subject: enable hybrid
+
+Body: list the ethereum account addresses in the body. 
+
+
 
 :::
 
