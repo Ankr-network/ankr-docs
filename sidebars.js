@@ -32,6 +32,7 @@ module.exports =
                 'How to':  [
                 'build-blockchain/chains/v2/ethereum/how-to/connect-ethereum',
                 'build-blockchain/chains/v2/ethereum/how-to/ethereum-requests',
+                'build-blockchain/chains/v2/ethereum/how-to/ethereum-transactions',
                 'build-blockchain/chains/v2/ethereum/how-to/build-eth-dapp',
                           ],
                },

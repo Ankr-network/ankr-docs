@@ -24,7 +24,7 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Mainn
 
   | **Chain** | **Custom RPC Category** | **Details**               |
   | --------- | ----------------------- | ------------------------- |
-  | Ethereum  | NETWORK NAME:           | Ethereum RPC              |
+  | Ethereum  | NETWORK NAME:           | Ankr Ethereum RPC              |
   |           | NEW RPC URL:            | https://rpc.ankr.com/eth/ |
   |           | CHAIN ID:               | 1                         |
   |           | SYMBOL:                 | ETH                       |
@@ -77,9 +77,9 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Rinke
 
   | **Chain** | **Custom RPC Category** | **Details**               |
   | --------- | ----------------------- | ------------------------- |
-  | Ethereum  | NETWORK NAME:           | Rinkeby RPC              |
+  | Ethereum  | NETWORK NAME:           | Ankr Rinkeby RPC              |
   |           | NEW RPC URL:            | https://rpc.ankr.com/eth_rinkeby/|
-  |           | CHAIN ID:               | 4                        |
+  |           | CHAIN ID:               | 3                        |
   |           | SYMBOL:                 | RIN                     |
   |           | BLOCK EXPLORER URL:     | https://rinkeby.etherscan.io/    |
 
@@ -115,16 +115,15 @@ There are default settings in MetaMask for connecting a wallet to Ropsten Testne
 
   | **Chain** | **Custom RPC Category** | **Details**               |
   | --------- | ----------------------- | ------------------------- |
-  | Ethereum  | NETWORK NAME:           | Ropsten RPC              |
-  |           | NEW RPC URL:            | https://rpc.ankr.com/eth_rinkeby/|
-  |           | CHAIN ID:               | 4                        |
-  |           | SYMBOL:                 | RIN                     |
-|           | BLOCK EXPLORER URL:     | https://rinkeby.etherscan.io/    |
+  | Ethereum  | NETWORK NAME:           | Ankr Ropsten RPC              |
+  |           | NEW RPC URL:            | https://rpc.ankr.com/eth_ropsten/|
+  |           | CHAIN ID:               | 3                        |
+  |           | SYMBOL:                 | ROP                    |
+|           | BLOCK EXPLORER URL:     | https://ropsten.etherscan.io/    |
 
 2. Ignore the **Chain ID warning** and click **Save**
 
   <img src={require('/img/rinkeby-rpc-metamask.png').default} alt="Rinkeby RPC MetaMask" width="600" />
-
 
 
 
@@ -152,11 +151,11 @@ There are default settings in MetaMask for connecting a wallet to Goerli Testnet
 
   | **Chain** | **Custom RPC Category** | **Details**               |
   | --------- | ----------------------- | ------------------------- |
-  | Ethereum  | NETWORK NAME:           | Ropsten RPC              |
-  |           | NEW RPC URL:            | https://rpc.ankr.com/eth_rinkeby/|
-  |           | CHAIN ID:               | 4                        |
-  |           | SYMBOL:                 | RIN                     |
-|           | BLOCK EXPLORER URL:     | https://rinkeby.etherscan.io/    |
+  | Ethereum  | NETWORK NAME:           | Ankr Goerli RPC              |
+  |           | NEW RPC URL:            | https://rpc.ankr.com/eth_goerli/|
+  |           | CHAIN ID:               | 5                        |
+  |           | SYMBOL:                 | GOR                     |
+|           | BLOCK EXPLORER URL:     | https://goerli.etherscan.io/    |
 
 2. Ignore the **Chain ID warning** and click **Save**
 
