@@ -69,6 +69,11 @@
 
         // Optional
         contextualSearch: true,
+
+        // Add Solidity language to code blocks
+        prism: {
+          additionalLanguages: ['solidity'],
+        }, 
       },
       colorMode: {
         disableSwitch: true,
