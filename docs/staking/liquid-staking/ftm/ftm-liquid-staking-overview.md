@@ -14,7 +14,7 @@ Ankr Staking can connect you to the best ways to earn more crypto by staking, ar
 ## Audit details
 
 FTM Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
-To learn more, view the [detailed audit repot](http://assets.ankr.com/earn/smart_contract_security_audit_ftm.pdf).
+To learn more, view the [detailed audit report](http://assets.ankr.com/earn/smart_contract_security_audit_ftm.pdf).
 
 ## **Benefits**
 
