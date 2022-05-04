@@ -99,6 +99,9 @@ a {
 .menu__link {
   background: transparent !important;
 }
+.menu__list {
+/* font-size: 15px; */
+}
 .menu__list-item-collapsible {
   background: transparent !important;
 }
