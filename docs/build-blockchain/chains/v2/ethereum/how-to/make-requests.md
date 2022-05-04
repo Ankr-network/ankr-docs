@@ -5,9 +5,6 @@ id: ethereum-requests
 
 In this section, we'll create a simple script using Ethereum Mainnet RPC and Web3.js library to make requests. 
 
-## Useful Resources
-
-[Convert Wei to Gwei and ETH and vice versa](https://eth-converter.com/)
 
 1) Create a new project directory
 

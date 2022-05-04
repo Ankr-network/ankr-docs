@@ -9,10 +9,10 @@ Let's get started with a super simple project using node and truffle. It is a go
 
 Make sure you have Node installed. 
     
-    ```bash
-    $ node --version
-    v14.16.1
-    ```
+```bash
+$ node --version
+v14.16.1
+```
 
 If it isn't installed, [download](https://nodejs.org/en/download/) it or use a [package manager](https://nodejs.org/en/download/package-manager/). 
 
@@ -22,15 +22,15 @@ In your terminal or command prompt do the following:
 
 1) Let's create a folder for our super simple project
 
-    ```bash
-    mkdir eth-project && cd eth-project
-    ```
+```bash
+mkdir eth-project && cd eth-project
+```
 
 2) Now initialize it
 
-    ```bash
-    npm init -y
-    ```
+```bash
+npm init -y
+```
 
 ## Add truffle
 
@@ -38,39 +38,39 @@ In your terminal or command prompt do the following:
 
     This will allow you to deploy a smart contract to a blockchain. Truffle can be installed locally inside your project using `npx` to install an executable. This makes it easier to manage versions for each project you build. 
 
-    ```tip
+```tip
 
-    Make sure you are in your project directory first. e.g. eth-project
+Make sure you are in your project directory first. e.g. eth-project
 
-    ```
+```
 
-    ```bash
-    npm install --save-dev truffle
-    ```
+```bash
+npm install --save-dev truffle
+```
 
 2) Initialize a truffle project inside your folder.
 
-    ```bash
-    npx truffle init
+```bash
+npx truffle init
 
-    Starting init...
-    ================
+Starting init...
+================
 
-    > Copying project files to /home/eth-project
+> Copying project files to /home/eth-project
 
-    Init successful, sweet!
+Init successful, sweet!
 
-    Try our scaffold commands to get started:
-    $ truffle create contract YourContractName # scaffold a contract
-    $ truffle create test YourTestName         # scaffold a test
+Try our scaffold commands to get started:
+$ truffle create contract YourContractName # scaffold a contract
+$ truffle create test YourTestName         # scaffold a test
 
-    http://trufflesuite.com/docs
+http://trufflesuite.com/docs
 
-    ```
+```
   
 3) Open your project in your preferred code editor e.g Visual Studio Code Editor to view the newly created folders - **contracts**, **migrations** and **test**. You can also see a new **truffle-config.js** file containing default code. 
 
-    <img src={require('/img/truffle-project-folders.png').default} alt="Truffle folders" width="300" />
+<img src={require('/img/truffle-project-folders.png').default} alt="Truffle folders" width="300" />
 
 ## Write a simple contract
 
@@ -117,17 +117,17 @@ The Ethereum Virtual Machine (EVM) executes the logic defined in the smart contr
 
 2) Locate the `Compilers` section, specify a compatible version and toggle the comment into code. 
 
-    ```sol
+```sol
 
-    // Configure your compilers
-    compilers: {
-        solc: {
-        version: "^0.8.0",  
-    ``` 
+// Configure your compilers
+compilers: {
+    solc: {
+    version: "^0.8.0",  
+``` 
 
 3) Now you can compile with a single command:
 
-    ```npx truffle compile```
+```npx truffle compile```
 
 The contract is compiled and a new **build/contracts** directory is created.
 
@@ -312,8 +312,10 @@ npx truffle console --network development
 We can use the console to interact with the deployed **storage** contract. 
 
 ```js
+
 truffle(development)> const storage = await Storage.deployed();
 undefined
+
 ```
 
 ## Sending transactions
