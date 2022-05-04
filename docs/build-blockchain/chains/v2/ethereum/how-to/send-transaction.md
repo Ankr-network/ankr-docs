@@ -120,7 +120,7 @@ async function main() {
 main();
 ```
 
-7. Run the code 
+7) Run the code 
 
 ```js
 node transaction.js

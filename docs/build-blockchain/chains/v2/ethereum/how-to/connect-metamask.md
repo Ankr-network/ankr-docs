@@ -6,15 +6,13 @@ id: connect-ethereum
 This section walks you through how to connect a MetaMask wallet to Ethereum Mainnet and Testnets.
 
 
-# Mainnet
+## How to add Ethereum Mainnet to your wallet
 
 This is the primary Ethereum production blockchain. Transactions on the Ethereum Mainnet occur on the blockchain and incur costs (ETH).
 
 ```
 https://rpc.ankr.com/eth
 ``` 
-
-## How to add Ethereum Mainnet to your wallet
 
 There are default settings in MetaMask for connecting a wallet to Ethereum Mainnet. However, it is possible to add additional RPC networks. It is generally better to have multiple networks to choose from for redundancy. 
 
@@ -36,9 +34,14 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Mainn
 
 
 
-# Testnet
+## About Ethereum Testnets
 
 For building dapps, it is important to validate contract code on a Testnet before deploying to Mainnet. Most testnets use a proof-of-authority consensus mechanism. Using Test ETH incurs no real value. 
+
+The following RPC Testnets are available:
+- Rinkeby
+- Ropsten
+- Goerli 
 
 :::info🚰 
 
@@ -46,7 +49,7 @@ Be aware that Testnet faucets vary in their reliability and Testnet ETH may take
 
 :::
 
-## RINKEBY:
+## Rinkeby and faucets
 
 Rinkeby is for Geth Client users only. It uses proof-of-authority consensus. 
 
@@ -89,7 +92,7 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Rinke
 
 
 
-## ROPSTEN:
+## Ropsten and faucets
 
 Ropsten is for Geth, Parity, Nethermind and Hyperledger Besu Client users. It is the only proof-of-work Testnet. It most closely resembles the current Ethereum network. It can have unpredictable block times. 
 
@@ -127,7 +130,7 @@ There are default settings in MetaMask for connecting a wallet to Ropsten Testne
 
 
 
-## GOERLI:
+## Goerli and faucets
 
 Goerli can be used with any client. It uses proof-of-authority consensus.
 
