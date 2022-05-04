@@ -28,7 +28,6 @@ DeFi projects have evolved to solve these pain points with the launch of newer c
 
 From Ankr’s point of view, DeFi is on track to become the financial system for the web 3.0 movement.
 
-
 ### ETH2
 ETH2 is a set of upgrades that improve the scalability, security, and sustainability of Ethereum. These upgrades are:
 

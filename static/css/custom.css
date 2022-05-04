@@ -57,7 +57,7 @@
   --ifm-code-font-size: 85%;
   --ifm-color-primary: #356df3;
   --ifm-link-color: #356df3;
-  --ifm-heading-font-family: 'Inter'
+  --ifm-heading-font-family: 'Inter';
 }
 
 a {
@@ -102,6 +102,7 @@ a {
 .menu__list-item-collapsible {
   background: transparent !important;
 }
+
 .menu__caret:hover {
   background: transparent !important;
 }
