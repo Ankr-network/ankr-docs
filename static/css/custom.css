@@ -276,7 +276,48 @@ aside nav {
   visibility: hidden;
 }
 
+.menu__list {
+  padding: 0 20px 0 60px;
+  color: rgba(31, 34, 38, 0.8);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.45;
+}
 
+.menu__list .menu__list {
+  margin-left: 0;
+  padding-left: 12px;
+}
+
+.menu__link {
+  padding: 0;
+  margin: 10px;
+}
+
+.menu__caret {
+  padding: 10px;
+}
+
+.menu__list-item {
+  margin: 0;
+}
+
+.menu__caret .menu__link--active:not(.menu__link--sublist),
+.menu__link:hover {
+  color: #356df3;
+  background-color: transparent;
+}
+
+.menu__link--sublist:after {
+  background: url("../../static/img/dropdown.svg") 0 0 no-repeat;
+  transform: none;
+}
+
+.menu__list-item--collapsed .menu__link--sublist:after {
+  transform: rotate(-90deg);
+  margin-top: -5px;
+  margin-right: 5px;
+}
 
 @media (max-width: 1235px) {
   .pagination-nav {
@@ -516,14 +557,28 @@ table td {
     right: 45px;
     top: 13px;
   }
-
   .navbar__items--right .navbar__item {
     display: none;
   }
   .navbar-sidebar__item {
     padding: 0;
   }
-  
+  .menu__list {
+    padding: 32px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 32px;
+  }
+  .menu__list .menu__list {
+    padding: 0;
+  }
+  .theme-doc-sidebar-menu.menu__list {
+    padding: 0 16px;
+  }
+  .theme-doc-sidebar-menu .menu__list {
+    border-bottom: none;
+  }
   .navbar-sidebar__back {
     top: 0;
     margin-bottom: 12px;
