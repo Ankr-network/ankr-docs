@@ -25,7 +25,7 @@ We're planning to add support for BNB, FTM, AVAX soon.
 ## Audit details
 
 Ankr Bridge has undergone external audit by Beosin Blockchain Security. 
-To learn more, view the [detailed audit repot](https://assets.ankr.com/earn/ankr_bridge_security_audit.pdf).
+To learn more, view the [detailed audit report](https://assets.ankr.com/earn/ankr_bridge_security_audit.pdf).
 
 ## Why Ankr Bridge?
 
