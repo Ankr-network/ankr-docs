@@ -60,11 +60,11 @@ Types:
 
 Naming examples:
 
-* `feature/FOOBAR-1-create-ankr-earn-docs`
+* `feature/FOOBAR-1-create-ankr-staking-docs`
 
 * `bugfix/FOOBAR-2-fix-typos`
 
-* `hotfix/FOOBAR-3-update-sc-addresses-for-earn`
+* `hotfix/FOOBAR-3-update-sc-addresses-for-staking`
 
 ### Pull request naming format
 
@@ -76,11 +76,11 @@ Naming examples:
 
 * `fix(Fantom staking): FOOBAR-666 fix typos`
 
-* `chore: FOOBAR-777 update smart contract addresses for Ankr Earn`
+* `chore: FOOBAR-777 update smart contract addresses for Ankr Staking`
 
 ## How to add a new page
 
-1. Create a new markdown file in a related folder that lives under the `docs` folder, e.g. `staking.md` should live somewhere in `docs/Earn`, as it's related to ANKR Earn.
+1. Create a new markdown file in a related folder that lives under the `docs` folder, e.g. `staking.md` should live somewhere in `docs/staking`, as it's related to Ankr Staking.
 2. At the beginning of the file, insert ***yaml front matter*** with the page **title** and a unique **id** (emphasis on the word **unique**). For example:
 
 ## Search

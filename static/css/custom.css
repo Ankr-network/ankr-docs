@@ -64,6 +64,27 @@ a {
   font-family: "Inter";
 }
 
+.alert {
+  --ifm-code-background: var(--ifm-alert-background-color-highlight);
+  --ifm-link-color: var(--ifm-alert-foreground-color);
+  --ifm-link-hover-color: var(--ifm-alert-foreground-color);
+  --ifm-link-decoration: underline;
+  --ifm-tabs-color: var(--ifm-alert-foreground-color);
+  --ifm-tabs-color-active: var(--ifm-alert-foreground-color);
+  --ifm-tabs-color-active-border: var(--ifm-alert-border-color);
+  background-color: var(--ifm-alert-background-color);
+  border-color: var(--ifm-alert-border-color);
+  border-style: solid;
+  border-width: var(--ifm-alert-border-width);
+  border-left-width: var(--ifm-alert-border-left-width);
+  border-radius: var(--ifm-alert-border-radius);
+  box-shadow: var(--ifm-alert-shadow);
+  color: var(--ifm-alert-foreground-color);
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .navbar__toggle {
   position: absolute;
   right: 0;
@@ -140,6 +161,12 @@ a {
   width: 50%;
 }
 
+.codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -149,6 +176,11 @@ a {
 
 html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.img_node_modules-\@docusaurus-theme-classic-lib-next-theme-MDXComponents-Img-module {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .navbar {
@@ -380,22 +412,30 @@ aside nav {
   left: calc(100% - 10px);
 }
 
-table thead tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+table {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+table tr {
+  border-bottom: 1px solid rgba(7, 97, 243, 0.1);
   border-top: none;
+  
 }
 table th {
   border: none;
   text-align: left;
   color: rgba(31, 34, 38, 0.8);
-  padding: 16px 8px 16px;
+  padding: 8px 16px 8px 16px;
 }
 table tr:nth-child(2n) {
-  background-color: transparent;
+  background-color: white;
 }
 table td {
   border-width: 0 0 1px 0;
-  padding: 16px 8px 16px;
+  padding: 8px 16px 8px 16px;
+  background-color: white;
 }
 
 .alert {
@@ -453,11 +493,13 @@ table td {
   counter-reset: ol;
   padding-left: 2em;
 }
-.markdown ul {
-  counter-reset: ul;
-  padding-left: 2em;
+.markdown ul li:before {
+  color: #356df3;
+  display: inline-block;
+  width: 1em;
+  margin-left: -2em;  
 }
-.markdown li:before {
+.markdown ol li:before {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -487,10 +529,6 @@ table td {
 .markdown ol li:before {
   content: counter(ol);
   counter-increment: ol;
-}
-.markdown ul li:before {
-  content: counter(ul);
-  counter-increment: ul;
 }
 
 @media (max-width: 1235px) {
