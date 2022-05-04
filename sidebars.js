@@ -406,6 +406,7 @@ module.exports =
             'staking/reference/staking-glossary',
             'staking/reference/staking-principles',
             'staking/reference/audit-reports',
+            'staking/reference/integrations',
             'staking/reference/ls-smart-contract-addresses-mn',
             'staking/reference/ls-smart-contract-addresses-tn',
             'staking/reference/staking-compatible-wallets',
