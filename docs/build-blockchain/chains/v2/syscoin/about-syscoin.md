@@ -1,10 +1,10 @@
 ---
-title: Syscoin RPC
-id: syscoin
+title: Overview
+id: about-syscoin
 ---
 
 # Syscoin RPC
-Syscoin is a Proof-of-Work blockchain. It uses merged-mining - a technique whereby PoW blockchain miners can mine multiple blockchains at a time. 
+Syscoin is a Proof-of-Work blockchain. It uses merged-mining - a technique whereby PoW blockchain miners can merge several cryptocurrencies with mining at the same time. Syscoin currently has around 20% of the hashpower that goes into mining Bitcoin. SysCoin utilizes [Chainlocks](https://docs.syscoin.org/docs/tech/chainlocks) to [secure against 51% attacks]. 
 
 Syscoin has a modular blockchain architecture with multiple specialized layers. This represents their approach to solving the scalability trilemma. 
 
@@ -20,9 +20,8 @@ Syscoin has a modular blockchain architecture with multiple specialized layers. 
 
 This is where the data from the blockchain is stored. ZK-rollups on Syscoin store data on-chain whilst Validium roll-ups store data off-chain in decentralized storage or with trusted entitites. Validium is scheduled for later in the year.
 
-:::tip
+:::info What is Validium?
 
-### What is Validium?
 Validium is a Layer-2 scaling solution that enforces the validity of all transactions using zero-knowledge proofs whilst data is kept off-chain. This means that assets cannot be accessed without explicit authorization from the account owner. 
 
 :::
