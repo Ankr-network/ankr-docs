@@ -7,20 +7,25 @@ id: hybrid-infra
 
 :::note 
 
-This is currently a **CLOSED** testing feature and is not available to all clients. 
+## This is currently a **CLOSED** testing feature and is not available to all clients. 
 
-If you would like to add this feature and you are a Premium Plan subscriber, send an email to 
-premiumsupport@ankr.com
+If you are a Premium Plan subscriber and would like to add this feature, do the following:
 
-Subject: enable hybrid
+1. Checkout [**Ankr website**](https://www.ankr.com/)
 
-Body: list the ethereum account addresses in the body. 
+2. Click the **Help** icon
 
+3. Enter your ***name***, ***email address*** and then scroll down to the ***How can we help you*** field. 
 
+  Insert the following text **"I want to enable Hybrid Infrastructure"**.
+
+4. Click **Send** 
+
+We will respond ASAP.
 
 :::
 
-Premium Plan (v2) users now have the ability to create a Hybrid Infrastructure by adding external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
+Premium Plan (v2) users now have the ability to create a **Hybrid Infrastructure** by adding external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
 
 Ankr can also support your specific use case to create a custom node cluster. You can then add an endpoint from this to your account. 
 
