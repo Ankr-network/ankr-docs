@@ -100,7 +100,10 @@ a {
   background: transparent !important;
 }
 .menu__list {
-/* font-size: 15px; */
+font-size: 15px;
+}
+.menu__link--sublist:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
 }
 .menu__list-item-collapsible {
   background: transparent !important;
