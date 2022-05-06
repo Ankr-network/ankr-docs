@@ -4,7 +4,7 @@ id: about-syscoin
 ---
 
 # Syscoin RPC
-Syscoin is a Proof-of-Work blockchain. It uses merged-mining - a technique whereby PoW blockchain miners can merge several cryptocurrencies with mining at the same time. Syscoin currently has around 20% of the hashpower that goes into mining Bitcoin. SysCoin utilizes [Chainlocks](https://docs.syscoin.org/docs/tech/chainlocks) to securely mitigate against <a href="https://www.ankr.com/docs/learn/reference/51-attack>51% attacks</a>
+Syscoin is a Proof-of-Work blockchain. It uses merged-mining - a technique whereby PoW blockchain miners can merge several cryptocurrencies with mining at the same time. Syscoin currently has around 20% of the hashpower that goes into mining Bitcoin. SysCoin utilizes [Chainlocks](https://docs.syscoin.org/docs/tech/chainlocks) to securely mitigate against <a href="https://www.ankr.com/docs/learn/reference/51-attacks">51% attacks</a>
 
 Syscoin has a modular blockchain architecture with multiple specialized layers. This represents their approach to solving the scalability trilemma. 
 
