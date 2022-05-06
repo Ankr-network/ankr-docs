@@ -7,6 +7,22 @@ id: json-methods
 
 For EVM-compatible chains, Ankr supports the following methods:
 
+:::tip Unsupported Methods
+
+Be aware that the following methods are NOT supported on Ankr Protocol RPCs
+  'eth_newFilter' 
+  'eth_getFilterChanges' 
+  'eth_syncing' 
+  'eth_coinbase' 
+  'eth_hashrate' 
+  'eth_mining' 
+  'eth_getWork' 
+  'eth_submitWork' 
+  'eth_submitHashrate' 
+  'net_peerCount': true
+}
+:::
+
 ### Websockets
 
 * `Subscribe`
