@@ -1,1 +1,0 @@
-# Websocket Error Codes
