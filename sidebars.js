@@ -445,7 +445,8 @@ module.exports =
           },
           {
              'How to...': [
-              'game/unity/how-tos/wallet-game'
+              'game/unity/how-tos/wallet-game',
+              'game/unity/how-tos/subscribe-game'
             ],
           },
         ],
