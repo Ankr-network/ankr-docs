@@ -17,8 +17,8 @@ If you are a Premium Plan subscriber and would like to add this feature, do the 
 
 3. Enter your ***name***, ***email address*** and then scroll down to the ***How can we help you*** field. 
 
-  Insert the following text **"I want to enable Hybrid Infrastructure"**.
-
+  Make your request and add your wallet address **"I want to enable Hybrid Infrastructure, my wallet address is** *YOUR_WALLET_ADDRESS*"
+  
 4. Click **Send** 
 
 We will respond ASAP.

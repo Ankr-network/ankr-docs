@@ -9,18 +9,28 @@ For EVM-compatible chains, Ankr supports the following methods:
 
 :::tip Unsupported Methods
 
-Be aware that the following methods are NOT supported on Ankr Protocol RPCs
-  'eth_newFilter' 
+Be aware that the following methods are **NOT** supported on Ankr Protocol RPCs:
+
+  'eth_newFilter'
+
   'eth_getFilterChanges' 
+
   'eth_syncing' 
+
   'eth_coinbase' 
+
   'eth_hashrate' 
+
   'eth_mining' 
+
   'eth_getWork' 
+
   'eth_submitWork' 
+
   'eth_submitHashrate' 
-  'net_peerCount': true
-}
+
+  'net_peerCount'
+
 :::
 
 ### Websockets
@@ -86,7 +96,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c
 }
 ```
 
-## **eth\_blockNumber**
+## eth\_blockNumber
 
 Returns the number of most recent block.
 
@@ -110,7 +120,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}' 
 ```
 
-## **eth\_call**
+## eth\_call
 
 Executes a new message call immediately without creating a transaction on the block chain.
 
@@ -198,7 +208,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{see 
 }
 ```
 
-## **eth\_gasPrice**
+## eth\_gasPrice
 
 Returns the current price per gas in wei.
 
@@ -224,7 +234,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":7
 }
 ```
 
-## **eth\_getBalance**
+## eth\_getBalance
 
 Returns the balance of the account of given address.
 
@@ -258,7 +268,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x407
 }
 ```
 
-## **eth\_getBlockByHash**
+## eth\_getBlockByHash
 
 Returns information about a block by hash.
 
@@ -336,7 +346,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0
 }
 ```
 
-## **eth\_getBlockByNumber**
+## eth\_getBlockByNumber
 
 Returns information about a block by block number.
 
@@ -413,7 +423,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":[
 }
 ```
 
-## **eth\_getBlockTransactionCountByHash**
+## eth\_getBlockTransactionCountByHash
 
 Returns the number of transactions in a block from a block matching the given block hash.
 
@@ -1271,7 +1281,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67
 }
 ```
 
-## **net\_listening**
+## net\_listening
 
 Returns `true` if client is actively listening for network connections.
 

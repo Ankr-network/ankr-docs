@@ -43,7 +43,7 @@ You can set up your **MetaMask wallet** to connect to Gnosis RPC. You can then p
 
 :::tip
 
-**Gnosis** supports [standard JSON RPC calls](../../guides/evm-supported-requests.md)
+**Gnosis** supports [standard JSON RPC calls](https://www.ankr.com/docs/build-blockchain/guides/json-methods)
 
 :::
 
@@ -128,6 +128,12 @@ curl https://rpc.ankr.com/gnosis \
 
 ---
 ## Integrate code
+
+:::caution Be aware!
+
+Gnosis RPC calls do not work with URLs that specify a Port Number. 
+
+:::
 
 ### web3 
 
