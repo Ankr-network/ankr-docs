@@ -46,6 +46,11 @@ module.exports =
             'build-blockchain/chains/v2/near',
             'build-blockchain/chains/v2/nervos',
             'build-blockchain/chains/v2/polygon',
+            {
+              'Syscoin RPC': [
+            'build-blockchain/chains/v2/syscoin/about-syscoin',
+              ],
+            },
             'build-blockchain/chains/v2/solana',
           ],
         },
@@ -299,7 +304,12 @@ module.exports =
                   },
               ],
           },
+          {
+            'Support': [
         'build-blockchain/support/get-support',
+        'build-blockchain/support/errors'
+            ],
+          },
       ],
     },
   ],
@@ -406,7 +416,6 @@ module.exports =
             'staking/reference/staking-glossary',
             'staking/reference/staking-principles',
             'staking/reference/audit-reports',
-            'staking/reference/integrations',
             'staking/reference/ls-smart-contract-addresses-mn',
             'staking/reference/ls-smart-contract-addresses-tn',
             'staking/reference/staking-compatible-wallets',
@@ -502,6 +511,7 @@ module.exports =
      {
          'Reference': [
           'learn/reference/ankr-vision',
+          'learn/reference/51-attacks',
         ],
       },
     ],
