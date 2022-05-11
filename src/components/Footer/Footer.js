@@ -134,7 +134,7 @@ export default function Footer() {
         <div className={styles.column}>
           <span className={styles.copy}>
             <AnkrLogo />
-            {"© 2021 Ankr All rights reserved | info@ankr.com"}
+            {"© 2022 Ankr All rights reserved | info@ankr.com"}
           </span>
         </div>
         <div>
