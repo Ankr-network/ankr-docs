@@ -1,9 +1,9 @@
 ---
-title: 04 Mint Wearables NFT
+title: 04 Mint Wearable NFTs
 id: unreal-mint-nft
 ---
 
-# 04 Mint wearables NFT
+# 04 Mint wearable NFTs
 
 The following methods can be used to mint new characters and wearable NFTs. 
 
@@ -14,6 +14,9 @@ All write method calls such as minting a character or wearable incur gas fees to
 All read data method calls such as retrieving a balance do NOT incur gas fees.
 
 :::
+
+### 🕹 &nbsp;Guided tutorial
+<iframe width="550" height="305" src="https://www.youtube.com/embed/EtiW3Th9Mns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Mint character
 
