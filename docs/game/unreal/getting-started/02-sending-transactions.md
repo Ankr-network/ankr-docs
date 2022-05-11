@@ -15,6 +15,9 @@ All read data method calls such as retrieving a balance do NOT incur gas fees.
 
 :::
 
+### 🕹 &nbsp;Guided tutorial
+<iframe width="550" height="305" src="https://www.youtube.com/embed/ikHdTSzxxQY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Send transaction
 ----------------
 ----------------

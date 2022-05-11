@@ -7,6 +7,9 @@ id: unreal-connect-wallet
 
 This section assumes you have already deployed the relevant smart contracts to the blockchain and have smart contract addresses and ABI.
 
+#### 🕹 &nbsp;Guided tutorial
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O8FAOFPvDUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 #### STEP ONE
 
 Upon initialization, a unique `deviceId` is generated.
