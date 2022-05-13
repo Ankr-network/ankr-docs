@@ -38,6 +38,8 @@ The requirements when unstaking are:
 
 * aMATICb to MATIC exchange ratio is 1:1.
 
+* aMATICc to MATIC exchange ratio is dynamic, as aMATICc grows in value to MATIC, daily.
+
 * User can unstake a part of or all the staked MATIC anytime.
 
 
@@ -51,6 +53,8 @@ The user must also count in the gas price in ETH for outgoing transactions.
 
 ## Rewards
 User's aMATICb balance grows daily. It can be desribed as `daily rewards / total share * user's share`.
+
+User's aMATICc balance stays the same but the value of aMATICc to MATIC grows daily.
 
 Validators receive rewards on the regular basis at the end of each epoch.
 
@@ -69,6 +73,8 @@ Smart contracts and addresses involved in MATIC Liquid Staking are:
 * [PolygonPool](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89) — contract on Ethereum where the user sends their initial staking request.
 
 * [aMATICb](https://etherscan.io/address/0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe) — contract on Ethereum that mints aMATICb tokens for the user in 1:1 ratio with the staked amount.
+
+* [aMATICc on Ethereum](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c) — contract on Ethereum that mints or burns aMATICc tokens for the user. All interactions go through the Proxy part. 
 
 Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 

@@ -19,6 +19,12 @@ Check our [blog article](https://medium.com/ankr-network/aeth-vs-feth-which-liqu
 It is not possible to unstake ETH until the Ethereum network reaches phase 1.5 of its transition from Proof-of-Work to Proof-of-Stake. Phase 1.5 is expected in 2022, but the exact date is still unknown.
 :::
 
+## Audit details
+
+ETH Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
+To learn more, view the [detailed audit report](https://assets.ankr.com/files/stkr_smart_contract_auditing_report.pdf).
+
+
 ## Two types of ETH2 Liquid Staking
 
 ### Ankr Reward-Bearing Staked ETH (aETHc)

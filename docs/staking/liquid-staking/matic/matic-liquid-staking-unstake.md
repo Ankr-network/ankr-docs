@@ -29,7 +29,7 @@ The following fees applied when unstaking:
 :::
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
-3. Locate the aMATICb box and click the **'-'** icon to unstake.
+3. Locate the aMATICb/aMATICc box respectively and click the **'-'** icon to unstake.
 4. Enter the amount to unstake and click *'Unstake'*.
 
 You will need to make the following interactions in your wallet:

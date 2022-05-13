@@ -11,13 +11,13 @@ Polygon Liquid Staking enables you to earn **alpha**. (Alpha is a return on inve
 
 ## Benefits
 
-* **Generate Multiple Layers of Rewards**: Use the aMATICb bond token on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!
+* **Generate Multiple Layers of Rewards**: Use the aMATICb/aMATICc bond token on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!
 
-* **Low Impermanent Loss**: Contributing aMATICb tokens for liquidity with tokens like MATIC means low risk of impermanent loss, expanding the upside of providing liquidity for a more stable and profitable experience.
+* **Low Impermanent Loss**: Contributing aMATICb/aMATICc tokens for liquidity with tokens like MATIC means low risk of impermanent loss, expanding the upside of providing liquidity for a more stable and profitable experience.
 
-* **Compound Your Staking Rewards**: Your staking rewards will compound every two months as your wallet’s aMATICb balance increases.
+* **Compound Your Staking Rewards**: Your staking rewards will compound every two months as your wallet’s aMATICb/aMATICc balance increases.
 
-* **Ethereum market opportunities**: Since aMATICb is an ERC-20 token staked via Ethereum, you will be able to access a variety of DEXs to instantly buy or sell aMATICb.
+* **Ethereum market opportunities**: Since aMATICb/aMATICc is an ERC-20 token staked via Ethereum, you will be able to access a variety of DEXs to instantly buy or sell aMATICb/aMATICc.
 
 * **Support & Secure Polygon**: Staking MATIC directly supports the Polygon network and helps validate transactions. Ankr’s staking system distributes staked tokens intelligently across the Polygon ecosystem to achieve optimal decentralization.
 

@@ -46,13 +46,13 @@ You will need to make the following interactions in your wallet:
 
 2. Locate the **Polygon (MATIC)** box and click *Stake* in it.
 
-3. Enter the desired amount of MATIC to stake and click *Get aMATICb*.
+3. Enter the desired amount of MATIC to stake and click either *Get aMATICb* or *Get aMATICc* to choose the desired liquid token.
 
 4. Confirm the transaction in your wallet.
 
-5. Add aMATICb to your wallet, clicking  *Add aMATICb to wallet*.
+5. Add aMATICb/aMATICc to your wallet, clicking *Add aMATICb to wallet* or *Add aMATICc to wallet* respectively.
 
-6. Click *Go to dashboard* to see the received aMATICb in Ankr Staking. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
+6. Click *Go to dashboard* to see the received aMATICb/aMATICc in Ankr Staking. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
 
 :::info
 
@@ -70,9 +70,13 @@ You will need to make the following interactions in your wallet:
 
 :::success
 
-Your aMATICb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aMATICb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aMATICb section.
+Your aMATICb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. 
+Your aMATICc balance stays the same, but the fair value of aMATICc to MATIC grows daily.
 
-### If you don't see your aMATICb balance
+You can now use your aMATICb to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aMATICb section. aMATICc support is coming soon.
+:::
+
+### If you don't see your aMATICb/aMATICc balance
 
 If you don't see the balance in your wallet, do the following:
 
