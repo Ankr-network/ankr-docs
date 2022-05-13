@@ -128,7 +128,9 @@ Topics are an array of values that describe what's going on in an event.
 
 The order is important, if you want to leave topics out use null, e.g. `[null, '0x00...']`. 
 
-You can pass another array for each topic with options for that topic e.g. [null, ['option1', 'option2']]
+You can pass another array for each topic with options for that topic e.g. [null, ['option1', 'option2']].
+
+All values of the array are logically connected using OR operator (example 'option1' OR 'option2' OR 'option3')
 
 :::
 
