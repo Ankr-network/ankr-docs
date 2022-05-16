@@ -69,6 +69,15 @@ module.exports =
                 ],
             },
             {
+                'Security': [
+                'build-blockchain/bas/security/blockchain-evm',
+                'build-blockchain/bas/security/smart-contracts',
+                'build-blockchain/bas/security/on-chain',
+                'build-blockchain/bas/security/off-chain',
+                ],
+
+            },
+            {
                 'How to launch BAS': [
                  'build-blockchain/bas/how-to-launch/launch-bas',
                  'build-blockchain/bas/how-to-launch/deploy-erc20-token',
@@ -76,7 +85,6 @@ module.exports =
                 ],
             },
             'build-blockchain/bas/staking',
-            'build-blockchain/bas/blockchain-security',
             'build-blockchain/bas/demo',
             'build-blockchain/bas/faq',
             'build-blockchain/bas/glossary',
