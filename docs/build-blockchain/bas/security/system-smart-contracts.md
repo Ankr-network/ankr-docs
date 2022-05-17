@@ -23,7 +23,7 @@ This model balances validator performance and creates a more decentralized syste
 ## Audit details
 
 BAS smart contracts have undergone external audit by Beosin Blockchain Security. 
-To learn more, view the [detailed audit report](https://github.com/Ankr-network/bas-genesis-config/blob/master/audit/2022-04-27-Beosin.pdf).
+To learn more, view the [detailed audit report](https://assets.ankr.com/bas/system_smart_contracts_security_audit.pdf).
 
 
 
