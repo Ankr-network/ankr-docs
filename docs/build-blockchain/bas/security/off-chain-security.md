@@ -1,5 +1,5 @@
 ---
-title: Off-chain security
+title: Off-chain Security
 id: off-chain
 ---
 
