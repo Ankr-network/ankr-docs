@@ -24,5 +24,5 @@ Instead, it implements all staking- and governance-specific logic right in the s
 It means that staking, governance, and rewards distribution are fully managed and verified by the EVM runtime environment.
 
 To proof the absence of vulnerabilities and bugs in the code, we're passing several auditions.
-So far, you can read [audit details on BAS system smart contract](https://assets.ankr.com/bas/system_smart_contracts_security_audit.pdf).
+So far, you can read [audit details on BAS system smart contracts](https://assets.ankr.com/bas/system_smart_contracts_security_audit.pdf).
 
