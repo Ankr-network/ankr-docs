@@ -20,6 +20,8 @@ This model balances validator performance and creates a more decentralized syste
 
 ## No centralized controlling authority
 
+Thanks to the decentralized validators model and the governance model, a BAS instance can have no centralized controlling authority and be governed by the network users themselves. 
+
 ## Audit details
 
 BAS smart contracts have undergone external audit by Beosin Blockchain Security. 
