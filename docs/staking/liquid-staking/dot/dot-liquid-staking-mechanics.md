@@ -34,7 +34,7 @@ The requirements when unstaking are:
 
 * Maximum value to unstake — staked amount + % of the reward, up to the user’s balance.
 
-* Release period — up to 7 days.
+* Release period — up to 28 days.
 
 ## Fees
 
