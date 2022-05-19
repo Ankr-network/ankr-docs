@@ -11,17 +11,17 @@ id: pricing
 
 :::info v2 Protocol Pricing
 
-| **Feature**           | Public RPCs                       | Premium RPCs                     |
-| --------------------- | --------------------------------- | -------------------------------- |
-| Full and Archive Data | ✅                                | ✅                               |
-| Advanced API          | ❌                                | ✅                               |
-| Rate limit            | Limited during high traffic       | Unlimited                        |
-| Requests per day      | Soft limit of 1M requests per day | Unlimited requests               |
-| Connection            | HTTPS                             | HTTPS and WebSockets             |
-| Latency               | US / EU Based nodes               | Global node coverage             |
-| Support               | Discord Support                   | Custom SLA                       |
-| Terms                 | No Contract                       | No Contract                      |
-| Cost                  | **FREE**                          | **10000 ANKR** (approx. $717.44) |
+| **Feature**           | Public RPCs                       | Premium RPCs                         |
+| --------------------- | --------------------------------- |--------------------------------------|
+| Full and Archive Data | ✅                                | ✅                                    |
+| Advanced API          | ❌                                | ✅                                    |
+| Rate limit            | Limited during high traffic       | Unlimited                            |
+| Requests per day      | Soft limit of 1M requests per day | Unlimited requests                   |
+| Connection            | HTTPS                             | HTTPS and WebSockets                 |
+| Latency               | US / EU Based nodes               | Global node coverage                 |
+| Support               | Discord Support                   | Custom SLA                           |
+| Terms                 | No Contract                       | No Contract                          |
+| Cost                  | **FREE**                          | **[Contact us](https://4f4a8balgjw.typeform.com/to/Q0pbns3g)**|
 
 :::
 
