@@ -4,7 +4,7 @@ id: premium-plan
 ---
 
 
-The **Premium Plan** gives you access to a range of exclusive features that allow you to build on a secure, reliable, ultra-fast multi-chain network. Please fill in form and our sales team will help you. 
+The **Premium Plan** gives you access to a range of exclusive features that allow you to build on a secure, reliable, ultra-fast multi-chain network. Please fill in [form](https://4f4a8balgjw.typeform.com/to/Q0pbns3g) and our sales team will help you. 
 
 
 ## Key features
