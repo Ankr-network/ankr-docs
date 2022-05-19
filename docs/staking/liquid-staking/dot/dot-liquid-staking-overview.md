@@ -17,7 +17,7 @@ Ankr Staking can connect you to the best ways to earn more crypto by staking, ar
 
 ### **Instant liquidity**
 
-Staked assets are illiquid. Stakers must wait 7 days to unstake DOT. Also, during the unstaking period, unstaking assets are not entitled to additional reward. This creates an opportunity cost in time and capital for the user. Only after unstaking does DOT become redeemable and available for reinvestment. 
+Staked assets are illiquid. Stakers must wait 28 days to unstake DOT. Also, during the unstaking period, unstaking assets are not entitled to additional reward. This creates an opportunity cost in time and capital for the user. Only after unstaking does DOT become redeemable and available for reinvestment. 
 
 Using Ankr Staking is the best way to stake DOT as you can access instant liquidity in the form of the aDOTb token. Avoiding locking your DOT up with the Polkadot network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
 
@@ -29,7 +29,7 @@ As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-o
 * **Farming rewards for liquidity providers:** Liquid Staking presents several yield farming strategies for users to contribute to liquidity pools and gain a share of the trading fees and governance tokens. These new LP tokens can be used to generate yet another layer of earnings.
 * **Staking rewards on farmed tokens:** After using yield farming strategies, users can also reinvest their farmed LP tokens into more staking opportunities. This is a highly repeatable process as layers of rewards from farming and staking will quickly stack up.
 * **Yield aggregators and vaults** can automate yield farming rewards and enable compounding returns with next to no effort from users. This is a great method for maximizing your passive income strategy.
-* **More trading opportunities** are enabled thanks to the elastic supply nature of aDOTb, meaning that you could potentially buy aDOTb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Staking to extract its fair value back in up to 7 days (the Polkadot Liquid Staking unbonding period).
+* **More trading opportunities** are enabled thanks to the elastic supply nature of aDOTb, meaning that you could potentially buy aDOTb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Staking to extract its fair value back in up to 28 days (the Polkadot Liquid Staking unbonding period).
 
 ### Borrowing and lending
 

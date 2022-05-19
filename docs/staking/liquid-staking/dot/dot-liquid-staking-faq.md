@@ -25,7 +25,7 @@ No, you can stake at your discretion, unlimited.
 
 ### What is the unbonding period for aDOTb?
 
-You receive the unstaked amount after the unbonding period of up to 7 days.
+You receive the unstaked amount after the unbonding period of up to 28 days.
 
 
 ### How do I receive rewards? 
