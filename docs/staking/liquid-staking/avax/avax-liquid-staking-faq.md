@@ -51,6 +51,11 @@ Staking rewards depend mostly on the voting power of the validator node that you
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
  
 
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+It depends on the staked asset. For AVAX Liquid Staking, your stake **continues** to accumulate rewards until the moment you receive them.
+
+
 ### Is there any risk from staking, like slashing or any penalties?
 
 The only risk for stakers is missing out on rewards during any time a validator they staked with is slashed. 

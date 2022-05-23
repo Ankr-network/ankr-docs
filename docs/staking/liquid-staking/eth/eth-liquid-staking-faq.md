@@ -23,6 +23,11 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited. You should know that currently staking starts once 32 ETH are accumulated, so if your stake is >32 ETH, it’ll be divided into chunks and the rule will apply to each of them. 
 
 
+### When can I unstake?
+
+There is no unstaking mechanism for ETH right now. We're all waiting for Ethereum 2.0 to implement it. 
+
+
 ### What is the unbonding period for aETHb/aETHc?
 
 Currently, there is no unbonding period, as there is no unstaking for ETH. This functionality is to be implemented by the Ethereum team in future updates.
@@ -51,7 +56,7 @@ Ankr's income comes from running one of the several validator nodes that will be
 
 Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to and how much ETH is validated on the network. The less ETH is staked, the higher the rewards to incentivize more ETH to come online, and vice versa. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards. 
 View the [current amount of staked ETH](https://launchpad.ethereum.org/).
- 
+
 
 ### Is there any risk from staking, like slashing or any penalties?
 

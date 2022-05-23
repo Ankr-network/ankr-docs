@@ -50,6 +50,9 @@ When unstaking, users pay a burn fee that depends on the current liquidity and a
 Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to.
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
  
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+It depends on the staked asset. For FTM Liquid Staking, your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
 
 ### Is there any risk from staking, like slashing or any penalties?
 
