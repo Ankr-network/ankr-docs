@@ -7,9 +7,9 @@ id: overview
 
 ## What is BAS?
 
-BAS is a framework for creating sidechains in the Binance ecosystem. In other words, it is an infrastructure to help developers and node operators build and run their own blockchains as their internal value system and for a massive number of users, while still maintaining a close connection with the Binance Blockchain (BNB).
+BAS is a framework for creating sidechains in the Binance ecosystem. In other words, it is an infrastructure to help developers and node operators build and run their own blockchains as their internal value system and for a massive number of users, while still maintaining a close connection with the Binance Blockchain (BNB Chain).
 
-The primary objective of BAS is to allow developers to launch their blockchain applications in a matter of hours, with its unique specifications and validator set. Such blockchains, out-of-the-box, can be connected to the BNB infrastructure.
+The primary objective of BAS is to allow developers to launch their blockchain applications in a matter of hours, with its unique specifications and validator set. Such blockchains, out-of-the-box, can be connected to the BNB Chain infrastructure.
 
 The validator set can run with fewer validators than BNB Chain, depending on the BAS deployer. The validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BAS.  
 
@@ -22,7 +22,7 @@ Check out the [BAS codebase on GitHub](https://github.com/Ankr-network?q=bas).
 
 ## Why BAS?
 
-Today BNB is experiencing network scalability problems and the core developer has proposed to use BAS in their Outlook 2022 paper to solve this problem because these sidechains can be designed for much higher throughput and lower gas fees. We want to define a protocol for consensus management and messaging between BAS and BNB so that it is easier for developers to use a ready-made solution and it is easier for BNB to integrate with them.
+Today BNB Chain is experiencing network scalability problems and the core developer has proposed to use BAS in their Outlook 2022 paper to solve this problem because these sidechains can be designed for much higher throughput and lower gas fees. We want to define a protocol for consensus management and messaging between BAS and BNB Chain so that it is easier for developers to use a ready-made solution and it is easier for BNB Chain to integrate with them.
 
 In short, the typical usage of BAS is like the Ronin chain for the Axie Infinity.
 
@@ -42,9 +42,9 @@ The idea of BAS is to allow you to expand and reuse existing modules, and by usi
 
 Technically, BAS is a set of smart contracts written in any possible programming language. The contract executor itself can be anyone and work in any way; BAS does not require the use of any specific set of programming languages or API standards. 
 
-In essence, BAS defines the primary structure and configuration of the blockchain, using special templates. A template is a ready-made blockchain solution that is already integrated into the BNB infrastructure. With this integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
+In essence, BAS defines the primary structure and configuration of the blockchain, using special templates. A template is a ready-made blockchain solution that is already integrated into the BNB Chain infrastructure. With this integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
 
-The current implementation of BAS is based on a modified version of BNB, but this is not the rule, BAS can technically run on top of any blockchain. In the future, the list of templates will be extended.
+The current implementation of BAS is based on a modified version of BNB Chain, but this is not the rule, BAS can technically run on top of any blockchain. In the future, the list of templates will be extended.
 
 
 ## What is BAS structure? 
@@ -57,4 +57,4 @@ Over time, the set of modules will increase and they will take on a more structu
 
 The main goal of BAS is to build such a multi-modular blockchain architecture that it is flexible, convenient, and easy to use.
 
-As the current implementation of BAS is built on BNB chain, all existing modules are built into system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
+As the current implementation of BAS is built on BNB Chain, all existing modules are built into system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
