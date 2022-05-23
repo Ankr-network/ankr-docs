@@ -49,7 +49,12 @@ aKSMb will increase with every rebase; rebasing occurs daily.
 
 Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to.
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
+
  
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+It depends on the staked asset. For KSM Liquid Staking, your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
+
 
 ### Is there any risk from staking, like slashing or any penalties?
 
