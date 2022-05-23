@@ -9,7 +9,7 @@ id: overview
 
 BAS is a framework for creating sidechains in the Binance ecosystem. In other words, it is an infrastructure to help developers and node operators build and run their own blockchains as their internal value system and for a massive number of users, while still maintaining a close connection with the Binance Blockchain (BNB Chain).
 
-The primary objective of BAS is to allow developers to launch their blockchain applications in a matter of hours, with its unique specifications and validator set. Such blockchains, out-of-the-box, can be connected to the BNB Chain infrastructure.
+The primary objective of BAS is to allow developers to launch a blockchain in a matter of hours, with its unique specifications and validator set. Such blockchains, out-of-the-box, can be connected to the BNB Chain infrastructure.
 
 The validator set can run with fewer validators than BNB Chain, depending on the BAS deployer. The validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BAS.  
 
