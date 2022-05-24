@@ -9,8 +9,8 @@ Connecting to a Web3 wallet such as MetaMask via **WalletConnect** provides a li
 
 There are two ways to get a **Session Key** from your wallet. 
 
-* Connect with `QRCode` when building Desktop-based applications
-* Connect with `WalletConnect.Instance.OpenMobileWallet` when building Android/iOs based applications. 
+* Connect with `QRCode` when building Desktop-based applications. Usually, it's the option used for the Standalone option (Linux, Windows, macOS machine) when the user cannot get access to their wallet directly on their machine; they have to generate a QR code and scan it with a mobile app to open a wallet there.
+* Connect with `WalletConnect.Instance.OpenMobileWallet` when building mobile-based applications. Usually, it's the option used for a iOS/Android device with an installed wallet app.  
 
 Both of these methods generate a **linking url** that creates a request in a **MetaMask wallet** to connect.
 
