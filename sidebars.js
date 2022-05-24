@@ -55,7 +55,7 @@ module.exports =
           ],
         },
         {
-            'BSC Application Sidechain': [
+            'BNB Application Sidechain': [
             'build-blockchain/bas/overview',
             {
                 'Architecture': [
