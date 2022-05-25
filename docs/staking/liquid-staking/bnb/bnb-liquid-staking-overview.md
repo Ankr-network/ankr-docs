@@ -5,11 +5,11 @@ id: overview
 
 # BNB Liquid Staking
 
-Binance Liquid Staking from Ankr Staking offers **instant liquidity** for your staked **BNB**, enabling you to connect your new aBNBb tokens with DeFi platforms and earn several more layers of rewards.&#x20;
+Binance Liquid Staking from Ankr Staking offers **instant liquidity** for your staked **BNB**, enabling you to connect your new aBNBb/aBNBc tokens with DeFi platforms and earn several more layers of rewards.
 
-Binance Liquid Staking enables you to earn **alpha**. (the _return on investment that goes far beyond normal increases in the crypto market index_).
+* aBNBb is a reward-earning token, meaning that rewards from BNB staking will be distributed daily through rebasing and aBNBb holders' balance in their wallet will increase on a daily basis.
+* aBNBc is a reward-bearing token, meaning that the fair value of 1 aBNBc token vs. BNB increases over time as staking rewards accumulate. 
 
-Ankr Staking can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
 ## Audit details
 

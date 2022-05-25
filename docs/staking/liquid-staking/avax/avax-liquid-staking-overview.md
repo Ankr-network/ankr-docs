@@ -5,11 +5,10 @@ id: overview
 
 # Avalanche Liquid Staking
 
-Ankr Staking offers Avalanche token holders the opportunity to stake AVAX and in return claim Ankr Avalanche Liquid Staking tokens (aAVAXb).
+Ankr Staking offers Avalanche token holders the opportunity to stake AVAX and in return claim Ankr Avalanche Liquid Staking tokens — aAVAXb and aAVAXc.
 
-aAVAXb, similarly to aETHb, is a reward earning token, meaning that rewards from Avalanche staking will be distributed daily through rebasing. In other words, the balance of aAVAXb tokens will increase daily in every holder’s wallet.
-
-Contrary to ETH staking, it is also possible to unstake AVAX tokens. Therefore, aAVAXb will benefit from the following aAVAXb liquidity options:
+* aAVAXb is a reward-earning token, meaning that rewards from AVAX staking will be distributed daily through rebasing and aAVAXb holders' balance in their wallet will increase on a daily basis.
+* aAVAXc is a reward-bearing token, meaning that the fair value of 1 aAVAXc token vs. AVAX increases over time as staking rewards accumulate. 
 
 ### 1. Market liquidity
 
@@ -18,10 +17,12 @@ aAVAXb is tradable on the following Decentralized Exchanges on Avalanche network
 * [**Pangolin**](https://pangolin.exchange)
 * [**Lydia Finance**](https://www.lydia.finance)
 
+aAVAXc is tradable in [Ankr DeFi](https://ankr.com/defi/trade/).
+
 ### 2. Unstaking
 
-From the Ankr Staking dashboard, you can choose to **Unstake** and redeem aAVAXb. 
-Wait for up to 28 days to redeem 1 aAVAXb for 1 AVAX. 
+From the Ankr Staking dashboard, you can choose to **Unstake** and redeem aAVAXb/aAVAXc. 
+Wait for up to 28 days to redeem aAVAXb/aAVAXc for AVAX. 
 
 :::info
 Unstaking means that aAVAXb has an **elastic supply** contributing to a **robust price stability mechanism** without relying on having large amounts of tokens in liquidity pools to ensure token price stability.
@@ -33,4 +34,4 @@ Unstaking means that aAVAXb has an **elastic supply** contributing to a **robust
 
 * 3% of the allocated AVAX tokens to Ankr Staking will not be staked and will remain unstaked.
 
-* aAVAXb holders indirectly bear the cost of the instant liquidity pool, which will represent 3% of the staking rewards due to the missed opportunity to stake AVAX. Therefore, the total cost for aAVAXb holders will be 2% service fee, plus 3% missed opportunity to stake AVAX, which equals 4.94% (no service fee applied to 3% instant liquidity pool). 
+* aAVAXb/aAVAXc holders indirectly bear the cost of the instant liquidity pool, which will represent 3% of the staking rewards due to the missed opportunity to stake AVAX. Therefore, the total cost for aAVAXb/aAVAXc holders will be 2% service fee, plus 3% missed opportunity to stake AVAX, which equals 4.94% (no service fee applied to 3% instant liquidity pool). 

@@ -5,9 +5,11 @@ id: overview
 
 # Polygon Liquid Staking
 
-**Polygon Liquid Staking** from Ankr Staking offers instant liquidity for your staked MATIC, enabling you to connect your tokens with DeFi platforms and earn several more layers of rewards.
+**Polygon Liquid Staking** from Ankr Staking offers instant liquidity for your staked MATIC, enabling you to connect your aMATICb/aMATICc tokens with DeFi platforms and earn several more layers of rewards.
 
-Polygon Liquid Staking enables you to earn **alpha**. (Alpha is a return on investment that goes far beyond normal increases in the crypto market index). Ankr Staking can connect you to the best ways to earn more crypto by staking, arbitrage trading, yield farming, and much more.
+* aMATICb is a reward-earning token, meaning that rewards from MATIC staking will be distributed daily through rebasing and aMATICb holders' balance in their wallet will increase on a daily basis.
+* aMATICc is a reward-bearing token, meaning that the fair value of 1 aMATICc token vs. MATIC increases over time as staking rewards accumulate. 
+
 
 ## Benefits
 
