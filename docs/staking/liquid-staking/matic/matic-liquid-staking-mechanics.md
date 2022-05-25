@@ -113,8 +113,8 @@ The Ankr backend monitors blockchain events coming from the `PolygonPool` smart 
 
 ## Daily exchange ratio updates
 
-## aMATICb
-To update the rates, the Ankr backend:
+### aMATICb
+To update the ratio, the Ankr backend:
 
 1. Collects information about the total supply of aMATICb.
 
@@ -123,6 +123,18 @@ To update the rates, the Ankr backend:
 3. Calculates MATIC ratio, diving the MATIC share by the MATIC involved in the staking.
 
 4. Sends a ratio update request to `aMATICb::function updateRatioAndFee(uint256 newRatio, uint256 newFee)`.
+
+### aMATICc
+To update the ratio, the Ankr backend:
+
+1. Collects information about the total supply of aMATICb.
+
+2. Collects information about MATIC available as stakes on the `PolygonPool` smart contract, at the addresses controlled by Ankr, MATICs staked on the Validator node, and MATICs received as reward.
+
+3. Calculates MATIC ratio, diving the MATIC share by the MATIC involved in the staking.
+
+4. Sends a ratio update request to `aMATICb::function updateRatioAndFee(uint256 newRatio, uint256 newFee)`.
+
 
 
 ## Unstaking workflow
@@ -135,7 +147,7 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 
 Frontend gets the unstake fee information from Ankr backend:
 
-4. Ankr Staking Dashboard calls Ankr smart contract to approve the transfer fee in Ankr tokens from the user address to the PolygonPool smart contract address. The fee is needed to compensate Ankr for the unstaking expenses.
+4. Ankr Staking Dashboard calls Ankr smart contract to approve the transfer fee in ANKR tokens from the user address to the `PolygonPool` smart contract address. The fee is needed to compensate Ankr for the unstaking expenses.
 
 5. For aMATICb, Ankr Staking Dashboard calls `PolygonPool::unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)` to unstake the specified amount of MATIC. For aMATICc, it's `PolygonPool::unstakeCerts(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)`.  
 
