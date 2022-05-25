@@ -70,4 +70,4 @@ You can check all available DeFi platforms and options on [ANKR DeFi](https://ww
 
 ### Can I get staking metrics for my integration?
 
-Yes, if you want to integrate Ankr Liquid Staking into your product, read read [Liquid Staking Metrics](htpps://ankr.com/docs/staking/reference/staking-metrics).
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).
