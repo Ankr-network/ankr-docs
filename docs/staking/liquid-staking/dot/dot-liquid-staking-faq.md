@@ -67,3 +67,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 ### Is there any liquidity for aDOTb anywhere currently?
 
 You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aDOTb&to=DOT).
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read read [Liquid Staking Metrics](htpps://ankr.com/docs/staking/reference/staking-metrics).

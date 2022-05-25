@@ -83,3 +83,7 @@ You can check all available DeFi platforms on ANKR DeFi:
 
 * [aBNBb](https://www.ankr.com/staking/defi/trade/?from=aBNBb&to=BNB) 
 * aBNBc (coming soon)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read read [Liquid Staking Metrics](htpps://ankr.com/docs/staking/reference/staking-metrics).
