@@ -158,8 +158,8 @@ Unstakes aBNBc and gets BNB for the unstaked aBNBc.
 * [Mainnet live transaction example](https://bscscan.com/tx/0x5c610a2569f06592c82b5b239c23b37a2ecee6115d899024b0a7bdebb02f392e)
 * [Testnet live transaction example](https://testnet.bscscan.com/tx/0x71f95dfcfe5543777ada8900551585c124bcbbd5a52ec76d930c957e7227515f)
 
+## Get staking metrics
 
-
-
+To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).
 
 

@@ -68,3 +68,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 * [aFTMb](https://www.ankr.com/staking/defi/trade/?from=aFTMb&to=FTM) 
 * aFTMc (coming soon)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).

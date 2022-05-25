@@ -73,3 +73,7 @@ You can check all available DeFi platforms on ANKR DeFi:
 
 * [aAVAXb](https://www.ankr.com/staking/defi/trade/?from=aAVAXb&to=AVAX) 
 * aAVAXc (coming soon)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).

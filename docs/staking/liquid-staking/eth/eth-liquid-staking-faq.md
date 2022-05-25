@@ -74,3 +74,7 @@ You can check all available DeFi platforms on ANKR DeFi:
 
 * [aETHb](https://www.ankr.com/staking/defi/trade/?from=aETHb&to=ETH) 
 * [aETHc](https://www.ankr.com/staking/defi/trade/?from=aETHc&to=ETH)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).
