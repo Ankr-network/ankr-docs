@@ -47,7 +47,8 @@ Instead, it appreciates in value, as the redemption ratio grows because of rewar
 
 ### How soon after staking will I begin to receive rewards?
 
-aBNBb will increase in number with every rebase; rebasing occurs daily. aBNBc will increase in value, daily.
+aBNBb will increase in number with every rebase; rebasing occurs daily. 
+aBNBc rewards are built into the token. Effectively, your rewards accumulate daily as aMATICc grows in value to BNB.
 
 
 ### Does Ankr charge for the service?
@@ -66,7 +67,7 @@ Ankr aims to spread delegations to only the most trustworthy and reliable nodes 
 
 ### If I click **Unstake**, does my stake immediately stop accumulating rewards?
 
-It depends on the staked asset. For BNB Liquid Staking, your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
+Your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
 
  
 ### Is there any risk from staking, like slashing or any penalties?
@@ -76,7 +77,7 @@ Slashing is a protocol-level penalty associated with a validator failure if it v
 The delegated staked BNB is not slashed — slashing impacts only the self-stake of the validator. 
 Ankr only delegates to trusted and reputable validator nodes to avoid any validator that would act maliciously.
 
-### Is there any liquidity for aBNBb anywhere currently?
+### Is there any liquidity for aBNBb/aBNBc anywhere currently?
 
 You can check all available DeFi platforms on ANKR DeFi:
 

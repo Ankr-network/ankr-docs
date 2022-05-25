@@ -99,7 +99,7 @@ GET https://api.dev.stkr.io/v1alpha/polygon/unstakeFee?address=0x000000000000000
 
 #### `approve(spender, value)`
 
-Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay fees when unstaking aMATICc).
+Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay fees when unstaking aMATICb).
 
 ##### Parameters
 * `spender` (address, required) — address of the `PolygonPool` contract.
@@ -117,7 +117,7 @@ Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay f
 
 #### `unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes signature)`
 
-Lets the `PolygonPool` smart contract transfer user's ANKR tokens (needed to pay fees when unstaking aMATICb).
+Lets the `PolygonPool` to exchange aMATICb for MATIC.
 
 ##### Parameters
 * `amount` (uint256, required) — amount aMATICc to be unstake.
@@ -197,7 +197,7 @@ Approves the `aMATICb` smart contract to transfer user's aMATICc tokens to itsel
 
 #### `unstakeCerts(uint256 shares, uint256 fee, uint256 useBeforeBlock, bytes signature)`
 
-Lets the `PolygonPool` smart contract transfer user's ANKR tokens (needed to pay fees when unstaking aMATICc).
+Lets the `PolygonPool` to exchange aMATICc for MATIC.
 
 ##### Parameters
 * `shares` (uint256, required) — amount aMATICc to be unstake.

@@ -36,14 +36,16 @@ Currently, there is no unbonding period, as there is no unstaking for ETH. This 
 ### How do I receive rewards? 
 
 aETHb is a rebasing token. When holding aETHb, your balance will increase in proportion to your ETH staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aETHb increase by a small amount. 
-aETHc, though, does not change in quantity but will appreciate in value, daily.
+aETHc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. 
+Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+
 Mind that to pull out your rewards, you’ll need to sell aETHb/aETHc on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
 
 
 ### How soon after staking will I begin to receive rewards?
 
 aETHb will increase with every rebase; rebasing occurs daily. aETHc will increase in value only, daily. 
-
+aETHc rewards are built into the token. Effectively, your rewards accumulate daily as aETHc grows in value to ETH.
 
 ### Does Ankr charge for the service?
 
@@ -68,4 +70,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 ### Is there any liquidity for aETHb/aETHc anywhere currently?
 
-You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aETHb&to=ETH).
+You can check all available DeFi platforms on ANKR DeFi:
+
+* [aETHb](https://www.ankr.com/staking/defi/trade/?from=aETHb&to=ETH) 
+* [aETHc](https://www.ankr.com/staking/defi/trade/?from=aETHc&to=ETH)
