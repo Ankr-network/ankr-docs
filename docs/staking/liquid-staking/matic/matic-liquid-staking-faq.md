@@ -3,8 +3,7 @@ title: FAQ
 id: faq
 ---
 
-
-### How can I set up my walelt and stake MATIC?
+### How can I set up my wallet and stake MATIC?
 
 Check the [Stake MATIC](https://www.ankr.com/docs/staking/liquid-staking/matic/stake-matic) user guide.
 
@@ -19,19 +18,19 @@ Check the [Stake MATIC](https://www.ankr.com/docs/staking/liquid-staking/matic/s
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aMATICb?
+### What is the unbonding period for aMATICb/aMATICc?
 
 80 epochs and more depending on the network congestion. Typically, it takes around 1–2 days to receive your unstaked MATIC.
 
 
 ### How do I receive rewards? 
 
-If you hold aMATICb, your balance will increase in proportion to your MATIC staking rewards. 
+aMATICb is a rebasing token. When holding aMATICb, your balance will increase in proportion to your MATIC staking rewards. 
 A rebase runs daily, and rewards occur each time this runs. 
-So each day, you will see the quantity of your aMATICb increase by a small amount.
-You can see the increased amount on the Ankr Staking dashboard and in your wallet, assuming you added aMATICb to it.
+So each day, you will see the quantity of your aMATICb increase by a small amount. 
 
-If you hold aMATICc, balance stays the same but the token grows in value daily to MATIC. When you decide to unstake it, you will get more MATIC than when initially staking.
+aMATICc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. 
+Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
@@ -52,7 +51,7 @@ Ankr aims to spread delegations to only the most trustworthy and reliable nodes 
 
 ### If I click **Unstake**, does my stake immediately stop accumulating rewards?
 
-It depends on the staked asset. For MATIC Liquid Staking, your stake **continues** to accumulate rewards until the moment you receive them.
+Your stake **continues** to accumulate rewards until the moment you receive them.
 
 
 ### Is there any risk from staking, like slashing or any penalties?
@@ -65,5 +64,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 ### Is there any liquidity for aMATICb/aMATICc anywhere currently?
 
-For aAMTICb, you can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aMATICb&to=MATIC).
-aMATICc support is coming soon.
+You can check all available DeFi platforms on ANKR DeFi:
+
+* [aMATICb](https://www.ankr.com/staking/defi/trade/?from=aMATICb&to=MATIC) 
+* aMATICc (coming soon)
