@@ -1,9 +1,9 @@
 ---
-title: Pay as you go
+title: Pay as You Go
 id: pay-as-you-go
 ---
 
-# Access Ankr Protocol Premium plan and Pay-as-you-go
+# Access Ankr Protocol premium plan and pay-as-you-go
 Introducing pay-as-you-go, a usage-based pricing that enables Ankr Protocol users to pay for each request they make to blockchain without having to overpay for any annual subscriptions. To get started with the premium features, all you have to do is make a minimum deposit of 1000 ANKR tokens and create Ankr Protocol's premium account.
 
 ## How does it work?
