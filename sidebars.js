@@ -5,6 +5,7 @@ module.exports =
       Build: [
         'build-blockchain/overview',
         'build-blockchain/concepts/pricing',
+        'build-blockchain/concepts/pay-as-you-go-general',
         {
           'Products v2': [
             'build-blockchain/products/v2/public-rpc',
