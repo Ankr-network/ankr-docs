@@ -4,10 +4,10 @@ id: pay-as-you-go
 ---
 
 # Access Ankr Protocol Premium plan and Pay-as-you-go
-Introducing pay-as-you-go, a usage-based pricing that enables Ankr Protocol users to pay for each request they make to blockchain without having to overpay for any annual subscriptions. To get started with the premium features, all you have to is make a minimum deposit of 1000 ANKR tokens to create Ankr Protocol's premium account.
+Introducing pay-as-you-go, a usage-based pricing that enables Ankr Protocol users to pay for each request they make to blockchain without having to overpay for any annual subscriptions. To get started with the premium features, all you have to do is make a minimum deposit of 1000 ANKR tokens and create Ankr Protocol's premium account.
 
 ## How does it work?
-We have created a system in which each request sent through an endpoint will costs a certain number of units called "credits". Depositing one ANKR token will give you a credit score of 1,000,000. You can always interchange your credits with the ANKR token. For example, if after depositing you decide that you don't want this much of loan, you can always withdraw your tokens back at the same rate.
+We have created a system in which each request sent through an endpoint will costs a certain number of units called "credits." Depositing one ANKR token will give you a credit score of 1,000,000. You can always interchange your credits with the ANKR token. For example, if after depositing you decide that you don't want this much of loan, you can always withdraw your tokens back at the same rate.
 
 :::danger Warning
 The withdrawal function is under development, it will be live in the next release.
