@@ -1,9 +1,9 @@
 ---
-title: Staking Mechanics
+title: AVAX Staking Mechanics
 id: staking-mechanics
 ---
 
-# Staking mechanics
+# AVAX staking mechanics
 
 AVAX Liquid Staking lets the user stake their funds through the Ankr deposit address on the Avalanche network, accumulate rewards, and receive their stake+rewards when unstaking.
 

@@ -1,9 +1,9 @@
 ---
-title: Development Details
-id: dev-details
+title: BNB Liquid Staking
+id: api
 ---
 
-# Development details
+# BNB Liquid Staking API
 
 To integrate with BNB Liquid Staking, use the functions, smart contract addresses, and examples below. 
 
