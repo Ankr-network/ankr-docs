@@ -3,34 +3,28 @@ title: Pay as you go
 id: pay-as-you-go
 ---
 
-# Use premium plan and pay as you go
-To start using all the premium features, make a minimum deposit of 1000 ANKR tokens and create an Ankr Protocol premium account.
+# Access Ankr Protocol Premium plan and Pay-as-you-go
+Introducing pay-as-you-go, a usage-based pricing that enables Ankr Protocol users to pay for each request they make to blockchain without having to overpay for any annual subscriptions. To get started with the premium features, all you have to is make a minimum deposit of 1000 ANKR tokens to create Ankr Protocol's premium account.
 
-## General concept
+## How does it work?
+We have created a system in which each request sent through an endpoint will costs a certain number of units called "credits". Depositing one ANKR token will give you a credit score of 1,000,000. You can always interchange your credits with the ANKR token. For example, if after depositing you decide that you don't want this much of loan, you can always withdraw your tokens back at the same rate.
 
-We have created a system in which each request sent through an endpoint costs a certain number of units called credits.
-
-One ANKR token you deposit gives you 1,000,000 credits.
-
-If after depositing you decide that you do not need so many loans, then you can withdraw your tokens back at the same rate
 :::danger Warning
-The withdrawal function is under development and testing, it will be available to all users in the next release
-
+The withdrawal function is under development, it will be live in the next release.
 :::
-## Do you first deposit
 
-Connect your wallet at [Protocol page](https://www.ankr.com/protocol/) page.
+## How to get started?
 
-Visit your [Account details](https://www.ankr.com/protocol/account/) section in sidebar
+1. Connect your wallet to the [Ankr Protocol](https://www.ankr.com/protocol/) page
+2. Explore the [Account Details](https://www.ankr.com/protocol/account/) section in sidebar
+3. Top up the account with the desired amount of ANKR tokens
+4. Wait for our system to generate personal endpoints for you
 
-Do a top up for desired amount of ANKR tokens
-
-Our system will generate your personal endpoints
 ## Pricing
 
-At the moment, our pricing is set several times lower than our competition. Use the full functionality of a geographically distributed load balancer for blockchain nodes for a fraction of the price.
+At Ankr, we are set to provide developers with pricing that is several times lower than what is being offered in the market - all while accessing a full functionality of geographically distributed load balancer for a fraction of the price.
 
-Below you could find prices for blockchain that support standard EVM methods. For all other methods and blockchains price set to 100 credits.
+Below you can find the price point for blockchains that support standard EVM methods. For all other methods and blockchains, the default price is set to 100 credits.
 
 | Method                                   | Ankr Credits |
 |------------------------------------------| ------------ |
@@ -67,7 +61,8 @@ Below you could find prices for blockchain that support standard EVM methods. Fo
 | eth\_newBlockFilter                      | 200          |
 | eth\_getBalance                          | 200          |
 | eth\_getStorageAt                        | 200          |
+
 ## Future development
+More features are coming soon!
 
-More useful features are coming soon! See granular usage when developing your dApps,  statistics, Advanced APIs, notifications, creating access lists, and much more.
-
+Hint: Support for granular usage for developing dApps, statistics, Advanced APIs, notifications, access lists, and much more.
