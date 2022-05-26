@@ -420,6 +420,12 @@ module.exports =
                'staking/api-overview',
                'staking/liquid-staking/bnb/api',
                'staking/liquid-staking/matic/api',
+               'staking/reference/staking-metrics',
+                 ],
+             },
+            {
+             'SDK': [
+                'staking/liquid-crowdloan/sdk',
                  ],
              },
              {
@@ -436,17 +442,11 @@ module.exports =
                'staking/bridge/bridge-mechanics',
                ],
              },
-            {
-             'Liquid Crownload SDK': [
-                'staking/liquid-crowdloan/sdk',
-                 ],
-             },
              {
             'Reference': [
                 'staking/reference/glossary',
                 'staking/reference/principles',
                 'staking/reference/audit-reports',
-                'staking/reference/staking-metrics',
                 'staking/reference/ls-smart-contract-addresses-mn',
                 'staking/reference/ls-smart-contract-addresses-tn',
                 'staking/reference/compatible-wallets',

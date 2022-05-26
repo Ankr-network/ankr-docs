@@ -1,9 +1,9 @@
 ---
-title: Overview
+title: Liquid Crowdloan SDK
 id: sdk
 ---
 
-# Overview
+# Liquid Crowdloan SDK
 
 Ankr’s new Software Development Kit (SDK) integrates Parachain Liquid Crowdloan into Parachain Crowdloan.
 

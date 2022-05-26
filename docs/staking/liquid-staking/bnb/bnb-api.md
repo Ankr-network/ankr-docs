@@ -1,5 +1,5 @@
 ---
-title: BNB Liquid Staking
+title: BNB Liquid Staking API
 id: api
 ---
 

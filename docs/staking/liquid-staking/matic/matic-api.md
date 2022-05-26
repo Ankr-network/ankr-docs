@@ -1,5 +1,5 @@
 ---
-title: MATIC Liquid Staking
+title: MATIC Liquid Staking API
 id: api
 ---
 
