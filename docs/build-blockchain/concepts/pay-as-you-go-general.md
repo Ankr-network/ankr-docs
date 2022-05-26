@@ -1,6 +1,6 @@
 ---
 title: Pay as you go
-id: pay-as-you-go-general
+id: pay-as-you-go
 ---
 
 # Use premium plan and pay as you go
