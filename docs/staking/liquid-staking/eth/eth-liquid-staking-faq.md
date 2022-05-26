@@ -23,6 +23,11 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited. You should know that currently staking starts once 32 ETH are accumulated, so if your stake is >32 ETH, it’ll be divided into chunks and the rule will apply to each of them. 
 
 
+### When can I unstake?
+
+There is no unstaking mechanism for ETH right now. We're all waiting for Ethereum 2.0 to implement it. 
+
+
 ### What is the unbonding period for aETHb/aETHc?
 
 Currently, there is no unbonding period, as there is no unstaking for ETH. This functionality is to be implemented by the Ethereum team in future updates.
@@ -31,14 +36,16 @@ Currently, there is no unbonding period, as there is no unstaking for ETH. This 
 ### How do I receive rewards? 
 
 aETHb is a rebasing token. When holding aETHb, your balance will increase in proportion to your ETH staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aETHb increase by a small amount. 
-aETHc, though, does not change in quantity but will appreciate in value, daily.
+aETHc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. 
+Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+
 Mind that to pull out your rewards, you’ll need to sell aETHb/aETHc on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
 
 
 ### How soon after staking will I begin to receive rewards?
 
 aETHb will increase with every rebase; rebasing occurs daily. aETHc will increase in value only, daily. 
-
+aETHc rewards are built into the token. Effectively, your rewards accumulate daily as aETHc grows in value to ETH.
 
 ### Does Ankr charge for the service?
 
@@ -51,7 +58,7 @@ Ankr's income comes from running one of the several validator nodes that will be
 
 Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to and how much ETH is validated on the network. The less ETH is staked, the higher the rewards to incentivize more ETH to come online, and vice versa. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards. 
 View the [current amount of staked ETH](https://launchpad.ethereum.org/).
- 
+
 
 ### Is there any risk from staking, like slashing or any penalties?
 
@@ -63,4 +70,11 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 ### Is there any liquidity for aETHb/aETHc anywhere currently?
 
-You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aETHb&to=ETH).
+You can check all available DeFi platforms on ANKR DeFi:
+
+* [aETHb](https://www.ankr.com/staking/defi/trade/?from=aETHb&to=ETH) 
+* [aETHc](https://www.ankr.com/staking/defi/trade/?from=aETHc&to=ETH)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).

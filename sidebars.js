@@ -56,7 +56,7 @@ module.exports =
           ],
         },
         {
-            'BSC Application Sidechain': [
+            'BNB Application Sidechain': [
             'build-blockchain/bas/overview',
             {
                 'Architecture': [
@@ -425,6 +425,7 @@ module.exports =
             'staking/reference/staking-glossary',
             'staking/reference/staking-principles',
             'staking/reference/audit-reports',
+            'staking/reference/staking-metrics',
             'staking/reference/ls-smart-contract-addresses-mn',
             'staking/reference/ls-smart-contract-addresses-tn',
             'staking/reference/staking-compatible-wallets',
@@ -452,10 +453,12 @@ module.exports =
               'game/unity/getting-started/game-04',
             ],
           },
+          'game/unity/interface',
           {
              'How to...': [
               'game/unity/how-tos/wallet-game',
-              'game/unity/how-tos/subscribe-game'
+              'game/unity/how-tos/subscribe-game',
+              'game/unity/how-tos/switch-to-webgl',
             ],
           },
         ],

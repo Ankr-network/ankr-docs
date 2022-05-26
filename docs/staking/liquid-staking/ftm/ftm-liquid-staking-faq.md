@@ -3,9 +3,9 @@ title: FAQ
 id: faq
 ---
 
-### Which wallets are compatible with the aFTMb tokens?
+### Which wallets are compatible with the aFTMb/aFTMc tokens?
 
-aFTMb is an ERC-20 token that is compatible with Ethereum-based wallets like Metamask.
+aFTMb/aFTMc is an ERC-20 token that is compatible with Ethereum-based wallets like Metamask.
 
 
 ### Are there any docs about the FTM staking and how I set up my wallet etc.?
@@ -23,7 +23,7 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aFTMb?
+### What is the unbonding period for aFTMb/aFTMc?
 
 You receive the unstaked amount after the unbonding period of up to 35 days.
 
@@ -34,10 +34,14 @@ aFTMb is a rebasing token. When holding aFTMb, your balance will increase in pro
 A rebase runs daily, and rewards occur each time this runs. 
 So each day, you will see the quantity of your aFTMb increase by a small amount. 
 
+aFTMc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. 
+Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+
 
 ### How soon after staking will I begin to receive rewards?
 
 aFTMb will increase with every rebase; rebasing occurs daily. 
+aFTMc rewards are built into the token. Effectively, your rewards accumulate daily as aFTMc grows in value to FTM.
 
 
 ### Does Ankr charge for the service?
@@ -50,6 +54,9 @@ When unstaking, users pay a burn fee that depends on the current liquidity and a
 Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to.
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
  
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+Your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
 
 ### Is there any risk from staking, like slashing or any penalties?
 
@@ -59,4 +66,9 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 ### Is there any liquidity for aFTMb anywhere currently?
 
-You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aFTMb&to=FTM).
+* [aFTMb](https://www.ankr.com/staking/defi/trade/?from=aFTMb&to=FTM) 
+* aFTMc (coming soon)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).

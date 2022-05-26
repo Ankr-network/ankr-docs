@@ -25,7 +25,7 @@ No, you can stake at your discretion, unlimited.
 
 ### What is the unbonding period for aKSMb?
 
-You receive the unstaked amount after the unbonding period of up to 28 days.
+You receive the unstaked amount after the unbonding period of up to 7 days.
 
 
 ### How do I receive rewards? 
@@ -49,7 +49,12 @@ aKSMb will increase with every rebase; rebasing occurs daily.
 
 Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to.
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
+
  
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+Your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
+
 
 ### Is there any risk from staking, like slashing or any penalties?
 
@@ -62,3 +67,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 ### Is there any liquidity for aKSMb anywhere currently?
 
 You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aKSMb&to=KSM).
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).

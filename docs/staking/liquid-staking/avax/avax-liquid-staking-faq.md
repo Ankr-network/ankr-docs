@@ -3,9 +3,9 @@ title: FAQ
 id: faq
 ---
 
-### Which wallets are compatible with the aAVAXb tokens?
+### Which wallets are compatible with the aAVAXb/aAVAXc tokens?
 
-aAVAXb is an ERC-20 token that is compatible with Ethereum-based wallets like Metamask.
+aAVAXb/aAVAXc is an ERC-20 token that is compatible with Ethereum-based wallets like Metamask.
 
 
 ### Are there any docs about the AVAX staking and how I set up my wallet etc.?
@@ -23,9 +23,9 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aAVAXb?
+### What is the unbonding period for aAVAXb/aAVAXc?
 
-You receive the unstaked amount after the end of the current validating period. A validating period is 4 weeks.
+You receive the unstaked amount of AVAX after the end of the current validating period. A validating period is 4 weeks.
 
 
 ### How do I receive rewards? 
@@ -34,10 +34,13 @@ aAVAXb is a rebasing token. When holding aAVAXb, your balance will increase in p
 A rebase runs daily, and rewards occur each time this runs. 
 So each day, you will see the quantity of your aAVAXb increase by a small amount. 
 
+aAVAXc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. 
+Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
-aAVAXb will increase with every rebase; rebasing occurs daily. 
+aAVAXb will increase in number with every rebase; rebasing occurs daily. 
+aAVAXc rewards are built into the token. Effectively, your rewards accumulate daily as aAVAXc grows in value to AVAX.
 
 
 ### Does Ankr charge for the service?
@@ -51,6 +54,11 @@ Staking rewards depend mostly on the voting power of the validator node that you
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
  
 
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+Your stake **continues** to accumulate rewards until the moment you receive them.
+
+
 ### Is there any risk from staking, like slashing or any penalties?
 
 The only risk for stakers is missing out on rewards during any time a validator they staked with is slashed. 
@@ -59,6 +67,13 @@ The delegated staked AVAX is not slashed — slashing impacts only the self-stak
 Ankr only delegates to trusted and reputable validator nodes to avoid any validator that would act maliciously.
 
 
-### Is there any liquidity for aAVAXb anywhere currently?
+### Is there any liquidity for aAVAXb/aAVAXc anywhere currently?
 
-You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aAVAXb&to=AVAX).
+You can check all available DeFi platforms on ANKR DeFi:
+
+* [aAVAXb](https://www.ankr.com/staking/defi/trade/?from=aAVAXb&to=AVAX) 
+* aAVAXc (coming soon)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).

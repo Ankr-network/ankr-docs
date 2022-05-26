@@ -47,7 +47,8 @@ Instead, it appreciates in value, as the redemption ratio grows because of rewar
 
 ### How soon after staking will I begin to receive rewards?
 
-aBNBb will increase in number with every rebase; rebasing occurs daily. aBNBc will increase in value, daily.
+aBNBb will increase in number with every rebase; rebasing occurs daily. 
+aBNBc rewards are built into the token. Effectively, your rewards accumulate daily as aMATICc grows in value to BNB.
 
 
 ### Does Ankr charge for the service?
@@ -62,8 +63,13 @@ You must also count in the gas price for outgoing transactions.
 Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to and how much BNB is validated on the network. 
 The less BNB is staked on the network, the higher the rewards to incentivize more BNB to come online, and vice versa. 
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards. 
- 
 
+
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+Your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
+
+ 
 ### Is there any risk from staking, like slashing or any penalties?
 
 The only risk for stakers is missing out on rewards during any time a validator they staked with is “in jail” (slashed). 
@@ -71,9 +77,13 @@ Slashing is a protocol-level penalty associated with a validator failure if it v
 The delegated staked BNB is not slashed — slashing impacts only the self-stake of the validator. 
 Ankr only delegates to trusted and reputable validator nodes to avoid any validator that would act maliciously.
 
-### Is there any liquidity for aBNBb anywhere currently?
+### Is there any liquidity for aBNBb/aBNBc anywhere currently?
 
 You can check all available DeFi platforms on ANKR DeFi:
 
 * [aBNBb](https://www.ankr.com/staking/defi/trade/?from=aBNBb&to=BNB) 
 * aBNBc (coming soon)
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).

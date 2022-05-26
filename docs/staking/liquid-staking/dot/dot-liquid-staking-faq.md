@@ -25,7 +25,7 @@ No, you can stake at your discretion, unlimited.
 
 ### What is the unbonding period for aDOTb?
 
-You receive the unstaked amount after the unbonding period of up to 7 days.
+You receive the unstaked amount after the unbonding period of up to 28 days.
 
 
 ### How do I receive rewards? 
@@ -51,6 +51,11 @@ Staking rewards depend mostly on the voting power of the validator node that you
 Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
  
 
+### If I click **Unstake**, does my stake immediately stop accumulating rewards?
+
+Your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
+
+
 ### Is there any risk from staking, like slashing or any penalties?
 
 The only risk for stakers is missing out on rewards during any time a validator they staked with is slashed. 
@@ -62,3 +67,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 ### Is there any liquidity for aDOTb anywhere currently?
 
 You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aDOTb&to=DOT).
+
+### Can I get staking metrics for my integration?
+
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).
