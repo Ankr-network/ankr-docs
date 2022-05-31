@@ -1,9 +1,9 @@
 ---
-title: Development Details
-id: dev-details
+title: MATIC Liquid Staking API
+id: api
 ---
 
-# Development details
+# MATIC Liquid Staking API
 
 To integrate with MATIC Liquid Staking, use the functions, smart contract addresses, and examples below.
 

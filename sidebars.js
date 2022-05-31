@@ -325,13 +325,15 @@ module.exports =
   earnSidebar: {
     'Staking': [
      'staking/overview',
+    {
+    'For Stakers': [
+
         {
           'Liquid Staking': [
             'staking/liquid-staking/overview',
             {
               'AVAX': [
                 'staking/liquid-staking/avax/overview',
-                'staking/liquid-staking/avax/staking-mechanics',
                 'staking/liquid-staking/avax/stake-avax',
                 'staking/liquid-staking/avax/unstake-avax',
                 'staking/liquid-staking/avax/faq',
@@ -340,8 +342,6 @@ module.exports =
             {
               'BNB': [
                 'staking/liquid-staking/bnb/overview',
-                'staking/liquid-staking/bnb/staking-mechanics',
-                'staking/liquid-staking/bnb/dev-details',
                 'staking/liquid-staking/bnb/stake-bnb',
                 'staking/liquid-staking/bnb/unstake-bnb',
                 'staking/liquid-staking/bnb/faq',
@@ -349,8 +349,7 @@ module.exports =
             },
             {
               'DOT': [
-               'staking/liquid-staking/dot/overview',
-                'staking/liquid-staking/dot/staking-mechanics',
+                'staking/liquid-staking/dot/overview',
                 'staking/liquid-staking/dot/stake-dot',
                 'staking/liquid-staking/dot/unstake-dot',
                 'staking/liquid-staking/dot/faq',
@@ -358,8 +357,7 @@ module.exports =
             },
             {
               'ETH': [
-               'staking/liquid-staking/eth/overview',
-                'staking/liquid-staking/eth/staking-mechanics',
+                'staking/liquid-staking/eth/overview',
                 'staking/liquid-staking/eth/stake-eth',
                 'staking/liquid-staking/eth/unstake-eth',
                 'staking/liquid-staking/eth/faq',
@@ -368,7 +366,6 @@ module.exports =
             {
               'FTM': [
                 'staking/liquid-staking/ftm/overview',
-                'staking/liquid-staking/ftm/staking-mechanics',
                 'staking/liquid-staking/ftm/stake-ftm',
                 'staking/liquid-staking/ftm/unstake-ftm',
                 'staking/liquid-staking/ftm/faq',
@@ -376,8 +373,7 @@ module.exports =
             },
             {
               'KSM': [
-               'staking/liquid-staking/ksm/overview',
-                'staking/liquid-staking/ksm/staking-mechanics',
+                'staking/liquid-staking/ksm/overview',
                 'staking/liquid-staking/ksm/stake-ksm',
                 'staking/liquid-staking/ksm/unstake-ksm',
                 'staking/liquid-staking/ksm/faq',
@@ -385,9 +381,7 @@ module.exports =
             },
             {
               'MATIC': [
-               'staking/liquid-staking/matic/overview',
-                'staking/liquid-staking/matic/staking-mechanics',
-                'staking/liquid-staking/matic/dev-details',
+                'staking/liquid-staking/matic/overview',
                 'staking/liquid-staking/matic/stake-matic',
                 'staking/liquid-staking/matic/unstake-matic',
                 'staking/liquid-staking/matic/faq',
@@ -405,14 +399,12 @@ module.exports =
         {
           'Bridge': [
            'staking/bridge/overview',
-           'staking/bridge/bridge-mechanics',
-            'staking/bridge/bridge-tokens'
+           'staking/bridge/bridge-tokens'
           ],
         },
         {
           'Switch': [
             'staking/switch/overview',
-            'staking/switch/switch-mechanics'
           ],
         },
         {
@@ -420,20 +412,51 @@ module.exports =
             'staking/liquid-crowdloan/overview',
           ],
         },
-        {
-          'Reference': [
-            'staking/reference/staking-glossary',
-            'staking/reference/staking-principles',
-            'staking/reference/audit-reports',
-            'staking/reference/staking-metrics',
-            'staking/reference/ls-smart-contract-addresses-mn',
-            'staking/reference/ls-smart-contract-addresses-tn',
-            'staking/reference/staking-compatible-wallets',
-            'staking/reference/micropools',
-            'staking/reference/liquid-crowdloan-market-makers',
-            'staking/reference/parachain-sdk',
-            'staking/reference/brand-assets',
           ],
+        },
+        {
+         'For Integrators': [
+            {
+             'API': [
+               'staking/api-overview',
+               'staking/liquid-staking/bnb/api',
+               'staking/liquid-staking/matic/api',
+               'staking/reference/staking-metrics',
+                 ],
+             },
+            {
+             'SDK': [
+                'staking/liquid-crowdloan/sdk',
+                 ],
+             },
+             {
+             'Development details': [
+               'staking/liquid-staking/avax/staking-mechanics',
+               'staking/liquid-staking/bnb/staking-mechanics',
+               'staking/liquid-staking/dot/staking-mechanics',
+               'staking/liquid-staking/eth/staking-mechanics',
+               'staking/liquid-staking/dot/staking-mechanics',
+               'staking/liquid-staking/ftm/staking-mechanics',
+               'staking/liquid-staking/ksm/staking-mechanics',
+               'staking/liquid-staking/matic/staking-mechanics',
+               'staking/switch/switch-mechanics',
+               'staking/bridge/bridge-mechanics',
+               ],
+             },
+             {
+            'Reference': [
+                'staking/reference/glossary',
+                'staking/reference/principles',
+                'staking/reference/audit-reports',
+                'staking/reference/ls-smart-contract-addresses-mn',
+                'staking/reference/ls-smart-contract-addresses-tn',
+                'staking/reference/compatible-wallets',
+                'staking/reference/micropools',
+                'staking/reference/liquid-crowdloan-market-makers',
+                'staking/reference/brand-assets',
+             ],
+            },
+           ],
         },
      ],
   },

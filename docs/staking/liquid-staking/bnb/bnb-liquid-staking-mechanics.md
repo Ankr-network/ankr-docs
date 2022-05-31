@@ -1,9 +1,9 @@
 ---
-title: Staking Mechanics
+title: BNB Staking Mechanics
 id: staking-mechanics
 ---
 
-# Staking mechanics
+# BNB staking mechanics
 
 BNB Liquid Staking lets the user stake their funds through the corresponding smart contracts on the Binance network, accumulate rewards, and receive their stake and rewards when unstaking.
 

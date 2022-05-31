@@ -1,9 +1,9 @@
 ---
-title: Staking Mechanics
+title: ETH Staking Mechanics
 id: staking-mechanics
 ---
 
-# Staking mechanics
+# ETH staking mechanics
 
 ETH Liquid Staking lets the user stake their funds through the corresponding smart contracts on the Ethereum network, accumulate rewards, and receive their stake and rewards when unstaking.
 

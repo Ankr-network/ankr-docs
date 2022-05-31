@@ -1,5 +1,5 @@
 ---
-title: Unstake AVAX in Ankr Staking
+title: Unstake AVAX
 id: unstake-avax
 ---
 

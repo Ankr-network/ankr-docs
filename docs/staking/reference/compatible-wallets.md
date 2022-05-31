@@ -1,6 +1,6 @@
 ---
 title: Compatible Wallets
-id: staking-compatible-wallets
+id: compatible-wallets
 ---
 
 # Compatible wallets
