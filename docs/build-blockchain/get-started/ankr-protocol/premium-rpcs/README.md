@@ -4,7 +4,7 @@
 
 ### Ankr Premium - Developer
 
-Deposit 10000 ANKR for 1 year.&#x20;
+Minimum deposit of 1000 ANKR.&#x20;
 
 {% hint style="info" %}
 NOTE:&#x20;
@@ -19,8 +19,8 @@ Fully refundable if you change your mind within 3 days.
 
 Enjoy the following benefits:&#x20;
 
-* At times of network congestion, Ankr Premium requests are prioritized.&#x20;
-* Establish a durable, low-latency connection via the websocket endpoint and have data pushed incrementally directly to you as soon as it is available. This makes it ideal for real-time data analytics
+- At times of network congestion, Ankr Premium requests are prioritized.&#x20;
+- Establish a durable, low-latency connection via the websocket endpoint and have data pushed incrementally directly to you as soon as it is available. This makes it ideal for real-time data analytics
 
 {% hint style="warning" %}
 BE AWARE:&#x20;

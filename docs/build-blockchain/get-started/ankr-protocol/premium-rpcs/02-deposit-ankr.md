@@ -4,11 +4,11 @@ If you are using Ankr Premium or becoming a Provider, you will need to deposit t
 
 ### Assumptions
 
-*   You have the required amount of ANKR in your MetaMask wallet plus some ETH for transaction fees.&#x20;
+- You have the required amount of ANKR in your MetaMask wallet plus some ETH for transaction fees.&#x20;
 
-    Ankr Premium Developer: 10000 ANKR&#x20;
+  Ankr Premium Developer (minimum deposit): 1000 ANKR&#x20;
 
-    Ankr Premium Project: 30000 ANKR&#x20;
+  Ankr Premium Project: 30000 ANKR&#x20;
 
 If you do not have sufficient ANKR, then check out [How to buy ANKR Tokens](01-get-ready/how-to-buy-ankr-tokens.md) & [How to Transfer ANKR to ](01-get-ready/how-to-transfer-ankr-tokens-to-your-wallet.md)your Wallet or [How to swap crypto for ANKR tokens](01-get-ready/how-to-swap-assets-for-ankr-tokens.md).&#x20;
 
@@ -31,7 +31,7 @@ Wallets use cryptography to generate key pairs: a public and a private key. You 
 
 ### STEP TWO: Perform the Deposit transaction&#x20;
 
-01 Enter the amount you wish to deposit (10000, 30000 or 50000 ANKR)&#x20;
+01 Enter the amount you wish to deposit (1000, 3000 or 5000 ANKR)&#x20;
 
 02 Confirm the transaction&#x20;
 
@@ -45,6 +45,6 @@ Wallets use cryptography to generate key pairs: a public and a private key. You 
 
 05 Finally, disconnect your MetaMask wallet by clicking ‘Decrypt’.&#x20;
 
-You can now access the **Private RPCs page** and get your private_** https and wss endpoints.**_&#x20;
+You can now access the **Private RPCs page** and get your private**_ https and wss endpoints._**&#x20;
 
 ###
