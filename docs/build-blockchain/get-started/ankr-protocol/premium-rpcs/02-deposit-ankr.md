@@ -8,8 +8,6 @@ If you are using Ankr Premium or becoming a Provider, you will need to deposit t
 
   Ankr Premium Developer (minimum deposit): 1000 ANKR&#x20;
 
-  Ankr Premium Project: 30000 ANKR&#x20;
-
 If you do not have sufficient ANKR, then check out [How to buy ANKR Tokens](01-get-ready/how-to-buy-ankr-tokens.md) & [How to Transfer ANKR to ](01-get-ready/how-to-transfer-ankr-tokens-to-your-wallet.md)your Wallet or [How to swap crypto for ANKR tokens](01-get-ready/how-to-swap-assets-for-ankr-tokens.md).&#x20;
 
 ### STEP ONE: Connect Wallet&#x20;
