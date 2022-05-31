@@ -16,11 +16,15 @@ The requirements when staking are:
 
 * Minimum value to stake — 1 AVAX.
 
+* Stake can only be a whole number.
+
 * Maximum value to stake — unlimited, at the user’s discretion.
 
 The requirements when unstaking are:
 
 * Minimum value to unstake — 0 AVAX.
+
+* Unstaking allows fractional numbers.
 
 * Maximum value to unstake — staked amount + % of the reward, up to the user’s balance.
 
@@ -88,8 +92,8 @@ Ankr backend updates the ratio daily and the user can see their updated aAVAXb b
 Unstaking aAVAXb workflow starts from Step 2, while aAVAXc — from Step 1. The workflow is both user and Ankr-driven. The user part is Steps 1-2, the Ankr part is Steps 3–4.
 
 2. The user inputs the number of aAVAXb or aAVAXc on the Ankr Staking Dashboard to unstake, and the frontend:
-   1. For aAVAXb sends a request to the `valanchePool::claimBonds(uint256 amount)` smart contract to claim the AVAX. `amount` specifies the amount AVAX to be released back to the user.
-   2. For aAVAXc For aAVAXc, first sends a request to the `aAVAXc::approve(aAVAXb.address, amount)` to let the `aAVAXb` smart contract transfer the user's Liquid Staking tokens to `aAVAXb` and exchange them to aAVAXb. Second, sends a request to the `valanchePool::claimCerts(uint256 amount)` smart contract to claim the AVAX. `amount` specifies the amount AVAX to be released back to the user.
+   1. For aAVAXb sends a request to the `AvalanchePool::claimBonds(uint256 amount)` smart contract to claim the AVAX. `amount` specifies the amount AVAX to be released back to the user.
+   2. For aAVAXc For aAVAXc, first sends a request to the `aAVAXc::approve(aAVAXb.address, amount)` to let the `aAVAXb` smart contract transfer the user's Liquid Staking tokens to `aAVAXb` and exchange them to aAVAXb. Second, sends a request to the `AvalanchePool::claimCerts(uint256 amount)` smart contract to claim the AVAX. `amount` specifies the amount AVAX to be released back to the user.
    
 3. `AvalanchePool` sends a convert request to the `aAVAXb` smart contract that burns the corresponding amount of aAVAXb. `AvalanchePool` stores the convert request. 
 
