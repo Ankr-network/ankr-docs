@@ -1,6 +1,6 @@
 ---
 title: Staking Glossary
-id: staking-glossary
+id: glossary
 ---
 
 # Staking glossary

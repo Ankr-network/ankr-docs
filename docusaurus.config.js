@@ -136,6 +136,10 @@
                 to: "staking/liquid-crowdloan/overview",
                 label: "Liquid Crowdloan",
               },
+              {
+                to: 'staking/api-overview',
+                label: "API",
+              },
           ],
         },
         {

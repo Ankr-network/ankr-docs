@@ -1,6 +1,6 @@
 ---
 title: Staking Principles
-id: staking-principles
+id: principles
 ---
 
 # Staking principles

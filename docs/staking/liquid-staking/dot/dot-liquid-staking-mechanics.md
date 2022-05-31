@@ -1,8 +1,8 @@
 ---
-title: Staking Mechanics
+title: DOT Staking Mechanics
 id: staking-mechanics
 ---
-# Staking mechanics
+# DOT staking mechanics
 
 DOT Liquid Staking lets the user stake their funds through the Ankr deposit address on the Polkadot network, accumulate rewards, and receive their stake+rewards when unstaking.
 

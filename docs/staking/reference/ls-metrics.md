@@ -1,10 +1,10 @@
 ---
-title: Liquid Staking Metrics
+title: Liquid Staking Metrics API
 id: staking-metrics
 ---
 
 
-# Liquid Staking metrics
+# Liquid Staking metrics API
 
 You can get Ankr Liquid Staking metrics to integrate into your product dashboards and to use metrics like APY in yor product.
 

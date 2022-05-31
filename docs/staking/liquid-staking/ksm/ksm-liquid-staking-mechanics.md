@@ -1,8 +1,8 @@
 ---
-title: Staking Mechanics
+title: KSM Staking Mechanics
 id: staking-mechanics
 ---
-# Staking mechanics
+# KSM staking mechanics
 
 :::note
 Kusama is Polkadot's canary network, so it isn't a typo when you notice `Polkadot` at the end of this document.
