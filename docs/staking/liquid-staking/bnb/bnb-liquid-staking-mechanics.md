@@ -24,7 +24,7 @@ The requirements when unstaking are:
 
 * Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for aBNBc.
 
-* Release time — 7-15 days.
+* Release time — 7-14 days.
 
 
 ## Fees

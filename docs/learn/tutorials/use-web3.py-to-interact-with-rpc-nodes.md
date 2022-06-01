@@ -12,10 +12,12 @@ This tutorial explains how to use the web3.py library to connect and interact wi
 
 You can develop two different types of applications with Ethereum
 
-**1. Smart contracts** 
-- Writing programs that run on the blockchain with the Solidity programming language. 
+**1. Smart contracts**
+
+- Writing programs that run on the blockchain with the Solidity programming language.
 
 **2. Clients**
+
 - Clients that talk to the blockchain - code that reads and writes new transaction data or executes business logic from smart contracts.
 
 Use **web3.py** to do the second.
@@ -26,7 +28,7 @@ By clients, we mean transacting with the blockchain by reading information from 
 
 :::info
 
-“Ethereum node” and “Ethereum client” are used interchangeably. 
+“Ethereum node” and “Ethereum client” are used interchangeably.
 In either case, it refers to the software that a participant in the Ethereum network runs. This software can read block data, receive updates when new blocks are added to the chain ("mined"), broadcast new transactions, and more.
 :::
 
@@ -38,7 +40,7 @@ Web3.py allows us to make RPC API requests to the Ethereum network with JSON RPC
 
 ## 00 - Let's get started
 
-1) **Install Python or verify installation**
+1. **Install Python or verify installation**
 
 We need to use Python3 so let's install it.
 
@@ -85,7 +87,7 @@ https://rpc.ankr.com/eth
 
 :::info
 
-You can also use **10000 ANKR** tokens to access exclusive premium endpoints, websockets and prioritized requests by launching the [**Ankr Protocol app**](https://www.ankr.com/ankr-protocol/) and signing up for the premium plan.
+You can also access exclusive premium endpoints, websockets and prioritized requests by launching the [**Ankr Protocol app**](https://www.ankr.com/ankr-protocol/) and signing up for the premium plan with a minimum deposit of **1000 ANKR** tokens.
 :::
 
 1**. Run the Python Shell**
@@ -94,7 +96,7 @@ You can also use **10000 ANKR** tokens to access exclusive premium endpoints, we
 python3
 ```
 
-:::tip 
+:::tip
 
 You know you are in the shell as you see $.
 You know you are in the console when you see >>>
@@ -136,7 +138,7 @@ Now you can instantiate a live Web3 connection to communicate with the ethereum 
 web3 = Web3(Web3.HTTPProvider(ankr_url))
 ```
 
-**2. **Check you are connected**
+**2. **Check you are connected\*\*
 
 Add the following to your script:
 
@@ -168,12 +170,10 @@ Now we're set up, our instance allows us to get interesting information.
 
 :::tip
 
-The **web3.eth** object exposes the properties and methods to interact with the RPC APIs under the eth_ namespace.
+The **web3.eth** object exposes the properties and methods to interact with the RPC APIs under the eth\_ namespace.
 
 Often, when a property or method returns a mapping of keys to values, it will return an **`AttributeDict`** which acts like a **`dict`** but you can access the keys as attributes and cannot modify its fields.
 :::
-
-
 
 #### Web3.eth.get_block()
 
@@ -191,4 +191,3 @@ Example Response:
 AttriAttributeDict({'difficulty': 735512610763, 'extraData': HexBytes('0x476574682f76312e302e302f6c696e75782f676f312e342e32'), 'gasLimit': 5000, 'gasUsed': 0, 'hash': HexBytes('0x767c2bfb3bdee3f78676c1285cd757bcd5d8c272cef2eb30d9733800a78c0b6d'), 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'miner': '0xad5C1768e5974C231b2148169da064e61910f31a', 'mixHash': HexBytes('0x31d9ec7e3855aeba37fd92aa1639845e70b360a60f77f12eff530429ef8cfcba'), 'nonce': HexBytes('0x549f882c5f356f85'), 'number': 12345, 'parentHash': HexBytes('0x4b3c1d7e65a507b62734feca1ee9f27a5379e318bd52ae62de7ba67dbeac66a3'), 'receiptsRoot': HexBytes('0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421'), 'sha3Uncles': HexBytes('0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347'), 'size': 539, 'stateRoot': HexBytes('0xca495e22ed6b88c61714d129dbc8c94f5bf966ac581c09a57c0a72d0e55e7286'), 'timestamp': 1438367030, 'totalDifficulty': 3862140487204603, 'transactions': [], 'transactionsRoot': HexBytes('0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421'), 'uncles': []})
 
 ```
-
