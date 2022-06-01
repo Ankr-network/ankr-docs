@@ -468,18 +468,22 @@ module.exports =
           'game/unity/about-unity',
           'game/unity/setting-up',
           {
-             'Get Started': [
-              'game/unity/getting-started/game-00',
-              'game/unity/getting-started/game-01',
-              'game/unity/getting-started/game-02',
-              'game/unity/getting-started/game-03',
-              'game/unity/getting-started/game-04',
+             'Getting Started': [
+              'game/unity/getting-started/before-you-start',
+              'game/unity/getting-started/connect-wallet',
             ],
           },
-          'game/unity/interface',
+          {
+             'Interacting with Blockchain': [
+              'game/unity/interacting-with-blockchain/avialable-interfaces',
+              'game/unity/interacting-with-blockchain/interact-with-smart-contract',
+              'game/unity/interacting-with-blockchain/mint-nft',
+              'game/unity/interacting-with-blockchain/read-nft',
+              'game/unity/interacting-with-blockchain/update-nft',
+            ],
+          },
           {
              'How to...': [
-              'game/unity/how-tos/wallet-game',
               'game/unity/how-tos/subscribe-game',
               'game/unity/how-tos/switch-to-webgl',
             ],

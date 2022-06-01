@@ -83,7 +83,7 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 ```
 The response is a 'ticket'.
 
-The session saved during `Init` will be used to open MetaMask. Metamask will show a popup to sign or confirm the transaction for that ticket.
+The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
 void UWearableNFTExample::MintItems(FString abi_hash, FString to, FAnkrDelegate Result)
@@ -141,7 +141,7 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 
 The response is a `ticket`. 
 
-The session saved during `Init` will be used to open MetaMask. Metamask will show a popup to sign or confirm the transaction for that ticket.
+The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
 void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOperator, bool approved, FAnkrDelegate Result)
@@ -292,7 +292,7 @@ The following body is sent to POST http://45.77.189.28:5000/send/transaction
 ```json
 { 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["characterId", "tokenAddress"] }
 ```
-The session saved during `Init` will be used to open MetaMask. Metamask will show a popup to sign or confirm the transaction for that ticket.
+The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
 
 ```c++
 void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasHat, FString hatAddress, FAnkrDelegate Result)

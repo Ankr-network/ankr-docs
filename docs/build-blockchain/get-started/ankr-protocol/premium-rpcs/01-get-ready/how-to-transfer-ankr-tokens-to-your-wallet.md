@@ -24,7 +24,7 @@ We are continuing to use Kraken to demonstrate.
 
 This is known as **whitelisting**.&#x20;
 
-Follow these instructions to whitelist your Metamask Wallet Address. [https://support.kraken.com/hc/en-us/articles/360000672863](https://support.kraken.com/hc/en-us/articles/360000672863)
+Follow these instructions to whitelist your MetaMask Wallet Address. [https://support.kraken.com/hc/en-us/articles/360000672863](https://support.kraken.com/hc/en-us/articles/360000672863)
 
 **02** Sign in to your Kraken account and navigate to "_**Funding**_"
 

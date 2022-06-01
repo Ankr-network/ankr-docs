@@ -1,6 +1,6 @@
 ---
-title: 02 - Read NFT Data
-id: game-02
+title: Read NFT Data
+id: read-nft
 ---
 
 # Read NFT data

@@ -14,7 +14,7 @@ You have a **Polkadot wallet **chrome extension installed.
 
 You have the required amount of DOT you wish to contribute in your Polkadot wallet (chrome extension) plus an amount for gas fees.
 
-You have a Metamask wallet.
+You have a MetaMask wallet.
 :::
 
 ## Install Polkadot wallet

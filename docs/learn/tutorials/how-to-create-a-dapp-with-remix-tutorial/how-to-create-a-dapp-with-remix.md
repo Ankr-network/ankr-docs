@@ -15,7 +15,7 @@ This Tutorial shows how to build  a simple dApp with a smart contract. It is sui
 
 * A code editor e.g. Visual Studio Code. ([Download Visual Studio Code](https://code.visualstudio.com/download))
 * Node JS installed ([Download Node.js](https://nodejs.org/en/download/))
-* A Metamask Wallet ([Download Metamask](https://metamask.io/))
+* A MetaMask Wallet ([Download Metamask](https://metamask.io/))
 
 ## 01 Get Testnet ETH
 
@@ -428,7 +428,7 @@ Install web3 by running the following code:
 
 
 
-1. First create a button to prompt the user to connect their Metamask wallet to our dApp.
+1. First create a button to prompt the user to connect their MetaMask wallet to our dApp.
 
 
 ```
@@ -471,7 +471,7 @@ let contractAddress = '0xd9145CCE52D386f254917e481eB44e9943F39138';
 
 4. Here is a function to make our smart contract call.
 
-`window.ethereum.selectedAddress `is our connected metamask account,
+`window.ethereum.selectedAddress `is our connected MetaMask account,
 
 
 ```
