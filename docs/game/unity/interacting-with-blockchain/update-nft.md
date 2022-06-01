@@ -1,6 +1,6 @@
 ---
-title: 04 - Update an NFT
-id: game-04
+title: Update an NFT
+id: update-nft
 ---
 
 # Update an NFT

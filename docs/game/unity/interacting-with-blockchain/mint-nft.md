@@ -1,6 +1,6 @@
 ---
-title: 03 - Mint a New NFT
-id: game-03
+title: Mint a New NFT
+id: mint-nft
 ---
 
 # Mint a new NFT

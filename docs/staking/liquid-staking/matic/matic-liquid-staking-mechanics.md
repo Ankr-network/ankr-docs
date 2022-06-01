@@ -91,13 +91,13 @@ The workflow is both user and Ankr-driven. The user part is Steps 1–2, the Ank
 
 User calls `Matic::approve(address spender, uint256 amountToSpend)` to approve the chosen MATIC amount to be sent to the `PolygonPool` smart contract.
 
-User sends a request to Ankr `PolygonPool` smart contract on Ethereum, calling `PolygonPool::stake(uint256 amount)`. The request is sent via Ankr Staking and Metamask or another wallet connected to Ethereum.
+User sends a request to Ankr `PolygonPool` smart contract on Ethereum, calling `PolygonPool::stake(uint256 amount)`. The request is sent via Ankr Staking and MetaMask or another wallet connected to Ethereum.
 
 Upon receiving the stake, the `PolygonPool` smart contract calculates the equivalent amount of aMATICb or aMATICc and mints them to the user’s address in the stake transaction.
 
 `PolygonPool` emits a `StakePending(msg.sender, amount)` event.
 
-On the Ankr Staking Dashbaord, the user can import the received aMATICb or aMATICc tokens to Metamask or another wallet connected to Ethereum.
+On the Ankr Staking Dashbaord, the user can import the received aMATICb or aMATICc tokens to MetaMask or another wallet connected to Ethereum.
 
 Ankr backend collects the MATIC staked by users, transferring them from the smart contract to the address controlled by the platform, and makes a validator stake on the Ankr MATIC Validator node if the conditions below are met.
 

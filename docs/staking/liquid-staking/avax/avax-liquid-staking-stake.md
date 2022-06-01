@@ -5,7 +5,7 @@ id: stake-avax
 
 ## Use a supported browser extension with the Avalanche network
 
-The choice is up to you. We recommend using Chrome Browser and Metamask wallet extension.
+The choice is up to you. We recommend using Chrome Browser and MetaMask wallet extension.
 
 ## Get AVAX tokens to stake
 
@@ -30,13 +30,13 @@ There are several ways how to buy AVAX tokens:
 
 ### Send AVAX
 
-Now you can send the AVAX from your Avalanche wallet to your Metamask wallet.
+Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
 
 1. Select "**Send**"
 
 2. Select "**C Contract**" as the Source Chain
 
-3. Enter your Metamask wallet address by copying and pasting it into the **To Address** field on your Avalanche wallet.
+3. Enter your MetaMask wallet address by copying and pasting it into the **To Address** field on your Avalanche wallet.
 
 4. Confirm, and finalize the transaction.
 
@@ -44,8 +44,8 @@ Now you can send the AVAX from your Avalanche wallet to your Metamask wallet.
 
 Get free AVAX to trade on decentralized exchange on the Avalanche network.
 
-1. Transfer tokens through [Avalanche Bridge](https://bridge.avax.network/login) using your Metamask browser extension (Ethereum network).
-2. Once you transferred tokens to Avalanche network using Avalanche Bridge, make sure that your Metamask browser extension is connected using Avalanche network.
+1. Transfer tokens through [Avalanche Bridge](https://bridge.avax.network/login) using your MetaMask browser extension (Ethereum network).
+2. Once you transferred tokens to Avalanche network using Avalanche Bridge, make sure that your MetaMask browser extension is connected using Avalanche network.
 3. Sell the token that you bridged from Ethereum to Avalanche network in a decentralized exchange on Avalanche network. For example, [Pangolin](https://pangolin.exchange), [Lydia Finance](https://www.lydia.finance), or [TraderJoe](https://www.traderjoexyz.com/).
 
 ## How to stake AVAX
@@ -60,7 +60,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 
 4. Select the **Avalanche supported wallet** you wish to connect to, e.g., Metamask.
 
-5. If you are on a different network, you may be prompted to switch to the correct one. Select the correct network by clicking on its icon on the page then allow Metamask to switch to it.
+5. If you are on a different network, you may be prompted to switch to the correct one. Select the correct network by clicking on its icon on the page then allow MetaMask to switch to it.
 
 6. Successful connection to **Ankr Staking** is indicated at top right corner.
 

@@ -11,7 +11,7 @@ id: stake-bnb
 
 You are using a Chrome Browser.
 
-You have a Metamask wallet.
+You have a MetaMask wallet.
 :::
 
 ## Purchase BNB
@@ -32,7 +32,7 @@ You have a Metamask wallet.
 
 4. Select the **Binance supported wallet** you wish to connect to, i.e., Metamask.
 
-5. If you are on a different network, you may be prompted to switch to the correct one. Click the correct network on the page, then allow Metamask to switch to it.
+5. If you are on a different network, you may be prompted to switch to the correct one. Click the correct network on the page, then allow MetaMask to switch to it.
 
 6. Successful connection to **Ankr Staking** is indicated at top right corner.
 
