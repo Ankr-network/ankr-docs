@@ -1,6 +1,6 @@
 ---
-title: 00 - Before you Start
-id: game-00
+title: Before You Start
+id: before-you-start
 ---
 
 # 00 - Before you start

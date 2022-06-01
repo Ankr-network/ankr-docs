@@ -82,7 +82,7 @@ bool UAnkrClient::GetClient(FAnkrConnectionStatus Status)
 
 #### STEP THREE
 
-If login via MetaMask is required to authenticate the session, a connection request is sent to metamask with `uri` as a deeplink.
+If login via MetaMask is required to authenticate the session, a connection request is sent to MetaMask with `uri` as a deeplink.
 
 ```cpp
 FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);

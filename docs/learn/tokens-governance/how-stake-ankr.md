@@ -10,7 +10,7 @@ On OnX, you can stake ANKR and earn OnX tokens via the Onx.Finance platform.
 
 #### How to stake ANKR
 
-**STEP ONE:** Visit the [Onx.Finance Platform](http://app.onx.finance) and connect one of the supported wallets ( i.e. Metamask / Trustwallet )\
+**STEP ONE:** Visit the [Onx.Finance Platform](http://app.onx.finance) and connect one of the supported wallets ( i.e. MetaMask / Trustwallet )\
 
 
 **STEP TWO: **Open the farming page and select the token you want to stake and how many you want to stake.\

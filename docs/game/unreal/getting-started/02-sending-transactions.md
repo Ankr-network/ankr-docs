@@ -21,7 +21,7 @@ All read data method calls such as retrieving a balance do NOT incur gas fees.
 Send transaction
 ----------------
 ----------------
-The `SendTransaction` function interacts with the blockchain and incurs gas fees. Signing in Metamask is required. 
+The `SendTransaction` function interacts with the blockchain and incurs gas fees. Signing in MetaMask is required. 
 When a call is made, the back end client sends a 'Ticket' in MetaMask if the call was successful.
 
 ### URL 
@@ -40,7 +40,7 @@ http://45.77.189.28:5000/send/transaction
 
 A `ticket` is the response.  
 
-The session saved during the `GetClient`call is used to open Metamask. Metamask will popup to display gas fees for the transaction. Sign or confirm the transaction for that ticket.
+The session saved during the `GetClient`call is used to open Metamask. MetaMask will popup to display gas fees for the transaction. Sign or confirm the transaction for that ticket.
 
 ```cpp
 

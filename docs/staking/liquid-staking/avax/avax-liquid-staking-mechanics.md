@@ -73,7 +73,7 @@ Addresses of these smart contracts are:
 
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–5. 
 
-1. User sends AVAX to `AvalanchePool` on the Avalanche blockchain via the Ankr Staking Dashboard and Metamask connected to the Avalanche blockchain. The function effectively called is `AlavalchePool::stakeAndClaimBonds()` or `AlavalchePool::stakeAndClaimCerts()` for aAVAXb and aAVAXc respectively. 
+1. User sends AVAX to `AvalanchePool` on the Avalanche blockchain via the Ankr Staking Dashboard and MetaMask connected to the Avalanche blockchain. The function effectively called is `AlavalchePool::stakeAndClaimBonds()` or `AlavalchePool::stakeAndClaimCerts()` for aAVAXb and aAVAXc respectively. 
 
 2. `AvalanchePool` emits an event saying the stake is received: `AlavalchePool::StakePendingV2(address indexed staker, uint256 amount, bool indexed isRebasing)`. `isRebasing` is false for `stakeAndClaimCerts` and true for `stakeAndClaimBonds`.
 

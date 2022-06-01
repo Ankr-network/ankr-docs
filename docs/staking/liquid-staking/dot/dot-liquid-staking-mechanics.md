@@ -97,7 +97,7 @@ The workflow is user-driven. User interacts with Ankr and Polkadot via Ankr fron
 
 2. User sees their staking history on the DOT staking dashboard. 
 
-3. For claimable aDOTb, the user sees a suggestion to claim them. In order to claim, the user must unlock and connect their Metamask or another compatible Ethereum wallet to the Ethereum network.
+3. For claimable aDOTb, the user sees a suggestion to claim them. In order to claim, the user must unlock and connect their MetaMask or another compatible Ethereum wallet to the Ethereum network.
 
 4. When claiming, the user sees the claiming form and inputs the amount of aDOTb to be claimed along with the user’s Ethereum address. By default, Ankr suggests the max possible claim and address from the connected user’s Ethereum wallet.  
    Upon claim confirmation, the user interacts with the Polkadot.js extension to send a request to the Ankr backend to get a notarization signature. To send the request, the user creates a signature and includes it in the request.
@@ -152,7 +152,7 @@ PolkadotPool::claimBonds(
 
   All fields are taken from the `claim` payload from Step 5.
 
-7. Once the transaction is successful, `PolkadotPool` mints aDOTb to the user's wallet. The balance shows on the staking dashboard and in Metamask (only if user added the token) via a call to `aDOTb::balanceOf(address)`.
+7. Once the transaction is successful, `PolkadotPool` mints aDOTb to the user's wallet. The balance shows on the staking dashboard and in MetaMask (only if user added the token) via a call to `aDOTb::balanceOf(address)`.
 
 ### Daily exchange ratio updates
 

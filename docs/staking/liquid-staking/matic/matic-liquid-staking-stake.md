@@ -28,7 +28,7 @@ A very small amount of ETH is used as gas fee to perform a transaction. Normally
 
 4. Select the **Polygon supported wallet** you wish to connect to, e.g., Metamask.
 
-5. If you are on a different network, you may be prompted to switch to the **Ethereum** network. Click the correct network on the page, then allow Metamask to switch to it.
+5. If you are on a different network, you may be prompted to switch to the **Ethereum** network. Click the correct network on the page, then allow MetaMask to switch to it.
 
 6. Successful connection to **Ankr Staking** is indicated at top right corner.
 

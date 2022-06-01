@@ -145,7 +145,7 @@ Click **_‘Connect Wallet_**’ in your app and a pop up modal will appear.
 
 ![connect wallet3](connect-metamask3.png)
 
-![connected metamask 4](connected-metamask4.png)
+![connected MetaMask 4](connected-metamask4.png)
 
 ## 05 - Modify app.js
 
