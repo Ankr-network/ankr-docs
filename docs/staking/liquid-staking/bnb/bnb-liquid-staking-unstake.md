@@ -5,7 +5,7 @@ id: unstake-bnb
 
 ## Overview
 
-If you decide to unstake, it can take 7-15 days before you receive your funds. 
+If you decide to unstake, it can take 7-14 days before you receive your funds. 
 
 :::info Before you start
 

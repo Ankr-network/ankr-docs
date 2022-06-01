@@ -32,7 +32,7 @@ No, you can stake at your discretion, unlimited.
 
 ### What is the unbonding period for aBNBb/aBNBc?
 
-You receive the unstaked amount after the unbonding period of up to 7–15 days.
+You receive the unstaked amount after the unbonding period of up to 7–14 days.
 
 
 ### How do I receive rewards? 
