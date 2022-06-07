@@ -419,6 +419,7 @@ module.exports =
             {
              'API': [
                'staking/api-overview',
+               'staking/liquid-staking/avax/api',
                'staking/liquid-staking/bnb/api',
                'staking/liquid-staking/matic/api',
                'staking/reference/staking-metrics',
