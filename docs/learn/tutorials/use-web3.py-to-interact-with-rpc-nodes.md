@@ -104,7 +104,7 @@ You know you are in the console when you see >>>
 
 2**. Create a Python script**
 
-Use your favourite code editor to write a script. e.g. VSCode.&#x20;
+Use your favourite code editor to write a script. e.g. VSCode.
 
 Name it `rpc-eth.py`
 

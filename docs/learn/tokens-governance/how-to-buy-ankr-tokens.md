@@ -17,7 +17,7 @@ For example: [Binance](https://www.binance.com), [Kraken](https://www.kraken.com
 NOTE: Buying ANKR on some exchanges is not available in certain countries
 :::
 
-This guide explains how to buy ANKR tokens from **Binance**.&#x20;
+This guide explains how to buy ANKR tokens from **Binance**.
 
 ## 01 Create a free account on the Binance website or the app.
 
@@ -51,9 +51,9 @@ Ensure you buy enough to cover fees.
 
 ### If you need to install MetaMask
 
-1 Head over to [https://metamask.io/](https://metamask.io).&#x20;
+1 Head over to [https://metamask.io/](https://metamask.io).
 
-2 Download and install the MetaMask version compatible with your browser.&#x20;
+2 Download and install the MetaMask version compatible with your browser.
 
 3 After it's finished downloading click 'Get Started' and follow the sequence. 
 

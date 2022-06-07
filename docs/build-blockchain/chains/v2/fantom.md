@@ -23,8 +23,8 @@ You can set up your **MetaMask wallet** to connect to Fantom RPC. You can then p
 
 ### Get started
 
-1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.&#x20;
-2. Select '_**Custom RPC**_'.&#x20;
+1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
+2. Select '_**Custom RPC**_'.
 3. Enter the settings for the required project as follows in the table below:
 
 |  Chain | Custom RPC Category |                               Details                               |

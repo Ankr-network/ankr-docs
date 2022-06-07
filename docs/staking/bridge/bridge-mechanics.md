@@ -19,7 +19,7 @@ The mechanics of what's going on under the hood when a user transfers their fund
 1. The user has Ankr Liquid Staking tokens on the network where our smart contract minted them for said user.
 
 2. The user wants to transfer them onto another network. They visit [Ankr Bridge](https://www.ankr.com/staking/bridge/), choose the amount to be transferred and click **Approve**. 
-   That causes Ankr Bridge to call the `approve()` function of the bridging smart contract to allow transfer of the assets. From the user side, it looks like they approve the operation in their Metamask.  
+   That causes Ankr Bridge to call the `approve()` function of the bridging smart contract to allow transfer of the assets. From the user side, it looks like they approve the operation in their MetaMask.  
 
 3. The user clicks **Send** on the page, which causes Ankr Bridge to call the `deposit()` function to transfer the assets to the destination network. 
    This operation is called *peg-in*.

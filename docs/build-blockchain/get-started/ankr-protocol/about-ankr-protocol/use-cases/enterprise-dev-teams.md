@@ -18,4 +18,4 @@ With ANKR there is no requirement to invest in additional node infrastructure an
 
 ### _**02 Ensure private transactions for you and your customers**_
 
-Create your own private API connections to ensure important transactions can be conducted without risk of front running.&#x20;
+Create your own private API connections to ensure important transactions can be conducted without risk of front running.

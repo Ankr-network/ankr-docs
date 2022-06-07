@@ -16,11 +16,11 @@ You have a MetaMask wallet.
 
 ## Purchase BNB
 
-1. Create a BNB address using Metamask.
+1. Create a BNB address using MetaMask.
 
 2. Purchase BNB at [https://www.binance.com/](https://www.binance.com) and other exchanges.
 
-3. Send BNB to your Binance Smart Chain (BSC) address from Metamask.
+3. Send BNB to your Binance Smart Chain (BSC) address from MetaMask.
 
 ## Connect your wallet
 
@@ -30,7 +30,7 @@ You have a MetaMask wallet.
 
 3. You are prompted to grant **Ankr Staking** access to your wallet. Click **Grant Access** to proceed.
 
-4. Select the **Binance supported wallet** you wish to connect to, i.e., Metamask.
+4. Select the **Binance supported wallet** you wish to connect to, i.e., MetaMask.
 
 5. If you are on a different network, you may be prompted to switch to the correct one. Click the correct network on the page, then allow MetaMask to switch to it.
 
@@ -77,4 +77,4 @@ If you don't see the balance in your wallet, do the following:
 
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard) 
 2. Find your staked token, click the three-dot menu, and click *Copy token address*.
-3. Insert the token address directly into your wallet (e.g. Metamask).
+3. Insert the token address directly into your wallet (e.g. MetaMask).

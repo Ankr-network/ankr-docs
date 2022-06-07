@@ -90,4 +90,4 @@ If you don't see the balance in your wallet, do the following:
 
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard) 
 2. Find your staked token, click the three-dot menu, and click *Copy token address*.
-3. Insert the token address directly into your wallet (e.g. Metamask).
+3. Insert the token address directly into your wallet (e.g. MetaMask).

@@ -5,7 +5,7 @@ id: faq
 
 ### Which wallets are compatible with the aAVAXb/aAVAXc tokens?
 
-aAVAXb/aAVAXc is an ERC-20 token that is compatible with Ethereum-based wallets like Metamask.
+aAVAXb/aAVAXc is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
 
 
 ### Are there any docs about the AVAX staking and how I set up my wallet etc.?

@@ -1,6 +1,6 @@
 # Providing Infrastructure
 
-Being a Provider on Ankr Protocol is the ultimate mutually beneficial relationship. You can literally “Ankr” your node(s) to the network and enhance infrastructure capacity for yourself and other network participants.&#x20;
+Being a Provider on Ankr Protocol is the ultimate mutually beneficial relationship. You can literally “Ankr” your node(s) to the network and enhance infrastructure capacity for yourself and other network participants.
 
 At times when your own nodes are overstretched, you can benefit from utilizing the services of the network to add capacity to meet your own demands.
 

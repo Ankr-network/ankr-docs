@@ -64,7 +64,7 @@ Addresses of these smart contracts are:
 
 * [aAVAXb](https://snowtrace.io/address/0x6C6f910A79639dcC94b4feEF59Ff507c2E843929#code)
 
-* aAVAXc (coming soon)
+* [aAVAXc](https://snowtrace.io/0xc3344870d52688874b06d844E0C36cc39FC727F6#code) 
 
 * [AvalanchePool](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D#code)
 

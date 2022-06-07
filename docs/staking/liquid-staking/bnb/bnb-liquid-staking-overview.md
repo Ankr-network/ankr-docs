@@ -30,7 +30,7 @@ As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-o
 * **Farming rewards for liquidity providers**: Liquid Staking presents several yield farming strategies for users to contribute to liquidity pools and gain a share of the trading fees and governance tokens. These new LP tokens can be used to generate yet another layer of earnings.
 * **Staking rewards on farmed tokens**: After using yield farming strategies, users can also reinvest their farmed LP tokens into more staking opportunities. This is a highly repeatable process as layers of rewards from farming and staking will quickly stack up.
 * **Yield aggregators /vaults** can automate yield farming rewards and enable compounding returns with next to no effort from users. This is a great method for maximizing your passive income strategy.
-* **More trading opportunities** are enabled thanks to the elastic supply nature of aBNBb, meaning that you could potentially buy aBNBb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Staking to extract its fair value back in up to 7-14 days (the BNB Liquid Staking unbonding period).&#x20;
+* **More trading opportunities** are enabled thanks to the elastic supply nature of aBNBb, meaning that you could potentially buy aBNBb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Staking to extract its fair value back in up to 7-14 days (the BNB Liquid Staking unbonding period).
 
 ### **More flexibility**
 

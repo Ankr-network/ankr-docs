@@ -5,9 +5,9 @@ id: libraries
 
 # Using libraries
 
-Developers can choose to interact directly with Ethereum clients via the JSON-RPC API, however there are often easier options for dApp developers depending on their language preferences.&#x20;
+Developers can choose to interact directly with Ethereum clients via the JSON-RPC API, however there are often easier options for dApp developers depending on their language preferences.
 
-Polkadot clients have different libraries.&#x20;
+Polkadot clients have different libraries.
 
 Many API libraries exist to provide wrappers on top of the JSON-RPC API. With these libraries, developers can write one-line methods in the programming language of their choice to initialize JSON-RPC requests (under the hood) that interact with Ethereum.
 

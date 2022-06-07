@@ -8,11 +8,11 @@ id: bsc-api
 
 ## Develop on Binance Smart Chain (BSC)
 
-In addition to Ankr’s free and public [Binance Smart Chain RPC](https://rpc.ankr.com/bsc), Ankr allows users to create their own full and archive APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.&#x20;
+In addition to Ankr’s free and public [Binance Smart Chain RPC](https://rpc.ankr.com/bsc), Ankr allows users to create their own full and archive APIs with a variety of options for request call limits, archived data, and more. Ankr’s novel cluster technology allows APIs to draw from multiple nodes, offering a more reliable experience for our users.
 
 ## Get started on Binance Smart Chain
 
-1. Login or set up an account on &#x20; [app.ankr.com](https://app.ankr.com/api/)
+1. Login or set up an account on  [app.ankr.com](https://app.ankr.com/api/)
 2. [**Create API**](https://app.ankr.com/apps/api)
 
 ## Node types available on Ankr
