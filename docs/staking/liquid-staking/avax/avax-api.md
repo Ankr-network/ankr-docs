@@ -9,13 +9,9 @@ To integrate with AVAX Liquid Staking, use the functions, smart contract address
 
 ## Stake AVAX and claim aAVAXb
 
-### `stakeAndClaimBonds(payableAmount)`
+### `stakeAndClaimBonds()`
  
-Stakes AVAX and claims aAVAXb for the staked AVAX. 
-
-#### Parameters 
-
-`payableAmount` (unit256, required) — amount of AVAX to be staked.
+Stakes the `msg.value` of AVAX and claims aAVAXb for it.
 
 #### Smart contract
 
@@ -29,13 +25,9 @@ Stakes AVAX and claims aAVAXb for the staked AVAX.
 
 ## Stake AVAX and claim aAVAXc
 
-### `stakeAndClaimCerts(payableAmount)`
+### `stakeAndClaimCerts()`
  
-Stakes AVAX and claims aAVAXc for the staked AVAX.
-
-#### Parameters 
-
-`payableAmount` (uint256, required) — amount of AVAX to be staked.
+Stakes the `msg.value` of AVAX and claims aAVAXc for it.
 
 #### Smart contract
 
