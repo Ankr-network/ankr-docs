@@ -34,7 +34,7 @@ Polkadot's approach to JSON-RPC methods is unique and not the same as the standa
 
 You can call the `rpc_methods` method to view the list of methods supported by Polkadot.
 
-View [Substrate RPC client in Go documentation ](https://pkg.go.dev/github.com/centrifuge/go-substrate-rpc-client#section-documentation)for calling RPC methods.&#x20;
+View [Substrate RPC client in Go documentation ](https://pkg.go.dev/github.com/centrifuge/go-substrate-rpc-client#section-documentation)for calling RPC methods.
 
 You can also use [Polkadot-JS-Apps](https://polkadot.js.org/docs/) to interact. These are a collection of tools, utilities and libraries for interacting with the [Polkadot network](https://polkadot.network) from JavaScript. All code is made available on [Github](https://github.com/polkadot-js/) with a [permissive Apache-2.0 license](https://en.wikipedia.org/wiki/Apache\_License#Version\_2.0).
 

@@ -70,7 +70,7 @@ This is an example from the SDK and illustrates how to update a GameItem NFT by 
     Ensure that the smart contract is deployed from the same account that uses the backend to sign data.
     :::
 
-2. Create an instance of `Web3` class and call `Initialize` method after login in metamask
+2. Create an instance of `Web3` class and call `Initialize` method after login in MetaMask
 
     ```c#
     string provider_url = "<ethereum node url>";

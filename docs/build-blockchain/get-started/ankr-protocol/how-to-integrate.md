@@ -12,8 +12,8 @@ Curl samples are provided for each chain.
 
 ### THREE: Wallet
 
-You can set up your MetaMask wallet to connect to Ankr supported RPC chains that are **EVM compatible**.&#x20;
+You can set up your MetaMask wallet to connect to Ankr supported RPC chains that are **EVM compatible**.
 
 You can then perform transactions and interact with the network.
 
-Custom RPC settings are provided for each chain.&#x20;
+Custom RPC settings are provided for each chain.

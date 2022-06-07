@@ -78,7 +78,7 @@ none
 
 **Content-Type** application/json
 
-#### BODY&#x20;
+#### BODY
 
 #### raw
 
