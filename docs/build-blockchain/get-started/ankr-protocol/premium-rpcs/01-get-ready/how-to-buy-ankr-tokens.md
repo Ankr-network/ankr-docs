@@ -12,19 +12,19 @@ For example:  [Kraken](https://www.kraken.com), [Gemini](https://www.gemini.com)
 NOTE: Buying ANKR on some exchanges is not available in certain countries
 {% endhint %}
 
-In the following guide we’ll be buying ANKR tokens from **Kraken**.&#x20;
+In the following guide we’ll be buying ANKR tokens from **Kraken**.
 
 **01** Sign up for an **Account** on the Kraken website [https://www.kraken.com](https://www.kraken.com)
 
-**02** Click on the **Create Account** button in the upper-right corner and follow the steps to create your account.&#x20;
+**02** Click on the **Create Account** button in the upper-right corner and follow the steps to create your account.
 
 <!-- ![](<../../../.gitbook/assets/image (17).png>) -->
 
-**03** Verify your account.&#x20;
+**03** Verify your account.
 
 Provide relevant verification details for your location [https://support.kraken.com/hc/en-us/articles/360021973671](https://support.kraken.com/hc/en-us/articles/360021973671)
 
-**04** Add funds or a payment method to your account&#x20;
+**04** Add funds or a payment method to your account
 
 Make a Fiat Deposit by card, Deposit another Crypto Asset and pay with that. Use a Credit Card, Make a bank transfer of fiat.
 
@@ -32,7 +32,7 @@ Make a Fiat Deposit by card, Deposit another Crypto Asset and pay with that. Use
 NOTE: These fund/payment options may vary depending on your location.
 {% endhint %}
 
-**04** Buy the desired amount of ANKR.&#x20;
+**04** Buy the desired amount of ANKR.
 
 Ensure you buy enough to cover fees.
 

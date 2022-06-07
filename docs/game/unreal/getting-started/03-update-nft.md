@@ -94,7 +94,7 @@ http://45.77.189.28:5000/send/transaction
 
 A `ticket`
 
-The session saved during a call to `Init` will be used to open metamask. MetaMask will show popup to sign or confirm the transaction for that ticket.
+The session saved during a call to `Init` will be used to open MetaMask. MetaMask will show popup to sign or confirm the transaction for that ticket.
 
 ```cpp
 

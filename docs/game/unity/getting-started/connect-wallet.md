@@ -85,7 +85,7 @@ Inside ***(AnkrSDK/Examples/UseCases/LinkingAccountWallet)*** is an example scri
 
 This is an example from the SDK on how to link a Web3 wallet to a player account.
 
-1. To connect a wallet, first make an instance of a `Web3` class and call `Initialize` method after login in metamask
+1. To connect a wallet, first make an instance of a `Web3` class and call `Initialize` method after login in MetaMask
 
     ```js
     string provider_url = "<ethereum node url>";

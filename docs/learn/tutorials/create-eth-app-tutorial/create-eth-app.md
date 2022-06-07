@@ -126,7 +126,7 @@ To create a production build, use npm run build.
 
 Out of the box we can connect a wallet to our app. You can use MetaMask or WalletConnect. 
 
-(To install MetaMask, open[ metamask.io ](https://metamask.io/) and click on ‘**Download’**. BE SURE TO KEEP YOUR SECRET SAFE. )
+(To install MetaMask, open[ MetaMask.io ](https://metamask.io/) and click on ‘**Download’**. BE SURE TO KEEP YOUR SECRET SAFE. )
 
 Click **_‘Connect Wallet_**’ in your app and a pop up modal will appear.
 

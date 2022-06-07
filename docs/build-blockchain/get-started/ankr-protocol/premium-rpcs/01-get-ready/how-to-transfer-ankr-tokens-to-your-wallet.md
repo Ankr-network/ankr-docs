@@ -1,6 +1,6 @@
 # How to transfer ANKR Tokens to your Wallet
 
-This section describes how to transfer **ANKR ERC-20 token**s to a **MetaMask wallet.**&#x20;
+This section describes how to transfer **ANKR ERC-20 token**s to a **MetaMask wallet.**
 
 This is recommended when purchasing ANKR from an **Exchange**.
 
@@ -12,7 +12,7 @@ This is recommended when purchasing ANKR from an **Exchange**.
 
 ![](https://lh4.googleusercontent.com/o9w6AtcEXd137jXzWTSJ9kSZ55c94hpUcDenF-vzapTHK6V\_Q2OOZFK\_idnrxK80v1ZZVimx15TKqlKJEIIEDKwOe\_WQA5dvVusTw3esJ2zhM4zluSb75Gzb54QiGS1d-zS5erzZ=s1600)
 
-### In the Exchange&#x20;
+### In the Exchange
 
 {% hint style="warning" %}
 NOTE: This flow may vary depending on the Exchange you are using. The following flow applies to Kraken.
@@ -20,9 +20,9 @@ NOTE: This flow may vary depending on the Exchange you are using. The following 
 
 We are continuing to use Kraken to demonstrate.
 
-**01** Add and confirm the MetaMask withdrawal address.&#x20;
+**01** Add and confirm the MetaMask withdrawal address.
 
-This is known as **whitelisting**.&#x20;
+This is known as **whitelisting**.
 
 Follow these instructions to whitelist your MetaMask Wallet Address. [https://support.kraken.com/hc/en-us/articles/360000672863](https://support.kraken.com/hc/en-us/articles/360000672863)
 

@@ -1,6 +1,6 @@
 # Integrate Wallet
 
-Solana is not evm-compatible and therefore MetaMask cannot currently be configured to work with Solana.&#x20;
+Solana is not evm-compatible and therefore MetaMask cannot currently be configured to work with Solana.
 
 Solana does support several types of wallets via usage of the the [Solana native command-line app](https://docs.solana.com/cli) as well as wallets from third-parties.
 

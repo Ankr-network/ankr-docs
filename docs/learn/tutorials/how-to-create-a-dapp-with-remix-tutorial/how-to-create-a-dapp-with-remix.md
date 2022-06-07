@@ -15,7 +15,7 @@ This Tutorial shows how to build  a simple dApp with a smart contract. It is sui
 
 * A code editor e.g. Visual Studio Code. ([Download Visual Studio Code](https://code.visualstudio.com/download))
 * Node JS installed ([Download Node.js](https://nodejs.org/en/download/))
-* A MetaMask Wallet ([Download Metamask](https://metamask.io/))
+* A MetaMask Wallet ([Download MetaMask](https://metamask.io/))
 
 ## 01 Get Testnet ETH
 

@@ -58,7 +58,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 
 3. You are prompted to grant **Ankr Staking** access to your wallet. Click **Grant Access** to proceed.
 
-4. Select the **Avalanche supported wallet** you wish to connect to, e.g., Metamask.
+4. Select the **Avalanche supported wallet** you wish to connect to, e.g., MetaMask.
 
 5. If you are on a different network, you may be prompted to switch to the correct one. Select the correct network by clicking on its icon on the page then allow MetaMask to switch to it.
 
@@ -77,13 +77,13 @@ To allow sufficient AVAX to cover gas fees AVAX - from 0.025 to 0.1 AVAX
 
 2. Locate the **Avalanche (AVAX)** box and click *Stake* in it.
 
-3. Enter the desired amount of AVAX to stake and click *Get aAVAXb*.
+3. Enter the desired amount of AVAX to stake and click *Get aAVAXb* or *Get aAVAXc*.
 
 4. Confirm the transaction in your wallet.
 
-5. Add aAVAXb to your wallet, clicking  *Add aAVAXb to wallet*.
+5. Add aAVAXb to your wallet, clicking *Add aAVAXb to wallet* or *Add aAVAXc to wallet* respectively.
 
-6. Click *Go to dashboard* to see the received aAVAXb in Ankr Staking. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update.
+6. Click *Go to dashboard* to see the received aAVAXb or aAVAXc in Ankr Staking. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update.
 
 :::info
 
@@ -101,13 +101,13 @@ You will need to make the following interactions in your wallet:
 
 :::success
 
-Your aAVAXb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aAVAXb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aMATICb section.
+Your aAVAXb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aAVAXb tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aAVAXb section. Support for aAVAXc is coming soon.
 
-### If you don't see your aAVAXb balance
+### If you don't see your aAVAXb/aAVAXc balance
 
 If you don't see the balance in your wallet, do the following:
 
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard) 
 2. Find your staked token, click the three-dot menu, and click *Copy token address*.
-3. Insert the token address directly into your wallet (e.g. Metamask).
+3. Insert the token address directly into your wallet (e.g. MetaMask).
 

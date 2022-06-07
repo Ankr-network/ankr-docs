@@ -40,7 +40,7 @@ http://45.77.189.28:5000/send/transaction
 
 A `ticket` is the response.  
 
-The session saved during the `GetClient`call is used to open Metamask. MetaMask will popup to display gas fees for the transaction. Sign or confirm the transaction for that ticket.
+The session saved during the `GetClient`call is used to open MetaMask. MetaMask will popup to display gas fees for the transaction. Sign or confirm the transaction for that ticket.
 
 ```cpp
 

@@ -7,7 +7,7 @@ id: arbitrum
 
 Arbitrum RPC is available on the [Ankr Protocol App](https://www.ankr.com/protocol/public/arbitrum/)
 
-**Arbitrum** is a suite of Ethereum scaling solutions that enable high-throughput, low cost smart contracts while remaining trustlessly secure.&#x20;
+**Arbitrum** is a suite of Ethereum scaling solutions that enable high-throughput, low cost smart contracts while remaining trustlessly secure.
 
 Arbitrum has three modes: **AnyTrust Channels**, **AnyTrust Sidechains,** and **Arbitrum Rollup**.
 

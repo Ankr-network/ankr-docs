@@ -13,9 +13,9 @@ This examples assumes you are using a MetaMask wallet.
 
 ## Install MetaMask
 
-1. Head over to [https://metamask.io/](https://metamask.io).&#x20;
+1. Head over to [https://metamask.io/](https://metamask.io).
 
-2. Download and install the MetaMask version compatible with your browser.&#x20;
+2. Download and install the MetaMask version compatible with your browser.
 
 3.  After it's finished downloading click 'Get Started' and follow the sequence. 
 

@@ -26,7 +26,7 @@ On the dashboard, you can track your earnings and you will be able to unstake yo
 
 ### Staking ANKR on Bancor
 
-On Bancor, you can stake your ANKR and add liquidity to the ANKR-BNT pool.&#x20;
+On Bancor, you can stake your ANKR and add liquidity to the ANKR-BNT pool.
 
 * Earn passive income opportunities as a liquidity provider (LP) while swaps are taking place.\
 
@@ -40,7 +40,7 @@ On Bancor, you can stake your ANKR and add liquidity to the ANKR-BNT pool.&#x20;
 ****\
 **STEP THREE: **In the search box, type in Ankr to bring up the ANKR/BNT pair.  Next click the blue + sign on the right\
 ****\
-**STEP FOUR: **In the popup you can choose how much ANKR or BNT to stake. Once you’ve added the amount of ANKR to stake, click 'Stake and Protect' .&#x20;
+**STEP FOUR: **In the popup you can choose how much ANKR or BNT to stake. Once you’ve added the amount of ANKR to stake, click 'Stake and Protect' .
 
 {% hint style="success" %}
 **SUCCESS**

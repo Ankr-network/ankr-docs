@@ -24,7 +24,7 @@ baseUrl = "http://45.77.189.28:5000/";
 Use the `GetClient` method to send a request to http://45.77.189.28:5000/connect. 
 Include the `device_id` as a parameter in the body. 
 A response object is returned containing:
-* `uri` deeplink to open metamask, 
+* `uri` deeplink to open MetaMask, 
 * `session`
 * `login` details.
 

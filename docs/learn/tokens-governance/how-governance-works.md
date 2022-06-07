@@ -15,7 +15,7 @@ The Ankr Community control the direction of Ankr projects by voting for ideas th
 
 ### How does it work?
 
-We have chosen to adopt a Proposal model that has already been successfully applied in other major crypto projects. A Proposal is submitted and the community votes on whether or not to accept it. If it is accepted then the Ankr team ensure it comes to fruition.&#x20;
+We have chosen to adopt a Proposal model that has already been successfully applied in other major crypto projects. A Proposal is submitted and the community votes on whether or not to accept it. If it is accepted then the Ankr team ensure it comes to fruition.
 
 #### STEP ONE: Create a Proposal
 
@@ -31,7 +31,7 @@ If a proposal is approved, it is then voted upon over the number of days set by 
 
 #### STEP FOUR: Voting for the Proposal
 
-The proposers’ ANKR is locked for 14 days.&#x20;
+The proposers’ ANKR is locked for 14 days.
 
 Votes are cast by ANKR token-holders on the basis of 1 ANKR per vote, and ANKR used for the vote is locked for the duration of the vote. ANKR tokens locked for voting can be used to cast votes for multiple proposals.
 
