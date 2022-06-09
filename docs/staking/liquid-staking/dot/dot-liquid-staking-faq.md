@@ -68,6 +68,10 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aDOTb&to=DOT).
 
+You can also use your liquid tokens to:
+* [Provide liquidity to DEXs](https://www.ankr.com/docs/staking/defi/provide-liquidity-to-dex) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
+* [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farm) and earn additional rewards in the form of other tokens.  
+
 ### Can I get staking metrics for my integration?
 
 Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).
