@@ -22,14 +22,11 @@ The clear benefits of Ankr Liquid Staking are:
 ## Parachain Liquid Crowdloan
 **Parachain Liquid Crowdloan** provide similar benefits to *Staking*. 
 
-1. **Bond DOT/KSM**
-Users bond DOT or KSM to a Polkadot project during a Parachain Slot Auction. 
+1. **Bond DOT/KSM**: users bond DOT or KSM to a Polkadot project during a Parachain Slot Auction. 
 
-2. **Locked Liquidity**
-It the project wins a slot, the bonded DOT or KSM is inaccessible.
+2. **Locked Liquidity**: if the project wins a slot, the bonded DOT or KSM is inaccessible.
 
-3. **Attain Instant Liquidity**
-However, Parachain Liquid Staking tokens can be instantly obtained. These are portable and usable elsewhere. 
+3. **Attain Instant Liquidity**: however, Parachain Liquid Staking tokens can be instantly obtained. These are portable and usable elsewhere. 
 
 Token rewards from the winning project are distributed to Parachain Liquid Crowdloan token holders automatically. 
 
