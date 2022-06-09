@@ -1,15 +1,15 @@
 ---
-title: Run BSC Node on Erigon
+title: Run BNB Chain Node on Erigon
 id: run-bsc-node-on-erigon
 ---
 
-# Run BSC node on Erigon
+# Run BNB Chain node on Erigon
 
 ## Introduction
 
-This guide will walk you through 3 options for setting up and launching a BSC Node on Erigon. 
+This guide will walk you through 3 options for setting up and launching a BNB Chain Node on Erigon. 
 
-Here are the main benefits of running BSC on Erigon:
+Here are the main benefits of running BNB Chain on Erigon:
 
 * Drastically reduced disk storage - 1.2TB for Archive Node, 430GB for Pruned Node. 
 * Faster sync speed > 10 blocks per second 
@@ -66,9 +66,9 @@ This section is still being tested. We recommend the Docker options whilst this 
     cd /srv/svc
     ```
 
-2. Clone BSC Erigon Repo and Launch the Node
+2. Clone BNB Chain Erigon Repo and Launch the Node
    :::info
-   Binance Smart Chain mode is available on the develop branch
+   BNB Chain mode is available on the develop branch
    ::: 
 
     ```   
@@ -102,7 +102,7 @@ This section is still being tested. We recommend the Docker options whilst this 
 
 ### 03 Run Node
 
-1. Run Erigon in BSC mode using binaries:
+1. Run Erigon in BNB Chain mode using binaries:
 
     ```
     # for the node

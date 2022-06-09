@@ -27,7 +27,7 @@ Mainnet
 
 Avalanche Archive
 
-​Binance Smart Chain​
+​BNB Chain​
 
 ​Docs​
 
@@ -187,4 +187,4 @@ Mainnet
 
 XDai Archive
 
-*Binance Smart Chain Archive node currently has a pricing requirement. This is due to change soon.
+*BNB Chain Archive node currently has a pricing requirement. This is due to change soon.

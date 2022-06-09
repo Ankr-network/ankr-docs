@@ -25,7 +25,7 @@ Use **web3.js** to do the second. That is to write code that reads and writes da
 
 ## About Web3.js?
 
-**Web3.js** is a Javascript library that makes it easy to use the Ethereum API and all EVM based blockchain APIs such as Binance Smart Chain and Polygon. You can use the API to interact with smart contracts and read and write data from the blockchain.
+**Web3.js** is a Javascript library that makes it easy to use the Ethereum API and all EVM based blockchain APIs such as BNB Chain and Polygon. You can use the API to interact with smart contracts and read and write data from the blockchain.
 
 Web3.js is written in NodeJS. You can use it server-side or in a web browser.
 

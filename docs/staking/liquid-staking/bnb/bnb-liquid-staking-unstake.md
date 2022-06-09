@@ -11,7 +11,7 @@ If you decide to unstake, it can take 7-14 days before you receive your funds.
 
 Ensure you have a small amount of BNB for the gas fee.
 
-Unstaking BNB tokens is a multi-step process involving sending several transactions to the BNB smart-contracts deployed in Binance chain and Binance Smart Chain.
+Unstaking BNB tokens is a multi-step process involving sending several transactions to the BNB smart-contracts deployed in Binance chain and BNB Chain.
 
 BNB tokens are transferred to your wallet automatically when the unstaking process completes. There is no additional cost for this.
 :::

@@ -17,7 +17,7 @@ Premium websockets are of the following format:
 
 **Avalanche wss://rpc.ankr.com/avalanche/ws/<YOUR_PRIVATE_KEY>**
 
-**Binance Smart Chain wss://rpc.ankr.com/bsc/ws/<YOUR_PRIVATE_KEY>**
+**BNB Chain wss://rpc.ankr.com/bsc/ws/<YOUR_PRIVATE_KEY>**
 
 **Celo wss://rpc.ankr.com/celo/ws/<YOUR_PRIVATE_KEY>**
 

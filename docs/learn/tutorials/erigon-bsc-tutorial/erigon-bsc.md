@@ -1,9 +1,9 @@
 ---
-title: BSC Full Node with Erigon
+title: BNB Chain Full Node with Erigon
 id: erigon-bsc
 ---
 
-# Launching a full node on Binance Smart Chain with Erigon
+# Launching a full node on BNB Chain with Erigon
 
 **By Corey Wooten**
 <br/>
@@ -15,8 +15,8 @@ id: erigon-bsc
 **This tutorial will demonstrate the following processes:**
 
 1. Configuring the remote server to run a full node.
-2. Building the Erigon Client on Binance Smart Chain from the source code.
-3. Using Erigon to deploy the full node on Binance Smart Chain.
+2. Building the Erigon Client on BNB Chain from the source code.
+3. Using Erigon to deploy the full node on BNB Chain.
 
 ## **00 Getting started**
 
@@ -188,7 +188,7 @@ which erigon
 erigon --help
 ```
 
-## **03 Running the BSC node with Erigon**
+## **03 Running the BNB Chain node with Erigon**
 
 ### **3.1 Update your erver's security settings**
 
@@ -210,7 +210,7 @@ sudo ufw allow ssh
 
 ![UFW](https://i.imgur.com/ur9Y2qyl.jpg)
 
-### **3.2 Sync with Binance Smart Chain**
+### **3.2 Sync with BNB Chain**
 _This step will likely take a while to complete._
 
 #### 3.2.1 Sync normally

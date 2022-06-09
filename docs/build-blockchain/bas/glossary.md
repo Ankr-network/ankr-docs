@@ -4,17 +4,17 @@ id: glossary
 ---
 
 ### BAS
-Framework for creating sidechains in the BSC ecosystem. 
+Framework for creating sidechains in the BNB Chain ecosystem. 
 
 ### BAS Modules
 Configurable and programmable modules that extend the base BAS functionality that is obtained applying the BAS template. Internally, BAS implements the following modules: Parlia consensus engine, staking pools, governance, dynamic runtime upgrades, reward management, manageable blockchain params, EVM hooks, deployment proxy. 
 Template
-A ready-made blockchain solution that is already integrated into the BSC infrastructure. A template defines the primary structure and configuration of the blockchain, using special templates. With the BSC integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
+A ready-made blockchain solution that is already integrated into the BNB Chain infrastructure. A template defines the primary structure and configuration of the blockchain, using special templates. With the BNB Chain integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
 
 Right now, we offer a single BSC-based template. In the future, the list of templates will be extended.
 
 ### BAS Validator Hub
-A smart contract that adds to cross-chain functionality to the BAS applications. It registers the BAS application in the BSC smart contract.
+A smart contract that adds to cross-chain functionality to the BAS applications. It registers the BAS application in the BNB Chain smart contract.
 
 See this code example for technical details:
 ```
@@ -23,15 +23,15 @@ interface BASValidatorHub {
 ```
 
 ### Block Header Verification (BHVF)
-A Solidity function that verifies block headers from BAS applications, thus ensuring the validators are not compromised. Also, BHVF is responsible for verifying transaction receipt from blockchain that allows to prove the correctness of cross-chain transfer from BAS to BSC chain.
+A Solidity function that verifies block headers from BAS applications, thus ensuring the validators are not compromised. Also, BHVF is responsible for verifying transaction receipt from blockchain that allows to prove the correctness of cross-chain transfer from BAS to BNB Chain chain.
 
 ### BLS Cryptography
 Boneh–Lynn–Shacham cryptography for signature verification and more. For more detail, refer to [CryptoWiki](https://cryptography.fandom.com/wiki/BLS_(cryptography)).
 
 ### BSC
-BNB Chain, formerly known as Binance Smart Chain. The Binance chain with smart contracts support. 
+BNB Chain, formerly known as BNB Chain. The Binance chain with smart contracts support. 
 
-### BSC Infrastructure
+### BNB Chain Infrastructure
 BSC brings with it a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. All that is easily accessible to BAS developers, as creating a BAS they apply a BAS template that includes integration with this infrastructure.
 EVM
 A powerful, sandboxed virtual stack embedded within each full Ethereum node, responsible for executing contract bytecode. It controls smart contract deployment and execution.
@@ -44,7 +44,7 @@ Governance is able to manage staking parameters, such as felony threshold or jai
 
 ### Native Asset Bridge
 A cross-chain bridge that is embedded to BAS as a system smart contract. 
-It supports deposits (BAS -> BSC) and withdrawals (BSC -> BAS).
+It supports deposits (BAS -> BNB Chain) and withdrawals (BNB Chain -> BAS).
 
 ### Parlia Consensus Engine
 A Proof-of-Staked Authority (PoSA) consensus algorithm for BSC. 

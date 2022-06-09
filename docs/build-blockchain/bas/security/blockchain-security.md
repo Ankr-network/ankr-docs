@@ -7,11 +7,11 @@ id: blockchain-evm
 
 ## Blockchain
 
-BAS solves the blockchain security problem by using the BSC codebase for it default template applied when creating a BAS instenca.
+BAS solves the blockchain security problem by using the BNB Chain codebase for it default template applied when creating a BAS instenca.
 
 BSC is well-tested, audited, and is affordable and scalable solution, which closes all the target security and financial points. 
 
-In its turn, BSC uses BNB Chain with Cosmos SDK under the hood and relies on its security model.
+In its turn, BNB Chain uses BNB Chain with Cosmos SDK under the hood and relies on its security model.
 
 ## EVM
 

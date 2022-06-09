@@ -27,7 +27,7 @@ Depends on whether the project wants to own their own BAS, or they want it as a 
 NodeReal or Ankr will provide it as PaaS, which includes validators, networks, tools, RPC service, and explorer. All that will be provided as a package, and there will be a quotation for this service.
 
 ### Will BAS transactions and DAOs be counted towards BNB Chain? Should we account for these sidechain metrics and how?
-They will not be counted. In the future, BSC should focus mainly on non-game metrics and liquidity, while games will be on BAS.
+They will not be counted. In the future, BNB Chain should focus mainly on non-game metrics and liquidity, while games will be on BAS.
 
 ### When can projects start deploying on BAS? 
 BAS Testnet will be out at the end of March, 2022.
