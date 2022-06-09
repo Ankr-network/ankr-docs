@@ -84,6 +84,10 @@ You can check all available DeFi platforms on ANKR DeFi:
 * [aBNBb](https://www.ankr.com/staking/defi/trade/?from=aBNBb&to=BNB) 
 * aBNBc (coming soon)
 
+You can also use your liquid tokens to:
+* [Provide liquidity to DEXs](https://www.ankr.com/docs/staking/defi/provide-liquidity-to-dex) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
+* [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farm) and earn additional rewards in the form of other tokens.  
+
 ### Can I get staking metrics for my integration?
 
 Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).
