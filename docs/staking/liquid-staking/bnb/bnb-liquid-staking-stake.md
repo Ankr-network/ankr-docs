@@ -20,7 +20,7 @@ You have a MetaMask wallet.
 
 2. Purchase BNB at [https://www.binance.com/](https://www.binance.com) and other exchanges.
 
-3. Send BNB to your Binance Smart Chain (BSC) address from MetaMask.
+3. Send BNB to your BNB Chain (BSC) address from MetaMask.
 
 ## Connect your wallet
 

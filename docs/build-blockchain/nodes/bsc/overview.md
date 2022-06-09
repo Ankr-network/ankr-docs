@@ -3,10 +3,10 @@ title: Overview
 id: overview
 ---
 
-# Binance Smart Chain
+# BNB Chain
 
 :::info
-Ankr has pioneered the running of Erigon BSC for Testnet. 
+Ankr has pioneered the running of Erigon BNB Chain for Testnet. 
 The Mainnet is currently synchronizing and details will be available soon.
 :::
 

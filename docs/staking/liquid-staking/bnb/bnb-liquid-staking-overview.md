@@ -18,7 +18,7 @@ To learn more, view the [detailed audit report](http://assets.ankr.com/earn/smar
 
 ### Benefits of BNB Liquid Staking
 
-Instant Liquidity Using Ankr Staking is the best way to stake BNB as you can access instant liquidity in the form of the aBNBb token. Avoiding locking your tokens up with the BSC network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
+Instant Liquidity Using Ankr Staking is the best way to stake BNB as you can access instant liquidity in the form of the aBNBb token. Avoiding locking your tokens up with the BNB Chain network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
 
 Read the [Medium article](https://medium.com/Ankr-network/Ankr-x-ellipsis-staking-liquidity-mining-Ankr-rewards-f49a76fd50cc) about staking and liquidity mining to learn more benefits!
 
@@ -38,11 +38,11 @@ If you would like to unstake your BNB, you can choose the “unstake” option a
 
 ### **No technical knowledge required**
 
-Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your BNB for the reward earning aBNBb token. Enhanced decentralization Our BNB Liquid Staking will not be using only Ankr validator nodes to stake the BNB from users. Ankr Staking will select several suitable and reliable BSC validators, making BNB Liquid Staking as decentralized as possible. This means that Ankr will not contribute to giving any party more influence over the BSC network as the BNB will be spread over a wide variety of nodes. Ultimately, the end goal is having Ankr governance decide on the target allocation to different validator nodes.
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your BNB for the reward earning aBNBb token. Enhanced decentralization Our BNB Liquid Staking will not be using only Ankr validator nodes to stake the BNB from users. Ankr Staking will select several suitable and reliable BNB Chain validators, making BNB Liquid Staking as decentralized as possible. This means that Ankr will not contribute to giving any party more influence over the BNB Chain network as the BNB will be spread over a wide variety of nodes. Ultimately, the end goal is having Ankr governance decide on the target allocation to different validator nodes.
 
-### Contribute to the security of the BSC network
+### Contribute to the security of the BNB Chain network
 
-Staking with BNB Liquid Staking allows you to play an important role in boosting the network’s security as a whole. Ankr’s BNB staking system distributes staked tokens intelligently across the BSC ecosystem to help the network achieve optimal decentralization. Diversity and decentralization of active validators both ensure the network remains as secure as possible.
+Staking with BNB Liquid Staking allows you to play an important role in boosting the network’s security as a whole. Ankr’s BNB staking system distributes staked tokens intelligently across the BNB Chain ecosystem to help the network achieve optimal decentralization. Diversity and decentralization of active validators both ensure the network remains as secure as possible.
 
 ### Additional yield
 

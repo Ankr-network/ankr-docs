@@ -1,19 +1,19 @@
 ---
-Title: Binance Smart Chain RPC
+Title: BNB Chain RPC
 id: binance-smart-chain
 ---
 
-# Binance Smart Chain RPC
+# BNB Chain RPC
 
-**Binance Smart Chain** is an EVM compatible chain designed to work alongside Binance Chain. 
+**BNB Chain** is an EVM compatible chain designed to work alongside Binance Chain. 
 
-As well as EVM compatibility, BSC adds smart contract functionality to the chain. The dual-chain architecture alongside Binance Chain enables the sending and receiving of BNB and BEP2 tokens cross-chain.
+As well as EVM compatibility, BNB Chain adds smart contract functionality to the chain. The dual-chain architecture alongside Binance Chain enables the sending and receiving of BNB and BEP2 tokens cross-chain.
 
 EVM-compatibility permits support for Ethereum tools and DApps.
 
 ## Quick links
 
-[**Binance Smart Chain**](https://www.binance.org/en/smartChain)
+[**BNB Chain**](https://www.binance.org/en/smartChain)
 
 [**Docs**](https://docs.binance.org/smart-chain/guides/bsc-intro.html)
 
@@ -24,7 +24,7 @@ EVM-compatibility permits support for Ethereum tools and DApps.
 ## Connect wallet
 
 
-You can set up your **MetaMask wallet** to connect to BSC RPC. You can then perform transactions and interact with the network.
+You can set up your **MetaMask wallet** to connect to BNB Chain RPC. You can then perform transactions and interact with the network.
 
 ### Get started
 
@@ -36,7 +36,7 @@ You can set up your **MetaMask wallet** to connect to BSC RPC. You can then perf
 
 |        Chain        | Custom RPC Category |                           Details                          |
 | :-----------------: | :-----------------: | :--------------------------------------------------------: |
-| Binance Smart Chain |    NETWORK NAME:    |                           BSC RPC                          |
+| BNB Chain |    NETWORK NAME:    |                           BNB Chain RPC                          |
 |                     |     NEW RPC URL:    | [https://rpc.ankr.com/bsc](https://rpc.ankr.com/bsc) |
 |                     |      CHAIN ID:      |                             56                             |
 |                     |       SYMBOL:       |                             BNB                            |

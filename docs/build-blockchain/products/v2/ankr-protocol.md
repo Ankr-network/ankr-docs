@@ -14,7 +14,7 @@ open access to a public multi-chain RPC layer, Ankr Protocol provides reliable, 
 
 ## What's so (r)evolutionary about it?
 
-Developers can instantly access public or premium endpoints for both full nodes and archive nodes on Binance Smart Chain using either HTTPS or Websocket (Websockets on **Premium** only)
+Developers can instantly access public or premium endpoints for both full nodes and archive nodes on BNB Chain using either HTTPS or Websocket (Websockets on **Premium** only)
 
 With Ankr RPC endpoints, you don't have to spend hours or days or weeks waiting for your node to sync.
 
@@ -43,7 +43,7 @@ The **Ankr Investor** enjoys a significant utility of the ANKR token being emplo
 
 **Ankr Premium** offers even further optimisation, speed and efficiency for 10K ANKR per year.
 
-Initial blockchains supported are:**Avalanche, Arbitrum, Binance Smart Chain, Ethereum, Fantom, Near, Polygon, Solana**
+Initial blockchains supported are:**Avalanche, Arbitrum, BNB Chain, Ethereum, Fantom, Near, Polygon, Solana**
 
 By providing node services and receiving ANKR rewards, to building on multiple chains and receiving chain rewards. Anyone can build and earn on Web 3.0 from a DeFi newbie to a Crypto Degen.
 

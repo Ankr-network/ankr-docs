@@ -50,19 +50,19 @@ This is particularly useful in addressing the scalability problems of Ethereum. 
 
 EVM compatible blockchains can help users get past these hurdles.
 
-Examples of EVM compatible blockchains are Binance Smart Chain, Polygon and Avalanche.
+Examples of EVM compatible blockchains are BNB Chain, Polygon and Avalanche.
 
 View the [complete list of EVM-compatible chains](https://docs.ankr.com/resources/articles/supported-chains).
 
 With Ankr’s support for EVM-compatible chains, developers can easily access other chains with the same functions and code, without getting locked into a single chain.
 
-#### Binance Smart Chain
-Binance Smart Chain solves the development challenges in adding new decentralized features for assets and community to the native DEX blockchain.
+#### BNB Chain
+BNB Chain solves the development challenges in adding new decentralized features for assets and community to the native DEX blockchain.
 
-Binance Smart Chain is a standalone parallel Binance chain offering much requested Smart Contract and Virtual Machine functionality. The provision of a parallel chain ensures the continuance of existing Binance Chain performance capabilities in handling millions of trades in a short time.
+BNB Chain is a standalone parallel Binance chain offering much requested Smart Contract and Virtual Machine functionality. The provision of a parallel chain ensures the continuance of existing Binance Chain performance capabilities in handling millions of trades in a short time.
 
 **Key Benefits**
-* Cross-chain communication meaning that users are free to create any tokenization, financial products, and digital assets on Binance Smart Chain or Binance Chain. Items on BSC can be manually and programmatically traded and circulated in the stable, high throughput, fast and friendly environment of Binance Chain whilst being able to operate these in a single interface and tooling ecosystem.
+* Cross-chain communication meaning that users are free to create any tokenization, financial products, and digital assets on BNB Chain or Binance Chain. Items on BNB Chain can be manually and programmatically traded and circulated in the stable, high throughput, fast and friendly environment of Binance Chain whilst being able to operate these in a single interface and tooling ecosystem.
 * Staking Involved Consensus and Governance.
 * Ethereum Compatibility.
 

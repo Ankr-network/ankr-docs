@@ -1,22 +1,22 @@
 ---
-title: Erigon BSC for Testnet
+title: Erigon BNB Chain for Testnet
 id: erigon-bsc-testnet
 ---
 
-# Initial testing of the Erigon BSC Testnet Archive Node
+# Initial testing of the Erigon BNB Chain Testnet Archive Node
 
-This is a description of our process and initial results running Erigon BSC for Testnet. 
+This is a description of our process and initial results running Erigon BNB Chain for Testnet. 
 The Mainnet is still being synchronized and details will be published shortly.
 
 :::note
-We intentionally ran a low spec server from Digital Ocean to demonstrate the high performance of Erigon for BSC. 
+We intentionally ran a low spec server from Digital Ocean to demonstrate the high performance of Erigon for BNB Chain. 
 :::
 
 ## 00 Hardware Setup
 * Processor: 4 vCPU
 * Memory: 8 GB
 * OS: 160 GB
-* Storage: 1TB disk for BSC Testnet Archive Data
+* Storage: 1TB disk for BNB Chain Testnet Archive Data
 
 
 ## 01 Synchronization Process
@@ -29,7 +29,7 @@ and proceeds all the way to the latest height at:
 :::tip
 The synchronization process took **25 hours and 10 minutes**. 
 
-It is worth considering that Erigon for BSC was only using a single CPU processor. 
+It is worth considering that Erigon for BNB Chain was only using a single CPU processor. 
 We estimate that the sync process could 4-5 times faster than our trial. 
 
 It is also worth considering that this synchronization speed is still significantly faster than currrent Geth based clients. 
@@ -61,9 +61,9 @@ If you compare the results below wit
 ![GETH Goerli 100 concurrent requests](../../../../static/img/nodes/bsc-erigon-100-geth-goerli-conc-req.png)
 
 ## 03 Future Work 
-Our focus going forward is to progress our collaboration with the Binance Smart Chain team with the following aims:
+Our focus going forward is to progress our collaboration with the BNB Chain team with the following aims:
 
-1. Continue to improve the performance of Erigon for BSC by utilizing full multi-core CPU capacity.
+1. Continue to improve the performance of Erigon for BNB Chain by utilizing full multi-core CPU capacity.
 2. Enable Validator mode.
 
 

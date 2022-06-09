@@ -71,7 +71,7 @@ NOTE: This is also known as Blockchain Agnosticism.
 As a multi-chain provider, Ankr is chain neutral; we don’t advocate for our users to adopt any particular chain in preference to another. 
 
 Ankr users have to choose between networks and the ecosystem. 
-One consideration is whether they want users to hold crypto assets on ETH (ERC20) or BSC (BEP20) and what the implications are. A user holding USDT - the ERC20 version - cannot easily buy a NFT being sold with USDT, the BEP20 version.
+One consideration is whether they want users to hold crypto assets on ETH (ERC20) or BNB Chain (BEP20) and what the implications are. A user holding USDT - the ERC20 version - cannot easily buy a NFT being sold with USDT, the BEP20 version.
 
 Ankr is at the forefront of addressing these limitations. By working closely with developers, Ankr has pioneered the building of tools for cross-chain interoperability.
 

@@ -13,7 +13,7 @@ Ensure you have a small amount of FTM for the gas fee.
 
 Unstaknig also applies an unstake fee that depends on the current liquidity and amount to unstake. The fee is deducted from the unstaked amount.
 
-Unstaking FTM tokens is a multi-step process involving sending several transactions to the FTM smart-contracts deployed in Binance chain and Binance Smart Chain.
+Unstaking FTM tokens is a multi-step process involving sending several transactions to the FTM smart-contracts deployed in Binance chain and BNB Chain.
 
 FTM tokens are transferred to your wallet automatically when the unstaking process completes. There is no additional cost for this.
 :::
