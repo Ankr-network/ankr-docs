@@ -53,10 +53,7 @@ aBNBc rewards are built into the token. Effectively, your rewards accumulate dai
 
 ### Does Ankr charge for the service?
 
-When staking, users pay the relayer fee — 0.02 BNB.
-
-You must also count in the gas price for outgoing transactions.
-
+Ankr does not charge any service fees for BNB Liquid Staking. Just to make sure — `relayer fee` is fee for cross-chain transfer of your assets during staking, not an Ankr fee.
 
 ### What determines the amount of reward I receive each rebase of aBNBb?
 
