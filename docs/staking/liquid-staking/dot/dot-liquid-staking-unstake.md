@@ -5,7 +5,7 @@ id: unstake-dot
 
 ## Overview
 
-If you decide to unstake, it can take up to 28 weeks before you can claim your funds.
+If you decide to unstake, it can take up to 28 days before you can claim your funds.
 
 :::info Before you start
 
