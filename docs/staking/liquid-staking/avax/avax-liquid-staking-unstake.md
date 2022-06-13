@@ -5,7 +5,7 @@ id: unstake-avax
 
 ## Overview
 
-If you decide to unstake, it can take 4 weeks before you can claim your funds.
+If you decide to unstake, it can take up to 4 weeks before you can claim your funds.
 
 :::info Before you start
 

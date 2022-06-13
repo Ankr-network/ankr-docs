@@ -5,7 +5,7 @@ id: unstake-matic
 
 ## Overview
 
-If you decide to unstake, it can take 3-4 days before you can claim your funds. Throughout this period, your MATIC will continue to **earn staking rewards**.
+If you decide to unstake, it can take up to 3-4 days before you can claim your funds. Throughout this period, your MATIC will continue to **earn staking rewards**.
 
 :::info Before you start
 
