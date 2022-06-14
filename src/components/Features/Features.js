@@ -18,6 +18,17 @@ const FeatureList = [
 
   },
   {
+    title: "Tutorials",
+    icon: require("../../../static/img/feature/tutorials-icon.png").default,
+    list: [
+      'Read practical tutorials to build projects',
+      'Build DeFi and Web3 projects, step by step',
+      'Share your knowledge and submit your own tutorials',
+      'Discover opportunities for grants, partnerships, and more',
+    ],
+    link: 'https://www.ankr.com/docs/learn/tutorials/tutorials',
+  },
+  {
     title: "Stake ＆ Earn",
     icon: require("../../../static/img/feature/staking-icon.png").default,
     list: [
@@ -42,17 +53,6 @@ const FeatureList = [
     ],
     link: 'https://www.ankr.com/docs/learn/tokens-governance/ankr-tokens',
   },
-  {
-    title: "Tutorials",
-    icon: require("../../../static/img/feature/tutorials-icon.png").default,
-    list: [
-      'Read practical tutorials to build projects',
-      'Build DeFi and Web3 projects, step by step',
-      'Share your knowledge and submit your own tutorials',
-      'Discover opportunities for grants, partnerships, and more',
-    ],
-    link: 'https://www.ankr.com/docs/learn/tutorials/create-voting-system/movie-voting-web3',
-  }
 ];
 
 function Feature({ icon, title, list, description, link }) {

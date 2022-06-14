@@ -17,14 +17,6 @@ function HomepageHeader() {
         <div className={styles.container}>
           <h1 className={styles.title}>{siteConfig.title}</h1>
           <p className={styles.subTitle}>{siteConfig.tagline}</p>{' '}
-          <div className={styles.buttons}>
-            <Link
-              className={styles.button}
-              to="/docs/learn/tutorials/submit-tutorial"
-            >
-              Contribute to Ankr Docs
-            </Link>
-          </div>
         </div>
         <Holder />
       </div>

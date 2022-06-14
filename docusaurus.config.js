@@ -171,7 +171,7 @@
                 label: 'Tokens & Governance',
               },
               {
-                to: 'learn/tutorials/submit-tutorial',
+                to: 'learn/tutorials/tutorials',
                 label: 'Tutorials',
               },
               {
