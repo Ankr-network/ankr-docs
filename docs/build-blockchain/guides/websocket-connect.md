@@ -109,9 +109,7 @@ func main() {
 <TabItem value="ethers.js" label="Ethers.js">
 
 ```javascript
-const ethers = require("ethers");
-
-const url = wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>     
+const ethers = require("ethers");   
 
 const init = function () {
 
@@ -122,7 +120,6 @@ const init = function () {
         setTimeout(function () {
             wsProvider.destroy()
         }, 1000);
-
     });
 
 };
