@@ -423,6 +423,7 @@ module.exports =
                'staking/liquid-staking/bnb/api',
                'staking/liquid-staking/matic/api',
                'staking/reference/staking-metrics',
+               'staking/liquid-staking/oracles/api',
                  ],
              },
             {
