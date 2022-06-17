@@ -49,7 +49,7 @@ If you need more details on cumulative prices and TWAP oracles, refer to the [Un
 Now that you know the flow, you can integrate with the Ankr PancakeSwap price oracle, using the functions below.
 
 ### `peek()`
-Gets time-weighted average price of a pair of tokens from PancakeSwap.
+Gets time-weighted average price of a pair of tokens from PancakeSwap. A view function.
 
 #### Parameters
 The function returns two parameters:
@@ -59,6 +59,3 @@ The function returns two parameters:
 
 #### Smart contracts
 * [Mainnet aBNBc Oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06#readProxy)
-
-#### Example
-* [Mainnet live transaction example](https://bscscan.com/tx/0xb803ff8100d76cc54fbf7cbe1d38eb1c2e803eff775d903d6e7ba7367ddce58b)
