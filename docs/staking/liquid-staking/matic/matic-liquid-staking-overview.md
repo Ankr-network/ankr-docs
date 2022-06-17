@@ -11,6 +11,9 @@ id: overview
 * aMATICc is a reward-bearing token, meaning that the fair value of 1 aMATICc token vs. MATIC increases over time as staking rewards accumulate. 
 
 
+## Audit details
+Polygon Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. To learn more, view the [detailed audit report](https://assets.ankr.com/staking/smart_contract_security_audit_matic.pdf).
+
 ## Benefits
 
 * **Generate Multiple Layers of Rewards**: Use the aMATICb/aMATICc bond token on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!

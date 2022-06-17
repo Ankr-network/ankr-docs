@@ -541,7 +541,7 @@ module.exports =
       },
      {
          'Tutorials': [
-          'learn/tutorials/submit-tutorial',
+          'learn/tutorials/tutorials',
           'learn/tutorials/create-voting-system/movie-voting-web3',
           'learn/tutorials/create-eth-app-tutorial/create-eth-app',
           'learn/tutorials/simple-truffle',
