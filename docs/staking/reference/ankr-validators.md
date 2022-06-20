@@ -7,8 +7,6 @@ id: ankr-validators
 
 Besides using network infrastructure, we are creating and maintaining our own validators.
 
-Ankr validators are part of [Ankr Liquid Staking](https://www.ankr.com/about-staking/), but also provide direct access.
-
 Here are available Ankr validators.
 
 | Network | Validator |
