@@ -1,13 +1,13 @@
 ---
-title: Oracles API
+title: Price oracles API
 id: api
 ---
 
-# Oracles API for Liquid Staking API
+# Ankr price oracles API
 
-Ankr offers you oracles that get data from the real world or blockchain.
+Ankr offers you oracles that get data from DEXs.
 
-To integrate with Ankr oracles, use the functions, smart contract addresses, and examples below.
+To integrate with Ankr oracles, use the smart contract functions and examples below.
 
 Before integrating, read the workflow. It will help you understand what actual data you're getting from each oracle.
 
@@ -19,7 +19,7 @@ TWAP is a compound price that is calculated, using data from a specific period o
 
 ### Workflow
 
-To explain how the oracle works, let's show what happens when we request price of aBNBc in BUSD.
+To explain how the oracle works, let's show what happens when we request price of aBNBc in USD (BUSD).
 
 Before we dive into the example, you should know two things:
 * Since there is no direct pair aBNBc-BUSD on PancakeSwap, the price is calculated via 2 pairs — aBNBc-BNB and BNB-BUSD — which is done automatically, without additional user interaction. The user just asks the oracle for the price of aBNBc in BUSD.
@@ -49,7 +49,7 @@ If you need more details on cumulative prices and TWAP oracles, refer to the [Un
 Now that you know the flow, you can integrate with the Ankr PancakeSwap price oracle, using the functions below.
 
 ### `peek()`
-Gets time-weighted average price of a pair of tokens from PancakeSwap. A view function.
+Gets time-weighted average price of a pair of tokens from PancakeSwap; a view function.
 
 #### Parameters
 The function returns two parameters:
@@ -58,4 +58,12 @@ The function returns two parameters:
 * query status (bool) — status of the attempt to get the price (success/failure).
 
 #### Smart contracts
-* [Mainnet aBNBc Oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06#readProxy)
+* [Mainnet aBNBc Oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06#readProxyContract)
+
+#### Examples
+
+You can query for a price on the [contract page](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06#readProxyContract), anytime.
+
+As an example, see the response for a price query in the picture below:
+
+<img src={require('/img/oracles/pancakeswap-oracle-peek-query.png').default} alt="response for a price query" width="600" />
