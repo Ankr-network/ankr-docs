@@ -1,5 +1,5 @@
 ---
-title: Price oracles API
+title: Price Oracles API
 id: api
 ---
 
