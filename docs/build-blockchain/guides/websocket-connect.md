@@ -13,21 +13,21 @@ Copy your wss endpoint from the [Premium Plan](https://www.ankr.com/protocol/pla
 
 Premium websockets are of the following format:
 	
-**Arbitrum wss://rpc.ankr.com/arbitrum/ws/<YOUR_PRIVATE_KEY>**
+**Arbitrum wss://rpc.ankr.com/arbitrum/ws/<YOUR_API_KEY>**
 
-**Avalanche wss://rpc.ankr.com/avalanche/ws/<YOUR_PRIVATE_KEY>**
+**Avalanche wss://rpc.ankr.com/avalanche/ws/<YOUR_API_KEY>**
 
-**BNB Chain wss://rpc.ankr.com/bsc/ws/<YOUR_PRIVATE_KEY>**
+**BNB Chain wss://rpc.ankr.com/bsc/ws/<YOUR_API_KEY>**
 
-**Celo wss://rpc.ankr.com/celo/ws/<YOUR_PRIVATE_KEY>**
+**Celo wss://rpc.ankr.com/celo/ws/<YOUR_API_KEY>**
 
-**Ethereum wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>**
+**Ethereum wss://rpc.ankr.com/eth/ws/<YOUR_API_KEY>**
 
-**Fantom wss://rpc.ankr.com/fantom/ws/<YOUR_PRIVATE_KEY>**
+**Fantom wss://rpc.ankr.com/fantom/ws/<YOUR_API_KEY>**
 
-**Polygon wss://rpc.ankr.com/polygon/ws/<YOUR_PRIVATE_KEY>**
+**Polygon wss://rpc.ankr.com/polygon/ws/<YOUR_API_KEY>**
 
-**Solana wss://rpc.ankr.com/solana/ws/<YOUR_PRIVATE_KEY>**
+**Solana wss://rpc.ankr.com/solana/ws/<YOUR_API_KEY>**
 
 :::
 
@@ -46,7 +46,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="bash" label="Curl">
 
 ```bash
-wscat -c wss://multi-rpc.com/avalanche/ws/YOUR-PRIVATE-ENDPOINT`
+wscat -c wss://multi-rpc.com/avalanche/ws/YOUR_API_KEY`
 
 Connected (press CTRL+C to quit)
 
@@ -72,7 +72,7 @@ import (
 
 
 func main() {
-    const url = "wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>"                
+    const url = "wss://rpc.ankr.com/eth/ws/<YOUR_API_KEY>"                
     
     client, err := ethclient.Dial(`choose url_basic or url_token by your created type`)
     
@@ -113,7 +113,7 @@ const ethers = require("ethers");
 
 const init = function () {
 
-    const wsProvider = new ethers.providers.WebSocketProvider('wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>');
+    const wsProvider = new ethers.providers.WebSocketProvider('wss://rpc.ankr.com/eth/ws/<YOUR_API_KEY>');
 
     wsProvider.on("pending", (tx) => {
         console.log("tx", tx)
@@ -133,11 +133,11 @@ init();
 ```javascript
 const WebSocket = require('ws');
 
-const url = 'wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>'                
+const url = 'wss://rpc.ankr.com/eth/ws/<YOUR_API_KEY>'                
 
 const request = '{"jsonrpc": "2.0", "id": 1, "method": "eth_subscribe", "params": ["newPendingTransactions"]}';  
 
-const ws = new WebSocket('wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>');
+const ws = new WebSocket('wss://rpc.ankr.com/eth/ws/<YOUR_API_KEY>');
 
 ws.on('open', function open() {
     ws.send(request);
@@ -197,8 +197,8 @@ async def do_wss(url):
 class TestWSS:
 
     def test_wss(self):
-        url = 'wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>' 
-        asyncio.get_event_loop().run_until_complete(do_wss('wss://rpc.ankr.com/eth/ws/<YOUR_PRIVATE_KEY>'))
+        url = 'wss://rpc.ankr.com/eth/ws/<YOUR_API_KEY>' 
+        asyncio.get_event_loop().run_until_complete(do_wss('wss://rpc.ankr.com/eth/ws/<YOUR_API_KEY>'))
 ```
 
 </TabItem>
