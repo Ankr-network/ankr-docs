@@ -112,7 +112,7 @@ Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay f
 
 ##### Parameters
 * `spender` (address, required) — address of the `PolygonPool` contract.
-* `value` (uint256, required) — amount of ANKR to be transfered.
+* `value` (uint256, required) — amount of ANKR to be transferred.
 
 ##### Smart contract
 
@@ -172,7 +172,7 @@ Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay f
 
 ##### Parameters
 * `spender` (address, required) — address of the `PolygonPool` contract.
-* `value` (uint256, required) — amount of ANKR to be transfered.
+* `value` (uint256, required) — amount of ANKR to be transferred.
 
 ##### Smart contract
 

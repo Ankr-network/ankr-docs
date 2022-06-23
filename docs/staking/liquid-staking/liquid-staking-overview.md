@@ -75,7 +75,7 @@ When you stake ETH and receive Liquid Staking tokens (aETHb, aETHc) the main ben
 
 #### 2. Elastic supply
 
-For chains that allow unstaking such as Avalanche, the beneift is the elastic supply of Liquid Staking tokens. 
+For chains that allow unstaking such as Avalanche, the benefit is the elastic supply of Liquid Staking tokens. 
 
 *Elastic Supply Tokens* work in such a way that the circulating supply expands or contracts to offset changes in a token's price via rebasing. When you stake AVAX and receive Liquid Staking tokens aAVAXb, the circulating supply of aAVAXb increases. When you want to unstake your AVAX, you must return your aAVAXb to Ankr Staking. Your aAVAXb is burnt and AVAX is returned to you.The circulating supply of aAVAXb decreases. 
 

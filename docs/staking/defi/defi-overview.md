@@ -37,7 +37,7 @@ The aETHc ratio is also applied when staking ETH to avoid existing stakers being
 
 ## Should I Stake or Trade?
 
-Along with the trading optoins, you can see the Ankr Staking row with a **Stake** or **Unstake** button depending on the source asset you choose.
+Along with the trading options, you can see the Ankr Staking row with a **Stake** or **Unstake** button depending on the source asset you choose.
 
 Ankr DeFi Trade will compare prices on the market with Ankr's Fair Value to indicate whether it is more attractive to stake, or trade. This tool was created to help stakers make better-informed decisions.
 

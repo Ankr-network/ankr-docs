@@ -58,7 +58,7 @@ The user must also count in the gas price in ETH for outgoing transactions.
 
 
 ## Rewards
-User's aMATICb balance grows daily. It can be desribed as `daily rewards / total share * user's share`.
+User's aMATICb balance grows daily. It can be described as `daily rewards / total share * user's share`.
 
 User's aMATICc balance stays the same but the value of aMATICc to MATIC grows daily.
 

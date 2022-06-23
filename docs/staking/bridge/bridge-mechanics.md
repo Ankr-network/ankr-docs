@@ -33,6 +33,6 @@ The mechanics of what's going on under the hood when a user transfers their fund
 7. The user clicks **Receive**, which causes Ankr Bridge to call the `withdraw()` function (both for ERC-20 or native tokens).
    This operation is called *peg-out*.
 
-8. The user sees the transferred assets deposited to their wallet on the detination network.
+8. The user sees the transferred assets deposited to their wallet on the destination network.
 
 To sum up, the flow in any direction is the same: `approve()` (if necessary) -> `deposit()` -> `notarize` -> `withdraw()`.

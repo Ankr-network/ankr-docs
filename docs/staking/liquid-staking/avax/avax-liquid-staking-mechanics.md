@@ -40,7 +40,7 @@ The user must also count in the gas price for outgoing transactions.
 
 ## Rewards
 
-User's aAVAXb balance grows daily. It can be desribed as `daily rewards / total share * user's share`.
+User's aAVAXb balance grows daily. It can be described as `daily rewards / total share * user's share`.
 
 Validators that work correctly and are online at least 80% of their validating period, receive rewards at the end of the validating period.
 
