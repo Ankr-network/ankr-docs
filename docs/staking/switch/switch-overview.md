@@ -11,7 +11,7 @@ Ankr Switch is a product for switching between reward earning tokens and reward 
 
 ### What are reward bearing and rewards earning tokens?
 
-They are tokens issued to you by Ankr when staking with Arnk Earn.  These tokens are in a 1:1 ratio to your staked assets.
+They are tokens issued to you by Ankr when staking with Ankr Earn.  These tokens are in a 1:1 ratio to your staked assets.
 
 There are two types of Liquid Staking tokens:
 

@@ -23,7 +23,7 @@ By solving the capital inefficiency of Parachain slot auctions with Parachain Li
 
 1. **Liquidity**: Parachain Liquid Crowdloan enables liquidity on bonded DOT through an upcoming auction marketplace on [Bounce Finance](https://bounce.finance).
 
-2. **Higher Rewards**: Ankr Staking collects rewards from projects winning Parachain Slot Auctions and enables Parachain Liquid Crowdloan token holders to claim rewards. To compensate contributors for the illiquidity risk of bonding KSM/DOTfor up to 48 weeks/24 months, rewards are expected to be significantly higher than KSM/DOT staking.
+2. **Higher Rewards**: Ankr Staking collects rewards from projects winning Parachain Slot Auctions and enables Parachain Liquid Crowdloan token holders to claim rewards. To compensate contributors for the illiquidity risk of bonding KSM/DOT for up to 48 weeks/24 months, rewards are expected to be significantly higher than KSM/DOT staking.
 
 3. **Lending/Borrowing**: [OnX Finance](https://onx.finance) is developing a lending contract enabling it to collateralize Parachain Bonds and borrow DOT, which can be used to free up liquidity, or buy more Parachain Bonds on [Bounce Finance](https://bounce.finance).
 

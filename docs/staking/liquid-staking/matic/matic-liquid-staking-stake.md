@@ -38,7 +38,7 @@ You will need to make the following interactions in your wallet:
 
 :thumbsup: **Approve** to add a new network.
 
-:thumbsup: **Switch network** to switch to the corret network.
+:thumbsup: **Switch network** to switch to the correсt network.
 
 ### Stake your MATIC
 
