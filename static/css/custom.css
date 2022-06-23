@@ -250,9 +250,8 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 main .container {
-  padding: 46px 0 46px 92px !important;
+  padding: 46px 16px 46px 92px !important;
   max-width: 100%;
-
 }
 @media (max-width: 1235px) {
   main .container {
