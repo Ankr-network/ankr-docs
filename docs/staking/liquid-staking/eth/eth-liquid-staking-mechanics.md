@@ -30,7 +30,7 @@ The user must also count in the gas price for outgoing transactions.
 
 
 ## Rewards
-User's aETHb balance grows daily. It can be desribed as `total share supply / (total stake amount + rewards)`.
+User's aETHb balance grows daily. It can be described as `total share supply / (total stake amount + rewards)`.
 
 Validators receive rewards when Ethereum has their unstaking functionality released in their 2.0 version.
 

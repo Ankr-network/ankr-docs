@@ -30,7 +30,7 @@ We're going to explain bridging, using aMATICb.
 
 The *Finish Bridge* functionality allows you to get back to the bridging process if anything fails. 
 
-The brinding process may fail due to: 
+The bridging process may fail due to: 
 * Navigating away from the Bridge page anytime during the process.
 * Closing the page anytime during the process.
 * Ankr Bridge failures due to network instability and other possible issues. 
@@ -41,5 +41,5 @@ If the process failed at Step 5 or later:
 1. Open your wallet, find and copy the transaction ID from the **Deposit** operation.
 2. Visit [Ankr Bridge](https://www.ankr.com/staking/bridge/). 
 3. Click *Finish Bridge*.
-4. Paste the deposit transation ID in the form and click *Proceed bridge*.
+4. Paste the deposit transaction ID in the form and click *Proceed bridge*.
 5. Check that it brought you to the **Sending progress** page, then continue from Step 6 from **Bridge aMATICb**.
