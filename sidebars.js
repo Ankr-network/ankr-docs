@@ -453,6 +453,7 @@ module.exports =
             'staking/reference/principles',
             'staking/reference/audit-reports',
             'staking/reference/ankr-validators',
+            'staking/reference/liquid-staking-fees',
             'staking/reference/ls-smart-contract-addresses-mn',
             'staking/reference/ls-smart-contract-addresses-tn',
             'staking/reference/compatible-wallets',
