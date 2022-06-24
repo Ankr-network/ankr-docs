@@ -5,7 +5,7 @@ id: api
 
 # BNB Liquid Staking API
 
-To integrate with AVAX Liquid Staking, use the functions, smart contract addresses, and examples below. 
+To integrate with AVAX Liquid Staking, use the smart contract functions and examples below.
 
 ## Stake AVAX and claim aAVAXb
 
