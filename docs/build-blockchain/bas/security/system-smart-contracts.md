@@ -5,13 +5,13 @@ id: smart-contracts
 
 # System smart contracts security
 
-For the smart contract runtime environment, BAS uses EVM from the official Go-Ethereum codebase. 
+For the smart contract runtime environment, BNB Sidechain uses EVM from the official Go-Ethereum codebase. 
 Time, usage, and numerous extensive audits of EVM and Solidity by the entire blockchain community show it's a secure and hack-proof technology.  
 
-This way BAS solves the runtime environment security problem.
+This way BNB Sidechain solves the runtime environment security problem.
 
 What's left is to ensure that the system smart contracts themselves are secure.  
-BAS solves this problem by introducing the following features.
+BNB Sidechain solves this problem by introducing the following features.
 
 ## Decentralized validators
 
@@ -20,11 +20,11 @@ This model balances validator performance and creates a more decentralized syste
 
 ## No centralized controlling authority
 
-Thanks to the decentralized validators model and the governance model, a BAS instance can have no centralized controlling authority and be governed by the network users themselves. 
+Thanks to the decentralized validators model and the governance model, a BNB Sidechain instance can have no centralized controlling authority and be governed by the network users themselves. 
 
 ## Audit details
 
-BAS smart contracts have undergone external audit by Beosin Blockchain Security. 
+BNB Sidechain smart contracts have undergone external audit by Beosin Blockchain Security. 
 To learn more, view the [detailed audit report](https://assets.ankr.com/bas/system_smart_contracts_security_audit.pdf).
 
 

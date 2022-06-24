@@ -3,7 +3,7 @@ title: Demo
 id: demo
 ---
 
-There is a demo application where you can try BAS. 
+There is a demo application where you can try BNB Sidechain. 
 It already contains pre-deployed API gateways, block explorer, UI for the staking and faucet.
 ```
 RPC Endpoint: https://rpc.dev-01.bas.ankr.com/
@@ -20,5 +20,5 @@ Current Symbol: BAS
 ```
 
 :::info
-If you want to see BAS source code, check the [BAS codebase](https://github.com/Ankr-network?q=bas). 
+If you want to see BNB Sidechain source code, check the [BNB Sidechain codebase](https://github.com/Ankr-network?q=bas). 
 :::

@@ -1,9 +1,9 @@
 ---
-title: Launch BAS
+title: Launch BNB Sidechain
 id: launch-bas
 ---
 
-# Launch BAS
+# Launch BNB Sidechain
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Before running command you must do following steps:
 
 The config file structure is as such:
 
-* `chainId` — identifier of your BAS chain.
+* `chainId` — identifier of your chain in BNB Sidechain.
 * `validators` — list of initial validator set (make sure that you have the same list in docker compose file).
 * `systemTreasury` — address of system treasury that accumulates 1/16 of rewards (might be governance).
    * `consensusParams` — parameters for the consensus and staking.

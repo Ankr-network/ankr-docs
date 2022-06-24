@@ -56,7 +56,7 @@ module.exports =
           ],
         },
         {
-            'BNB Application Sidechain': [
+            'BNB Sidechain': [
             'build-blockchain/bas/overview',
             {
                 'Architecture': [
@@ -79,7 +79,7 @@ module.exports =
 
             },
             {
-                'How to launch BAS': [
+                'How to launch BNB Sidechain': [
                  'build-blockchain/bas/how-to-launch/launch-bas',
                  'build-blockchain/bas/how-to-launch/deploy-erc20-token',
                  'build-blockchain/bas/how-to-launch/deploy-erc721-token',
