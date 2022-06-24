@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy doc Ankr
 
 on:
   workflow_dispatch:
