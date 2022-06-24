@@ -5,7 +5,7 @@ id: staking
 
 # Staking
 
-BAS supports on-chain staking system and uses the PoSA (proof-of-stake-of-authority) staking model.
+BNB Sidechain supports on-chain staking system and uses the PoSA (proof-of-stake-of-authority) staking model.
 It allows users to delegate their tokens to the specific validator and share validator's rewards based on the total staked amount.
 
 ## Roles 

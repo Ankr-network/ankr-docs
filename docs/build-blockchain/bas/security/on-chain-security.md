@@ -5,7 +5,7 @@ id: on-chain
 
 # On-chain security
 
-Everything that goes on BAS is controlled by the governance model: from the blockchain consensus, change proposals and staking.
+Everything that goes on BNB Sidechain is controlled by the governance model: from the blockchain consensus, change proposals and staking.
 
 ## Governance
 
@@ -15,7 +15,7 @@ By voting for honest validators, users also distribute the voting power between 
 ## Change proposals 
 
 Users are able to propose changes, including changes in governance. 
-Each proposal is reviewed and voted for by other BAS users.
+Each proposal is reviewed and voted for by other BNB Sidechain users.
 Only after reaching the quorum, a governance proposal can be applied.
 
 Here is the list of available proposals:
@@ -34,7 +34,7 @@ Here is the list of available proposals:
 
 ## Staking
 
-We want BAS to be as decentralized as possible, so while validators in the network produce blocks, other validators verify these blocks.
+We want BNB Sidechain to be as decentralized as possible, so while validators in the network produce blocks, other validators verify these blocks.
 
 Validators are incentivized to perform by positive and negative factors.
 
@@ -44,7 +44,7 @@ In turn, they are elected by the users more often.
 However, if a validator is underperforming, it gains less staking rewards and users vote for it less often.
 And if a validator misses a block, it can be punished or even slashed and jailed for 1 week for bad performance.
 
-Besides these factors, validators in the BAS network are also incentivized the following ways:
+Besides these factors, validators in the BNB Sidechain network are also incentivized the following ways:
 * Well-configured network allows to get them more transactions in the pool and, as a result, increases APY.
 * Better CPU makes it possible to include more transactions in blocks.
 * Each missed block causes a reward miss, and transactions in it go to the next validator.

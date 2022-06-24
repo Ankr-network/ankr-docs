@@ -11,7 +11,7 @@ const FeatureList = [
 
       'Access Premium APIs and RPC endpoints with WebSockets',
       'Seamless interaction with 40+ supported blockchains',
-      'Build a fast and secure blockchain with BNB Application Sidechain (BAS)',
+      'Build a fast and secure blockchain with BNB Sidechain',
       'Suitable for web3 developers and enthusiasts of all skill levels',
     ],
     link: 'https://www.ankr.com/docs/build-blockchain/overview',
