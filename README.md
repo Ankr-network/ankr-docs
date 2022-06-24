@@ -37,7 +37,7 @@ To deploy:
 
 Currently, we're using the following Gitflow:
 
-1. Create a feature branch from the `stage` branch. Use the branch naming format described farther in this doc.
+1. Create a feature branch from the `stage` branch. Use the branch naming format described further in this doc.
 2. Work on the documentation for the feature.
 3. When done, test your documentation deploying it to `STAGE`.
 4. When tested, create a pull request to the `stage` branch and add colleagues as reviews, at your discretion. Use the pull request naming format described further in this doc.
