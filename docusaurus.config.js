@@ -99,7 +99,7 @@
               },
               {
                 to: "build-blockchain/bas/overview",
-                label: "BNB Application Sidechain",
+                label: "BNB Sidechain",
               },
               {
                 to: "build-blockchain/guides/json-methods",

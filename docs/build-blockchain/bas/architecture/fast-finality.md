@@ -11,7 +11,7 @@ Currently, BLS cryptography is merged to the official Geth repository, but it's 
 
 Here, we have the next solutions:
 
-* Break compatibility with Parlia and implement fast-finality in the BAS version of Parlia using the BN256 curve.
-* Wait for the BSC’s version of fast-finality and for BLS support.
+* Break compatibility with Parlia and implement fast-finality in the BNB Sidechain version of Parlia using the BN256 curve.
+* Wait for the BNB Chain’s version of fast-finality and for BLS support.
 
-For now, let's assume that fast-finality is an optional solution for the BAS since we have a lot of moving parts here.
+For now, let's assume that fast-finality is an optional solution for the BNB Sidechain since we have a lot of moving parts here.
