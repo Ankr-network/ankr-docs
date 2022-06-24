@@ -49,6 +49,22 @@ jobs:
         run: |
           yarn build
 
+      - uses: actions/checkout@v1  
+        with:
+          repository: Ankr-network/ankr-web
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Install dependencies
+        run: yarn install --cwd ankr-web/packages/staking-sdk
+
+      - name: Build
+        working-directory: ankr-web/packages/staking-sdk
+        run: |
+          yarn docs
+         
+      - name: Copy build
+        run: mv ankr-web/packages/staking-sdk/docs  docs/sdk
+
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
