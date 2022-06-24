@@ -49,9 +49,10 @@ jobs:
         run: |
           yarn build
 
-      - name: Clone ankr-web
-        run: git clone -b main git@github.com:Ankr-network/ankr-web.git
-
+      - uses: actions/checkout@v1  
+        with:
+          repository: Ankr-network/ankr-web
+          token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Install dependencies
         run: yarn install --cwd ankr-web/packages/staking-sdk
