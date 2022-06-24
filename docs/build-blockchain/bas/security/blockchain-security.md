@@ -7,11 +7,11 @@ id: blockchain-evm
 
 ## Blockchain
 
-BNB Sidechain solves the blockchain security problem by using the BNB Chain codebase for it default template applied when creating a BNB Sidechain instance.
+BNB Sidechain solves the blockchain security problem by using the BNB Smart Chain codebase for it default template applied when creating a BNB Sidechain instance.
 
-BNB Chain is well-tested, audited, and is affordable and scalable solution, which closes all the target security and financial points. 
+BNB Smart Chain is well-tested, audited, and is affordable and scalable solution, which closes all the target security and financial points. 
 
-In its turn, BNB Chain uses Cosmos SDK under the hood and has a strong security model.
+In its turn, BNB Smart Chain uses Cosmos SDK under the hood and has a strong security model.
 
 ## EVM
 

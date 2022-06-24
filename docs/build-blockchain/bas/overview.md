@@ -7,11 +7,11 @@ id: overview
 
 ## What is BNB Sidechain?
 
-BNB Sidechain is a framework for creating sidechains in the BNB Chain ecosystem. In other words, it's an infrastructure to help developers and node operators build and run their own blockchains as their internal value system and for a massive number of users while still maintaining a close connection with BNB Chain (BSC).
+BNB Sidechain is a framework for creating sidechains in the BNB Smart Chain ecosystem. In other words, it's an infrastructure to help developers and node operators build and run their own blockchains as their internal value system and for a massive number of users while still maintaining a close connection with BNB Smart Chain.
 
-The main BNB Sidechain task is to allow any developer to raise their blockchain in a matter of hours, with its unique specifications and validator set. Such blockchain, out-of-the-box, can be connected to the BNB Chain infrastructure.
+The main BNB Sidechain task is to allow any developer to raise their blockchain in a matter of hours, with its unique specifications and validator set. Such blockchain, out-of-the-box, can be connected to the BNB Smart Chain infrastructure.
 
-The validator set can run with fewer validators than BNB Chain, depending on the BNB Sidechain deployer. The validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BNB Sidechain.  
+The validator set can run with fewer validators than BNB Smart Chain, depending on the BNB Sidechain deployer. The validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BNB Sidechain.  
 
 We can say this is a standard on which you can build simple but functional blockchain projects. Developers and teams can create simple blockchains with their own business rules and economies. Most importantly, they can extend the existing functionality.
 
@@ -22,7 +22,7 @@ Check out the [BNB Sidechain codebase on GitHub](https://github.com/Ankr-network
 
 ## Why BNB Sidechain?
 
-Today BNB Chain is experiencing network scalability problems and the core developer has proposed to use BNB Sidechain in their Outlook 2022 paper to solve this problem because these sidechains can be designed for much higher throughput and lower gas fees. We want to define a protocol for consensus management and messaging between BNB Sidechain and BNB Chain so that it is easier for developers to use a ready-made solution and it is easier for BNB Chain to integrate with them.
+Today BNB Smart Chain is experiencing network scalability problems and the core developer has proposed to use BNB Sidechain in their Outlook 2022 paper to solve this problem because these sidechains can be designed for much higher throughput and lower gas fees. We want to define a protocol for consensus management and messaging between BNB Sidechain and BNB Smart Chain so that it is easier for developers to use a ready-made solution and it is easier for BNB Smart Chain to integrate with them.
 
 In short, the typical usage of BNB Sidechain is like the Ronin chain for the Axie Infinity.
 
@@ -42,9 +42,9 @@ The idea of BNB Sidechain is to allow you to expand and reuse existing modules, 
 
 Technically, BNB Sidechain is a set of smart contracts written in any possible programming language. The contract executor itself can be anyone and work in any way; BNB Sidechain does not require the use of any specific set of programming languages or API standards. 
 
-In essence, BNB Sidechain defines the primary structure and configuration of the blockchain, using special templates. A template is a ready-made blockchain solution that is already integrated into the BNB Chain infrastructure. With this integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
+In essence, BNB Sidechain defines the primary structure and configuration of the blockchain, using special templates. A template is a ready-made blockchain solution that is already integrated into the BNB Smart Chain infrastructure. With this integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
 
-The current implementation of BNB Sidechain is based on a modified version of BNB Chain, but this is not the rule, BNB Sidechain can technically run on top of any blockchain. In the future, the list of templates will be extended.
+The current implementation of BNB Sidechain is based on a modified version of BNB Smart Chain, but this is not the rule, BNB Sidechain can technically run on top of any blockchain. In the future, the list of templates will be extended.
 
 
 ## What is BNB Sidechain structure? 
@@ -57,4 +57,4 @@ Over time, the set of modules will increase and they will take on a more structu
 
 The main goal of BNB Sidechain is to build such a multi-modular blockchain architecture that it is flexible, convenient, and easy to use.
 
-As the current implementation of BNB Sidechain is built on BNB Chain, all existing modules are built into system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
+As the current implementation of BNB Sidechain is built on BNB Smart Chain, all existing modules are built into system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
