@@ -60,10 +60,10 @@ jobs:
       - name: Build
         working-directory: ankr-web/packages/staking-sdk
         run: |
-          yarn build 
+          yarn docs
          
       - name: Copy build
-        run: mv ankr-web/packages/staking-sdk/build  docs/sdk
+        run: mv ankr-web/packages/staking-sdk/docs  docs/sdk
 
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
