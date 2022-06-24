@@ -49,6 +49,21 @@ jobs:
         run: |
           yarn build
 
+      - name: Clone ankr-web
+        run: git clone stage-staking git@github.com:Ankr-network/ankr-web.git
+
+
+      - name: Install dependencies
+        run: yarn install --cwd ankr-web/packages/staking-sdk
+
+      - name: Build
+        working-directory: ankr-web/packages/staking-sdk
+        run: |
+          yarn build 
+         
+      - name: Copy build
+        run: mv ankr-web/packages/staking-sdk/build  docs/sdk
+
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
