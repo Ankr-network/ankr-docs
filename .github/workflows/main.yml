@@ -50,7 +50,7 @@ jobs:
           yarn build
 
       - name: Clone ankr-web
-        run: git clone stage-staking git@github.com:Ankr-network/ankr-web.git
+        run: git clone -b main git@github.com:Ankr-network/ankr-web.git
 
 
       - name: Install dependencies
