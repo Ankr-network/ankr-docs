@@ -67,6 +67,7 @@ jobs:
         run: |
           ls -la
           cd build
+          ls -la
           mkdir sdk
           mv ankr-web/packages/staking-sdk/docs/*  build/sdk
 
