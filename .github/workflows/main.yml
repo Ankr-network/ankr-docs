@@ -59,7 +59,7 @@ jobs:
         run: yarn install --cwd ankr-web/packages/staking-sdk
 
       - name: Build
-        working-directory: ankr-web/packages/staking-sdk
+        working-directory: ./ankr-web/packages/staking-sdk
         run: |
           yarn docs
          
