@@ -49,20 +49,26 @@ jobs:
         run: |
           yarn build
 
+      - name: Check working-directory
+        run: pwd && ls -lat
+
       - uses: actions/checkout@v3
         with:
           ref: main
+          path: '/tmp/ankr-web'
           repository: Ankr-network/ankr-web
           token: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Install dependencies
-        run: yarn install --cwd ankr-web/packages/staking-sdk
+      - name: Check working-directory
+        run: pwd && ls -lat
 
-      - name: Build
+      - name: Install dependencies
         run: |
-          cd ankr-web/packages/staking-sdk
+          yarn install --cwd ankr-web/packages/staking-sdk 
+          cd  packages/staking-sdk 
           yarn docs
-         
+          pwd && ls -lat
+    
       - name: Copy build
         run: mv ankr-web/packages/staking-sdk/docs  docs/sdk
 
