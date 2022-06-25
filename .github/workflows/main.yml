@@ -41,53 +41,47 @@ jobs:
         with:
           node-version: '16.13.0'
 
-      # - name: Install dependencies
-      #   run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-      # - name: Build
-      #   working-directory: .
-      #   run: |
-      #     yarn build
-
-      - name: Check working-directory
-        run: pwd && ls -lat
+      - name: Build
+        working-directory: .
+        run: |
+          yarn build
 
       - uses: actions/checkout@v3
         with:
           ref: main
           repository: Ankr-network/ankr-web
           token: ${{ secrets.ACCESS_TOKEN }}
-          path: sdk
+          path: ankr-web
 
-      - name: Check working-directory
-        run: pwd && ls -lat
 
-      - name: Install dependencies
+      - name: Install dependencies and build doc sdk
         run: |
-          # yarn install --cwd ankr-web/packages/staking-sdk 
-          # cd  packages/staking-sdk 
-          # yarn docs
-          pwd && ls -lat
+          yarn install --cwd ankr-web/packages/staking-sdk 
+          cd  ankr-web/packages/staking-sdk 
+          yarn docs
     
-      # - name: Copy build
-      #   run: mv ankr-web/packages/staking-sdk/docs  docs/sdk
+      - name: Copy build
+        run: mv ankr-web/packages/staking-sdk/docs  docs/sdk
 
-      # - name: Set AWS credentials
-      #   uses: aws-actions/configure-aws-credentials@v1
-      #   with:
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     aws-region: ${{ secrets.AWS_REGION }}
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      # - name: Copy files to the production website with the AWS CLI
-      #   working-directory: .
-      #   env:
-      #     DOMAIN: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DOMAIN')] }}
-      #     DISTRIBUTION_ID: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DISTRIBUTION_ID')] }}
-      #   run: |
-      #     aws s3 sync --delete ./build s3://$DOMAIN/docs/ --acl public-read --cache-control "public,max-age=600,s-maxage=3600"
-      #     aws configure set preview.cloudfront true
-      #     echo "Invalidating CDN network"
-      #     INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*' | jq -r '.Invalidation.Id'`
-      #     echo "Invalidation ID is $INVALIDATION_ID"
-      #     echo "CDN Invalidation request is sent."
+      - name: Copy files to the production website with the AWS CLI
+        working-directory: .
+        env:
+          DOMAIN: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DOMAIN')] }}
+          DISTRIBUTION_ID: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DISTRIBUTION_ID')] }}
+        run: |
+          aws s3 sync --delete ./build s3://$DOMAIN/docs/ --acl public-read --cache-control "public,max-age=600,s-maxage=3600"
+          aws configure set preview.cloudfront true
+          echo "Invalidating CDN network"
+          INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*' | jq -r '.Invalidation.Id'`
+          echo "Invalidation ID is $INVALIDATION_ID"
+          echo "CDN Invalidation request is sent."
