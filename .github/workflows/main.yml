@@ -65,11 +65,9 @@ jobs:
     
       - name: Copy build
         run: |
-          ls -la
-          cd ./build
+          cd build
           mkdir sdk
-          cd ./ankr-web/packages/staking-sdk/docs/
-          ls -la
+          cd ../
           mv ankr-web/packages/staking-sdk/docs/*  build/sdk
 
       - name: Set AWS credentials
