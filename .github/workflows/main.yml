@@ -49,19 +49,20 @@ jobs:
         run: |
           yarn build
 
-      - uses: actions/checkout@v1  
+      - uses: actions/checkout@v3
         with:
+          ref: stage-staking
           repository: Ankr-network/ankr-web
           token: ${{ secrets.ACCESS_TOKEN }}
+          path: ankr-web
 
-      - name: Install dependencies
-        run: yarn install --cwd ankr-web/packages/staking-sdk
 
-      - name: Build
-        working-directory: ankr-web/packages/staking-sdk
+      - name: Install dependencies and build doc sdk
         run: |
+          yarn install --cwd ankr-web/packages/staking-sdk 
+          cd  ankr-web/packages/staking-sdk 
           yarn docs
-         
+    
       - name: Copy build
         run: mv ankr-web/packages/staking-sdk/docs  docs/sdk
 
