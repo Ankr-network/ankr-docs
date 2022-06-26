@@ -65,10 +65,10 @@ jobs:
     
       - name: Copy build
         run: |
-          cd build
+          cd build/staking/
           mkdir sdk
-          cd ../
-          mv ankr-web/packages/staking-sdk/docs/*  build/sdk
+          cd ../../
+          mv ankr-web/packages/staking-sdk/docs/*  build/staking/sdk
 
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
