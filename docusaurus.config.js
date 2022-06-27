@@ -137,8 +137,8 @@
                 label: "Liquid Crowdloan",
               },
               {
-                to: 'staking/api-overview',
-                label: "API",
+                to: 'staking/sdk-overview',
+                label: "SDK",
               },
           ],
         },
