@@ -428,7 +428,11 @@ module.exports =
              },
             {
              'SDK': [
+                'staking/sdk-overview',
                 'staking/liquid-crowdloan/sdk',
+                'staking/liquid-staking/bnb/sdk',
+                'staking/liquid-staking/eth/sdk',
+                'staking/liquid-staking/matic/sdk',
                  ],
              },
              {

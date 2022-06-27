@@ -5,7 +5,7 @@ id: api
 
 # BNB Liquid Staking API
 
-To integrate with BNB Liquid Staking, use the functions, smart contract addresses, and examples below. 
+To integrate with BNB Liquid Staking, use the smart contract functions and examples below.
 
 ## Switch aBNBb to aBNBc
 

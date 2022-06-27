@@ -5,7 +5,7 @@ id: api
 
 # MATIC Liquid Staking API
 
-To integrate with MATIC Liquid Staking, use the functions, smart contract addresses, and examples below.
+To integrate with MATIC Liquid Staking, use the smart contract functions and examples below.
 
 ### Stake MATIC and claim aMATICb
 
