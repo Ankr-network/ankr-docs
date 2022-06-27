@@ -138,7 +138,7 @@ export default function Footer() {
           </span>
         </div>
         <div>
-          <Link to="https://www.ankr.com/terms/">{"Teams of service"}</Link>
+          <Link to="https://www.ankr.com/terms/">{"Terms of service"}</Link>
           <Link to="https://www.ankr.com/privacy-policy/">
             {"Privacy Policy"}
           </Link>
