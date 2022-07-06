@@ -15,6 +15,8 @@ Here's a growing list of tutorials showing how to apply Ankr for the benefit and
 * [How to deploy your own ERC-20 token with Ankr & Hardhat on ETH Goerli Testnet](https://ankr.hashnode.dev/how-to-deploy-your-own-erc-20-token-with-ankr-and-hardhat-on-eth-goerli-testnet)
 * [How to Deploy Your First Polygon NFT with an ERC-721 Solidity Smart Contract and Ankr](https://ankr.hashnode.dev/how-to-deploy-your-first-polygon-nft-with-an-erc-721-solidity-smart-contract-and-ankr)
 * [How to Deploy an ERC-721 Smart Contract to Avalanche and Mint an NFT with Ankr, Hardhat, and Ethers.js ](https://ankr.hashnode.dev/how-to-deploy-an-erc-721-smart-contract-to-avalanche-and-mint-an-nft-with-ankr-hardhat-and-ethersjs)
+* [Deploy and Mint a CryptoKitties-Like NFT with ERC-721 Smart Contract](https://ankr.hashnode.dev/deploy-and-mint-a-cryptokitties-like-nft-with-erc-721-smart-contract)
+* [How to create an ERC721 NFT Smart Contract on Optimism](https://www.youtube.com/watch?v=-kcrQKA-ZLk)
 
 ## Good ol' tuts
 We also have some good ol' stuff living here in the docs, so apply the tutorials from this docs section to improve your skills and projects.
