@@ -35,4 +35,4 @@ This is a crucial step, and Ankr is here to help you ensure everything goes smoo
 
 Once your App Chain is live on mainnet, and you gain some traction and transaction volume, you can participate in Ankr’s Exchange-Readiness program, which helps you prepare to present your native token to CEXs in order to potentially have it listed for trading.
 
-Keep in mind that as part of Ankr’s App Chain program, you’ll have hands-on engineering support throughout this whole process and for any and all issues that arise. Contact Ankr to get started!
+Keep in mind that as part of Ankr’s App Chain program, you’ll have hands-on engineering support throughout this whole process and for any and all issues that arise. [Contact Ankr to get started!](mailto:sales@ankr.com)
