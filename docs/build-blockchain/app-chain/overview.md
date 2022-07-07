@@ -16,7 +16,8 @@ The 5 App Chain building blocks to customize the chain to the builder's exact sp
 
 ## Why use an App Chain?
 **For ultimate scalability:**
-No more competing with other projects for traffic on crowded blockchains — keeping your transactions fast, your fees low, and your users happy.
+
+No more competing with other projects for traffic on crowded blockchains — keeping your transactions fast, your fees low, and your users happy. <br /><br />
 
 **For customized control:**
 * Configure your own consensus mechanism
