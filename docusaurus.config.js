@@ -86,6 +86,25 @@
         items: [
           {
             type: "dropdown",
+            label: "⛓️" + Array(2).fill("\xa0").join("") + "App Chains",
+            position: "right",
+            items: [
+              {
+                to: "build-blockchain/app-chain/overview",
+                label: "Overview",
+              },
+              {
+                to: "build-blockchain/app-chain/components/validator-nodes",
+                label: "Components",
+              },
+              {
+                to: "build-blockchain/app-chain/step-by-step",
+                label: "Start step-by-step",
+              },
+            ],
+          },
+          {
+            type: "dropdown",
             label: "🔨" + Array(2).fill("\xa0").join("") + "Build",
             position: "right",
             items: [
