@@ -46,4 +46,4 @@ There are 5 main technical features that you’ll need to get started with your 
 
 Through Ankr’s App Chain program, you have several options for each of these components — being able to choose from building certain pieces yourself with our provided instructions and support, or going hands-off and letting us take care of all the technical legwork for you.
 
-You’ll also have access to Ankr’s “Exchange-Readiness” program in which we use our immense industry experience to help you prepare to apply for token listings on major exchanges.
+You’ll also have access to Ankr’s [Exchange-Readiness program](https://www.ankr.com/docs/build-blockchain/app-chain/exchange-readiness) in which we use our immense industry experience to help you prepare to apply for token listings on major exchanges.
