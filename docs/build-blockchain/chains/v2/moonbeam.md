@@ -3,7 +3,7 @@ Title: Moonbeam RPC
 id: moonbeam
 ---
 
-# Moonbeam RPC
+# Moonbeam
 
 Moonbeam combines the easy-to-use tooling of Ethereum and the scalable, interoperable architecture of Polkadot.
 Moonbeam is EVM compatible to an extent but there are important Moonbeam differences that developers should know and understand in terms of the Ethereum API JSON-RPC support.

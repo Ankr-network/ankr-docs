@@ -1,5 +1,5 @@
 ---
-title: 03 - Ankr Scan
+title: Ankr Scan
 id: scan
 ---
 

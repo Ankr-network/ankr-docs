@@ -3,7 +3,7 @@ Title: Gnosis RPC
 id: gnosis
 ---
 
-# Gnosis RPC
+# Gnosis
 
 **Gnosis Chain** (Formerly the xDai Chain) provides stability, scalability and an extendable beacon chain framework.
 

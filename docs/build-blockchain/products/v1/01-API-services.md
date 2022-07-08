@@ -1,5 +1,5 @@
 ---
-title: 01 - API Services
+title: API Services
 id: about-api-services
 ---
 
