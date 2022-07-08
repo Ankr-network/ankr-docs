@@ -3,7 +3,7 @@ Title: Arbitrum RPC
 id: arbitrum
 ---
 
-# Arbitrum RPC
+# Arbitrum
 
 Arbitrum RPC is available on the [Ankr Protocol App](https://www.ankr.com/protocol/public/arbitrum/)
 

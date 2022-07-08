@@ -22,96 +22,139 @@ module.exports =
   buildSidebar: [
     {
       Build: [
-        'build-blockchain/overview',
-        'build-blockchain/concepts/pricing',
-        'build-blockchain/concepts/pay-as-you-go',
+          {
+              type: 'category',
+              label: 'Getting Started',
+              items: [
+                      'build-blockchain/overview',
+                      'build-blockchain/concepts/pricing',
+                      'build-blockchain/concepts/pay-as-you-go',
+                     ],
+          },
         {
-          'Products v2': [
-            'build-blockchain/products/v2/public-rpc',
+          'Products': [
               {
-                '02 - Premium Plan': [
-                'build-blockchain/products/v2/premium-plan',
-                'build-blockchain/products/v2/premium-endpoints',
-                'build-blockchain/products/v2/hybrid-infra',
-                'build-blockchain/products/v2/advanced-apis',
-                ],
+                  'Public APIs': [
+                      'build-blockchain/products/v2/public-rpc',
+                      {
+                          'Chains': [
+                              'build-blockchain/chains/v2/arbitrum',
+                              'build-blockchain/chains/v2/avalanche',
+                              'build-blockchain/chains/v2/binance-smart-chain',
+                              'build-blockchain/chains/v2/celo',
+                              {
+                                  'Ethereum': [
+                                      'build-blockchain/chains/v2/ethereum/about-ethereum',
+                                      {
+                                          'How to': [
+                                              'build-blockchain/chains/v2/ethereum/how-to/connect-ethereum',
+                                              'build-blockchain/chains/v2/ethereum/how-to/ethereum-requests',
+                                              'build-blockchain/chains/v2/ethereum/how-to/ethereum-transactions',
+                                              'build-blockchain/chains/v2/ethereum/how-to/build-eth-project',
+                                          ],
+                                      },
+                                  ],
+                              },
+                              'build-blockchain/chains/v2/fantom',
+                              'build-blockchain/chains/v2/gnosis',
+                              'build-blockchain/chains/v2/harmony',
+                              'build-blockchain/chains/v2/iotex',
+                              'build-blockchain/chains/v2/moonbeam',
+                              'build-blockchain/chains/v2/near',
+                              'build-blockchain/chains/v2/nervos',
+                              'build-blockchain/chains/v2/polygon',
+                              {
+                                  'Syscoin': [
+                                      'build-blockchain/chains/v2/syscoin/about-syscoin',
+                                  ],
+                              },
+                              'build-blockchain/chains/v2/solana',
+                          ]
+                      },
+                  ],
               },
-            'build-blockchain/products/v2/scan',
-          ],
-        },
-        {
-          'Chains v2': [
-            'build-blockchain/chains/v2/arbitrum',
-            'build-blockchain/chains/v2/avalanche',
-            'build-blockchain/chains/v2/binance-smart-chain',
-            'build-blockchain/chains/v2/celo',
-            {
-              'Ethereum RPC': [
-              'build-blockchain/chains/v2/ethereum/about-ethereum',
-              {
-                'How to':  [
-                'build-blockchain/chains/v2/ethereum/how-to/connect-ethereum',
-                'build-blockchain/chains/v2/ethereum/how-to/ethereum-requests',
-                'build-blockchain/chains/v2/ethereum/how-to/ethereum-transactions',
-                'build-blockchain/chains/v2/ethereum/how-to/build-eth-project',
-                          ],
-               },
+                  {
+                    'Premium APIs': [
+                    'build-blockchain/products/v2/premium-plan',
+                    'build-blockchain/products/v2/premium-endpoints',
+                    'build-blockchain/products/v2/hybrid-infra',
+                    'build-blockchain/products/v2/advanced-apis',
+                    ],
+                  },
+                'build-blockchain/products/v2/scan',
+                  {
+                     'BNB Sidechain': [
+                         'build-blockchain/bas/overview',
+                         {
+                             'Architecture': [
+                                 'build-blockchain/bas/architecture/overview',
+                                 'build-blockchain/bas/architecture/circ-model-native-bridge',
+                                 'build-blockchain/bas/architecture/native-bridge',
+                                 'build-blockchain/bas/architecture/fast-finality-bls-crypto',
+                                 'build-blockchain/bas/architecture/sys-smart-contracts',
+                                 'build-blockchain/bas/architecture/governance',
+                                 'build-blockchain/bas/architecture/runtime-upgrades',
+                             ],
+                         },
+                         {
+                             'Security': [
+                                 'build-blockchain/bas/security/blockchain-evm',
+                                 'build-blockchain/bas/security/smart-contracts',
+                                 'build-blockchain/bas/security/on-chain',
+                                 'build-blockchain/bas/security/off-chain',
+                             ],
+                         },
+                         {
+                             'How to launch BNB Sidechain': [
+                                 'build-blockchain/bas/how-to-launch/launch-bas',
+                                 'build-blockchain/bas/how-to-launch/deploy-erc20-token',
+                                 'build-blockchain/bas/how-to-launch/deploy-erc721-token',
+                             ],
+                         },
+                         'build-blockchain/bas/staking',
+                         'build-blockchain/bas/demo',
+                         'build-blockchain/bas/faq',
+                         'build-blockchain/bas/glossary',
+                     ],
+                  },
               ],
             },
-            'build-blockchain/chains/v2/fantom',
-            'build-blockchain/chains/v2/gnosis',
-            'build-blockchain/chains/v2/harmony',
-            'build-blockchain/chains/v2/iotex',
-            'build-blockchain/chains/v2/moonbeam',
-            'build-blockchain/chains/v2/near',
-            'build-blockchain/chains/v2/nervos',
-            'build-blockchain/chains/v2/polygon',
-            {
-              'Syscoin RPC': [
-            'build-blockchain/chains/v2/syscoin/about-syscoin',
-              ],
-            },
-            'build-blockchain/chains/v2/solana',
+        {
+          'Guides': [
+            'build-blockchain/guides/json-methods',
+            'build-blockchain/guides/libraries',
+            'build-blockchain/guides/websocket-premium',
+            'build-blockchain/guides/rpcapi',
           ],
         },
-        {
-            'BNB Sidechain': [
-            'build-blockchain/bas/overview',
-            {
-                'Architecture': [
-                'build-blockchain/bas/architecture/overview',
-                'build-blockchain/bas/architecture/circ-model-native-bridge',
-                  'build-blockchain/bas/architecture/native-bridge',
-                  'build-blockchain/bas/architecture/fast-finality-bls-crypto',
-                  'build-blockchain/bas/architecture/sys-smart-contracts',
-                  'build-blockchain/bas/architecture/governance',
-                  'build-blockchain/bas/architecture/runtime-upgrades',
-                ],
-            },
-            {
-                'Security': [
-                'build-blockchain/bas/security/blockchain-evm',
-                'build-blockchain/bas/security/smart-contracts',
-                'build-blockchain/bas/security/on-chain',
-                'build-blockchain/bas/security/off-chain',
-                ],
+                  {
+              'Legacy': [
 
-            },
-            {
-                'How to launch BNB Sidechain': [
-                 'build-blockchain/bas/how-to-launch/launch-bas',
-                 'build-blockchain/bas/how-to-launch/deploy-erc20-token',
-                 'build-blockchain/bas/how-to-launch/deploy-erc721-token',
-                ],
-            },
-            'build-blockchain/bas/staking',
-            'build-blockchain/bas/demo',
-            'build-blockchain/bas/faq',
-            'build-blockchain/bas/glossary',
-          ],
-        },
-        {
-            'Nodes': [
+                  {
+                      'Products': [
+                          'build-blockchain/products/v1/about-api-services',
+                          'build-blockchain/products/v1/node-services'
+                      ],
+                  },
+                  {
+                      'Chains': [
+                          'build-blockchain/chains/v1/arb-api',
+                          'build-blockchain/chains/v1/avax-api',
+                          'build-blockchain/chains/v1/bsc-api',
+                          'build-blockchain/chains/v1/clover-api',
+                          'build-blockchain/chains/v1/ethereum-api',
+                          'build-blockchain/chains/v1/fantom-api',
+                          'build-blockchain/chains/v1/huobi-api',
+                          'build-blockchain/chains/v1/kusama-api',
+                          'build-blockchain/chains/v1/oec-api',
+                          'build-blockchain/chains/v1/polkadot-api',
+                          'build-blockchain/chains/v1/polygon-api',
+                          'build-blockchain/chains/v1/terra-api',
+                          'build-blockchain/chains/v1/xdai-api',
+                      ],
+                  },
+                  {
+                      'Nodes': [
                 {
                     'Algorand': [
                         'build-blockchain/nodes/algorand/overview',
@@ -295,40 +338,6 @@ module.exports =
                     ],
                 },
             ],
-        },
-        {
-          'Guides': [
-            'build-blockchain/guides/json-methods',
-            'build-blockchain/guides/libraries',
-            'build-blockchain/guides/websocket-premium',
-            'build-blockchain/guides/rpcapi',
-          ],
-        },
-                  {
-              'Archive': [
-
-                  {
-                      'Products v1': [
-                          'build-blockchain/products/v1/about-api-services',
-                          'build-blockchain/products/v1/node-services'
-                      ],
-                  },
-                  {
-                      'Chains v1': [
-                          'build-blockchain/chains/v1/arb-api',
-                          'build-blockchain/chains/v1/avax-api',
-                          'build-blockchain/chains/v1/bsc-api',
-                          'build-blockchain/chains/v1/clover-api',
-                          'build-blockchain/chains/v1/ethereum-api',
-                          'build-blockchain/chains/v1/fantom-api',
-                          'build-blockchain/chains/v1/huobi-api',
-                          'build-blockchain/chains/v1/kusama-api',
-                          'build-blockchain/chains/v1/oec-api',
-                          'build-blockchain/chains/v1/polkadot-api',
-                          'build-blockchain/chains/v1/polygon-api',
-                          'build-blockchain/chains/v1/terra-api',
-                          'build-blockchain/chains/v1/xdai-api',
-                      ],
                   },
               ],
           },

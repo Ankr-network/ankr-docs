@@ -3,7 +3,7 @@ Title: Near RPC
 id: near
 ---
 
-# Near RPC
+# Near
 NEAR is a decentralized, development platform built on a [sharded](https://near.org/downloads/Nightshade.pdf), Proof-of-Stake, Layer 1 blockchain designed for ease of use.
 
 NEAR developers can host serverless applications and smart contracts that easily connect to "open finance" networks and benefit from an ecosystem of "open web"  components.

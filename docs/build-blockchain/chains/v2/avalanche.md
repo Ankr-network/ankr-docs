@@ -3,7 +3,7 @@ Title: Avalanche
 id: avalanche
 ---
 
-# Avalanche RPC
+# Avalanche
 
 Avalanche is an **ecosystem** made up of three core Blockchains optimized for specific tasks within the network. The **Exchange Chain** (X-Chain), **Platform Chain** (P-Chain), and **Contract Chain** (C-Chain).
 
