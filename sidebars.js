@@ -482,6 +482,7 @@ module.exports =
             'staking/reference/micropools',
             'staking/reference/liquid-crowdloan-market-makers',
             'staking/reference/brand-assets',
+            'staking/reference/switch-aethc-binance',
            ],
         },
      ],
