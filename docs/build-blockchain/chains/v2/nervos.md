@@ -3,7 +3,7 @@ Title: Nervos RPC
 id: nervos
 ---
 
-# Nervos RPC
+# Nervos
 
 **Nervos** is a blockchain ecosystem with an interesting Multi-Layer Architecture. It has both a Layer 1 (CKB) and a Layer 2 called Godwoken. 
 

@@ -1,5 +1,5 @@
 ---
-title: Get Started
+title: Premium Plan 
 id: premium-plan
 ---
 

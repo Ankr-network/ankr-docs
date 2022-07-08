@@ -3,7 +3,7 @@ title: Overview
 id: about-ethereum
 ---
 
-# Ethereum RPC
+# Ethereum
 
 **Ethereum** is a decentralized, open-source blockchain with smart contract functionality. **Ether** (**ETH**) is the native cryptocurrency of the platform.
 
