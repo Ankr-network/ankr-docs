@@ -1,20 +1,24 @@
 module.exports =
 {
-    'App Chains': [
-      'build-blockchain/app-chain/overview',
+  appchainSidebar: [
       {
-        'Components': [
-          'build-blockchain/app-chain/components/validator-nodes',
-          'build-blockchain/app-chain/components/rpc-endpoints',
-          'build-blockchain/app-chain/components/block-explorer',
-          'build-blockchain/app-chain/components/testnet-faucet',
-          'build-blockchain/app-chain/components/staking-ui',
-        ],
-      },
-      'build-blockchain/app-chain/exchange-readiness',
-      'build-blockchain/app-chain/step-by-step',
+          'App Chains': [
+              'build-blockchain/app-chain/overview',
+              {
+                  'Components': [
+                      'build-blockchain/app-chain/components/validator-nodes',
+                      'build-blockchain/app-chain/components/rpc-endpoints',
+                      'build-blockchain/app-chain/components/block-explorer',
+                      'build-blockchain/app-chain/components/testnet-faucet',
+                      'build-blockchain/app-chain/components/staking-ui',
+                  ],
+              },
+              'build-blockchain/app-chain/exchange-readiness',
+              'build-blockchain/app-chain/step-by-step',
 
-    ],
+          ],
+      },
+   ],
   buildSidebar: [
     {
       Build: [
