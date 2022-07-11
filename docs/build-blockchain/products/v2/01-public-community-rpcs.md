@@ -1,15 +1,15 @@
 ---
-title: Public APIs
+title: Public Tier
 id: public-rpc
 ---
 
-# Public APIs
+# Public Tier
 
-Public APIs are central to the Ankr vision of mass adoption in Web 3.0 and the crypto economy. The Ankr Public APIs layer provides fast and reliable access via API endpoints to anybody in the world to connect to a growing number of networks:
+*Public Tier* is central to the Ankr vision of mass adoption in Web 3.0 and the crypto economy. Ankr's Public Tier provides you with API endpoints for a fast and reliable access to a growing number of networks:
 
-Check out the latest chains on [Ankr Protocol](https://www.ankr.com/protocol/public/)
+Check out the latest chains on [Ankr Protocol](https://www.ankr.com/protocol/public/).
 
-## _Simply use the public URL and start making requests instantly NO SIGN UP, NO KYC_
+## Make requests via public URL (no sign up or KYC)
 
 :::tip Have a go
 
@@ -28,14 +28,14 @@ curl https://rpc.ankr.com/arbitrum \
 Enjoy the following benefits:
 
 - Permissionless, Open access to multiple chains 16+ (more to come)
-- Zero cost access to Public RPC API endpoints
+- Zero cost access to Public RPC endpoints
 - Exceedingly high rate-limiting
-- No username or password required.
+- No username or password required
 - Dashboard views of the status of individual chain public RPCs
 
 ## How it works
 
-The Public RPC Layer sits on top of the Ankr Protocol network. It is kept stable using a backbone of multiple underlying nodes globally distributed across 200 data centres as well as individual providers' homes.
+The Public Tier sits on top of the Ankr Protocol network. It is kept stable using a backbone of multiple underlying nodes globally distributed across 200 data centers as well as individual providers' homes.
 
 Constant system monitoring ensures that RPC endpoints are synced in real-time to underlying nodes. Whilst, network traffic monitoring uses intelligent caching to optimize speed and automate routing to the best available node at busy times.
 
