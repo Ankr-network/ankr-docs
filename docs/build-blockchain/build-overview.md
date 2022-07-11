@@ -7,9 +7,9 @@ id: overview
 
 **Ankr Build** provides a truly distributed, multi-chain infrastructure network and toolkit to simplify the building of applications. Build Products include the following:
 
-1. **Public APIs**: Free and instant access to our range of Public APIs. [Read more](/build-blockchain/products/v2/public-rpc)
+1. **Public Tier**: Free and instant access to our range of Public APIs. [Read more](/build-blockchain/products/v2/public-rpc)
 
-2. **Premium APIs**: Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features. [Read more](/build-blockchain/products/v2/premium-plan)
+2. **Premium Tier**: Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features. [Read more](/build-blockchain/products/v2/premium-plan)
 
 3. **Ankr Scan**: Ankr Scan is a Multi-Chain Explorer allowing to view assets across chains as well as assigned to a specific wallet address. [Read more](/build-blockchain/products/v2/scan)
 

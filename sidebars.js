@@ -27,15 +27,19 @@ module.exports =
               label: 'Getting Started',
               items: [
                       'build-blockchain/overview',
-                      'build-blockchain/concepts/pricing',
-                      'build-blockchain/concepts/pay-as-you-go',
                      ],
           },
         {
           'Products': [
               {
-                  'Public APIs': [
+                  'RPC Services': [
                       'build-blockchain/products/v2/public-rpc',
+                      {
+                          'Premium Tier': [
+                              'build-blockchain/products/v2/premium-plan',
+                              'build-blockchain/products/v2/hybrid-infra',
+                          ],
+                      },
                       {
                           'Chains': [
                               'build-blockchain/chains/v2/arbitrum',
@@ -71,52 +75,51 @@ module.exports =
                               'build-blockchain/chains/v2/solana',
                           ]
                       },
+                      'build-blockchain/concepts/pricing',
+                      'build-blockchain/concepts/pay-as-you-go',
                   ],
               },
-                  {
-                    'Premium APIs': [
-                    'build-blockchain/products/v2/premium-plan',
-                    'build-blockchain/products/v2/premium-endpoints',
-                    'build-blockchain/products/v2/hybrid-infra',
-                    'build-blockchain/products/v2/advanced-apis',
-                    ],
-                  },
-                'build-blockchain/products/v2/scan',
-                  {
-                     'BNB Sidechain': [
-                         'build-blockchain/bas/overview',
-                         {
-                             'Architecture': [
-                                 'build-blockchain/bas/architecture/overview',
-                                 'build-blockchain/bas/architecture/circ-model-native-bridge',
-                                 'build-blockchain/bas/architecture/native-bridge',
-                                 'build-blockchain/bas/architecture/fast-finality-bls-crypto',
-                                 'build-blockchain/bas/architecture/sys-smart-contracts',
-                                 'build-blockchain/bas/architecture/governance',
-                                 'build-blockchain/bas/architecture/runtime-upgrades',
-                             ],
-                         },
-                         {
-                             'Security': [
-                                 'build-blockchain/bas/security/blockchain-evm',
-                                 'build-blockchain/bas/security/smart-contracts',
-                                 'build-blockchain/bas/security/on-chain',
-                                 'build-blockchain/bas/security/off-chain',
-                             ],
-                         },
-                         {
-                             'How to launch BNB Sidechain': [
-                                 'build-blockchain/bas/how-to-launch/launch-bas',
-                                 'build-blockchain/bas/how-to-launch/deploy-erc20-token',
-                                 'build-blockchain/bas/how-to-launch/deploy-erc721-token',
-                             ],
-                         },
-                         'build-blockchain/bas/staking',
-                         'build-blockchain/bas/demo',
-                         'build-blockchain/bas/faq',
-                         'build-blockchain/bas/glossary',
-                     ],
-                  },
+              {
+                  'Advanced APIs': [
+                      'build-blockchain/products/v2/advanced-apis',
+                      'build-blockchain/products/v2/scan',
+                  ],
+              },
+                  // {
+                  //    'BNB Sidechain': [
+                  //        'build-blockchain/bas/overview',
+                  //        {
+                  //            'Architecture': [
+                  //                'build-blockchain/bas/architecture/overview',
+                  //                'build-blockchain/bas/architecture/circ-model-native-bridge',
+                  //                'build-blockchain/bas/architecture/native-bridge',
+                  //                'build-blockchain/bas/architecture/fast-finality-bls-crypto',
+                  //                'build-blockchain/bas/architecture/sys-smart-contracts',
+                  //                'build-blockchain/bas/architecture/governance',
+                  //                'build-blockchain/bas/architecture/runtime-upgrades',
+                  //            ],
+                  //        },
+                  //        {
+                  //            'Security': [
+                  //                'build-blockchain/bas/security/blockchain-evm',
+                  //                'build-blockchain/bas/security/smart-contracts',
+                  //                'build-blockchain/bas/security/on-chain',
+                  //                'build-blockchain/bas/security/off-chain',
+                  //            ],
+                  //        },
+                  //        {
+                  //            'How to launch BNB Sidechain': [
+                  //                'build-blockchain/bas/how-to-launch/launch-bas',
+                  //                'build-blockchain/bas/how-to-launch/deploy-erc20-token',
+                  //                'build-blockchain/bas/how-to-launch/deploy-erc721-token',
+                  //            ],
+                  //        },
+                  //        'build-blockchain/bas/staking',
+                  //        'build-blockchain/bas/demo',
+                  //        'build-blockchain/bas/faq',
+                  //        'build-blockchain/bas/glossary',
+                  //    ],
+                  // },
               ],
             },
         {
