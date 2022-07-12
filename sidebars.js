@@ -85,41 +85,41 @@ module.exports =
                       'build-blockchain/products/v2/scan',
                   ],
               },
-                  // {
-                  //    'BNB Sidechain': [
-                  //        'build-blockchain/bas/overview',
-                  //        {
-                  //            'Architecture': [
-                  //                'build-blockchain/bas/architecture/overview',
-                  //                'build-blockchain/bas/architecture/circ-model-native-bridge',
-                  //                'build-blockchain/bas/architecture/native-bridge',
-                  //                'build-blockchain/bas/architecture/fast-finality-bls-crypto',
-                  //                'build-blockchain/bas/architecture/sys-smart-contracts',
-                  //                'build-blockchain/bas/architecture/governance',
-                  //                'build-blockchain/bas/architecture/runtime-upgrades',
-                  //            ],
-                  //        },
-                  //        {
-                  //            'Security': [
-                  //                'build-blockchain/bas/security/blockchain-evm',
-                  //                'build-blockchain/bas/security/smart-contracts',
-                  //                'build-blockchain/bas/security/on-chain',
-                  //                'build-blockchain/bas/security/off-chain',
-                  //            ],
-                  //        },
-                  //        {
-                  //            'How to launch BNB Sidechain': [
-                  //                'build-blockchain/bas/how-to-launch/launch-bas',
-                  //                'build-blockchain/bas/how-to-launch/deploy-erc20-token',
-                  //                'build-blockchain/bas/how-to-launch/deploy-erc721-token',
-                  //            ],
-                  //        },
-                  //        'build-blockchain/bas/staking',
-                  //        'build-blockchain/bas/demo',
-                  //        'build-blockchain/bas/faq',
-                  //        'build-blockchain/bas/glossary',
-                  //    ],
-                  // },
+                  {
+                     'BNB Sidechain': [
+                         'build-blockchain/bas/overview',
+                         {
+                             'Architecture': [
+                                 'build-blockchain/bas/architecture/overview',
+                                 'build-blockchain/bas/architecture/circ-model-native-bridge',
+                                 'build-blockchain/bas/architecture/native-bridge',
+                                 'build-blockchain/bas/architecture/fast-finality-bls-crypto',
+                                 'build-blockchain/bas/architecture/sys-smart-contracts',
+                                 'build-blockchain/bas/architecture/governance',
+                                 'build-blockchain/bas/architecture/runtime-upgrades',
+                             ],
+                         },
+                         {
+                             'Security': [
+                                 'build-blockchain/bas/security/blockchain-evm',
+                                 'build-blockchain/bas/security/smart-contracts',
+                                 'build-blockchain/bas/security/on-chain',
+                                 'build-blockchain/bas/security/off-chain',
+                             ],
+                         },
+                         {
+                             'How to launch BNB Sidechain': [
+                                 'build-blockchain/bas/how-to-launch/launch-bas',
+                                 'build-blockchain/bas/how-to-launch/deploy-erc20-token',
+                                 'build-blockchain/bas/how-to-launch/deploy-erc721-token',
+                             ],
+                         },
+                         'build-blockchain/bas/staking',
+                         'build-blockchain/bas/demo',
+                         'build-blockchain/bas/faq',
+                         'build-blockchain/bas/glossary',
+                     ],
+                  },
               ],
             },
         {
