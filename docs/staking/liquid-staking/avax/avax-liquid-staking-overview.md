@@ -10,6 +10,12 @@ Ankr Staking offers Avalanche token holders the opportunity to stake AVAX and in
 * aAVAXb is a reward-earning token, meaning that rewards from AVAX staking will be distributed daily through rebasing and aAVAXb holders' balance in their wallet will increase on a daily basis.
 * aAVAXc is a reward-bearing token, meaning that the fair value of 1 aAVAXc token vs. AVAX increases over time as staking rewards accumulate. 
 
+## Audit details
+
+AVAX Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
+To learn more, view:
+* [Detailed Beosin audit report](https://assets.ankr.com/staking/smart_contract_security_audit_avax_beosin.pdf)
+
 ## Market liquidity
 
 aAVAXb is tradable on the following Decentralized Exchanges on Avalanche network:
