@@ -13,7 +13,7 @@ Binance Liquid Staking from Ankr Staking offers **instant liquidity** for your s
 
 ## Audit details
 
-BNB Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
+BNB Liquid Staking smart contracts have undergone external audits. 
 To learn more, view:
 * [Detailed Beosin audit report](http://assets.ankr.com/earn/smart_contract_security_audit_bnb.pdf)
 * [Detailed PeckShield audit report](https://assets.ankr.com/staking/smart_contract_security_audit_bnb_peckshield.pdf)
