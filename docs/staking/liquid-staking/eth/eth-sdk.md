@@ -8,7 +8,7 @@ id: sdk
 Integrating with Ankr Liquid Staking on Ethereum has become easier. 
 
 Now you can skip the complications of Solidity and learning how to send direct calls to [ETH Liquid Staking API](https://www.ankr.com/docs/staking/liquid-staking/eth/api/). 
-Instead, use EthereumSDK — a npm package with compound and comprehensible JS methods that take care of all the low-level logic in a flow.
+Instead, use EthereumSDK — an npm package with compound and comprehensible JS methods that take care of all the low-level logic in for you.
 
 EthereumSDK allows you to interact with Ethereum blockchain, aETHb/aETHc tokens and EthereumPool contracts.
 
