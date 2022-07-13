@@ -12,4 +12,4 @@ Instead, use BinanceSDK — a npm package with compound and comprehensible JS me
 
 BinanceSDK allows you to interact with Binance blockchain, aBNBb/aBNBc tokens and BinancePool contracts.
 
-To start using it, install the [SDK NPM package and](https://www.npmjs.com/package/@ankr.com/staking-sdk) and see the [BinanceSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/BinanceSDK.html).
+To start using it, install the [SDK NPM package](https://www.npmjs.com/package/@ankr.com/staking-sdk) and see the [BinanceSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/BinanceSDK.html).
