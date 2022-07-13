@@ -156,8 +156,12 @@
                 label: "Liquid Crowdloan",
               },
               {
+                to: "staking/liquid-staking/oracles/overview",
+                label: "Oracles",
+              },
+              {
                 to: 'staking/sdk-overview',
-                label: "SDK",
+                label: "Staking SDK",
               },
           ],
         },

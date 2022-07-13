@@ -1,23 +1,15 @@
 ---
-title: Price Oracles API
-id: api
+title: PanacakeSwap Price Oracle
+id: pancakeswap
 ---
 
-# Ankr price oracles API
+# Ankr PancakeSwap price oracle
 
-Ankr offers you oracles that get data from DEXs.
-
-To integrate with Ankr oracles, use the smart contract functions and examples below.
-
-Before integrating, read the workflow. It will help you understand what actual data you're getting from each oracle.
-
-## Ankr PancakeSwap price oracle
-
-It is a TWAP oracle that obtains time-weighted average price (TWAP) for a pair of tokens from PancakeSwap. 
+Ankr PancakeSwap price oracle is a TWAP oracle that obtains time-weighted average price (TWAP) for a pair of tokens from [PancakeSwap](https://pancakeswap.finance/). 
 
 TWAP is a compound price that is calculated, using data from a specific period of time.
 
-### Workflow
+## Workflow
 
 To explain how the oracle works, let's show what happens when we request price of aBNBc in USD (BUSD).
 
@@ -47,6 +39,8 @@ To calculate the aBNBc-BUSD TWAP price, the oracle:
 If you need more details on cumulative prices and TWAP oracles, refer to the [Uniswap oracles documentation](https://docs.uniswap.org/protocol/V2/concepts/core-concepts/oracles).
 
 Now that you know the flow, you can integrate with the Ankr PancakeSwap price oracle, using the functions below.
+
+## API
 
 ### `peek()`
 Gets time-weighted average price of a pair of tokens from PancakeSwap; a view function.
