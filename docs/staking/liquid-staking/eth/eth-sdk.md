@@ -12,4 +12,4 @@ Instead, use EthereumSDK — a npm package with compound and comprehensible JS m
 
 EthereumSDK allows you to interact with Ethereum blockchain, aETHb/aETHc tokens and EthereumPool contracts.
 
-To start using it, install the [SDK NPM package](https://www.npmjs.com/package/@ankr.com/staking-sdk) and see the [EthereumSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/EthereumSDK.html).
+To start using it, install the SDK via the [SDK npm package](https://www.npmjs.com/package/@ankr.com/staking-sdk) and see the [EthereumSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/EthereumSDK.html).
