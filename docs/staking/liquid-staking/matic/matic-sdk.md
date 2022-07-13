@@ -12,4 +12,4 @@ Instead, use PolygonSDK — a npm package with compound and comprehensible JS me
 
 PolygonSDK allows you to interact with Ethereum blockchain, aMATICb/aMATICc tokens and PolygonPool contracts.
 
-To start using it, install the SDK via the [SDK npm package](https://www.npmjs.com/package/@ankr.com/staking-sdk) and see the [PolygonSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/PolygonSDK.html).
+To start using it, install the [SDK npm package](https://www.npmjs.com/package/@ankr.com/staking-sdk) and see the [PolygonSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/PolygonSDK.html).
