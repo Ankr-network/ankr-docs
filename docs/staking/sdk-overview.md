@@ -13,3 +13,10 @@ If you want to offer your users a scalable and ready-to-use staking solution, us
 Our [API](https://ankr.com/docs/staking/api-overview) and SDK are overlapping each other. 
 
 We recommend you use SDK over the API for easier integration, unless you need something specific that only the API can provide, such as Ankr Price Oracles. 
+
+## Available SDKs
+
+* [Crowdload SDK](https://www.npmjs.com/package/@ankr.com/stakefi-polkadot)
+* [Staking SDK](https://www.npmjs.com/package/@ankr.com/staking-sdk) (includes BinanceSDK, EthereumSDK, PolygonSDK)
+
+For more information and SDK documentation on each, visit the respective pages in this Ankr Docs section. 
