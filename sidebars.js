@@ -448,13 +448,18 @@ module.exports =
         {
          'For Integrators': [
             {
+            'Oracles': [
+               'staking/liquid-staking/oracles/overview',
+               'staking/liquid-staking/oracles/pancakeswap',
+                ],
+            },
+            {
              'API': [
                'staking/api-overview',
                'staking/liquid-staking/avax/api',
                'staking/liquid-staking/bnb/api',
                'staking/liquid-staking/matic/api',
                'staking/reference/staking-metrics',
-               'staking/liquid-staking/oracles/api',
                  ],
              },
             {
