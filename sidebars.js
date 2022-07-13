@@ -449,6 +449,7 @@ module.exports =
          'For Integrators': [
             {
             'Oracles': [
+               'staking/liquid-staking/oracles/overview',
                'staking/liquid-staking/oracles/pancakeswap',
                 ],
             },
