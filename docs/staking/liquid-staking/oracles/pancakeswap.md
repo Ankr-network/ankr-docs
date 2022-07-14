@@ -1,5 +1,5 @@
 ---
-title: PanacakeSwap Price Oracle
+title: PancakeSwap Price Oracle
 id: pancakeswap
 ---
 
