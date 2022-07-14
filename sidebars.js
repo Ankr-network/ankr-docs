@@ -458,6 +458,8 @@ module.exports =
                'staking/api-overview',
                'staking/liquid-staking/avax/api',
                'staking/liquid-staking/bnb/api',
+               'staking/liquid-staking/eth/api',
+               'staking/liquid-staking/ftm/api',
                'staking/liquid-staking/matic/api',
                'staking/reference/staking-metrics',
                  ],
