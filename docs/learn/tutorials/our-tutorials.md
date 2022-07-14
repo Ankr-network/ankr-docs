@@ -17,6 +17,11 @@ Here's a growing list of tutorials showing how to apply Ankr for the benefit and
 * [How to Deploy an ERC-721 Smart Contract to Avalanche and Mint an NFT with Ankr, Hardhat, and Ethers.js ](https://ankr.hashnode.dev/how-to-deploy-an-erc-721-smart-contract-to-avalanche-and-mint-an-nft-with-ankr-hardhat-and-ethersjs)
 * [Deploy and Mint a CryptoKitties-Like NFT with ERC-721 Smart Contract](https://ankr.hashnode.dev/deploy-and-mint-a-cryptokitties-like-nft-with-erc-721-smart-contract)
 * [How to create an ERC721 NFT Smart Contract on Optimism](https://www.youtube.com/watch?v=-kcrQKA-ZLk)
+* [Configure Your Metamask To Work With Optimism](https://ankr.hashnode.dev/configure-your-metamask-to-work-with-optimism)
+* [Build & Deploy Your Own ERC20 Token On Optimism](https://ankr.hashnode.dev/build-and-deploy-your-own-erc20-token-on-optimism)
+* [Build and Deploy A Rentable NFT Smart Contract On Optimism](https://ankr.hashnode.dev/build-and-deploy-a-rentable-nft-smart-contract-on-optimism)
+* [Easily Understand & Upload Files To IPFS With Filebase](https://ankr.hashnode.dev/easily-understand-and-upload-files-to-ipfs-with-filebase)
+* [Create A Backend NodeJS IPFS File Uploader With Filebase](https://ankr.hashnode.dev/create-a-backend-nodejs-ipfs-file-uploader-with-filebase)
 
 ## Good ol' tuts
 We also have some good ol' stuff living here in the docs, so apply the tutorials from this docs section to improve your skills and projects.
