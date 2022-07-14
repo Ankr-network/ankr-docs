@@ -461,7 +461,7 @@ module.exports =
                'staking/liquid-staking/eth/api',
                'staking/liquid-staking/ftm/api',
                'staking/liquid-staking/matic/api',
-               'staking/reference/staking-metrics',
+               'staking/extra/staking-metrics',
                  ],
              },
             {
@@ -489,19 +489,19 @@ module.exports =
            ],
         },
         {
-        'Reference': [
-            'staking/reference/glossary',
-            'staking/reference/principles',
-            'staking/reference/audit-reports',
-            'staking/reference/ankr-validators',
-            'staking/reference/liquid-staking-fees',
-            'staking/reference/ls-smart-contract-addresses-mn',
-            'staking/reference/ls-smart-contract-addresses-tn',
-            'staking/reference/compatible-wallets',
-            'staking/reference/micropools',
-            'staking/reference/liquid-crowdloan-market-makers',
-            'staking/reference/brand-assets',
-            'staking/reference/switch-aethc-binance',
+        'Extra': [
+            'staking/extra/glossary',
+            'staking/extra/principles',
+            'staking/extra/audit-reports',
+            'staking/extra/ankr-validators',
+            'staking/extra/liquid-staking-fees',
+            'staking/extra/ls-smart-contract-addresses-mn',
+            'staking/extra/ls-smart-contract-addresses-tn',
+            'staking/extra/switch-aethc-binance',
+            'staking/extra/compatible-wallets',
+            'staking/extra/micropools',
+            'staking/extra/liquid-crowdloan-market-makers',
+            'staking/extra/brand-assets',
            ],
         },
      ],
@@ -557,8 +557,8 @@ module.exports =
         ],
       },
       {
-        'Reference': [
-          'game/reference/game-reference'
+        'Extra': [
+          'game/extra/game-reference'
         ],
       },
     ],
@@ -595,9 +595,9 @@ module.exports =
         ],
       },
      {
-         'Reference': [
-          'learn/reference/ankr-vision',
-          'learn/reference/51-attacks',
+         'Extra': [
+          'learn/extra/ankr-vision',
+          'learn/extra/51-attacks',
         ],
       },
     ],
