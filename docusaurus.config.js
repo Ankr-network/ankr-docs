@@ -198,8 +198,8 @@
                 label: 'Tutorials',
               },
               {
-                to: 'learn/reference/ankr-vision',
-                label: 'Reference',
+                to: 'learn/extra/ankr-vision',
+                label: 'Extra',
               },
             ],
           },
