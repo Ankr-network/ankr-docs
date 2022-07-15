@@ -42,7 +42,7 @@ Here is the summary on PAYG charging:
 
 ### Pricing calculator
 
-Below you can find our beta pricing calculator for blockchains that support standard EVM methods. For all other methods and blockchains, the default price is set to 100 credits.
+Use our beta pricing calculator for standard EVM methods. For all other methods and blockchains that don't support standard EVM methods, the default price is set to 100 credits.
 
 <iframe 
   width="100%"
