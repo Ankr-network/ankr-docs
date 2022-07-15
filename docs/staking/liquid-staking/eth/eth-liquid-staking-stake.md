@@ -29,31 +29,28 @@ id: stake-eth
 **BE SURE: to allow sufficient ETH to cover gas fees.**
 :::
 
-1. Choose the type of Ankr Liquid Staking tokens you want to receive: aETHb grow in quantity, and aETHc grow in value. 
-    
-2. Click the **'+'** button to stake ETH.
+1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 
 
-3. Enter the desired staking amount or use the slider.
+2. Locate the **Ethereum (ETH)** box and click *Stake* in it.
 
-4. Click _**Get aETHb**_ or _**Get aETHc**_ respectively.
+3. Enter the desired amount of ETH to stake, choose the token, and click *Get aETHb* or *Get aETHc* respectively.
 
-5. Your Wallet pops up with details of the transaction. Click '_**Confirm**_' to proceed.
+4. Confirm the transaction in your wallet.
 
-6. The status of the transaction updates in your wallet.
+5. Add the liquid staking token to your wallet, clicking *Add aETHb to wallet* or *Add aETHc to wallet* respectively.
 
-7. When staking is finalized, the **Staker Dashboard** updates to show the Status as '_**Confirmed**_'.
-
+6. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
 :::info
 
 Ankr sends the collectively pooled **32 ETH** once it is accumulated to the nodes. Until that happens, you have the option to **unstake** if desired.
 
 :::
 
-## If you don't see your aETHb/aETHc balance
+## If you don't see your liquid staking token balance
 
 If you don't see the balance in your wallet, do the following:
 
-1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard) 
-2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
+2. Find your liquid staking token, click the three-dot menu, and click *Copy token address*.
 3. Insert the token address directly into your wallet (e.g. MetaMask).
 
