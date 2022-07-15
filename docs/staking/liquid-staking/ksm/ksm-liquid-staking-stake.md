@@ -27,7 +27,7 @@ You have a MetaMask wallet.
 
 3. Ensure you follow master seed best practices and back up your master seed SECURELY offline.
 4. Generate a secure password and create your wallet.
-5. Give your wallet a name and select ‘Any Chain'‌
+5. Give your wallet a name and select ‘Any Chain'.
 
 ## Transfer KSM to your Polkadot wallet
 
@@ -75,9 +75,9 @@ Click to allow access.
 
 2. Select your Wallet type and connect.
 
-3. Authorize your Ethereum Wallet
+3. Authorize your Ethereum Wallet.
 
-4. Authorize your Polkadot Wallet
+4. Authorize your Polkadot Wallet.
 
 :::info success
 
@@ -87,10 +87,10 @@ You are now free to utilize your aKSMb on other DeFi Platforms.
 
 :::
 
-## If you don't see your aKSMb balance
+## If you don't see your liquid staking token balance
 
 If you don't see the balance in your wallet, do the following:
 
-1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard) 
-2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
+2. Find your liquid staking token, click the three-dot menu, and click *Copy token address*.
 3. Insert the token address directly into your wallet (e.g. MetaMask).

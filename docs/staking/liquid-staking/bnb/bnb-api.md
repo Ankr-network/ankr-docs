@@ -160,7 +160,7 @@ Unstakes aBNBc and gets BNB for the unstaked aBNBc.
 
 ## Get staking metrics
 
-To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](https://ankr.com/docs/staking/reference/staking-metrics).
+To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
 
 
 

@@ -46,13 +46,14 @@ You will need to make the following interactions in your wallet:
 
 2. Locate the **Polygon (MATIC)** box and click *Stake* in it.
 
-3. Enter the desired amount of MATIC to stake and click either *Get aMATICb* or *Get aMATICc* to choose the desired liquid token.
+3. Enter the desired amount of MATIC to stake, choose the token, and click *Get aMATICb* or *Get aMATICc* respectively.
 
 4. Confirm the transaction in your wallet.
 
-5. Add aMATICb/aMATICc to your wallet, clicking *Add aMATICb to wallet* or *Add aMATICc to wallet* respectively.
+5. Add the liquid staking token to your wallet, clicking *Add aMATICb to wallet* or *Add aMATICc to wallet* respectively.
 
-6. Click *Go to dashboard* to see the received aMATICb/aMATICc in Ankr Staking. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
+6. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
+
 
 :::info
 
@@ -76,10 +77,10 @@ Your aMATICc balance stays the same, but the fair value of aMATICc to MATIC grow
 You can now use your aMATICb to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aMATICb section. aMATICc support is coming soon.
 :::
 
-### If you don't see your aMATICb/aMATICc balance
+### If you don't see your liquid staking token balance
 
 If you don't see the balance in your wallet, do the following:
 
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard) 
-2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+2. Find your liquid staking token, click the three-dot menu, and click *Copy token address*.
 3. Insert the token address directly into your wallet (e.g. MetaMask).
