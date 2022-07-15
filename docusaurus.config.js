@@ -114,7 +114,11 @@
               },
               {
                 to: "build-blockchain/chains/v2/arbitrum",
-                label: "Chains v2",
+                label: "Chains",
+              },
+              {
+                to: "build-blockchain/concepts/pricing",
+                label: "Pricing",
               },
               {
                 to: "build-blockchain/bas/overview",
