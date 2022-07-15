@@ -76,7 +76,6 @@ module.exports =
                           ]
                       },
                       'build-blockchain/concepts/pricing',
-                      'build-blockchain/concepts/pay-as-you-go',
                   ],
               },
               {
