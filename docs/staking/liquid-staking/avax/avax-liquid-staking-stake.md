@@ -77,13 +77,13 @@ To allow sufficient AVAX to cover gas fees AVAX - from 0.025 to 0.1 AVAX
 
 2. Locate the **Avalanche (AVAX)** box and click *Stake* in it.
 
-3. Enter the desired amount of AVAX to stake and click *Get aAVAXb* or *Get aAVAXc*.
+3. Enter the desired amount of AVAAX to stake, choose the token, and click *Get aAVAXb* or *Get aAVAXc* respectively.
 
 4. Confirm the transaction in your wallet.
 
-5. Add aAVAXb to your wallet, clicking *Add aAVAXb to wallet* or *Add aAVAXc to wallet* respectively.
+5. Add the liquid staking token to your wallet, clicking *Add aAVAXb to wallet* or *Add aAVAXb to wallet* respectively.
 
-6. Click *Go to dashboard* to see the received aAVAXb or aAVAXc in Ankr Staking. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update.
+6. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update.
 
 :::info
 
@@ -103,11 +103,11 @@ You will need to make the following interactions in your wallet:
 
 Your aAVAXb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aAVAXb tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aAVAXb section. Support for aAVAXc is coming soon.
 
-### If you don't see your aAVAXb/aAVAXc balance
+### If you don't see your liquid staking token balance
 
 If you don't see the balance in your wallet, do the following:
 
-1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard) 
-2. Find your staked token, click the three-dot menu, and click *Copy token address*.
+1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
+2. Find your liquid staking token, click the three-dot menu, and click *Copy token address*.
 3. Insert the token address directly into your wallet (e.g. MetaMask).
 
