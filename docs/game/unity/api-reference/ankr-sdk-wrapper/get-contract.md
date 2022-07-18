@@ -18,9 +18,9 @@ id: get-contract
 
 ## Returns
 
-| Parameter   | Description                                                                           |
-|-------------|---------------------------------------------------------------------------------------|
-| `IContract` | Returns an instance of [Contract](/game/unity/api-reference/contract/contract) class. |
+| Parameter   | Description                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| `IContract` | Returns an instance of [Contract](/game/unity/api-reference/contract) class. |
 
 ## Description
 
