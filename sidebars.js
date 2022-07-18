@@ -528,11 +528,65 @@ module.exports =
             ],
           },
           {
-             'How to...': [
+             'How to': [
               'game/unity/how-tos/subscribe-game',
               'game/unity/how-tos/switch-to-webgl',
             ],
           },
+            {
+                'API Reference': [
+                    {
+                        'AnkrSDKFactory': [
+                            'game/unity/api-reference/ankr-sdk-factory/ankr-sdk-factory',
+                            'game/unity/api-reference/ankr-sdk-factory/get-ankr-sdk-instance',
+                        ],
+                    },
+                    {
+                        'AnkrSDKWrapper': [
+                            'game/unity/api-reference/ankr-sdk-wrapper/ankr-sdk-wrapper',
+                            'game/unity/api-reference/ankr-sdk-wrapper/get-contract',
+                            'game/unity/api-reference/ankr-sdk-wrapper/create-subscriber',
+                            'game/unity/api-reference/ankr-sdk-wrapper/disconnect',
+                        ],
+                    },
+                    {
+                        'EthHandler': [
+                            'game/unity/api-reference/eth-handler/eth-handler',
+                            'game/unity/api-reference/eth-handler/get-transaction',
+                            'game/unity/api-reference/eth-handler/get-transaction-receipt',
+                            'game/unity/api-reference/eth-handler/get-default-account',
+                            'game/unity/api-reference/eth-handler/sign',
+                            'game/unity/api-reference/eth-handler/send-transaction',
+                            'game/unity/api-reference/eth-handler/estimate-gas-2',
+                            'game/unity/api-reference/eth-handler/get-balance',
+                            'game/unity/api-reference/eth-handler/get-block-number',
+                            'game/unity/api-reference/eth-handler/get-transaction-count',
+                            'game/unity/api-reference/eth-handler/get-block-with-transactions',
+                            'game/unity/api-reference/eth-handler/get-block-with-transactions-hashes',
+                        ],
+                    },
+                    {
+                        'Contract': [
+                            'game/unity/api-reference/contract/contract',
+                            'game/unity/api-reference/contract/call-method',
+                            'game/unity/api-reference/contract/web3-send-method',
+                            'game/unity/api-reference/contract/get-events',
+                            'game/unity/api-reference/contract/get-data',
+                            'game/unity/api-reference/contract/estimate-gas',
+                        ],
+                    },
+                    {
+                        'ContractEventSubscriber': [
+                            'game/unity/api-reference/contract-event-subscriber/contract-event-subscriber',
+                            'game/unity/api-reference/contract-event-subscriber/constructor',
+                            'game/unity/api-reference/contract-event-subscriber/subscribe',
+                            'game/unity/api-reference/contract-event-subscriber/listen-for-events',
+                            'game/unity/api-reference/contract-event-subscriber/unsubscribe',
+                            'game/unity/api-reference/contract-event-subscriber/stop-listen',
+                        ],
+                    },
+                ],
+            },
         ],
       },
       {
@@ -557,7 +611,11 @@ module.exports =
       },
       {
         'Extra': [
-          'game/extra/game-reference'
+          'game/extra/game-reference',
+            'game/extra/events-and-subscriptions',
+            'game/extra/gas-fees-gas-free-methods',
+            'game/extra/currency-units',
+            'game/extra/csharp-to-solidity',
         ],
       },
     ],
