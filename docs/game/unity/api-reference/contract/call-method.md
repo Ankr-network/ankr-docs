@@ -7,19 +7,23 @@ id: call-method
 
 ## Declaration
 
-Task<string> CallMethod(string methodName, object[] arguments, string gas, string gasPrice, string nonce)
+`Task<string> CallMethod(string methodName, object[] arguments, string gas, string gasPrice, string nonce)`
 
 ## Parameters
 
+| Parameter    | Description                                                       |
+|--------------|-------------------------------------------------------------------|
 | `methodName` | A string containing a contract method name according to ABI.      |
 | `arguments`  | Arguments that take contract method according to ABI.             |
 | `gas`        | The maximum gas provided for this call “transaction” (gas limit). |
 | `gasPrice`   | The gas price in WEI to use for this call “transaction”.          |
-| `nonce`      | The nonce number of the transaction.                              |
+| `nonce`      | A nonce number of the transaction.                                |
 
 ## Returns
 
-| `string` | A hash of the transaction. |
+| Parameter    | Description                |
+|--------------|----------------------------|
+| `string`     | A hash of the transaction. |
 
 ## Description
 
@@ -33,7 +37,7 @@ Makes a call to the contract method, and returns a transaction hash when that ca
 
 If you'd like to speed up a call that has already been applied to work but still hasn't been mined, you need to do the following:
 
-1. Get a nonce of the mining transaction (using [GetTransaction](/game/unity/eth-handler/get-transaction)).
+1. Get a nonce of the mining transaction (using [GetTransaction](/game/unity/api-reference/eth-handler/get-transaction)).
 2. Call the method with the same arguments but set the `nonce` to the value you've received in Step 1.
 
 ## Code example

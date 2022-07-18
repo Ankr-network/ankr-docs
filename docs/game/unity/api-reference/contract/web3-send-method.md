@@ -7,10 +7,12 @@ id: web3-send-method
 
 ## Declaration
 
-Task Web3SendMethod(string methodName, object[] arguments, ITransactionEventHandler evController, string gas, string gasPrice, string nonce)
+`Task Web3SendMethod(string methodName, object[] arguments, ITransactionEventHandler evController, string gas, string gasPrice, string nonce)`
 
 ## Parameters
 
+| Parameter      | Description                                                              |
+|----------------|--------------------------------------------------------------------------|
 | `methodName`   | A string containing a contract method name according to the ABI.         |
 | `arguments`    | Arguments that take contract method according to the ABI.                |
 | `evController` | And implementation instance of the `ITransactionEventHandler` interface. |
@@ -22,6 +24,8 @@ Task Web3SendMethod(string methodName, object[] arguments, ITransactionEventHand
 
 The method returns nothing specific, but instead it returns various values on various stages of a contract method execution:
 
+| Parameter                 | Description                                                              |
+|---------------------------|--------------------------------------------------------------------------|
 | `TransactionSendBegin`    | Returns [TransactionInput](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.RPC/Eth/DTOs/TransactionInput.cs). |
 | `TransactionSendEnd`      | Returns [TransactionInput](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.RPC/Eth/DTOs/TransactionInput.cs). |
 | `TransactionHashReceived` | Returns a `string`. |
@@ -32,6 +36,7 @@ The method returns nothing specific, but instead it returns various values on va
 
 :::warning
 Use only for methods that change a smart contract state. Use [GetData](/game/unity/api-reference/contract/get-data) for methods that return contract state, contract field, and mappings. To get more about difference between contract method please read the article.
+:::
 
 In contrast with [CallMethod](/game/unity/api-reference/contract/call-method), this method provides the handlers for all the transaction lifecycle stages. To work with that method you need to implement the `ITransactionEventHandler` interface. The following implementation works with `EventHandler` to provide the most flexible experience to work with a transaction lifecycle.
 
@@ -148,4 +153,4 @@ To find out more on getting a transaction status or event, take a look at [GetTr
 Pay attention to the gas you use for a transaction. If your gas value will be lover than the average in a network, then the time to mine a transaction can be undetermined. If you are not sure if you're using enough gas:
 
 1. Add an event emitting to the contract method.
-2. Use [subscribe to events](/game/unity/api-reference/ankr-sdk-wrapper/events-and-subscriptions#subscribe-to-events).
+2. Use [subscribe to events](/game/extra/events-and-subscriptions#subscribe-to-events).

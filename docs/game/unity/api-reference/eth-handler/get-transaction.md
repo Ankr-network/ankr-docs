@@ -7,15 +7,19 @@ id: get-transaction
 
 ## Declaration
 
-Task<Transaction> GetTransaction(string transactionReceipt)
+`Task<Transaction> GetTransaction(string transactionReceipt)`
 
 ## Parameters
 
-| transactionReceipt | String with hash of transaction. |
+| Parameter            | Description                                |
+|----------------------|--------------------------------------------|
+| `transactionReceipt` | A string containing a hash of transaction. |
 
 ## Returns
 
-`Transaction` — a transaction object.
+| Parameter     | Description                   |
+|---------------|-------------------------------|
+| `Transaction` | Returns a transaction object. |
 
 ## Description
 

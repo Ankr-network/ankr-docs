@@ -7,11 +7,13 @@ id: get-block-number
 
 ## Declaration
 
-Task<BigInteger> GetBlockNumber()
+`Task<BigInteger> GetBlockNumber()`
 
 ## Returns
 
-| `BigInteger` | Returns the number of the latest block. |
+| Parameter    | Description                           |
+|--------------|---------------------------------------|
+| `BigInteger` | Returns a number of the latest block. |
 
 ## Description
 

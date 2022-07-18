@@ -7,12 +7,14 @@ id: get-ankr-sdk-instance
 
 ## Declaration
 
-IAnkrSDK GetAnkrSDKInstance(string providerURI)
+`IAnkrSDK GetAnkrSDKInstance(string providerURI)`
 
 or
 
-IAnkrSDK GetAnkrSDKInstance(NetworkName networkName)
+`IAnkrSDK GetAnkrSDKInstance(NetworkName networkName)`
 
 ## Parameters
 
-| providerURI | String with RPC endpoint. |
+| Parameter     | Description                          |
+|---------------|--------------------------------------|
+| `providerURI` | A string containing an RPC endpoint. | 

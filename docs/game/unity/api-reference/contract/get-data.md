@@ -7,15 +7,19 @@ id: get-data
 
 ## Declaration
 
-Task<TReturnType> GetData<TFieldData, TReturnType>(TFieldData requestData)
+`Task<TReturnType> GetData<TFieldData, TReturnType>(TFieldData requestData)`
 
 ## Parameters
 
+| Parameter     | Description                                                       |
+|---------------|-------------------------------------------------------------------|
 | `requestData` | An object containing the arguments that take the contract method. |
 
 ## Returns
 
-| `TReturnType` | Data from a contract's method, field, or mapping.
+| Parameter     | Description                                       |
+|---------------|---------------------------------------------------|
+| `TReturnType` | Data from a contract's method, field, or mapping. |
 
 ## Description
 
@@ -65,7 +69,7 @@ The same information you can get from the ABI:
 ...
 ```
 
-Then DTO will look as follows:
+Then the DTO will look as follows:
 
 ```
 using Nethereum.ABI.FunctionEncoding.Attributes;

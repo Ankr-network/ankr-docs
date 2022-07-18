@@ -11,24 +11,32 @@ A class contains methods for making real-time subscriptions for contracts' event
 
 ## Constructors
 
-| [ContractEventSubscriber]() | Constructs a new ContractEventSubscriber. |
+| Component                                                                                  | Description                               |
+|--------------------------------------------------------------------------------------------|-------------------------------------------|
+| [ContractEventSubscriber](/game/unity/api-reference/contract-event-subscriber/constructor) | Constructs a new ContractEventSubscriber. |
 
-## Properties
+## Parameters
 
+| Parameter        | Description                       |
+|------------------|-----------------------------------|
 | `RequestHeaders` | A dictionary of specific headers. |
 
 ## Events
 
-| `OnOpenHandler`  | Fires when a connection to a node opens. |
+| Event            | Description                              |
+|------------------|------------------------------------------|
+| `OnOpenHandler`  | Fires when a connection to a node opens  |
 | `OnErrorHandler` | Fires when a connection fails.           |
 | `OnCloseHandler` | Fires when a connection closes.          |
 
 ## Public methods
 
+| Method                                                                                   | Description                                                   |
+|------------------------------------------------------------------------------------------|---------------------------------------------------------------|
 | [ListenForEvents](/game/unity/api-reference/contract-event-subscriber/listen-for-events) | Opens a connection to a node and starts listening for events. |
-| [Subscribe](/game/unity/api-reference/contract-event-subscriber/subscribe) | Subscribes to an event with the given parameters. |
-| [Unsubscribe](/game/unity/api-reference/contract-event-subscriber/unsubscribe) | Unsubscribes from events by a subscription ID. |
-| [StopListen](/game/unity/api-reference/contract-event-subscriber/stop-listen) | Closes a connection to a node. |
+| [Subscribe](/game/unity/api-reference/contract-event-subscriber/subscribe)               | Subscribes to an event with the given parameters.             |
+| [Unsubscribe](/game/unity/api-reference/contract-event-subscriber/unsubscribe)           | Unsubscribes from events by a subscription ID.                |
+| [StopListen](/game/unity/api-reference/contract-event-subscriber/stop-listen)            | Closes a connection to a node.                                |
 
 ## Code example
 

@@ -7,19 +7,23 @@ id: create-subscriber
 
 ## Declaration
 
-IContractEventSubscriber CreateSubscriber(string wsUrl)
+`IContractEventSubscriber CreateSubscriber(string wsUrl)`
 
 ## Parameters
 
-| wsUrl | String with RPC WebSocket endpoint. |
+| Parameter  | Description                                    |
+|------------|------------------------------------------------|
+| `wsUrl`    | A string containing an RPC WebSocket endpoint. |
 
 ## Returns
 
-`IContractEventSubscriber` instance of subscriber class.
+| Parameter                  | Description                              |
+|----------------------------|------------------------------------------|
+| `IContractEventSubscriber` | Returns an instance of subscriber class. |
 
 ## Description
 
-Provide instance of subscriber to make contract event subscriptions. See more on [Events and subscriptions](/game/unity/api-reference/contract/events-and-subscriptions).
+Provides an instance of subscriber to make contract event subscriptions. See more on [Events and subscriptions](/game/extra/events-and-subscriptions).
 
 ## Code example
 

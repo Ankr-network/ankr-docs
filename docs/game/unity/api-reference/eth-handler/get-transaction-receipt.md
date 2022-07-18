@@ -7,15 +7,19 @@ id: get-transaction-receipt
 
 ## Declaration
 
-Task<TransactionReceipt> GetTransactionReceipt(string transactionHash)
+`Task<TransactionReceipt> GetTransactionReceipt(string transactionHash)`
 
 ## Parameters
 
-| transactionHash | String with hash of transaction. |
+| Parameter         | Description                               |
+|-------------------|-------------------------------------------|
+| `transactionHash` | A string containing a transaction's hash. |
 
 ## Returns
 
-`TransactionReceipt` — a transaction receipt object.
+| Parameter            | Description                   |
+|----------------------|-------------------------------|
+| `TransactionReceipt` | A transaction receipt object. |
 
 ## Description
 
@@ -23,7 +27,7 @@ Returns the receipt of a transaction by transaction hash. Method resolves when t
 
 ## How to get contract events from receipt
 
-If contract method that you called emit event you can get it from [TransactionReceipt](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.RPC/Eth/DTOs/TransactionReceipt.cs) on `ReceiptReceived` stage. But first you need to make [DTO corresponding to contract event](/game/unity/api-reference/contract/events-and-subscriptions#Event-nature).
+If contract method that you called emit event you can get it from [TransactionReceipt](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.RPC/Eth/DTOs/TransactionReceipt.cs) on `ReceiptReceived` stage. But first you need to create a [DTO corresponding to contract event](/game/extra/events-and-subscriptions#Event-nature).
 
 ```C++
 public void HandleReceipt(object sender, TransactionReceipt receipt)

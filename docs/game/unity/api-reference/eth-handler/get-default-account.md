@@ -7,15 +7,17 @@ id: get-default-account
 
 ## Declaration
 
-Task<string> GetDefaultAccount()
+`Task<string> GetDefaultAccount()`
 
 ## Returns
 
-`string` — a string with account address.
+| Parameter | Description                             |
+|-----------|-----------------------------------------|
+| `string`  | A string containing an account address. |
 
 ## Description
 
-Method returns address that your wallet provided. There is no way to change it from SDK because it has a pair private key stored at your wallet. To change default address you need to open wallet and change it manually.
+The method returns address that your wallet provided. There is no way to change it from SDK because it has a pair private key stored in your wallet. To change a default address, open your wallet and change it manually.
 
 ## Code example
 

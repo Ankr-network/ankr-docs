@@ -7,10 +7,12 @@ id: estimate-gas
 
 ## Declaration
 
-UniTask<HexBigInteger> EstimateGas(string methodName, object[] arguments, string gas, string gasPrice, string nonce)
+`UniTask<HexBigInteger> EstimateGas(string methodName, object[] arguments, string gas, string gasPrice, string nonce)`
 
 ## Parameters
 
+| Parameter    | Description                                                       |
+|--------------|-------------------------------------------------------------------|
 | `methodName` | A string with contract method name according to ABI.              |
 | `arguments`  | Arguments that take contract method according to ABI.             |
 | `gas`        | The maximum gas provided for this call “transaction” (gas limit). |
@@ -19,12 +21,14 @@ UniTask<HexBigInteger> EstimateGas(string methodName, object[] arguments, string
 
 ## Returns
 
+| Parameter       | Description                         |
+|-----------------|-------------------------------------|
 | `HexBigInteger` | A gas estimation for a transaction. |
 
 ## Description
 
 :::warning
-Use only for the contract methods that change a smart contract state. To find out more on the difference between the contract methods, have a look at [Gas fee and gas-free methods](/game/extra/gas-fee-gas-free-methods).
+Use only for the contract methods that change a smart contract state. To find out more on the difference between the contract methods, have a look at [Gas fee and gas-free methods](/game/extra/gas-fees-gas-free-methods).
 :::
 
 Requests a gas estimation for a contract method call.

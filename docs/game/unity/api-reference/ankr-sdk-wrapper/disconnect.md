@@ -7,15 +7,17 @@ id: disconnect
 
 ## Declaration
 
-UniTask Disconnect(bool waitForNewSession)
+`UniTask Disconnect(bool waitForNewSession)`
 
 ## Parameters
 
-| waitForNewSession | If true (by default) connection will be reestablished after disconnect. If false connection will be closed immediately. |
+| Parameter           | Description                                                                         |
+|---------------------|-------------------------------------------------------------------------------------|
+| `waitForNewSession` | If true (by default), a connection will be reestablished after disconnect. If false, connection will be closed immediately. |
 
 ## Description
 
-Removes a connection with wallet.
+Removes a wallet connection.
 
 ## Code example
 

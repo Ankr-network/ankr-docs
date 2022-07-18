@@ -7,29 +7,35 @@ id: estimate-gas-2
 
 ## Declaration
 
-Task<HexBigInteger> EstimateGas(string from, string to, string data, string value, string gas, string gasPrice, string nonce)
+`Task<HexBigInteger> EstimateGas(string from, string to, string data, string value, string gas, string gasPrice, string nonce)`
 
 or
 
-Task<HexBigInteger> EstimateGas(TransactionInput transactionInput)
+`Task<HexBigInteger> EstimateGas(TransactionInput transactionInput)`
 
 ## Parameters
 
-| `from`     | The address for the sending account.                                                                             |
-| `to`       | The destination address of the message.                                                                          |
-| `data`     | String containing the data of the function call on a contract. (optional)                                        |
-| `value`    | The value transferred for the transaction in wei. (optional)                                                     |
-| `gas`      | The maximum gas provided for this call “transaction” (gas limit). (optional)                                     |
-| `gasPrice` | The gas price in wei to use for this call “transaction”. (optional)                                              |
-| `nonce`    | Integer of the nonce. This allows to overwrite your own pending transactions that use the same nonce. (optional) |
+| Parameter   | Description                                                                                                      |
+|-------------|------------------------------------------------------------------------------------------------------------------|
+| `from`      | An address for the sending account.                                                                              |
+| `to`        | The destination address of the message.                                                                          |
+| `data`      | String containing the data of the function call on a contract. (optional)                                        |
+| `value`     | The value transferred for the transaction in wei. (optional)                                                     |
+| `gas`       | The maximum gas provided for this call “transaction” (gas limit). (optional)                                     |
+| `gasPrice`  | The gas price in wei to use for this call “transaction”. (optional)                                              |
+| `nonce`     | Integer of the nonce. This allows to overwrite your own pending transactions that use the same nonce. (optional) |
 
 or
 
-| `transactionInput` | Object with transaction parameters. |
+| Parameter          | Description                                  |
+|--------------------|----------------------------------------------|
+| `transactionInput` | An object containing transaction parameters. |
 
 ## Returns
 
-| `HexBigInteger` | Number the used gas for the simulated call/transaction. |
+| Parameter       | Description                                                     |
+|-----------------|-----------------------------------------------------------------|
+| `HexBigInteger` | Returns the gas amount used for the simulated call/transaction. |
 
 ## Description
 

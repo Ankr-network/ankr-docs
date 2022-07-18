@@ -11,19 +11,25 @@ A class for SDK instance creation.
 
 ## Static methods
 
-| GetAnkrSDKInstance | Create instance of SDK with given argument. |
+| Method               | Description                                       |
+|----------------------|---------------------------------------------------|
+| `GetAnkrSDKInstance` | Creates an instance of SDK with a given argument. | 
 
 or
 
-| networkName | Enum with network name. |
+| Method        | Description                        |
+|---------------|------------------------------------|
+| `networkName` | An enum containing a network name. | 
 
 ## Returns
 
-`IAnkrSDK` Instance of SDK provider.
+| Parameter  | Description                  |
+|------------|------------------------------|
+| `IAnkrSDK` | An instance of SDK provider. | 
 
 ## Description
 
-Create an SDK instance by given provider URL or network name.
+Creates an SDK instance by a given provider URL or network name.
 
 ## Code example
 

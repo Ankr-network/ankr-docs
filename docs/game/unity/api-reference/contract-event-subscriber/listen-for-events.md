@@ -7,7 +7,7 @@ id: listen-for-events
 
 ## Declaration
 
-UniTask ListenForEvents()
+`UniTask ListenForEvents()`
 
 ## Description
 

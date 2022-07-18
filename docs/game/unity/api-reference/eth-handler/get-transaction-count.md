@@ -7,19 +7,23 @@ id: get-transaction-count
 
 ## Declaration
 
-Task<BigInteger> GetTransactionCount(string hash)
+`Task<BigInteger> GetTransactionCount(string hash)`
 
 or
 
-Task<BigInteger> GetTransactionCount(BlockParameter block)
+`Task<BigInteger> GetTransactionCount(BlockParameter block)`
 
 ## Parameters
 
-| `hash`  | A `string` containing a block hash. |
-| `block` | A `BlockParameter` that can be either a number of blocks or the `earliest`, `latest`, or `pending` options. |
+| Parameter | Description                                                                                                 |
+|-----------|-------------------------------------------------------------------------------------------------------------|
+| `hash`    | A `string` containing a block hash.                                                                         |
+| `block`   | A `BlockParameter` that can be either a number of blocks or the `earliest`, `latest`, or `pending` options. |
 
 ## Returns
 
+| Parameter    | Description                                  |
+|--------------|----------------------------------------------|
 | `BigInteger` | A number of transactions in the given block. |
 
 ## Description

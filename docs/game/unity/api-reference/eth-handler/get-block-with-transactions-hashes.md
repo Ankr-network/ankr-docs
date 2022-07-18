@@ -7,22 +7,28 @@ id: get-block-with-transactions-hashes
 
 ## Declaration
 
-Task<BlockWithTransactionHashes> GetBlockWithTransactionsHashes(string hash)
+`Task<BlockWithTransactionHashes> GetBlockWithTransactionsHashes(string hash)`
 
 or
 
-Task<BlockWithTransactionHashes> GetBlockWithTransactionsHashes(BlockParameter block)
+`Task<BlockWithTransactionHashes> GetBlockWithTransactionsHashes(BlockParameter block)`
 
 ## Parameters
 
-| `hash` | A `string` containing the block hash. |
+| Parameter | Description                           |
+|-----------|---------------------------------------|
+| `hash`    | A `string` containing the block hash. |
 
 or
 
-| `block` | A `BlockParameter` that can be either a number of blocks or the `earliest`, `latest`, or `pending` options. |
+| Parameter | Description                                    |
+|-----------|------------------------------------------------|
+| `block`   | A `BlockParameter` that can be either a number of blocks or the `earliest`, `latest`, or `pending` options. |
 
 ## Returns
 
+| Parameter                    | Description                                    |
+|------------------------------|------------------------------------------------|
 | `BlockWithTransactionHashes` | A block object containing transactions hashes. |
 
 ## Description

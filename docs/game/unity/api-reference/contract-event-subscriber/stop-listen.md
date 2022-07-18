@@ -7,7 +7,7 @@ id: stop-listen
 
 ## Declaration
 
-void StopListen()
+`void StopListen()`
 
 ## Description
 

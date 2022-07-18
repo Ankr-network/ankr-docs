@@ -7,20 +7,24 @@ id: sign
 
 ## Declaration
 
-Task<string> Sign(string messageToSign, string address)
+`Task<string> Sign(string messageToSign, string address)`
 
 ## Parameters
 
-| messageToSign | Message that should be signed. |
-| address       | Account address.               |
+| Parameter       | Description                      |
+|-----------------|----------------------------------|
+| `messageToSign` | A message that has to be signed. |
+| `address`       | An account address.              |
 
 ## Returns
 
-`string` — a string with a signature.
+| Parameter | Description                      |
+|-----------|----------------------------------|
+| `string`  | A string containing a signature. |
 
 ## Description
 
-Signs data using a specific account.
+Signs the data using a specific account.
 
 ## Code example
 

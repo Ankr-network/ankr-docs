@@ -7,9 +7,11 @@ id: constructor
 
 ## Declaration
 
-ContractEventSubscriber(string wsUrl)
+`ContractEventSubscriber(string wsUrl)`
 
 ## Parameters
 
-| `wsUrl` | A string containing a WebSocket RPC endpoint. |
+| Parameter  | Description                                   |
+|------------|-----------------------------------------------|
+| `wsUrl`    | A string containing a WebSocket RPC endpoint. |
 

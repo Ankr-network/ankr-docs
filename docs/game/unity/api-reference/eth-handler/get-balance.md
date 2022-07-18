@@ -7,15 +7,19 @@ id: get-balance
 
 ## Declaration
 
-Task<BigInteger> GetBalance(string address)
+`Task<BigInteger> GetBalance(string address)`
 
 ## Parameters
 
-| `address` | Address of an account. Method returns balance of a default account if the parameter hasn't been given. |
+| Parameter   | Description                                                                                              |
+|-------------|----------------------------------------------------------------------------------------------------------|
+| `address`   | An account address. The method returns the default account's balance if the parameter hasn't been given. |
 
 ## Returns
 
-| `BigInteger` | Account balance in WEI. |
+| Parameter    | Description                |
+|--------------|----------------------------|
+| `BigInteger` | An account balance in WEI. |
 
 ## Description
 

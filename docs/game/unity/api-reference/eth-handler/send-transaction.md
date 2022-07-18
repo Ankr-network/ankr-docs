@@ -7,21 +7,25 @@ id: send-transaction
 
 ## Declaration
 
-Task<string> SendTransaction(string from, string to, string data, string value, string gas, string gasPrice, string nonce)
+`Task<string> SendTransaction(string from, string to, string data, string value, string gas, string gasPrice, string nonce)`
 
 ## Parameters
 
-| `from`     | The address for the sending account.                                         |
-| `to`       | The destination address of the message.                                      |
-| `data`     | String containing the data of the function call on a contract (optional).    |
-| `value`    | The value transferred for the transaction in wei (optional).                 |
-| `gas`      | The maximum gas provided for this call “transaction” (gas limit) (optional).                                     |
-| `gasPrice` | The gas price in wei to use for this call “transaction” (optional).                                              |
-| `nonce`    | Integer of the nonce. This allows to overwrite your own pending transactions that use the same nonce. (optional) |
+| Parameter  | Description                                                                                                          |
+|------------|----------------------------------------------------------------------------------------------------------------------|
+| `from`     | The address for the sending account.                                                                                 |
+| `to`       | The destination address of the message.                                                                              |
+| `data`     | String containing the data of the function call on a contract (optional).                                            |
+| `value`    | The value transferred for the transaction in wei (optional).                                                         |
+| `gas`      | The maximum gas provided for this call “transaction” (gas limit) (optional).                                         |
+| `gasPrice` | The gas price in wei to use for this call “transaction” (optional).                                                  |
+| `nonce`    | An integer value of the nonce. Allows to overwrite your own pending transactions that use the same nonce. (optional) |
 
 ## Returns
 
-| `string` | Returns the 32 bytes transaction hash. |
+| Parameter | Description                          |
+|-----------|--------------------------------------|
+| `string`  | Returns a 32 bytes transaction hash. |
 
 ## Description
 

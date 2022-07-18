@@ -7,15 +7,17 @@ id: unsubscribe
 
 ## Declaration
 
-UniTask Unsubscribe(string subscriptionId)
+`UniTask Unsubscribe(string subscriptionId)`
 
 ## Parameters
 
+| Parameter        | Description                      |
+|------------------|----------------------------------|
 | `subscriptionId` | An identifier of a subscription. |
 
 ## Description
 
-Unsubscribes from events with a given identifier.
+Unsubscribes from the events with a given identifier.
 
 ## Code example
 

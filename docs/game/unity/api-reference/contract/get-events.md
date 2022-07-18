@@ -7,23 +7,29 @@ id: get-events
 
 ## Declaration
 
-Task<List<EventLog<TEvDto>>> GetEvents<TEvDto>(EventFilterRequest<TEvDto> evFilter)
+`Task<List<EventLog<TEvDto>>> GetEvents<TEvDto>(EventFilterRequest<TEvDto> evFilter)`
 
-Task<List<EventLog<TEvDto>>> GetEvents<TEvDto>(EventFilterData evFilter)
+or
+
+`Task<List<EventLog<TEvDto>>> GetEvents<TEvDto>(EventFilterData evFilter)`
 
 ## Parameters
 
-| `evFilter` | Object that contains an event request. |
+| Parameter  | Description                            |
+|------------|----------------------------------------|
+| `evFilter` | An object containing an event request. |
 
 ## Returns
 
+| Parameter                | Description                                        |
+|--------------------------|----------------------------------------------------|
 | `List<EventLog<TEvDto>>` | Returns all the events complying with the request. |
 
 ## Description
 
 Gets a contract's past events.
 
-Find out more on events and events requests in [Events and subscriptions](/game/unity/api-reference/ankr-sdk-wrapper/events-and-subscriptions#event-nature).
+Find out more on events and events requests in [Events and subscriptions](/game/extra/events-and-subscriptions#event-nature).
 
 ```C++
 using AnkrSDK.Core.Infrastructure;

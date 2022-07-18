@@ -7,20 +7,24 @@ id: get-contract
 
 ## Declaration
 
-IContract GetContract(string contractAddress, string contractABI)
+`IContract GetContract(string contractAddress, string contractABI)`
 
 ## Parameters
 
-| contractAddress | String with contract address.                               |
-| contractABI     | String with application binary interface (ABI) of contract. |
+| Parameter         | Description                                                              |
+|-------------------|--------------------------------------------------------------------------|
+| `contractAddress` | A string containing a contract address.                                  |
+| `contractABI`     | A string containing an application binary interface (ABI) of a contract. |
 
 ## Returns
 
-`IContract` instance of [Contract](/game/unity/api-reference/contract/contract) class.
+| Parameter   | Description                                                                           |
+|-------------|---------------------------------------------------------------------------------------|
+| `IContract` | Returns an instance of [Contract](/game/unity/api-reference/contract/contract) class. |
 
 ## Description
 
-Provide an instance of a contract with a platform-dependant provider.
+Provides an instance of a contract with a platform-dependant provider.
 
 ## Code example
 
