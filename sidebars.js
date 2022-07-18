@@ -528,11 +528,66 @@ module.exports =
             ],
           },
           {
-             'How to...': [
+             'How to': [
               'game/unity/how-tos/subscribe-game',
               'game/unity/how-tos/switch-to-webgl',
             ],
           },
+            {
+                'API Reference': [
+                    {
+                        'AnkrSDKFactory': [
+                            'game/unity/api-reference/ankr-sdk-factory/ankr-sdk-factory',
+                            'game/unity/api-reference/ankr-sdk-factory/get-ankr-sdk-instance',
+                        ],
+                    },
+                    {
+                        'AnkrSDKWrapper': [
+                            'game/unity/api-reference/ankr-sdk-wrapper/ankr-sdk-wrapper',
+                            'game/unity/api-reference/ankr-sdk-wrapper/',
+                            'game/unity/api-reference/ankr-sdk-wrapper/',
+                            'game/unity/api-reference/ankr-sdk-wrapper/',
+                            'game/unity/api-reference/ankr-sdk-wrapper/',
+                        ],
+                    },
+                    {
+                        'EthHandler': [
+                            'game/unity/api-reference/eth-handler/eth-handler',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                            'game/unity/api-reference/eth-handler/',
+                        ],
+                    },
+                    {
+                        'Contract': [
+                            'game/unity/api-reference/contract',
+                            'game/unity/api-reference/contract',
+                            'game/unity/api-reference/contract',
+                            'game/unity/api-reference/contract',
+                            'game/unity/api-reference/contract',
+                            'game/unity/api-reference/contract',
+                        ],
+                    },
+                    {
+                        'ContractEventSubscriber': [
+                            'game/unity/api-reference/contract-event-subscriber',
+                            'game/unity/api-reference/contract-event-subscriber',
+                            'game/unity/api-reference/contract-event-subscriber',
+                            'game/unity/api-reference/contract-event-subscriber',
+                            'game/unity/api-reference/contract-event-subscriber',
+                            'game/unity/api-reference/contract-event-subscriber',
+                        ],
+                    },
+                },
+                ],
+            },
         ],
       },
       {
