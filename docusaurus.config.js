@@ -101,6 +101,10 @@
                 to: "build-blockchain/app-chain/step-by-step",
                 label: "Start step-by-step",
               },
+              {
+                to: "build-blockchain/app-chain/bnb-sidechain/overview",
+                label: "BNB Sidechain",
+              },
             ],
           },
           {
@@ -119,10 +123,6 @@
               {
                 to: "build-blockchain/concepts/pricing",
                 label: "Pricing",
-              },
-              {
-                to: "build-blockchain/bas/overview",
-                label: "BNB Sidechain",
               },
               {
                 to: "build-blockchain/guides/json-methods",
