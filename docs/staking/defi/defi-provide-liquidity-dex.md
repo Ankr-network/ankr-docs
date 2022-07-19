@@ -47,9 +47,9 @@ Here is how to add liquidity to pool, using two widely visited DEXs and ETH–aE
 2. Go to [Uniswap Exchange Liquidity Pool](https://uniswap.exchange/pool).
 3. Connect your wallet.
 4. Click **New Position**.
-5. Add ETH by clicking **Select a token** and pasting aETHc address from the [token smart contracts table](https://www.ankr.com/docs/staking/extra/ls-smart-contract-addresses-mn/).<br /> 
+5. Add ETH by clicking **Select a token**, typing ETH, and selecting it.
+6. Add aETHc by clicking **Select a token** and pasting aETHc address from the [token smart contracts table](https://www.ankr.com/docs/staking/extra/ls-smart-contract-addresses-mn/).<br /> 
    As aETHc is an ERC-20 token, you'll need the *Ethereum (ERC20)* section of the table, specifically the *aETHc* address, which is `0xE95A203B1a91a908F9B9CE46459d101078c2c3cb`.
-6. Add aETHc by clicking **Select a token**.
 7. Enter the amount. 
 8. Confirm the operation.
 
