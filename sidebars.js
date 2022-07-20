@@ -37,6 +37,7 @@ module.exports =
                       {
                           'Premium Tier': [
                               'build-blockchain/products/v2/premium-plan',
+                              'build-blockchain/products/v2/premium-endpoints',
                               'build-blockchain/products/v2/hybrid-infra',
                           ],
                       },
