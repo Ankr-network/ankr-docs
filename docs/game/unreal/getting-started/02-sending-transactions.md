@@ -1,359 +1,386 @@
 ---
-title: 02 Sending Transactions & Retrieving Data
+title: Write/Read Requests
 id: unreal-send-retrieve
 ---
 
-# 02 Sending transactions & retrieving data
+# Write and Read requests
 
-This page lists the different methods you can use in your game. 
+This page lists the functionality you can use in your game. 
 
-:::tip in general
+:::tip Write vs. Read methods
 
-All write method calls such as minting a character or wearable incur gas fees to cover smart contract operations. Tickets are issued for these and approval needed via MetaMask.
+* The *Write* method requests — those that change the current state (example: minting NFTs) — incur gas fees to cover smart contract operations. Those requests issue tickets that you need to either approve or reject via MetaMask.
 
-All read data method calls such as retrieving a balance do NOT incur gas fees.
+* The *Read* method requests — those that don't change but just show the current state (example: retrieving a balance info) — do not incur gas fees. Therefore, no tickets to be issued or approval needed.  
 
 :::
 
-### 🕹 &nbsp;Guided tutorial
+### Guided tutorial
+
 <iframe width="550" height="305" src="https://www.youtube.com/embed/ikHdTSzxxQY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Send transaction
-----------------
-----------------
-The `SendTransaction` function interacts with the blockchain and incurs gas fees. Signing in MetaMask is required. 
-When a call is made, the back end client sends a 'Ticket' in MetaMask if the call was successful.
+---
 
-### URL 
+## SendTransaction
 
-http://45.77.189.28:5000/send/transaction
+`SendTransaction` — the function that supports sending the *Write* method requests. Those requests change a current state on the blockchain and incur gas fees to cover smart contract operations. Those requests issue the tickets pending your approval on MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
-### Parameters
+### Body Parameters
 
-`device_id`, 
-`contract_address`, 
-`abi_hash`, 
-`method`, 
-`args`
+| Parameter             | Description                                                                           |
+|-----------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default) | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract` (required) | An address of the contract you perform operations by.                                 |
+| `abi_hash` (required) | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `method` (required)   | A method to interact with the contract deployed on the blockchain.                    |
+| `args` (optional)     | A destination address (a user to send a transaction to).                              |
 
 ### Response
 
-A `ticket` is the response.  
+A successful request issues a ticket to come to your MetaMask wallet. The ticket shows a transaction that needs validation on your side — either confirmation or rejection.
 
-The session saved during the `GetClient`call is used to open MetaMask. MetaMask will popup to display gas fees for the transaction. Sign or confirm the transaction for that ticket.
+### Code Example
 
 ```cpp
-
-void UAnkrClient::SendTransaction(FString contract, FString abi_hash, FString method, FString args, FAnkrTicket Ticket)
-{
-    http = &FHttpModule::Get();
-
-    TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
-    Request->OnProcessRequestComplete().BindLambda([Ticket, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-        {
-            TSharedPtr<FJsonObject> JsonObject;
-            TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-            FString data = Response->GetContentAsString();
-
-            if (FJsonSerializer::Deserialize(Reader, JsonObject))
-            {
-                FString ticketId = JsonObject->GetStringField("ticket");
-                data = ticketId;
-            }
-
-            Ticket.ExecuteIfBound(data);
-        });
-
-    AsyncTask(ENamedThreads::AnyBackgroundThreadNormalTask, [this, Request, contract, abi_hash, method, args]()
-        {
-            FString url = baseUrl + "send/transaction";
-
-            Request->SetURL(url);
-            Request->SetVerb("POST");
-            Request->SetHeader(TEXT("User-"), "X-MirageSDK-Agent");
-            Request->SetHeader("Content-Type", TEXT("application/json"));
-            Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + contract + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + method + "\", \"args\": \"" + args + "\"}");
-            Request->ProcessRequest();
-        });
-    #if PLATFORM_ANDROID
-    FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
-    #endif
-    }
-```
-
-Checking status of ticket
-------------
------------
-
-Check status of tickets by calling **GetTicketResult**.
-
-For example, if you come back to the game, check the status of the ticket with `GetTicketResult` having body parameters as `device_id`, `ticket`.
-
-Returns the status of the result.
-
-### URL
-
-http://45.77.189.28:5000/send/GetTicketResult
-
-### Parameters
-
-`device_id`, `ticket`
-
-### Response
-
-Successful or Unsuccessful.
-
-Get Data
--------
--------
-
-`GetData` is used to retrieve data associated with a particular wallet and user from a contract.
-
-### URL
-
-http://45.77.189.28:5000/wallet/call/method
-
-### Parameters
-
-`device_id`, 
-`contract_address`, 
-`abi_hash`, 
-`method`, 
-`args`
-
-### Response
-
-The data for a particular wallet and user from a contract is returned.
-
-```cpp
-void UAnkrClient::GetData(FString contract, FString abi_hash, FString method, FString args, FAnkrDelegate Result)
+void UAnkrClient::SendTransaction(FString contract, FString abi_hash, FString method, FString args, const FAnkrCallCompleteDynamicDelegate& Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - SendTransaction - GetContentAsString: %s"), *content);
+
 			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			Result.ExecuteIfBound(Response->GetContentAsString());
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+			FString data = content;
+			if (FJsonSerializer::Deserialize(Reader, JsonObject))
+			{
+				FString ticketId = JsonObject->GetStringField("ticket");
+				data = ticketId;
+
+#if PLATFORM_ANDROID || PLATFORM_IOS
+				AnkrUtility::SetLastRequest("SendTransaction");
+				FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
+#endif
+			}
+			else
+			{
+				UE_LOG(LogTemp, Error, TEXT("AnkrClient - SendTransaction - Couldn't get a valid response:\n%s"), *content);
+			}
+
+			Result.ExecuteIfBound(content, data, "", -1, false);
 		});
 
-	FString url = baseUrl + "call/method";
+	AsyncTask(ENamedThreads::AnyBackgroundThreadNormalTask, [this, Request, contract, abi_hash, method, args]()
+		{
+			FString url = AnkrUtility::GetUrl() + ENDPOINT_SEND_TRANSACTION;
+			Request->SetURL(url);
+			Request->SetVerb("POST");
+			Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+			Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + contract + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + method + "\", \"args\": \"" + args + "\"}");
+			Request->ProcessRequest();
+		});
+}
+```
 
+---
+
+## GetTicketResult
+
+`GetTicketResult` — returns a status of the ticket specified by the body parameters.
+
+### Body Parameters
+
+| Parameter             | Description                                                                      |
+|-----------------------|----------------------------------------------------------------------------------|
+| `device_id` (default) | An ID of your device, generated and saved for further usage upon initialization. |
+| `ticket` (required)   |                                                                                  |
+
+### Response
+
+Returns info on whether the ticket has been confirmed or rejected (successful or unsuccessful).
+
+---
+
+## CallMethod
+
+`CallMethod` — the function that supports sending the *Read* method requests. Those requests change nothing but retrieve a current state on the blockchain. Those requests don't incur gas fees neither. Simply put, they are all just the requests for information.
+
+### Body Parameters
+
+| Parameter             | Description                                                                           |
+|-----------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default) | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract` (required) | An address of the contract you perform operations by.                                 |
+| `abi_hash` (required) | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `method` (required)   | A method to interact with the contract deployed on the blockchain.                    |
+| `args` (optional)     | A destination address (a user to send a transaction to).                              |
+
+### Response
+
+Retrieves the information specified by the body parameters.
+
+### Code Example
+
+```cpp
+void UAnkrClient::CallMethod(FString contract, FString abi_hash, FString method, FString args, const FAnkrCallCompleteDynamicDelegate& Result)
+{
+	http = &FHttpModule::Get();
+
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
+	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - CallMethod - GetContentAsString: %s"), *content);
+
+			TSharedPtr<FJsonObject> JsonObject;
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+			Result.ExecuteIfBound(content, content, "", -1, false);
+		});
+
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_CALL_METHOD;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + contract + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + method + "\", \"args\": \"" + args + "\"}");
 	Request->ProcessRequest();
 }
 ```
 
-Send ABI
------
------
+---
 
-`SendABI` is used to send a request and retrieve the ABI hash generated by the backend.
+## SendABI
 
-### URL
+`SendABI` — converts the ABI string passed with the body parameters into the ABI hash that you can subsequently use with other functions requiring `abi_hash`, such as `SendTransaction` or `CallMethod`.
 
-http://45.77.189.28:5000/abi
+### Body Parameters
 
-### Parameters
-
-`abi`
+| Parameter        | Description                                                        |
+|------------------|--------------------------------------------------------------------|
+| `abi` (required) | An ABI passed as a string to convert to a hash value (`abi_hash`). |
 
 ### Response
 
-The ABI hash is returned. 
+Returns the ABI hash.
+
+### Code Example
 
 ```cpp
-
-void UAnkrClient::SendABI(FString abi, FAnkrDelegate Result)
+void UAnkrClient::SendABI(FString abi, const FAnkrCallCompleteDynamicDelegate& Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - SendABI - GetContentAsString: %s"), *content);
+
 			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
-			
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+			FString data = content;
 			if (FJsonSerializer::Deserialize(Reader, JsonObject))
 			{
-				Result.ExecuteIfBound(JsonObject->GetStringField("abi"));
+				Result.ExecuteIfBound(content, JsonObject->GetStringField("abi"), "", -1, false);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Error, TEXT("AnkrClient - SendABI - Couldn't get a valid response:\n%s"), *content);
 			}
 		});
-
-	FString url = baseUrl + "abi";
-
-	Request->SetURL(url);
-	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
 
 	const TCHAR* find = TEXT("\"");
 	const TCHAR* replace = TEXT("\\\"");
 	FString body = FString("{\"abi\": \"" + abi.Replace(find, replace, ESearchCase::IgnoreCase) + "\"}");
-	
-	Request->SetContentAsString(*body);
+
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_ABI;
+	Request->SetURL(url);
+	Request->SetVerb("POST");
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+	Request->SetContentAsString(body);
 	Request->ProcessRequest();
 }
 ```
 
-Sign message
----
 ---
 
-`SignMessage` is used to send a request that requires confirmation in MetaMask. The session saved during **GetClient** will be used to open MetaMask. 
+## SignMessage
 
-### URL
+`SignMessage` — signs a message you pass with the body parameters to be encrypted and sent. The function corresponds to the *Write* method requests, therefore it issues a ticket that you need to approve or reject on MetaMask. 
 
-http://45.77.189.28:5000/sign/message 
+### Body Parameters
 
-### Parameters
-
-`device_id`,
-`message`
+| Parameter             | Description                                                                      |
+|-----------------------|----------------------------------------------------------------------------------|
+| `device_id` (default) | An ID of your device, generated and saved for further usage upon initialization. |
+| `message` (required)  | A message you'd like to send.                                                    |
 
 ### Response
 
-A `ticketid` is returned.
+Returns a ticket validation status — whether the operation has been approved, rejected (successful or unsuccessful), or any error has occurred.
+
+### Code Example
 
 ```cpp
-
-void UAnkrClient::SignMessage(FString message, FAnkrDelegate Result)
+void UAnkrClient::SignMessage(FString message, const FAnkrCallCompleteDynamicDelegate & Result)
 {
 	http = &FHttpModule::Get();
-	
+
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - SignMessage - GetContentAsString: %s"), *content);
+
 			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
 			if (FJsonSerializer::Deserialize(Reader, JsonObject))
 			{
 				FString ticketId = JsonObject->GetStringField("ticket");
 
-#if PLATFORM_ANDROID
+#if PLATFORM_ANDROID || PLATFORM_IOS
+				AnkrUtility::SetLastRequest("SignMessage");
 				FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
 #endif
-				Result.ExecuteIfBound(ticketId);
+
+				Result.ExecuteIfBound(content, ticketId, "", -1, false);
 			}
 		});
-	
-	FString url = baseUrl + "sign/message";
 
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_SIGN_MESSAGE;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
-	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"message\":\"" + message + "\"}"); // erc20 abi
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"message\":\"" + message + "\"}");
 	Request->ProcessRequest();
 }
-
 ```
 
-The Call is as follows:
+---
 
-```cpp
+## GetSignature
 
-FString url = baseUrl + "sign/message";
-```
+`GetSignature` — verifies a signature of the `ticket` passed with the body parameters. The function gets the result whether the user has signed the message or cancelled signing it.
 
-Get signature
-----
-----
+### Body Parameters
 
-`GetSignature` is used to verify a message by getting a `signature` data object. 
-
-### URL
-
-http://45.77.189.28:5000/result 
-
-### Parameters
-
-`device_id`, 
-`ticket` 
+| Parameter             | Description                                                                      |
+|-----------------------|----------------------------------------------------------------------------------|
+| `device_id` (default) | An ID of your device, generated and saved for further usage upon initialization. |
+| `ticket` (required)   | A ticket received upon performing a `SignMessage` request.                       |
 
 ### Response
 
-A 'data' object with 'signature' string field. 
+Returns a `signature` data object based on the body parameters specified.
+
+### Code Example
 
 ```cpp
-
-void UAnkrClient::GetSignature(FString ticket, FAnkrDelegate Result)
+void UAnkrClient::GetSignature(FString ticket, const FAnkrCallCompleteDynamicDelegate& Result)
 {
 	http = &FHttpModule::Get();
-	
+
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - GetSignature - GetContentAsString: %s"), *content);
+
 			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
 			if (FJsonSerializer::Deserialize(Reader, JsonObject))
 			{
 				TSharedPtr<FJsonObject> data = JsonObject->GetObjectField("data");
-				Result.ExecuteIfBound(data->GetStringField("signature"));
+
+				Result.ExecuteIfBound(content, data->GetStringField("signature"), "", -1, false);
 			}
 		});
-	
-	FString url = baseUrl + "result";
 
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_RESULT;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"ticket\":\"" + ticket + "\"}");
 	Request->ProcessRequest();
 }
 ```
 
-Verify message
-----
-----
+---
 
-`VerifyMessage` is used to verify a signature and connect a player account with a connected wallet's public address.
+## VerifyMessage
 
-### URL
+`VerifyMessage` — verifies if the connected wallet's user has signed the message.
 
-http://45.77.189.28:5000/verify/message
+### Body Parameters
 
-### Parameters
-
-`device_id`, 
-`message`, 
-`signature` 
+| Parameter              | Description                                                                      |
+|------------------------|----------------------------------------------------------------------------------|
+| `device_id` (default)  | An ID of your device, generated and saved for further usage upon initialization. |
+| `message` (required)   | A message sent in the `SignMessage` request.                                     |
+| `signature` (required) | A signature object returned in the `GetSignature` request.                       |
 
 ### Response 
 
-Account 'address'. The account address for the connected wallet's public address.
+Returns an account address for the connected wallet's public address.
+
+### Code Example
 
 ```cpp
-
-void UAnkrClient::VerifyMessage(FString message, FString signature, FAnkrDelegate Result)
+void UAnkrClient::VerifyMessage(FString message, FString signature, const FAnkrCallCompleteDynamicDelegate& Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - VerifyMessage - GetContentAsString: %s"), *content);
+
 			TSharedPtr<FJsonObject> JsonObject;
 			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
+
 			if (FJsonSerializer::Deserialize(Reader, JsonObject))
 			{
-				Result.ExecuteIfBound(JsonObject->GetStringField("address"));
+				Result.ExecuteIfBound(content, JsonObject->GetStringField("address"), "", -1, false);
 			}
 		});
 
-	FString url = baseUrl + "verify/message";
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_VERIFY_MESSAGE;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"message\":\"" + message + "\", \"signature\":\"" + signature + "\"}");
 	Request->ProcessRequest();
 }
-
 ```
