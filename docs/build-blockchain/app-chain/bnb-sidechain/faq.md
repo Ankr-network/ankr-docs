@@ -35,16 +35,16 @@ BNB Sidechain Testnet will be out at the end of March, 2022.
 BNB Sidechain Mainnet will be ready at least 2 months after that.
 
 ### Where can we find more docs for BNB Sidechain for our developers to read through? 
-Refer to [BNB Sidechain Architecture](../bas/architecture/overview). 
+Refer to [BNB Sidechain Architecture](/build-blockchain/app-chain/bnb-sidechain/architecture/overview). 
 
 Also, read [BNB Smart Chain 2022: Build N’ Build](https://www.bnbchain.world/en/blog/bsc-2022-build-and-build/) and [BEP100 proposal for BNB Sidechain](https://github.com/bnb-chain/BEPs/pull/132). 
 
 ### If developers have questions about BNB Sidechain deployment, where can they ask them?
 We will soon set up a Discord channel for questions and organize a Twitter space to share more details. 
-For now, they can read [How to Launch a BNB Sidechain](../bas/how-to-launch/launch-bas).
+For now, they can read [How to Launch a BNB Sidechain](/build-blockchain/app-chain/bnb-sidechain/how-to-launch/launch-bas).
 
 ### I have read the proposal and want to take the next step toward deployment. Who can I talk to? 
-For now, read [How to Launch a BNB Sidechain](../bas/how-to-launch/launch-bas)). For other business and technical details, wait till the Discord channel is set up. You'll be able to ask your questions there.
+For now, read [How to Launch a BNB Sidechain](/build-blockchain/app-chain/bnb-sidechain/how-to-launch/launch-bas). For other business and technical details, wait till the Discord channel is set up. You'll be able to ask your questions there.
 
 ### If a project already has its own private chain, what’s the process to integrate it as a BNB Sidechain? And what does “integrate” mean? 
 Such a project will have to implement BNB Sidechain modules following our standards to align with our BNB Sidechain framework. "Integrate" means to become a BNB Sidechain-compatible blockchain that can use all the specter of BNB Sidechain products.

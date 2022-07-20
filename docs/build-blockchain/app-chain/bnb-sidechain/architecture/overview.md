@@ -19,7 +19,7 @@ After applying templates, BNB Sidechain can be customized using programmable and
 <p>
 &nbsp;
 
-![BNB Sidechain architecture](../../../../static/img/bas-architecture.png)
+![BNB Sidechain architecture](../../../../../static/img/bas-architecture.png)
 
 </p>
 
