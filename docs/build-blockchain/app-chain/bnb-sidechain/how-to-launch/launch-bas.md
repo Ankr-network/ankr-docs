@@ -32,6 +32,14 @@ The config file structure is as such:
 * `votingPeriod` — default voting period for the governance proposals.
 * `faucet` — map with initial balances for faucet and other needs.
 
+:::tip
+You can find the parameters in the [devnet repo containing a test-ready sidechain instance](https://github.com/Ankr-network/bas-devnet-setup).
+
+You can change parameters there and spawn up a more customized instance.
+
+For the rest of the sidechain's codebase, see [the list of available BNB Sidechain repos](/build-blockchain/app-chain/bnb-sidechain/architecture/overview#repositories).
+:::
+
 ## Launch 
 
 You have two launching options:
