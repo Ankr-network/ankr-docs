@@ -5,24 +5,23 @@ id: unreal-connect-wallet
 
 # Connect a wallet
 
-This section assumes you have already deployed the relevant smart contracts to the blockchain and have smart contract addresses and ABI.
+This section assumes you have already deployed the relevant smart contracts to the blockchain and have smart contract addresses and ABI at your disposal.
 
-### Guided tutorial
+## Guided tutorial
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O8FAOFPvDUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Step one
+## deviceId
 
-Upon initialization, a unique `deviceId` is generated.
+`deviceId` — the parameter that is generated upon initialization and saved for the further usage. It will be automatically populated upon sending any requests from that particular device. This parameter serves as a kind of validator. For example, it might prevent confirming a ticket from any other device except for the one associated with the `deviceId` generated upon initialization.
 
 ```js
 deviceId = load->UniqueId;
 ```
 
-### Step two
+## ConnectWallet
 
-`ConnectWallet` is used to connect to the wallet app on your mobile device. On a desktop, a QR-code generates upon logging in. The session is saved to a variable for later use.
-
-[//]: # (The session is saved to a variable for later use. ——>??? To which variable the session is saved?)
+`ConnectWallet` — connects to the wallet app on your mobile device. On a desktop, a QR-code is to be generated upon logging in. The session is saved to a variable for the further usage.
 
 ```cpp
 void UAnkrClient::ConnectWallet(const FAnkrCallCompleteDynamicDelegate& Result)
@@ -88,17 +87,15 @@ void UAnkrClient::ConnectWallet(const FAnkrCallCompleteDynamicDelegate& Result)
 }
 ```
 
-### Step three
+## GetWalletInfo
 
-If you haven't been logged in to your wallet yet, then it opens on your mobile device.
+If you haven't logged in to your wallet yet, then the app on your mobile device will automatically prompt you to log in.
 
 ```cpp
 FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);
 ```
 
-If you're logged in, then `GetWalletInfo` is used to get the wallet information.
-
-[//]: # (——>???Why it's the same code as step1 used below?)
+If you're logged in, then  `GetWalletInfo` retrieves your wallet information.
 
 ```cpp
 void UAnkrClient::GetWalletInfo(const FAnkrCallCompleteDynamicDelegate& Result)

@@ -1,252 +1,322 @@
 ---
-title: Mint Wearable NFTs
+title: Mint NFTs
 id: unreal-mint-nft
 ---
 
-# 04 Mint wearable NFTs
+# Mint NFTs
 
-The following methods can be used to mint new characters and wearable NFTs. 
+This section lists the functions used to mint NFTs (new characters or wearable items). 
 
-:::tip
+:::tip Write vs. Read methods
 
-All write method calls such as minting a character or wearable incur gas fees to cover smart contract operations. Tickets are issued for these and approval needed via MetaMask.
+* The *Write* method requests — those that change the current state (example: minting NFTs) — incur gas fees to cover smart contract operations. Those requests issue tickets that you need to either approve or reject via MetaMask.
 
-All read data method calls such as retrieving a balance do NOT incur gas fees.
+* The *Read* method requests — those that don't change but just show the current state (example: retrieving a balance info) — do not incur gas fees. Therefore, no tickets to be issued or approval needed.
 
 :::
 
-### 🕹 &nbsp;Guided tutorial
+## Guided tutorial
+
 <iframe width="550" height="305" src="https://www.youtube.com/embed/EtiW3Th9Mns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Mint character
+---
 
-`MintCharacter` is used to send a request to mint a new character on the blockchain.
+## MintCharacter
 
-The following body is sent to POST http://45.77.189.28:5000/send/transaction
+`MintCharacter` — mints a character specified by the body parameters to the wallet address. The transaction issues a ticket pending your approval on MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["0xto"] }
-```
-The response is a 'ticket'.
+### Body Parameters
 
-The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
+| Parameter                     | Description                                                                           |
+|-------------------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default)         | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract_address` (required) | A game character contract address.                                                    |
+| `abi_hash` (required)         | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `to` (required)               | A wallet address of the minted character's future owner.                              |
 
-```c++
-void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FAnkrDelegate Result)
+### Response
+
+A successful request issues a ticket to come to the MetaMask wallet of the designated owner. The ticket shows a transaction that needs validation on the owner's side — either confirmation or rejection.
+
+### Code Example
+
+```cpp
+void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FAnkrCallCompleteDynamicDelegate Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - MintCharacter - GetContentAsString: %s"), *content);
+
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+		FString data = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
 		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
+			FString ticket = JsonObject->GetStringField("ticket");
+			data = ticket;
+		}
 			
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				FString ticket = JsonObject->GetStringField("ticket");
-				data = ticket;
-				
-			}
-			lastMethod = "MintCharacter";
-			Result.ExecuteIfBound(data);
-		});
+		AnkrUtility::SetLastRequest("MintCharacter");
+		Result.ExecuteIfBound(content, data, "", -1, false);
+	});
 
 	AsyncTask(ENamedThreads::AnyBackgroundThreadNormalTask, [this, Request, abi_hash, to]()
-		{
-			FString safeMintMethodName = "safeMint";
+	{
+		FString safeMintMethodName = "safeMint";
 
-			FString url = baseUrl + "send/transaction";
-			Request->SetURL(url);
-			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-			Request->SetHeader("Content-Type", TEXT("application/json"));
-			Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + safeMintMethodName + "\", \"args\": [\"" + to + "\"]}");
-			Request->ProcessRequest();
+		FString url = AnkrUtility::GetUrl() + ENDPOINT_SEND_TRANSACTION;
+		Request->SetURL(url);
+		Request->SetVerb("POST");
+		Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+		Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + safeMintMethodName + "\", \"args\": [\"" + to + "\"]}");
+		Request->ProcessRequest();
 
-#if PLATFORM_ANDROID
+#if PLATFORM_ANDROID || PLATFORM_IOS
 			FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
 #endif
-		});
+	});
 }
 ```
 
-## Mint items
+---
 
-`MintItems` is used to send a request to mint new items on the blockchain. 
+## MintItems
 
-The following body is sent to POST http://45.77.189.28:5000/send/transaction
+`MintItems` — mints items in a batch to the wallet address. The transaction issues a ticket pending your approval on MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["0xpubAddres", ["0xtokAddres", "0xtokAddres", "0xtokAddres", "0xtokAddres", "0xtokAddres", "0xtokAddres"],[1, 2, 3, 4, 5, 6], []] }
-```
-The response is a 'ticket'.
+### Body Parameters
 
-The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
+| Parameter                     | Description                                                                           |
+|-------------------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default)         | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract_address` (required) | A game character contract address.                                                    |
+| `abi_hash` (required)         | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `to` (required)               | A wallet address of the minted items' future owner.                                   |
 
-```c++
-void UWearableNFTExample::MintItems(FString abi_hash, FString to, FAnkrDelegate Result)
+### Response
+
+A successful request issues a ticket to come to your MetaMask wallet. The ticket shows a transaction that needs validation on your side — either confirmation or rejection.
+
+### Code Example
+
+```cpp
+void UWearableNFTExample::MintItems(FString abi_hash, FString to, FAnkrCallCompleteDynamicDelegate Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - MintItems - GetContentAsString: %s"), *content);
+
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+		FString data = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
 		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
-
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				FString ticket = JsonObject->GetStringField("ticket");
-				data = ticket;
-
-			}
-			lastMethod = "MintItems";
-			Result.ExecuteIfBound(data);
-		});
+			FString ticket = JsonObject->GetStringField("ticket");
+			data = ticket;
+		}
+			
+		AnkrUtility::SetLastRequest("MintItems");
+		Result.ExecuteIfBound(content, data, "", -1, false);
+	});
 
 	AsyncTask(ENamedThreads::AnyBackgroundThreadNormalTask, [this, Request, abi_hash, to]()
-		{
-			FString mintBatchMethodName = "mintBatch";
+	{
+		FString mintBatchMethodName = "mintBatch";
 
-			FString json = "[\"" + to + "\", [\"" + BlueHatAddress + "\", \"" + RedHatAddress + "\", \"" + BlueShoesAddress + "\", \"" + WhiteShoesAddress + "\", \"" + RedGlassesAddress + "\", \"" + WhiteGlassesAddress + "\"], [1, 2, 3, 4, 5, 6], \"0x\"]";
-			json = json.Replace(TEXT(" "), TEXT(""));
+		FString args = "[\"" + to + "\", [\"" + BlueHatAddress + "\", \"" + RedHatAddress + "\", \"" + BlueShoesAddress + "\", \"" + WhiteShoesAddress + "\", \"" + RedGlassesAddress + "\", \"" + WhiteGlassesAddress + "\"], [1, 2, 3, 4, 5, 6], \"0x\"]";
+		args = args.Replace(TEXT(" "), TEXT(""));
 
-			FString url = baseUrl + "send/transaction";
-			Request->SetURL(url);
-			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-			Request->SetHeader("Content-Type", TEXT("application/json"));
-			Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + mintBatchMethodName + "\", \"args\": " + json + "}");
-			Request->ProcessRequest();
+		FString url = AnkrUtility::GetUrl() + ENDPOINT_SEND_TRANSACTION;
+		Request->SetURL(url);
+		Request->SetVerb("POST");
+		Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+		Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + mintBatchMethodName + "\", \"args\": " + args + "}");
+		Request->ProcessRequest();
 
-#if PLATFORM_ANDROID
-			FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
+#if PLATFORM_ANDROID || PLATFORM_IOS
+		FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
 #endif
-		});
+	});
 }
 ```
 
-## Game item set approval
+---
 
-`GameItemSetApproval` is used to confirm an update of a game item.
+## GameItemSetApproval
 
-The following body is sent to POST http://45.77.189.28:5000/send/transaction
+`GameItemSetApproval` — approves the minting of items for someone else (`callOperator`). The function serves the cases when a user has no permission to mint on his own. For example, someone is using somebody else's contract, etc. In that case, a user needs an approval from the contract owner. The function issues a ticket pending your approval on MetaMask.
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["0xoperatorContractAddress", true] }
-```
+### Body parameters
 
-The response is a `ticket`. 
+| Parameter                     | Description                                                                           |
+|-------------------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default)         | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract_address` (required) | A game character contract address.                                                    |
+| `abi_hash` (required)         | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `callOperator` (required)     | A contract address that is going to have the minted assets.                           |
+| `approved` (required)         | A status showing whether you approve the transaction or not (bool).                   |
 
-The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
+### Response
 
-```c++
-void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOperator, bool approved, FAnkrDelegate Result)
+A successful request issues a ticket to come to your MetaMask wallet. The ticket shows a transaction that needs validation on your side — either confirmation or rejection.
+
+### Code Example
+
+```cpp
+void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOperator, bool approved, FAnkrCallCompleteDynamicDelegate Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - GameItemSetApproval - GetContentAsString: %s"), *content);
 
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+			
+		FString data = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		{
+			bool result = JsonObject->GetBoolField("result");
+			if (result)
 			{
-				bool result = JsonObject->GetBoolField("result");
-				if (result)
-				{
-					FString ticket = JsonObject->GetStringField("ticket");
-					data = ticket;
-				}
+				FString ticket = JsonObject->GetStringField("ticket");
+				data = ticket;
 			}
-			lastMethod = "GameItemSetApproval";
-			Result.ExecuteIfBound(data);
-		});
+		}
+			
+		AnkrUtility::SetLastRequest("GameItemSetApproval");
+		Result.ExecuteIfBound(content, data, "", -1, false);
+	});
 
 	AsyncTask(ENamedThreads::AnyBackgroundThreadNormalTask, [this, Request, abi_hash, callOperator, approved]()
-		{
-			FString setApprovalForAllMethodName = "setApprovalForAll";
+	{
+		FString setApprovalForAllMethodName = "setApprovalForAll";
 
-			FString url = baseUrl + "send/transaction";
-			Request->SetURL(url);
-			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-			Request->SetHeader("Content-Type", TEXT("application/json"));
-			FString body = "{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + setApprovalForAllMethodName + "\", \"args\": [\"" + GameCharacterContractAddress + "\", true ]}";
+		FString body = "{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + setApprovalForAllMethodName + "\", \"args\": [\"" + GameCharacterContractAddress + "\", true ]}";
 			
-			Request->SetContentAsString(body);
-			Request->ProcessRequest();
+		FString url = AnkrUtility::GetUrl() + ENDPOINT_SEND_TRANSACTION;
+		Request->SetURL(url);
+		Request->SetVerb("POST");
+		Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+		Request->SetContentAsString(body);
+		Request->ProcessRequest();
 
-#if PLATFORM_ANDROID
+#if PLATFORM_ANDROID || PLATFORM_IOS
 			FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
 #endif
-		});
+	});
 }
 ```
 
-## Get character balance
+---
 
-`GetCharacterBalance` is used to check whether a user holds any NFTs. 
+## GetCharacterBalance
 
-The following body is sent to POST http://45.77.189.28:5000/call/method 
+`GetCharacterBalance` — retrieves a token balance a user has in their MetaMask wallet. The data shows the number of tokens   the user holds.
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["0xpubAddres"] }
-``` 
+### Body Parameters
 
-The response is a 'data' object detailing the number of tokens that the user holds.
+| Parameter                     | Description                                                                           |
+|-------------------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default)         | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract_address` (required) | A game character contract address.                                                    |
+| `abi_hash` (required)         | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `address` (required)          | An address of the wallet you'd like to check the balance for.                         |
+| `args` (required)             | A destination address (a user to send a transaction to).                              |
 
-```c++
-void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address, FAnkrDelegate Result)
+### Response
+
+The response comes as a data object detailing the number of tokens belonging to the user.
+
+### Code example
+
+```cpp
+void UWearableNFTExample::GetCharacterBalance(FString abi_hash, FString address, FAnkrCallCompleteDynamicDelegate Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - GetCharacterBalance - GetContentAsString: %s"), *content);
 
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				data = JsonObject->GetStringField("data");
-			}
-			lastMethod = "GetCharacterBalance";
-			Result.ExecuteIfBound(data);
-		});
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+			
+		FString data = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		{
+			data = JsonObject->GetStringField("data");
+		}
+			
+		Result.ExecuteIfBound(content, data, "", -1, false);
+	});
 
 	FString balanceOfMethodName = "balanceOf";
 
-	FString url = baseUrl + "call/method";
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_CALL_METHOD;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + balanceOfMethodName + "\", \"args\": [\"" + address + "\"]}");
 	Request->ProcessRequest();
 }
 ```
 
-## Get character token Id
+---
 
-`GetCharacterTokenId` retrieves the unique identifier for a specific Character Token. 
+## GetCharacterTokenId
 
-The following body is sent to POST http://45.77.189.28:5000/result
+`GetCharacterTokenId` — retrieves a unique ID for a token specified by the body parameters. 
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["0xpubAddres", "index"] }
-```
+### Body Parameters
 
-The response is a 'data' object containing the id of the character.
+| Parameter                     | Description                                                                           |
+|-------------------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default)         | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract_address` (required) | A game character contract address.                                                    |
+| `abi_hash` (required)         | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `tokenBalance` (required)     | A token balance retrieved by the `GetCharacterBalance` function.                      |
+| `owner` (required)            | An owner of the token.                                                                |
 
-```c++
-void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance, FString owner, FString index, FAnkrDelegate Result)
+### Response
+
+The response comes as a data object containing the ID of the token specified by the body parameters.
+
+### Code example
+
+```cpp
+void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance, FString owner, FString index, FAnkrCallCompleteDynamicDelegate Result)
 {
 	if (tokenBalance <= 0)
 	{
@@ -256,46 +326,61 @@ void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance
 
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - GetCharacterTokenId - GetContentAsString: %s"), *content);
 
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				data = JsonObject->GetStringField("data");
-			}
-			lastMethod = "GetCharacterTokenId";
-			Result.ExecuteIfBound(data);
-		});
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+			
+		FString data = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		{
+			data = JsonObject->GetStringField("data");
+		}
+
+		Result.ExecuteIfBound(content, data, "", -1, false);
+	});
 
 	FString tokenOfOwnerByIndexMethodName = "tokenOfOwnerByIndex";
 
-	FString url = baseUrl + "call/method";
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_CALL_METHOD;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + tokenOfOwnerByIndexMethodName + "\", \"args\": [\"" + owner + "\", \"" + index + "\"]}");
 	Request->ProcessRequest();
 }
 ```
 
-## Change hat
+## ChangeHat
 
-`ChangeHat` sends a request to alter the hat wearable to red (if the hat is currently blue) or blue (if the hat is currently red).
+`ChangeHat` — changes the hat wearable to another available hat. The request issues the ticket pending your approval on MetaMask.
 
-The following body is sent to POST http://45.77.189.28:5000/send/transaction
+### Body Parameters
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["characterId", "tokenAddress"] }
-```
-The session saved during `Init` will be used to open MetaMask. MetaMask will show a popup to sign or confirm the transaction for that ticket.
+| Parameter                     | Description                                                                           |
+|-------------------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default)         | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract_address` (required) | A game character contract address.                                                    |
+| `abi_hash` (required)         | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `characterId` (required)      | An ID of the character you'd like to change a hat for (equals to `tokenId`).          |
+| `hatAddress` (required)       | A wallet address of the hat token.                                                    |
 
-```c++
-void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasHat, FString hatAddress, FAnkrDelegate Result)
+### Response
+
+A successful request issues a ticket to come to your MetaMask wallet. The ticket shows a transaction that needs validation on your side — either confirmation or rejection.
+
+### Code Example
+
+```cpp
+void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasHat, FString hatAddress, FAnkrCallCompleteDynamicDelegate Result)
 {
 	if (!hasHat || characterId == -1)
 	{
@@ -305,191 +390,231 @@ void UWearableNFTExample::ChangeHat(FString abi_hash, int characterId, bool hasH
 
 	http = &FHttpModule::Get();
 	
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
-	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString ticket = Response->GetContentAsString();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
+	Request->OnProcessRequestComplete().BindLambda([Result, this, hatAddress](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - ChangeHat - GetContentAsString: %s"), *content);
 
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				ticket = JsonObject->GetStringField("ticket");
-			}
-			lastMethod = "ChangeHat";
-			if (hat.Equals(BlueHatAddress))
-			{
-				lastMethod = "ChangeHatBlue";
-			}
-			else if (hat.Equals(RedHatAddress))
-			{
-				lastMethod = "ChangeHatRed";
-			}
-			Result.ExecuteIfBound(ticket);
-		});
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+			
+		FString ticket = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		{
+			ticket = JsonObject->GetStringField("ticket");
+		}
+			
+		if		(hatAddress.Equals(BlueHatAddress)) AnkrUtility::SetLastRequest("ChangeHatBlue");
+		else if (hatAddress.Equals(RedHatAddress))  AnkrUtility::SetLastRequest("ChangeHatRed");
+			
+		Result.ExecuteIfBound(content, ticket, "", -1, false);
+	});
 
 	AsyncTask(ENamedThreads::AnyBackgroundThreadNormalTask, [this, Request, abi_hash, characterId, hasHat, hatAddress]()
-		{
-			hat = hatAddress;
-			FString changeHatMethodName = "changeHat";
+	{
+		FString changeHatMethodName = "changeHat";
 
-			FString url = baseUrl + "send/transaction";
-			Request->SetURL(url);
-			Request->SetVerb("POST");
-			Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-			Request->SetHeader("Content-Type", TEXT("application/json"));
-			FString body = "{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + changeHatMethodName + "\", \"args\": [\"" + FString::FromInt(characterId) + "\", \"" + BlueHatAddress + "\"]}";
-			
-			Request->SetContentAsString(body);
-			Request->ProcessRequest();
+		FString body = "{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + changeHatMethodName + "\", \"args\": [\"" + FString::FromInt(characterId) + "\", \"" + hatAddress + "\"]}";
 
-#if PLATFORM_ANDROID
-			FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
+		FString url = AnkrUtility::GetUrl() + ENDPOINT_SEND_TRANSACTION;
+		Request->SetURL(url);
+		Request->SetVerb("POST");
+		Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+		Request->SetContentAsString(body);
+		Request->ProcessRequest();
+
+#if PLATFORM_ANDROID || PLATFORM_IOS
+		FPlatformProcess::LaunchURL(session.GetCharArray().GetData(), NULL, NULL);
 #endif
-		});
+	});
 }
 ```
 
-## Get hat
+## GetHat
 
-`GetHat` is used to retrieve the token address for a hat NFT.
+`GetHat` — retrieves the current hat of the character. The data shows the token address that the player has.
 
-The following body is sent to POST http://45.77.189.28:5000/call/method
+### Body Parameters
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': ["characterId"] }
-```
+| Parameter                | Description                                                                           |
+|--------------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default)    | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract` (required)    | A game character contract address.                                                    |
+| `abi_hash` (required)    | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `characterId` (required) | An ID of the character you'd like to change a hat for (equals to `tokenId`).          |
 
-The response is a 'data' object containing a string for the token address that the player has.
+### Response
 
-```c++
-void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FAnkrDelegate Result)
+The response comes as a data object containing the token address that corresponds to the player's hat.
+
+### Code Example
+
+```cpp
+void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FAnkrCallCompleteDynamicDelegate Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - GetHat - GetContentAsString: %s"), *content);
 
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				data = JsonObject->GetStringField("data");
-			}
-			lastMethod = "GetHat";
-			Result.ExecuteIfBound(data);
-		});
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+		FString data = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		{
+			data = JsonObject->GetStringField("data");
+		}
+			
+		Result.ExecuteIfBound(content, data, "", -1, false);
+	});
 
 	FString getHatMethodName = "getHat";
 
-	FString url = baseUrl + "call/method";
-
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_CALL_METHOD;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameCharacterContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + getHatMethodName + "\", \"args\": [\"" + FString::FromInt(characterId) + "\"]}");
 	Request->ProcessRequest();
 }
 ```
 
-## Get ticket result
+---
 
-`GetTicketResult` is used to retrieve the status of a ticket and to see whether a transaction has been successful or not. 
+## GetTicketResult
 
-The following body is sent to POST http://45.77.189.28:5000/result
+`GetTicketResult` — retrieves  the result of the ticket. The status shows whether the ticket has been successful or not (approved or rejected). The 'code' shows a code number related to a specific failure or success. 
 
-```json
-{ 'ticket' }
-```
+### Body Parameters
 
-A 'data' object is returned with a 'code' number to indicate success or failure.
+| Parameter             | Description                                                      |
+|-----------------------|------------------------------------------------------------------|
+| `ticketID` (required) | An ID of the ticket you'd like to know the resulting status for. |
 
-```c++
-void UWearableNFTExample::GetTicketResult(FString ticketId, FAnkrTicketResult Result)
+### Response
+
+The response comes as a data object containing a code value that indicate a specific type of failure or success.
+
+### Code Example
+
+```cpp
+void UWearableNFTExample::GetTicketResult(FString ticketId, FAnkrCallCompleteDynamicDelegate Result)
 {
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, ticketId, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				FString data = JsonObject->GetStringField("data");
-				int code = 1;
-				
-				if (lastMethod.Equals("ChangeHatBlue") || lastMethod.Equals("ChangeHatRed"))
-				{
-					bool result = JsonObject->GetBoolField("result");
-					TSharedPtr<FJsonObject> object = JsonObject->GetObjectField("data");
-					FString transactionHash = object->GetStringField("tx_hash");
-					FString status = object->GetStringField("status");
-					
-					if (result && status == "success")
-					{
-						code = 123;
-					}
-				}
-				Result.ExecuteIfBound(Response->GetContentAsString(), code);
-			}
-		});
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - GetTicketResult - GetContentAsString: %s"), *content);
 
-	FString url = baseUrl + "result";
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+			
+		FString data = content;
+		int code = 0;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		{
+			code = 1;
+
+			if (AnkrUtility::GetLastRequest().Equals("ChangeHatBlue") || AnkrUtility::GetLastRequest().Equals("ChangeHatRed"))
+			{
+				bool result					   = JsonObject->GetBoolField("result");
+				TSharedPtr<FJsonObject> object = JsonObject->GetObjectField("data");
+				FString transactionHash		   = object->GetStringField("tx_hash");
+				FString status				   = object->GetStringField("status");
+				UE_LOG(LogTemp, Warning, TEXT("tx_hash: %s | status: %s"), *transactionHash, *status);
+
+				if (result && status == "success")
+				{
+					code = 123;
+				}
+			}
+		}
+
+		Result.ExecuteIfBound(content, data, "", code, false);
+	});
+
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_RESULT;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"ticket\": \"" + ticketId + "\" }");
 	Request->ProcessRequest();
 }
 ```
 
-## Get items balance
+## GetItemsBalance
 
-`GetItemsBalance` is used to retrieve the number of items for each item type. 
+`GetItemsBalance` — retrieves the balance of items in a batch.
 
-The following body is sent to POST http://45.77.189.28:5000/call/method
+### Body Parameters
 
-```json
-{ 'device_id', 'contract_address', 'abi_hash', 'method', 'args': [["9 wallet address elements"], ["9 token address elements"]] }
-```
+| Parameter             | Description                                                                           |
+|-----------------------|---------------------------------------------------------------------------------------|
+| `device_id` (default) | An ID of your device, generated and saved for further usage upon initialization.      |
+| `contract` (required) | A game character contract address.                                                    |
+| `abi_hash` (required) | An ABI indicates the number of functions in the contract (represented in hash value). |
+| `address` (required)  | An address of the user for which you'd like to retrieve the information.              |
 
-The response is a 'data' object containing an array of balances for each token. The balances for each token are returned in the order in which they were sent as a request.  
+### Response
 
-```c++
-void UWearableNFTExample::GetItemsBalance(FString abi_hash, FString address, FAnkrDelegate Result)
+The response is a data object containing an array of balances for each token. The balances for each token return in the same order they were sent in request.
+
+### Code example
+
+```cpp
+void UWearableNFTExample::GetItemsBalance(FString abi_hash, FString address, FAnkrCallCompleteDynamicDelegate Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
 	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-		{
-			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			FString data = Response->GetContentAsString();
+	{
+		const FString content = Response->GetContentAsString();
+		UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - GetItemsBalance - GetContentAsString: %s"), *content);
 
-			if (FJsonSerializer::Deserialize(Reader, JsonObject))
-			{
-				data = JsonObject->GetStringField("data");
-			}
-			lastMethod = "GetItemsBalance";
-			Result.ExecuteIfBound(data);
-		});
+		TSharedPtr<FJsonObject> JsonObject;
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+		FString data = content;
+		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		{
+			data = JsonObject->GetStringField("data");
+			UE_LOG(LogTemp, Warning, TEXT("WearableNFTExample - GetItemsBalance - Balance: %s"), *data);
+		}
+			
+		Result.ExecuteIfBound(content, data, "", -1, false);
+	});
 
 	FString balanceOfBatchMethodName = "balanceOfBatch";
 
-	FString body = "[ [\"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\"], [\"" + BlueHatAddress + "\", \"" + RedHatAddress + "\", \"" + WhiteHatAddress + "\", \"" + BlueShoesAddress + "\", \"" + RedShoesAddress + "\", \"" + WhiteShoesAddress + "\", \"" + BlueGlassesAddress + "\", \"" + RedGlassesAddress + "\", \"" + WhiteGlassesAddress + "\"]]";
+	FString args = "[ [\"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\", \"" + activeAccount + "\"], [\"" + BlueHatAddress + "\", \"" + RedHatAddress + "\", \"" + WhiteHatAddress + "\", \"" + BlueShoesAddress + "\", \"" + RedShoesAddress + "\", \"" + WhiteShoesAddress + "\", \"" + BlueGlassesAddress + "\", \"" + RedGlassesAddress + "\", \"" + WhiteGlassesAddress + "\"]]";
 	
-	FString url = baseUrl + "call/method";
-
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_CALL_METHOD;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
-	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + balanceOfBatchMethodName + "\", \"args\": " + body + "}");
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\", \"contract_address\": \"" + GameItemContractAddress + "\", \"abi_hash\": \"" + abi_hash + "\", \"method\": \"" + balanceOfBatchMethodName + "\", \"args\": " + args + "}");
 	Request->ProcessRequest();
 }
 ```
