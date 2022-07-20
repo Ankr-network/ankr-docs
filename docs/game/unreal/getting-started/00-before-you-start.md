@@ -1,34 +1,34 @@
 ---
-title: 00 Before you Start
+title: Before Start
 id: unreal-before
 ---
-# 00 Before you start
-## ▶️ &nbsp;SDK walkthrough
+# Before you start
+## SDK walk-through
 
 <iframe width="550" height="305" src="https://www.youtube.com/embed/lvhW_9y2lEc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## 👉🏻 &nbsp;Getting started
+## Components interaction
 
-The **Ankr Unreal SDK** sends requests to the backend client to connect and interact with the blockchain to send and retrieve data.
+AnkrSDK enables interacting with the blockchain for the latest Unreal Engine 5+.
 
-The baseURL is: http://45.77.189.28:5000/
- 
-- Back End 
-    - **Ankr** handles all communication with the backend and blockchain via a baseURL
-    - The **Ankr Unreal SDK** sends call functions and parameters and receives JSON responses as to whether the call is successful or not.
+The interaction components are the following:
 
-## 💫 &nbsp;Use cases
+* Frontend: Unreal Engine 5+
+* Backend:
+  * Unreal Engine uses Ankr API to interact with the blockchain.
+  * Ankr handles the Unreal Engine to blockchain communication.
 
-Currently, the SDK serves three use cases:
+## SDK's functionality
 
-1. Connect Wallet (MetaMask) and Authenticate User
-2. Update NFT by signing and sending Transactions
-3. Wearables NFT (Minting)
+Currently, the SDK supports the following functionality for Unreal Engine:
 
-The first step is to initiate connection to a **Web3 wallet** and authenticate the player as the owner of the wallet. 
+1. Connecting a wallet (MetaMask) and authenticating a user.
+2. Updating NFTs (by signing and sending transactions).
+3. Minting wearable NFTs.
 
-:::tip
+## Prerequisites
 
-To get started, you need to have deployed your contract on to the blockchain and have the **ABI** and the **Contract Address**. 
+1. Smart contracts deployed on the blockchain.
+2. Smart contract addresses and ABI
 
-:::
+[//]: # (&#40;**What needs to be done with those: smart contract addresses and ABI???**&#41;)

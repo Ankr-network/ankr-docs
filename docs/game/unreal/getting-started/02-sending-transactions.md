@@ -1,9 +1,9 @@
 ---
-title: 02 Sending Transactions & Retrieving Data
+title: Send Transactions & Retrieve Data
 id: unreal-send-retrieve
 ---
 
-# 02 Sending transactions & retrieving data
+# Send transactions and retrieve data
 
 This page lists the different methods you can use in your game. 
 

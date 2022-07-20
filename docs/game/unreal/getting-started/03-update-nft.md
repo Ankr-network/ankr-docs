@@ -1,5 +1,5 @@
 ---
-title: 03 Update an NFT
+title: Update an NFT
 id: unreal-update-nft
 ---
 

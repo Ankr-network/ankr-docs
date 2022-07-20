@@ -1,93 +1,170 @@
 ---
-title: 01 Connect Wallet and Authenticate
+title: Connect Wallet
 id: unreal-connect-wallet
 ---
 
-# 01 Connect wallet and authenticate
+# Connect a wallet
 
 This section assumes you have already deployed the relevant smart contracts to the blockchain and have smart contract addresses and ABI.
 
-#### 🕹 &nbsp;Guided tutorial
+### Guided tutorial
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O8FAOFPvDUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### STEP ONE
+### Step one
 
 Upon initialization, a unique `deviceId` is generated.
 
 ```js
 deviceId = load->UniqueId;
-baseUrl = "http://45.77.189.28:5000/";
 ```
 
-#### STEP TWO
+### Step two
 
-Use the `GetClient` method to send a request to http://45.77.189.28:5000/connect. 
-Include the `device_id` as a parameter in the body. 
-A response object is returned containing:
-* `uri` deeplink to open MetaMask, 
-* `session`
-* `login` details.
+`ConnectWallet` is used to connect to the wallet app on your mobile device. On a desktop, a QR-code generates upon logging in. The session is saved to a variable for later use.
 
-The 'uri' deeplink only works for mobile devices. For desktop, a QR Code is generated at the time the login button is pressed. The session is saved to a variable for later use.
+[//]: # (The session is saved to a variable for later use. ——>??? To which variable the session is saved?)
 
 ```cpp
-	
-bool UAnkrClient::GetClient(FAnkrConnectionStatus Status)
+void UAnkrClient::ConnectWallet(const FAnkrCallCompleteDynamicDelegate& Result)
 {
 	http = &FHttpModule::Get();
 
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
-	Request->OnProcessRequestComplete().BindLambda([Status, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
+	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - ConnectWallet - GetContentAsString: %s"), *content);
+
 			TSharedPtr<FJsonObject> JsonObject;
-			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-			
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+			needLogin = false;
 			if (FJsonSerializer::Deserialize(Reader, JsonObject))
 			{
-				FString recievedUri = JsonObject->GetStringField("uri");
-				FString sessionId	= JsonObject->GetStringField("session");
-				bool needLogin		= JsonObject->GetBoolField("login");
-				session				= sessionId;
-
-				updateNFTExample->Init(deviceId, baseUrl, session);
-				wearableNFTExample->Init(deviceId, baseUrl, session);
-
-				if (needLogin) 
+				bool result = JsonObject->GetBoolField("result");
+				if (result)
 				{
-#if PLATFORM_ANDROID
-					FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);
+					FString recievedUri = JsonObject->GetStringField("uri");
+					FString sessionId = JsonObject->GetStringField("session");
+					needLogin = JsonObject->GetBoolField("login");
+					session = sessionId;
+					walletConnectDeeplink = recievedUri;
+
+					updateNFTExample->Init(deviceId, session);
+					wearableNFTExample->Init(deviceId, session);
+
+					if (needLogin)
+					{
+#if PLATFORM_ANDROID || PLATFORM_IOS
+						AnkrUtility::SetLastRequest("ConnectWallet");
+						FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);
 #endif
+					}
+
+					Result.ExecuteIfBound(content, "", "", -1, needLogin);
 				}
-				Status.ExecuteIfBound(true);
+				else
+				{
+					UE_LOG(LogTemp, Error, TEXT("AnkrClient - ConnectWallet - Couldn't connect, when result is false, see details:\n%s"), *content);
+				}
 			}
-			else 
+			else
 			{
-				Status.ExecuteIfBound(false);
+				UE_LOG(LogTemp, Error, TEXT("AnkrClient - ConnectWallet - Couldn't get a valid response, deserialization failed, see details:\n%s"), *content);
 			}
 
-		});
+});
 
-	FString url = baseUrl + "connect";
-
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_CONNECT;
 	Request->SetURL(url);
 	Request->SetVerb("POST");
-	Request->SetHeader(TEXT("User-Agent"), "X-MirageSDK-Agent");
-	Request->SetHeader("Content-Type", TEXT("application/json"));
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
 	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\"}");
 	Request->ProcessRequest();
-	return true;
 }
-
 ```
 
-#### STEP THREE
+### Step three
 
-If login via MetaMask is required to authenticate the session, a connection request is sent to MetaMask with `uri` as a deeplink.
+If you haven't been logged in to your wallet yet, then it opens on your mobile device.
 
 ```cpp
 FPlatformProcess::LaunchURL(recievedUri.GetCharArray().GetData(), NULL, NULL);
 ```
 
-If already logged in, a JSON object is returned with the `session_id` and `URI`. This is now a valid session and any transaction to the blockchain can be performed.
+If you're logged in, then `GetWalletInfo` is used to get the wallet information.
 
----
+[//]: # (——>???Why it's the same code as step1 used below?)
+
+```cpp
+void UAnkrClient::GetWalletInfo(const FAnkrCallCompleteDynamicDelegate& Result)
+{
+	http = &FHttpModule::Get();
+
+#if ENGINE_MAJOR_VERSION == 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = http->CreateRequest();
+#else
+	TSharedRef<IHttpRequest> Request = http->CreateRequest();
+#endif
+	Request->OnProcessRequestComplete().BindLambda([Result, this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+		{
+			const FString content = Response->GetContentAsString();
+			UE_LOG(LogTemp, Warning, TEXT("AnkrClient - GetWalletInfo - GetContentAsString: %s"), *content);
+
+			TSharedPtr<FJsonObject> JsonObject;
+			TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(content);
+
+			FString data = content;
+			if (FJsonSerializer::Deserialize(Reader, JsonObject))
+			{
+				bool result = JsonObject->GetBoolField("result");
+				if (result)
+				{
+					TArray<TSharedPtr<FJsonValue>> accountsObject = JsonObject->GetArrayField("accounts");
+
+					if (accountsObject.Num() > 0)
+					{
+						for (int32 i = 0; i < accountsObject.Num(); i++)
+						{
+							accounts.Add(accountsObject[i]->AsString());
+						}
+
+						activeAccount = accounts[0];
+						chainId = JsonObject->GetIntegerField("chainId");
+
+						updateNFTExample->SetAccount(activeAccount, chainId);
+						wearableNFTExample->SetAccount(activeAccount, chainId);
+
+						data = FString("Active Account: ").Append(activeAccount).Append(" | Chain Id: ").Append(FString::FromInt(chainId));
+					}
+					else
+					{
+						UE_LOG(LogTemp, Error, TEXT("AnkrClient - GetWalletInfo - Couldn't get an account, wallet is not connected: %s"), *content);
+					}
+				}
+				else
+				{
+					UE_LOG(LogTemp, Error, TEXT("AnkrClient - GetWalletInfo - Couldn't get a valid response: %s"), *content);
+					data = JsonObject->GetStringField("msg");
+				}
+
+				Result.ExecuteIfBound(content, data, "", -1, false);
+}
+			else
+			{
+				UE_LOG(LogTemp, Error, TEXT("AnkrClient - GetWalletInfo - Couldn't get a valid response:\n%s"), *content);
+			}
+	});
+
+	FString url = AnkrUtility::GetUrl() + ENDPOINT_WALLET_INFO;
+	Request->SetURL(url);
+	Request->SetVerb("POST");
+	Request->SetHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE);
+	Request->SetContentAsString("{\"device_id\": \"" + deviceId + "\"}");
+	Request->ProcessRequest();
+}
+```
