@@ -79,7 +79,7 @@ void UUpdateNFTExample::GetNFTInfo(FString abi_hash, int tokenId, FAnkrCallCompl
 
 ## UpdateNFT
 
-`UpdateNFT` — changes NFT metadata on the blockchain. This request changes a current state on the blockchain and incurs gas fees to cover smart contract operations. Therefore, the request issues a ticket to be approved or rejected on MetaMask.
+`UpdateNFT` — changes NFT metadata on the blockchain. This request changes the current state of the blockchain and incurs gas fees to cover smart contract operations. Therefore, the request issues a ticket to be approved or rejected in MetaMask.
 
 ### Body Parameters
 
