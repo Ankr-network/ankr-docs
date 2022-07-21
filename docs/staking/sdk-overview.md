@@ -17,6 +17,6 @@ We recommend you use SDK over the API for easier integration, unless you need so
 ## Available SDKs
 
 * [Crowdload SDK](https://www.npmjs.com/package/@ankr.com/stakefi-polkadot)
-* [Staking SDK](https://www.npmjs.com/package/@ankr.com/staking-sdk) (includes BNB SDK, ETH SDK, MATIC SDK)
+* [Staking SDK](https://www.npmjs.com/package/@ankr.com/staking-sdk) (includes AVAX, BNB, ETH, FTM, and MATIC SDKs)
 
 For more information and SDK documentation on each, visit the respective pages in this Ankr Docs section. 
