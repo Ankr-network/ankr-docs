@@ -10,6 +10,6 @@ Integrating with Ankr Liquid Staking on Binance has become easier.
 Now you can skip the complications of Solidity and learning how to send direct calls to [BNB Liquid Staking API](https://www.ankr.com/docs/staking/liquid-staking/bnb/api/). 
 Instead, use BinanceSDK — an npm package with compound and comprehensible JS methods that take care of all the low-level logic for you.
 
-BinanceSDK allows you to interact with Binance blockchain, aBNBb/aBNBc tokens, and BinancePool contracts.
+BinanceSDK allows you to interact with the Binance blockchain, aBNBb/aBNBc tokens, and Binance Liquid Staking contracts.
 
 To start using it, install the [SDK npm package](https://www.npmjs.com/package/@ankr.com/staking-sdk) and see the [BinanceSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/BinanceSDK.html).
