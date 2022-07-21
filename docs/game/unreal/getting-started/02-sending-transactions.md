@@ -9,9 +9,9 @@ This page lists the functionality you can use in your game.
 
 :::tip Write vs. Read methods
 
-* The *Write* method requests — those that change the current state (example: minting NFTs) — incur gas fees to cover smart contract operations. Those requests issue tickets that you need to either approve or reject via MetaMask.
+* The *Write* method requests — those that change the current state (example: minting NFTs) — incur gas fees to cover smart contract operations. Those requests issue tickets you need to approve or reject in MetaMask.
 
-* The *Read* method requests — those that don't change but just show the current state (example: retrieving a balance info) — do not incur gas fees. Therefore, no tickets to be issued or approval needed.  
+* The *Read* method requests — those that don't change but just show the current state (example: retrieving balance info) — do not incur gas fees. Therefore, no tickets to be issued or approval needed.  
 
 :::
 
@@ -23,7 +23,7 @@ This page lists the functionality you can use in your game.
 
 ## SendTransaction
 
-`SendTransaction` — the function that supports sending the *Write* method requests. Those requests change a current state on the blockchain and incur gas fees to cover smart contract operations. Those requests issue the tickets pending your approval on MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
+`SendTransaction` — the function that supports sending the *Write* method requests. Those requests change a current state on the blockchain and incur gas fees to cover smart contract operations. Those requests issue the tickets pending your approval in MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
 ### Body Parameters
 
@@ -111,7 +111,7 @@ Returns info on whether the ticket has been confirmed or rejected (successful or
 
 ## CallMethod
 
-`CallMethod` — the function that supports sending the *Read* method requests. Those requests change nothing but retrieve a current state on the blockchain. Those requests don't incur gas fees neither. Simply put, they are all just the requests for information.
+`CallMethod` — the function that supports sending the *Read* method requests. Those requests change nothing but retrieve a current state on the blockchain. Those requests don't incur gas fees either. Simply put, they are all just requests for information.
 
 ### Body Parameters
 
@@ -223,7 +223,7 @@ void UAnkrClient::SendABI(FString abi, const FAnkrCallCompleteDynamicDelegate& R
 
 ## SignMessage
 
-`SignMessage` — signs a message you pass with the body parameters to be encrypted and sent. The function corresponds to the *Write* method requests, therefore it issues a ticket that you need to approve or reject on MetaMask. 
+`SignMessage` — signs a message you pass with the body parameters to be encrypted and sent. The function corresponds to the *Write* method requests, therefore it issues a ticket you need to approve or reject in MetaMask.
 
 ### Body Parameters
 
@@ -282,7 +282,7 @@ void UAnkrClient::SignMessage(FString message, const FAnkrCallCompleteDynamicDel
 
 ## GetSignature
 
-`GetSignature` — verifies a signature of the `ticket` passed with the body parameters. The function gets the result whether the user has signed the message or cancelled signing it.
+`GetSignature` — verifies a signature of the `ticket` passed with the body parameters. The function gets the result whether the user has signed the message or canceled signing it.
 
 ### Body Parameters
 
