@@ -9,9 +9,9 @@ This section lists the functions used to mint NFTs (new characters or wearable i
 
 :::tip Write vs. Read methods
 
-* The *Write* method requests — those that change the current state (example: minting NFTs) — incur gas fees to cover smart contract operations. Those requests issue tickets that you need to either approve or reject via MetaMask.
+* *Write* requests change the current state of the blockchain (example: minting NFTs) and thus incur gas fees to cover smart contract operations. Those requests issue tickets you need to approve or reject in MetaMask.
 
-* The *Read* method requests — those that don't change but just show the current state (example: retrieving a balance info) — do not incur gas fees. Therefore, no tickets to be issued or approval needed.
+* *Read* requests don't change but only show the current state of the blockchain, and don't incur any gas fees. Those requests don't issue tickets or need approval. 
 
 :::
 
@@ -23,7 +23,7 @@ This section lists the functions used to mint NFTs (new characters or wearable i
 
 ## MintCharacter
 
-`MintCharacter` — mints a character specified by the body parameters to the wallet address. The transaction issues a ticket pending your approval on MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
+`MintCharacter` — mints a character specified by the body parameters to the wallet address. The transaction issues a ticket pending your approval in MetaMask. Simply put, a successful request is going to change the current state of the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
 ### Body Parameters
 
@@ -91,7 +91,7 @@ void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FAnkrCallC
 
 ## MintItems
 
-`MintItems` — mints items in a batch to the wallet address. The transaction issues a ticket pending your approval on MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
+`MintItems` — mints items in a batch to the wallet address. The transaction issues a ticket pending your approval in MetaMask. Simply put, a successful request is going to change the current state of the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
 ### Body Parameters
 
@@ -162,7 +162,7 @@ void UWearableNFTExample::MintItems(FString abi_hash, FString to, FAnkrCallCompl
 
 ## GameItemSetApproval
 
-`GameItemSetApproval` — approves the minting of items for someone else (`callOperator`). The function serves the cases when a user has no permission to mint on his own. For example, someone is using somebody else's contract, etc. In that case, a user needs an approval from the contract owner. The function issues a ticket pending your approval on MetaMask.
+`GameItemSetApproval` — approves the minting of items for someone else (`callOperator`). The function serves the cases when a user has no permission to mint on his own. For example, someone is using somebody else's contract, etc. In that case, a user needs approval from the contract owner. The function issues a ticket pending your approval in MetaMask.
 
 ### Body parameters
 
@@ -237,7 +237,7 @@ void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOper
 
 ## GetCharacterBalance
 
-`GetCharacterBalance` — retrieves a token balance a user has in their MetaMask wallet. The data shows the number of tokens   the user holds.
+`GetCharacterBalance` — retrieves a user's token balance of the MetaMask wallet. The data shows the number of tokens the user holds.
 
 ### Body Parameters
 
@@ -251,7 +251,7 @@ void UWearableNFTExample::GameItemSetApproval(FString abi_hash, FString callOper
 
 ### Response
 
-The response comes as a data object detailing the number of tokens belonging to the user.
+The response comes as a data object specifying the number of tokens belonging to the user.
 
 ### Code example
 
@@ -361,7 +361,7 @@ void UWearableNFTExample::GetCharacterTokenId(FString abi_hash, int tokenBalance
 
 ## ChangeHat
 
-`ChangeHat` — changes the hat wearable to another available hat. The request issues the ticket pending your approval on MetaMask.
+`ChangeHat` — changes the hat wearable to another available hat. The request issues the ticket pending your approval in MetaMask.
 
 ### Body Parameters
 
@@ -496,7 +496,8 @@ void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FAnkrCallCom
 
 ## GetTicketResult
 
-`GetTicketResult` — retrieves  the result of the ticket. The status shows whether the ticket has been successful or not (approved or rejected). The 'code' shows a code number related to a specific failure or success. 
+`GetTicketResult` — retrieves the result of the ticket. The status shows whether the ticket has been successful or not (approved or rejected). The 'code' shows a code number related to a specific failure or success.
+ 
 
 ### Body Parameters
 
@@ -506,7 +507,7 @@ void UWearableNFTExample::GetHat(FString abi_hash, int characterId, FAnkrCallCom
 
 ### Response
 
-The response comes as a data object containing a code value that indicate a specific type of failure or success.
+The response comes as a data object containing a code value indicating a specific failure or success type.
 
 ### Code Example
 
@@ -574,7 +575,7 @@ void UWearableNFTExample::GetTicketResult(FString ticketId, FAnkrCallCompleteDyn
 
 ### Response
 
-The response is a data object containing an array of balances for each token. The balances for each token return in the same order they were sent in request.
+The response is a data object containing an array of balances for each token. The balances for each token return in the order sent in the request.
 
 ### Code example
 
