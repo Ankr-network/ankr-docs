@@ -9,9 +9,9 @@ This section lists the functions used to mint NFTs (new characters or wearable i
 
 :::tip Write vs. Read methods
 
-* The *Write* method requests — those that change the current state (example: minting NFTs) — incur gas fees to cover smart contract operations. Those requests issue tickets that you need to either approve or reject in MetaMask.
+* *Write* requests change the current state of the blockchain (example: minting NFTs) and thus incur gas fees to cover smart contract operations. Those requests issue tickets you need to approve or reject in MetaMask.
 
-* The *Read* method requests — those that don't change but just show the current state (example: retrieving a balance info) — do not incur gas fees. Therefore, no tickets to be issued or approval needed.
+* *Read* requests don't change but only show the current state of the blockchain, and don't incur any gas fees. Those requests don't issue tickets or need approval. 
 
 :::
 
@@ -23,7 +23,7 @@ This section lists the functions used to mint NFTs (new characters or wearable i
 
 ## MintCharacter
 
-`MintCharacter` — mints a character specified by the body parameters to the wallet address. The transaction issues a ticket pending your approval in MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
+`MintCharacter` — mints a character specified by the body parameters to the wallet address. The transaction issues a ticket pending your approval in MetaMask. Simply put, a successful request is going to change the current state of the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
 ### Body Parameters
 
@@ -91,7 +91,7 @@ void UWearableNFTExample::MintCharacter(FString abi_hash, FString to, FAnkrCallC
 
 ## MintItems
 
-`MintItems` — mints items in a batch to the wallet address. The transaction issues a ticket pending your approval in MetaMask. Simply put, a successful request is going to change the current state on the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
+`MintItems` — mints items in a batch to the wallet address. The transaction issues a ticket pending your approval in MetaMask. Simply put, a successful request is going to change the current state of the blockchain, that is why it sends a ticket to your MetaMask wallet that asks you to confirm or reject the ticket's transaction.
 
 ### Body Parameters
 
