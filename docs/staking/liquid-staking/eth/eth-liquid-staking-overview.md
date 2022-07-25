@@ -7,7 +7,7 @@ id: overview
 
 [Ankr Staking](https://www.ankr.com/staking/) offers ETH holders the opportunity to stake ETH and claim two different types of ETH2 Liquid Staking tokens:
 
-<img src={require('/img/aethb-aethc-difference.jpeg').default} alt="Difference between aETHb and aETHc" class="responsive-pic" />
+<img src={require('/img/aethb-aethc-difference.jpeg').default} alt="Difference between aETHb and aETHc" class="responsive-pic" width="800" />
 
 * aETHc is a reward-bearing token, meaning that the fair value of 1 aETHc token vs. ETH increases over time as staking rewards accumulate. When it will be possible to unstake ETH at phase 1.5 of Ethereum 2.0, users will have the option to redeem aETHc to Ankr StakeFi, and unstake ETH with accumulated staking rewards.
 
@@ -22,6 +22,10 @@ It is not possible to unstake ETH until the Ethereum network reaches phase 1.5 o
 
 ETH Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
 To learn more, view the [detailed audit report](https://assets.ankr.com/files/stkr_smart_contract_auditing_report.pdf).
+
+## Smart contracts
+
+Visit [ETH development details](/staking/liquid-staking/eth/staking-mechanics#smart-contracts) for the addresses of ETH Liquid Staking smart contracts. 
 
 
 ## Two types of ETH2 Liquid Staking

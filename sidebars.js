@@ -482,8 +482,8 @@ module.exports =
              'Development details': [
                'staking/liquid-staking/avax/staking-mechanics',
                'staking/liquid-staking/bnb/staking-mechanics',
-               'staking/liquid-staking/eth/staking-mechanics',
                'staking/liquid-staking/dot/staking-mechanics',
+               'staking/liquid-staking/eth/staking-mechanics',
                'staking/liquid-staking/ftm/staking-mechanics',
                'staking/liquid-staking/ksm/staking-mechanics',
                'staking/liquid-staking/matic/staking-mechanics',

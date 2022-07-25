@@ -16,6 +16,10 @@ AVAX Liquid Staking smart contracts have undergone external audit by Beosin Bloc
 To learn more, view:
 * [Detailed Beosin audit report](https://assets.ankr.com/staking/smart_contract_security_audit_avax_beosin.pdf)
 
+## Smart contracts
+
+Visit [AVAX development details](/staking/liquid-staking/avax/staking-mechanics#smart-contracts) for the addresses of AVAX Liquid Staking smart contracts. 
+
 ## Market liquidity
 
 aAVAXb is tradable on the following Decentralized Exchanges on Avalanche network:

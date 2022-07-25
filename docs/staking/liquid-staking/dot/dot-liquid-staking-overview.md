@@ -13,6 +13,10 @@ Polkadot Liquid Staking enables you to earn **alpha** (the _return on investment
 
 Ankr Staking can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
+## Smart contracts
+
+Visit [DOT development details](/staking/liquid-staking/dot/staking-mechanics#smart-contracts) for the addresses of DOT Liquid Staking smart contracts. 
+
 ## **Instant liquidity**
 
 Staked assets are illiquid. Stakers must wait 28 days to unstake DOT. Also, during the unstaking period, unstaking assets are not entitled to additional reward. This creates an opportunity cost in time and capital for the user. Only after unstaking does DOT become redeemable and available for reinvestment. 
@@ -49,6 +53,6 @@ Ankr Staking offers instant liquidity for your staked DOT, enabling you to conne
 
 ## How does it Work?
 Stake a minimum of 1 DOT and Ankr stakes your DOT tokens with validator nodes we’ve selected.
-Instant Liquidity!!! We return an equivalent amount of aDOTb tokens to you. These are reward earning tokens that distribute staking rewards to your wallet on a daily basis. You can watch the aDOTb balance in your wallet automatically increase everyday.
+Instant Liquidity! We return an equivalent amount of aDOTb tokens to you. These are reward earning tokens that distribute staking rewards to your wallet on a daily basis. You can watch the aDOTb balance in your wallet automatically increase everyday.
 You can use your aDOTb to generate further yield by liquidity mining, lending, and/or other strategies on DeFi platforms such as:
 OnX, Uniswap, Compound.
