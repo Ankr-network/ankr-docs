@@ -58,9 +58,9 @@ npm install --save ethers
 
 3) Request some Ropsten test ETH
 
-* We're going to be sending a transaction on the Ropsten network, so get hold of some Ropsten from the [listed Ropsten faucets](connect-ethereum#ropsten). 
+* We're going to be sending a transaction on the Ropsten network, so get hold of some Ropsten from the [listed Ropsten faucets](/build-blockchain/chains/v2/ethereum/how-to/connect-ethereum#ropsten-and-faucets). 
 
-* Make sure you configure your wallet to the [Ankr Ropsten RPC Network](connect-ethereum#ropsten) to provide your address and to check your balance.  
+* Make sure you configure your wallet to the [Ankr Ropsten RPC Network](/build-blockchain/chains/v2/ethereum/how-to/connect-ethereum#how-to-add-ankr-ropsten-rpc-to-your-wallet) to provide your address and to check your balance.  
 
 * Check your wallet to see if it arrived. 
 
