@@ -23,6 +23,7 @@ Ankr Staking products are extensively tested, undergo [audit checks](https://www
 ### AVAX
 
 * [Development details](https://www.ankr.com/docs/staking/liquid-staking/avax/staking-mechanics)
+* [SDK](https://www.ankr.com/docs/staking/liquid-staking/avax/sdk)
 * [API](https://www.ankr.com/docs/staking/liquid-staking/avax/api)
 
 ### BNB
@@ -34,8 +35,6 @@ Ankr Staking products are extensively tested, undergo [audit checks](https://www
 ### DOT
 
 * [Development details](https://www.ankr.com/docs/staking/liquid-staking/dot/staking-mechanics)
-* SDK — coming soon
-* API — coming soon
 
 ### ETH
 
@@ -46,14 +45,13 @@ Ankr Staking products are extensively tested, undergo [audit checks](https://www
 ### FTM 
 
 * [Development details](https://www.ankr.com/docs/staking/liquid-staking/ftm/staking-mechanics)
-* SDK — coming soon
+* [SDK](https://www.ankr.com/docs/staking/liquid-staking/ftm/sdk)
 * [API](https://www.ankr.com/docs/staking/liquid-staking/ftm/api)
 
 ### KSM
 
 * [Development details](https://www.ankr.com/docs/staking/liquid-staking/ksm/staking-mechanics)
-* SDK — coming soon
-* API — coming soon
+
 
 ### MATIC
 
