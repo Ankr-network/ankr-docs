@@ -58,7 +58,7 @@ The following entities are involved:
 * Ankr validators
 
 
-## Smart contracts and addresses
+## Smart contracts
 
 [BinancePool Implementation](https://bscscan.com/address/0x2ffd8a0dcedd44c583098de439242b801903bf6b) and [BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contracts on BNB Chain where the user sends their initial staking or unstaking request.
 

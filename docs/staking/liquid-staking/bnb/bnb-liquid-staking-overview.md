@@ -18,6 +18,10 @@ To learn more, view:
 * [Detailed Beosin audit report](http://assets.ankr.com/earn/smart_contract_security_audit_bnb.pdf)
 * [Detailed PeckShield audit report](https://assets.ankr.com/staking/smart_contract_security_audit_bnb_peckshield.pdf)
 
+## Smart contracts
+
+Visit [BNB development details](/staking/liquid-staking/bnb/staking-mechanics#smart-contracts) for the addresses of BNB Liquid Staking smart contracts. 
+
 
 ## Boosted yields
 

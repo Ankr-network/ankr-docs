@@ -13,6 +13,10 @@ Kusama Liquid Staking enables you to earn **alpha** (the _return on investment t
 
 Ankr Staking can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
+## Smart contracts
+
+Visit [KSM development details](/staking/liquid-staking/ksm/staking-mechanics#smart-contracts) for the addresses of KSM Liquid Staking smart contracts. 
+
 ## Instant liquidity
 
 Staked assets are illiquid. Stakers must wait 7 days to unstake KSM. Also, during the unstaking period, unstaking assets are not entitled to additional reward. This creates an opportunity cost in time and capital for the user. Only after unstaking does KSM become redeemable and available for reinvestment. 

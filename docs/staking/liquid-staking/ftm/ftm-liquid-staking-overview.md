@@ -16,6 +16,10 @@ Ankr Staking can connect you to the best ways to earn more crypto by staking, ar
 FTM Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
 To learn more, view the [detailed audit report](http://assets.ankr.com/earn/smart_contract_security_audit_ftm.pdf).
 
+## Smart contracts
+
+Visit [FTM development details](/staking/liquid-staking/ftm/staking-mechanics#smart-contracts) for the addresses of FTM Liquid Staking smart contracts. 
+
 ## Instant liquidity
 
 Using Ankr Staking is the best way to stake FTM as you can access instant liquidity in the form of the aFTMb token. Avoiding locking your tokens up with the Fantom network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.

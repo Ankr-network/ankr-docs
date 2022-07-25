@@ -10,9 +10,12 @@ id: overview
 * aMATICb is a reward-earning token, meaning that rewards from MATIC staking will be distributed daily through rebasing and aMATICb holders' balance in their wallet will increase on a daily basis.
 * aMATICc is a reward-bearing token, meaning that the fair value of 1 aMATICc token vs. MATIC increases over time as staking rewards accumulate. 
 
-
 ## Audit details
 Polygon Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. To learn more, view the [detailed audit report](https://assets.ankr.com/staking/smart_contract_security_audit_matic.pdf).
+
+## Smart contracts
+
+Visit [MATIC development details](/staking/liquid-staking/matic/staking-mechanics#smart-contracts) for the addresses of MATIC Liquid Staking smart contracts. 
 
 ## Benefits
 
