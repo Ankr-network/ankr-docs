@@ -11,6 +11,7 @@
     favicon: "img/favicon.ico",
     organizationName: "ankr-network", // Usually your GitHub org/user name.
     projectName: "ankr-docs", // Usually your repo name.
+    trailingSlash: true,
     stylesheets: [
       "https://fonts.googleapis.com/css?family=Raleway|Source+Code+Pro",
       "https://at-ui.github.io/feather-font/css/iconfont.css",
