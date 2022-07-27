@@ -180,9 +180,9 @@ With `3` provided as the depth, the APR = `(((day 3 - day 2) / day 3) * 100) + (
 
 #### Example
 
-`averagePercentageRate` being a read function, we suggest you visit the links and make a query entering a desired number of days. 
-* [Mainnet live transaction example](https://bscscan.com/readContract?m=normal&a=0xbb1aa6e59e5163d8722a122cd66eba614b59df0d&v=0xc6c4e1ca42904efce3bec150329ff637ff2b0fea#readCollapse2)
-* [Testnet live transaction example](https://testnet.bscscan.com/readContract?m=normal&a=0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE&v=0xe94147b33a757fdf8a878bfd80562b08c954f6f9#readCollapse2)
+`averagePercentageRate` being a read function, we suggest you visit the links and make a query entering a desired number of days to see an example. 
+* [Mainnet function address](https://bscscan.com/readContract?m=normal&a=0xbb1aa6e59e5163d8722a122cd66eba614b59df0d&v=0xc6c4e1ca42904efce3bec150329ff637ff2b0fea#readCollapse2)
+* [Testnet function address](https://testnet.bscscan.com/readContract?m=normal&a=0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE&v=0xe94147b33a757fdf8a878bfd80562b08c954f6f9#readCollapse2)
 
 
 ## Get staking metrics
