@@ -167,7 +167,7 @@ Gets the APR for aBNBb or aBNBc.
 
 The formula is best expressed by an example. 
 
-With `3` provided as the depth, the APR = `(((day 3 - day 2) / day 3) * 100) + ((day 2 - day 1) / day 2) * 100) + ((day 1 - current day) / day 1) * 100) * 365`.
+With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + ((day 2 - day 1) / day 2) * 100) + ((day 1 - current day) / day 1) * 100) / 3) * 365`.
 
 #### Parameters
 
