@@ -158,6 +158,33 @@ Unstakes aBNBc and gets BNB for the unstaked aBNBc.
 * [Mainnet live transaction example](https://bscscan.com/tx/0x5c610a2569f06592c82b5b239c23b37a2ecee6115d899024b0a7bdebb02f392e)
 * [Testnet live transaction example](https://testnet.bscscan.com/tx/0x71f95dfcfe5543777ada8900551585c124bcbbd5a52ec76d930c957e7227515f)
 
+
+## Get APR
+
+### `averagePercentageRate(uint256 day)`
+
+Gets the APR for aBNBb or aBNBc. 
+
+The formula is best expressed by an example. 
+
+With `3` provided as the depth, the APR = `(((day 3 - day 2) / day 3) * 100) + ((day 2 - day 1) / day 2) * 100) + ((day 1 - current day) / day 1) * 100) * 365`.
+
+#### Parameters
+
+* `day` (uint256, required) — number of days to get the APR for. Max value — 7 days.
+
+#### Smart contract
+
+* [Mainnet aBNBb contract](https://bscscan.com/token/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
+* [Testnet aBNBb contract](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE)
+
+#### Example
+
+`averagePercentageRate` being a read function, we suggest you visit the links and make a query entering a desired number of days. 
+* [Mainnet live transaction example](https://bscscan.com/readContract?m=normal&a=0xbb1aa6e59e5163d8722a122cd66eba614b59df0d&v=0xc6c4e1ca42904efce3bec150329ff637ff2b0fea#readCollapse2)
+* [Testnet live transaction example](https://testnet.bscscan.com/readContract?m=normal&a=0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE&v=0xe94147b33a757fdf8a878bfd80562b08c954f6f9#readCollapse2)
+
+
 ## Get staking metrics
 
 To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
