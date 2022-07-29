@@ -432,12 +432,18 @@ table td {
 }
 .markdown h2 {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 1.45;
 }
 .markdown h3 {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 24px;
+  line-height: 1.45;
+  font-family: 'Inter';
+}
+.markdown h4 {
+  font-weight: 500;
+  font-size: 18px;
   line-height: 1.45;
   font-family: 'Inter';
 }
