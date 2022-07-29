@@ -120,6 +120,9 @@ module.exports =
               {
                   'Advanced APIs': [
                       'build-blockchain/products/v2/advanced-apis',
+                      'build-blockchain/products/advanced-apis/nft-api',
+                      `build-blockchain/products/advanced-apis/query-api`,
+                      `build-blockchain/products/advanced-apis/token-api`,
                       'build-blockchain/products/v2/scan',
                   ],
               },
