@@ -1,10 +1,12 @@
 ---
-title: Advanced APIs
+title: Overview
 id: advanced-apis
 ---
 
-**Advanced APIs** are a collection of exclusive API endpoints exclusively for Premium Plan subscribers. 
+*Advanced APIs* is a collection of JSON-RPC API endpoints for the Premium Tier users. 
 
-Check out the latest Advanced APIs by clicking the image. 
+Check out the latest Advanced APIs collection in [Postman](https://documenter.getpostman.com/view/19024547/UVsEVUGQ) and look through the Advanced APIs docs divided into the following sections:
 
-[![View the documentation](@site/static/img/advanced-api-docs.png)](https://documenter.getpostman.com/view/19024547/UVsEVUGQ)
+* [NFT API](/build-blockchain/products/advanced-apis/nft-api/)
+* [Query API](/build-blockchain/products/advanced-apis/query-api)
+* [Token API](/build-blockchain/products/advanced-apis/token-api)
