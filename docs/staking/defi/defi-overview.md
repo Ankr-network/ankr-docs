@@ -11,33 +11,77 @@ Ankr DeFi Trade is a Liquid Staking data aggregation tool providing access to re
 
 It allows users to find all liquidity staking DeFi integrations to trade between Liquid Staking tokens and other assets.
 
-Liquid Staking tokens, e.g. aETHc, aMATICb are tokens users get when staking their assets, e.g. ETH, MATIC, in Ankr Staking. 
+Liquid Staking tokens, e.g. aETHc or aMATICb, are tokens users get when staking their assets, e.g. ETH or MATIC, in Ankr Staking. 
 
-Ankr DeFi features a cross-chain dashboard where users can choose Liquid Staking tokens and assets to trade, and platform to trade on.
+## Ankr DeFi Dashboard 
+Ankr DeFi features a cross-chain dashboard where users can choose Liquid Staking tokens and assets to trade, and platforms to trade on.
 
-Planned DeFi integrations categories are:
-
-* Liquidity Mining
-* Lending
-* Borrowing
-* Farming
+Currently, the dashboard features:
+* Liquidity pools
+* Yield farming
 * Vaults
-* Indexes
 
+Borrowing and Indexes are coming later.
 
-## What is Fair Value of Liquid Staking tokens?
+## Liquidity pools
+Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see dashboard where you can enable the **Liquidity pool** filter. 
 
-Looking at [Ankr DeFi](https://ankr.com/staking/defi/), you can see the **Difference vs. Fair value** column.
+This filter allows you to see all the integrated opportunities to make profit providing liquidity on DEXs and getting a % of the swapping commissions when users swap their tokens using the pool.
 
-Fair Value represents the ratio at which users can stake/unstake 1 token. For reward earning tokens i.e. aETHb the ratio is always 1. This is because any difference is passed to your wallet as a type of staking reward resulting from rebasing.
+Liquidity pairs in the listed liquidity pools usually contain a native token and a corresponding Liquid Staking token.
 
-The Fair Value of aETHc is always higher than 1. This is because staking rewards accumulate and can be realized when users unstake. The ratio or Fair Value of aETHc is therefore continuously increasing together with ETH staking rewards.
+### Deposit liquidity
+To deposit liquidity into a pool:
+1. Click **Deposit** next to the pool.
+2. When redirected to the DEX, connect your wallet, enter the desired amount of tokens, and deposit them (usually, via the **Deposit** or **Add Liquidity** button).
 
-The aETHc ratio is also applied when staking ETH to avoid existing stakers being diluted by new stakers. In other words, if the redemption value of 1 aETHc is 1.05 ETH, a new user willing to stake ETH will get 1/1.05 = 0.9524 aETHc for staking 1 ETH.
+### Withdraw liquidity
+To withdraw liquidity from a pool:
+1. On the page of the pool, click **Withdraw** to get to the **Withdraw** tab.
+2. Enter the desired amount of tokens and withdraw them (usually, via the **Withdraw** or **Remove Liquidity** button).
 
-## Should I Stake or Trade?
+## Yield farming
+Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see dashboard where you can enable the **Farming** filter. 
 
-Along with the trading options, you can see the Ankr Staking row with a **Stake** or **Unstake** button depending on the source asset you choose.
+This filter allows you to see all the integrated opportunities to make profit providing liquidity on DEXs and getting rewards in the LP tokens which you can then farm.
 
-Ankr DeFi Trade will compare prices on the market with Ankr's Fair Value to indicate whether it is more attractive to stake, or trade. This tool was created to help stakers make better-informed decisions.
+Liquidity pairs in the listed yield farming pools usually contain a native token and a corresponding Liquid Staking token.
+Rewards are usually given in the LP token native to the DEX (e.g. CAKE for PancakeSwap).
+
+### Deposit liquidity
+To deposit liquidity into a pool:
+1. Click **Deposit** next to the pool.
+2. When redirected to the DEX, connect your wallet, choose a pool if there are multiple pools listed, enter the desired amount of tokens, and deposit them (usually, via the **Deposit** or **Add Liquidity** button).
+
+### Withdraw liquidity
+To withdraw liquidity from a pool:
+1. On the page of the pool, click **Withdraw** to get to the **Withdraw** tab.
+2. Enter the desired amount of tokens and withdraw them (usually, via the **Withdraw** or **Remove Liquidity** button).
+
+### Yield farm
+To yield farm your LP tokens:
+1. On the page of the pool, claim your rewards — the liquid pool tokens rewarded you for providing liquidity to the pool (usually, via a dedicated **Rewards** tab). 
+2. Stake your LP tokens and gain yield (usually, via the **Stake** button on a dedicated **Stake LP** tab or **Deposit & Stake** button on the main pool page).  
+
+### Withdraw yield-farming rewards
+To withdraw your LP tokens along with the yield gains:
+1. On the page of the pool, withdraw your LP tokens (usually, via the **Withdraw** button on a dedicated **Stake LP** tab or **Withdraw** button on the main pool page).
+
+## Vaults
+Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see dashboard where you can enable the **Vault** filter. 
+
+This filter allows you to see all the integrated opportunities to make profit providing liquidity on DEXs and autofarming it via vaults.
+
+Liquidity pairs in the listed vaults usually contain a native token and a corresponding Liquid Staking token.
+Rewards can be given either in the tokens deposited to the pool (e.g. ETH/aETHc) or sometimes the LP token native to the DEX (e.g. CAKE for PancakeSwap). 
+
+### Deposit liquidity
+To deposit liquidity into a vault:
+1. Click **Deposit** next to the vault.
+2. When redirected to the DEX, connect your wallet, choose a vault if there are multiple vaults listed, enter the desired amount of tokens, and deposit them (usually, via the **Deposit** or **Add Liquidity** button).
+
+### Withdraw liquidity and rewards
+To withdraw liquidity and/or rewards from a vault:
+1. On the page of the vault, click **Withdraw** to get to the **Withdraw** tab.
+2. Enter the desired amount of tokens and withdraw them (usually, via the **Withdraw** or **Remove Liquidity** button).
 
