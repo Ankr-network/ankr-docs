@@ -25,7 +25,7 @@ The following fees applied when unstaking:
 :::
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
-2. Locate the aDOTb box and click the **-** icon to unstake.
+2. Locate the **aDOTb** box and click the **-** icon to unstake.
 3. Enter the amount to unstake and click **Unstake**.
 4. Enter the desired address in the Polkadot network where the DOT will be released to.
 

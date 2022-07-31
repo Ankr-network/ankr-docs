@@ -362,9 +362,6 @@ module.exports =
   earnSidebar: {
     'Staking': [
      'staking/overview',
-    {
-    'For Stakers': [
-
         {
           'Liquid Staking': [
             'staking/liquid-staking/overview',
@@ -429,8 +426,7 @@ module.exports =
         {
            'DeFi': [
             'staking/defi/overview',
-            'staking/defi/yield-farm',
-            'staking/defi/provide-liquidity-to-dex'
+            'staking/defi/faq',
           ],
         },
         {
@@ -447,8 +443,6 @@ module.exports =
         {
           'Liquid Crowdloan': [
             'staking/liquid-crowdloan/overview',
-          ],
-        },
           ],
         },
         {
