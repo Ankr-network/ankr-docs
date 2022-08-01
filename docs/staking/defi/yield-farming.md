@@ -1,6 +1,6 @@
 ---
 title: Yield Farming
-id: yield-farming
+id: yield-farm
 ---
 
 # Yield farming
