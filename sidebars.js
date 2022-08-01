@@ -426,6 +426,9 @@ module.exports =
         {
            'DeFi': [
             'staking/defi/overview',
+            'staking/defi/liquidity-pools',
+            'staking/defi/yield-farming',
+            'staking/defi/vaults',
             'staking/defi/faq',
           ],
         },
@@ -476,7 +479,7 @@ module.exports =
                  ],
              },
              {
-             'Development details': [
+             'Development Details': [
                'staking/liquid-staking/avax/staking-mechanics',
                'staking/liquid-staking/bnb/staking-mechanics',
                'staking/liquid-staking/dot/staking-mechanics',
