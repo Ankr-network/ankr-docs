@@ -427,7 +427,7 @@ module.exports =
            'DeFi': [
             'staking/defi/overview',
             'staking/defi/liquidity-pools',
-            'staking/defi/yield-farming',
+            'staking/defi/yield-farm',
             'staking/defi/vaults',
             'staking/defi/faq',
           ],
