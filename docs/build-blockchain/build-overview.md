@@ -76,6 +76,7 @@ A non-distributed system resides in a single location, whereas a distributed sys
 
 Networks that are more distributed tend to be more resilient to the failure of individual nodes or loss of connection between them.
 
+
 :::tip Key point
 A Distributed network is about the Physical distribution of nodes. Control is a separate concern. Therefore, a Distributed network can be either Centralized or Decentralized.
 :::
