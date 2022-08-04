@@ -64,13 +64,16 @@ The delegated staked KSM is not slashed — slashing impacts only the self-stake
 Ankr only delegates to trusted and reputable validator nodes to avoid any validator that would act maliciously.
 
 
-### Is there any liquidity for aKSMb anywhere currently?
+### Is there any liquidity for my Liquid Staking tokens anywhere?
 
-You can check all available DeFi platforms and options on [ANKR DeFi](https://www.ankr.com/staking/defi/trade/?from=aKSMb&to=KSM).
+You can trade them in the listed liquidity pools on ANKR DeFi:
 
-You can also use your liquid tokens to:
-* [Provide liquidity to DEXs](https://www.ankr.com/docs/staking/defi/provide-liquidity-to-dex) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
-* [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farm) and earn additional rewards in the form of other tokens.  
+* [aKSMb](https://www.ankr.com/staking/defi/?assets=aKSMb)
+
+You can also use your Liquid Staking tokens to:
+* [Add liquidity on DEXs](https://www.ankr.com/docs/staking/defi/liquidity-pools/) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
+* [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farm) and earn additional rewards in the form of liquidity pool tokens and further farm them.  
+* [Put your tokens in a vault](https://www.ankr.com/docs/staking/defi/vaults) and automatically earn additional rewards in the form of one of both assets from the pair.
 
 ### Can I get staking metrics for my integration?
 
