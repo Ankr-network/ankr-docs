@@ -13,10 +13,13 @@ module.exports =
                       'build-blockchain/app-chain/components/staking-ui',
                   ],
               },
-              'build-blockchain/app-chain/exchange-readiness',
-              'build-blockchain/app-chain/step-by-step',
               {
-                'Affiliated chains': [
+                  'Use Cases': [
+                      'build-blockchain/app-chain/use-cases/web3-gaming',
+                  ],
+              },
+              {
+                'Affiliated Chains': [
                 {
                   'BNB Sidechain': [
                        'build-blockchain/app-chain/bnb-sidechain/overview',
@@ -40,7 +43,7 @@ module.exports =
                              ],
                          },
                          {
-                             'How to launch BNB Sidechain': [
+                             'How to Launch BNB Sidechain': [
                                  'build-blockchain/app-chain/bnb-sidechain/how-to-launch/launch-bas',
                                  'build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc20-token',
                                  'build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc721-token',
@@ -54,6 +57,8 @@ module.exports =
                  },
                ],
              },
+              'build-blockchain/app-chain/exchange-readiness',
+              'build-blockchain/app-chain/step-by-step',
           ],
       },
    ],

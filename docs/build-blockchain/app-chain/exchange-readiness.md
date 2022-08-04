@@ -1,5 +1,5 @@
 ---
-title: Exchange-Readiness program
+title: Exchange-Readiness Program
 id: exchange-readiness
 ---
 
