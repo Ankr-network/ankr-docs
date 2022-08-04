@@ -23,9 +23,9 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aAVAXb/aAVAXc?
+### How long does it take to unstake my AVAX?
 
-You receive the unstaked amount of AVAX after the end of the current validating period. A validating period is 4 weeks.
+You receive the unstaked AVAX after the unbonding period, which is at end of the current validating period. A validating period is 4 weeks.
 
 
 ### How do I receive rewards? 

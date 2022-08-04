@@ -23,9 +23,9 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aFTMb/aFTMc?
+### How long does it take to unstake my FTM?
 
-You receive the unstaked amount after the unbonding period of up to 35 days.
+You receive the unstaked FTM after the unbonding period of up to 35 days.
 
 
 ### How do I receive rewards? 

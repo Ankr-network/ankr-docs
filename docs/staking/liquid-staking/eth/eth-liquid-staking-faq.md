@@ -28,7 +28,7 @@ No, you can stake at your discretion, unlimited. You should know that currently 
 There is no unstaking mechanism for ETH right now. We're all waiting for Ethereum 2.0 to implement it. 
 
 
-### What is the unbonding period for aETHb/aETHc?
+### How long does it take to unstake my ETH?
 
 Currently, there is no unbonding period, as there is no unstaking for ETH. This functionality is to be implemented by the Ethereum team in future updates.
 
