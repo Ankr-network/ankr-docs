@@ -1,5 +1,5 @@
 ---
-title: App Chains step-by-step
+title: Start with App Chains
 id: step-by-step
 ---
 
