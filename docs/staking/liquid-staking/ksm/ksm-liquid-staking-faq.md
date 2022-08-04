@@ -23,9 +23,9 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aKSMb?
+### How long does it take to unstake my KSM?
 
-You receive the unstaked amount after the unbonding period of up to 7 days.
+You receive the unstaked KSM after the unbonding period of up to 7 days.
 
 
 ### How do I receive rewards? 

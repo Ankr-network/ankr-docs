@@ -17,10 +17,23 @@ Check the [Stake MATIC](https://www.ankr.com/docs/staking/liquid-staking/matic/s
 
 No, you can stake at your discretion, unlimited.  
 
+What is the difference between MATIC staking and crosschain staking?
 
-### What is the unbonding period for aMATICb/aMATICc?
+MATIC staking happens on Ethereum. You can stake/unstake any MATIC amount at once. 
+Ethereum gas fee applies. 
+Also, when unstaking, you receive your MATIC and rewards after the 3–4 days unbonding period.
 
-80 epochs and more depending on the network congestion. Typically, it takes around 1–2 days to receive your unstaked MATIC.
+MATIC crosschain staking happens on Polygon. 
+You may have to stake/unstake your MATIC in portions, as you’re doing it via a crosschain staking pool, which may not have the amount you need at the moment. 
+Also, an additional fee applies. 
+However, there is no unbonding period, so when unstaking you receive your MATIC and rewards instantly.
+
+
+### How long does it take to unstake my MATIC?
+
+If you staked on Ethereum, you’ll receive your MATIC and rewards after the unbonding period of 80+ epochs; typically, it takes 3–4 days. 
+
+If you staked on Polygon via the crosschain staking pool, you’ll receive your MATIC and rewards instantly.
 
 
 ### How do I receive rewards? 

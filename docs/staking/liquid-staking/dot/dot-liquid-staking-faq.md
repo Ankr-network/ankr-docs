@@ -23,9 +23,9 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aDOTb?
+### How long does it take to unstake my DOT?
 
-You receive the unstaked amount after the unbonding period of up to 28 days.
+You receive the unstaked DOT after the unbonding period of up to 28 days.
 
 
 ### How do I receive rewards? 

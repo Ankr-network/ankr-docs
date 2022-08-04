@@ -30,9 +30,9 @@ The exchange ratio is calculated like this: `totals_supply_of_abnbc / (total_sta
 No, you can stake at your discretion, unlimited.  
 
 
-### What is the unbonding period for aBNBb/aBNBc?
+### How long does it take to unstake my BNB?
 
-You receive the unstaked amount after the unbonding period of up to 7–14 days.
+You receive the unstaked BNB after the unbonding period of up to 7–14 days.
 
 
 ### How do I receive rewards? 
