@@ -44,7 +44,7 @@ The APY is dynamic and calculated from the validators' rewards.
 
 
 ## Validators
-The validator set consists of one [Fantom](https://explorer.fantom.network/validator/0xd160d9b59508e4636eec3e0a7f734268d1ce1047), one [MCLB-DAO](https://explorer.fantom.network/validator/0x63c87103063a146d75788780f2b026a01c03046b), and one [Ankr](https://explorer.fantom.network/validator/0x146ee71e057e6b10efb93aedf631fde6cbaed5e2) validator.
+The validator set consists of one [Fantom](https://explorer.fantom.network/validator/0x0aa7aa665276a96acd25329354feea8f955caf2b), one [MCLB-DAO](https://explorer.fantom.network/validator/0x63c87103063a146d75788780f2b026a01c03046b), and one [Ankr](https://explorer.fantom.network/validator/0x146ee71e057e6b10efb93aedf631fde6cbaed5e2) validator.
 
 
 ## Smart contracts
