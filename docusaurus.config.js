@@ -166,8 +166,8 @@
                 label: "Oracles",
               },
               {
-                to: 'staking/sdk-overview',
-                label: "Staking SDK",
+                to: 'staking/liquid-staking/sdk',
+                label: "Liquid Staking SDK",
               },
           ],
         },

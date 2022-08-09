@@ -476,11 +476,7 @@ module.exports =
              'SDK': [
                 'staking/sdk-overview',
                 'staking/liquid-crowdloan/sdk',
-                'staking/liquid-staking/avax/sdk',
-                'staking/liquid-staking/bnb/sdk',
-                'staking/liquid-staking/eth/sdk',
-                'staking/liquid-staking/ftm/sdk',
-                'staking/liquid-staking/matic/sdk',
+                'staking/liquid-staking/sdk',
                  ],
              },
              {
