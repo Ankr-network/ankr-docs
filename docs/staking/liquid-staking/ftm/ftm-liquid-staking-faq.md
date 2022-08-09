@@ -69,6 +69,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
 * [aFTMb](https://www.ankr.com/staking/defi/?assets=aFTMb)
+* [aFTMс](https://www.ankr.com/staking/defi/?assets=aFTMс)
 
 You can also use your Liquid Staking tokens to:
 * [Add liquidity on DEXs](https://www.ankr.com/docs/staking/defi/liquidity-pools/) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
