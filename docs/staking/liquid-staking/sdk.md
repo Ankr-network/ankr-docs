@@ -150,3 +150,11 @@ For detailed information on supported methods and parameters, refer to:
 * [FantomSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/FantomSDK.html)
 * [PolygonSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/PolygonSDK.html)
 
+## Flow
+To understand the processes and mechanics of Liquid Staking, refer to:
+* [Avalanche Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/avax/staking-mechanics)
+* [Binance Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/bnb/staking-mechanics)
+* [Ethereum Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/eth/staking-mechanics)
+* [Fantom Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/ftm/staking-mechanics)
+* [Polygon Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/matic/staking-mechanics)
+
