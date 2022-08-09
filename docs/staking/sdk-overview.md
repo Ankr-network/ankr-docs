@@ -16,7 +16,7 @@ We recommend you use SDK over the API for easier integration and better experien
 
 ## Liquid Crowdloan SDK
 
-[Liquid Crowdloan SDK](/staking/liquid-staking/liquid-crowdloan/sdk) allows you to integrate Parachain Liquid Crowdloan into your project.
+[Liquid Crowdloan SDK](/staking/liquid-crowdloan/sdk/) allows you to integrate Parachain Liquid Crowdloan into your project.
 
 Liquid Crowdloan is a very specific and a little outdated functionality. If you don't know what it is, you probably don't need it in your project.
 
