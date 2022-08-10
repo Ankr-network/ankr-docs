@@ -43,7 +43,7 @@ Ankr can also support your specific use case to create a custom node cluster. Yo
 
 * This feature is included in your Premium Plan (10k ANKR)
 * No KYC required
-* No staking required. (No rewards are available)
+* No staking required (no rewards available)
 
 ## Requirements
 
@@ -58,7 +58,7 @@ Ankr can also support your specific use case to create a custom node cluster. Yo
 
 ![Add endpoints](@site/static/img/add-own-endpoint.png)
 
-## 01 Obtain additional endpoint
+## Obtain additional endpoint
 
 You can add an RPC endpoint from:
 
@@ -66,9 +66,9 @@ You can add an RPC endpoint from:
 2. Your own node running on your machine.
 3. A specially configured node cluster. (Contact sales@ankr.com to discuss your use case).
 
-## 02 Add your endpoint
+## Add your endpoint
 
-1. From [Ankr Protocol](https://www.ankr.com/protocol/public/) select **Premium Plan**
+1. From [Ankr RPC](https://www.ankr.com/protocol/public/) select **Premium Plan**
 
 2. Select the Chain you want to add your endpoints to.
 
@@ -77,7 +77,7 @@ You can add an RPC endpoint from:
 
 
 
-## 03 Set up security
+## Set up security
 
 :::tip
 To protect your endpoints from unauthorized usage, we request that you whitelist referring URLs and/or IP addresses. 
