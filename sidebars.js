@@ -43,7 +43,8 @@ module.exports =
                              ],
                          },
                          {
-                             'How to Launch BNB Sidechain': [
+                             'How to': [
+                                 'build-blockchain/app-chain/bnb-sidechain/how-to-launch/customize-genesis-config',
                                  'build-blockchain/app-chain/bnb-sidechain/how-to-launch/launch-bas',
                                  'build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc20-token',
                                  'build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc721-token',
