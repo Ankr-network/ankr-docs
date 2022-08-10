@@ -15,7 +15,7 @@ ANKR delegated staking has a locking period of 84–91 days. You are only able t
 :::
 
 ## Unstake ANKR
-
+To unstake ANKR to the wallet address you chose in the connected MetaMask:
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
 2. Locate the ANKR box and click the **Manage**.
 3. Under **Active Staking**, locate a stake that is past the locking period.
@@ -28,4 +28,3 @@ You will need to make the following interactions in your wallet:
 
 :thumbsup: **Confirm** the unstaking transaction.
 
-:::tip success
