@@ -142,6 +142,10 @@
                 label: "Overview",
               },
               {
+                to: "staking/delegated-staking/ankr/overview",
+                label: "Delegated Staking",
+              },
+              {
                 to: "staking/liquid-staking/overview",
                 label: "Liquid Staking",
               },

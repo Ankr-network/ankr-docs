@@ -369,6 +369,19 @@ module.exports =
     'Staking': [
      'staking/overview',
         {
+            'Delegated Staking': [
+                'staking/liquid-staking/overview',
+                {
+                    'ANKR': [
+                        'staking/delegated-staking/ankr/overview',
+                        'staking/delegated-staking/ankr/stake-ankr',
+                        'staking/delegated-staking/ankr/claim-or-restake-rewards',
+                        'staking/delegated-staking/ankr/unstake-ankr'
+                    ],
+                },
+            ],
+        },
+        {
           'Liquid Staking': [
             'staking/liquid-staking/overview',
             {
