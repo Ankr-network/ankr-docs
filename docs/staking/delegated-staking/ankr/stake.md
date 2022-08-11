@@ -3,7 +3,7 @@ title: Stake ANKR
 id: stake-ankr
 ---
 
-# Stake ANKR token in Ankr Staking
+# Stake ANKR token
 
 ## Before you start
 

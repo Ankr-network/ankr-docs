@@ -3,7 +3,7 @@ title: Unstake ANKR
 id: unstake-ankr
 ---
 
-# Unstake ANKR token in Ankr Staking
+# Unstake ANKR token
 
 ### Before you start
 
