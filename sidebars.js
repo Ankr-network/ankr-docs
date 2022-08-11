@@ -370,7 +370,6 @@ module.exports =
      'staking/overview',
         {
             'Delegated Staking': [
-                'staking/liquid-staking/overview',
                 {
                     'ANKR': [
                         'staking/delegated-staking/ankr/overview',
