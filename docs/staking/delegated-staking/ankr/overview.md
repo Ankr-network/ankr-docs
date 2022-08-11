@@ -46,5 +46,5 @@ This may cause the APY for the V1 of ANKR staking to be variable.
 
 ## What is next with ANKR token staking?
 As Ankr continues to release more and more infrastructure solutions powered by Ankr Network, we will have a growing need for Ankr Bankrs to help secure the system. 
-And as Web 3 grows and we add an ever-increasing number of chains to the protocol, Ankr will match the pace of Web3 adoption. Here’s what you can expect in the works:
+And as Web3 grows and we add an ever-increasing number of chains to the protocol, Ankr will match the pace of Web3 adoption. 
 
