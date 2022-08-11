@@ -3,7 +3,7 @@ title: Claim or Restake Rewards
 id: claim-or-restake-rewards
 ---
 
-# Claim rewards for delegated-staked ANKR
+# Claim or restake rewards
 
 ## Before you start
 
