@@ -15,7 +15,7 @@ Yes — there is a [user guide](https://docs.binance.org/smart-chain/wallet/meta
 
 ### What is the minimum amount of BNB I can stake?
  
-1.002 BNB: 1 BNB, plus the relayer fee — 0.002 BNB. You must also count in the gas fee on top for sending the transaction.
+1.002 BNB: user asset — 1 BNB, plus the relayer fee for cross-chain transfer of your assets applied during the staking — 0.002 BNB. You must also count in the gas fee on top for sending the transaction.
 
 
 ### Why do I get less aBNBc than aBNBb for my 1 BNB?
@@ -53,7 +53,8 @@ aBNBc rewards are built into the token. Effectively, your rewards accumulate dai
 
 ### Does Ankr charge for the service?
 
-Ankr does not charge any service fees for BNB Liquid Staking. Just to make sure — `relayer fee` is a fee for cross-chain transfer of your assets needed during staking, not an Ankr fee.
+5% are subtracted from your Liquid Staking rewards to cover the services and operations provided by Ankr.
+Note that `relayer fee` is a fee for cross-chain transfer of your assets applied during staking and is not an Ankr fee.
 
 ### What determines the amount of reward I receive each rebase of aBNBb?
 
