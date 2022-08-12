@@ -54,7 +54,9 @@ aBNBc rewards are built into the token. Effectively, your rewards accumulate dai
 ### Does Ankr charge for the service?
 
 5% are subtracted from your Liquid Staking rewards to cover the services and operations provided by Ankr.
-Note that `relayer fee` is a fee for cross-chain transfer of your assets applied during staking and is not an Ankr fee.
+Your APY already includes the fee so no need to recalculate it, you get what you see.
+
+Note that relayer fee is a fee for cross-chain transfer of your assets applied during staking and is not an Ankr fee.
 
 ### What determines the amount of reward I receive each rebase of aBNBb?
 
