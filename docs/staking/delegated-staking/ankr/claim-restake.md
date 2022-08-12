@@ -19,6 +19,8 @@ You have a MetaMask wallet.
 You can claim or restake your rewards after the locking period of 84–91 days. This period applies to each staking transaction independently.
 
 However, your stake will keep generating rewards until you unstake, whether or not the locking period has ended.
+
+Rewards accrue on the weekly basis, i.e. you can claim rewards once a week, not daily. 
 :::
 
 ### Claim all rewards
