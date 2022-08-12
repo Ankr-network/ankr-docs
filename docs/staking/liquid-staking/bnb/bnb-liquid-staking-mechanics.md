@@ -29,21 +29,20 @@ The requirements when unstaking are:
 
 ## Fees
 
-When staking, the user pays the relayer fee — 0.002 BNB, which is a fee for transferring assets between BNB Chain (prev. Binance Chain) and BNB Beacon Chain (prev. Binance Chain).
+* Ankr takes 5% of the Liquid Staking rewards as a base fee. 
 
-When unstaking, the user pays nothing, while Ankr pays:
+* When staking, the user pays the relayer fee — 0.002 BNB, which is a fee for transferring assets between BNB Chain (prev. Binance Chain) and BNB Beacon Chain (prev. Binance Chain).
 
-* Unbonding transaction fee (undelegate_fee) — 0.004 BNB.
+* When unstaking, the user pays nothing, while Ankr pays:
 
-* Cross-chain transaction fee (transfer_out_fee) — 0.000075 BNB.
+  * Unbonding transaction fee (undelegate_fee) — 0.004 BNB.
 
-* Ankr validator takes 2% fee from the user's rewards; BNB48 Club validator takes 0.48% fee from the user's rewards.
+  * Cross-chain transaction fee (transfer_out_fee) — 0.000075 BNB.
 
 The user must also count in the gas price for outgoing transactions.
 
 
 ## Rewards
-
 Validators receive rewards every day, at midnight, UTC.
 
 The APY is calculated from the validators' rewards. 
@@ -78,15 +77,14 @@ The following entities are involved:
 
 * When unstaking, receives the unstaked funds+rewards to send to stakers.
 
-
 ## Validators
-
-[Ankr validator on Binance](https://www.bnbchain.world/en/staking/validator/bva1xnudjls7x4p48qrk0j247htt7rl2k2dzp3mr3j) — Ankr validator node that secures network, creates blocks, and processes transactions during the validation period.
-
-[BNB48 Club validator on Binance](https://www.bnbchain.world/en/staking/validator/bva1ygrhjdjfyn2ffh5ha5llf5g6l3wxjt29hz9q4s) — BNB48 Club validator node that secures network, creates blocks, and processes transactions during the validation period.
+* [Ankr validator](https://www.bnbchain.world/en/staking/validator/bva1xnudjls7x4p48qrk0j247htt7rl2k2dzp3mr3j)
+* [BNB48 Club validator](https://www.bnbchain.world/en/staking/validator/bva1ygrhjdjfyn2ffh5ha5llf5g6l3wxjt29hz9q4s)
+* [MathWallet](https://www.bnbchain.org/en/staking/validator/bva1y52k5rfmqv46p8x8jsnppzgkjgzt5m0zgx5h37)
+* [CertiK](https://www.bnbchain.org/en/staking/validator/bva1lva9unyerjwcnayyd9kukyde96tvcfdgqk4930)
+* [Tranchess](https://www.bnbchain.org/en/staking/validator/bva1m3nj2sglp7mlz3y08qjlqyhycenz8m9cl4h4ht)
 
 ## Staking workflow
-
 1. User sends a request to the `BinancePool::stake({value:stake+relayer_fee})` on BNB Chain. `stake` specifies the staked amount and should meet the requirements described above, while `fee` specifies the fee deducted from the user’s wallet for the staking. 
 
 2. `BinancePool` verifies the request checking the `minimal_stake_value` and the user-paid `relayer_fee`, executes `TokenHub::transferOut()` to make a cross-chain transaction to Binance Chain, mints either aBNBb to the user 1:1 to the staked BNB or aBNBc in the amount defined by the current exchange ratio, and then issues a `Staked()` event with the `sender`, `stake`, `intermediary` parameters. 
