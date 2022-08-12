@@ -36,6 +36,10 @@ You may want to restake some of your rewards to get higher APY. To do that:
 
 ## Restake rewards
 
+:::note
+The locking period of 84–91 days applies to each restake transaction.  
+:::
+
 You can restake your rewards to increase you APY. To do that:
 
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
