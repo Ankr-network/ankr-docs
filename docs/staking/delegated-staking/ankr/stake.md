@@ -37,9 +37,10 @@ You will need to make the following interactions in your wallet:
 :::note
 Make sure you have some ETH to pay the gas fee for your staking transaction.
 
-Currently, ANKR can only be staked on Ethereum. If you have ANKR on any other chains, please bridge it first to stake it. 
+Currently, **ANKR can only be staked on Ethereum**. If you have ANKR on any other chains, please bridge it first to stake it. 
 
-ANKR delegated staking has a locking period of 84–91 days. You are only able to unstake ANKR or claim your rewards after this period has ended. The period applies to each of your staking transactions independently.
+You can claim or restake your rewards after the locking period of 84–91 days. This period applies to each staking transaction independently.
+However, your stake will keep generating rewards until you unstake, whether or not the locking period has ended.
 :::
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
