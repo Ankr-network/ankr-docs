@@ -80,6 +80,7 @@ module.exports =
                       {
                           'Premium Tier': [
                               `build-blockchain/products/v2/ui-interactions`,
+                              `build-blockchain/products/v2/ui-interactions-blockchain`,
                               'build-blockchain/products/v2/premium-plan',
                               'build-blockchain/products/v2/premium-endpoints',
                               'build-blockchain/products/v2/hybrid-infra',

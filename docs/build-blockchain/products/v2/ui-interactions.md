@@ -7,13 +7,13 @@ id: ui-interactions
 
 To start using the _Premium Tier_ services, there are some required steps for you to go through:
 
-`Connect wallet` —>`Top up account balance` —>`Start using custom RPC endpoints` —>`Add email`
+`Connect wallet` —>`Top up account balance` —>`[Start using custom RPC URLs](/ui-interactions-blockchain#)` —>`Add email`
 
 * **Connect a wallet**: first things first, connecting your MetaMask wallet is the key to access your account and start using Premium services.
   
 * **Top up an account balance**: surely, you need to have a positive account balance to make any RPC requests. 
   
-* **Start using custom RPC endpoints**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
+* **Start using custom RPC URLs**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
 
 * **Add an email address**: this step is optional. You might want to have account status notifications, such as top-ups, withdrawals, and other billing info, sent to your email. You can select the notifications you'd like to receive in **Settings**. Sure, our marketing would love to know our users and be able to propose you some new tailored options from time to time in the future. But, no pressure at all — you can switch those notifications off anytime. And the cherry on top is that for email adding, we're currently depositing _100M bonus API credits_ that you can spend on your Premium requests.
 
