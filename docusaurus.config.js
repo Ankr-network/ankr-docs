@@ -101,7 +101,7 @@
               },
               {
                 to: "build-blockchain/app-chain/step-by-step",
-                label: "Start step-by-step",
+                label: "Start with App Chains",
               },
               {
                 to: "build-blockchain/app-chain/bnb-sidechain/overview",
