@@ -11,7 +11,7 @@ To understand the config parameters and create your customized genesis config fi
 <iframe 
   width="100%"
   height="1000"
-  src="https://rpc.dev-02.bas.ankr.com:3002/"
+  src="https://config.dev-02.bas.ankr.com/"
   frameborder="0"
   allowfullscreen>
 </iframe>
