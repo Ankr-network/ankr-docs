@@ -35,7 +35,7 @@ The [config file](https://github.com/Ankr-network/bas-devnet-setup/blob/devel/co
 
 
 :::tip
-You can easily customize parameters of the genesis config file via [Genesis Configurator](/build-blockchain/app-chain/bnb-sidechain/customize-genesis-config).
+You can easily customize parameters of the genesis config file via [Genesis Configurator](/build-blockchain/app-chain/bnb-sidechain/how-to-launch/customize-genesis-config).
 
 For the rest of the sidechain's codebase, see [the list of available BNB Sidechain repos](/build-blockchain/app-chain/bnb-sidechain/architecture/overview#repositories).
 :::
