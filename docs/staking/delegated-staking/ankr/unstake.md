@@ -13,7 +13,9 @@ Ensure you have a small amount of ETH for the gas fee.
 
 ANKR delegated staking has a locking period of 84–91 days. You are only able to unstake ANKR or claim your rewards after this period has ended. The period applies to each of your staking transactions independently.
 
-When unstaking, an undelegate period applies. After this period that lasts an epoch, which is 1 day, you can claim your unstaked ANKR to the connected wallet address.
+When unstaking, an undelegate period of 1 next epoch — 7 days — applies. After this period, you can claim your unstaked ANKR to the connected wallet address.
+For example, if the epoch starts on Monday, and you unstaked on Monday, you'll wait 14 days (current_epoch + next_epoch), on Tuesday — 13 days, and so on.
+
 :::
 
 ## Unstake ANKR
@@ -28,7 +30,7 @@ Multiple Node Providers support is coming soon.
 2. Locate the ANKR box and click the **Manage**.
 3. Under **Active Staking**, locate a stake that is past the locking period and has the **Unlocked** status.
 4. Click **Unstake** next to it and confirm your action in MetaMask if needed.
-5. Wait for the undelegated period of 1 day to end.
+5. Wait for the undelegate period of 7–14 days to end.
 6. When ended, repeat #1 and #2 and go to the **Unstaking** tab.
 7. Click **Claim** next to the unstaked ANKR to send it to the address you connected via MetaMask.
 

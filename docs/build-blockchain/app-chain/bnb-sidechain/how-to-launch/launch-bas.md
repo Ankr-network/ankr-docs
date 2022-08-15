@@ -7,14 +7,15 @@ id: launch-bas
 
 ## Prerequisites
 
-Before running command you must do following steps:
+Set up and run a BNB Sidechain instance using the [devnet repo](https://github.com/Ankr-network/bas-devnet-setup).
+Before running an instance you must do following:
 * Ensure you have a dedicated machine that have at least 8 dedicated CPU core and 32GB RAM, as it needs to run 7 nodes.
 * Make sure you have a wildcard domain `*.example.com` set to your machine (use a dedicated machine with a public IP).
 * Modify the `config.json` file to update parameters as you need (you can find all addresses in the keystore folder).
 
-## Config file parameters
+## `config.json` parameters
 
-The config file structure is as such:
+The [config file](https://github.com/Ankr-network/bas-devnet-setup/blob/devel/config.json) structure is:
 
 * `chainId` — identifier of your chain in BNB Sidechain.
 * `validators` — list of initial validator set (make sure that you have the same list in docker compose file).
@@ -32,10 +33,9 @@ The config file structure is as such:
 * `votingPeriod` — default voting period for the governance proposals.
 * `faucet` — map with initial balances for faucet and other needs.
 
-:::tip
-You can find the parameters in the [devnet repo containing a test-ready sidechain instance](https://github.com/Ankr-network/bas-devnet-setup).
 
-You can change parameters there and spawn up a more customized instance.
+:::tip
+You can easily customize parameters of the genesis config file via [Genesis Configurator](/build-blockchain/app-chain/bnb-sidechain/customize-genesis-config).
 
 For the rest of the sidechain's codebase, see [the list of available BNB Sidechain repos](/build-blockchain/app-chain/bnb-sidechain/architecture/overview#repositories).
 :::

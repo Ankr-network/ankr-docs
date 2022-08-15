@@ -24,11 +24,11 @@ Now, anyone can earn ANKR rewards and become an “_Ankr Bankr_” by staking th
 ## Why is ANKR token staking needed?
 The Ankr Network depends on reliable, high-quality node providers to serve RPC requests on supported blockchains. 
 As such, the system requires a significant deposit of ANKR backing each node provider. 
-This includes ANKR deposits each node provider contributes (the self-stake) that is subject to slashing in the event of malicious acts or poor performance by the node provider.
+This includes ANKR deposits each node provider contributes (the self-stake).
 
 In addition, token holders will have the ability to signal support for individual node providers on the Ankr Network by staking ANKR to back their nodes. 
 By delegating ANKR to node providers, community members play an active role in discerning which service providers are reputable, performant, and worthy of a reputational boost. 
-In return, ANKR token stakers share in the rewards earned by the node providers they support, while assuming a portion of slashing risks. 
+In return, ANKR token stakers share in the rewards earned by the node providers they support. 
 ANKR staking will also enable delegators to allocate voting power to node providers to decide, among other things, which independent node providers will be admitted in the near term to service traffic on Ankr Network.  
 
 Although the ANKR staking pool may eventually be capped in size, offering allotments to existing node providers, community members, and other active Ankr ecosystem members, the initial ANKR staking pool will not be capped in size, and we anticipate that the pool size will be expanded. 
