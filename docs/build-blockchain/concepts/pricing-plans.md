@@ -3,21 +3,20 @@ title: Pricing
 id: pricing
 ---
 
-# Product pricing
+# RPC Services pricing
 
 ## Public and Premium tiers comparison
 
-| Feature               | Public Tier                       | Premium Tier                                                                                   |
-|-----------------------|-----------------------------------|------------------------------------------------------------------------------------------------|
-| Full and Archive Data | ✅                                 | ✅                                                                                              |
-| Advanced API          | ❌                                 | ✅                                                                                              |
-| Rate limit            | Limited during high traffic       | Unlimited                                                                                      |
-| Requests per day      | Soft limit of 1M requests per day | Unlimited requests                                                                             |
-| Connection            | HTTPS                             | HTTPS and WebSockets                                                                           |
-| Latency               | Global Public nodes               | Global Premium nodes (+ Public nodes reserve)                                                  |
-| Support               | Discord Support                   | Custom SLA                                                                                     |
-| Terms                 | No Contract                       | No Contract                                                                                    |
-| Cost                  | **FREE**                          | **[Pay-as-you-go](/build-blockchain/concepts/pricing#payg-premium-tiers-usage-based-pricing)** |
+| Feature               | Public Tier                                                                                                | Premium Tier                                                                                   |
+|-----------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| Full and Archive Data | ✅                                                                                                          | ✅                                                                                              |
+| Advanced API          | ❌                                                                                                          | ✅                                                                                              |
+| Priority order        | Inferior to Premium;<br/>Limited during high traffic                                                       | Superior to Public;<br/>Prioritized during high traffic                                        |
+| Requests per minute   | `= 45k / all blockchains` — guaranteed;<br/>`> 45k / all blockchains` — possible (depends on overall load) | `= 60k / endpoint` — guaranteed;<br/>`> 60k / endpoint` — possible (depends on overall load)   |
+| Connection            | HTTPS                                                                                                      | HTTPS and WebSockets                                                                           |
+| Support               | Discord Support                                                                                            | Custom SLA                                                                                     |
+| Terms                 | No Contract                                                                                                | Both Contract and No Contract                                                                  |
+| Cost                  | **FREE**                                                                                                   | **[Pay-as-you-go](/build-blockchain/concepts/pricing#payg-premium-tiers-usage-based-pricing)** |
 
 ## PAYG: Premium tier's usage-based pricing
 
@@ -52,9 +51,9 @@ Use our beta pricing calculator for standard EVM methods. For all other methods 
   allowfullscreen>
 </iframe>
 
-## Getting started
+## Get started with Premium
 
-1. Connect your wallet to the [Ankr Protocol](https://www.ankr.com/protocol/) page.
-2. Explore the [Account Details](https://www.ankr.com/protocol/account/) section in sidebar.
-3. Top up the account with the desired amount of ANKR tokens.
-4. Wait for our system to generate personal endpoints for you.
+1. Go to the [RPC Services](https://www.ankr.com/rpc/) platform.
+2. [Connect your wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet).
+3. [Top up account balance](/build-blockchain/products/v2/ui-interactions/#top-up).
+4. [Add Premium URLs into your project](/build-blockchain/products/v2/ui-interactions-blockchain/#rpc-apis-for-your-project) to interact with a blockchain.
