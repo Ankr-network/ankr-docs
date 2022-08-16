@@ -7,7 +7,7 @@ id: ui-interactions
 
 To start using the _Premium Tier_ services, there are some required steps for you to go through:
 
-`Connect wallet` —>`Top up account balance` —> `Start using custom RPC URLs`—>`Add email`
+`Connect wallet` —>`Top up account balance` —> `Start using custom RPC URLs`
 
 * **[Connect a wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet)**: first things first, connecting your MetaMask wallet is the key to access your account and start using Premium services.
   
