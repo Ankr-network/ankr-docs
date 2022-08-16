@@ -7,13 +7,19 @@ id: ui-interactions
 
 To start using the _Premium Tier_ services, there are some required steps for you to go through:
 
-`Connect wallet` —>`Top up account balance` —>`[Start using custom RPC URLs](/ui-interactions-blockchain#)` —>`Add email`
+`Connect wallet` —>`Top up account balance` —> `Start using custom RPC URLs`
 
-* **Connect a wallet**: first things first, connecting your MetaMask wallet is the key to access your account and start using Premium services.
+* **[Connect a wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet)**: first things first, connecting your MetaMask wallet is the key to access your account and start using Premium services.
   
-* **Top up an account balance**: surely, you need to have a positive account balance to make any RPC requests. 
+* **[Top up an account balance](/build-blockchain/products/v2/ui-interactions/#top-up)**: surely, you need to have a positive account balance to make any RPC requests. 
   
-* **Start using custom RPC URLs**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
+* **[Start using custom RPC URLs](/build-blockchain/products/v2/ui-interactions-blockchain/#rpc-apis-for-your-project)**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
+
+Someday, you might also want to opt for additional actions:
+
+`Withdraw ANKR tokens` or `Add your email`
+
+* **[Withdraw](/build-blockchain/products/v2/ui-interactions/#withdraw)**: get ANKR tokens from your RPC Services account back to your wallet.
 
 * **Add an email address**: this step is optional. You might want to have account status notifications, such as top-ups, withdrawals, and other billing info, sent to your email. You can select the notifications you'd like to receive in **Settings**. Sure, our marketing would love to know our users and be able to propose you some new tailored options from time to time in the future. But, no pressure at all — you can switch those notifications off anytime. And the cherry on top is that for email adding, we're currently depositing _100M bonus API credits_ that you can spend on your Premium requests.
 
@@ -24,7 +30,7 @@ The wallet connection procedure is the following:
 1. Go to [Ankr RPC service](https://www.ankr.com/protocol/).
 2. In the top right corner, click **Connect Wallet** and follow the sequence of self-explanatory steps prompted by your wallet.
 
-That's it — you now have an account in Ankr RPC Service, associated with your wallet.
+Congrats — you now have an account in Ankr RPC Service, associated with your wallet.
 
 ## Top up
 
@@ -40,7 +46,7 @@ That's where the top-up procedure comes into play:
   * `Grant ANKRs to contract` — click **Confirm**, and then approve in the wallet.  
   * `Approve spending under contract` — click **Confirm**, and then approve in the wallet.
 
-That's it — you've added ANKR tokens to your account, and you're all set for using _Premium_ services. 
+Congrats — you've added ANKR tokens to your account, and you're all set for using _Premium_ services. 
 
 ## Withdraw
 
@@ -56,4 +62,4 @@ The withdrawal procedure is the following:
   * `Withdrawal amount` (min: 500 ANKR) — enter the amount to withdraw, click **Confirm**, and then approve in the wallet.
   * `Transaction validation` — click **Next** and **Done** as soon as the validation completes.
 
-That's it — you've withdrawn ANKR tokens back to your wallet.
+Congrats — you've withdrawn ANKR tokens back to your wallet.
