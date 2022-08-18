@@ -1,18 +1,18 @@
 ---
-title: Overview
+title: API Overview
 id: advanced-apis
 ---
 
-Ankr's *Advanced APIs* is a multi-chain collection of JSON-RPC API endpoints, with a mission to become the Go-To tool for multichain search.
+Ankr's *Advanced API* is a specifically-tailored collection of JSON-RPC API endpoints built to support the most popular Web3 scenarios on multiple chains at almost instant speeds. We believe it to become a single point of reference for the multi-chain requests.
 
-Use the following endpoint to test the API: https://rpc.ankr.com/multichain 
+Try our RPC endpoints for blockchain interactions at our [RPC Services](https://www.ankr.com/rpc/) platform.
 
-Check out the latest Advanced APIs collection in [Postman](https://documenter.getpostman.com/view/19024547/UVsEVUGQ) and look through the Advanced APIs docs divided into the following sections:
+Check out the latest Advanced API collections in [Postman](https://documenter.getpostman.com/view/19024547/UVsEVUGQ) and look through the Advanced API docs divided into the following sections:
 
 * [NFT API](/build-blockchain/products/advanced-apis/nft-api/)
 * [Query API](/build-blockchain/products/advanced-apis/query-api)
 * [Token API](/build-blockchain/products/advanced-apis/token-api)
 
-Please leave your feedback, or feature requests here: https://roadmap.ankr.com/b/feature-requests/
+Please leave your feedback, or propose any features in our [roadmap](https://roadmap.ankr.com/b/feature-requests/).
 
 Thank you for trying out the Advanced API 🙌

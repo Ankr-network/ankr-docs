@@ -71,24 +71,33 @@ module.exports =
               label: 'Getting Started',
               items: [
                       'build-blockchain/overview',
+                      'build-blockchain/pricing-plans',
                      ],
           },
         {
           'Products': [
               {
-                  'RPC Services': [
-                      'build-blockchain/products/v2/public-rpc',
+                  'RPC Service': [
+                      `build-blockchain/products/v2/ui-interactions`,
+                      `build-blockchain/products/v2/ui-interactions-blockchain`,
+                      'build-blockchain/products/v2/hybrid-infra',
+                      'build-blockchain/concepts/pricing',
+                  ],
+              },
+              {
+                  'Advanced API / SDKs': [
+                      'build-blockchain/products/v2/advanced-apis',
+                      'build-blockchain/products/advanced-apis/nft-api',
+                      `build-blockchain/products/advanced-apis/query-api`,
+                      `build-blockchain/products/advanced-apis/token-api`,
+                      `build-blockchain/products/advanced-apis/javascript-sdk`,
+                  ],
+              },
+              'build-blockchain/products/v2/scan',
+              ],
+            },
                       {
-                          'Premium Tier': [
-                              `build-blockchain/products/v2/ui-interactions`,
-                              `build-blockchain/products/v2/ui-interactions-blockchain`,
-                              'build-blockchain/products/v2/premium-plan',
-                              'build-blockchain/products/v2/premium-endpoints',
-                              'build-blockchain/products/v2/hybrid-infra',
-                          ],
-                      },
-                      {
-                          'Chains': [
+                          'Supported Chains': [
                               'build-blockchain/chains/v2/arbitrum',
                               'build-blockchain/chains/v2/avalanche',
                               'build-blockchain/chains/v2/binance-smart-chain',
@@ -122,244 +131,230 @@ module.exports =
                               'build-blockchain/chains/v2/solana',
                           ]
                       },
-                      'build-blockchain/concepts/pricing',
-                  ],
-              },
-              {
-                  'Advanced APIs': [
-                      'build-blockchain/products/v2/advanced-apis',
-                      'build-blockchain/products/advanced-apis/nft-api',
-                      `build-blockchain/products/advanced-apis/query-api`,
-                      `build-blockchain/products/advanced-apis/token-api`,
-                      'build-blockchain/products/v2/scan',
-                  ],
-              },
-              ],
-            },
-        {
-          'Guides': [
-            'build-blockchain/guides/json-methods',
-            'build-blockchain/guides/libraries',
-            'build-blockchain/guides/websocket-premium',
-            'build-blockchain/guides/rpcapi',
-          ],
-        },
-                  {
-              'Legacy': [
-
-                  {
-                      'Products': [
-                          'build-blockchain/products/v1/about-api-services',
-                          'build-blockchain/products/v1/node-services'
-                      ],
-                  },
-                  {
-                      'Chains': [
-                          'build-blockchain/chains/v1/arb-api',
-                          'build-blockchain/chains/v1/avax-api',
-                          'build-blockchain/chains/v1/bsc-api',
-                          'build-blockchain/chains/v1/clover-api',
-                          'build-blockchain/chains/v1/ethereum-api',
-                          'build-blockchain/chains/v1/fantom-api',
-                          'build-blockchain/chains/v1/huobi-api',
-                          'build-blockchain/chains/v1/kusama-api',
-                          'build-blockchain/chains/v1/oec-api',
-                          'build-blockchain/chains/v1/polkadot-api',
-                          'build-blockchain/chains/v1/polygon-api',
-                          'build-blockchain/chains/v1/terra-api',
-                          'build-blockchain/chains/v1/xdai-api',
-                      ],
-                  },
-                  {
-                      'Nodes': [
-                {
-                    'Algorand': [
-                        'build-blockchain/nodes/algorand/overview',
-                        'build-blockchain/nodes/algorand/endpoints',
-                    ],
-                },
-                {
-                    'Binance Chain': [
-                        'build-blockchain/nodes/binance-chain/overview',
-                    ],
-                },
-                {
-                    'Binance Smart Chain': [
-                        'build-blockchain/nodes/bsc/overview',
-                        'build-blockchain/nodes/bsc/erigon-bsc-testnet',
-                        'build-blockchain/nodes/bsc/run-bsc-node-on-erigon',
-                    ],
-                },
-                {
-                    'Bitcoin': [
-                        'build-blockchain/nodes/bitcoin/overview',
-                    ],
-                },
-                {
-                    'Cardano': [
-                        'build-blockchain/nodes/cardano/overview',
-                    ],
-                },
-                {
-                    'Celo': [
-                        'build-blockchain/nodes/celo/overview',
-                    ],
-                },
-                {
-                    'Cosmos': [
-                        'build-blockchain/nodes/cosmos/overview',
-                    ],
-                },
-                {
-                    'Covalent': [
-                        'build-blockchain/nodes/covalent/overview',
-                    ],
-                },
-                {
-                    'Dash': [
-                        'build-blockchain/nodes/dash/overview',
-                    ],
-                },
-                {
-                    'Decred': [
-                        'build-blockchain/nodes/decred/overview',
-                    ],
-                },
-                {
-                    'Elastos': [
-                        'build-blockchain/nodes/elastos/overview',
-                    ],
-                },
-                {
-                    'Eethreum 2': [
-                        'build-blockchain/nodes/eth2/overview',
-                        'build-blockchain/nodes/eth2/run-provider-nodes',
-                        'build-blockchain/nodes/eth2/rewards-distribution',
-                    ],
-                },
-                {
-                    'Fantom': [
-                        'build-blockchain/nodes/fantom/overview',
-                        'build-blockchain/nodes/fantom/ftm-node-read-only',
-                        'build-blockchain/nodes/fantom/ftm-node-full',
-                    ],
-                },
-                {
-                    'Vite': [
-                        'build-blockchain/nodes/vite/supernode',
-                        'build-blockchain/nodes/vite/full-node',
-                    ],
-                },
-                {
-                    'Harmony': [
-                        'build-blockchain/nodes/harmony/overview',
-                        'build-blockchain/nodes/harmony/run-staking-node-on-ankr',
-                        'build-blockchain/nodes/harmony/faq',
-                    ],
-                },
-                {
-                    'Hathor': [
-                        'build-blockchain/nodes/hathor/overview',
-                        'build-blockchain/nodes/hathor/endpoints',
-                    ],
-                },
-                {
-                    'Hedera': [
-                        'build-blockchain/nodes/hedera/overview',
-                    ],
-                },
-                {
-                    'Horizen': [
-                        'build-blockchain/nodes/horizen/overview',
-                        'build-blockchain/nodes/horizen/run-node',
-                    ],
-                },
-                {
-                    'Elrond': [
-                        'build-blockchain/nodes/elrond/overview',
-                        'build-blockchain/nodes/elrond/run-staking-node',
-                    ],
-                },
-                {
-                    'IOST': [
-                        'build-blockchain/nodes/iost/overview',
-                        'build-blockchain/nodes/iost/run-node',
-                    ],
-                },
-                {
-                    'LTO': [
-                        'build-blockchain/nodes/lto/overview',
-                        'build-blockchain/nodes/lto/run-node',
-                        'build-blockchain/nodes/lto/faq',
-                    ],
-                },
-                {
-                    'Neo': [
-                        'build-blockchain/nodes/neo/overview',
-                    ],
-                },
-                {
-                    'Near': [
-                        'build-blockchain/nodes/near/overview',
-                    ],
-                },
-                {
-                    'Nervos': [
-                        'build-blockchain/nodes/nervos/overview',
-                        'build-blockchain/nodes/nervos/run-node',
-                        'build-blockchain/nodes/nervos/endpoints',
-                    ],
-                },
-                {
-                    'NuCypher': [
-                        'build-blockchain/nodes/nucypher/overview',
-                        'build-blockchain/nodes/nucypher/run-node',
-                    ],
-                },
-                {
-                    'Nuls': [
-                        'build-blockchain/nodes/nuls/overview',
-                        'build-blockchain/nodes/nuls/endpoints',
-                    ],
-                },
-                {
-                    'OmiseGo': [
-                        'build-blockchain/nodes/omisego/overview',
-                        'build-blockchain/nodes/omisego/endpoints',
-                    ],
-                },
-                {
-                    'Pchain': [
-                        'build-blockchain/nodes/pchain/overview',
-                        'build-blockchain/nodes/pchain/run-node',
-                        'build-blockchain/nodes/pchain/faq',
-                    ],
-                },
-                {
-                    'Polygon': [
-                        'build-blockchain/nodes/polygon/overview',
-                        'build-blockchain/nodes/polygon/run-node',
-                    ],
-                },
-                {
-                    'Stafi': [
-                        'build-blockchain/nodes/stafi/overview',
-                        'build-blockchain/nodes/stafi/run-node',
-                    ],
-                },
-                {
-                    'TomoX': [
-                        'build-blockchain/nodes/tomochain/overview',
-                        'build-blockchain/nodes/tomochain/run-node-master',
-                        'build-blockchain/nodes/tomochain/run-node-tomox',
-                    ],
-                },
-            ],
-                  },
-              ],
-          },
+        // {
+        //   'Guides': [
+        //     'build-blockchain/guides/json-methods',
+        //     'build-blockchain/guides/libraries',
+        //     'build-blockchain/guides/websocket-premium',
+        //     'build-blockchain/guides/rpcapi',
+        //   ],
+        // },
+        //           {
+        //       'Legacy': [
+        //
+        //           {
+        //               'Products': [
+        //                   'build-blockchain/products/v1/about-api-services',
+        //                   'build-blockchain/products/v1/node-services'
+        //               ],
+        //           },
+        //           {
+        //               'Chains': [
+        //                   'build-blockchain/chains/v1/arb-api',
+        //                   'build-blockchain/chains/v1/avax-api',
+        //                   'build-blockchain/chains/v1/bsc-api',
+        //                   'build-blockchain/chains/v1/clover-api',
+        //                   'build-blockchain/chains/v1/ethereum-api',
+        //                   'build-blockchain/chains/v1/fantom-api',
+        //                   'build-blockchain/chains/v1/huobi-api',
+        //                   'build-blockchain/chains/v1/kusama-api',
+        //                   'build-blockchain/chains/v1/oec-api',
+        //                   'build-blockchain/chains/v1/polkadot-api',
+        //                   'build-blockchain/chains/v1/polygon-api',
+        //                   'build-blockchain/chains/v1/terra-api',
+        //                   'build-blockchain/chains/v1/xdai-api',
+        //               ],
+        //           },
+        //           {
+        //               'Nodes': [
+        //         {
+        //             'Algorand': [
+        //                 'build-blockchain/nodes/algorand/overview',
+        //                 'build-blockchain/nodes/algorand/endpoints',
+        //             ],
+        //         },
+        //         {
+        //             'Binance Chain': [
+        //                 'build-blockchain/nodes/binance-chain/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Binance Smart Chain': [
+        //                 'build-blockchain/nodes/bsc/overview',
+        //                 'build-blockchain/nodes/bsc/erigon-bsc-testnet',
+        //                 'build-blockchain/nodes/bsc/run-bsc-node-on-erigon',
+        //             ],
+        //         },
+        //         {
+        //             'Bitcoin': [
+        //                 'build-blockchain/nodes/bitcoin/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Cardano': [
+        //                 'build-blockchain/nodes/cardano/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Celo': [
+        //                 'build-blockchain/nodes/celo/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Cosmos': [
+        //                 'build-blockchain/nodes/cosmos/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Covalent': [
+        //                 'build-blockchain/nodes/covalent/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Dash': [
+        //                 'build-blockchain/nodes/dash/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Decred': [
+        //                 'build-blockchain/nodes/decred/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Elastos': [
+        //                 'build-blockchain/nodes/elastos/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Eethreum 2': [
+        //                 'build-blockchain/nodes/eth2/overview',
+        //                 'build-blockchain/nodes/eth2/run-provider-nodes',
+        //                 'build-blockchain/nodes/eth2/rewards-distribution',
+        //             ],
+        //         },
+        //         {
+        //             'Fantom': [
+        //                 'build-blockchain/nodes/fantom/overview',
+        //                 'build-blockchain/nodes/fantom/ftm-node-read-only',
+        //                 'build-blockchain/nodes/fantom/ftm-node-full',
+        //             ],
+        //         },
+        //         {
+        //             'Vite': [
+        //                 'build-blockchain/nodes/vite/supernode',
+        //                 'build-blockchain/nodes/vite/full-node',
+        //             ],
+        //         },
+        //         {
+        //             'Harmony': [
+        //                 'build-blockchain/nodes/harmony/overview',
+        //                 'build-blockchain/nodes/harmony/run-staking-node-on-ankr',
+        //                 'build-blockchain/nodes/harmony/faq',
+        //             ],
+        //         },
+        //         {
+        //             'Hathor': [
+        //                 'build-blockchain/nodes/hathor/overview',
+        //                 'build-blockchain/nodes/hathor/endpoints',
+        //             ],
+        //         },
+        //         {
+        //             'Hedera': [
+        //                 'build-blockchain/nodes/hedera/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Horizen': [
+        //                 'build-blockchain/nodes/horizen/overview',
+        //                 'build-blockchain/nodes/horizen/run-node',
+        //             ],
+        //         },
+        //         {
+        //             'Elrond': [
+        //                 'build-blockchain/nodes/elrond/overview',
+        //                 'build-blockchain/nodes/elrond/run-staking-node',
+        //             ],
+        //         },
+        //         {
+        //             'IOST': [
+        //                 'build-blockchain/nodes/iost/overview',
+        //                 'build-blockchain/nodes/iost/run-node',
+        //             ],
+        //         },
+        //         {
+        //             'LTO': [
+        //                 'build-blockchain/nodes/lto/overview',
+        //                 'build-blockchain/nodes/lto/run-node',
+        //                 'build-blockchain/nodes/lto/faq',
+        //             ],
+        //         },
+        //         {
+        //             'Neo': [
+        //                 'build-blockchain/nodes/neo/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Near': [
+        //                 'build-blockchain/nodes/near/overview',
+        //             ],
+        //         },
+        //         {
+        //             'Nervos': [
+        //                 'build-blockchain/nodes/nervos/overview',
+        //                 'build-blockchain/nodes/nervos/run-node',
+        //                 'build-blockchain/nodes/nervos/endpoints',
+        //             ],
+        //         },
+        //         {
+        //             'NuCypher': [
+        //                 'build-blockchain/nodes/nucypher/overview',
+        //                 'build-blockchain/nodes/nucypher/run-node',
+        //             ],
+        //         },
+        //         {
+        //             'Nuls': [
+        //                 'build-blockchain/nodes/nuls/overview',
+        //                 'build-blockchain/nodes/nuls/endpoints',
+        //             ],
+        //         },
+        //         {
+        //             'OmiseGo': [
+        //                 'build-blockchain/nodes/omisego/overview',
+        //                 'build-blockchain/nodes/omisego/endpoints',
+        //             ],
+        //         },
+        //         {
+        //             'Pchain': [
+        //                 'build-blockchain/nodes/pchain/overview',
+        //                 'build-blockchain/nodes/pchain/run-node',
+        //                 'build-blockchain/nodes/pchain/faq',
+        //             ],
+        //         },
+        //         {
+        //             'Polygon': [
+        //                 'build-blockchain/nodes/polygon/overview',
+        //                 'build-blockchain/nodes/polygon/run-node',
+        //             ],
+        //         },
+        //         {
+        //             'Stafi': [
+        //                 'build-blockchain/nodes/stafi/overview',
+        //                 'build-blockchain/nodes/stafi/run-node',
+        //             ],
+        //         },
+        //         {
+        //             'TomoX': [
+        //                 'build-blockchain/nodes/tomochain/overview',
+        //                 'build-blockchain/nodes/tomochain/run-node-master',
+        //                 'build-blockchain/nodes/tomochain/run-node-tomox',
+        //             ],
+        //         },
+        //     ],
+        //           },
+        //       ],
+        //   },
           {
-            'Support': [
+            'Extra': [
         'build-blockchain/support/get-support',
         'build-blockchain/support/errors'
             ],
