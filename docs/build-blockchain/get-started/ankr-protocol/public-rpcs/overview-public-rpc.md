@@ -7,15 +7,15 @@ id: pub-rpc-endpoints
 
 ### Overview
 
-Public RPCs provide an ultra fast and reliable gateway to connect to chains via public RPC API endpoints.
+Public RPCs provide an ultra-fast and reliable gateway to connect to chains via public RPC API endpoints.
 
 Simply copy the endpoint and start making calls.
 
-[View endpoints](https://www.ankr.com/protocol/public/)
+[View endpoints](https://www.ankr.com/rpc/)
 
 _**Read more:**_
 
-[01-public-community-rpcs.md](build-blockchain/products/v2/01-public-community-rpcs.md)
+[Public RPCs](/build-blockchain/overview/#public-plan)
 
 
 ### Getting Started

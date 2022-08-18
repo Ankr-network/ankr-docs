@@ -1,6 +1,6 @@
 ---
 title: Pricing
-id: pricing
+id: pricing-plans
 ---
 
 # Ankr RPC Pricing Plans
