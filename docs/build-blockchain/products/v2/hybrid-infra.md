@@ -5,9 +5,38 @@ id: hybrid-infra
 
 # Hybrid infrastructure
 
-:::note 
+Hybrid infrastructure is the means to provide a sort of backup for the requests going through external providers. It might support up to 5 external endpoints that are covered as a "final gate" by our RPC endpoints.
 
-## This is currently a **CLOSED** testing feature and is not available to all clients. 
+
+What's the scheme of action for those endpoints? For example, the request can't be made through the first endpoint, what are the further steps, further logic of actions? How this request is to be served? 
+
+
+
+
+
+What is Hybrid infrastructure?
+
+What are the use cases? 
+
+What's the testing period?
+
+OK, the user has tested the functionality. What's then? What's for us in it?
+
+
+
+
+
+
+
+
+
+The _Premium Plan_ users now have the ability to create a **Hybrid Infrastructure** by adding external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
+
+Ankr can also support your specific use case to create a custom node cluster. You can then add an endpoint from this to your account.
+
+
+:::note Available to the Premium Plan users on request 
+
 
 If you are a Premium Plan subscriber and would like to add this feature, do the following:
 
@@ -38,12 +67,6 @@ Ankr can also support your specific use case to create a custom node cluster. Yo
 💳 You can utilize credit from other providers e.g. Infura or Alchemy to create new endpoints and multiple paths to nodes.  
 
 💠 Add an endpoint from your own node. For example, a node configured for a specific purpose e.g. archive data, mainnet forking on your own machine.
-
-## Highlights
-
-* This feature is included in your Premium Plan (10k ANKR)
-* No KYC required
-* No staking required (no rewards available)
 
 ## Requirements
 
