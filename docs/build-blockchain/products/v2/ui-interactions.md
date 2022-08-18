@@ -1,9 +1,9 @@
 ---
-title: UI Interactions
+title: Premium Account Ops
 id: ui-interactions
 ---
 
-# Premium account interactions
+# Premium account operations
 
 To start using the _Premium Tier_ services, there are some required steps for you to go through:
 

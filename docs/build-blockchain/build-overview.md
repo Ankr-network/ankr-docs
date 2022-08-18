@@ -3,15 +3,15 @@ title: Overview
 id: overview
 ---
 
-# Ankr RPC Services
+# Ankr Services
 
-*Ankr RPC* provides a distributed nodes infrastructure supporting a multi-chain network and providing tools for developers to start building Web3 projects. Ankr RPS Services contain the following components:
+*Ankr* provides a distributed nodes infrastructure supporting a multi-chain network and providing tools for developers to start building Web3 projects. Ankr RPC Service contains various components depending on your Plan:
 
-1. `Public Tier`: Free and instant access to our range of Public APIs. [Read more](/build-blockchain/products/v2/public-rpc)
+1. [`Public Plan`](/build-blockchain/overview/#public-plan): Free and instant access to our range of Public RPC APIs.
 
-2. `Premium Tier`: Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features. [Read more](/build-blockchain/products/v2/premium-plan)
+2. [`Premium Tier`](/build-blockchain/overview/#premium-plan): Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features.
 
-3. `Ankr Scan`: Ankr Scan is a multi-chain Explorer that allows viewing assets across chains as well as assigned to a specific wallet address. [Read more](/build-blockchain/products/v2/scan)
+3. [`Ankr Scan`](/build-blockchain/products/v2/scan/): Ankr Scan is a multi-chain Explorer that allows viewing assets across chains as well as assigned to a specific wallet address.
 
 4. `Node Services`: Full, Archive, and Validator/Staking nodes are available for 50+ chains.
 
@@ -29,3 +29,50 @@ To access all the advanced features of Ankr RPC, developers can use Premium serv
 
 ![Ankr Infrastructure](@site/static/img/ankr-structure.png)
 
+## Public Plan
+
+*Public Plan* is central to the Ankr vision of mass adoption in Web3 and crypto economy. Ankr's Public Plan provides a zero-cost and reliable access to RPC API endpoints for growing number of networks:
+
+Check out the latest chains on [Ankr RPC](https://www.ankr.com/rpc/).
+
+### Get started using Public plan
+
+1. Go to [Ankr RPC](https://www.ankr.com/rpc/) service.
+2. In **Sidebar**, click **Endpoints** to open the pane.
+3. In the list of blockchains, click the one you'd like to interact with.
+4. In the **Blockchain** opened, select a chain type (**Mainnet**/**Testnet**) needed for your project.
+5. On the **Connection** tab, in the URL block, copy the URL into your project's library or config file.
+
+### How it works
+
+The Public Plan's services are being kept stable using a backbone of multiple underlying nodes globally distributed across 200 data centers as well as individual providers' homes.
+
+Constant system monitoring ensures that RPC endpoints are synced in real-time to underlying nodes. Whilst, network traffic monitoring uses intelligent caching to optimize speed and automate routing to the best available node at busy times.
+
+This architecture is built to meet the requirements for high availability and scalability.
+
+## Premium Plan
+
+*Premium Plan* provides access to a range of exclusive features that allow you to build on a secure, reliable, ultra-fast multi-chain network. See more info on the Premium Plan's [pricing and charging model](/build-blockchain/pricing-plans/).
+
+### Key features
+
+1. Unique collection of JSON-RPC API endpoints. [Read more](/build-blockchain/products/v2/advanced-apis).
+2. Secure and private endpoints for HTTPS and WSS. [Read more](/build-blockchain/overview/#benefits).
+3. On-request Hybrid Infrastructure functionality. [Read more](/build-blockchain/products/v2/hybrid-infra).
+
+### Benefits
+
+Premium Plan provides a set of *secure* and *private* RPC API endpoints exclusive to you. Those endpoints are designed to have greater reliability by interfacing with a fully distributed, ultra low latency node pool. This node network infrastructure is distinct from the Public Plan's one.
+
+Enjoy the following benefits:
+
+* At times of network congestion, Premium Plan requests are prioritized.
+* Establish a durable, low-latency connection via the websocket endpoint and have data pushed incrementally directly to you as soon as it is available. This makes it ideal for real-time data analytics.
+
+:::note
+
+The WebSocket API limits the maximum number of simultaneous connections to provide protection against misuse, such as DDoS attacks, for example. If your Websocket client makes too many connections at the same time, you'll receive an Error message.
+:::
+
+Check out [How to connect to Premium websockets](/build-blockchain/guides/websocket-premium).
