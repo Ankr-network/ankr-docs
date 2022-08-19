@@ -9,7 +9,7 @@ id: overview
 
 1. [`Public Plan`](/build-blockchain/overview/#public-plan): Free and instant access to our range of Public RPC APIs.
 
-2. [`Premium Tier`](/build-blockchain/overview/#premium-plan): Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features.
+2. [`Premium Plan`](/build-blockchain/overview/#premium-plan): Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features.
 
 3. [`Ankr Scan`](/build-blockchain/products/v2/scan/): Ankr Scan is a multi-chain Explorer that allows viewing assets across chains as well as assigned to a specific wallet address.
 
