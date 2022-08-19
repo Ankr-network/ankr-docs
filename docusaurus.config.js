@@ -119,17 +119,21 @@
                 label: "Overview",
               },
               {
-                to: "build-blockchain/chains/v2/arbitrum",
+                to: "build-blockchain/overview",
+                label: "Products",
+              },
+              {
+                to: "build-blockchain/chains/v2/arbitrum/",
                 label: "Chains",
               },
               {
-                to: "build-blockchain/concepts/pricing",
+                to: "build-blockchain/pricing-plans",
                 label: "Pricing",
               },
-              {
-                to: "build-blockchain/guides/json-methods",
-                label: "Guides",
-              },
+              // {
+              //   to: "build-blockchain/guides/json-methods",
+              //   label: "Guides",
+              // },
             ],
           },
           {
