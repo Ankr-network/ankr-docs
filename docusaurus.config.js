@@ -119,7 +119,7 @@
                 label: "Overview",
               },
               {
-                to: "build-blockchain/products/v2/ui-interaction",
+                to: "build-blockchain/products/v2/ui-interactions",
                 label: "Products",
               },
               {
