@@ -142,13 +142,13 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    const { txHash } = await sdk.stake(new BigNumber(1_200), 'aMATICc');
    ```
 
-## Documentation
+## Reference
 For detailed information on supported methods and parameters, refer to:
-* [AvalancheSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/AvalancheSDK.html)
-* [BinanceSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/BinanceSDK.html) 
-* [EthereumSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/EthereumSDK.html)
-* [FantomSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/FantomSDK.html)
-* [PolygonSDK documentation](https://www.ankr.com/docs/staking/sdk/classes/PolygonSDK.html)
+* [AvalancheSDK reference](https://www.ankr.com/docs/staking/sdk/classes/AvalancheSDK.html)
+* [BinanceSDK reference](https://www.ankr.com/docs/staking/sdk/classes/BinanceSDK.html) 
+* [EthereumSDK reference](https://www.ankr.com/docs/staking/sdk/classes/EthereumSDK.html)
+* [FantomSDK reference](https://www.ankr.com/docs/staking/sdk/classes/FantomSDK.html)
+* [PolygonSDK reference](https://www.ankr.com/docs/staking/sdk/classes/PolygonSDK.html)
 
 ## Flow
 To understand the processes and mechanics of Liquid Staking, refer to:
