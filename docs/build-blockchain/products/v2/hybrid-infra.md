@@ -5,115 +5,73 @@ id: hybrid-infra
 
 # Hybrid infrastructure
 
-Hybrid infrastructure is the means to provide a sort of backup for the requests going through external providers. It might support up to 5 external endpoints that are covered as a "final gate" by our RPC endpoints.
+:::note Request for Hybrid Infrastructure 
 
+Fill in the details for our Sales to contact you:
 
-What's the scheme of action for those endpoints? For example, the request can't be made through the first endpoint, what are the further steps, further logic of actions? How this request is to be served? 
-
-
-
-
-
-What is Hybrid infrastructure?
-
-What are the use cases? 
-
-What's the testing period?
-
-OK, the user has tested the functionality. What's then? What's for us in it?
-
-
-
-
-
-
-
-
-
-The _Premium Plan_ users now have the ability to create a **Hybrid Infrastructure** by adding external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
-
-Ankr can also support your specific use case to create a custom node cluster. You can then add an endpoint from this to your account.
-
-
-:::note Available to the Premium Plan users on request 
-
-
-If you are a Premium Plan subscriber and would like to add this feature, do the following:
-
-1. Checkout [**Ankr website**](https://www.ankr.com/)
-
-2. Click the **Help** icon
-
-3. Enter your ***name***, ***email address*** and then scroll down to the ***How can we help you*** field. 
-
-  Make your request and add your wallet address **"I want to enable Hybrid Infrastructure, my wallet address is** *YOUR_WALLET_ADDRESS*"
-  
-4. Click **Send** 
-
-We will respond ASAP.
+<iframe 
+  width="100%"
+  height="400px"
+  src="https://4f4a8balgjw.typeform.com/to/cdgNpeZC"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 
 :::
 
-Premium Plan (v2) users now have the ability to create a **Hybrid Infrastructure** by adding external RPC endpoints to their account e.g. Infura endpoint. These RPC endpoints serve as an additional resource for your own traffic ONLY. 
+## What's Hybrid Infrastructure?
 
-Ankr can also support your specific use case to create a custom node cluster. You can then add an endpoint from this to your account. 
+On request, a Premium user can be enabled to add either their own private nodes or use external providers' ones to interact with blockchains. In both instances, Ankr's load balancer would still be processing the requests, sending them to nodes, and sending the received responses back to the user. But the nodes the requests are sent to would be the ones from the private infrastructure of the user's choice (personal nodes or external providers' nodes). At the same time, Ankr's nodes would be used as a fallback option in case of any breakdown.
 
-## Key advantages
-		
-🌍 Move towards greater decentralization and away from the risk of a single-point-of-failure.
+This solution goes without PAYG charging for the responses received from the user's private infrastructure enabled.
 
-🏗 Added RPC endpoints are secure and private. There is no possibility of no data mining. 
+### How it works
 
-💳 You can utilize credit from other providers e.g. Infura or Alchemy to create new endpoints and multiple paths to nodes.  
+Upon receiving the user's request, the system employs the following algorithm to provide a response:
 
-💠 Add an endpoint from your own node. For example, a node configured for a specific purpose e.g. archive data, mainnet forking on your own machine.
+  1. **Response can be found in cache**. First, the system checks if the response is already available in the cache. If it's there, then the response is taken from cache and sent to the user, end of the story.
 
-## Requirements
+  2. **Response can't be found in cache**. In that case, the request is sent to the user's private infrastructure, and then the valid response is sent back to the user.
 
-### Functioning RPC Endpoints
-  - Only fully functioning RPC endpoints can be added.
-  - The end-user must test the endpoint via the UI prior to adding it. 
+  * The system checks if the user has a private node added to the infrastructure. All the nodes are being monitored, including private ones, therefore the system knows their performance readings. So, if the private node is available and live, it doesn't lag behind, and it could be regarded as reliable, then the load balancer sends the user's request to that node. If the load balancer receives a valid response from the private node, it sends that one straight to the user — end of the story.
 
-### Whitelisting
-  - Access must be restricted by whitelisting IPs/Referrer URLs
+  * If anything goes wrong, the system checks if the user has any more private nodes and if yes, the same story goes over with the next available private node. If the system is out of private nodes and still doesn't have a valid response, then it falls back to Ankr's infrastructure for sending requests.
 
-## How does it work?
+### Use case: free credits
 
-![Add endpoints](@site/static/img/add-own-endpoint.png)
+One of the legit cases for using Hybrid Infrastructure can be to shorten the PAYG charging. Ankr charges Premium users for each request they make. The only exception is the requests sent to the user's private infrastructure enabled. Assume the user has lots of API сredits with some external providers such as, for example, Alchemy or Infura. In that case, Hybrid Infrastructure can become a single comfortable point of access to use both Alchemy's and Infura's free requests capacity before starting to be charged real credits with Ankr. And moreover, if any of those requests fail on private infrastructure, you'll be backed up by Ankr's to fall back to.
 
-## Obtain additional endpoint
+But the Premium user seeking to cut their costs has to keep one thing in mind — the algorithm we use has been intended to reduce processing times, and the first thing in the course of action upon receiving any request is to check the cache for the response already stored in it and send this cached response to the user. And the response stored in the cache might have come from Ankr's nodes. In such a case, Hybrid Infrastructure won't give the user even a chance to send the request to the infrastructure of their choice, and therefore the PAYG charging will apply as usual.
 
-You can add an RPC endpoint from:
+Therefore, popular requests such as those of a block number, height, etc., would most likely be already cached.
 
-1. Other providers e.g. Infura, 
-2. Your own node running on your machine.
-3. A specially configured node cluster. (Contact sales@ankr.com to discuss your use case).
+On the other hand, if the Hybrid Infrastructure user makes some rare requests that haven't been sent before (no cached answers available), then the system will use their private infrastructure to process that request, meaning no charges will apply.
 
-## Add your endpoint
+### Use case: private nodes
 
-1. From [Ankr RPC](https://www.ankr.com/protocol/public/) select **Premium Plan**
+Assume the Premium user has a private high-spec top-performing node they'd like to use. The only drawback is that the node is prone to breaking down. And the user requires a backend, service, or application to be failure-proof and to work flawlessly.
 
-2. Select the Chain you want to add your endpoints to.
+This is precisely the case the Hybrid Infrastructure can become an excellent solution for. You just add your private node to the infrastructure, and if anything goes wrong on your side, the system redirects your request to Ankr's infrastructure. And as soon as you repair your private node, you'll be able to use it as before.
 
-3. Add your Endpoint to the '**My endpoints**' section and click '**+ Add Endpoint**'. 
-- Add further endpoint URLs as desired.
+## How to enable Hybrid Infrastructure
 
+Enabling of Hybrid Infrastructure is only performed manually. The first step is to fill in the request form at the top of this page. Thus, the Sales department will contact you shortly to discuss the kind of infrastructure you'd like to be able to use. The talk with Sales usually results in having the user data such as wallet address and user token and composing a list of items the infrastructure to include — a particular blockchain you're interested in, number of nodes, etc. This info goes to the Backend team that gives you access to add the infrastructure directly in the RPC Service interface.  
 
+The matter of principle for us is that we just provide the user with access to Hybrid Infrastructure, and then they act on their own — control the nodes, tackle the URLs, and so on. The user doesn't pass the URLs into Ankr explicitly, so we might presume that nobody knows those URLs until the user discloses that information.
 
-## Set up security
+## Adding private nodes
 
-:::tip
-To protect your endpoints from unauthorized usage, we request that you whitelist referring URLs and/or IP addresses. 
-:::
+Prerequisites:
 
-In the 'Security' section, 
+  * Having a Premium account ([connect your wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet)).
+  * Having your account balance [topped up](/build-blockchain/products/v2/ui-interactions/#top-up).
+  * Having the [Hybrid Infrastructure functionality](/build-blockchain/products/v2/hybrid-infra/#how-to-enable-hybrid-infrastructure) enabled.
 
-1. Add the website address URL for each referring website address in order to whitelist it as an allowed website.
+To add a private node, follow the steps:
 
-2. Add referring IP addresses to whitelist them as allowed. 
+  1. Go to [Ankr RPC](https://www.ankr.com/rpc/) service.
+  2. In **Sidebar**, click **Endpoints** to open the corresponding pane.
+  3. In the list of blockchain networks, click the one you have the Hybrid Infrastructure functionality enabled for.
+  4. On the **Infrastructure** tab, in **My Endpoints** block, click **Add Endpoint** (+), enter the address of your node, and then click finish.
 
-
-
-
-
-
+![Add private node](@site/static/img/hybrid-add-node.png)
