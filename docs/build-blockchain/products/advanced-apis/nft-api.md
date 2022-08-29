@@ -20,7 +20,7 @@ Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specifi
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `walletAddress` (string; required): an account address to query for NFTs.
+  * `walletAddress` (string; required): an account address to query for NFTs; supports the Ethereum Name Service (ENS).
   * `blockchain` (string): a chain or a combination of chains to query:
      * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
      * Chains combination: `[eth, polygon, bsc]`.
@@ -43,6 +43,19 @@ import TabItem from '@theme/TabItem';
     "method": "ankr_getNFTsByOwner",
     "params": {
         "blockchain": "eth",
+        "filter": [
+        {
+          "additionalProp1": [
+            "string"
+          ],
+          "additionalProp2": [
+            "string"
+          ],
+          "additionalProp3": [
+            "string"
+          ]
+        }
+    ],
         "walletAddress": "0x40a8396b83f84e8380f5fee85cd746fe14cb7330",
         "pageSize": 1,
         "pageToken": ""
@@ -75,7 +88,7 @@ A successful response contains the following parameters:
 
   * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
   * `collectionName` (string): a collection name the NFT asset belongs to.
-  * `contractAddress` (string): an NFT collection's EVM-compatible contract address.
+  * `contractAddress` (string): an NFT collection's EVM-compatible contract address; supports the Ethereum Name Service (ENS).
   * `contractType` (int32): a type of the contract — either ERC721 or ERC1155.
   * `name` (string): a name of the NFT asset.
   * `tokenId` (string): an ID of the NFT asset.
@@ -311,7 +324,7 @@ Gets NFT metadata (ERC721/ERC1155/ENS/POAP) associated with a specific NFT. A re
 * `params` (object): the data object containing request body parameters.
 
   * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
-  * `contractAddress` (string): a contract address of the NFT the metadata belongs to.
+  * `contractAddress` (string): a contract address of the NFT the metadata belongs to; supports the Ethereum Name Service (ENS).
   * `tokenId` (integer): a token ID of the NFT the metadata belongs to.
 
 <Tabs>
@@ -352,7 +365,7 @@ A successful request returns, along with the general parameters, the `result` ob
 
   * `metadata` (object): the data object containing the NFT metadata:
     * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
-    * `contractAddress` (string): a contract address of the NFT Collection.
+    * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
     * `contractType` (string): a contract type of the NFT the metadata belongs to (example: ERC721, ERC1155).
     * `tokenId` (string): a token ID of the NFT the metadata belongs to (example: 7822).
 
@@ -497,7 +510,7 @@ Gets holders of the NFT specified by request body parameters.
 * `params` (object): the data object containing request body parameters.
 
   * `blockchain` (string; required): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
-  * `contractAddress` (string): a contract address of the NFT Collection.
+  * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (integer): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
@@ -512,7 +525,7 @@ Gets holders of the NFT specified by request body parameters.
         "blockchain": "arbitrum",
         "contractAddress": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
         "pageSize": 10000,
-        "pageToken": ""
+        "pageToken": "string"
     },
     "id": 1
 }
@@ -539,7 +552,7 @@ A successful request returns a list of holders for the NFT specified.
 * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
 * `result` (object): the data object containing a holder of the NFT specified by request parameters:
   * `holder` (string): a list of holders.
-  * `nextPageToken` (string): ???
+  * `nextPageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
 ### Code Examples
 
