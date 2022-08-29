@@ -1,0 +1,9 @@
+{
+  "bnb-sidechain-architecture-overview": "Overview",
+  "bnb-sidechain-architecture-circ-model-native-bridge": "Circulation Model and Native Asset Bridge",
+  "bnb-sidechain-architecture-native-bridge": "Native Asset Bridge",
+  "bnb-sidechain-architecture-fast-finality": "Fast-Finality and BLS Cryptography\n",
+  "bnb-sidechain-architecture-system-smart-contracts": "System Smart Contracts",
+  "bnb-sidechain-architecture-governance": "Governance",
+  "bnb-sidechain-architecture-runtime-upgrades": "Runtime Upgrades"
+}

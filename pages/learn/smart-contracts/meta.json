@@ -1,0 +1,10 @@
+{
+  "Deploy-ERC-721-SmartContract-Avalanche":"Deploy an ERC-721 Smart Contract to Avalanche and Mint an NFT with Ankr, Hardhat, and Ethers.js",
+  "Polygon-NFT-ERC-721-Solidity-Smart-Contract-Ankr": "How to Deploy Your First Polygon NFT with an ERC-721 Solidity Smart Contract and Ankr",
+  "ERC-20-token-Ankr-Hardhat-ETH-Goerli-Testnet": "How to deploy your own ERC-20 token with Ankr & Hardhat on ETH Goerli Testnet",
+
+  "Deploy-Mint-CryptoKitties-Like-NFT-ERC-721-Smart-Contract":"Deploy and Mint a CryptoKitties-Like NFT with ERC-721 Smart Contract",
+  "Deploy-Your-Own-ERC20-Token-On-Optimism": "How To Build An ERC-20 token On Optimism's Lightning-Fast Ethereum L2 Blockchain",
+  "how-to-create-a-soulbound-token": "A Step-by-step Guide to Creating and Deploying a Soulbound NFT Smart Contract",
+  "Rentable-NFT-Smart-Contract-On-Optimism": "Learn How To Build Lendable ERC721 NFTs And Deploy Them On Optimism L2"
+}
