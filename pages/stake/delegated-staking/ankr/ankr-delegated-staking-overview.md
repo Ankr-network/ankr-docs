@@ -7,7 +7,7 @@ In the [Ankr 2.0 whitepaper](https://www.ankr.com/ankr-whitepaper-2.0.pdf), we i
 The first step to making this vision a reality is the introduction of a market mechanism (staking) that will bring developers, node providers and Ankr ecosystem supporters together to solidify the foundational building blocks of Ankr Network’s decentralized node marketplace. 
 Afterall, to build a truly decentralized Web3 protocol, “tokens must be more valuable to network participants than they are to purely financial holders.”  
 
-<img src="/delegated-staking/ankr-staking-in-ankr-infra.png" alt="ANKR Staking brings peace to Ankr Infrastructure" class="responsive-pic" width="800" />
+<img src="/docs/delegated-staking/ankr-staking-in-ankr-infra.png" alt="ANKR Staking brings peace to Ankr Infrastructure" class="responsive-pic" width="800" />
 Our product team is releasing a reimagined vision of Ankr Network – our global network of nodes running on 18+ different blockchains. 
 This vision for Ankr Network 2.0 brings together our ecosystem of developers, node providers (Node Pros), and stakers (Ankr Bankrs) in a way that will offer everyone involved with Ankr a more rewarding experience — with ANKR token utility at its very heart.
 
@@ -15,6 +15,8 @@ This vision for Ankr Network 2.0 brings together our ecosystem of developers, no
 ANKR token staking is similar to the idea of staking to help secure PoS networks. 
 However, instead of delegating ANKR to validator nodes, ANKR token staking introduces the ability for anyone to stake to full nodes for the first time ever. 
 Now, anyone can earn ANKR rewards and become an “_Ankr Bankr_” by staking their tokens with the independent full nodes running on our new decentralized Network.
+
+<iframe width="600" height="400" src="https://www.youtube.com/embed/4Qt0_TS6PKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Why is ANKR token staking needed?
 The Ankr Network depends on reliable, high-quality node providers to serve RPC requests on supported blockchains. 
