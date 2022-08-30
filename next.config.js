@@ -10,6 +10,7 @@ module.exports = withNextra({
     path: '',
   },
   basePath: '/docs',
+  trailingSlash: true,
 });
 
 /* example of how to set up redirects
