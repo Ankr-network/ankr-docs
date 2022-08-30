@@ -21,7 +21,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: egordm/gha-yarn-node-cache@v1
       - uses: nelonoel/branch-name@v1.0.1
 
       - name: Prevent wrong version releasing
@@ -48,6 +47,7 @@ jobs:
       - name: Build
         working-directory: .
         run: |
+          pnpm install
           pnpm build
 
       - name: Set AWS credentials
