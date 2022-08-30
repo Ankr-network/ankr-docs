@@ -9,6 +9,7 @@ module.exports = withNextra({
     loader: 'akamai',
     path: '',
   },
+  basePath: '/docs',
 });
 
 /* example of how to set up redirects
