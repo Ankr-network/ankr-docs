@@ -9,7 +9,7 @@ Returns newly created Contract wrapper, using the provided address and ABI.
 
 <Callout>
 You have to provide everything listed under your contract definition's `abi` section.
-<img src="/interfaces-note.png" alt="abi section" class="responsive-pic" width="190" />
+<img src="/docs/interfaces-note.png" alt="abi section" class="responsive-pic" width="190" />
 </Callout>
 
 ### `IEthHandler Eth { get; }`

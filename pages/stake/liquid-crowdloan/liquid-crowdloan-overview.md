@@ -27,7 +27,7 @@ Estimate the fair value of Parachain Liquid Crowdloan tokens and buy below your 
 
 ### **How Parachain Liquid Crowdloan works**
 
-<img src="/dotksm-plc.png" alt="Parachain Crowdloan" class="responsive-pic" width="600" />
+<img src="/docs/dotksm-plc.png" alt="Parachain Crowdloan" class="responsive-pic" width="600" />
 
 1. Contribute DOT or KSM to your preferred project that is currently running a Polkadot or Kusama Parachain crowdloan to participate in the **Parachain Slot auction**.
 

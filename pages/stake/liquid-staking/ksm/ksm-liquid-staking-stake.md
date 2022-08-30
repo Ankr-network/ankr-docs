@@ -18,7 +18,7 @@ You have a MetaMask wallet.
 
 2. Click **Add to Chrome**.
 
-<img src="/install-polka.png" alt="Install Polkadot.js wallet" class="responsive-pic" width="600" />
+<img src="/docs/install-polka.png" alt="Install Polkadot.js wallet" class="responsive-pic" width="600" />
 
 3. Ensure you follow master seed best practices and back up your master seed SECURELY offline.
 4. Generate a secure password and create your wallet.
@@ -38,7 +38,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 * Select the **Polkadot** network.
 * Click **Switch** to change to it (if required).
 
-<img src="/switch-polkadot.png" alt="Switch to Polkadot wallet" class="responsive-pic" width="600" />
+<img src="/docs/switch-polkadot.png" alt="Switch to Polkadot wallet" class="responsive-pic" width="600" />
 
 3. You can then view your balance and/or make a transfer if required.
 
