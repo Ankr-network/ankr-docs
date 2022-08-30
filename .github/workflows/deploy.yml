@@ -10,10 +10,10 @@ on:
         options:
 #          - STAGE # www-stage.ankr.com/docs/
 #          - PROD # www.ankr.com/docs/
-          - BS5 # bs-5-stage.dccn.ankr.com/docs/
-          - BS6 # bs-6-stage.dccn.ankr.com/docs/
-          - BS7 # bs-7-stage.dccn.ankr.com/docs/
-          - BS8 # bs-8-stage.dccn.ankr.com/docs/
+          - BS1 # bs-1-stage.dccn.ankr.com/docs/
+          - BS2 # bs-2-stage.dccn.ankr.com/docs/
+          - BS3 # bs-3-stage.dccn.ankr.com/docs/
+          - BS4 # bs-4-stage.dccn.ankr.com/docs/
 
 jobs:
   deploy:
