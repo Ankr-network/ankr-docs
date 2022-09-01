@@ -14,8 +14,11 @@ id: overview
 * aETHb is a reward-earning token, meaning that rewards from Ethereum staking will be distributed daily through rebasing and aETHb holders' balance in their wallet will increase on a daily basis.
  
 :::caution Unstaking restrictions!
+Currently, unstaking is not available, as this functionality is not yet supported by Ethereum.
 
-It is not possible to unstake ETH until the Ethereum network reaches phase 1.5 of its transition from Proof-of-Work to Proof-of-Stake. Phase 1.5 is expected in 2022, but the exact date is still unknown.
+Unstaking will be enabled after in the Shanghai upgrade that will follow The Merge in 6-12 months. 
+
+Overall, it looks like Shanghai is going to come in ~Q2/Q3 2023.
 :::
 
 ## Audit details
