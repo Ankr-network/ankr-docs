@@ -224,6 +224,30 @@ Lets the `PolygonPool` to exchange aMATICc for MATIC.
 * [Mainnet live transaction example](https://etherscan.io/tx/0x791b2587ac40bd9a41a38f45a92a328966dbbc1acb958500307dd0eea74b918a)
 * [Mainnet live transaction example](https://goerli.etherscan.io/tx/0x39ca83209a1636a5b803853a38a7294bcf209032f947684064d5034aaaf68b14)
 
-## Get staking metrics
+### Get APR
+
+#### `averagePercentageRate(uint256 day)`
+
+Gets the APR for aMATICb or aMATICc. 
+
+The formula is best expressed by an example. 
+
+With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + ((day 2 - day 1) / day 2) * 100) + ((day 1 - current day) / day 1) * 100) / 3) * 365`.
+
+##### Parameters
+
+* `day` (uint256, required) — number of days to get the APR for. Max value — 7 days.
+* `address` (address, required) — address of the token contract to determine which token to get the APR for. Possible values: [aMATICb](0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe) or [aMATICc](0x26dcfbfa8bc267b250432c01c982eaf81cc5480c).
+
+##### Smart contract
+
+* [Mainnet APR contract](https://polygonscan.com/address/0xEf3C162450E1d08804493aA27BE60CDAa054050F)
+
+##### Example
+
+`averagePercentageRate` being a read function, we suggest you visit the links and make a query entering a desired number of days to see an example. 
+* [Mainnet function address](https://polygonscan.com/readContract?m=normal&a=0xEf3C162450E1d08804493aA27BE60CDAa054050F&v=0xb902b8024cab7a17500d9dbab77a4c060d5c10f2&t=false#readCollapse1)
+
+### Get staking metrics
 
 To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
