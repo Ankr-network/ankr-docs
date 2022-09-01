@@ -8,9 +8,15 @@ id: faq
 Check the [Stake MATIC](https://www.ankr.com/docs/staking/liquid-staking/matic/stake-matic) user guide.
 
 
-### What is the minimum amount of MATIC I can stake?
- 
-1 MATIC.
+### What is the minimum and maximum amount of MATIC I can stake?
+
+Minimum amount: 
+* Staking MATIC on Ethereum, your minimum amount is 1 MATIC.
+* Staking MATIC on Polygon, there is no minimum amount.
+
+Maximum amount:
+* Staking MATIC on Ethereum, there is no maximum amount.
+* Staking MATIC on Ethereum, your maximum amount is limited by the crosschain staking pool capacity. You will see the capacity while staking.
 
 
 ### Is there a maximum amount I can stake?
