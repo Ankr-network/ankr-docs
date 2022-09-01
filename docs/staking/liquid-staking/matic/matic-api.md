@@ -237,7 +237,7 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 ##### Parameters
 
 * `day` (uint256, required) — number of days to get the APR for. Max value — 7 days.
-* `address` (address, required) — address of the token contract to determine which token to get the APR for. Possible values: [aMATICb](0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe) or [aMATICc](0x26dcfbfa8bc267b250432c01c982eaf81cc5480c).
+* `address` (address, required) — address of the token contract to determine which token to get the APR for. Possible values: aMATICb — 0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe, aMATICc — 0x26dcfbfa8bc267b250432c01c982eaf81cc5480c.
 
 ##### Smart contract
 
