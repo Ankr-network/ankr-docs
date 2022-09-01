@@ -7,7 +7,7 @@ id: unstake-eth
 
 Currently, unstaking is not available, as this functionality is not yet supported by Ethereum.
 
-Unstaking will be enabled after in the Shanghai upgrade that will follow The Merge in 6-12 months. 
+Unstaking will be enabled after in the [Shanghai upgrade that will follow The Merge in 6-12 months](https://ethereum.org/en/upgrades/merge/#misconceptions). 
 
 Overall, it looks like Shanghai is going to come in ~Q2/Q3 2023.
 
