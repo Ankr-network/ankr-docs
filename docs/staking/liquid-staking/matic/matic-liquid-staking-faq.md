@@ -18,11 +18,6 @@ Maximum amount:
 * Staking MATIC on Ethereum, there is no maximum amount.
 * Staking MATIC on Ethereum, your maximum amount is limited by the crosschain staking pool capacity. You will see the capacity while staking.
 
-
-### Is there a maximum amount I can stake?
-
-No, you can stake at your discretion, unlimited.  
-
 ### What is the difference between MATIC staking on Ethereum and Polygon?
 
 MATIC staking happens on Ethereum. You can stake/unstake any MATIC amount at once. 
