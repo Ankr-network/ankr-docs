@@ -28,7 +28,7 @@ id: stake-eth
 :::note
 Make sure you have enough ETH to cover the gas fees for you transactions.
 
-Also, remember that Ethereum currently doesn't support unstaking. You will only be able to unstake with the Shanghai upgrade which is planned for ~Q2/Q3 2023.
+Also, remember that Ethereum currently doesn't support unstaking. You will only be able to unstake with the [Shanghai upgrade](https://ethereum.org/en/upgrades/merge/#misconceptions) which is planned for ~Q2/Q3 2023.
 :::
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 
