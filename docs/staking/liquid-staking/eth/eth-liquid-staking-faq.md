@@ -25,7 +25,11 @@ No, you can stake at your discretion, unlimited. You should know that currently 
 
 ### When can I unstake?
 
-There is no unstaking mechanism for ETH right now. We're all waiting for Ethereum 2.0 to implement it. 
+Currently, unstaking is not available, as this functionality is not yet supported by Ethereum.
+
+Unstaking will be enabled after in the Shanghai upgrade that will follow The Merge in 6-12 months. 
+
+Overall, it looks like Shanghai is going to come in ~Q2/Q3 2023.
 
 
 ### How long does it take to unstake my ETH?
