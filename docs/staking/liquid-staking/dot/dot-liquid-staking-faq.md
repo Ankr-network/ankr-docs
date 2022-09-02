@@ -8,7 +8,7 @@ id: faq
 aDOTb is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
 
 
-### Are there any docs about the KSM staking and how I set up my wallet etc.?
+### Are there any docs about the DOT staking and how I set up my wallet etc.?
 
 Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking/dot/stake-dot).
 
