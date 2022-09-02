@@ -14,6 +14,7 @@ module.exports = withNextra({
   trailingSlash: true,
   // Use the CDN in production and localhost for development.
   assetPrefix: isProd ? 'https://bs-1-stage.dccn.ankr.com/docs/' : undefined,
+  basePath: '/docs',
 });
 
 /* example of how to set up redirects
