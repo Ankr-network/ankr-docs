@@ -48,7 +48,7 @@ Instead, it appreciates in value, as the redemption ratio grows because of rewar
 ### How soon after staking will I begin to receive rewards?
 
 aBNBb will increase in number with every rebase; rebasing occurs daily. 
-aBNBc rewards are built into the token. Effectively, your rewards accumulate daily as aMATICc grows in value to BNB.
+aBNBc rewards are built into the token. Effectively, your rewards accumulate daily as aBNBc grows in value to BNB.
 
 
 ### Does Ankr charge for the service?
