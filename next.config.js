@@ -1,4 +1,4 @@
-const isProd = process.env.NODE_ENV === 'production'
+//const isProd = process.env.NODE_ENV === 'production'
 
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
@@ -12,8 +12,7 @@ module.exports = withNextra({
     path: '',
   },
   trailingSlash: true,
-  // Use the CDN in production and localhost for development.
-  assetPrefix: isProd ? 'https://bs-1-stage.dccn.ankr.com/docs/' : undefined,
+//  assetPrefix: isProd ? 'https://bs-1-stage.dccn.ankr.com/docs/' : undefined,
   basePath: '/docs',
 });
 
