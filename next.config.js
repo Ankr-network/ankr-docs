@@ -9,7 +9,6 @@ module.exports = withNextra({
     loader: 'akamai',
     path: '',
   },
-  basePath: '/docs',
   trailingSlash: true,
 });
 
