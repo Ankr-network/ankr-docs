@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.js",
@@ -10,6 +12,8 @@ module.exports = withNextra({
     path: '',
   },
   trailingSlash: true,
+  // Use the CDN in production and localhost for development.
+  assetPrefix: isProd ? 'https://bs-1-stage.dccn.ankr.com/docs/' : undefined,
 });
 
 /* example of how to set up redirects
