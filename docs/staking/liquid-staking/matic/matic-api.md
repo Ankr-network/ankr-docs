@@ -121,8 +121,8 @@ Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay f
 
 ##### Example
 
+* [Mainnet live transaction example](https://etherscan.io/tx/0x508295e74e3b5480373f6611fbb7a98b65f3fd80d4671d771898e924dcd3df75)
 * [Testnet live transaction example](https://goerli.etherscan.io/tx/0x6ab2ce2f6cec6344fd707aeb1e49811a4f88a60cc790c62c3b87a3e4a1722356)
-* [Testnet live transaction example](https://etherscan.io/tx/0x508295e74e3b5480373f6611fbb7a98b65f3fd80d4671d771898e924dcd3df75)
 
 #### `unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes signature)`
 
@@ -181,8 +181,8 @@ Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay f
 
 ##### Example
 
+* [Mainnet live transaction example](https://etherscan.io/tx/0x508295e74e3b5480373f6611fbb7a98b65f3fd80d4671d771898e924dcd3df75)
 * [Testnet live transaction example](https://goerli.etherscan.io/tx/0x6ab2ce2f6cec6344fd707aeb1e49811a4f88a60cc790c62c3b87a3e4a1722356)
-* [Testnet live transaction example](https://etherscan.io/tx/0x508295e74e3b5480373f6611fbb7a98b65f3fd80d4671d771898e924dcd3df75)
 
 
 #### `approve(spender, amount)`
@@ -222,7 +222,7 @@ Lets the `PolygonPool` to exchange aMATICc for MATIC.
 ##### Example
 
 * [Mainnet live transaction example](https://etherscan.io/tx/0x791b2587ac40bd9a41a38f45a92a328966dbbc1acb958500307dd0eea74b918a)
-* [Mainnet live transaction example](https://goerli.etherscan.io/tx/0x39ca83209a1636a5b803853a38a7294bcf209032f947684064d5034aaaf68b14)
+* [Testnet live transaction example](https://goerli.etherscan.io/tx/0x39ca83209a1636a5b803853a38a7294bcf209032f947684064d5034aaaf68b14)
 
 ### Get APR
 
