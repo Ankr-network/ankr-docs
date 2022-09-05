@@ -28,7 +28,7 @@ export default {
     const { route } = useRouter();
 
     const ogImage =
-      meta.image || meta.description
+      meta?.image || meta?.description || '';
 
     return (
       <>
@@ -38,14 +38,14 @@ export default {
         <meta
           name="description"
           content={
-            meta.description ||
+            meta?.description ||
             "Ankr is a leading Web3 Infrastructure Company."
           }
         />
         <meta
           name="og:description"
           content={
-            meta.description ||
+            meta?.description ||
             "Ankr is a leading Web3 Infrastructure Company."
           }
         />
