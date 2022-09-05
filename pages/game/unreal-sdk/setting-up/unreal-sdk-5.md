@@ -17,7 +17,7 @@ The following instructions are based on Monterey v12.3.1.
 
 2. Click **Library** and the **+** button to add the **v5** version
 
-   <img src="/unreal-v5.png" alt="blank" class="responsive-pic" width="600" />
+   <img src="/docs/unreal-v5.png" alt="blank" class="responsive-pic" width="600" />
 
    <Callout type="warning" emoji="❗">
    If you find that the + button is greyed out, then do the following:
@@ -26,7 +26,7 @@ The following instructions are based on Monterey v12.3.1.
 
    b. Then from the **login box**, scroll to the bottom and click **Sign in Later**.
 
-   <img src="/game-mac-1.0.png" alt="blank" class="responsive-pic" width="200" />
+   <img src="/docs/game-mac-1.0.png" alt="blank" class="responsive-pic" width="200" />
 
    c. Inside **Epic Games Launcher**, select **Library** > **+** > **v5**
 
@@ -42,14 +42,14 @@ The following instructions are based on Monterey v12.3.1.
    "Do you want the app **UnrealEditor.app** to accept incoming network connections"
    Select **Allow**
 
-   <img src="/game-mac-1.png" alt="blank" class="responsive-pic" width="200" />
+   <img src="/docs/game-mac-1.png" alt="blank" class="responsive-pic" width="200" />
    </Callout>
 
 ## STEP TWO - Create a new project
 
 1. Inside the **Unreal Project Browser**, select the **Games** tab and **Blank**
 
-   <img src="/game-mac-2.0.png" alt="blank" class="responsive-pic" width="600" />
+   <img src="/docs/game-mac-2.0.png" alt="blank" class="responsive-pic" width="600" />
 
 2. Under **Project Defaults**, select **C++**
 
@@ -59,7 +59,7 @@ The following instructions are based on Monterey v12.3.1.
 
 5. Check if your project is successfully created and opens. Then close it. Now we can do the next important step of adding the SDK. 
 
-   <img src="/game-mac-2.png" alt="create folder" class="responsive-pic" width="350" />
+   <img src="/docs/game-mac-2.png" alt="create folder" class="responsive-pic" width="350" />
 
 ## STEP THREE - Download Ankr SDK
 
@@ -71,7 +71,7 @@ The following instructions are based on Monterey v12.3.1.
 
 4. Delete the **AnkrSDK.zip** file (if it is inside the **Plugins folder**). 
 
-<img src="/game-mac-3.png" alt="create folder" class="responsive-pic" width="400" />
+<img src="/docs/game-mac-3.png" alt="create folder" class="responsive-pic" width="400" />
 
 
 ## STEP FOUR - Generate the Xcode project
@@ -96,7 +96,7 @@ These docs are written using Xcode 13.1
 
 2. Expand **Games > your_unreal_project__name > Source > your_unreal_project_name > your_unreal_project_name.Build.cs** 
 
-   <img src="/game-mac-5.png" alt="Xcode" class="responsive-pic" width="600" />
+   <img src="/docs/game-mac-5.png" alt="Xcode" class="responsive-pic" width="600" />
 
   * Add `"AnkrSDK"` at the end of the string array as shown below: 
 
