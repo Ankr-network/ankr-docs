@@ -48,6 +48,7 @@ jobs:
         working-directory: .
         run: |
           pnpm install
+          cp -f temp/nextra-theme-docs/dist/index.js node_modules/nextra-theme-docs/dist/index.js
           pnpm build
 
       - name: Set AWS credentials
