@@ -1,8 +1,8 @@
 # Token API Methods
 
-## `ankr_getAccountBalance`
+## `ankr_getAccountBalances`
 
-Gets balance of the account specified by request body parameters.
+Gets all the balance data of the account specified by request body parameters.
 
 ### Request
 
@@ -19,7 +19,7 @@ Gets balance of the account specified by request body parameters.
     * All chains: leave the value empty to query all the chains available.
   * `pageSize` (int32): a number of results you'd like to get.
   * `pageToken` (string): The token is provided at the end of the response body and can be referenced in the request to fetch the next page.
-  * `walletAddress` (string): an account address to query for balance.
+  * `walletAddress` (string): an account address to query for balance; supports the Ethereum Name Service (ENS).
 
 <Nextra.Tabs
   items={[
@@ -32,7 +32,7 @@ Gets balance of the account specified by request body parameters.
     {
   "id": 1,
   "jsonrpc": "2.0",
-  "method": "ankr_getAccountBalance",
+  "method": "ankr_getAccountBalances",
   "params": {
     "blockchain": [
       "string"
@@ -54,7 +54,7 @@ Gets balance of the account specified by request body parameters.
 
 ### Response
 
-Returns a balance for the account specified in request body parameters.
+Returns all the balance data for the account specified in request body parameters.
 
 #### Parameters
 
@@ -67,10 +67,10 @@ See the response parameters' data model in Swagger.
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: 22e282df02e47a6dc906c48db9830304e93e9f12bb74a179152c747c01d4e7b7' \
+--header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
-    "method": "ankr_getAccountBalance",
+    "method": "ankr_getAccountBalances",
     "params": {
         "blockchain": "eth",
         "walletAddress": "0xfa9019df60d3c710d7d583b2d69e18d412257617"
@@ -391,7 +391,7 @@ Gets the price of the token specified by request body parameters.
 * `params` (object): the data object containing request body parameters:
 
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
-  * `contractAddress` (string): a contract address of the tokens collection.
+  * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
 
 <Nextra.Tabs
   items={[
@@ -502,7 +502,7 @@ Gets holders and the associated metadata for the tokens specified by request bod
 * `params` (object): the data object containing request body parameters:
 
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
-  * `contractAddress` (string): a contract address of the tokens collection.
+  * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (string): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
@@ -549,7 +549,7 @@ See the response parameters' data model in Swagger.
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}} \
+--header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getTokenHolders",
@@ -645,7 +645,7 @@ Gets the number of holders for the tokens specified by request body parameters.
 * `params` (object): the data object containing request body parameters:
 
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
-  * `contractAddress` (string): a contract address of the tokens collection.
+  * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (string): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
@@ -689,7 +689,7 @@ See the response parameters' data model in Swagger.
 #### Request
 
 ```shell
-curl --location -g --request POST '{{URL}}' \
+curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
 --header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
