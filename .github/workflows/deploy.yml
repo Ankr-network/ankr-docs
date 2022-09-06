@@ -51,6 +51,26 @@ jobs:
           cp -f patch/nextra-theme-docs/dist/index.js node_modules/nextra-theme-docs/dist/index.js
           pnpm build
 
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+          repository: Ankr-network/ankr-web
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: ankr-web
+
+      - name: Install dependencies and build doc sdk
+        run: |
+          yarn install --cwd ankr-web/packages/staking-sdk
+          cd  ankr-web/packages/staking-sdk
+          yarn docs
+
+      - name: Copy build
+        run: |
+          cd build/staking/
+          mkdir sdk
+          cd ../../
+          mv ankr-web/packages/staking-sdk/docs/*  out/stake/for-integrators/sdk/liquid-staking/reference
+
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
