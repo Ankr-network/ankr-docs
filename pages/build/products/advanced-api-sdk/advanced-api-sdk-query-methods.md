@@ -31,21 +31,16 @@ Gets full information for the block specified by request parameters.
   ]}
 >   
   <Nextra.Tab>
-```json
+```
 {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ankr_getBlocks",
-  "params": {
-    "blockchain": "string",
-    "decodeLogs": true,
-    "decodeTxData": true,
-    "descOrder": true,
-    "fromBlock": 0,
-    "includeLogs": true,
-    "includeTxs": true,
-    "toBlock": 0
-  }
+    "jsonrpc": "2.0",
+    "method": "ankr_getBlocksRange",
+    "params": {
+        "blockchain": "bsc",
+        "fromBlock": 9509443,
+        "toBlock": 9509444
+    },
+    "id": 1
 }
 ```
   </Nextra.Tab>
@@ -66,25 +61,18 @@ See the response parameters' data model in Swagger.
 
 #### Request
 
-```sh
-curl -X 'POST' \
-  'https://rpc.ankr.com/multichain' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ankr_getBlocks",
-  "params": {
-    "blockchain": "string",
-    "decodeLogs": true,
-    "decodeTxData": true,
-    "descOrder": true,
-    "fromBlock": 9509443,
-    "includeLogs": true,
-    "includeTxs": true,
-    "toBlock": 9509444
-  }
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getBlocksRange",
+    "params": {
+        "blockchain": "bsc",
+        "fromBlock": 9509443,
+        "toBlock": 9509444
+    },
+    "id": 1
 }'
 ```
 
@@ -290,7 +278,7 @@ See the response parameters' data model in Swagger.
 
 #### Request
 
-```sh
+```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -483,8 +471,8 @@ See the response parameters' data model in Swagger.
 
 #### Request
 
-```sh
-curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+```shell
+curl --location -g --request POST '{{URL}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",

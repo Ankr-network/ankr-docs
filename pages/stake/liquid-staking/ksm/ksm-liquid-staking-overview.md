@@ -50,10 +50,10 @@ Our Kusama Liquid Staking will not be using only Ankr validator nodes to stake t
 
 Staking with Kusama Liquid Staking allows you to play an important role in boosting the network’s security as a whole. Ankr’s Kusama staking system distributes staked tokens intelligently across the Kusama ecosystem to help the network achieve optimal decentralization. Diversity and decentralization of active validators both ensure the network remains as secure as possible.
 
-Ankr Staking offers instant liquidity for your staked KSM, enabling you to connect your tokens with DeFi and create an opportunity to earn several other layers of rewards.
+Ankr Staking offers instant liquidity for your staked DOT, enabling you to connect your tokens with DeFi and create an opportunity to earn several other layers of rewards.
 
 ## How does it Work?
 Stake a minimum of 1 KSM and Ankr stakes your KSM tokens with validator nodes we’ve selected.
 Instant Liquidity!!! We return an equivalent amount of aKSMb tokens to you. These are reward earning tokens that distribute staking rewards to your wallet on a daily basis. You can watch the aKSMb balance in your wallet automatically increase everyday.
-You can use your aKSMb to generate further yield by liquidity mining, lending, and/or other strategies on DeFi platforms such as:
+You can use your aDOTb to generate further yield by liquidity mining, lending, and/or other strategies on DeFi platforms such as:
 OnX, Uniswap, Compound.

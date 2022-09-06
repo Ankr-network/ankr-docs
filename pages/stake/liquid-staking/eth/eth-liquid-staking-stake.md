@@ -5,7 +5,7 @@ import Callout from "nextra-theme-docs/callout";
 ## Connect your wallet
 
 <Callout type="warning" emoji="❗">
-Be sure to select the ‘Ethereum Mainnet’ network in your wallet. Otherwise you get an error message.
+**BE SURE to select the ‘Ethereum Mainnet’ network in your wallet. Otherwise you get an error message.**
 </Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu.
@@ -21,9 +21,7 @@ Be sure to select the ‘Ethereum Mainnet’ network in your wallet. Otherwise y
 ## Stake your ETH
 
 <Callout>
-Ensure you have enough ETH to cover gas fees.
-
-Also, remember that Ethereum currently doesn't support unstaking. You will only be able to unstake with the [Shanghai upgrade](https://ethereum.org/en/upgrades/merge/#misconceptions) which is planned for ~Q2/Q3 2023.
+**BE SURE: to allow sufficient ETH to cover gas fees.**
 </Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 

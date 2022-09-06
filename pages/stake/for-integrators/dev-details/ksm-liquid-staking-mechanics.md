@@ -167,7 +167,7 @@ To update the ratio, the Ankr backend:
 
 3. Collects information about the total supply of aKSMb from `aKSMb`.
 
-4. Recalculates the aKSMb share — the aKSMb exchange ratio. The share is an analog of aETHc (which historically was aETH), but for Kusama. For example, user has 1 share, but due to ratio change, aKSMb balance grows daily.
+4. Recalculates the aKSMb share — the aDOTb exchange ratio. The share is an analog of aETHc (which historically was aETH), but for Kusama. For example, user has 1 share, but due to ratio change, aKSMb balance grows daily.
 
 ## Unstaking flow
 

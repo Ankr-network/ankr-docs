@@ -107,6 +107,7 @@ Unstakes aBNBb and gets BNB for the unstaked aBNBb.
 * [Mainnet BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118)
 * [Testnet BinancePool Proxy](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
 
+
 ##### Example
 
 * [Mainnet live transaction example](https://bscscan.com/tx/0x48d6af59108c53707fd21fbd15c216a523ed6da2dd1f573e433f985ca82c65dc)
@@ -178,9 +179,10 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 * [Mainnet function address](https://bscscan.com/readContract?m=normal&a=0xbb1aa6e59e5163d8722a122cd66eba614b59df0d&v=0xc6c4e1ca42904efce3bec150329ff637ff2b0fea#readCollapse2)
 * [Testnet function address](https://testnet.bscscan.com/readContract?m=normal&a=0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE&v=0xe94147b33a757fdf8a878bfd80562b08c954f6f9#readCollapse2)
 
+
 ### Get staking metrics
 
-To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](/stake/for-integrators/restful-api/staking-metrics/).
+To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](../restful-api/staking-metrics).
 
 
 
