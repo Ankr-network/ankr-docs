@@ -60,4 +60,4 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 ### Can I get staking metrics for my integration?
 
-Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](/stake/for-integrators/restful-api/staking-metrics/).

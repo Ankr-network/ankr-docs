@@ -73,4 +73,4 @@ You can also use your Liquid Staking tokens to:
 
 ### Can I get staking metrics for my integration?
 
-Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](/stake/for-integrators/restful-api/staking-metrics/).

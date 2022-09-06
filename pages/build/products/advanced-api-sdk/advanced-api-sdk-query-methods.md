@@ -31,16 +31,21 @@ Gets full information for the block specified by request parameters.
   ]}
 >   
   <Nextra.Tab>
-```
+```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getBlocksRange",
-    "params": {
-        "blockchain": "bsc",
-        "fromBlock": 9509443,
-        "toBlock": 9509444
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getBlocks",
+  "params": {
+    "blockchain": "string",
+    "decodeLogs": true,
+    "decodeTxData": true,
+    "descOrder": true,
+    "fromBlock": 0,
+    "includeLogs": true,
+    "includeTxs": true,
+    "toBlock": 0
+  }
 }
 ```
   </Nextra.Tab>
@@ -61,18 +66,25 @@ See the response parameters' data model in Swagger.
 
 #### Request
 
-```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "ankr_getBlocksRange",
-    "params": {
-        "blockchain": "bsc",
-        "fromBlock": 9509443,
-        "toBlock": 9509444
-    },
-    "id": 1
+```sh
+curl -X 'POST' \
+  'https://rpc.ankr.com/multichain' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getBlocks",
+  "params": {
+    "blockchain": "string",
+    "decodeLogs": true,
+    "decodeTxData": true,
+    "descOrder": true,
+    "fromBlock": 9509443,
+    "includeLogs": true,
+    "includeTxs": true,
+    "toBlock": 9509444
+  }
 }'
 ```
 
@@ -278,7 +290,7 @@ See the response parameters' data model in Swagger.
 
 #### Request
 
-```shell
+```sh
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -471,8 +483,8 @@ See the response parameters' data model in Swagger.
 
 #### Request
 
-```shell
-curl --location -g --request POST '{{URL}}' \
+```sh
+curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",

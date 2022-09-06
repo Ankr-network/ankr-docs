@@ -76,9 +76,8 @@ Burns aFTMc and gets FTM for the burned aFTMc.
 * [Mainnet live transaction example](https://ftmscan.com/tx/0x303e68588bf68dbfd515a7d1b46198c18b8b978b1bee540ff8386e871c7dc4d9)
 * [Testnet live transaction example](https://testnet.ftmscan.com/tx/0x7ca2d6bda3db3d4c60119d6a1bc5e9245d24066669a30caafa275d147cf3c9fc)
 
-
 ### Get staking metrics
 
-To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](../restful-api/staking-metrics).
+To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](/stake/for-integrators/restful-api/staking-metrics/).
 
 

@@ -6,7 +6,7 @@ This SDK contains a compact JavaScript library to enable you interact with Ankr'
 
 1. Install the latest package stored on [npm](/build-blockchain/products/v2/advanced-apis/).
 
-    ```shell
+    ```sh
     # with npm
     npm install @ankr.com/ankr.js
 

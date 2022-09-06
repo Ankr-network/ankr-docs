@@ -3,14 +3,15 @@
 Check the [Stake MATIC](https://www.ankr.com/docs/staking/liquid-staking/matic/stake-matic) user guide.
 
 
-### What is the minimum amount of MATIC I can stake?
- 
-1 MATIC.
+### What is the minimum and maximum amount of MATIC I can stake?
 
+Minimum amount: 
+* Staking MATIC on Ethereum, your minimum amount is 1 MATIC.
+* Staking MATIC on Polygon, there is no minimum amount.
 
-### Is there a maximum amount I can stake?
-
-No, you can stake at your discretion, unlimited.  
+Maximum amount:
+* Staking MATIC on Ethereum, there is no maximum amount.
+* Staking MATIC on Polygon, your maximum amount is limited by the crosschain staking pool capacity. You will see the capacity while staking.
 
 ### What is the difference between MATIC staking on Ethereum and Polygon?
 
@@ -84,4 +85,4 @@ You can also use your Liquid Staking tokens to:
 
 ### Can I get staking metrics for my integration?
 
-Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](/stake/for-integrators/restful-api/staking-metrics/).

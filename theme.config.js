@@ -21,6 +21,8 @@ export default {
   feedbackLink: "Give us feedback →",
   feedbackLabels: "feedback",
   footerEditLink: "Edit this page on GitHub →",
+  nextLinks: false,
+  prevLinks: false,
 // Logo
   logo: logo,
 // Head content and settings
