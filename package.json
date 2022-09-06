@@ -9,6 +9,8 @@
     "start": "next start",
     "build": "next build && next export"
   },
+  "author": "raproid at Ankr",
+  "license": "MIT",
   "dependencies": {
     "@reach/skip-nav": "^0.16.0",
     "copy-to-clipboard": "^3.3.2",
