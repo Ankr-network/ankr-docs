@@ -66,9 +66,11 @@ jobs:
 
       - name: Copy build
         run: |
-          cd build/staking/
-          mkdir sdk
-          cd ../../
+          cd out/stake/for-integrators/sdk/
+          mkdir liquid-staking
+          cd liquid-staking
+          mkdir reference
+          cd ../../../../../
           mv ankr-web/packages/staking-sdk/docs/*  out/stake/for-integrators/sdk/liquid-staking/reference
 
       - name: Set AWS credentials
