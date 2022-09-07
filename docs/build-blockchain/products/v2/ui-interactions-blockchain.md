@@ -5,7 +5,7 @@ id: ui-interactions-blockchain
 
 # Blockchain interactions
 
-As soon as you've [connected a wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet) and [deposited ANKR tokens](/build-blockchain/products/v2/ui-interactions/#top-up) into your account, the system generates a personal JWT token granting access to the Premium tier functionality. The **Endpoints** pane now becomes connected to your account and shows the data specific to it.
+As soon as you've [connected a wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet) and [deposited ANKR tokens](/build-blockchain/products/v2/ui-interactions/#top-up) into your account, the system generates a personal JWT token granting access to the Premium plan functionality. The **Endpoints** pane now becomes connected to your account and shows the data specific to it.
 
 ## Endpoints pane's structure
 
