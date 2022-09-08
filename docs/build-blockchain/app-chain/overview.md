@@ -39,11 +39,12 @@ Despite all their benefits, App Chains can be difficult to build and launch whic
 
 There are 5 main technical features that you’ll need to get started with your App Chain:
 
-* [Validator nodes](https://ankr.com/docs/build-blockchain/app-chain/components/validator-nodes)
-* [RPC endpoint](https://ankr.com/docs/build-blockchain/app-chain/components/rpc-endpoints)
-* [Block explorer](https://ankr.com/docs/build-blockchain/app-chain/components/block-explorer)
-* [Testnet token faucet](https://ankr.com/docs/build-blockchain/app-chain/components/testnet-faucet)
-* [Staking UI](https://ankr.com/docs/build-blockchain/app-chain/components/staking-ui)
+* [Validator nodes](/build-blockchain/app-chain/components/validator-nodes)
+* [RPC endpoint](/build-blockchain/app-chain/components/rpc-endpoints)
+* [Block explorer](/build-blockchain/app-chain/components/block-explorer)
+* [Testnet token faucet](/build-blockchain/app-chain/components/testnet-faucet)
+* [Cross-chain bridge](/build-blockchain/app-chain/components/relay-hub)
+* [Staking UI](/build-blockchain/app-chain/components/staking-ui)
 
 Through Ankr’s App Chain program, you have several options for each of these components — being able to choose from building certain pieces yourself with our provided instructions and support, or going hands-off and letting us take care of all the technical legwork for you.
 
