@@ -10,6 +10,7 @@ module.exports =
                       'build-blockchain/app-chain/components/rpc-endpoints',
                       'build-blockchain/app-chain/components/block-explorer',
                       'build-blockchain/app-chain/components/testnet-faucet',
+                      'build-blockchain/app-chain/components/relay-hub',
                       'build-blockchain/app-chain/components/staking-ui',
                   ],
               },
