@@ -8,7 +8,7 @@ id: stake-mgno
 To stake mGNO, you'll need to:
 1. Purchase GNO on Ethereum.
 2. Bridge GNO to Gnosis.
-3. Deposit the bridged GNO to auto-convert it to mGNO.
+3. Swap the bridged GNO to mGNO.
 4. Connect your wallet at Ankr Staking.
 5. Stake mGNO at Ankr.
 
@@ -34,9 +34,9 @@ Your obtained GNO is likely to be the Ethereum Mainnet GNO version.
 To use it on Gnosis, you'll need to bridge it to Gnosis Chain.
 
 * Use the [OmniBridge](https://omni.gnosischain.com/bridge) to move GNO from Ethereum to Gnosis Chain.
-* Add Gnosis to your wallet with https://chainlist.org/ or with [these manual instructions](https://docs.gnosischain.com/tools/wallets/metamask).
+* Add Gnosis to your wallet, visiting [Ankr Gnosis RPC page](https://www.ankr.com/rpc/gnosis/) and clicking **Add network**. Alternatively, use [these manual instructions](https://docs.gnosischain.com/tools/wallets/metamask) from Gnosis.
 
-## Deposit the bridged GNO to auto-convert it to mGNO
+## Swap the bridged GNO to mGNO
 
 :::warning GAS FEES AND LIQUID RESTRICTIONS
 Make sure you have some xDai to pay the gas fee for your depositing transaction.
@@ -45,8 +45,8 @@ Remember that mGNO will remain locked and illiquid until ~Q4 2023 max.
 This is due to Gnosis plans to enable withdrawals in the Shanghai upgrade. Shanghai is planned in 6–12 months from The Merge that is expected in ~Q3/Q4 2022.
 :::
 
-Deposit your bridged GNO, following the [original Gnosis deposit instructions](https://docs.gnosischain.com/node/validator-deposits).
-When depositing, your GNO will automatically convert to mGNO in 32:1 ratio — you'll get 32 mGNO for 1 deposited GNO.
+Swap your bridged GNO, following the [original Gnosis deposit instructions](https://docs.gnosischain.com/node/validator-deposits#convert-gno-to-mgno-special-cases).
+You specifically need the **Convert GNO to mGNo (special cases)** section of the page!
 
 When done, you're ready to stake your mGNO at Ankr. 
 

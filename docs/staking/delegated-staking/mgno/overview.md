@@ -11,7 +11,7 @@ Delegated Staking is working towards Ankr Network 2.0 that brings together our e
 With ANKR staking is at the core, driving Delegated Staking to success, we're teaming up with more platforms.   
 
 We are excited to announce that we're teaming up with Gnosis in launching a new staking product that is completely trustless and non-custodial.
-Gnosis staking allows you to stake your mGNO that you obtained when depositing your GNO, making more profit from your assets.
+Gnosis staking allows you to stake your mGNO, making more profit from your assets.
 Thanks to the implemented Node Providers technology, you'll be able to choose between Ankr-owned node providers various Node Providers supporting Ankr Network 2.0.
 
 This is a perfect opportunity for Gnosis fans and crypto-enthusiasts in general to take charge of their crypto assets and make them work.
@@ -24,10 +24,10 @@ It is an infrastructure for open finance and aims to bring it to the "long tail"
 
 From a users' perspective, a full trading cycle on Gnosis Protocol consists of three user actions: deposit, order, and withdrawal
 
-mGNO specifically is a metatoken for GNO, the native Gnosis token. 
+mGNO specifically is a metatoken for GNO, a Gnosis token. 
 The relation is similar to a wrapped token like WETH to ETH, except there are 32 mGNO in 1 GNO.
 
-You obtain mGNO when making a deposit on Gnosis. 
+You obtain mGNO [swapping GNO on Gnosis](https://docs.gnosischain.com/node/validator-deposits#convert-gno-to-mgno-special-cases) (scroll down to **Convert GNO to mGNo (special cases)** if needed). 
 
 mGNO staking gives you the opportunity of staking with Ankr bringing you better APY for your mGNO.   
 As Ankr Network 2.0 expands, you'll be able to choose between different APYs different Node Providers will offer. 
@@ -38,7 +38,7 @@ To learn more about Gnosis, read the [introduction of Gnosis Protocol](https://d
 
 ## Security of your stake
 Delegated staking with independent Node Providers calls for increased security. 
-This is where we're introducing protection pool. 
+This is where we're introducing insurance pool. 
 Independent Node Providers can make a pool that protects your stake from slashing. 
 The protection level is dynamically calculated by the ratio of the total amount of all delegated stakes to the size of the insurance pool.
 The bigger is the pool, the more assurance you have your stake is safe with the provider.
