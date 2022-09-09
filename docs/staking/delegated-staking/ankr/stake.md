@@ -46,9 +46,9 @@ However, your stake will keep generating rewards until you unstake, whether or n
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
 2. In the **Delegated staking** section, click **Stake** under **ANKR**.
 3. Enter the desired amount of ANKR to stake (min. amount is 1000 ANKR).
-4. Choose a Node Provider (currently only ANKRl; more providers in future releases).
-5. Click **Approve** to approve Ankr Staking access to your ANKR
+4. Choose a Node Provider (currently only Ankr; more providers in future releases).
+5. Click **Approve** to approve Ankr Staking access to your ANKR.
 6. Confirm approving access in MetaMask.
-7. Click **Send** to send your delegated stake to the chosen Node Provider.
+7. Click **Stake** to send your delegated stake to the chosen Node Provider.
 8. Confirm the transaction in MetaMask.
 9. On the stake progress page, click **Go to dashboard** to see the staked ANKR. You may need to wait a little for the transaction to finalize and Ankr Staking Dashboard to automatically update.
