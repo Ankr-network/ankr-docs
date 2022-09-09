@@ -377,6 +377,13 @@ module.exports =
                         'staking/delegated-staking/ankr/faq',
                     ],
                 },
+                {
+                    'mGNO': [
+                        'staking/delegated-staking/mgno/overview',
+                        'staking/delegated-staking/mgno/stake-mgno',
+                        'staking/delegated-staking/mgno/faq',
+                    ],
+                },
             ],
         },
         {
