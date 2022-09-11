@@ -46,7 +46,7 @@ This is due to Gnosis plans to enable withdrawals in the Shanghai upgrade. Shang
 :::
 
 Swap your bridged GNO, following the [original Gnosis deposit instructions](https://docs.gnosischain.com/node/validator-deposits#convert-gno-to-mgno-special-cases).
-You specifically need the **Convert GNO to mGNo (special cases)** section of the page!
+You specifically need the **Convert GNO to mGNO (special cases)** section of the page!
 
 When done, you're ready to stake your mGNO at Ankr. 
 
