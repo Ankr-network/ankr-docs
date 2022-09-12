@@ -10,7 +10,7 @@
 
 4. Select '*Import all*' to have access to all SDK capabilities.
 
-<img src="/docs/install-sdk.png" alt="Install SDK" class="responsive-pic" width="700" />
+<img src="/install-sdk.png" alt="Install SDK" class="responsive-pic" width="700" />
 
 
 

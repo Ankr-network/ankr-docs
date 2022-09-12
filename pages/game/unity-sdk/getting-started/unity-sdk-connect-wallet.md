@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 # Connect wallet and authenticate
 
@@ -26,7 +26,7 @@ Before you start connecting a wallet, you need to initialize a session, create a
 1. Initialise a `WalletConnect` Session using WalletConnect.cs script. 
    1. Attach it on your GameObject or use a Prefab. 
    2. Wait until `WalletConnect` establishes a connection to the blockchain bridge. By default, the connection is made on Start but that can be changed in editor as shown in the picture below.
-      <img src="/docs/wallet-connection.png" alt="abi section" class="responsive-pic" width="600" />
+      <img src="/wallet-connection.png" alt="abi section" class="responsive-pic" width="600" />
 2. Use the static method below to create a new AnkrSDK Instance.
    ```AnkrSDKFactory.GetAnkrSDKInstance(string ProviderURL);```
 3. Create and cache Contract by using IAnkrSDK initialized instance.

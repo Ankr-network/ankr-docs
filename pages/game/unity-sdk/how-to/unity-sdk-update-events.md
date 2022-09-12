@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 # How to subscribe to events in Unity SDK
 

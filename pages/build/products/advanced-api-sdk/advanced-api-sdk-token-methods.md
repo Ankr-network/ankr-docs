@@ -1,3 +1,5 @@
+import { Tabs, Tab } from "nextra-theme-docs";
+
 # Token API Methods
 
 ## `ankr_getAccountBalances`
@@ -21,13 +23,13 @@ Gets all the balance data of the account specified by request body parameters.
   * `pageToken` (string): The token is provided at the end of the response body and can be referenced in the request to fetch the next page.
   * `walletAddress` (string): an account address to query for balance; supports the Ethereum Name Service (ENS).
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
     ```
     {
   "id": 1,
@@ -43,14 +45,14 @@ Gets all the balance data of the account specified by request body parameters.
   }
 }
     ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
     ```sh
     Content-Type: application/json
     X-API-KEY: {{KEY}}
     ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -83,13 +85,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -117,8 +119,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -186,8 +188,8 @@ Code: 200 OK
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -206,13 +208,13 @@ Gets the currencies available for the blockchain specified by request body param
 
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -223,14 +225,14 @@ Gets the currencies available for the blockchain specified by request body param
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -262,13 +264,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -288,8 +290,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -372,8 +374,8 @@ Code: 200 OK
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -393,13 +395,13 @@ Gets the price of the token specified by request body parameters.
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
   * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -411,14 +413,14 @@ Gets the price of the token specified by request body parameters.
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 
 ### Response
@@ -451,13 +453,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 
 ```
 {
@@ -471,8 +473,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -483,8 +485,8 @@ Code: 200 OK
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -506,13 +508,13 @@ Gets holders and the associated metadata for the tokens specified by request bod
   * `pageSize` (string): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -525,14 +527,14 @@ Gets holders and the associated metadata for the tokens specified by request bod
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -565,13 +567,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 #### Response
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -593,8 +595,8 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 
 ```
 {
@@ -626,8 +628,8 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -649,13 +651,13 @@ Gets the number of holders for the tokens specified by request body parameters.
   * `pageSize` (string): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -669,14 +671,14 @@ Gets the number of holders for the tokens specified by request body parameters.
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -707,13 +709,13 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 
 #### Response
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -735,8 +737,8 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -811,7 +813,7 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 

@@ -1,3 +1,5 @@
+import { Tabs, Tab } from "nextra-theme-docs";
+
 # NFT API Methods
 
 NFT API Methods serve to request NFT-related data across multiple chains.
@@ -26,13 +28,13 @@ Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specifi
      * Smart contract address (`"0xd8682bfa6918b0174f287b888e765b9a1b4dc9c3": [] `) — retrieves all NFTs from the address.
      * Smart contract address and NFT ID (`"0xd8682bfa6918b0174f287b888e765b9a1b4dc9c3": ["8937"]`) — retrieves a particular NFT specified.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```json
 {
     "jsonrpc": "2.0",
@@ -59,13 +61,13 @@ Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specifi
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -125,13 +127,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -169,8 +171,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
   "jsonrpc": "2.0",
@@ -299,8 +301,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -321,13 +323,13 @@ Gets NFT metadata (ERC721/ERC1155/ENS/POAP) associated with a specific NFT. A re
   * `contractAddress` (string): a contract address of the NFT the metadata belongs to; supports the Ethereum Name Service (ENS).
   * `tokenId` (integer): a token ID of the NFT the metadata belongs to.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -340,13 +342,13 @@ Gets NFT metadata (ERC721/ERC1155/ENS/POAP) associated with a specific NFT. A re
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -397,13 +399,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -440,8 +442,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -489,8 +491,8 @@ Code: 200 OK
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -510,13 +512,13 @@ Gets holders of the NFT specified by request body parameters.
   * `pageSize` (integer): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```json
 {
     "jsonrpc": "2.0",
@@ -530,14 +532,14 @@ Gets holders of the NFT specified by request body parameters.
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -576,13 +578,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -596,8 +598,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -619,8 +621,8 @@ Code: 200 OK
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 
 

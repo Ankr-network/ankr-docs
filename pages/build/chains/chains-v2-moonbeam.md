@@ -1,4 +1,5 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
+import { Tabs, Tab } from "nextra-theme-docs";
 
 # Moonbeam
 
@@ -88,13 +89,13 @@ If you're using the Premium Plan, you can copy your two endpoints for HTTPS and 
 In the code samples below, use **EITHER** the public endpoint **OR** the premium endpoint (if you have signed up to the Premium Plan)
 </Callout>
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Web3",
     "Ethers.js",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 const Web3 = require('web3'); //Load Web3 library
 
@@ -104,8 +105,8 @@ const web3 = new Web3("https://rpc.ankr.com/moonbeam"); // Public RPC URL
 const web3 = new Web3("https://rpc.ankr.com/moonbeam/YOUR-API-KEY"); // Premium RPC URL
 
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 const ethers = require('ethers');
 
@@ -119,8 +120,8 @@ const provider = new ethers.providers.StaticJsonRpcProvider(providerURL, {
     name: 'moonbeam'
 });
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 
 

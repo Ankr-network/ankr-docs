@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 # MacOS 
 
@@ -22,7 +22,7 @@ You can also read through this list:
 
 2. Click **Library** and the **+** button to add the **v4** version
 
-    <img src="/docs/unreal-v5.png" alt="blank" class="responsive-pic" width="600" />
+    <img src="/unreal-v5.png" alt="blank" class="responsive-pic" width="600" />
 
 3. You can now click to install **v4**. (This takes some time)
 
@@ -33,7 +33,7 @@ You can also read through this list:
    "Do you want the app **UnrealEditor.app** to accept incoming network connections"
    Select **Allow**
 
-   <img src="/docs/game-mac-1.png" alt="blank" class="responsive-pic" width="200" />
+   <img src="/game-mac-1.png" alt="blank" class="responsive-pic" width="200" />
    </Callout>
 
 
@@ -41,7 +41,7 @@ You can also read through this list:
 
 1. Inside the **Unreal Project Browser**, select **Games** and click **Next**
 
-   <img src="/docs/v4-games-2.png" alt="blank" class="responsive-pic" width="500" />
+   <img src="/v4-games-2.png" alt="blank" class="responsive-pic" width="500" />
 
 2. On the **Template** screen, select **Blank** and click **Next**
 
@@ -49,21 +49,21 @@ You can also read through this list:
     If you can't see any templates, you should reinstall v4
     </Callout>
 
-    <img src="/docs/game-template.png" alt="blank" class="responsive-pic" width="500" />
+    <img src="/game-template.png" alt="blank" class="responsive-pic" width="500" />
 
 3. In **Project Settings**
 * From the **Blueprint** and **C++** options, select **C++**. 
 * From the **Starter Content** and **No Starter Content** options, select **No Starter Content**
 * From the **Desktop/Console** or **Mobile** options, select your preference. 
 
-    <img src="/docs/game-v4-2.png" alt="blank" class="responsive-pic" width="500" />
+    <img src="/game-v4-2.png" alt="blank" class="responsive-pic" width="500" />
 
 
 4. Give your project a memorable name e.g. BlockchainGame and then click **Create Project**
 
 5. Check your project is successfully created and opens. Then close it. So we can do the next important step of adding the SDK. 
 
-<img src="/docs/game-mac-2.png" alt="create folder" class="responsive-pic" width="350" />
+<img src="/game-mac-2.png" alt="create folder" class="responsive-pic" width="350" />
 
 ## STEP THREE - Download Ankr SDK
 
@@ -77,7 +77,7 @@ You can also read through this list:
 
 4. Delete the **AnkrSDK.zip** file if it is inside the **Plugins folder** as well. 
 
-<img src="/docs/game-mac-3.png" alt="create folder" class="responsive-pic" width="400" />
+<img src="/game-mac-3.png" alt="create folder" class="responsive-pic" width="400" />
 
 
 ## STEP FOUR - Generate the Xcode project
@@ -102,7 +102,7 @@ These docs are written using Xcode 13.1
 
 2. Expand **Games > your_unreal_project__name > Source > your_unreal_project_name > your_unreal_project_name.Build.cs** 
 
-   <img src="/docs/game-mac-5.png" alt="Xcode" class="responsive-pic" width="600" />
+   <img src="/game-mac-5.png" alt="Xcode" class="responsive-pic" width="600" />
 
    Add `"AnkrSDK"` at the end of the string array as shown below: 
 

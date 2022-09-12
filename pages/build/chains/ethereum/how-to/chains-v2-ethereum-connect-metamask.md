@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 This section walks you through how to connect a MetaMask wallet to Ethereum Mainnet and Testnets.
 
@@ -26,7 +26,7 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Mainn
 
 2. Ignore the **Chain ID warning** and click **Save**.
 
-<img src="/docs/ankr-eth-mainnet-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="310" />
+<img src="/ankr-eth-mainnet-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="310" />
 
 ## About Ethereum Testnets
 
@@ -80,7 +80,7 @@ _Make sure you include backslashes and don't add any whitespace._
 
 2. Ignore the **Chain ID warning** and click **Save**
 
-<img src="/docs/ankr-rinkeby-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />
+<img src="/ankr-rinkeby-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />
 
 ## Ropsten and faucets
 
@@ -114,7 +114,7 @@ There are default settings in MetaMask for connecting a wallet to Ropsten Testne
 
 2. Ignore the **Chain ID warning** and click **Save**
 
-<img src="/docs/ankr-ropsten-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />
+<img src="/ankr-ropsten-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />
 
 ## Goerli and faucets
 
@@ -146,4 +146,4 @@ There are default settings in MetaMask for connecting a wallet to Goerli Testnet
 
 2. Ignore the **Chain ID warning** and click **Save**
 
-<img src="/docs/docs/ankr-goerli-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />
+<img src="/docs/ankr-goerli-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />

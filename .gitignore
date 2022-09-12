@@ -8,7 +8,6 @@ package-lock.json
 *.tsbuildinfo
 
 .DS_Store
-yarn.lock
 
 
 # hardhat files
@@ -101,4 +100,4 @@ out/
 
 .env
 
-build
+yarn.lock

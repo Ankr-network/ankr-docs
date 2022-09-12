@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 # Ankr Liquid Staking
 Liquid Staking solves the problem of locked up liquidity when staking assets on Proof-of-Stake networks.

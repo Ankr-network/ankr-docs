@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 # Ankr Game
 
@@ -14,7 +14,7 @@ Ankr Game SDKs provide Web3 capabilities to the two biggest players in the indus
 
 ## Ankr Unity SDK  
 
-<img src="/docs/Unity.png" alt="Unity Engine" class="responsive-pic" width="820" />
+<img src="/Unity.png" alt="Unity Engine" class="responsive-pic" width="820" />
 
 **Unity** is the most popular engine for independent developers and game studios. 
 
@@ -31,7 +31,7 @@ It has everything you need to create a game from scratch.
 
 ## Ankr Unreal SDK 
 
-<img src="/docs/unreal.png" alt="Unreal Engine" class="responsive-pic" width="820" />
+<img src="/unreal.png" alt="Unreal Engine" class="responsive-pic" width="820" />
 
 **Unreal** is the more popular engine for the AAA-industry and artists. Developed by Epic Games, Unreal is the driving force behind blockbuster games such as Red Dead Redemption 2 and Fortnite. 
 

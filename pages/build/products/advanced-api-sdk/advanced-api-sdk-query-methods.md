@@ -1,3 +1,5 @@
+import { Tabs, Tab } from "nextra-theme-docs";
+
 # Query API Methods
 
 Query API Methods serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata.
@@ -24,13 +26,13 @@ Gets full information for the block specified by request parameters.
   * `includeLogs` (boolean): set to `true` to include logs, or to `false` to exclude them. Note that logs are stored inside transactions, so make sure the following parameter is also set to `true` if you'd like to include logs.
   * `includeTxs` (boolean): set to `true` to include transactions, or to `false` to exclude them.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >   
-  <Nextra.Tab>
+  <Tab>
 ```json
 {
   "id": 1,
@@ -48,13 +50,13 @@ Gets full information for the block specified by request parameters.
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -93,13 +95,13 @@ curl -X 'POST' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -209,13 +211,13 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -247,13 +249,13 @@ Gets history data for the blocks specified by request parameters.
   * `address` (uint8): an address of the contract created the logs. 
   * `topics` (uint8): the data the log contains.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -273,13 +275,13 @@ Gets history data for the blocks specified by request parameters.
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -317,13 +319,13 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -366,8 +368,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
   "jsonrpc": "2.0",
@@ -422,8 +424,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -445,13 +447,13 @@ Returns transaction details for a transaction specified by hash.
   * `decodeTxData` (boolean): set to `true` to decode transaction data, or to `false` if not interested in it.
   * `includeLogs` (boolean): set to `true` to include logs, or to `false` to exclude them.
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Body",
     "Headers",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -464,13 +466,13 @@ Returns transaction details for a transaction specified by hash.
     "id": 1
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```sh
 Content-Type: application/json
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -503,13 +505,13 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 
 Code: 200 OK
 
-<Nextra.Tabs
+<Tabs
   items={[
     "Schema",
     "Example",
   ]}
 >
-  <Nextra.Tab>
+  <Tab>
 ```
 {
   "error": {},
@@ -593,8 +595,8 @@ Code: 200 OK
   }
 }
 ```
-  </Nextra.Tab>
-  <Nextra.Tab>
+  </Tab>
+  <Tab>
 ```
 {
     "jsonrpc": "2.0",
@@ -824,5 +826,5 @@ Code: 200 OK
     }
 }
 ```
-  </Nextra.Tab>
-</Nextra.Tabs>
+  </Tab>
+</Tabs>

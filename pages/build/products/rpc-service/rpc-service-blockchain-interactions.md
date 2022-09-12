@@ -9,7 +9,7 @@ The Premium user's **Endpoints** pane contains the following items:
   * **Your stats** — the block shows the overall number of requests across all chains made for a specific timeframe (`24h`/`7d`/`30d`).
   * **Blockchains list** — a list of all the blockchains available for querying. Each of those blocks also shows the number of requests made to that particular blockchain for a specific timeframe (`24h`/`7d`/`30d`).
 
-<img src="/docs/endpoints.png" alt="Endpoints" class="responsive-pic" width="820" />
+<img src="/endpoints.png" alt="Endpoints" class="responsive-pic" width="820" />
 
 ### Particular Blockchain
 

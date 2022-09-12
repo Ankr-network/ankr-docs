@@ -1,6 +1,6 @@
 import { Code } from "../../../components";
-import Bleed from "nextra-theme-docs/bleed";
-import Callout from "nextra-theme-docs/callout";
+import { Bleed } from "nextra-theme-docs";
+import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
 # Build an end-to-end Crypto Picks Board with No-Code on Ethereum

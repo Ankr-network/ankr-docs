@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 # Near
 NEAR is a decentralized, development platform built on a [sharded](https://near.org/downloads/Nightshade.pdf), Proof-of-Stake, Layer 1 blockchain designed for ease of use.

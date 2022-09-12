@@ -1,19 +1,20 @@
-//const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.js",
   unstable_flexsearch: true,
+  unstable_staticImage: true,
 });
 
 module.exports = withNextra({
-  images: {
+/*    images: {
     loader: 'akamai',
     path: '',
   },
   trailingSlash: true,
 //  assetPrefix: isProd ? 'https://bs-1-stage.dccn.ankr.com/docs/' : undefined,
-  basePath: '/docs',
+  basePath: '/docs', */
 });
 
 /* example of how to set up redirects

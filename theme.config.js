@@ -13,89 +13,28 @@ export default {
   docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/tree/main/pages",
   github: "https://github.com/Ankr-network/ankr-docs/",
   titleSuffix: " – Ankr",
-  search: true,
-  unstable_flexsearch: true,
-  floatTOC: true,
-  defaultMenuCollapsed: true,
+  toc: {
+    float: true,
+  },
+  sidebar: { defaultMenuCollapsed: true },
 // Feedback and Edit on GH links (footerEditLink is NOT a footer link, the name is misleading)
-  feedbackLink: "Give us feedback →",
-  feedbackLabels: "feedback",
-  footerEditLink: "Edit this page on GitHub →",
-  nextLinks: false,
-  prevLinks: false,
+  feedback: {
+  labels: "feedback",
+  link: "Give us feedback →",
+  },
+  editLink: {
+    text: "Edit this page on GitHub →",
+  },
 // Logo
   logo: logo,
 // Head content and settings
-  head: ({ title, meta }) => {
-    const { route } = useRouter();
 
-    const ogImage =
-      meta.image || meta.description
-
-    return (
-      <>
-        {/* Meta-information */}
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta httpEquiv="Content-Language" content="en" />
-        <meta
-          name="description"
-          content={
-            meta.description ||
-            "Ankr is a leading Web3 Infrastructure Company."
-          }
-        />
-        <meta
-          name="og:description"
-          content={
-            meta.description ||
-            "Ankr is a leading Web3 Infrastructure Company."
-          }
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImage} />
-        <meta
-          name="og:title"
-          content={
-            title ? title + " – Ankr" : "Ankr: Web3 Infrastructure Company."
-          }
-        />
-        <meta name="og:image" content={ogImage} />
-        <meta name="apple-mobile-web-app-title" content="Ankr" />
-
-        {/* Favicons */}
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="apple-icon"
-          sizes="180x180"
-          href="/favicon/apple-icon-180x180.png"
-        />
-        <link
-          rel="mask-icon"
-          href="/favicon/safari-pinned-tab.svg"
-          color="#000000"
-        />
-      </>
-    );
-  },
 //Footer content and settings
-  footerText: (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:space-x-16 lg:space-x-28">
+  footer: {
+    text: <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:space-x-16 lg:space-x-28">
       <div className="flex flex-col">
         © {new Date().getFullYear()} Ankr All rights reserved
       </div>
     </div>
-  ),
+  },
 };

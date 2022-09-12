@@ -55,4 +55,4 @@ You can query for a price on the [contract page](https://bscscan.com/address/0xB
 
 As an example, see the response for a price query in the picture below:
 
-<img src="/docs/oracles/pancakeswap-oracle-peek-query.png" alt="response for a price query" class="responsive-pic" width="600" />
+<img src="/oracles/pancakeswap-oracle-peek-query.png" alt="response for a price query" class="responsive-pic" width="600" />

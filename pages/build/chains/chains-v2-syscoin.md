@@ -1,4 +1,4 @@
-import Callout from "nextra-theme-docs/callout";
+import { Callout } from "nextra-theme-docs";
 
 # Syscoin
 Syscoin is a Proof-of-Work blockchain. It uses merged-mining - a technique whereby PoW blockchain miners can merge several cryptocurrencies with mining at the same time. Syscoin currently has around 20% of the hashpower that goes into mining Bitcoin. SysCoin utilizes [Chainlocks](https://docs.syscoin.org/docs/tech/chainlocks) to securely mitigate against <a href="https://www.ankr.com/docs/learn/extra/51-attacks">51% attacks</a>
@@ -106,7 +106,7 @@ echo $((0x14eeb))
 
 Check the latest block at [https://explorer.syscoin.org/](https://explorer.syscoin.org/)  
 
-<img src="/docs/verify-latest-block.png" alt="Verify latest block" class="responsive-pic" width="1000" />
+<img src="/verify-latest-block.png" alt="Verify latest block" class="responsive-pic" width="1000" />
 
 
 
