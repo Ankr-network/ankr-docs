@@ -39,17 +39,12 @@ jobs:
         with:
           node-version: '16.13.0'
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.0.2
-
       - name: Build
         working-directory: .
         run: |
-          pnpm install
+          yarn install
           cp -f patch/nextra-theme-docs/dist/index.js node_modules/nextra-theme-docs/dist/index.js
-          pnpm build
+          yarn build
 
       - uses: actions/checkout@v3
         with:
