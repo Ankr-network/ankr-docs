@@ -8,6 +8,7 @@ package-lock.json
 *.tsbuildinfo
 
 .DS_Store
+yarn.lock
 
 
 # hardhat files
