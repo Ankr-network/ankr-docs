@@ -1,0 +1,1 @@
+Remove the patch when nextra-theme-docs stable
