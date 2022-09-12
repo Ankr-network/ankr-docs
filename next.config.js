@@ -13,7 +13,7 @@ module.exports = withNextra({
     path: '',
   },
   trailingSlash: true,
-  assetPrefix: isProd ? 'https://bs-1-stage.dccn.ankr.com/docs/' : undefined,
+  assetPrefix: isProd ? 'https://bs-1-stage.dccn.ankr.com/docs' : undefined,
   basePath: '/docs',
 });
 
