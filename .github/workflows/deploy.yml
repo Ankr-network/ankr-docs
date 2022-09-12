@@ -43,7 +43,6 @@ jobs:
         working-directory: .
         run: |
           yarn install
-          cp -f patch/nextra-theme-docs/dist/index.js node_modules/nextra-theme-docs/dist/index.js
           yarn build
 
       - uses: actions/checkout@v3
