@@ -24,7 +24,7 @@ Public RPCs are available to all and free to use on the Ankr RPC platform. Today
 
 To access all the advanced features of Ankr RPC, developers can use Premium services with a flexible and affordable pay-as-you-go model denominated in ANKR tokens. Premium features include exclusive multi-chain RPC endpoints, prioritized requests, WebSockets, and Advanced Developer APIs that are designed to make Web3 development an easy task.
 
-![Ankr Infrastructure](/docs/ankr-structure.png)
+![Ankr Infrastructure](/ankr-structure.png)
 
 ## Public Plan
 

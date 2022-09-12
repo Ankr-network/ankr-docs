@@ -146,4 +146,4 @@ There are default settings in MetaMask for connecting a wallet to Goerli Testnet
 
 2. Ignore the **Chain ID warning** and click **Save**
 
-<img src="/docs/ankr-goerli-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />
+<img src="/ankr-goerli-metamask.png" alt="Rinkeby RPC MetaMask" class="responsive-pic" width="600" />
