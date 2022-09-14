@@ -84,6 +84,7 @@ We can use Cloudfare’s IPFS Gateway to also access the file through a browser 
 ```
 https://cloudflare-ipfs.com/ipfs/QmRG4BgEVcD3MuNaL3SxmZJcCEEYkRomw6PFEaha1Gagi2
 ```
+
 ![ipfs](../../../public/learn/ex4.png)
 
 We can also still access our file through Filebase’s IPFS Gateway, even after we’ve deleted it in Filebase.

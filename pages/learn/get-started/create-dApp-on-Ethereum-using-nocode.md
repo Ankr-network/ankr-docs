@@ -11,7 +11,6 @@ ____________________________________
 Now that you have entered the chat, let me guess what made you swipe right on this article. Is that the “pickup lines” and you desperately wanting to avoid the low level uttering of "hey.” Or is it the “no-code” buzzword that many coders roll their eyes at?
 
 In any case, at least it made an impression. So why not capitalize on both the no-code and have a crack at our idea of building a Pickup Line dApp on-chain.
-
 __________________________
 
 ## So, what are we building exactly?

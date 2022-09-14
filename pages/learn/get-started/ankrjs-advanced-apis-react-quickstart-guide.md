@@ -17,7 +17,6 @@ ________________
 
 ![Hello](../../../public/learn/Cnaoed4.png)
 
-
 ## Prerequisites
 
 To successfully finish this guide, you'll only need [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed on your machine.

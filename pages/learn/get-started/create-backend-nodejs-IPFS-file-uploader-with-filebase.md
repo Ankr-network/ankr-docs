@@ -613,6 +613,7 @@ Seeing that IPFS url, we can go to it directly and see that it’s actually pers
 ```
 https://ipfs.filebase.io/ipfs/bafybeierozrtdlir5ywdguah573ga25a7tzzhqeh7kvlvfx2y2wqymdj7u
 ```
+
 ![ipfs](../../../public/learn/ww9.png)
 
 There you have it, we built a Backend IPFS File Uploader with Filebase.
