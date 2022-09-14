@@ -22,7 +22,7 @@ id: stake-ftm
 
 ### Connect your wallet
 
-1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu.
+1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Staking** in the product menu.
 
 2. Locate the **Fantom (FTM)** box and click **Stake** in it.
    <img src={require('/img/staking/choose-ftm-box.png').default} alt="Click FTM box" class="responsive-pic" width="700" />
@@ -45,20 +45,22 @@ Make sure you have a small surplus of FTM to pay the gas fees for the staking tr
 1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu.
 2. Locate the **Fantom (FTM)** box and click **Stake** in it.
    <img src={require('/img/staking/choose-ftm-box.png').default} alt="Click FTM box" class="responsive-pic" width="700" />
-3. Enter the desired **FTM Amount** to stake, choose the token, and click **Get aFTMb** or **Get aFTMc** respectively.
-   <img src={require('/img/staking/enter-amount-choose-token.png').default} alt="Enter amount and choose between aFTMb/aFTMc" class="responsive-pic" width="400" />
+3. Enter the desired **FTM Amount** to stake, choose the token, and click **Get aFTMb** or **Get aFTMc** respectively.<br/>
+   <img src={require('/img/staking/ftm-ls/enter-amount-choose-token.png').default} alt="Enter amount and choose between aFTMb/aFTMc" class="responsive-pic" width="380" />
      
-4. Confirm the transaction in your wallet.
-
-5. Add the liquid staking token to your wallet, clicking **Add aFTMb to wallet** or **Add aFTMc to wallet** respectively.
-
-6. Click **Go to dashboard** to see the added liquid staking token. You may need to wait a little for the transaction to finalize and the dashboard to automatically update.
+4. Confirm the transaction in your wallet.<br/>
+   <img src={require('/img/staking/ftm-ls/confirm-staking-ftm.png').default} alt="Confirm staking" class="responsive-pic" width="300" />
+5. At the next page with the **Stake successful!** message, add the liquid staking token to your wallet, clicking **Add aFTMb to wallet** or **Add aFTMc to wallet** respectively and confirming adding the token in your wallet.<br/>
+   <img src={require('/img/staking/ftm-ls/stake-successful.png').default} alt="Add Liquid Staking token to your wallet" class="responsive-pic" width="450" />
+6. Click **Go to dashboard** to see your stake. You may need to wait a little for the transaction to finalize and the dashboard to automatically update.
 
 :::success
 
-Your aFTMb balance automatically increases by a small amount, daily, to reflect your Fantom Staking rewards. You can now use your aFTMb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aFTMb section.
+Your aFTMb balance automatically increases by a small amount, daily, to reflect your Fantom Staking rewards, while your aFTMc amount never changes but grows in value to FTM overtime.  
 
-If you don't see the balance in your wallet, do the following:
+You can now use your aFTMb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aFTMb section.
+
+If you don't see the balance in your wallet, add the token manually:
 
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Copy token address**.
