@@ -11,6 +11,7 @@ The information contained here is not intended to provide strict rules, but rath
 Finance has long been contrained by the limitation of Web2. Banking and financial services in their classical form are often unable to trickle down to developing part of the world such as Africa, part of South Asia, Latin America.
 Unfamiliar with their benefits, people in these countries have a inherent mistrust of banks, which makes their adoption even harder.
 Meanwhile, new and exciting DeFi opportunities are often percieved as bringing more freedom and independence from financial institutions. They appear as exciting opportunities to many who want to enter and profit from finance.
+
 An extreme case can be made with people in distant African regions, who run a local banking system among themselves, where every unit or member of their community contributes to the "bank" — a person in charge of the collective fund.
 This fund then can benefit a unit, which is a family, by the decision of the community, and give an opportunity otherwise unreachable — to buy appliance or machinery needed for local production, or even to build a house.
 The same pattern can be seen in Asia, where members of the family put their saving together to buy a lodging for the oldest. In some time, another round takes place providing a lodging for the next oldest person and so on.
@@ -25,17 +26,18 @@ Blockchain, specifically a modular set. A modular blockchain offers greater cust
 App Chains are a perfect case for that. It's an ecosystem of modules that tailed specifically to your needs into your own App Chain instance.
 
 Ankr develops & launches your App Chain with your specific infrastructure needs including such modules as: 
-* Validator nodes — the core of any PoS blockchain — they process transactions and add new blocks to the chain. 
-* Full nodes — enable developers to communicate with (and build on) your App Chain using RPCs.
-* RPC endpoints — track and analyze transactions, addresses, and blocks on your App Chain.
-* Block explorers — a complete visual set of accounts and their history.
-* Testnets & faucets — free testnet tokens for developers to test what they're building on your App Chain.
-* Staking mechanisms — staking functionality and a UI interface to enable users to stake native tokens to your App Chain through a simple, elegant interface.
-* Wallet integrations — wider adoption among users of different crypto wallets where they store funds.
-* Bridging solutions — bring tokens from other network to your App Chain or bring your native tokens to other platforms.
-* On-ramp solutions — enable easy transfers between fiat and crypto and back for the users.
+* _Validator nodes_ — the core of any PoS blockchain, they process transactions and add new blocks to the chain. 
+* _Full nodes_ — enable developers to communicate with (and build on) your App Chain using RPCs.
+* _RPC endpoints_ — track and analyze transactions, addresses, and blocks on your App Chain.
+* _Block explorers_ — a complete visual set of accounts and their history.
+* _Testnets & faucets_ — free testnet tokens for developers to test what they're building on your App Chain.
+* _Staking mechanisms_ — staking functionality and a UI interface to enable users to stake native tokens to your App Chain through a simple, elegant interface.
+* _Wallet integrations_ — wider adoption among users of different crypto wallets where they store funds.
+* _Bridging solutions_ — bring tokens from other network to your App Chain or bring your native tokens to other platforms.
+* _On-ramp solutions_ — enable easy transfers between fiat and crypto and back for the users.
 
 ## What you get from using App Chains
+With App Chains you get unbeatable benefits: 
 * Complete regulatory compliance and KYC through Ankr’s DigiVerif KYC solution
 * No data leaks
 * Great privacy protection
@@ -84,22 +86,22 @@ App Chains fit:
 
 A little more about the options.
 
-### Staking Yields
+#### Staking Yields
 Provide enterprise-grade staking that offers an APY much higher than traditional fixed income products.
 
-### Fiat Onramps
+#### Fiat Onramps
 Allow your customers to purchase digital assets securely and expand their portfolios.
 
-### 401(k) & Index funds
+#### 401(k) & Index funds
 Add more diversity and higher yields to funds with more digital finance tools at your disposal.
 
-### Custodial Wallets
+#### Custodial Wallets
 Custodial wallets provide a simple and effective way for inexperienced customers to gain exposure to digital assets and store them securely.
 
-### Private & Central Banks 
+#### Private & Central Banks 
 Private and public banks can take advantage of increased transparency, faster and cheaper global transfers, and decreased overhead costs.
 
-### Stablecoins & CBDCs
+#### Stablecoins & CBDCs
 These cryptocurrencies allow for fast global transactions without the volatility traditionally associated with digital assets.
 
 ## Guidance and support through exchange-readiness program
