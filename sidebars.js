@@ -17,6 +17,7 @@ module.exports =
               {
                   'Use Cases': [
                       'build-blockchain/app-chain/use-cases/web3-gaming',
+                      'build-blockchain/app-chain/use-cases/finance',
                   ],
               },
               {
@@ -61,6 +62,7 @@ module.exports =
              },
               'build-blockchain/app-chain/exchange-readiness',
               'build-blockchain/app-chain/step-by-step',
+              'build-blockchain/app-chain/faq',
           ],
       },
    ],
