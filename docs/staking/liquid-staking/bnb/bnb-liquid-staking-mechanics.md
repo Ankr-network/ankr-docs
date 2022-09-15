@@ -24,7 +24,7 @@ The requirements when unstaking are:
 
 * Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for aBNBc.
 
-* Release time — 7-14 days.
+* Unbond time (before user gets their unstaked funds) — 7-14 days.
 
 
 ## Fees
@@ -125,7 +125,10 @@ Unstaking aBNBc adds an additional approval step — Step 1. Unstaking aBNBb wor
 
 5. After the `UnbondTime`, `intermediaryAddress` receives `undelegated(unbonded)` funds. Then the BNB backend service makes a cross-chain transaction to `operatorAddress` on BNB Chain.
 
-6. Upon the cross-transaction completion, the unstaked amount ends up at `operatorAddress`. Then the BNB backend service executes `BinancePool::distributeRewards({value: totalPendingAmount})` on BNB Chain to distribute stakes and rewards to the users.
+6. Upon the cross-transaction completion, the unstaked amount ends up at `operatorAddress`. Then the BNB backend service executes `BinancePool::distributeRewards({value: totalPendingAmount})` on BNB Chain to distribute stakes and rewards to the users. 
+   
+   The unbond time for the users is 7–14 days until they receive their unstaked funds. This is due to the Binance Chain unbond time, which is 7 days for 1 validator. Additional 7 days are because once a user unstaked with a validator, other users have to wait these 7 days + their 7 days period. 
+
 
 ## Additional information
 
