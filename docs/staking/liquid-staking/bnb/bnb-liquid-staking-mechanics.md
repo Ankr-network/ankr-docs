@@ -127,7 +127,16 @@ Unstaking aBNBc adds an additional approval step — Step 1. Unstaking aBNBb wor
 
 6. Upon the cross-transaction completion, the unstaked amount ends up at `operatorAddress`. Then the BNB backend service executes `BinancePool::distributeRewards({value: totalPendingAmount})` on BNB Chain to distribute stakes and rewards to the users. 
    
-   The unbond time for the users is 7–14 days until they receive their unstaked funds. This is due to the Binance Chain unbond time, which is 7 days for 1 validator. Additional 7 days are because once a user unstaked with a validator, other users have to wait these 7 days + their 7 days period. 
+
+### The unstake process
+
+To understand the Step 4 through 6 clearer, look at the following description. 
+ 
+1. Ankr accumulated all the unstaking transaction from Liquid Staking users in a pool.
+2. Once every 24 hours, Ankr check if there is a validator that doesn't have a pending unstaking transaction.
+3. If such validator is found, Ankr sends an unstaking transaction to it. The amount in this transaction is an aggregate of all the total users unstaking transactions since the last Ankr unstaking transaction.      
+4. The transaction takes 7 days to be processes, which is the BNB Chain unbond time period.
+5. After the unbond time period ends, Ankr receives the unstaked funds and redistributes them to the users.
 
 
 ## Additional information

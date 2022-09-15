@@ -13,8 +13,15 @@ This mGNO will be used to cover provider's slashing.
 As getting mGMO is a multistep process, you're better off reading how to get it in the [mGMO staking guide](/staking/delegated-staking/ankr/stake-ankr/).
 
 ### What is the minimum and maximum amount of mGNO I can stake?
-* Minimum — 0.00001 mGNO
+* Minimum — 0.00001 mGNO.
 * Maximum — limited by the specific Node Provider capacity (count of supported keys by the provider, each key allows to stake 32 mGNO).
+
+### Is my mGNO staked immediately?
+Gnosis accepts stakes with minumum 1 GNO (32mGNO).
+To bypass this and accept your stake if it's lower than 1GNO, we created a micropool that accumulates user stakes.
+Once it has 1 GNO, we stake it with Gnosis.
+
+This is why your stake may have to wait a while, until it's really staked with Gnosis.
 
 ### What if I want to stake more after already staking some mGNO?
 You're limited only by the capaticy of a specific Node Provider.
