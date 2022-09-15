@@ -18,18 +18,22 @@ BNB tokens are transferred to your wallet automatically when the unstaking proce
 
 :::warning release time and fees
 
-Unbond time for your stake is to 7-14 days, so you will receive the funds 7-14 after you unstaked.
+When you unstake, you have to wait for 7–14 days until your funds are released to your wallet.
 
-This is due to the Binance Chain unbond time, which is 7 days for 1 validator.  
-Additional 7 days are because once a user unstaked with a validator, other users have to wait these 7 days + their 7 days period. 
+This is because of the BNB Chain restriction, where the processing time of an unstaking transaction is 7 days.
 
-Also, ensure you have a small amount of BNB to pay the Binance gas fee for the unstake transaction.
+1. Because of this restriction, Ankr has to accumulate all unstaking transactions from users in a pool.
+2. Once every 24 hours, Ankr checks any of the 5 available validators are free, i.e. are not processing a pending unstaking transaction.
+3. When such validator is found, Ankr sends it an unstaking transaction with the amount equal to the aggregate of all the user transaction since the last Ankr unstaking transaction.
+4. This Ankr transaction takes 7 days to be processes, which is the BNB Chain unbond time period.
+5. After the unbond time period ends, Ankr receives the unstaked funds and redistributes them to the users.
 
+Ensure you have a small amount of BNB to pay the Binance gas fee for your unstaking transaction.
 :::
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
-3. Locate the aBNBb box and click the **'-'** icon to unstake.
-4. Enter the amount to unstake and click *'Unstake'*.
+3. Locate the aBNBb box and click the **-** icon to unstake.
+4. Enter the amount to unstake and click **Unstake**.
 
 You will need to make the following interactions in your wallet:
 
@@ -38,8 +42,6 @@ You will need to make the following interactions in your wallet:
 :thumbsup: **Confirm** the unstaking transaction.
 
 :::tip success
-
-Once transaction is confirmed, Ankr Staking Dashboard updates to show *Unstaking in progress*.
-
+Once transaction is confirmed, Ankr Staking Dashboard updates to show **Unstaking in progress**.
 :::
 
