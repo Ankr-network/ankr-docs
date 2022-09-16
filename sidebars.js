@@ -57,7 +57,13 @@ module.exports =
                          'build-blockchain/app-chain/bnb-sidechain/faq',
                          'build-blockchain/app-chain/bnb-sidechain/glossary',
                      ],
+
                  },
+                {
+                  'Polygon Supernets': [
+                      'build-blockchain/app-chain/polygon-supernets/overview',
+                  ],
+                },
                ],
              },
               'build-blockchain/app-chain/exchange-readiness',
