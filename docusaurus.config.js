@@ -108,7 +108,7 @@
                 label: "BNB Sidechain",
               },
               {
-                to: "build-blockchain/app-chain/polygon-supernets/overview/#what-ankr-can-offer-your-project-on-supernets",
+                to: "build-blockchain/app-chain/polygon-supernets/overview/#what-can-ankr-offer-your-supernet",
                 label: "Polygon Supernets support",
               },
             ],
