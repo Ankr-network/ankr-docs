@@ -5,7 +5,7 @@ const s3 = new AWS.S3();
 const redirects = JSON.parse(fs.readFileSync('./redirects.json'));
 
 redirects.forEach((item) => {
-    console.log('Uploading ', item.from, ' ', item.to)
+    console.log('Uploading:', item.from, '->', item.to)
     s3.putObject({
         Body: '',
         Bucket: process.env.DOMAIN,
@@ -18,6 +18,6 @@ redirects.forEach((item) => {
             return console.log(err);
         }
 
-        console.log('Done ', item.from, ' ', item.to)
+        console.log('Done')
     })
 })
