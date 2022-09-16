@@ -59,6 +59,7 @@ Supernets can operate in different modes customized to what your project needs:
 
 ## What can Ankr offer your Supernet?
 Ankr is the leading Web3 infrastructure company. It has to offer the fastest, most reliable services to power any Web3 project or bring a Web2 project to blockchain.
+
 Ankr advertizes App Chains as its own wholesome ecosystem of modules with full set up, maintenance and support.
 
 As App Chains are gaining adoption and popularity, we are partnering with other similar ecosystems to extend their functionality and improve your experience as a client. 
