@@ -1,4 +1,3 @@
-const {parse} = require('csv-parse');
 const fs = require('fs')
 const AWS = require('aws-sdk')
 const s3 = new AWS.S3();
