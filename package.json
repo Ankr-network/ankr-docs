@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Ankr Docs",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "next",
     "debug": "NODE_OPTIONS='--inspect' next",
@@ -15,8 +16,6 @@
     "@reach/skip-nav": "^0.16.0",
     "aws-sdk": "^2.1217.0",
     "copy-to-clipboard": "^3.3.2",
-    "csv-parse": "^5.3.0",
-    "exports": "^0.0.1",
     "focus-visible": "^5.1.0",
     "http-server": "^14.1.1",
     "intersection-observer": "^0.10.0",

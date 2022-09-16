@@ -87,11 +87,9 @@ jobs:
           echo "Invalidation ID is $INVALIDATION_ID"
           echo "CDN Invalidation request is sent."
 
-      - name: Custom set website-redirect for every files
+      - name: Set redirections
         working-directory: .
         env:
           DOMAIN: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DOMAIN')] }}
-          DISTRIBUTION_ID: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DISTRIBUTION_ID')] }}
         run: |
-          cat redirects.csv
-          node redirects.js 
+          node redirects.js

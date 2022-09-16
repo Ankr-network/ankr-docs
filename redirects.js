@@ -1,20 +1,24 @@
-const { parse } = require('csv-parse');
+const {parse} = require('csv-parse');
 const fs = require('fs')
 const AWS = require('aws-sdk')
 const s3 = new AWS.S3();
 
-const redirects = parse(fs.readFileSync('redirects.csv'))
-redirects.forEach((redirect) => {
-    console.log('Uploading ', redirect)
+const redirects = JSON.parse(fs.readFileSync('./redirects.json'));
+
+redirects.forEach((item) => {
+    console.log('Uploading ', item.from, ' ', item.to)
     s3.putObject({
         Body: '',
-        Bucket: 'gotothat.link',
-        Key: redirect[0],
+        Bucket: process.env.DOMAIN,
+        Key: item.from,
         Metadata: {
-            'Website-Redirect-Location': redirect[1]
+            'Website-Redirect-Location': item.to
         }
     }, (err, data) => {
-        if (err) return console.log(err)
-        console.log('done')
+        if (err) {
+            return console.log(err);
+        }
+
+        console.log('Done ', item.from, ' ', item.to)
     })
 })

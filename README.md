@@ -12,9 +12,9 @@ git clone git@github.com:raproid/raproid.github.io.git && cd raproid.github.io
 
 ## Install dependencies for the docs
 ```shell
-yarn install
+pnpm install
 ```
 ## Run a local dev env
 ```shell
-yarn next
+yarn dev
 ```
