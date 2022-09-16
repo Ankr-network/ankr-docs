@@ -11,7 +11,8 @@ redirects.forEach((item) => {
         Bucket: process.env.DOMAIN,
         Key: item.from,
         Metadata: {
-            'Website-Redirect-Location': item.to
+            'Website-Redirect-Location': item.to,
+            'Content-Type': 'text/html',
         }
     }, (err, data) => {
         if (err) {
