@@ -27,7 +27,7 @@ This is why your stake may have to wait a while, until it's really staked with G
 You're limited only by the capaticy of a specific Node Provider.
 
 ### How soon after staking will I begin to receive rewards? 
-Rewards accumulate on the weekly basis.
+Rewards accumulate on the daily basis.
 
 ### When can I claim my rewards?
 Currently, claiming rewards is not available, as this functionality is not yet supported by Gnosis.

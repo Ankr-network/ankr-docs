@@ -37,7 +37,7 @@ App Chains may be the ideal development solution if you:
 ## How can I build an App Chain?
 Despite all their benefits, App Chains can be difficult to build and launch which is why Ankr’s expertise and setup service is so crucial for helping users get their App Chains off the ground and into Web3.
 
-There are 5 main technical features that you’ll need to get started with your App Chain:
+There are 6 main technical features that you’ll need to get started with your App Chain:
 
 * [Validator nodes](/build-blockchain/app-chain/components/validator-nodes)
 * [RPC endpoint](/build-blockchain/app-chain/components/rpc-endpoints)
