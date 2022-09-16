@@ -86,3 +86,10 @@ jobs:
           INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*' | jq -r '.Invalidation.Id'`
           echo "Invalidation ID is $INVALIDATION_ID"
           echo "CDN Invalidation request is sent."
+
+      - name: Set redirections
+        working-directory: .
+        env:
+          DOMAIN: ${{ secrets[format('{0}{1}', github.event.inputs.environment, '_DOMAIN')] }}
+        run: |
+          node redirects.js
