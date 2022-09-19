@@ -16,20 +16,21 @@ The Premium user's **Endpoints** pane contains the following items:
 
 ![Endpoints](@site/static/img/endpoints.png)
 
-### Particular Blockchain
+### Particular Chain
 
-To interact with a blockchain, you must first select the one you need, right? So, in the block-structured list of supported blockchains, click the one you're going to add into your project to establish a connection with. That will take you to the pane of a particular blockchain you've selected.
+To interact with a blockchain, you must first select the one you need, right? So, in the block-structured list of supported chains, click the one you're going to add into your project to establish a connection with. That will take you to the pane of a particular chain you've selected.
 
 Each blockchain has basic and specific info divided into corresponding blocks. Let's take Ethereum as an example.
 
 #### Basic info
 
-  * **Ethereum**: blockchain name.
+  * **Ethereum**: chain name.
   * **ETH**: Ether, cryptocurrency used on the blockchain.
-  * **Archive**: type of nodes supported. 
-  * **Mainnet**: the real functioning blockchain network.
-  * **Testnet**: a sandbox environment simulating the blockchain network.
+  * **Archive**: a type of nodes supported. 
+  * **Mainnet**: a network type — the real functioning blockchain network.
+  * **Testnet**: a network type — a sandbox environment simulating the blockchain network.
     * **Gorli/Rinkeby/Ropsten**: testing networks to select from.
+  * **Endpoint**: an Endpoint to use for RPC API requests.
 
 #### Specific info
 
@@ -69,8 +70,8 @@ https://rpc.ankr.com/eth/6fe08843fa0966456eaa3fb19d4828b12389e71f48829f50df25e45
 To enable your project to interact with a blockchain, add the blockchain's URL into the project's library or config file:
 
 1. In **Sidebar**, click **Endpoints** to open the pane.
-2. In the list of blockchains, click the one you'd like to interact with.
-3. In the **Blockchain** opened, select a chain type (**Mainnet**/**Testnet**) needed for your project.
-4. On the **Connection** tab, in the **Premium URLs** block, copy the URL into your project's library or config file.
+2. In the list of chains, click the one you'd like to interact with.
+3. In the **Chain** opened, select a network (**Mainnet**/**Testnet**) needed for your project.
+4. In the **Endpoint** field, copy the URL and paste it into your project's library or config file.
 
-Congrats — you've just added a Premium URL into your project to enable blockchain interaction.
+Congrats — you've just added a Premium Endpoint into your project to enable blockchain interaction.
