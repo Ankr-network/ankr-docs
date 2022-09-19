@@ -14,7 +14,7 @@ The following section explains staking requirements, fees, rewards, validators, 
 
 The requirements when staking are:
 
-* Minimum value to stake — 1.002 BNB (the 0.002 part is the relayer fee added on top of 1 BNB).
+* Minimum value to stake — 0.502 BNB (the 0.002 part is the relayer fee added on top of 0.5 BNB).
 
 * Maximum value to stake — unlimited, at the user’s discretion.
 
