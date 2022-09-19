@@ -15,7 +15,7 @@ Yes — there is a [user guide](https://docs.binance.org/smart-chain/wallet/meta
 
 ### What is the minimum amount of BNB I can stake?
  
-1.002 BNB: user asset — 1 BNB, plus the relayer fee for cross-chain transfer of your assets applied during the staking — 0.002 BNB. You must also count in the gas fee on top for sending the transaction.
+1.002 BNB: user asset — 0.5 BNB, plus the relayer fee for cross-chain transfer of your assets applied during the staking — 0.002 BNB. You must also count in the gas fee on top for sending the transaction.
 
 
 ### Why do I get less aBNBc than aBNBb for my 1 BNB?
