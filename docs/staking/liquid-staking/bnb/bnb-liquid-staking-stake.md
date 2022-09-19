@@ -48,7 +48,7 @@ You will need to make the following interactions in your wallet:
 
 :::info
 
-A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why you see 0.502 as the min amount.
+A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why you see 0.502: the min amount 0.5 + the fee.
 
 :::
 

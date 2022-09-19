@@ -20,7 +20,7 @@ The requirements when staking are:
 
 The requirements when unstaking are:
 
-* Minimum value to unstake — 1 BNB.
+* Minimum value to unstake — 0.5 BNB.
 
 * Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for aBNBc.
 
