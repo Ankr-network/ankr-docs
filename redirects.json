@@ -1,14 +1,14 @@
 [
   {
-    "from": "docs/build-blockchain/app-chain/overview/",
+    "from": "docs/build-blockchain/app-chain/overview/index.html",
     "to": "docs/app-chain/exchange-readiness-program/"
   },
     {
-    "from": "docs/build-blockchain/app-chain/exchange-readiness/",
+    "from": "docs/build-blockchain/app-chain/exchange-readiness/index.html",
     "to": "docs/app-chain/exchange-readiness-program/"
   },
   {
-    "from": "docs/build-blockchain/app-chain/step-by-step/",
+    "from": "docs/build-blockchain/app-chain/step-by-step/index.html",
     "to": "docs/app-chain/start-with-app-chains/"
   }
 ]
