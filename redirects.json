@@ -1,6 +1,14 @@
 [
   {
-    "from": "docs/app-chain/affiliated-chain/bnb-sidechain/architecture/bnb-sidechain-architecture-circ-model-native-bridge/index.html",
-    "to": "docs/foo/bar/"
+    "from": "docs/build-blockchain/app-chain/overview/",
+    "to": "docs/app-chain/exchange-readiness-program/"
+  },
+    {
+    "from": "docs/build-blockchain/app-chain/exchange-readiness/",
+    "to": "docs/app-chain/exchange-readiness-program/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/step-by-step/",
+    "to": "docs/app-chain/start-with-app-chains/"
   }
 ]
