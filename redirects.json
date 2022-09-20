@@ -8,7 +8,7 @@
     "to": "docs/app-chain/exchange-readiness-program/"
   },
   {
-    "from": "docs/build-blockchain/app-chain/step-by-step/index.html",
+    "from": "docs/build-blockchain/app-chain/step-by-step/",
     "to": "docs/app-chain/start-with-app-chains"
   }
 ]
