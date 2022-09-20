@@ -14,6 +14,7 @@ on:
           - BS2 # bs-2-stage.dccn.ankr.com/docs/
           - BS3 # bs-3-stage.dccn.ankr.com/docs/
           - BS4 # bs-4-stage.dccn.ankr.com/docs/
+          - PROD # www.ankr.com/docs/
 
 jobs:
   deploy:
