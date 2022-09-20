@@ -20,7 +20,7 @@ export default {
 // Feedback and Edit on GH links (footerEditLink is NOT a footer link, the name is misleading)
   feedback: {
   labels: "feedback",
-  link: "Give us feedback →",
+  content: "Give us feedback →",
   },
   editLink: {
     text: "Edit this page on GitHub →",
