@@ -8,6 +8,7 @@ redirects.forEach((item) => {
     console.log('Uploading:', item.from, '->', item.to)
     s3.putObject({
         ACL: 'public-read',
+        ContentType: 'text/html',
         Body: '',
         Bucket: process.env.DOMAIN,
         Key: item.from,
