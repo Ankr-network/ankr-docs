@@ -7,6 +7,7 @@ const redirects = JSON.parse(fs.readFileSync('./redirects.json'));
 redirects.forEach((item) => {
     console.log('Uploading:', item.from, '->', item.to)
     s3.putObject({
+        ACL: 'public-read',
         Body: '',
         Bucket: process.env.DOMAIN,
         Key: item.from,
