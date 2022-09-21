@@ -9,6 +9,7 @@ redirects.forEach((item) => {
     s3.putObject({
         ACL: 'public-read',
         ContentType: 'text/html',
+        WebsiteRedirectLocation: item.to,
         Body: '',
         Bucket: process.env.DOMAIN,
         Key: item.from,
