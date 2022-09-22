@@ -145,7 +145,8 @@ For detailed information on supported methods and parameters, refer to:
 * [BinanceSDK reference](/staking/for-integrators/sdk/liquid-staking/reference/classes/BinanceSDK.html) 
 * [EthereumSDK reference](/staking/for-integrators/sdk/liquid-staking/reference/classes/EthereumSDK.html)
 * [FantomSDK reference](/staking/for-integrators/sdk/liquid-staking/reference/classes/FantomSDK.html)
-* [PolygonSDK reference](/staking/for-integrators/sdk/liquid-staking/reference/classes/PolygonSDK.html)
+* [PolygonSDK for Ethereum reference](/staking/for-integrators/sdk/liquid-staking/reference/classes/MaticEthSDK.html)
+* [PolygonSDK for Polygon reference](/staking/for-integrators/sdk/liquid-staking/reference/classes/MaticPolygonSDK.html) 
 
 ## Flow
 To understand the processes and mechanics of Liquid Staking, refer to:
