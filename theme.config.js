@@ -35,10 +35,9 @@ export default {
     const { route } = useRouter();
     const config = useConfig();
     const description =
-      config.frontMatter.description ||
-      "Ankr is the leading Web3 infrastructure company.";
-    const title_ =
-      title ? title + " – Ankr" : `${config.title} — Ankr`;
+      config.frontMatter.description ? config.frontMatter.description : "Ankr is the leading Web3 infrastructure company.";
+//    const title_ =
+//      title ? title : "Ankr Docs";
     const image =
       config.frontMatter.image ||
       `https://ankr.com/docs${
@@ -53,7 +52,7 @@ export default {
         {/* SEO */}
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
-        <meta name="og:title" content={title_} />
+        <meta name="og:title" content={`${config.title} — Ankr`} />
         <meta name="apple-mobile-web-app-title" content="Ankr is the leading Web3 infrastructure company." />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
