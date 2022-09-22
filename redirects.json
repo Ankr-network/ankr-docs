@@ -1,18 +1,2014 @@
 [
   {
-    "from": "docs/build-blockchain/app-chain/overview/index.html",
-    "to": "/docs/app-chain/exchange-readiness-program/"
+    "from": "/docs/build-blockchain/overview/",
+    "to": "/docs/build/overview/"
   },
   {
-    "from": "docs/build-blockchain/app-chain/exchange-readiness/index.html",
-    "to": "https://bs-7-stage.dccn.ankr.com/"
+    "from": "/docs/build-blockchain/pricing-plans/",
+    "to": "/docs/build/pricing/"
   },
   {
-    "from": "docs/build-blockchain/app-chain/step-by-step/index.html",
-    "to": "/docs/apnop-chain/start-with-app-chains/"
+    "from": "/docs/build-blockchain/products/v2/rpc-overview/",
+    "to": "/docs/build/products/rpc-service/overview/"
   },
   {
-    "from": "docs/foo/bar/index.html",
-    "to": "/docs/app-chain/start-with-app-chains/"
+    "from": "/docs/build-blockchain/products/v2/ui-interactions/",
+    "to": "/docs/build/products/rpc-service/premium-account-operations/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/v2/ui-interactions-blockchain/",
+    "to": "/docs/build/products/rpc-service/blockchain-interactions/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/v2/hybrid-infra/",
+    "to": "/docs/build/products/rpc-service/hybrid-infrastructure/"
+  },
+  {
+    "from": "/docs/build-blockchain/concepts/pricing/",
+    "to": "/docs/build/products/rpc-service/pricing-plans/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/v2/card-flow/",
+    "to": "/docs/build/products/rpc-service/card-flow/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/v2/advanced-apis/",
+    "to": "/docs/build/products/advanced-api-sdk/overview/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/advanced-apis/nft-api/",
+    "to": "/docs/build/products/advanced-api-sdk/nft-methods/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/advanced-apis/query-api/",
+    "to": "/docs/build/products/advanced-api-sdk/query-methods/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/advanced-apis/token-api/",
+    "to": "/docs/build/products/advanced-api-sdk/token-methods/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/advanced-apis/javascript-sdk/",
+    "to": "/docs/build/products/advanced-api-sdk/javascript-sdk/"
+  },
+  {
+    "from": "/docs/build-blockchain/products/v2/scan/",
+    "to": "/docs/build/products/ankr-scan/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/arbitrum/",
+    "to": "/docs/build/chains/arbitrum/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/avalanche/",
+    "to": "/docs/build/chains/avalanche/"
+  },
+  {
+    "from": "/build-blockchain/chains/v2/binance-smart-chain/",
+    "to": "/docs/build/chains/binance-smart-chain/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/celo/",
+    "to": "/docs/build/chains/celo/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/ethereum/about-ethereum/",
+    "to": "/docs/build/chains/ethereum/overview/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/ethereum/how-to/connect-ethereum/",
+    "to": "/docs/build/chains/ethereum/how-to/connect-metamask/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/ethereum/how-to/ethereum-requests/",
+    "to": "/docs/build/chains/ethereum/how-to/make-requests/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/ethereum/how-to/ethereum-transactions/",
+    "to": "/docs/build/chains/ethereum/how-to/send-transaction/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/ethereum/how-to/build-eth-project/",
+    "to": "/docs/build/chains/ethereum/how-to/basic-dapp/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/fantom/",
+    "to": "/docs/build/chains/fantom/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/gnosis/",
+    "to": "/docs/build/chains/gnosis/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/harmony/",
+    "to": "/docs/build/chains/harmony/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/iotex/",
+    "to": "/docs/build/chains/iotex/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/moonbeam/",
+    "to": "/docs/build/chains/moonbeam/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/near/",
+    "to": "/docs/build/chains/near/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/nervos/",
+    "to": "/docs/build/chains/nervos/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/polygon/",
+    "to": "/docs/build/chains/polygon/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/solana/",
+    "to": "/docs/build/chains/solana/"
+  },
+  {
+    "from": "/docs/build-blockchain/chains/v2/syscoin/about-syscoin/",
+    "to": "/docs/build/chains/syscoin/"
+  },
+  {
+    "from": "/docs/build-blockchain/support/get-support/",
+    "to": "/docs/build/extra/get-support/"
+  },
+  {
+    "from": "/docs/build-blockchain/support/errors/",
+    "to": "/docs/build/extra/handling-errors/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/overview/",
+    "to": "/docs/app-chains/overview/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/components/validator-nodes/",
+    "to": "/docs/app-chains/components/validator-nodes/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/components/rpc-endpoints/",
+    "to": "/docs/app-chains/components/rpc-endpoints/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/components/block-explorer/",
+    "to": "/docs/app-chains/components/block-explorer/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/components/testnet-faucet/",
+    "to": "/docs/app-chains/components/testnet-faucet/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/components/relay-hub/",
+    "to": "/docs/app-chains/components/relay-hub/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/components/staking-ui/",
+    "to": "/docs/app-chains/components/staking-ui/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/use-cases/web3-gaming/",
+    "to": "/docs/app-chains/use-cases/web3-gaming/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/use-cases/finance/",
+    "to": "/docs/app-chains/use-cases/finance/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/overview/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/overview/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/architecture/overview/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/overview/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/architecture/circ-model-native-bridge/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/circulation-model-native-bridge/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/architecture/native-bridge/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/native-bridge/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/architecture/fast-finality-bls-crypto/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/fast-finality/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/architecture/sys-smart-contracts/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/architecture/governance/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/governance/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/architecture/runtime-upgrades/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/runtime-upgrades/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/security/blockchain-evm/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/blockchain-and-evm-security/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/security/smart-contracts/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/system-smart-contracts/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/security/on-chain/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/on-chain-security/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/security/off-chain/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/off-chain-security/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/customize-genesis-config/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/configure-genesis-file/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/launch-bas/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc20-token/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc20-token/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc721-token/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc721-token/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/staking/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/staking/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/demo/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/demo/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/faq/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/faq/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/bnb-sidechain/glossary/",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/glossary/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/polygon-supernets/overview/",
+    "to": "/docs/app-chains/affiliated-chains/polygon-supernets/overview/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/exchange-readiness/",
+    "to": "/docs/app-chains/exchange-readiness-program/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/step-by-step/",
+    "to": "/docs/app-chains/start-with-app-chains/"
+  },
+  {
+    "from": "/docs/build-blockchain/app-chain/faq/",
+    "to": "/docs/app-chains/faq/"
+  },
+  {
+    "from": "/docs/staking/overview/",
+    "to": "/docs/stake/overview/"
+  },
+  {
+    "from": "/docs/staking/delegated-staking/ankr/overview/",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "",
+    "to": ""
+  },
+  {
+    "from": "docs/example/index.html",
+    "to": "https://example.com/"
+  },
+  {
+    "from": "docs/example/index.html",
+    "to": "/docs/example/"
   }
 ]
