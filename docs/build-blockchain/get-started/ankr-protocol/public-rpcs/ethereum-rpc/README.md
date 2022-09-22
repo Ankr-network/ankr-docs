@@ -1,2 +1,0 @@
-# Ethereum RPC
-
