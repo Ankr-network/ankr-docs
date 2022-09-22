@@ -1,5 +1,6 @@
 // Imported React packages/modules
 import { useRouter } from "next/router";
+import { useConfig } from "nextra-theme-docs";
 
 // Constants to use in Params
 const logo = ({ height }) => (
@@ -30,17 +31,12 @@ export default {
 // Logo
   logo: logo,
 // Head content and settings
-  head: ({ title, meta }) => {
-//    const description =
-//      meta.description || "Ankr Docs";
-
+  head() {
+    const config = useConfig();
+    const description =
+      config.frontMatter.description ? config.frontMatter.description : "Ankr Docs";
 //    const title_ =
 //      title ? title : "Ankr Docs";
-
-//    const ogImage =
-//      "Ankr Docs";
-//      meta.image || meta.description;
-
     return (
       <>
          {/* General */}
@@ -48,10 +44,9 @@ export default {
         <meta httpEquiv="Content-Language" content="en" />
 
         {/* SEO */}
-        <meta name="description" content={ "Ankr Docs" } />
-        <meta name="og:description" content={ title ? title : "Ankr Docs" } />
-        <meta name="og:title" content={ title ? title : "Ankr Docs" } />
-
+        <meta name="description" content={description} />
+        <meta name="og:description" content={description} />
+        <meta name="og:title" content={`${config.title} — Ankr`} />
         <meta name="apple-mobile-web-app-title" content="Ankr Docs" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
