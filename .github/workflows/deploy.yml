@@ -8,12 +8,12 @@ on:
         description: Target
         required: true
         options:
-#          - STAGE # www-stage.ankr.com/docs/
+          - STAGE # www-stage.ankr.com/docs/
           - BS1 # bs-1-stage.dccn.ankr.com/docs/
           - BS2 # bs-2-stage.dccn.ankr.com/docs/
           - BS3 # bs-3-stage.dccn.ankr.com/docs/
           - BS4 # bs-4-stage.dccn.ankr.com/docs/
-#          - PROD # www.ankr.com/docs/
+          - PROD # www.ankr.com/docs/
 
 jobs:
   deploy:
@@ -38,6 +38,27 @@ jobs:
         run: |
           yarn install
           yarn build
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+          repository: Ankr-network/ankr-web
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: ankr-web
+
+      - name: Install dependencies and build doc sdk
+        run: |
+          yarn install --cwd ankr-web/packages/staking-sdk
+          cd  ankr-web/packages/staking-sdk
+          yarn docs
+
+      - name: Copy build
+        run: |
+          cd out/staking/for-integrators/sdk/
+          mkdir liquid-staking
+          cd liquid-staking
+          mkdir reference
+          cd ../../../../../
+          mv ankr-web/packages/staking-sdk/docs/*  out/staking/for-integrators/sdk/liquid-staking/reference
 
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
