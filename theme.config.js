@@ -11,7 +11,7 @@ const logo = ({ height }) => (
 export default {
 //General params
   projectLink: "https://github.com/Ankr-network/",
-  docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/tree/main/",
+  docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/blob/main",
   project: {
     link: "https://github.com/Ankr-network/ankr-docs/",
   },
@@ -53,8 +53,8 @@ export default {
         <meta name="theme-color" content="#ffffff" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site:domain" content="ankr.com/docs/" />
-        <meta name="twitter:url" content="https://ankr.com/docs/" />
+        <meta name="twitter:site:domain" content="ankr.com" />
+        <meta name="twitter:url" content="https://ankr.com" />
         <meta name="twitter:image" content={image} />
         <meta name="og:image" content={image} />
 
