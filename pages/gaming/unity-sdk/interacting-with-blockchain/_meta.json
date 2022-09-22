@@ -1,7 +1,6 @@
 {
-  "available-interfaces": "Available Interfaces",
-  "interacting-with-smart-contract": "Interacting with Smart Contract",
-  "mint-nft": "Mint an NFT",
+  "interacting-with-smart-contract": "Interact with Smart Contract",
+  "mint-nft": "Mint NFT",
   "read-nft": "Read NFT Data",
-  "update-nft": "Update an NFT"
+  "update-nft": "Update NFT"
 }

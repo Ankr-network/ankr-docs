@@ -1,6 +1,6 @@
 {
-  "overview": "Overview",
-  "unity-sdk": "Unity SDK",
-  "unreal-sdk": "Unreal SDK",
+  "overview": "Mirage Overview",
+  "unity-sdk": "Mirage SDK: Unity",
+  "unreal-sdk": "Mirage SDK: Unreal Engine",
   "extra": "Extra"
 }

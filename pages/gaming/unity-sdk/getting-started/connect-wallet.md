@@ -21,19 +21,22 @@ Connecting a wallet via `QRCode` involves the following steps:
 
 ### 1. Create and cache a smart contract
 
-Before you start connecting a wallet, you need to initialize a session, create an AnkrSDK instance, and create a cache a contract — all that to be able to connect a wallet in the first place.
+To create and cache a smart contract, do the following:
 
-1. Initialise a `WalletConnect` Session using WalletConnect.cs script. 
-   1. Attach it on your GameObject or use a Prefab. 
+1. Initialize a `WalletConnect` session using `WalletConnect.cs` script. 
+   1. Attach it to your `GameObject` or use a Prefab. 
    2. Wait until `WalletConnect` establishes a connection to the blockchain bridge. By default, the connection is made on Start but that can be changed in editor as shown in the picture below.
       <img src="/docs/wallet-connection.png" alt="abi section" class="responsive-pic" width="600" />
-2. Use the static method below to create a new AnkrSDK Instance.
-   ```AnkrSDKFactory.GetAnkrSDKInstance(string ProviderURL);```
-3. Create and cache Contract by using IAnkrSDK initialized instance.
-   ```IContract GetContract(string contractAddress, string contractABI);```
+2. Use the static method below to create a new AnkrSDK instance.  
+   ```
+   AnkrSDKFactory.GetAnkrSDKInstance(string ProviderURL);
+   ```
+3. Create and cache a contract by using the `IAnkrSDK` initialized instance.  
+   ```
+   IContract GetContract(string contractAddress, string contractABI);
+   ```
 
 Now you can interact with the created contract via `GetData()` and `CallMethod()`. Read more about [interacting with a smart contact](https://ankr.com/docs/game/unity/interacting-with-blockchain/interacting-with-smart-contract). 
-
 
 ### 2. Connect a wallet via QRCode
 
@@ -47,11 +50,9 @@ Here is the way it is implemented in our **Examples**.
 We get the `ConnectURL` from a `walletconnect` Instance. Then we generate the `QRCode` from it and activate the QRCode's image so it can be scanned: 
 
 ```
-
 var connectURL = WalletConnect.Instance.ConnectURL;
 _qrCodeImage.UpdateQRCode(connectURL);
 _qrCodeImage.SetImageActive(true);
-
 ```
 
 This `QRCode` should be scanned from you MetaMask mobile app. (It asks you to connect the same way you would with the non QRCode version). 
@@ -68,11 +69,11 @@ If you agree to connect, a `Session Key` is saved in `PlayerPrefs` for future us
 
 ### 4. Create an instance of `AnkrSDKWrapper`
 
-Create an instance of a `AnkrSDKWrapper` class via `AnkrSDKWrapper.GetSDKInstance()` method after successful connection to your wallet.
+Create an instance of an `AnkrSDKWrapper` class via `AnkrSDKWrapper.GetSDKInstance()` method after successful connection to your wallet.
 
-    ```
-    var ankrSdk = AnkrSDKWrapper.GetSDKInstance("<ethereum node url>");
-    ```
+```
+IAnkrSDK GetAnkrSDKInstance(string providerURI, bool autoSetup = false)
+```
 
 Inside ***(AnkrSDK/Examples/UseCases/LinkingAccountWallet)*** is an example script demonstrating how to link a Web3 wallet (Metamask) to a player account.
 
@@ -158,5 +159,4 @@ This is an example from the SDK on how to link a Web3 wallet to a player account
     address := string(sigPublicKey);
     // add address to a database
     ...
-
     ```

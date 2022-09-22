@@ -4,22 +4,22 @@ import { Callout } from "nextra-theme-docs";
 
 Making updates to the NFT e.g. adding a red hat to a character requires signing and sending a transaction.
 
-### Signing transactions
+## Signing transactions
 All updates are transactions that must be signed via a prompt from MetaMask.
 
-### Sending transactions
+## Sending transactions
 
 There are two ways to make update transactions. 
 Using the **GetData** method and the **CallMethod**
 
-#### GetData method
+### GetData method
 
 Use the `GetData` method to retrieve information from the blockchain. (READ functions do NOT require mining.). Other non-standard `Get` functions are also available
 
-These methods require
+These methods require:
 
-* Contract Address
-* ABI
+  * Contract Address
+  * ABI
 
 The following extract is an example usage of the **GetData** method to retrieve information about an NFT:
 
@@ -39,7 +39,7 @@ private async UniTask<BigInteger> GetHat(BigInteger tokenID)
 ```
 
 
-#### CallMethod
+### CallMethod
 
 Use the `CallMethod` to write new information to the blockchain. These methods utilize gas. 
 
@@ -57,7 +57,7 @@ public async void UpdateNFT()
 		}
 ```
 
-### 👀 Example — update NFT
+## Example: update NFT
 
 This is an example from the SDK and illustrates how to update a GameItem NFT by user request.
 
@@ -115,5 +115,4 @@ This is an example from the SDK and illustrates how to update a GameItem NFT by 
 
         tokenDetails[itemInfo.tokenId] = Item(itemInfo.itemType, itemInfo.strength, itemInfo.level);
     }
-
     ```
