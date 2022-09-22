@@ -13,7 +13,7 @@ This documentation serves as a resource to explore how you can use and integrate
 * Choose separate components your project needs
 * Build a fast and secure blockchain with BNB Sidechain
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Bring your project to Web3](app-chain/overview)↗
+  [Bring your project to Web3](app-chains/overview)↗
 </div>
 
 ## Ankr Build
@@ -22,7 +22,7 @@ This documentation serves as a resource to explore how you can use and integrate
 * Suitable for Web3 developers and enthusiasts of all skill levels
 * Multichain JS SDK
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Use Ankr infrastructure and access blockchains](build/ankr-build-overview)↗
+  [Use Ankr infrastructure and access blockchains](build/overview)↗
 </div>
 
 
@@ -32,7 +32,7 @@ This documentation serves as a resource to explore how you can use and integrate
 * Connect staking rewards to DeFi to trade/farm for even higher APY
 * Integrate Ankr Staking into your projects
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Stake, earn, and integrate](stake/stake-overview)↗
+  [Stake, earn, and integrate](stake/overview)↗
 </div>
 
 ## Ankr Gaming
@@ -41,7 +41,7 @@ This documentation serves as a resource to explore how you can use and integrate
 * Integrate Web3 wallets easily
 * Compatible with Unity and Unreal Engine
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Take your game to Web3](game/ankr-gaming-overview)↗
+  [Take your game to Web3](game/overview)↗
 </div>
 
 ## Ankr Learn
@@ -51,5 +51,5 @@ This documentation serves as a resource to explore how you can use and integrate
 * Explore code guide, tools, tutorials and resoures you need to write and deploy smart contracts.
 * Find End-to-End tutorials to build and ship full-fledged decentralized applications.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Learn and practice Web3](learn/learn-overview)↗
+  [Learn and practice Web3](learn/overview)↗
 </div>
