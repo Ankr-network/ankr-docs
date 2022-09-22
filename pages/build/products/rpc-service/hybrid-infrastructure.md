@@ -69,4 +69,4 @@ To add a private node, follow the steps:
   3. In the list of blockchain networks, click the one you have the Hybrid Infrastructure functionality enabled for.
   4. On the **Infrastructure** tab, in **My Endpoints** block, click **Add Endpoint** (+), enter the address of your node, and then click finish.
 
-<img src="/hybrid-add-node.png" alt="Add private node" class="responsive-pic" width="820" />
+<img src="/docs/hybrid-add-node.png" alt="Add private node" class="responsive-pic" width="820" />

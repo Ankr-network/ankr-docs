@@ -14,7 +14,7 @@ We’ll be walking you through the entire process of coding, testing, setting up
 
 ## Wait, What’s Optimism?
 
-![Hello](../../../public/learn/c8r6BWBuQ.png)
+<img src="/docs/learn/c8r6BWBuQ.png" alt="Hello" class="responsive-pic" width="700" />
 
 Optimism is a fast and transactionally cheap L2 EVM Blockchain that lets developers build contracts on top of its chain with Solidity. If you’d like to read more about what Optimism is, there is a great article on CoinMarketCap explaining its advantages and differences.
 
@@ -29,7 +29,7 @@ Before we start, here is a list of things you’ll need on your computer:
 ## Project Setup
 To start, we’re going to leverage Hardhat to develop, compile, test, and deploy our contract locally. If you’re not familiar, this will be a good primer to start with.
 
-![Hello](../../../public/learn/rTVWirrkB.png)
+<img src="/docs/learn/rTVWirrkB.png" alt="Hello" class="responsive-pic" width="700" />
 
 To start, we’re going to scaffold out a new project with TypeScript.
 
@@ -75,7 +75,7 @@ npx hardhat;
 
 If we open up our project in VSCode we should see big list of files generated for us, but don’t worry we won’t need to use all of them.
 
-![Hello](../../../public/learn/C2wDPA7xh.png)
+<img src="/docs/learn/C2wDPA7xh.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 ## Creating Our Contract
@@ -93,7 +93,7 @@ contract BuidlToken {
 
 With that base in place, we’re now going to leverage some existing code to easily build our own ERC-20 token on top of a widely adopted standard. To do this, we’ll be using OpenZeppelin’s contract npm package.
 
-![Hello](../../../public/learn/rbbL8ro7j.png)
+<img src="/docs/learn/rbbL8ro7j.png" alt="Hello" class="responsive-pic" width="700" />
 
 ```bash
 # /optimism-erc20
@@ -116,12 +116,12 @@ contract BuidlToken is ERC20 {
 ```
 That’s it! We have our ERC-20 token. The reason why our code is so short is because we’re using all the functions defined by the OpenZeppelin ERC20.sol file. The file provided by OpenZeppelin is an inherited set of functions from the ERC-20 contract, which you can more details on here. In VSCode, you can actually see the functions by doing Command (PC CTRL) + Click on the ERC20.sol part of the import.
 
-![Hello](../../../public/learn/2GPJfTK3O.png)
+<img src="/docs/learn/2GPJfTK3O.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 This should open up the file located in your node_modules folder and show you the [contents](https://github.com/OpenZeppelin/openzeppelin-contracts) of the entire file we’re extending.
 
-![Hello](../../../public/learn/lM8jBQ5Xr.png)
+<img src="/docs/learn/lM8jBQ5Xr.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 There is one thing that we need to factor in with this default ERC-20 token and that is that the supply can only be defined once, at the time of the contract deployed. We’re going to make a slight modification to our contract to make it so that only the owner (the wallet that deployed the contract) can modify the supply after the contract has been deployed.
@@ -235,7 +235,7 @@ After we’ve modified the file we’ll need to run two Terminals to get things 
 # Compiled 5 Solidity files successfully
 # Contract deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 ```
-![Hello](../../../public/learn/LsPiAJsOm.png)
+<img src="/docs/learn/LsPiAJsOm.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 ## Testing Our Contract
@@ -788,10 +788,9 @@ If you don’t have a Twitter account, you can use some of these faucet options 
 - https://kovan.optifaucet.com
 - https://optimismfaucet.xyz
 
-![Hello](../../../public/learn/DBijURIW-.png)
-![Hello](../../../public/learn/5dYFHOWWv.png)
+<img src="/docs/learn/DBijURIW-.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/learn/5dYFHOWWv.png" alt="Hello" class="responsive-pic" width="700" />
 
-5dYFHOWWv.png
 
 ## Deployment Configuration
 Now that we have the tokens in our wallet, we just need to need to create our environment variable file (.env) and modify our hardhat.config.ts to add the Optimism network to it.
@@ -814,10 +813,10 @@ REMEMBER: Never share this private key with anyone, not even your mom.
 cp .env.example .env;
 ```
 Next, we’ll need to get our wallet private key.
-![Hello](../../../public/learn/u1ZTG3u4J.png)
-![Hello](../../../public/learn/QFjlhRkS0.png)
-![Hello](../../../public/learn/dZgJfym-D.png)
-![Hello](../../../public/learn/pQHpLyko_.png)
+<img src="/docs/learn/u1ZTG3u4J.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/learn/QFjlhRkS0.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/learn/dZgJfym-D.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/learn/pQHpLyko_.png" alt="Hello" class="responsive-pic" width="700" />
 
 Once we have it, add it to our newly created .env file.
 
@@ -894,18 +893,18 @@ Run the following and enjoy the miracle of deploying to the blockchain.
 ```
 Using [Etherscan’s Optimism Kovan Blockchain Explorer](https://kovan-optimistic.etherscan.io/), we can search for the deployed contract.
 
-![Hello](../../../public/learn/yRxH7z_qa.png)
+<img src="/docs/learn/yRxH7z_qa.png" alt="Hello" class="responsive-pic" width="700" />
 
 ## Verifying Our Contract
 
 Now that we have our contract deployed, we want to be able to interact with it via the blockchain explorer and in order to do that we need to verify its source code. This part requires creating an account with Optimistic Etherscan and generating an API key.
 
-![Hello](../../../public/learn/C2yRmq9yu.png)
+<img src="/docs/learn/C2yRmq9yu.png" alt="Hello" class="responsive-pic" width="700" />
 
 To do this, you’ll need to go to https://optimistic.etherscan.io/, sign up for a new account, and then make your way to the API Key section to generate a new key. With this key you’ll be pasting it into you .env file.
-![Hello](../../../public/learn/weUkOGtKX.png)
-![Hello](../../../public/learn/UUf5rKRtq.png)
-![Hello](../../../public/learn/QXKJN3C_f.png)
+<img src="/docs/learn/weUkOGtKX.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/learn/UUf5rKRtq.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/learn/QXKJN3C_f.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 
@@ -941,19 +940,19 @@ Now that we have all the right values, we can run the following to validate the 
 ```
 Now if we look on the test net we’ll see a bunch of functions that are available to us.
 
-![Hello](../../../public/learn/AQAmipGq8.png)
+<img src="/docs/learn/AQAmipGq8.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 ## Minting Tokens
 
 Our final step is to increase the total supply by minting more token through the blockchain explorer. To do this you’ll head over to the Contract section and select Write Contract. From there you’ll need to connect your wallet (the wallet address which deployed the contract) and use the mint function.
 
-![Hello](../../../public/learn/X4qxLJCR0.png)
-![Hello](../../../public/learn/KXl4DfKYG.png)
+<img src="/docs/learn/X4qxLJCR0.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/learn/KXl4DfKYG.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 Once the transaction is complete, you can verify the total supply by going back the Read Contract section and expanding the totalSupply section to see the new supply being reflected.
 
-![Hello](../../../public/learn/-wq0TVPlR.png)
+<img src="/docs/learn/-wq0TVPlR.png" alt="Hello" class="responsive-pic" width="700" />
 
 

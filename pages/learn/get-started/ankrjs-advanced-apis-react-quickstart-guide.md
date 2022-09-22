@@ -14,8 +14,7 @@ ________________
 - [Ankr.js](https://github.com/ankr-network/ankr.js) to interact with Ankr's Advanced APIs
 - [Ankr's Advanced APIs](https://ankr.com/advanced-api) as the data source
 
-
-![Hello](../../../public/learn/Cnaoed4.png)
+<img src="/docs/learn/Cnaoed4.png" alt="Hello" class="responsive-pic" width="700" />
 
 ## Prerequisites
 
@@ -37,8 +36,7 @@ cd ankrjs-tutorial && yarn dev
 
 Here's what it looks like at the moment:
 
-![fig2](../../../public/learn/DtagqBA.png)
-
+<img src="/docs/learn/DtagqBA.png" alt="fig2" class="responsive-pic" width="700" />
 
 The app currently only contains the boilerplate code provided by Next.js. Over the course of the next few sections, you'll set up Ankr.js and use it to create a gallery of NFTs for any given wallet address.
 
@@ -123,7 +121,7 @@ export default Home;
 
 You should see a list of nfts being logged out in your browser's console.
 
-![fig3](../../../public/learn/qxAxaoa.png)
+<img src="/docs/learn/qxAxaoa.png" alt="fig3" class="responsive-pic" width="700" />
 
 ## Step 4: Create Wallet Address Input
 
@@ -179,8 +177,7 @@ export default Home;
 
 You should see a different list of `nfts` being logged out in the console when you change the wallet address in the input now. Congrats! You are now able to fetch the list of NFTs owned by any given address.
 
-
-![fig4](../../../public/learn/7tmuhJ8.png)
+<img src="/docs/learn/7tmuhJ8.png" alt="fig4" class="responsive-pic" width="700" />
 
 ## Step 5: Display NFTs In Your UI
 
@@ -240,7 +237,7 @@ export default Home;
 ```
 You should now see a gallery of all the NFTs owned by the given wallet address of your choice. LFG!
 
-![Hello](../../../public/learn/Cnaoed4.png)
+<img src="/docs/learn/Cnaoed4.png" alt="Hello" class="responsive-pic" width="700" />
 
 # Conclusion & Next Steps
 

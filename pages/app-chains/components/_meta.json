@@ -3,6 +3,7 @@
   "validator-nodes": "Validator Nodes",
   "testnet-faucet": "TestNet Faucet",
   "block-explorer": "Block Explorer",
+  "relay-hub": "Cross-chain Bridge",
   "staking-ui": "Staking UI"
 
 }

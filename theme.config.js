@@ -11,7 +11,9 @@ export default {
 //General params
   projectLink: "https://github.com/Ankr-network/",
   docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/tree/main/pages",
-  github: "https://github.com/Ankr-network/ankr-docs/",
+  project: {
+    link: "https://github.com/Ankr-network/ankr-docs/",
+  },
   titleSuffix: " – Ankr",
   toc: {
     float: true,

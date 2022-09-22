@@ -129,11 +129,11 @@ PRIVATE_KEY=YOUR_PRIVATE_KEY
 
 ## Setup Hardhat to Compile and Deploy Your Contract to Fuji Testnet
 
-![Hello](../../../public/learn/12.png)
+<img src="/docs/learn/12.png" alt="Hello" class="responsive-pic" width="700" />
 
 We will be using [Ankr's Public RPC's](https://www.ankr.com/rpc/avalanche/) to connect to and send transactions on the Avalanche blockchain just copy the URL for the Fuji testnet and mainnet. No account or login required!
 
-![Hello](../../../public/learn/13.png)
+<img src="/docs/learn/13.png" alt="Hello" class="responsive-pic" width="700" />
 
 Now you are ready to edit your `hardhat.config.js` with the following:
 
@@ -218,7 +218,7 @@ npx hardhat run scripts/deploy.js --network fuji
 ```
 Copy the contract address and search for it in Snowtrace at [testnet.snowtrace.io](https://testnet.snowtrace.io/)↗ (example)
 
-![Hello](../../../public/learn/14.png)
+<img src="/docs/learn/14.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 ##  Deploy the Contract to Avalanche Mainnet
@@ -235,12 +235,12 @@ npx hardhat run scripts/deploy.js --network avalanche
 Copy the contract address and search for it in Snowtrace at snowtrace.io ([example contract](https://snowtrace.io/address/0xc7f2061054FceF82397942F42a37d5fE7A758960)↗)
 
 
-![Hello](../../../public/learn/16.png)
+<img src="/docs/learn/16.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 Create an account on Snowtrace and go to `https://snowtrace.io/myapikey`. Create a new API key. Copy the API key and paste it in your `.env` file
 
-![Hello](../../../public/learn/44.png)
+<img src="/docs/learn/44.png" alt="Hello" class="responsive-pic" width="700" />
 
 ```
 PRIVATE_KEY=YOUR_PRIVATE_KEY
@@ -356,5 +356,5 @@ npx hardhat run scripts/mint.js --network avalanche
 
 Copy the `PUBLIC_KEY` address and navigate to `https://nftrade.com/users/avalanche/PUBLIC_KEY` to view your NFT.
 
-![Hello](../../../public/learn/Um9YnRSx2.png)
+<img src="/docs/learn/Um9YnRSx2.png" alt="Hello" class="responsive-pic" width="700" />
 

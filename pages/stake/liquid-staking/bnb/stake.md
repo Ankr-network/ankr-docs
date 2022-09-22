@@ -42,6 +42,10 @@ You will need to make the following interactions in your wallet:
 
 ## Stake your BNB
 
+<Callout>
+A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why you see 0.502: the min amount 0.5 + the fee.
+</Callout>
+
 1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 
 
 2. Locate the **Binance (BNB)** box and click *Stake* in it.
@@ -54,9 +58,6 @@ You will need to make the following interactions in your wallet:
 
 6. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
 
-<Callout>
-As mentioned before, a gas fee is incurred to finalize the staking transactions.
-</Callout>
 
 <Callout emoji="✅">
 Your aBNBb balance will automatically increase by a small amount daily to reflect your Binance Coin Staking rewards. 

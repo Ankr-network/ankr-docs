@@ -5,11 +5,11 @@
 | Feature               | Public Plan                                                                                                | Premium Plan                                                                                   |
 |-----------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
 | Full and Archive Data | ✅                                                                                                          | ✅                                                                                              |
-| Advanced API          | ❌                                                                                                          | ✅                                                                                              |
-| Priority order        | Inferior to Premium;<br/>Limited during high traffic                                                       | Superior to Public;<br/>Prioritized during high traffic                                        |
+| Advanced API          | ✅                                                                                                          | ✅                                                                                              |
+| Priority order        | Limited during high traffic                                                                                | Prioritized during high traffic                                                                |
 | Requests per minute   | `= 45k / all blockchains` — guaranteed;<br/>`> 45k / all blockchains` — possible (depends on overall load) | `= 60k / endpoint` — guaranteed;<br/>`> 60k / endpoint` — possible (depends on overall load)   |
 | Connection            | HTTPS                                                                                                      | HTTPS and WebSockets                                                                           |
-| Support               | Discord Support                                                                                            | Custom SLA                                                                                     |
+| Support               | Discord Support                                                                                            | Direct Email Support                                                                           |
 | Terms                 | No Contract                                                                                                | Both Contract and No Contract                                                                  |
 | Cost                  | **FREE**                                                                                                   | **[Pay-as-you-go](/build-blockchain/concepts/pricing#payg-premium-tiers-usage-based-pricing)** |
 
@@ -52,3 +52,41 @@ Use our beta pricing calculator for standard EVM methods. For all other methods 
 2. [Connect your wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet).
 3. [Top up account balance](/build-blockchain/products/v2/ui-interactions/#top-up).
 4. [Add Premium URLs into your project](/build-blockchain/products/v2/ui-interactions-blockchain/#rpc-apis-for-your-project) to interact with a blockchain.
+
+## Pricing per request
+
+The price of our API Credits is pegged to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
+
+| Chain type | Method                                    | API Credits | USD/request |
+|------------|-------------------------------------------|-------------|-------------|
+|     EVM    | `eth_getLogs`                             | 700         | $0.00007000 |
+|     EVM    | `eth_estimateGas`                         | 700         | $0.00007000 |
+|     EVM    | `eth_sendRawTransaction`                  | 700         | $0.00007000 |
+|     EVM    | `eth_call`                                | 500         | $0.00005000 |
+|     EVM    | `eth_getCode`                             | 500         | $0.00005000 |
+|     EVM    | `web3_clientVersion`                      | 200         | $0.00002000 |
+|     EVM    | `web3_sha3`                               | 200         | $0.00002000 |
+|     EVM    | `eth_getBlockByNumber`                    | 200         | $0.00002000 |
+|     EVM    | `eth_getBlockByHash`                      | 200         | $0.00002000 |
+|     EVM    | `eth_getTransactionReceipt`               | 200         | $0.00002000 |
+|     EVM    | `eth_getUncleByBlockHashAndIndex`         | 200         | $0.00002000 |
+|     EVM    | `eth_chainId`                             | 200         | $0.00002000 |
+|     EVM    | `eth_getBlockTransactionCountByHash`      | 200         | $0.00002000 |
+|     EVM    | `eth_accounts`                            | 200         | $0.00002000 |
+|     EVM    | `eth_gasPrice`                            | 200         | $0.00002000 |
+|     EVM    | `eth_getBlockTransactionCountByNumber`    | 200         | $0.00002000 |
+|     EVM    | `eth_getCompilers`                        | 200         | $0.00002000 |
+|     EVM    | `eth_getUncleByBlockNumberAndIndex`       | 200         | $0.00002000 |
+|     EVM    | `eth_getTransactionByHash`                | 200         | $0.00002000 |
+|     EVM    | `eth_getUncleCountByBlockNumber`          | 200         | $0.00002000 |
+|     EVM    | `eth_uninstallFilter`                     | 200         | $0.00002000 |
+|     EVM    | `eth_compileSolidity`                     | 200         | $0.00002000 |
+|     EVM    | `eth_getTransactionByBlockHashAndIndex`   | 200         | $0.00002000 |
+|     EVM    | `eth_getTransactionByBlockNumberAndIndex` | 200         | $0.00002000 |
+|     EVM    | `eth_subscribe`                           | 200         | $0.00002000 |
+|     EVM    | `eth_unsubscribe`                         | 200         | $0.00002000 |
+|     EVM    | `eth_getTransactionCount`                 | 200         | $0.00002000 |
+|     EVM    | `eth_blockNumber`                         | 200         | $0.00002000 |
+|     EVM    | `eth_newBlockFilter`                      | 200         | $0.00002000 |
+|     EVM    | `eth_getBalance`                          | 200         | $0.00002000 |
+|     EVM    | `eth_getStorageAt`                        | 200         | $0.00002000 |

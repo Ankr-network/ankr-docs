@@ -28,7 +28,7 @@ Um, without writing a single line of code.
 
 Let me just show you instead. Also, was that just me talking to myself or what? 
 
-![Hello](../../../public/learn/reXHIQX1T.png)
+<img src="/docs/learn/reXHIQX1T.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 TL;DR: We will build a DAO on [Aragon Client](https://client.aragon.org/#/)↗ and deploy it on the Ethereum Rinkeby Testnet. By the end of this tutorial, you’ll be able to:
@@ -44,7 +44,7 @@ TL;DR: We will build a DAO on [Aragon Client](https://client.aragon.org/#/)↗ a
 
 Aragon is a DAO maker tool for beginners and developers to create their first of many DAOs in a couple of clicks. This tool will help you with managing your DAO members, their votes, and proposals, and will let you admin your funds directly on the blockchain without writing a single line of code. 
 
-![Hello](../../../public/learn/h9Fg7K8Dh.png)
+<img src="/docs/learn/h9Fg7K8Dh.png" alt="Hello" class="responsive-pic" width="700" />
 ______________________________
 ## Getting Started
 
@@ -57,11 +57,11 @@ Head over to [Aragon Client](https://client.aragon.org/#/)↗ and follow these s
 
 - Navigate to the "Create an organization" option and click on that.
 
-![Hello](../../../public/learn/M9ZL-fipA.png)
+<img src="/docs/learn/M9ZL-fipA.png" alt="Hello" class="responsive-pic" width="700" />
 
 Once you select the "Create an Organization" button, you'll land to this page where you'll be given a few options as pre-configured templates for your DAO, with the details given already. 
 
-![Hello](../../../public/learn/2hCqeOQGP.png)
+<img src="/docs/learn/2hCqeOQGP.png" alt="Hello" class="responsive-pic" width="700" />
 
 For this project, we will opt for the "Company" template where the tokens are transferable and decisions are based on the weighted voting system. 
 
@@ -72,13 +72,13 @@ For this project, we will opt for the "Company" template where the tokens are tr
 
 - Next up, we will set up the DAO's name. The name you choose will be mapped to the organization's address and cannot be changed after you launch it.
 
-![Hello](../../../public/learn/lgcDc4BRP.png)
+<img src="/docs/learn/lgcDc4BRP.png" alt="Hello" class="responsive-pic" width="700" />
 
 - Once you set up the name from the DAO, click "Next: Configure template".
 
 ### Configure Voting  
 
-![Hello](../../../public/learn/gglyCR3CN.png)
+<img src="/docs/learn/gglyCR3CN.png" alt="Hello" class="responsive-pic" width="700" />
 
 Now, in the above screenshot, you see a couple of different options which we will be exploring below: 
 
@@ -94,7 +94,7 @@ You can set the settings which might suit best for your DAO, for the sake of thi
 
 Now that we have configured the voting mechanism for the DAO, you can now set a desired name and symbol for your token. 
 
-![Hello](../../../public/learn/tk-syH5ds.png)
+<img src="/docs/learn/tk-syH5ds.png" alt="Hello" class="responsive-pic" width="700" />
 
 - Enter the token name and symbol 
 - Enter the addresses of the DAO members or holders and allocate tokens to them. 
@@ -102,17 +102,17 @@ Now that we have configured the voting mechanism for the DAO, you can now set a 
 
 After you launch your organization, the Metamask window will pop up for transaction approval. Confirm the transaction and make sure you don't select the speed-up option in MetaMask. Also, do not refresh the window.
 
-![Hello](../../../public/learn/g0JSY-t1w.png)
+<img src="/docs/learn/g0JSY-t1w.png" alt="Hello" class="responsive-pic" width="700" />
 
 With that, you should be presented with a screen similar to this:
 
-![Hello](../../../public/learn/C-QwyWtIR.png)
+<img src="/docs/learn/C-QwyWtIR.png" alt="Hello" class="responsive-pic" width="700" />
 
 ### First Proposal, First Vote
 
 Click on get started, and let us create our very first proposal to begin the voting process.
 
-![Hello](../../../public/learn/v9DCmgk0W.png)
+<img src="/docs/learn/v9DCmgk0W.png" alt="Hello" class="responsive-pic" width="700" />
 
 - Click on ‘Vote’ from the options shown or find 'Voting' from the left menu and click on ‘Create a New Vote’. 
 
@@ -120,11 +120,11 @@ Click on get started, and let us create our very first proposal to begin the vot
 
 This action will require you to sign a transaction for the proposal to go live.
 
-![Hello](../../../public/learn/CTxYhHkWB.png)
+<img src="/docs/learn/CTxYhHkWB.png" alt="Hello" class="responsive-pic" width="700" />
 
 Once the proposal is live, members can vote "yes" or "no" based on their decision in favor or against the question asked. The voting window will be open for the time duration set in the earlier steps. In our case, it is 24 hours only. 
 
-![Hello](../../../public/learn/3uIf2XTyL.png)
+<img src="/docs/learn/3uIf2XTyL.png" alt="Hello" class="responsive-pic" width="700" />
 
 Now that you have successfully published the first proposal, you can finally register your first vote!
 

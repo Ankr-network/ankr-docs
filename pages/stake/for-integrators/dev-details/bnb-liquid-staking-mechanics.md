@@ -9,17 +9,17 @@ The following section explains staking requirements, fees, rewards, validators, 
 
 The requirements when staking are:
 
-* Minimum value to stake — 1.002 BNB (the 0.002 part is the relayer fee added on top of 1 BNB).
+* Minimum value to stake — 0.502 BNB (the 0.002 part is the relayer fee added on top of 0.5 BNB).
 
 * Maximum value to stake — unlimited, at the user’s discretion.
 
 The requirements when unstaking are:
 
-* Minimum value to unstake — 1 BNB.
+* Minimum value to unstake — 0.5 BNB.
 
 * Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for aBNBc.
 
-* Release time — 7-14 days.
+* Unbond time (before user gets their unstaked funds) — 7-14 days.
 
 
 ## Fees
@@ -121,6 +121,15 @@ Unstaking aBNBc adds an additional approval step — Step 1. Unstaking aBNBb wor
 5. After the `UnbondTime`, `intermediaryAddress` receives `undelegated(unbonded)` funds. Then the BNB backend service makes a cross-chain transaction to `operatorAddress` on BNB Chain.
 
 6. Upon the cross-transaction completion, the unstaked amount ends up at `operatorAddress`. Then the BNB backend service executes `BinancePool::distributeRewards({value: totalPendingAmount})` on BNB Chain to distribute stakes and rewards to the users.
+   
+### The unstake process
+
+To understand the Step 4 through 6 clearer, look at the following description. 
+1. Ankr accumulated all the unstaking transaction from Liquid Staking users in a pool.
+2. Once every 24 hours, Ankr check if there is a validator that doesn't have a pending unstaking transaction.
+3. If such validator is found, Ankr sends an unstaking transaction to it. The amount in this transaction is an aggregate of all the total users unstaking transactions since the last Ankr unstaking transaction.      
+4. The transaction takes 7 days to be processes, which is the BNB Chain unbond time period.
+5. After the unbond time period ends, Ankr receives the unstaked funds and redistributes them to the users. 
 
 ## Additional information
 

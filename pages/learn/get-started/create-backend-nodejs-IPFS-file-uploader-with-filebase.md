@@ -10,7 +10,7 @@ ________________
 # IPFS & Filebase
 If you’d like to understand IPFS a bit better, check out the last article written to easily understand & upload files to IPFS with filebase. This tutorial will focus on creating a Node Backend API that allows for uploading to IPFS with Filebase.
 
-![ipfs](../../../public/learn/ww1.png)
+<img src="/docs/learn/ww1.png" alt="ipfs" class="responsive-pic" width="700" />
 
 ## Requirements
 Before we start, we need to make sure that you have the following installed locally on your computer.
@@ -266,8 +266,7 @@ yarn dev;
 # Listening on PORT 5001
 # Environment: development
 ```
-
-![ipfs](../../../public/learn/ww2.png)
+<img src="/docs/learn/ww2.png" alt="ipfs" class="responsive-pic" width="700" />
 
 Our server is now working, now we need to add upload functionality.
 
@@ -361,7 +360,7 @@ curl --location --request POST 'http://localhost:5001/upload' \
 
 **Postman:**
 
-![ipfs](../../../public/learn/ww3.png)
+<img src="/docs/learn/ww3.png" alt="ipfs" class="responsive-pic" width="700" />
 
 To confirm that the file has also been uploaded, we can check our `bucket` folder to see a new `test-forever.jpg` created. We can also create a server on port 5002 to see that our file is uploaded by running the following:
 
@@ -393,7 +392,7 @@ npx http-server -p 5002 bucket;
 ```
 If we open up `http://localhost:5002/test-forever.jpg` we can see in our browser that image is there.
 
-![ipfs](../../../public/learn/ww4.png)
+<img src="/docs/learn/ww4.png" alt="ipfs" class="responsive-pic" width="700" />
 
 Now that we have the base setup for our local uploads, we’re going to leverage multer-s3 to utilize Filebase’s AWS S3 Client compatibility.
 
@@ -401,15 +400,15 @@ Now that we have the base setup for our local uploads, we’re going to leverage
 
 Before we can add the code, we’ll need to create a new account at Filebase.com. Once an account has been created, we’ll need to create a new **bucket**, with the **Storage Network** set to **IPFS (All data is public)**.
 
-![ipfs](../../../public/learn/FmrYcQ1KI.png)
+<img src="/docs/learn/FmrYcQ1KI.png" alt="ipfs" class="responsive-pic" width="700" />
 
-![ipfs](../../../public/learn/ww5.png)
+<img src="/docs/learn/ww5.png" alt="ipfs" class="responsive-pic" width="700" />
 
-![ipfs](../../../public/learn/ww6.png)
+<img src="/docs/learn/ww6.png" alt="ipfs" class="responsive-pic" width="700" />
 
 Once we have our newly created bucket, we’re going to take note of the name so that we can use it later, and then get our Access Keys.
 
-![ipfs](../../../public/learn/ww7.png)
+<img src="/docs/learn/ww7.png" alt="ipfs" class="responsive-pic" width="700" />
 
 Now that we have the values, we’re going to create a dot environment file `.env`, but we’ll create a template (.env.example) for it because we should never save our `.env` to our git repository.
 
@@ -606,7 +605,7 @@ curl --location --request POST 'http://localhost:8080/upload' \
 
 **Postman:**
 
-![ipfs](../../../public/learn/ww8.png)
+<img src="/docs/learn/ww8.png" alt="ipfs" class="responsive-pic" width="700" />
 
 Seeing that IPFS url, we can go to it directly and see that it’s actually persisted on the decentralized storage.
 
@@ -614,7 +613,7 @@ Seeing that IPFS url, we can go to it directly and see that it’s actually pers
 https://ipfs.filebase.io/ipfs/bafybeierozrtdlir5ywdguah573ga25a7tzzhqeh7kvlvfx2y2wqymdj7u
 ```
 
-![ipfs](../../../public/learn/ww9.png)
+<img src="/docs/learn/ww9.png" alt="ipfs" class="responsive-pic" width="700" />
 
 There you have it, we built a Backend IPFS File Uploader with Filebase.
 
