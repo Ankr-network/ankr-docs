@@ -34,7 +34,7 @@ export default {
   head() {
     const config = useConfig();
     const description =
-      config.frontMatter.description ? config.frontMatter.description : "Ankr Docs";
+      config.frontMatter.description ? config.frontMatter.description : "Ankr is the leading Web3 infrastructure company.";
 //    const title_ =
 //      title ? title : "Ankr Docs";
     return (
@@ -47,7 +47,7 @@ export default {
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
         <meta name="og:title" content={`${config.title} — Ankr`} />
-        <meta name="apple-mobile-web-app-title" content="Ankr Docs" />
+        <meta name="apple-mobile-web-app-title" content="Ankr is the leading Web3 infrastructure company." />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
 
