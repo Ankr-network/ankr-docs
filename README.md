@@ -1,5 +1,4 @@
-#  Ankr Docs 
-
+# Ankr Docs
 Ankr is the leading Web3 infrastructure company. It provides all the necessary blockchain infrastructure and services for companies to build new and bring their existing projects to Web3.
 
 Ankr Docs contain information on Ankr, from general product information to user guides, SDK documentation, API references, RPC methods, Web3 tutorials, developer guides, and more.
@@ -7,29 +6,32 @@ The docs are targeted at existing and potential Ankr users and explain what diff
 
 The docs are built on [Nextra](https://nextra.vercel.app/) — a Next.js based static site generator.
 
+
 ## How to contribute to the project
 
 As an ever-developing company, we welcome you to contribute to Ankr Docs — via feedback raising an issue or a pull request adding/updating content.
 
 As raising an issue and describing a problem is pretty self-explanatory, let's jump straight to adding/updating content.
 
-### Adding/updating content
 
+### Adding/updating content
 Adding/updating content is done via pull requests to this repo.
 If you're in the mood to improve our content:
 1. Understand the pull request policy.
 2. Work with the content either via the GitHub web interface or clone-commit-push. 
 
+
 #### Pull request policy
 We do not pose a strict policy on pull requests. 
 
-#### Work with the content
 
+#### Work with the content
 If you're an Ankr users, use the GitHub web interface:
 1. Go to the **pages** folder and either see what subfolder you need to add a new .md file or navigate to the .md file that you want to edit. 
 2. Click **Add file** to add a new file or click the pencil icon to edit an existing file.
 3. Fill the newly created file with content or edit the content in the existing file you opened.
 4. When done, commit the changes **to a new branch**. A pull request will be created automatically.
+
 
 ## Contributing policy for Ankr employees 
 Now, if you're with us, you know to uphold our standards. 
@@ -48,6 +50,7 @@ If you are new to them, here are the guidelines:
 11. Test your work, deploying it to a staging server and seeing if everything is as smooth on web as it was locally.
 12. Merge your changes, following the gitflow and pull request policy.
 
+
 ### Gitflow
 Currently, we're using the following Gitflow:
 1. Create a feature branch from the `stage` branch. Use the branch naming format described further in this doc.
@@ -59,6 +62,7 @@ Currently, we're using the following Gitflow:
 7. When merged, test the `main` branch deploying it to `STAGE`.
 8. When tested, deploy the `main` branch to `PROD`.
 
+
 ### Deploying routine
 To deploy:
 1. Navigate to the Actions tab on the repo page.
@@ -67,6 +71,7 @@ To deploy:
    1. Deploy to `STAGE` or any other staking server from the drop-down list to view and test your doc updates in a safe environment.
    2. When tested and ready, deploy to `PROD` available to general public. 
 4. Click the green `Run workflow` button right below the chosen values.
+
 
 ### Internal branch and pull request policy
 1. Branch off from **stage**.
@@ -95,6 +100,7 @@ To deploy:
    * `chore: FOOBAR-777 update smart contract addresses for Ankr Staking`
    
 4. Make sure the **Assignee** is you and there are two **labels** — **documentation** and a section-specific label (e.g. **staking**). 
+
 
 ### Clone the repo
 
@@ -137,11 +143,16 @@ yarn install
 yarn dev
 ```
 
+FYI, it's `http://localhost:3000/docs/`.
+
+
 ### Work with the content and resources in your favorite IDE.
 Yeah, work that sweet content!
 
+
 ### Test your work, deploying it to a staging server
 Remember that deploying routine above? Follow it.
+
 
 ### Merge your changes
 Remember that pull request policy above?
