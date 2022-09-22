@@ -1,7 +1,7 @@
 {
-  "ankr-gaming-token-standards": "Understanding Token Standards",
-  "ankr-gaming-events-and-subscriptions": "Events and Subscriptions",
-  "ankr-gaming-gas-fees-gas-free-methods": "Gas Fees and Gas-free Methods",
-  "ankr-gaming-currency-units": "Currency Units",
-  "ankr-gaming-csharp-to-solidity": "C# and Solidity Types Comparison"
+  "token-standards": "Understanding Token Standards",
+  "events-and-subscriptions": "Events and Subscriptions",
+  "gas-fees-gas-free-methods": "Gas Fees and Gas-free Methods",
+  "currency-units": "Currency Units",
+  "csharp-to-solidity": "C# and Solidity Types Comparison"
 }

@@ -1,6 +1,6 @@
 {
-  "bnb-sidechain-configure-genesis-file": "Customize Genesis Config",
-  "bnb-sidechain-launch-bnb-sidechain": "Launch BNB Sidechain",
-  "bnb-sidechain-deploy-erc20-token": "Deploy an ERC-20 Token",
-  "bnb-sidechain-deploy-erc721-token": "Deploy an ERC-721 Token"
+  "configure-genesis-file": "Customize Genesis Config",
+  "launch-bnb-sidechain": "Launch BNB Sidechain",
+  "deploy-erc20-token": "Deploy an ERC-20 Token",
+  "deploy-erc721-token": "Deploy an ERC-721 Token"
 }

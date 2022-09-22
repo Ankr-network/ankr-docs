@@ -1,6 +1,6 @@
 {
-  "ftm-liquid-staking-overview": "Overview",
-  "ftm-liquid-staking-stake": "Stake",
-  "ftm-liquid-staking-unstake": "Unstake",
-  "ftm-liquid-staking-faq": "FAQ"
+  "overview": "Overview",
+  "stake": "Stake",
+  "unstake": "Unstake",
+  "faq": "FAQ"
 }

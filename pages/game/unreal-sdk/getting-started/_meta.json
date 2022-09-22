@@ -1,8 +1,8 @@
 {
-  "unreal-sdk-before-you-start": "Before You Start",
-  "unreal-sdk-connect-wallet": "Connect Wallet",
-  "unreal-sdk-write-read-requests": "Write/Read Requests",
-  "unreal-sdk-mint-nft": "Mint NFT",
-  "unreal-sdk-update-nft": "Update NFT",
-  "unreal-sdk-demo": "View Demo"
+  "before-you-start": "Before You Start",
+  "connect-wallet": "Connect Wallet",
+  "write-read-requests": "Write/Read Requests",
+  "mint-nft": "Mint NFT",
+  "update-nft": "Update NFT",
+  "demo": "View Demo"
 }

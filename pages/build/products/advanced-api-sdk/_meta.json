@@ -1,7 +1,7 @@
 {
-  "advanced-api-sdk-api-overview": "Advanced API Overview",
-  "advanced-api-sdk-nft-methods": "NFT Methods",
-  "advanced-api-sdk-query-methods": "Query Methods",
-  "advanced-api-sdk-token-methods": "Token Methods",
-  "advanced-api-sdk-javascript-sdk": "Multichain JS SDK"
+  "overview": "Advanced API Overview",
+  "nft-methods": "NFT Methods",
+  "query-methods": "Query Methods",
+  "token-methods": "Token Methods",
+  "javascript-sdk": "Multichain JS SDK"
 }

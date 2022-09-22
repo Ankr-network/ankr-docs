@@ -1,8 +1,8 @@
 {
-  "unity-sdk-overview": "Overview",
-  "unity-sdk-setting-up": "Setting Up",
+  "overview": "Overview",
+  "setting-up": "Setting Up",
   "getting-started": "Getting Started",
   "interacting-with-blockchain": "Interacting with Blockchain",
   "how-to": "How to",
-  "unity-sdk-reference": "SDK Reference"
+  "reference": "SDK Reference"
 }

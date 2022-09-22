@@ -1,7 +1,7 @@
 {
-  "defi-overview": "Overview",
-  "defi-liquidity-pools": "Liquidity Pools",
-  "defi-yield-farming": "Yield Farming",
-  "defi-vaults": "Vaults",
-  "defi-faq": "FAQ"
+  "overview": "Overview",
+  "liquidity-pools": "Liquidity Pools",
+  "yield-farming": "Yield Farming",
+  "vaults": "Vaults",
+  "faq": "FAQ"
 }

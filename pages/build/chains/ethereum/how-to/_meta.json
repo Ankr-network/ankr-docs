@@ -1,6 +1,6 @@
 {
-  "chains-v2-ethereum-connect-metamask": "Connect Wallet",
-  "chains-v2-ethereum-make-requests": "Make Requests",
-  "chains-v2-ethereum-send-transaction": "Send Transactions",
-  "chains-v2-ethereum-basic-dapp": "Build a Basic DApp"
+  "connect-metamask": "Connect Wallet",
+  "make-requests": "Make Requests",
+  "send-transaction": "Send Transactions",
+  "basic-dapp": "Build a Basic DApp"
 }

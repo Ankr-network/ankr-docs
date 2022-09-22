@@ -1,6 +1,6 @@
 {
-  "matic-liquid-staking-overview": "Overview",
-  "matic-liquid-staking-stake": "Stake",
-  "matic-liquid-staking-unstake": "Unstake",
-  "matic-liquid-staking-faq": "FAQ"
+  "overview": "Overview",
+  "stake": "Stake",
+  "unstake": "Unstake",
+  "faq": "FAQ"
 }

@@ -1,5 +1,5 @@
 {
-  "api-overview": "Overview",
+  "overview": "Overview",
   "avax-api": "Avalanche Liquid Staking API",
   "bnb-api": "Binance Liquid Staking API",
   "eth-api": "Ethereum Liquid Staking API",
