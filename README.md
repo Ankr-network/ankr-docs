@@ -160,5 +160,6 @@ Let's sum it up:
 1. For the love of code, follow the pull request policy, or I will come to you in your dreams! 
 2. Merge your branch to **stage**.
 3. If stage doesn't have any other unfinished work and is ready for prod, merge **stage** into **main**.
+4. Have a cookie.
 
 
