@@ -13,7 +13,7 @@ This documentation serves as a resource to explore how you can use and integrate
 * Choose separate components your project needs
 * Build a fast and secure blockchain with BNB Sidechain
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Bring your project to Web3](app-chain/app-chain-overview)↗
+  [Bring your project to Web3](app-chain/overview)↗
 </div>
 
 ## Ankr Build
