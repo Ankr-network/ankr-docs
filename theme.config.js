@@ -31,32 +31,34 @@ export default {
   logo: logo,
 // Head content and settings
   head: ({ title, meta }) => {
-    const { route } = useRouter();
+//    const description =
+//      meta.description || "Ankr Docs";
 
-    const ogImage =
-      "Ankr Docs"
+//    const title_ =
+//      title ? title : "Ankr Docs";
+
+//    const ogImage =
+//      "Ankr Docs";
+//      meta.image || meta.description;
 
     return (
       <>
-        {/* Meta-information */}
-        <meta name="msapplication-TileColor" content="#ffffff" />
+         {/* General */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
-        <meta
-          name="description"
-          content="Ankr Docs" />
-        <meta
-          name="og:description"
-          content="Ankr Docs" />
+
+        {/* SEO */}
+        <meta name="description" content={ "Ankr Docs" } />
+        <meta name="og:description" content={ title ? title : "Ankr Docs" } />
+        <meta name="og:title" content={ title ? title : "Ankr Docs" } />
+
+        <meta name="apple-mobile-web-app-title" content="Ankr Docs" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
+
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImage} />
-        <meta
-          name="og:title"
-          content={
-            title ? title + "Ankr Docs" : "Ankr Docs"
-          }
-        />
-        <meta name="og:image" content={ogImage} />
-        <meta name="apple-mobile-web-app-title" content="Ankr" />
+        <meta name="twitter:site:domain" content="ankr.com/docs/" />
+        <meta name="twitter:url" content="https://ankr.com/docs/" />
 
         {/* Favicons */}
         <link rel="manifest" href="/favicon/site.webmanifest" />
