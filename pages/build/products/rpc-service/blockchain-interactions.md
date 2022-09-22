@@ -1,6 +1,6 @@
 # Blockchain interactions
 
-As soon as you've [connected a wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet) and [deposited ANKR tokens](/build-blockchain/products/v2/ui-interactions/#top-up) into your account, the system generates a personal JWT token granting access to the Premium plan functionality. The **Endpoints** pane now becomes connected to your account and shows the data specific to it.
+As soon as you've [connected a wallet](/build/products/rpc-service/premium-account-operations/#connect-wallet) and [deposited ANKR tokens](/build/products/rpc-service/premium-account-operations/#top-up) into your account, the system generates a personal JWT token granting access to the Premium plan functionality. The **Endpoints** pane now becomes connected to your account and shows the data specific to it.
 
 ## Endpoints pane's structure
 
@@ -51,8 +51,8 @@ The block provides information on the means to query the blockchain, to access r
 
 Prerequisites:
 
-  * [Connect a wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet)
-  * [Top up account balance](/build-blockchain/products/v2/ui-interactions/#top-up)
+  * [Connect a wallet](/build/products/rpc-service/premium-account-operations/#connect-wallet)
+  * [Top up account balance](/build/products/rpc-service/premium-account-operations/#top-up)
 
 As a Premium user, you have custom URLs at hand to enable your projects to interact with a blockchain.
 

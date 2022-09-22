@@ -2,16 +2,16 @@
 
 ## Public and Premium plans comparison
 
-| Feature               | Public Plan                                                                                                | Premium Plan                                                                                   |
-|-----------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| Full and Archive Data | ✅                                                                                                          | ✅                                                                                              |
-| Advanced API          | ✅                                                                                                          | ✅                                                                                              |
-| Priority order        | Limited during high traffic                                                                                | Prioritized during high traffic                                                                |
-| Requests per minute   | `= 45k / all blockchains` — guaranteed;<br/>`> 45k / all blockchains` — possible (depends on overall load) | `= 60k / endpoint` — guaranteed;<br/>`> 60k / endpoint` — possible (depends on overall load)   |
-| Connection            | HTTPS                                                                                                      | HTTPS and WebSockets                                                                           |
-| Support               | Discord Support                                                                                            | Direct Email Support                                                                           |
-| Terms                 | No Contract                                                                                                | Both Contract and No Contract                                                                  |
-| Cost                  | **FREE**                                                                                                   | **[Pay-as-you-go](/build-blockchain/concepts/pricing#payg-premium-tiers-usage-based-pricing)** |
+| Feature               | Public Plan                                                                                                | Premium Plan                                                                                           |
+|-----------------------|------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Full and Archive Data | ✅                                                                                                          | ✅                                                                                                      |
+| Advanced API          | ✅                                                                                                          | ✅                                                                                                      |
+| Priority order        | Limited during high traffic                                                                                | Prioritized during high traffic                                                                        |
+| Requests per minute   | `= 45k / all blockchains` — guaranteed;<br/>`> 45k / all blockchains` — possible (depends on overall load) | `= 60k / endpoint` — guaranteed;<br/>`> 60k / endpoint` — possible (depends on overall load)           |
+| Connection            | HTTPS                                                                                                      | HTTPS and WebSockets                                                                                   |
+| Support               | Discord Support                                                                                            | Direct Email Support                                                                                   |
+| Terms                 | No Contract                                                                                                | Both Contract and No Contract                                                                          |
+| Cost                  | **FREE**                                                                                                   | **[Pay-as-you-go](/build/products/rpc-service/pricing-plans/#payg-premium-plans-usage-based-pricing)** |
 
 ## PAYG: Premium plan's usage-based pricing
 
@@ -19,7 +19,7 @@ Pay-as-you-go (PAYG) is a usage-based pricing model for the Premium Plan service
 
 ### How we charge?
 
-Premium Plan's usage measures in *credits*. PAYG model charges per method used. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
+Premium Plan's usage measures in *API Credits*. PAYG model charges per method used. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
 
 Premium Plan supports two communication protocols:
 
@@ -49,9 +49,9 @@ Use our beta pricing calculator for standard EVM methods. For all other methods 
 ## Get started with Premium
 
 1. Go to the [RPC Services](https://www.ankr.com/rpc/) platform.
-2. [Connect your wallet](/build-blockchain/products/v2/ui-interactions/#connect-wallet).
-3. [Top up account balance](/build-blockchain/products/v2/ui-interactions/#top-up).
-4. [Add Premium URLs into your project](/build-blockchain/products/v2/ui-interactions-blockchain/#rpc-apis-for-your-project) to interact with a blockchain.
+2. [Connect your wallet](/build/products/rpc-service/premium-account-operations/#connect-wallet).
+3. [Top up account balance](/build/products/rpc-service/premium-account-operations/#top-up).
+4. [Add Premium URLs into your project](/build/products/rpc-service/blockchain-interactions/#rpc-apis-for-your-project) to interact with a blockchain.
 
 ## Pricing per request
 

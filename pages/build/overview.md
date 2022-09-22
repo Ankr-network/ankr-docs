@@ -6,11 +6,11 @@ import { OpenUrl, Code } from "../../components";
 Ankr provides a distributed nodes infrastructure supporting a multi-chain network and providing tools for developers to start building Web3 projects.
 Ankr RPC Service is a major part of Ankr Build and contains various components depending on your Plan:
 
-1. [Public Plan](/build-blockchain/overview/#public-plan): Free and instant access to our range of Public RPC APIs.
+1. [Public Plan](/build/overview/#public-plan): Free and instant access to our range of Public RPC APIs.
 
-2. [Premium Plan](/build-blockchain/overview/#premium-plan): Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features.
+2. [Premium Plan](/build/overview/#premium-plan): Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features.
 
-3. [Ankr Scan](/build-blockchain/products/v2/scan/): Ankr Scan is a multi-chain Explorer that allows viewing assets across chains as well as assigned to a specific wallet address.
+3. [Ankr Scan](/build/products/ankr-scan/): Ankr Scan is a multi-chain Explorer that allows viewing assets across chains as well as assigned to a specific wallet address.
 
 4. Node Services: Full, Archive, and Validator/Staking nodes are available for 50+ chains.
 
@@ -24,7 +24,7 @@ Public RPCs are available to all and free to use on the Ankr RPC platform. Today
 
 To access all the advanced features of Ankr RPC, developers can use Premium services with a flexible and affordable pay-as-you-go model denominated in ANKR tokens. Premium features include exclusive multi-chain RPC endpoints, prioritized requests, WebSockets, and Advanced Developer APIs that are designed to make Web3 development an easy task.
 
-![Ankr Infrastructure](/ankr-structure.png)
+![Ankr Infrastructure](/docs/ankr-structure.png)
 
 ## Public Plan
 
@@ -50,13 +50,13 @@ This architecture is built to meet the requirements for high availability and sc
 
 ## Premium Plan
 
-*Premium Plan* provides access to a range of exclusive features that allow you to build on a secure, reliable, ultra-fast multi-chain network. See more info on the Premium Plan's [pricing and charging model](/build-blockchain/pricing-plans/).
+*Premium Plan* provides access to a range of exclusive features that allow you to build on a secure, reliable, ultra-fast multi-chain network. See more info on the Premium Plan's [pricing and charging model](/build/pricing/).
 
 ### Key features
 
-1. Unique collection of JSON-RPC API endpoints. [Read more](/build-blockchain/products/v2/advanced-apis).
-2. Secure and private endpoints for HTTPS and WSS. [Read more](/build-blockchain/overview/#benefits).
-3. On-request Hybrid Infrastructure functionality. [Read more](/build-blockchain/products/v2/hybrid-infra).
+1. Unique collection of JSON-RPC API endpoints. [Read more](/build/products/advanced-api-sdk/overview/).
+2. Secure and private endpoints for HTTPS and WSS. [Read more](/build/overview/#benefits).
+3. On-request Hybrid Infrastructure functionality. [Read more](/build/products/rpc-service/hybrid-infrastructure/).
 
 ### Benefits
 
@@ -71,4 +71,4 @@ Enjoy the following benefits:
   The WebSocket API limits the maximum number of simultaneous connections to provide protection against misuse, such as DDoS attacks, for example. If your Websocket client makes too many connections at the same time, you'll receive an Error message.
 </Callout>
 
-Check out [How to connect to Premium websockets](/build-blockchain/guides/websocket-premium).
+Check out [How to connect to Premium websockets](/build/guides/websocket-premium).

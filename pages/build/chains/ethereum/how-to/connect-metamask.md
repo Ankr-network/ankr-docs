@@ -16,13 +16,13 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Mainn
 
    _Make sure you include backslashes and don't add any whitespace._
 
-| **Chain** | **Custom RPC Category** | **Details**               |
-| --------- | ----------------------- | ------------------------- |
-| Ethereum  | NETWORK NAME:           | Ankr Ethereum RPC         |
-|           | NEW RPC URL:            | https://rpc.ankr.com/eth/ |
-|           | CHAIN ID:               | 1                         |
-|           | SYMBOL:                 | ETH                       |
-|           | BLOCK EXPLORER URL:     | https://etherscan.io/     |
+| **Chain**  | **Custom RPC Category**  | **Details**               |
+|------------|--------------------------|---------------------------|
+| Ethereum   | NETWORK NAME:            | Ankr Ethereum RPC         |
+|            | NEW RPC URL:             | https://rpc.ankr.com/eth/ |
+|            | CHAIN ID:                | 1                         |
+|            | SYMBOL:                  | ETH                       |
+|            | BLOCK EXPLORER URL:      | https://etherscan.io/     |
 
 2. Ignore the **Chain ID warning** and click **Save**.
 
@@ -70,13 +70,13 @@ There are default settings in MetaMask for connecting a wallet to Ethereum Rinke
 
 _Make sure you include backslashes and don't add any whitespace._
 
-| **Chain** | **Custom RPC Category** | **Details**                       |
-| --------- | ----------------------- | --------------------------------- |
-| Ethereum  | NETWORK NAME:           | Ankr Rinkeby RPC                  |
-|           | NEW RPC URL:            | https://rpc.ankr.com/eth_rinkeby/ |
-|           | CHAIN ID:               | 4                                 |
-|           | SYMBOL:                 | RIN                               |
-|           | BLOCK EXPLORER URL:     | https://rinkeby.etherscan.io/     |
+| **Chain**   | **Custom RPC Category**  | **Details**                       |
+|-------------|--------------------------|-----------------------------------|
+| Ethereum    | NETWORK NAME:            | Ankr Rinkeby RPC                  |
+|             | NEW RPC URL:             | https://rpc.ankr.com/eth_rinkeby/ |
+|             | CHAIN ID:                | 4                                 |
+|             | SYMBOL:                  | RIN                               |
+|             | BLOCK EXPLORER URL:      | https://rinkeby.etherscan.io/     |
 
 2. Ignore the **Chain ID warning** and click **Save**
 
@@ -104,13 +104,13 @@ There are default settings in MetaMask for connecting a wallet to Ropsten Testne
 
    _Make sure to not add any whitespace and to include backslashes_
 
-| **Chain** | **Custom RPC Category** | **Details**                       |
-| --------- | ----------------------- | --------------------------------- |
-| Ethereum  | NETWORK NAME:           | Ankr Ropsten RPC                  |
-|           | NEW RPC URL:            | https://rpc.ankr.com/eth_ropsten/ |
-|           | CHAIN ID:               | 3                                 |
-|           | SYMBOL:                 | ROP                               |
-|           | BLOCK EXPLORER URL:     | https://ropsten.etherscan.io/     |
+| **Chain**   | **Custom RPC Category**  | **Details**                       |
+|-------------|--------------------------|-----------------------------------|
+| Ethereum    | NETWORK NAME:            | Ankr Ropsten RPC                  |
+|             | NEW RPC URL:             | https://rpc.ankr.com/eth_ropsten/ |
+|             | CHAIN ID:                | 3                                 |
+|             | SYMBOL:                  | ROP                               |
+|             | BLOCK EXPLORER URL:      | https://ropsten.etherscan.io/     |
 
 2. Ignore the **Chain ID warning** and click **Save**
 
@@ -136,13 +136,13 @@ There are default settings in MetaMask for connecting a wallet to Goerli Testnet
 
    _Make sure to not add any whitespace and to include backslashes_
 
-| **Chain** | **Custom RPC Category** | **Details**                      |
-| --------- | ----------------------- | -------------------------------- |
-| Ethereum  | NETWORK NAME:           | Ankr Goerli RPC                  |
-|           | NEW RPC URL:            | https://rpc.ankr.com/eth_goerli/ |
-|           | CHAIN ID:               | 5                                |
-|           | SYMBOL:                 | GOR                              |
-|           | BLOCK EXPLORER URL:     | https://goerli.etherscan.io/     |
+| **Chain**   | **Custom RPC Category**  | **Details**                      |
+|-------------|--------------------------|----------------------------------|
+| Ethereum    | NETWORK NAME:            | Ankr Goerli RPC                  |
+|             | NEW RPC URL:             | https://rpc.ankr.com/eth_goerli/ |
+|             | CHAIN ID:                | 5                                |
+|             | SYMBOL:                  | GOR                              |
+|             | BLOCK EXPLORER URL:      | https://goerli.etherscan.io/     |
 
 2. Ignore the **Chain ID warning** and click **Save**
 

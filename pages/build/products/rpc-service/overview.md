@@ -6,7 +6,7 @@
 
 The thing we stand out by is that we don't have a single centralized Gateway. Similar to the competition, our infrastructure consists of nodes behind a load balancer that gets a request from the client and calculates the fastest processing solution to route the request through.
 
-<img src="/docs/build/rpc-flow.png" alt="RPC Service dataflow" class="responsive-pic" width="700" />
+<img src="/docs/build/rpc-flow.png" alt="RPC Service dataflow" class="responsive-pic" width="800" />
 
 Our fundamental distinction is that we use a whole network of geo-distributed load balancers instead of a single one for that purpose. Such an approach reduces the time needed for the request to get to a load balancer. And you don't have to work in NASA to realize that it's quicker for a user from Australia to reach the Australia-based load balancer than the one from abroad.
 
@@ -29,7 +29,7 @@ From a technology point of view, RPC Service infrastructure relies heavily on th
 
 ## Pricing Plans
 
-The next layer, [*Pricing Plans*](/build-blockchain/concepts/pricing), deals with users and defines their RPC Service functional capabilities.
+The next layer, [*Pricing Plans*](/build/products/rpc-service/pricing-plans/), deals with users and defines their RPC Service functional capabilities.
 
 In general, the advantages the Premium plan provides over the Public one come down to the higher rate limits, the availability of the WebSockets connection, having personal requests telemetry, the better means of support, and the most notorious one — having the nodes used for processing the Premium user requests only.
 

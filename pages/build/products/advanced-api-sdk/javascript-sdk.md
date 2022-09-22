@@ -1,10 +1,10 @@
 # Ankr's JavaScript SDK
 
-This SDK contains a compact JavaScript library to enable you interact with Ankr's [Advanced API](/build-blockchain/products/v2/advanced-apis).
+This SDK contains a compact JavaScript library to enable you interact with Ankr's [Advanced API](/build/products/advanced-api-sdk/overview/).
 
 ## Get started
 
-1. Install the latest package stored on [npm](/build-blockchain/products/v2/advanced-apis/).
+1. Install the latest package stored on [npm](https://www.npmjs.com/package/@ankr.com/ankr.js).
 
     ```shell
     # with npm
@@ -48,15 +48,15 @@ This SDK contains a compact JavaScript library to enable you interact with Ankr'
 
 ## Methods available
 
-  * [`getLogs`](/build-blockchain/products/advanced-apis/javascript-sdk/#getlogs)
-  * [`getBlocks`](/build-blockchain/products/advanced-apis/javascript-sdk/#getblocks)
-  * [`getTransactionsByHash`](/build-blockchain/products/advanced-apis/javascript-sdk/#gettransactionsbyhash)
-  * [`getAccountBalance`](/build-blockchain/products/advanced-apis/javascript-sdk/#getaccountbalance)
-  * [`getNFTsByOwner`](/build-blockchain/products/advanced-apis/javascript-sdk/#getnftsbyowner)
-  * [`getTokenHolders`](/build-blockchain/products/advanced-apis/javascript-sdk/#gettokenholders)
-  * [`getTokenHoldersCount`](/build-blockchain/products/advanced-apis/javascript-sdk/#gettokenholderscount)
-  * [`getCurrencies`](/build-blockchain/products/advanced-apis/javascript-sdk/#getcurrencies)
-  * [`getNFTMetadata`](/build-blockchain/products/advanced-apis/javascript-sdk/#getnftmetadata)
+  * [`getLogs`](/build/products/advanced-api-sdk/javascript-sdk/#getlogs)
+  * [`getBlocks`](/build/products/advanced-api-sdk/javascript-sdk/#getblocks)
+  * [`getTransactionsByHash`](/build/products/advanced-api-sdk/javascript-sdk/#gettransactionsbyhash)
+  * [`getAccountBalance`](/build/products/advanced-api-sdk/javascript-sdk/#getaccountbalance)
+  * [`getNFTsByOwner`](/build/products/advanced-api-sdk/javascript-sdk/#getnftsbyowner)
+  * [`getTokenHolders`](/build/products/advanced-api-sdk/javascript-sdk/#gettokenholders)
+  * [`getTokenHoldersCount`](/build/products/advanced-api-sdk/javascript-sdk/#gettokenholderscount)
+  * [`getCurrencies`](/build/products/advanced-api-sdk/javascript-sdk/#getcurrencies)
+  * [`getNFTMetadata`](/build/products/advanced-api-sdk/javascript-sdk/#getnftmetadata)
 
 ### `getLogs`
 

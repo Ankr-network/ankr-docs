@@ -17,20 +17,20 @@ Hi, dear user. We've implemented a card payment functionality for those who pref
     <img src="/docs/build/card-email-confirm.png" alt="Card payment email" class="responsive-pic" width="700" />
 
 4. You find yourself prompted by MetaMask as we use it to sign in to Premium Account:  
-    • Click **Provide** — to use your public key for token encryption.  
-    • Click **Sign** — to confirm interactions with our platform.
+    * Click **Provide** — to use your public key for token encryption.  
+    * Click **Sign** — to confirm interactions with our platform.
 
     <img src="/docs/build/card-metamask.png" alt="MetaMask" class="responsive-pic" width="700" />
 
 5. You find yourself on the **Settings** pane. Yeah, we know that it's kinda weird, but you're already here, so these are your options:   
-    • _[Optional step]:_ If you'd like to use some other email address for your Premium Account, click **Change Email**, provide a new one, and then verify it via the link sent to the address specified, which will eventually land you once again to this same pane — **Settings**.  
-    • _[Required step]:_ If you feel quite right about using the current email address, just move to **Billing**, clicking it in **Sidebar**.
+    * _[Optional step]:_ If you'd like to use some other email address for your Premium Account, click **Change Email**, provide a new one, and then verify it via the link sent to the address specified, which will eventually land you once again to this same pane — **Settings**.  
+    * _[Required step]:_ If you feel quite right about using the current email address, just move to **Billing**, clicking it in **Sidebar**.
 
     <img src="/docs/build/card-settings.png" alt="Settings" class="responsive-pic" width="700" />
 
 6. Now, you're on the **Billing** pane.  
     Here, you have to interact exclusively with the **Top Up Balance** block (far right):  
-    • Make sure the toggle is set to **USD** and click **Top Up**.
+    * Make sure the toggle is set to **USD** and click **Top Up**.
 
     <img src="/docs/build/card-billing.png" alt="Settings" class="responsive-pic" width="700" />
 

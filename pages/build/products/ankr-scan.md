@@ -1,11 +1,11 @@
 # Ankr Scan
 
-**Ankr Scan** is a Multi-Chain Explorer that allows a unified view of multiple chains at a time. Currently it supports 11 chains with more in the pipeline. 
+**Ankr Scan** is a Multi-Chain Explorer that allows a unified view of multiple chains at a time. Currently, it supports 11 chains with more in the pipeline. 
 
 <img src="/docs/ankr-scan-chains.png" alt="Ankr Scan Chains" class="responsive-pic" width="800" />
 
 * View current and historical data for transactions, addresses and blocks 
-* Unified view of Crypto assets, Tokens and NFTs acrossing multiple chains.
+* Unified view of Crypto assets, Tokens and NFTs across multiple chains.
 * View all assets associated with a single wallet address/account.  
 
 ## Search 
@@ -91,14 +91,14 @@ If the target account contains code, the code is executed and the payload is pro
 The 'Method' field provides details on the nature of the transaction. 
 
 The following details are provided:
-- **Chain Symbol** - Visual representation ofthe blockchain. 
+- **Chain Symbol** - Visual representation of the blockchain. 
 - **Txn Hash** - The unique Transaction ID
 - **Method** - e.g. Transfer ETH, AtomicMatch, Mint
-- **Block** - The block number that thetransaction is on. 
-- **Last seen** - When the transaction statuswas last viewed
-- **From** - The address from which thetransaction originated
-- **Out/In** - The direction of thetransaction
-- **To** The address of the recipient of thetransaction
+- **Block** - The block number that the transaction is on. 
+- **Last seen** - When the transaction status was last viewed
+- **From** - The address from which the transaction originated
+- **Out/In** - The direction of the transaction
+- **To** The address of the recipient of the transaction
 - **Value** - The amount transferred
 
 - **Token Transfers**
@@ -106,10 +106,10 @@ The following details are provided:
 Token Transfers provide details of **from** and **to** transactions between addresses only.
 
 - **Txn Hash** - The unique Transaction ID
-- **Last Seen** - When the transaction statuswas last viewed.
-- **From** - The address from which thetransaction originated.
-- **Out/In** - The direction of thetransaction.
-- **To** - The address of the recipient ofthe transaction.
+- **Last Seen** - When the transaction status was last viewed.
+- **From** - The address from which the transaction originated.
+- **Out/In** - The direction of the transaction.
+- **To** - The address of the recipient of the transaction.
 - **Value** - The amount transferred
 - **Token** The asset type transferred
 

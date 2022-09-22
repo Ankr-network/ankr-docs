@@ -4,9 +4,9 @@ Query our Advanced APIs at the following URL: `https://rpc.ankr.com/multichain`.
 
 Check out the latest Advanced APIs collections in [Postman](https://documenter.getpostman.com/view/19024547/UVsEVUGQ) and look through the Advanced API docs divided into the following sections:
 
-* [NFT APIs](/build-blockchain/products/advanced-apis/nft-api/)
-* [Query APIs](/build-blockchain/products/advanced-apis/query-api)
-* [Token APIs](/build-blockchain/products/advanced-apis/token-api)
+* [NFT APIs](/build/products/advanced-api-sdk/nft-methods/)
+* [Query APIs](/build/products/advanced-api-sdk/query-methods/)
+* [Token APIs](/build/products/advanced-api-sdk/token-methods/)
 
 Please leave your feedback, or propose any features in our [roadmap](https://roadmap.ankr.com/b/feature-requests/).
 
