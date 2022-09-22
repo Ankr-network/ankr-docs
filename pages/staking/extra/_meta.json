@@ -2,7 +2,7 @@
   "glossary": "Glossary",
   "principles": "Principles",
   "audit-reports": "Audit Reports",
-  "validators": "Validators",
+  "ankr-validators": "Ankr Validators",
   "liquid-staking-fees": "Liquid Staking Fees",
   "ls-sc-addresses-mn": "Liquid Staking Smart Contract Addresses (MainNet)",
   "ls-sc-addresses-tn": "Liquid Staking Smart Contract Addresses (TestNet)",
@@ -12,5 +12,7 @@
   "liquid-crowdloan-market-makers": "Parachain Liquid Crowdloan Market Makers",
   "brand-assets": "Brand Assets",
   "integrations": "Integrating with Ankr Staking",
-  "liquidity-tokens": "Types of Liquid Staking Tokens"
+  "liquidity-tokens": "Types of Liquid Staking Tokens",
+  "ankr-tokenomics": "ANKR Tokenomics",
+  "ankr-governance-mechanics": "ANKR Governance Mechanics"
 }

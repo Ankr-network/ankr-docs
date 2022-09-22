@@ -1,7 +1,7 @@
 {
-  "ankr-delegated-staking-overview": "Overview",
-  "ankr-stake": "Stake",
-  "ankr-claim-restake": "Claim or Restake Rewards",
-  "ankr-unstake": "Unstake",
-  "ankr-faq": "FAQ"
+  "overview": "Overview",
+  "stake": "Stake",
+  "claim-restake-rewards": "Claim or Restake Rewards",
+  "unstake": "Unstake",
+  "faq": "FAQ"
 }
