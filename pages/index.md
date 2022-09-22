@@ -32,7 +32,7 @@ This documentation serves as a resource to explore how you can use and integrate
 * Connect staking rewards to DeFi to trade/farm for even higher APY
 * Integrate Ankr Staking into your projects
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Stake, earn, and integrate](stake/overview)↗
+  [Stake, earn, and integrate](staking/overview)↗
 </div>
 
 ## Ankr Gaming
@@ -41,7 +41,7 @@ This documentation serves as a resource to explore how you can use and integrate
 * Integrate Web3 wallets easily
 * Compatible with Unity and Unreal Engine
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Take your game to Web3](game/overview)↗
+  [Take your game to Web3](gaming/overview)↗
 </div>
 
 ## Ankr Learn
