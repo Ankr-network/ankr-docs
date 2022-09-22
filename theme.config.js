@@ -37,6 +37,9 @@ export default {
       config.frontMatter.description ? config.frontMatter.description : "Ankr is the leading Web3 infrastructure company.";
 //    const title_ =
 //      title ? title : "Ankr Docs";
+    const image =
+      config.frontMatter.image ||
+      "https://www.ankr.com/_next/static/images/ankr-white-logo-c263a8e0801c5090aaf0cbecb36b689c.png";
     return (
       <>
          {/* General */}
@@ -54,6 +57,8 @@ export default {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site:domain" content="ankr.com/docs/" />
         <meta name="twitter:url" content="https://ankr.com/docs/" />
+        <meta name="twitter:image" content={image} />
+        <meta name="og:image" content={image} />
 
         {/* Favicons */}
         <link rel="manifest" href="/favicon/site.webmanifest" />
