@@ -13,7 +13,7 @@ To learn more, view the [detailed audit report](http://assets.ankr.com/earn/smar
 
 ## Smart contracts
 
-Visit [FTM development details](/staking/liquid-staking/ftm/staking-mechanics#smart-contracts) for the addresses of FTM Liquid Staking smart contracts. 
+Visit [FTM development details](/staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/#smart-contracts) for the addresses of FTM Liquid Staking smart contracts. 
 
 ## Instant liquidity
 

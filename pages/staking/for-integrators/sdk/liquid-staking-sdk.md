@@ -141,17 +141,17 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
 
 ## Reference
 For detailed information on supported methods and parameters, refer to:
-* [AvalancheSDK reference](https://www.ankr.com/docs/staking/sdk/classes/AvalancheSDK.html)
-* [BinanceSDK reference](https://www.ankr.com/docs/staking/sdk/classes/BinanceSDK.html) 
-* [EthereumSDK reference](https://www.ankr.com/docs/staking/sdk/classes/EthereumSDK.html)
-* [FantomSDK reference](https://www.ankr.com/docs/staking/sdk/classes/FantomSDK.html)
-* [PolygonSDK reference](https://www.ankr.com/docs/staking/sdk/classes/PolygonSDK.html)
+* [AvalancheSDK reference](/staking/for-integrators/sdk/reference/classes/AvalancheSDK.html)
+* [BinanceSDK reference](/staking/for-integrators/sdk/reference/classes/BinanceSDK.html) 
+* [EthereumSDK reference](/staking/for-integrators/sdk/reference/classes/EthereumSDK.html)
+* [FantomSDK reference](/staking/for-integrators/sdk/reference/classes/FantomSDK.html)
+* [PolygonSDK reference](/staking/for-integrators/sdk/reference/classes/PolygonSDK.html)
 
 ## Flow
 To understand the processes and mechanics of Liquid Staking, refer to:
-* [Avalanche Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/avax/staking-mechanics)
-* [Binance Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/bnb/staking-mechanics)
-* [Ethereum Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/eth/staking-mechanics)
-* [Fantom Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/ftm/staking-mechanics)
-* [Polygon Liquid Staking mechanics](https://www.ankr.com/docs/staking/liquid-staking/matic/staking-mechanics)
+* [Avalanche Liquid Staking mechanics](/staking/for-integrators/dev-details/avax-liquid-staking-mechanics/)
+* [Binance Liquid Staking mechanics](/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/)
+* [Ethereum Liquid Staking mechanics](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/)
+* [Fantom Liquid Staking mechanics](/staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/)
+* [Polygon Liquid Staking mechanics](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/)
 

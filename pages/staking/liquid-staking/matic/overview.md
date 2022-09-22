@@ -10,7 +10,7 @@ Polygon Liquid Staking smart contracts have undergone external audit by Beosin B
 
 ## Smart contracts
 
-Visit [MATIC development details](/staking/liquid-staking/matic/staking-mechanics#smart-contracts) for the addresses of MATIC Liquid Staking smart contracts. 
+Visit [MATIC development details](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/#smart-contracts) for the addresses of MATIC Liquid Staking smart contracts. 
 
 ## Benefits
 

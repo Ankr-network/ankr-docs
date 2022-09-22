@@ -76,6 +76,6 @@ Lets `AvalanchePool` exchange aAVAXc for AVAX.
 
 ### Get staking metrics
 
-To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](../restful-api/staking-metrics).
+To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](/staking/for-integrators/restful-api/staking-metrics/).
 
 

@@ -10,7 +10,7 @@ Ankr Staking can connect you to the best ways to earn more crypto by staking, ar
 
 ## Smart contracts
 
-Visit [KSM development details](/staking/liquid-staking/ksm/staking-mechanics#smart-contracts) for the addresses of KSM Liquid Staking smart contracts. 
+Visit [KSM development details](/staking/for-integrators/dev-details/ksm-liquid-staking-mechanics/#smart-contracts) for the addresses of KSM Liquid Staking smart contracts. 
 
 ## Instant liquidity
 

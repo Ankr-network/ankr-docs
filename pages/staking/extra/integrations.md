@@ -4,7 +4,7 @@ We encourage you to use Ankr Staking products in your projects.
 
 If you are a blockchain developer or a company, you may want to integrate with Ankr Staking and benefit from a ready-made solution.
 
-Ankr Staking products are extensively tested, undergo [audit checks](https://www.ankr.com/docs/staking/extra/audit-reports) and have live users.<br /><br />
+Ankr Staking products are extensively tested, undergo [audit checks](/staking/extra/audit-reports) and have live users.<br /><br />
 
 **Development details** give you general understanding of how Ankr Staking works under the hood: the workflow, requirements, fees, and so on.
 
@@ -17,45 +17,45 @@ Ankr Staking products are extensively tested, undergo [audit checks](https://www
 
 ### AVAX
 
-* [Development details](https://www.ankr.com/docs/staking/liquid-staking/avax/staking-mechanics)
-* [SDK](https://www.ankr.com/docs/staking/liquid-staking/avax/sdk)
-* [API](https://www.ankr.com/docs/staking/liquid-staking/avax/api)
+* [Development details](/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/)
+* [SDK](/staking/for-integrators/sdk/liquid-staking-sdk/)
+* [API](/staking/for-integrators/smart-contract-api/avax-api/)
 
 ### BNB
 
-* [Development details](https://www.ankr.com/docs/staking/liquid-staking/bnb/staking-mechanics)
-* [SDK](https://www.ankr.com/docs/staking/liquid-staking/bnb/sdk)
-* [API](https://www.ankr.com/docs/staking/liquid-staking/bnb/api)
+* [Development details](/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/)
+* [SDK](/staking/for-integrators/sdk/liquid-staking-sdk/)
+* [API](/staking/for-integrators/smart-contract-api/bnb-api/)
 
 ### DOT
 
-* [Development details](https://www.ankr.com/docs/staking/liquid-staking/dot/staking-mechanics)
+* [Development details](/staking/for-integrators/dev-details/dot-liquid-staking-mechanics/)
 
 ### ETH
 
-* [Development details](https://www.ankr.com/docs/staking/liquid-staking/eth/staking-mechanics)
-* [SDK](https://www.ankr.com/docs/staking/liquid-staking/eth/sdk)
-* [API](https://www.ankr.com/docs/staking/liquid-staking/eth/api)
+* [Development details](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/)
+* [SDK](/staking/for-integrators/sdk/liquid-staking-sdk/)
+* [API](/staking/for-integrators/smart-contract-api/eth-api/)
 
 ### FTM 
 
-* [Development details](https://www.ankr.com/docs/staking/liquid-staking/ftm/staking-mechanics)
-* [SDK](https://www.ankr.com/docs/staking/liquid-staking/ftm/sdk)
-* [API](https://www.ankr.com/docs/staking/liquid-staking/ftm/api)
+* [Development details](/staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/)
+* [SDK](/staking/for-integrators/sdk/liquid-staking-sdk/)
+* [API](/staking/for-integrators/smart-contract-api/ftm-api/)
 
 ### KSM
 
-* [Development details](https://www.ankr.com/docs/staking/liquid-staking/ksm/staking-mechanics)
+* [Development details](/staking/for-integrators/dev-details/ksm-liquid-staking-mechanics/))
 
 
 ### MATIC
 
-* [Development details](https://www.ankr.com/docs/staking/liquid-staking/matic/staking-mechanics)
-* [SDK](https://www.ankr.com/docs/staking/liquid-staking/matic/sdk)
-* [API](https://www.ankr.com/docs/staking/liquid-staking/matic/api)
+* [Development details](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/)
+* [SDK](/staking/for-integrators/sdk/liquid-staking-sdk/)
+* [API](/staking/for-integrators/smart-contract-api/matic-api/)
 
 ## Ankr Oracles
 
 ### Ankr PancakeSwap price oracle
 
-* [Development details and API](https://www.ankr.com/docs/staking/liquid-staking/oracles/pancakeswap)
+* [Development details and API](/staking/for-integrators/oracles/pancakeswap-oracle/)

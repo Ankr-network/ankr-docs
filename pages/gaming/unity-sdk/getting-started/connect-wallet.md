@@ -36,7 +36,7 @@ To create and cache a smart contract, do the following:
    IContract GetContract(string contractAddress, string contractABI);
    ```
 
-Now you can interact with the created contract via `GetData()` and `CallMethod()`. Read more about [interacting with a smart contact](https://ankr.com/docs/game/unity/interacting-with-blockchain/interacting-with-smart-contract). 
+Now you can interact with the created contract via `GetData()` and `CallMethod()`. Read more about [interacting with a smart contact](/gaming/unity-sdk/interacting-with-blockchain/interacting-with-smart-contract/). 
 
 ### 2. Connect a wallet via QRCode
 

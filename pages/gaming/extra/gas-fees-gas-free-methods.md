@@ -100,7 +100,7 @@ In ABI it looks the following way.
 
 To read more on Solidity features, follow the [mappings](https://docs.soliditylang.org/en/v0.5.0/types.html#mappings) and [fields](https://docs.soliditylang.org/en/v0.5.0/structure-of-a-contract.html#state-variables) links.
 
-To access contract fields and mappings, use the [Contract.GetData](/game/unity/api-reference/contract/get-data) method.
+To access contract fields and mappings, use the [Contract.GetData](/gaming/unity-sdk/reference/#getdata) method.
 
 ## Gas fee methods
 
@@ -139,5 +139,5 @@ To check that, have a look at the `stateMutability` field of an ABI.
 
 The `stateMutability` value can be either payable or non-payable for the gas fee methods.
 
-To call that kind of contract methods, use [CallMethod](/game/unity/api-reference/contract/call-method) or [Web3SendMethod](/game/unity/api-reference/contract/web3-send-method).
+To call that kind of contract methods, use [CallMethod](/gaming/unity-sdk/reference/#callmethod) or [Web3SendMethod](/gaming/unity-sdk/reference/#web3sendmethod).
 

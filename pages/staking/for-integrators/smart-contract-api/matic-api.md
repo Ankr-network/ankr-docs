@@ -245,4 +245,4 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 
 ### Get staking metrics
 
-To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](../restful-api/staking-metrics).
+To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](/staking/for-integrators/restful-api/staking-metrics/).

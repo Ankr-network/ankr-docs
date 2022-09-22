@@ -15,7 +15,7 @@ To learn more, view:
 
 ## Smart contracts
 
-Visit [BNB development details](/staking/liquid-staking/bnb/staking-mechanics#smart-contracts) for the addresses of BNB Liquid Staking smart contracts. 
+Visit [BNB development details](/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/#smart-contracts) for the addresses of BNB Liquid Staking smart contracts. 
 
 
 ## Boosted yields

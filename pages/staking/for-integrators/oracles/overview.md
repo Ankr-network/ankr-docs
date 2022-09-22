@@ -7,4 +7,4 @@ This section of Ankr Docs helps you understand how oracles work, what actual dat
 
 ## Available oracles
 
-* [PancakeSwap price oracle](https://ankr.com/docs/staking/liquid-staking/oracles/pancakeswap)
+* [PancakeSwap price oracle](/docs/staking/for-integrators/oracles/pancakeswap-oracle/)

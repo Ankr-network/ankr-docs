@@ -1,6 +1,6 @@
 ### How can I set up my wallet and stake MATIC?
 
-Check the [Stake MATIC](https://www.ankr.com/docs/staking/liquid-staking/matic/stake-matic) user guide.
+Check the [Stake MATIC](/staking/liquid-staking/matic/stake) user guide.
 
 ### What is the minimum and maximum amount of MATIC I can stake?
 
@@ -78,10 +78,10 @@ You can trade them in the listed liquidity pools on ANKR DeFi:
 * [aMATICc](https://www.ankr.com/staking/defi/?assets=aMATICc)
 
 You can also use your Liquid Staking tokens to:
-* [Add liquidity on DEXs](https://www.ankr.com/docs/staking/defi/liquidity-pools/) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
-* [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farm) and earn additional rewards in the form of liquidity pool tokens and further farm them.  
-* [Put your tokens in a vault](https://www.ankr.com/docs/staking/defi/vaults) and automatically earn additional rewards in the form of one of both assets from the pair.
+* [Add liquidity on DEXs](/staking/defi/liquidity-pools/) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
+* [Yield farm](/staking/defi/yield-farming) and earn additional rewards in the form of liquidity pool tokens and further farm them.  
+* [Put your tokens in a vault](/staking/defi/vaults) and automatically earn additional rewards in the form of one of both assets from the pair.
 
 ### Can I get staking metrics for my integration?
 
-Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](/staking/for-integrators/restful-api/staking-metrics/).

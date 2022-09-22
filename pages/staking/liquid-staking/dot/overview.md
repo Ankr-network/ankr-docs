@@ -10,7 +10,7 @@ Ankr Staking can connect you to the best ways to earn more crypto by staking, ar
 
 ## Smart contracts
 
-Visit [DOT development details](/staking/liquid-staking/dot/staking-mechanics#smart-contracts) for the addresses of DOT Liquid Staking smart contracts. 
+Visit [DOT development details](/staking/for-integrators/dev-details/dot-liquid-staking-mechanics/#smart-contracts) for the addresses of DOT Liquid Staking smart contracts. 
 
 ## **Instant liquidity**
 

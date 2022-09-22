@@ -15,7 +15,7 @@ To learn more, view:
 
 ## Smart contracts
 
-Visit [AVAX development details](/staking/liquid-staking/avax/staking-mechanics#smart-contracts) for the addresses of AVAX Liquid Staking smart contracts. 
+Visit [AVAX development details](/staking/for-integrators/dev-details/avax-liquid-staking-mechanics/#smart-contracts) for the addresses of AVAX Liquid Staking smart contracts. 
 
 ## Market liquidity
 

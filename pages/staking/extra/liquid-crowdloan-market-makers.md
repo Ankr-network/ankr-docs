@@ -10,7 +10,7 @@ For Parachain Liquid Crowdloan, fair value estimation depends on factors differe
 
 Here is how we ascertain price of 1 Parachain Liquid Bonding token:
 
-![](https://lh3.googleusercontent.com/WOHgD5IK4wwkm8aVJ\_8qQaj90o1SL-Jd7Bn\_KZsPnNMRzApb088KnuoNjgWhpBnqyK2IEhxHQeeQ1Gal-HC9uVYwJd1\_gIg8v4RtLw4RGvTCroyPBhv5SutoF-YHECqSYJCATV8bVi\_2TVH7Fg=s0)
+<img src="/docs/staking/extra/formula-for-parachain-liquid-bonding-token.png" alt="" class="responsive-pic" width="800" />
 
 Some of the elements of the formula depend on the user's personal risk tolerance, such as the required risk premium. Other factors could also be considered if a user is willing, for example the perceived risk associated with Ankr.
 

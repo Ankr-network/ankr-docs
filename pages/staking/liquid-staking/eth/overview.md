@@ -25,7 +25,7 @@ To learn more, view the [detailed audit report](https://assets.ankr.com/files/st
 
 ## Smart contracts
 
-Visit [ETH development details](/staking/liquid-staking/eth/staking-mechanics#smart-contracts) for the addresses of ETH Liquid Staking smart contracts. 
+Visit [ETH development details](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/#smart-contracts) for the addresses of ETH Liquid Staking smart contracts. 
 
 
 ## Two types of ETH2 Liquid Staking

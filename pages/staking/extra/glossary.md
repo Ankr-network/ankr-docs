@@ -49,8 +49,6 @@ EVM compatible blockchains can help users get past these hurdles.
 
 Examples of EVM compatible blockchains are BNB Chain, Polygon and Avalanche.
 
-View the [complete list of EVM-compatible chains](https://docs.ankr.com/resources/articles/supported-chains).
-
 With Ankr’s support for EVM-compatible chains, developers can easily access other chains with the same functions and code, without getting locked into a single chain.
 
 #### BNB Chain

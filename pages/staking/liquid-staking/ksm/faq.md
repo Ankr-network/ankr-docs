@@ -5,7 +5,7 @@ aKSMb is an ERC-20 token that is compatible with Ethereum-based wallets like Met
 
 ### Are there any docs about the DOT staking and how I set up my wallet etc.?
 
-Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking/ksm/stake-ksm).
+Yes — there is a [user guide](/staking/liquid-staking/ksm/stake).
 
 
 ### What is the minimum amount of KSM I can stake?
@@ -60,4 +60,4 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 ### Can I get staking metrics for my integration?
 
-Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).
+Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](/staking/for-integrators/restful-api/staking-metrics/).

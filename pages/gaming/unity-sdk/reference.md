@@ -104,7 +104,7 @@ AnkrSDKWrapper provides support for all platform-dependent features. Implements 
 
 | Parameter   | Description                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| `IContract` | Returns an instance of [Contract](/game/unity/api-reference/contract) class. |
+| `IContract` | Returns an instance of [Contract](#contract) class. |
 
 #### Description
 
@@ -149,7 +149,7 @@ public class ContractExample : MonoBehaviour
 
 #### Description
 
-Provides an instance of subscriber to make contract event subscriptions. See more on [Events and subscriptions](/game/extra/events-and-subscriptions).
+Provides an instance of subscriber to make contract event subscriptions. See more on [Events and subscriptions](/gaming/extra/events-and-subscriptions/).
 
 #### Code example
 
@@ -354,7 +354,7 @@ Gets an address's balance in ETH currency.
 
 The method returns balance info in WEI units. To convert balance into other units, use [Web3.Convert](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.Util/UnitConversion.cs).
 
-To find more info on the currency units, have a look at the [Currency Units](/game/extra/currency-units) section.
+To find more info on the currency units, have a look at the [Currency Units](/gaming/extra/currency-units/) section.
 
 #### Code example
 
@@ -507,7 +507,7 @@ Returns the receipt of a transaction by transaction hash. Method resolves when t
 
 #### How to get contract events from receipt
 
-If contract method that you called emit event you can get it from [TransactionReceipt](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.RPC/Eth/DTOs/TransactionReceipt.cs) on `ReceiptReceived` stage. But first you need to create a [DTO corresponding to contract event](/game/extra/events-and-subscriptions#Event-nature).
+If contract method that you called emit event you can get it from [TransactionReceipt](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.RPC/Eth/DTOs/TransactionReceipt.cs) on `ReceiptReceived` stage. But first you need to create a [DTO corresponding to contract event](/gaming/extra/events-and-subscriptions/#event-nature).
 
 ```
 public void HandleReceipt(object sender, TransactionReceipt receipt)
@@ -956,7 +956,7 @@ A class containing the method to interact with smart contracts.
 #### Description
 
 <Callout type="warning" emoji="❗">
-Use only for methods that change a smart contract state. To return a contract state, contract field, and mappings, use [GetData](/game/unity/api-reference/contract/get-data). To find out more on the difference between contract methods, see [Gas fees and gas-free methods](/game/extra/gas-fees-gas-free-methods).
+Use only for methods that change a smart contract state. To return a contract state, contract field, and mappings, use [GetData](#getdata). To find out more on the difference between contract methods, see [Gas fees and gas-free methods](/gaming/extra/gas-fees-gas-free-methods/).
 </Callout>
 
 Makes a call to the contract method, and returns a transaction hash when that call applies to work. This method is asynchronous.
@@ -965,7 +965,7 @@ Makes a call to the contract method, and returns a transaction hash when that ca
 
 If you'd like to speed up a call that has already been applied to work but still hasn't been mined, you need to do the following:
 
-1. Get a nonce of the mining transaction (using [GetTransaction](/game/unity/api-reference/eth-handler/get-transaction)).
+1. Get a nonce of the mining transaction (using [GetTransaction](#gettransaction)).
 2. Call the method with the same arguments but set the `nonce` to the value you've received in Step 1.
 
 #### Code example
@@ -1031,10 +1031,12 @@ The method returns nothing specific, but instead it returns various values on va
 #### Description
 
 <Callout type="warning" emoji="❗">
-Use only for methods that change a smart contract state. Use [GetData](/game/unity/api-reference/contract/get-data) for methods that return contract state, contract field, and mappings. To get more about difference between contract method please read the article.
+Use only for methods that change a smart contract state. Use [GetData](#getdata) for methods that return contract state, contract field, and mappings. To get more about difference between contract method please read the article.
 </Callout>
 
-In contrast with [CallMethod](/game/unity/api-reference/contract/call-method), this method provides the handlers for all the transaction lifecycle stages. To work with that method you need to implement the `ITransactionEventHandler` interface. The following implementation works with `EventHandler` to provide the most flexible experience to work with a transaction lifecycle.
+In contrast with [CallMethod](#callmethod), this method provides the handlers for all the transaction lifecycle stages. 
+To work with that method you need to implement the `ITransactionEventHandler` interface. 
+The following implementation works with `EventHandler` to provide the most flexible experience to work with a transaction lifecycle.
 
 ```
 using System;
@@ -1142,14 +1144,14 @@ public class ERC20Example : UseCase
 }
 ```
 
-To find out more on getting a transaction status or event, take a look at [GetTransactionReceipt](/game/unity/api-reference/eth-handler/get-transaction-receipt).
+To find out more on getting a transaction status or event, take a look at [GetTransactionReceipt](#gettransactionreceipt).
 
 #### Can't receive a receipt?
 
 Pay attention to the gas you use for a transaction. If your gas value will be lover than the average in a network, then the time to mine a transaction can be undetermined. If you are not sure if you're using enough gas:
 
 1. Add an event emitting to the contract method.
-2. Use [subscribe to events](/game/extra/events-and-subscriptions#subscribe-to-events).
+2. Use [subscribe to events](/gaming/extra/events-and-subscriptions/#subscribe-to-events).
 
 
 ### GetEvents
@@ -1178,7 +1180,7 @@ or
 
 Gets a contract's past events.
 
-Find out more on events and events requests in [Events and subscriptions](/game/extra/events-and-subscriptions#event-nature).
+Find out more on events and events requests in [Events and subscriptions](/gaming/extra/events-and-subscriptions/#event-nature).
 
 ```
 using AnkrSDK.Core.Infrastructure;
@@ -1243,7 +1245,7 @@ public class ContractExample : MonoBehaviour
 #### Description
 
 <Callout type="warning" emoji="❗">
-Use only for methods that return data, contract fields, and mappings. To change a contract state, use [CallMethod](/game/unity/api-reference/contract/call-method) or [Web3SendMethod](/game/unity/api-reference/contract/web3-send-method). To find out more on the difference between contract methods please, have a look at [Gas fees and gas-free methods](/game/extra/gas-fees-gas-free-methods).
+Use only for methods that return data, contract fields, and mappings. To change a contract state, use [CallMethod](#callmethod) or [Web3SendMethod](#web3sendmethod). To find out more on the difference between contract methods please, have a look at [Gas fees and gas-free methods](/gaming/extra/gas-fees-gas-free-methods/).
 </Callout>
 
 The method allows getting contract states from the contract methods, fields, and mappings.
@@ -1304,7 +1306,7 @@ public class BalanceOfMessage : FunctionMessage
 
 Pay attention that DTO should extend [FunctionMessage](https://github.com/Nethereum/Nethereum/blob/9c94c067a2e3c4bc2ec9c3fec6791e1c0d87a817/src/Nethereum.Contracts/FunctionMessage.cs).
 
-To find out more information on how to convert Solidity types to C# types, take a look at [C# and Solidity comparison](/game/extra/csharp-to-solidity).
+To find out more information on how to convert Solidity types to C# types, take a look at [C# and Solidity comparison](/gaming/extra/csharp-to-solidity/).
 
 When a `TFieldData` DTO is prepared, we can request data.
 
@@ -1365,7 +1367,7 @@ public class ContractExample : MonoBehaviour
 #### Description
 
 <Callout type="warning" emoji="❗">
-Use only for the contract methods that change a smart contract state. To find out more on the difference between the contract methods, have a look at [Gas fee and gas-free methods](/game/extra/gas-fees-gas-free-methods).
+Use only for the contract methods that change a smart contract state. To find out more on the difference between the contract methods, have a look at [Gas fee and gas-free methods](/gaming/extra/gas-fees-gas-free-methods/).
 </Callout>
 
 Requests a gas estimation for a contract method call.
@@ -1562,7 +1564,7 @@ or
 
 Subscribes to events with specific request parameters. Use it only to subscribe for events emitted after a subscription start, the method doesn’t return past events.
 
-To find out more info on events and subscriptions, have a look at [Events and subscriptions](/game/extra/events-and-subscriptions).
+To find out more info on events and subscriptions, have a look at [Events and subscriptions](/gaming/extra/events-and-subscriptions/).
 
 #### Code example
 
@@ -1577,7 +1579,7 @@ var subscription = await _eventSubscriber.Subscribe(
 );
 ```
 
-The full code example lives [here](/game/unity/api-reference/contract-event-subscriber#code-example).
+The full code example lives [here](/game/unity/api-reference/#code-example-16).
 
 
 ### ListenForEvents

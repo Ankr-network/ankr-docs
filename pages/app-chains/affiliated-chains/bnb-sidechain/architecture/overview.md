@@ -2,7 +2,9 @@
 
 BNB Sidechain is a modular framework for creating BNB Smart Chain-compatible sidechains. 
 
-It defines requirements for integration with the BNB Smart Chain ecosystem and brings development-ready EVM-compatible features like staking, RPC-API, and smart contracts. Since BNB Smart Chain doesn’t rely on the BNB Sidechain security model, there is no default embedded production-ready bridge solution between the BNB Smart Chain and BNB Sidechain networks. Instead, BNB Sidechain can provide protocols and standards for integrating third-party bridges that can be managed by the BNB Sidechain validator set of other projects like AnySwap or Celer Network cBridge, of course, if they trust the BNB Sidechain development team.
+It defines requirements for integration with the BNB Smart Chain ecosystem and brings development-ready EVM-compatible features like staking, RPC-API, and smart contracts. 
+Since BNB Smart Chain doesn’t rely on the BNB Sidechain security model, there is no default embedded production-ready bridge solution between the BNB Smart Chain and BNB Sidechain networks. 
+Instead, BNB Sidechain can provide protocols and standards for integrating third-party bridges that can be managed by the BNB Sidechain validator set of other projects like AnySwap or Celer Network cBridge, of course, if they trust the BNB Sidechain development team.
 
 
 ## BNB Sidechain structure & integration

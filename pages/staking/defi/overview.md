@@ -13,7 +13,7 @@ Ankr DeFi features a cross-chain dashboard where users can choose Liquid Staking
 
 Currently, the dashboard features:
 * [Liquidity pools](/staking/defi/liquidity-pools)
-* [Yield farming](/staking/defi/yield-farm)
+* [Yield farming](/staking/defi/yield-farming)
 * [Vaults](/staking/defi/vaults)
 
 Borrowing and Indexes are coming later.

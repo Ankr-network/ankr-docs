@@ -1,6 +1,6 @@
 ### Are there any docs about the ETH staking and how I set up my wallet etc.?
 
-Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking/eth/stake-eth).
+Yes — there is a [user guide](/staking/liquid-staking/eth/stake).
 
 
 ### What is the minimum amount of ETH I can stake?
@@ -73,13 +73,3 @@ You can trade them in the listed liquidity pools on ANKR DeFi:
 
 * [aETHb](https://www.ankr.com/staking/defi/?assets=aETHb)
 * [aETHc](https://www.ankr.com/staking/defi/?assets=aETHc)
-
-You can also use your Liquid Staking tokens to:
-* [Add liquidity on DEXs](https://www.ankr.com/docs/staking/defi/liquidity-pools/) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
-* [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farm) and earn additional rewards in the form of liquidity pool tokens and further farm them.  
-* [Put your tokens in a vault](https://www.ankr.com/docs/staking/defi/vaults) and automatically earn additional rewards in the form of one of both assets from the pair.
-
-
-### Can I get staking metrics for my integration?
-
-Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://ankr.com/docs/staking/extra/staking-metrics).

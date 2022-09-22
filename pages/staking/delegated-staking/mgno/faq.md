@@ -5,7 +5,7 @@ To avoid looses of staked mGNO we made insurance system, each Node Provider has 
 This mGNO will be used to cover provider's slashing.
 
 ###  Where can I get mGMO? 
-As getting mGMO is a multistep process, you're better off reading how to get it in the [mGMO staking guide](/staking/delegated-staking/ankr/stake-ankr/).
+As getting mGMO is a multistep process, you're better off reading how to get it in the [mGMO staking guide](/staking/delegated-staking/mgno/stake/).
 
 ### What is the minimum and maximum amount of mGNO I can stake?
 * Minimum — 0.00001 mGNO.
@@ -38,4 +38,4 @@ Overall, it looks like Shanghai is going to come in ~Q2/Q3 2023.
 Yes, you can.
 
 ### Must rewards be claimed from the Ankr website, or will they be automatically sent to the supplying wallet?
-Rewards must be claimed from the [Ankr website](https://www.ankr.com/staking/dashboard/) after the Ethereum Shangai upgrade in ~Q2/Q3 2023
+Rewards must be claimed from the [Ankr website](https://www.ankr.com/staking/dashboard/) after the Ethereum Shangai upgrade in ~Q2/Q3 2023.
