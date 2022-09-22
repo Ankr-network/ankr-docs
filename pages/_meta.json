@@ -2,7 +2,7 @@
   "index": "Welcome to Ankr Docs",
   "build": "Ankr Build",
   "app-chains": "App Chains",
-  "stake": "Ankr Staking",
-  "game": "Ankr Gaming",
+  "staking": "Ankr Staking",
+  "gaming": "Ankr Gaming",
   "learn": "Ankr Learn"
 }

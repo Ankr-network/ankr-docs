@@ -276,11 +276,11 @@
     "to": "/docs/stake/overview/"
   },
   {
-    "from": "/docs/staking/delegated-staking/ankr/overview/",
+    "from": "/docs/game/ankr-game/",
     "to": ""
   },
   {
-    "from": "",
+    "from": "/docs/game/unity/about-unity/",
     "to": ""
   },
   {
