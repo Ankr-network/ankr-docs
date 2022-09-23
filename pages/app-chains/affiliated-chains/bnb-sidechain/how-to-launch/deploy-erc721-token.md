@@ -1,0 +1,50 @@
+import { Callout } from "nextra-theme-docs";
+
+# Deploy ERC-721 token
+
+Deployment of ERC-721 token can be done though Remix IDE of locally using truffle. 
+Since BNB Sidechain has EVM & Web3 support, it is compatible with Ethereum development toolsets. 
+Remix is the easiest way to deploy the ERC-721 smart contract into a BNB Sidechain network.
+
+To deploy an ERC-721 token using Remix IDE go to the [remix page](https://remix.ethereum.org/). 
+In the deploy section choose `Injected Web3` and make sure your MetaMask is connected to one of the BNB Sidechain networks. 
+To get connected to the BNB Sidechain network, go to one of the BNB Sidechain devnet's staking pages, for example, https://staking.dev-01.bas.ankr.com/, and it will create a new MetaMask network automatically for you. 
+You can also configure your MetaMask manually.
+
+Use this snippet from the ERC-721 smart contract:
+
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.1;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+
+contract MyERC721Token is ERC721URIStorage, Ownable {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+
+    constructor() ERC721("MyERC721Token", "Test Token") {}
+
+    function mintNFT(address recipient, string memory tokenURI)
+        public onlyOwner
+        returns (uint256)
+    {
+        _tokenIds.increment();
+
+        uint256 newItemId = _tokenIds.current();
+        _mint(recipient, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+
+        return newItemId;
+    }
+}
+```
+
+MetaData URI is a link (usually on ipfs) that returns a JSON object with information about your NFT token.
+
+<Callout>
+For more information on NFT (EIP-721) metadata, visit the [official EIP page](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md).
+</Callout>
