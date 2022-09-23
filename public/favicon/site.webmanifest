@@ -1,0 +1,16 @@
+{
+    "name": "Ankr",
+    "short_name": "Ankr",
+    "description": "The Web3 Infrastructure Company",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/favicon/android-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

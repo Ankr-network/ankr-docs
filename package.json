@@ -1,52 +1,41 @@
 {
   "name": "ankr-docs",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Ankr Docs",
+  "main": "index.js",
   "private": true,
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "env-cmd -f .env docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "dev": "next",
+    "debug": "NODE_OPTIONS='--inspect' next",
+    "start": "next start",
+    "build": "next build && next export"
   },
+  "author": "raproid at Ankr",
+  "license": "MIT",
   "dependencies": {
-    "@ankr.com/global-menu": "^1.1.3",
-    "@docusaurus/core": "^2.0.0-beta.18",
-    "@docusaurus/plugin-ideal-image": "^2.0.0-beta.18",
-    "@docusaurus/preset-classic": "^2.0.0-beta.18",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-beta.17",
-    "@docusaurus/theme-search-algolia": "^2.0.0-beta.17",
-    "@mdx-js/react": "^1.6.22",
-    "@svgr/webpack": "^5.5.0",
-    "algoliasearch": "^4.12.2",
-    "clsx": "^1.1.1",
-    "core-js": "^3.21.1",
-    "docusaurus-theme-search-typesense": "^0.4.0-2",
-    "file-loader": "^6.2.0",
-    "prism-react-renderer": "^1.3.1",
+    "@reach/skip-nav": "^0.16.0",
+    "aws-sdk": "^2.1217.0",
+    "copy-to-clipboard": "^3.3.2",
+    "focus-visible": "^5.1.0",
+    "intersection-observer": "^0.10.0",
+    "markdown-to-jsx": "^6.11.4",
+    "next": "^12.2.0",
+    "nextra": "^2.0.0-beta.25",
+    "nextra-theme-docs": "^2.0.0-beta.25",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-simple-code-editor": "^0.11.0",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.69.1"
+    "react-intersection-observer": "^8.26.2",
+    "react-router-dom": "^6.3.0",
+    "http-server": "^14.1.1"
   },
   "devDependencies": {
-    "env-cmd": "^10.1.0"
+    "@heroicons/react": "^1.0.6",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.16"
   },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "prettier": {
+    "embeddedLanguageFormatting": "off",
+    "htmlWhitespaceSensitivity": "strict"
   }
 }

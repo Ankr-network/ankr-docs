@@ -1,0 +1,36 @@
+const isProd = process.env.NODE_ENV === 'production'
+
+const withNextra = require("nextra")({
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.js",
+  unstable_flexsearch: true,
+  unstable_staticImage: true,
+});
+
+module.exports = withNextra({
+    images: {
+    loader: 'akamai',
+    path: '',
+  },
+  trailingSlash: true,
+  //assetPrefix: isProd ? 'https://ankr.com/docs' : undefined,
+  basePath: '/docs',
+});
+
+/* example of how to set up redirects
+module.exports = withNextra({
+  redirects: () => {
+    return [
+      {
+        source: "/docs/deprecated-page",
+        destination: "/docs/new-page",
+        statusCode: 301,
+      },
+        source: "/docs/deprecated-page",
+        destination: "/docs/new-page",
+        statusCode: 302,
+      },
+    ];
+  },
+});
+*/

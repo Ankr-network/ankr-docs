@@ -1,0 +1,743 @@
+[
+  {
+    "from": "docs/build-blockchain/overview/index.html",
+    "to": "/docs/build/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/pricing-plans/index.html",
+    "to": "/docs/build/pricing/"
+  },
+  {
+    "from": "docs/build-blockchain/products/v2/rpc-overview/index.html",
+    "to": "/docs/build/products/rpc-service/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/products/v2/ui-interactions/index.html",
+    "to": "/docs/build/products/rpc-service/premium-account-operations/"
+  },
+  {
+    "from": "docs/build-blockchain/products/v2/ui-interactions-blockchain/index.html",
+    "to": "/docs/build/products/rpc-service/blockchain-interactions/"
+  },
+  {
+    "from": "docs/build-blockchain/products/v2/hybrid-infra/index.html",
+    "to": "/docs/build/products/rpc-service/hybrid-infrastructure/"
+  },
+  {
+    "from": "docs/build-blockchain/concepts/pricing/index.html",
+    "to": "/docs/build/products/rpc-service/pricing-plans/"
+  },
+  {
+    "from": "docs/build-blockchain/products/v2/card-flow/index.html",
+    "to": "/docs/build/products/rpc-service/card-flow/"
+  },
+  {
+    "from": "docs/build-blockchain/products/v2/advanced-apis/index.html",
+    "to": "/docs/build/products/advanced-api-sdk/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/products/advanced-apis/nft-api/index.html",
+    "to": "/docs/build/products/advanced-api-sdk/nft-methods/"
+  },
+  {
+    "from": "docs/build-blockchain/products/advanced-apis/query-api/index.html",
+    "to": "/docs/build/products/advanced-api-sdk/query-methods/"
+  },
+  {
+    "from": "docs/build-blockchain/products/advanced-apis/token-api/index.html",
+    "to": "/docs/build/products/advanced-api-sdk/token-methods/"
+  },
+  {
+    "from": "docs/build-blockchain/products/advanced-apis/javascript-sdk/index.html",
+    "to": "/docs/build/products/advanced-api-sdk/javascript-sdk/"
+  },
+  {
+    "from": "docs/build-blockchain/products/v2/scan/index.html",
+    "to": "/docs/build/products/ankr-scan/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/arbitrum/index.html",
+    "to": "/docs/build/chains/arbitrum/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/avalanche/index.html",
+    "to": "/docs/build/chains/avalanche/"
+  },
+  {
+    "from": "build-blockchain/chains/v2/binance-smart-chain/index.html",
+    "to": "/docs/build/chains/binance-smart-chain/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/celo/index.html",
+    "to": "/docs/build/chains/celo/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/ethereum/about-ethereum/index.html",
+    "to": "/docs/build/chains/ethereum/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/ethereum/how-to/connect-ethereum/index.html",
+    "to": "/docs/build/chains/ethereum/how-to/connect-metamask/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/ethereum/how-to/ethereum-requests/index.html",
+    "to": "/docs/build/chains/ethereum/how-to/make-requests/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/ethereum/how-to/ethereum-transactions/index.html",
+    "to": "/docs/build/chains/ethereum/how-to/send-transaction/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/ethereum/how-to/build-eth-project/index.html",
+    "to": "/docs/build/chains/ethereum/how-to/basic-dapp/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/fantom/index.html",
+    "to": "/docs/build/chains/fantom/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/gnosis/index.html",
+    "to": "/docs/build/chains/gnosis/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/harmony/index.html",
+    "to": "/docs/build/chains/harmony/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/iotex/index.html",
+    "to": "/docs/build/chains/iotex/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/moonbeam/index.html",
+    "to": "/docs/build/chains/moonbeam/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/near/index.html",
+    "to": "/docs/build/chains/near/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/nervos/index.html",
+    "to": "/docs/build/chains/nervos/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/polygon/index.html",
+    "to": "/docs/build/chains/polygon/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/solana/index.html",
+    "to": "/docs/build/chains/solana/"
+  },
+  {
+    "from": "docs/build-blockchain/chains/v2/syscoin/about-syscoin/index.html",
+    "to": "/docs/build/chains/syscoin/"
+  },
+  {
+    "from": "docs/build-blockchain/support/get-support/index.html",
+    "to": "/docs/build/extra/get-support/"
+  },
+  {
+    "from": "docs/build-blockchain/support/errors/index.html",
+    "to": "/docs/build/extra/handling-errors/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/overview/index.html",
+    "to": "/docs/app-chains/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/components/validator-nodes/index.html",
+    "to": "/docs/app-chains/components/validator-nodes/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/components/rpc-endpoints/index.html",
+    "to": "/docs/app-chains/components/rpc-endpoints/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/components/block-explorer/index.html",
+    "to": "/docs/app-chains/components/block-explorer/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/components/testnet-faucet/index.html",
+    "to": "/docs/app-chains/components/testnet-faucet/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/components/relay-hub/index.html",
+    "to": "/docs/app-chains/components/relay-hub/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/components/staking-ui/index.html",
+    "to": "/docs/app-chains/components/staking-ui/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/use-cases/web3-gaming/index.html",
+    "to": "/docs/app-chains/use-cases/web3-gaming/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/use-cases/finance/index.html",
+    "to": "/docs/app-chains/use-cases/finance/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/overview/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/architecture/overview/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/architecture/circ-model-native-bridge/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/circulation-model-native-bridge/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/architecture/native-bridge/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/native-bridge/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/architecture/fast-finality-bls-crypto/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/fast-finality/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/architecture/sys-smart-contracts/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/architecture/governance/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/governance/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/architecture/runtime-upgrades/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/architecture/runtime-upgrades/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/security/blockchain-evm/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/blockchain-and-evm-security/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/security/smart-contracts/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/system-smart-contracts/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/security/on-chain/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/on-chain-security/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/security/off-chain/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/security/off-chain-security/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/customize-genesis-config/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/configure-genesis-file/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/launch-bas/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc20-token/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc20-token/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/how-to-launch/deploy-erc721-token/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc721-token/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/staking/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/staking/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/demo/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/demo/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/faq/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/faq/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/bnb-sidechain/glossary/index.html",
+    "to": "/docs/app-chains/affiliated-chains/bnb-sidechain/glossary/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/polygon-supernets/overview/index.html",
+    "to": "/docs/app-chains/affiliated-chains/polygon-supernets/overview/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/exchange-readiness/index.html",
+    "to": "/docs/app-chains/exchange-readiness-program/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/step-by-step/index.html",
+    "to": "/docs/app-chains/start-with-app-chains/"
+  },
+  {
+    "from": "docs/build-blockchain/app-chain/faq/index.html",
+    "to": "/docs/app-chains/faq/"
+  },
+  {
+    "from": "docs/staking/overview/index.html",
+    "to": "/docs/stake/overview/"
+  },
+  {
+    "from": "docs/game/ankr-game/index.html",
+    "to": "/docs/gaming/overview/"
+  },
+  {
+    "from": "docs/game/unity/about-unity/index.html",
+    "to": "/docs/gaming/unity-sdk/overview/"
+  },
+  {
+    "from": "docs/game/unity/setting-up/index.html",
+    "to": "/docs/gaming/unity-sdk/setting-up/"
+  },
+  {
+    "from": "docs/game/unity/getting-started/before-you-start/index.html",
+    "to": "/docs/gaming/unity-sdk/getting-started/before-you-start/"
+  },
+  {
+    "from": "docs/game/unity/getting-started/connect-wallet/index.html",
+    "to": "/docs/gaming/unity-sdk/getting-started/connect-wallet/"
+  },
+  {
+    "from": "docs/game/unity/interacting-with-blockchain/avialable-interfaces/index.html",
+    "to": "/docs/gaming/unity-sdk/interacting-with-blockchain/available-interfaces/"
+  },
+  {
+    "from": "docs/game/unity/interacting-with-blockchain/interact-with-smart-contract/index.html",
+    "to": "/docs/gaming/unity-sdk/interacting-with-blockchain/interacting-with-smart-contract/"
+  },
+  {
+    "from": "docs/game/unity/interacting-with-blockchain/mint-nft/index.html",
+    "to": "/docs/gaming/unity-sdk/interacting-with-blockchain/mint-nft/"
+  },
+  {
+    "from": "docs/game/unity/interacting-with-blockchain/read-nft/index.html",
+    "to": "/docs/gaming/unity-sdk/interacting-with-blockchain/read-nft/"
+  },
+  {
+    "from": "docs/game/unity/interacting-with-blockchain/update-nft/index.html",
+    "to": "/docs/gaming/unity-sdk/interacting-with-blockchain/update-nft/"
+  },
+  {
+    "from": "docs/game/unity/how-tos/subscribe-game/index.html",
+    "to": "/docs/gaming/unity-sdk/how-to/update-events/"
+  },
+  {
+    "from": "docs/game/unity/how-tos/switch-to-webgl/index.html",
+    "to": "/docs/gaming/unity-sdk/how-to/switch-to-webgl/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/ankr-sdk-factory/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/ankr-sdk-factory/get-ankr-sdk-instance/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/get-contract/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/create-subscriber/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/disconnect/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-transaction/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-transaction-receipt/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-default-account/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/sign/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/send-transaction/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/estimate-gas-2/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-balance/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-block-number/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-transaction-count/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-block-with-transactions/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/eth-handler/get-block-with-transactions-hashes/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract/call-method/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract/web3-send-method/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract/get-events/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract/get-data/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract/estimate-gas/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract-event-subscriber/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract-event-subscriber/constructor/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract-event-subscriber/subscribe/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract-event-subscriber/listen-for-events/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract-event-subscriber/unsubscribe/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unity/api-reference/contract-event-subscriber/stop-listen/index.html",
+    "to": "/docs/gaming/unity-sdk/reference/"
+  },
+  {
+    "from": "docs/game/unreal/about-unreal/index.html",
+    "to": "/docs/gaming/unreal-sdk/overview/"
+  },
+  {
+    "from": "docs/game/unreal/setting-up-v4/index.html",
+    "to": "/docs/gaming/unreal-sdk/setting-up/unreal-sdk-4/"
+  },
+  {
+    "from": "docs/game/unreal/setting-up-v5/index.html",
+    "to": "/docs/gaming/unreal-sdk/setting-up/unreal-sdk-5/"
+  },
+  {
+    "from": "docs/game/unreal/getting-started/unreal-before/index.html",
+    "to": "/docs/gaming/unreal-sdk/getting-started/before-you-start/"
+  },
+  {
+    "from": "docs/game/unreal/getting-started/unreal-connect-wallet/index.html",
+    "to": "/docs/gaming/unreal-sdk/getting-started/connect-wallet/"
+  },
+  {
+    "from": "docs/game/unreal/getting-started/unreal-send-retrieve/index.html",
+    "to": "/docs/gaming/unreal-sdk/getting-started/write-read-requests/"
+  },
+  {
+    "from": "docs/game/unreal/getting-started/unreal-mint-nft/index.html",
+    "to": "/docs/gaming/unreal-sdk/getting-started/mint-nft/"
+  },
+  {
+    "from": "docs/game/unreal/getting-started/unreal-update-nft/index.html",
+    "to": "/docs/gaming/unreal-sdk/getting-started/update-nft/"
+  },
+  {
+    "from": "docs/game/extra/game-reference/index.html",
+    "to": "/docs/gaming/extra/token-standards/"
+  },
+  {
+    "from": "docs/game/extra/events-and-subscriptions/index.html",
+    "to": "/docs/gaming/extra/events-and-subscriptions/"
+  },
+  {
+    "from": "docs/game/extra/gas-fees-gas-free-methods/index.html",
+    "to": "/docs/gaming/extra/gas-fees-gas-free-methods/"
+  },
+  {
+    "from": "docs/game/extra/currency-units/index.html",
+    "to": "/docs/gaming/extra/currency-units/"
+  },
+  {
+    "from": "docs/game/extra/csharp-to-solidity/index.html",
+    "to": "/docs/gaming/extra/csharp-to-solidity/"
+  },
+  {
+    "from": "docs/staking/delegated-staking/ankr/stake-ankr/index.html",
+    "to": "/docs/staking/delegated-staking/ankr/stake/"
+  },
+  {
+    "from": "docs/staking/delegated-staking/ankr/claim-or-restake-rewards/index.html",
+    "to": "/docs/staking/delegated-staking/ankr/claim-restake-rewards/"
+  },
+  {
+    "from": "docs/staking/delegated-staking/ankr/unstake-ankr/index.html",
+    "to": "/docs/staking/delegated-staking/ankr/unstake/"
+  },
+  {
+    "from": "docs/staking/delegated-staking/mgno/stake-mgno/index.html",
+    "to": "/docs/staking/delegated-staking/mgno/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/avax/stake-avax/index.html",
+    "to": "/docs/staking/liquid-staking/avax/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/avax/unstake-avax/index.html",
+    "to": "/docs/staking/liquid-staking/avax/unstake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/bnb/stake-bnb/index.html",
+    "to": "/docs/staking/liquid-staking/bnb/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/bnb/unstake-bnb/index.html",
+    "to": "/docs/staking/liquid-staking/bnb/unstake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/dot/stake-dot/index.html",
+    "to": "/docs/staking/liquid-staking/dot/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/dot/unstake-dot/index.html",
+    "to": "/docs/staking/liquid-staking/dot/unstake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/eth/stake-eth/index.html",
+    "to": "/docs/staking/liquid-staking/eth/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/eth/unstake-eth/index.html",
+    "to": "/docs/staking/liquid-staking/eth/unstake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/ftm/stake-ftm/index.html",
+    "to": "/docs/staking/liquid-staking/ftm/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/ftm/unstake-ftm/index.html",
+    "to": "/docs/staking/liquid-staking/ftm/unstake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/ksm/stake-ksm/index.html",
+    "to": "/docs/staking/liquid-staking/ksm/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/ksm/unstake-ksm/index.html",
+    "to": "/docs/staking/liquid-staking/ksm/unstake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/matic/stake-matic/index.html",
+    "to": "/docs/staking/liquid-staking/matic/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/matic/unstake-matic/index.html",
+    "to": "/docs/staking/liquid-staking/matic/unstake/"
+  },
+  {
+    "from": "docs/staking/defi/yield-farm/index.html",
+    "to": "/docs/staking/defi/yield-farming/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/oracles/overview/index.html",
+    "to": "/docs/staking/for-integrators/oracles/overview/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/oracles/pancakeswap/index.html",
+    "to": "/docs/staking/for-integrators/oracles/pancakeswap-oracle/"
+  },
+  {
+    "from": "docs/staking/api-overview/index.html",
+    "to": "/docs/staking/for-integrators/smart-contract-api/overview/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/avax/api/index.html",
+    "to": "/docs/staking/for-integrators/smart-contract-api/avax-api/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/bnb/api/index.html",
+    "to": "/docs/staking/for-integrators/smart-contract-api/bnb-api/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/eth/api/index.html",
+    "to": "/docs/staking/for-integrators/smart-contract-api/eth-api/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/ftm/api/index.html",
+    "to": "/docs/staking/for-integrators/smart-contract-api/ftm-api/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/matic/api/index.html",
+    "to": "/docs/staking/for-integrators/smart-contract-api/matic-api/"
+  },
+  {
+    "from": "docs/staking/extra/staking-metrics/index.html",
+    "to": "/docs/staking/for-integrators/restful-api/staking-metrics/"
+  },
+  {
+    "from": "docs/staking/sdk-overview/index.html",
+    "to": "/docs/staking/for-integrators/sdk/overview/"
+  },
+  {
+    "from": "docs/staking/liquid-crowdloan/sdk/index.html",
+    "to": "/docs/staking/for-integrators/sdk/liquid-crowdloan-sdk/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/sdk/index.html",
+    "to": "/docs/staking/for-integrators/sdk/liquid-staking-sdk/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/avax/staking-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/avax-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/bnb/staking-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/dot/staking-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/dot-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/eth/staking-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/ftm/staking-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/ksm/staking-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/ksm-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/matic/staking-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking/bridge/bridge-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/bridge-mechanics/"
+  },
+  {
+    "from": "docs/staking/switch/switch-mechanics/index.html",
+    "to": "/docs/staking/for-integrators/dev-details/switch-mechanics/"
+  },
+  {
+    "from": "docs/staking/extra/ls-smart-contract-addresses-mn/index.html",
+    "to": "/docs/staking/extra/ls-sc-addresses-mn/"
+  },
+  {
+    "from": "docs/staking/extra/ls-smart-contract-addresses-tn/index.html",
+    "to": "/docs/staking/extra/ls-sc-addresses-tn/"
+  },
+  {
+    "from": "docs/staking/extra/micropools/index.html",
+    "to": "/docs/staking/extra/micropool-staking/"
+  },
+  {
+    "from": "docs/staking/reference/integrations/index.html",
+    "to": "/docs/staking/extra/integrations/"
+  },
+  {
+    "from": "docs/staking/reference/liquidity-tokens/index.html",
+    "to": "/docs/staking/extra/liquidity-tokens/"
+  },
+  {
+    "from": "docs/learn/tokens-governance/ankr-tokens/index.html",
+    "to": "/docs/staking/delegated-staking/ankr/overview/#introduction"
+  },
+  {
+    "from": "docs/learn/tokens-governance/buy-ankr-cex/index.html",
+    "to": "/docs/staking/delegated-staking/ankr/stake/#purchase-ankr"
+  },
+  {
+    "from": "docs/learn/tokens-governance/buy-ankr-dex/index.html",
+    "to": "/docs/staking/delegated-staking/ankr/stake/#purchase-ankr"
+  },
+  {
+    "from": "docs/learn/tokens-governance/governance/index.html",
+    "to": "/docs/staking/extra/ankr-governance-mechanics/"
+  },
+  {
+    "from": "docs/learn/tokens-governance/tokenomics/index.html",
+    "to": "/docs/staking/extra/ankr-tokenomics/"
+  },
+  {
+    "from": "docs/learn/tutorials/tutorials/index.html",
+    "to": "/docs/learn/overview/"
+  },
+  {
+    "from": "docs/learn/tutorials/create-voting-system/movie-voting-web3/index.html",
+    "to": "/docs/learn/overview/"
+  },
+  {
+    "from": "docs/learn/tutorials/create-eth-app-tutorial/create-eth-app/index.html",
+    "to": "/docs/learn/overview/"
+  },
+  {
+    "from": "docs/learn/tutorials/simple-truffle/index.html",
+    "to": "/docs/learn/overview/"
+  },
+  {
+    "from": "docs/learn/tutorials/connect-web3js/index.html",
+    "to": "/docs/learn/overview/"
+  },
+  {
+    "from": "docs/learn/tutorials/erigon-bsc-tutorial/erigon-bsc/index.html",
+    "to": "/docs/learn/overview/"
+  },
+
+  {
+    "from": "docs/learn/tutorials/connect-web3py/index.html",
+    "to": "/docs/learn/overview/"
+  },
+  {
+    "from": "docs/learn/extra/ankr-vision/index.html",
+    "to": "docs/learn/overview/"
+  },
+  {
+    "from": "docs/learn/extra/51-attacks/index.html",
+    "to": "docs/learn/overview/"
+  },
+  {
+    "from": "docs/example/index.html",
+    "to": "https://example.com/"
+  },
+  {
+    "from": "docs/example/index.html",
+    "to": "/docs/example/"
+  }
+]
