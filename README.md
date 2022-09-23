@@ -7,7 +7,7 @@ The docs are targeted at existing and potential Ankr users and explain what diff
 The docs are built on [Nextra](https://nextra.vercel.app/) — a Next.js based static site generator.
 
 
-## How to contribute to the project
+## Contribute to the project as an end-user
 
 As an ever-developing company, we welcome you to contribute to Ankr Docs — via feedback raising an issue or a pull request adding/updating content.
 
@@ -33,7 +33,7 @@ If you're an Ankr users, use the GitHub web interface:
 4. When done, commit the changes **to a new branch**. A pull request will be created automatically.
 
 
-## Contributing policy for Ankr employees 
+## Contribute to the project as an Ankr employee 
 Now, if you're with us, you know to uphold our standards. 
 
 If you are new to them, here are the guidelines:
@@ -115,24 +115,25 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ```
 
 ## Get acquainted with the file and folder structure
-
-┌ ○ /.github 
-├     ○ /worflows 
+```
+┌ ○ .github 
+├     ○ worflows 
 ├         deploy.yml — workflows for deploying the project via GitHub Actions.
-├ ○ /components — custom React components to import and use in the project.
-├ ○ /icons — icons to use in the metainfo.
-├ ○ /pages — source files with the content to generate static HTML files from.
-├ ○ /public — images to use in the docs.
-├ ○ /styles — custom CSS styles overwriting the default Nextra styles. 
-├   /next.config.js — configuration file for the Next.js framework, which powers Nextra.
-├   /postcss.config.js — configuration file listing additional packages to import to Nextra.
-├   /README.md — readme of the project.
-├   /redirects.js — redirects solution.
-├   /redirects.json — map of redirects for the redirects solution.
-├   /tailwind.config.js — additional CSS framework (imported in postcss.config.js).
-├   /theme.config.js — configuration file for Nextra with the essential project parameters.
-└   /yarn.lock — lock file to ensure the same environment across devices.
-
+├ ○ components — custom React components to import and use in the project.
+├ ○ icons — icons to use in the metainfo.
+├ ○ pages — source files with the content to generate static HTML files from.
+├ ○ public — images to use in the docs.
+├ ○ styles — custom CSS styles overwriting the default Nextra styles.
+├   .gitignore — list of intentionally untracked files and folders to skip when commiting. 
+├   next.config.js — configuration file for the Next.js framework, which powers Nextra.
+├   postcss.config.js — configuration file listing additional packages to import to Nextra.
+├   README.md — readme of the project.
+├   redirects.js — redirects solution.
+├   redirects.json — map of redirects for the redirects solution.
+├   tailwind.config.js — additional CSS framework (imported in postcss.config.js).
+├   theme.config.js — configuration file for Nextra with the essential project parameters.
+└   yarn.lock — lock file to ensure the same environment across devices.
+```
 ## Install dependencies for the docs
 ```shell
 yarn install
