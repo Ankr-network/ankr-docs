@@ -33,6 +33,7 @@ Congrats — you now have an account in Ankr RPC Service, associated with your w
 
 <Callout>
 Price of API Credits pegged to USD 
+
 We’ve pegged the price of our API Credits to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
 </Callout>
 
@@ -52,6 +53,7 @@ Congrats — you've added ANKR tokens to your account, and you're all set for us
 ## Withdraw
 <Callout type="warning" emoji="❗">
 Request Withdrawals via Support
+
 We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.
 </Callout>
 
