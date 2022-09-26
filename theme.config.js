@@ -10,7 +10,6 @@ const logo = ({ height }) => (
 // Params
 export default {
 //General params
-  docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/blob/main",
   project: {
     link: "https://github.com/Ankr-network/",
   },
@@ -19,11 +18,12 @@ export default {
     float: true,
   },
   sidebar: { defaultMenuCollapsed: true },
-// Feedback and Edit on GH links (footerEditLink is NOT a footer link, the name is misleading)
+// Feedback and Edit on GH links
   feedback: {
   labels: "feedback",
   content: "Give us feedback →",
   },
+  docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/blob/main",
   editLink: {
     text: "Edit this page on GitHub →",
   },
