@@ -68,7 +68,7 @@ To deploy:
 1. Navigate to the Actions tab on the repo page.
 2. Under `All wokflows`, on the left, click `Deploy`.
 3. Click the `Run wokflow` button on the right, then choose the branch and environment to deploy to.
-   1. Deploy to `STAGE` or any other staking server from the drop-down list to view and test your doc updates in a safe environment.
+   1. Deploy to `STAGE` or any other staging server from the drop-down list to view and test your doc updates in a safe environment.
    2. When tested and ready, deploy to `PROD` available to general public. 
 4. Click the green `Run workflow` button right below the chosen values.
 
