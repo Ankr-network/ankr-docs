@@ -10,10 +10,9 @@ const logo = ({ height }) => (
 // Params
 export default {
 //General params
-  projectLink: "https://github.com/Ankr-network/",
   docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/blob/main",
   project: {
-    link: "https://github.com/Ankr-network/ankr-docs/",
+    link: "https://github.com/Ankr-network/",
   },
   titleSuffix: " – Ankr",
   toc: {
