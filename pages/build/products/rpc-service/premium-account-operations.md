@@ -1,3 +1,5 @@
+import { Callout } from "nextra-theme-docs";
+
 # Premium account operations
 
 To start using the _Premium Tier_ services, there are some required steps for you to go through:
@@ -29,9 +31,10 @@ Congrats — you now have an account in Ankr RPC Service, associated with your w
 
 ## Top up
 
-:::note Price of API Credits pegged to USD 
+<Callout>
+Price of API Credits pegged to USD 
 We’ve pegged the price of our API Credits to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
-:::
+</Callout>
 
 As always the case, you would need to deposit some tokens into your Ankr account to be able to make RPC requests — that's just the fact of life.
 
@@ -47,10 +50,10 @@ That's where the top-up procedure comes into play:
 Congrats — you've added ANKR tokens to your account, and you're all set for using _Premium_ services. 
 
 ## Withdraw
-
-:::warning Request Withdrawals via Support
+<Callout type="warning" emoji="❗">
+Request Withdrawals via Support
 We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.
-:::
+</Callout>
 
 Life goes fast, and it might be the case someday that you'd like to get your ANKR tokens back to your wallet. That's exactly what the withdrawal operation has been implemented for.
 
