@@ -6,6 +6,8 @@ Query API Methods serve to request info on the ranges of blocks (max range is 10
 
 ## `ankr_getBlocks`
 
+> Retrieves the blocks' data.
+
 Gets full information for the block specified by request parameters.
 
 ### Request
@@ -33,6 +35,7 @@ Gets full information for the block specified by request parameters.
   ]}
 >   
   <Tab>
+
 ```json
 {
   "id": 1,
@@ -52,7 +55,8 @@ Gets full information for the block specified by request parameters.
 ```
   </Tab>
   <Tab>
-```sh
+
+```shell
 Content-Type: application/json
 ```
   </Tab>
@@ -102,7 +106,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -213,8 +218,9 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
 
+```
+Provide example!!!
 ```
   </Tab>
 </Tabs>
@@ -222,6 +228,8 @@ Code: 200 OK
 ---
 
 ## `ankr_getLogs`
+
+> Retrieves the blocks' history data.
 
 Gets history data for the blocks specified by request parameters.
 
@@ -256,7 +264,8 @@ Gets history data for the blocks specified by request parameters.
   ]}
 >
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "method": "ankr_getLogs",
@@ -277,6 +286,7 @@ Gets history data for the blocks specified by request parameters.
 ```
   </Tab>
   <Tab>
+
 ```sh
 Content-Type: application/json
 ```
@@ -326,7 +336,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -370,7 +381,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -431,6 +443,8 @@ Code: 200 OK
 
 ## `ankr_getTransactionsByHash`
 
+> Retrieves data for the hash-specified transaction.
+
 Returns transaction details for a transaction specified by hash.
 
 ### Request
@@ -454,7 +468,8 @@ Returns transaction details for a transaction specified by hash.
   ]}
 >
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "method": "ankr_getTransactionsByHash",
@@ -468,6 +483,7 @@ Returns transaction details for a transaction specified by hash.
 ```
   </Tab>
   <Tab>
+
 ```sh
 Content-Type: application/json
 ```
@@ -512,7 +528,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -597,7 +614,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,

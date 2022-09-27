@@ -8,11 +8,12 @@ Ankr RPC Service is a major part of Ankr Build and contains various components d
 
 1. [Public Plan](/build/overview/#public-plan): Free and instant access to our range of Public RPC APIs.
 
-2. [Premium Plan](/build/overview/#premium-plan): Sign up to our Pay-as-you-go Premium Plan with a minimum deposit of 1000 ANKR and get access to powerful features.
+2. [Premium Plan](/build/overview/#premium-plan): Start using our Premium Plan by depositing 1000 ANKR to get access to a [set of powerful features](/build/pricing/#public-and-premium-plans-comparison), such as prioritized requests order, higher request rate limits, WebSockets connection, direct email support, and Advanced API functionality.  
 
-3. [Ankr Scan](/build/products/ankr-scan/): Ankr Scan is a multi-chain Explorer that allows viewing assets across chains as well as assigned to a specific wallet address.
+[//]: # (3. [Ankr Scan]&#40;/build/products/ankr-scan/&#41;: Ankr Scan is a multi-chain Explorer that allows viewing assets across chains as well as assigned to a specific wallet address.)
 
-4. Node Services: Full, Archive, and Validator/Staking nodes are available for 50+ chains.
+[//]: # ()
+[//]: # (4. Node Services: Full, Archive, and Validator/Staking nodes are available for 50+ chains.)
 
 ## Overview
 
@@ -32,13 +33,13 @@ To access all the advanced features of Ankr RPC, developers can use Premium serv
 
 Check out the latest chains on [Ankr RPC](https://www.ankr.com/rpc/).
 
-### Get started using Public plan
+### Get started with Public plan
 
 1. Go to [Ankr RPC](https://www.ankr.com/rpc/) service.
 2. In **Sidebar**, click **Endpoints** to open the pane.
 3. In the list of blockchains, click the one you'd like to interact with.
-4. In the **Blockchain** opened, select a chain type (**Mainnet**/**Testnet**) needed for your project.
-5. On the **Connection** tab, in the URL block, copy the URL into your project's library or config file.
+4. In the **Blockchain** opened, select a network (**Mainnet**/**Testnet**) needed for your project.
+5. From the **Endpoints** fields, copy the URL into your project's library or config file.
 
 ### How it works
 
@@ -68,7 +69,7 @@ Enjoy the following benefits:
 * Establish a durable, low-latency connection via the websocket endpoint and have data pushed incrementally directly to you as soon as it is available. This makes it ideal for real-time data analytics.
 
 <Callout type="warning" emoji="❗">
-  The WebSocket API limits the maximum number of simultaneous connections to provide protection against misuse, such as DDoS attacks, for example. If your Websocket client makes too many connections at the same time, you'll receive an Error message.
+  The WebSocket API limits the maximum number of simultaneous connections to provide protection against misuse, such as DDoS attacks, for example. If your WebSocket client makes too many connections at the same time, you'll receive an Error message.
 </Callout>
 
-Check out [How to connect to Premium websockets](/build/guides/websocket-premium).
+[//]: # (Check out [How to connect to Premium websockets]&#40;/build/guides/websocket-premium&#41;.)
