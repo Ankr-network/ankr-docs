@@ -1,4 +1,10 @@
+import { Callout } from "nextra-theme-docs";
+
 # Card Payment Activation
+
+<Callout type="warning" emoji="❗">
+The card payment flow is unavailable for common users until the end of the _Beta-testing_ stage.
+</Callout>
 
 Hi, dear user. We've implemented a card payment functionality for those who prefer things old-school. We know there are still some tweaks to be done about the flow to make it smooth, so here is the step-by-step guide for you to ease the path: 
 
