@@ -23,7 +23,7 @@ For each staking transaction, a new locking period will apply, i.e. each new sta
 ### How soon after staking will I begin to receive rewards? 
 Rewards accumulate on the weekly basis.
 
-### How often will I ba able to claim my rewards?
+### How often will I be able to claim my rewards?
 As rewards accumulate on the weekly basis, you'll be able to claim them once a week.
 
 ### Can I stake with Ledger if I connect it with MetaMask?
