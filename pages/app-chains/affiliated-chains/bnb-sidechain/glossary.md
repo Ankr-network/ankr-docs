@@ -35,7 +35,7 @@ A powerful, sandboxed virtual stack embedded within each full Ethereum node, res
 ### Governance
 On-chain governance in each BNB Sidechain to let users vote for the new proposal on the chain. 
 Voting power is distributed based on the total delegated amount to the validator. 
-Once ⅔ of the quorum is reached and >51% of votes are for the proposal, it can be executed by anyone on the chain. 
+Once ⅔ of the quorum is reached and > 51% of votes are for the proposal, it can be executed by anyone on the chain. 
 Governance is able to manage staking parameters, such as felony threshold or jail period.
 
 ### Native Asset Bridge
