@@ -10,7 +10,7 @@ To start using the _Premium Tier_ services, there are some required steps for yo
   
 * **[Top up an account balance](/build/products/rpc-service/premium-account-operations/#top-up)**: surely, you need to have a positive account balance to make any RPC requests. 
   
-* **[Start using custom RPC URLs](/build/products/rpc-service/blockchain-interactions/#rpc-apis-for-your-project)**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
+* **[Start using private RPC URLs](/build/products/rpc-service/blockchain-interactions/#rpc-apis-for-your-project)**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
 
 Someday, you might also want to opt for additional actions:
 
@@ -32,8 +32,6 @@ Congrats — you now have an account in Ankr RPC Service, associated with your w
 ## Top up
 
 <Callout>
-Price of API Credits pegged to USD 
-
 We’ve pegged the price of our API Credits to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
 </Callout>
 
@@ -51,9 +49,8 @@ That's where the top-up procedure comes into play:
 Congrats — you've added ANKR tokens to your account, and you're all set for using _Premium_ services. 
 
 ## Withdraw
-<Callout type="warning" emoji="❗">
-Request Withdrawals via Support
 
+<Callout type="warning" emoji="❗">
 We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.
 </Callout>
 

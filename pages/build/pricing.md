@@ -53,40 +53,66 @@ Use our beta pricing calculator for standard EVM methods. For all other methods 
 3. [Top up account balance](/build/products/rpc-service/premium-account-operations/#top-up).
 4. [Add Premium URLs into your project](/build/products/rpc-service/blockchain-interactions/#rpc-apis-for-your-project) to interact with a blockchain.
 
-## Pricing per request
+## PAYG pricing per request
 
-The price of our API Credits is pegged to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
+The price of our API Credits is pegged to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the latest _ANKR/USD_ exchange rate.
 
-| Chain type | Method                                    | API Credits | USD/request |
-|------------|-------------------------------------------|-------------|-------------|
-|     EVM    | `eth_getLogs`                             | 700         | $0.00007000 |
-|     EVM    | `eth_estimateGas`                         | 700         | $0.00007000 |
-|     EVM    | `eth_sendRawTransaction`                  | 700         | $0.00007000 |
-|     EVM    | `eth_call`                                | 500         | $0.00005000 |
-|     EVM    | `eth_getCode`                             | 500         | $0.00005000 |
-|     EVM    | `web3_clientVersion`                      | 200         | $0.00002000 |
-|     EVM    | `web3_sha3`                               | 200         | $0.00002000 |
-|     EVM    | `eth_getBlockByNumber`                    | 200         | $0.00002000 |
-|     EVM    | `eth_getBlockByHash`                      | 200         | $0.00002000 |
-|     EVM    | `eth_getTransactionReceipt`               | 200         | $0.00002000 |
-|     EVM    | `eth_getUncleByBlockHashAndIndex`         | 200         | $0.00002000 |
-|     EVM    | `eth_chainId`                             | 200         | $0.00002000 |
-|     EVM    | `eth_getBlockTransactionCountByHash`      | 200         | $0.00002000 |
-|     EVM    | `eth_accounts`                            | 200         | $0.00002000 |
-|     EVM    | `eth_gasPrice`                            | 200         | $0.00002000 |
-|     EVM    | `eth_getBlockTransactionCountByNumber`    | 200         | $0.00002000 |
-|     EVM    | `eth_getCompilers`                        | 200         | $0.00002000 |
-|     EVM    | `eth_getUncleByBlockNumberAndIndex`       | 200         | $0.00002000 |
-|     EVM    | `eth_getTransactionByHash`                | 200         | $0.00002000 |
-|     EVM    | `eth_getUncleCountByBlockNumber`          | 200         | $0.00002000 |
-|     EVM    | `eth_uninstallFilter`                     | 200         | $0.00002000 |
-|     EVM    | `eth_compileSolidity`                     | 200         | $0.00002000 |
-|     EVM    | `eth_getTransactionByBlockHashAndIndex`   | 200         | $0.00002000 |
-|     EVM    | `eth_getTransactionByBlockNumberAndIndex` | 200         | $0.00002000 |
-|     EVM    | `eth_subscribe`                           | 200         | $0.00002000 |
-|     EVM    | `eth_unsubscribe`                         | 200         | $0.00002000 |
-|     EVM    | `eth_getTransactionCount`                 | 200         | $0.00002000 |
-|     EVM    | `eth_blockNumber`                         | 200         | $0.00002000 |
-|     EVM    | `eth_newBlockFilter`                      | 200         | $0.00002000 |
-|     EVM    | `eth_getBalance`                          | 200         | $0.00002000 |
-|     EVM    | `eth_getStorageAt`                        | 200         | $0.00002000 |
+> Our PAYG pricing model:  
+> 0.10 USD = 1M API Credits
+
+### EVM
+
+| Network Type | Method                                    | API Credits | USD/request   |
+|--------------|-------------------------------------------|-------------|---------------|
+| EVM          | `eth_getLogs`                             | 200         | $0.00002      |
+| EVM          | `eth_estimateGas`                         | 200         | $0.00002      |
+| EVM          | `eth_sendRawTransaction`                  | 200         | $0.00002      |
+| EVM          | `eth_call`                                | 200         | $0.00002      |
+| EVM          | `eth_getCode`                             | 200         | $0.00002      |
+| EVM          | `web3_clientVersion`                      | 200         | $0.00002      |
+| EVM          | `web3_sha3`                               | 200         | $0.00002      |
+| EVM          | `eth_getBlockByNumber`                    | 200         | $0.00002      |
+| EVM          | `eth_getBlockByHash`                      | 200         | $0.00002      |
+| EVM          | `eth_getTransactionReceipt`               | 200         | $0.00002      |
+| EVM          | `eth_getUncleByBlockHashAndIndex`         | 200         | $0.00002      |
+| EVM          | `eth_chainId`                             | 200         | $0.00002      |
+| EVM          | `eth_getBlockTransactionCountByHash`      | 200         | $0.00002      |
+| EVM          | `eth_accounts`                            | 200         | $0.00002      |
+| EVM          | `eth_gasPrice`                            | 200         | $0.00002      |
+| EVM          | `eth_getBlockTransactionCountByNumber`    | 200         | $0.00002      |
+| EVM          | `eth_getCompilers`                        | 200         | $0.00002      |
+| EVM          | `eth_getUncleByBlockNumberAndIndex`       | 200         | $0.00002      |
+| EVM          | `eth_getTransactionByHash`                | 200         | $0.00002      |
+| EVM          | `eth_getUncleCountByBlockNumber`          | 200         | $0.00002      |
+| EVM          | `eth_uninstallFilter`                     | 200         | $0.00002      |
+| EVM          | `eth_compileSolidity`                     | 200         | $0.00002      |
+| EVM          | `eth_getTransactionByBlockHashAndIndex`   | 200         | $0.00002      |
+| EVM          | `eth_getTransactionByBlockNumberAndIndex` | 200         | $0.00002      |
+| EVM          | `eth_subscribe`                           | 200         | $0.00002      |
+| EVM          | `eth_unsubscribe`                         | 200         | $0.00002      |
+| EVM          | `eth_getTransactionCount`                 | 200         | $0.00002      |
+| EVM          | `eth_blockNumber`                         | 200         | $0.00002      |
+| EVM          | `eth_newBlockFilter`                      | 200         | $0.00002      |
+| EVM          | `eth_getBalance`                          | 200         | $0.00002      |
+| EVM          | `eth_getStorageAt`                        | 200         | $0.00002      |
+
+### Solana
+| Network Type | Method       | API Credits | USD/request  |
+|--------------|--------------|-------------|--------------|
+| Solana       | All methods  | 500         | $0.00005     |
+
+### Advanced APIs
+
+| API Collection | Method                                    | API Credits | USD/request  |
+|----------------|-------------------------------------------|-------------|--------------|
+| NFT API        | `ankr_getNFTsByOwner`                     | 700         | $0.00007     |
+| NFT API        | `ankr_getNFTMetadata`                     | 700         | $0.00007     |
+| NFT API        | `ankr_getNFTHolders`                      | 700         | $0.00007     |
+| Query API      | `ankr_getBlocks`                          | 700         | $0.00007     |
+| Query API      | `ankr_getLogs`                            | 700         | $0.00007     |
+| Query API      | `ankr_getTransactionsByHash`              | 700         | $0.00007     |
+| Token API      | `ankr_getAccountBalances`                 | 700         | $0.00007     |
+| Token API      | `ankr_getCurrencies`                      | 700         | $0.00007     |
+| Token API      | `ankr_getTokenPrice`                      | 700         | $0.00007     |
+| Token API      | `ankr_getTokenHolders`                    | 700         | $0.00007     |
+| Token API      | `ankr_getTokenHoldersCount`               | 700         | $0.00007     |
