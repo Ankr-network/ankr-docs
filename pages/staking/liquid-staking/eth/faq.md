@@ -15,7 +15,7 @@ Yes — there is a [user guide](/staking/liquid-staking/eth/stake).
 
 ### Is there a maximum amount I can stake?
 
-No, you can stake at your discretion, unlimited. You should know that currently staking starts once 32 ETH are accumulated, so if your stake is >32 ETH, it’ll be divided into chunks and the rule will apply to each of them. 
+No, you can stake at your discretion, unlimited. You should know that currently staking starts once 32 ETH are accumulated, so if your stake is > 32 ETH, it’ll be divided into chunks and the rule will apply to each of them. 
 
 
 ### When can I unstake?
