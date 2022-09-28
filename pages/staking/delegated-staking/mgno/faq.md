@@ -4,8 +4,8 @@ Slashing is a protocol-level penalty associated with a validator failure if it v
 To avoid looses of staked mGNO we made insurance system, each Node Provider has insurance pool with locked mGNO. 
 This mGNO will be used to cover provider's slashing.
 
-###  Where can I get mGMO? 
-As getting mGMO is a multistep process, you're better off reading how to get it in the [mGMO staking guide](/staking/delegated-staking/mgno/stake/).
+###  Where can I get mGNO? 
+As getting mGNO is a multistep process, you're better off reading how to get it in the [mGNO staking guide](/staking/delegated-staking/mgno/stake/).
 
 ### What is the minimum and maximum amount of mGNO I can stake?
 * Minimum — 0.00001 mGNO.
