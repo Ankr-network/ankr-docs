@@ -33,7 +33,7 @@ Yes, you can.
 You can choose to reinvest your staking rewards to get higher APY, i.e. restake them.
 
 ### If I restake my rewards, will these have a locking period as well? And of how many days?
-A: Staking your rewards without claiming them is considered a regular staking transaction and will have the usual locking period of 84–91 days.
+Staking your rewards without claiming them is considered a regular staking transaction and will have the usual locking period of 84–91 days.
 
 ###  If I don’t unstake after the locking period is over, will I continue to earn staking rewards?
 Yes. You will continue to collect rewards until you unstake.
