@@ -77,8 +77,8 @@ You will need to make the following interactions in your wallet:
 Micropool and gas fees
 
 Your stake does not immediately gets staked on Gnosis. 
-Gnosis accepts stakes with minumum 1 GNO (32mGNO).
-To bypass this and accept your stake if it's lower than 1GNO, we created a micropool that accumulates user stakes.
+Gnosis accepts stakes with minumum 1 GNO (32 mGNO).
+To bypass this and accept your stake if it's lower than 1 GNO, we created a micropool that accumulates user stakes.
 Once it has 1 GNO, we stake it with Gnosis.
 
 Make sure you have some xDai to pay the gas fee for your staking transaction.
