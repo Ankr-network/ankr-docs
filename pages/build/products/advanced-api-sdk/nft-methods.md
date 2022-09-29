@@ -16,6 +16,8 @@ Web3 projects that integrate NFTs (including virtual worlds, decentralized games
 NFT API Methods serve to request NFT-related data across multiple chains.
 ## `ankr_getNFTsByOwner`
 
+> Retrieves account's NFTs data.
+
 Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specified. A request could be further narrowed and filtered using the corresponding request body parameters.
 
 ### Request
@@ -73,7 +75,8 @@ Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specifi
 ```
   </Tab>
   <Tab>
-```sh
+
+```shell
 Content-Type: application/json
 ```
   </Tab>
@@ -144,7 +147,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -183,7 +187,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -318,6 +323,8 @@ Code: 200 OK
 
 ## `ankr_getNFTMetadata`
 
+> Retrieves the NFT's metadata.
+
 Gets NFT metadata (ERC721/ERC1155/ENS/POAP) associated with a specific NFT. A request could be further narrowed using the corresponding request body parameters.
 
 ### Request
@@ -340,7 +347,8 @@ Gets NFT metadata (ERC721/ERC1155/ENS/POAP) associated with a specific NFT. A re
   ]}
 >
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "method": "ankr_getNFTMetadata",
@@ -416,7 +424,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -454,7 +463,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -507,6 +517,8 @@ Code: 200 OK
 ---
 
 ## `ankr_getNFTHolders`
+
+> Retrieves the NFT's holders data.
 
 Gets holders of the NFT specified by request body parameters.
 
@@ -595,7 +607,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -610,7 +623,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,

@@ -1,3 +1,5 @@
+import { Callout } from "nextra-theme-docs";
+
 # Premium account operations
 
 To start using the _Premium Tier_ services, there are some required steps for you to go through:
@@ -8,7 +10,7 @@ To start using the _Premium Tier_ services, there are some required steps for yo
   
 * **[Top up an account balance](/build/products/rpc-service/premium-account-operations/#top-up)**: surely, you need to have a positive account balance to make any RPC requests. 
   
-* **[Start using custom RPC URLs](/build/products/rpc-service/blockchain-interactions/#rpc-apis-for-your-project)**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
+* **[Start using private RPC URLs](/build/products/rpc-service/blockchain-interactions/#rpc-apis-for-your-project)**: finally, with a wallet connected and a balance topped up, you're all set to start using custom RPC API.
 
 Someday, you might also want to opt for additional actions:
 
@@ -29,9 +31,9 @@ Congrats — you now have an account in Ankr RPC Service, associated with your w
 
 ## Top up
 
-:::note Price of API Credits pegged to USD 
+<Callout>
 We’ve pegged the price of our API Credits to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
-:::
+</Callout>
 
 As always the case, you would need to deposit some tokens into your Ankr account to be able to make RPC requests — that's just the fact of life.
 
@@ -48,9 +50,9 @@ Congrats — you've added ANKR tokens to your account, and you're all set for us
 
 ## Withdraw
 
-:::warning Request Withdrawals via Support
+<Callout type="warning" emoji="❗">
 We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.
-:::
+</Callout>
 
 Life goes fast, and it might be the case someday that you'd like to get your ANKR tokens back to your wallet. That's exactly what the withdrawal operation has been implemented for.
 

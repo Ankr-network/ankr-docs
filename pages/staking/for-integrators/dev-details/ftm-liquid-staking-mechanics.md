@@ -66,7 +66,7 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 
 5. Currently, the Ankr backend does not monitor events on the blockchain, but instead uses cron for scheduled checks: once an hour for funds, delegating, updating ratio, etc.
 
-## Unstaking worklfow
+## Unstaking workflow
 
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–3.
 

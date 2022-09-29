@@ -1,8 +1,9 @@
 {
-  "overview": "Advanced API Overview",
+  "overview": "Advanced APIs Overview",
   "nft-methods": "NFT Methods",
   "query-methods": "Query Methods",
   "token-methods": "Token Methods",
   "javascript-sdk": "Multichain JS SDK",
+  "python-sdk": "Multichain PY SDK",
   "build-with-advanced-apis": "Advanced APIs QuickStart Guide"
 }

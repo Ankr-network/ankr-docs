@@ -10,21 +10,20 @@ const logo = ({ height }) => (
 // Params
 export default {
 //General params
-  projectLink: "https://github.com/Ankr-network/",
-  docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/tree/main/pages",
   project: {
-    link: "https://github.com/Ankr-network/ankr-docs/",
+    link: "https://github.com/Ankr-network/",
   },
   titleSuffix: " – Ankr",
   toc: {
     float: true,
   },
   sidebar: { defaultMenuCollapsed: true },
-// Feedback and Edit on GH links (footerEditLink is NOT a footer link, the name is misleading)
+// Feedback and Edit on GH links
   feedback: {
   labels: "feedback",
   content: "Give us feedback →",
   },
+  docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/blob/main",
   editLink: {
     text: "Edit this page on GitHub →",
   },
@@ -34,9 +33,10 @@ export default {
   head() {
     const config = useConfig();
     const description =
-      config.frontMatter.description ? config.frontMatter.description : "Ankr Docs";
-//    const title_ =
-//      title ? title : "Ankr Docs";
+      config.frontMatter.description ? config.frontMatter.description : "Ankr is the leading Web3 infrastructure company.";
+    const image =
+      config.frontMatter.image ||
+      "https://pbs.twimg.com/media/FZvncdhWAAA-hxK.jpg";
     return (
       <>
          {/* General */}
@@ -47,13 +47,15 @@ export default {
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
         <meta name="og:title" content={`${config.title} — Ankr`} />
-        <meta name="apple-mobile-web-app-title" content="Ankr Docs" />
+        <meta name="apple-mobile-web-app-title" content={`${config.title} — Ankr`} />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site:domain" content="ankr.com/docs/" />
-        <meta name="twitter:url" content="https://ankr.com/docs/" />
+        <meta name="twitter:site:domain" content="ankr.com" />
+        <meta name="twitter:url" content="https://ankr.com" />
+        <meta name="twitter:image" content={image} />
+        <meta name="og:image" content={image} />
 
         {/* Favicons */}
         <link rel="manifest" href="/favicon/site.webmanifest" />

@@ -12,6 +12,8 @@ Token API only uses on-chain data, leaving third parties behind. Ankr constantly
 Query account balances, number of currencies existing on a given blockchain, token holders a given currency has, and a token’s current fair market value.
 ## `ankr_getAccountBalances`
 
+> Retrieves account balance.
+
 Gets all the balance data of the account specified by request body parameters.
 
 ### Request
@@ -38,8 +40,9 @@ Gets all the balance data of the account specified by request body parameters.
   ]}
 >
   <Tab>
-    ```
-    {
+
+```json
+{
   "id": 1,
   "jsonrpc": "2.0",
   "method": "ankr_getAccountBalances",
@@ -52,13 +55,14 @@ Gets all the balance data of the account specified by request body parameters.
     "walletAddress": "string"
   }
 }
-    ```
+```
   </Tab>
   <Tab>
-    ```sh
-    Content-Type: application/json
-    X-API-KEY: {{KEY}}
-    ```
+
+```sh
+Content-Type: application/json
+X-API-KEY: {{KEY}}
+```
   </Tab>
 </Tabs>
 
@@ -100,7 +104,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -129,7 +134,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -203,7 +209,9 @@ Code: 200 OK
 
 ## `ankr_getCurrencies`
 
-Gets the currencies available for the blockchain specified by request body parameters.
+> Retrieves blockchain's currencies.
+
+Retrieves a list of supported currencies for a given blockchain.
 
 ### Request
 
@@ -223,7 +231,8 @@ Gets the currencies available for the blockchain specified by request body param
   ]}
 >
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "method": "ankr_getCurrencies",
@@ -235,7 +244,8 @@ Gets the currencies available for the blockchain specified by request body param
 ```
   </Tab>
   <Tab>
-```sh
+
+```shell
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
@@ -279,7 +289,8 @@ Code: 200 OK
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -300,7 +311,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -389,6 +401,8 @@ Code: 200 OK
 
 ## `ankr_getTokenPrice`
 
+> Retrieves token price.
+
 Gets the price of the token specified by request body parameters.
 
 ### Request
@@ -410,7 +424,8 @@ Gets the price of the token specified by request body parameters.
   ]}
 >
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "method": "ankr_getTokenPrice",
@@ -483,7 +498,8 @@ Code: 200 OK
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -499,6 +515,8 @@ Code: 200 OK
 ---
 
 ## `ankr_getTokenHolders`
+
+> Retrieves data on token holders. 
 
 Gets holders and the associated metadata for the tokens specified by request body parameters.
 
@@ -523,7 +541,8 @@ Gets holders and the associated metadata for the tokens specified by request bod
   ]}
 >
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "method": "ankr_getTokenHolders",
@@ -582,7 +601,8 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -606,7 +626,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
   </Tab>
   <Tab>
 
-```
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -643,6 +663,8 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 ## `ankr_getTokenHoldersCount`
 
+> Retrieves the number of token holders. 
+
 Gets the number of holders for the tokens specified by request body parameters.
 
 ### Request
@@ -666,7 +688,8 @@ Gets the number of holders for the tokens specified by request body parameters.
   ]}
 >
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "method": "ankr_getTokenHoldersCount",
@@ -724,7 +747,8 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
   ]}
 >
   <Tab>
-```
+
+```json
 {
   "error": {},
   "id": 1,
@@ -747,7 +771,8 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 ```
   </Tab>
   <Tab>
-```
+
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,

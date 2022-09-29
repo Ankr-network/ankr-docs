@@ -16,7 +16,7 @@ This SDK contains a compact JavaScript library to enable you interact with Ankr'
 
 2. Initialize the provider.
 
-    ```
+    ```javascript
     import AnkrProvider from '@ankr.com/ankr.js';
     
     const provider = new AnkrProvider('');
@@ -27,7 +27,7 @@ This SDK contains a compact JavaScript library to enable you interact with Ankr'
 
 3. Use the provider to call either of the supported methods.
 
-    ```
+    ```javascript
     await provider.getNFTsByOwner({
       blockchain: 'eth',
       walletAddress: '0x0E11A192d574b342C51be9e306694C41547185DD',
@@ -36,7 +36,7 @@ This SDK contains a compact JavaScript library to enable you interact with Ankr'
 
 ## Chains supported
 
-`ankr.js` supports interaction with the following chains using their aliases:
+Currently, `ankr.js` supports interaction with the following chains using their aliases:
 
   * Ethereum: `eth`
   * BSC: `bsc`
@@ -60,9 +60,9 @@ This SDK contains a compact JavaScript library to enable you interact with Ankr'
 
 ### `getLogs`
 
-Gets the logs matching the filter indicated.
+Retrieves the logs matching the filter indicated.
 
-```
+```javascript
 const logs = async () => {
   return await provider.getLogs({
     blockchain: 'eth',
@@ -80,9 +80,9 @@ const logs = async () => {
 
 ### `getBlocks`
 
-Gets the data on the blocks within the indicated range.
+Retrieves the data on the blocks within the indicated range.
 
-```
+```javascript
 const blocks = async () => {
   return await provider.getBlocks({
     blockchain: 'bsc',
@@ -94,9 +94,9 @@ const blocks = async () => {
 
 ### `getTransactionsByHash`
 
-Gets transaction details for a transaction specified by hash.
+Retrieves transaction details for a transaction specified by hash.
 
-```
+```javascript
 const transactions = async () => {
   return await provider.getTransactionsByHash({
     transactionHash:
@@ -108,9 +108,9 @@ const transactions = async () => {
 
 ### `getAccountBalance`
 
-Gets the coin and token balances of a wallet specified.
+Retrieves the coin and token balances of the wallet specified.
 
-```
+```javascript
 const balances = async () => {
   return await provider.getAccountBalance({
     blockchain: 'eth',
@@ -121,9 +121,9 @@ const balances = async () => {
 
 ### `getNFTsByOwner`
 
-Gets the data on all the NFTs (collectibles) owned by the indicated wallet.
+Retrieves the data on all the NFTs (collectibles) owned by the indicated wallet.
 
-```
+```javascript
 const nfts = async () => {
   return await provider.getNFTsByOwner({
     blockchain: 'eth',
@@ -138,9 +138,9 @@ const nfts = async () => {
 
 ### `getTokenHolders`
 
-Gets the list of token holders for a given contract address.
+Retrieves the list of token holders for a given contract address.
 
-```
+```javascript
 const tokenHolders = async () => {
   return await provider.getTokenHolders({
     blockchain: 'eth',
@@ -151,9 +151,9 @@ const tokenHolders = async () => {
 
 ### `getTokenHoldersCount`
 
-Gets current and historical data on the number of token holders for a given contract address.
+Retrieves current and historical data on the number of token holders for a given contract address.
 
-```
+```javascript
 const tokenHoldersCount = async () => {
   return await provider.getTokenHoldersCount({
     blockchain: 'eth',
@@ -164,9 +164,9 @@ const tokenHoldersCount = async () => {
 
 ### `getCurrencies`
 
-Gets a list of supported currencies for a given blockchain.
+Retrieves a list of supported currencies for a given blockchain.
 
-```
+```javascript
 const currencies = async () => {
   return await provider.getCurrencies({ blockchain: 'fantom' });
 };
@@ -176,7 +176,7 @@ const currencies = async () => {
 
 Gets metadata of a given NFT.
 
-```
+```javascript
 
 const nftMetadata = async () => {
   return await provider.getNFTMetadata({
