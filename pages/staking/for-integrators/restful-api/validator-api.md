@@ -15,7 +15,7 @@ https://api.stkr.io
 `GET /v1alpha/validation/end`
 
 #### Params
-`amount` (uint256, required) — amount of pending unstakes to be paid out from validators via Ankr Liquid Staking smart contracts. 
+`amount` (uint256, required) — amount of assets pending for unstake to be paid out from validators via Ankr Liquid Staking smart contracts. 
 
 <Callout>
 If the amount value passed in the request is higher than the maximum amount to be available at a validator, the returned value is equal to the maximum amount.
@@ -26,7 +26,7 @@ If the amount value passed in the request is higher than the maximum amount to b
 
 #### Request
 ```
-curl https://api.dev.stkr.io/v1alpha/validation/end?amount=<your-pending-unstake-value>
+curl https://api.dev.stkr.io/v1alpha/validation/end?amount=24
 ```
 
 #### Returned data
