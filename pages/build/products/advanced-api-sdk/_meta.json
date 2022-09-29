@@ -3,5 +3,6 @@
   "nft-methods": "NFT Methods",
   "query-methods": "Query Methods",
   "token-methods": "Token Methods",
-  "javascript-sdk": "Multichain JS SDK"
+  "javascript-sdk": "Multichain JS SDK",
+  "build-with-advanced-apis": "Advanced APIs QuickStart Guide"
 }

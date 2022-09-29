@@ -178,5 +178,13 @@ Gets metadata of a given NFT.
 
 ```
 
+const nftMetadata = async () => {
+  return await provider.getNFTMetadata({
+    blockchain: 'avalanche',
+    contractAddress: '0x8d01c8ee82e581e55c02117a676b5bbd4734fabb',
+    tokenId: '23240',
+  });
+};
+
 ```
 

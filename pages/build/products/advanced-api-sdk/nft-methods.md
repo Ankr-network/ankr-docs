@@ -1,9 +1,19 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# NFT API Methods
+# Ankr NFT API
 
+## Introduction 
+
+As NFTs become more fundamentally integrated with Web3 than ever before, developers need new tools to work with them. Ankr’s NFT API enables developers to easily view, verify, and display NFTs — including their ownership, transaction history, and other metadata — across the six different blockchains supported by the API.
+
+
+## Why NFT API?
+NFT API makes it easier than ever to find the details about which collection an NFT belongs to, when it was minted, its past transaction history, who currently owns the token, and so much more — across multiple blockchains at once.
+
+Web3 projects that integrate NFTs (including virtual worlds, decentralized games, galleries, marketplaces, and more) need to be able to pull this information across a breadth of collections across chains, which is complex. Ankr’s NFT API makes it simple.
+
+## NFT API Methods
 NFT API Methods serve to request NFT-related data across multiple chains.
-
 ## `ankr_getNFTsByOwner`
 
 Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specified. A request could be further narrowed and filtered using the corresponding request body parameters.
