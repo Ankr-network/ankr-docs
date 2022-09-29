@@ -23,13 +23,12 @@ If the amount value passed in the request is higher than the maximum amount to b
 If the amount value passed in the request is higher than the maximum amount to be available at a validator, the returned value is equal only to the requested amount. Make sure you use the pending unstake value relevant to your unstake.  
 </Callout>
 
-
 #### Request
 ```
 curl https://api.dev.stkr.io/v1alpha/validation/end?amount=24
 ```
 
-#### Returned data
+#### Response data
 * `validationEndTime` (Unix timestamp) — time the assets are unlocked at a validator. 
 * `amountAvailable` (float64) — amount of unlocked assets pending for unstake available at a validator.
 
