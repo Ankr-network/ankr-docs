@@ -1,62 +1,55 @@
-import { Code } from "../../../components";
+import { Code } from "../../../../../components";
 import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
+import Image from 'next/image';
 
 # Ankr.js (Advanced APIs) React Quickstart Guide
 
-**By** [**Dhaiwat Pandya**](https://twitter.com/dhaiwat10)
-________________
+Learn How To Get Started With Ankr's Advanced APIs In A React App Using JavaScript SDK
 
-[Ankr.js](https://github.com/ankr-network/ankr.js) is a JavaScript library that lets you interact with [Ankr's Advanced APIs](https://ankr.com/advanced-api). In this guide, you'll learn how to create an NFT viewer app using the following technologies:
+[Ankr.js](https://github.com/ankr-network/ankr.js) is a JavaScript library that lets you interact with [Ankr's Advanced APIs](https://www.ankr.com/advanced-api/). In this guide, you'll learn how to create an NFT viewer app using the following technologies:
 
-- [Next.js](https://nextjs.org/) as the React/frontend framework
-- [TailwindCSS](https://tailwindcss.com/) as the CSS framework
-- [Ankr.js](https://github.com/ankr-network/ankr.js) to interact with Ankr's Advanced APIs
-- [Ankr's Advanced APIs](https://ankr.com/advanced-api) as the data source
+- Next.js as the React/frontend framework
+- TailwindCSS as the CSS framework
+- Ankr.js to interact with Ankr's Advanced APIs
+- Ankr's Advanced APIs as the data source
 
-<img src="/docs/learn/Cnaoed4.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/build/react01.png" alt="API" class="responsive-pic"  />
 
-## Prerequisites
 
-To successfully finish this guide, you'll only need [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed on your machine.
+**Prerequisite:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/)↗ and [Yarn](https://yarnpkg.com/)↗ installed on your machine.
 
 ## Step 1: Set Up Your Next.js Starter Project
-
 Navigate into a directory of your choice and run the following command in your terminal to set up a new Next.js project:
 
 ```
 yarn create next-app --ts ankrjs-tutorial
 ```
-
 You can now navigate into the directory and launch the app:
 
 ```
 cd ankrjs-tutorial && yarn dev
 ```
-
 Here's what it looks like at the moment:
-
-<img src="/docs/learn/DtagqBA.png" alt="fig2" class="responsive-pic" width="700" />
+<img src="/docs/build/nextjs.png" alt="API" class="responsive-pic"  />
 
 The app currently only contains the boilerplate code provided by Next.js. Over the course of the next few sections, you'll set up Ankr.js and use it to create a gallery of NFTs for any given wallet address.
 
-Before we proceed to step 2, feel free to set up TailwindCSS by following their [official guide for Next.js.](https://tailwindcss.com/docs/guides/nextjs) 
+Before we proceed to step 2, feel free to set up TailwindCSS by following their official guide for Next.js: [Tailwind Docs](https://tailwindcss.com/docs/guides/nextjs).
 
 ## Step 2: Install And Set Up Ankr.js
-
 Next, you will install and set up Ankr.js so that you can use it to fetch all the NFTs for a given wallet address later on.
 
-Start by installing the `ankr.js` package from npm:
+Start by installing the ankr.js package from npm:
 
 ```
 # ./ankrjs-tutorial
 
 yarn add @ankr.com/ankr.js
 ```
+Next, create a new file named utils.ts at the root of your project directory. You will initialize Ankr.js in this file.
 
-Next, create a new file named `utils.ts` at the root of your project directory. You will initialize Ankr.js in this file.
-
-File: `./utils.ts`
+**File:** `./utils.ts`
 
 ```javascript
 import AnkrscanProvider from '@ankr.com/ankr.js';
@@ -66,12 +59,12 @@ const provider = new AnkrscanProvider('');
 Your provider instance will be your interface to the Ankr Advanced APIs whenever you want to fetch some data from them.
 
 ## Step 3: Create NFT Retrieval Function
-
-In this step, you will create a `getNfts` function that accepts a walletAddress and returns a list of NFTs owned by that address.
+In this step, you will create a getNfts function that accepts a walletAddress and returns a list of NFTs owned by that address.
 
 You can utilize the `getNFTsByOwner` function provided by Ankr.js for this.
 
-File: `./utils.ts`
+**File:** `./utils.ts`
+
 
 ```javascript
 import AnkrscanProvider from '@ankr.com/ankr.js';
@@ -87,12 +80,11 @@ export const getNfts = async (address: string) => {
     nfts: assets,
   };
 };
-
 ```
-
 Just to see if things are working, let's call this function on our page i.e. `./pages/index.tsx` and log out the output.
 
-File: `./pages/index.tsx`
+**File:** `./pages/index.tsx`
+
 
 ```javascript
 import type { NextPage } from 'next';
@@ -118,18 +110,19 @@ const Home: NextPage = () => {
 
 export default Home;
 ```
-
 You should see a list of nfts being logged out in your browser's console.
 
-<img src="/docs/learn/qxAxaoa.png" alt="fig3" class="responsive-pic" width="700" />
+<br></br>
+<img src="/docs/build/react02.png" alt="API" class="responsive-pic"  />
+
 
 ## Step 4: Create Wallet Address Input
-
 You will now add an input to the UI that lets the user input any wallet address they want and pass it to the `getNfts` function.
 
 You can keep track of the wallet address input in a state variable named `walletAddress`, hook it up to the input element in the UI, and then pass `walletAddress` to the `getNfts` function.
 
-File: `./pages/index.tsx`
+**File:** `./pages/index.tsx`
+
 
 ```javascript
 /* eslint-disable @next/next/no-img-element */
@@ -172,18 +165,16 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
 ```
+You should see a different list of nfts being logged out in the console when you change the wallet address in the input now. Congrats! You are now able to fetch the list of NFTs owned by any given address.
+<img src="/docs/build/react03.png" alt="API" class="responsive-pic"  />
 
-You should see a different list of `nfts` being logged out in the console when you change the wallet address in the input now. Congrats! You are now able to fetch the list of NFTs owned by any given address.
-
-<img src="/docs/learn/7tmuhJ8.png" alt="fig4" class="responsive-pic" width="700" />
 
 ## Step 5: Display NFTs In Your UI
+You can start off by storing the list of NFTs you fetch in a state variable named nfts. You can then loop through nfts and display all the NFTs in a grid.
 
-You can start off by storing the list of NFTs you fetch in a state variable named `nfts`. You can then loop through `nfts` and display all the NFTs in a grid.
+**File:** `./pages/index.tsx`
 
-File: `./pages/index.tsx`
 
 ```javascript
 /* eslint-disable @next/next/no-img-element */
@@ -233,16 +224,7 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
 ```
 You should now see a gallery of all the NFTs owned by the given wallet address of your choice. LFG!
+<img src="/docs/build/react01.png" alt="API" class="responsive-pic"  />
 
-<img src="/docs/learn/Cnaoed4.png" alt="Hello" class="responsive-pic" width="700" />
-
-# Conclusion & Next Steps
-
-Ankr.js and Ankr Advanced APIs have so much more to offer than what we covered in this quick-start guide. Ankr.js gives you access to all sorts of data from seven different chains. Learn more [here!](https://github.com/ankr-network/ankr.js#️-ankrjs)
-
-Apart from that, you can make some UX improvements to the app we built in the guide. We did not handle the loading or the error state for our app. You can try fixing that on your own! 
-
-If you want to go the fancy route, you can create a useNfts hook on top of the getNfts function to do this.
