@@ -59,7 +59,7 @@ export default {
 
         {/* Favicons */}
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
         <link
           rel="icon"
           type="image/png"
