@@ -8,43 +8,43 @@ ____________________________________
 This documentation serves as a resource to explore how you can use and integrate Ankr's full suite of decentralized products and services ranging from free [public RPC endpoints](https://www.ankr.com/protocol/) that developers have come to know and love, alongside new [Premium and Enterprise plans](https://www.ankr.com/protocol/account/) packed with [advanced developer tools](https://www.ankr.com/advanced-api/) — all powered by a globally distributed and decentralized network of nodes.
 
 ## App Chains
-* Transition from Web2 to Web3 seamlessly
-* Order a turnkey dedicated blockchain tailored to you
-* Choose separate components your project needs
-* Build a fast and secure blockchain with BNB Sidechain
+* Transition from Web2 to Web3 seamlessly.
+* Order a turnkey dedicated blockchain tailored to you.
+* Choose separate components your project needs.
+* Build a fast and secure blockchain with BNB Sidechain.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Bring your project to Web3](app-chains/overview)↗
 </div>
 
-## Ankr Build
-* Access Premium APIs and RPC endpoints with WebSockets
-* Seamless interaction with 40+ supported blockchains
-* Suitable for Web3 developers and enthusiasts of all skill levels
-* Multichain JS SDK
+## Build
+* Access Premium APIs and RPC endpoints with WebSockets.
+* Seamless interaction with 40+ supported blockchains.
+* Suitable for Web3 developers and enthusiasts of all skill levels.
+* Multichain JS SDK.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Use Ankr infrastructure and access blockchains](build/overview)↗
 </div>
 
 
-## Ankr Staking
-* Easily stake 5+ tokens on a secure, decentralized network
-* Earn rewards on tokens without needing technical knowledge
-* Connect staking rewards to DeFi to trade/farm for even higher APY
-* Integrate Ankr Staking into your projects
+## Staking
+* Easily stake 5+ tokens on a secure, decentralized network.
+* Earn rewards on tokens without needing technical knowledge.
+* Connect staking rewards to DeFi to trade/farm for even higher APY.
+* Integrate Ankr Staking into your projects.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Stake, earn, and integrate](staking/overview)↗
 </div>
 
-## Ankr Gaming
-* Take your game to the next level — Web3
-* Launch your Web3 monetization strategy
-* Integrate Web3 wallets easily
-* Compatible with Unity and Unreal Engine
+## Gaming
+* Take your game to the next level — Web3.
+* Launch your Web3 monetization strategy.
+* Integrate Web3 wallets easily.
+* Compatible with Unity and Unreal Engine.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Take your game to Web3](gaming/overview)↗
 </div>
 
-## Ankr Learn
+## Learn
 
 * Learn how to develop Smart Contracts, build dApps, explore tools and frameworks, and more.
 * Find getting started tutorials, guide and follow along to ship cool stuff.
