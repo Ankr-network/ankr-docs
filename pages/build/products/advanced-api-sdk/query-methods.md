@@ -1,22 +1,26 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Ankr Query API
-## Introduction 
-Query API is designed to enable developers to query huge sections of blockchains quickly and easily in one call, without needing to create custom fixes to call blockchains from scratch. By indexing blockchain data from all six of the currently supported chains, searching through large amounts of data is easier and faster than ever before.
-
-## Why Query API?
-For example, if you wanted to search for an event like “an NFT from ‘X’ collection was minted,” you could do so across a range of blocks with extreme efficiency. What might normally take hours of searching can be done nearly instantaneously thanks to Ankr’s key-value pairing schema.
 # Query API Methods
 
 Query API Methods serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata.
 
-## `ankr_getBlocks`
+## Introduction
 
-> Retrieves the blocks' data.
+Query API is designed to enable developers to query huge sections of blockchains quickly and easily in one request, without needing to create custom fixes to call blockchains from scratch. By indexing blockchain data from all six of the currently supported chains, searching through large amounts of data is easier and faster than ever before.
 
-Gets full information for the block specified by request parameters.
+## Why Query API?
+
+For example, if you wanted to search for an event like “an NFT from ‘X’ collection was minted,” you could do so across a range of blocks with extreme efficiency. What might normally take hours of searching can be done nearly instantaneously thanks to Ankr’s key-value pairing schema.
+
+## Get Blocks
+
+> `ankr_getBlocks` — Retrieves the blocks' data.
+
+Retrieves complete information for the block specified by request parameters.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -64,40 +68,40 @@ Gets full information for the block specified by request parameters.
 
 ```shell
 Content-Type: application/json
+x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>
 
 ### Response
 
+A successful request returns complete information for the block specified by request parameters.
+
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getBlocks).
 
 ### Code Examples
 
 #### Request
 
-
 ```shell
-curl -X 'POST' \
-  'https://rpc.ankr.com/multichain' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ankr_getBlocks",
-  "params": {
-    "blockchain": "string",
-    "decodeLogs": true,
-    "decodeTxData": true,
-    "descOrder": true,
-    "fromBlock": 9509443,
-    "includeLogs": true,
-    "includeTxs": true,
-    "toBlock": 9509444
-  }
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{KEY}}' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getBlocks",
+    "params": {
+        "blockchain": "eth",
+        "fromBlock": 14500000,
+        "toBlock": 14500000,
+        "decodeLogs": false,
+        "decodeTxData": true,
+        "includeLogs": true,
+        "includeTxs": true
+    },
+    "id": 1
 }'
 ```
 
@@ -225,21 +229,53 @@ Code: 200 OK
   </Tab>
   <Tab>
 
-```
-Provide example!!!
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blocks": [
+            {
+                "blockchain": "eth",
+                "number": "0xdd40a0",
+                "hash": "0xfeed3e175e482268db83d4fd87a43c708f40983343f4b039e582c6f6a95e0e78",
+                "parentHash": "0xe311161a7462068919abe2ac2cd42e5806898b3f42ec597699ce764c067c416a",
+                "nonce": "0xc5f9ce09d63baf71",
+                "mixHash": "0xbd7063d27079586ab3fdae7de0472f93f96f81a0f6c5b3abe903a9c6f62cab06",
+                "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                "stateRoot": "0xbbf4fe65498447568abe945ea8f926791e491873a367c82ae847aeadf0c7e17f",
+                "miner": "0xea674fdde714fd979de3edf0f56aa9716b898ec8",
+                "difficulty": "0x2e032d1caff8d9",
+                "extraData": "0x617369612d65617374312d34",
+                "size": "0x219",
+                "gasLimit": "0x1ca35d2",
+                "gasUsed": "0x0",
+                "timestamp": "0x6246dd9c",
+                "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+                "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+                "totalDifficulty": "0x994af3a04b379bb8b42",
+                "transactions": [],
+                "uncles": []
+            }
+        ]
+    }
+}
 ```
   </Tab>
 </Tabs>
 
 ---
 
-## `ankr_getLogs`
+## Get Logs
 
-> Retrieves the blocks' history data.
+> `ankr_getLogs` — Retrieves the blocks' history data.
 
-Gets history data for the blocks specified by request parameters.
+Retrieves history data for the blocks specified.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -248,19 +284,19 @@ Gets history data for the blocks specified by request parameters.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
+  * `address` (uint8): an address of the contract created the logs. Supported value formats: hex or array of hexes.
   * `blockchain` (string): a chain or a combination of chains to query:
-     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
-     * Chains combination: `[eth, polygon, bsc]`.
-     * All chains: leave the value empty to query all the chains available.
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+    * Chains combination: `[eth, polygon, bsc]`.
+    * All chains: leave the value empty to query all the chains available.
   * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
-  * `fromBlock` (string): the first block of the range.
+  * `fromBlock` (string): the first block of the range. Supported value formats: hex, decimal, "earliest", "latest". 
   * `fromTimestamp` (uint64): the first timestamp of the range.
-  * `pageSize` (string): a number of results you'd like to get.
+  * `pageSize` (string): a number of result pages you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
   * `toBlock` (string): the last block included in the range.
   * `toTimestamp` (uint64): the last timestamp of the range.
-  * `address` (uint8): an address of the contract created the logs. 
   * `topics` (uint8): the data the log contains.
 
 <Tabs
@@ -273,28 +309,42 @@ Gets history data for the blocks specified by request parameters.
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getLogs",
-    "params": {
-        "blockchain": "eth",
-        "fromBlock": "0xdaf6b1", 
-        "toBlock": 14350010,
-        "address": ["0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"],
-        "topics": [
-            [],
-            [
-                "0x000000000000000000000000def1c0ded9bec7f1a1670819833240f027b25eff"
-            ]
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getLogs",
+  "params": {
+    "address": [
+      [
+        0
+      ]
+    ],
+    "blockchain": [
+      "string"
+    ],
+    "decodeLogs": true,
+    "descOrder": true,
+    "fromBlock": 0,
+    "fromTimestamp": 0,
+    "pageSize": 0,
+    "pageToken": "string",
+    "toBlock": 0,
+    "toTimestamp": 0,
+    "topics": [
+      [
+        [
+          0
         ]
-    },
-    "id": 1
+      ]
+    ]
+  }
 }
 ```
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
+X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -303,7 +353,7 @@ Content-Type: application/json
 
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getLogs).
 
 ### Code Examples
 
@@ -447,13 +497,15 @@ Code: 200 OK
 
 ---
 
-## `ankr_getTransactionsByHash`
+## Get Transactions by Hash
 
-> Retrieves data for the hash-specified transaction.
+> `ankr_getTransactionsByHash` — Retrieves data for the hash-specified transaction.
 
-Returns transaction details for a transaction specified by hash.
+Retrieves the details for a transaction specified by hash.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -477,21 +529,26 @@ Returns transaction details for a transaction specified by hash.
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getTransactionsByHash",
-    "params": {
-        "transactionHash": "0x82c13aaac6f0b6471afb94a3a64ae89d45baa3608ad397621dbb0d847f51196f",
-        "decodeLogs": true,
-        "decodeTxData": true
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getTransactionsByHash",
+  "params": {
+    "blockchain": [
+      "string"
+    ],
+    "decodeLogs": true,
+    "decodeTxData": true,
+    "includeLogs": true,
+    "transactionHash": "string"
+  }
 }
 ```
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
+X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
