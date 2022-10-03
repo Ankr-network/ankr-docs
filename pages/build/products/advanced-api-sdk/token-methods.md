@@ -2,6 +2,8 @@ import { Tabs, Tab } from "nextra-theme-docs";
 
 # Token API Methods
 
+Token API Methods serve to request token-related data across multiple chains.
+
 ## Introduction
 
 Token API helps deliver information about tokens on any of the EVM-compatible blockchains currently supported. The Token API allows developers to query things like account balances, how many currencies exist on a given blockchain, how many token holders a given currency has, and a token’s current fair market value.
