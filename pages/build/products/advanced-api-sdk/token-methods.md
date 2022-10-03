@@ -1,22 +1,24 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Ankr Token API
+# Token API Methods
 
 ## Introduction
-Ankr’s Token API helps deliver information about tokens on any of the EVM-compatible blockchains currently supported. The Token API allows developers to query things like account balances, how many currencies exist on a given blockchain, how many token holders a given currency has, and a token’s current fair market value.
+
+Token API helps deliver information about tokens on any of the EVM-compatible blockchains currently supported. The Token API allows developers to query things like account balances, how many currencies exist on a given blockchain, how many token holders a given currency has, and a token’s current fair market value.
 
 ## Why Token API?
-Token API only uses on-chain data, leaving third parties behind. Ankr constantly scans for on-chain transactions coming from DEXs — flagging transactions and aggregating data into accurate token price feeds in real time. These tools are crucial for Web3 projects like marketplaces and exchanges looking for efficient ways to query accurate, on-chain data for tokenized assets.
 
-# Token API Methods
-Query account balances, number of currencies existing on a given blockchain, token holders a given currency has, and a token’s current fair market value.
-## `ankr_getAccountBalances`
+Token API uses only the on-chain data, leaving third parties behind. Ankr constantly scans for the on-chain transactions coming from DEXs — flagging transactions and aggregating data into accurate token price feeds in real time. These tools are crucial for the Web3 projects like marketplaces and exchanges looking for efficient ways to query accurate on-chain data for tokenized assets.
 
-> Retrieves account balance.
+## Get Account Balance
 
-Gets all the balance data of the account specified by request body parameters.
+> `ankr_getAccountBalance` — Retrieves account balance.
+
+Retrieves all the balance data of the account specified by request body parameters.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -25,12 +27,12 @@ Gets all the balance data of the account specified by request body parameters.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string): A chain or a combination of chains to query:
+  * `blockchain` (string): a chain or a combination of chains to query:
     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
     * Chains combination: `[eth, polygon, bsc]`.
     * All chains: leave the value empty to query all the chains available.
   * `pageSize` (int32): a number of results you'd like to get.
-  * `pageToken` (string): The token is provided at the end of the response body and can be referenced in the request to fetch the next page.
+  * `pageToken` (string): the token is provided at the end of the response body and can be referenced in the request to fetch the next page.
   * `walletAddress` (string): an account address to query for balance; supports the Ethereum Name Service (ENS).
 
 <Tabs
@@ -45,11 +47,12 @@ Gets all the balance data of the account specified by request body parameters.
 {
   "id": 1,
   "jsonrpc": "2.0",
-  "method": "ankr_getAccountBalances",
+  "method": "ankr_getAccountBalance",
   "params": {
     "blockchain": [
       "string"
     ],
+    "onlyWhitelisted": true,
     "pageSize": 0,
     "pageToken": "string",
     "walletAddress": "string"
@@ -59,7 +62,7 @@ Gets all the balance data of the account specified by request body parameters.
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
@@ -207,13 +210,15 @@ Code: 200 OK
 
 ---
 
-## `ankr_getCurrencies`
+## Get Currencies
 
-> Retrieves blockchain's currencies.
+> `ankr_getCurrencies` — Retrieves the blockchain's currencies.
 
 Retrieves a list of supported currencies for a given blockchain.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -234,12 +239,12 @@ Retrieves a list of supported currencies for a given blockchain.
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getCurrencies",
-    "params": {
-        "blockchain": "eth"
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getCurrencies",
+  "params": {
+    "blockchain": "string"
+  }
 }
 ```
   </Tab>
@@ -399,13 +404,15 @@ Code: 200 OK
 
 ---
 
-## `ankr_getTokenPrice`
+## Get Token Price
 
-> Retrieves token price.
+> `ankr_getTokenPrice` — Retrieves token price.
 
-Gets the price of the token specified by request body parameters.
+Retrieves a price of the token specified by request body parameters.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -427,13 +434,13 @@ Gets the price of the token specified by request body parameters.
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getTokenPrice",
-    "params": {
-        "blockchain": "eth",
-        "contractAddress": "0x990f341946A3fdB507aE7e52d17851B87168017c"
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getTokenPrice",
+  "params": {
+    "blockchain": "string",
+    "contractAddress": "string"
+  }
 }
 ```
   </Tab>
@@ -446,10 +453,9 @@ X-API-KEY: {{KEY}}
   </Tab>
 </Tabs>
 
-
 ### Response
 
-Returns a USD price for the token specified by request body parameters.
+A successful request returns a USD price for the token specified by request body parameters.
 
 #### Parameters
 
@@ -515,13 +521,15 @@ Code: 200 OK
 
 ---
 
-## `ankr_getTokenHolders`
+## Get Token Holders
 
-> Retrieves data on token holders. 
+> `ankr_getTokenHolders` — Retrieves data on token holders. 
 
-Gets holders and the associated metadata for the tokens specified by request body parameters.
+Retrieves holders and the associated metadata for the tokens specified by request body parameters.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -545,14 +553,15 @@ Gets holders and the associated metadata for the tokens specified by request bod
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getTokenHolders",
-    "params": {
-        "blockchain": "eth",
-        "contractAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-        "pageSize": 100
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getTokenHolders",
+  "params": {
+    "blockchain": "string",
+    "contractAddress": "string",
+    "pageSize": 0,
+    "pageToken": "string"
+  }
 }
 ```
   </Tab>
@@ -663,13 +672,15 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 ---
 
-## `ankr_getTokenHoldersCount`
+## Get Token Holders Count
 
-> Retrieves the number of token holders. 
+> `ankr_getTokenHoldersCount` — Retrieves the number of token holders. 
 
-Gets the number of holders for the tokens specified by request body parameters.
+Retrieves the number of holders for the tokens specified by request body parameters.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -693,15 +704,15 @@ Gets the number of holders for the tokens specified by request body parameters.
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getTokenHoldersCount",
-    "params": {
-        "blockchain": "eth",
-        "contractAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-        "pageSize": 10,
-        "pageToken": ""
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getTokenHoldersCount",
+  "params": {
+    "blockchain": "string",
+    "contractAddress": "string",
+    "pageSize": 0,
+    "pageToken": "string"
+  }
 }
 ```
   </Tab>

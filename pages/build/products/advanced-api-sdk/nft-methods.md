@@ -15,13 +15,15 @@ Web3 projects that integrate NFTs (including virtual worlds, decentralized games
 
 NFT API Methods serve to request NFT-related data across multiple chains.
 
-## `ankr_getNFTsByOwner`
+## Get NFTs by Owner
 
-> Retrieves account's NFTs data.
+> `ankr_getNFTsByOwner` — Retrieves the account's NFT data.
 
-Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specified. A request could be further narrowed and filtered using the corresponding request body parameters.
+Retrieves a list of NFTs (ERC721/ERC1155/ENS/POAP) that belong to the particular account specified.
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -35,7 +37,7 @@ Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specifi
      * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
      * Chains combination: `[eth, polygon, bsc]`.
      * All chains: leave the value empty to query all the chains available.
-  * `pageSize` (integer): a number of results you'd like to get (default=10, max=50).
+  * `pageSize` (int32): a number of page results you'd like to get (default=10, max=50).
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
   * `filter` (key-value): Filters your request by either of the following:
      * Smart contract address (`"0xd8682bfa6918b0174f287b888e765b9a1b4dc9c3": [] `) — retrieves all NFTs from the address.
@@ -51,28 +53,30 @@ Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specifi
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getNFTsByOwner",
-    "params": {
-        "blockchain": "eth",
-        "filter": [
-        {
-          "additionalProp1": [
-            "string"
-          ],
-          "additionalProp2": [
-            "string"
-          ],
-          "additionalProp3": [
-            "string"
-          ]
-        }
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getNFTsByOwner",
+  "params": {
+    "blockchain": [
+      "string"
     ],
-        "walletAddress": "0x40a8396b83f84e8380f5fee85cd746fe14cb7330",
-        "pageSize": 1,
-        "pageToken": ""
-    },
-    "id": 1
+    "filter": [
+      {
+        "additionalProp1": [
+          "string"
+        ],
+        "additionalProp2": [
+          "string"
+        ],
+        "additionalProp3": [
+          "string"
+        ]
+      }
+    ],
+    "pageSize": 0,
+    "pageToken": "string",
+    "walletAddress": "string"
+  }
 }
 ```
   </Tab>
@@ -80,6 +84,7 @@ Gets a list of NFTs (ERC721/ERC1155/ENS/POAP) associated with an account specifi
 
 ```shell
 Content-Type: application/json
+x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -323,13 +328,15 @@ Code: 200 OK
 
 ---
 
-## `ankr_getNFTMetadata`
+## Get NFT Metadata
 
-> Retrieves the NFT's metadata.
+> `ankr_getNFTMetadata` — Retrieves the NFT's metadata.
 
-Gets NFT metadata (ERC721/ERC1155/ENS/POAP) associated with a specific NFT. A request could be further narrowed using the corresponding request body parameters.
+Retrieves the metadata that belongs to a particular NFT (ERC721/ERC1155/ENS/POAP).
 
 ### Request
+
+Build your request using the parameters below.
 
 #### Parameters
 
@@ -352,21 +359,22 @@ Gets NFT metadata (ERC721/ERC1155/ENS/POAP) associated with a specific NFT. A re
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getNFTMetadata",
-    "params": {
-        "blockchain": "avalanche",
-        "contractAddress": "0x8d01c8ee82e581e55c02117a676b5bbd4734fabb",
-        "tokenId": "23240"
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getNFTMetadata",
+  "params": {
+    "blockchain": "string",
+    "contractAddress": "string",
+    "tokenId": "string"
+  }
 }
 ```
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
+x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -519,13 +527,17 @@ Code: 200 OK
 
 ---
 
-## `ankr_getNFTHolders`
+## Get NFT Holders
 
-> Retrieves the NFT's holders data.
+> `ankr_getNFTHolders` — Retrieves the NFT's holders data.
 
-Gets holders of the NFT specified by request body parameters.
+Retrieves a list of holders (wallet addresses) of the NFT specified by request body parameters.
 
-### Parameters
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
 
 * `id` (int64; required): a request ID (example: 1).
 * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -547,23 +559,23 @@ Gets holders of the NFT specified by request body parameters.
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "ankr_getNFTHolders",
-    "params": {
-        "blockchain": "arbitrum",
-        "contractAddress": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
-        "pageSize": 10000,
-        "pageToken": "string"
-    },
-    "id": 1
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getNFTHolders",
+  "params": {
+    "blockchain": "string",
+    "contractAddress": "string",
+    "pageSize": 0,
+    "pageToken": "string"
+  }
 }
 ```
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
+x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>

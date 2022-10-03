@@ -1,0 +1,321 @@
+# React Hooks
+
+## Get started
+
+1. Install the package.
+
+```shell
+# with npm
+npm install ankr-react
+
+# with yarn
+yarn add ankr-react
+```
+
+2. Wrap your app with the `<Provider />` component.
+
+```javascript
+import { Provider } from 'ankr-react';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Provider>
+      <Component {...pageProps} />
+    </Provider>
+  );
+}
+
+export default MyApp;
+```
+
+3. Use React Hooks.
+
+```javascript
+import { useNFTsByOwner } from 'ankr-react';
+
+const Page = () => {
+  const {data, error, isLoading} = useNFTsByOwner({
+    walletAddress: '0x0ED6Cec17F860fb54E21D154b49DAEFd9Ca04106',
+    blockchain: ['eth', 'polygon'],
+  })
+
+  return (
+    ...
+  )
+}
+```
+
+## Hooks available
+
+  * [`useAccountBalance`](/build/products/advanced-api-sdk/react-hooks/#useaccountbalance) — retrieves account balance.
+  * [`useBlocks`](/build/products/advanced-api-sdk/react-hooks/#useblocks) — retrieves the block's data.
+  * [`useCurrencies`](/build/products/advanced-api-sdk/react-hooks/#usecurrencies) — retrieves the blockchain's currencies.
+  * [`useLogs`](/build/products/advanced-api-sdk/react-hooks/#uselogs) — retrieves the block's history data.
+  * [`useNFTMetadata`](/build/products/advanced-api-sdk/react-hooks/#usenftmetadata) — retrieves the NFTs metadata.
+  * [`useNFTsByOwner`](/build/products/advanced-api-sdk/react-hooks/#usenftsbyowner) — retrieves the account's NFT data.
+  * [`useTokenHolders`](/build/products/advanced-api-sdk/react-hooks/#usetokenholders) — retrieves data on token holders.
+  * [`useTokenHoldersCount`](/build/products/advanced-api-sdk/react-hooks/#usetokenholderscount) — retrieves the number of token holders.
+  * [`useTransactionsByHash`](/build/products/advanced-api-sdk/react-hooks/#usetransactionsbyhash) — retrieves data for the hash-specified transaction.
+
+### `useAccountBalance`
+
+> Retrieves all the balance data of the account specified. 
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain?: Blockchain | (Blockchain)[];
+    walletAddress: string;
+    pageToken?: string;
+    pageSize?: number;
+}
+```
+
+#### Parameters Description
+
+  * `walletAddress` (string; required): an account address to query for balance; supports the Ethereum Name Service (ENS).
+  * `blockchain` (string): A chain or a combination of chains to query:
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+    * Chains combination: `[eth, polygon, bsc]`.
+    * All chains: leave the value empty to query all the chains available.
+  * `pageToken` (string): a token provided at the end of the response body to reference in the request to fetch the next page.
+  * `pageSize` (number): a number of result pages you'd like to get.
+
+---
+
+### `useBlocks`
+
+> Retrieves full information for the block specified.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain: Blockchain;
+    fromBlock?: number | "latest" | "earliest";
+    toBlock?: number | "latest" | "earliest";
+    descOrder?: boolean;
+    includeLogs?: boolean;
+    includeTxs?: boolean;
+    decodeLogs?: boolean;
+    decodeTxData?: boolean;
+}
+```
+
+#### Parameters Description
+
+  * `blockchain` (string; required): A chain to query (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `fromBlock`(string): the first block of the range. Supported value formats: hex, decimal, "earliest", "latest".
+  * `toBlock` (string): the last block included in the range. Supported value formats: hex, decimal, "earliest", "latest".
+  * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
+  * `includeLogs` (boolean): set to `true` to include logs, or to `false` to exclude them.
+  * `includeTxs` (boolean): set to `true` to include transactions, or to `false` to exclude them.
+  * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
+
+---
+
+### `useCurrencies`
+
+> Retrieves a list of supported currencies for a given blockchain.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain: Blockchain;
+}
+```
+
+#### Parameters Description
+
+  * `blockchain` (string; required): A chain to query (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+
+---
+
+### `useLogs`
+
+> Retrieves history data for the blocks specified.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain: Blockchain | (Blockchain)[];
+    fromBlock?: number | "latest" | "earliest";
+    toBlock?: number | "latest" | "earliest";
+    fromTimestamp?: number | "latest" | "earliest";
+    toTimestamp?: number | "latest" | "earliest";
+    address?: string | string[];
+    topics?: (string | string[])[];
+    pageToken?: string;
+    pageSize?: number;
+    descOrder?: boolean;
+    decodeLogs?: boolean;
+}
+```
+
+#### Parameters Description
+
+  * `blockchain` (string; required): a chain to query (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `fromBlock`(string): the first block of the range. Supported value formats: hex, decimal, "earliest", "latest".
+  * `toBlock` (string): the last block included in the range. Supported value formats: hex, decimal, "earliest", "latest".
+  * `fromTimestamp` (uint64): the first timestamp of the range.
+  * `toTimestamp` (uint64): the last timestamp of the range.
+  * `address` (string): an address of the contract created the logs. Supported value formats: string or array of strings. 
+  * `topics` (string): the data the log contains.
+  * `pageToken` (string): a token provided at the end of the response body to reference in the request to fetch the next page.
+  * `pageSize` (number): a number of result pages you'd like to get.
+  * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
+  * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
+
+---
+
+### `useNFTMetadata`
+
+> Retrieves the metadata that belongs to a particular NFT.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain: Blockchain;
+    contractAddress: string;
+    tokenId: string;
+}
+```
+
+#### Parameters Description
+
+  * `blockchain` (string; required): a chain to query (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `contractAddress` (string; required): a contract address of the NFT the metadata belongs to; supports the Ethereum Name Service (ENS).
+  * `tokenId` (string; required): a token ID of the NFT the metadata belongs to.
+
+---
+
+### `useNFTsByOwner`
+
+> Retrieves a list of NFTs (ERC721/ERC1155/ENS/POAP) that belong to a particular account specified.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain?: Blockchain | (Blockchain)[];
+    filter?: {[key: string]: string[]}[];
+    walletAddress: string;
+    pageToken?: string;
+    pageSize?: number;
+}
+```
+
+#### Parameters Description
+
+  * `walletAddress` (string; required): an account address to query for NFTs; supports the Ethereum Name Service (ENS).
+  * `blockchain` (string): a chain or a combination of chains to query:
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+    * Chains combination: `[eth, polygon, bsc]`.
+    * All chains: leave the value empty to query all the chains available.
+  * `pageToken` (sting): a token provided at the end of the response body to reference in the request to fetch the next page.
+  * `pageSize` (int32): a number of page results you'd like to get.
+  * `filter` (key-value): Filters your request by either of the following:
+     * Smart contract address (`"0xd8682bfa6918b0174f287b888e765b9a1b4dc9c3": [] `) — retrieves all NFTs from the address.
+     * Smart contract address and NFT ID (`"0xd8682bfa6918b0174f287b888e765b9a1b4dc9c3": ["8937"]`) — retrieves a particular NFT specified.
+
+---
+
+### `useTokenHolders`
+
+> Retrieves holders and the associated metadata for the tokens specified.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain: Blockchain;
+    contractAddress: string;
+    pageToken?: string;
+    pageSize?: number;
+}
+```
+
+#### Parameters Description
+
+  * `blockchain` (string; required): a chain to query (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `contractAddress` (string; required): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
+  * `pageToken` (string): a token provided at the end of the response body to reference in the request to fetch the next page.
+  * `pageSize` (int32): a number of page results you'd like to get.
+
+---
+
+### `useTokenHoldersCount`
+
+> Retrieves the number of holders for the tokens specified.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain: Blockchain;
+    contractAddress: string;
+    pageToken?: string;
+    pageSize?: number;
+}
+```
+
+#### Parameters Description
+
+  * `blockchain` (string; required): a chain to query (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `contractAddress` (string; required): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
+  * `pageToken` (string): a token provided at the end of the response body to reference in the request to fetch the next page.
+  * `pageSize` (int32): a number of page results you'd like to get.
+
+---
+
+### `useTransactionsByHash`
+
+> Retrieves the details for a transaction specified by hash.
+
+#### Parameters Schema
+
+Parameters to pass with the request:
+
+```typescript
+{
+    blockchain?: Blockchain | (Blockchain)[];
+    transactionHash: string;
+    includeLogs?: boolean;
+    decodeLogs?: boolean;
+    decodeTxData?: boolean;
+}
+```
+
+#### Parameters Description
+
+  * `blockchain` (string): a chain or a combination of chains to query:
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+    * Chains combination: `[eth, polygon, bsc]`.
+    * All chains: leave the value empty to query all the chains available.
+  * `transactionHash` (string; required): a hash of the transactions you'd like to request the details for.
+  * `includeLogs` (boolean): set to `true` to include logs, or to `false` to exclude them.
+  * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
+  * `decodeTxData` (boolean): set to `true` to decode transaction data, or to `false` if not interested in it.
+
+
+
