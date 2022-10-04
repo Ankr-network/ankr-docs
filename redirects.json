@@ -329,115 +329,115 @@
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ankrsdkwrapper"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/get-contract/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getcontract"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/create-subscriber/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#createsubscriber"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/disconnect/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#disconnect"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ethhandler"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-transaction/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#gettransaction"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-transaction-receipt/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#gettransactionreceipt"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-default-account/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getdefaultaccount"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/sign/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ethhandler"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/send-transaction/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#sendtransaction"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/estimate-gas-2/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#estimategas-2"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-balance/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getbalance"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-block-number/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getblocknumber"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-transaction-count/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#gettransactioncount"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-block-with-transactions/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getblockwithtransactions"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-block-with-transactions-hashes/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getblockwithtransactionshashes"
   },
   {
     "from": "docs/game/unity/api-reference/contract/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#contract"
   },
   {
     "from": "docs/game/unity/api-reference/contract/call-method/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#callmethod"
   },
   {
     "from": "docs/game/unity/api-reference/contract/web3-send-method/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#web3sendmethod"
   },
   {
     "from": "docs/game/unity/api-reference/contract/get-events/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getevents"
   },
   {
     "from": "docs/game/unity/api-reference/contract/get-data/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getdata"
   },
   {
     "from": "docs/game/unity/api-reference/contract/estimate-gas/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#estimategas"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#contracteventsubscriber"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/constructor/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#constructor"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/subscribe/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#subscribe"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/listen-for-events/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#listenforevents"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/unsubscribe/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#unsubscribe"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/stop-listen/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#stoplisten"
   },
   {
     "from": "docs/game/unreal/about-unreal/index.html",
