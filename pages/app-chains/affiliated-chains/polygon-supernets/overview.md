@@ -8,9 +8,7 @@ They allow you to create a dedicated blockchain network optimized to fit your pa
 Supernets praise themselves for higher performance, constant and predictable throughput for multiple use cases, and customization through the configuration of every aspect of the blockchain network. Over 20 Web3 projects are using them.
 
 <Callout emoji="🔗">
-**Testnet only** 
-
-While Polygon Supernets are enabling new features and nearing a release, currently they're only offered on testnet. 
+**Currently on Testnet** — while Polygon Supernets are enabling new features and nearing a release, currently they're only offered on testnet. 
 </Callout>
 
 ## Architecture
