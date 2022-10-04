@@ -732,159 +732,159 @@
     "to": "https://example.com/"
   },
   {
-    "from": "/docs/build/pricing.html",
+    "from": "docs/build/pricing/index.html",
     "to": "/docs/rpc-service/pricing-plans/"
   },
   {
-    "from": "/docs/build/products/rpc-service/overview.html",
+    "from": "docs/build/products/rpc-service/overview/index.html",
     "to": "/docs/rpc-service/overview/"
   },
   {
-    "from": "/docs/build/products/rpc-service/premium-account-operations.html",
+    "from": "docs/build/products/rpc-service/premium-account-operations/index.html",
     "to": "/docs/rpc-service/premium-account-operations/"
   },
   {
-    "from": "/docs/build/products/rpc-service/blockchain-interactions.html",
+    "from": "docs/build/products/rpc-service/blockchain-interactions/index.html",
     "to": "/docs/rpc-service/blockchain-interactions/"
   },
   {
-    "from": "/docs/build/products/rpc-service/hybrid-infrastructure.html",
+    "from": "docs/build/products/rpc-service/hybrid-infrastructure/index.html",
     "to": "/docs/rpc-service/hybrid-infrastructure/"
   },
   {
-    "from": "/docs/build/products/rpc-service/pricing-plans.html",
+    "from": "docs/build/products/rpc-service/pricing-plans/index.html",
     "to": "/docs/rpc-service/pricing-plans/"
   },
   {
-    "from": "/docs/build/products/rpc-service/card-flow.html",
+    "from": "docs/build/products/rpc-service/card-flow/index.html",
     "to": "/docs/rpc-service/card-flow/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/overview.html",
+    "from": "docs/build/products/advanced-api-sdk/overview/index.html",
     "to": "/docs/advanced-api/overview/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/nft-methods.html",
+    "from": "docs/build/products/advanced-api-sdk/nft-methods/index.html",
     "to": "/docs/advanced-api/nft-methods/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/query-methods.html",
+    "from": "docs/build/products/advanced-api-sdk/query-methods/index.html",
     "to": "/docs/advanced-api/query-methods/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/token-methods.html",
+    "from": "docs/build/products/advanced-api-sdk/token-methods/index.html",
     "to": "/docs/advanced-api/token-methods/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/javascript-sdk.html",
+    "from": "docs/build/products/advanced-api-sdk/javascript-sdk/index.html",
     "to": "/docs/advanced-api/javascript-sdk/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/python-sdk.html",
+    "from": "docs/build/products/advanced-api-sdk/python-sdk/index.html",
     "to": "/docs/advanced-api/python-sdk/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/react-hooks.html",
+    "from": "docs/build/products/advanced-api-sdk/react-hooks/index.html",
     "to": "/docs/advanced-api/react-hooks/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/build-with-advanced-apis/overview.html",
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/overview/index.html",
     "to": "/docs/advanced-api/build-with-advanced-apis/overview/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/build-with-advanced-apis/fetch-nfts-owned-by-wallet-address-ankrjs.html",
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/fetch-nfts-owned-by-wallet-address-ankrjs/index.html",
     "to": "/docs/advanced-api/build-with-advanced-apis/fetch-nfts-owned-by-wallet-address-ankrjs/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/build-with-advanced-apis/check-account-balance-ankrjs.html",
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/check-account-balance-ankrjs/index.html",
     "to": "/docs/advanced-api/build-with-advanced-apis/check-account-balance-ankrjs/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/build-with-advanced-apis/Ankrjs-Advanced-APIs-Nodejs-Quickstart-Guide.html",
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/Ankrjs-Advanced-APIs-Nodejs-Quickstart-Guide/index.html",
     "to": "/docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-Nodejs-Quickstart-Guide/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/build-with-advanced-apis/Ankrjs-Advanced-APIs-React-Quickstart-Guide.html",
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/Ankrjs-Advanced-APIs-React-Quickstart-Guide/index.html",
     "to": "/docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-React-Quickstart-Guide/"
   },
   {
-    "from": "/docs/build/products/advanced-api-sdk/build-with-advanced-apis/defidashboard-ankrjs.html",
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/defidashboard-ankrjs/index.html",
     "to": "/docs/advanced-api/build-with-advanced-apis/defidashboard-ankrjs/"
   },
   {
-    "from": "/docs/build/chains/arbitrum.html",
+    "from": "docs/build/chains/arbitrum/index.html",
     "to": "/docs/rpc-service/chains/arbitrum/"
   },
   {
-    "from": "/docs/build/chains/avalanche.html",
+    "from": "docs/build/chains/avalanche/index.html",
     "to": "/docs/rpc-service/chains/avalanche/"
   },
   {
-    "from": "/docs/build/chains/binance-smart-chain.html",
+    "from": "docs/build/chains/binance-smart-chain/index.html",
     "to": "/docs/rpc-service/chains/binance-smart-chain/"
   },
   {
-    "from": "/docs/build/chains/celo.html",
+    "from": "docs/build/chains/celo/index.html",
     "to": "/docs/rpc-service/chains/celo/"
   },
   {
-    "from": "/docs/build/chains/ethereum/overview.html",
+    "from": "docs/build/chains/ethereum/overview/index.html",
     "to": "/docs/rpc-service/chains/ethereum/overview/"
   },
   {
-    "from": "/docs/build/chains/ethereum/how-to/connect-metamask.html",
+    "from": "docs/build/chains/ethereum/how-to/connect-metamask/index.html",
     "to": "/docs/rpc-service/chains/ethereum/how-to/connect-metamask/"
   },
   {
-    "from": "/docs/build/chains/ethereum/how-to/make-requests.html",
+    "from": "docs/build/chains/ethereum/how-to/make-requests/index.html",
     "to": "/docs/rpc-service/chains/ethereum/how-to/make-requests/"
   },
   {
-    "from": "/docs/build/chains/ethereum/how-to/send-transaction.html",
+    "from": "docs/build/chains/ethereum/how-to/send-transaction/index.html",
     "to": "/docs/rpc-service/chains/ethereum/how-to/send-transaction/"
   },
   {
-    "from": "/docs/build/chains/ethereum/how-to/basic-dapp.html",
+    "from": "docs/build/chains/ethereum/how-to/basic-dapp/index.html",
     "to": "/docs/rpc-service/chains/ethereum/how-to/basic-dapp/"
   },
   {
-    "from": "/docs/build/chains/fantom.html",
+    "from": "docs/build/chains/fantom/index.html",
     "to": "/docs/rpc-service/chains/fantom/"
   },
   {
-    "from": "/docs/build/chains/gnosis.html",
+    "from": "docs/build/chains/gnosis/index.html",
     "to": "/docs/rpc-service/chains/gnosis/"
   },
   {
-    "from": "/docs/build/chains/harmony.html",
+    "from": "docs/build/chains/harmony/index.html",
     "to": "/docs/rpc-service/chains/harmony/"
   },
   {
-    "from": "/docs/build/chains/iotex.html",
+    "from": "docs/build/chains/iotex/index.html",
     "to": "/docs/rpc-service/chains/iotex/"
   },
   {
-    "from": "/docs/build/chains/moonbeam.html",
+    "from": "docs/build/chains/moonbeam/index.html",
     "to": "/docs/rpc-service/chains/moonbeam/"
   },
   {
-    "from": "/docs/build/chains/near.html",
+    "from": "docs/build/chains/near/index.html",
     "to": "/docs/rpc-service/chains/near/"
   },
   {
-    "from": "/docs/build/chains/nervos.html",
+    "from": "docs/build/chains/nervos/index.html",
     "to": "/docs/rpc-service/chains/nervos/"
   },
   {
-    "from": "/docs/build/chains/polygon.html",
+    "from": "docs/build/chains/polygon/index.html",
     "to": "/docs/rpc-service/chains/polygon/"
   },
   {
-    "from": "/docs/build/chains/solana.html",
+    "from": "docs/build/chains/solana/index.html",
     "to": "/docs/rpc-service/chains/solana/"
   },
   {
-    "from": "/docs/build/chains/syscoin.html",
+    "from": "docs/build/chains/syscoin/index.html",
     "to": "/docs/rpc-service/chains/syscoin/"
   }
 ]
