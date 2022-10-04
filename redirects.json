@@ -321,11 +321,11 @@
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-factory/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ankrsdkfactory"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-factory/get-ankr-sdk-instance/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getankrsdkinstance"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/index.html",
