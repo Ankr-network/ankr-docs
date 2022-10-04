@@ -1,8 +1,8 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Ankr NFT API
+# NFT API Methods
 
-NFT API Methods serve to request NFT-related data across multiple chains.
+NFT API serves to request NFT-related data across multiple chains.
 
 ## Introduction 
 

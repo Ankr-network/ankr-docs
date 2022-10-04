@@ -2,7 +2,7 @@ import { Tabs, Tab } from "nextra-theme-docs";
 
 # Token API Methods
 
-Token API Methods serve to request token-related data across multiple chains.
+Token API serves to request token-related data across multiple chains.
 
 ## Introduction
 

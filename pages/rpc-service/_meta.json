@@ -1,8 +1,9 @@
 {
   "overview": "Overview",
+  "pricing-plans": "Pricing",
   "premium-account-operations": "Premium Account Operations",
   "blockchain-interactions": "Blockchain Interactions",
   "hybrid-infrastructure": "Hybrid Infrastructure",
-  "pricing-plans": "Pricing",
-  "card-flow": "Card Flow"
+  "card-flow": "Card Flow",
+  "chains": "Supported Chains"
 }
