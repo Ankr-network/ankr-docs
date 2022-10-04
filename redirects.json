@@ -726,18 +726,14 @@
   },
   {
     "from": "docs/learn/extra/ankr-vision/index.html",
-    "to": "docs/learn/overview/"
+    "to": "/docs/learn/overview/"
   },
   {
     "from": "docs/learn/extra/51-attacks/index.html",
-    "to": "docs/learn/overview/"
+    "to": "/docs/learn/overview/"
   },
   {
     "from": "docs/example/index.html",
     "to": "https://example.com/"
-  },
-  {
-    "from": "docs/example/index.html",
-    "to": "/docs/example/"
   }
 ]
