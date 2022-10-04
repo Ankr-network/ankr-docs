@@ -2,7 +2,7 @@ import { Tabs, Tab } from "nextra-theme-docs";
 
 # Query API Methods
 
-Query API Methods serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata.
+Query API serves to request info on the ranges of blocks (max range is 100) for a full list of block metadata.
 
 ## Introduction
 

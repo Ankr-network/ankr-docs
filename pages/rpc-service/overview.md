@@ -29,7 +29,7 @@ From a technology point of view, RPC Service infrastructure relies heavily on th
 
 ## Pricing Plans
 
-The next layer, [*Pricing Plans*](/build/products/rpc-service/pricing-plans/), deals with users and defines their RPC Service functional capabilities.
+The next layer, [*Pricing Plans*](/rpc-service/pricing-plans/), deals with users and defines their RPC Service functional capabilities.
 
 In general, the advantages the Premium plan provides over the Public one come down to the higher rate limits, the availability of the WebSockets connection, having personal requests telemetry, the better means of support, and the most notorious one — having the nodes used for processing the Premium user requests only.
 

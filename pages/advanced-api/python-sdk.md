@@ -1,6 +1,6 @@
-# Ankr's Python SDK
+# AnkrPY SDK
 
-Our SDK is a compact Python library that enables interaction with Ankr's [Advanced APIs](/build/products/advanced-api-sdk/overview/).
+Our SDK is a compact Python library that enables interaction with [Advanced APIs](/advanced-api-sdk/overview/).
 
 ## Get started
 
