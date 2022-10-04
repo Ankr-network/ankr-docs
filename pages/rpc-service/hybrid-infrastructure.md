@@ -58,9 +58,9 @@ The matter of principle for us is that we just provide the user with access to H
 
 Prerequisites:
 
-  * Having a Premium account ([connect your wallet](/build/products/rpc-service/premium-account-operations/#connect-wallet)).
-  * Having your account balance [topped up](/build/products/rpc-service/premium-account-operations/#top-up).
-  * Having the [Hybrid Infrastructure functionality](/build/products/rpc-service/hybrid-infrastructure/#how-to-enable-hybrid-infrastructure) enabled.
+  * Having a Premium account ([connect your wallet](/rpc-service/premium-account-operations/#connect-wallet)).
+  * Having your account balance [topped up](/rpc-service/premium-account-operations/#top-up).
+  * Having the [Hybrid Infrastructure functionality](/rpc-service/hybrid-infrastructure/#how-to-enable-hybrid-infrastructure) enabled.
 
 To add a private node, follow the steps:
 

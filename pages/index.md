@@ -7,6 +7,22 @@ ____________________________________
 
 This documentation serves as a resource to explore how you can use and integrate Ankr's full suite of decentralized products and services ranging from free [public RPC endpoints](https://www.ankr.com/protocol/) that developers have come to know and love, alongside new [Premium and Enterprise plans](https://www.ankr.com/protocol/account/) packed with [advanced developer tools](https://www.ankr.com/advanced-api/) — all powered by a globally distributed and decentralized network of nodes.
 
+## RPC Service
+* Access PRC Endpoints via HTTPS or WebSockets.
+* Interact with 18+ supported blockchains.
+* Suitable for Web3 developers and enthusiasts of all skill levels.
+<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+  [Use Ankr infrastructure to empower your projects with blockchain interaction](rpc-service/overview)↗
+</div>
+
+## Advanced APIs/SDKs
+* Access a specifically-tailored collection of JSON-RPC API endpoints.
+* Interact with 8 supported blockchains.
+* Use Ankr JavaScript/Python SDKs and React Hooks.
+<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+  [Query multiple chains for most popular Web3 scenarios](advanced-api/overview)↗
+</div>
+
 ## App Chains
 * Transition from Web2 to Web3 seamlessly.
 * Order a turnkey dedicated blockchain tailored to you.
@@ -15,16 +31,6 @@ This documentation serves as a resource to explore how you can use and integrate
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Bring your project to Web3](app-chains/overview)↗
 </div>
-
-## Build
-* Access Premium APIs and RPC endpoints with WebSockets.
-* Seamless interaction with 40+ supported blockchains.
-* Suitable for Web3 developers and enthusiasts of all skill levels.
-* Multichain JS SDK.
-<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Use Ankr infrastructure and access blockchains](build/overview)↗
-</div>
-
 
 ## Staking
 * Easily stake 5+ tokens on a secure, decentralized network.
