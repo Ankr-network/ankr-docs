@@ -8,7 +8,7 @@ ____________________________________
 This documentation serves as a resource to explore how you can use and integrate Ankr's full suite of decentralized products and services ranging from free [public RPC endpoints](https://www.ankr.com/protocol/) that developers have come to know and love, alongside new [Premium and Enterprise plans](https://www.ankr.com/protocol/account/) packed with [advanced developer tools](https://www.ankr.com/advanced-api/) — all powered by a globally distributed and decentralized network of nodes.
 
 ## RPC Service
-* Access PRC Endpoints via HTTPS or WebSockets.
+* Access RPC Endpoints via HTTPS or WebSockets.
 * Interact with 18+ supported blockchains.
 * Suitable for Web3 developers and enthusiasts of all skill levels.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
