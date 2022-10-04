@@ -1,11 +1,17 @@
+import { Callout } from "nextra-theme-docs";
+
+## What is Polygon Supernets?
 [Polygon Supernets](https://polygon.technology/supernets/) are a blockchain stack powered by Polygon Edge. You can also call it an ecosystem — a set of modules that work seamlessly together and add to each other's functionality.
 
 They allow you to create a dedicated blockchain network optimized to fit your particular needs and easily deploy your Web3 applications on it without sacrificing security or performance. 
 
 Supernets praise themselves for higher performance, constant and predictable throughput for multiple use cases, and customization through the configuration of every aspect of the blockchain network. Over 20 Web3 projects are using them.
 
-## Architecture
+<Callout emoji="🔗">
+**Currently on Testnet** — while Polygon Supernets are enabling new features and nearing a release, currently they're only offered on testnet. 
+</Callout>
 
+## Architecture
 Supernets offer an open platform with a L1 blockchain network — Polygon Edge. Though, Edge is not the only building block of Supernets, it is its heart.   
 
 There are 6 main modules in the architecture of the Edge.
