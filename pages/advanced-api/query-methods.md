@@ -1,16 +1,10 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Query API Methods
+# Query API
+
+_Query API_ is an access-ready solution that enables your projects to interact with multiple blockchains in a single request. By indexing blockchain data from all eight currently supported chains, searching through large amounts of data is easier and faster than ever before. Query API can boast almost instantaneous processing speeds (due to the key-value filtering supported) for the searches that might ordinarily take hours to process. 
 
 Query API serves to request info on the ranges of blocks (max range is 100) for a full list of block metadata.
-
-## Introduction
-
-Query API is designed to enable developers to query huge sections of blockchains quickly and easily in one request, without needing to create custom fixes to call blockchains from scratch. By indexing blockchain data from all six of the currently supported chains, searching through large amounts of data is easier and faster than ever before.
-
-## Why Query API?
-
-For example, if you wanted to search for an event like “an NFT from ‘X’ collection was minted,” you could do so across a range of blocks with extreme efficiency. What might normally take hours of searching can be done nearly instantaneously thanks to Ankr’s key-value pairing schema.
 
 ## Get Blocks
 
