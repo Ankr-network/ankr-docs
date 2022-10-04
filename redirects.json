@@ -272,10 +272,6 @@
     "to": "/docs/app-chains/faq/"
   },
   {
-    "from": "docs/staking/overview/index.html",
-    "to": "/docs/stake/overview/"
-  },
-  {
     "from": "docs/game/ankr-game/index.html",
     "to": "/docs/gaming/overview/"
   },
@@ -719,7 +715,6 @@
     "from": "docs/learn/tutorials/erigon-bsc-tutorial/erigon-bsc/index.html",
     "to": "/docs/learn/overview/"
   },
-
   {
     "from": "docs/learn/tutorials/connect-web3py/index.html",
     "to": "/docs/learn/overview/"
