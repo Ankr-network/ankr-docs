@@ -1,6 +1,6 @@
-# Ankr's JavaScript SDK
+# AnkrJS SDK
 
-This SDK contains a compact JavaScript library to enable you interact with Ankr's [Advanced API](/advanced-api-sdk/overview/).
+_AnkrJS SDK_ contains a compact JavaScript library to enable you interact with [Advanced API](/advanced-api/overview/).
 
 ## Get started
 
@@ -45,18 +45,19 @@ Currently, `ankr.js` supports interaction with the following chains using their 
   * Arbitrum: `arbitrum`
   * Avalanche: `avalanche`
   * Syscoin NEVM: `syscoin`
+  * Optimism: `optimism`
 
 ## Methods available
 
-  * [`getLogs`](/advanced-api-sdk/javascript-sdk/#getlogs)
-  * [`getBlocks`](/advanced-api-sdk/javascript-sdk/#getblocks)
-  * [`getTransactionsByHash`](/advanced-api-sdk/javascript-sdk/#gettransactionsbyhash)
-  * [`getAccountBalance`](/advanced-api-sdk/javascript-sdk/#getaccountbalance)
-  * [`getNFTsByOwner`](/advanced-api-sdk/javascript-sdk/#getnftsbyowner)
-  * [`getTokenHolders`](/advanced-api-sdk/javascript-sdk/#gettokenholders)
-  * [`getTokenHoldersCount`](/advanced-api-sdk/javascript-sdk/#gettokenholderscount)
-  * [`getCurrencies`](/advanced-api-sdk/javascript-sdk/#getcurrencies)
-  * [`getNFTMetadata`](/advanced-api-sdk/javascript-sdk/#getnftmetadata)
+  * [`getLogs`](/advanced-api/javascript-sdk/#getlogs)
+  * [`getBlocks`](/advanced-api/javascript-sdk/#getblocks)
+  * [`getTransactionsByHash`](/advanced-api/javascript-sdk/#gettransactionsbyhash)
+  * [`getAccountBalance`](/advanced-api/javascript-sdk/#getaccountbalance)
+  * [`getNFTsByOwner`](/advanced-api/javascript-sdk/#getnftsbyowner)
+  * [`getTokenHolders`](/advanced-api/javascript-sdk/#gettokenholders)
+  * [`getTokenHoldersCount`](/advanced-api/javascript-sdk/#gettokenholderscount)
+  * [`getCurrencies`](/advanced-api/javascript-sdk/#getcurrencies)
+  * [`getNFTMetadata`](/advanced-api/javascript-sdk/#getnftmetadata)
 
 ### `getLogs`
 

@@ -1,16 +1,10 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Token API Methods
+# Token API
 
-Token API serves to request token-related data across multiple chains.
+Token API serves to request token-related data (account balance, supported currencies, token holders, token price, etc.) across multiple EVM-compatible chains.
 
-## Introduction
-
-Token API helps deliver information about tokens on any of the EVM-compatible blockchains currently supported. The Token API allows developers to query things like account balances, how many currencies exist on a given blockchain, how many token holders a given currency has, and a token’s current fair market value.
-
-## Why Token API?
-
-Token API uses only the on-chain data, leaving third parties behind. Ankr constantly scans for the on-chain transactions coming from DEXs — flagging transactions and aggregating data into accurate token price feeds in real time. These tools are crucial for the Web3 projects like marketplaces and exchanges looking for efficient ways to query accurate on-chain data for tokenized assets.
+Token API uses only official on-chain data, leaving third parties behind. Ankr constantly scans for the on-chain transactions coming from DEXs, flagging transactions and aggregating data into accurate real-time token price feeds. This solution is crucial for the Web3 projects like marketplaces and exchanges looking for efficient ways to query accurate on-chain data for tokenized assets.
 
 ## Get Account Balance
 

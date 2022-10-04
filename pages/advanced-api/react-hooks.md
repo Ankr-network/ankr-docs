@@ -1,4 +1,6 @@
-# React Hooks
+# Ankr React Hooks
+
+This section contains info on using React hooks to fetch data from [Advanced APIs](/advanced-api/overview/). 
 
 ## Get started
 
@@ -47,15 +49,15 @@ const Page = () => {
 
 ## Hooks available
 
-  * [`useAccountBalance`](/build/products/advanced-api-sdk/react-hooks/#useaccountbalance) — retrieves account balance.
-  * [`useBlocks`](/build/products/advanced-api-sdk/react-hooks/#useblocks) — retrieves the block's data.
-  * [`useCurrencies`](/build/products/advanced-api-sdk/react-hooks/#usecurrencies) — retrieves the blockchain's currencies.
-  * [`useLogs`](/build/products/advanced-api-sdk/react-hooks/#uselogs) — retrieves the block's history data.
-  * [`useNFTMetadata`](/build/products/advanced-api-sdk/react-hooks/#usenftmetadata) — retrieves the NFTs metadata.
-  * [`useNFTsByOwner`](/build/products/advanced-api-sdk/react-hooks/#usenftsbyowner) — retrieves the account's NFT data.
-  * [`useTokenHolders`](/build/products/advanced-api-sdk/react-hooks/#usetokenholders) — retrieves data on token holders.
-  * [`useTokenHoldersCount`](/build/products/advanced-api-sdk/react-hooks/#usetokenholderscount) — retrieves the number of token holders.
-  * [`useTransactionsByHash`](/build/products/advanced-api-sdk/react-hooks/#usetransactionsbyhash) — retrieves data for the hash-specified transaction.
+  * [`useAccountBalance`](/advanced-api/react-hooks/#useaccountbalance) — retrieves account balance.
+  * [`useBlocks`](/advanced-api/react-hooks/#useblocks) — retrieves the block's data.
+  * [`useCurrencies`](/advanced-api/react-hooks/#usecurrencies) — retrieves the blockchain's currencies.
+  * [`useLogs`](/advanced-api/react-hooks/#uselogs) — retrieves the block's history data.
+  * [`useNFTMetadata`](/advanced-api/react-hooks/#usenftmetadata) — retrieves the NFTs metadata.
+  * [`useNFTsByOwner`](/advanced-api/react-hooks/#usenftsbyowner) — retrieves the account's NFT data.
+  * [`useTokenHolders`](/advanced-api/react-hooks/#usetokenholders) — retrieves data on token holders.
+  * [`useTokenHoldersCount`](/advanced-api/react-hooks/#usetokenholderscount) — retrieves the number of token holders.
+  * [`useTransactionsByHash`](/advanced-api/react-hooks/#usetransactionsbyhash) — retrieves data for the hash-specified transaction.
 
 ### `useAccountBalance`
 

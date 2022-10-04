@@ -5,19 +5,21 @@ import Image from 'next/image';
 
 # Advanced APIs
 
+<Callout>
+Advanced APIs is a unique feature that comes along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
+</Callout>
+
 ## Overview
 
 *Advanced APIs* is a specifically-tailored collection of JSON-RPC API endpoints built to support the most popular Web3 scenarios on multiple chains at almost instant speeds. We believe it to become a single point of reference for the multi-chain requests.
 
 <img src="/docs/build/API.png" alt="API" class="responsive-pic" />
 
-## Save Time, Money, and Effort
+Advanced APIs optimize, index, cache, and store blockchain data to make it access-ready for you. To make things even better, our Advanced APIs support querying eight EVM-compatible blockchains in a single request.
 
-Advanced APIs take blockchain data and optimize, index, cache, and store it to make it more access-ready. And, to make things even better, our Advanced APIs support all major blockchains, and you can perform a single request to get data from eight different EVM-compatible blockchains.
+## Chains Supported
 
-## Supported Chains
-
-Currently, Ankr supports eight EVM-compatible chains:
+Currently, Ankr supports the following EVM-compatible chains:
 
   * Ethereum
   * Fantom
@@ -36,9 +38,9 @@ And more EVM and non-EVM chains coming soon.
 
 Query our Advanced APIs at the following URL:
 
-> `https://rpc.ankr.com/multichain`.
+> `https://rpc.ankr.com/multichain`
 
-Check out the latest Advanced APIs collections divided into the following sections:
+Check out the latest Advanced APIs collections for various Web3 scenarios:
 
 ### NFT APIs
 
@@ -90,9 +92,9 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 ### Support and Developer Community
 
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Start Building with Ankr Advanced APIs](build-with-advanced-apis/overview)↗
+  [Start Building with Advanced APIs](build-with-advanced-apis/overview)↗
 </div>
 
-Our goal is to support developers with best experience possible and supercharge their dApps with our Advanced APIs. Join our [community discord](http://discord.gg/ankr) for support from our team and engage with other like-minded developers to discuss, ask questions, and vibe. 
+Our goal is to provide developers with the best user experience possible and supercharge their Web3 projects with our Advanced APIs. Join our [Discord community](http://discord.gg/ankr) to get support from our team and engage with other like-minded developers. 
 
-We also value community feedback, and want you all to keep proposing new features for us to add in our [roadmap](https://roadmap.ankr.com/b/feature-requests/).
+We believe that community feedback fills our sails — we appreciate you proposing new features to add in our [Roadmap](https://roadmap.ankr.com/b/feature-requests/).
