@@ -886,5 +886,13 @@
   {
     "from": "docs/build/chains/syscoin/index.html",
     "to": "/docs/rpc-service/chains/syscoin/"
+  },
+  {
+    "from": "docs/build/overview/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/build/products/ankr-scan/index.html",
+    "to": "/docs/"
   }
 ]
