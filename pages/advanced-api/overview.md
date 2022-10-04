@@ -1,4 +1,4 @@
-import { Code } from "../../../../components";
+import { Code } from "../../components";
 import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
@@ -10,8 +10,6 @@ import Image from 'next/image';
 *Advanced APIs* is a specifically-tailored collection of JSON-RPC API endpoints built to support the most popular Web3 scenarios on multiple chains at almost instant speeds. We believe it to become a single point of reference for the multi-chain requests.
 
 <img src="/docs/build/API.png" alt="API" class="responsive-pic" />
-
-Query our Advanced APIs at the following URL: `https://rpc.ankr.com/multichain`.
 
 ## Save Time, Money, and Effort
 
@@ -35,6 +33,10 @@ And more EVM and non-EVM chains coming soon.
 [//]: # (in [Postman]&#40;https://documenter.getpostman.com/view/19024547/UVsEVUGQ&#41; and look through the Advanced API docs)
 
 ## API Collections Available
+
+Query our Advanced APIs at the following URL:
+
+> `https://rpc.ankr.com/multichain`.
 
 Check out the latest Advanced APIs collections divided into the following sections:
 

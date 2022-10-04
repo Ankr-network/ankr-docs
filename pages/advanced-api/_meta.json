@@ -1,0 +1,10 @@
+{
+  "overview": "Overview",
+  "nft-methods": "NFT API",
+  "query-methods": "Query API",
+  "token-methods": "Token API",
+  "javascript-sdk": "AnkrJS SDK",
+  "python-sdk": "AnkrPY SDK",
+  "react-hooks": "Ankr React Hooks",
+  "build-with-advanced-apis": "Quick Start Guide"
+}
