@@ -23,6 +23,5 @@ export function useGtm(pageProps) {
     };
 
     gtmVirtualPageView(mainDataLayer);
-
   }, [pageProps]);
 }
