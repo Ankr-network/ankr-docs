@@ -1,11 +1,11 @@
-import { Code } from "../../../../../components";
+import { Code } from "../../../components";
 import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
-# Build with Ankr Advanced APIs
+# Build with Advanced APIs
 
-Kickstart your dApp with Ankr Advanced APIs to go from idea to building and shipping cool stuff. 
+Kickstart your dApp with Advanced APIs to go from idea to building and shipping cool stuff. 
 
 ## Code Snippets
 Learn how to query data from blockchain instantly.  
@@ -30,7 +30,7 @@ Learn how to query data from blockchain, build prototypes, dApps, projects and m
 </div>
 
 ## Tutorials
-Learn how to build fullstack projects and dApps with Ankr's Advanced APIs.
+Learn how to build fullstack projects and dApps with Advanced APIs.
 
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Build basic Defi-Dashboard dApp with Vite.js, Ankr.js & Tailwind CSS](defidashboard-ankrjs)↗

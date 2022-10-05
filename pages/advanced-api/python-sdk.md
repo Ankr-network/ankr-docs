@@ -1,6 +1,6 @@
-# Ankr's Python SDK
+# AnkrPY SDK
 
-Our SDK is a compact Python library that enables interaction with Ankr's [Advanced APIs](/build/products/advanced-api-sdk/overview/).
+_AnkrPY SDK_ is a compact Python library that enables interaction with [Advanced APIs](/advanced-api/overview/).
 
 ## Get started
 
@@ -82,17 +82,17 @@ Currently, `ankr.js` supports interaction with the following chains using their 
 
 ## Methods available
 
-  * [`nft.get_nfts`](/build/products/advanced-api-sdk/python-sdk/#get_nfts)
-  * [`nft.get_nft_metadata`](/build/products/advanced-api-sdk/python-sdk/#get_nft_metadata)
+  * [`nft.get_nfts`](/advanced-api/python-sdk/#get_nfts)
+  * [`nft.get_nft_metadata`](/advanced-api/python-sdk/#get_nft_metadata)
   * `nft.get_nft_holders`
-  * [`token.get_token_holders`](/build/products/advanced-api-sdk/python-sdk/#get_token_holders)
-  * [`token.get_token_holders_count_history`](/build/products/advanced-api-sdk/python-sdk/#get_token_holders_count_history)
-  * [`token.get_token_holders_count`](/build/products/advanced-api-sdk/python-sdk/#get_token_holders_count)
+  * [`token.get_token_holders`](/advanced-api/python-sdk/#get_token_holders)
+  * [`token.get_token_holders_count_history`](/advanced-api/python-sdk/#get_token_holders_count_history)
+  * [`token.get_token_holders_count`](/advanced-api/python-sdk/#get_token_holders_count)
   * `token.get_token_price`
-  * [`token.get_account_balance`](/build/products/advanced-api-sdk/python-sdk/#get_account_balance)
-  * [`query.get_logs`](/build/products/advanced-api-sdk/python-sdk/#get_logs)
-  * [`query.get_blocks`](/build/products/advanced-api-sdk/python-sdk/#get_blocks)
-  * [`query.get_transaction`](/build/products/advanced-api-sdk/python-sdk/#get_transaction)
+  * [`token.get_account_balance`](/advanced-api/python-sdk/#get_account_balance)
+  * [`query.get_logs`](/advanced-api/python-sdk/#get_logs)
+  * [`query.get_blocks`](/advanced-api/python-sdk/#get_blocks)
+  * [`query.get_transaction`](/advanced-api/python-sdk/#get_transaction)
 
 ### `get_nfts`
 

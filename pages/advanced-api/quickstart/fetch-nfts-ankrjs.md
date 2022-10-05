@@ -1,13 +1,13 @@
-import { Code } from "../../../../../components";
+import { Code } from "../../../components";
 import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
-# How to fetch all NFTs owned by a particular Wallet Address using Ankrjs
+# Fetch Particular Owner's NFTs with AnkrJS
 
-In this tutorial, we’ll be fetching all the NFTs owned by a particular wallet or owner across multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Ankr's Advanced Multichain APIs](https://www.ankr.com/advanced-api/)↗.
+In this tutorial, we’ll be fetching all the NFTs owned by a particular wallet or owner across multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Advanced APIs](https://www.ankr.com/advanced-api/)↗.
 
-### Ankr Advanced APIs
+### Advanced APIs
 
 Ankr's Advanced Multichain APIs are the collection of RPC methods created to simplify querying blockchain data. These APIs do all the heavy lifting for us so that we can query on-chain data in a matter of seconds. 
 
@@ -17,7 +17,7 @@ Currently, it supports eight EVM compatible chains: Ethereum, Fantom, Binance Sm
 
 **Prerequisite:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/)↗ and [Yarn](https://yarnpkg.com/)↗ installed on your machine.
 
-### Step 1: Setting Up Next.js Starter Application
+### Step 1: Set Up Next.js Starter Application
 First up, navigate into the directory of your choice where you want to initiate this project and run the following command in your terminal to set up a new Next.js starter page:
 
 ```
@@ -39,7 +39,7 @@ Visit localhost:3000 to view the starter application and it will resemble the sc
 
 ______________________________________
 
-### Step 2: Installing and Setting Up Ankr.js
+### Step 2: Install and Set Up Ankr.js
 
 In this section, we will install and set up Ankr.js for querying NFT data from the blockchain for a given wallet address.
 

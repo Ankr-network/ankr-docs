@@ -1,38 +1,38 @@
-# Ankr's JavaScript SDK
+# AnkrJS SDK
 
-This SDK contains a compact JavaScript library to enable you interact with Ankr's [Advanced API](/build/products/advanced-api-sdk/overview/).
+_AnkrJS SDK_ contains a compact JavaScript library to enable you interact with [Advanced API](/advanced-api/overview/).
 
 ## Get started
 
 1. Install the latest package stored on [npm](https://www.npmjs.com/package/@ankr.com/ankr.js).
 
-    ```shell
-    # with npm
-    npm install @ankr.com/ankr.js
+```shell
+# with npm
+npm install @ankr.com/ankr.js
 
-    # with yarn
-    yarn add @ankr.com/ankr.js
-    ```
+# with yarn
+yarn add @ankr.com/ankr.js
+```
 
 2. Initialize the provider.
 
-    ```javascript
-    import AnkrProvider from '@ankr.com/ankr.js';
-    
-    const provider = new AnkrProvider('');
-    
-    // or if you have a premium account
-    const provider = new AnkrProvider('YOUR_API_KEY');
-    ```
+```javascript
+import AnkrProvider from '@ankr.com/ankr.js';
+
+const provider = new AnkrProvider('');
+
+// or if you have a premium account
+const provider = new AnkrProvider('YOUR_API_KEY');
+```
 
 3. Use the provider to call either of the supported methods.
 
-    ```javascript
-    await provider.getNFTsByOwner({
-      blockchain: 'eth',
-      walletAddress: '0x0E11A192d574b342C51be9e306694C41547185DD',
-    });
-    ```
+```javascript
+await provider.getNFTsByOwner({
+  blockchain: 'eth',
+  walletAddress: '0x0E11A192d574b342C51be9e306694C41547185DD',
+});
+```
 
 ## Chains supported
 
@@ -45,18 +45,19 @@ Currently, `ankr.js` supports interaction with the following chains using their 
   * Arbitrum: `arbitrum`
   * Avalanche: `avalanche`
   * Syscoin NEVM: `syscoin`
+  * Optimism: `optimism`
 
 ## Methods available
 
-  * [`getLogs`](/build/products/advanced-api-sdk/javascript-sdk/#getlogs)
-  * [`getBlocks`](/build/products/advanced-api-sdk/javascript-sdk/#getblocks)
-  * [`getTransactionsByHash`](/build/products/advanced-api-sdk/javascript-sdk/#gettransactionsbyhash)
-  * [`getAccountBalance`](/build/products/advanced-api-sdk/javascript-sdk/#getaccountbalance)
-  * [`getNFTsByOwner`](/build/products/advanced-api-sdk/javascript-sdk/#getnftsbyowner)
-  * [`getTokenHolders`](/build/products/advanced-api-sdk/javascript-sdk/#gettokenholders)
-  * [`getTokenHoldersCount`](/build/products/advanced-api-sdk/javascript-sdk/#gettokenholderscount)
-  * [`getCurrencies`](/build/products/advanced-api-sdk/javascript-sdk/#getcurrencies)
-  * [`getNFTMetadata`](/build/products/advanced-api-sdk/javascript-sdk/#getnftmetadata)
+  * [`getLogs`](/advanced-api/javascript-sdk/#getlogs)
+  * [`getBlocks`](/advanced-api/javascript-sdk/#getblocks)
+  * [`getTransactionsByHash`](/advanced-api/javascript-sdk/#gettransactionsbyhash)
+  * [`getAccountBalance`](/advanced-api/javascript-sdk/#getaccountbalance)
+  * [`getNFTsByOwner`](/advanced-api/javascript-sdk/#getnftsbyowner)
+  * [`getTokenHolders`](/advanced-api/javascript-sdk/#gettokenholders)
+  * [`getTokenHoldersCount`](/advanced-api/javascript-sdk/#gettokenholderscount)
+  * [`getCurrencies`](/advanced-api/javascript-sdk/#getcurrencies)
+  * [`getNFTMetadata`](/advanced-api/javascript-sdk/#getnftmetadata)
 
 ### `getLogs`
 

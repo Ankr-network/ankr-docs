@@ -272,10 +272,6 @@
     "to": "/docs/app-chains/faq/"
   },
   {
-    "from": "docs/staking/overview/index.html",
-    "to": "/docs/stake/overview/"
-  },
-  {
     "from": "docs/game/ankr-game/index.html",
     "to": "/docs/gaming/overview/"
   },
@@ -325,123 +321,123 @@
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-factory/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ankrsdkfactory"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-factory/get-ankr-sdk-instance/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getankrsdkinstance"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ankrsdkwrapper"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/get-contract/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getcontract"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/create-subscriber/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#createsubscriber"
   },
   {
     "from": "docs/game/unity/api-reference/ankr-sdk-wrapper/disconnect/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#disconnect"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ethhandler"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-transaction/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#gettransaction"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-transaction-receipt/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#gettransactionreceipt"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-default-account/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getdefaultaccount"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/sign/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#ethhandler"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/send-transaction/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#sendtransaction"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/estimate-gas-2/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#estimategas-2"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-balance/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getbalance"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-block-number/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getblocknumber"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-transaction-count/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#gettransactioncount"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-block-with-transactions/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getblockwithtransactions"
   },
   {
     "from": "docs/game/unity/api-reference/eth-handler/get-block-with-transactions-hashes/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getblockwithtransactionshashes"
   },
   {
     "from": "docs/game/unity/api-reference/contract/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#contract"
   },
   {
     "from": "docs/game/unity/api-reference/contract/call-method/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#callmethod"
   },
   {
     "from": "docs/game/unity/api-reference/contract/web3-send-method/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#web3sendmethod"
   },
   {
     "from": "docs/game/unity/api-reference/contract/get-events/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getevents"
   },
   {
     "from": "docs/game/unity/api-reference/contract/get-data/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#getdata"
   },
   {
     "from": "docs/game/unity/api-reference/contract/estimate-gas/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#estimategas"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#contracteventsubscriber"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/constructor/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#constructor"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/subscribe/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#subscribe"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/listen-for-events/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#listenforevents"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/unsubscribe/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#unsubscribe"
   },
   {
     "from": "docs/game/unity/api-reference/contract-event-subscriber/stop-listen/index.html",
-    "to": "/docs/gaming/unity-sdk/reference/"
+    "to": "/docs/gaming/unity-sdk/reference/#stoplisten"
   },
   {
     "from": "docs/game/unreal/about-unreal/index.html",
@@ -719,25 +715,208 @@
     "from": "docs/learn/tutorials/erigon-bsc-tutorial/erigon-bsc/index.html",
     "to": "/docs/learn/overview/"
   },
-
   {
     "from": "docs/learn/tutorials/connect-web3py/index.html",
     "to": "/docs/learn/overview/"
   },
   {
     "from": "docs/learn/extra/ankr-vision/index.html",
-    "to": "docs/learn/overview/"
+    "to": "/docs/learn/overview/"
   },
   {
     "from": "docs/learn/extra/51-attacks/index.html",
-    "to": "docs/learn/overview/"
+    "to": "/docs/learn/overview/"
   },
   {
     "from": "docs/example/index.html",
     "to": "https://example.com/"
   },
   {
-    "from": "docs/example/index.html",
-    "to": "/docs/example/"
+    "from": "docs/build/pricing/index.html",
+    "to": "/docs/rpc-service/pricing-plans/"
+  },
+  {
+    "from": "docs/build/products/rpc-service/overview/index.html",
+    "to": "/docs/rpc-service/overview/"
+  },
+  {
+    "from": "docs/build/products/rpc-service/premium-account-operations/index.html",
+    "to": "/docs/rpc-service/premium-account-operations/"
+  },
+  {
+    "from": "docs/build/products/rpc-service/blockchain-interactions/index.html",
+    "to": "/docs/rpc-service/blockchain-interactions/"
+  },
+  {
+    "from": "docs/build/products/rpc-service/hybrid-infrastructure/index.html",
+    "to": "/docs/rpc-service/hybrid-infrastructure/"
+  },
+  {
+    "from": "docs/build/products/rpc-service/pricing-plans/index.html",
+    "to": "/docs/rpc-service/pricing-plans/"
+  },
+  {
+    "from": "docs/build/products/rpc-service/card-flow/index.html",
+    "to": "/docs/rpc-service/card-flow/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/overview/index.html",
+    "to": "/docs/advanced-api/overview/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/nft-methods/index.html",
+    "to": "/docs/advanced-api/nft-methods/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/query-methods/index.html",
+    "to": "/docs/advanced-api/query-methods/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/token-methods/index.html",
+    "to": "/docs/advanced-api/token-methods/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/javascript-sdk/index.html",
+    "to": "/docs/advanced-api/javascript-sdk/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/python-sdk/index.html",
+    "to": "/docs/advanced-api/python-sdk/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/react-hooks/index.html",
+    "to": "/docs/advanced-api/react-hooks/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/overview/index.html",
+    "to": "/docs/advanced-api/build-with-advanced-apis/overview/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/fetch-nfts-owned-by-wallet-address-ankrjs/index.html",
+    "to": "/docs/advanced-api/build-with-advanced-apis/fetch-nfts-owned-by-wallet-address-ankrjs/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/check-account-balance-ankrjs/index.html",
+    "to": "/docs/advanced-api/build-with-advanced-apis/check-account-balance-ankrjs/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/Ankrjs-Advanced-APIs-Nodejs-Quickstart-Guide/index.html",
+    "to": "/docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-Nodejs-Quickstart-Guide/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/Ankrjs-Advanced-APIs-React-Quickstart-Guide/index.html",
+    "to": "/docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-React-Quickstart-Guide/"
+  },
+  {
+    "from": "docs/build/products/advanced-api-sdk/build-with-advanced-apis/defidashboard-ankrjs/index.html",
+    "to": "/docs/advanced-api/build-with-advanced-apis/defidashboard-ankrjs/"
+  },
+  {
+    "from": "docs/build/chains/arbitrum/index.html",
+    "to": "/docs/rpc-service/chains/arbitrum/"
+  },
+  {
+    "from": "docs/build/chains/avalanche/index.html",
+    "to": "/docs/rpc-service/chains/avalanche/"
+  },
+  {
+    "from": "docs/build/chains/binance-smart-chain/index.html",
+    "to": "/docs/rpc-service/chains/binance-smart-chain/"
+  },
+  {
+    "from": "docs/build/chains/celo/index.html",
+    "to": "/docs/rpc-service/chains/celo/"
+  },
+  {
+    "from": "docs/build/chains/ethereum/overview/index.html",
+    "to": "/docs/rpc-service/chains/ethereum/overview/"
+  },
+  {
+    "from": "docs/build/chains/ethereum/how-to/connect-metamask/index.html",
+    "to": "/docs/rpc-service/chains/ethereum/how-to/connect-metamask/"
+  },
+  {
+    "from": "docs/build/chains/ethereum/how-to/make-requests/index.html",
+    "to": "/docs/rpc-service/chains/ethereum/how-to/make-requests/"
+  },
+  {
+    "from": "docs/build/chains/ethereum/how-to/send-transaction/index.html",
+    "to": "/docs/rpc-service/chains/ethereum/how-to/send-transaction/"
+  },
+  {
+    "from": "docs/build/chains/ethereum/how-to/basic-dapp/index.html",
+    "to": "/docs/rpc-service/chains/ethereum/how-to/basic-dapp/"
+  },
+  {
+    "from": "docs/build/chains/fantom/index.html",
+    "to": "/docs/rpc-service/chains/fantom/"
+  },
+  {
+    "from": "docs/build/chains/gnosis/index.html",
+    "to": "/docs/rpc-service/chains/gnosis/"
+  },
+  {
+    "from": "docs/build/chains/harmony/index.html",
+    "to": "/docs/rpc-service/chains/harmony/"
+  },
+  {
+    "from": "docs/build/chains/iotex/index.html",
+    "to": "/docs/rpc-service/chains/iotex/"
+  },
+  {
+    "from": "docs/build/chains/moonbeam/index.html",
+    "to": "/docs/rpc-service/chains/moonbeam/"
+  },
+  {
+    "from": "docs/build/chains/near/index.html",
+    "to": "/docs/rpc-service/chains/near/"
+  },
+  {
+    "from": "docs/build/chains/nervos/index.html",
+    "to": "/docs/rpc-service/chains/nervos/"
+  },
+  {
+    "from": "docs/build/chains/polygon/index.html",
+    "to": "/docs/rpc-service/chains/polygon/"
+  },
+  {
+    "from": "docs/build/chains/solana/index.html",
+    "to": "/docs/rpc-service/chains/solana/"
+  },
+  {
+    "from": "docs/build/chains/syscoin/index.html",
+    "to": "/docs/rpc-service/chains/syscoin/"
+  },
+  {
+    "from": "docs/build/overview/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/build/products/ankr-scan/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/overview/index.html",
+    "to": "/docs/advanced-api/quickstart/overview/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/fetch-nfts-owned-by-wallet-address-ankrjs/index.html",
+    "to": "/docs/advanced-api/quickstart/fetch-nfts-ankrjs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/check-account-balance-ankrjs/index.html",
+    "to": "/docs/advanced-api/quickstart/account-balance-ankrjs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-Nodejs-Quickstart-Guide/index.html",
+    "to": "/docs/advanced-api/quickstart/aapi-on-nodejs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-React-Quickstart-Guide/index.html",
+    "to": "/docs/advanced-api/quickstart/aapi-react-app/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/defidashboard-ankrjs/index.html",
+    "to": "/docs/advanced-api/quickstart/defi-dashboard-ankrjs/"
   }
 ]
