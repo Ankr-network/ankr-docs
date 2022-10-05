@@ -3,9 +3,10 @@ import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
-# How to check your Account Balance across Multiple Blockchains using Ankrjs
+# Query Account Balance across Multiple Blockchains using AnkrJS
 
-Fetch Account Balance across Multiple Blockchains such as:
+Fetch account balance across multiple blockchains:
+
 - ETH
 - Polygon
 - BSC
@@ -13,9 +14,9 @@ Fetch Account Balance across Multiple Blockchains such as:
 - Avalanche
 - Arbitrum 
 - Syscoin 
-- and Optimism.
+- Optimism.
 
-In this tutorial, we’ll be fetching the account balances from multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Ankr's Advanced Multichain APIs](https://www.ankr.com/advanced-api/)↗.
+In this tutorial, we’ll be fetching the account balances from multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Advanced APIs](https://www.ankr.com/advanced-api/)↗.
 
 ## Getting Started
 
@@ -66,7 +67,7 @@ const provider = new AnkrscanProvider('');
 To interact with Ankr's Advanced APIs, we have created a provider instance that will serve as an interface to the APIs required to fetch data.
 
 
-### Step 3: Create Function to Fetch Total Balance
+### Step 3: Creating Function to Fetch Total Balance
 
 In this step, we will first create a `getAccountBalance` function in the `./apis.ts` file, which will accept a `walletAddress`, and return the coin and the respective token balance. Here we are going to utilize the [getAccountBalance](https://documenter.getpostman.com/view/19024547/UVsEVUGQ#74b5cc68-fba2-415c-a53b-28c08818f970)↗ method provided by Ankr.js. 
 

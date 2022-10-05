@@ -6,5 +6,5 @@
   "javascript-sdk": "AnkrJS SDK",
   "python-sdk": "AnkrPY SDK",
   "react-hooks": "Ankr React Hooks",
-  "build-with-advanced-apis": "Quick Start Guide"
+  "quickstart": "Quick Start Guide"
 }
