@@ -3,18 +3,17 @@ import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
-# Ankr.js (Advanced APIs) Node.js Quickstart Guide
-Learn How To Get Started With Ankr's Advanced APIs On A Node.js Server Using Our JavaScript SDK
+# Query Advanced APIs on NodeJS Server using AnkrJS SDK
 
-[Ankr.js](https://github.com/ankr-network/ankr.js) is a JavaScript library that lets you interact with [Ankr's Advanced APIs](https://www.ankr.com/advanced-api/). In this guide, you'll learn how to create a Node.js script that logs out a list of all the NFTs owned by an account and a given account's ERC20 token balances.
+[Ankr.js](https://github.com/ankr-network/ankr.js) is a JavaScript library that lets you interact with [Advanced APIs](https://www.ankr.com/advanced-api/). In this guide, you'll learn how to create a Node.js script that logs out a list of all the NFTs owned by an account and a given account's ERC20 token balances.
 
 - [Node.js](https://nodejs.org/en/) as our script runner
-- Ankr.js to interact with Ankr's Advanced APIs
-- Ankr's Advanced APIs as the data source
+- AnkrJS SDK to interact with Advanced APIs
+- Advanced APIs as the data source
 
-**Prerequisite:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/)↗ and [Yarn](https://yarnpkg.com/)↗ installed on your machine.
+**Prerequisites:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/)↗ and [Yarn](https://yarnpkg.com/)↗ installed on your machine.
 
-## Step 1: Set Up Your Node.js Project
+## Step 1: Setting Up Your Node.js Project
 Navigate into a directory of your choice and run the following commands in your terminal to set up a new Node.js project:
 
 ```bash
@@ -75,7 +74,7 @@ yarn dev
 <img src="/docs/build/Node01.png" alt="API" class="responsive-pic"  />
 
 
-## Step 2: Install And Set Up Ankr.js
+## Step 2: Installing And Setting Up Ankr.js
 Next, you will install and set up Ankr.js so that you can use it to fetch all the NFTs and tokens for a given wallet address later on.
 
 Start by installing the `ankr.js` package from npm:
@@ -97,7 +96,7 @@ const provider = new AnkrscanProvider('');
 ```
 Your `provider` instance will be your interface to the Ankr Advanced APIs whenever you want to fetch some data from them.
 
-## Step 3: Create The `getNFTs` Function
+## Step 3: Creating the `getNFTs` Function
 In this step, you will create a `getNFTs` function that accepts a `walletAddress` and returns a list of NFTs owned by that address.
 
 You can utilize the `getNFTsByOwner` function provided by Ankr.js for this.
@@ -138,7 +137,7 @@ yarn dev
 ```
 <img src="/docs/build/node03.png" alt="API" class="responsive-pic"/>
 
-## Step 4: Accept the address as an input
+## Step 4: Accepting the Address as Input
 At the moment, we are passing in a hard-coded address to the `getNFTs` function. You will now let the user pass in any address from their keyboard instead.
 
 To achieve this, you can make use of the `prompts` package.
@@ -171,7 +170,7 @@ yarn dev
 <img src="/docs/build/node04.png" alt="API" class="responsive-pic"/>
 
 
-## Step 5: Create the `getAccountBalance` function
+## Step 5: Creating the `getAccountBalance` Function
 
 In this step, you will create a `getAccountBalance` function that accepts a `walletAddress` and returns a list of ERC20 tokens owned by that address and their balances.
 
@@ -198,7 +197,7 @@ export const getAccountBalance = async (walletAddress: string) => {
 };
 ```
 
-## Step 6: Use getAccountBalance in your script
+## Step 6: Using `getAccountBalance` in Script
 
 In this step, you will accept an address as input and pass it into `getAccountBalance` to display results for the given address just like you did with `getNFTs`.
 

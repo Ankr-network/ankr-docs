@@ -3,11 +3,11 @@ import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
-# Create a “What’s in Your Wallet?” dApp using Ankr’s Multichain Advanced APIs
+# DeFi-Dashboard dApp using Advanced APIs
 
 In this tutorial, we’ll be building a "What's in Your Wallet?" dApp where users can check their net worth, credits in native balance by chain, and NFTs they hold on multiple blockchains such as Ethereum, Polygon and Fantom (to name a few) using [Ankr's Advanced Multichain APIs](https://www.ankr.com/advanced-api/)↗. 
 
-## Ankr Advanced APIs
+## Advanced APIs
 
 Ankr's Advanced Multichain APIs are the collection of RPC methods created to simplify querying blockchain data. These APIs does all the heavy lifting for us so that we can query on-chain data in a matter of seconds.
 
@@ -22,11 +22,11 @@ Currently, it support eight EVM compatible chains:
 - Syscoin 
 - and Optimism, with more EVM and non-EVM chains coming soon.
 
-To interact with Ankr's Advanced APIs, we are going to use a JavaScript library named [Ankr.js](https://www.npmjs.com/package/@ankr.com/ankr.js)↗. Here's the tech stack for this guide:
+To interact with Advanced APIs, we are going to use a JavaScript library named [Ankr.js](https://www.npmjs.com/package/@ankr.com/ankr.js)↗. Here's the tech stack for this guide:
 
 - Vite.js 
 - [TailwindCSS](https://tailwindcss.com/docs/guides/vite)↗ as CSS framework (follow their official guide to set it up)
-- Ankr's Advanced APIs for querying blockchain data
+- Advanced APIs for querying blockchain data
 
 Here's what you'll be able to build by the end of this tutorial:
 <br></br>

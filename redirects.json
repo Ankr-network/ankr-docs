@@ -894,5 +894,29 @@
   {
     "from": "docs/build/products/ankr-scan/index.html",
     "to": "/docs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/overview/index.html",
+    "to": "/docs/advanced-api/quickstart/overview/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/fetch-nfts-owned-by-wallet-address-ankrjs/index.html",
+    "to": "/docs/advanced-api/quickstart/fetch-nfts-ankrjs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/check-account-balance-ankrjs/index.html",
+    "to": "/docs/advanced-api/quickstart/account-balance-ankrjs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-Nodejs-Quickstart-Guide/index.html",
+    "to": "/docs/advanced-api/quickstart/aapi-on-nodejs/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/Ankrjs-Advanced-APIs-React-Quickstart-Guide/index.html",
+    "to": "/docs/advanced-api/quickstart/aapi-react-app/"
+  },
+  {
+    "from": "docs/advanced-api/build-with-advanced-apis/defidashboard-ankrjs/index.html",
+    "to": "/docs/advanced-api/quickstart/defi-dashboard-ankrjs/"
   }
 ]

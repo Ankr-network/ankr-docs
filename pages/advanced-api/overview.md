@@ -3,13 +3,11 @@ import { Bleed } from "nextra-theme-docs";
 import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
-# Advanced APIs
+# Advanced APIs Overview
 
 <Callout>
 Advanced APIs is a unique feature that comes along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
 </Callout>
-
-## Overview
 
 *Advanced APIs* is a specifically-tailored collection of JSON-RPC API endpoints built to support the most popular Web3 scenarios on multiple chains at almost instant speeds. We believe it to become a single point of reference for the multi-chain requests.
 
