@@ -24,7 +24,7 @@ The requirements when unstaking are:
 
 ## Fees
 
-* Ankr takes 5% of the Liquid Staking rewards as a base fee. 
+* Ankr takes 10% of the Liquid Staking rewards as a base fee. 
 
 * When staking, the user pays the relayer fee — 0.002 BNB, which is a fee for transferring assets between BNB Chain (prev. Binance Chain) and BNB Beacon Chain (prev. Binance Chain).
 
