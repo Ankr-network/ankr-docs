@@ -21,19 +21,21 @@
     "intersection-observer": "^0.10.0",
     "markdown-to-jsx": "^6.11.4",
     "next": "^12.2.0",
+    "next-images": "^1.8.4",
     "nextra": "^2.0.0-beta.25",
     "nextra-theme-docs": "^2.0.0-beta.25",
     "prism-react-renderer": "^1.3.5",
     "prismjs": "^1.29.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-gtm-module": "^2.0.11",
     "react-intersection-observer": "^8.26.2",
-    "react-router-dom": "^6.3.0",
-    "react-gtm-module": "^2.0.11"
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@heroicons/react": "^1.0.6",
     "autoprefixer": "^10.4.2",
+    "next-compose-plugins": "^2.2.1",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.16"
   },
