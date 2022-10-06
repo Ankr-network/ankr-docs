@@ -29,7 +29,7 @@ eth_block = ankr_w3.eth.get_block("latest")
 bsc_block = ankr_w3.bsc.get_block("latest")
 polygon_block = ankr_w3.polygon.get_block("latest")
 ```
-  * Ankr NFT API
+  * NFT API
 
 ```python
 from ankr.types import Blockchain
@@ -44,7 +44,7 @@ nfts = ankr_w3.nft.get_nfts(
 )
 ```
 
-  * Ankr Token API
+  * Token API
 
 ```python
 assets = ankr_w3.token.get_account_balance(
@@ -52,7 +52,7 @@ assets = ankr_w3.token.get_account_balance(
 )
 ```
 
-  * Ankr Query API
+  * Query API
 
 ```python
 logs = ankr_w3.query.get_logs(
@@ -70,7 +70,7 @@ logs = ankr_w3.query.get_logs(
 
 ## Chains supported
 
-Currently, `ankr.js` supports interaction with the following chains using their aliases:
+Currently, `ankr.py` supports interaction with the following chains using their aliases:
 
   * Ethereum: `eth`
   * BSC: `bsc`

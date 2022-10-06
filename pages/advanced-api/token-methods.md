@@ -10,7 +10,7 @@ Token API uses only official on-chain data, leaving third parties behind. Ankr c
 
 > `ankr_getAccountBalance` — Retrieves account balance.
 
-Retrieves all the balance data of the account specified by request body parameters.
+Retrieves a complete set of balance data for the account specified by request body parameters.
 
 ### Request
 
@@ -67,11 +67,11 @@ X-API-KEY: {{KEY}}
 
 ### Response
 
-Returns all the balance data for the account specified in request body parameters.
+Returns a complete set of balance data for the account specified in request body parameters.
 
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getAccountBalance).
 
 ### Code Examples
 
@@ -83,7 +83,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
-    "method": "ankr_getAccountBalances",
+    "method": "ankr_getAccountBalance",
     "params": {
         "blockchain": "eth",
         "walletAddress": "0xfa9019df60d3c710d7d583b2d69e18d412257617"
@@ -210,7 +210,7 @@ Code: 200 OK
 
 > `ankr_getCurrencies` — Retrieves the blockchain's currencies.
 
-Retrieves a list of supported currencies for a given blockchain.
+Retrieves a list of all the currencies used in transactions on a blockchain specified.
 
 ### Request
 
@@ -259,7 +259,7 @@ Returns the currencies and their metadata for the blockchain specified by reques
 
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getCurrencies).
 
 ### Code Examples
 
@@ -404,7 +404,7 @@ Code: 200 OK
 
 > `ankr_getTokenPrice` — Retrieves token price.
 
-Retrieves a price of the token specified by request body parameters.
+Retrieves a USD price of the token specified.
 
 ### Request
 
@@ -451,11 +451,11 @@ X-API-KEY: {{KEY}}
 
 ### Response
 
-A successful request returns a USD price for the token specified by request body parameters.
+Returns a USD price of the token specified by request body parameters.
 
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTokenPrice).
 
 ### Code Examples
 
@@ -469,7 +469,8 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
     "jsonrpc": "2.0",
     "method": "ankr_getTokenPrice",
     "params": {
-        "blockchain": "eth"
+        "blockchain": "eth",
+        "contractAddress": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4"
     },
     "id": 1
 }'
@@ -507,8 +508,9 @@ Code: 200 OK
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "usdPrice": "1700.706696318613574431",
-        "blockchain": "eth"
+        "usdPrice": "0.031240514621682378",
+        "blockchain": "eth",
+        "contractAddress": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4"
     }
 }
 ```
@@ -521,7 +523,7 @@ Code: 200 OK
 
 > `ankr_getTokenHolders` — Retrieves data on token holders. 
 
-Retrieves holders and the associated metadata for the tokens specified by request body parameters.
+Retrieves holders and the associated metadata of the tokens specified.
 
 ### Request
 
@@ -536,7 +538,7 @@ Build your request using the parameters below.
 
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
   * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
-  * `pageSize` (string): a number of results you'd like to get.
+  * `pageSize` (int32): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
 <Tabs
@@ -563,7 +565,7 @@ Build your request using the parameters below.
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
@@ -572,11 +574,11 @@ X-API-KEY: {{KEY}}
 
 ### Response
 
-Returns holders, holders number, and holders metadata for the tokens specified by request body parameters.
+Returns holders, holders number, and holders metadata of the tokens specified by request body parameters.
 
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTokenHolders).
 
 ### Code Examples
 
@@ -714,7 +716,7 @@ Build your request using the parameters below.
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
@@ -723,9 +725,11 @@ X-API-KEY: {{KEY}}
 
 ### Response
 
+Returns the number of holders for the tokens specified by request body parameters.
+
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTokenHoldersCount).
 
 ### Code Examples
 
