@@ -27,19 +27,19 @@ You can set up your **MetaMask wallet** to connect to Gnosis RPC. You can then p
 2. Select '_**Custom RPC**_'
 3. Enter the settings below:
 
-|   Chain   | Custom RPC Category |                                    Details                                    |
-| :-------: | :-----------------: | :---------------------------------------------------------------------------: |
-| Gnosis |    NETWORK NAME:    |                                 Gnosis RPC                                 |
-|           |     NEW RPC URL:    |        [https://rpc.ankr.com/gnosis](https://rpc.ankr.com/gnosis)       |
-|           |      CHAIN ID:      |                                     0x64                                    |
-|           |       SYMBOL:       |                                      xDai                                     |
-|           |   BLOCK EXPLORER:   | [https://blockscout.com/xdai/mainnet/](https://blockscout.com/xdai/mainnet/) |
+| Chain    | Custom RPC Category   |                              Details                                         |
+|:--------:|:---------------------:|:----------------------------------------------------------------------------:|
+|  Gnosis  |     NETWORK NAME:     |                                  Gnosis RPC                                  |
+|          |     NEW RPC URL:      |          [https://rpc.ankr.com/gnosis](https://rpc.ankr.com/gnosis)          |
+|          |       CHAIN ID:       |                                     0x64                                     |
+|          |        SYMBOL:        |                                     xDai                                     |
+|          |    BLOCK EXPLORER:    | [https://blockscout.com/xdai/mainnet/](https://blockscout.com/xdai/mainnet/) |
 
 
 ## Integrate code
 
 <Callout>
-**Gnosis** supports [standard JSON RPC calls](https://www.ankr.com/docs/build-blockchain/guides/json-methods)
+**Gnosis** supports standard JSON RPC calls.
 </Callout>
 
 ## Gnosis

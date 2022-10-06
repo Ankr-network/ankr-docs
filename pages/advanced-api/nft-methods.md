@@ -82,7 +82,7 @@ x-api-key: {{KEY}}
 
 ### Response
 
-The response contains all the NFTs that belong to the account address specified by request parameters.
+Returns all the NFTs that belong to the account address specified by request body parameters.
 
 #### Parameters
 
