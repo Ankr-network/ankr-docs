@@ -5,7 +5,7 @@ Here are the fees applied during staking and unstaking process.
 
 ## Staking
 * AVAX — 2% fee from the staking reward.
-* BNB — relayer fee for cross-chain asset transfer (0.002 BNB).
+* BNB — 10% of the Liquid Staking rewards as a base fee; a relayer fee is taken when staking for cross-chain asset transfer (0.002 BNB).
 * DOT — 2% fee from the staking reward.
 * FTM — no fees.
 * KSM — no fees.
