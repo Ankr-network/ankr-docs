@@ -14,7 +14,7 @@ After the locking period of 84–91 days, which begins after you stake, you’ll
 
 ### How long does it take to unstake my ANKR?
 The unstaking process takes two steps: 
-1. Undelegate period that lasts one next epoch, which is one next week after your unstaking operation. So, it can taken take 7-14 days, e.g. 14 days if you unstake on Monday, 13 — on Tuesday, and so on. 
+1. Undelegate period that lasts one next epoch, which is one next week after your unstaking operation. So, it can taken take 7–14 days, e.g. 14 days if you unstake on Monday, 13 — on Tuesday, and so on. 
 2. Once the undelegate period has ended, you can claim your unstaked ANKR.
 
 ### What if I want to stake more after already staking some ANKR?
