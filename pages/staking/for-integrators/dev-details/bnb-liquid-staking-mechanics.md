@@ -19,7 +19,7 @@ The requirements when unstaking are:
 
 * Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for aBNBc.
 
-* Unbond time (before user gets their unstaked funds) — 7-14 days.
+* Unbond time (before user gets their unstaked funds) — 7–10 days.
 
 
 ## Fees

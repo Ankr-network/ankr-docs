@@ -17,7 +17,7 @@ Advanced APIs optimize, index, cache, and store blockchain data to make it acces
 
 ## Chains Supported
 
-Currently, Ankr supports the following EVM-compatible chains:
+Currently, Advanced APIs work with the following EVM-compatible chains:
 
   * Ethereum
   * Fantom
@@ -42,29 +42,30 @@ Check out the latest Advanced APIs collections for various Web3 scenarios:
 
 ### NFT APIs
 
-[_NFT API Methods_](/build/products/advanced-api-sdk/nft-methods/) serve to request NFT-related data across multiple chains:
+[_NFT API Methods_](/advanced-api/nft-methods/) serve to request NFT-related data across multiple chains:
 
-  * [`ankr_getNFTsByOwner`](/build/products/advanced-api-sdk/nft-methods/#get-nfts-by-owner) — retrieves an account-associated NFTs.
-  * [`ankr_getNFTMetadata`](/build/products/advanced-api-sdk/nft-methods/#get-nft-metadata) — retrieves metadata of a particular NFT.
-  * [`ankr_getNFTHolders`](/build/products/advanced-api-sdk/nft-methods/#get-nft-holders) — retrieves holders of a particular NFT.
+  * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#get-nfts-by-owner) — retrieves an account-associated NFTs.
+  * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#get-nft-metadata) — retrieves metadata of a particular NFT.
+  * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#get-nft-holders) — retrieves holders of a particular NFT.
 
 ### Query APIs
 
-[_Query API Methods_](/build/products/advanced-api-sdk/query-methods/) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
+[_Query API Methods_](/advanced-api/query-methods/) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
 
-  * [`ankr_getBlocks`](/build/products/advanced-api-sdk/query-methods/#get-blocks) — retrieves full info of a particular block.
-  * [`ankr_getLogs`](/build/products/advanced-api-sdk/query-methods/#get-logs) — retrieves history data of a particular block range.
-  * [`ankr_getTransactionsByHash`](/build/products/advanced-api-sdk/query-methods/#get-transactions-by-hash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getBlocks`](/advanced-api/query-methods/#get-blocks) — retrieves full info of a particular block.
+  * [`ankr_getLogs`](/advanced-api/query-methods/#get-logs) — retrieves history data of a particular block range.
+  * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#get-transactions-by-hash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getInteractions`](/advanced-api/query-methods/#get-interactions) — retrieves blockchains interacted with a particular wallet.
 
 ### Token APIs
 
-[_Token API Methods_](/build/products/advanced-api-sdk/token-methods/) serve to request token-related data across multiple chains:
+[_Token API Methods_](/advanced-api/token-methods/) serve to request token-related data across multiple chains:
 
-  * [`ankr_getAccountBalances`](/build/products/advanced-api-sdk/token-methods/#get-account-balances) — retrieves the balance of a particular account.
-  * [`ankr_getCurrencies`](/build/products/advanced-api-sdk/token-methods/#get-currencies) — retrieves info on currencies available for a particular blockchain.
-  * [`ankr_getTokenPrice`](/build/products/advanced-api-sdk/token-methods/#get-token-price) — retrieves the price of a particular token.
-  * [`ankr_getTokenHolders`](/build/products/advanced-api-sdk/token-methods/#get-token-holders) — retrieves info on holders of a particular token.
-  * [`ankr_getTokenHoldersCount`](/build/products/advanced-api-sdk/token-methods/#get-token-holders-count) — retrieves the number of token holders.
+  * [`ankr_getAccountBalance`](/advanced-api/token-methods/#get-account-balance) — retrieves the balance of a particular account.
+  * [`ankr_getCurrencies`](/advanced-api/token-methods/#get-currencies) — retrieves info on currencies available for a particular blockchain.
+  * [`ankr_getTokenPrice`](/advanced-api/token-methods/#get-token-price) — retrieves the price of a particular token.
+  * [`ankr_getTokenHolders`](/advanced-api/token-methods/#get-token-holders) — retrieves info on holders of a particular token.
+  * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#get-token-holders-count) — retrieves the number of token holders.
 
 ## Advanced APIs PAYG Pricing
 
@@ -73,19 +74,20 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 > Our PAYG pricing model:  
 > 0.10 USD = 1M API Credits  
 
-| API Collection | Method                       | API Credits | USD/request  |
-|----------------|------------------------------|-------------|--------------|
-| NFT API        | `ankr_getNFTsByOwner`        | 700         | $0.00007     |
-|                | `ankr_getNFTMetadata`        | 700         | $0.00007     |
-|                | `ankr_getNFTHolders`         | 700         | $0.00007     |
-| Query API      | `ankr_getBlocks`             | 700         | $0.00007     |
-|                | `ankr_getLogs`               | 700         | $0.00007     |
-|                | `ankr_getTransactionsByHash` | 700         | $0.00007     |
-| Token API      | `ankr_getAccountBalances`    | 700         | $0.00007     |
-|                | `ankr_getCurrencies`         | 700         | $0.00007     |
-|                | `ankr_getTokenPrice`         | 700         | $0.00007     |
-|                | `ankr_getTokenHolders`       | 700         | $0.00007     |
-|                | `ankr_getTokenHoldersCount`  | 700         | $0.00007     |
+| API Collection | Method                       | API Credits | USD/request |
+|----------------|------------------------------|-------------|-------------|
+| NFT API        | `ankr_getNFTsByOwner`        | 700         | $0.00007    |
+|                | `ankr_getNFTMetadata`        | 700         | $0.00007    |
+|                | `ankr_getNFTHolders`         | 700         | $0.00007    |
+| Query API      | `ankr_getBlocks`             | 700         | $0.00007    |
+|                | `ankr_getLogs`               | 700         | $0.00007    |
+|                | `ankr_getTransactionsByHash` | 700         | $0.00007    |
+|                | `ankr_getInteractions`       | 700         | $0.00007    |
+| Token API      | `ankr_getAccountBalances`    | 700         | $0.00007    |
+|                | `ankr_getCurrencies`         | 700         | $0.00007    |
+|                | `ankr_getTokenPrice`         | 700         | $0.00007    |
+|                | `ankr_getTokenHolders`       | 700         | $0.00007    |
+|                | `ankr_getTokenHoldersCount`  | 700         | $0.00007    |
 
 ### Support and Developer Community
 

@@ -2,14 +2,14 @@ import { Callout } from "nextra-theme-docs";
 
 ## Overview
 
-If you decide to unstake, it can take up to 7-14 days before you receive your funds.
+If you decide to unstake, it can take up to 7–10 days before you receive your funds.
 
 ## Unstake BNB
 
 <Callout type="warning" emoji="❗">
 Release time and fees
 
-When you unstake, you have to wait for 7–14 days until your funds are released to your wallet.
+When you unstake, you have to wait for 7–10 days until your funds are released to your wallet.
 
 This is because of the BNB Chain restriction, where the processing time of an unstaking transaction is 7 days.
 
