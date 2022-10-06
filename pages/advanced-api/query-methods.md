@@ -10,7 +10,7 @@ Query API serves to request info on the ranges of blocks (max range is 100) for 
 
 > `ankr_getBlocks` — Retrieves the blocks' data.
 
-Retrieves complete information for the block specified by request parameters.
+Retrieves complete information for the block specified.
 
 ### Request
 
@@ -69,7 +69,7 @@ x-api-key: {{KEY}}
 
 ### Response
 
-A successful request returns complete information for the block specified by request parameters.
+Returns complete information for the block specified by request parameters.
 
 #### Parameters
 
@@ -119,102 +119,27 @@ Code: 200 OK
   "result": {
     "blocks": [
       {
-        "blockchain": "string",
-        "difficulty": "string",
-        "extraData": "string",
-        "gasLimit": "string",
-        "gasUsed": "string",
-        "hash": "string",
-        "logsBloom": "string",
-        "miner": "string",
-        "mixHash": "string",
-        "nonce": "string",
-        "number": "string",
-        "parentHash": "string",
-        "receiptsRoot": "string",
-        "sha3Uncles": "string",
-        "size": "string",
-        "stateRoot": "string",
-        "timestamp": "string",
-        "totalDifficulty": "string",
-        "transactions": [
-          {
-            "blockHash": "string",
-            "blockNumber": "string",
-            "blockchain": "string",
-            "contractAddress": "string",
-            "cumulativeGasUsed": "string",
-            "from": "string",
-            "gas": "string",
-            "gasPrice": "string",
-            "gasUsed": "string",
-            "hash": "string",
-            "input": "string",
-            "logs": [
-              {
-                "address": "string",
-                "blockHash": "string",
-                "blockNumber": "string",
-                "data": "string",
-                "event": {
-                  "anonymous": true,
-                  "id": "string",
-                  "inputs": [
-                    {
-                      "indexed": true,
-                      "name": "string",
-                      "size": 0,
-                      "type": "string",
-                      "valueDecoded": "string"
-                    }
-                  ],
-                  "name": "string",
-                  "signature": "string",
-                  "string": "string",
-                  "verified": true
-                },
-                "logIndex": "string",
-                "removed": true,
-                "topics": [
-                  "string"
-                ],
-                "transactionHash": "string",
-                "transactionIndex": "string"
-              }
-            ],
-            "logsBloom": "string",
-            "method": {
-              "id": "string",
-              "inputs": [
-                {
-                  "name": "string",
-                  "size": 0,
-                  "type": "string",
-                  "valueDecoded": "string"
-                }
-              ],
-              "name": "string",
-              "signature": "string",
-              "string": "string",
-              "verified": true
-            },
+        "blockHash": "string",
+        "blockHeight": "string",
+        "blockchainLogo": "string",
+        "blockchainName": "string",
+        "details": {
+          "ethBlock": {
+            "difficulty": "string",
+            "extraData": "string",
+            "gasLimit": 0,
+            "gasUsed": 0,
+            "miner": "string",
             "nonce": "string",
-            "r": "string",
-            "s": "string",
-            "status": "string",
-            "timestamp": "string",
-            "to": "string",
-            "transactionHash": "string",
-            "transactionIndex": "string",
-            "type": "string",
-            "v": "string",
-            "value": "string"
+            "sha3Uncles": "string",
+            "size": "string",
+            "stateRoot": "string",
+            "totalDifficulty": "string"
           }
-        ],
-        "transactionsRoot": "string",
-        "uncles": [
-          "string"
-        ]
+        },
+        "parentHash": "string",
+        "timestamp": "string",
+        "transactionsCount": 0
       }
     ]
   }
@@ -345,6 +270,8 @@ X-API-KEY: {{KEY}}
 
 ### Response
 
+Returns history data for the blocks specified by request body parameters.
+
 #### Parameters
 
 See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getLogs).
@@ -356,6 +283,7 @@ See the response parameters' data model in [Swagger](https://sanjose.api.ankrsca
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
+--header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getLogs",
@@ -508,6 +436,10 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
+  * `blockchain` (string): a chain or a combination of chains to query:
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+    * Chains combination: `[eth, polygon, bsc]`.
+    * All chains: leave the value empty to query all the chains available.
   * `transactionHash` (string): a hash of the transactions you'd like to request the details for.
   * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
   * `decodeTxData` (boolean): set to `true` to decode transaction data, or to `false` if not interested in it.
@@ -549,11 +481,11 @@ X-API-KEY: {{KEY}}
 
 ### Response
 
-Returns all transactions' metadata for the hash specified in request body. 
+Returns all transactions' metadata for the hash specified in request body parameters. 
 
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTransactionsByHash).
 
 ### Code Examples
 
@@ -562,6 +494,7 @@ See the response parameters' data model in Swagger.
 ```shell
 curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
+--header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getTransactionsByHash",
@@ -959,7 +892,7 @@ Returns the list of blockchains interacted with the address specified in request
 
 #### Parameters
 
-See the response parameters' data model in Swagger.
+See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getInteractions).
 
 ### Code Examples
 
