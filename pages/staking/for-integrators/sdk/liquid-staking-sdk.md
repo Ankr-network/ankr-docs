@@ -2,7 +2,7 @@ import { Callout } from "nextra-theme-docs";
 
 # Liquid Staking SDK
 
-Integrating with Ankr Liquid Staking on Avalanche has become easier. 
+Integrating with Ankr Liquid Staking has become easier. 
 
 Now you can skip the complications of Solidity and learning how to send direct calls to Liquid Staking smart contracts. 
 Instead, use Liquid Staking SDK — an npm package with compound and comprehensible JS methods that take care of the low-level logic for you.

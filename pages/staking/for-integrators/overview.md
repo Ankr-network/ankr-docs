@@ -11,10 +11,10 @@ Ank Staking features several products:
 To better understand how Ankr Staking products work under the hood, integrating with them, read:
 * [Avalanche staking mechanics](/staking/for-integrators/dev-details/avax-liquid-staking-mechanics/)
 * [Binance staking mechanics](/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/)
-* [Polkadot staking mechanics](/staking/for-integrators/dev-details/dot-liquid-staking-mechanics/)
 * [Ethereum staking mechanics](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/)
 * [Fantom staking mechanics](/staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/)
 * [Kusama staking mechanics](/staking/for-integrators/dev-details/ksm-liquid-staking-mechanics/)
+* [Polkadot staking mechanics](/staking/for-integrators/dev-details/dot-liquid-staking-mechanics/)
 * [Polygon staking mechanics](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/)
 * [Ankr Bridge mechanics](/staking/for-integrators/dev-details/bridge-mechanics/)
 * [Ankr Switch mechanics](/staking/for-integrators/dev-details/switch-mechanics/)
