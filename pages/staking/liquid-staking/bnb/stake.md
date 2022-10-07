@@ -42,21 +42,17 @@ You will need to make the following interactions in your wallet:
 
 ## Stake your BNB
 
-<Callout>
+<Callout type="info" emoji="ℹ">
 A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why you see 0.502: the min amount 0.5 + the fee.
 </Callout>
 
-1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 
-
-2. Locate the **Binance (BNB)** box and click *Stake* in it.
-
-3. Enter the desired amount of BNB to stake, choose the token, and click *Get aBNBb* or *Get aBNBc* respectively.
-
-4. Confirm the transaction in your wallet.
-
-5. Add the liquid staking token to your wallet, clicking *Add aBNBb to wallet* or *Add aBNBb to wallet* respectively.
-
-6. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
+3. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 
+4. Locate the **Binance (BNB)** box and click *Stake* in it.
+5. If you have a referral code from a partner and you never owned Ankr Liquid Staking tokens, check "**I have partner code**" and enter their referral code making your first staking transaction.
+6. Enter the desired amount of BNB to stake, choose the token, and click *Get aBNBb* or *Get aBNBc* respectively.
+7. Confirm the transaction in your wallet.
+8. Add the liquid staking token to your wallet, clicking *Add aBNBb to wallet* or *Add aBNBb to wallet* respectively.
+9. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
 
 
 <Callout emoji="✅">
