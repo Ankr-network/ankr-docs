@@ -7,7 +7,7 @@ const withNextra = require("nextra")({
   unstable_staticImage: true,
 });
 
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
   images: {
