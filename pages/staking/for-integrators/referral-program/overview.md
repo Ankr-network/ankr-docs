@@ -47,11 +47,17 @@ If you want to integrate Ankr Liquid Staking into your web app:
 1. Drop us a line at [staking@ankr.com](mailto:staking@ankr.com).
 2. Let us guide you through the registration process.
 3. Receive integration instructions.
-4. Integrate with Ankr Liquid Staking via Liquid Staking SDK, using intructions from #3.
+4. Integrate with Ankr Liquid Staking via Liquid Staking SDK, using instructions from #3.
 5. Start attracting users and generating revenue.
 
+If you want to promote Ankr Liquite Staking on media:
+1. Drop us a line at [staking@ankr.com](mailto:staking@ankr.com).
+2. Let us guide you through the registration process.
+3. Receive your referral code.
+4. Start attracting users and generating revenue.
+
 ## Check revenue and progress on Referral Dashboard
-Once you've registered as partner, you can check your progress and claim your partner rewards from Referral Dashboard:
+Once registered as partner, you can check your progress and claim your partner rewards from Referral Dashboard:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
 2. Click **Referral Program** on the right above the dashboard.
    <img src="/docs/staking/referral-program/referral-program-button-on-staking-dashboard.jpg" alt="Referral Program button on Staking Dashboard" class="responsive-pic" width="800" />
