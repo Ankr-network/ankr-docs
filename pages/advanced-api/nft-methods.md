@@ -1,14 +1,27 @@
 import { Tabs, Tab } from "nextra-theme-docs";
+import { Callout } from "nextra-theme-docs";
 
 # NFT API
+
+<Callout>
+_NFT API_ is an Advanced APIs' collection of endpoints that comes as a unique feature along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
+</Callout>
 
 NFT API serves to request NFT-related data (owners, listings for particular wallet addresses, collections, time it's been minted, transaction history, and other metadata) across multiple EVM-compatible chains.
 
 NFT API empowers the Web3 projects integrating NFTs (virtual worlds, decentralized games, galleries, marketplaces) to instantly fetch all the necessary information across multiple blockchains in a single request.
 
-## Get NFTs by Owner
+## NFT API Endpoints Collection
 
-> `ankr_getNFTsByOwner` — Retrieves the account's NFT data.
+_NFT API Collection_ consists of the following endpoints to request NFT-related data across multiple chains:
+
+  * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#ankr_getnftsbyowner) — retrieves an account-associated NFTs.
+  * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
+  * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves holders of a particular NFT.
+
+## `ankr_getNFTsByOwner`
+
+> **Retrieves the account's NFT data.**
 
 Retrieves a list of NFTs (ERC721/ERC1155/ENS/POAP) that belong to the particular account specified.
 
@@ -319,9 +332,9 @@ Code: 200 OK
 
 ---
 
-## Get NFT Metadata
+## `ankr_getNFTMetadata`
 
-> `ankr_getNFTMetadata` — Retrieves the NFT's metadata.
+> **Retrieves the NFT's metadata.**
 
 Retrieves the metadata that belongs to a particular NFT (ERC721/ERC1155/ENS/POAP).
 
@@ -518,9 +531,9 @@ Code: 200 OK
 
 ---
 
-## Get NFT Holders
+## `ankr_getNFTHolders`
 
-> `ankr_getNFTHolders` — Retrieves the NFT's holders data.
+> **Retrieves the NFT's holders data.**
 
 Retrieves a list of holders (wallet addresses) of the NFT specified by request body parameters.
 

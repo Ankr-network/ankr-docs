@@ -1,0 +1,7 @@
+{
+  "overview": "Overview",
+  "get-blocks": "ankr_getBlocks",
+  "get-logs": "ankr_getLogs",
+  "get-transaction-by-hash": "ankr_getTransactionsByHash",
+  "get-interactions": "ankr_getInteractions"
+}

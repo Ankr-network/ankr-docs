@@ -1,0 +1,8 @@
+{
+  "overview": "Overview",
+  "get-account-balance": "ankr_getAccountBalance",
+  "get-currencies": "ankr_getCurrencies",
+  "get-token-price": "ankr_getTokenPrice",
+  "get-token-holders": "ankr_getTokenHolders",
+  "get-token-holders-count": "ankr_getTokenHoldersCount"
+}
