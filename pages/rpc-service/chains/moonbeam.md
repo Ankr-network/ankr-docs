@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 import { Tabs, Tab } from "nextra-theme-docs";
 
 # Moonbeam

@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 Let's get started with a super simple project using node and truffle. It is a good idea to start off with a local blockchain before connecting to testnets or the mainnet. This gives you the opportunity to demonstrate that everything works.
 

@@ -1,5 +1,4 @@
-import { Callout } from "nextra-theme-docs";
-
+import { Callout } from "components";
 # Delegated mGNO token staking
 
 ## Introduction

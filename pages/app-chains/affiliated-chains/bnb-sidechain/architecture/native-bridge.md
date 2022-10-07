@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 BNB Sidechain brings a native cross-chain bridge that is embedded to BNB Sidechain as a system smart contract. Here we specify interfaces for the EVM version of BNB Sidechain:
 
