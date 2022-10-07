@@ -1,4 +1,4 @@
-import { OpenUrl, Code } from "../components";
+import { OpenUrl, Code } from "components";
 
 # Welcome to Ankr Docs 👋
 
