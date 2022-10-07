@@ -1,4 +1,5 @@
 import { Callout } from "components";
+
 # Delegated mGNO token staking
 
 ## Introduction
