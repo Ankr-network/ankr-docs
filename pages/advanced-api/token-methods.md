@@ -4,16 +4,16 @@ import { Callout } from "nextra-theme-docs";
 # Token API
 
 <Callout>
-_Token API_ is an Advanced APIs' collection of endpoints that comes as a unique feature along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
+_Token API_ is an Advanced APIs' collection of methods that comes as a unique feature along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
 </Callout>
 
-Token API serves to request token-related data (account balance, supported currencies, token holders, token price, etc.) across multiple EVM-compatible chains.
+_Token API_ serves to request token-related data (account balance, supported currencies, token holders, token price, etc.) across multiple EVM-compatible chains.
 
 Token API uses only official on-chain data, leaving third parties behind. Ankr constantly scans for the on-chain transactions coming from DEXs, flagging transactions and aggregating data into accurate real-time token price feeds. This solution is crucial for the Web3 projects like marketplaces and exchanges looking for efficient ways to query accurate on-chain data for tokenized assets.
 
-## Token API Endpoints Collection
+## Token API Methods
 
-_Token API Collection_ consists of the following endpoints to request token-related data across multiple chains:
+_Token API_ consists of the following methods to request token-related data across multiple chains:
 
   * [`ankr_getAccountBalance`](/advanced-api/token-methods/#ankr_getaccountbalance) — retrieves the balance of a particular account.
   * [`ankr_getCurrencies`](/advanced-api/token-methods/#ankr_getcurrencies) — retrieves info on currencies available for a particular blockchain.

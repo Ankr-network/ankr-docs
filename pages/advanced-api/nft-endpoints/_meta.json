@@ -1,6 +1,0 @@
-{
-  "overview": "Overview",
-  "get-nfts-by-owner": "ankr_getNFTsByOwner",
-  "get-nft-metadata": "ankr_getNFTMetadata",
-  "get-nft-holders": "ankr_getNFTHolders"
-}

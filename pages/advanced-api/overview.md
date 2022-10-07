@@ -32,15 +32,15 @@ And more EVM and non-EVM chains coming soon.
 
 [//]: # (in [Postman]&#40;https://documenter.getpostman.com/view/19024547/UVsEVUGQ&#41; and look through the Advanced API docs)
 
-## API Collections Available
+## API Methods Supported
 
 Query our Advanced APIs at the following URL:
 
 > `https://rpc.ankr.com/multichain`
 
-Check out the latest Advanced APIs collections for various Web3 scenarios:
+Check out the latest Advanced APIs for various Web3 scenarios:
 
-### NFT APIs
+### NFT API
 
 [_NFT API Methods_](/advanced-api/nft-methods/) serve to request NFT-related data across multiple chains:
 
@@ -48,7 +48,7 @@ Check out the latest Advanced APIs collections for various Web3 scenarios:
   * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
   * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#ankr_getnftholders) — retrieves holders of a particular NFT.
 
-### Query APIs
+### Query API
 
 [_Query API Methods_](/advanced-api/query-methods/) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
 
@@ -57,7 +57,7 @@ Check out the latest Advanced APIs collections for various Web3 scenarios:
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
   * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
 
-### Token APIs
+### Token API
 
 [_Token API Methods_](/advanced-api/token-methods/) serve to request token-related data across multiple chains:
 

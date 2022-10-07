@@ -6,8 +6,5 @@
   "javascript-sdk": "AnkrJS SDK",
   "python-sdk": "AnkrPY SDK",
   "react-hooks": "Ankr React Hooks",
-  "quickstart": "Quick Start Guide",
-  "nft-endpoints": "NFT API",
-  "query-endpoints": "Query API",
-  "token-endpoints": "Token API"
+  "quickstart": "Quick Start Guide"
 }
