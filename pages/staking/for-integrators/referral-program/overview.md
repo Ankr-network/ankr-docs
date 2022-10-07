@@ -55,5 +55,5 @@ Once you've registered as partner, you can check your progress and claim your pa
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
 2. Click **Referral Program** on the right above the dashboard.
    <img src="/docs/staking/referral-program/referral-program-button-on-staking-dashboard.jpg" alt="Referral Program button on Staking Dashboard" class="responsive-pic" width="800" />
-3. See your referrals, staked amount, pending and claimable partner rewards, and claim history.
+3. Check your referrals, staked amount, pending and claimable partner rewards, and claim history.
    <img src="/docs/staking/referral-program/referral-dashboard.jpg" alt="Referral Dashboard" class="responsive-pic" width="800" />
