@@ -1,87 +1,53 @@
-import ChainPNG from '../assets/chain.png';
-import LampPNG from '../assets/lamp.png';
-import InfoPNG from '../assets/info.png';
-import PencilPNG from '../assets/pencil.png';
-import StopPNG from '../assets/stop.png';
-import WarningPNG from '../assets/warning.png';
+import React from 'react';
+import cn from 'clsx';
+import { useTheme } from 'next-themes';
 
-const EMOJI_MAP = {
-  chain: ChainPNG,
-  lamp: LampPNG,
-  info: InfoPNG,
-  pencil: PencilPNG,
-  stop: StopPNG,
-  warning: WarningPNG,
-}
-
-const TYPE_MAP = {
-  general: {
-    emoji: EMOJI_MAP.chain,
-    style: {
-      backgroundColor: '#FEF7EE',
-      border: '1px solid #FCEED8',
-    },
+const themes = {
+  default: {
+    light: 'bg-orange-50 text-orange-800 border-orange-100',
+    dark: 'bg-orange-400/20 text-orange-300 border-orange-400/30'
   },
-  tip: {
-    emoji: EMOJI_MAP.lamp,
-    style: {
-      backgroundColor: '#E9F3EB',
-      border: '1px solid #C9E5CD',
-    },
-  },
-  info: {
-    emoji: EMOJI_MAP.info,
-    style: {
-      backgroundColor: '#E8EFFF',
-      border: '1px solid #D7E4FF',
-    },
-  },
-  note: {
-    emoji: EMOJI_MAP.pencil,
-    style: {
-      backgroundColor: '#F6F6F7',
-      border: '1px solid #EAEAEA',
-    },
+  success: {
+    light: 'bg-green-100 text-green-800 border-green-100',
+    dark: 'bg-green-400/20 text-green-300 border-green-400/30'
   },
   error: {
-    emoji: EMOJI_MAP.stop,
-    style: {
-      backgroundColor: '#FFE8E8',
-      border: '1px solid #F9C2C2',
-    },
+    light: 'bg-red-100 text-red-900 border-red-200 ',
+    dark: 'bg-red-900/30 text-red-200 border-red-200/30'
+  },
+  info: {
+    light: 'bg-blue-100 text-blue-900 border-blue-200',
+    dark: 'bg-blue-900/30 text-blue-200 border-blue-200/30'
   },
   warning: {
-    emoji: EMOJI_MAP.warning,
-    style: {
-      backgroundColor: '#FFFDDA',
-      border: '1px solid #F5F2AD',
-    },
+    light: 'bg-yellow-50 text-yellow-900 border-yellow-100',
+    dark: 'bg-yellow-700/30 text-yellow-200 border-yellow-100/30'
   },
 }
 
-export const Callout = ({ type="general", emoji, children }) => {
-  const foundType = TYPE_MAP[type];
-
-  if (!foundType) {
-    return null;
-  }
-
+export function Callout({
+  children,
+  type = 'default',
+  emoji = '💡'
+}) {
+  const { theme } = useTheme();
   return (
-    <div style={{
-        display: 'flex',
-        gap: '8px',
-        marginTop: 24,
-        padding: 12,
-        borderRadius: 8,
-        ...foundType.style
-      }}
+    <div
+      className={cn(
+        'nextra-callout border mt-6 flex rounded-lg py-2 ltr:pr-4 rtl:pl-4',
+        'contrast-more:border-current contrast-more:dark:border-current',
+        themes[type][theme === 'light' ? 'light' : 'dark']
+      )}
     >
-      <div style={{ minWidth: 'fit-content', marginTop: 5 }}>
-        <img src={EMOJI_MAP[emoji] || foundType.emoji} alt="emoji" />
+      <div
+        className="select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2"
+        style={{
+          fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+        }}
+      >
+        {emoji}
       </div>
-      <div>
-        {children}
-      </div>
+      <div className="min-w-0">{children}</div>
     </div>
-  );
-};
+  )
+}

@@ -1,4 +1,12 @@
+@tailwind base;
 @tailwind utilities;
+@tailwind components;
+
+/* @layer base{
+  body{
+      @apply bg-green-100 text-green-900; 
+  }
+} */
 
 html {
   font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1 !important;

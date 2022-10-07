@@ -20,7 +20,7 @@ const nextConfig = {
   basePath: '/docs',
 };
 
-module.exports = withPlugins([withImages, withNextra], nextConfig);
+module.exports = withPlugins([withNextra], nextConfig);
 
 /* example of how to set up redirects
 module.exports = withNextra({

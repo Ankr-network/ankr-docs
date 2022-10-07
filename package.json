@@ -8,7 +8,8 @@
     "dev": "next -p 3016",
     "debug": "NODE_OPTIONS='--inspect' next",
     "start": "next start",
-    "build": "next build && next export"
+    "build": "next build && next export",
+    "start:css": "tailwindcss -o styles/global.css --watch"
   },
   "author": "raproid at Ankr",
   "license": "MIT",
