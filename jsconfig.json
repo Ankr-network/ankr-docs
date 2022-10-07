@@ -6,8 +6,8 @@
       "components/*": ["src/components/*"],
       "hooks": ["src/hooks"],
       "hooks/*": ["src/hooks/*"],
-      "icoins": ["src/icoins"],
-      "icoins/*": ["src/icoins/*"],
+      "icoins": ["src/icons"],
+      "icoins/*": ["src/icons/*"],
       "styles/*": ["src/styles/*"]
     }
   }
