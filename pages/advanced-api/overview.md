@@ -32,40 +32,40 @@ And more EVM and non-EVM chains coming soon.
 
 [//]: # (in [Postman]&#40;https://documenter.getpostman.com/view/19024547/UVsEVUGQ&#41; and look through the Advanced API docs)
 
-## API Collections Available
+## API Methods Supported
 
 Query our Advanced APIs at the following URL:
 
 > `https://rpc.ankr.com/multichain`
 
-Check out the latest Advanced APIs collections for various Web3 scenarios:
+Check out the latest Advanced APIs for various Web3 scenarios:
 
-### NFT APIs
+### NFT API
 
 [_NFT API Methods_](/advanced-api/nft-methods/) serve to request NFT-related data across multiple chains:
 
-  * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#get-nfts-by-owner) — retrieves an account-associated NFTs.
-  * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#get-nft-metadata) — retrieves metadata of a particular NFT.
-  * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#get-nft-holders) — retrieves holders of a particular NFT.
+  * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#ankr_getnftsbyowner) — retrieves an account-associated NFTs.
+  * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
+  * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#ankr_getnftholders) — retrieves holders of a particular NFT.
 
-### Query APIs
+### Query API
 
 [_Query API Methods_](/advanced-api/query-methods/) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
 
-  * [`ankr_getBlocks`](/advanced-api/query-methods/#get-blocks) — retrieves full info of a particular block.
-  * [`ankr_getLogs`](/advanced-api/query-methods/#get-logs) — retrieves history data of a particular block range.
-  * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#get-transactions-by-hash) — retrieves the details of a transaction specified by hash.
-  * [`ankr_getInteractions`](/advanced-api/query-methods/#get-interactions) — retrieves blockchains interacted with a particular wallet.
+  * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
+  * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
+  * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
 
-### Token APIs
+### Token API
 
 [_Token API Methods_](/advanced-api/token-methods/) serve to request token-related data across multiple chains:
 
-  * [`ankr_getAccountBalance`](/advanced-api/token-methods/#get-account-balance) — retrieves the balance of a particular account.
-  * [`ankr_getCurrencies`](/advanced-api/token-methods/#get-currencies) — retrieves info on currencies available for a particular blockchain.
-  * [`ankr_getTokenPrice`](/advanced-api/token-methods/#get-token-price) — retrieves the price of a particular token.
-  * [`ankr_getTokenHolders`](/advanced-api/token-methods/#get-token-holders) — retrieves info on holders of a particular token.
-  * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#get-token-holders-count) — retrieves the number of token holders.
+  * [`ankr_getAccountBalance`](/advanced-api/token-methods/#ankr_getaccountbalance) — retrieves the balance of a particular account.
+  * [`ankr_getCurrencies`](/advanced-api/token-methods/#ankr_getcurrencies) — retrieves a list of currencies used on a particular blockchain.
+  * [`ankr_getTokenPrice`](/advanced-api/token-methods/#ankr_gettokenprice) — retrieves the price of a particular token.
+  * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
+  * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
 
 ## Advanced APIs PAYG Pricing
 
