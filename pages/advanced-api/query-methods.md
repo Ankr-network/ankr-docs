@@ -1,14 +1,28 @@
 import { Tabs, Tab } from "nextra-theme-docs";
+import { Callout } from "nextra-theme-docs";
 
 # Query API
+
+<Callout>
+_Query API_ is an Advanced APIs' collection of methods that comes as a unique feature along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
+</Callout>
 
 _Query API_ is an access-ready solution that enables your projects to interact with multiple blockchains in a single request. By indexing blockchain data from all eight currently supported chains, searching through large amounts of data is easier and faster than ever before. Query API can boast almost instantaneous processing speeds (due to the key-value filtering supported) for the searches that might ordinarily take hours to process. 
 
 Query API serves to request info on the ranges of blocks (max range is 100) for a full list of block metadata.
 
-## Get Blocks
+## Query API Methods
 
-> `ankr_getBlocks` — Retrieves the blocks' data.
+_Query API_ consists of the following methods to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
+
+  * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
+  * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
+  * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
+
+## `ankr_getBlocks`
+
+> **Retrieves the blocks' data.**
 
 Retrieves complete information for the block specified.
 
@@ -186,9 +200,9 @@ Code: 200 OK
 
 ---
 
-## Get Logs
+## `ankr_getLogs`
 
-> `ankr_getLogs` — Retrieves the blocks' history data.
+> **Retrieves the blocks' history data.**
 
 Retrieves history data for the blocks specified.
 
@@ -419,9 +433,9 @@ Code: 200 OK
 
 ---
 
-## Get Transactions by Hash
+## `ankr_getTransactionsByHash`
 
-> `ankr_getTransactionsByHash` — Retrieves data for the hash-specified transaction.
+> **Retrieves data for the hash-specified transaction.**
 
 Retrieves the details for a transaction specified by hash.
 
@@ -839,9 +853,9 @@ Code: 200 OK
 
 ---
 
-## Get Address-Interacted Blockchains
+## `ankr_getInteractions`
 
-> `ankr_getInteractions` — Retrieves blockchains interacted with a particular address.
+> **Retrieves blockchains interacted with a particular address.**
 
 Retrieves a list of blockchains on which the address interaction was registered and manifested by the info available for the address (tokens, NFTs, transactions).
 

@@ -1,16 +1,31 @@
 import { Tabs, Tab } from "nextra-theme-docs";
+import { Callout } from "nextra-theme-docs";
 
 # Token API
 
-Token API serves to request token-related data (account balance, supported currencies, token holders, token price, etc.) across multiple EVM-compatible chains.
+<Callout>
+_Token API_ is an Advanced APIs' collection of methods that comes as a unique feature along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
+</Callout>
+
+_Token API_ serves to request token-related data (account balance, supported currencies, token holders, token price, etc.) across multiple EVM-compatible chains.
 
 Token API uses only official on-chain data, leaving third parties behind. Ankr constantly scans for the on-chain transactions coming from DEXs, flagging transactions and aggregating data into accurate real-time token price feeds. This solution is crucial for the Web3 projects like marketplaces and exchanges looking for efficient ways to query accurate on-chain data for tokenized assets.
 
-## Get Account Balance
+## Token API Methods
 
-> `ankr_getAccountBalance` — Retrieves account balance.
+_Token API_ consists of the following methods to request token-related data across multiple chains:
 
-Retrieves a complete set of balance data for the account specified by request body parameters.
+  * [`ankr_getAccountBalance`](/advanced-api/token-methods/#ankr_getaccountbalance) — retrieves the balance of a particular account.
+  * [`ankr_getCurrencies`](/advanced-api/token-methods/#ankr_getcurrencies) — retrieves info on currencies available for a particular blockchain.
+  * [`ankr_getTokenPrice`](/advanced-api/token-methods/#ankr_gettokenprice) — retrieves the price of a particular token.
+  * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
+  * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
+
+## `ankr_getAccountBalance`
+
+> **Retrieves account balance.**
+
+Retrieves a complete set of balance data for the account specified.
 
 ### Request
 
@@ -206,9 +221,9 @@ Code: 200 OK
 
 ---
 
-## Get Currencies
+## `ankr_getCurrencies`
 
-> `ankr_getCurrencies` — Retrieves the blockchain's currencies.
+> **Retrieves the blockchain's currencies.**
 
 Retrieves a list of all the currencies used in transactions on a blockchain specified.
 
@@ -400,9 +415,9 @@ Code: 200 OK
 
 ---
 
-## Get Token Price
+## `ankr_getTokenPrice`
 
-> `ankr_getTokenPrice` — Retrieves token price.
+> **Retrieves token price.**
 
 Retrieves a USD price of the token specified.
 
@@ -442,7 +457,7 @@ Build your request using the parameters below.
   </Tab>
   <Tab>
 
-```sh
+```shell
 Content-Type: application/json
 X-API-KEY: {{KEY}}
 ```
@@ -519,9 +534,9 @@ Code: 200 OK
 
 ---
 
-## Get Token Holders
+## `ankr_getTokenHolders`
 
-> `ankr_getTokenHolders` — Retrieves data on token holders. 
+> **Retrieves data on token holders.** 
 
 Retrieves holders and the associated metadata of the tokens specified.
 
@@ -670,9 +685,9 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 ---
 
-## Get Token Holders Count
+## `ankr_getTokenHoldersCount`
 
-> `ankr_getTokenHoldersCount` — Retrieves the number of token holders. 
+> **Retrieves the number of token holders.** 
 
 Retrieves the number of holders for the tokens specified by request body parameters.
 
