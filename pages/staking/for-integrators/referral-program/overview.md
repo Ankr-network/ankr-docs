@@ -39,7 +39,7 @@ An API to see if an address is assigned to any partner is coming later for you t
 </Callout>
 
 ## Where and how often to claim partner rewards 
-You can claim your rewards once a month as we release it to the partner smart contract.
+You can claim your rewards once a month as we release them to the partner smart contract.
 Claiming is done via [Referral Dashboard](/staking/for-integrators/referral-program/overview/#check-revenue-and-progress-on-referral-dashboard).
 
 ## Become an Ankr partner and start generating revenue
