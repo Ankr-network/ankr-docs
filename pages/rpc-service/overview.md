@@ -1,6 +1,6 @@
 # RPC Service Overview
 
-*RPC Service* — is a platform that enables users to empower their Web3 projects with the blockchain interaction capabilities (18 blockchains supported) via the top-performing globally-distributed decentralized infrastructure of nodes.
+*RPC Service* — is a platform that enables users to empower their Web3 projects with the blockchain interaction capabilities (22 blockchains supported) via the top-performing globally-distributed decentralized infrastructure of nodes.
 
 ## Architecture
 

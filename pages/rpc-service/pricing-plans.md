@@ -1,4 +1,14 @@
-# Ankr Pricing Plans
+# Blockchains Interaction Service Plans
+
+Ankr provides the top-performing globally-distributed decentralized infrastructure of nodes to empower your Web3 projects with the blockchain interaction capabilities. There is a couple of solutions we have at your disposal to query the blockchains:
+
+  * *RPC Service* — a platform that enables your Web3 projects to start interacting with 22+ blockchains via JSON-RPC endpoints, gives you access to viewing the usage statistics for the data queried, and provides the means for RPC methods testing.
+
+  * *Advanced APIs* — a ready-to-use collection of endpoints that supports simultaneous querying of multiple blockchains (8 blockchains currently available) for the most popular Web3 scenarios at near-instant speeds; available via JavaScript/Python SDKs and React Hooks. Advanced APIs' endpoints and usage statistics are also accessed via the RPC Service platform, though it is considered to be a separate product for its powerful querying performance.
+
+Both these blockchain interaction solutions come with Ankr Service Plans but differ significantly by the rate limits and other performance features supported. See a complete feature set in the Service Plans Comparison table.
+
+## Service Plans Comparison
 
 | Feature               | Public Plan                                                                                                | Premium Plan                                                                                         |
 |-----------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
@@ -12,13 +22,13 @@
 | Terms                 | No Contract                                                                                                | Both Contract and No Contract                                                                        |
 | Cost                  | **FREE**                                                                                                   | **[Pay-as-you-go](/rpc-service/pricing-plans/#payg-premium-plans-usage-based-pricing)**              |
 
-## PAYG: Premium plan's usage-based pricing
+## PAYG Charging Model
 
-Pay-as-you-go (PAYG) is a usage-based pricing model for the Premium Plan services. PAYG means that you commit to no subscriptions but pay for each request you make. To start using the Premium Plan features, you deposit a minimum amount of 1000 ANKR tokens and create an Ankr Premium account.
+Pay-as-you-go (PAYG) is a usage-based charging model for the Premium Plan services. PAYG means that you commit to no subscriptions but pay for each request you make. To start using the Premium Plan features, you deposit a minimum amount of 1000 ANKR tokens and create an Ankr Premium account.
 
 ### How we charge?
 
-Premium Plan's usage measures in *API Credits*. PAYG model charges per method used. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
+Premium Plan's usage measures in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
 
 Premium Plan supports two communication protocols:
 

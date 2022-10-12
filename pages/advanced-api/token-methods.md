@@ -84,10 +84,6 @@ X-API-KEY: {{KEY}}
 
 Returns a complete set of balance data for the account specified in request body parameters.
 
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getAccountBalance).
-
 ### Code Examples
 
 #### Request
@@ -271,10 +267,6 @@ X-API-KEY: {{KEY}}
 ### Response
 
 Returns the currencies and their metadata for the blockchain specified by request body parameters.
-
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getCurrencies).
 
 ### Code Examples
 
@@ -468,10 +460,6 @@ X-API-KEY: {{KEY}}
 
 Returns a USD price of the token specified by request body parameters.
 
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTokenPrice).
-
 ### Code Examples
 
 #### Request
@@ -590,10 +578,6 @@ X-API-KEY: {{KEY}}
 ### Response
 
 Returns holders, holders number, and holders metadata of the tokens specified by request body parameters.
-
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTokenHolders).
 
 ### Code Examples
 
@@ -741,10 +725,6 @@ X-API-KEY: {{KEY}}
 ### Response
 
 Returns the number of holders for the tokens specified by request body parameters.
-
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTokenHoldersCount).
 
 ### Code Examples
 
