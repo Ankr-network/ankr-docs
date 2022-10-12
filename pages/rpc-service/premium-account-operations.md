@@ -2,9 +2,9 @@ import { Callout } from "nextra-theme-docs";
 
 # Premium account operations
 
-To start using the _Premium Tier_ services, there are some required steps for you to go through:
+To start using the _Premium Plan_ services, there are some required steps for you to go through:
 
-`Connect wallet` —> `Top up account balance` —> `Start using custom RPC URLs`
+`Connect wallet` —> `Deposit funds` —> `Start using private RPC Endpoints`
 
 * **[Connect a wallet](/rpc-service/premium-account-operations/#connect-wallet)**: first things first, connecting your MetaMask wallet is the key to access your account and start using Premium services.
   
@@ -16,7 +16,7 @@ Someday, you might also want to opt for additional actions:
 
 `Withdraw ANKR tokens` or `Add your email`
 
-* **[Withdraw](/rpc-service/premium-account-operations/#withdraw)**: get ANKR tokens from your RPC Services account back to your wallet.
+* **[Withdraw](/rpc-service/premium-account-operations/#withdraw)**: get ANKR tokens from your RPC Service account back to your wallet.
 
 * **Add an email address**: this step is optional. You might want to have account status notifications, such as top-ups, withdrawals, and other billing info, sent to your email. You can select the notifications you'd like to receive in **Settings**. Sure, our marketing would love to know our users and be able to propose you some new tailored options from time to time in the future. But, no pressure at all — you can switch those notifications off anytime. And the cherry on top is that for email adding, we're currently depositing _100M bonus API credits_ that you can spend on your Premium requests.
 

@@ -85,10 +85,6 @@ x-api-key: {{KEY}}
 
 Returns complete information for the block specified by request parameters.
 
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getBlocks).
-
 ### Code Examples
 
 #### Request
@@ -285,10 +281,6 @@ X-API-KEY: {{KEY}}
 ### Response
 
 Returns history data for the blocks specified by request body parameters.
-
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getLogs).
 
 ### Code Examples
 
@@ -495,11 +487,7 @@ X-API-KEY: {{KEY}}
 
 ### Response
 
-Returns all transactions' metadata for the hash specified in request body parameters. 
-
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getTransactionsByHash).
+Returns all transactions' metadata for the hash specified in request body parameters.
 
 ### Code Examples
 
@@ -903,10 +891,6 @@ X-API-KEY: {{KEY}}
 ### Response
 
 Returns the list of blockchains interacted with the address specified in request body parameters.
-
-#### Parameters
-
-See the response parameters' data model in [Swagger](https://sanjose.api.ankrscan.io/docs/#/default/ankr_getInteractions).
 
 ### Code Examples
 
