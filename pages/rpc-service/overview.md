@@ -1,6 +1,14 @@
-# RPC Service Overview
+# RPC Service overview
 
-*RPC Service* — is a platform that enables users to empower their Web3 projects with the blockchain interaction capabilities (22 blockchains supported) via the top-performing globally-distributed decentralized infrastructure of nodes.
+*RPC Service* — a platform that enables users to empower their Web3 projects with the blockchain interaction capabilities (22 blockchains supported) via the top-performing globally-distributed decentralized infrastructure of nodes.
+
+The platform has the following functionality to offer:
+
+  * *JSON-RPC API* — the endpoints to integrate into your project for blockchain interaction. 
+  * *[Advanced APIs](/advanced-api/overview)* — collections of endpoints that supports simultaneous querying of multiple blockchains for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks).
+  * *Usage statistics* — the means to have a full view of your blockchain interaction statistics.
+  * *RPC methods testing* — a tool for RPC methods testing. 
+  * *[Hybrid infrastructure](/rpc-service/hybrid-infrastructure)* — the access point for adding either private or external providers' nodes into Ankr's infrastructure.
 
 ## Architecture
 
@@ -27,15 +35,15 @@ From a technology point of view, RPC Service infrastructure relies heavily on th
   * **Info Caching**  
   We cache the nodes' responses. The information is stored depending on the response type. Caching duration depends on the request type. Caching serves as an additional way to reduce request processing times.
 
-## Pricing Plans
+## Service plans
 
-The next layer, [*Pricing Plans*](/rpc-service/pricing-plans/), deals with users and defines their RPC Service functional capabilities.
+The next layer, *[Service Plans](/rpc-service/pricing-plans/)*, deals with users and defines their RPC Service functional capabilities.
 
 In general, the advantages the Premium plan provides over the Public one come down to the higher rate limits, the availability of the WebSockets connection, having personal requests telemetry, the better means of support, and the most notorious one — having the nodes used for processing the Premium user requests only.
 
 The latest one, nodes, let's cover in more detail. The availability of nodes reserved specifically for the Premium user requests processing is a blue ribbon feature we provide. It helps in fencing the Premium users from competing with the Public user requests in cases of peak loads on the blockchain. In other words, the Public plan requests don't ever get routed to those Premium nodes, which brings the Premium plan request processing effectiveness to the next level.
 
-## Data Correctness
+## Data correctness
 
 Data correctness is ensured by the monitoring system that checks the nodes' performance 24/7. The majority of nodes from the network belongs to us — it's our hardware, we roll it out, run, and optimize the nodes. We feel confident about what's going on with the nodes, what they do, and how they make calculations.
 
@@ -43,7 +51,7 @@ Our implemented safeguard mechanisms protect us from connecting our infrastructu
 
 Moreover, we have a software update schedule in place to run the nodes on the latest software versions available. Before updating the nodes' software, we research the peculiarities of each specific version and never use it without a complete understanding of what the update brings us, whether there are any benefits in it, and how secure it is.
 
-## User Security
+## User security
 
 The security of access to the Premium Plan RPC Service is stipulated by the following conditions:
 
@@ -53,7 +61,7 @@ The security of access to the Premium Plan RPC Service is stipulated by the foll
   * **HTTPS connection**  
     Our platform uses the HTTPS connection protocol. Therefore, even if the traffic has been sniffed, the data it contains still stays encrypted, and no one can hack into it.
 
-## On Premium Users (User-Service Interaction)
+## Premium user-service interaction
 
 >The security of user transactions on the RPC Service platform relies on two premises.
 
@@ -67,11 +75,11 @@ The system uses asymmetric encryption. It means there is a pair of keys, one of 
 
 In the future, we are also planning to increase the number of consensus mechanism participants to involve the collaborating third parties willing to work with us. In such a case, not only our internal microservices but also the external ones would participate in the consensus mechanism to confirm its validity of providing tokens security.
 
-## Funds Security
+## Funds security
 
-User transactions data is stored on the backend in anonymized form. The system knows an Ethereum address the data associates with, but it doesn't know, for example, the private endpoint that has been used. We don't store that kind of information for security reasons. Therefore, even if the inconceivable happens and someone hacks into our production database, the only thing to be seen is the existence of transactions — no one would be able to create fraudulent tokens or steal funds.
+User transactions data is stored on the backend in anonymized form. The system knows an Ethereum address the data associates with, but it doesn't know, for example, the private endpoint that has been used. We don't store that kind of information due to security reasons. Therefore, even if the inconceivable happens and someone hacks into our production database, the only thing to be seen is the existence of transactions — no one would be able to create fraudulent tokens or steal funds.
 
-## PAYG Funds Security
+## PAYG funds security
 
 The Premium user deposits the funds into their Premium Account. Those funds can be either spent or withdrawn. Withdrawal operations are also processed via the smart contract, and you would have to interact with it using no other address but the one from which the deposit has been made. You have deposited from a particular account of yours — you have the ability to get the funds back to that particular account. No more, no less.
 
