@@ -1,63 +1,13 @@
-# Blockchains Interaction Service Plans
+# Methods pricing
 
-Ankr provides the top-performing globally-distributed decentralized infrastructure of nodes to empower your Web3 projects with the blockchain interaction capabilities. There is a couple of solutions we have at your disposal to query the blockchains:
+Premium Plan's usage measures in *API Credits*. Our Pay-as-you-go (PAYG) model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
 
-  * *RPC Service* — a platform that enables your Web3 projects to start interacting with 22+ blockchains via JSON-RPC endpoints, gives you access to viewing the usage statistics for the data queried, and provides the means for RPC methods testing.
+**The price of our API Credits is pegged to USD**. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the latest _ANKR/USD_ exchange rate.
 
-  * *Advanced APIs* — a ready-to-use collection of endpoints that supports simultaneous querying of multiple blockchains (8 blockchains currently available) for the most popular Web3 scenarios at near-instant speeds; available via JavaScript/Python SDKs and React Hooks. Advanced APIs' endpoints and usage statistics are also accessed via the RPC Service platform, though it is considered to be a separate product for its powerful querying performance.
+> **Our PAYG pricing model:**  
+> **0.10 USD = 1M API Credits**
 
-Both these blockchain interaction solutions come with Ankr Service Plans but differ significantly by the rate limits and other performance features supported. See a complete feature set in the Service Plans Comparison table.
-
-## Service Plans Comparison
-
-| Feature               | Public Plan                                                                                                | Premium Plan                                                                                         |
-|-----------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| RPC Service           | ✅                                                                                                          | ✅                                                                                                    |
-| Advanced APIs         | ❌                                                                                                          | ✅                                                                                                    |
-| Full and Archive Data | ✅                                                                                                          | ✅                                                                                                    |
-| Priority order        | Limited during high traffic                                                                                | Prioritized during high traffic                                                                      |
-| Requests per minute   | `= 45k / all blockchains` — guaranteed;<br/>`> 45k / all blockchains` — possible (depends on overall load) | `= 60k / endpoint` — guaranteed;<br/>`> 60k / endpoint` — possible (depends on overall load)         |
-| Connection            | HTTPS                                                                                                      | HTTPS and WebSockets                                                                                 |
-| Support               | Discord Support                                                                                            | Direct Email Support                                                                                 |
-| Terms                 | No Contract                                                                                                | Both Contract and No Contract                                                                        |
-| Cost                  | **FREE**                                                                                                   | **[Pay-as-you-go](/rpc-service/pricing-plans/#payg-premium-plans-usage-based-pricing)**              |
-
-## PAYG Charging Model
-
-Pay-as-you-go (PAYG) is a usage-based charging model for the Premium Plan services. PAYG means that you commit to no subscriptions but pay for each request you make. To start using the Premium Plan features, you deposit a minimum amount of 1000 ANKR tokens and create an Ankr Premium account.
-
-### How we charge?
-
-Premium Plan's usage measures in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
-
-Premium Plan supports two communication protocols:
-
-* **HTTPS** — this one is used either for individual or batch requests.
-* **WebSocket** — this one is used to establish a communication channel.
-
-We charge no matter whether a request has been successful or not. In other words, a charge is taken for each request coming to our worker, regardless of a node's response.
-
-Here is the summary on PAYG charging:
-
-* **Correct request** (charged) — a request uses a supported method and has a valid JSON-RPC structure. 
-* **Incorrect request** (not charged) — a request has an invalid JSON-RPC structure or a batch request has the same ID in multiple requests. We can't parse such a request.
-* **Correct request + incorrect method** (charged default amount) — a request uses an unsupported method though has a valid JSON-RPC structure. We charge default amount of credits for the infrastructure usage.
-
-## Get started with Premium
-
-1. Go to the [RPC Services](https://www.ankr.com/rpc/) platform.
-2. [Connect your wallet](/rpc-service/premium-account-operations/#connect-wallet).
-3. [Deposit funds](/rpc-service/premium-account-operations/#top-up).
-4. [Add Premium Endpoints into your project](/rpc-service/blockchain-interactions/#rpc-apis-for-your-project) to interact with a blockchain.
-
-## PAYG pricing per request
-
-The price of our API Credits is pegged to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the latest _ANKR/USD_ exchange rate.
-
-> Our PAYG pricing model:  
-> 0.10 USD = 1M API Credits
-
-### EVM-compatible chains
+## EVM-compatible chains
 
 | Method                                     | API Credits | USD/request |
 |:-------------------------------------------|-------------|-------------|
@@ -93,7 +43,7 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 | `eth_getBalance`                           | 200         | $0.00002    |
 | `eth_getStorageAt`                         | 200         | $0.00002    |
 
-### Solana
+## Solana
 
 | Method                                     | API Credits | USD/request |
 |:-------------------------------------------|-------------|-------------|
@@ -137,7 +87,7 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 | `getTokenAccountsByDelegate`               | 500         | $0.00005    |
 | `getTokenAccountsByOwner`                  | 500         | $0.00005    |
 
-### Advanced APIs
+## Advanced APIs
 
 | APIs Collection | Method                       | API Credits | USD/request |
 |:----------------|:-----------------------------|-------------|-------------|

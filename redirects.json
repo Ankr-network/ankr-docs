@@ -918,5 +918,9 @@
   {
     "from": "docs/advanced-api/build-with-advanced-apis/defidashboard-ankrjs/index.html",
     "to": "/docs/advanced-api/quickstart/defi-dashboard-ankrjs/"
+  },
+  {
+    "from": "docs/rpc-service/pricing-plans/index.html",
+    "to": "/docs/rpc-service/service-plans/"
   }
 ]
