@@ -45,11 +45,14 @@ The requirements when unstaking are:
 
 
 ## Fees
-Currently, the user pays no fees while staking.
+Staking fees:
+* Both for staking on Ethereum and on Polygon, Ankr takes 5% fees from user's Liquid Staking rewards. 
 
-When unstaking, the user pays a fee in ANKR that starts from 100 ANKR. Typical fee range is 500–3500 ANKR.
+Unstaking fees: 
+* When unstaking on Ethereum, user pays a fee in ANKR that starts from 100 ANKR. Typical fee range is 500–3500 ANKR.
+* When unstaking on Polygon, user pays a fee — 0.5% from the unstaking amount.
 
-The user must also count in the gas price in ETH for outgoing transactions.
+The user must also count in the gas price in ETH for outgoing transactions for staking/unstaking on Ethereum.
 
 
 ## Rewards
@@ -86,9 +89,9 @@ The workflow is both user and Ankr-driven. The user part is Steps 1–2, the Ank
 
 User calls `Matic::approve(address spender, uint256 amountToSpend)` to approve the chosen MATIC amount to be sent to the `PolygonPool` smart contract.
 
-User sends a request to Ankr `PolygonPool` smart contract on Ethereum, calling `PolygonPool::stake(uint256 amount)`. The request is sent via Ankr Staking and MetaMask or another wallet connected to Ethereum.
+User sends a request to Ankr `PolygonPool` smart contract on Ethereum, calling `stakeAndClaimBonds(uint256 amount)` (aMATICb) or stakeAndClaimCerts(uint256 amount) (aMATICc). The request is sent via Ankr Staking and MetaMask or another wallet connected to Ethereum.
 
-Upon receiving the stake, the `PolygonPool` smart contract calculates the equivalent amount of aMATICb or aMATICc and mints them to the user’s address in the stake transaction.
+Upon receiving the stake, the `PolygonPool` smart contract calculates the equivalent amount of aMATICb or aMATICc respectively and mints them to the user’s address found in the stake transaction.
 
 `PolygonPool` emits a `StakePending(msg.sender, amount)` event.
 
