@@ -24,7 +24,7 @@ The following section explains staking requirements, fees, rewards, validators, 
 
 The requirements when staking are:
 
-* Minimum value to stake — 1 KSM.
+* Minimum value to stake — 0.1 KSM.
 
 * Maximum value to stake — unlimited, at the user’s discretion.
 
