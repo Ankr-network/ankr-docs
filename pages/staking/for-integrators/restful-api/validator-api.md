@@ -6,7 +6,7 @@ You can get payout data for Ankr Validators.
 ## Ankr validators on Avalanche and Fantom
 
 ### Get unstake data from a validator
-RESTful API endpoint that returns amount of pending unstakes to be release from a validator and timestamp when the amount is unlocked at a validator.
+RESTful API endpoint that returns amount of pending unstakes to be released from a validator and timestamp when the amount is unlocked at a validator.
 
 #### Host 
 https://api.staking.ankr.com
