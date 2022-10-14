@@ -76,7 +76,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -92,7 +91,6 @@ Returns complete information for the block specified by request parameters.
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'x-api-key: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getBlocks",
@@ -273,7 +271,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -289,7 +286,6 @@ Returns history data for the blocks specified by request body parameters.
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getLogs",
@@ -480,7 +476,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -496,7 +491,6 @@ Returns all transactions' metadata for the hash specified in request body parame
 ```shell
 curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getTransactionsByHash",
@@ -883,7 +877,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -899,7 +892,6 @@ Returns the list of blockchains interacted with the address specified in request
 ```shell
 curl --location -g --request POST '{{URL}}' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
 			"jsonrpc": "2.0",
 			"method": "ankr_getInteractions",
