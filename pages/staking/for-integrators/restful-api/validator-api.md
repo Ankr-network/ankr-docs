@@ -9,7 +9,7 @@ You can get payout data for Ankr Validators.
 RESTful API endpoint that returns amount of pending unstakes to be release from a validator and timestamp when the amount is unlocked at a validator.
 
 #### Host 
-https://api.stkr.io
+https://api.dev.staking.ankr.com/
 
 #### Endpoint
 `GET /v1alpha/validation/end`
@@ -25,7 +25,7 @@ If the amount value passed in the request is higher than the maximum amount to b
 
 #### Request
 ```
-curl https://api.dev.stkr.io/v1alpha/validation/end?amount=24
+curl https://api.dev.staking.ankr.com/v1alpha/validation/end?amount=24
 ```
 
 #### Response data

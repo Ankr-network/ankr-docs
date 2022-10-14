@@ -18,7 +18,7 @@ RESTful API endpoint that returns metrics that describe different properties of 
 
 ### Host 
 
-https://api.stkr.io
+https://api.staking.ankr.com
 
 ### Endpoint
 
@@ -27,7 +27,7 @@ https://api.stkr.io
 ### Request
 
 ```
-curl https://api.stkr.io/v1alpha/metrics
+curl https://api.staking.ankr.com/v1alpha/metrics
 ```
 
 ### Response
