@@ -922,5 +922,9 @@
   {
     "from": "docs/rpc-service/pricing-plans/index.html",
     "to": "/docs/rpc-service/service-plans/"
+  },
+  {
+    "from": "docs/rpc-service/methods-pricing/index.html",
+    "to": "/docs/rpc-service/pricing/"
   }
 ]
