@@ -10,7 +10,7 @@ Yes — there is a [user guide](/staking/liquid-staking/ksm/stake).
 
 ### What is the minimum amount of KSM I can stake?
  
-1 KSM.
+0.1 KSM.
 
 
 ### Is there a maximum amount I can stake?
