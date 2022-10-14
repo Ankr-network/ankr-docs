@@ -1,4 +1,4 @@
-# Blockchains interaction service plans
+# Service plans
 
 Ankr provides the top-performing globally-distributed decentralized infrastructure of nodes to empower your Web3 projects with blockchain interaction capabilities. There is a couple of solutions we have at your disposal to query the blockchains:
 
@@ -8,7 +8,7 @@ Ankr provides the top-performing globally-distributed decentralized infrastructu
 
 ## Service plans comparison
 
-The `RPC Service` and `Advanced APIs` _blockchain interaction solutions_ come with both *Public* and *Premium* Ankr service plans but differ significantly by the rate limits and other performance features supported depending on the plan selected.
+The `RPC Service` and `Advanced APIs` solutions come with both *Public* and *Premium* Ankr service plans but differ significantly by the rate limits and other performance features supported depending on the plan selected.
 
 ### Feature list
 
@@ -30,10 +30,11 @@ The `RPC Service` and `Advanced APIs` _blockchain interaction solutions_ come wi
 
 ### Rate limits
 
-| Service                        | Public                                                                                                                                                                                                            | Premium                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| JSON-RPC API<br/>(RPC Service) | **EVM-compatible chains**<br/>Total requests / minute:<br/>`= 15k` — guaranteed;<br/>`> 15k` — depends on the load;<br/><br/>Total requests / second:<br/>`= 250` — guaranteed;<br/>`> 250` — depends on the load | **EVM-compatible chains**<br/>Requests per endpoint / minute:<br/>`= 60k` — guaranteed;<br/>`> 60k` — depends on the load;<br/><br/>Requests per endpoint / second:<br/>`= 1k` — guaranteed;<br/>`> 1k` — depends on the load;<br/><br/>**Solana**<br/>Requests per endpoint / minute:<br/>`= 160k` — guaranteed;<br/>`> 160k` — depends on the load;<br/><br/>Requests per endpoint / second:<br/>`= 2.7k` — guaranteed;<br/>`> 2.7k` — depends on the load |
-| Advanced APIs                  | `50` requests/minute                                                                                                                                                                                              | `1k+` requests/minute                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Service                                 | Public                                                                | Premium                                                       |
+|-----------------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------|
+| RPC Service<br/>(EVM-compatible chains) | **Requests accross all endpoints:**<br/>Up to `≈ 500 requests/second` | **Requests per endpoint:**<br/>Up to `≈ 1.5k requests/second` |
+| RPC Service<br/>(Solana)                | ❌                                                                     | **Requests per endpoint:**<br/>Up to `≈ 4k requests/second`   |
+| Advanced APIs                           | `50 requests/minute`                                                  | `1k+ requests/minute`                                         |
 
 ## Charging model: Pay-as-you-go
 
@@ -41,7 +42,7 @@ _Pay-as-you-go_ (PAYG) is a usage-based charging model for the Premium Plan serv
 
 ### How we charge?
 
-Premium Plan's usage measures in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
+Premium Plan's RPC usage measures in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
 
 [//]: # (Premium Plan supports two communication protocols:)
 
