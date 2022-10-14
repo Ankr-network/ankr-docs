@@ -75,7 +75,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -91,7 +90,6 @@ Returns a complete set of balance data for the account specified in request body
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getAccountBalance",
@@ -259,7 +257,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -275,7 +272,6 @@ Returns the currencies and their metadata for the blockchain specified by reques
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getCurrencies",
@@ -451,7 +447,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -467,7 +462,6 @@ Returns a USD price of the token specified by request body parameters.
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getTokenPrice",
@@ -570,7 +564,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -586,7 +579,6 @@ Returns holders, holders number, and holders metadata of the tokens specified by
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getTokenHolders",
@@ -717,7 +709,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-X-API-KEY: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -733,7 +724,6 @@ Returns the number of holders for the tokens specified by request body parameter
 ```shell
 curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'X-API-KEY: {{KEY}}' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getTokenHoldersCount",

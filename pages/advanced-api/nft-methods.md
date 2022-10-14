@@ -88,7 +88,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -378,7 +377,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -579,7 +577,6 @@ Build your request using the parameters below.
 
 ```shell
 Content-Type: application/json
-x-api-key: {{KEY}}
 ```
   </Tab>
 </Tabs>
@@ -603,7 +600,6 @@ A successful request returns a list of holders for the NFT specified.
 ```shell
 curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
---header 'x-api-key: {{KEY}} \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getNFTHolders",
