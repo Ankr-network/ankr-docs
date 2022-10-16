@@ -27,7 +27,7 @@ You can integrate with Ankr Liquid Staking through:
 * [Liquid Staking SDK](/staking/for-integrators/sdk/liquid-staking-sdk/) — a more convenient option with wider access and more conventional methods naming. 
 * [Smart Contracts API](/staking/for-integrators/smart-contract-api/overview/) — direct access to our Liquid Staking smart contracts.
   * [RESTful API for Liquid Staking metrics](/staking/for-integrators/restful-api/staking-metrics/) — addition to the smart contracts API to get richer statistical data.
-  * [REFTful API for validators](/staking/for-integrators/restful-api/validator-api/) — addition to the smart contracts API to get such data as unbond time for rewards and amount of released rewards per validator. 
+  * [RESTful API for validators](/staking/for-integrators/restful-api/validator-api/) — addition to the smart contracts API to get such data as unbond time for rewards and amount of released rewards per validator. 
 
 ## Oracles 
 Oracles can provide you with data from DEXs and make integrating with Ankr Staking easier.
@@ -37,5 +37,5 @@ Curently, you can integrate with:
 * [PancakeSwap Price Oracle](/staking/for-integrators/oracles/pancakeswap-oracle/)
 
 ## Liquid Crowdloan
-You can integrate Liquid Crowdloan into Parachain Crowdloan on Polkadot through our [Liquid Crowdloan SDK](/docs/staking/for-integrators/sdk/liquid-crowdloan-sdk/).
+You can integrate Liquid Crowdloan into Parachain Crowdloan on Polkadot through our [Liquid Crowdloan SDK](/staking/for-integrators/sdk/liquid-crowdloan-sdk/).
 
