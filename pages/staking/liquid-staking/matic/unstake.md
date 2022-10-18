@@ -2,24 +2,24 @@ import { Callout } from "nextra-theme-docs";
 
 ## Overview
 
-If you decide to unstake, it can take up to 3-4 days before you can claim your funds. Throughout this period, your MATIC will continue to **earn staking rewards**.
+If you decide to unstake, the waiting period will depend on what network you chose when staking:
+* For MATIC Liquid Staking on Ethereum, it can take up to 3-4 days before you can claim your funds. Throughout this period, your MATIC will continue to **earn staking rewards**.
+* For MATIC Liquid Staking on Polygon, the unstake is fast, as what happens is your Liquid Staking token gets swapped for MATIC in a liquidity pool on Polygon. 
 
 <Callout> 
-Before you start, ensure you have ANKR for the unstaking fee (500–3500 on average) and a small amount of ETH for the dynamic gas fee (approx. 0.0005).
+If you're unstaking on Ethereum, ensure you have 0.025 ETH for the unstake fee.  
 
-Unstaking MATIC tokens is a multi-step process involving sending several transactions to the MATIC smart-contracts deployed in Ethereum.
-
-Ankr Staking covers the gas fee cost and charges a small fee in ANKR.
+Unstaking MATIC tokens on Ethereum is a multi-step process involving sending several transactions to the MATIC smart-contracts deployed in Ethereum.
 
 MATIC tokens are transferred to your wallet automatically when the unstaking process completes. There is no additional cost for this.
+
+If you're unstaking on Polygon, a fee of 0.5% is deducted from the unstaking amount.
 </Callout>
 
 ## Unstake MATIC
-
 <Callout type="warning" emoji="❗"> 
-The following fees applied when unstaking:
-* ANKR fee.
-* Ethereum gas fee. 
+* For unstaking on Ethereum, a fee of 0.025 ETH applies.
+* For unstaking on Polygon, a fee of 0.5% is deducted from the unstaking amount.
 </Callout>
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
@@ -37,7 +37,9 @@ You will need to make the following interactions in your wallet:
 <Callout emoji="✅">
 Once transaction is confirmed, Ankr Staking Dashboard updates to show *Unstaking in progress*.
 
-Withdrawal period is 80 epochs and more depending on the network congestion. Typically, it takes around 1–2 days to receive your MATIC. 
+For unstaking on Ethereum, the withdrawal period is 80 epochs and more depending on the network congestion. Typically, it takes around 1–2 days to receive your MATIC. 
 Following the withdrawal period, your MATIC balance updates in your wallet and the Ankr Staking dashboard automatically.
+
+For unstakig on Polygon, no withdrawal period applies, and you receive your MATIC instantly.
 </Callout>
 

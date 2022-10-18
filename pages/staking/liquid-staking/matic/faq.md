@@ -14,25 +14,22 @@ Maximum amount:
 
 ### What is the difference between MATIC staking on Ethereum and Polygon?
 
-MATIC staking happens on Ethereum. You can stake/unstake any MATIC amount at once. 
-Ethereum gas fee applies. 
+MATIC staking happens on Ethereum. You can stake/unstake any MATIC amount. 
+A fee of 0.025 ETH applies when unstaking. 
 Also, when unstaking, you receive your MATIC and rewards after the 3–4 days unbonding period.
 
 MATIC crosschain staking happens on Polygon. 
 You may have to stake/unstake your MATIC in portions, as you’re doing it via a crosschain staking pool, which may not have the amount you need at the moment. 
-Also, an additional fee applies. 
+Also, a fee of 0.5% is deducted from the unstaking amount. 
 However, there is no unbonding period, so when unstaking you receive your MATIC and rewards instantly.
 
-
 ### How long does it take to unstake my MATIC?
-
 If you staked on Ethereum, you’ll receive your MATIC and rewards after the unbonding period of 80+ epochs; typically, it takes 3–4 days. 
 
 If you staked on Polygon via the crosschain staking pool, you’ll receive your MATIC and rewards instantly.
 
 
 ### How do I receive rewards? 
-
 aMATICb is a rebasing token. When holding aMATICb, your balance will increase in proportion to your MATIC staking rewards. 
 A rebase runs daily, and rewards occur each time this runs. 
 So each day, you will see the quantity of your aMATICb increase by a small amount. 
@@ -48,7 +45,8 @@ aMATICc rewards are built into the token. Effectively, your rewards accumulate d
 
 ### Does Ankr charge for the service?
 
-When unstaking, the user pays a fee in ANKR that starts from 100 ANKR. Typical fee range is 500–3500 ANKR.
+* When unstaking on Ethereum, the user pays a fee of 0.025 ETH.
+* When unstaking on Polygon, the user pays a fee of 0.5% that is deducted from the unstaking amount.
 
 
 ### What determines the amount of reward I receive each rebase of aMATICb?

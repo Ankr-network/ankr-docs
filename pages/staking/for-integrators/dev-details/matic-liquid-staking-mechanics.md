@@ -49,7 +49,7 @@ Staking fees:
 * Both for staking on Ethereum and on Polygon, Ankr takes 5% fees from user's Liquid Staking rewards. 
 
 Unstaking fees: 
-* When unstaking on Ethereum, user pays a fee in ANKR that starts from 100 ANKR. Typical fee range is 500–3500 ANKR.
+* When unstaking on Ethereum, user pays a fee of 0.025 ETH.
 * When unstaking on Polygon, user pays a fee — 0.5% from the unstaking amount.
 
 The user must also count in the gas price in ETH for outgoing transactions for staking/unstaking on Ethereum.
@@ -141,23 +141,12 @@ To update the ratio, the Ankr backend:
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–11.
 
 1. User navigates to the dedicated page in Ankr Staking and unstakes their MATIC.
-
 2. Ankr Staking Dashboard checks the user’s aMATICb or aMATICc balance and displays a form to enter the number of MATIC to unstake.
-
-Frontend gets the unstake fee information from Ankr backend:
-
-4. Ankr Staking Dashboard calls Ankr smart contract to approve the transfer fee in ANKR tokens from the user address to the `PolygonPool` smart contract address. The fee is needed to compensate Ankr for the unstaking expenses.
-
-5. For aMATICb, Ankr Staking Dashboard calls `PolygonPool::unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)` to unstake the specified amount of MATIC. For aMATICc, it's `PolygonPool::unstakeCerts(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)`.  
-
-6. `PolygonPool` transfers the equal amount of aMATICb or aMATICc from the user to itself (technically, it locks the amount of aMATICb/aMATICc to unstake in the user’s account).
-
-7. `PolygonPool` issues an unstake event `MaticClaimPending(msg.sender, amount)`.
-
-8. Ankr Staking Dashboard displays a notification to the user to indicate the unstaking request has been registered.
-
-9. Ankr backend detects the unstake event and sends an unstake request to the MATIC smart contract on the Ethereum blockchain.
-
-10. When unstake is completed and MATIC received at the platform address, the backend sends the MATIC to the Polygon Pool smart contract: `PolygonPool::serveClaims()`.
-
-11. `PolygonPool` sends the MATIC to the user address, burns the aMATICb or aMATICc tokens, and issues an event saying the unstake request has been completed.
+3. Frontend gets the unstake fee information from Ankr backend:
+4. For aMATICb, Ankr Staking Dashboard calls `PolygonPool::unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)` to unstake the specified amount of MATIC. For aMATICc, it's `PolygonPool::unstakeCerts(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)`.  
+5. `PolygonPool` transfers the equal amount of aMATICb or aMATICc from the user to itself (technically, it locks the amount of aMATICb/aMATICc to unstake in the user’s account).
+6. `PolygonPool` issues an unstake event `MaticClaimPending(msg.sender, amount)`.
+7. Ankr Staking Dashboard displays a notification to the user to indicate the unstaking request has been registered.
+8. Ankr backend detects the unstake event and sends an unstake request to the MATIC smart contract on the Ethereum blockchain.
+9. When unstake is completed and MATIC received at the platform address, the backend sends the MATIC to the Polygon Pool smart contract: `PolygonPool::serveClaims()`.
+10. `PolygonPool` sends the MATIC to the user address, burns the aMATICb or aMATICc tokens, and issues an event saying the unstake request has been completed.
