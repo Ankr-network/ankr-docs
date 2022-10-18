@@ -1,5 +1,5 @@
-const isProd = process.env.NODE_ENV === 'production'
-
+const withPlugins = require('next-compose-plugins');
+const withImages = require('next-images');
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.js",
@@ -7,15 +7,20 @@ const withNextra = require("nextra")({
   unstable_staticImage: true,
 });
 
-module.exports = withNextra({
-    images: {
+// const isProd = process.env.NODE_ENV === 'production'
+
+const nextConfig = {
+  images: {
     loader: 'akamai',
     path: '',
+    disableStaticImages: true,
   },
   trailingSlash: true,
   //assetPrefix: isProd ? 'https://ankr.com/docs' : undefined,
   basePath: '/docs',
-});
+};
+
+module.exports = withNextra(nextConfig);
 
 /* example of how to set up redirects
 module.exports = withNextra({

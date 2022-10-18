@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 In this section, we'll create a simple script using Ethereum Mainnet RPC and Web3.js library to make requests. 
 

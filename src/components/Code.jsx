@@ -20,7 +20,7 @@ export const Code = ({ children, terminal = false }) => {
 
   return (
     <div className="my-1">
-      {terminal && (
+      {terminal && (  
         <div>
           <button
             className={classNames(

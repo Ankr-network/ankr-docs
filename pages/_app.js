@@ -1,7 +1,7 @@
-import "../styles/global.css";
+import "styles/global.css";
 import "nextra-theme-docs/style.css";
-import { useGtm } from "../src/hooks/useGtm";
-import { enableAdditionalLanguagesInPrism } from "../components/prism"
+import { useGtm } from "hooks";
+import { enableAdditionalLanguagesInPrism } from "components"
 
 enableAdditionalLanguagesInPrism();
 

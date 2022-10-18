@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router'
-import { initGoogleGtm } from '../../components/gtm';
+import { initGoogleGtm } from 'components';
 
 function gtmVirtualPageView(rest) {
   window.dataLayer?.push({
