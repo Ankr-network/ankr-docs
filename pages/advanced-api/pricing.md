@@ -3,10 +3,10 @@ import { Callout } from "nextra-theme-docs";
 # Advanced APIs Pricing
 
 <Callout>
-Advanced APIs is a unique feature available for the [Premium Plan](/rpc-service/pricing-plans/) users.
+Advanced APIs is a unique feature available for the [Premium Plan](/rpc-service/service-plans/) users.
 </Callout>
 
-Being a Premium Plan's feature, _Advanced APIs_ usage measures in API Credits under the [Pay-as-you-go](/rpc-service/pricing-plans/#payg-premium-plans-usage-based-pricing) (PAYG) charging model.
+Being a Premium Plan's feature, _Advanced APIs_ usage measures in API Credits under the [Pay-as-you-go](/rpc-service/service-plans/#charging-model-pay-as-you-go) (PAYG) charging model.
 
 ## Pricing
 

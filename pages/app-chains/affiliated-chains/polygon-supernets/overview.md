@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 ## What is Polygon Supernets?
 [Polygon Supernets](https://polygon.technology/supernets/) are a blockchain stack powered by Polygon Edge. You can also call it an ecosystem — a set of modules that work seamlessly together and add to each other's functionality.

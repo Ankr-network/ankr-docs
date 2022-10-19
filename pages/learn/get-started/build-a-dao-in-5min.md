@@ -1,6 +1,6 @@
-import { Code } from "../../../components";
+import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 import Image from 'next/image';
 
 # How to Create your First DAO using Plug-and-Play No-Code Solution On Ethereum

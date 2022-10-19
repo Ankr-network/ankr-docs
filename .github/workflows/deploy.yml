@@ -48,14 +48,14 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: main
-          repository: Ankr-network/ankr-web
+          repository: Ankr-network/frontend
           token: ${{ secrets.ACCESS_TOKEN }}
-          path: ankr-web
+          path: frontend
 
       - name: Install dependencies and build doc sdk
         run: |
-          yarn install --cwd ankr-web/packages/staking-sdk
-          cd  ankr-web/packages/staking-sdk
+          yarn install --cwd frontend/packages/staking-sdk
+          cd  frontend/packages/staking-sdk
           yarn docs
 
       - name: Copy build
@@ -65,7 +65,7 @@ jobs:
           cd liquid-staking
           mkdir reference
           cd ../../../../../
-          mv ankr-web/packages/staking-sdk/docs/*  out/staking/for-integrators/sdk/liquid-staking/reference
+          mv frontend/packages/staking-sdk/docs/*  out/staking/for-integrators/sdk/liquid-staking/reference
 
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
