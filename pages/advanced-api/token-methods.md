@@ -665,7 +665,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 > **Retrieves the number of token holders.** 
 
-Retrieves the number of holders for the tokens specified by request body parameters.
+Retrieves the number of holders for the tokens specified.
 
 ### Request
 
@@ -722,7 +722,7 @@ Returns the number of holders for the tokens specified by request body parameter
 #### Request
 
 ```shell
-curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -848,4 +848,605 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
   </Tab>
 </Tabs>
 
+---
+
+## `ankr_getTransfersByAddress`
+
+> **Retrieves token transfers by wallet address.** 
+
+Retrieves the transfers info for the wallet address specified.
+
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
+
+* `id` (int64; required): a request ID (example: 1).
+* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+* `method` (string; required): a method used for the request.
+* `params` (object): the data object containing request body parameters:
+
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `walletAddress` (string): a wallet address to look for the transfers info.
+  * `orderAsc` (boolean): use `true` to structure info in ascending order, or `false` — in descending. 
+  * `pageSize` (int32): a number of results you'd like to get.
+  * `pageToken` (string): a token at the end of the response body that can be referenced in the request to fetch the next page.
+  * `timestamp` (uint64): a transfer timestamp.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getTransfersByAddress",
+  "params": {
+    "blockchain": "string",
+    "walletAddress": "string",
+    "orderAsc": true,
+    "pageSize": 0,
+    "pageToken": "string",
+    "timestamp": 0
+  }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
+
+### Response
+
+Returns the transfers info for the wallet address specified in request body parameters.
+
+### Code Examples
+
+#### Request
+
+<Tabs
+  items={[
+    "Minimal",
+    "Token transfers",
+    "ERC721",
+    "ERC1155",
+    "Regular transfers"
+  ]}
+>
+  <Tab>
+
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getTransfersByAddress",
+    "params": {
+        "blockchain": "bsc",
+        "walletAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3"
+    },
+    "id": 1
+}'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getTransfersByAddress",
+    "params": {
+        "blockchain": "bsc",
+        "walletAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+        "transactionType":"TRANSFER_TOKEN",
+        "timestamp":0,
+        "orderAsc": false,
+        "pageToken":"",
+        "pageSize": 5
+    },
+    "id": 1
+}'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getTransfersByAddress",
+    "params": {
+        "blockchain": "bsc",
+        "walletAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+        "transactionType":"TRANSFER_ERC721",
+        "timestamp":0,
+        "orderAsc": false,
+        "pageToken":"",
+        "pageSize": 12
+    },
+    "id": 1
+}'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getTransfersByAddress",
+    "params": {
+        "blockchain": "bsc",
+        "walletAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+        "transactionType":"TRANSFER_ERC1155",
+        "timestamp":0,
+        "orderAsc": true,
+        "pageToken":"",
+        "pageSize": 12
+    },
+    "id": 1
+}'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getTransfersByAddress",
+    "params": {
+        "blockchain": "bsc",
+        "walletAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+        "transactionType":"REGULAR_TRANSACTION",
+        "timestamp":0,
+        "orderAsc": true,
+        "pageToken":"",
+        "pageSize": 5
+    },
+    "id": 1
+}'
+```
+  </Tab>
+</Tabs>
+
+#### Response
+
+<Tabs
+  items={[
+    "Minimal",
+    "Token transfers",
+    "ERC721",
+    "ERC1155",
+    "Regular transfers"
+  ]}
+>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "transactions": [
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0x4c0c5e278d29b5e629c33a393ab9616b9f1e4b04ff557c9aea8b6d71627d8777",
+                "transactionId": "",
+                "blockHeight": 21337878,
+                "blockHash": "0xdd158e2a53f455c994061cd3c05da3812824c1198dc0ed56f627d6e10d35b506",
+                "fromAddress": "0x21d45650db732ce5df77685d6021d7d5d1da807f",
+                "contractAddress": "",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "8210580000000000",
+                "timestamp": "1663195853",
+                "success": true,
+                "actionDescription": "",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 0,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0x1d24e4b7738f2ad1ca4a981f672a6c27d3333fd2a7240595676125ad21863a86",
+                "transactionId": "",
+                "blockHeight": 21337720,
+                "blockHash": "0xe91572ad5033536c405a865b9423933f1148d3d915816d083b564371ee32cb76",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "",
+                "toAddress": "0x5c2b025f4f2d5ddb6d339f4ef46f9caeac661d27",
+                "value": "10991405924766175",
+                "timestamp": "1663195379",
+                "success": true,
+                "actionDescription": "",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 46,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xa4ec9d01caadfb6be2859026d9a7606911aafb840a1d0d4fce08d84df4aa0897",
+                "transactionId": "",
+                "blockHeight": 21337702,
+                "blockHash": "0x95c5339b87180b6036f103334edd8f20dba7e248b2e160cfe009414be3bd3179",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "",
+                "toAddress": "0x10ed43c718714eb63d5aa57b78b54704e256024e",
+                "value": "0",
+                "timestamp": "1663195325",
+                "success": true,
+                "actionDescription": "791ac947",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 72,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xbbd3ed67318e1b0e10dfe5823fd386d104fa8bdf8146a721b411a85c77e7b182",
+                "transactionId": "",
+                "blockHeight": 21337624,
+                "blockHash": "0x96d0cb9232f0cd8763a3d83478291acf7c39d54bf96359c982c85476d1e7b114",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "",
+                "toAddress": "0x5c2b025f4f2d5ddb6d339f4ef46f9caeac661d27",
+                "value": "20370380000000000",
+                "timestamp": "1663195091",
+                "success": true,
+                "actionDescription": "",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 47,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0x07feea40464f98a05f08e36b9245f3d4989c2b4925f0729dd87f530da19d8ec8",
+                "transactionId": "",
+                "blockHeight": 21332602,
+                "blockHash": "0xbd73aae68c4d0ec34f81588ad066cf508e975ed46409e3b962423553462f0343",
+                "fromAddress": "0x21d45650db732ce5df77685d6021d7d5d1da807f",
+                "contractAddress": "",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "7475380000000000",
+                "timestamp": "1663180024",
+                "success": true,
+                "actionDescription": "",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 16,
+                "logIndex": 0,
+                "isLog": false
+            }
+        ],
+        "nextPageToken": "RVJXU9RdE4o9reDBVBvSKRGaqEGtW9nF6aPJs774kzFbc8Q6PsVzDTYpn87Gp4YCBJygrzeMPPTRZw1Pbi54pVu"
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "transactions": [
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xa4ec9d01caadfb6be2859026d9a7606911aafb840a1d0d4fce08d84df4aa0897",
+                "transactionId": "",
+                "blockHeight": 21337702,
+                "blockHash": "0x95c5339b87180b6036f103334edd8f20dba7e248b2e160cfe009414be3bd3179",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "0x01bd7acb6ff3b6dd5aefa05cf085f2104f3fc53f",
+                "toAddress": "0xfa0c171afe708b97ad61a136cb0499cdb1b7b10e",
+                "value": "100842000000000000000",
+                "timestamp": "1663195325",
+                "success": true,
+                "actionDescription": "",
+                "type": "TRANSFER_TOKEN",
+                "transactionIndex": 72,
+                "logIndex": 2,
+                "isLog": true
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xa4ec9d01caadfb6be2859026d9a7606911aafb840a1d0d4fce08d84df4aa0897",
+                "transactionId": "",
+                "blockHeight": 21337702,
+                "blockHash": "0x95c5339b87180b6036f103334edd8f20dba7e248b2e160cfe009414be3bd3179",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "0x01bd7acb6ff3b6dd5aefa05cf085f2104f3fc53f",
+                "toAddress": "0x92d3fb02eb038944fc7a8b414721bf8b009df765",
+                "value": "1029000000000000000",
+                "timestamp": "1663195325",
+                "success": true,
+                "actionDescription": "",
+                "type": "TRANSFER_TOKEN",
+                "transactionIndex": 72,
+                "logIndex": 1,
+                "isLog": true
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xa4ec9d01caadfb6be2859026d9a7606911aafb840a1d0d4fce08d84df4aa0897",
+                "transactionId": "",
+                "blockHeight": 21337702,
+                "blockHash": "0x95c5339b87180b6036f103334edd8f20dba7e248b2e160cfe009414be3bd3179",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "0x01bd7acb6ff3b6dd5aefa05cf085f2104f3fc53f",
+                "toAddress": "0x01bd7acb6ff3b6dd5aefa05cf085f2104f3fc53f",
+                "value": "1029000000000000000",
+                "timestamp": "1663195325",
+                "success": true,
+                "actionDescription": "",
+                "type": "TRANSFER_TOKEN",
+                "transactionIndex": 72,
+                "logIndex": 0,
+                "isLog": true
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xe757dec72241b434bcffc9106bb7d94acc1d04a2fc84cc81d38dbfb48d46aaf2",
+                "transactionId": "",
+                "blockHeight": 21331110,
+                "blockHash": "0x37909e9b5d4b790cf80763672e4da4ae22b171e2dc91db0c6ee6cdf510378a6c",
+                "fromAddress": "0x35122d1fe8001296f61290b8ba42ef597af31fb7",
+                "contractAddress": "0x35122d1fe8001296f61290b8ba42ef597af31fb7",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "956000000000",
+                "timestamp": "1663175548",
+                "success": true,
+                "actionDescription": "",
+                "type": "TRANSFER_TOKEN",
+                "transactionIndex": 39,
+                "logIndex": 47,
+                "isLog": true
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xf99a5d78e0933c60c2042d388b1474f38a209b6f87a8b7cfa73828f88e3ab3ad",
+                "transactionId": "",
+                "blockHeight": 21330233,
+                "blockHash": "0xe7d00bf22be75f1b50cca58cab9e6a88355f574fd2ea85fcb54ba64f62f8bf6b",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "0xe79a1163a95734ccfbd006cbaaba954f3e846beb",
+                "toAddress": "0xda55dec4e31a31076adf010ef8d74f2fdeb02e33",
+                "value": "3656285204704929617947",
+                "timestamp": "1663172916",
+                "success": true,
+                "actionDescription": "",
+                "type": "TRANSFER_TOKEN",
+                "transactionIndex": 90,
+                "logIndex": 0,
+                "isLog": true
+            }
+        ],
+        "nextPageToken": "2s5vb9ddmJUG1umaobgKTLu7Zv5k6GMEDX8T7JKoCauMLHHrpPBm4r5qrKdzaEyi8NTM845mrB2sYhfdUEZZ642Go"
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "transactions": [
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xc9e23db7227a1eed1719158947bcb3e92acd40d85a725420e64115e7aa3530a2",
+                "transactionId": "",
+                "blockHeight": 20381154,
+                "blockHash": "0xbafd55cce2e2e9a657b9f367f06bd20bef9fe4f1d34eee95d8adfd8832f49a13",
+                "fromAddress": "0x0000000000000000000000000000000000000000",
+                "contractAddress": "0xadc466855ebe8d1402c5f7e6706fccc3aedb44a0",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "1",
+                "timestamp": "1660321369",
+                "success": true,
+                "actionDescription": "76358",
+                "type": "TRANSFER_ERC721",
+                "transactionIndex": 74,
+                "logIndex": 0,
+                "isLog": true
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0x61e7626d8f96c1398106770f37fcfa0f01d5cc5defdc029322bc0353394ea265",
+                "transactionId": "",
+                "blockHeight": 20248465,
+                "blockHash": "0xf4496e3517109513436a6266e69e1c9467f0964b93d88f2b5b3b6c6c06dfdab6",
+                "fromAddress": "0x0000000000000000000000000000000000000000",
+                "contractAddress": "0x9cee09946a8113a503c1264e328c0e3aee4c8bcf",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "1",
+                "timestamp": "1659922921",
+                "success": true,
+                "actionDescription": "39286",
+                "type": "TRANSFER_ERC721",
+                "transactionIndex": 126,
+                "logIndex": 0,
+                "isLog": true
+            }
+        ],
+        "nextPageToken": ""
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "transactions": [
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xb7a6d360e76de38524b62a30c33da813960b79a2467cd2f8969f0394c4b52c8f",
+                "transactionId": "",
+                "blockHeight": 18744672,
+                "blockHash": "0x6283c43f55f56f8d25edd8f7cb8eb58bf5590ea550d90174165eec3382617d8d",
+                "fromAddress": "0x8c80f871f91b7e53859cbffebdb35311630b548a",
+                "contractAddress": "0x36f8f51f65fe200311f709b797baf4e193dd0b0d",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "1",
+                "timestamp": "1655401450",
+                "success": true,
+                "actionDescription": "12",
+                "type": "TRANSFER_ERC1155",
+                "transactionIndex": 133,
+                "logIndex": 0,
+                "isLog": true
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0x95ae64003124fe4c3e8702364136d25c3d0f2fdbbf953bd815785f06d5cb6025",
+                "transactionId": "",
+                "blockHeight": 19116577,
+                "blockHash": "0x745ecc5d74827a393b84025405ef9c54387c7faf125dd2c0476e8f9024a1930c",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "0x36f8f51f65fe200311f709b797baf4e193dd0b0d",
+                "toAddress": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+                "value": "1",
+                "timestamp": "1656519782",
+                "success": true,
+                "actionDescription": "12",
+                "type": "TRANSFER_ERC1155",
+                "transactionIndex": 261,
+                "logIndex": 0,
+                "isLog": true
+            }
+        ],
+        "nextPageToken": ""
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "transactions": [
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xe6e9901d202b8762148dd1a947b773c4a6c5117d0cb5d558a356cf9fc1b56956",
+                "transactionId": "",
+                "blockHeight": 16801400,
+                "blockHash": "0x0e1cfc2d7764ad2554059e3b7bb4e388dffee4d3c63264a3049011baac2532ff",
+                "fromAddress": "0x21d45650db732ce5df77685d6021d7d5d1da807f",
+                "contractAddress": "",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "74282590000000000",
+                "timestamp": "1649526533",
+                "success": true,
+                "actionDescription": "",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 3,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0x95ae64003124fe4c3e8702364136d25c3d0f2fdbbf953bd815785f06d5cb6025",
+                "transactionId": "",
+                "blockHeight": 19116577,
+                "blockHash": "0x745ecc5d74827a393b84025405ef9c54387c7faf125dd2c0476e8f9024a1930c",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "",
+                "toAddress": "0x36f8f51f65fe200311f709b797baf4e193dd0b0d",
+                "value": "0",
+                "timestamp": "1656519782",
+                "success": true,
+                "actionDescription": "f242432a",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 261,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xcca859654d790282570898b4561db8fb9a62276cf3020f6639cbc8a1a0fcfa92",
+                "transactionId": "",
+                "blockHeight": 19116579,
+                "blockHash": "0x96522cd672b229584b4c9aea1596281225b37a390342106747f60b778fca1945",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "",
+                "toAddress": "0x36f8f51f65fe200311f709b797baf4e193dd0b0d",
+                "value": "0",
+                "timestamp": "1656519788",
+                "success": false,
+                "actionDescription": "f242432a",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 166,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0x66ac742f291d9b35c97d19a749f15dea73a50ec03fc5082962c2f80bb75b7d22",
+                "transactionId": "",
+                "blockHeight": 19203716,
+                "blockHash": "0x429c39d4108138f63eb1702eaf74a9615dbeffadf7e028d64571f6a305dfa205",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "contractAddress": "",
+                "toAddress": "0x5c2b025f4f2d5ddb6d339f4ef46f9caeac661d27",
+                "value": "73860105000000000",
+                "timestamp": "1656781670",
+                "success": true,
+                "actionDescription": "",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 84,
+                "logIndex": 0,
+                "isLog": false
+            },
+            {
+                "blockchain": "bsc",
+                "transactionHash": "0xe0f549c0d20c2b082534bc239ca1e568ce5a93944e65427cb8fb9c5a76acdd63",
+                "transactionId": "",
+                "blockHeight": 19204099,
+                "blockHash": "0x52dd0a00b0a21eb4297316b929ced708982bfb2a1624ff16b28456ba4dc5e3f5",
+                "fromAddress": "0x21d45650db732ce5df77685d6021d7d5d1da807f",
+                "contractAddress": "",
+                "toAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "value": "73360100000000000",
+                "timestamp": "1656782819",
+                "success": true,
+                "actionDescription": "",
+                "type": "REGULAR_TRANSACTION",
+                "transactionIndex": 13,
+                "logIndex": 0,
+                "isLog": false
+            }
+        ],
+        "nextPageToken": "RVJXU9RdE4o9reDBVBvSKRGaqEGtW9nF6aPJs774kzFbc8Q1y9bJ4px29hYuFhKypCcdQvrP8tymT5JDg9kQKGB"
+    }
+}
+```
+  </Tab>
+</Tabs>
 
