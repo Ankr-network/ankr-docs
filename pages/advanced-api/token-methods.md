@@ -852,7 +852,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 ## `ankr_getTransfersByAddress`
 
-> **Retrieves token transfers by wallet address.** 
+> **Retrieves transfers info by wallet address.** 
 
 Retrieves the transfers info for the wallet address specified.
 
