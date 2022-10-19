@@ -89,17 +89,17 @@ Premium Plan's RPC usage measures in *API Credits*. Our Pay-as-you-go (PAYG) mod
 
 ## Advanced APIs
 
-| APIs Collection | Method                       | API Credits | USD/request |
-|:----------------|:-----------------------------|-------------|-------------|
-| NFT API         | `ankr_getNFTsByOwner`        | 700         | $0.00007    |
-|                 | `ankr_getNFTMetadata`        | 700         | $0.00007    |
-|                 | `ankr_getNFTHolders`         | 700         | $0.00007    |
-| Query API       | `ankr_getBlocks`             | 700         | $0.00007    |
-|                 | `ankr_getLogs`               | 700         | $0.00007    |
-|                 | `ankr_getTransactionsByHash` | 700         | $0.00007    |
-|                 | `ankr_getInteractions`       | 700         | $0.00007    |
-| Token API       | `ankr_getAccountBalances`    | 700         | $0.00007    |
-|                 | `ankr_getCurrencies`         | 700         | $0.00007    |
-|                 | `ankr_getTokenPrice`         | 700         | $0.00007    |
-|                 | `ankr_getTokenHolders`       | 700         | $0.00007    |
-|                 | `ankr_getTokenHoldersCount`  | 700         | $0.00007    |
+| API Collection | Method                       | API Credits | USD/request |
+|:---------------|:-----------------------------|-------------|-------------|
+| NFT API        | `ankr_getNFTsByOwner`        | 700         | $0.00007    |
+|                | `ankr_getNFTMetadata`        | 700         | $0.00007    |
+|                | `ankr_getNFTHolders`         | 700         | $0.00007    |
+| Query API      | `ankr_getBlocks`             | 700         | $0.00007    |
+|                | `ankr_getLogs`               | 700         | $0.00007    |
+|                | `ankr_getTransactionsByHash` | 700         | $0.00007    |
+|                | `ankr_getInteractions`       | 700         | $0.00007    |
+| Token API      | `ankr_getAccountBalances`    | 700         | $0.00007    |
+|                | `ankr_getCurrencies`         | 700         | $0.00007    |
+|                | `ankr_getTokenPrice`         | 700         | $0.00007    |
+|                | `ankr_getTokenHolders`       | 700         | $0.00007    |
+|                | `ankr_getTokenHoldersCount`  | 700         | $0.00007    |

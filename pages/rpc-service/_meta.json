@@ -1,9 +1,8 @@
 {
-  "overview": "Overview",
+  "getting-started": "Getting Started",
+  "tech-stuff": "Tech Stuff",
   "service-plans": "Service Plans",
   "pricing": "Pricing",
-  "premium-account-operations": "Premium Account Operations",
-  "blockchain-interactions": "Blockchain Interactions",
   "hybrid-infrastructure": "Hybrid Infrastructure",
   "card-flow": {
     "title": "Card Flow",
