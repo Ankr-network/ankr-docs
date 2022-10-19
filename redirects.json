@@ -926,5 +926,13 @@
   {
     "from": "docs/rpc-service/methods-pricing/index.html",
     "to": "/docs/rpc-service/pricing/"
+  },
+  {
+    "from": "docs/rpc-service/blockchain-interactions/index.html",
+    "to": "/docs/rpc-service/getting-started/"
+  },
+  {
+    "from": "docs/rpc-service/premium-account-operations/index.html",
+    "to": "/docs/rpc-service/getting-started/"
   }
 ]

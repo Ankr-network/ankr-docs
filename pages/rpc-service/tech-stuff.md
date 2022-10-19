@@ -1,15 +1,3 @@
-# RPC Service overview
-
-*RPC Service* — a platform that enables users to empower their Web3 projects with the blockchain interaction capabilities (22 blockchains supported) via the top-performing globally-distributed decentralized infrastructure of nodes.
-
-The platform has the following functionality to offer:
-
-  * *JSON-RPC API* — the endpoints to integrate into your project for blockchain interaction. 
-  * *[Advanced APIs](/advanced-api/overview)* — collections of endpoints that supports simultaneous querying of multiple blockchains for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks).
-  * *Usage statistics* — the means to have a full view of your blockchain interaction statistics.
-  * *RPC methods testing* — a tool for RPC methods testing. 
-  * *[Hybrid infrastructure](/rpc-service/hybrid-infrastructure)* — the access point for adding either private or external providers' nodes into Ankr's infrastructure.
-
 ## Architecture
 
 The thing we stand out by is that we don't have a single centralized Gateway. Similar to the competition, our infrastructure consists of nodes behind a load balancer that gets a request from the client and calculates the fastest processing solution to route the request through.
@@ -32,12 +20,12 @@ From a technology point of view, RPC Service infrastructure relies heavily on th
   * **Intelligent load balancers**  
   The load balancing algorithm uses a scoring system to determine the best possible node to serve an RPC request at any given time. A load balancer selects the quickest node to answer. To do so, each load balancer instance regularly sends a standard request to each node and measures their answer times to find out the quickest one. Therefore, we can say that each instance of a load balancer knows the quickest nodes to serve the requests for each of the blockchains.
 
-  * **Info Caching**  
+  * **Info caching**  
   We cache the nodes' responses. The information is stored depending on the response type. Caching duration depends on the request type. Caching serves as an additional way to reduce request processing times.
 
 ## Service plans
 
-The next layer, *[Service Plans](/rpc-service/pricing-plans/)*, deals with users and defines their RPC Service functional capabilities.
+The next layer, *[Service Plans](/rpc-service/service-plans/)*, deals with users and defines their RPC Service functional capabilities.
 
 In general, the advantages the Premium plan provides over the Public one come down to the higher rate limits, the availability of the WebSockets connection, having personal requests telemetry, the better means of support, and the most notorious one — having the nodes used for processing the Premium user requests only.
 
