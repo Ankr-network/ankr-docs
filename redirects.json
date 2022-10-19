@@ -934,5 +934,9 @@
   {
     "from": "docs/rpc-service/premium-account-operations/index.html",
     "to": "/docs/rpc-service/getting-started/"
+  },
+  {
+    "from": "docs/rpc-service/overview/index.html",
+    "to": "/docs/rpc-service/getting-started/"
   }
 ]
