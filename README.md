@@ -117,7 +117,7 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ## Get acquainted with the file and folder structure
 ```
 ┌ ○ .github 
-├     ○ worflows 
+├     ○ workflows 
 ├         deploy.yml — workflows for deploying the project via GitHub Actions.
 ├ ○ components — custom React components to import and use in the project.
 ├ ○ icons — icons to use in the metainfo.
