@@ -26,7 +26,7 @@ We do not pose a strict policy on pull requests.
 
 
 #### Work with the content
-If you're an Ankr users, use the GitHub web interface:
+If you're an Ankr user, use the GitHub web interface:
 1. Go to the **pages** folder and either see what subfolder you need to add a new .md file or navigate to the .md file that you want to edit. 
 2. Click **Add file** to add a new file or click the pencil icon to edit an existing file.
 3. Fill the newly created file with content or edit the content in the existing file you opened.
@@ -66,8 +66,8 @@ Currently, we're using the following Gitflow:
 ### Deploying routine
 To deploy:
 1. Navigate to the Actions tab on the repo page.
-2. Under `All wokflows`, on the left, click `Deploy`.
-3. Click the `Run wokflow` button on the right, then choose the branch and environment to deploy to.
+2. Under `All workflows`, on the left, click `Deploy`.
+3. Click the `Run workflow` button on the right, then choose the branch and environment to deploy to.
    1. Deploy to `STAGE` or any other staging server from the drop-down list to view and test your doc updates in a safe environment.
    2. When tested and ready, deploy to `PROD` available to general public. 
 4. Click the green `Run workflow` button right below the chosen values.
@@ -124,7 +124,7 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ├ ○ pages — source files with the content to generate static HTML files from.
 ├ ○ public — images to use in the docs.
 ├ ○ styles — custom CSS styles overwriting the default Nextra styles.
-├   .gitignore — list of intentionally untracked files and folders to skip when commiting. 
+├   .gitignore — list of intentionally untracked files and folders to skip when committing. 
 ├   next.config.js — configuration file for the Next.js framework, which powers Nextra.
 ├   postcss.config.js — configuration file listing additional packages to import to Nextra.
 ├   README.md — readme of the project.
