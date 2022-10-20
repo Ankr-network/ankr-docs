@@ -20,6 +20,7 @@ _Token API_ consists of the following methods to request token-related data acro
   * [`ankr_getTokenPrice`](/advanced-api/token-methods/#ankr_gettokenprice) — retrieves the price of a particular token.
   * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
   * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
+  * [`ankr_getTransfersByAddress`](/advanced-api/token-methods/#ankr_gettransfersbyaddress) — retrieves the transfers info by wallet address.
 
 ## `ankr_getAccountBalance`
 
@@ -869,6 +870,7 @@ Build your request using the parameters below.
 
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
   * `walletAddress` (string): a wallet address to look for the transfers info.
+  * `transactionType` (string): a type of transaction (available types: `REGULAR_TRANSACTION` — everything that gets under the definition of transaction on blockchain, `TRANSFER_TOKEN` — ERC20 token and native token transfers, `ERC721` — transfers of NFTs for EVM-compatible blockchains, `ERC1155` — multi-token transfers).
   * `orderAsc` (boolean): use `true` to structure info in ascending order, or `false` — in descending. 
   * `pageSize` (int32): a number of results you'd like to get.
   * `pageToken` (string): a token at the end of the response body that can be referenced in the request to fetch the next page.
@@ -890,6 +892,7 @@ Build your request using the parameters below.
   "params": {
     "blockchain": "string",
     "walletAddress": "string",
+    "transactionType": "string",
     "orderAsc": true,
     "pageSize": 0,
     "pageToken": "string",

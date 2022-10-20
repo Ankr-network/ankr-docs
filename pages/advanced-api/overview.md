@@ -66,6 +66,7 @@ Check out the latest Advanced APIs for various Web3 scenarios:
   * [`ankr_getTokenPrice`](/advanced-api/token-methods/#ankr_gettokenprice) — retrieves the price of a particular token.
   * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
   * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
+  * [`ankr_getTransfersByAddress`](/advanced-api/token-methods/#ankr_gettransfersbyaddress) — retrieves the transfers info by wallet address.
 
 ## Advanced APIs PAYG Pricing
 
