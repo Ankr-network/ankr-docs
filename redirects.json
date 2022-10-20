@@ -938,5 +938,17 @@
   {
     "from": "docs/rpc-service/overview/index.html",
     "to": "/docs/rpc-service/getting-started/"
+  },
+  {
+    "from": "docs/staking/delegated-staking/mgno/overview/index.html",
+    "to": "/docs/staking/delegated-staking/gnosis/overview/"
+  },
+  {
+    "from": "docs/staking/delegated-staking/mgno/stake/index.html",
+    "to": "/docs/staking/delegated-staking/gnosis/stake/"
+  },
+  {
+    "from": "docs/staking/delegated-staking/mgno/faq/index.html",
+    "to": "/docs/staking/delegated-staking/gnosis/faq/"
   }
 ]
