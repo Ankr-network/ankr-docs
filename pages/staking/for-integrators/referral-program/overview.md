@@ -50,7 +50,7 @@ If you want to integrate Ankr Liquid Staking into your web app:
 4. Integrate with Ankr Liquid Staking via Liquid Staking SDK, using instructions from #3.
 5. Start attracting users and generating revenue.
 
-If you want to promote Ankr Liquite Staking on media:
+If you want to promote Ankr Liquid Staking on media:
 1. Drop us a line at [staking@ankr.com](mailto:staking@ankr.com).
 2. Let us guide you through the registration process.
 3. Receive your referral code.
