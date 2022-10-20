@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
 # Deploy and Mint a CryptoKitties-Like NFT with ERC-721 Smart Contract

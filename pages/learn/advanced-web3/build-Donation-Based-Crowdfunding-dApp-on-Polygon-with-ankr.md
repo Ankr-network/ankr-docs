@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
 # An End-to-End Tutorial to Create and Deploy a Fully Decentralized Crowdfunding dApp on Polygon using Rainbowkit, Wagmi and Ankr

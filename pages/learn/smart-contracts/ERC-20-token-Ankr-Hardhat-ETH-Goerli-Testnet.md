@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
 # How to deploy your own ERC-20 token with Ankr & Hardhat on ETH Goerli Testnet

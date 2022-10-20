@@ -1,4 +1,4 @@
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 
 # Validator API
 You can get payout data for Ankr Validators.
