@@ -1,4 +1,4 @@
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 
 In this section we're going to request testnet from a Ropsten faucet and then return testnet to a Ropsten faucet.  
 

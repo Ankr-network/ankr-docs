@@ -1,4 +1,4 @@
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 
 There is a demo application where you can try BNB Sidechain. 
 It already contains pre-deployed API gateways, block explorer, UI for the staking and faucet.

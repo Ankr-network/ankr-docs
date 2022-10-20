@@ -1,4 +1,4 @@
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 
 ### Wallets that support Fantom
 

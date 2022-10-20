@@ -1,4 +1,4 @@
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 
 This section walks you through how to connect a MetaMask wallet to Ethereum Mainnet and Testnets.
 

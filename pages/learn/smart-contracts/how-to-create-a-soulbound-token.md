@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 import Image from 'next/image';
 
 # A Step-by-step Guide To Creating And Deploying A Non-Transferable (Soulbound) NFT Smart Contract

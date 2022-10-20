@@ -1,4 +1,4 @@
-import { Callout } from "components";
+import { Callout } from "nextra-theme-docs";
 
 # Connect wallet and authenticate
 
