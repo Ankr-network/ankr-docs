@@ -90,12 +90,10 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 |                | `ankr_getTokenHolders`       | 700         | $0.00007    |
 |                | `ankr_getTokenHoldersCount`  | 700         | $0.00007    |
 
-### Support and Developer Community
+## Support and Developer Community
 
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Start Building with Advanced APIs](build-with-advanced-apis/overview)↗
 </div>
 
-Our goal is to provide developers with the best user experience possible and supercharge their Web3 projects with our Advanced APIs. Join our [Discord community](http://discord.gg/ankr) to get support from our team and engage with other like-minded developers. 
-
-We believe that community feedback fills our sails — we appreciate you proposing new features to add in our [Roadmap](https://roadmap.ankr.com/b/feature-requests/).
+Our goal is to provide developers with the best user experience possible and supercharge Web3 projects with our Advanced APIs. Also, we strongly believe that community feedback fills our sails. So, let's team up — join our [Discord community](http://discord.gg/ankr) to get support from our team, engage with like-minded developers, and propose new features that we can add in our Roadmap.
