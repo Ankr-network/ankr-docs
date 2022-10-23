@@ -87,10 +87,8 @@ export default {
   },
 //Footer content and settings
   footer: {
-    text: <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:space-x-16 lg:space-x-28">
-      <div className="flex flex-col">
-        © {new Date().getFullYear()} Ankr All rights reserved
+    text: <div>
+        © {new Date().getFullYear()}  Ankr All rights reserved | <a href="https://ankr.com"><b>Back to ankr.com</b></a>
       </div>
-    </div>
   },
 };
