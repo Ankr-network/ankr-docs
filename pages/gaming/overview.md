@@ -23,5 +23,5 @@ Gaming SDKs support interaction with all the EVM-compatible blockchains.
 Gaming SDKs support the following platforms and have the corresponding Web3 wallet solution for them:
 
   * Android/iOS — WalletConnect via deep link.
-  * WebGL — MetaMask.
-  * Standalone — MetaMask via QR code.
+  * WebGL — MetaMask or any wallet that supports WalletConnect.
+  * Standalone — MetaMask or any wallet that supports WalletConnect.
