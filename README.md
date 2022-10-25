@@ -42,13 +42,13 @@ If you are new to them, here are the guidelines:
 3. Remember our internal branch naming and pull request policy.
 4. Clone the repo.
 5. Create a new branch branching off from **stage**.
-6. Get acquainted with the file folder structure. 
+6. Get acquainted with the file and folder structure. 
 7. Install dependencies for the docs.
 8. Run a local dev env.
 9. Work with the content and resources in your favorite IDE.
 10. Commit, push.
 11. Test your work, deploying it to a staging server and seeing if everything is as smooth on web as it was locally.
-12. Merge your changes, following the gitflow and pull request policy.
+12. Merge your changes, following the gitflow from #1 and pull request policy from #3.
 
 
 ### Gitflow
@@ -144,7 +144,7 @@ yarn install
 yarn dev
 ```
 
-FYI, it's `http://localhost:3000/docs/`.
+FYI, it's `http://localhost:3016/docs/`.
 
 
 ### Work with the content and resources in your favorite IDE.
@@ -160,7 +160,7 @@ Remember that pull request policy above?
 Let's sum it up:
 1. For the love of code, follow the pull request policy, or I will come to you in your dreams! 
 2. Merge your branch to **stage**.
-3. If stage doesn't have any other unfinished work and is ready for prod, merge **stage** into **main**.
+3. If **stage** doesn't have any other unfinished work and is ready for prod, merge **stage** into **main**.
 4. Have a cookie.
 
 
