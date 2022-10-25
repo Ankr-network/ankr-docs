@@ -1,1 +1,2 @@
-export * from './useGtm';
+export * from "./useGtm";
+export * from "./useStrapiFAQData";
