@@ -28,38 +28,37 @@ npm i @ankr.com/staking-sdk reselect
 ```
 
 <Callout>
-To interact with testsnet smart contracts, use the `REACT_APP_API_ENV=staging` environment variable. For mainnet smart contracts, use `REACT_APP_API_ENV=prod`.
+To interact with the Testsnet smart contracts, use the `REACT_APP_API_ENV=staging` environment variable. For Mainnet smart contracts, use `REACT_APP_API_ENV=prod`.
 </Callout>
 
 ## Usage examples
-
 Here are some reference examples on how to user Liquid Stakin SDK in your project.
 
 ### Live sample
-Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-sdk-e1jvvi) as specific live example of interacting with `@ankr.com/staking-sdk`.<br /><br /> 
+Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-sdk-e1jvvi) as specific live example of interacting with `@ankr.com/staking-sdk`.<br /> 
 
-### Polygon
+### Polygon (on Ethereum)
 1. Stake aMATICc token:
     ```
-    import { PolygonSDK } from '@ankr.com/staking-sdk';
-    
-    const sdk = await PolygonSDK.getInstance();
-    
+    import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
+   
+    const sdk = await PolygonOnEthereumSDK.getInstance();
+   
     const { txHash } = await sdk.stake(new BigNumber(1_200), 'aMATICc');
     ```
 2. Unstake aMATICc token:
    ```
-   import { PolygonSDK } from '@ankr.com/staking-sdk';
+   import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
-   const sdk = await PolygonSDK.getInstance();
+   const sdk = await PolygonOnEthereumSDK.getInstance();
    
    await sdk.unstake(new BigNumber(1_200), 'aMATICc');
    ```
 3. Switch aMATICb and aMATICc:
    ```
-   import { PolygonSDK } from '@ankr.com/staking-sdk';
+   import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
-   const sdk = await PolygonSDK.getInstance();
+   const sdk = await PolygonOnEthereumSDK.getInstance();
    
    const lockResponse = await sdk.lockShares({ amount: new BigNumber(2.65) });
    
@@ -67,9 +66,9 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    ```
 4. Get MATIC transaction history:
    ```
-   import { PolygonSDK } from '@ankr.com/staking-sdk';
+   import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
-   const sdk = await PolygonSDK.getInstance();
+   const sdk = await PolygonOnEthereumSDK.getInstance();
    
    const history = await sdk.getTxEventsHistory();
    ```
@@ -130,11 +129,11 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
 ### Misc
 1. Define specific providers:
    ```
-   import { PolygonSDK, Web3KeyReadProvider, Web3KeyWriteProvider } from '@ankr.com/staking-sdk';
+   import { PolygonOnEthereumSDK, Web3KeyReadProvider, Web3KeyWriteProvider } from '@ankr.com/staking-sdk';
    
    const readProvider: Web3KeyReadProvider = { ... };
    const writeProvider: Web3KeyWriteProvider = { ... };
-   const sdk = await PolygonSDK.getInstance({ readProvider, writeProvider });
+   const sdk = await PolygonOnEthereumSDK.getInstance({ readProvider, writeProvider });
    
    const { txHash } = await sdk.stake(new BigNumber(1_200), 'aMATICc');
    ```
