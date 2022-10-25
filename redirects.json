@@ -950,5 +950,9 @@
   {
     "from": "docs/staking/delegated-staking/mgno/faq/index.html",
     "to": "/docs/staking/delegated-staking/gnosis/faq/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/reference/index.html",
+    "to": "/gaming/unity-sdk/reference/ankr-sdk-factory/"
   }
 ]
