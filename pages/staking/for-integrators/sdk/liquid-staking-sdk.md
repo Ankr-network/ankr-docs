@@ -32,11 +32,10 @@ To interact with the Testsnet smart contracts, use the `REACT_APP_API_ENV=stagin
 </Callout>
 
 ## Usage examples
-
 Here are some reference examples on how to user Liquid Stakin SDK in your project.
 
 ### Live sample
-Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-sdk-e1jvvi) as specific live example of interacting with `@ankr.com/staking-sdk`.<br /><br /> 
+Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-sdk-e1jvvi) as specific live example of interacting with `@ankr.com/staking-sdk`.<br /> 
 
 ### Polygon (on Ethereum)
 1. Stake aMATICc token:
