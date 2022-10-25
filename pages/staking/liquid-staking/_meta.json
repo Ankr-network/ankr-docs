@@ -2,9 +2,9 @@
   "overview": "Overview",
   "avax": "Avalanche",
   "bnb": "Binance",
-  "dot": "Polkadot",
   "eth": "Ethereum",
   "ftm": "Fantom",
   "ksm": "Kusama",
+  "dot": "Polkadot",
   "matic": "Polygon"
 }
