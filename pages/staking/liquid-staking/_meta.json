@@ -6,6 +6,5 @@
   "eth": "Ethereum",
   "ftm": "Fantom",
   "ksm": "Kusama",
-  "matic": "Polygon",
-  "eth-ssv": "SSV"
+  "matic": "Polygon"
 }
