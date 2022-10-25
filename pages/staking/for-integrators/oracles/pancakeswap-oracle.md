@@ -35,7 +35,7 @@ If you need more details on cumulative prices and TWAP oracles, refer to the [Un
 
 Now that you know the flow, you can integrate with the Ankr PancakeSwap price oracle, using the functions below.
 
-## API
+## Smart Contract API
 
 ### `peek()`
 Gets time-weighted average price of a pair of tokens from PancakeSwap; a view function.
