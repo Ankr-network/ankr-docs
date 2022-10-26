@@ -23,7 +23,7 @@ What's available for the [Public plan](/rpc-service/service-plans/#service-plans
   * RPC methods testing tool.
   * Public usage data (stats on requests from all Public service users).
 
-### User interface schema 
+### Interface schema 
 
 <img src="/docs/build/rpc-endpoints-public.png" alt="Public Endpoints" class="responsive-pic" width="800" />
 
@@ -51,7 +51,7 @@ What's available for the [Premium plan](/rpc-service/service-plans/#service-plan
   * Access to [Hybrid infrastructure](/rpc-service/hybrid-infrastructure).
   * Requests charging and payments history data.
 
-### User interface schema
+### Interface schema
 
 Below is the interface of the [_Premium_ service plan](/rpc-service/service-plans/#service-plans-comparison) user that is all set to use RPC API Endpoints and Advanced APIs at the corresponding [rate limits](/rpc-service/service-plans/#rate-limits). Here is the path to access Premium and start using RPCs and Advanced APIs:
 
@@ -70,7 +70,11 @@ Below is the interface of the [_Premium_ service plan](/rpc-service/service-plan
 The wallet connection procedure is the following:
 
 1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
-2. In the top right corner, click **Connect Wallet** and follow the sequence of self-explanatory steps prompted by your wallet.
+2. In the top right corner, click **Connect Wallet**, then provide your public key for encryption and confirm interactions with our platform:
+   * Click **Provide** — to use your public key for token encryption.
+   * Click **Sign** — to confirm interactions with our platform.
+
+<img src="/docs/build/card-metamask.png" alt="MetaMask connection" class="responsive-pic" width="550" />
 
 Congrats — you now have an account in RPC Service, associated with your wallet.
 
@@ -89,6 +93,8 @@ The initial top-up process is the following:
 1. In **Navigation**, click **Pricing** to open the corresponding pane.
 2. In **Premium** box, click **Get Started with Premium** to get scrolled to the **Deposit** box.
 3. Enter the amount of ANKR tokens you'd like to deposit (min. 1000 ANKR), click **Top Up**, and then confirm the operation in MetaMask.
+
+<img src="/docs/build/initial-deposit.png" alt="Initial deposit" class="responsive-pic" width="800" />
 
 Congrats — you've added ANKR tokens to your account, and you're all set for using _Premium_ services.
 
@@ -139,7 +145,7 @@ Prerequisites:
   * [Connect wallet](/rpc-service/getting-started/#connect-wallet)
   * [Deposit funds](/rpc-service/getting-started/#deposit-funds)
 
-As a Premium user, you have custom URLs at hand to enable your projects to interact with a blockchain.
+As a Premium user, you have private Endpoints at hand to enable your projects to interact with a blockchain.
 
 A Premium URL consists of a connection protocol (`https` or `wss`), domain name (`rpc.ankr.com`), common path of a blockchain to use (`/eth`), and your personal JWT token as the last segment of the path:
 
@@ -150,9 +156,11 @@ https://rpc.ankr.com/eth/6fe08843fa0966456eaa3fb19d4828b12389e71f48829f50df25e45
 To enable your project to interact with a blockchain, add the blockchain's URL into the project's library or config file:
 
 1. In **Navigation**, click **Endpoints** to open the pane.
-2. In the **Chain Selection** area, click a chain you'd like to query.
+2. In the **Chain Selection** area, click the chain you'd like to query.
 3. In the **Chain** opened, select a network (**Mainnet**/**Testnet**) needed for your project.
-4. In the **Endpoints** field, copy the `HTTPS` or `WebSockets` URL and paste it into your project's library or config file.
+4. In the **Endpoints** field, copy the `HTTPS` or `WebSocket` URL and paste it into your project's library or config file.
+
+<img src="/docs/build/use-endpoint-premium.png" alt="Premium Endpoints" class="responsive-pic" width="800" />
 
 Congrats — you've just added a private endpoint into your project to enable blockchain interaction.
 
