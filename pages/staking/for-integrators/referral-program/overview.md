@@ -4,7 +4,7 @@ import { Callout } from "nextra-theme-docs";
 Through our referral program, you can become an Ankr partner and generate more revenue attracting new users to Ankr Liquid Staking.
 
 <Callout type="info" emoji="ℹ">
-Partner program is coming first on BNB Chain and later will be enabled for other networks that feature Ankr Liquid Staking.
+Referral program is coming first on BNB Chain and later will be enabled for other networks that feature Ankr Liquid Staking.
 </Callout>
 
 ## How it works
