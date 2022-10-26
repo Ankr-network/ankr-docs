@@ -67,6 +67,25 @@ The function returns:
 
 You can query for a price on the contract page by the links above, anytime.
 
+### Fantom
+
+#### `ratio()`
+
+Gets the aFTMb/aFTMc-based redemption price.
+
+##### Parameters
+The function returns:
+
+* price (uint256) —  redemption price for aFTMb/aFTMc.
+
+##### Smart contracts
+* [Mainnet aFTMb](https://ftmscan.com/address/0xB42bF10ab9Df82f9a47B86dd76EEE4bA848d0Fa2#readProxyContract#F14)
+* [Mainnet aFTMc](https://ftmscan.com/address/0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179#readProxyContract#F10)
+
+##### Examples
+
+You can query for a price on the contract page by the links above, anytime.
+
 ### Kusama
 
 #### `ratio()`
