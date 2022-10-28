@@ -142,7 +142,6 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 
 1. User navigates to the dedicated page in Ankr Staking and unstakes their MATIC.
 2. Ankr Staking Dashboard checks the user’s aMATICb or aMATICc balance and displays a form to enter the number of MATIC to unstake.
-3. Frontend gets the unstake fee information from Ankr backend:
 4. For aMATICb, Ankr Staking Dashboard calls `PolygonPool::unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)` to unstake the specified amount of MATIC. For aMATICc, it's `PolygonPool::unstakeCerts(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes memory signature)`.  
 5. `PolygonPool` transfers the equal amount of aMATICb or aMATICc from the user to itself (technically, it locks the amount of aMATICb/aMATICc to unstake in the user’s account).
 6. `PolygonPool` issues an unstake event `MaticClaimPending(msg.sender, amount)`.

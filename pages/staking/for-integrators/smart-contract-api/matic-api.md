@@ -14,8 +14,8 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Smart contract
 
-* [Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
 * [Mainnet MATIC — 0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0](https://etherscan.io/token/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0)
+* [Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
 
 ##### Example
 
@@ -30,7 +30,8 @@ Stakes MATIC and claims aMATICb for the staked MATIC.
 
 ##### Smart contract
 
-[Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
+* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
+* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 ##### Example
 
@@ -48,7 +49,8 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Smart contract
 
-[Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
+* [Mainnet MATIC — 0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0](https://etherscan.io/token/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0)
+* [Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
 
 ##### Example
 
@@ -64,7 +66,8 @@ Stakes MATIC and claims aMATICc for the staked MATIC.
 
 ##### Smart contract
 
-[Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
+* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
+* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 ##### Example
 
@@ -73,61 +76,25 @@ Stakes MATIC and claims aMATICc for the staked MATIC.
 
 ### Unstake aMATICb and claim MATIC
 
-#### unstakeFee
+#### `ethUnstakeFee()`
 
-RESTful API endpoint that returns the current fee value for the unstaking operation.
+Get the current unstake fee in ETH.
 
-#### Host
+##### Smart contracts
 
-https://api.dev.stkr.io/
-
-#### Endpoint
-
-`GET /v1alpha/polygon/unstakeFee`
-
-##### Parameters
-* `address` (address, required) — address of the staker.
-
-##### Request
-
-```
-curl https://api.dev.stkr.io/v1alpha/polygon/unstakeFee?address=0x0000000000000000000000000000000000000000
-```
-
-##### Response
-
-###### 200
-```
-{"unstakeFee":"50000000000000000000","useBeforeBlock":6946279,"signature":"0x7ed0ac683aca82358813f0e40dd2f636b1e12e48d9c3f79194272b8da26cb770273d5c39d99981e8387f6d8c1ae69e9a3bb0dd4fd76cfb92d8ab3b1d3a0094e51c"}
-```
-
-#### `approve(spender, value)`
-
-Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay fees when unstaking aMATICb).
-
-##### Parameters
-* `spender` (address, required) — address of the `PolygonPool` contract.
-* `value` (uint256, required) — amount of ANKR to be transferred.
-
-##### Smart contract
-
-* [Mainnet ANKR — 0x8290333cef9e6d528dd5618fb97a76f268f3edd4](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4)
-* [Testnet ANKR — 0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8](https://goerli.etherscan.io/token/0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8).
-
-##### Example
-
-* [Mainnet live transaction example](https://etherscan.io/tx/0x508295e74e3b5480373f6611fbb7a98b65f3fd80d4671d771898e924dcd3df75)
-* [Testnet live transaction example](https://goerli.etherscan.io/tx/0x6ab2ce2f6cec6344fd707aeb1e49811a4f88a60cc790c62c3b87a3e4a1722356)
+* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
+* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 #### `unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes signature)`
 
-Lets the `PolygonPool` to exchange aMATICb for MATIC.
+Lets `PolygonPool` to exchange aMATICb for MATIC.
 
 ##### Parameters
+* `payableValue` (ETH, required) – amount received querying `ethUnstakeFee()`.
 * `amount` (uint256, required) — amount aMATICc to be unstake.
-* `fee` (uint256, required) — fee paid in ANKR for the unstaking operation. Get the value from the unstakeFee endpoint response.
-* `useBeforeBlock` (uint256, required) — last valid blockchain block to unstake before. Get the value from the unstakeFee endpoint response.
-* `signature` (bytes, required) — notary signature for the fees. Get the value from the unstakeFee endpoint response.
+* `fee` (uint256, required) — legacy param, should be set to `0`.
+* `useBeforeBlock` (uint256, required) — legacy param, should be set to `0`.
+* `signature` (bytes, required) — legacy param, should be `0x0`.
 
 ##### Smart contract
 
@@ -136,49 +103,20 @@ Lets the `PolygonPool` to exchange aMATICb for MATIC.
 
 ##### Example
 
-* [Mainnet live transaction example](https://etherscan.io/tx/0x791b2587ac40bd9a41a38f45a92a328966dbbc1acb958500307dd0eea74b918a)
+* [Mainnet live transaction example](https://etherscan.io/tx/0xabd8e4111093141cda17925cee573d52d2342c763e40a7da6def860f4aaa8c41)
+* [Testnet live transaction example](https://goerli.etherscan.io/tx/0xeb9c65c181753a2f08a9d7335bf3cb041ba83618e72785c85d1e61174f05a6a4)
 
 
 ### Unstake aMATICc and claim MATIC
 
-#### unstakeFee
+#### `ethUnstakeFee()`
 
-RESTful API endpoint that return the current fee value for the unstaking operation.
+Get the current unstake fee in ETH.
 
-##### Parameters
-* `address` (address, required) — address of the staker.
+##### Smart contracts
 
-##### Request
-
-```
-GET https://api.dev.stkr.io/v1alpha/polygon/unstakeFee?address=0x0000000000000000000000000000000000000000
-```
-
-##### Response
-
-###### 200
-```
-{"unstakeFee":"50000000000000000000","useBeforeBlock":6946279,"signature":"0x7ed0ac683aca82358813f0e40dd2f636b1e12e48d9c3f79194272b8da26cb770273d5c39d99981e8387f6d8c1ae69e9a3bb0dd4fd76cfb92d8ab3b1d3a0094e51c"}
-```
-
-#### `approve(spender, value)`
-
-Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay fees when unstaking aMATICb).
-
-##### Parameters
-* `spender` (address, required) — address of the `PolygonPool` contract.
-* `value` (uint256, required) — amount of ANKR to be transferred.
-
-##### Smart contract
-
-* [Mainnet ANKR — 0x8290333cef9e6d528dd5618fb97a76f268f3edd4](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4)
-* [Testnet ANKR — 0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8](https://goerli.etherscan.io/token/0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8).
-
-##### Example
-
-* [Mainnet live transaction example](https://etherscan.io/tx/0x508295e74e3b5480373f6611fbb7a98b65f3fd80d4671d771898e924dcd3df75)
-* [Testnet live transaction example](https://goerli.etherscan.io/tx/0x6ab2ce2f6cec6344fd707aeb1e49811a4f88a60cc790c62c3b87a3e4a1722356)
-
+* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
+* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 #### `approve(spender, amount)`
 
@@ -204,10 +142,11 @@ Approves the `aMATICb` smart contract to transfer user's aMATICc tokens to itsel
 Lets the `PolygonPool` to exchange aMATICc for MATIC.
 
 ##### Parameters
+* `payableValue` (ETH, required) – amount received querying `ethUnstakeFee()`.
 * `shares` (uint256, required) — amount aMATICc to be unstake.
-* `fee` (uint256, required) — fee paid in ANKR for the unstaking operation. Get the value from the unstakeFee endpoint response.
-* `useBeforeBlock` (uint256, required) — last valid blockchain block to unstake before. Get the value from the unstakeFee endpoint response.
-* `signature` (bytes, required) — notary signature for the fees. Get the value from the unstakeFee endpoint response.
+* `fee` (uint256, required) — legacy param, should be set to `0`.
+* `useBeforeBlock` (uint256, required) — legacy param, should be set to `0`.
+* `signature` (bytes, required) — legacy param, should be `0x0`.
 
 ##### Smart contract
 
@@ -216,8 +155,7 @@ Lets the `PolygonPool` to exchange aMATICc for MATIC.
 
 ##### Example
 
-* [Mainnet live transaction example](https://etherscan.io/tx/0x791b2587ac40bd9a41a38f45a92a328966dbbc1acb958500307dd0eea74b918a)
-* [Testnet live transaction example](https://goerli.etherscan.io/tx/0x39ca83209a1636a5b803853a38a7294bcf209032f947684064d5034aaaf68b14)
+* [Testnet live transaction example](https://goerli.etherscan.io/tx/0x354074f3cc047f6ce02d956746f6dafe70c41d906feb116b8869a63a80ae2791)
 
 ### Get APR
 
