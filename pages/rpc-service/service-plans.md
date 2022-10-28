@@ -23,7 +23,7 @@ The `RPC Service` and `Advanced APIs` solutions come with both *Public* and *Pre
 | Batch requests                         | ✅                           | ✅                                                                                       |
 | `eth_getLogs` batch size               | `10` per batch              | `up to 1000` per batch                                                                  |
 | Priority order                         | Limited during high traffic | Prioritized during high traffic                                                         |
-| Connection                             | HTTPS                       | HTTPS and WebSockets                                                                    |
+| Connection                             | HTTPS                       | HTTPS and WebSocket                                                                     |
 | Support                                | Discord and Support Portal  | Direct Email Support                                                                    |
 | Terms                                  | No Contract                 | Both Contract and No Contract                                                           |
 | Cost                                   | **Free**                    | **[Pay-as-you-go](/rpc-service/pricing-plans/#payg-premium-plans-usage-based-pricing)** |
