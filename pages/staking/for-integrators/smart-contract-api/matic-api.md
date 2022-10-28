@@ -14,7 +14,7 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Smart contract
 
-[Testnet Matic](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
+[Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
 
 ##### Example
 
@@ -29,7 +29,7 @@ Stakes MATIC and claims aMATICb for the staked MATIC.
 
 ##### Smart contract
 
-[Testnet PolygonPool Proxy](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
+[Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 ##### Example
 
@@ -47,7 +47,7 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Smart contract
 
-[Testnet MATIC](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
+[Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
 
 ##### Example
 
@@ -63,7 +63,7 @@ Stakes MATIC and claims aMATICc for the staked MATIC.
 
 ##### Smart contract
 
-[Testnet PolygonPool Proxy](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
+[Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 ##### Example
 
@@ -111,8 +111,8 @@ Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay f
 
 ##### Smart contract
 
-* [Mainnet ANKR](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4)
-* [Testnet ANKR](https://goerli.etherscan.io/token/0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8).
+* [Mainnet ANKR — 0x8290333cef9e6d528dd5618fb97a76f268f3edd4](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4)
+* [Testnet ANKR — 0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8](https://goerli.etherscan.io/token/0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8).
 
 ##### Example
 
@@ -131,8 +131,8 @@ Lets the `PolygonPool` to exchange aMATICb for MATIC.
 
 ##### Smart contract
 
-* [Mainnet PolygonPool](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
-* [Testnet PolygonPool](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
+* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
+* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 ##### Example
 
@@ -171,8 +171,8 @@ Lets the PolygonPool smart contract transfer user's ANKR tokens (needed to pay f
 
 ##### Smart contract
 
-* [Mainnet ANKR](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4)
-* [Testnet ANKR](https://goerli.etherscan.io/token/0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8).
+* [Mainnet ANKR — 0x8290333cef9e6d528dd5618fb97a76f268f3edd4](https://etherscan.io/token/0x8290333cef9e6d528dd5618fb97a76f268f3edd4)
+* [Testnet ANKR — 0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8](https://goerli.etherscan.io/token/0x7fed49f5b0497a060cdcff50bdbd22e5d07661d8).
 
 ##### Example
 
@@ -190,8 +190,8 @@ Approves the `aMATICb` smart contract to transfer user's aMATICc tokens to itsel
 
 ##### Smart contract
 
-* [Mainnet aMATICc](https://etherscan.io/address/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c)
-* [Testnet aMATICc](https://goerli.etherscan.io/address/0x148bf822cae6a61b2f278801ef4369fddd2a80df)
+* [Mainnet aMATICc — 0x26dcfbfa8bc267b250432c01c982eaf81cc5480c](https://etherscan.io/address/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c)
+* [Testnet aMATICc — 0x148bf822cae6a61b2f278801ef4369fddd2a80df](https://goerli.etherscan.io/address/0x148bf822cae6a61b2f278801ef4369fddd2a80df)
 
 ##### Example
 
@@ -211,8 +211,8 @@ Lets the `PolygonPool` to exchange aMATICc for MATIC.
 
 ##### Smart contract
 
-* [Mainnet PolygonPool](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
-* [Testnet PolygonPool](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
+* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
+* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
 
 ##### Example
 

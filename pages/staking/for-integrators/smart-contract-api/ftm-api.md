@@ -10,8 +10,8 @@ Stakes the `msg.value` of FTM and claims aFTMb for it.
 
 ##### Smart contract
 
-* [Mainnet FantomPool Proxy](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet FantomPool Proxy](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
+* [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
+* [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
 
 ##### Example
 
@@ -32,8 +32,8 @@ Stakes the `msg.value` of FTM and claims aFTMc for it.
 
 ##### Example
 
-* [Mainnet live transaction example](https://ftmscan.com/tx/0x3744426c4a36cead2d3f1048fd64c1268dc863003c283efdbbf97cee6a9545e4)
-* [Testnet live transaction example](https://testnet.ftmscan.com/tx/0xe3c7af52171d3514b7b174863db1f0a4cfe6c33f0c79b3850627f97766996626)
+* [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
+* [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
 
 ### Unstake aFTMb and claim FTM
 
@@ -47,8 +47,8 @@ Burns aFTMb and gets FTM for the burned aFTMb.
 
 ##### Smart contract
 
-* [Mainnet FantomPool Proxy](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet FantomPool Proxy](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
+* [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
+* [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
 
 ##### Example
 
@@ -68,8 +68,8 @@ Burns aFTMc and gets FTM for the burned aFTMc.
 
 ##### Smart contract
 
-* [Mainnet FantomPool Proxy](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet FantomPool Proxy](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
+* [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
+* [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
 
 ##### Example
 

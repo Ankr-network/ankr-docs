@@ -10,8 +10,8 @@ Stakes the `msg.value` of AVAX and claims aAVAXb for it.
 
 ##### Smart contract
 
-* [Mainnet AvalanchePool Proxy](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
-* [Testnet AvalanchePool Proxy](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
+* [Mainnet AvalanchePool Proxy — 0x7BAa1E3bFe49db8361680785182B80BB420A836D](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
+* [Testnet AvalanchePool Proxy — 0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
 
 ##### Example
 
@@ -26,8 +26,8 @@ Stakes the `msg.value` of AVAX and claims aAVAXc for it.
 
 ##### Smart contract
 
-* [Mainnet AvalanchePool Proxy](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
-* [Testnet AvalanchePool Proxy](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
+* [Mainnet AvalanchePool Proxy — 0x7BAa1E3bFe49db8361680785182B80BB420A836D](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
+* [Testnet AvalanchePool Proxy — 0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
 
 ##### Example
 
@@ -46,8 +46,8 @@ Lets AvalanchePool exchange aAVAXb for AVAX.
 
 ##### Smart contract
 
-* [Mainnet AvalanchePool Proxy](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
-* [Testnet AvalanchePool Proxy](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
+* [Mainnet AvalanchePool Proxy — 0x7BAa1E3bFe49db8361680785182B80BB420A836D](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
+* [Testnet AvalanchePool Proxy — 0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
 
 ##### Example
 
@@ -66,8 +66,8 @@ Lets `AvalanchePool` exchange aAVAXc for AVAX.
 
 ##### Smart contract
 
-* [Mainnet AvalanchePool Proxy](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
-* [Testnet AvalanchePool Proxy](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
+* [Mainnet AvalanchePool Proxy — 0x7BAa1E3bFe49db8361680785182B80BB420A836D](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D)
+* [Testnet AvalanchePool Proxy — 0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11](https://testnet.snowtrace.io/address/0x0c29d40cbd3c9073f4c0c96bf88ae1b4b4fe1d11)
 
 ##### Example
 
