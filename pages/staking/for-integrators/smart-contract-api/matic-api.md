@@ -80,7 +80,7 @@ Stakes MATIC and claims aMATICc for the staked MATIC.
 
 Get the current unstake fee in ETH.
 
-##### Smart contracts
+##### Smart contract
 
 * [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
 * [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
@@ -113,7 +113,7 @@ Lets `PolygonPool` to exchange aMATICb for MATIC.
 
 Get the current unstake fee in ETH.
 
-##### Smart contracts
+##### Smart contract
 
 * [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
 * [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
@@ -174,7 +174,7 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 
 ##### Smart contract
 
-* [Mainnet APR contract](https://polygonscan.com/address/0xEf3C162450E1d08804493aA27BE60CDAa054050F)
+* [Mainnet APR contract — 0xEf3C162450E1d08804493aA27BE60CDAa054050F](https://polygonscan.com/address/0xEf3C162450E1d08804493aA27BE60CDAa054050F)
 
 ##### Example
 
