@@ -16,21 +16,30 @@ To request for Hybrid Infrastructure, fill in the details for our Sales to conta
 
 ## What's Hybrid Infrastructure?
 
-On request, a Premium user can be enabled to add either their own private nodes or use external providers' ones to interact with blockchains. In both instances, Ankr's load balancer would still be processing the requests, sending them to nodes, and sending the received responses back to the user. But the nodes the requests are sent to would be the ones from the private infrastructure of the user's choice (personal nodes or external providers' nodes). At the same time, Ankr's nodes would be used as a fallback option in case of any breakdown.
+On request, a [Premium](/rpc-service/service-plans/#service-plans-comparison) user can be enabled to add either their own private nodes or use external providers' ones to interact with blockchains. In both instances, Ankr's load balancer would still be processing the requests, sending them to nodes, and sending the received responses back to the user. But the nodes the requests are sent to would be the ones from the private infrastructure of the user's choice (personal nodes or external providers' nodes). At the same time, Ankr's nodes would be used as a fallback option in case of any breakdown.
 
-This solution goes without PAYG charging for the responses received from the user's private infrastructure enabled.
+<Callout type="warning" emoji="❗">
+The WebSocket connection is available via Ankr's infrastructure only.
+</Callout>
 
 ### How it works
 
 Upon receiving the user's request, the system employs the following algorithm to provide a response:
 
-  1. **Response can be found in cache**. First, the system checks if the response is already available in the cache. If it's there, then the response is taken from cache and sent to the user, end of the story.
+  1. **Response found in cache**. First, the system checks if the response is already available in the cache. If it's there, then the response is taken from the cache and sent to the user, end of the story.
 
-  2. **Response can't be found in cache**. In that case, the request is sent to the user's private infrastructure, and then the valid response is sent back to the user.
+  2. **Response found on private nodes**. Second, the response can't be found in the cache, and the request is sent to the user's private infrastructure, and then the valid response is sent back to the user.
 
   * The system checks if the user has a private node added to the infrastructure. All the nodes are being monitored, including private ones, therefore the system knows their performance readings. So, if the private node is available and live, it doesn't lag behind, and it could be regarded as reliable, then the load balancer sends the user's request to that node. If the load balancer receives a valid response from the private node, it sends that one straight to the user — end of the story.
 
   * If anything goes wrong, the system checks if the user has any more private nodes and if yes, the same story goes over with the next available private node. If the system is out of private nodes and still doesn't have a valid response, then it falls back to Ankr's infrastructure for sending requests.
+
+### Pricing
+
+According to the implemented [architecture](/rpc-service/hybrid-infrastructure/#how-it-works), the cost per request sent via Hybrid Infrastructure might fit under the following categories:
+
+  * **Response found in cache** — standard [pricing](/rpc-service/pricing/) applies.
+  * **Response found on private nodes** — 10% of the standard [pricing](/rpc-service/pricing/).
 
 ### Use case: free credits
 
@@ -64,9 +73,9 @@ Prerequisites:
 
 To add a private node, follow the steps:
 
-  1. Go to [Ankr RPC](https://www.ankr.com/rpc/) service.
-  2. In **Sidebar**, click **Endpoints** to open the corresponding pane.
-  3. In the list of blockchain networks, click the one you have the Hybrid Infrastructure functionality enabled for.
-  4. On the **Infrastructure** tab, in **My Endpoints** block, click **Add Endpoint** (+), enter the address of your node, and then click finish.
+  1. Go to [RPC Service](https://www.ankr.com/rpc/).
+  2. In **Navigation**, click **Endpoints** to open the corresponding pane.
+  3. In the list of available chains, click the one you have the Hybrid Infrastructure functionality enabled for.
+  4. On the **Infrastructure** tab, in **My Endpoints** block, click **Add Endpoint** (+), enter the address of your node, and then click **Finish**.
 
-<img src="/docs/hybrid-add-node.png" alt="Add private node" class="responsive-pic" width="820" />
+<img src="/docs/hybrid-add-node.png" alt="Add private node" class="responsive-pic" width="800" />
