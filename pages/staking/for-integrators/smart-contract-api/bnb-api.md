@@ -51,7 +51,8 @@ Switches aBNBc to aBNBb.
 
 ##### Smart contract
 
-[Mainnet aBNBb Proxy — 0xbb1aa6e59e5163d8722a122cd66eba614b59df0d](https://bscscan.com/address/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
+* [Mainnet aBNBb Proxy — 0xbb1aa6e59e5163d8722a122cd66eba614b59df0d](https://bscscan.com/address/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
+* [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE) 
 
 ##### Example
 
@@ -69,7 +70,8 @@ Stakes BNB and claims aBNBb for the staked BNB.
 
 ##### Smart contract
 
-[Mainnet BinancePool Proxy — 0x66bea595aefd5a65799a920974b377ed20071118](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118)
+* [Mainnet BinancePool Proxy — 0x66bea595aefd5a65799a920974b377ed20071118](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118)
+* [Testnet BinancePool Proxy — 0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
 
 ##### Example
 
