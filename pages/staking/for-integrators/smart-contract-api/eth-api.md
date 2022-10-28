@@ -10,8 +10,8 @@ Stakes the `msg.value` of ETH and claims aETHb for it.
 
 ##### Smart contract
 
-* [Mainnet GlobalPool Proxy](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet GlobalPool Proxy](https://goerli.etherscan.io/address/0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27)
+* [Mainnet GlobalPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
+* [Testnet GlobalPool Proxy — 0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27](https://goerli.etherscan.io/address/0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27)
 
 ##### Example
 
@@ -27,8 +27,8 @@ Stakes the `msg.value` of ETH and claims aETHc for it.
 
 ##### Smart contract
 
-* [Mainnet GlobalPool Proxy](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet GlobalPool Proxy](https://goerli.etherscan.io/address/0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27)
+* [Mainnet GlobalPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
+* [Testnet GlobalPool Proxy — 0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27](https://goerli.etherscan.io/address/0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27)
 
 ##### Example
 
