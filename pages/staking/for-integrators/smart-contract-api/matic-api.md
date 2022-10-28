@@ -14,7 +14,8 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 ##### Smart contract
 
-[Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
+* [Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
+* [Mainnet MATIC — 0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0](https://etherscan.io/token/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0)
 
 ##### Example
 
@@ -79,7 +80,6 @@ RESTful API endpoint that returns the current fee value for the unstaking operat
 #### Host
 
 https://api.dev.stkr.io/
-
 
 #### Endpoint
 
