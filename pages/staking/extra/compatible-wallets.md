@@ -9,8 +9,8 @@ The following hot wallets are compatible with Ankr Staking:
 * [Trust Wallet](https://trustwallet.com/)
 * [Huobi Wallet](https://www.huobiwallet.io/)
 * [OKX](https://www.okx.com/) (doesn't support Gnosis network)
-* [Polkadot.js](https://polkadot.js.org/)
 
 You can also use **Ledger Nano S** cold wallet. 
 
-Additionally, for some chains such as Polkadot you need to use a chain specific wallet such as in addition to an EVM compatible wallet. 
+Additionally, for some chains such you need to use a chain specific wallet such as in addition to an EVM compatible wallet:
+* Polkadot — [Polkadot.js](https://polkadot.js.org/)
