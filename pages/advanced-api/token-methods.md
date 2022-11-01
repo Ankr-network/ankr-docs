@@ -1475,8 +1475,8 @@ Build your request using the parameters below.
 
   * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
   * `contractAddress` (string; required): an address of the token to search for a price history.
-  * `from_timestamp` (uint64; required): only a single timestamp (either `from_timestamp` or `to_timestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `from_timestamp` corresponds to the time range starting from the timestamp specified (included in the range) and moving forward in time by the number of `interval`s (see the `interval` parameter).
-  * `to_timestamp` (uint64; required): only a single timestamp (either `from_timestamp` or `to_timestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `to_timestamp` corresponds to the time range starting from the timestamp specified (included in the range) and moving backward in time by the number of `interval`s (see the `interval` parameter).
+  * `fromTimestamp` (uint64; required): only a single timestamp (either `fromTimestamp` or `toTimestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `fromTimestamp` corresponds to the time range starting from the timestamp specified (included in the range) and moving forward in time by the number of `interval`s (see the `interval` parameter).
+  * `toTimestamp` (uint64; required): only a single timestamp (either `fromTimestamp` or `toTimestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `toTimestamp` corresponds to the time range starting from the timestamp specified (included in the range) and moving backward in time by the number of `interval`s (see the `interval` parameter).
   * `interval` (uint64): a duration (in hours) of a single time period you'd like to arrange a price history by. In other words, you receive a single history price value per the interval you define. Default value: `24` hours. Max value: `8760` hours (= 365 days).
   * `limit` (uint64): the maximum number of history prices to receive. Default value: `100`. Max value: `1000`.
 
@@ -1496,10 +1496,10 @@ Build your request using the parameters below.
   "params": {
     "blockchain": "string",
     "contractAddress": "string",
-    "from_timestamp": 0,
+    "fromTimestamp": 0,
     "interval": 0,
     "limit": 0,
-    "to_timestamp": 0
+    "toTimestamp": 0
   }
 }
 ```
@@ -1529,7 +1529,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
     "params": {  
         "blockchain": "eth",
         "contractAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-        "to_timestamp": 1667195581,
+        "toTimestamp": 1667195581,
         "interval": 6000,
         "limit": 8
     },
@@ -1557,9 +1557,9 @@ Code: 200 OK
   "result": {
     "quotes": [
       {
-        "block_height": 0,
+        "blockHeight": 0,
         "timestamp": 0,
-        "usd_price": "string"
+        "usdPrice": "string"
       }
     ]
   }
@@ -1576,43 +1576,43 @@ Code: 200 OK
         "quotes": [
             {
                 "timestamp": 1667195591,
-                "block_height": 15866069,
-                "usd_price": "1589.886112425257096286"
+                "blockHeight": 15866069,
+                "usdPrice": "1589.886112425257096286"
             },
             {
                 "timestamp": 1667189591,
-                "block_height": 15865572,
-                "usd_price": "1583.0151106"
+                "blockHeight": 15865572,
+                "usdPrice": "1583.0151106"
             },
             {
                 "timestamp": 1667183591,
-                "block_height": 15865079,
-                "usd_price": "1567.796549909782742262"
+                "blockHeight": 15865079,
+                "usdPrice": "1567.796549909782742262"
             },
             {
                 "timestamp": 1667177591,
-                "block_height": 15864584,
-                "usd_price": "1583.132896298479798684"
+                "blockHeight": 15864584,
+                "usdPrice": "1583.132896298479798684"
             },
             {
                 "timestamp": 1667171591,
-                "block_height": 15864084,
-                "usd_price": "1584.491716491399097652"
+                "blockHeight": 15864084,
+                "usdPrice": "1584.491716491399097652"
             },
             {
                 "timestamp": 1667165591,
-                "block_height": 15863589,
-                "usd_price": "1597.057392438442564297"
+                "blockHeight": 15863589,
+                "usdPrice": "1597.057392438442564297"
             },
             {
                 "timestamp": 1667159591,
-                "block_height": 15863091,
-                "usd_price": "1589.308361856425258561"
+                "blockHeight": 15863091,
+                "usdPrice": "1589.308361856425258561"
             },
             {
                 "timestamp": 1667153591,
-                "block_height": 15862596,
-                "usd_price": "1583.58262649223497801"
+                "blockHeight": 15862596,
+                "usdPrice": "1583.58262649223497801"
             }
         ]
     }
