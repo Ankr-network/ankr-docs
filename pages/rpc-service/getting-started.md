@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Getting Started
 
@@ -113,7 +113,7 @@ Congrats — you've added ANKR tokens to your account, and you're all set for us
 
 ### Withdraw funds
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.
 </Callout>
 
