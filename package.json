@@ -8,7 +8,6 @@
     "build": "npm run update-strapi-faq-files && next build && next export",
     "debug": "NODE_OPTIONS='--inspect' next",
     "dev": "npm run update-strapi-faq-files && next -p 3016",
-    "postinstall": "npm run update-strapi-faq-files",
     "start": "npm run update-strapi-faq-files && next start",
     "start:css": "tailwindcss -o styles/global.css --watch",
     "update-strapi-faq-files": "node ./scripts/update-strapi-faq-files.js"
