@@ -20,7 +20,7 @@ const themes = {
   },
   note: {
     light: 'bg-yellow-50 text-yellow-900 border-yellow-200',
-    dark: 'bg-yellow-600/30 text-yellow-200 border-yellow-100/30'
+    dark: 'bg-yellow-700/30 text-yellow-200 border-yellow-100/30'
   },
    info: {
     light: 'bg-sky-50 text-sky-900 border-sky-200',
@@ -28,11 +28,11 @@ const themes = {
   },
   tip: {
     light: 'bg-teal-50 text-teal-800 border-teal-200',
-    dark: 'bg-teal-300/20 text-teal-300 border-teal-400/30'
+    dark: 'bg-teal-400/20 text-teal-300 border-teal-400/30'
   },
   success: {
     light: 'bg-green-100 text-green-800 border-green-200',
-    dark: 'bg-green-400/20 text-green-300 border-green-400/30'
+    dark: 'bg-green-500/20 text-green-300 border-green-400/30'
   },
   warning: {
     light: 'bg-orange-50 text-orange-800 border-orange-200',
@@ -40,7 +40,7 @@ const themes = {
   },
   error: {
     light: 'bg-rose-50 text-rose-900 border-rose-200 ',
-    dark: 'bg-rose-800/30 text-rose-200 border-rose-200/30'
+    dark: 'bg-rose-900/30 text-rose-200 border-rose-200/30'
   },
 }
 
