@@ -3,41 +3,51 @@ import cn from 'clsx';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 
+const TypeToEmoji = {
+  default: '📃',
+  note: '✏',
+  info: 'ℹ',
+  tip: '💡',
+  success: '✅',
+  warning: '⚠️',
+  error: '🚫'
+}
+
 const themes = {
   default: {
-    light: 'bg-orange-50 text-orange-800 border-orange-100',
-    dark: 'bg-orange-400/20 text-orange-300 border-orange-400/30'
-  },
-  tip: {
-    light: 'bg-green-100 text-green-800 border-green-100',
-    dark: 'bg-green-400/20 text-green-300 border-green-400/30'
-  },
-  success: {
-    light: 'bg-green-100 text-green-800 border-green-100',
-    dark: 'bg-green-400/20 text-green-300 border-green-400/30'
-  },
-  info: {
-    light: 'bg-blue-100 text-blue-900 border-blue-200',
-    dark: 'bg-blue-900/30 text-blue-200 border-blue-200/30'
+    light: 'bg-gray-100 text-gray-900 border-gray-200 ',
+    dark: 'bg-gray-800 text-gray-200 border-gray-200/30'
   },
   note: {
-    light: 'bg-gray-100 text-gray-900 border-gray-200 ',
-    dark: 'bg-gray-900 text-gray-200 border-gray-200/30'
+    light: 'bg-yellow-50 text-yellow-900 border-yellow-200',
+    dark: 'bg-yellow-600/30 text-yellow-200 border-yellow-100/30'
   },
-  error: {
-    light: 'bg-red-100 text-red-900 border-red-200 ',
-    dark: 'bg-red-900/30 text-red-200 border-red-200/30'
+   info: {
+    light: 'bg-sky-50 text-sky-900 border-sky-200',
+    dark: 'bg-sky-800/30 text-sky-200 border-sky-200/30'
+  },
+  tip: {
+    light: 'bg-teal-50 text-teal-800 border-teal-200',
+    dark: 'bg-teal-300/20 text-teal-300 border-teal-400/30'
+  },
+  success: {
+    light: 'bg-green-100 text-green-800 border-green-200',
+    dark: 'bg-green-400/20 text-green-300 border-green-400/30'
   },
   warning: {
-    light: 'bg-yellow-50 text-yellow-900 border-yellow-100',
-    dark: 'bg-yellow-700/30 text-yellow-200 border-yellow-100/30'
+    light: 'bg-orange-50 text-orange-800 border-orange-200',
+    dark: 'bg-orange-400/20 text-orange-300 border-orange-400/30'
+  },
+  error: {
+    light: 'bg-rose-50 text-rose-900 border-rose-200 ',
+    dark: 'bg-rose-800/30 text-rose-200 border-rose-200/30'
   },
 }
 
 export function Callout({
   children,
   type = 'default',
-  emoji = '💡'
+  emoji = TypeToEmoji[type]
 }) {
   const { resolvedTheme } = useTheme();
   const [ rootClasses, setRootClasses ] = useState('');
