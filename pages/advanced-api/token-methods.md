@@ -1477,7 +1477,7 @@ Build your request using the parameters below.
   * `contractAddress` (string; required): an address of the token to search for a price history.
   * `fromTimestamp` (uint64; required): only a single timestamp (either `fromTimestamp` or `toTimestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `fromTimestamp` corresponds to the time range starting from the timestamp specified (included in the range) and moving forward in time by the number of `interval`s (see the `interval` parameter).
   * `toTimestamp` (uint64; required): only a single timestamp (either `fromTimestamp` or `toTimestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `toTimestamp` corresponds to the time range starting from the timestamp specified (included in the range) and moving backward in time by the number of `interval`s (see the `interval` parameter).
-  * `interval` (uint64): a duration (in hours) of a single time period you'd like to arrange a price history by. In other words, you receive a single history price value per the interval you define. Default value: `24` hours. Max value: `8760` hours (= 365 days).
+  * `interval` (uint64): a duration (in seconds) of a single time period you'd like to arrange a price history by. In other words, you receive a single history price value per the interval you define. Default value: 24 hours. Max value: 365 days.
   * `limit` (uint64): the maximum number of history prices to receive. Default value: `100`. Max value: `1000`.
 
 <Tabs
