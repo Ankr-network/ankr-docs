@@ -39,16 +39,16 @@ export function Callout({
   type = 'default',
   emoji = '💡'
 }) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [ rootClasses, setRootClasses ] = useState('');
 
   useEffect(() => {
     setRootClasses(cn(
       'nextra-callout border mt-6 flex rounded-lg py-2 ltr:pr-4 rtl:pl-4',
       'contrast-more:border-current',
-      themes[type][theme === 'light' ? 'light' : 'dark'],
+      themes[type][resolvedTheme === 'light' ? 'light' : 'dark'],
     ));
-  }, [cn, theme, type])
+  }, [cn, resolvedTheme, type])
 
   return (
     <div
