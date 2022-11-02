@@ -1,6 +1,6 @@
 ## Introduction
-These use case has been developed specifically for finance projects looking to launch Web3 services using Ankr App Chains. 
-The information contained here is not intended to provide strict rules, but rather loose guidelines to help developers think about where to start constructing their ideal App Chain.
+These use case has been developed specifically for finance projects looking to launch Web3 services using Ankr AppChains. 
+The information contained here is not intended to provide strict rules, but rather loose guidelines to help developers think about where to start constructing their ideal AppChain.
 
 ## Problem
 Finance has long been contrained by the limitation of Web2. Banking and financial services in their classical form are often unable to trickle down to developing part of the world such as Africa, part of South Asia, Latin America.
@@ -18,21 +18,21 @@ Blockchain, specifically DeFi that has been rapidly growing in popularity last 2
 ## Solution 
 Blockchain, specifically a modular set. A modular blockchain offers greater customization.
 
-App Chains are a perfect case for that. It's an ecosystem of modules that tailed specifically to your needs into your own App Chain instance.
+AppChains are a perfect case for that. It's an ecosystem of modules that tailed specifically to your needs into your own AppChain instance.
 
-Ankr develops & launches your App Chain with your specific infrastructure needs including such modules as: 
+Ankr develops & launches your AppChain with your specific infrastructure needs including such modules as: 
 * _Validator nodes_ — the core of any PoS blockchain, they process transactions and add new blocks to the chain. 
-* _Full nodes_ — enable developers to communicate with (and build on) your App Chain using RPCs.
-* _RPC endpoints_ — track and analyze transactions, addresses, and blocks on your App Chain.
+* _Full nodes_ — enable developers to communicate with (and build on) your AppChain using RPCs.
+* _RPC endpoints_ — track and analyze transactions, addresses, and blocks on your AppChain.
 * _Block explorers_ — a complete visual set of accounts and their history.
-* _Testnets & faucets_ — free testnet tokens for developers to test what they're building on your App Chain.
-* _Staking mechanisms_ — staking functionality and a UI interface to enable users to stake native tokens to your App Chain through a simple, elegant interface.
+* _Testnets & faucets_ — free testnet tokens for developers to test what they're building on your AppChain.
+* _Staking mechanisms_ — staking functionality and a UI interface to enable users to stake native tokens to your AppChain through a simple, elegant interface.
 * _Wallet integrations_ — wider adoption among users of different crypto wallets where they store funds.
-* _Bridging solutions_ — bring tokens from other network to your App Chain or bring your native tokens to other platforms.
+* _Bridging solutions_ — bring tokens from other network to your AppChain or bring your native tokens to other platforms.
 * _On-ramp solutions_ — enable easy transfers between fiat and crypto and back for the users.
 
-## What you get from using App Chains
-With App Chains you get unbeatable benefits: 
+## What you get from using AppChains
+With AppChains you get unbeatable benefits: 
 * Complete regulatory compliance and KYC through Ankr’s DigiVerif KYC solution
 * No data leaks
 * Great privacy protection
@@ -53,10 +53,10 @@ Blockchain brings several new benefits to finance:
 * Central Bank Digital Currencies (CBDCs)
 
 ## Safety & compliance
-Ankr App Chains bridge the gap for banks to join Web3, helping them participate in the DeFi sector in a compliant manner. This allows you to provide the benefits of the cryptocurrency and blockchain world without the risks that regulators are wary of.
+Ankr AppChains bridge the gap for banks to join Web3, helping them participate in the DeFi sector in a compliant manner. This allows you to provide the benefits of the cryptocurrency and blockchain world without the risks that regulators are wary of.
 
 ## Security through permissioned blockchain
-App Chains offer a permissioned setup where all the critical decisions and mode of operation are controlled by you as a client.
+AppChains offer a permissioned setup where all the critical decisions and mode of operation are controlled by you as a client.
 A permissioned setup is similar to the original one, but is enhanced with:
 * Data access layer
 * DigiVerif KYC solution
@@ -67,7 +67,7 @@ A permissioned setup is similar to the original one, but is enhanced with:
 * Ability to reach untapped markets and onboard enterprises and industries from Web2 to Web3
 
 ## Who is it for?
-App Chains fit: 
+AppChains fit: 
 * Local & enterprise banking 
 * Traditional finance
 * Investment funds
