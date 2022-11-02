@@ -24,7 +24,7 @@ Unstaking will be enabled after in the Shanghai upgrade that will follow The Mer
 
   
 
-Overall, it looks like Shanghai is going to come in \~Q2/Q3 2023.
+Overall, it looks like Shanghai is going to come in ~Q2/Q3 2023.
 
 ### How long does it take to unstake my ETH?
 
