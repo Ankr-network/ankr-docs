@@ -23,7 +23,7 @@ This documentation serves as a resource to explore how you can use and integrate
   [Query multiple chains for most popular Web3 scenarios](advanced-api/overview)↗
 </div>
 
-## App Chains
+## AppChains
 * Transition from Web2 to Web3 seamlessly.
 * Order a turnkey dedicated blockchain tailored to you.
 * Choose separate components your project needs.
@@ -51,11 +51,10 @@ This documentation serves as a resource to explore how you can use and integrate
 </div>
 
 ## Learn
-
 * Learn how to develop Smart Contracts, build dApps, explore tools and frameworks, and more.
-* Find getting started tutorials, guide and follow along to ship cool stuff.
-* Explore code guide, tools, tutorials and resoures you need to write and deploy smart contracts.
-* Find End-to-End tutorials to build and ship full-fledged decentralized applications.
+* Find getting-started tutorials, guides and follow along to ship cool stuff.
+* Explore code guides, tools, tutorials, and resources you need to write and deploy smart contracts.
+* Find end-to-end tutorials to build and ship full-fledged decentralized applications.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Learn and practice Web3](learn/overview)↗
 </div>
