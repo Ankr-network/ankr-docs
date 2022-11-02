@@ -23,7 +23,7 @@ This documentation serves as a resource to explore how you can use and integrate
   [Query multiple chains for most popular Web3 scenarios](advanced-api/overview)↗
 </div>
 
-## App Chains
+## AppChains
 * Transition from Web2 to Web3 seamlessly.
 * Order a turnkey dedicated blockchain tailored to you.
 * Choose separate components your project needs.

@@ -60,13 +60,13 @@ Supernets can operate in different modes customized to what your project needs:
 ## What can Ankr offer your Supernet?
 Ankr is the leading Web3 infrastructure company. It has to offer the fastest, most reliable services to power any Web3 project or bring a Web2 project to blockchain.
 
-Ankr advertizes App Chains as its own wholesome ecosystem of modules with full set up, maintenance and support.
+Ankr advertizes AppChains as its own wholesome ecosystem of modules with full set up, maintenance and support.
 
-As App Chains are gaining adoption and popularity, we are partnering with other similar ecosystems to extend their functionality and improve your experience as a client. 
+As AppChains are gaining adoption and popularity, we are partnering with other similar ecosystems to extend their functionality and improve your experience as a client. 
 
 Today, as an official Polygon Supernets partner, we are offering critical infrastructure for building on Polygon Supernets. 
 
-With Ankr App Chains on your Supernet, you'll gain access to:
+With Ankr AppChains on your Supernet, you'll gain access to:
 * **Block explorer** — the custom looking module to track and analyze txs, blocks, and addresses on your Supernet.
 * **Validators** — the core of any PoS blockchain. You can also request Ankr as a trusted and highly reputable validator for your project.
 * **Full nodes** — dedicated throughput for requests from the Web3 applications you're developing.
@@ -77,7 +77,7 @@ With Ankr App Chains on your Supernet, you'll gain access to:
 * **Cross-chain bridge support** — to bridge your tokens out to other Supernets and networks or into your Supernet.
 * **Exchange-readiness program** — to provide Ankr’s expertise and guidance when you're applying to get your token listed on major CEXs.
 
-## Reasons to use Ankr App Chains for your Supernet
+## Reasons to use Ankr AppChains for your Supernet
 There are [more than several reasons](https://medium.com/ankr-network/ankr-is-pulling-ahead-in-web3-infrastructure-f14384888862), but we'll try to be humble:
 * Ankr is the world’s fastest growing decentralized node infrastructure provider.
 * Ankr has immense experience with EVM-compatible chains including Polygon.
@@ -88,4 +88,4 @@ There are [more than several reasons](https://medium.com/ankr-network/ankr-is-pu
 Supernets are for any company who wants a dedicated blockchain for themselves to continue to build, launch and scale their applications.
 An infrastructure provider to build all of their specific blockchain infrastructure along with additional features upon request.
 
-Ankr App Chains are for any Supernets client who wants to improve security of their Supernet and enable the required functionality not yet found in their Supernet.
+Ankr AppChains are for any Supernets client who wants to improve security of their Supernet and enable the required functionality not yet found in their Supernet.
