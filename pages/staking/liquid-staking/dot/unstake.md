@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 ## Overview
 
@@ -14,7 +14,7 @@ Unstaking DOT tokens is a multi-step process involving sending several transacti
 
 ## Unstake DOT
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Gas fee is applied when unstaking
 </Callout>
 

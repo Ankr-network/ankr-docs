@@ -1,8 +1,8 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Card Payment Activation
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 The card payment flow is unavailable for common users until the end of the _Beta-testing_ stage.
 </Callout>
 

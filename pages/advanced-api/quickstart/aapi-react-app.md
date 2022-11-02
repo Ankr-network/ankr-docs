@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 import Image from 'next/image';
 
 # Empower React App with Advanced APIs using AnkrJS SDK

@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # MacOS 
 
@@ -19,7 +19,7 @@ The following instructions are based on Monterey v12.3.1.
 
    <img src="/docs/unreal-v5.png" alt="blank" class="responsive-pic" width="600" />
 
-   <Callout type="warning" emoji="❗">
+   <Callout type="warning">
    If you find that the + button is greyed out, then do the following:
 
    a. Sign out 
@@ -164,7 +164,7 @@ The following instructions are based on Windows 10.
 
 2. Click **Library** and the **+** button to add the **v5** version
 
-   <Callout type="warning" emoji="❗">
+   <Callout type="warning">
    If you find that the + button is greyed out, then do the following:
 
    a. Sign out 

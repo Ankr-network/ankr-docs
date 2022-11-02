@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 ## Overview
 
@@ -16,7 +16,7 @@ AVAX tokens are transferred to your wallet automatically when the unstaking proc
 
 ## Unstake AVAX
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 The following fees applied when unstaking:
 * ANKR fee.
 * Gas fee. 
@@ -34,7 +34,6 @@ You will need to make the following interactions in your wallet:
 
 👍 **Confirm** the unstaking transaction.
 
-<Callout emoji="✅">
+<Callout type="success">
 Once transaction is confirmed, Ankr Staking Dashboard updates to show *Unstaking in progress*.
 </Callout>
-

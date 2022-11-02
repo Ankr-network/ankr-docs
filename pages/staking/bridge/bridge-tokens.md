@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Bridge tokens
 
@@ -15,7 +15,7 @@ We're going to explain bridging, using aMATICb.
    We recommend choosing the **high fee** value for faster transaction mining time.
 6. Ankr Bridge shows you the sending progress. Wait till the cross-chain transaction successfully finishes. 
    
-   <Callout type="warning" emoji="❗">
+   <Callout type="warning">
    Stay on the page until sending has completed in order to receive the bridged tokens. Do not navigate away or close the tab. If bridging fails for any reason, see the **Finish Bridge** section below.
    </Callout>
 7. To receive the bridged aMATICb on the destination network, switch to it by clicking *Switch to network-name* and click *Confirm* in your wallet.

@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 import { Tabs, Tab } from "nextra-theme-docs";
 
 # Moonbeam
@@ -39,7 +39,7 @@ You can set up your **MetaMask wallet** to connect to Moonbeam RPC. You can then
 
 The Moonbeam API is very similar to the Ethereum API and is compatible with the majority of Ethereum-style JSON-RPC methods. Developers can leverage this compatibility and use the [**web3.js library**](https://web3js.readthedocs.io/en/v1.7.3/), [**ethers.js library**](https://docs.ethers.io/) and the [**web3.py library**](https://web3py.readthedocs.io/) to interact with a Moonbeam node as if they were doing so on Ethereum.
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 However, not all Ethereum JSON RPC methods are supported, and some of the supported ones return default values. 
 
 The following methods are supported on the Moonbeam RPC. 

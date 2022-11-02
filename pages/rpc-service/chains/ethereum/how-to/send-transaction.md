@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 In this section we're going to request testnet from a Ropsten faucet and then return testnet to a Ropsten faucet.  
 
@@ -8,7 +8,7 @@ Every transaction on Ethereum must be signed using your private key to validate 
 
 Typically, MetaMask is used in dApp development as it securely holds your private keys in the browser and whenever the front end requires a signature it can call MetaMask. In this walkthrough, your MetaMask private key is stored in a secure .env file along with your endpoint. 
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 About eth_call Transactions
 
 `eth_call` vs `eth_sendRawTransaction`

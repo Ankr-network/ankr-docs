@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # How To Build An ERC-20 token On Optimism's Lightning-Fast Ethereum L2 Blockchain
 

@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # MacOS 
 
@@ -169,7 +169,7 @@ The following instructions are based on Windows 10.
 
 2. Click **Library** and the **+** button to add the **v5** version
 
-   <Callout type="warning" emoji="❗"> 
+   <Callout type="warning"> 
    If you find that the + button is greyed out, then do the following:
    a. Sign out 
    b. Then from the **login box**, scroll to the bottom and click **'Sign in Later'**. 

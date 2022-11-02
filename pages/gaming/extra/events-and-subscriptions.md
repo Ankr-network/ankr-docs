@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Events and subscriptions
 
@@ -57,7 +57,7 @@ public class TransferEventDTO : EventDTOBase
 public ParameterAttribute(string type, string name, int order, bool indexed = false)
 ```
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Pay attention to use compatible type of fields to type of Event props.
 </Callout>
 
@@ -136,7 +136,7 @@ To full example see on [GitHub](https://github.com/Ankr-network/game-unity-sdk/b
 
 In addition to a direct request for past events, we can subscribe to get them right after emit.
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Subscribing works via WebSockets only. Request a relevant endpoint from your provider or activate a WebSocket connection on your Ethereum node.
 </Callout>
 

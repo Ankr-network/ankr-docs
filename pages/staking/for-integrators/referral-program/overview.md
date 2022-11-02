@@ -1,9 +1,9 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Referral program 
 Through our referral program, you can become an Ankr partner and generate more revenue attracting new users to Ankr Liquid Staking.
 
-<Callout type="info" emoji="ℹ">
+<Callout type="info">
 Referral program is coming first on BNB Chain and later will be enabled for other networks that feature Ankr Liquid Staking.
 </Callout>
 
@@ -28,7 +28,7 @@ The formula and the mechanics are well-explained through this example:
    1. Let's say, Ankr decided on 50% partner shares this month — 0.5 BNB.
    2. Ankr counts the % of TVL that came through your. Let's say, it's 1%, so for 1 day you'll get 0.5 * 0.01 = 0.005 BNB. Calculations are performed daily, and you can see your share on Referral Dashboard.
    
-<Callout type="info" emoji="ℹ">
+<Callout type="info">
 A very important aspect is **how a staker is assigned to a partner**.
 
 We have a special staking method where one of the input arguments is the referral code that we generate for the partner.

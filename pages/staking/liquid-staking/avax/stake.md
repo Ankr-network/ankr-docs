@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 ## Use a supported browser extension with the Avalanche network
 
@@ -63,7 +63,7 @@ Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
 
 ### Stake your AVAX
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Be sure to allow sufficient AVAX to cover gas fees AVAX - from 0.025 to 0.1 AVAX 
 
 [_**Find out more**_](https://docs.avax.network/learn/platform-overview/transaction-fees)
