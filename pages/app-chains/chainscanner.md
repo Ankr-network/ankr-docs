@@ -1,6 +1,8 @@
 # Chainscanner
 
-Chainscanner is a first-of-its-kind blockchain data hub and is the face of [Ankr AppChains](https://www.ankr.com/app-chains/), our end-to-end infrastructure solution which creates tailored and application-specific blockchains. 
+Chainscanner is a first-of-its-kind blockchain data hub and is the face of [Ankr AppChains](https://www.ankr.com/app-chains/), our end-to-end infrastructure solution which creates tailored and application-specific blockchains.
+
+<img src="/docs/app-chains/chainscanner.jpg" alt="Chainscanner web UI" class="responsive-pic" width="900" />
 
 Featuring a user-friendly web UI, Chainscanner provides critical insights for users to learn about different chains and decentralized applications — combining CoinMarketCap-like research tools with Etherscan-like functionality.
 
