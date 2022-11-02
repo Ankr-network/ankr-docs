@@ -1,5 +1,5 @@
 # Full Nodes & RPC Endpoints
-Full nodes with RPC endpoints enable developers to communicate with your AppChain using “remote procedure calls.”
+Full nodes with RPC endpoints enable developers to communicate with your App Chain using “remote procedure calls.”
 
 ## Why do I need full nodes?
 Validator nodes process transactions and add new blocks to the chain, keeping record of the newest data. 
@@ -10,7 +10,7 @@ Need to know what happened in block #4317? Need to interact with the blockchain 
 ## Why do I need an RPC endpoint?
 Most developers read and write data to and from the blockchain remotely, sending and receiving data via “remote procedure calls,” or RPCs. 
 These requests can be efficiently filtered through an endpoint (or multiple endpoints). 
-You’ll need an RPC endpoint to facilitate the devs building on your AppChain.
+You’ll need an RPC endpoint to facilitate the devs building on your App Chain.
 
 ## Determine your RPC needs
 **Option 1 (experienced Web3 developers)**
@@ -20,15 +20,15 @@ Ankr launches and hosts three RPC nodes for one year. This option does not inclu
 **Option 2 (new to Web3, or want SLA support)**
 
 Ankr launches, hosts, and provides full engineering support for six RPC nodes for one year — including strategic network updates to maintain 100% uptime. 
-Connect to your AppChain using these nodes, but know they’ll also receive public-facing network traffic from Ankr Protocol.
+Connect to your App Chain using these nodes, but know they’ll also receive public-facing network traffic from Ankr Protocol.
 
 **Option 3 (new Web3 users and special high-traffic use cases)**
 
-Ankr provides a fully customizable and private experience with the setup, hosting, and maintenance of 6 RPC nodes with private RPC engineering so that these nodes are exclusively reachable via your AppChain. 
+Ankr provides a fully customizable and private experience with the setup, hosting, and maintenance of 6 RPC nodes with private RPC engineering so that these nodes are exclusively reachable via your App Chain. 
 This option includes full SLA for Ankr engineering support.
 
-## Set up your RPC endpoint, start testing your AppChain
+## Set up your RPC endpoint, start testing your App Chain
 Depending on your particular use case and usage metrics, your RPC node needs may vary. 
 If you have a lot of users and traffic, you may opt for private RPC nodes. 
 If you’re just getting off the ground, maybe you can get away with using public RPC nodes. 
-In any case, Ankr is here to set up, host, and provide optimal node services for your AppChain.
+In any case, Ankr is here to set up, host, and provide optimal node services for your App Chain.
