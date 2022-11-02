@@ -12,7 +12,7 @@ Unstaking KSM tokens is a multi-step process involving sending several transacti
 
 ## Unstake KSM
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 The following fees applied when unstaking:
 * Gas fee. 
 </Callout>

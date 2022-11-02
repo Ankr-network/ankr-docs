@@ -18,7 +18,7 @@ To request for Hybrid Infrastructure, fill in the details for our Sales to conta
 
 On request, a [Premium](/rpc-service/service-plans/#service-plans-comparison) user can be enabled to add either their own private nodes or use external providers' ones to interact with blockchains. In both instances, Ankr's load balancer would still be processing the requests, sending them to nodes, and sending the received responses back to the user. But the nodes the requests are sent to would be the ones from the private infrastructure of the user's choice (personal nodes or external providers' nodes). At the same time, Ankr's nodes would be used as a fallback option in case of any breakdown.
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 The WebSocket connection is available via Ankr's infrastructure only.
 </Callout>
 

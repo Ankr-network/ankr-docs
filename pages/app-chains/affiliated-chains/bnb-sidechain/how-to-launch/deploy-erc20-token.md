@@ -28,6 +28,6 @@ contract MyERC20Token is ERC20 {
 
 Now you can go to the `Solidity Compiler` section to compile your smart contract and deploy it to the BNB Sidechain network via the `Deploy & Run Transaction` section.
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Make sure you choose `MyERC20Token` smart contract at the deployment stage.
 </Callout>

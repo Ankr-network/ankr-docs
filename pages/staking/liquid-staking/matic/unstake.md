@@ -17,7 +17,7 @@ If you're unstaking on Polygon, a fee of 0.5% is deducted from the unstaking amo
 </Callout>
 
 ## Unstake MATIC
-<Callout type="warning" emoji="❗"> 
+<Callout type="warning"> 
 * For unstaking on Ethereum, a fee of 0.025 ETH applies.
 * For unstaking on Polygon, a fee of 0.5% is deducted from the unstaking amount.
 </Callout>
@@ -34,7 +34,7 @@ You will need to make the following interactions in your wallet:
 
 👍 **Confirm** the unstaking transaction.
 
-<Callout emoji="✅">
+<Callout type="success">
 Once transaction is confirmed, Ankr Staking Dashboard updates to show *Unstaking in progress*.
 
 For unstaking on Ethereum, the withdrawal period is 80 epochs and more depending on the network congestion. Typically, it takes around 1–2 days to receive your MATIC. 

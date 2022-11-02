@@ -124,7 +124,7 @@ curl https://rpc.ankr.com/gnosis \
 ---
 ## Integrate code
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Be aware! Gnosis RPC calls do not work with URLs that specify a Port Number. 
 </Callout>
 

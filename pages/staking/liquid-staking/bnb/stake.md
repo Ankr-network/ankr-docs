@@ -42,7 +42,7 @@ You will need to make the following interactions in your wallet:
 
 ## Stake your BNB
 
-<Callout type="info" emoji="ℹ">
+<Callout type="info">
 A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why you see 0.502: the min amount 0.5 + the fee.
 </Callout>
 
@@ -55,7 +55,7 @@ A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why yo
 7. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update. 
 
 
-<Callout emoji="✅">
+<Callout type="success">
 Your aBNBb balance will automatically increase by a small amount daily to reflect your Binance Coin Staking rewards. 
 You can now use your aBNBb reward earning tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aBNBb section.
 </Callout>

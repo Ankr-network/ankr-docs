@@ -10,7 +10,7 @@ import { Callout } from "components";
 
 * aETHb is a reward-earning token, meaning that rewards from Ethereum staking will be distributed daily through rebasing and aETHb holders' balance in their wallet will increase on a daily basis.
  
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Currently, unstaking is not available, as this functionality is not yet supported by Ethereum.
 
 Unstaking will be enabled after in the Shanghai upgrade that will follow The Merge in 6-12 months. 

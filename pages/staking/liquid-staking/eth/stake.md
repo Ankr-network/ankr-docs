@@ -4,7 +4,7 @@ import { Callout } from "components";
 
 ## Connect your wallet
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 **BE SURE to select the ‘Ethereum Mainnet’ network in your wallet. Otherwise you get an error message.**
 </Callout>
 

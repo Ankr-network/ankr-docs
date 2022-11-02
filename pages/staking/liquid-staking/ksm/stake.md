@@ -68,7 +68,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 
 4. Authorize your Polkadot.js wallet.
 
-<Callout emoji="✅">
+<Callout type="success">
 This enables access to aKSMb Tokens.
 Successful addition to your wallet is indicated by your Ethereum wallet updating with aKSMb tokens.
 You are now free to utilize your aKSMb in Ankr DeFi or other DeFi platforms.

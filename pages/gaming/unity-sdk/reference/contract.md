@@ -31,7 +31,7 @@ A class containing the methods to interact with smart contracts.
 
   * `string` — a transaction hash.
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Use only for methods that change a smart contract state. To return a contract state, contract field, and mappings, use [`GetData`](#getdata). To find out more on the difference between contract methods, see [Gas fees and gas-free methods](/gaming/extra/gas-fees-gas-free-methods/).
 </Callout>
 
@@ -102,7 +102,7 @@ The method returns nothing specific, but instead it returns various values on va
   * `ErrorReceived` — returns an `Exception`.
   * `ReceiptReceived` — returns a [TransactionReceipt](https://github.com/Nethereum/Nethereum/blob/master/src/Nethereum.RPC/Eth/DTOs/TransactionReceipt.cs).
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Use only for methods that change a smart contract state. Use [GetData](#getdata) for methods that return contract state, contract field, and mappings. To get more about difference between contract method please read the article.
 </Callout>
 
@@ -304,7 +304,7 @@ public class ContractExample : MonoBehaviour
 
   * `TReturnType` — the data from a contract's method, field, or mapping.
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Use only for methods that return data, contract fields, and mappings. To change a contract state, use [CallMethod](#callmethod) or [Web3SendMethod](#web3sendmethod). To find out more on the difference between contract methods please, have a look at [Gas fees and gas-free methods](/gaming/extra/gas-fees-gas-free-methods/).
 </Callout>
 
@@ -422,7 +422,7 @@ public class ContractExample : MonoBehaviour
 
   * `HexBigInteger` — a gas value estimation for a transaction specified.
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Use only for the contract methods that change a smart contract state. To find out more on the difference between the contract methods, have a look at [Gas fee and gas-free methods](/gaming/extra/gas-fees-gas-free-methods/).
 </Callout>
 

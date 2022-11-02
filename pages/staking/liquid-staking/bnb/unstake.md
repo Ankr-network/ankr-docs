@@ -6,7 +6,7 @@ If you decide to unstake, it can take up to 7–10 days before you receive your 
 
 ## Unstake BNB
 
-<Callout type="warning" emoji="❗">
+<Callout type="warning">
 Release time and fees
 
 When you unstake, you have to wait for 7–10 days until your funds are released to your wallet.
@@ -32,7 +32,7 @@ You will need to make the following interactions in your wallet:
 
 👍 **Confirm** the unstaking transaction.
 
-<Callout emoji="✅">
+<Callout type="success">
 Once transaction is confirmed, Ankr Staking Dashboard updates to show **Unstaking in progress**.
 </Callout>
 
