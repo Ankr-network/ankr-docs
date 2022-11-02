@@ -3,7 +3,7 @@ Leverage Ankr’s industry expertise to prepare to apply for exchange listings.
 
 ## Why trust Ankr?
 Ankr has long-standing relationships with many popular CEXs and has helped to position several partner projects for success in the Web3 industry. 
-Ankr will expertly advise AppChain teams in order to help them complete the technical due diligence process with exchanges.
+Ankr will expertly advise AppChain teams to help them complete the technical due diligence process with exchanges.
 
 ## What’s included in the Exchange-Readiness program?
 Ankr will use its experience and relationships to make sure you have the best chance of getting your tokens listed on major exchanges the first time. 

@@ -1,6 +1,6 @@
 # Chainscanner
 
-Chainscanner is a first-of-its-kind blockchain data hub and is the face of [Ankr AppChains](https://www.ankr.com/app-chains/), our end-to-end infrastructure solution which creates tailored and application-specific blockchains.
+Chainscanner is a first-of-its-kind blockchain data hub and is the face of [Ankr AppChains](https://www.ankr.com/app-chains/), our end-to-end infrastructure solution, which creates tailored and application-specific blockchains.
 
 <img src="/docs/app-chains/chainscanner.jpg" alt="Chainscanner web UI" class="responsive-pic" width="900" />
 
@@ -24,9 +24,9 @@ Digital infrastructure (specifically blockchain infrastructure) consists of comp
 However, we can share the important insights that blockchain infrastructure provides without showing the actual code and programming languages that built it.
 
 Chainscanner provides a simple and understandable user interface over the blockchain infrastructure that powers our AppChain projects. 
-The hubs’s purpose is for developers to view the core infrastructure of a blockchain and for dApp users to analyze the application’s critical data points and visualize the actions available to them. 
-Interacting with this new feature allows users to become truly knowledgeable and involved with their favorite applications. 
-Chainscanner provides the educational experience for Web2 users to get comfortable utilizing Web3 dApps. 
+The hub's purpose is for developers to view the core infrastructure of a blockchain and for dApp users to analyze the application’s critical data points and visualize the actions available to them. 
+Interacting with this new feature allows users to become truly knowledgeable and involved with their favorite applications.
+Chainscanner provides the educational experience for Web2 users to get comfortable utilizing Web3 dApps.
 And further, the experience will empower those users to go beyond positions as speculative investors and become experienced token/coin holders.
 
 ## Use cases now on Chainscanner
@@ -40,7 +40,7 @@ Chainscanner makes it easy for players to keep tabs on their transactions and pa
 
 ### Finance — BOMB Money
 [BOMB Money](https://app.bomb.money/) is on a mission to become the safest and largest crypto-staking platform by offering a seamless user experience that is on par with easy-to-use traditional financial apps like Robinhood. 
-Chainscanner will make it easy for BOMB Money users to earn more with the native assets of the BOMB chain while providing a window into all on-chain activity for enhanced transparency and assurance.
+Chainscanner will make it easy for BOMB Money users to earn more with the native assets of the BOMB chain while providing a window into all on-chain activity for an enhanced transparency and assurance.
 
 
 

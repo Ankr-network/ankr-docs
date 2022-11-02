@@ -1,4 +1,4 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Referral program 
 Through our referral program, you can become an Ankr partner and generate more revenue attracting new users to Ankr Liquid Staking.

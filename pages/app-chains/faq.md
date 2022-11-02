@@ -23,7 +23,7 @@ All we need is some expertise from your engineers about key points of integratio
 
 Affiliated Chains are projects that team up with Ankr AppChains, using it as part of their infrastructure.
 For example, BNB Sidechain is almost entirely implemented using AppChains and thus is a paragon of the power AppChains can offer. It's a complex project that you can build upon and especially useful if your company is new to Web3 and wants a whole setup.
-Other example is Polygon Supernets — a partner that takes from AppChains what it misses, e.g., trusted validators for its validators set.  
+Other example is Polygon Superset's — a partner that takes from AppChains what it misses, e.g., trusted validators for its validators set.  
 
 ### Meta Apes are built on AppChains. So is it any good for game projects?
 

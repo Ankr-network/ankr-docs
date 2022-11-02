@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Create A Backend NodeJS IPFS File Uploader With Filebase
 

@@ -1,6 +1,6 @@
 import { Code } from "components";
 import { Bleed } from "nextra-theme-docs";
-import { Callout } from "nextra-theme-docs";
+import { Callout } from "components";
 
 # Filebase to store files to IPFS
 
