@@ -58,6 +58,7 @@ Currently, `ankr.js` supports interaction with the following chains using their 
   * [`getTokenHoldersCount`](/advanced-api/javascript-sdk/#gettokenholderscount)
   * [`getCurrencies`](/advanced-api/javascript-sdk/#getcurrencies)
   * [`getNFTMetadata`](/advanced-api/javascript-sdk/#getnftmetadata)
+  * [`getTokenPriceHistory`](/advanced-api/javascript-sdk/#gettokenpricehistory)
 
 ### `getLogs`
 
@@ -187,4 +188,23 @@ const nftMetadata = async () => {
   });
 };
 
+```
+
+### `getTokenPriceHistory`
+
+Retrieves the particular token's price history on the chain specified. Either of the timestamp parameters MUST be provided to build a successful request — indicating both parameters leads to an error:
+
+  * `fromTimestamp` corresponds to the time range starting from the timestamp specified in seconds (included in the range) and moving forward in time by the number of `interval`s. The number of fetched history prices can't exceed the `limit` specified.
+  * `toTimestamp` corresponds to the time range starting from the timestamp specified in seconds (included in the range) and moving backward in time by the number of `interval`s. The number of fetched history prices can't exceed the `limit` specified.
+
+```javascript
+const prices = async () => {
+  return await provider.getTokenPriceHistory({
+        blockchain: "eth",
+        contractAddress: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        fromTimestamp: 1667195581, 
+        interval: 86400, // 24h
+        limit: 337
+  });
+};
 ```
