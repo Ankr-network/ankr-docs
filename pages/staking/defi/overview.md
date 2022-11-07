@@ -1,3 +1,5 @@
+import { Callout } from "components";
+
 # Ankr DeFi 
 
 ## What is Ankr DeFi?
@@ -11,12 +13,16 @@ Liquid Staking tokens, e.g. aETHc or aMATICb, are tokens users get when staking 
 ## Ankr DeFi Dashboard 
 Ankr DeFi features a cross-chain dashboard where users can choose Liquid Staking tokens and assets to trade, and platforms to trade on.
 
+<img src="/docs/defi/defi-dashboard.png" alt="Ankr DeFi Dashboard " class="responsive-pic" width="900" />
+
 Currently, the dashboard features:
 * [Liquidity pools](/staking/defi/liquidity-pools)
 * [Yield farming](/staking/defi/yield-farming)
 * [Vaults](/staking/defi/vaults)
 
-Borrowing and Indexes are coming later.
+<Callout>
+The **Borrowing** and **Indexes** functionality is coming later.
+</Callout>
 
 
 

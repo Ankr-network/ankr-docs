@@ -1,13 +1,13 @@
 import { Callout } from "components";
 
 # Ankr Liquid Staking
+<img src="/docs/liquid-staking/liquid-staking.png" alt="Switch network" class="responsive-pic" width="800" />
 Liquid Staking solves the problem of locked up liquidity when staking assets on Proof-of-Stake networks.
 
 Staking rewards from Proof-of-Stake networks can be one of the most stable streams of income available (in percentage terms). 
 However typically you have to wait until the end of the staking period to get your staking rewards.
 
 Liquid Staking provides instant liquidity for staked assets in the form of Liquid Staking tokens.
-
 Liquid Staking tokens represent the value of your staked assets but the tokens are portable, accessible and thus liquid. 
 They can now be utilized in a number of ways.
 
@@ -22,10 +22,9 @@ By providing liquidity, you also have the possibility of receiving farming rewar
 3. **Earn more yield**
 You can harvest the farmed tokens and stake those tokens as well to earn more yield, or simply sell them to buy more AVAX and aAVAXb to generate more yield. Repeating this operation periodically can add a compounding effect to yield.
 
-<Callout>
-Ready to get started?
-
-Check out [**Ankr Staking**](https://www.ankr.com/staking/)
+<Callout type="tip">
+**READY TO GET STARTED?**<br/>
+Check out [Ankr Staking](https://www.ankr.com/staking/stake/)
 </Callout>
 
 ## Types of Liquid Staking tokens
@@ -49,9 +48,7 @@ For example, the fair value of 1 aETHc token vs. ETH increases over time as stak
 
 ## How do I get Liquid Staking tokens?
 
-Liquid Staking tokens are automatically issued to your Ankr Staking Dashboard when you successfully stake assets such as ETH, AVAX, FTM, BNB. 
-
-Check out [**Ankr Staking**](https://www.ankr.com/staking/)
+Liquid Staking tokens are automatically issued to your Ankr Staking Dashboard when you successfully stake assets such as ETH, AVAX, FTM, BNB.
 
 For example,
 
@@ -79,11 +76,6 @@ For chains that allow unstaking such as Avalanche, the benefit is the elastic su
 
 The Elastic supply feature of liquid staking has an important impact on the price stability of Liquid Staking tokens. 
 
-ETH liquid staking price stability is based mainly on the amount of liquidity in DEXs. However, with AVAX liquid staking, the price stability is less dependent on the amount of liquidity in a DEX because any price deviation of aAVAXb creates a trading opportunity for other users. Other users can buy aAVAXb at a discount and then return aAVAXb to Ankr Staking(unstake) to claim the aAVAXb fair value. In doing so, a gain can be realized once the unstaking lock-up period, of 28 days for aAVAXb has passed. 
+ETH liquid staking price stability is based mainly on the amount of liquidity in DEXs. However, with AVAX liquid staking, the price stability is less dependent on the amount of liquidity in a DEX because any price deviation of aAVAXb creates a trading opportunity for other users. Other users can buy aAVAXb at a discount and then return aAVAXb to Ankr Staking(unstake) to claim the aAVAXb fair value. In doing so, a gain can be realized once the unstaking lock-up period, of 28 days for aAVAXb has passed.
 
-<Callout>
-Ready to start?
-
-Check out [**Ankr Staking**](https://www.ankr.com/staking/)
-</Callout>
-
+Check out [Ankr Staking](https://www.ankr.com/staking/stake/)!

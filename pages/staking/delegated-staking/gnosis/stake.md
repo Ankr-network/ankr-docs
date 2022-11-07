@@ -11,8 +11,8 @@ To stake mGNO, you'll need to:
 
 ## Before you start
 
-<Callout>
-Ensure the following:
+<Callout type="info">
+**ENSURE THE FOLLOWING:**
 * You are using a Chrome Browser.
 * You have a MetaMask wallet.
 </Callout>
@@ -20,9 +20,8 @@ Ensure the following:
 ## Purchase GNO
 Visit one of the [recommended DEXs](https://docs.gnosischain.com/ecosystems/defi#dex-aggregators) and swap your assets for the desired amount of GNO tokens.
 
-<Callout>
-xDai
-
+<Callout type="tip">
+**xDai**<br/>
 You'll need a small amount of xDai for gas fees while depositing GNO and staking mGNO.
 </Callout>
 
@@ -36,9 +35,8 @@ To use it on Gnosis, you'll need to bridge it to Gnosis Chain.
 
 ## Swap the bridged GNO to mGNO
 
-<Callout>
-Gas fees and liquidity restrictions
-
+<Callout type="tip">
+**GAS FEES AND LIQUIDITY RESTRICTIONS**<br/>
 Make sure you have some xDai to pay the gas fee for your depositing transaction.
 
 Remember that mGNO will remain locked and illiquid until ~Q4 2023 max.
@@ -73,20 +71,20 @@ You will need to make the following interactions in your wallet:
 
 ## Stake mGNO
 
-<Callout>
-Micropool and gas fees
-
+<Callout type="info">
+**MICROPOOLS AND GAS FEES**<br/>
 Your stake does not immediately gets staked on Gnosis. 
 Gnosis accepts stakes with minumum 1 GNO (32 mGNO).
 To bypass this and accept your stake if it's lower than 1 GNO, we created a micropool that accumulates user stakes.
-Once it has 1 GNO, we stake it with Gnosis.
-
+Once it has 1 GNO, we stake it with Gnosis.<br/>
 Make sure you have some xDai to pay the gas fee for your staking transaction.
 </Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
 2. In the **Delegated staking** section, click **Stake** under **mGNO**.
+   <img src="/docs/delegated-staking/gnosis-delegated-staking-box.png" alt="Locate the mGNO box" class="responsive-pic" width="300" /> 
 3. Enter the desired amount of mGNO to stake.
+   <img src="/docs/delegated-staking/enter-mgno-token-amount-to-stake.png" alt="Enter the desired amount of mGNO tokens to stake" class="responsive-pic" width="500" />
 4. Choose a Node Provider (currently only Ankr; more providers in future releases).
 5. Click **Approve** to approve Ankr Staking access to your mGNO.
 6. Confirm approving access in MetaMask.

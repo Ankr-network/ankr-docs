@@ -41,9 +41,12 @@ However, your stake will keep generating rewards until you unstake, whether or n
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
 2. In the **Delegated staking** section, click **Stake** under **ANKR**.
+   <img src="/docs/delegated-staking/ankr-delegated-staking-box.png" alt="Locate ANKR Delegated Staking box" class="responsive-pic" width="300" /> 
 3. Enter the desired amount of ANKR to stake (min. amount is 1000 ANKR).
+   <img src="/docs/delegated-staking/enter-ankr-token-amount-to-stake.png" alt="Enter the desired amount of ANKR tokens to stake" class="responsive-pic" width="500" />
 4. Choose a Node Provider (currently only Ankr; more providers in future releases).
 5. Click **Approve** to approve Ankr Staking access to your ANKR.
+   <img src="/docs/delegated-staking/enter-ankr-token-amount-to-stake.png" alt="Click Approve" class="responsive-pic" width="500" />
 6. Confirm approving access in MetaMask.
 7. Click **Stake** to send your delegated stake to the chosen Node Provider.
 8. Confirm the transaction in MetaMask.
