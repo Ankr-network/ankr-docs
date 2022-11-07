@@ -60,28 +60,28 @@ export default {
         <meta name="og:image" content={image} />
 
         {/* Favicons */}
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
+        <link rel="manifest" href="/docs/favicon/site.webmanifest" />
+        <link rel="icon" type="image/svg+xml" href="/docs/favicon/favicon.ico" />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon/favicon-16x16.png"
+          href="/docs/favicon/favicon-16x16.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon/favicon-32x32.png"
+          href="/docs/favicon/favicon-32x32.png"
         />
         <link
           rel="apple-icon"
           sizes="180x180"
-          href="/favicon/apple-icon-180x180.png"
+          href="/docs/favicon/apple-icon-180x180.png"
         />
         <link
           rel="mask-icon"
-          href="/favicon/safari-pinned-tab.svg"
+          href="/docs/favicon/safari-pinned-tab.svg"
           color="#000000"
         />
       </>
