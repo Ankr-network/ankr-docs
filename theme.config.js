@@ -46,6 +46,7 @@ export default {
         <meta httpEquiv="Content-Language" content="en" />
 
         {/* SEO */}
+        <meta name="robots" content="nofollow" />
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
         <meta name="og:title" content={`${config.title} — Ankr`} />
