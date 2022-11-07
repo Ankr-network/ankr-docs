@@ -1,6 +1,6 @@
 # Chainscanner
 
-Chainscanner is effectively the user interface for [Ankr AppChains](https://www.ankr.com/app-chains/). 
+Chainscanner is the user interface for [Ankr AppChains](https://www.ankr.com/app-chains/). 
 It’s an all-in-one platform for application-specific blockchains that provides a central hub where Ankr AppChain developers and users alike can view important data and interact with their desired AppChains. 
 On Chainscanner, anyone can search for on-chain info like transaction data and dApps history, stake their tokens, vote on governance proposals, access development resources, and learn more about how specific AppChains work.
 
