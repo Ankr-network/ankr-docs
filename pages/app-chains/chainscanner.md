@@ -1,12 +1,14 @@
 # Chainscanner
 
-Chainscanner is a first-of-its-kind blockchain data hub and is the face of [Ankr AppChains](https://www.ankr.com/app-chains/), our end-to-end infrastructure solution, which creates tailored and application-specific blockchains.
+Chainscanner is effectively the user interface for [Ankr AppChains](https://www.ankr.com/app-chains/). 
+It’s an all-in-one platform for application-specific blockchains that provides a central hub where Ankr AppChain developers and users alike can view important data and interact with their desired AppChains. 
+On Chainscanner, anyone can search for on-chain info like transaction data and dApps history, stake their tokens, vote on governance proposals, access development resources, and learn more about how specific AppChains work.
+
+It combines CoinMarketCap-like research tools with Etherscan-like functionality.
 
 <img src="/docs/app-chains/chainscanner.jpg" alt="Chainscanner web UI" class="responsive-pic" width="900" />
 
-Featuring a user-friendly web UI, Chainscanner provides critical insights for users to learn about different chains and decentralized applications — combining CoinMarketCap-like research tools with Etherscan-like functionality.
-
-The core functionality includes:
+The core functionality of Chainscanner includes:
 1. Block explorer — transparently displays all on-chain data.
 2. Staking interface — allows users to earn staking rewards with their favorite tokens.
 3. Validator enrollment hub — provides onboarding to contribute validator nodes.
