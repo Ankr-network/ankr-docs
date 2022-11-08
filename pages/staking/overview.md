@@ -4,7 +4,7 @@ import { Callout } from "components";
 Ankr Staking aims to bring the benefits of DeFi to the masses with Liquid Staking, Delegated Staking, DeFi, Bridge, Switch, and Parachain Crowdloan.
 
 <Callout type="tip">
-If you're a developer or a company looking to integrate Staking into your project, visit our [intergrator docs](/staking/for-integrators/overview/).
+If you're a developer, or a company looking to integrate Staking into your project, visit the [Staking integration docs](/staking/for-integrators/overview/).
 </Callout>
 
 ## Liquid Staking
@@ -25,12 +25,11 @@ This is a next step towards Ankr 2.0.
 
 
 ## DeFi
-[Ankr DeFi](/staking/defi/overview/) features a cross-chain dashboard where users can choose Liquid Staking tokens and assets to trade, earn additional yeild, and platforms to do it on.
+[Ankr DeFi](/staking/defi/overview/) features a cross-chain dashboard with trading and yield opportunities for Liquid Staking tokens and assets on different platforms.
 
 
 ## Bridge
-[Ankr Bridge](/staking/bridge/overview/) is a product for bridging assets between networks. 
-It enables users to bring their Liquid Staking Tokens to other networks where they may have more exciting yield opportunities.
+[Ankr Bridge](/staking/bridge/overview/) enables bridging assets between networks for users to bring their Liquid Staking Tokens somewhere where they may get exciting yield opportunities.
 
 Ankr Bridge is secured with ECDSA cryptography and a multi-party computation based Threshold Signature Scheme. This ensures that private keys are never exposed whilst mitigating against any single point of failure.
 
@@ -40,7 +39,7 @@ Ankr Bridge is secured with ECDSA cryptography and a multi-party computation bas
 
 
 ## Parachain Liquid Crowdloan
-[Parachain Liquid Crowdloan](/staking/liquid-crowdloan/overview/) provide benefits similar to Staking and allows users to:
+[Parachain Liquid Crowdloan](/staking/liquid-crowdloan/overview/) provides benefits similar to Staking and allows users to:
 1. Bond DOT/KSM: users bond DOT or KSM to a Polkadot project during a Parachain Slot Auction. 
 2. Locked Liquidity: if the project wins a slot, the bonded DOT or KSM is inaccessible.
 3. Attain Instant Liquidity: however, Parachain Liquid Staking tokens can be instantly obtained. These are portable and usable elsewhere. 
