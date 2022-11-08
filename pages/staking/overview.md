@@ -3,7 +3,7 @@ import { Callout } from "components";
 # Ankr Staking
 Ankr Staking aims to bring the benefits of DeFi to the masses with:
 * [Liquid Staking](#liquid-staking) 
-* [Delegate Staking](#delegate-staking)
+* [Delegated Staking](#delegate-staking)
 * [DeFi](#defi)
 * [Bridge](#bridge)
 * [Switch](#ankr-switch)
@@ -25,8 +25,8 @@ The clear benefits of Ankr Liquid Staking are:
 * Immediate access to liquidity
 * Transfer of risks to Ankr experts
 
-## Delegate Staking
-[Delegate Staking](/staking/delegated-staking/ankr/overview/) extends the Liquid Staking experience to make it more decentralized and transparent. 
+## Delegated Staking
+[Delegated Staking](/staking/delegated-staking/ankr/overview/) extends the Liquid Staking experience to make it more decentralized and transparent. 
 Instead of relying solely on a limited subset of validators, users will be able to choose from a larger range of validators to stake with, and validators will be able to choose incentives and their amount to stimulate users to stake with them.
 This is a next step towards Ankr 2.0.
 
@@ -35,14 +35,14 @@ This is a next step towards Ankr 2.0.
 [Ankr DeFi](/staking/defi/overview/) features a cross-chain dashboard where users can choose Liquid Staking tokens and assets to trade, earn additional yeild, and platforms to do it on.
 
 
-## Ankr Bridge
+## Bridge
 [Ankr Bridge](/staking/bridge/overview/) is a product for bridging assets between networks. 
 It enables users to bring their Liquid Staking Tokens to other networks where they may have more exciting yield opportunities.
 
 Ankr Bridge is secured with ECDSA cryptography and a multi-party computation based Threshold Signature Scheme. This ensures that private keys are never exposed whilst mitigating against any single point of failure.
 
 
-## Ankr Switch
+## Switch
 [Ankr Switch](/staking/switch/overview/) enables the exchange of Liquid Staking tokens: between reward earning tokens and reward bearing tokens for the same asset.
 
 
