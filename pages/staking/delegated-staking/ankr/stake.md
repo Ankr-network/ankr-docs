@@ -13,7 +13,7 @@ Visit [1Inch ETH to ANKR](https://app.1inch.io/#/1/classic/swap/ETH/ANKR) swap p
 ## Connect your wallet
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
-   <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
+   <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Ankr Staking" class="responsive-pic" width="600" />
 2. Click **Connect wallet** in the top-right corner of the page.
    <img src="/docs/staking/connect-wallet/connect-wallet-button.jpg" alt="Connect wallet button" class="responsive-pic" width="140" />
 3. Choose **MetaMask**.
@@ -27,25 +27,33 @@ Visit [1Inch ETH to ANKR](https://app.1inch.io/#/1/classic/swap/ETH/ANKR) swap p
 
 ## Stake ANKR
 
-<Callout>
-Make sure you have some ETH to pay the gas fee for your staking transaction.
-
-Currently, **ANKR can only be staked on Ethereum**. If you have ANKR on any other chains, please bridge it first to stake it. 
-
-You can claim or restake your rewards after the locking period of 84–91 days. This period applies to each staking transaction independently.
+<Callout type="info">
+**CORRECT NETWORK, GAS FEES, LOCKUP PERIOD**<br/>
+1. Currently, **ANKR can only be staked on Ethereum**. If you have ANKR on any other chains, please bridge it first to stake it.
+2. Before staking, make sure you have some ETH to pay the gas fee for your staking transaction.
+3. You can claim or restake your rewards after the locking period of 84–91 days. This period applies to each staking transaction independently.
 However, your stake will keep generating rewards until you unstake, whether or not the locking period has ended.
 </Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
+   <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Ankr Staking" class="responsive-pic" width="600" />
 2. In the **Delegated staking** section, click **Stake** under **ANKR**.
-   <img src="/docs/staking/delegated-staking/ankr-delegated-staking-box.png" alt="Locate ANKR Delegated Staking box" class="responsive-pic" width="300" />
-3. 6. If you're on a different network, you may be prompted to switch to the correct one. Click **Switch network** on the page, then allow MetaMask to switch to it.
-4. Enter the desired amount of ANKR to stake (min. amount is 1000 ANKR).
-   <img src="/docs/staking/delegated-staking/enter-ankr-token-amount-to-stake.png" alt="Enter the desired amount of ANKR tokens to stake" class="responsive-pic" width="500" />
-5. Choose a Node Provider (currently only Ankr; more providers in future releases).
-6. Click **Approve** to approve Ankr Staking access to your ANKR.
-   <img src="/docs/staking/delegated-staking/enter-ankr-token-amount-to-stake.png" alt="Click Approve" class="responsive-pic" width="500" />
-7. Confirm approving access in MetaMask.
-8. Click **Stake** to send your delegated stake to the chosen Node Provider.
-9. Confirm the transaction in MetaMask.
-10. On the stake progress page, click **Go to dashboard** to see the staked ANKR. You may need to wait a little for the transaction to finalize and Ankr Staking Dashboard to automatically update.
+   <img src="/docs/staking/delegated-staking/ankr/ankr-staking-box.jpg" alt="ANKR Delegated Staking box" class="responsive-pic" width="300" />
+3. If you're on a different network, you may be prompted to switch to the correct one in MetaMask. Click **Switch network** on the page.
+   <img src="/docs/staking/delegated-staking/ankr/switch-to-correct-network.jpg" alt="Switch to correct network" class="responsive-pic" width="450" />
+4. Click **Switch network** in MetaMask to confirm the switching.
+   <img src="/docs/staking/delegated-staking/ankr/confirm-switching-networks.jpg" alt="Confirm switching in MetaMask" class="responsive-pic" width="300" />
+5. Enter the desired amount of ANKR to stake (min. 1000 ANKR).
+   <img src="/docs/staking/delegated-staking/ankr/enter-ankr-amount-to-stake.jpg" alt="Enter the desired amount of ANKR tokens to stake" class="responsive-pic" width="500" />
+6. Choose a Node Provider (currently only Ankr; more providers in future releases).
+7. Click **Approve** to approve Ankr Staking access to your ANKR.
+   <img src="/docs/staking/delegated-staking/ankr/enter-ankr-amount-to-stake.jpg" alt="Enter the desired amount of ANKR tokens to stake" class="responsive-pic" width="500" />
+8. Confirm the access approval in MetaMask.
+   <img src="/docs/staking/delegated-staking/ankr/confirm-approving-acces-to-ankr.jpg" alt="Confirm your approval in MateMask" class="responsive-pic" width="300" />
+9. Click **Stake** to send your delegated stake to the chosen Node Provider.
+   <img src="/docs/staking/delegated-staking/ankr/click-stake-ankr-after-approval.jpg" alt="Stake ANKR after your approval" class="responsive-pic" width="500" />
+10. Confirm the transaction in MetaMask.
+    <img src="/docs/staking/delegated-staking/ankr/confirm-staking-ankr.jpg" alt="Confirm staking ANKR" class="responsive-pic" width="300" />
+11. On the stake progress page, wait for the "Stake successfull!" message and click **Go to dashboard** to see the staked ANKR. <br/> It may take a few moments for the transaction to finalize and Ankr Staking Dashboard to update.
+    <img src="/docs/staking/delegated-staking/ankr/successful-stake.jpg" alt="Stake successfull!" class="responsive-pic" width="600" />
+
