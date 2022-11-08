@@ -1,18 +1,11 @@
 import { Callout } from "components";
 
 # Ankr Staking
-Ankr Staking aims to bring the benefits of DeFi to the masses with:
-* [Liquid Staking](#liquid-staking) 
-* [Delegated Staking](#delegate-staking)
-* [DeFi](#defi)
-* [Bridge](#bridge)
-* [Switch](#ankr-switch)
-* [Parachain Liquid Crowdloan](#parachain-liquid-crowdloan)
+Ankr Staking aims to bring the benefits of DeFi to the masses with Liquid Staking, Delegated Staking, DeFi, Bridge, Switch, and Parachain Crowdloan.
 
-<Callout type="info">
+<Callout type="tip">
 If you're a developer or a company looking to integrate Staking into your project, visit our [intergrator docs](/staking/for-integrators/overview/).
 </Callout>
-
 
 ## Liquid Staking
 [Liquid Staking](/staking/liquid-staking/overview/) extends the Staking experience to solve the problem of loss of liquidity and capital inefficiency. 
