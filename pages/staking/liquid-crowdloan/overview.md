@@ -1,3 +1,5 @@
+import { Callout } from "components";
+
 # Ankr Parachain Liquid Crowdloan
 
 ## What are Kusama and Polkadot Parachain Liquid Crowdloan
@@ -7,10 +9,11 @@ Kusama and Polkadot Parachain slot auctions are among the most widely discussed 
 However, these rewards have their limitations. Once a winning project secures a Parachain slot, crowdloan participants find their tokens locked up for up to two years with Polkadot, and 48 weeks with Kusama.
 
 To tackle this issue, Ankr introduces **Parachain Liquid Crowdloan** – an innovative instrument that unlocks the liquidity of bonded DOT, collects rewards from winning Parachain slot auctions, and distributes token rewards from the winning project’s to Parachain Liquid Crowdloan token holders.
+<img src="/docs/liquid-crownload/liquid-crownload.png" alt="Liquid Crowdloan Dashboard" class="responsive-pic" width="900" />
 
 Rewards from winning slot auctions are expected to become higher than Polkadot and Kusama staking rewards, which incentivizes more Parachain Liquid Crowdloan token holders to contribute their DOT and KSM tokens and benefit from a higher ROI.
 
-### **Why Parachain Liquid Crowdloan?**
+### Why Parachain Liquid Crowdloan?
 
 Like Liquid Staking, **Parachain Liquid Crowdloan** has other benefits beyond liquidity and solve a general problem specific to Proof-of-Stake, as well as Parachain slot auctions: **capital inefficiency**
 
@@ -25,7 +28,7 @@ By solving the capital inefficiency of Parachain slot auctions with Parachain Li
 4.  **Opportunity to become a DeFi Parachain Crowdloan Market Maker**
 Estimate the fair value of Parachain Liquid Crowdloan tokens and buy below your fair value and sell above your fair value. The bid-ask spread (difference between your buy and sell price) will become your market marking revenue.
 
-### **How Parachain Liquid Crowdloan works**
+### How Parachain Liquid Crowdloan works
 
 <img src="/docs/dotksm-plc.png" alt="Parachain Crowdloan" class="responsive-pic" width="600" />
 
@@ -41,10 +44,10 @@ Estimate the fair value of Parachain Liquid Crowdloan tokens and buy below your 
 
 6. For liquidity, Parachain Liquid Crowdloan token holders can sell on [Bounce Finance](https://bounce.finance) auction marketplace, or collateralize the Parachain Liquid Crowdloan and borrow DOT on [ONX Finance](https://onx.finance).
 
-**Get started**
+<Callout type="tip">
+**GET STARTED**<br/>
+[Parachain Liquid Crowdloan](https://www.ankr.com/staking/liquid-crowdloan/) is available now!
+</Callout>
 
-Parachain Liquid Crowdloan is available in [Ankr Staking](https://www.ankr.com/staking/liquid-crowdloan/)!
-
-Read about Parachain Liquid Crowdloan Market Makers
 
 

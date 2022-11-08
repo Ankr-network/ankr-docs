@@ -18,30 +18,20 @@ import { Callout } from "components";
 ## How to stake FTM
 
 ### Connect your wallet
-
-1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Staking** in the product menu.
-
-2. Locate the **Fantom (FTM)** box and click **Stake** in it.
-   <img src="/docs/staking/choose-ftm-box.png" alt="Click FTM box" class="responsive-pic" width="700" />
-3. You are prompted to grant **Ankr Staking** access to your wallet. Click **Grant Access** to proceed.
-   <img src="/docs/staking/grant-access-to-wallet.png" alt="Grant access" class="responsive-pic" width="300" />
-4. Select the Fantom-supported wallet you wish to connect to. We're recommending MetaMask.
-   <img src="/docs/staking/choose-metamask.png" alt="Choose Fantom-supported wallet" class="responsive-pic" width="300" />
-5. If you are on a different network, click **Switch network** to switch to the correct one and confirm switching in MetaMask.
-   <img src="/docs/staking/switch-network.png" alt="Switch network" class="responsive-pic" width="300" />
-6. Successful wallet connection to **Ankr Staking** is indicated at top right corner.
-   <img src="/docs/staking/metamask-connected.png" alt="Switch network" class="responsive-pic" width="200" />
-
-You will need to make the following interactions in your wallet:
-
-👍 **Grant access** to grant access to your wallet.
-
-👍 **Approve** to add a new network.
-
-👍 **Switch network** to switch to the correсt network.
+1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
+   <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
+2. Click **Connect wallet** in the top-right corner of the page.
+   <img src="/docs/staking/connect-wallet/connect-wallet-button.jpg" alt="Connect wallet button" class="responsive-pic" width="140" />
+3. Choose **MetaMask**.
+   <img src="/docs/staking/connect-wallet/choose-wallet-to-connect.jpg" alt="Connect wallet button" class="responsive-pic" width="500" />
+4. If you have multiple account in MetaMask, choose an account to connect and click **Next**.
+   <img src="/docs/staking/connect-wallet/choose-account-to-connect.jpg" alt="Choose an account" class="responsive-pic" width="300" />
+5. Connect it by clicking **Connect** and wait a couple of moment till the connecting process is finished.
+   <img src="/docs/staking/connect-wallet/connect-account.jpg" alt="Connect the account" class="responsive-pic" width="300" />
+7. Successful connection to **Ankr Staking** is indicated at top right corner by the address of wallet you connected.
+   <img src="/docs/staking/connect-wallet/wallet-connected.jpg" alt="Wallet connected" class="responsive-pic" width="220" />
 
 ### Stake your FTM
-
 <Callout>
 Make sure you have a small surplus of FTM to pay the gas fees for the staking transaction.
 </Callout>
