@@ -4,11 +4,9 @@ import { Callout } from "components";
 
 ## Before you start
 
-<Callout>
 Ensure the following:
 * You are using a Chrome Browser.
 * You have a MetaMask wallet.
-</Callout>
 
 ## Claim rewards
 <Callout>
@@ -47,4 +45,4 @@ You can restake your rewards to increase you APY. To do that:
 3. On the management page, under **Active Staking**, choose a Node Provider and an _unlocked_ reward. 
 4. Click **Restake** next to the chosen reward.
 
-<img src="/docs/delegated-staking/ankr-bankr.png" alt="Ankr Bankr" class="responsive-pic" width="400" />
+<img src="/docs/staking/delegated-staking/ankr-bankr.png" alt="Ankr Bankr" class="responsive-pic" width="400" />

@@ -1,7 +1,7 @@
 import { Callout } from "components";
 
 # Ankr Liquid Staking
-<img src="/docs/liquid-staking/liquid-staking.png" alt="Switch network" class="responsive-pic" width="800" />
+<img src="/docs/staking/liquid-staking/liquid-staking.png" alt="Switch network" class="responsive-pic" width="800" />
 Liquid Staking solves the problem of locked up liquidity when staking assets on Proof-of-Stake networks.
 
 Staking rewards from Proof-of-Stake networks can be one of the most stable streams of income available (in percentage terms). 

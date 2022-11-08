@@ -11,11 +11,9 @@ To stake mGNO, you'll need to:
 
 ## Before you start
 
-<Callout type="info">
-**ENSURE THE FOLLOWING:**
+Ensure the following:
 * You are using a Chrome Browser.
 * You have a MetaMask wallet.
-</Callout>
 
 ## Purchase GNO
 Visit one of the [recommended DEXs](https://docs.gnosischain.com/ecosystems/defi#dex-aggregators) and swap your assets for the desired amount of GNO tokens.
@@ -57,17 +55,17 @@ When done, you're ready to stake your mGNO at Ankr.
 ## Connect your wallet at Ankr Staking
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
-2. Click **Connect wallet** in the top-right corner of the page and choose **MetaMask**; approve connecting if needed.
-3. If you're on a different network, you may be prompted to switch to the correct one. Click **Switch network** on the page, then allow MetaMask to switch to it.
-4. Successful connection to **Ankr Staking** is indicated at top right corner by the address of wallet you connected.
-
-You will need to make the following interactions in your wallet:
-
-👍 **Grant access** to grant access to your wallet.
-
-👍 **Approve** to add a new network.
-
-👍 **Switch network** to switch to the correсt network.
+   <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
+2. Click **Connect wallet** in the top-right corner of the page.
+   <img src="/docs/staking/connect-wallet/connect-wallet-button.jpg" alt="Connect wallet button" class="responsive-pic" width="140" />
+3. Choose **MetaMask**.
+   <img src="/docs/staking/connect-wallet/choose-wallet-to-connect.jpg" alt="Connect wallet button" class="responsive-pic" width="500" />
+4. If you have multiple account in MetaMask, choose an account to connect and click **Next**.
+   <img src="/docs/staking/connect-wallet/choose-account-to-connect.jpg" alt="Choose an account" class="responsive-pic" width="300" />
+5. Connect it by clicking **Connect** and wait a couple of moment till the connecting process is finished.
+   <img src="/docs/staking/connect-wallet/connect-account.jpg" alt="Connect the account" class="responsive-pic" width="300" />
+7. Successful connection to **Ankr Staking** is indicated at top right corner by the address of wallet you connected.
+   <img src="/docs/staking/connect-wallet/wallet-connected.jpg" alt="Wallet connected" class="responsive-pic" width="220" />
 
 ## Stake mGNO
 
@@ -82,9 +80,9 @@ Make sure you have some xDai to pay the gas fee for your staking transaction.
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
 2. In the **Delegated staking** section, click **Stake** under **mGNO**.
-   <img src="/docs/delegated-staking/gnosis-delegated-staking-box.png" alt="Locate the mGNO box" class="responsive-pic" width="300" /> 
+   <img src="/docs/staking/delegated-staking/gnosis-delegated-staking-box.png" alt="Locate the mGNO box" class="responsive-pic" width="300" /> 
 3. Enter the desired amount of mGNO to stake.
-   <img src="/docs/delegated-staking/enter-mgno-token-amount-to-stake.png" alt="Enter the desired amount of mGNO tokens to stake" class="responsive-pic" width="500" />
+   <img src="/docs/staking/delegated-staking/enter-mgno-token-amount-to-stake.png" alt="Enter the desired amount of mGNO tokens to stake" class="responsive-pic" width="500" />
 4. Choose a Node Provider (currently only Ankr; more providers in future releases).
 5. Click **Approve** to approve Ankr Staking access to your mGNO.
 6. Confirm approving access in MetaMask.
