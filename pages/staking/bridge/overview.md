@@ -3,10 +3,12 @@
 ## What is Ankr Bridge?
 
 Ankr Bridge is an Ankr product for bridging assets between networks. 
+<img src="/docs/bridge/ankr-bridge.jpg" alt="Ankr Bridge" class="responsive-pic" width="600" />
 
 It allows you to transfer your Ankr Liquid Staking tokens to a different network where they remain a valid stake and continue to accumulate rewards.
 
 You receive Liquid Staking tokens when staking your original assets, in 1:1 ratio.
+
 
 ### Supported tokens
 
