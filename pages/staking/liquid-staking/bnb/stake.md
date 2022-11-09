@@ -1,6 +1,6 @@
 import { Callout } from "components";
 
-# Stake BNB in Ankr Staking
+# Stake BNB
 
 ## Before you start
 

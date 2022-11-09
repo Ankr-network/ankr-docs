@@ -1,7 +1,6 @@
 import { Callout } from "components";
 
 # Ankr Liquid Staking
-<img src="/docs/staking/liquid-staking/liquid-staking.png" alt="Switch network" class="responsive-pic" width="800" />
 Liquid Staking solves the problem of locked up liquidity when staking assets on Proof-of-Stake networks.
 
 Staking rewards from Proof-of-Stake networks can be one of the most stable streams of income available (in percentage terms). 
@@ -27,9 +26,19 @@ You can harvest the farmed tokens and stake those tokens as well to earn more yi
 Check out [Ankr Staking](https://www.ankr.com/staking/stake/)
 </Callout>
 
-## Types of Liquid Staking tokens
+## Supported platforms
+Liquid Staking is available on the following platforms:
+* Avalanche
+* Binance
+* Polkadot
+* Ethereum Mainnet
+* Fantom
+* Kusama 
+* Polygon (on both Ethereum and Polygon)
+* SSV (Ethereum Goerli) 
 
-There are two types of Liquid Staking tokens: reward earning tokens and reward bearing tokens.
+## Types of Liquid Staking tokens
+Liquid Staking supports two types of Liquid Staking tokens: reward earning tokens and reward bearing tokens.
 
 ### Reward earning tokens
 
@@ -48,7 +57,7 @@ For example, the fair value of 1 aETHc token vs. ETH increases over time as stak
 
 ## How do I get Liquid Staking tokens?
 
-Liquid Staking tokens are automatically issued to your Ankr Staking Dashboard when you successfully stake assets such as ETH, AVAX, FTM, BNB.
+Liquid Staking tokens are automatically issued to your Ankr Staking Dashboard when you successfully stake assets such as ETH, AVAX, FTM, and more.
 
 For example,
 
