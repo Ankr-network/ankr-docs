@@ -1,7 +1,7 @@
 # Vaults
-Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see dashboard where you can enable the **Vault** filter. 
+Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see a dashboard where you can enable the **Vault** filter. 
 
-This filter allows you to see all the integrated opportunities to make profit providing liquidity on DEXs and autofarming it via vaults.
+The filter allows you to see all the integrated opportunities to make profit, providing liquidity on DEXs and autofarming it via vaults.
 
 Liquidity pairs in the listed vaults usually contain a native token and a corresponding Liquid Staking token.
 Rewards can be given either in the tokens deposited to the pool, e.g. ETH/aETHc, or in the LP token native to the DEX, e.g. CAKE on PancakeSwap. 

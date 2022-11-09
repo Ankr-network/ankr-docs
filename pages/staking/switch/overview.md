@@ -4,8 +4,6 @@
 
 Ankr Switch is a product for switching between reward earning tokens and reward bearing tokens for the same asset. For example, aETHb and aETHc.
 
-<img src="/docs/switch/ankr-switch.png" alt="Ankr Switch" class="responsive-pic" width="600" />
-
 ### What are reward bearing and rewards earning tokens?
 
 They are tokens issued to you by Ankr when staking with Ankr Earn.  These tokens are in a 1:1 ratio to your staked assets.

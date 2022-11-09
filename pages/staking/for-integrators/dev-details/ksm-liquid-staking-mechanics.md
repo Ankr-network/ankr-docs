@@ -84,7 +84,7 @@ Due to Polkadot backend architecture, we currently do not disclose our API endpo
 
 3. User sends their extrinsic id to the Ankr backend. In Substate, an extrinsic is a piece of information that comes from outside the chain and is included in a block.
 
-4. Once the transaction has been finalized, the user can see their KSM balance in Ankr Staking.
+4. Once the transaction has been finalized, the user can see their KSM balance on Ankr Staking.
 
 5. Ankr backend monitor deposits to the Ankr deposit address. Once new KSM are available for staking, the backend:
    1. Transfers the KSM to one of the Ankr dedicated accounts if necessary.

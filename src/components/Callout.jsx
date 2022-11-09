@@ -27,8 +27,8 @@ const themes = {
     dark: 'bg-sky-800/30 text-sky-200 border-sky-200/30'
   },
   tip: {
-    light: 'bg-teal-50 text-teal-800 border-teal-200',
-    dark: 'bg-teal-400/20 text-teal-300 border-teal-400/30'
+    light: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+    dark: 'bg-emerald-400/20 text-emerald-300 border-emerald-400/30'
   },
   success: {
     light: 'bg-green-100 text-green-800 border-green-200',

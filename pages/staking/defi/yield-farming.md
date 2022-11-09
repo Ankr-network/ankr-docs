@@ -1,7 +1,7 @@
 # Yield farming
-Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see dashboard where you can enable the **Farming** filter. 
+Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see a dashboard where you can enable the **Farming** filter. 
 
-This filter allows you to see all the integrated opportunities to make profit providing liquidity on DEXs and getting rewards in the LP tokens which you can then farm.
+The filter allows you to see all the integrated opportunities to make profit, providing liquidity on DEXs and getting rewards in the LP tokens which you can then farm.
 
 Liquidity pairs in the listed yield farming pools usually contain a native token and a corresponding Liquid Staking token.
 Rewards are usually given in the LP token native to the DEX. For example, CAKE on PancakeSwap.
