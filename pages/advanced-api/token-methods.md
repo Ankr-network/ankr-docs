@@ -27,7 +27,7 @@ _Token API_ consists of the following methods to request token-related data acro
 
 > **Retrieves account balance.**
 
-Retrieves a complete set of balance data for the account specified.
+Retrieves the balance of the account specified.
 
 ### Request
 
@@ -44,6 +44,7 @@ Build your request using the parameters below.
     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
     * Chains combination: `[eth, polygon, bsc]`.
     * All chains: leave the value empty to query all the chains available.
+  * `onlyWhitelisted` (boolean): set to `true` to filter through all the "scam" or "junk" tokens to return account balance based on the real ones; set to `false` to show balance based on all the tokens available.
   * `pageSize` (int32): a number of results you'd like to get.
   * `pageToken` (string): the token is provided at the end of the response body and can be referenced in the request to fetch the next page.
   * `walletAddress` (string): an account address to query for balance; supports the Ethereum Name Service (ENS).
