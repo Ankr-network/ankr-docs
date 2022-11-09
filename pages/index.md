@@ -5,14 +5,14 @@ import { OpenUrl, Code } from "components";
 Find information on Ankr products, SDK documentation, API references, RPC methods, Web3 tutorials, developer guides, codes, and more.
 ____________________________________
 
-This documentation serves as a resource to explore how you can use and integrate Ankr's full suite of decentralized products and services ranging from free [public RPC endpoints](https://www.ankr.com/rpc/) that developers have come to know and love, alongside new [Premium and Enterprise plans](https://www.ankr.com/rpc/pricing/) packed with [advanced developer tools](https://www.ankr.com/advanced-api/) — all powered by a globally distributed and decentralized network of nodes.
+This documentation lets you explore how you can use and integrate Ankr's full suite of decentralized products and services, including free [public RPC endpoints](https://www.ankr.com/rpc/) that developers have come to know and love, alongside new [Premium and Enterprise plans](https://www.ankr.com/rpc/pricing/) packed with [advanced developer tools](https://www.ankr.com/advanced-api/) — all powered by a globally distributed and decentralized network of nodes.
 
 ## RPC Service
 * Access RPC Endpoints via HTTPS or WebSockets.
 * Interact with 18+ supported blockchains.
 * Suitable for Web3 developers and enthusiasts of all skill levels.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Use Ankr infrastructure to empower your projects with blockchain interaction](rpc-service/getting-started)↗
+  [Empower your projects with blockchain interaction](rpc-service/getting-started)↗
 </div>
 
 ## Advanced APIs/SDKs
