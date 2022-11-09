@@ -36,3 +36,14 @@ sup a {
 .footnotes {
   @apply text-sm;
 }
+
+ul.mt-6,
+ol.mt-6 {
+  margin-top: 0.65em;
+}
+
+@media (min-width: 768px) {
+  div.mb-8.flex.items-center.border-t.pt-8 > a.gap-1.flex.items-center.py-4.text-base.font-medium.text-gray-600.transition-colors {
+    font-size: 1rem;
+  }
+}
