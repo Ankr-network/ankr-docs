@@ -53,6 +53,20 @@ ol.mt-6 {
 
 /* Some debatable stylign refinements */
 
+h2.mt-10 {
+  margin-bottom: 0.6em;
+}
+
+h3.mt-8 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h4.mt-8 {
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
+}
+
 pre.mt-6 {
   margin-top: 1.1em;
 }
@@ -62,33 +76,21 @@ p.mt-6 {
   margin-bottom: -0.2em;
 }
 
-h2.mt-10 {
-  margin-bottom: 0.45em;
-}
-
-h3.mt-8 {
-  margin-top: 1em;
-  margin-bottom: -0.2em;
-}
-
-h4.mt-8 {
-  margin-top: 1.4em;
-  margin-bottom: -0.2em;
-}
-
-.nextra-callout.mt-6 {
-  margin-top: 1.2em;
-}
-
 blockquote.mt-6 {
     margin-top: 1.4em;
 }
 
-.p-4.mt-6 {
-  margin-top: 1em;
+.nextra-callout.mt-6 {
+  margin-top: 1.9em;
+  padding-bottom: 0.6rem;
 }
 
 hr.my-8 {
   margin-top: 1.4em;
   margin-bottom: 1em;
+}
+
+/* links in outlined rectangles */
+.p-4.mt-6 {
+  margin-top: 1em;
 }
