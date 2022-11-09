@@ -37,13 +37,58 @@ sup a {
   @apply text-sm;
 }
 
+/* Make space before a list and before a nested list of a diff kind shorter */
 ul.mt-6,
 ol.mt-6 {
   margin-top: 0.65em;
+  margin-bottom: 0.8em;
 }
 
+/* Make Prev/Next links font for the desktop version as small as for mobile */
 @media (min-width: 768px) {
   div.mb-8.flex.items-center.border-t.pt-8 > a.gap-1.flex.items-center.py-4.text-base.font-medium.text-gray-600.transition-colors {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
+}
+
+/* Some debatable stylign refinements */
+
+pre.mt-6 {
+  margin-top: 1.1em;
+}
+
+p.mt-6 {
+  margin-top: 0.7em;
+  margin-bottom: -0.2em;
+}
+
+h2.mt-10 {
+  margin-bottom: 0.45em;
+}
+
+h3.mt-8 {
+  margin-top: 1em;
+  margin-bottom: -0.2em;
+}
+
+h4.mt-8 {
+  margin-top: 1.4em;
+  margin-bottom: -0.2em;
+}
+
+.nextra-callout.mt-6 {
+  margin-top: 1.2em;
+}
+
+blockquote.mt-6 {
+    margin-top: 1.4em;
+}
+
+.p-4.mt-6 {
+  margin-top: 1em;
+}
+
+hr.my-8 {
+  margin-top: 1.4em;
+  margin-bottom: 1em;
 }
