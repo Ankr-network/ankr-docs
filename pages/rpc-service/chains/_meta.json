@@ -1,4 +1,8 @@
 {
+  "chains-list": "Chains List",
+  "chains-api-evm": "Chains API: EVM",
+  "chains-api-non-evm": "Chains API: Non-EVM",
+  "chains-api-solana": "Chains API: Solana",
   "arbitrum": "Arbitrum",
   "avalanche": "Avalanche",
   "binance-smart-chain": "BNB Smart Chain",
