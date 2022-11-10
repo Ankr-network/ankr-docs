@@ -54,7 +54,6 @@ What's available for the [Premium plan](/rpc-service/service-plans/#service-plan
 ### Interface schema
 
 Below is the interface of the [_Premium_ service plan](/rpc-service/service-plans/#service-plans-comparison) user that is all set to use RPC API Endpoints and Advanced APIs at the corresponding [rate limits](/rpc-service/service-plans/#rate-limits). Here is the path to access Premium and start using RPCs and Advanced APIs:
-
 `Connect wallet` —> `Deposit funds` —> `Use private endpoints`
 
   * **[Connect wallet](/rpc-service/getting-started/#connect-wallet)**: first things first, connecting your MetaMask wallet is the key to access your Premium account.
