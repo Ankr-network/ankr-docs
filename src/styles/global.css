@@ -52,13 +52,11 @@ ol.mt-6 {
 }
 
 /* Links in outlined rectangles */
-.p-4.mt-6 {
-  margin-top: 1.2em;
-}
+
 
 hr.my-8 {
   margin-top: 1.5em;
-  margin-bottom: 0em;
+  margin-bottom: -0.1em;
 }
 
 h3.mt-8 {
@@ -67,6 +65,10 @@ h3.mt-8 {
 
 h4.mt-8 {
   margin-bottom: -0.3em;
+}
+
+.list-with-custom-top-margin.mt-6 {
+
 }
 
 /* Some debatable stylign refinements
