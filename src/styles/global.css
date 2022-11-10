@@ -40,8 +40,8 @@ sup a {
 /* Make space before a list and before a nested list of a diff kind shorter */
 ul.mt-6,
 ol.mt-6 {
-  margin-top: 0.65em;
-  margin-bottom: 0.8em;
+  margin-top: 0.6em;
+  margin-bottom: 0.5em;
 }
 
 /* Make Prev/Next links font for the desktop version as small as for mobile */
@@ -51,7 +51,25 @@ ol.mt-6 {
   }
 }
 
-/* Some debatable stylign refinements */
+/* Links in outlined rectangles */
+.p-4.mt-6 {
+  margin-top: 1.2em;
+}
+
+hr.my-8 {
+  margin-top: 1.5em;
+  margin-bottom: 0em;
+}
+
+h3.mt-8 {
+  margin-bottom: -0.2em;
+}
+
+h4.mt-8 {
+  margin-bottom: -0.3em;
+}
+
+/* Some debatable stylign refinements
 
 h2.mt-10 {
   margin-bottom: 0.6em;
@@ -85,12 +103,5 @@ blockquote.mt-6 {
   padding-bottom: 0.6rem;
 }
 
-hr.my-8 {
-  margin-top: 1.4em;
-  margin-bottom: 1em;
-}
+ */
 
-/* links in outlined rectangles */
-.p-4.mt-6 {
-  margin-top: 1em;
-}
