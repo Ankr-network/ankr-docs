@@ -71,6 +71,11 @@ h4.mt-8 {
 
 }
 
+.nextra-callout.mt-6 {
+  margin-top: 1.9em;
+  padding-bottom: 0.6rem;
+}
+
 /* Some debatable stylign refinements
 
 h2.mt-10 {
@@ -98,11 +103,6 @@ p.mt-6 {
 
 blockquote.mt-6 {
     margin-top: 1.4em;
-}
-
-.nextra-callout.mt-6 {
-  margin-top: 1.9em;
-  padding-bottom: 0.6rem;
 }
 
  */
