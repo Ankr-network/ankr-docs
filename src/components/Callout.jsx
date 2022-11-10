@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 
 const TypeToEmoji = {
-  default: '📃',
+  default: '🖖',
   note: '✏',
   info: 'ℹ',
   tip: '💡',
