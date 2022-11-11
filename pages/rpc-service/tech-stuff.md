@@ -6,7 +6,7 @@ The thing we stand out by is that we don't have a single centralized Gateway. Si
 
 Our fundamental distinction is that we use a whole network of geo-distributed load balancers instead of a single one for that purpose. Such an approach reduces the time needed for the request to get to a load balancer. And you don't have to work in NASA to realize that it's quicker for a user from Australia to reach the Australia-based load balancer than the one from abroad.
 
-Secondly, we can boast of having a vast geographical distribution of nodes themselves which never really ends to expand. And we're committed to building our network of nodes coupled by location to the network of load balancers. Thereby, we reduce the requests processing time (the time request goes from the load balancer to the node and back), making the geographical distribution and the nodes-to-load-balancers coupling a powerful solution to increase infrastructure effectiveness and reduce querying latency.
+Secondly, we can boast of having a vast geographical distribution of nodes themselves, which never really ends to expand. And we're committed to building our network of nodes coupled by location to the network of load balancers. Thereby, we reduce the requests processing time (the time request goes from the load balancer to the node and back), making the geographical distribution and the nodes-to-load-balancers coupling a powerful solution to increase infrastructure effectiveness and reduce querying latency.
 
 The idea behind our geo-distributed architecture of nodes and load balancers is to provide the user with the same predictable top-quality services regardless of the user's location.
 
@@ -43,10 +43,10 @@ Moreover, we have a software update schedule in place to run the nodes on the la
 
 The security of access to the Premium Plan RPC Service is stipulated by the following conditions:
 
-  * **Private/public key pair**  
+  * **Private/public key pair**
     First of all, you MUST, at all times, ensure the safety of your private/public key pair that's used on our platform for access. Keeping the private key safe protects your JWT token from being stolen. The only additional item you have to be careful about is your private endpoint. To summarize, you must ensure the safety of your private key and private endpoint.
 
-  * **HTTPS connection**  
+  * **HTTPS connection**
     Our platform uses the HTTPS connection protocol. Therefore, even if the traffic has been sniffed, the data it contains still stays encrypted, and no one can hack into it.
 
 ## Premium user-service interaction
