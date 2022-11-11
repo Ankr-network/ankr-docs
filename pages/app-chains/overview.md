@@ -7,7 +7,7 @@ Serving developers and web3 consumers alike, AppChains are dedicated blockchains
 Ankr helps you develop, launch, & operate those chains, and you deliver enhanced Web3 experiences to your users.
 
 ## What is the value of AppChains?
-AppChains offers plug and play tools for developers to build their dApps fast.
+AppChains offers plug-and-play tools for developers to build their dApps fast.
 
 The 6 AppChain building blocks to customize the chain to the builder's exact specs ensures they give their users low, near zero, gas fees, blazing-fast transactions, security, and a pleasing experience that works as intended every time.
 
@@ -36,10 +36,10 @@ Despite all their benefits, AppChains can be difficult to build and launch which
 
 There are 6 main technical features that you’ll need to get started with your AppChain:
 
-* [Validator nodes](/app-chains/components/validator-nodes)
 * [RPC endpoint](/app-chains/components/rpc-endpoints)
-* [Block explorer](/app-chains/components/block-explorer)
+* [Validator nodes](/app-chains/components/validator-nodes)
 * [Testnet token faucet](/app-chains/components/testnet-faucet)
+* [Block explorer](/app-chains/components/block-explorer)
 * [Cross-chain bridge](/app-chains/components/relay-hub)
 * [Staking UI](/app-chains/components/staking-ui)
 
