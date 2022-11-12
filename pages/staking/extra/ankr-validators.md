@@ -15,7 +15,7 @@ Here are available Ankr validators.
 | MAP | [Ankr 1](https://mapscan.io/validators/0x9c557591958a3cd0375fa1a437c5649611722b9b)|
 | Oasis | [Ankr 1](https://www.oasisscan.com/accounts/detail/oasis1qqdd4nmtcmarf4u9gdg24swxhec52du43cxzf302) <br /> [Ankr 2](https://www.oasisscan.com/accounts/detail/oasis1qzz8zmehzgcynlueydeqfax9cznzdw3lvgark5h3) |
 | Polygon | [Ankr 1](https://wallet.polygon.technology/staking/validators/31) |
-| Skale | [Ankr 1](https://skale-analytics.skalelabs.com/#/mainnetstatus/53) <br/> [Ankr 1](https://skale-analytics.skalelabs.com/#/mainnetstatus/54)|
+| Skale | [Ankr 1](https://skale-analytics.skalelabs.com/#/mainnetstatus/53) <br/> [Ankr 2](https://skale-analytics.skalelabs.com/#/mainnetstatus/54)|
 
 
 
