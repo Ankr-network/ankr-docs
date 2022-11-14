@@ -6,5 +6,8 @@
   "staking": "Staking",
   "gaming": "Gaming",
   "learn": "Learn",
-  "support": "Get Support"
+  "support": {
+    "title": "Get Support",
+    "href": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
+  }
 }

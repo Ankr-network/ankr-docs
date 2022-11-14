@@ -953,10 +953,6 @@
   },
   {
     "from": "docs/gaming/unity-sdk/reference/index.html",
-    "to": "/gaming/unity-sdk/reference/ankr-sdk-factory/"
-  },
-  {
-    "from": "docs/support/index.html",
-    "to": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
+    "to": "/docs/gaming/unity-sdk/reference/ankr-sdk-factory/"
   }
 ]
