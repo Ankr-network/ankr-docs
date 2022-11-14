@@ -17,4 +17,4 @@ Liquid Crowdloan is a very specific and a little outdated functionality. If you 
 
 ## Liquid Staking SDK
 
-[Liquid Staking SDK](/docs/staking/for-integrators/sdk/liquid-staking-sdk/) allows you to integrate Ankr Liquid Staking into your project.
+[Liquid Staking SDK](/staking/for-integrators/sdk/liquid-staking-sdk/) allows you to integrate Ankr Liquid Staking into your project.
