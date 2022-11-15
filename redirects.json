@@ -954,5 +954,9 @@
   {
     "from": "docs/gaming/unity-sdk/reference/index.html",
     "to": "/docs/gaming/unity-sdk/reference/ankr-sdk-factory/"
+  },
+  {
+    "from": "docs/staking/index.html",
+    "to": "/docs/staking/overview/"
   }
 ]
