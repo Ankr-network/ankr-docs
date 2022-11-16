@@ -31,7 +31,13 @@ As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-o
 
 ## More flexibility
 
-If you would like to unstake your FTM, you can choose the “unstake” option at any time on the Ankr Staking platform. After you select unstake, you will need to wait up to 28 days unbonding period before you can claim your funds. During this time, your FTM will still be earning staking rewards. This creates a more robust price stability mechanism for Fantom Liquid Staking, where any price deviation of aFTMb vs. its fair value will create trading opportunities that can be exploited by redeeming aFTMb (unstaking FTM) or minting aFTMb (staking FTM).
+If you would like to unstake your FTM, you can choose the “unstake” option at any time on the Ankr Staking platform. 
+After you select unstake, you will need to wait a varying period before the unstaked funds are released to your wallet.
+The period depends on the amount you want to unstake and ranges from 1 day up to 35 and more days. The explanation is very simple: your unstake request is fulfilled from the current rewards for all stakes of all users Ankr claims from a validator at the end of recurring validator's lock-up period — 35 days.
+So, if you unstake 1 FTM, the amount that small is likely to fit the current payout capacity, and you'll likely to receive your funds in 1 to 35 days.
+However, if you unstake 10000 FTM, the amount that big is unlikely to fit the current payout capacity and will be released to your wallet in parts, each part being released at the end of the lock-up period. As TVL grows, so grows the payout capacity, and it is hard to tell the exact amount released in each part, but we can assume 100–500 FTM and more.   
+Until the unstaked FTM are released to your wallet, it keeps earning your staking rewards. 
+This creates a more robust price stability mechanism for Fantom Liquid Staking, where any price deviation of aFTMb vs its fair value will create trading opportunities that can be exploited by redeeming aFTMb (unstaking FTM) or minting aFTMb (staking FTM).
 
 That means if you buy aFTMb at a discount on a DEX and unstake it on Ankr Staking at its fair value, you will make a profit! Therefore, aFTMb price stability will be less dependent on the size of liquidity pools and associated rewards.
 
