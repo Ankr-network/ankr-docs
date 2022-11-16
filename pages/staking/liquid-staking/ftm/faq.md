@@ -16,11 +16,9 @@ You can stake at your discretion, unlimited.
 
 ### How long does it take to unstake my FTM?
 
-If you decide to unstake, it can take varying time, depending on the amount you want to unstake. 
-The unstake logic is that each time a lock-up period ends, Ankr claims all rewards for all stakes from a validator. 
-It means if you want to unstake a small amount like 1 FTM, your request will likely fit rewards claimed at the end of the current validator's lock-up period, and you'll receive your FTM in 1 to 35 days. 
-However, if you want to unstake 10000 FTM, this amount is unlikely to fit the current claimed rewards and will have to wait until Ankr has enough funds to fulfill the unstake request.
+If you decide to unstake, it can take varying time, depending on the amount you want to unstake.   
 
+The unstake logic is that each time a lock-up period ends, Ankr claims all rewards for all stakes from a validator. It means if you want to unstake a small amount like 1 FTM, your request will likely fit rewards claimed at the end of the current validator's lock-up period, and you'll receive your FTM in 1 to 35 days. However, if you want to unstake 10000 FTM, this amount is unlikely to fit the current claimed rewards and will have to wait until Ankr has enough funds to fulfill the unstake request.
 
 ### How do I receive rewards?
 
@@ -44,7 +42,7 @@ Staking rewards depend mostly on the voting power of the validator node that you
 
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 
-Your stake immediately **stops** accumulating rewards once you clicked **Unstake**.
+Until the unstaked FTM is released to your wallet, it keeps earning your staking rewards.
 
 ### Is there any risk from staking, like slashing or any penalties?
 
