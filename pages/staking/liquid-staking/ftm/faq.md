@@ -16,7 +16,11 @@ You can stake at your discretion, unlimited.
 
 ### How long does it take to unstake my FTM?
 
-You receive the unstaked FTM after the unbonding period of up to 35 days.
+If you decide to unstake, it can take varying time, depending on the amount you want to unstake. 
+The unstake logic is that each time a lock-up period ends, Ankr claims all rewards for all stakes from a validator. 
+It means if you want to unstake a small amount like 1 FTM, your request will likely fit rewards claimed at the end of the current validator's lock-up period, and you'll receive your FTM in 1 to 35 days. 
+However, if you want to unstake 10000 FTM, this amount is unlikely to fit the current claimed rewards and will have to wait until Ankr has enough funds to fulfill the unstake request.
+
 
 ### How do I receive rewards?
 
