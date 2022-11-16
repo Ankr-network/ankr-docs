@@ -19,7 +19,7 @@ The requirements when unstaking are:
 
 * Maximum value to unstake — staked amount + % of the reward, up to the user’s balance.
 
-* Release time — up to 35 days.
+* Release time — depending on the amount in the unstake request, it can take different number of validator's lock-up periods. Each time a lock-up period ends, Ankr claims all rewards for all stakes from a validator. It means if the user wants to unstake a small amount like 1 FTM, their request will likely fit rewards claimed at the end of the current validator's lock-up period, so in 1 to 35 days. However, if the user wants to unstake 10000 FTM, the request amount is unlikely to fit the current claimed rewards and will have to wait until Ankr has enough funds to fulfill the unstake request.   
 
 
 ## Fees
@@ -39,7 +39,12 @@ The APY is dynamic and calculated from the validators' rewards.
 
 
 ## Validators
-The validator set consists of one [Fantom](https://explorer.fantom.network/validator/0x0aa7aa665276a96acd25329354feea8f955caf2b), one [MCLB-DAO](https://explorer.fantom.network/validator/0x63c87103063a146d75788780f2b026a01c03046b), and one [Ankr](https://explorer.fantom.network/validator/0x146ee71e057e6b10efb93aedf631fde6cbaed5e2) validator.
+The validator set consists:
+* [Fantom Foundation validator](https://explorer.fantom.network/validator/0xd160D9B59508e4636eEc3E0a7f734268D1cE1047)
+* [MCLB-DAO validator](https://explorer.fantom.network/validator/0x63c87103063a146d75788780f2b026a01c03046b)
+* [Ankr validator](https://explorer.fantom.network/validator/0x0aa7aa665276a96acd25329354feea8f955caf2b)
+
+For the lock-up period affecting release time of funds in unstake requests, see the "Release time" explanation in [Requirement](#requirements). 
 
 
 ## Smart contracts
