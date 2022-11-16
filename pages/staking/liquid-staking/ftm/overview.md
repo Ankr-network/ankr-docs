@@ -33,7 +33,7 @@ As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-o
 
 If you would like to unstake your FTM, you can choose the “unstake” option at any time on the Ankr Staking platform. 
 After you select unstake, you will need to wait a varying period before the unstaked funds are released to your wallet.
-The period depends on the amount you want to unstake and ranges from 1 day up to 35 and more days. The explanation is very simple: your unstake request is fulfilled from the current rewards for all stakes of all users Ankr claims from a validator at the end of recurring validator's lock-up period — 35 days.
+The period depends on the amount you want to unstake and ranges from 1 day up to 35 and more days. The explanation is very simple: your unstake request is fulfilled from the current rewards for all stakes of all users Ankr claims from a validator at the end of recurring validator's lock-up period.
 So, if you unstake 1 FTM, the amount that small is likely to fit the current payout capacity, and you'll likely to receive your funds in 1 to 35 days.
 However, if you unstake 10000 FTM, the amount that big is unlikely to fit the current payout capacity and will be released to your wallet in parts, each part being released at the end of the lock-up period. As TVL grows, so grows the payout capacity, and it is hard to tell the exact amount released in each part, but we can assume 100–500 FTM and more.   
 Until the unstaked FTM are released to your wallet, it keeps earning your staking rewards. 
