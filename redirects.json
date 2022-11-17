@@ -954,5 +954,81 @@
   {
     "from": "docs/gaming/unity-sdk/reference/index.html",
     "to": "/gaming/unity-sdk/reference/ankr-sdk-factory/"
+  },
+  {
+    "from": "docs/rpc-service/chains/arbitrum/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/avalanche/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/binance-smart-chain/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/celo/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/ethereum/overview/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/ethereum/how-to/connect-metamask/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/ethereum/how-to/connect-metamask/"
+  },
+  {
+    "from": "docs/rpc-service/chains/ethereum/how-to/make-requests/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/ethereum/how-to/make-requests/"
+  },
+  {
+    "from": "docs/rpc-service/chains/ethereum/how-to/send-transaction/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/ethereum/how-to/send-transaction/"
+  },
+  {
+    "from": "docs/rpc-service/chains/ethereum/how-to/basic-dapp/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/ethereum/how-to/basic-dapp/"
+  },
+  {
+    "from": "docs/rpc-service/chains/fantom/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/gnosis/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/harmony/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/iotex/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/moonbeam/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/near/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/nervos/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/polygon/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/solana/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/syscoin/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
   }
 ]
