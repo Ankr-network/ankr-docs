@@ -6,35 +6,23 @@ import { Callout } from "components";
 
 Development on Gnosis Chain is straightforward for Ethereum developers as it is an EVM compatible chain. Smart contracts can be written and deployed in the same way as for Ethereum just by setting a different RPC endpoint.
 
-Any contract that works on the Ethereum mainnet can be redeployed to the Gnosis chain. Transaction costs are minimized, and all fees and transactions are paid with a single token (xDai). Many tools supporting Ethereum development are compatible with Gnosis Chain. 
-
-## Quick links
-
-[**Gnosis Chain**](https://www.xdaichain.com/)
-
-[**Docs**](https://www.xdaichain.com/)
-
-[**Github**](https://github.com/xdaichain)
-
+Any contract that works on the Ethereum mainnet can be redeployed to the Gnosis chain. Transaction costs are minimized, and all fees and transactions are paid with a single token (xDai). Many tools supporting Ethereum development are compatible with Gnosis Chain.
 
 ## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Gnosis RPC. You can then perform transactions and interact with the network.
 
-## Get started
-
-1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
-2. Select '_**Custom RPC**_'
+1. Open your **Metamask Extension** and click the '**Network**' drop down menu at the top.
+2. Select '**Custom RPC**'
 3. Enter the settings below:
 
-| Chain    | Custom RPC Category   |                              Details                                         |
-|:--------:|:---------------------:|:----------------------------------------------------------------------------:|
-|  Gnosis  |     NETWORK NAME:     |                                  Gnosis RPC                                  |
-|          |     NEW RPC URL:      |          [https://rpc.ankr.com/gnosis](https://rpc.ankr.com/gnosis)          |
-|          |       CHAIN ID:       |                                     0x64                                     |
-|          |        SYMBOL:        |                                     xDai                                     |
-|          |    BLOCK EXPLORER:    | [https://blockscout.com/xdai/mainnet/](https://blockscout.com/xdai/mainnet/) |
-
+|  Chain | Custom RPC Category |                                Details                                       |
+|:------:|:-------------------:|:----------------------------------------------------------------------------:|
+| Gnosis |    NETWORK NAME:    |                                  Gnosis RPC                                  |
+|        |    NEW RPC URL:     |          [https://rpc.ankr.com/gnosis](https://rpc.ankr.com/gnosis)          |
+|        |      CHAIN ID:      |                                     0x64                                     |
+|        |       SYMBOL:       |                                     xDai                                     |
+|        |   BLOCK EXPLORER:   | [https://blockscout.com/xdai/mainnet/](https://blockscout.com/xdai/mainnet/) |
 
 ## Integrate code
 
@@ -58,7 +46,6 @@ curl https://rpc.ankr.com/gnosis \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ```
-
 
 
 #### Example response

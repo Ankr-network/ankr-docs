@@ -23,14 +23,6 @@ What is Validium?
 Validium is a Layer-2 scaling solution that enforces the validity of all transactions using zero-knowledge proofs whilst data is kept off-chain. This means that assets cannot be accessed without explicit authorization from the account owner. 
 </Callout>
 
-## Quick links
-
-[**Syscoin**](https://syscoin.org/)
-
-[**Docs**](https://docs.syscoin.org/)
-
-[**Github**](https://github.com/syscoin)
-
 ## Connect Wallet
 
 You can set up your **MetaMask wallet** to connect to Syscoin RPC. You can then perform transactions and interact with the network.
@@ -41,13 +33,13 @@ You can set up your **MetaMask wallet** to connect to Syscoin RPC. You can then 
 
 
 
-|        Chain        | Custom RPC Category |                           Details                          |
-| :-----------------: | :-----------------: | :--------------------------------------------------------: |
-| Syscoin              |    NETWORK NAME:    |                         Syscoin Mainnet                       |
-|                     |     NEW RPC URL:    | [https://rpc.ankr.com/syscoin](https://rpc.ankr.com/sycoin) |
-|                     |      CHAIN ID:      |                             57                             |
-|                     |       SYMBOL:       |                             SYS                           |
-|                     |   BLOCK EXPLORER:   |         [https://explorer.syscoin.org/](https://explorer.syscoin.org/)         |
+|        Chain        | Custom RPC Category |                            Details                             |
+|:-------------------:|:-------------------:|:--------------------------------------------------------------:|
+|       Syscoin       |    NETWORK NAME:    |                        Syscoin Mainnet                         |
+|                     |    NEW RPC URL:     |  [https://rpc.ankr.com/syscoin](https://rpc.ankr.com/sycoin)   |
+|                     |      CHAIN ID:      |                               57                               |
+|                     |       SYMBOL:       |                              SYS                               |
+|                     |   BLOCK EXPLORER:   | [https://explorer.syscoin.org/](https://explorer.syscoin.org/) |
 
 
 ## Get Started

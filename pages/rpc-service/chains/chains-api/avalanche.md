@@ -8,20 +8,9 @@ The **C-Chain** is available via Avalanche RPC.
 
 Avalanche was built specifically with Defi dApps and protocols in mind, focusing on security, low latency & high throughput. Avalanche uses a novel consensus protocol by utilizing two different consensus mechanisms. The consensus protocol ensures a high degree of security and fast finality even with multiple chains running simultaneously.
 
-## Quick links
-
-[**Avalanche**](https://www.avalabs.org)
-
-[**Docs**](https://docs.avax.network/build/avalanchego-apis/issuing-api-calls)
-
-[**Github**](https://github.com/ava-labs)
-
-
 ## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Avalanche RPC. You can then perform transactions and interact with the network.
-
-## Get started
 
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.

@@ -6,30 +6,18 @@ Celo is a layer 1 protocol and blockchain platform. The Celo Mainnet is entirely
 
 All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that while they are not ERC-20 tokens on the Ethereum Mainnet, all familiar tooling and code that support ERC-20 tokens can be easily adapted for Celo assets, including the Celo Native Asset (CELO) and the Celo Dollar (cUSD).
 
-## Quick links
-
-[**Celo**](https://celo.org)
-
-[**Docs**](https://docs.celo.org/)
-
-[**Github**](https://github.com/celo-org)
-
 ---
 
 ## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Celo RPC. You can then perform transactions and interact with the network.
 
-### Get started
-
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
 3. Enter the settings for the required project as follows in the table below:
 
-
-
 | **Chain** | **Custom RPC Category** | **Details**                                            |
-| --------- | ----------------------- | ------------------------------------------------------ |
+|-----------|-------------------------|--------------------------------------------------------|
 | Celo      | NETWORK NAME:           | Celo RPC                                               |
 |           | NEW RPC URL:            | https://rpc.ankr.com/celo/                             |
 |           | CHAIN ID:               | 42220                                                  |

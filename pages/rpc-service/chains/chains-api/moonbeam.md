@@ -6,31 +6,23 @@ import { Tabs, Tab } from "nextra-theme-docs";
 Moonbeam combines the easy-to-use tooling of Ethereum and the scalable, interoperable architecture of Polkadot.
 Moonbeam is EVM compatible to an extent but there are important Moonbeam differences that developers should know and understand in terms of the Ethereum API JSON-RPC support.
 
-## Quick links
-
-[**Moonbeam**](https://moonbeam.foundation/)
-
-[**Docs**](https://docs.moonbeam.network/)
-
-[**Github**](https://github.com/PureStake/moonbeam)
-
 ---
 
 ## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Moonbeam RPC. You can then perform transactions and interact with the network.
 
-1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
-2. Select '_**Custom RPC**_'.
+1. Open your **Metamask Extension** and click the **Network** drop down menu at the top.
+2. Select **Custom RPC**.
 3. Enter the settings for the required project as follows in the table below:
 
 
-| **Chain** | **Custom RPC Category** | **Details**                                            |
-| --------- | ----------------------- | ------------------------------------------------------ |
-| Celo      | NETWORK NAME:           | Moonbeam RPC                                               |
-|           | NEW RPC URL:            | https://rpc.ankr.com/moonbeam/                             |
-|           | CHAIN ID:               | 1284 (hex: 0x504)                                                 |
-|           | SYMBOL:                 | GLMR                                                  |
+| **Chain** | **Custom RPC Category** | **Details**                                  |
+|-----------|-------------------------|----------------------------------------------|
+| Moonbeam  | NETWORK NAME:           | Moonbeam RPC                                 |
+|           | NEW RPC URL:            | https://rpc.ankr.com/moonbeam/               |
+|           | CHAIN ID:               | 1284 (hex: 0x504)                            |
+|           | SYMBOL:                 | GLMR                                         |
 |           | BLOCK EXPLORER URL:     | [https://moonscan.io/](https://moonscan.io/) |
 
 ## Get Started
