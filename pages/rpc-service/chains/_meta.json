@@ -1,17 +1,4 @@
 {
-  "arbitrum": "Arbitrum",
-  "avalanche": "Avalanche",
-  "binance-smart-chain": "BNB Smart Chain",
-  "celo": "Celo",
-  "ethereum": "Ethereum",
-  "fantom": "Fantom",
-  "gnosis": "Gnosis",
-  "harmony": "Harmony",
-  "iotex": "IoTex RPC",
-  "moonbeam": "Moonbeam",
-  "near": "Near",
-  "nervos": "Nervos",
-  "polygon": "Polygon",
-  "solana": "Solana",
-  "syscoin": "Syscoin"
+  "chains-list": "Chains Quickstart",
+  "chains-api": "API Reference"
 }
