@@ -953,7 +953,7 @@
   },
   {
     "from": "docs/gaming/unity-sdk/reference/index.html",
-    "to": "/gaming/unity-sdk/reference/ankr-sdk-factory/"
+    "to": "/docs/gaming/unity-sdk/reference/ankr-sdk-factory/"
   },
   {
     "from": "docs/rpc-service/chains/arbitrum/index.html",
