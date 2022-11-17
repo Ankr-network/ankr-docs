@@ -4,45 +4,33 @@
 
 Developing on Harmony should be familiar for Ethereum developers, as it is fully Ethereum compatible and inherits almost all the tools and libraries from Ethereum, like truffle, remix, web3js, etc.
 
-## Quick links
-
-[**Harmony**](https://www.harmony.one/)
-
-[**Docs**](https://docs.harmony.one/home/)
-
-[**Github**](https://github.com/harmony-one)
-
 ---
 
 ## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Celo RPC. You can then perform transactions and interact with the network.
 
-### Get started
-
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
 3. Enter the settings for the required project as follows in the table below:
 
-
-
-| **Chain** | **Custom RPC Category** | **Details**                                            |
-| --------- | ----------------------- | ------------------------------------------------------ |
-| Celo      | NETWORK NAME:           | Harmony RPC                                              |
-|           | NEW RPC URL:            | https://rpc.ankr.com/harmony/                             |
-|           | CHAIN ID:               | 1666600000 (shard 0)                                                 |
-|           | SYMBOL:                 | ONE                                                   |
+| **Chain** | **Custom RPC Category** | **Details**                                                    |
+|-----------|-------------------------|----------------------------------------------------------------|
+| Celo      | NETWORK NAME:           | Harmony RPC                                                    |
+|           | NEW RPC URL:            | https://rpc.ankr.com/harmony/                                  |
+|           | CHAIN ID:               | 1666600000 (shard 0)                                           |
+|           | SYMBOL:                 | ONE                                                            |
 |           | BLOCK EXPLORER URL:     | [https://explorer.harmony.one/](https://explorer.harmony.one/) |
 
 ## Integrate code
 
 All requests follow the standard JSON-RPC format and include 4 variables in the data object:
 
-|  Request Data Object | Example  | Purpose  |   
-|---     |---|---|
-|Jsonrpc  | "2.0"  |  Specifies version number |   
-|Method | "hmy_getBalance"  |  Method to be called server-side |  
-|Params |["0xD7Ff...24Cf2d", "latest"]|Parameters for method call|
+| Request Data Object | Example                       | Purpose                         |   
+|---------------------|-------------------------------|---------------------------------|
+| Jsonrpc             | "2.0"                         | Specifies version number        |   
+| Method              | "hmy_getBalance"              | Method to be called server-side |  
+| Params              | ["0xD7Ff...24Cf2d", "latest"] | Parameters for method call      |
 
 ### Key Differences between Harmony and Ethereum
 

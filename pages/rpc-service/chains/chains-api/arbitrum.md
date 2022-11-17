@@ -1,18 +1,10 @@
 # Arbitrum
 
-Arbitrum RPC is available on the [Ankr Protocol App](https://www.ankr.com/protocol/public/arbitrum/)
+Arbitrum API is available on [RPC Service](https://www.ankr.com/rpc/)
 
 **Arbitrum** is a suite of Ethereum scaling solutions that enable high-throughput, low cost smart contracts while remaining trustlessly secure.
 
 Arbitrum has three modes: **AnyTrust Channels**, **AnyTrust Sidechains,** and **Arbitrum Rollup**.
-
-## **Quick Links**
-
-[**Arbitrum**](https://arbitrum.io) ​
-
-[**Docs**](https://developer.offchainlabs.com/docs/frontend\_integration)**​**
-
-[**Github**](https://github.com/OffchainLabs)
 
 ---
 
@@ -20,13 +12,9 @@ Arbitrum has three modes: **AnyTrust Channels**, **AnyTrust Sidechains,** and **
 
 Here's how to set up your  **MetaMask wallet** to connect to Arbitrum RPC. You can then perform transactions and interact with the network.
 
-### Get started
-
 1. Open your **MetaMask wallet** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
-3. Enter the settings below:
-
-
+3. Enter the settings below.
 
 |   Chain  | Custom RPC Category |                             Details                             |
 | :------: | :-----------------: | :-------------------------------------------------------------: |

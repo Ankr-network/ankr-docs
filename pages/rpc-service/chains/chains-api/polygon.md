@@ -2,31 +2,20 @@
 
 **Polygon**, (formerly MATIC) is a protocol and a framework for building and connecting Ethereum-compatible blockchain networks. It aggregates scalable solutions on Ethereum supporting a multi-chain Ethereum ecosystem.
 
-## **Quick links**
-
-[**Polygon**](https://polygon.technology)
-
-[**Docs**](https://docs.matic.network/docs/develop/getting-started/)
-
-[**Github**](https://github.com/maticnetwork/)
-
-
 ---
 
 ## Connect wallet
 
 You can set up your **MetaMask wallet** to connect to Polygon RPC. You can then perform transactions and interact with the network.
 
-### Get started
-
 1. Open your **Metamask Extension** and click the '_**Network**_' drop down menu at the top.
 2. Select '_**Custom RPC**_'.
 3. Enter the settings for the required project as follows in the table below:
 
 |  Chain  | Custom RPC Category |                              Details                              |
-| :-----: | :-----------------: | :---------------------------------------------------------------: |
+|:-------:|:-------------------:|:-----------------------------------------------------------------:|
 | Polygon |    NETWORK NAME:    |                            Polygon RPC                            |
-|         |     NEW RPC URL:    |    [https://rpc.ankr.com/polygon](https://rpc.ankr.com/polygon)   |
+|         |    NEW RPC URL:     |   [https://rpc.ankr.com/polygon](https://rpc.ankr.com/polygon)    |
 |         |      CHAIN ID:      |                                137                                |
 |         |       SYMBOL:       |                               MATIC                               |
    
