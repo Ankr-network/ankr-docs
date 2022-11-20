@@ -4,7 +4,11 @@
   "advanced-api": "Advanced APIs/SDKs",
   "app-chains": "AppChains",
   "staking": "Staking",
-  "gaming": "Gaming",
+  "gaming": {
+    "title": "Gaming",
+    "type": "page",
+    "hidden": true
+  },
   "learn": "Learn",
   "support": {
     "title": "Support",
