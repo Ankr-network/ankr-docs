@@ -1,11 +1,9 @@
 import { OpenUrl, Code } from "components";
 
-# Welcome to Ankr Learn 👋
-
+# Welcome to Ankr Tutorials 👋
 Find web3 tutorials, developer guides, codes, API references, RPC methods, and more.
 
-## Ankr Tutorials - Learn Web3
-Learn how to develop Smart Contracts, build dApps, explore tools and frameworks, and more. 
+Learn how to develop Smart Contracts, build dApps, explore tools and frameworks, and more.
 
 ### Basic
 Find getting started tutorials, guide and follow along to ship cool stuff. 
