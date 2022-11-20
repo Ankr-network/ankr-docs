@@ -1030,5 +1030,173 @@
   {
     "from": "docs/rpc-service/chains/syscoin/index.html",
     "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/gaming/overview/index.html",
+    "to": "https://mirage.xyz/docs/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/setting-up/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/setting-up/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/getting-started/connect-wallet/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/getting-started/connect-wallet/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/interacting-with-smart-contract/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/interacting-with-smart-contract/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/mint-nft/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/mint-nft/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/read-nft/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/read-nft/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/update-nft/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/update-nft/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/how-to/update-events/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/how-to/update-events/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/how-to/switch-to-webgl/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/how-to/switch-to-webgl/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/how-to/use-ads/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/how-to/use-ads/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/reference/ankr-sdk-factory/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/reference/ankr-sdk-factory/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/reference/ankr-sdk-wrapper/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/reference/ankr-sdk-wrapper/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/reference/eth-handler/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/reference/eth-handler/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/reference/contract/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/reference/contract/"
+  },
+  {
+    "from": "docs/gaming/unity-sdk/reference/contract-event-subscriber/index.html",
+    "to": "https://mirage.xyz/docs/unity-sdk/reference/contract-event-subscriber/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/setting-up/unreal-sdk-4/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/setting-up/unreal-sdk-4/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/setting-up/unreal-sdk-5/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/setting-up/unreal-sdk-5/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/getting-started/before-you-start/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/before-you-start/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/getting-started/connect-wallet/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/connect-wallet/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/getting-started/write-read-requests/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/write-read-requests/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/getting-started/mint-nft/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/mint-nft/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/getting-started/update-nft/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/update-nft/"
+  },
+  {
+    "from": "docs/gaming/unreal-sdk/getting-started/demo/index.html",
+    "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/demo/"
+  },
+  {
+    "from": "docs/gaming/extra/token-standards/index.html",
+    "to": "https://mirage.xyz/docs/extra/token-standards/"
+  },
+  {
+    "from": "docs/gaming/extra/events-and-subscriptions/index.html",
+    "to": "https://mirage.xyz/docs/extra/events-and-subscriptions/"
+  },
+  {
+    "from": "docs/gaming/extra/gas-fees-gas-free-methods/index.html",
+    "to": "https://mirage.xyz/docs/extra/gas-fees-gas-free-methods/"
+  },
+  {
+    "from": "docs/gaming/extra/currency-units/index.html",
+    "to": "https://mirage.xyz/docs/extra/currency-units/"
+  },
+  {
+    "from": "docs/gaming/extra/csharp-to-solidity/index.html",
+    "to": "https://mirage.xyz/docs/extra/csharp-to-solidity/"
+  },
+  {
+    "from": "docs/mirage-gaming/index.html",
+    "to": "https://mirage.xyz/docs/"
+  },
+  {
+    "from": "docs/learn/overview/index.html",
+    "to": "/docs/tutorials/overview/"
+  },
+  {
+    "from": "docs/learn/get-started/create-dApp-on-Ethereum-using-nocode/index.html",
+    "to": "/docs/tutorials/get-started/dapp-on-ethereum-using-nocode/"
+  },
+  {
+    "from": "docs/learn/get-started/build-a-dao-in-5min/index.html",
+    "to": "/docs/tutorials/get-started/dao-in-5min/"
+  },
+  {
+    "from": "docs/learn/get-started/ankrjs-advanced-apis-react-quickstart-guide/index.html",
+    "to": "/docs/tutorials/get-started/ankrjs-advanced-apis-react-quickstart-guide/"
+  },
+  {
+    "from": "docs/learn/get-started/filebase-to-store-files-to-IPFS/index.html",
+    "to": "/docs/tutorials/get-started/file-storage-on-ipfs-with-filebase/"
+  },
+  {
+    "from": "docs/learn/get-started/create-backend-nodejs-IPFS-file-uploader-with-filebase/index.html",
+    "to": "/docs/tutorials/get-started/backend-nodejs-ipfs-file-uploader-with-filebase/"
+  },
+  {
+    "from": "docs/learn/smart-contracts/Deploy-ERC-721-SmartContract-Avalanche/index.html",
+    "to": "/docs/tutorials/smart-contracts/erc-721-smart-contract-on-avalanche/"
+  },
+  {
+    "from": "docs/learn/smart-contracts/ERC-20-token-Ankr-Hardhat-ETH-Goerli-Testnet/index.html",
+    "to": "/docs/tutorials/smart-contracts/erc-20-token-with-ankr-hardhat-on-goerli/"
+  },
+  {
+    "from": "docs/learn/smart-contracts/Deploy-Mint-CryptoKitties-Like-NFT-ERC-721-Smart-Contract/index.html",
+    "to": "/docs/tutorials/smart-contracts/cryptokitties-like-nft-with-erc-721-smart-contract/"
+  },
+  {
+    "from": "docs/learn/smart-contracts/Deploy-Your-Own-ERC20-Token-On-Optimism/index.html",
+    "to": "/docs/tutorials/smart-contracts/erc-20-token-on-optimism/"
+  },
+  {
+    "from": "docs/learn/smart-contracts/how-to-create-a-soulbound-token/index.html",
+    "to": "/docs/tutorials/smart-contracts/non-rentable-soulbound-nft/"
+  },
+  {
+    "from": "docs/learn/smart-contracts/Rentable-NFT-Smart-Contract-On-Optimism/index.html",
+    "to": "/docs/tutorials/smart-contracts/rentable-nft-on-optimism/"
+  },
+  {
+    "from": "docs/learn/advanced-web3/build-Donation-Based-Crowdfunding-dApp-on-Polygon-with-ankr/index.html",
+    "to": "/docs/tutorials/advanced-web3/donation-based-crowdfunding-dapp-on-polygon-with-ankr/"
   }
 ]
