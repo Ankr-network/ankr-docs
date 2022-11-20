@@ -1142,5 +1142,9 @@
   {
     "from": "docs/gaming/extra/csharp-to-solidity/index.html",
     "to": "https://mirage.xyz/docs/extra/csharp-to-solidity/"
+  },
+  {
+    "from": "docs/gaming/index.html",
+    "to": "https://mirage.xyz/docs/"
   }
 ]
