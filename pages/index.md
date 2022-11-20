@@ -49,7 +49,7 @@ This documentation lets you explore how you can use and integrate Ankr's full su
   [Stake, earn, and integrate](staking/overview)↗
 </div>
 
-## Ankr's Mirage Gaming Platform
+## Mirage Gaming Platform
 <div className="list-with-custom-top-margin mt-6">
 * Take your game to the next level — Web3.
 * Launch your Web3 monetization strategy.
