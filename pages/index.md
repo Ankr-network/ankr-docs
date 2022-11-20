@@ -60,7 +60,7 @@ This documentation lets you explore how you can use and integrate Ankr's full su
   [Take your game to Web3](https://mirage.xyz/docs/)↗
 </div>
 
-## Learn
+## Tutorials
 <div className="list-with-custom-top-margin mt-6">
 * Learn how to develop Smart Contracts, build dApps, explore tools and frameworks, and more.
 * Find getting-started tutorials, guides and follow along to ship cool stuff.
