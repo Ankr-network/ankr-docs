@@ -11,6 +11,7 @@ This documentation lets you explore how you can use and integrate Ankr's full su
 <div className="list-with-custom-top-margin mt-6">
 * Access RPC Endpoints via HTTPS or WebSockets.
 * Interact with 18+ supported blockchains.
+* Test out and get important stats.
 * Suitable for Web3 developers and enthusiasts of all skill levels.
 </div>
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
@@ -22,6 +23,7 @@ This documentation lets you explore how you can use and integrate Ankr's full su
 * Access a specifically-tailored collection of JSON-RPC API endpoints.
 * Interact with 8 supported blockchains.
 * Use Ankr JavaScript/Python SDKs and React Hooks.
+* Tailored to support most popular Web3 scenarios. 
 </div>
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
   [Query multiple chains for most popular Web3 scenarios](advanced-api/overview)↗
@@ -49,7 +51,7 @@ This documentation lets you explore how you can use and integrate Ankr's full su
   [Stake, earn, and integrate](staking/overview)↗
 </div>
 
-## Mirage Gaming Platform
+## Gaming
 <div className="list-with-custom-top-margin mt-6">
 * Take your game to the next level — Web3.
 * Launch your Web3 monetization strategy.
