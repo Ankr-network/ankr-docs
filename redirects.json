@@ -1032,115 +1032,115 @@
     "to": "/docs/rpc-service/chains/chains-list/"
   },
   {
-    "from": "docs/gaming/overview/",
+    "from": "docs/gaming/overview/index.html",
     "to": "https://mirage.xyz/docs/"
   },
   {
-    "from": "docs/gaming/unity-sdk/setting-up/",
+    "from": "docs/gaming/unity-sdk/setting-up/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/setting-up/"
   },
   {
-    "from": "docs/gaming/unity-sdk/getting-started/connect-wallet/",
+    "from": "docs/gaming/unity-sdk/getting-started/connect-wallet/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/getting-started/connect-wallet/"
   },
   {
-    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/interacting-with-smart-contract/",
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/interacting-with-smart-contract/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/interacting-with-smart-contract/"
   },
   {
-    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/mint-nft/",
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/mint-nft/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/mint-nft/"
   },
   {
-    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/read-nft/",
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/read-nft/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/read-nft/"
   },
   {
-    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/update-nft/",
+    "from": "docs/gaming/unity-sdk/interacting-with-blockchain/update-nft/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/interacting-with-blockchain/update-nft/"
   },
   {
-    "from": "docs/gaming/unity-sdk/how-to/update-events/",
+    "from": "docs/gaming/unity-sdk/how-to/update-events/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/how-to/update-events/"
   },
   {
-    "from": "docs/gaming/unity-sdk/how-to/switch-to-webgl/",
+    "from": "docs/gaming/unity-sdk/how-to/switch-to-webgl/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/how-to/switch-to-webgl/"
   },
   {
-    "from": "docs/gaming/unity-sdk/how-to/use-ads/",
+    "from": "docs/gaming/unity-sdk/how-to/use-ads/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/how-to/use-ads/"
   },
   {
-    "from": "docs/gaming/unity-sdk/reference/ankr-sdk-factory/",
+    "from": "docs/gaming/unity-sdk/reference/ankr-sdk-factory/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/reference/ankr-sdk-factory/"
   },
   {
-    "from": "docs/gaming/unity-sdk/reference/ankr-sdk-wrapper/",
+    "from": "docs/gaming/unity-sdk/reference/ankr-sdk-wrapper/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/reference/ankr-sdk-wrapper/"
   },
   {
-    "from": "docs/gaming/unity-sdk/reference/eth-handler/",
+    "from": "docs/gaming/unity-sdk/reference/eth-handler/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/reference/eth-handler/"
   },
   {
-    "from": "docs/gaming/unity-sdk/reference/contract/",
+    "from": "docs/gaming/unity-sdk/reference/contract/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/reference/contract/"
   },
   {
-    "from": "docs/gaming/unity-sdk/reference/contract-event-subscriber/",
+    "from": "docs/gaming/unity-sdk/reference/contract-event-subscriber/index.html",
     "to": "https://mirage.xyz/docs/unity-sdk/reference/contract-event-subscriber/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/setting-up/unreal-sdk-4/",
+    "from": "docs/gaming/unreal-sdk/setting-up/unreal-sdk-4/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/setting-up/unreal-sdk-4/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/setting-up/unreal-sdk-5/",
+    "from": "docs/gaming/unreal-sdk/setting-up/unreal-sdk-5/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/setting-up/unreal-sdk-5/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/getting-started/before-you-start/",
+    "from": "docs/gaming/unreal-sdk/getting-started/before-you-start/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/before-you-start/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/getting-started/connect-wallet/",
+    "from": "docs/gaming/unreal-sdk/getting-started/connect-wallet/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/connect-wallet/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/getting-started/write-read-requests/",
+    "from": "docs/gaming/unreal-sdk/getting-started/write-read-requests/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/write-read-requests/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/getting-started/mint-nft/",
+    "from": "docs/gaming/unreal-sdk/getting-started/mint-nft/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/mint-nft/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/getting-started/update-nft/",
+    "from": "docs/gaming/unreal-sdk/getting-started/update-nft/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/update-nft/"
   },
   {
-    "from": "docs/gaming/unreal-sdk/getting-started/demo/",
+    "from": "docs/gaming/unreal-sdk/getting-started/demo/index.html",
     "to": "https://mirage.xyz/docs/unreal-sdk/getting-started/demo/"
   },
   {
-    "from": "docs/gaming/extra/token-standards/",
+    "from": "docs/gaming/extra/token-standards/index.html",
     "to": "https://mirage.xyz/docs/extra/token-standards/"
   },
   {
-    "from": "docs/gaming/extra/events-and-subscriptions/",
+    "from": "docs/gaming/extra/events-and-subscriptions/index.html",
     "to": "https://mirage.xyz/docs/extra/events-and-subscriptions/"
   },
   {
-    "from": "docs/gaming/extra/gas-fees-gas-free-methods/",
+    "from": "docs/gaming/extra/gas-fees-gas-free-methods/index.html",
     "to": "https://mirage.xyz/docs/extra/gas-fees-gas-free-methods/"
   },
   {
-    "from": "docs/gaming/extra/currency-units/",
+    "from": "docs/gaming/extra/currency-units/index.html",
     "to": "https://mirage.xyz/docs/extra/currency-units/"
   },
   {
-    "from": "docs/gaming/extra/csharp-to-solidity/",
+    "from": "docs/gaming/extra/csharp-to-solidity/index.html",
     "to": "https://mirage.xyz/docs/extra/csharp-to-solidity/"
   }
 ]

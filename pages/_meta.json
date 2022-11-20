@@ -6,7 +6,7 @@
   "staking": "Staking",
   "gaming": {
     "title": "Gaming",
-    "type": "page",
+    "type": "folder",
     "hidden": true
   },
   "learn": "Learn",
