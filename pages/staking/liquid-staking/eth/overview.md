@@ -1,7 +1,6 @@
 import { Callout } from "components";
 
 # Ethereum Liquid Staking 
-
 [Ankr Staking](https://www.ankr.com/staking/) offers ETH holders the opportunity to stake ETH and claim two different types of ETH2 Liquid Staking tokens:
 
 <img src="/docs/aethb-aethc-difference.jpeg" alt="Difference between aETHb and aETHc" class="responsive-pic" width="800" />
@@ -19,19 +18,18 @@ Overall, it looks like Shanghai is going to come in ~Q2/Q3 2023.
 </Callout>
 
 ## Audit details
-
-ETH Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. 
-To learn more, view the [detailed audit report](https://assets.ankr.com/files/stkr_smart_contract_auditing_report.pdf).
+ETH Liquid Staking smart contracts have undergone an external audit by Beosin Blockchain Security. 
+To learn more, look at:
+* [Nov 2020 detailed audit report](https://assets.ankr.com/files/stkr_smart_contract_auditing_report.pdf)
+* [Nov 2022 detailed audit report](https://assets.ankr.com/staking/smart_contract_security_audit_aeth_beosin.pdf)
 
 ## Smart contracts
-
 Visit [ETH development details](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/#smart-contracts) for the addresses of ETH Liquid Staking smart contracts. 
 
 
 ## Two types of ETH2 Liquid Staking
 
 ### Ankr Reward-Bearing Staked ETH (aETHc)
-
 aETHc (formerly aETH) is a reward-bearing token that enables instant liquidity for staked ETH. aETHc represents the staked ETH plus all future staking rewards.
 
 Initially, at the start of ETH2 staking on December 1st 2020, aETHc was issued at a ratio of 1:1 to the amount of staked ETH.
@@ -44,7 +42,6 @@ The amount of aETHc you hold will not increase. Instead, the price of aETHc is e
 
 
 ### Ankr Reward Earning Staked ETH (aETHb)
-
 Similar to aETHc, aETHb (formerly fETH) also enables instant liquidity for staked ETH tokens in ETH 2.0 network.
 
 The main difference between aETHb and aETHc is that it distributes staking rewards through a rebasing process on a daily basis, meaning that its fair value should be equal to ETH price, contrary to aETHc, whose fair price is ETH + staking rewards embedded in aETHc (1 aETHc represents 1.04 ETH as of August 2021).
