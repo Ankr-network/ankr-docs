@@ -49,16 +49,12 @@ For the lock-up period affecting release time of funds in unstake requests, see 
 
 ## Smart contracts
 Smart contracts and addresses involved in FTM Liquid Staking are:
-
-[FantomPool](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) — contract on Fantom Chain where the user sends their initial staking or unstaking request.
-
-[aFTMb](https://ftmscan.com/address/0xB42bF10ab9Df82f9a47B86dd76EEE4bA848d0Fa2) — contract on Fantom Chain that mints or burns aFTMb tokens for the user in 1:1 ratio with the staked amount.
-
-[aFTMc](https://ftmscan.com/address/0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179) — contract on Fantom Chain that mints or burns aFTMc tokens for the user in the amount defined by the current [FTM–aFTMc ratio](https://ftmscan.com/address/0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179#readProxyContract#F10).
-
-FantomStub — contract that delegates stakes to a validator from the validator set. The contract is needed to avoid Fantom intrinsic restrictions. The address is not given, as the user never directly interacts with the contract.
-
-[Operator address](https://ftmscan.com/address/0x4069d8a3de3a72eca86ca5e0a4b94619085e7362) — address of the Ankr backend on Fantom Chain that
+* [FantomPool](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) — contract on Fantom Chain where the user sends their initial staking or unstaking request.
+* [aFTMb](https://ftmscan.com/address/0xB42bF10ab9Df82f9a47B86dd76EEE4bA848d0Fa2) — contract on Fantom Chain that mints or burns aFTMb tokens for the user in 1:1 ratio with the staked amount.
+* [aFTMc](https://ftmscan.com/address/0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179) — contract on Fantom Chain that mints or burns aFTMc tokens for the user in the amount defined by the current [FTM–aFTMc ratio](https://ftmscan.com/address/0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179#readProxyContract#F10).
+* FantomStub — contracts (curr. val. — 47) that delegates stakes to a validator from the validator set. The contracts are needed to avoid Fantom intrinsic restrictions. The addresses are not listed, as the user never directly interacts with these contracts.
+* [Operator address](https://ftmscan.com/address/0x4069d8a3de3a72eca86ca5e0a4b94619085e7362) — address of the Ankr backend on Fantom Chain that:
+  * When unstaking, receives the unstaked funds+rewards to send to stakers.
 
 Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 
@@ -82,4 +78,4 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 2. If the transaction is successful, aFTMbs are automatically burned and removed from the user’s address. An event `TokensBurned(address indexed account, uint256 amount, uint256 shares, uint256 burnFee, uint256 indexed wrId)` is emitted, and the user receives `amount - burnFee` FTM within the period of up to 35 days. 
 The fee depends on unstaked amount and can be shown to the user via `getBurnFee(uint256 amount) external view returns (uint256)`, which changes from time to time based on the current available liquidity. 
 
-3. Then `FantomPool` saves the request in the form of a `WithdrawalRequest {address payable staker; uint256 amount;}` struct.  Within up to 35 days the Ankr backend calls `withdrawLast()` to send the staked funds back to the user, and a `Withdrawn(address indexed staker, uint256 amount, uint256 indexed wrId)` event is emitted.
+3. Then `FantomPool` saves the request in the form of a `WithdrawalRequest {address payable staker; uint256 amount;}` struct. Within up to 35 days the Ankr backend calls `withdrawLast()` to send the staked funds back to the user, and a `Withdrawn(address indexed staker, uint256 amount, uint256 indexed wrId)` event is emitted.

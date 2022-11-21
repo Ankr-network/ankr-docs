@@ -55,18 +55,10 @@ Ankr backend calculates the ratio of rewards to the total stake amount weekly an
 Ankr delegates the staked funds to trusted validators from Kusama. Specific validators may change in >= 1 day.
 
 ## Smart contracts
-
-Smart contracts addresses involved in KSM staking are:
-
-Kusama deposit address:
-
-[Ankr deposit address](https://kusama.subscan.io/account/GUDy5gwmUTaHxcX8v2U3wyYdjSF8Zswnt47ZhYBuTCobDqX) — address that receives the staked KSM on Kusama.
-
-Ethereum:
-
-[aKSMb](https://etherscan.io/address/0x84DA8e731172827fCB233B911678E2a82E27Baf2) — contract on the Ethereum network that mints or burns aKSMb tokens for the user in 1:1 ratio with the staked amount.
-
-[PolkadotPool](https://etherscan.io/address/0x59f767EC659E9FE01ebCf930465E2aD4Cc0F208e) — contract on the Ethereum network where the user sends their request to mint or burn aKSMb.
+Smart contracts and addresses involved in KSM Liquid Staking are:
+* [aKSMb](https://etherscan.io/address/0x84DA8e731172827fCB233B911678E2a82E27Baf2) — contract on the Ethereum network that mints or burns aKSMb tokens for the user in 1:1 ratio with the staked amount.
+* [PolkadotPool](https://etherscan.io/address/0x59f767EC659E9FE01ebCf930465E2aD4Cc0F208e) — contract on the Ethereum network where the user sends their request to mint or burn aKSMb.
+* [Ankr deposit address](https://kusama.subscan.io/account/GUDy5gwmUTaHxcX8v2U3wyYdjSF8Zswnt47ZhYBuTCobDqX) — address on the Kusama network that receives the staked KSM.
 
 ## Staking flow
 
