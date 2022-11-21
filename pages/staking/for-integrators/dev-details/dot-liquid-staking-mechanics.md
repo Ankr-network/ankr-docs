@@ -49,18 +49,10 @@ Ankr backend calculates the ratio of rewards to the total stake amount weekly an
 Ankr delegates the staked funds to trusted validators from Polkadot. Specific validators may change in >= 1 day.
 
 ## Smart contracts
-
-Smart contracts addresses involved in DOT staking are:
-
-Polkadot deposit address:
-
-[Ankr deposit address](https://polkadot.subscan.io/account/11XAoN3fgVLJUmK4Ty2q2H5dGYYzRZe82F247SyzfwZbHpV) — address that receives the staked DOT on Polkadot.
-
-Ethereum:
-
-[aDOTb](https://etherscan.io/address/0x5cc56c266143f29a5054b9ae07f3ac3513a7965e) — contract on the Ethereum network that mints or burns aDOTb tokens for the user in 1:1 ratio with the staked amount.
-
-[PolkadotPool](https://etherscan.io/address/0x59f767EC659E9FE01ebCf930465E2aD4Cc0F208e) — contract on the Ethereum network where the user sends their request to mint or burn aDOTb.
+Smart contracts and addresses involved in DOT Liquid Staking are:
+* [aDOTb](https://etherscan.io/address/0x5cc56c266143f29a5054b9ae07f3ac3513a7965e) — contract on the Ethereum network that mints or burns aDOTb tokens for the user in 1:1 ratio with the staked amount.
+* [PolkadotPool](https://etherscan.io/address/0x59f767EC659E9FE01ebCf930465E2aD4Cc0F208e) — contract on the Ethereum network where the user sends their request to mint or burn aDOTb.
+* [Ankr deposit address](https://polkadot.subscan.io/account/11XAoN3fgVLJUmK4Ty2q2H5dGYYzRZe82F247SyzfwZbHpV) — address on the Polkadot network that receives the staked DOT.
 
 ## Staking flow
 

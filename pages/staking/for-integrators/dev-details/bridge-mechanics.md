@@ -9,7 +9,7 @@ Smart contracts involved in bridging Liquid Staking tokens are:
 
 ## Briding workflow
 
-The mechanics of what's going on under the hood when a user transfers their funds between network can be described as following:
+The mechanics of what's going on under the hood when a user transfers their funds between networks can be described as following:
 
 1. The user has Ankr Liquid Staking tokens on the network where our smart contract minted them for said user.
 

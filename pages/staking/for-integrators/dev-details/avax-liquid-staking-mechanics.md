@@ -49,23 +49,13 @@ On Avalanche, Ankr has three validators:
 
 
 ## Smart contracts
-Smart contracts involved AVAX Liquid Staking are:
-
-1. `aAVAXb` — keeps track of user shares and their ratio to AVAX and keeps track of aAVAXb supply share; aAVAXb is an ERC-20-like token.
-2. `aAVAXc` — keeps track of user shares and aAVAXc supply share; aAVAXc is an ERC-20-like token.
-3. `AvalanchePool` — implements staking and unstaking logic.
-
-Addresses of these smart contracts are:
-
-* [aAVAXb](https://snowtrace.io/address/0x6C6f910A79639dcC94b4feEF59Ff507c2E843929#code)
-
-* [aAVAXc](https://snowtrace.io/address/0xc3344870d52688874b06d844e0c36cc39fc727f6#code) 
-
-* [AvalanchePool](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D#code)
+Smart contracts involved in AVAX Liquid Staking are:
+* [aAVAXb](https://snowtrace.io/address/0x6C6f910A79639dcC94b4feEF59Ff507c2E843929#code) — keeps track of user shares and their ratio to AVAX and keeps track of aAVAXb supply share; aAVAXb is an ERC-20-like token.
+* [aAVAXc](https://snowtrace.io/address/0xc3344870d52688874b06d844e0c36cc39fc727f6#code) — keeps track of user shares and aAVAXc supply share; aAVAXc is an ERC-20-like token.
+* [AvalanchePool](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D#code) — implements staking and unstaking logic.
 
 
 ## Staking workflow
-
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–5. 
 
 1. User sends AVAX to `AvalanchePool` on the Avalanche blockchain via the Ankr Staking Dashboard and MetaMask connected to the Avalanche blockchain. The function effectively called is `AlavalchePool::stakeAndClaimBonds()` or `AlavalchePool::stakeAndClaimCerts()` for aAVAXb and aAVAXc respectively. 

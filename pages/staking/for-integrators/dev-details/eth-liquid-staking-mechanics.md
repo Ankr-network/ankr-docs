@@ -37,13 +37,10 @@ Ankr has roughly [1700 validators on Ethereum](https://beaconcha.in/validators/e
 
 
 ## Smart contracts
-Smart contracts and addresses involved in ETH Liquid Staking are:
-
-[GlobalPool](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) — contract with the staking logic, also accumulates stakes and distributes them across the validator.
-
-[aETHb](https://etherscan.io/address/0xD01ef7C0A5d8c432fc2d1a85c66cF2327362E5C6) — contract that implements the ERC-20-like token aETHb. aETHb grows in number.
-
-[aETHc](https://etherscan.io/token/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb) — contract that implements the ERC-20-like token aETHc. aETHc doesn't grow in number, but grows in value.
+Smart contracts involved in ETH Liquid Staking are:
+* [GlobalPool](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) — contract with the staking logic, also accumulates stakes and distributes them across the validator.
+* [aETHb](https://etherscan.io/address/0xD01ef7C0A5d8c432fc2d1a85c66cF2327362E5C6) — contract that implements the ERC-20-like token aETHb. aETHb grows in number.
+* [aETHc](https://etherscan.io/token/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb) — contract that implements the ERC-20-like token aETHc. aETHc doesn't grow in number, but grows in value.
 
 Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 

@@ -71,14 +71,10 @@ There is a single [Ankr validator on Polygon](https://wallet.polygon.technology/
 
 
 ## Smart contracts
-Smart contracts and addresses involved in MATIC Liquid Staking are:
-
+Smart contracts involved in ETH Liquid Staking are:
 * [Matic](https://etherscan.io/address/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0) — contract on Ethereum that the user calls to approve the chosen MATIC amount to be sent to the PolygonPool
-
 * [PolygonPool](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89) — contract on Ethereum where the user sends their initial staking request.
-
 * [aMATICb](https://etherscan.io/address/0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe) — contract on Ethereum that mints aMATICb tokens for the user in 1:1 ratio with the staked amount.
-
 * [aMATICc](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c) — contract on Ethereum that mints or burns aMATICc tokens for the user. All interactions go through the Proxy part. 
 
 Smart contract code can be viewed by following the links and selecting the *Contract* tab.
