@@ -70,5 +70,5 @@ This documentation lets you explore how you can use and integrate Ankr's full su
 * Find end-to-end tutorials to build and ship full-fledged decentralized applications.
 </div>
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Learn and practice Web3](learn/overview)↗
+  [Learn and practice Web3](tutorials/overview)↗
 </div>
