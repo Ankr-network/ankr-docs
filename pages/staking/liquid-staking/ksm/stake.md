@@ -1,11 +1,9 @@
 import { Callout } from "components";
 
 ## Before you start
-
+Ensure the following:
 * You are using a Chrome Browser.
-* You have a [**Polkadot.js wallet** chrome extension](https://polkadot.js.org/extension/) installed.
-* You have the required amount of KSM you wish to contribute in your Polkadot.js wallet (chrome extension) plus an amount for gas fees.
-* You have a MetaMask wallet.
+* You have a [MetaMask wallet extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) installed and set up in Chrome.
 
 
 ## Install Polkadot.js wallet
@@ -43,7 +41,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
    <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
 2. Click **Connect wallet** in the top-right corner of the page.
    <img src="/docs/staking/connect-wallet/connect-wallet-button.jpg" alt="Connect wallet button" class="responsive-pic" width="140" />
-3. Choose **MetaMask**.
+3. Choose **Polkadot.js**.
    <img src="/docs/staking/connect-wallet/choose-wallet-to-connect.jpg" alt="Connect wallet button" class="responsive-pic" width="500" />
 4. Your Polkadot.js wallet pops up requesting **"authorization"** to connect to Ankr Staking. Click to allow access.
 
@@ -56,10 +54,14 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
    <img src="/docs/staking/connect-wallet/choose-wallet-to-connect.jpg" alt="Connect wallet button" class="responsive-pic" width="500" />
 4. If you have multiple account in MetaMask, choose an account to connect and click **Next**.
    <img src="/docs/staking/connect-wallet/choose-account-to-connect.jpg" alt="Choose an account" class="responsive-pic" width="300" />
-5. Connect it by clicking **Connect** and wait a couple of moment till the connecting process is finished.
+5. Click **Connect** and wait for a couple of moments till the connecting process is finished.
    <img src="/docs/staking/connect-wallet/connect-account.jpg" alt="Connect the account" class="responsive-pic" width="300" />
-7. Successful connection to **Ankr Staking** is indicated at top right corner by the address of wallet you connected.
+6. Successful connection to **Ankr Staking** is indicated at top right corner by the address of wallet you connected.
    <img src="/docs/staking/connect-wallet/wallet-connected.jpg" alt="Wallet connected" class="responsive-pic" width="220" />
+7. If asked by Ankr Staking to switch networks, select a network of your choice.
+   <img src="/docs/staking/connect-wallet/select-supported-network.jpg" alt="Select a supported network" class="responsive-pic" width="500" />
+8. Click **Switch network** to confirm switching.
+   <img src="/docs/staking/connect-wallet/confirm-switching-networks.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
 
 ## Stake your KSM
 
@@ -85,10 +87,14 @@ Successful addition to your wallet is indicated by your Ethereum wallet updating
 You are now free to utilize your aKSMb in Ankr DeFi or other DeFi platforms.
 </Callout>
 
-## If you don't see your liquid staking token balance
-
-If you don't see the balance in your wallet, do the following:
-
+## Don't see your aKSMb balance?
+If you don't see your aKSMb balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
-2. Find your liquid staking token, click the three-dot menu, and click *Copy token address*.
-3. Add the token address manually in your wallet (e.g. MetaMask).
+2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
+   <img src="/docs/staking/liquid-staking/avax/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
+3. Click **Add aKSMb to wallet**.
+   <img src="/docs/staking/liquid-staking/avax/click-add-token.jpg" alt="Click Add aKSMb to wallet" class="responsive-pic" width="500" />
+
+<Callout type="success">
+You can also manually import the token in your wallet and copy&paste the **Contract** address while doing it.
+</Callout>
