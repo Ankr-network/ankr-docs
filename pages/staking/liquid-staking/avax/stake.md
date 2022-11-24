@@ -75,10 +75,13 @@ Staking AVAX is a two-step process:
 7. If asked by Ankr Staking to switch networks, select a network of your choice.
    <img src="/docs/staking/connect-wallet/select-supported-network.jpg" alt="Select a supported network" class="responsive-pic" width="500" />
 8. Click **Switch network** to confirm switching.
-   <img src="/docs/staking/connect-wallet/confirm-switching-networks.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
+   <img src="/docs/staking/connect-wallet/confirm-switching-networks-avalanche.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
+
+<Callout>
+If the wallet isn't showing as connected, click **Connect wallet** and choose **MetaMask** again, this should do the trick.
+</Callout>
 
 ### Stake your AVAX
-
 <Callout>
 Have a small amount of AVAX to cover Avalanche gas fees, which may range from 0.025 to 0.1 AVAX.
 [Learn more about fees](https://docs.avax.network/learn/platform-overview/transaction-fees).
