@@ -970,10 +970,10 @@ There is a list of methods that we don't support for either _Public_ or _Premium
 curl -X POST https://rpc.ankr.com/eth \
 -H 'Content-Type: application/json' \
 -d '{
-      "jsonrpc":"2.0",
-      "method":"eth_blockNumber",
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
       "params": [],
-      "id":1
+      "id": 1
     }'
 ```
   </Tab>
@@ -1043,9 +1043,9 @@ def test_block_number(self):
 
 ```json
 {
-  "jsonrpc":"2.0",
-  "id":1,
-  "result":"0xf3c34b"
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0xf3c34b"
 }
 ```
 

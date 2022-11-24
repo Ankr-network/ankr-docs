@@ -17,14 +17,14 @@ You can interact with contracts using `eth_call` or `eth_sendRawTransaction`. Th
 
 Essentially, you use `eth_call` to read data on the blockchain e.g. a balance. Use `eth_sendRawTransaction` when you are sending assets as in this walkthrough. This requires updating the state of the blockchain.
 
-eth_call |	eth_sendRawTransaction
---------|-------------
-Read-only |	Write
-Invokes contract function locally |	Broadcasts to network
-Does not change state of blockchain	| Updates blockchain (for example, transfers ether between accounts)
-Does not consume gas |	Requires gas
-Synchronous |	Asynchronous
-Returns value of contract function available immediately |	Returns transaction hash only. Possible transaction may not be included in a block (for example, if the gas price is too low).
+| eth_call                                                  | 	eth_sendRawTransaction                                                                                                         |
+|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| Read-only                                                 | 	Write                                                                                                                          |
+| Invokes contract function locally                         | 	Broadcasts to network                                                                                                          |
+| Does not change state of blockchain	                      | Updates blockchain (for example, transfers ether between accounts)                                                              |
+| Does not consume gas                                      | 	Requires gas                                                                                                                   |
+| Synchronous                                               | 	Asynchronous                                                                                                                   |
+|  Returns value of contract function available immediately | 	Returns transaction hash only. Possible transaction may not be included in a block (for example, if the gas price is too low). |
 </Callout>
 
 ## Useful Resources
