@@ -1950,7 +1950,7 @@ There is a list of methods that we don't support for either _Public_ or _Premium
 
 Nervos blockchain, also known as Common Knowledge Base, is the rock-bottom layer of the Nervos ecosystem. As the foundation, Nervos blockchain provides trust for all the layers built on top of it. It is designed to maximize decentralization while remaining minimal, flexible, and secure. Its primary objective is to reliably preserve any data and assets stored therein.
 
-Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [Godwoken Docs](https://docs.godwoken.io/), [GitHub](https://github.com/nervosnetwork)
+Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [Godwoken Docs](https://docs.godwoken.io/), [GitHub](https://github.com/godwokenrises/godwoken)
 
 ### Networks
 
