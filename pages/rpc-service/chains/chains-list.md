@@ -25,21 +25,21 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Ethereum](/rpc-service/chains/chains-list/#ethereum)</td>
     <td>[IoTeX](/rpc-service/chains/chains-list/#iotex)</td>
     <td>[Nervos](/rpc-service/chains/chains-list/#nervos)</td>
-    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
+    <td>[Sui](/rpc-service/chains/chains-list/#sui)</td>
   </tr>
   <tr>
     <td>[Avalanche](/rpc-service/chains/chains-list/#avalanche)</td>
     <td>[Fantom](/rpc-service/chains/chains-list/#fantom)</td>
     <td>[Klaytn](/rpc-service/chains/chains-list/#klaytn)</td>
     <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
-    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
+    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
   </tr>
   <tr>
     <td>[BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)</td>
     <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
     <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
     <td>[Polkadot](/rpc-service/chains/chains-list/#polkadot)</td>
-    <td></td>
+    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
   </tr>
   <tr>
     <td>[BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain)</td>
@@ -1950,7 +1950,7 @@ There is a list of methods that we don't support for either _Public_ or _Premium
 
 Nervos blockchain, also known as Common Knowledge Base, is the rock-bottom layer of the Nervos ecosystem. As the foundation, Nervos blockchain provides trust for all the layers built on top of it. It is designed to maximize decentralization while remaining minimal, flexible, and secure. Its primary objective is to reliably preserve any data and assets stored therein.
 
-Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [Godwoken Docs](https://docs.godwoken.io/), [GitHub](https://github.com/nervosnetwork)
+Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [Godwoken Docs](https://docs.godwoken.io/), [GitHub](https://github.com/godwokenrises/godwoken)
 
 ### Networks
 
@@ -2917,29 +2917,21 @@ There is a list of methods that we don't support for either _Public_ or _Premium
 
 ---
 
-[//]: # (## Sui)
+## Sui
 
-[//]: # ()
-[//]: # (Sui is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in web3. Sui is horizontally scalable to support a wide range of application development with unrivaled speed at low cost.)
+Sui is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in Web3. Sui is horizontally scalable to support a wide range of application development with unrivaled speed at low cost.
 
-[//]: # ()
-[//]: # (Official quick links: [Website]&#40;https://sui.io/&#41;, [Docs]&#40;https://docs.sui.io/&#41;, [GitHub]&#40;https://github.com/MystenLabs&#41;)
+Official quick links: [Website](https://sui.io/), [Docs](https://docs.sui.io/), [GitHub](https://github.com/MystenLabs)
 
-[//]: # ()
-[//]: # (### Networks)
+### Networks
 
-[//]: # ()
-[//]: # (<div className="list-with-custom-top-margin mt-6">)
+<div className="list-with-custom-top-margin mt-6">
+  * Testnet (`HTTPS` and `WSS`)
+</div>
 
-[//]: # (  * Testnet &#40;`HTTPS` and `WSS`&#41;)
+### API methods
 
-[//]: # (</div>)
-
-[//]: # ()
-[//]: # (### API methods)
-
-[//]: # ()
-[//]: # (For Sui, we support blockchain interaction via all the applicable methods except for those listed as unsupported.)
+For Sui, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
 
 [//]: # ()
 [//]: # ([//]: # &#40;Popular methods:&#41;)
@@ -2964,17 +2956,16 @@ There is a list of methods that we don't support for either _Public_ or _Premium
 [//]: # ()
 [//]: # ([//]: # &#40;  `sui_getTransaction`&#41;)
 [//]: # ()
-[//]: # (#### Unsupported)
 
-[//]: # ()
-[//]: # (<Callout type="tip">)
+#### Unsupported
 
-[//]: # (There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales &#40;`sales@ankr.com`&#41; about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.)
+<Callout type="tip">
+There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
 
-[//]: # (</Callout>)
+None
 
-[//]: # ()
-[//]: # (---)
+---
 
 ## Syscoin
 

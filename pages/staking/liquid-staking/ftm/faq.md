@@ -58,7 +58,7 @@ You can trade them in the listed liquidity pools on ANKR DeFi:
 
 * [aFTMb](https://www.ankr.com/staking/defi/?assets=aFTMb)
 
-* [aFTMc](https://www.ankr.com/staking/defi/?assets=aFTMc)
+* [aFTMс](https://www.ankr.com/staking/defi/?assets=aFTMс)
 
 You can also use your Liquid Staking tokens to:
 
