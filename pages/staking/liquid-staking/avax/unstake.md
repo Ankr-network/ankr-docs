@@ -28,5 +28,5 @@ When unstaking, a 2% Ankr service fee and Avalanche gas fee apply. Have a small 
    <img src="/docs/staking/liquid-staking/avax/unstaking-in-progress.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
 
 <Callout type="success">
-Once transaction is confirmed, Ankr Staking Dashboard updates to show *Unstaking in progress*.
+Once transaction is confirmed, Ankr Staking Dashboard updates to show **Unstaking in progress** at the token box.
 </Callout>

@@ -32,17 +32,19 @@ Ensure you have a small amount of BNB to pay the Binance gas fee for your unstak
 To unstake your BNB:
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/). 
 2. Locate the aBNBb box and click the **-** icon to unstake.
-<img src="/docs/staking/liquid-staking/bnb/click-minus-icon.jpg" alt="Click the minus icon" class="responsive-pic" width="800" />
+   <img src="/docs/staking/liquid-staking/bnb/click-minus-icon.jpg" alt="Click the minus icon" class="responsive-pic" width="800" />
 3. Enter the desired amount to unstake and click **Approve** to allow Ankr Staking smart contracts to unstake for you.
-<img src="/docs/staking/liquid-staking/bnb/enter-amount-click-approve.jpg" alt="Enter an amount and click Approve" class="responsive-pic" width="400" />
+   <img src="/docs/staking/liquid-staking/bnb/enter-amount-click-approve.jpg" alt="Enter an amount and click Approve" class="responsive-pic" width="400" />
 4. Confirm your approval in MetaMask.
-<img src="/docs/staking/liquid-staking/bnb/confirm-approval.jpg" alt="Confirm your approval" class="responsive-pic" width="300" />
+   <img src="/docs/staking/liquid-staking/bnb/confirm-approval.jpg" alt="Confirm your approval" class="responsive-pic" width="300" />
 5. Click **Unstake** to unstake the desired amount.
-<img src="/docs/staking/liquid-staking/bnb/click-unstake.jpg" alt="Click Unstake" class="responsive-pic" width="400" />
+   <img src="/docs/staking/liquid-staking/bnb/click-unstake.jpg" alt="Click Unstake" class="responsive-pic" width="400" />
 6. Confirm the unstaking transaction in MetaMask.
-<img src="/docs/staking/liquid-staking/bnb/confirm-unstaking-transaction.jpg" alt="Confirm transaction in MetaMask" class="responsive-pic" width="300" />
+   <img src="/docs/staking/liquid-staking/bnb/confirm-unstaking-transaction.jpg" alt="Confirm transaction in MetaMask" class="responsive-pic" width="300" />
+7. On the next **Unstake in progress page**, click **Go to dashboard**.
+   <img src="/docs/staking/liquid-staking/bnb/unstake-in-progress-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
 
 <Callout type="success">
-Once transaction is confirmed, Ankr Staking Dashboard updates to show **Unstaking in progress**.
+Once transaction is confirmed, Ankr Staking Dashboard updates to show **Unstaking in progress** at the token box.<br/>
 </Callout>
 

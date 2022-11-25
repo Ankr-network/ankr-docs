@@ -37,7 +37,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 3. You can then view your balance and/or make a transfer if required.
 
 ## Connect your Polkadot.js wallet
-1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
+1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
    <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
 2. Click **Connect wallet** in the top-right corner of the page.
    <img src="/docs/staking/connect-wallet/connect-wallet-button.jpg" alt="Connect wallet button" class="responsive-pic" width="140" />
@@ -46,13 +46,13 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send K
 4. Your Polkadot.js wallet pops up requesting **"authorization"** to connect to Ankr Staking. Click to allow access.
 
 ## Connect your MetaMask wallet
-1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
+1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
    <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
 2. Click **Connect wallet** in the top-right corner of the page.
    <img src="/docs/staking/connect-wallet/connect-wallet-button.jpg" alt="Connect wallet button" class="responsive-pic" width="140" />
 3. Choose **MetaMask**.
    <img src="/docs/staking/connect-wallet/choose-wallet-to-connect.jpg" alt="Connect wallet button" class="responsive-pic" width="500" />
-4. If you have multiple account in MetaMask, choose an account to connect and click **Next**.
+4. If you have multiple accounts in MetaMask, choose an account to connect and click **Next**.
    <img src="/docs/staking/connect-wallet/choose-account-to-connect.jpg" alt="Choose an account" class="responsive-pic" width="300" />
 5. Click **Connect** and wait for a couple of moments till the connecting process is finished.
    <img src="/docs/staking/connect-wallet/connect-account.jpg" alt="Connect the account" class="responsive-pic" width="300" />
