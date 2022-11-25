@@ -7,13 +7,7 @@ Ensure the following:
 * You are using a Chrome Browser.
 * You have a [MetaMask wallet extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) installed and set up in Chrome.
 
-## Get AVAX tokens to stake 
-
-Getting AVAX tokens to stake is a two-step process:
-1. Get AVAX tokens.
-2. Send them to MetaMask.
-
-### Get AVAX
+## Get AVAX
 There are several ways how to buy AVAX tokens:
 
 1. Centralized exchanges like Coinbase or Binance supporting withdrawals to AVAX C-Chain
@@ -41,7 +35,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 2. Once you transferred tokens to Avalanche network using Avalanche Bridge, make sure that your MetaMask browser extension is connected using Avalanche network.
 3. Sell the token that you bridged from Ethereum to Avalanche network in a decentralized exchange on Avalanche network. For example, [Pangolin](https://pangolin.exchange), [Lydia Finance](https://www.lydia.finance), or [TraderJoe](https://www.traderjoexyz.com/).
 
-### Send AVAX to MetaMask
+## Send AVAX to MetaMask
 Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
 
 1. Select "**Send**"
@@ -52,13 +46,7 @@ Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
 
 4. Confirm, and finalize the transaction.
 
-## How to stake AVAX
-
-Staking AVAX is a two-step process:
-1. Connect your wallet.
-2. Stake your AVAX.
-
-### Connect your wallet
+## Connect your wallet
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
    <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
@@ -81,7 +69,7 @@ Staking AVAX is a two-step process:
 If the wallet isn't showing as connected, click **Connect wallet** and choose **MetaMask** again, this should do the trick.
 </Callout>
 
-### Stake your AVAX
+## Stake AVAX
 <Callout>
 Have a small amount of AVAX to cover Avalanche gas fees, which may range from 0.025 to 0.1 AVAX.
 [Learn more about fees](https://docs.avax.network/learn/platform-overview/transaction-fees).
@@ -101,11 +89,9 @@ Have a small amount of AVAX to cover Avalanche gas fees, which may range from 0.
 8. Click **Go to dashboard** to see the added liquid staking token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/avax/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
    
-
-
 <Callout type="success">
 To reflect your staking rewards, your aAVAXb balance automatically increases by a small amount, daily, and your aAVAXc keeps growing in price to AVAX, never changing in number.<br/>
-To get more yield out of your Liquid Staking tokens, visit [**Ankr DeFi**](https://ankr.com/staking/defi/).
+To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
 ## Don't see your aAVAXb/aAVAXc balance?

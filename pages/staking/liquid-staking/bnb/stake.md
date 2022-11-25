@@ -7,7 +7,7 @@ Ensure the following:
 * You are using a Chrome Browser.
 * You have a [MetaMask wallet extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) installed and set up in Chrome.
 
-## Purchase BNB
+## Purchase BNB and send it to MetaMask
 
 1. Create a BNB address using MetaMask.
 
@@ -34,7 +34,7 @@ Ensure the following:
 8. Click **Switch network** to confirm switching.
    <img src="/docs/staking/connect-wallet/confirm-switching-networks-binance.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
 
-## Stake your BNB
+## Stake BNB
 
 <Callout type="info">
 A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why you see 0.502: the min amount 0.5 + the fee.
@@ -56,7 +56,7 @@ A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why yo
 
 <Callout type="success">
 To reflect your staking rewards, your aBNBb balance automatically increases by a small amount, daily, and your aBNBc keeps growing in price to BNB, never changing in number.<br/>
-To get more yield out of your Liquid Staking tokens, visit [**Ankr DeFi**](https://ankr.com/staking/defi/).
+To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
 ## Don't see your aBNBb/aBNBc balance?

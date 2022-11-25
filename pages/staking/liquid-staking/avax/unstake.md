@@ -11,7 +11,7 @@ AVAX is transferred to your wallet automatically when the unstaking process comp
 
 Ankr Staking deducts a 2% service fee from your staking rewards when you unstake AVAX.
 
-## How to unstake AVAX
+## Unstake AVAX
 
 <Callout>
 When unstaking, a 2% Ankr service fee and Avalanche gas fee apply. Have a small AVAX amount to cover the gas fee for the outgoing transactions.
