@@ -219,6 +219,32 @@ Official quick links: [Website](https://www.avax.network/), [Docs](https://docs.
       * Standard EVM API (`HTTPS` and `WSS`)
 </div>
 
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Avalanche through Ankr's infrastructure, add a required Avalanche network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Avalanche Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Avalanche Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/avalanche/`.
+      * **Chain ID**: `43114`.
+      * **Currency symbol**: `AVAX`.
+      * **Block explorer URL**: `https://snowtrace.io/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Avalanche Mainnet.
+
 ### API methods
 
 For Avalanche, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
@@ -350,6 +376,32 @@ Official quick links: [Website](https://www.bnbchain.org/en/smartChain), [Docs](
   * Mainnet (`HTTPS` and `WSS`)
   * Chapel Testnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with BNB Smart Chain through Ankr's infrastructure, add a required BNB Smart Chain network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add BNB Smart Chain Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `BNB Smart Chain Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/bsc/`.
+      * **Chain ID**: `56`.
+      * **Currency symbol**: `BNB`.
+      * **Block explorer URL**: `https://bscscan.com/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with BNB Smart Chain Mainnet.
 
 ### API methods
 
@@ -607,6 +659,32 @@ Official quick links: [Website](https://celo.org/), [Docs](https://docs.celo.org
   * Mainnet (`HTTPS` and `WSS`)
 </div>
 
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Celo through Ankr's infrastructure, add a required Celo network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Celo Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Celo Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/celo/`.
+      * **Chain ID**: `42220`.
+      * **Currency symbol**: `CELO`.
+      * **Block explorer URL**: `https://explorer.celo.org/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Celo Mainnet.
+
 ### API methods
 
 For Celo, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
@@ -733,6 +811,32 @@ Official quick links: [Website](https://ethereum.org/en/), [Docs](https://ethere
     * Rinkeby (`HTTPS` and `WSS`)
     * Ropsten (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Ethereum through Ankr's infrastructure, add a required Ethereum network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Ethereum Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Ethereum Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/eth/`.
+      * **Chain ID**: `1`.
+      * **Currency symbol**: `ETH`.
+      * **Block explorer URL**: `https://etherscan.io/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Ethereum Mainnet.
 
 ### API methods
 
@@ -867,6 +971,32 @@ Official quick links: [Website](https://fantom.foundation/), [Docs](https://docs
   * Testnet (`HTTPS` and `WSS`)
 </div>
 
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Fantom through Ankr's infrastructure, add a required Fantom network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Fantom Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Fantom Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/fantom/`.
+      * **Chain ID**: `250`.
+      * **Currency symbol**: `FTM`.
+      * **Block explorer URL**: `https://ftmscan.com/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Fantom Mainnet.
+
 ### API methods
 
 For Fantom, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
@@ -993,6 +1123,32 @@ Official quick links: [Website](https://gnosis.io/), [Docs](https://developers.g
 <div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Gnosis Chain through Ankr's infrastructure, add a required Gnosis Chain network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Gnosis Chain Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Gnosis Chain Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/gnosis/`.
+      * **Chain ID**: `100`.
+      * **Currency symbol**: `xDai`.
+      * **Block explorer URL**: `https://blockscout.com/xdai/mainnet/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Gnosis Chain Mainnet.
 
 ### API methods
 
@@ -1121,6 +1277,32 @@ Official quick links: [Website](https://www.harmony.one/), [Docs](https://docs.h
   * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Harmony through Ankr's infrastructure, add a required Harmony network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Harmony Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Harmony Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/harmony/`.
+      * **Chain ID**: `1666600000`.
+      * **Currency symbol**: `ONE`.
+      * **Block explorer URL**: `https://explorer.harmony.one/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Harmony Mainnet.
 
 ### API methods
 
@@ -1281,6 +1463,32 @@ Official quick links: [Website](https://iotex.io/), [Docs](https://docs.iotex.io
   * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with IoTeX through Ankr's infrastructure, add a required IoTeX network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add IoTeX Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `IoTeX Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/iotex/`.
+      * **Chain ID**: `4689`.
+      * **Currency symbol**: `IOTX`.
+      * **Block explorer URL**: `https://iotexscan.io/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with IoTeX Mainnet.
 
 ### API methods
 
@@ -1443,6 +1651,32 @@ Official quick links: [Website](https://www.klaytn.foundation/), [Docs](https://
 <div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Klaytn through Ankr's infrastructure, add a required Klaytn network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Klaytn Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Klaytn Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/klaytn/`.
+      * **Chain ID**: `8217`.
+      * **Currency symbol**: `KLAY`.
+      * **Block explorer URL**: `https://scope.klaytn.com/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Klaytn Mainnet.
 
 ### API methods
 
@@ -1802,6 +2036,32 @@ Official quick links: [Website](https://moonbeam.network/), [Docs](https://docs.
 <div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Moonbeam through Ankr's infrastructure, add a required Moonbeam network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Moonbeam Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Moonbeam Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/moonbeam/`.
+      * **Chain ID**: `1284`.
+      * **Currency symbol**: `GLMR`.
+      * **Block explorer URL**: `https://moonbeam.moonscan.io/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Moonbeam Mainnet.
 
 ### API methods
 
@@ -2235,6 +2495,32 @@ Official quick links: [Website](https://www.optimism.io/), [Docs](https://commun
   * Testnet (`HTTPS` and `WSS`)
 </div>
 
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Optimism through Ankr's infrastructure, add a required Optimism network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Optimism Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Optimism Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/optimism/`.
+      * **Chain ID**: `10`.
+      * **Currency symbol**: `ETH`.
+      * **Block explorer URL**: `https://optimistic.etherscan.io/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Optimism Mainnet.
+
 ### API methods
 
 For Optimism, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
@@ -2505,6 +2791,32 @@ Official quick links: [Website](https://polygon.technology/), [Docs](https://wik
   * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Polygon through Ankr's infrastructure, add a required Polygon network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Polygon Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Polygon Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/polygon/`.
+      * **Chain ID**: `137`.
+      * **Currency symbol**: `MATIC`.
+      * **Block explorer URL**: `https://polygonscan.com/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Polygon Mainnet.
 
 ### API methods
 
@@ -2978,6 +3290,32 @@ Official quick links: [Website](https://syscoin.org/), [Docs](https://docs.sysco
 <div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
 </div>
+
+### Add networks to MetaMask
+
+Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
+) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
+
+For MetaMask to interact with Syscoin through Ankr's infrastructure, add a required Syscoin network either via RPC Service's or MetaMask's UI.
+
+#### Via RPC Service
+
+To be added soon.
+
+#### Via MetaMask
+
+To add Syscoin Mainnet, follow this steps:
+
+  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
+  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
+
+      * **Network name**: `Syscoin Mainnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/syscoin/`.
+      * **Chain ID**: `57`.
+      * **Currency symbol**: `SYS`.
+      * **Block explorer URL**: `https://explorer.syscoin.org/`.
+
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Syscoin Mainnet.
 
 ### API methods
 
