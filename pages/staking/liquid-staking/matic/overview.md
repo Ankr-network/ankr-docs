@@ -6,11 +6,11 @@
 * aMATICc is a reward-bearing token, meaning that the fair value of 1 aMATICc token vs. MATIC increases over time as staking rewards accumulate. 
 
 ## Audit details
-Polygon Liquid Staking smart contracts have undergone external audit by Beosin Blockchain Security. To learn more, view the [detailed audit report](https://assets.ankr.com/staking/smart_contract_security_audit_matic.pdf).
+Polygon Liquid Staking smart contracts have undergone an external audit by Beosin Blockchain Security:
+* [Detailed audit report](https://assets.ankr.com/staking/smart_contract_security_audit_matic.pdf)
 
 ## Smart contracts
-
-Visit [MATIC development details](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/#smart-contracts) for the addresses of MATIC Liquid Staking smart contracts. 
+For information onMATIC Liquid Staking smart contracts, visit [MATIC development details](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/#smart-contracts).  
 
 ## Benefits
 

@@ -18,13 +18,12 @@ Overall, it looks like Shanghai is going to come in ~Q2/Q3 2023.
 </Callout>
 
 ## Audit details
-ETH Liquid Staking smart contracts have undergone an external audit by Beosin Blockchain Security. 
-To learn more, look at:
+ETH Liquid Staking smart contracts have undergone external audits by Beosin Blockchain Security:
 * [Nov 2020 detailed audit report](https://assets.ankr.com/files/stkr_smart_contract_auditing_report.pdf)
 * [Nov 2022 detailed audit report](https://assets.ankr.com/staking/smart_contract_security_audit_aeth_beosin.pdf)
 
 ## Smart contracts
-Visit [ETH development details](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/#smart-contracts) for the addresses of ETH Liquid Staking smart contracts. 
+For information on ETH Liquid Staking smart contracts, visit [ETH development details](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/#smart-contracts).  
 
 
 ## Two types of ETH2 Liquid Staking
