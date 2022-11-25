@@ -8,19 +8,8 @@ Ensure the following:
 * You have a [MetaMask wallet extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) installed and set up in Chrome.
 
 ### Get MATIC
-MATIC is available on many of the leading centralized and decentralized exchanges around the world. 
-
-<a href="https://polygon.technology/matic-token/" target="_blank">Check out the listings of platforms to acquire MATIC</a>
-
-<Callout>
-A very small amount of ETH is used as gas fee to perform a transaction when staking MATIC on Ethereum.
-Normally, it is around 0.0005 ETH, but may vary depending on the transaction complexity and network transaction load.
-</Callout>
-
-## How to stake MATIC
-Staking MATIC is a two-step process:
-1. Connect your wallet.
-2. Stake your MATIC.
+MATIC is available on many of the leading centralized and decentralized exchanges around the world.<br/> 
+Check out the [listings of platforms](https://polygon.technology/matic-token/) to acquire MATIC.
 
 ### Connect your wallet
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
@@ -38,28 +27,41 @@ Staking MATIC is a two-step process:
 7. If asked by Ankr Staking to switch networks, select a network of your choice.
    <img src="/docs/staking/connect-wallet/select-supported-network.jpg" alt="Select a supported network" class="responsive-pic" width="500" />
 8. Click **Switch network** to confirm switching.
-   <img src="/docs/staking/connect-wallet/confirm-switching-networks.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
+   <img src="/docs/staking/connect-wallet/confirm-switching-networks-ethereum.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
 
 ### Stake your MATIC
-1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 
-2. Locate the **Polygon (MATIC)** box and click *Stake* in it.
-3. Enter the desired amount of MATIC to stake, choose the token, and click *Get aMATICb* or *Get aMATICc* respectively.
-4. Confirm the transaction in your wallet. As mentioned before, a gas fee is incurred to finalize the staking transaction.
-5. Add the liquid staking token to your wallet, clicking *Add aMATICb to wallet* or *Add aMATICc to wallet* respectively.
-6. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update.
+<Callout type="info">
+Make sure you have a small surplus of FTM to pay the gas fees for the staking transaction.<br/>
+Normally, it is around 0.0005 ETH, but may vary depending on the transaction complexity and network transaction load.
+</Callout>
+1. Visit [Ankr Staking](https://www.ankr.com/staking/stake). 
+2. Locate the **Polygon (MATIC)** box and click **Stake** in it.
+   <img src="/docs/staking/liquid-staking/matic/matic-staking-box.jpg" alt="Click Stake in Polygon (MATIC) box" class="responsive-pic" width="700" />
+3. Select network to stake on: Ethereum (regular unstaking time and fees) or Polygon (instant unstaking, higher fees).
+   <img src="/docs/staking/liquid-staking/matic/select-network.jpg" alt="Select network to stake on" class="responsive-pic" width="400" />
+4. Enter the desired amount to stake, choose **aMATICb** or **aMATICc**, and click **Approve** to allow Ankr Staking smart contracts to unstake for you.
+   <img src="/docs/staking/liquid-staking/matic/enter-amount-click-approve.jpg" alt="Enter an amount and click Approve" class="responsive-pic" width="500" />
+5. Confirm your approval in MetaMask.
+   <img src="/docs/staking/liquid-staking/matic/confirm-approval.jpg" alt="Confirm your approval" class="responsive-pic" width="300" />
+6. Click **Get aMATICb** or **Get aMATICc** respectively.
+   <img src="/docs/staking/liquid-staking/matic/click-stake.jpg" alt="Click Unstake" class="responsive-pic" width="500"/>
+7. Confirm the transaction in your wallet.
+   <img src="/docs/staking/liquid-staking/matic/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
+8. Add the liquid staking token to your wallet, clicking **Add aMATICb to wallet** or **Add aMATICc to wallet** respectively.
+9. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
 
 <Callout type="success">
-To reflect your staking rewards, your aAVAXb balance automatically increases by a small amount, daily, and your aAVAXc keeps growing in price to AVAX, never changing in number.<br/>
-To get more yield out of your Liquid Staking tokens, visit [**Ankr DeFi**](https://ankr.com/staking/defi/).
+To reflect your staking rewards, your aMATICb balance automatically increases by a small amount, daily, and your aMATICc keeps growing in price to FTM, never changing in number.<br/>
+To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
 ## Don't see your aMATICb/aMATICc balance?
 If you don't see your aMATICb/aMATICc balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
-   <img src="/docs/staking/liquid-staking/avax/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
+   <img src="/docs/staking/liquid-staking/matic/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
 3. Click **Add aMATICb/aMATICc to wallet**.
-   <img src="/docs/staking/liquid-staking/avax/click-add-token.jpg" alt="Click Add aMATICb/aMATICc to wallet" class="responsive-pic" width="500" />
+   <img src="/docs/staking/liquid-staking/matic/click-add-token.jpg" alt="Click Add aMATICb/aMATICc to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">
 You can also manually import the token in your wallet and copy&paste the **Contract** address while doing it.

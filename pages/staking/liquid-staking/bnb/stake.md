@@ -7,12 +7,9 @@ Ensure the following:
 * You are using a Chrome Browser.
 * You have a [MetaMask wallet extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) installed and set up in Chrome.
 
-## Purchase BNB and send it to MetaMask
-
+## Get BNB and send it to MetaMask
 1. Create a BNB address using MetaMask.
-
 2. Purchase BNB at [https://www.binance.com/](https://www.binance.com) and other exchanges.
-
 3. Send BNB to your BNB Chain (BSC) address from MetaMask.
 
 ## Connect your wallet

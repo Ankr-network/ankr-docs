@@ -48,6 +48,11 @@ Ethereum currently doesn't support unstaking. You will only be able to unstake w
 6. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/eth/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="600" />
 
+<Callout type="success">
+To reflect your staking rewards, your aETHb balance automatically increases by a small amount, daily, and your aETHc keeps growing in price to ETH, never changing in number.<br/>
+To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
+</Callout>
+
 ## Don't see your aETHb/aETHc balance?
 If you don't see your aETHb/aETHc balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).

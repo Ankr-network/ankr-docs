@@ -13,14 +13,9 @@ As SSV Trustless Liquid Staking is currently available on Ethereum Goerli, you'l
 As Goerli is a testing network, you can get Goerli ETH from a Goerli faucet, such as [Goerlifaucet](https://goerlifaucet.com/).
 More faucets can easily be found on Internet. 
 
-## Stake ETH
-Staking AVAX is a two-step process:
-1. Connect your wallet.
-2. Stake your ETH.
-
 ## Connect your wallet
-<Callout>
-Be sure to select the ‘Ethereum Goerli’ network in your wallet. Otherwise you get an error message.
+<Callout type="warning">
+Be sure to select the "Ethereum Goerli" network in your wallet. Otherwise, you get an error message.
 </Callout>
 
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
@@ -38,25 +33,25 @@ Be sure to select the ‘Ethereum Goerli’ network in your wallet. Otherwise yo
 7. If asked by Ankr Staking to switch networks, select a network of your choice.
    <img src="/docs/staking/connect-wallet/select-supported-network.jpg" alt="Select a supported network" class="responsive-pic" width="500" />
 8. Click **Switch network** to confirm switching.
-   <img src="/docs/staking/connect-wallet/confirm-switching-networks.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
+   <img src="/docs/staking/connect-wallet/confirm-switching-networks-goerli.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
 
 ## Stake your ETH
 <Callout>
-Have enough ETH to cover the gas fees for you transactions.<br/>
-Also, remember that Ethereum currently doesn't support unstaking. You will only be able to unstake with the Shanghai upgrade which is planned for ~Q2/Q3 2023.
+Make sure you have enough ETH to cover the gas fees for you transactions.<br/>
+Ethereum currently doesn't support unstaking. You will only be able to unstake with the Shanghai upgrade which is planned for ~Q2/Q3 2023.
 </Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake/).
 2. Locate the **SSV–Ethereum (ETH)** box and click **Stake** in it.
-   <img src="/docs/staking/ssv/ssv-box.jpg" alt="SSV–Ethereum (ETH) on Staking Dashboard" class="responsive-pic" width="300" />
+   <img src="/docs/staking/liquid-staking/ssv/ssv-staking-box.jpg" alt="SSV–Ethereum (ETH) on Staking Dashboard" class="responsive-pic" width="900" />
 3. Enter the desired amount of ETH to stake and click **Stake**.
-   <img src="/docs/staking/ssv/stake-eth-ssv.jpg" alt="Stake ETH in SSV–Ethereum (ETH)" class="responsive-pic" width="550" />
+   <img src="/docs/staking/liquid-staking/ssv/click-stake.jpg" alt="Stake ETH in SSV–Ethereum (ETH)" class="responsive-pic" width="550" />
 4. Confirm the transaction in your wallet.
-   <img src="/docs/staking/ssv/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
+   <img src="/docs/staking/liquid-staking/ssv/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
 5. Add the liquid staking token to your wallet, clicking **Add asETHc to wallet**.
-   <img src="/docs/staking/ssv/add-token-or-go-to-dashboard.jpg" alt="Add asETHc to your wallet or go to Staking Dashboard" class="responsive-pic" width="550" />
+   <img src="/docs/staking/liquid-staking/ssv/add-token-to-wallet.jpg" alt="Add asETHc to your wallet or go to Staking Dashboard" class="responsive-pic" width="550" />
 6. Click **Go to dashboard** to see the added liquid staking token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
-   <img src="/docs/staking/ssv/ssv-liquid-token-on-dashboard.jpg" alt="See asETHc on Staking Dahsboard" class="responsive-pic" width="900" />
+   <img src="/docs/staking/liquid-staking/ssv/click-go-to-dashboard.jpg" alt="See asETHc on Staking Dahsboard" class="responsive-pic" width="550" />
 
 ## Don't see your asETHc balance?
 If you don't see your asETHc balance in your wallet:

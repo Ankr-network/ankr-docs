@@ -29,9 +29,9 @@ While it offers instant release of your funds, it poses a few limitations:
 <Callout type="info">
 Ensure you have a small amount of BNB to pay the Binance gas fee for your unstaking transaction.
 </Callout>
-To unstake your BNB:
+
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/). 
-2. Locate the aBNBb box and click the **-** icon to unstake.
+2. Locate the aBNBb or aBNBc box respectively and click the **-** icon to unstake.
    <img src="/docs/staking/liquid-staking/bnb/click-minus-icon.jpg" alt="Click the minus icon" class="responsive-pic" width="800" />
 3. Enter the desired amount to unstake and click **Approve** to allow Ankr Staking smart contracts to unstake for you.
    <img src="/docs/staking/liquid-staking/bnb/enter-amount-click-approve.jpg" alt="Enter an amount and click Approve" class="responsive-pic" width="400" />

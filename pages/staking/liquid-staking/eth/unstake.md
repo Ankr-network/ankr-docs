@@ -1,5 +1,6 @@
 # Unstake ETH
 
+## Unstaking limitations
 Currently, unstaking is not available, as this functionality is not yet supported by Ethereum.
 
 Unstaking will be enabled after in the Shanghai upgrade that will follow The Merge in 6-12 months. 
