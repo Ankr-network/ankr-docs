@@ -4,7 +4,7 @@ aBNBb/aBNBc is an ERC-20 token that is compatible with Ethereum-based wallets li
 
 ### Are there any docs about the BNB staking and how I set up my wallet etc.?
 
-Yes — there is a [user guide](https://docs.binance.org/smart-chain/wallet/metamask.html).
+Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking/bnb/stake/).
 
 ### What is the minimum amount of BNB I can stake?
 
