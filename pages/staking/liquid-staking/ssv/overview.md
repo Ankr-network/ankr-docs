@@ -1,6 +1,7 @@
 import { Callout } from "components";
 
-## SSV Trustless Liquid Staking
+# SSV Trustless Liquid Staking
+
 Trusting an intermediary with your blockchain-based assets defeats the purpose of blockchain.
 Current Liquid Staking options all require trust and permission at some part of the process.
 The reason that a lot of the staking solutions aren’t fully trustless is that they use custodial validators rather than non-custodial ones. 
@@ -11,8 +12,8 @@ The Distributed Validator Technology that SSV.network has created ensures that t
 If one of the nodes goes down, the other nodes will pick up the slack. 
 Specifically, in order to validate transactions, 3 out of the 4 must approve the transaction for it to go through.
  
-<Callout type="note">
-SSV Trustless Liquid Staking runs on the Ethereum network and currently **only on Goerli Testnet**.<br /><br />
+<Callout type="info">
+SSV Trustless Liquid Staking runs on the Ethereum network and currently **only on Goerli Testnet**.<br />
 Currently, unstaking is not available, as this functionality is not yet supported by Ethereum. 
 It will be enabled after in the Shanghai upgrade that will follow The Merge in 6-12 months, apx. ~Q2/Q3 2023.
 </Callout>
