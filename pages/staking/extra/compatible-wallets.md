@@ -1,14 +1,15 @@
 # Compatible wallets
 
-The following hot wallets are compatible with Ankr Staking: 
-* [Metamask](https://metamask.io)
+The following hot wallets are compatible with Ankr Staking:
 * [Coinbase](https://www.coinbase.com/wallet)
-* [WalletConnect](https://walletconnect.com/)
+* [Coin98](https://wallet.coin98.com/)
+* [Huobi Wallet](https://www.huobiwallet.io/)
 * [imToken](https://www.token.im/)
 * [Math Wallet](https://www.mathwallet.org/)
+* [Metamask](https://metamask.io)
+* [OKX](https://www.okx.com/) (doesn't support Gnosis network) 
 * [Trust Wallet](https://trustwallet.com/)
-* [Huobi Wallet](https://www.huobiwallet.io/)
-* [OKX](https://www.okx.com/) (doesn't support Gnosis network)
+* [WalletConnect](https://walletconnect.com/)
 
 You can also use **Ledger Nano S** cold wallet. 
 

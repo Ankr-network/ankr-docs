@@ -1,11 +1,13 @@
 import { Callout } from "components";
 
-## Use a supported browser extension with the Avalanche network
+# Stake AVAX
 
-The choice is up to you. We recommend using Chrome Browser and MetaMask wallet extension.
+## Before you start
+Ensure the following:
+* You are using a Chrome Browser.
+* You have a [MetaMask wallet extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) installed and set up in Chrome.
 
-## Get AVAX tokens to stake
-
+## Get AVAX
 There are several ways how to buy AVAX tokens:
 
 1. Centralized exchanges like Coinbase or Binance supporting withdrawals to AVAX C-Chain
@@ -33,8 +35,7 @@ Get free AVAX to trade on decentralized exchange on the Avalanche network.
 2. Once you transferred tokens to Avalanche network using Avalanche Bridge, make sure that your MetaMask browser extension is connected using Avalanche network.
 3. Sell the token that you bridged from Ethereum to Avalanche network in a decentralized exchange on Avalanche network. For example, [Pangolin](https://pangolin.exchange), [Lydia Finance](https://www.lydia.finance), or [TraderJoe](https://www.traderjoexyz.com/).
 
-### Send AVAX
-
+## Send AVAX to MetaMask
 Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
 
 1. Select "**Send**"
@@ -45,64 +46,62 @@ Now you can send the AVAX from your Avalanche wallet to your MetaMask wallet.
 
 4. Confirm, and finalize the transaction.
 
-## How to stake AVAX
+## Connect your wallet
 
-### Connect your wallet
-
-1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
+1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
    <img src="/docs/staking/connect-wallet/ankr-staking.jpg" alt="Connect wallet button" class="responsive-pic" width="600" />
 2. Click **Connect wallet** in the top-right corner of the page.
    <img src="/docs/staking/connect-wallet/connect-wallet-button.jpg" alt="Connect wallet button" class="responsive-pic" width="140" />
 3. Choose **MetaMask**.
    <img src="/docs/staking/connect-wallet/choose-wallet-to-connect.jpg" alt="Connect wallet button" class="responsive-pic" width="500" />
-4. If you have multiple account in MetaMask, choose an account to connect and click **Next**.
+4. If you have multiple accounts in MetaMask, choose an account to connect and click **Next**.
    <img src="/docs/staking/connect-wallet/choose-account-to-connect.jpg" alt="Choose an account" class="responsive-pic" width="300" />
-5. Connect it by clicking **Connect** and wait a couple of moment till the connecting process is finished.
+5. Click **Connect** and wait for a couple of moments till the connecting process is finished.
    <img src="/docs/staking/connect-wallet/connect-account.jpg" alt="Connect the account" class="responsive-pic" width="300" />
-7. Successful connection to **Ankr Staking** is indicated at top right corner by the address of wallet you connected.
+6. Successful connection to **Ankr Staking** is indicated at top right corner by the address of wallet you connected.
    <img src="/docs/staking/connect-wallet/wallet-connected.jpg" alt="Wallet connected" class="responsive-pic" width="220" />
-
-### Stake your AVAX
-
-<Callout type="warning">
-Be sure to allow sufficient AVAX to cover gas fees AVAX - from 0.025 to 0.1 AVAX 
-
-[_**Find out more**_](https://docs.avax.network/learn/platform-overview/transaction-fees)
-</Callout>
-
-1. Visit [Ankr Staking](https://www.ankr.com/staking/) and click **Stake** in the product menu. 
-
-2. Locate the **Avalanche (AVAX)** box and click *Stake* in it.
-
-3. Enter the desired amount of AVAAX to stake, choose the token, and click *Get aAVAXb* or *Get aAVAXc* respectively.
-
-4. Confirm the transaction in your wallet.
-
-5. Add the liquid staking token to your wallet, clicking *Add aAVAXb to wallet* or *Add aAVAXb to wallet* respectively.
-
-6. Click *Go to dashboard* to see the added liquid staking token. You may need to wait a little for the transaction to finalize and *Dashboard* to automatically update.
+7. If asked by Ankr Staking to switch networks, select a network of your choice.
+   <img src="/docs/staking/connect-wallet/select-supported-network.jpg" alt="Select a supported network" class="responsive-pic" width="500" />
+8. Click **Switch network** to confirm switching.
+   <img src="/docs/staking/connect-wallet/confirm-switching-networks-avalanche.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
 
 <Callout>
-As mentioned before, a gas fee is incurred to finalize the staking transaction.
+If the wallet isn't showing as connected, click **Connect wallet** and choose **MetaMask** again, this should do the trick.
 </Callout>
 
-You will need to make the following interactions in your wallet:
-
-👍**Authorize** to confirm the connection.
-
-👍 **Approve** the transaction.
-
-👍 **Confirm** the transaction.
-
+## Stake AVAX
 <Callout>
-Your aAVAXb balance automatically increases by a small amount, daily, to reflect your Polygon Staking rewards. You can now use your aAVAXb tokens to earn additional layers of rewards on other DeFi platforms listed in [**DeFi**](https://ankr.com/staking/defi/) under the aAVAXb section. Support for aAVAXc is coming soon.
+Have a small amount of AVAX to cover Avalanche gas fees, which may range from 0.025 to 0.1 AVAX.
+[Learn more about fees](https://docs.avax.network/learn/platform-overview/transaction-fees).
 </Callout>
 
-### If you don't see your liquid staking token balance
+1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
+2. Locate the **Avalanche (AVAX)** box and click **Stake** in it.
+   <img src="/docs/staking/liquid-staking/avax/click-avax-box.jpg" alt="Click Avalanche (AVAX) box" class="responsive-pic" width="600" />
+3. If asked to switch to the Avalanche network, click **Switch network** and confirm switching in Metamask by clicking **Switch network**.
+   <img src="/docs/staking/liquid-staking/avax/switch-to-correct-network.jpg" alt="Switch to the Avalanche network" class="responsive-pic" width="400" />
+4. Enter the desired amount of AVAX to stake, choose the token, and click **Get aAVAXb** or **Get aAVAXc** respectively.
+   <img src="/docs/staking/liquid-staking/avax/choose-token-and-click-to-get-it.jpg" alt="Enter amount, choose token and click Get" class="responsive-pic" width="500" />
+5. Confirm the transaction in Metamask. As mentioned before, a gas fee is incurred to finalize the staking transaction.
+   <img src="/docs/staking/liquid-staking/avax/confirm-staking-transaction-in-metamask.jpg" alt="Confirm staking transaction in MetaMask" class="responsive-pic" width="300" />
+6. Add the liquid staking token to your wallet, clicking **Add aAVAXb to wallet** or **Add aAVAXc to wallet** respectively.
+   <img src="/docs/staking/liquid-staking/avax/click-add-to-wallet.jpg" alt="Click Add to Wallet" class="responsive-pic" width="500" /> 
+8. Click **Go to dashboard** to see the added liquid staking token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
+   <img src="/docs/staking/liquid-staking/avax/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
+   
+<Callout type="success">
+To reflect your staking rewards, your aAVAXb balance automatically increases by a small amount, daily, and your aAVAXc keeps growing in price to AVAX, never changing in number.<br/>
+To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
+</Callout>
 
-If you don't see the balance in your wallet, do the following:
-
+## Don't see your aAVAXb/aAVAXc balance?
+If you don't see your aAVAXb/aAVAXc balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
-2. Find your liquid staking token, click the three-dot menu, and click *Copy token address*.
-3. Insert the token address directly into your wallet (e.g. MetaMask).
+2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
+   <img src="/docs/staking/liquid-staking/avax/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
+3. Click **Add aAVAXb/aAVAXc to wallet**.
+   <img src="/docs/staking/liquid-staking/avax/click-add-token.jpg" alt="Click Add aAVAXb/aAVAXc to wallet" class="responsive-pic" width="500" />
 
+<Callout type="success">
+You can also manually import the token in your wallet and copy&paste the **Contract** address while doing it.
+</Callout>
