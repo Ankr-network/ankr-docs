@@ -16,15 +16,15 @@ If you're unstaking on Polygon, a fee of 0.5% is deducted from the unstaking amo
 2. Locate the aMATICb or aMATICc box respectively and click the **-** icon to unstake.
    <img src="/docs/staking/liquid-staking/matic/click-minus-icon.jpg" alt="Click the minus icon" class="responsive-pic" width="800" />
 3. Enter the desired amount to unstake and click **Approve** to allow Ankr Staking smart contracts to unstake for you.
-   <img src="/docs/staking/liquid-staking/matic/enter-amount-to-unstake-click-approve.jpg" alt="Click Approve" class="responsive-pic" width="400" />
+   <img src="/docs/staking/liquid-staking/matic/enter-amount-to-unstake-click-approve.jpg" alt="Click Approve" class="responsive-pic" width="500" />
 4. Confirm your approval in MetaMask.
    <img src="/docs/staking/liquid-staking/matic/confirm-unstake-approval.jpg" alt="Confirm your approval" class="responsive-pic" width="300" />
 5. Click **Unstake** to unstake the desired amount.
-   <img src="/docs/staking/liquid-staking/matic/click-unstake.jpg" alt="Click unstake" class="responsive-pic" width="400" />
+   <img src="/docs/staking/liquid-staking/matic/click-unstake.jpg" alt="Click unstake" class="responsive-pic" width="500" />
 6. Confirm the unstaking transaction in MetaMask.
    <img src="/docs/staking/liquid-staking/matic/confirm-unstaking-transaction.jpg" alt="Confirm transaction in MetaMask" class="responsive-pic" width="300" />
 7. On the next **Unstake in progress page**, click **Go to dashboard**.
-   <img src="/docs/staking/liquid-staking/matic/unstake-in-progress-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
+   <img src="/docs/staking/liquid-staking/matic/unstake-in-progress-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 <Callout type="success">
 Once transaction is confirmed, Ankr Staking Dashboard updates to show **Unstaking in progress** at the token box.<br/>

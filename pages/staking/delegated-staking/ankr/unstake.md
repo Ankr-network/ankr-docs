@@ -30,7 +30,7 @@ Multiple Node Providers support is coming soon.
 6. Confirm the unstaking transaction in MetaMask.
    <img src="/docs/staking/delegated-staking/ankr/confirm-unstaking-transaction.jpg" alt="Confirm unstaking transaction" class="responsive-pic" width="300" />
 7. On the next **Unstake in pending**, click **Go to dashboard**.
-   <img src="/docs/staking/delegated-staking/ankr/unstake-pending-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
+   <img src="/docs/staking/delegated-staking/ankr/unstake-pending-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 8. Wait for the undelegate period of 7–14 days to end.
 9. When ended, repeat #1 and #2 and go to the **Unstaking** tab.
    <img src="/docs/staking/delegated-staking/ankr/unstake-tab.jpg" alt="Go to Unstaking tab" class="responsive-pic" width="900" />

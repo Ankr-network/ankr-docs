@@ -29,7 +29,7 @@ You may not want to restake your rewards and may want to claim all unlocked rewa
 6. Confirm the reward-claiming transaction.
    <img src="/docs/staking/delegated-staking/ankr/confirm-reward-claiming-transaction.jpg" alt="Confirm reward-claiming transaction" class="responsive-pic" width="300" />
 7. On the next page, click **Go to dashboard**.
-   <img src="/docs/staking/delegated-staking/ankr/claim-pending-click-go-to-dashboard.jpg" alt="Confirm reward-claiming transaction" class="responsive-pic" width="500" />
+   <img src="/docs/staking/delegated-staking/ankr/claim-pending-click-go-to-dashboard.jpg" alt="Confirm reward-claiming transaction" class="responsive-pic" width="550" />
 
 ### Claim rewards for specific staking transactions
 You may want to restake some of your rewards to get higher APY. To do that:
@@ -44,7 +44,7 @@ You may want to restake some of your rewards to get higher APY. To do that:
 6. Confirm the reward-claiming transaction.
    <img src="/docs/staking/delegated-staking/ankr/confirm-reward-claiming-transaction.jpg" alt="Confirm reward-claiming transaction" class="responsive-pic" width="300" />
 7. On the next page, click **Go to dashboard**.
-   <img src="/docs/staking/delegated-staking/ankr/specific-claim-pending-click-go-to-dashboard.jpg" alt="Confirm reward-claiming transaction" class="responsive-pic" width="500" />
+   <img src="/docs/staking/delegated-staking/ankr/specific-claim-pending-click-go-to-dashboard.jpg" alt="Confirm reward-claiming transaction" class="responsive-pic" width="550" />
 
 ## Restake rewards
 <Callout type="info">

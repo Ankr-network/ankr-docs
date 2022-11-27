@@ -47,9 +47,9 @@ A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why yo
 5. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/bnb/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
 6. Add the liquid staking token to your wallet, clicking **Add aBNBb to wallet** or **Add aBNBb to wallet** respectively.
-   <img src="/docs/staking/liquid-staking/bnb/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="600" />
+   <img src="/docs/staking/liquid-staking/bnb/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 7. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
-   <img src="/docs/staking/liquid-staking/bnb/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="600" />
+   <img src="/docs/staking/liquid-staking/bnb/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 
 <Callout type="success">
