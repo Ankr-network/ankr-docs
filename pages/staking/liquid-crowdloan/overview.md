@@ -2,14 +2,13 @@ import { Callout } from "components";
 
 # Ankr Parachain Liquid Crowdloan
 
-## What are Kusama and Polkadot Parachain Liquid Crowdloan
-
+## What are Kusama and Polkadot Parachain Liquid Crowdloan?
 Kusama and Polkadot Parachain slot auctions are among the most widely discussed and anticipated events in the blockchain space. They provide the winning projects with access to innovative multi-chain infrastructure while offering an opportunity for regular audiences to be involved in the vibrant Polkadot ecosystem. Through crowdloan campaigns, anyone can contribute KSM and DOT to support the bids of their favorite projects, and receive their tokens as a reward.
 
 However, these rewards have their limitations. Once a winning project secures a Parachain slot, crowdloan participants find their tokens locked up for up to two years with Polkadot, and 48 weeks with Kusama.
 
 To tackle this issue, Ankr introduces **Parachain Liquid Crowdloan** – an innovative instrument that unlocks the liquidity of bonded DOT, collects rewards from winning Parachain slot auctions, and distributes token rewards from the winning project’s to Parachain Liquid Crowdloan token holders.
-<img src="/docs/liquid-crownload/liquid-crownload.png" alt="Liquid Crowdloan Dashboard" class="responsive-pic" width="900" />
+<img src="/docs/staking/liquid-crownload/liquid-crownload.png" alt="Liquid Crowdloan Dashboard" class="responsive-pic" width="900" />
 
 Rewards from winning slot auctions are expected to become higher than Polkadot and Kusama staking rewards, which incentivizes more Parachain Liquid Crowdloan token holders to contribute their DOT and KSM tokens and benefit from a higher ROI.
 
@@ -30,7 +29,7 @@ Estimate the fair value of Parachain Liquid Crowdloan tokens and buy below your 
 
 ### How Parachain Liquid Crowdloan works
 
-<img src="/docs/dotksm-plc.png" alt="Parachain Crowdloan" class="responsive-pic" width="600" />
+<img src="/docs/staking/liquid-crownload/dotksm-plc.png" alt="Parachain Crowdloan" class="responsive-pic" width="600" />
 
 1. Contribute DOT or KSM to your preferred project that is currently running a Polkadot or Kusama Parachain crowdloan to participate in the **Parachain Slot auction**.
 

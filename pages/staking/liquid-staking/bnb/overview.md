@@ -1,5 +1,6 @@
 # BNB Liquid Staking
 
+## What and why is Binance Liquid Staking?
 Binance Liquid Staking from Ankr Staking offers **instant liquidity** for your staked **BNB**, enabling you to connect your new aBNBb/aBNBc tokens with DeFi platforms and earn several more layers of rewards.
 
 * aBNBb is a reward-earning token, meaning that rewards from BNB staking will be distributed daily through rebasing and aBNBb holders' balance in their wallet will increase on a daily basis.
