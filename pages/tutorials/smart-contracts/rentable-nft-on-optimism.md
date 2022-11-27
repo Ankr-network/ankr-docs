@@ -19,7 +19,7 @@ We are going to be building a rentable NFT collection. By “rentable”, we mea
 
 To test out our rentable NFTs, we will be using a gated frontend that gives you access to some content depending on whether you have rented a given NFT or not.
 
-<img src="/docs/learn/Tkwmg4J.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/Tkwmg4J.png" alt="Hello" class="responsive-pic" />
 
 
 
@@ -35,7 +35,7 @@ Ethereum Improvement Proposal (EIP) 4907 discusses a new standard called ERC4907
 
 In other words, the ERC4907 NFT standard makes it possible for you to “rent out” the utilities unlocked by your NFT to another address. This is made possible by adding a new role to the NFT.
 
-<img src="/docs/learn/93uxHCp.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/93uxHCp.png" alt="Hello" class="responsive-pic" />
 
 
 For example, as mentioned in the EIP itself, rentable NFTs can be leveraged heavily in projects where NFTs are used to manage the ownership of virtual real estate or “virtual land”.
@@ -76,7 +76,7 @@ OpenZeppelin is an extremely handy library containing implementations of some co
 ## Writing The Smart Contract
 First, open your project in a code editor of your choice and create three new, empty files inside of the contracts folder.
 
-<img src="/docs/learn/J1HASEhYT.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/J1HASEhYT.png" alt="Hello" class="responsive-pic" />
 
 
 ### IERC4907.sol
@@ -291,7 +291,7 @@ const setupAccounts = async () => {
 ```
 With this base, we can now structure what we want to test for different scenarios.
 
-<img src="/docs/learn/DyW7Xgk.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/DyW7Xgk.png" alt="Hello" class="responsive-pic" />
 
 Let’s write the code for our test suite now.
 
@@ -365,25 +365,25 @@ Let's get started by running `npx thirdweb deploy` in your terminal. Make sure y
 npx thirdweb deploy
 ```
 
-<img src="/docs/learn/yxqNdmc.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/yxqNdmc.png" alt="Hello" class="responsive-pic" />
 
 Select only the `RentableNFT` contract when prompted. We don't need to deploy the `ERC4907` contract separately. If all goes well, you should see something like this show up in your browser:
-<img src="/docs/learn/MvlfbmT.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/MvlfbmT.png" alt="Hello" class="responsive-pic" />
 
 
 Fill in the contract's constructor parameters, select the Optimism Testnet from the Network dropdown and then click **Deploy Now**. You will see two transaction confirmation requests show up.
 
 The first popup will be for the actual contract deployment. Make sure you confirm this one.
-<img src="/docs/learn/MTYuQoc.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/MTYuQoc.png" alt="Hello" class="responsive-pic" />
 
 
 The second transaction is optional. This transaction will add your contract to Thirdweb's proxy so that you can access it from your Thirdweb dashboard later on. This does not give away any ownership of your contract to Thirdweb.
 
-<img src="/docs/learn/p7sZQMX.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/p7sZQMX.png" alt="Hello" class="responsive-pic" />
 
 
 Once your contract gets deployed you should be redirected to the Contract Explorer which allows you to interact with the contract functions.
-<img src="/docs/learn/AJevJA3.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/AJevJA3.png" alt="Hello" class="responsive-pic" />
 
 
 Make sure you copy your contract's address from the top. You will need it later on.
@@ -398,7 +398,7 @@ We are going to use the Thirdweb UI to interact with our contract and go through
 
 Let’s start by minting an NFT by selecting the **mint** function from the left sidebar, specifying a _tokenId and _tokenURI (our IPFS URL), and then clicking **Execute**.
 
-<img src="/docs/learn/6hOp28F.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/6hOp28F.png" alt="Hello" class="responsive-pic" />
 
 
 Next, we are going to rent this NFT out to an account. Make sure you have access to this account though! We will use this account to interact with that gated frontend we talked about at the beginning.
@@ -418,12 +418,12 @@ node;
 > Math.round(new Date().getTime() / 1000) + 3600
 > 1657242017
 ```
-<img src="/docs/learn/MwS58Kl.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/MwS58Kl.png" alt="Hello" class="responsive-pic" />
 
 
 
 Check if the NFT was successfully rented out by calling `userOf` function for the token with token ID 1.
-<img src="/docs/learn/O7mbSIT.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/O7mbSIT.png" alt="Hello" class="responsive-pic" />
 
 You can also go see your NFT on Quixotic, which is an NFT marketplace for Optimism. Insert your contract address and token ID in this link to view yours:
 
@@ -435,7 +435,7 @@ Here’s an NFT that was already deployed and minted.
 
 https://testnet.quixotic.io/asset/0x1d269Cf95A2732ce98fAaF909642D756b59Af0aF/2
 
-<img src="/docs/learn/VfdFwjU.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/VfdFwjU.png" alt="Hello" class="responsive-pic" />
 
 ## Seeing The Rentable NFTs In Action
 We will now use the NFT we just rented for access to a gated frontend. It is a website that gives you access to some content if and only if you have rented an NFT from a certain ERC4907 NFT collection. This website will help you get a feel of a practical use case of the Rentable NFTs we just built.

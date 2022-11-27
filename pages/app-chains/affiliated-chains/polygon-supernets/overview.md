@@ -27,8 +27,7 @@ There are 6 main modules in the architecture of the Edge.
 * Libp2p — up-to-date peer to peer networking stack that facilitates consensus messages, block syncing, SAM Pool gossiping, and Tx pool gossiping.
 
 * gRPC — robust communication protocol used for issuing privileged operator commands. Commands can only be run locally on validator nodes to run online backups, fetch validator information, and query and clean the Tx pool.
-
-<img src="/docs/app-chains/affiliated-chains/polygon-supernets/architecture-overview.png" alt="Polygon Supernets architecture" width="700" />
+  <img src="/docs/app-chains/affiliated-chains/polygon-supernets/architecture-overview.png" alt="Polygon Supernets architecture" width="700" />
 
 ## Consensus
 Supernets use IBFT PoA is the default consensus option. In IBFT, validators are responsible for creating the blocks that get added to the blockchain.

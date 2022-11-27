@@ -19,7 +19,7 @@ CryptoKitties really braced the growth and use case of NFTs we see today and in 
 
 By the end of this tutorial - you'll be able to mint an NFT and display it on [Quixotic](https://testnet.quixotic.io/)↗ (an NFT marketplace on Optimism) from your deployed ERC721 contract. 
 
-<img src="/docs/learn/yy1.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/yy1.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 ________________________
@@ -256,7 +256,7 @@ Running the above command will compile the contract and deploy it to the Optimis
 
 - If you go to the [Kovan Optimism Etherscan](https://kovan-optimistic.etherscan.io/)↗ and search for your contract address, you should be able to see that the contract has been successfully deployed. 
 
-<img src="/docs/learn/yy2.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/yy2.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 ________________________
@@ -271,7 +271,7 @@ npx hardhat flatten > flattened.sol
 ```
 This will generate a `flattened.sol` file which contains the contract(s) code and all its dependencies, which we will copy and paste to the etherscan when verifying the contract.
 
-<img src="/docs/learn/yy3.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/yy3.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 Make sure in your `flattened.sol` file, `// SPDX-License-Identifier: MIT` is only mentioned one time. Otherwise, it will throw you an error. 
@@ -285,7 +285,7 @@ To verify the contract on Optimism Kovan Etherscan, follow the steps below:
 
 - From the drop-down for compiler type, version selection and license type, select the following configs: 
 
-<img src="/docs/learn/yy4.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/yy4.png" alt="Hello" class="responsive-pic" width="700" />
 
  
 - Hit "continue" and under `Enter the Solidity Contract Code below` section, copy and paste the entire code from the `flattened.sol` file that we generated in step 7. 
@@ -302,7 +302,7 @@ If you don’t have a Pinata account, [sign up](https://app.pinata.cloud/)↗ fo
 - Once you have verified your account on the Pinata, navigate to the "My Files" page and click the "Upload" button.
 - Upload your NFT art and you'll see your image asset file under the `Files` page along with the CID column. 
 
-<img src="/docs/learn/yy5.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/yy5.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 - Copy the CID by clicking the copy button next to it and use it as a postfix to this URL "https://gateway.pinata.cloud/ipfs/CID" to view your NFT art. 
@@ -346,7 +346,7 @@ Now, we will head to [Quixotic.io](https://testnet.quixotic.io/)↗, an NFT mark
 
 - Connect your wallet to Quicotic's testnet marketplace and you'll be able to view your minted NFT there!
 
-<img src="/docs/learn/yy1.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/yy1.png" alt="Hello" class="responsive-pic" width="700" />
 
 ## Check the GitHub Repo
 

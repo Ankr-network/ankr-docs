@@ -1,5 +1,6 @@
 # Polkadot Liquid Staking
 
+## What and why is Polkadot Liquid Staking?
 Polkadot Staking uses nominated proof-of-stake (NPoS) as its foundation consensus mechanism. By staking DOT on the Polkadot blockchain, participants earn rewards and help to bring security to the network. 
 
 Polkadot Liquid Staking from **Ankr Staking** offers instant liquidity for your staked **DOT**.
