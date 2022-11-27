@@ -1,7 +1,6 @@
 # Delegated ANKR token staking
 
 ## Introduction
-
 In the [Ankr 2.0 whitepaper](https://www.ankr.com/ankr-whitepaper-2.0.pdf), we introduced the vision for Ankr Network as a decentralized system where independent node operators work alongside Ankr nodes to power the growth and development of Web3, with a subsidy from the additional services and features provided to developers by Ankr ecosystem contributors and partners.
 
 The first step to making this vision a reality is the introduction of a market mechanism (staking) that will bring developers, node providers and Ankr ecosystem supporters together to solidify the foundational building blocks of Ankr Network’s decentralized node marketplace. 
@@ -11,7 +10,7 @@ Afterall, to build a truly decentralized Web3 protocol, “tokens must be more v
 Our product team is releasing a reimagined vision of Ankr Network – our global network of nodes running on 18+ different blockchains. 
 This vision for Ankr Network 2.0 brings together our ecosystem of developers, node providers (Node Pros), and stakers (Ankr Bankrs) in a way that will offer everyone involved with Ankr a more rewarding experience — with ANKR token utility at its very heart.
 
-## ANKR token staking
+## What is ANKR token staking?
 ANKR token staking is similar to the idea of staking to help secure PoS networks. 
 However, instead of delegating ANKR to validator nodes, ANKR token staking introduces the ability for anyone to stake to full nodes for the first time ever. 
 Now, anyone can earn ANKR rewards and become an “_Ankr Bankr_” by staking their tokens with the independent full nodes running on our new decentralized Network.

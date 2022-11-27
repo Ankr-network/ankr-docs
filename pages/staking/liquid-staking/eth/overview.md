@@ -1,10 +1,12 @@
 import { Callout } from "components";
 
-# Ethereum Liquid Staking 
+# Ethereum Liquid Staking
+
+## What and why is Ethereum Liquid Staking?
 [Ankr Staking](https://www.ankr.com/staking/) offers ETH holders the opportunity to stake ETH and claim two different types of ETH2 Liquid Staking tokens:
 * aETHc is a reward-bearing token, meaning that the fair value of 1 aETHc token vs. ETH increases over time as staking rewards accumulate. When it will be possible to unstake ETH at phase 1.5 of Ethereum 2.0, users will have the option to redeem aETHc to Ankr StakeFi, and unstake ETH with accumulated staking rewards.
 * aETHb is a reward-earning token, meaning that rewards from Ethereum staking will be distributed daily through rebasing and aETHb holders' balance in their wallet will increase on a daily basis.
-<img src="/docs/aethb-aethc-difference.jpeg" alt="Difference between aETHb and aETHc" class="responsive-pic" width="800" />
+<img src="/docs/staking/liquid-staking/eth/aethb-aethc-difference.jpeg" alt="Difference between aETHb and aETHc" class="responsive-pic" width="800" />
  
 <Callout type="warning">
 Currently, unstaking is not available, as this functionality is not yet supported by Ethereum.<br/>

@@ -2,8 +2,7 @@ import { Callout } from "components";
 
 # Delegated mGNO token staking
 
-## Introduction
-
+## What is Gnosis Delegated Staking?
 Delegated Staking is working towards Ankr Network 2.0 that brings together our ecosystem of developers, node providers (Node Pros), and stakers (Ankr Bankrs) in a way that will offer everyone involved with Ankr a more rewarding experience.
 With ANKR staking is at the core, driving Delegated Staking to success, we're teaming up with more platforms.   
 

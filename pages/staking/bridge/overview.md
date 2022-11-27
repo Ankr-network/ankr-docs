@@ -52,10 +52,10 @@ Why did we need our own bridge instead of using existing solutions?
 
 Typically, a cross-chain bridge uses wrapping or pegging mechanisms for bridging tokens. 
 This requires locking or burning funds on one of the chains as part of Proof-of-Lock of Proof-of-Burn.
-The basic well-known schemes are lock->mint and burn->unlock that is enough for bridging almost all assets. 
+The basic well-known schemes are `lock->mint and burn->unlock` that is enough for bridging almost all assets. 
 However, if we want to bridge existing pegged tokens, like the Ankr token on Ethereum or BNB chain, this scheme is not applicable. 
-We can use the lock->unlock scheme instead of minting and burning. However, it also requires us to rebalance assets between two networks on our own.
-Since we’re going to support the lock->unlock scheme, we can also add support for Peg-ETH tokens (and all other Binance pegged tokens).
+We can use the `lock->unlock` scheme instead of minting and burning. However, it also requires us to rebalance assets between two networks on our own.
+Since we’re going to support the `lock->unlock` scheme, we can also add support for Peg-ETH tokens (and all other Binance pegged tokens).
 We can, of course, in the future, extend Ankr Bridge functionality by supporting other bridges, such as Avalanche Bridge and so on.
 
 ## Additional information

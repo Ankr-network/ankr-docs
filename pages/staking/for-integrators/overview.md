@@ -1,9 +1,11 @@
 # Integrate with Ankr Staking
+
+## Products to integrate with
 We welcome you to use Ankr Staking in your projects.
 
 You can integrate the following:
-* Liquid Staking
 * Delegated Staking
+* Liquid Staking
 * Oracles
 * Liquid Crowdloan
 

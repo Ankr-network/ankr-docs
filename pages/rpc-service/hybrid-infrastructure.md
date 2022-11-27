@@ -78,4 +78,4 @@ To add a private node, follow the steps:
   3. In the list of available chains, click the one you have the Hybrid Infrastructure functionality enabled for.
   4. On the **Infrastructure** tab, in **My Endpoints** block, click **Add Endpoint** (+), enter the address of your node, and then click **Finish**.
 
-<img src="/docs/hybrid-add-node.png" alt="Add private node" class="responsive-pic" width="800" />
+<img src="/docs/rpc-service/hybrid-add-node.png" alt="Add private node" class="responsive-pic" width="800" />
