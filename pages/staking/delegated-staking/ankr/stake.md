@@ -52,6 +52,6 @@ However, your stake will keep generating rewards until you unstake, whether or n
    <img src="/docs/staking/delegated-staking/ankr/click-stake.jpg" alt="Stake ANKR after your approval" class="responsive-pic" width="500" />
 9. Confirm the transaction in MetaMask.
     <img src="/docs/staking/delegated-staking/ankr/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
-10. On the stake progress page, wait for the "Stake successfull!" message and click **Go to dashboard** to see the staked ANKR. <br/> It may take a few moments for the transaction to finalize and Ankr Staking Dashboard to update.
-    <img src="/docs/staking/delegated-staking/ankr/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="600" />
+10. On the stake progress page, wait for the **Stake successfull!** message and click **Go to dashboard** to see the staked ANKR. It may take a few moments for the transaction to finalize and Ankr Staking Dashboard to update.
+    <img src="/docs/staking/delegated-staking/ankr/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 

@@ -42,7 +42,7 @@ Ensure you have a small amount of BNB to pay the Binance gas fee for your unstak
 6. Confirm the unstaking transaction in MetaMask.
    <img src="/docs/staking/liquid-staking/bnb/confirm-unstaking-transaction.jpg" alt="Confirm transaction in MetaMask" class="responsive-pic" width="300" />
 7. On the next **Unstake in progress page**, click **Go to dashboard**.
-   <img src="/docs/staking/liquid-staking/bnb/unstake-in-progress-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
+   <img src="/docs/staking/liquid-staking/bnb/unstake-in-progress-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 <Callout type="success">
 Once transaction is confirmed, Ankr Staking Dashboard updates to show **Unstaking in progress** at the token box.<br/>

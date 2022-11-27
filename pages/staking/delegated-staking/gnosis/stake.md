@@ -90,4 +90,4 @@ Make sure you have some xDai to pay the gas fee for your staking transaction.
 8. Confirm the staking transaction in MetaMask.
    <img src="/docs/staking/delegated-staking/mgno/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
 9. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
-   <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="600" />
+   <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />

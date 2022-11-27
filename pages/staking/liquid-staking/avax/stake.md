@@ -85,9 +85,9 @@ Have a small amount of AVAX to cover Avalanche gas fees, which may range from 0.
 5. Confirm the transaction in Metamask. As mentioned before, a gas fee is incurred to finalize the staking transaction.
    <img src="/docs/staking/liquid-staking/avax/confirm-staking-transaction-in-metamask.jpg" alt="Confirm staking transaction in MetaMask" class="responsive-pic" width="300" />
 6. Add the liquid staking token to your wallet, clicking **Add aAVAXb to wallet** or **Add aAVAXc to wallet** respectively.
-   <img src="/docs/staking/liquid-staking/avax/click-add-to-wallet.jpg" alt="Click Add to Wallet" class="responsive-pic" width="500" /> 
+   <img src="/docs/staking/liquid-staking/avax/click-add-to-wallet.jpg" alt="Click Add to Wallet" class="responsive-pic" width="550" /> 
 8. Click **Go to dashboard** to see the added liquid staking token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
-   <img src="/docs/staking/liquid-staking/avax/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="500" />
+   <img src="/docs/staking/liquid-staking/avax/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
    
 <Callout type="success">
 To reflect your staking rewards, your aAVAXb balance automatically increases by a small amount, daily, and your aAVAXc keeps growing in price to AVAX, never changing in number.<br/>

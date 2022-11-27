@@ -45,7 +45,7 @@ Ethereum currently doesn't support unstaking. You will only be able to unstake w
 2. Locate the **SSV–Ethereum (ETH)** box and click **Stake** in it.
    <img src="/docs/staking/liquid-staking/ssv/ssv-staking-box.jpg" alt="SSV–Ethereum (ETH) on Staking Dashboard" class="responsive-pic" width="900" />
 3. Enter the desired amount of ETH to stake and click **Stake**.
-   <img src="/docs/staking/liquid-staking/ssv/click-stake.jpg" alt="Stake ETH in SSV–Ethereum (ETH)" class="responsive-pic" width="550" />
+   <img src="/docs/staking/liquid-staking/ssv/click-stake.jpg" alt="Stake ETH in SSV–Ethereum (ETH)" class="responsive-pic" width="500" />
 4. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/ssv/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
 5. Add the liquid staking token to your wallet, clicking **Add asETHc to wallet**.
