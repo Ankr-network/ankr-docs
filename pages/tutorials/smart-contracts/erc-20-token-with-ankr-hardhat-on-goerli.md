@@ -82,7 +82,7 @@ PRIVATE_KEY=YOUR_PRIVATE_KEY
 
 Before setting up the <code>hardhat.config.js</code> file, we will need a gateway to communicate to Ethereum blockchain. 
 
-<img src="/docs/learn/12.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/12.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 For that, we will be using [Ankr's Public RPCs](https://www.ankr.com/protocol/public/eth/) to connect and send transactions on the Ethereum blockchain. Just copy the URL for the goerli testnet. No account or login is required!
@@ -227,6 +227,6 @@ npx hardhat run scripts/deploy.js --network goerli
 Your contract will be compiled and deployed to the Goerli network! 
 - Now, go to [goerli.etherscan.io/](https://goerli.etherscan.io/tx/0xc7d30c40475bb3d16bb9cac24a59fd02faf03d308d324b19061e8abed6c11241) and input your token address to see your deployed ERC-20 contract on Goerli Network.
 
-<img src="/docs/learn/i-Zfqm2nI.png" alt="Hello" class="responsive-pic" />
+<img src="/docs/tutorials/i-Zfqm2nI.png" alt="Hello" class="responsive-pic" />
 
 Buildoooors, great job deploying your own ERC-20 token on Goerli using Ankr, Hardhat, and OpenZeppelin ERC20 standard.

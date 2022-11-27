@@ -1,5 +1,6 @@
 # Fantom Liquid Staking
 
+## What and why is Fantom Liquid Staking?
 Fantom Liquid Staking from Ankr Staking offers **instant liquidity** for your staked **FTM**, enabling you to connect your new aFTMb tokens with DeFi platforms and earn several more layers of rewards.
 
 Fantom Liquid Staking enables you to earn **alpha** (the _return on investment that goes far beyond normal increases in the crypto market index_).

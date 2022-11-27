@@ -65,7 +65,7 @@ http://trufflesuite.com/docs
   
 3) Open your project in your preferred code editor e.g Visual Studio Code Editor to view the newly created folders - **contracts**, **migrations** and **test**. You can also see a new **truffle-config.js** file containing default code. 
 
-<img src="/docs/truffle-project-folders.png" alt="Truffle folders" class="responsive-pic" width="300" />
+<img src="/docs/rpc-service/truffle-project-folders.png" alt="Truffle folders" class="responsive-pic" width="300" />
 
 ## Write a simple contract
 

@@ -14,7 +14,7 @@ By the end of this tutorial, you'll be able to:
 - deploy crowdfunding smart contract on polygon
 - and create a full-fledged frontend for your dApp 
 
-<img src="/docs/learn/-EFHTGxf6.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/-EFHTGxf6.png" alt="Hello" class="responsive-pic" width="700" />
 
 ## The Functionalities
 
@@ -66,7 +66,7 @@ yarn dev
 ```
 and you will be able to see the starter-kit webpage. Here's what the site will look like at this point: 
 
-<img src="/docs/learn/wztwdf729.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/wztwdf729.png" alt="Hello" class="responsive-pic" width="700" />
 
 ## Step 1: Setup Hardhat Configs
 
@@ -372,7 +372,7 @@ yarn hardhat run scripts/verify-factory.js --network mumbai
 
 - Scroll down and you'll find **Contract ABI** section
 
-<img src="/docs/learn/28NCzlMn3n.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/28NCzlMn3n.png" alt="Hello" class="responsive-pic" width="700" />
 
 
 - Copy the ABI and paste it in the `crowdfactory.json` file under `src/abis` directory
@@ -1203,7 +1203,7 @@ yarn dev
 ``` 
 And, here's what you should be able to see! 
 
-<img src="/docs/learn/-EFHTGxf6.png" alt="Hello" class="responsive-pic" width="700" />
+<img src="/docs/tutorials/-EFHTGxf6.png" alt="Hello" class="responsive-pic" width="700" />
 
 _________________________
 ### Check the GitHub Repo

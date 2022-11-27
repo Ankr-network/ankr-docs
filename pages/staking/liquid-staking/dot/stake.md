@@ -22,7 +22,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send D
 2. Open the top left menu and:
    1. Select the **Polkadot** network.
    2. Click **Switch** to change to it (if required).
-   <img src="/docs/switch-polkadot.png" alt="Switch to Polkadot wallet" class="responsive-pic" width="250" />
+   <img src="/docs/staking/liquid-staking/dot/switch-polkadot.png" alt="Switch to Polkadot wallet" class="responsive-pic" width="250" />
 3. You can then view your balance and/or make a transfer if required.
 
 ## Connect your MetaMask wallet
