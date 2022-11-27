@@ -44,9 +44,9 @@ Ethereum currently doesn't support unstaking. You will only be able to unstake w
 4. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/eth/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
 5. Add the liquid staking token to your wallet, clicking **Add aETHb to wallet** or **Add aETHc to wallet** respectively.
-   <img src="/docs/staking/liquid-staking/eth/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="600" />
+   <img src="/docs/staking/liquid-staking/eth/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 6. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
-   <img src="/docs/staking/liquid-staking/eth/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="600" />
+   <img src="/docs/staking/liquid-staking/eth/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 <Callout type="success">
 To reflect your staking rewards, your aETHb balance automatically increases by a small amount, daily, and your aETHc keeps growing in price to ETH, never changing in number.<br/>

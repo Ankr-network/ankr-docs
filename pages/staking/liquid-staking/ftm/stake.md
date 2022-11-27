@@ -43,9 +43,9 @@ Make sure you have a small surplus of FTM to pay the gas fees for the staking tr
 4. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/ftm/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
 5. Add the liquid staking token to your wallet, clicking **Add aFTMb to wallet** or **Add aFTMс to wallet** respectively.
-   <img src="/docs/staking/liquid-staking/ftm/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="600" />
+   <img src="/docs/staking/liquid-staking/ftm/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 6. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
-   <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="600" />
+   <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 <Callout type="success">
 To reflect your staking rewards, your aFTMb balance automatically increases by a small amount, daily, and your aFTMc keeps growing in price to FTM, never changing in number.<br/>
