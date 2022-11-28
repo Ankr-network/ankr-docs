@@ -48,7 +48,10 @@ Normally, it is around 0.0005 ETH, but may vary depending on the transaction com
 7. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/matic/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
 8. Add the liquid staking token to your wallet, clicking **Add aMATICb to wallet** or **Add aMATICc to wallet** respectively.
+   <img src="/docs/staking/liquid-staking/ftm/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 9. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
+   <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
+
 
 <Callout type="success">
 To reflect your staking rewards, your aMATICb balance automatically increases by a small amount, daily, and your aMATICc keeps growing in price to FTM, never changing in number.<br/>
