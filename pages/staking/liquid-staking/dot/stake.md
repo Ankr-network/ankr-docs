@@ -56,21 +56,25 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send D
 
 ## Stake DOT                                                                                                                                                  
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake/).                                                                                                 
-2. Locate the **Polkadot (DOT)** box and click **Stake** in it.                                                                                                 
-3. Enter the desired amount of BNB to stake, choose the token, and click **Get aDOTb**.                                                                       
-4. Your Polkadot.js wallet pops up requesting authorization. Click to authorize your staking.                                                                 
-5. Add the liquid staking token to your wallet, clicking **Add aDOTb to wallet**.                                                                             
-6. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update. 
-                                                                                                                                                              
-## Claim aDOTb tokens                                                                                                                                         
-1. Click **Connect** to connect MetaMask.                                                                                                                     
-2. Select your wallet type and connect.                                                                                                                       
-3. Authorize your Ethereum wallet.                                                                                                                            
-4. Authorize your Polkadot.js wallet.                                                                                                                            
+2. Locate the **Polkadot (DOT)** box and click **Stake** in it.
+   <img src="/docs/staking/liquid-staking/dot/dot-staking-box.jpg" alt="Locate DOT box and click Stake" class="responsive-pic" width="550" />
+3. Enter the desired amount of DOT to stake, choose the token, and click **Get aDOTb**.
+   <img src="/docs/staking/liquid-staking/dot/click-stake.jpg" alt="Click Get" class="responsive-pic" width="550" />
+4. Your Polkadot.js wallet pops up requesting authorization. Click **Sign the transaction** to authorize your staking.
+   <img src="/docs/staking/liquid-staking/dot/click-sign-the-transaction.jpg" alt="Click Sign the transaction" class="responsive-pic" width="400" />
+5. On the next page, click **Claim** to claim aDOTb to the Ethereum network. Check the Ledger Nano X box if you have connected you're using your Polkadot address via a Ledger Nano X.
+   <img src="/docs/staking/liquid-staking/dot/click-claim.jpg" alt="Click Claim" class="responsive-pic" width="550" /> 
+6. Your Polkadot.js wallet pops up requesting authorization. Click **Sign the message** to authorize your claiming.
+   <img src="/docs/staking/liquid-staking/dot/click-sign-the-message.jpg" alt="Click Claim" class="responsive-pic" width="400" />
+7. Confirm the claiming transaction in MetaMask.
+   <img src="/docs/staking/liquid-staking/dot/confirm-claiming-transaction.jpg" alt="Confirm claiming transaction" class="responsive-pic" width="300" />
+8. On the next page, wait for the **Stake successful** status and click **Add aDOTb to wallet** to add the token to MetaMask.
+   <img src="/docs/staking/liquid-staking/dot/add-token-to-wallet.jpg" alt="Click Add aDOTb to wallet" class="responsive-pic" width="450" /> 
+9. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
+   <img src="/docs/staking/liquid-staking/dot/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="450" />
 
 <Callout type="success">
-This enables access to aDOTb Tokens.
-Successful addition to your wallet is indicated by your Ethereum wallet updating with aDOTb tokens.
+To reflect your staking rewards, your aFTMb balance automatically increases by a small amount, daily, and your aFTMc keeps growing in price to FTM, never changing in number.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
@@ -78,6 +82,7 @@ To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://a
 If you don't see your aDOTb balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
+   <img src="/docs/staking/liquid-staking/dot/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
 3. Click **Add aDOTb to wallet**.
 
 <Callout type="success">
