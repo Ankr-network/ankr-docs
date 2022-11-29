@@ -84,6 +84,7 @@ If you don't see your aDOTb balance in your wallet:
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
    <img src="/docs/staking/liquid-staking/dot/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
 3. Click **Add aDOTb to wallet**.
+   <img src="/docs/staking/liquid-staking/dot/click-add-token.jpg" alt="Click Add aDOTb to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">
 You can also manually import the token in your wallet and copy&paste the **Contract** address while doing it.
