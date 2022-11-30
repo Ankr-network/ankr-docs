@@ -3,7 +3,7 @@ import { Callout } from "components";
 # Switch tokens
 We're going to explain bridging, using aBNBb.
 
-## Bridge aBNBb
+## Switch aBNBb
 1. Visit [Ankr Switch](https://www.ankr.com/staking/switch/) and choose aBNBb.
 2. Enter the desired amount and click **Switch**.
    <img src="/docs/staking/switch/click-switch.jpg" alt="Enter amount and click Switch" class="responsive-pic" width="550" />
