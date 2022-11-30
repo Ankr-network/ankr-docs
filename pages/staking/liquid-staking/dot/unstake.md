@@ -10,6 +10,11 @@ Ensure you have a small amount of ETH to pay the Ethreum gas fee for your unstak
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
 2. Locate the **aDOTb** box and click the **-** icon to unstake.
-3. Enter the amount to unstake and click **Unstake**.
-4. Enter the desired address in the Polkadot network where the DOT will be released to.
+   <img src="/docs/staking/liquid-staking/dot/click-minus-button.jpg" alt="Click minus button" class="responsive-pic" width="800" />
+3. Enter the amount to unstake and click **Unstake**.<br/> If you don't check the **External address button**, the DOT tokens are released to the connected MetaMask wallet. Checking the box and entering an address, you can specify what wallet to send the unstaked DOT to.
+   <img src="/docs/staking/liquid-staking/dot/enter-amount-click-unstake.jpg" alt="Click Unstake" class="responsive-pic" width="450" />
+4. Confirm the unstaking transaction in MetaMask.
+   <img src="/docs/staking/liquid-staking/dot/confirm-unstaking-transaction.jpg" alt="Confirm unstaking transaction" class="responsive-pic" width="300" />
+5. On the next page, check the release time to understand when your DOT tokens are released to your wallet and click **Go to dashboard**.
+   <img src="/docs/staking/liquid-staking/dot/unstake-in-progress.jpg" alt="Confirm unstaking transaction" class="responsive-pic" width="550" />
 
