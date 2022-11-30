@@ -9,7 +9,7 @@ Flash Loans are uncollateralized loans that allow the user to borrow HAY as long
 To use flash loans and get profit from them, you need a good understanding of BNB Chain (and Smart Chain), programming, and smart contracts.
 </Callout>
 
-## Application of Flash Loans
+## Application of flash loans
 There are various applications of flash loans.
 An obvious example is arbitrage between assets, where the user gets a flash loan in BNB from the Ankr's BNB swap pool, immediately swaps the BNB for another asset on a DEX, then immediately swaps the obtained asset for BNB on another DEX where the asset's ratio is higher, and repays Ankr the flash loan + interest, keeping the difference.
  
