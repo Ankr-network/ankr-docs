@@ -3,10 +3,13 @@ import { Callout } from "components";
 # Polygon Liquid Staking
 
 ## What and why is Polygon Liquid Staking?
-**Polygon Liquid Staking** from Ankr Staking offers instant liquidity for your staked MATIC, enabling you to connect your aMATICb/aMATICc tokens with DeFi platforms and earn several more layers of rewards.
+Ankr Staking offers Polygon token holders the opportunity to stake MATIC and in return claim Polygon Liquid Staking tokens — ankrMATIC (ex-aMATICc). 
+ankrMATIC a reward-bearing token, meaning that the fair value of 1 ankrMATIC token vs. MATIC increases over time as staking rewards accumulate inside the token.<br/>
+ankrMATIC also offers instant liquidity for your staked MATIC, enabling you to connect ankrMATIC with DeFi platforms and earn several more layers of rewards.
+<Callout type="info">
+There are no more new stakes getting aMATICb token. However, old stakes with aMATICb keep generating you rewards. You can also [switch aMATICb for ankrMATIC now](https://www.ankr.com/staking/switch/) (supply is limited).
+</Callout>
 
-* aMATICb is a reward-earning token, meaning that rewards from MATIC staking will be distributed daily through rebasing and aMATICb holders' balance in their wallet will increase on a daily basis.
-* aMATICc is a reward-bearing token, meaning that the fair value of 1 aMATICc token vs. MATIC increases over time as staking rewards accumulate. 
 <Callout type="info">
 You can stake your MATIC both on the Ethereum and native Polygon networks.  
 </Callout>
@@ -19,17 +22,17 @@ Polygon Liquid Staking smart contracts have undergone an external audit by Beosi
 For information onMATIC Liquid Staking smart contracts, visit [MATIC development details](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/#smart-contracts).  
 
 ## Benefits
-* **Generate Multiple Layers of Rewards**: Use the aMATICb/aMATICc bond token on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!
+* **Generate Multiple Layers of Rewards**: Use ankrMATIC (ex-aMATICc) on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!
 
-* **Low Impermanent Loss**: Contributing aMATICb/aMATICc tokens for liquidity with tokens like MATIC means low risk of impermanent loss, expanding the upside of providing liquidity for a more stable and profitable experience.
+* **Low Impermanent Loss**: Contributing ankrMATIC (ex-aMATICc) for liquidity with tokens like MATIC means low risk of impermanent loss, expanding the upside of providing liquidity for a more stable and profitable experience.
 
-* **Compound Your Staking Rewards**: Your staking rewards will compound every two months as your wallet’s aMATICb/aMATICc balance increases.
+* **Compound Your Staking Rewards**: Your staking rewards will compound daily as the value of ankrMATIC (ex-aMATICc) in your wallet increases vs. MATIC.
 
-* **Ethereum market opportunities**: Since aMATICb/aMATICc is an ERC-20 token staked via Ethereum, you will be able to access a variety of DEXs to instantly buy or sell aMATICb/aMATICc.
+* **Ethereum market opportunities**: Since ankrMATIC (ex-aMATICc) is an ERC-20 token staked via Ethereum, you will be able to access a variety of DEXs to instantly buy or sell ankrMATIC (ex-aMATICc).
 
 * **Support & Secure Polygon**: Staking MATIC directly supports the Polygon network and helps validate transactions. Ankr’s staking system distributes staked tokens intelligently across the Polygon ecosystem to achieve optimal decentralization.
 
-* **Elastic Supply**: Users will be able to trade in their aMATICb tokens for their staked MATIC at any time on a one-to-one basis (1 MATIC = 1 aMATICb). You will need to wait for 7 days for this transaction to complete.
+* **Elastic Supply**: Users will be able to trade in their ankrMATIC (ex-aMATICc) tokens for their staked MATIC at any time.
 
 ## Do more with your stake
 For more information, read [how to stake and bridge](https://medium.com/ankr-network/how-to-get-matic-liquid-staking-on-polygon-network-bcda9ef501a).

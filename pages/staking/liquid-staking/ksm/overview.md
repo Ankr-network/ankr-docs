@@ -1,3 +1,5 @@
+import { Callout } from "components";
+
 # Kusama Liquid Staking
 
 ## What and why is Kusama Liquid Staking?
@@ -9,9 +11,13 @@ Kusama Liquid Staking enables you to earn **alpha** (the _return on investment t
 
 Ankr Staking can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
+<Callout type="warning">
+We seized active support of Kusama Liquid Staking. There are no new stakes getting aKSMb.<br/>
+However, your old stakes keep generating you rewards. 
+</Callout>
+
 ## Smart contracts
 For information on KSM Liquid Staking smart contracts, visit [KSM development details](/staking/for-integrators/dev-details/ksm-liquid-staking-mechanics/#smart-contracts).
-
 
 ## Benefits
 
