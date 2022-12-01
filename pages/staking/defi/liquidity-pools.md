@@ -3,7 +3,7 @@ Visiting [Ankr DeFi Dashboard](https://www.ankr.com/staking/defi/), you will see
 
 The filter allows you to see all the integrated opportunities to make profit, providing liquidity on DEXs and getting a % of the swapping commissions when users swap their tokens using the pool.
 
-Liquidity pairs in the listed liquidity pools usually contain a native token and a corresponding Liquid Staking token. For example, ETH/aETHb or ETH/aETHc.
+Liquidity pairs in the listed liquidity pools usually contain a native token and a corresponding Liquid Staking token. For example, ETH/ankrETH (ex-aETHc) .
 
 ### Deposit liquidity
 To deposit liquidity into a pool:

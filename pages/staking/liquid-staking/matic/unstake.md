@@ -13,7 +13,7 @@ If you're unstaking on Polygon, a fee of 0.5% is deducted from the unstaking amo
 </Callout>
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/). 
-2. Locate the aMATICb or aMATICc box respectively and click the **-** icon to unstake.
+2. Locate the ankrMATIC box and click the **-** icon to unstake.
    <img src="/docs/staking/liquid-staking/matic/click-minus-icon.jpg" alt="Click the minus icon" class="responsive-pic" width="800" />
 3. Enter the desired amount to unstake and click **Approve** to allow Ankr Staking smart contracts to unstake for you.
    <img src="/docs/staking/liquid-staking/matic/enter-amount-to-unstake-click-approve.jpg" alt="Click Approve" class="responsive-pic" width="500" />
