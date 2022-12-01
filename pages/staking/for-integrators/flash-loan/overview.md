@@ -20,6 +20,10 @@ An obvious example is arbitrage between assets, where the user gets a flash loan
 
 SwapPool can be used to borrow and repay BNB, with a fee, in one transaction. EOA needs to interact with their own deployed copy of flashBorrower, which in turn interacts with SwapPool.
 
+## Flash loan fee
+
+The fee is 0.5% with the minimum of 10000 wei. 
+
 ## Step-by-step
 
 ### 1. Set up and deploy flashBorrower
