@@ -100,7 +100,9 @@ For Arbitrum, we support blockchain interaction via all the applicable methods e
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
 ### API querying
 
@@ -439,7 +441,7 @@ For BNB Smart Chain, we support blockchain interaction via all the applicable me
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
@@ -592,7 +594,7 @@ For BitTorrent Chain, we support blockchain interaction via all the applicable m
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
@@ -747,7 +749,9 @@ For Celo, we support blockchain interaction via all the applicable methods excep
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
 ### API querying
 
@@ -944,7 +948,7 @@ For Ethereum, we support blockchain interaction via all the applicable methods e
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
@@ -1111,7 +1115,9 @@ For Fantom, we support blockchain interaction via all the applicable methods exc
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
 ### API querying
 
@@ -1264,7 +1270,7 @@ For Gnosis, we support blockchain interaction via all the applicable methods exc
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
@@ -1418,7 +1424,7 @@ For Harmony, we support blockchain interaction via all the applicable methods ex
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`,
 
@@ -1551,7 +1557,9 @@ For HECO, we support blockchain interaction via all the applicable methods excep
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
 ---
 
@@ -1956,7 +1964,7 @@ For Klaytn, we support blockchain interaction via all the applicable methods exc
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`,
 
@@ -2190,7 +2198,7 @@ For Moonbeam, we support blockchain interaction via all the applicable methods e
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
@@ -2497,7 +2505,7 @@ For Nervos, we support blockchain interaction via all the applicable methods exc
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`,
 
@@ -2687,7 +2695,7 @@ For Optimism, we support blockchain interaction via all the applicable methods e
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
@@ -2997,7 +3005,7 @@ For Polygon, we support blockchain interaction via all the applicable methods ex
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
@@ -3496,7 +3504,7 @@ For Syscoin, we support blockchain interaction via all the applicable methods ex
 There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
+`eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
