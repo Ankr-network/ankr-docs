@@ -14,7 +14,7 @@ Ensure you have a small amount of FTM to pay the Fantom gas fee for your unstaki
 </Callout>
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/). 
-2. Locate the aFTMb or aFTMc box respectively and click the **-** icon to unstake.
+2. Locate the ankrFTM (ex-aFTMc) box and click the **-** icon to unstake.
    <img src="/docs/staking/liquid-staking/ftm/click-minus-icon.jpg" alt="Click the minus icon" class="responsive-pic" width="800" />
 3. Enter the desired amount to unstake and click **Unstake**.
    <img src="/docs/staking/liquid-staking/ftm/enter-amount-click-unstake.jpg" alt="Click Unstake" class="responsive-pic" width="400" />
