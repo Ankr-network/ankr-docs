@@ -30,11 +30,11 @@ The `RPC Service` and `Advanced APIs` solutions come with both *Public* and *Pre
 
 ### Rate limits
 
-| Service                                 | Public                                                               | Premium                                                       |
-|-----------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------|
-| RPC Service<br/>(EVM-compatible chains) | **Requests across all endpoints:**<br/>Up to `≈ 500 requests/second` | **Requests per endpoint:**<br/>Up to `≈ 1.5k requests/second` |
-| RPC Service<br/>(Solana)                | **Requests across all endpoints:**<br/>Up to `≈ 500 requests/second` | **Requests per endpoint:**<br/>Up to `≈ 4k requests/second`   |
-| Advanced APIs                           | `50 requests/minute`                                                 | `1k+ requests/minute`                                         |
+| Service                                 | Public                                                                                                                                      | Premium                                                      |
+|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| RPC Service<br/>(EVM-compatible chains) | **Requests across all endpoints:**<br/>`≈180 requests/minute` — guaranteed;<br/>`>180 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈1.5k requests/second` |
+| RPC Service<br/>(Solana)                | **Requests across all endpoints:**<br/>`≈180 requests/minute` — guaranteed;<br/>`>180 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈4k requests/second`   |
+| Advanced APIs                           | `50 requests/minute`                                                                                                                        | `1k+ requests/minute`                                        |
 
 ## Charging model: Pay-as-you-go
 
