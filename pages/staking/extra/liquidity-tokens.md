@@ -1,7 +1,9 @@
 # Types of Liquid Staking tokens
 
-Reward Bearing Tokens, e.g. ankrETH formerly aETHc.
-Reward Earning tokens, deprecated.
+There are two types of Liquid Staking tokens:
+
+• Reward Bearing Tokens, e.g. aETHc formerly aETH
+• Reward Earning Tokens, e.g. aAVAXb and aETHb (formerly fETH.)
 
 ## Reward earning
 These are automatically issued to your Ankr Staking Dashboard upon successful ETH2 staking.

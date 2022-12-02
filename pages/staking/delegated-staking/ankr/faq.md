@@ -26,7 +26,7 @@ The unstaking process takes two steps:
 
 ### What if I want to stake more after already staking some ANKR?
 
-For each staking transaction, a new locking period will apply, i.e., each new stake will be locked for 84–91 days before you can unstake it and/or claim/restake rewards for it.
+For each staking transaction, a new locking period will apply, i.e. each new stake will be locked for 84–91 days before you can unstake it and/or claim/restake rewards for it.
 
 ### How soon after staking will I begin to receive rewards?
 

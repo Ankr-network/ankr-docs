@@ -18,7 +18,7 @@ When unstaking, a 2% Ankr service fee and Avalanche gas fee apply. Have a small 
 </Callout>
 
 1. Open [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
-2. Locate the ankrAVAX (ex-aAVAXc) box and click the **'-'** icon to unstake.
+2. Locate the aAVAXb or aAVAXc box respectively and click the **'-'** icon to unstake.
    <img src="/docs/staking/liquid-staking/avax/click-the-minus-button.jpg" alt="Clickt the - button" class="responsive-pic" width="900" />
 3. Enter the amount to unstake and click **Unstake**.
 <img src="/docs/staking/liquid-staking/avax/click-unstake.jpg" alt="Click Unstake" class="responsive-pic" width="500" />

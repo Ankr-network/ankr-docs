@@ -17,4 +17,4 @@ Here are the fees applied during staking and unstaking process.
 * DOT — no fees.
 * FTM — burnFee; depends on the current liquidity and amount to unstake, calculated by the `FantomPool` smart contract, deducted from the amount the user unstakes.
 * KSM — no fees.
-* MATIC — for MATIC Liquid Staking on Ethereum, a typical fee is 0.0005 ETH; for MATIC Liquid Staking on Polygon — 0.5% of the unstaking amount.
+* MATIC — for MATIC Liquid Staking on Ethereum, a fee in $ANKR that starts from 100 $ANKR; typical fee range is 500–3500 $ANKR; for MATIC Liquid Staking on Polygon — 0.5% of the unstaking amount.
