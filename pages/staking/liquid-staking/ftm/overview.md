@@ -1,15 +1,11 @@
-import { Callout } from "components";
-
 # Fantom Liquid Staking
 
 ## What and why is Fantom Liquid Staking?
-Ankr Staking offers Fantom token holders the opportunity to stake FTM and in return claim Fantom Liquid Staking tokens — ankrFTM (ex-aFTMc). 
-ankrFTM is a reward-bearing token, meaning that the fair value of 1 ankrFTM token vs. FTm increases over time as staking rewards accumulate inside the token.
+Fantom Liquid Staking from Ankr Staking offers **instant liquidity** for your staked **FTM**, enabling you to connect your new aFTMb tokens with DeFi platforms and earn several more layers of rewards.
 
-<Callout type="info">
-There are no more new stakes getting aFTMb token. However, old stakes with aFTMb keep generating you rewards. You can also [switch aFTMb for ankrFTM now](https://www.ankr.com/staking/switch/) (supply is limited).
-</Callout>
+Fantom Liquid Staking enables you to earn **alpha** (the _return on investment that goes far beyond normal increases in the crypto market index_).
 
+Ankr Staking can connect you to the best ways to earn more crypto by staking, arbitrage trading, liquidity mining, yield farming, and much more.
 
 ## Audit details
 FTM Liquid Staking smart contracts have undergone an external audit by Beosin Blockchain Security:
@@ -21,16 +17,16 @@ For the addresses of FTM Liquid Staking smart contracts, visit [FTM development 
 ## Benefits
 
 ### Instant liquidity
-Using Ankr Staking is the best way to stake FTM as you can access instant liquidity in the form of the ankrFTM (ex-aFTMc) token. Avoiding locking your tokens up with the Fantom network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
+Using Ankr Staking is the best way to stake FTM as you can access instant liquidity in the form of the aFTMb token. Avoiding locking your tokens up with the Fantom network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential. Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
 
 ### Boosted yields
 As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-of-stake networks, it offers a way to earn additional rewards on your staked FTM, enabling new yield farming strategies. The main components of Fantom Liquid Staking will be:
 
-* **Liquidity mining opportunities** are enabled by providing liquidity for pools in decentralized exchanges. 
+* **Liquidity mining opportunities** are enabled by providing liquidity for pools in decentralized exchanges. The first main liquidity pools are expected to be aFTMb/ETH.
 * **Farming rewards for liquidity providers:** Liquid Staking presents several yield farming strategies for users to contribute to liquidity pools and gain a share of the trading fees and governance tokens. These new LP tokens can be used to generate yet another layer of earnings.
 * **Staking rewards on farmed tokens:** After using yield farming strategies, users can also reinvest their farmed LP tokens into more staking opportunities. This is a highly repeatable process as layers of rewards from farming and staking will quickly stack up.
 * **Yield aggregators and vaults** can automate yield farming rewards and enable compounding returns with next to no effort from users. This is a great method for maximizing your passive income strategy.
-* **More trading opportunities** are enabled thanks to the elastic supply nature of ankrFTM (ex-aFTMc), meaning that you could potentially buy ankrFTM (ex-aFTMc) at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Staking to extract its fair value back in up to 35 days (the Fantom Liquid Staking unbonding period).
+* **More trading opportunities** are enabled thanks to the elastic supply nature of aFTMb, meaning that you could potentially buy aFTMb at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Staking to extract its fair value back in up to 28 days (the Fantom Liquid Staking unbonding period).
 
 ### More flexibility
 If you would like to unstake your FTM, you can choose the “unstake” option at any time on the Ankr Staking platform. 
@@ -39,15 +35,15 @@ The period depends on the amount you want to unstake and ranges from 1 day up to
 So, if you unstake 1 FTM, the amount that small is likely to fit the current payout capacity, and you'll likely to receive your funds in 1 to 35 days.
 However, if you unstake 10000 FTM, the amount that big is unlikely to fit the current payout capacity and will be released to your wallet in parts, each part being released at the end of the lock-up period. As TVL grows, so grows the payout capacity, and it is hard to tell the exact amount released in each part, but we can assume 100–500 FTM and more.   
 Until the unstaked FTM are released to your wallet, it keeps earning your staking rewards. 
-This creates a more robust price stability mechanism for Fantom Liquid Staking, where any price deviation of ankrFTM (ex-aFTMc) vs its fair value will create trading opportunities that can be exploited by redeeming ankrFTM (ex-aFTMc) when unstaking FTM or minting ankrFTM (ex-aFTMc) when staking FTM.
+This creates a more robust price stability mechanism for Fantom Liquid Staking, where any price deviation of aFTMb vs its fair value will create trading opportunities that can be exploited by redeeming aFTMb (unstaking FTM) or minting aFTMb (staking FTM).
 
-That means if you buy ankrFTM (ex-aFTMc) at a discount on a DEX and unstake it on Ankr Staking at its fair value, you will make a profit! Therefore, ankrFTM (ex-aFTMc) price stability will be less dependent on the size of liquidity pools and associated rewards.
+That means if you buy aFTMb at a discount on a DEX and unstake it on Ankr Staking at its fair value, you will make a profit! Therefore, aFTMb price stability will be less dependent on the size of liquidity pools and associated rewards.
 
 ### Borrowing and lending
-The ankrFTM (ex-aFTMc) tokens will also allow users to borrow against their ankrFTM (ex-aFTMc) assets in exchange for assets like FTM that can be restaked or used for additional earning strategies. Or, lend your ankrFTM (ex-aFTMc) assets in return for interest paid by borrowers.
+The aFTMb tokens will also allow users to borrow against their aFTMb assets in exchange for assets like FTM that can be restaked or used for additional earning strategies. Or, lend your aFTMb assets in return for interest paid by borrowers.
 
 ### No technical knowledge required
-Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your FTM for the reward bearing ankrFTM (ex-aFTMc) token.
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your FTM for the reward earning aFTMb token.
 
 ## Enhanced decentralization
 

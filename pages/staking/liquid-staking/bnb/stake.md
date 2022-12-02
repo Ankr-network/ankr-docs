@@ -36,37 +36,34 @@ Ensure the following:
 <Callout type="info">
 A cross-chain transfer fee of 0.002 BNB is applied in the process, that's why you see 0.502: the min amount 0.5 + the fee.
 </Callout>
-<Callout type="warning">
-There are no more new stakes getting aBNBb token. However, old stakes with aBNBb keep generating you rewards. You can also [switch aBNBb for ankrBNB now](https://www.ankr.com/staking/switch/) (supply is limited).
-</Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake). 
 2. Locate the **Binance (BNB)** box and click **Stake** in it.
    <img src="/docs/staking/liquid-staking/bnb/bnb-staking-box.jpg" alt="Click Stake in Binance (BNB) box" class="responsive-pic" width="700" />
 3. If you have a referral code from a partner and you never owned Ankr Liquid Staking tokens, check "**I have partner code**" and enter their referral code making your first staking transaction.
    <img src="/docs/staking/liquid-staking/bnb/referral-code.jpg" alt="Referral code" class="responsive-pic" width="500" />
-4. Enter the desired amount of BNB to stake and click or **Get ankrBNB** (ex-aBNBc).
+4. Enter the desired amount of BNB to stake, choose the token, and click **Get aBNBb** or **Get aBNBc** respectively.
    <img src="/docs/staking/liquid-staking/bnb/enter-amount-click-stake.jpg" alt="Enter an amount and click Get" class="responsive-pic" width="500" />
 5. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/bnb/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
-6. Add the liquid staking token to your wallet, clicking **Add ankrBNB to wallet** (ex-aBNBc).
+6. Add the liquid staking token to your wallet, clicking **Add aBNBb to wallet** or **Add aBNBb to wallet** respectively.
    <img src="/docs/staking/liquid-staking/bnb/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 7. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/bnb/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 
 <Callout type="success">
-To reflect your staking rewards, your ankrBNB (ex-aBNBc) keeps growing in price to BNB, never changing in number.<br/>
+To reflect your staking rewards, your aBNBb balance automatically increases by a small amount, daily, and your aBNBc keeps growing in price to BNB, never changing in number.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
-## Don't see your ankrBNB (ex-aBNBc) balance?
-If you don't see your ankrBNB (ex-aBNBc) balance in your wallet:
+## Don't see your aBNBb/aBNBc balance?
+If you don't see your aBNBb/aBNBc balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
    <img src="/docs/staking/liquid-staking/bnb/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
-3. Click **Add ankrBNB to wallet** (ex-aBNBc).
-   <img src="/docs/staking/liquid-staking/bnb/click-add-token.jpg" alt="Click Add ankrBNB to wallet" class="responsive-pic" width="500" />
+3. Click **Add aBNBb/aBNBc to wallet**.
+   <img src="/docs/staking/liquid-staking/bnb/click-add-token.jpg" alt="Click Add aBNBb/aBNBc to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">
 You can also manually import the token in your wallet and copy&paste the **Contract** address while doing it.

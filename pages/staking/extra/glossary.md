@@ -35,9 +35,7 @@ The Beacon Chain introduces Proof-of-Stake to Ethereum. Proof-of-Stake is the un
 This is the merging of the Ethereum Mainnet into the Proof-of-Stake system controlled and coordinated by the Beacon Chain.
 
 #### Sharding - Phase 2
-Sharding is a scalability and capacity improvement for ETH 2 using Shard chains to spread the network's load across 64 new chains. 
-With shard chains, validators only need to store/run data for the shard they're validating, not the entire network. 
-Lower hardware requirements and capacity enable more validators to participate.
+Sharding is a scalability and capacity improvement for ETH 2 using Shard chains to spread the network's load across 64 new chains. With shard chains, validators only need to store/run data for the shard they're validating, not the entire network. Lower hardware requirements and capacity enable more validators to participate.
 
 Shard chains can only safely enter the Ethereum ecosystem with a proof-of-stake consensus mechanism in place.
 
