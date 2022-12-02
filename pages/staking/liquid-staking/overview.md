@@ -40,7 +40,7 @@ Liquid Staking is available on the following platforms:
 ## Liquid Staking tokens
 Liquid Staking supports reward bearing tokens.<br/>
 Reward bearing tokens represent the staked asset plus all future staking rewards. They don't grow in number but grow in value. 
-For example, the fair value of 1 ankrETH (ex-aETHc) token vs. ETH increases over time as staking rewards accumulate, i.e. 1 ankrETH (ex-aETHc) becomes worth increasingly more than 1 ETH.
+For example, the fair value of 1 ankrETH (ex-aETHc) token vs. ETH increases over time as staking rewards accumulate, i.e., 1 ankrETH (ex-aETHc) becomes worth increasingly more than 1 ETH.
 
 ## How do I get Liquid Staking tokens?
 
