@@ -1,7 +1,9 @@
+import { Callout } from "components";
+
 # Fantom Liquid Staking
 
 ## What and why is Fantom Liquid Staking?
-Ankr Staking offers Fantom token holders the opportunity to stake FTM and in return claim Fantom Liquid Staking tokens — ankrFTM (ex aFTMc). 
+Ankr Staking offers Fantom token holders the opportunity to stake FTM and in return claim Fantom Liquid Staking tokens — ankrFTM (ex-aFTMc). 
 ankrFTM is a reward-bearing token, meaning that the fair value of 1 ankrFTM token vs. FTm increases over time as staking rewards accumulate inside the token.
 
 <Callout type="info">

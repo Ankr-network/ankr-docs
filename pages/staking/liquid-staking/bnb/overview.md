@@ -1,3 +1,4 @@
+import { Callout } from "components";
 # BNB Liquid Staking
 
 ## What and why is Binance Liquid Staking?
