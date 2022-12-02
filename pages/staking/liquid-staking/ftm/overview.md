@@ -1,3 +1,5 @@
+import { Callout } from "components";
+
 # Fantom Liquid Staking
 
 ## What and why is Fantom Liquid Staking?
