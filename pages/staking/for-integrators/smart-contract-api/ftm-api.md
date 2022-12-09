@@ -2,23 +2,6 @@
 
 To integrate with FTM Liquid Staking, use the smart contract functions and examples below.
 
-### Stake FTM and claim aFTMb
-
-#### `stakeAndClaimBonds()`
- 
-Stakes the `msg.value` of FTM and claims aFTMb for it.
-
-##### Smart contract
-
-* [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
-
-##### Example
-
-* [Mainnet live transaction example](https://ftmscan.com/tx/0x8139d09140c1da66479c37e7ccf812a220e553912c97bd61a2c947a47db5fc7f)
-* [Testnet live transaction example](https://testnet.ftmscan.com/tx/0xa1f188a65446f82fc635f10ec78272f9f8e0cf3288668a1bc944c0f7bfd5628a)
-
-
 ### Stake FTM and claim aFTMc
 
 #### `stakeAndClaimCerts()`
@@ -34,27 +17,6 @@ Stakes the `msg.value` of FTM and claims aFTMc for it.
 
 * [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
 * [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
-
-### Unstake aFTMb and claim FTM
-
-#### `burnBonds(amount)`
- 
-Burns aFTMb and gets FTM for the burned aFTMb.
-
-##### Parameters 
-
-`amount` (uint256, required) — amount of aFTMb to be unstaked.
-
-##### Smart contract
-
-* [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
-
-##### Example
-
-* [Mainnet live transaction example](https://ftmscan.com/tx/0x067abdbf4a3119d04580cb8b4de9f8af2ecf43bc0e574ba62aba3a89bddfff75)
-* [Testnet live transaction example](https://testnet.ftmscan.com/tx/0x14416cf8043e0f7207779394d18b0cf507fb78aa5cbe9209fd576a20067fdec6)
-
 
 ### Unstake aFTMc and claim FTM
 

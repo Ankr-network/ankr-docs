@@ -33,9 +33,9 @@ A very important aspect is **how a staker is assigned to a partner**.
 
 We have a special staking method where one of the input arguments is the referral code that we generate for the partner.
 We count only the very first staking transaction from the address. 
-I means that if Alice initially staked with Bob's code and then started staking with Eve's code, we still count all TVL as coming through Bob. 
+It means that if Alice initially staked with Bob's code and then started staking with Eve's code, we still count all TVL as coming through Bob. 
 
-An API to see if an address is assigned to any partner is coming later for you to check which users to give out the perks you offered as incentive to.
+An API to see if an address is assigned to any partner is coming later for you to check, which users to give out the perks you offered as incentive to.
 </Callout>
 
 ## Where and how often to claim partner rewards 

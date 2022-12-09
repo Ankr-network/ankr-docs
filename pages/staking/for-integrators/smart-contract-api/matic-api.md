@@ -2,41 +2,6 @@
 
 To integrate with MATIC Liquid Staking, use the smart contract functions and examples below.
 
-### Stake MATIC and claim aMATICb
-
-#### `approve(spender, value)`
-
-Lets the PolygonPool smart contract transfer user's MATIC tokens.
-
-##### Parameters
-* `spender` (address, required) — address of the PolygonPool contract.
-* `value` (uint256, required) — amount of MATIC to be staked.
-
-##### Smart contract
-
-* [Mainnet MATIC — 0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0](https://etherscan.io/token/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0)
-* [Testnet MATIC — 0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae](https://goerli.etherscan.io/address/0x499d11e0b6eac7c0593d8fb292dcbbf815fb29ae)
-
-##### Example
-
-[Testnet live transaction example](https://goerli.etherscan.io/tx/0xd21e17f7e2d2922754f89d680b57d5525d95b439834684707f7cb5ed040ed2be)
-
-#### `stakeAndClaimBonds(amount)`
-
-Stakes MATIC and claims aMATICb for the staked MATIC.
-
-##### Parameters
-`amount` (uint256, required) — amount of MATIC to be staked.
-
-##### Smart contract
-
-* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
-* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
-
-##### Example
-
-[Testnet live transaction example](https://goerli.etherscan.io/tx/0x23c5a082e4e692cf16f5832ea319c31ec6fd0d0f7cc12b9bb7b9e69d3479d109)
-
 ### Stake MATIC and claim aMATICc
 
 #### `approve(spender, value)`
@@ -73,40 +38,6 @@ Stakes MATIC and claims aMATICc for the staked MATIC.
 
 [Testnet live transaction example](https://goerli.etherscan.io/tx/0xd45229eb00fd9e7bc78a0e1b71677735c80b989538d6b26670c27cde5bcd2be4)
 
-
-### Unstake aMATICb and claim MATIC
-
-#### `ethUnstakeFee()`
-
-Get the current unstake fee in ETH.
-
-##### Smart contract
-
-* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
-* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
-
-#### `unstakeBonds(uint256 amount, uint256 fee, uint256 useBeforeBlock, bytes signature)`
-
-Lets `PolygonPool` to exchange aMATICb for MATIC.
-
-##### Parameters
-* `payableValue` (ETH, required) – amount received querying `ethUnstakeFee()`.
-* `amount` (uint256, required) — amount aMATICc to be unstake.
-* `fee` (uint256, required) — legacy param, should be set to `0`.
-* `useBeforeBlock` (uint256, required) — legacy param, should be set to `0`.
-* `signature` (bytes, required) — legacy param, should be `0x0`.
-
-##### Smart contract
-
-* [Mainnet PolygonPool Proxy — 0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89)
-* [Testnet PolygonPool Proxy — 0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67](https://goerli.etherscan.io/address/0xAf2FdE2a233bc2E7B0B8Fa6066aD2df980B6fa67)
-
-##### Example
-
-* [Mainnet live transaction example](https://etherscan.io/tx/0xabd8e4111093141cda17925cee573d52d2342c763e40a7da6def860f4aaa8c41)
-* [Testnet live transaction example](https://goerli.etherscan.io/tx/0xeb9c65c181753a2f08a9d7335bf3cb041ba83618e72785c85d1e61174f05a6a4)
-
-
 ### Unstake aMATICc and claim MATIC
 
 #### `ethUnstakeFee()`
@@ -135,7 +66,6 @@ Approves the `aMATICb` smart contract to transfer user's aMATICc tokens to itsel
 
 * [Mainnet live transaction example](https://etherscan.io/tx/0xbd7150bb5e122460b31d4a3b1d12fe225c34178a75921b3e13b20c9d48eb03a7)
 * [Testnet live transaction example](https://goerli.etherscan.io/tx/0x772e34152e3fccfbfbb0170a206e55373df792b3b50f47996596b5b137095006)
-
 
 #### `unstakeCerts(uint256 shares, uint256 fee, uint256 useBeforeBlock, bytes signature)`
 
