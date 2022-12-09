@@ -10,7 +10,7 @@ This documentation lets you explore how you can use and integrate Ankr's full su
 ## RPC Service
 <div className="list-with-custom-top-margin mt-6">
 * Access RPC Endpoints via HTTPS or WebSockets.
-* Interact with 18+ supported blockchains.
+* Interact with 22+ [supported blockchains](/rpc-service/chains/chains-list/).
 * Test out and get important stats.
 * Suitable for Web3 developers and enthusiasts of all skill levels.
 </div>
