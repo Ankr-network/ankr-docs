@@ -72,7 +72,10 @@ If the wallet isn't showing as connected, click **Connect wallet** and choose **
 ## Stake AVAX
 <Callout>
 Have a small amount of AVAX to cover Avalanche gas fees, which may range from 0.025 to 0.1 AVAX.
-[Learn more about fees](https://docs.avax.network/learn/platform-overview/transaction-fees).
+[Learn more about fees](https://docs.avax.network/learn/platform-overview/transaction-fees).<br/>
+</Callout>
+<Callout type="warning">
+There are no more new stakes getting aAVAXb token. However, old stakes with aAVAXb keep generating you rewards. You can also [switch aAVAXb for ankrAVAX now](https://www.ankr.com/staking/switch/) (supply is limited).
 </Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
@@ -80,27 +83,27 @@ Have a small amount of AVAX to cover Avalanche gas fees, which may range from 0.
    <img src="/docs/staking/liquid-staking/avax/click-avax-box.jpg" alt="Click Avalanche (AVAX) box" class="responsive-pic" width="600" />
 3. If asked to switch to the Avalanche network, click **Switch network** and confirm switching in Metamask by clicking **Switch network**.
    <img src="/docs/staking/liquid-staking/avax/switch-to-correct-network.jpg" alt="Switch to the Avalanche network" class="responsive-pic" width="400" />
-4. Enter the desired amount of AVAX to stake, choose the token, and click **Get aAVAXb** or **Get aAVAXc** respectively.
+4. Enter the desired amount of AVAX to stake and click **Get ankrAVAX** (ex-aAVAXc).<br/> 
    <img src="/docs/staking/liquid-staking/avax/choose-token-and-click-to-get-it.jpg" alt="Enter amount, choose token and click Get" class="responsive-pic" width="500" />
 5. Confirm the transaction in Metamask. As mentioned before, a gas fee is incurred to finalize the staking transaction.
    <img src="/docs/staking/liquid-staking/avax/confirm-staking-transaction-in-metamask.jpg" alt="Confirm staking transaction in MetaMask" class="responsive-pic" width="300" />
-6. Add the liquid staking token to your wallet, clicking **Add aAVAXb to wallet** or **Add aAVAXc to wallet** respectively.
+6. Add the liquid staking token to your wallet, clicking or **Add ankrAVAX to wallet** (ex-aAVAXc).
    <img src="/docs/staking/liquid-staking/avax/click-add-to-wallet.jpg" alt="Click Add to Wallet" class="responsive-pic" width="550" /> 
 8. Click **Go to dashboard** to see the added liquid staking token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/avax/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
    
 <Callout type="success">
-To reflect your staking rewards, your aAVAXb balance automatically increases by a small amount, daily, and your aAVAXc keeps growing in price to AVAX, never changing in number.<br/>
+To reflect your staking rewards, your ankrAVAX (ex-aAVAXc) keeps growing in price to AVAX, never changing in number.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
-## Don't see your aAVAXb/aAVAXc balance?
-If you don't see your aAVAXb/aAVAXc balance in your wallet:
+## Don't see your ankrAVAX (ex-aAVAXc) balance?
+If you don't see your ankrAVAX (ex-aAVAXc) balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
    <img src="/docs/staking/liquid-staking/avax/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
-3. Click **Add aAVAXb/aAVAXc to wallet**.
-   <img src="/docs/staking/liquid-staking/avax/click-add-token.jpg" alt="Click Add aAVAXb/aAVAXc to wallet" class="responsive-pic" width="500" />
+3. Click **Add ankrAVAX to wallet** (ex-aAVAXc).
+   <img src="/docs/staking/liquid-staking/avax/click-add-token.jpg" alt="Click Add ankAVAX to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">
 You can also manually import the token in your wallet and copy&paste the **Contract** address while doing it.

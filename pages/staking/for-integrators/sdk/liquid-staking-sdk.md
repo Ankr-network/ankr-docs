@@ -9,10 +9,11 @@ Instead, use Liquid Staking SDK — an npm package with compound and comprehensi
 
 ## Multiple network support
 Liquid Staking SDK supports multiple networks and allows you to interact with:
-* Avalanche blockchain: aAVAXb/aAVAXc tokens and Avalanche Liquid Staking contracts.
-* Binance blockchain: aBNBb/aBNBc tokens and Binance Liquid Staking contracts.
-* Ethereum blockchain: aETHb/aETHc tokens and Ethereum Liquid Staking contracts; aMATICb/aMATICc tokens, and Polygon Liquid Staking contracts.
-* Fantom blockchain: aFTMb/aFTMc tokens and Fantom Liquid Staking contracts.
+* Avalanche blockchain: aAVAXb/ankrAVAX (ex-aAVAXc) tokens and Avalanche Liquid Staking contracts.
+* Binance blockchain: aBNBb/ankrBNB (ex-aBNBc) tokens and Binance Liquid Staking contracts.
+* Ethereum blockchain: aETHb/ankrETH (ex-aETHc) tokens and Ethereum Liquid Staking contracts; 
+* Fantom blockchain: aFTMb/ankrFTM (ex-aFTMc) tokens and Fantom Liquid Staking contracts.
+* Ethereum and Polygon blockchains: aMATICb/ankrMATIC (ex-aMATICc) tokens, and Polygon Liquid Staking contracts.
 
 ## Install and integrate
 To integrate with the SDK, install the [SDK npm package](https://www.npmjs.com/package/@ankr.com/staking-sdk):

@@ -34,31 +34,34 @@ ImToken and Huobi wallet **do not support** Fantom.
 <Callout>
 Make sure you have a small surplus of FTM to pay the gas fees for the staking transaction.
 </Callout>
+<Callout type="warning">
+There are no more new stakes getting aFTMb token. However, old stakes with aFTMb keep generating you rewards. You can also [switch aFTMb for ankrFTM now](https://www.ankr.com/staking/switch/) (supply is limited).
+</Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake). 
 2. Locate the **Fantom (FTM)** box and click **Stake** in it.
    <img src="/docs/staking/liquid-staking/ftm/ftm-staking-box.jpg" alt="Click Stake in Fantom (FTM) box" class="responsive-pic" width="700" />
-3. Enter the desired amount of ETH to stake, choose the token, and click **Get aFTMb** or **Get aFTMс** respectively.
+3. Enter the desired amount of ETH to stake and click **Get ankrFTM** (ex-aFTMс).
    <img src="/docs/staking/liquid-staking/ftm/enter-amount-click-get.jpg" alt="Enter an amount and click Get" class="responsive-pic" width="500" />
 4. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/ftm/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
-5. Add the liquid staking token to your wallet, clicking **Add aFTMb to wallet** or **Add aFTMс to wallet** respectively.
+5. Add the liquid staking token to your wallet, clicking **Add ankrFTM to wallet** (ex-aFTMс).
    <img src="/docs/staking/liquid-staking/ftm/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 6. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 <Callout type="success">
-To reflect your staking rewards, your aFTMb balance automatically increases by a small amount, daily, and your aFTMc keeps growing in price to FTM, never changing in number.<br/>
+To reflect your staking rewards, your ankrFTM (ex-aFTMс) keeps growing in price to FTM, never changing in number.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
-## Don't see your aFTMb/aFTMc balance?
-If you don't see your aFTMb/aFTMc balance in your wallet:
+## Don't see your ankrFTM (ex-aFTMс) balance?
+If you don't see your ankrFTM (ex-aFTMс) balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
    <img src="/docs/staking/liquid-staking/ftm/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
-3. Click **Add aFTMb/aFTMc to wallet**.
-   <img src="/docs/staking/liquid-staking/ftm/click-add-token.jpg" alt="Click Add aFTMb/aFTMc to wallet" class="responsive-pic" width="500" />
+3. Click **Add ankrFTM to wallet** (ex-aFTMс).
+   <img src="/docs/staking/liquid-staking/ftm/click-add-token.jpg" alt="Click Add ankrFTM to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">
 You can also manually import the token in your wallet and copy&paste the **Contract** address while doing it.

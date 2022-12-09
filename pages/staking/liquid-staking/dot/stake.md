@@ -74,7 +74,7 @@ You can use _Polka Wallet, Trust Wallet, Fearless Wallet, Polkadot.js_ to send D
    <img src="/docs/staking/liquid-staking/dot/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="450" />
 
 <Callout type="success">
-To reflect your staking rewards, your aFTMb balance automatically increases by a small amount, daily, and your aFTMc keeps growing in price to FTM, never changing in number.<br/>
+To reflect your staking rewards, the balance of your aDOTb increases steadily.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
