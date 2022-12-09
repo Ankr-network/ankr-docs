@@ -2,23 +2,6 @@
 
 To integrate with ETH Liquid Staking, use the smart contract functions and examples below.
 
-### Stake ETH and claim aETHb
-
-#### `stakeAndClaimAethB()`
- 
-Stakes the `msg.value` of ETH and claims aETHb for it.
-
-##### Smart contract
-
-* [Mainnet GlobalPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
-* [Testnet GlobalPool Proxy — 0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27](https://goerli.etherscan.io/address/0x5ea4C3a6CA22B38a1D6776329bb8b4073C157B27)
-
-##### Example
-
-* [Mainnet live transaction example](https://etherscan.io/tx/0xd328cad4fa2bb35bb991ea68586b440b25aff2a3fada03216c76aa55feb99afb)
-* [Testnet live transaction example](https://goerli.etherscan.io/tx/0x46f0fb4ebd31f4661b5b9630cf2369beee9e5367143f8cb9fdf6a8a145174f81)
-
-
 ### Stake ETH and claim aETHc
 
 #### `stakeAndClaimAethC()`
