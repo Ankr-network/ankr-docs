@@ -6,6 +6,8 @@ Ankr provides the top-performing globally-distributed decentralized infrastructu
 
   * *[Advanced APIs](/advanced-api/overview)* — a ready-to-use collection of endpoints that supports simultaneous querying of multiple blockchains (8 currently available) for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks). Advanced APIs' endpoints and usage statistics are also accessed via the RPC Service platform, though it is considered to be a separate product for its powerful querying performance.
 
+To find info on the blockchains supported, see [Chains Quickstart](/rpc-service/chains/chains-list/).
+
 ## Service plans comparison
 
 The `RPC Service` and `Advanced APIs` solutions come with both *Public* and *Premium* Ankr service plans but differ significantly by the rate limits and other performance features supported depending on the plan selected.
@@ -19,7 +21,7 @@ The `RPC Service` and `Advanced APIs` solutions come with both *Public* and *Pre
 | Hybrid endpoints                       | ❌                           | ✅                                                                             |
 | Usage stats and reports                | ❌                           | ✅                                                                             |
 | Private endpoints                      | ❌                           | ✅                                                                             |
-| Support *Polkadot*, *Kusama*, & *Heco* | ❌                           | ✅                                                                             |
+| Support *Polkadot*, *Kusama*, & *HECO* | ❌                           | ✅                                                                             |
 | Batch requests                         | ✅                           | ✅                                                                             |
 | `eth_getLogs` batch size               | `10` per batch              | `up to 1000` per batch                                                        |
 | Priority order                         | Limited during high traffic | Prioritized during high traffic                                               |

@@ -1198,5 +1198,21 @@
   {
     "from": "docs/learn/advanced-web3/build-Donation-Based-Crowdfunding-dApp-on-Polygon-with-ankr/index.html",
     "to": "/docs/tutorials/advanced-web3/donation-based-crowdfunding-dapp-on-polygon-with-ankr/"
+  },
+  {
+    "from": "docs/rpc-service/chains/chains-api/ethereum/how-to/connect-metamask/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/chains-api/ethereum/how-to/make-requests/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/chains-api/ethereum/how-to/send-transaction/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/chains/chains-api/ethereum/how-to/basic-dapp/index.html",
+    "to": "/docs/rpc-service/chains/chains-list/"
   }
 ]
