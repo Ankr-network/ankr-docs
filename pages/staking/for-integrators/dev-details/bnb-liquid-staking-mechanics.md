@@ -17,7 +17,7 @@ The requirements when unstaking are:
 
 * Minimum value to unstake — 0.5 BNB.
 
-* Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for aBNBc.
+* Maximum value to unstake — up to the initial stake+accumulated rewards for aBNBb; up to the initial stake for ankrBNB (ex-aBNBc).
 
 * Unbond time (before user gets their unstaked funds) — 7–10 days.
 
@@ -76,8 +76,8 @@ Smart contracts and addresses involved in BNB Liquid Staking are:
 ## Staking workflow
 1. User sends a request to the `BinancePool::stake({value:stake+relayer_fee})` on BNB Chain. `stake` specifies the staked amount and should meet the requirements described above, while `fee` specifies the fee deducted from the user’s wallet for the staking. 
 
-2. `BinancePool` verifies the request checking the `minimal_stake_value` and the user-paid `relayer_fee`, executes `TokenHub::transferOut()` to make a cross-chain transaction to Binance Chain, mints either aBNBb to the user 1:1 to the staked BNB or aBNBc in the amount defined by the current exchange ratio, and then issues a `Staked()` event with the `sender`, `stake`, `intermediary` parameters. 
-   1. Actual minting is internal and is done via a call from `BinancePool` to `aBNBb::mint(userAddress, stake)`/`aBNBc::mint()`.
+2. `BinancePool` verifies the request checking the `minimal_stake_value` and the user-paid `relayer_fee`, executes `TokenHub::transferOut()` to make a cross-chain transaction to Binance Chain, mints either aBNBb to the user 1:1 to the staked BNB or ankrBNB (ex-aBNBc) in the amount defined by the current exchange ratio, and then issues a `Staked()` event with the `sender`, `stake`, `intermediary` parameters. 
+   1. Actual minting is internal and is done via a call from `BinancePool` to `aBNBb::mint(userAddress, stake)`/`ankrBNB::mint()`.
 
 3. BNB backend service detects the issued `Staked()` event and creates a record in its Postgres database, then waits for the successful cross-chain transaction completion to Binance Chain, which usually takes around 45s.
 
@@ -87,24 +87,24 @@ Smart contracts and addresses involved in BNB Liquid Staking are:
 
 When staking, the user receives:
 * aBNBb 1:1 to the staked amount.
-* aBNBc in the amount calculated the following way: `user's_stake * exchange_ratio`.
+* ankrBNB (ex-aBNBc) in the amount calculated the following way: `user's_stake * exchange_ratio`.
 
 When unstaking, the user receives `their_stake + accumulated_rewards` in BNB. 
-It is calculated by the following formula: `accumulated_amount_of_aBNBb_or_aBNBc / exchange ratio`. 
+It is calculated by the following formula: `accumulated_amount_of_aBNBb_or_ankrBNB / exchange ratio`. 
 
 The exchange ratio is calculated by the following formula: 
 
 ```
-uint256 totalShares = totalSharesSupply(); == aBNBc.totalSupply();
+uint256 totalShares = totalSharesSupply(); == ankrBNB.totalSupply();
 uint256 denominator = _totalStaked + totalRewards - _totalUnbondedBonds;
 _ratio = (totalShares * 1e18) / denominator;
 ```
 
 ## Unstaking workflow
 
-Unstaking aBNBc adds an additional approval step — Step 1. Unstaking aBNBb workflow starts from Step 2. 
+Unstaking ankrBNB (ex-aBNBc) adds an additional approval step — Step 1. Unstaking aBNBb workflow starts from Step 2. 
 
-1. For aBNBc only, the user sends a request to the `aBNBc::approve(aBNBb.address, amount)` to let the `aBNBb` smart contract transfer the user's Liquid tokens.  
+1. For ankrBNB (ex-aBNBc) only, the user sends a request to the `ankrBNB::approve(aBNBb.address, amount)` to let the `aBNBb` smart contract transfer the user's Liquid tokens.  
 
 2. User sends a request to the `BinancePool::unstake(amount)` on BNB Chain. `amount` specifies the amount to be released back to the user.
 
