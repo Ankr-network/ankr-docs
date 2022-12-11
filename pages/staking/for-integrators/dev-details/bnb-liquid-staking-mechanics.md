@@ -54,7 +54,7 @@ The following entities are involved:
 
 ## Smart contracts
 Smart contracts and addresses involved in BNB Liquid Staking are:
-* [BinancePool Implementation](https://bscscan.com/address/0x2ffd8a0dcedd44c583098de439242b801903bf6b) and [BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118) — contracts on BNB Chain where the user sends their initial staking or unstaking request.
+* [BinancePool Proxy](https://bscscan.com/address/0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD#writeProxyContract) — contracts on BNB Chain where the user sends their initial staking or unstaking request.
 * [aBNBb Proxy](https://bscscan.com/address/0xBb1Aa6e59E5163D8722a122cd66EBA614b59df0d) — contract on BNB Chain that mints or burns aBNBb tokens for the user in 1:1 rate with the staked amount. All interactions go through the Proxy part.
 * [ankrBNB (ex-aBNBc) Proxy](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e) — contract on BNB Chain that mints or burns aBNBc tokens for the user. All interactions go through the Proxy part.
 * [TokenHub](https://bscscan.com/address/0x0000000000000000000000000000000000001004) — contract on BNB Chain that makes cross-chain transfers between BNB Chain and Binance Chain.
