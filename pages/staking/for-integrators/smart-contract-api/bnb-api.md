@@ -2,15 +2,15 @@
 
 To integrate with BNB Liquid Staking, use the smart contract functions and examples below.
 
-### Switch aBNBb to aBNBc
+### Switch aBNBb to ankrBNB (ex-aBNBc)
 
 #### `unlockShares(shares)`
  
-Switches aBNBb to aBNBc. 
+Switches aBNBb to ankrBNB (ex-aBNBc). 
 
 ##### Parameters 
 
-`shares` (uint256, required) — amount of aBNBb to be switched to aBNBc. 
+`shares` (uint256, required) — amount of aBNBb to be switched to ankrBNB (ex-aBNBc). 
 
 ##### Smart contract
 
@@ -21,11 +21,11 @@ Switches aBNBb to aBNBc.
 
 [Mainnet live transaction example](https://bscscan.com/tx/0x17d3db497c5ad42bbd3b5133c752f3028d79e16632319e6a2d490905357f31c4)
 
-### Stake BNB and claim aBNBc
+### Stake BNB and claim ankrBNB (ex-aBNBc)
 
 #### `stakeAndClaimCerts(payableAmount)`
  
-Stakes BNB and claims aBNBc for the staked BNB. 
+Stakes BNB and claims ankrBNB (ex-aBNBc) for the staked BNB. 
 
 ##### Parameters
 
@@ -33,30 +33,30 @@ Stakes BNB and claims aBNBc for the staked BNB.
 
 ##### Smart contract
 
-* [Mainnet BinancePool Proxy — 0x66bea595aefd5a65799a920974b377ed20071118](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118)
+* [Mainnet BinancePool Proxy — 0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD](https://bscscan.com/address/0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD#writeProxyContract)
 * [Testnet BinancePool Proxy — 0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
 
 ##### Example
 
 [Mainnet live transaction example](https://bscscan.com/tx/0xd8378256021c2a0928b9f13865dc2e6ed9f47a963805aa683930f1722a0b9424)
 
-### Unstake aBNBc and get BNB
+### Unstake ankrBNB (ex-aBNBc) and get BNB
 
 #### `approve(spender, rawAmount)`
 
-Lets the `aBNBb` smart contract transfer user's aBNBc tokens.
+Lets the `ankrBNB` smart contract transfer user's ankrBNB (ex-aBNBc) tokens.
 
 ##### Parameters
 
 * `spender` (address, required) — address of the `aBNBb`smart contract.
-* `rawAmount` (uint256, required) - amount of aBNBc to be unstaked.
+* `rawAmount` (uint256, required) - amount of ankrBNB (ex-aBNBc) to be unstaked.
 
 ##### Smart contract
 
 * [Mainnet aBNBb Proxy — 0xbb1aa6e59e5163d8722a122cd66eba614b59df0d](https://bscscan.com/token/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
 * [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE)
-* [Mainnet aBNBc Proxy — 0xe85afccdafbe7f2b096f268e31cce3da8da2990a](https://bscscan.com/token/0xe85afccdafbe7f2b096f268e31cce3da8da2990a)
-* [Testnet aBNBc Proxy — 0x46de2fbaf41499f298457cd2d9288df4eb1452ab](https://testnet.bscscan.com/token/0x46de2fbaf41499f298457cd2d9288df4eb1452ab)
+* [Mainnet ankrBNB (ex-aBNBc) Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
+* [Testnet ankrBNB (ex-aBNBc) Proxy — 0x46de2fbaf41499f298457cd2d9288df4eb1452ab](https://testnet.bscscan.com/token/0x46de2fbaf41499f298457cd2d9288df4eb1452ab)
 
 ##### Example
 
@@ -65,13 +65,13 @@ Lets the `aBNBb` smart contract transfer user's aBNBc tokens.
 
 #### `unstakeCerts(shares)`
 
-Unstakes aBNBc and gets BNB for the unstaked aBNBc.
+Unstakes ankrBNB (ex-aBNBc) and gets BNB for the unstaked ankrBNB (ex-aBNBc).
 
 ##### Parameters
-`shares` (uint256, required) — amount of aBNBc to be unstaked.
+`shares` (uint256, required) — amount of ankrBNB (ex-aBNBc) to be unstaked.
 
 ##### Smart contract
-* [Mainnet BinancePool Proxy](https://bscscan.com/address/0x66bea595aefd5a65799a920974b377ed20071118)
+* [Mainnet BinancePool Proxy — 0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD](https://bscscan.com/address/0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD#writeProxyContract)
 * [Testnet BinancePool Proxy](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
 
 ##### Example
@@ -84,7 +84,7 @@ Unstakes aBNBc and gets BNB for the unstaked aBNBc.
 
 #### `averagePercentageRate(uint256 day)`
 
-Gets the APR for aBNBc. 
+Gets the APR for ankrBNB (ex-aBNBc). 
 
 The formula is best expressed by an example. 
 
