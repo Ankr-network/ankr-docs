@@ -18,7 +18,6 @@ The `RPC Service` and `Advanced APIs` solutions come with both *Public* and *Pre
 |----------------------------------------|-----------------------------|-------------------------------------------------------------------------------|
 | Full and Archive Data                  | ✅                           | ✅                                                                             |
 | Global node coverage                   | ✅                           | ✅                                                                             |
-| Hybrid endpoints                       | ❌                           | ✅                                                                             |
 | Usage stats and reports                | ❌                           | ✅                                                                             |
 | Private endpoints                      | ❌                           | ✅                                                                             |
 | Support *Polkadot*, *Kusama*, & *HECO* | ❌                           | ✅                                                                             |

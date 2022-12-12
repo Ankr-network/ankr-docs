@@ -28,7 +28,7 @@ aAVAXc is a reward-bearing token, meaning its quantity stays the same from the m
 
 ### How soon after staking will I begin to receive rewards?
 
-aAVAXb will increase in number with every rebase; rebasing occurs daily. ankrAVAX (ex-aAVAXc) rewards are built into the token. Effectively, your rewards accumulate daily as aAVAXc grows in value to AVAX.
+aAVAXb will increase in number with every rebase; rebasing occurs daily. aAVAXc rewards are built into the token. Effectively, your rewards accumulate daily as aAVAXc grows in value to AVAX.
 
 ### Does Ankr charge for the service?
 
