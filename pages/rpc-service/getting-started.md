@@ -2,7 +2,8 @@ import { Callout } from "components";
 
 # Getting Started
 
-*RPC Service* — a platform that enables users to empower their Web3 projects with the blockchain interaction capabilities (22 blockchains supported) via the top-performing globally-distributed decentralized infrastructure of nodes.
+*RPC Service* — a platform that enables users to empower their Web3 projects with the blockchain interaction capabilities ([22+ chains supported](/rpc-service/chains/chains-list/)) via the top-performing globally-distributed decentralized infrastructure of nodes.
+<br/>
 
 <img src="/docs/build/rpc-overview.png" alt="RPC Overview" class="responsive-pic" width="800" />
 
@@ -11,8 +12,7 @@ The platform has the following functionality to offer:
   * *JSON-RPC API* — the endpoints (either [public](/rpc-service/getting-started/#use-public-endpoints) or [private](/rpc-service/getting-started/#use-private-endpoints)) to integrate into your project for blockchain interaction. 
   * *[Advanced APIs](/advanced-api/overview)* — collections of endpoints that supports simultaneous querying of multiple blockchains for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks).
   * *Usage statistics* — the means to have a full view of your blockchain interaction statistics.
-  * *RPC methods testing* — a tool for RPC methods testing. 
-  * *[Hybrid infrastructure](/rpc-service/hybrid-infrastructure)* — the access point for adding either private or external providers' nodes into Ankr's infrastructure.
+  * *RPC methods testing* — a tool for RPC methods testing.
 
 ## Basics with Public plan
 
@@ -23,7 +23,8 @@ What's available for the [Public plan](/rpc-service/service-plans/#service-plans
   * RPC methods testing tool.
   * Public usage data (stats on requests from all Public service users).
 
-### Interface schema 
+### Interface schema
+<br/>
 
 <img src="/docs/build/rpc-endpoints-public.png" alt="Public Endpoints" class="responsive-pic" width="800" />
 
@@ -48,7 +49,6 @@ What's available for the [Premium plan](/rpc-service/service-plans/#service-plan
   * Connection code snippets.
   * RPC methods testing tool.
   * Personal usage data.
-  * Access to [Hybrid infrastructure](/rpc-service/hybrid-infrastructure).
   * Requests charging and payments history data.
 
 ### Interface schema
