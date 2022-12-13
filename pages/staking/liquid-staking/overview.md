@@ -13,13 +13,13 @@ They can now be utilized in a number of ways.
 For example,
 
 1. **Provide liquidity on Decentralized Exchanges**
-Pairs of tokens for example Liquid Staking token ankrAVAX (ex-aAVAXc) and native AVAX can be deposited in liquidity pools on a number of DEXs such as Uniswap. By providing liquidity, you can earn additional rewards. As more people trade, you can earn a share of transaction fees (Liquidity Mining), on top of your AVAX staking rewards from ankrAVAX (ex-aAVAXc).
+Pairs of tokens for example Liquid Staking token ankrAVAX (ex-aAVAXc) and native AVAX can be deposited in liquidity pools on a number of DEXs such as Uniswap. By providing liquidity, you can earn additional rewards. As more people trade, you can earn a share of transaction fees (Liquidity Mining), on top of your AVAX staking rewards from ankrAVAX.
 
 2. **Receiving additional tokens from DEXs**
 By providing liquidity, you also have the possibility of receiving farming rewards or tokens on top of Liquidity Pool tokens, representing your share of a liquidity pool on a DEX.
 
 3. **Earn more yield**
-You can harvest the farmed tokens and stake those tokens as well to earn more yield, or simply sell them to buy more AVAX and (ex-aAVAXc) to generate more yield. Repeating this operation periodically can add a compounding effect to yield.
+You can harvest the farmed tokens and stake those tokens as well to earn more yield, or simply sell them to buy more AVAX and to generate more yield. Repeating this operation periodically can add a compounding effect to yield.
 
 <Callout type="tip">
 **READY TO GET STARTED?**<br/>
@@ -40,7 +40,7 @@ Liquid Staking is available on the following platforms:
 ## Liquid Staking tokens
 Liquid Staking supports reward bearing tokens.<br/>
 Reward bearing tokens represent the staked asset plus all future staking rewards. They don't grow in number but grow in value. 
-For example, the fair value of 1 ankrETH (ex-aETHc) token vs. ETH increases over time as staking rewards accumulate, i.e., 1 ankrETH (ex-aETHc) becomes worth increasingly more than 1 ETH.
+For example, the fair value of 1 ankrAVAX token vs. AVAX increases over time as staking rewards accumulate, i.e., 1 ankrAVAX becomes worth increasingly more than 1 AVAX.
 
 ## How do I get Liquid Staking tokens?
 
@@ -48,11 +48,11 @@ Liquid Staking tokens are automatically issued to your Ankr Staking Dashboard wh
 
 For example,
 
-1. AVAX Liquid Staking tokens - ankrAVAX (ex-aAVAXc) and AVAX pairs can be used to provide liquidity to ankrAVAX (ex-aAVAXc)/AVAX liquidity pools on Decentralized Exchanges (DEXs). As more people trade, you can earn a share of transaction fees (Liquidity Mining), on top of your AVAX staking rewards from ankrAVAX (ex-aAVAXc).
+1. AVAX Liquid Staking tokens — ankrAVAX and AVAX pairs can be used to provide liquidity to ankrAVAX/AVAX liquidity pools on Decentralized Exchanges (DEXs). As more people trade, you can earn a share of transaction fees (Liquidity Mining), on top of your AVAX staking rewards from ankrAVAX.
 
 2. By providing liquidity, you also have the possibility of receiving farming rewards on top of Liquidity Pool tokens, representing your share of a liquidity pool on a DEX.
 
-3. You can harvest the farmed tokens and stake those tokens as well to earn more yield, or simply sell them to buy more AVAX and ankrAVAX (ex-aAVAXc) to generate more yield. Repeating this operation periodically will add a compounding effect on my yield.
+3. You can harvest the farmed tokens and stake those tokens as well to earn more yield, or simply sell them to buy more AVAX and ankrAVAX to generate more yield. Repeating this operation periodically will add a compounding effect on my yield.
 
 ## Liquid Staking benefits
 
@@ -60,13 +60,17 @@ The benefits of Liquid Staking depend on your choice of staked asset.
 
 #### 1. Liquidity
 
-When you stake ETH and receive Liquid Staking tokens ankrETH (ex-aETHc), the main benefit is the liquidity as it is not possible to unstake ETH for the moment until phase 1.5 of Ethereum 2.0.
+When you stake ETH and receive Liquid Staking tokens ankrETH, the main benefit is the liquidity as it is not possible to unstake ETH for the moment until phase 1.5 of Ethereum 2.0.
+It is, however, possible with other Liquid Staking tokens, such as ankrAVAX, ankrETH, ankrFTM, ankrMATIC.
 
 #### 2. Elastic supply
 
 For chains that allow unstaking such as Avalanche, the benefit is the elastic supply of Liquid Staking tokens. 
 
-*Elastic Supply Tokens* work in such a way that the circulating supply expands or contracts to offset changes in a token's price via rebasing. When you stake AVAX and receive Liquid Staking tokens ankrAVAX (ex-aAVAXc), the circulating supply of ankrAVAX (ex-aAVAXc) increases. When you want to unstake your AVAX, you must return your ankrAVAX (ex-aAVAXc) to Ankr Staking. Your ankrAVAX (ex-aAVAXc) is burnt and AVAX is returned to you. 
-The circulating supply of ankrAVAX (ex-aAVAXc) decreases. 
+*Elastic Supply Tokens* work in such a way that the circulating supply expands or contracts to offset changes in a token's price via rebasing. 
+When you stake AVAX and receive Liquid Staking tokens ankrAVAX, the circulating supply of ankrAVAX increases. 
+When you want to unstake your AVAX, you must return your ankrAVAX to Ankr Staking. 
+Your ankrAVAX is burnt and AVAX is returned to you. 
+The circulating supply of ankrAVAX decreases. 
 
 For more yield opportunities, check out [Ankr Staking](https://www.ankr.com/staking/stake/)!

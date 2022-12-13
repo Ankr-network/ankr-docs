@@ -13,7 +13,7 @@ To explain how the oracle works, let's show what happens when we request price o
 
 ### Prerequisite knowledge
 Before we dive into the example, you should know two things:
-* Since there is no direct pair aBNBc-BUSD on PancakeSwap, the price is calculated via 2 pairs — ankrBNB-BNB and BNB-BUSD — which is done automatically, without additional user interaction. The user just asks the oracle for the price of ankrBNB (ex-aBNBc) in BUSD.
+* Since there is no direct pair ankrBNB-BUSD on PancakeSwap, the price is calculated via 2 pairs — ankrBNB-BNB and BNB-BUSD — which is done automatically, without additional user interaction. The user just asks the oracle for the price of ankrBNB (ex-aBNBc) in BUSD.
 * The oracle iteratively collects price for a pair every `periodSize` and stores it in an array of the `granularity` length. 
 `periodSize` = `windowSize` / `granularity`.
    * `periodSize` — frequency, which oracle queries PancakeSwap for the price of a pair with.
@@ -55,7 +55,7 @@ Gets time-weighted average price of a pair of tokens from PancakeSwap; a view fu
 #### Parameters
 The function returns two parameters:
 
-* price (bytes32) — time-weighted average price of ankrBNB (ex-aBNBc) in BUSD from PancakeSwap, up to 18 decimals.
+* price (bytes32) — time-weighted average price of ankrBNB in BUSD from PancakeSwap, up to 18 decimals.
 * query status (bool) — status of the attempt to get the price (success/failure).
 
 #### Smart contracts

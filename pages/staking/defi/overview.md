@@ -8,7 +8,7 @@ Ankr DeFi Trade is a Liquid Staking data aggregation tool providing access to re
 
 It allows users to find all liquidity staking DeFi integrations to trade between Liquid Staking tokens and other assets.
 
-Liquid Staking tokens, e.g. aETHc or aMATICb, are tokens users get when staking their assets, e.g. ETH or MATIC, on Ankr Staking. 
+Liquid Staking tokens, for example, ankrETH, are tokens users get when staking their assets, ETH in this example, on Ankr Staking. 
 
 ## Ankr DeFi Dashboard 
 For easier access, Ankr DeFi features a cross-chain dashboard where users can choose Liquid Staking tokens and assets to trade, and platforms to trade on.

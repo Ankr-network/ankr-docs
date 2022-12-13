@@ -50,23 +50,23 @@ There are no more new stakes getting aMATICb token. However, old stakes with aMA
    <img src="/docs/staking/liquid-staking/matic/click-stake.jpg" alt="Click Unstake" class="responsive-pic" width="500"/>
 7. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/matic/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
-8. Add the liquid staking token to your wallet, clicking **Add ankrMATIC** (ex-aMATICc).
+8. Add the liquid staking token to your wallet, clicking **Add ankrMATIC**.
    <img src="/docs/staking/liquid-staking/ftm/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 9. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 
 <Callout type="success">
-To reflect your staking rewards, your ankrMATIC (ex-aMATICc) keeps growing in price to MATIC, never changing in number.<br/>
+To reflect your staking rewards, your ankrMATIC keeps growing in price to MATIC, never changing in number.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
-## Don't see your ankrMATIC (ex-aMATICc) balance?
-If you don't see your ankrMATIC (ex-aMATICc) balance in your wallet:
+## Don't see your ankrMATIC balance?
+If you don't see your ankrMATIC balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
    <img src="/docs/staking/liquid-staking/matic/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
-3. Click **Add ankrMATIC to wallet** (ex-aMATICc).
+3. Click **Add ankrMATIC to wallet**.
    <img src="/docs/staking/liquid-staking/matic/click-add-token.jpg" alt="Click Add ankrMATIC to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">

@@ -14,7 +14,7 @@ Ankr's Redemption Price should be considered as the primary market, and market p
 
 #### `ratio()`
 
-Gets the ankrAVAX-based (ex-aAVAXc) redemption price.
+Gets the ankrAVAX-based redemption price.
 
 ##### Parameters
 The function returns:
@@ -32,7 +32,7 @@ You can query for a price on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Gets the ankrBNB-based (ex-aBNBc) redemption price.
+Gets the ankrBNB-based redemption price.
 
 ##### Parameters
 The function returns:
@@ -50,7 +50,7 @@ You can query for a price on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Gets the ankrETH-based (ex-aETHc) redemption price.
+Gets the ankrETH-based redemption price.
 
 ##### Parameters
 The function returns:
@@ -68,7 +68,7 @@ You can query for a price on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Gets the ankrFTM-based (ex-aFTMc) redemption price.
+Gets the ankrFTM-based redemption price.
 
 ##### Parameters
 The function returns:
@@ -122,7 +122,7 @@ You can query for a price on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Gets the ankrMATIC-based (ex-aMATICc) redemption price.
+Gets the ankrMATIC-based redemption price.
 
 ##### Parameters
 The function returns:

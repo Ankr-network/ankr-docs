@@ -22,17 +22,17 @@ Polygon Liquid Staking smart contracts have undergone an external audit by Beosi
 For information onMATIC Liquid Staking smart contracts, visit [MATIC development details](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/#smart-contracts).  
 
 ## Benefits
-* **Generate Multiple Layers of Rewards**: Use ankrMATIC (ex-aMATICc) on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!
+* **Generate Multiple Layers of Rewards**: Use ankrMATIC on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!
 
-* **Low Impermanent Loss**: Contributing ankrMATIC (ex-aMATICc) for liquidity with tokens like MATIC means low risk of impermanent loss, expanding the upside of providing liquidity for a more stable and profitable experience.
+* **Low Impermanent Loss**: Contributing ankrMATIC for liquidity with tokens like MATIC means low risk of impermanent loss, expanding the upside of providing liquidity for a more stable and profitable experience.
 
-* **Compound Your Staking Rewards**: Your staking rewards will compound daily as the value of ankrMATIC (ex-aMATICc) in your wallet increases vs. MATIC.
+* **Compound Your Staking Rewards**: Your staking rewards will compound daily as the value of ankrMATIC in your wallet increases vs. MATIC.
 
-* **Ethereum market opportunities**: Since ankrMATIC (ex-aMATICc) is an ERC-20 token staked via Ethereum, you will be able to access a variety of DEXs to instantly buy or sell ankrMATIC (ex-aMATICc).
+* **Ethereum market opportunities**: Since ankrMATIC is an ERC-20 token staked via Ethereum, you will be able to access a variety of DEXs to instantly buy or sell ankrMATIC.
 
 * **Support & Secure Polygon**: Staking MATIC directly supports the Polygon network and helps validate transactions. Ankr’s staking system distributes staked tokens intelligently across the Polygon ecosystem to achieve optimal decentralization.
 
-* **Elastic Supply**: Users will be able to trade in their ankrMATIC (ex-aMATICc) tokens for their staked MATIC at any time.
+* **Elastic Supply**: Users will be able to trade in their ankrMATIC tokens for their staked MATIC at any time.
 
 ## Do more with your stake
 For more information, read [how to stake and bridge](https://medium.com/ankr-network/how-to-get-matic-liquid-staking-on-polygon-network-bcda9ef501a).

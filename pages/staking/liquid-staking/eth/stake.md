@@ -46,22 +46,22 @@ There are no more new stakes getting aETHb token. However, old stakes with aETHb
    <img src="/docs/staking/liquid-staking/eth/enter-amount-click-get.jpg" alt="Enter an amount and click Get" class="responsive-pic" width="500" />
 4. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/eth/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
-5. Add the liquid staking token to your wallet, clicking **Add ankrETH to wallet** (ex-aETHc).
+5. Add the liquid staking token to your wallet, clicking **Add ankrETH to wallet**.
    <img src="/docs/staking/liquid-staking/eth/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 6. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/eth/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 <Callout type="success">
-To reflect your staking rewards, your ankrETH (ex-aETHc) keeps growing in price to ETH, never changing in number.<br/>
+To reflect your staking rewards, your ankrETH keeps growing in price to ETH, never changing in number.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
-## Don't see your ankrETH (ex-aETHc) balance?
-If you don't see your ankrETH (ex-aETHc) balance in your wallet:
+## Don't see your ankrETH balance?
+If you don't see your ankrETH balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
    <img src="/docs/staking/liquid-staking/eth/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
-3. Click **Add ankrETH to wallet** (ex-aETHc).
+3. Click **Add ankrETH to wallet**.
    <img src="/docs/staking/liquid-staking/eth/click-add-token.jpg" alt="Click Add ankrETH to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">

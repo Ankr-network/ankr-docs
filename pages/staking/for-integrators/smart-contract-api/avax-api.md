@@ -2,11 +2,11 @@
 
 To integrate with AVAX Liquid Staking, use the smart contract functions and examples below.
 
-### Stake AVAX and claim aAVAXc
+### Stake AVAX and claim ankrAVAX
 
 #### `stakeAndClaimCerts()`
  
-Stakes the `msg.value` of AVAX and claims aAVAXc for it.
+Stakes the `msg.value` of AVAX and claims ankrAVAX for it.
 
 ##### Smart contract
 
@@ -17,15 +17,15 @@ Stakes the `msg.value` of AVAX and claims aAVAXc for it.
 
 [Testnet live transaction example](https://testnet.snowtrace.io/tx/0x5213b7cda6dec4d6a40590f0450e9ee353319e15b7d95e437a1cb6cdb8f8c9af)
 
-### Unstake aAVAXc and claim AVAX
+### Unstake ankrAVAX and claim AVAX
 
 #### `claimCerts(amount)`
  
-Lets `AvalanchePool` exchange aAVAXc for AVAX.
+Lets `AvalanchePool` exchange ankrAVAX for AVAX.
 
 ##### Parameters 
 
-`amount` (uint256, required) — amount of aAVAXc to be unstaked.
+`amount` (uint256, required) — amount of ankrAVAX to be unstaked.
 
 ##### Smart contract
 

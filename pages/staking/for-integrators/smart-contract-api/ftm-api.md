@@ -2,11 +2,11 @@
 
 To integrate with FTM Liquid Staking, use the smart contract functions and examples below.
 
-### Stake FTM and claim aFTMc
+### Stake FTM and claim ankrFTM
 
 #### `stakeAndClaimCerts()`
  
-Stakes the `msg.value` of FTM and claims aFTMc for it.
+Stakes the `msg.value` of FTM and claims ankrFTM for it.
 
 ##### Smart contract
 
@@ -18,15 +18,15 @@ Stakes the `msg.value` of FTM and claims aFTMc for it.
 * [Mainnet FantomPool Proxy — 0x84db6eE82b7Cf3b47E8F19270abdE5718B936670](https://ftmscan.com/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670)
 * [Testnet FantomPool Proxy — 0x7B72E8117E69951F1b00178016EEaEE4ce715f28](https://testnet.ftmscan.com/address/0x7B72E8117E69951F1b00178016EEaEE4ce715f28)
 
-### Unstake aFTMc and claim FTM
+### Unstake ankrFTM and claim FTM
 
 #### `burnCerts(amount)`
  
-Burns aFTMc and gets FTM for the burned aFTMc.
+Burns aFTMc and gets FTM for the burned ankrFTM.
 
 ##### Parameters 
 
-`amount` (uint256, required) — amount of aFTMc to be unstaked.
+`amount` (uint256, required) — amount of ankrFTM to be unstaked.
 
 ##### Smart contract
 

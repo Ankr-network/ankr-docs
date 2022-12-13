@@ -2,15 +2,15 @@
 
 To integrate with BNB Liquid Staking, use the smart contract functions and examples below.
 
-### Switch aBNBb to ankrBNB (ex-aBNBc)
+### Switch aBNBb to ankrBNB
 
 #### `unlockShares(shares)`
  
-Switches aBNBb to ankrBNB (ex-aBNBc). 
+Switches aBNBb to ankrBNB. 
 
 ##### Parameters 
 
-`shares` (uint256, required) — amount of aBNBb to be switched to ankrBNB (ex-aBNBc). 
+`shares` (uint256, required) — amount of aBNBb to be switched to ankrBNB. 
 
 ##### Smart contract
 
@@ -21,11 +21,11 @@ Switches aBNBb to ankrBNB (ex-aBNBc).
 
 [Mainnet live transaction example](https://bscscan.com/tx/0x17d3db497c5ad42bbd3b5133c752f3028d79e16632319e6a2d490905357f31c4)
 
-### Stake BNB and claim ankrBNB (ex-aBNBc)
+### Stake BNB and claim ankrBNB
 
 #### `stakeAndClaimCerts(payableAmount)`
  
-Stakes BNB and claims ankrBNB (ex-aBNBc) for the staked BNB. 
+Stakes BNB and claims ankrBNB for the staked BNB. 
 
 ##### Parameters
 
@@ -40,23 +40,23 @@ Stakes BNB and claims ankrBNB (ex-aBNBc) for the staked BNB.
 
 [Mainnet live transaction example](https://bscscan.com/tx/0xd8378256021c2a0928b9f13865dc2e6ed9f47a963805aa683930f1722a0b9424)
 
-### Unstake ankrBNB (ex-aBNBc) and get BNB
+### Unstake ankrBNB and get BNB
 
 #### `approve(spender, rawAmount)`
 
-Lets the `ankrBNB` smart contract transfer user's ankrBNB (ex-aBNBc) tokens.
+Lets the `ankrBNB` smart contract transfer user's ankrBNB tokens.
 
 ##### Parameters
 
 * `spender` (address, required) — address of the `aBNBb`smart contract.
-* `rawAmount` (uint256, required) - amount of ankrBNB (ex-aBNBc) to be unstaked.
+* `rawAmount` (uint256, required) - amount of ankrBNB to be unstaked.
 
 ##### Smart contract
 
 * [Mainnet aBNBb Proxy — 0xbb1aa6e59e5163d8722a122cd66eba614b59df0d](https://bscscan.com/token/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
 * [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE)
-* [Mainnet ankrBNB (ex-aBNBc) Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
-* [Testnet ankrBNB (ex-aBNBc) Proxy — 0x46de2fbaf41499f298457cd2d9288df4eb1452ab](https://testnet.bscscan.com/token/0x46de2fbaf41499f298457cd2d9288df4eb1452ab)
+* [Mainnet ankrBNB Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
+* [Testnet ankrBNB Proxy — 0x46de2fbaf41499f298457cd2d9288df4eb1452ab](https://testnet.bscscan.com/token/0x46de2fbaf41499f298457cd2d9288df4eb1452ab)
 
 ##### Example
 
@@ -65,10 +65,10 @@ Lets the `ankrBNB` smart contract transfer user's ankrBNB (ex-aBNBc) tokens.
 
 #### `unstakeCerts(shares)`
 
-Unstakes ankrBNB (ex-aBNBc) and gets BNB for the unstaked ankrBNB (ex-aBNBc).
+Unstakes ankrBNB and gets BNB for the unstaked ankrBNB.
 
 ##### Parameters
-`shares` (uint256, required) — amount of ankrBNB (ex-aBNBc) to be unstaked.
+`shares` (uint256, required) — amount of ankrBNB to be unstaked.
 
 ##### Smart contract
 * [Mainnet BinancePool Proxy — 0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD](https://bscscan.com/address/0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD#writeProxyContract)
@@ -84,7 +84,7 @@ Unstakes ankrBNB (ex-aBNBc) and gets BNB for the unstaked ankrBNB (ex-aBNBc).
 
 #### `averagePercentageRate(uint256 day)`
 
-Gets the APR for ankrBNB (ex-aBNBc). 
+Gets the APR for ankrBNB. 
 
 The formula is best expressed by an example. 
 
