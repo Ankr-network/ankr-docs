@@ -13,7 +13,7 @@ To explain how the oracle works, let's show what happens when we request price o
 
 ### Prerequisite knowledge
 Before we dive into the example, you should know two things:
-* Since there is no direct pair aBNBc-BUSD on PancakeSwap, the price is calculated via 2 pairs — ankrBNB (ex-aBNBc)-BNB and BNB-BUSD — which is done automatically, without additional user interaction. The user just asks the oracle for the price of ankrBNB (ex-aBNBc) in BUSD.
+* Since there is no direct pair aBNBc-BUSD on PancakeSwap, the price is calculated via 2 pairs — ankrBNB-BNB and BNB-BUSD — which is done automatically, without additional user interaction. The user just asks the oracle for the price of ankrBNB (ex-aBNBc) in BUSD.
 * The oracle iteratively collects price for a pair every `periodSize` and stores it in an array of the `granularity` length. 
 `periodSize` = `windowSize` / `granularity`.
    * `periodSize` — frequency, which oracle queries PancakeSwap for the price of a pair with.
@@ -29,20 +29,20 @@ Each `periodSize` the price of a pair of tokens is updated and stored in an arra
   * `price1Cumulative` — cumulative price of the other asset in a pair.
 
 ### Actual workflow
-To get the ankrBNB (ex-aBNBc)–BUSD TWAP price, the user calls the `peek()` method of aBNBc oracle. The aBNBc oracle runs the following logic inside:
-1. Call the sliding window oracle to first obtain the ankrBNB (ex-aBNBc)–BNB price. The sliding window oracle calculates the price:
+To get the ankrBNB–BUSD TWAP price, the user calls the `peek()` method of aBNBc oracle. The aBNBc oracle runs the following logic inside:
+1. Call the sliding window oracle to first obtain the ankrBNB–BNB price. The sliding window oracle calculates the price:
    1. Obtain the current `timestamp`, `price0Cumulative`, and `price1Cumulative` from PancakeSwap, and the oldest observation from the array of stored observations. In our example, it's the one stored 6 hours ago. 
-   2. Calculate the TWAP price for the ankrBNB (ex-aBNBc)–BNB:
+   2. Calculate the TWAP price for the ankrBNB–BNB:
       1. For token0 in the pair, the TWAP price = (currentPrice0Cumulative - oldestPrice0Cumulative) / (currentTimestamp - oldestTimestamp).
       2. For token1 the pair, the TWAP price = (currentPrice1Cumulative - oldestPrice1Cumulative) / (currentTimestamp - oldestTimestamp).
-   3. Return the current ankrBNB (ex-aBNBc)–BNB price to aBNBc oracle.
+   3. Return the current ankrBNB–BNB price to aBNBc oracle.
 2. Call the sliding window oracle to second obtain the BNB-BUSD price. The sliding window oracle calculates the price:
    1. Obtain the current `timestamp`, `price0Cumulative`, and `price1Cumulative` from PancakeSwap, and the oldest observation from the array of stored observations. In our example, it's the one stored 6 hours ago. 
    2. Calculate the TWAP price for the BNB–BUSD:
       1. For token0 in the pair, the TWAP price = (currentPrice0Cumulative - oldestPrice0Cumulative) / (currentTimestamp - oldestTimestamp).
       2. For token1 the pair, the TWAP price = (currentPrice1Cumulative - oldestPrice1Cumulative) / (currentTimestamp - oldestTimestamp).
    3. Return the current BNB–BUSD price to aBNBc oracle.
-3. Return the current ankrBNB (ex-aBNBc)–BUSD price to the user.
+3. Return the current ankrBNB–BUSD price to the user.
 
 If you need more details on cumulative prices and TWAP oracles, refer to the [Uniswap oracles documentation](https://docs.uniswap.org/protocol/V2/concepts/core-concepts/oracles).
 

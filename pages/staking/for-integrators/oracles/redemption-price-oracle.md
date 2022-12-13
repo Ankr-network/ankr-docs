@@ -19,10 +19,10 @@ Gets the ankrAVAX-based (ex-aAVAXc) redemption price.
 ##### Parameters
 The function returns:
 
-* price (uint256) — redemption price for ankrAVAX (ex-aAVAXc).
+* price (uint256) — redemption price for ankrAVAX.
 
 ##### Smart contracts
-* [Mainnet ankrAVAX (ex-aAVAXc)](https://snowtrace.io/address/0xc3344870d52688874b06d844e0c36cc39fc727f6#readProxyContract#F10)
+* [Mainnet ankrAVAX](https://snowtrace.io/address/0xc3344870d52688874b06d844e0c36cc39fc727f6#readProxyContract#F10)
 
 ##### Examples
 
@@ -37,10 +37,10 @@ Gets the ankrBNB-based (ex-aBNBc) redemption price.
 ##### Parameters
 The function returns:
 
-* price (uint256) — redemption price for ankrBNB (ex-aBNBc).
+* price (uint256) — redemption price for ankrBNB.
 
 ##### Smart contracts
-* [Mainnet ankrBNB (ex-aBNBc)](https://bscscan.com/address/0xE85aFCcDaFBE7F2B096f268e31ccE3da8dA2990A#readProxyContract#F8)
+* [Mainnet ankrBNB](https://bscscan.com/address/0xE85aFCcDaFBE7F2B096f268e31ccE3da8dA2990A#readProxyContract#F8)
 
 ##### Examples
 
@@ -55,10 +55,10 @@ Gets the ankrETH-based (ex-aETHc) redemption price.
 ##### Parameters
 The function returns:
 
-* price (uint256) — redemption price for ankrETH (ex-aETHc).
+* price (uint256) — redemption price for ankrETH.
 
 ##### Smart contracts
-* [Mainnet ankrETH (ex-aETHc)](https://etherscan.io/token/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb#readProxyContract#F8)
+* [Mainnet ankrETH](https://etherscan.io/token/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb#readProxyContract#F8)
 
 ##### Examples
 
@@ -73,10 +73,10 @@ Gets the ankrFTM-based (ex-aFTMc) redemption price.
 ##### Parameters
 The function returns:
 
-* price (uint256) — redemption price for aFTMb/aFTMc.
+* price (uint256) — redemption price for ankrFTM.
 
 ##### Smart contracts
-* [Mainnet anktFTM (ex-aFTMc)](https://ftmscan.com/address/0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179#readProxyContract#F10)
+* [Mainnet ankrFTM](https://ftmscan.com/address/0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179#readProxyContract#F10)
 
 ##### Examples
 
@@ -127,11 +127,10 @@ Gets the ankrMATIC-based (ex-aMATICc) redemption price.
 ##### Parameters
 The function returns:
 
-* price (uint256) — redemption price for ankrMATIC (ex-aMATICc).
+* price (uint256) — redemption price for ankrMATIC.
 
 ##### Smart contracts
-* [Mainnet aMATICb](https://etherscan.io/address/0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe#readProxyContract#F14)
-* [Mainnet aMATICc](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c#readProxyContract#F10)
+* [Mainnet ankrMATIC](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c#readProxyContract#F10)
 
 ##### Examples
 
