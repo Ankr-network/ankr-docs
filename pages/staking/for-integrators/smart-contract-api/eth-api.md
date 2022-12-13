@@ -2,11 +2,11 @@
 
 To integrate with ETH Liquid Staking, use the smart contract functions and examples below.
 
-### Stake ETH and claim aETHc
+### Stake ETH and claim ankrETH
 
 #### `stakeAndClaimAethC()`
  
-Stakes the `msg.value` of ETH and claims aETHc for it.
+Stakes the `msg.value` of ETH and claims ankrETH for it.
 
 ##### Smart contract
 

@@ -45,22 +45,22 @@ There are no more new stakes getting aFTMb token. However, old stakes with aFTMb
    <img src="/docs/staking/liquid-staking/ftm/enter-amount-click-get.jpg" alt="Enter an amount and click Get" class="responsive-pic" width="500" />
 4. Confirm the transaction in your wallet.
    <img src="/docs/staking/liquid-staking/ftm/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="300" />
-5. Add the liquid staking token to your wallet, clicking **Add ankrFTM to wallet** (ex-aFTMс).
+5. Add the liquid staking token to your wallet, clicking **Add ankrFTM to wallet**.
    <img src="/docs/staking/liquid-staking/ftm/add-token-to-wallet.jpg" alt="Click Add to add the token to your wallet" class="responsive-pic" width="550" />
 6. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
    <img src="/docs/staking/liquid-staking/ftm/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="550" />
 
 <Callout type="success">
-To reflect your staking rewards, your ankrFTM (ex-aFTMс) keeps growing in price to FTM, never changing in number.<br/>
+To reflect your staking rewards, your ankrFTM keeps growing in price to FTM, never changing in number.<br/>
 To get more yield out of your Liquid Staking tokens, visit [Ankr DeFi](https://ankr.com/staking/defi/).
 </Callout>
 
-## Don't see your ankrFTM (ex-aFTMс) balance?
-If you don't see your ankrFTM (ex-aFTMс) balance in your wallet:
+## Don't see your ankrFTM balance?
+If you don't see your ankrFTM balance in your wallet:
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard).
 2. Find your liquid staking token, click the three-dot menu, and click **Token information**.
    <img src="/docs/staking/liquid-staking/ftm/click-three-dot-menu-button-choose-token-info.jpg" alt="Click the three dot menu button and click Token information" class="responsive-pic" width="800" />
-3. Click **Add ankrFTM to wallet** (ex-aFTMс).
+3. Click **Add ankrFTM to wallet**.
    <img src="/docs/staking/liquid-staking/ftm/click-add-token.jpg" alt="Click Add ankrFTM to wallet" class="responsive-pic" width="500" />
 
 <Callout type="success">

@@ -51,37 +51,37 @@ On Avalanche, Ankr has three validators:
 ## Smart contracts
 Smart contracts involved in AVAX Liquid Staking are:
 * [aAVAXb](https://snowtrace.io/address/0x6C6f910A79639dcC94b4feEF59Ff507c2E843929#code) — keeps track of user shares and their ratio to AVAX and keeps track of aAVAXb supply share; aAVAXb is an ERC-20-like token.
-* [aAVAXc](https://snowtrace.io/address/0xc3344870d52688874b06d844e0c36cc39fc727f6#code) — keeps track of user shares and aAVAXc supply share; aAVAXc is an ERC-20-like token.
+* [ankrAVAX](https://snowtrace.io/address/0xc3344870d52688874b06d844e0c36cc39fc727f6#code) — keeps track of user shares and ankrAVAX supply share; ankrAVAX is an ERC-20-like token.
 * [AvalanchePool](https://snowtrace.io/address/0x7BAa1E3bFe49db8361680785182B80BB420A836D#code) — implements staking and unstaking logic.
 
 
 ## Staking workflow
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–5. 
 
-1. User sends AVAX to `AvalanchePool` on the Avalanche blockchain via the Ankr Staking Dashboard and MetaMask connected to the Avalanche blockchain. The function effectively called is `AlavalchePool::stakeAndClaimBonds()` or `AlavalchePool::stakeAndClaimCerts()` for aAVAXb and aAVAXc respectively. 
+1. User sends AVAX to `AvalanchePool` on the Avalanche blockchain via the Ankr Staking Dashboard and MetaMask connected to the Avalanche blockchain. The function effectively called is `AlavalchePool::stakeAndClaimBonds()` or `AlavalchePool::stakeAndClaimCerts()` for aAVAXb and ankrAVAX respectively. 
 
 2. `AvalanchePool` emits an event saying the stake is received: `AlavalchePool::StakePendingV2(address indexed staker, uint256 amount, bool indexed isRebasing)`. `isRebasing` is false for `stakeAndClaimCerts` and true for `stakeAndClaimBonds`.
 
-3. `AvalanchePool` calculates and stores/updates the number of aAVAXb or aAVAXc the user can claim.
+3. `AvalanchePool` calculates and stores/updates the number of aAVAXb or ankrAVAX the user can claim.
 
 4. Ankr backend collects the staked AVAX transferring them from the smart contract to the deposit address controlled by Ankr. Then it makes a delegator or validator stake on the Avalanche blockchain.
 
-5. aAVAXb or aAVAXc is minted automatically for the user's address.
+5. aAVAXb or ankrAVAX is minted automatically for the user's address.
 
 ## Ratio updates
 
-Ankr backend updates the ratio daily and the user can see their updated aAVAXb balance. For aAVAXc the updated ratio is used for recalculating value of aAVAXc to AVAX.
+Ankr backend updates the ratio daily and the user can see their updated aAVAXb balance. For ankrAVAX the updated ratio is used for recalculating value of ankrAVAX to AVAX.
 
 ## Unstaking workflow
 
-Unstaking aAVAXb workflow starts from Step 2, while aAVAXc — from Step 1. The workflow is both user and Ankr-driven. The user part is Steps 1-2, the Ankr part is Steps 3–4.
+Unstaking aAVAXb workflow starts from Step 2, while ankrAVAX — from Step 1. The workflow is both user and Ankr-driven. The user part is Steps 1-2, the Ankr part is Steps 3–4.
 
-2. The user inputs the number of aAVAXb or aAVAXc on the Ankr Staking Dashboard to unstake, and the frontend:
+2. The user inputs the number of aAVAXb or ankrAVAX on the Ankr Staking Dashboard to unstake, and the frontend:
    1. For aAVAXb, sends a request to the `AvalanchePool::claimBonds(uint256 amount)` smart contract to claim the AVAX. `amount` specifies the amount AVAX to be released back to the user.
-   2. For aAVAXc, sends a request to the `AvalanchePool::claimCerts(uint256 amount)` smart contract to claim the AVAX. `amount` specifies the amount AVAX to be released back to the user.
+   2. For ankrAVAX, sends a request to the `AvalanchePool::claimCerts(uint256 amount)` smart contract to claim the AVAX. `amount` specifies the amount AVAX to be released back to the user.
    
 3. `AvalanchePool` sends a convert request to the `aAVAXb` smart contract that burns the corresponding amount of aAVAXb. `AvalanchePool` stores the convert request. 
 
-4. When the current validation period is over, Ankr backend checks if there any aAVAXb-to-AVAX or aAVAXc-to-AVAX convert requests pending and requests `AvalanchePool` to serve them providing AVAX from unblocked stakes and received rewards, at the end of the current validating period.
+4. When the current validation period is over, Ankr backend checks if there any aAVAXb-to-AVAX or ankrAVAX-to-AVAX convert requests pending and requests `AvalanchePool` to serve them providing AVAX from unblocked stakes and received rewards, at the end of the current validating period.
 
 5. `AvalanchePool` uses the AVAX received from the Ankr dedicated address to serve the pending convert requests. 

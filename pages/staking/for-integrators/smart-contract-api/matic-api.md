@@ -2,7 +2,7 @@
 
 To integrate with MATIC Liquid Staking, use the smart contract functions and examples below.
 
-### Stake MATIC and claim aMATICc
+### Stake MATIC and claim ankrMATIC
 
 #### `approve(spender, value)`
 
@@ -23,7 +23,7 @@ Lets the PolygonPool smart contract transfer user's MATIC tokens.
 
 #### `stakeAndClaimCerts(amount)`
 
-Stakes MATIC and claims aMATICc for the staked MATIC.
+Stakes MATIC and claims ankrMATIC for the staked MATIC.
 
 ##### Parameters
 
@@ -38,7 +38,7 @@ Stakes MATIC and claims aMATICc for the staked MATIC.
 
 [Testnet live transaction example](https://goerli.etherscan.io/tx/0xd45229eb00fd9e7bc78a0e1b71677735c80b989538d6b26670c27cde5bcd2be4)
 
-### Unstake aMATICc and claim MATIC
+### Unstake ankrMATIC and claim MATIC
 
 #### `ethUnstakeFee()`
 
@@ -51,16 +51,16 @@ Get the current unstake fee in ETH.
 
 #### `approve(spender, amount)`
 
-Approves the `aMATICb` smart contract to transfer user's aMATICc tokens to itself from the `aMATICc` smart contact and burn them. 
+Approves the `aMATICb` smart contract to transfer user's aMATICc tokens to itself from the `ankrMATIC` smart contact and burn them. 
 
 ##### Parameters
 * `spender` (address, required) — address of the `aMATICb` contract.
-* `amount` (uint256, required) — amount of aMATICc to be burned.
+* `amount` (uint256, required) — amount of ankrMATIC to be burned.
 
 ##### Smart contract
 
-* [Mainnet aMATICc — 0x26dcfbfa8bc267b250432c01c982eaf81cc5480c](https://etherscan.io/address/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c)
-* [Testnet aMATICc — 0x148bf822cae6a61b2f278801ef4369fddd2a80df](https://goerli.etherscan.io/address/0x148bf822cae6a61b2f278801ef4369fddd2a80df)
+* [Mainnet ankrMATIC — 0x26dcfbfa8bc267b250432c01c982eaf81cc5480c](https://etherscan.io/address/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c)
+* [Testnet ankrMATIC — 0x148bf822cae6a61b2f278801ef4369fddd2a80df](https://goerli.etherscan.io/address/0x148bf822cae6a61b2f278801ef4369fddd2a80df)
 
 ##### Example
 
@@ -69,11 +69,11 @@ Approves the `aMATICb` smart contract to transfer user's aMATICc tokens to itsel
 
 #### `unstakeCerts(uint256 shares, uint256 fee, uint256 useBeforeBlock, bytes signature)`
 
-Lets the `PolygonPool` to exchange aMATICc for MATIC.
+Lets the `PolygonPool` to exchange ankrMATIC for MATIC.
 
 ##### Parameters
 * `payableValue` (ETH, required) – amount received querying `ethUnstakeFee()`.
-* `shares` (uint256, required) — amount aMATICc to be unstake.
+* `shares` (uint256, required) — amount ankrMATIC to be unstake.
 * `fee` (uint256, required) — legacy param, should be set to `0`.
 * `useBeforeBlock` (uint256, required) — legacy param, should be set to `0`.
 * `signature` (bytes, required) — legacy param, should be `0x0`.
@@ -91,7 +91,7 @@ Lets the `PolygonPool` to exchange aMATICc for MATIC.
 
 #### `averagePercentageRate(uint256 day)`
 
-Gets the APR for aMATICb or aMATICc. 
+Gets the APR for aMATICb or ankrMATIC. 
 
 The formula is best expressed by an example. 
 
@@ -100,7 +100,7 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 ##### Parameters
 
 * `day` (uint256, required) — number of days to get the APR for. Max value — 7 days.
-* `address` (address, required) — address of the token contract to determine which token to get the APR for. Possible values: aMATICb — 0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe, aMATICc — 0x26dcfbfa8bc267b250432c01c982eaf81cc5480c.
+* `address` (address, required) — address of the token contract to determine which token to get the APR for. Possible values: aMATICb — 0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe, ankrMATIC — 0x26dcfbfa8bc267b250432c01c982eaf81cc5480c.
 
 ##### Smart contract
 

@@ -29,32 +29,19 @@ MATIC crosschain staking happens on Polygon. You may have to stake/unstake your 
 If you staked on Ethereum, you’ll receive your MATIC and rewards after the unbonding period of 80+ epochs; typically, it takes 3–4 days.  
 
   
-
 If you staked on Polygon via the crosschain staking pool, you’ll receive your MATIC and rewards instantly.
 
 ### How do I receive rewards?
 
-aMATICb is a rebasing token. When holding aMATICb, your balance will increase in proportion to your MATIC staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aMATICb increase by a small amount.  
-
-  
-
-aMATICc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+ankrMATIC (ex-aMATICc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
-aMATICb rewards arrive in your wallet with every rebase. Rebasing occurs daily.  
-
-  
-
-aMATICc rewards are built into the token. Effectively, your rewards accumulate daily as aMATICc grows in value to MATIC.
+ankrMATIC rewards are built into the token. Effectively, your rewards accumulate daily as ankrMATIC grows in value to MATIC.
 
 ### Does Ankr charge for the service?
 
 When staking on Ethereum, the user pays a gas fee (typically, 0.0005 ETH). When staking on Polygon, the user may pay a small dynamic fee. Both for staking on Ethereum and Polygon, Ankr takes 5% fees from user's Liquid Staking rewards. When unstaking on Ethereum, the user pays a fee of 0.025 ETH. When unstaking on Polygon, the user pays a fee of 0.5% from the unstaking amount.
-
-### What determines the amount of reward I receive each rebase of aMATICb?
-
-Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to and how much MATIC is validated on the network. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
 
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 
@@ -68,9 +55,7 @@ The only risk for stakers is missing out on rewards during any time a validator 
 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
-* [aMATICb](https://www.ankr.com/staking/defi/?assets=aMATICb)
-
-* [aMATICc](https://www.ankr.com/staking/defi/?assets=aMATICc)
+* [ankrMATIC](https://www.ankr.com/staking/defi/?assets=ankrMATIC)
 
 You can also use your Liquid Staking tokens to:
 

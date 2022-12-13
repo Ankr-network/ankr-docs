@@ -9,11 +9,11 @@ Instead, use Liquid Staking SDK — an npm package with compound and comprehensi
 
 ## Multiple network support
 Liquid Staking SDK supports multiple networks and allows you to interact with:
-* Avalanche blockchain: aAVAXb/ankrAVAX (ex-aAVAXc) tokens and Avalanche Liquid Staking contracts.
-* Binance blockchain: aBNBb/ankrBNB (ex-aBNBc) tokens and Binance Liquid Staking contracts.
-* Ethereum blockchain: aETHb/ankrETH (ex-aETHc) tokens and Ethereum Liquid Staking contracts; 
-* Fantom blockchain: aFTMb/ankrFTM (ex-aFTMc) tokens and Fantom Liquid Staking contracts.
-* Ethereum and Polygon blockchains: aMATICb/ankrMATIC (ex-aMATICc) tokens, and Polygon Liquid Staking contracts.
+* Avalanche blockchain: aAVAXb/ankrAVAX tokens and Avalanche Liquid Staking contracts.
+* Binance blockchain: aBNBb/ankrBNB tokens and Binance Liquid Staking contracts.
+* Ethereum blockchain: aETHb/ankrETH tokens and Ethereum Liquid Staking contracts; 
+* Fantom blockchain: aFTMb/ankrFTM tokens and Fantom Liquid Staking contracts.
+* Ethereum and Polygon blockchains: aMATICb/ankrMATIC tokens, and Polygon Liquid Staking contracts.
 
 ## Install and integrate
 To integrate with the SDK, install the [SDK npm package](https://www.npmjs.com/package/@ankr.com/staking-sdk):
@@ -39,7 +39,7 @@ Here are some reference examples on how to user Liquid Stakin SDK in your projec
 Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-sdk-e1jvvi) as specific live example of interacting with `@ankr.com/staking-sdk`.<br /> 
 
 ### Polygon (on Ethereum)
-1. Stake aMATICc token:
+1. Stake ankrMATIC token:
     ```
     import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
@@ -47,7 +47,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    
     const { txHash } = await sdk.stake(new BigNumber(1_200), 'aMATICc');
     ```
-2. Unstake aMATICc token:
+2. Unstake ankrMATIC token:
    ```
    import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
@@ -55,7 +55,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    
    await sdk.unstake(new BigNumber(1_200), 'aMATICc');
    ```
-3. Switch aMATICb and aMATICc:
+3. Switch aMATICb and ankrMATIC:
    ```
    import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
@@ -82,7 +82,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    
    const { txHash } = await sdk.stake(new BigNumber(1_200), 'aBNBc');
    ```
-2. Unstake aBNBc token:
+2. Unstake ankrBNB token:
    ```
    import { BinanceSDK } from '@ankr.com/staking-sdk';
    
@@ -90,7 +90,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    
    await sdk.unstake(new BigNumber(1_200), 'aBNBc');
    ```
-3. Switch aBNBb and aBNBc:
+3. Switch aBNBb and ankrBNB:
    ```
    import { BinanceSDK } from '@ankr.com/staking-sdk';
    
@@ -109,7 +109,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    const history = await sdk.getTxEventsHistory();
    ```
 ### Ethereum
-1. Stake aETHc token:
+1. Stake ankrETH token:
    ```
    import { EthereumSDK } from '@ankr.com/staking-sdk';
    
@@ -117,7 +117,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    
    const { txHash } = await sdk.stake(new BigNumber(1_200), 'aETHc');
    ```
-2. Switch aETHc and aETHb:
+2. Switch ankrETH and aETHb:
    ```
    import { EthereumSDK } from '@ankr.com/staking-sdk';
    

@@ -1,4 +1,4 @@
-### Which wallets are compatible with the aFTMb/aFTMc tokens?
+### Which wallets are compatible with the ankrFTM tokens?
 
 aFTMb/aFTMc is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
 
