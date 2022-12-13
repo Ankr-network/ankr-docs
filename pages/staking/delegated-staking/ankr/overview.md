@@ -10,6 +10,10 @@ Afterall, to build a truly decentralized Web3 protocol, “tokens must be more v
 Our product team is releasing a reimagined vision of Ankr Network – our global network of nodes running on 18+ different blockchains. 
 This vision for Ankr Network 2.0 brings together our ecosystem of developers, node providers (Node Pros), and stakers (Ankr Bankrs) in a way that will offer everyone involved with Ankr a more rewarding experience — with ANKR token utility at its very heart.
 
+## Audit details
+ANKR token staking smart contracts have undergone an external audit by Beosin Blockchain Security:
+* [Detailed Beosin audit report](https://assets.ankr.com/staking/smart_contract_security_audit.pdf)
+
 ## What is ANKR token staking?
 ANKR token staking is similar to the idea of staking to help secure PoS networks. 
 However, instead of delegating ANKR to validator nodes, ANKR token staking introduces the ability for anyone to stake to full nodes for the first time ever. 
