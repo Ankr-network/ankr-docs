@@ -34,11 +34,11 @@ If you staked on Polygon via the crosschain staking pool, you’ll receive your 
 
 ### How do I receive rewards?
 
-aMATICb is a rebasing token. When holding aMATICb, your balance will increase in proportion to your MATIC staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aMATICb increase by a small amount.  
+aMATICb is not actively supported anymore. We recommend you [switch your aMATICb for ankrMATIC (ex-aMATICc)](https://www.ankr.com/staking/switch/?from=aMATICb).   
 
   
 
-aMATICc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+ankrMATIC (ex-aMATICc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrAVAX to 1 AVAX grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
@@ -52,10 +52,6 @@ aMATICc rewards are built into the token. Effectively, your rewards accumulate d
 
 When staking on Ethereum, the user pays a gas fee (typically, 0.0005 ETH). When staking on Polygon, the user may pay a small dynamic fee. Both for staking on Ethereum and Polygon, Ankr takes 5% fees from user's Liquid Staking rewards. When unstaking on Ethereum, the user pays a fee of 0.025 ETH. When unstaking on Polygon, the user pays a fee of 0.5% from the unstaking amount.
 
-### What determines the amount of reward I receive each rebase of aMATICb?
-
-Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to and how much MATIC is validated on the network. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
-
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 
 Your stake **continues** to accumulate rewards until the moment you have received them.
@@ -68,9 +64,7 @@ The only risk for stakers is missing out on rewards during any time a validator 
 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
-* [aMATICb](https://www.ankr.com/staking/defi/?assets=aMATICb)
-
-* [aMATICc](https://www.ankr.com/staking/defi/?assets=aMATICc)
+* [ankrMATIC (ex-aMATICc)](https://www.ankr.com/staking/defi/?assets=ankrMATIC)
 
 You can also use your Liquid Staking tokens to:
 
@@ -79,3 +73,7 @@ You can also use your Liquid Staking tokens to:
 * [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farming/) and earn additional rewards in the form of liquidity pool tokens and further farm them.
 
 * [Put your tokens in a vault](https://www.ankr.com/docs/staking/defi/vaults/) and automatically earn additional rewards in the form of one of both assets from the pair.
+
+### Why do I get less ankrMATIC (ex-aMATICc) for my 1 MATIC?
+
+ ankrMATIC (ex-aMATICc) only changes in value, which is why the amount of ankrMATIC you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankrmatic / (total_staked_matic + total_rewards_for_staked_matic - total_unstaked_ankrmatic)`.

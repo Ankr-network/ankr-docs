@@ -1214,5 +1214,9 @@
   {
     "from": "docs/rpc-service/chains/chains-api/ethereum/how-to/basic-dapp/index.html",
     "to": "/docs/rpc-service/chains/chains-list/"
+  },
+  {
+    "from": "docs/rpc-service/card-flow/index.html",
+    "to": "/docs/rpc-service/getting-started/"
   }
 ]
