@@ -16,7 +16,7 @@ The platform has the following functionality to offer:
 
 ## Basics with Public plan
 
-What's available for the [Public plan](/rpc-service/service-plans/#service-plans-comparison) user:
+What's available for the [Public service plan](/rpc-service/service-plans/#service-plans-comparison) user:
 
   * RPC Endpoints and Advanced APIs at the corresponding [rate limits](/rpc-service/service-plans/#rate-limits).
   * Connection code snippets.
@@ -41,41 +41,55 @@ To enable your project to interact with a blockchain, add the blockchain's endpo
 
 Congrats — you've just added a public endpoint into your project to enable blockchain interaction.
 
+---
+
 ## Basics with Premium plan
 
-What's available for the [Premium plan](/rpc-service/service-plans/#service-plans-comparison) user:
+The [Premium service plan](/rpc-service/service-plans/#service-plans-comparison) enables using the RPC API Endpoints and Advanced APIs at the corresponding [rate limits](/rpc-service/service-plans/#rate-limits). Here is the path to access Premium and start using its functionality:
 
-  * Premium Endpoints and Advanced APIs at the corresponding [rate limits](/rpc-service/service-plans/#rate-limits).
-  * Connection code snippets.
-  * RPC methods testing tool.
-  * Personal usage data.
-  * Requests charging and payments history data.
+`Interface schema` —> `Sign in` —> `Deposit funds` —> `Use private endpoints`
+
+  * **[Interface schema](/rpc-service/getting-started/#interface-schema-1)**: surely, it's always helpful to orient yourself in a new environment. Hardcore users can skip this step and proceed to the following one.
+
+  * **[Sign in](/rpc-service/getting-started/#sign-in)**: first things first, the road to using Premium starts with signing in into your account (so we can provide you with the private endpoints and know which account to charge under the [PAYG model](/rpc-service/service-plans/#charging-model-pay-as-you-go) for the requests you make).
+  
+  * **[Deposit funds](/rpc-service/getting-started/#deposit-funds)**: second, the positive balance of [API Credits](/rpc-service/service-plans/#how-we-charge) in your account is a must to be able to query the endpoints. That's why you'll have to deposit funds (we support both *Web3 wallet* and *credit card* payment flows) to be converted into API Credits and stored into your account to make requests. It might be useful to know the [prices](/rpc-service/pricing/) before depositing funds.
+
+  * **[Use private endpoints](/rpc-service/getting-started/#use-private-endpoints)**: finally, after you've signed in and deposited funds into your account, you're all set to start using private RPC API endpoints.
 
 ### Interface schema
-
-Below is the interface of the [_Premium_ service plan](/rpc-service/service-plans/#service-plans-comparison) user that is all set to use RPC API Endpoints and Advanced APIs at the corresponding [rate limits](/rpc-service/service-plans/#rate-limits). Here is the path to access Premium and start using RPCs and Advanced APIs:
-`Connect wallet` —> `Deposit funds` —> `Use private endpoints`
-
-  * **[Connect wallet](/rpc-service/getting-started/#connect-wallet)**: first things first, connecting your MetaMask wallet is the key to access your Premium account.
-  
-  * **[Deposit funds](/rpc-service/getting-started/#deposit-funds)**: second, you need to have a positive account balance to make any RPC requests.
-  
-  * **[Use private endpoints](/rpc-service/getting-started/#use-private-endpoints)**: finally, with a wallet connected and a balance topped up, you're all set to start using private RPC API endpoints.
+<br/>
 
 <img src="/docs/build/ui-premium.png" alt="Public Endpoints" class="responsive-pic" width="800" />
 
-### Connect wallet
+### Sign in
 
-The wallet connection procedure is the following:
+RPC Service supports two authentication options:
+
+  * [**Web3 wallet**](/rpc-service/getting-started/#via-web3-wallet) — connect your wallet to sign in. This option enables using both Web3 wallet and credit card payment flows.
+  * [**Google account**](/rpc-service/getting-started/#via-google-account) — sign in with your Google account. This option provides for the credit card payment flow only, though you can connect your wallet anytime to use the Web3 wallet payment flow.
+
+#### Via Web3 wallet
+
+The Web3 wallet sign in procedure is the following:
 
 1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
-2. In the top right corner, click **Connect Wallet**, then provide your public key for encryption and confirm interactions with our platform:
+2. In the top right corner, click **Sign in**, select the wallet to use (example: **MetaMask**), and then go through required steps:
    * Click **Provide** — to use your public key for token encryption.
    * Click **Sign** — to confirm interactions with our platform.
 
 <img src="/docs/build/card-metamask.png" alt="MetaMask connection" class="responsive-pic" width="550" />
 
-Congrats — you now have an account in RPC Service, associated with your wallet.
+Congrats — you now have an account with RPC Service, associated with your wallet.
+
+#### Via Google account
+
+The Google sign in procedure is the following:
+
+1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
+2. In the top right corner, click **Sign in >** **Continue with Google**, and then select the account to use.
+
+Congrats — you've signed in into RPC Service using your Google account.
 
 ### Deposit funds
 
@@ -83,21 +97,37 @@ Congrats — you now have an account in RPC Service, associated with your wallet
 We’ve pegged the price of our API Credits to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
 </Callout>
 
-#### Initial deposit
+Depending on the [sign-in](/rpc-service/getting-started/#sign-in) option selected, you can deposit funds the following way:
 
-Initial top up is a required step to access Premium services, as, upon depositing funds into your account, the system generates a personal JWT token granting access to the Premium plan functionality.
+  * [Web3 wallet flow](/rpc-service/getting-started/#web3-wallet-flow)
+  * [Credit card flow](/rpc-service/getting-started/#credit-card-flow)
+
+#### Web3 wallet flow
+
+The Web3 wallet flow has the following parts to it:
+
+  * [Initial deposit](/rpc-service/getting-started/#initial-deposit)
+  * [Subsequent top ups](/rpc-service/getting-started/#subsequent-top-ups)
+
+##### Initial deposit
+
+Initial deposit is a required step to access Premium services, as, upon depositing funds into your account, the system generates a personal JWT token granting access to the Premium service plan functionality.
+
+Prerequisites:
+
+  * [Sign in](/rpc-service/getting-started/#via-web3-wallet)
 
 The initial top-up process is the following:
 
 1. In **Navigation**, click **Pricing** to open the corresponding pane.
 2. In **Premium** box, click **Get Started with Premium** to get scrolled to the **Deposit** box.
-3. Enter the amount of ANKR tokens you'd like to deposit (min. 1000 ANKR), click **Top Up**, and then confirm the operation in MetaMask.
+3. Enter the amount of ANKR tokens you'd like to deposit (min. 1000 ANKR), click **Top Up**, and then confirm the operation in your wallet.
 
 <img src="/docs/build/initial-deposit.png" alt="Initial deposit" class="responsive-pic" width="800" />
 
-Congrats — you've added ANKR tokens to your account, and you're all set for using _Premium_ services.
+Congrats — you've made payment in ANKR tokens to get the API Credits into your account, and you're all set for using _Premium_ services.
 
-#### Subsequent top ups
+##### Subsequent top ups
 
 As always the case, one day your account balance goes low — that's just the fact of life — and you need to top it up to continue querying blockchains:
 
@@ -108,7 +138,60 @@ As always the case, one day your account balance goes low — that's just the fa
    * `Grant ANKRs to contract` — click **Confirm**, and then approve in the wallet.  
    * `Approve spending under contract` — click **Confirm**, and then approve in the wallet.
 
-Congrats — you've added ANKR tokens to your account, and you're all set for using _Premium_ services.
+Congrats — you've made payment in ANKR tokens to get the API Credits into your account, and you're all set for using _Premium_ services.
+
+#### Credit card flow
+
+The credit card flow has the following parts to it:
+
+  * [Initial deposit](/rpc-service/getting-started/#initial-deposit-1)
+  * [Subsequent top ups](/rpc-service/getting-started/#subsequent-top-ups-1)
+
+##### Initial deposit
+
+Initial deposit is a required step to access Premium services, as, upon depositing funds into your account, the system generates a personal JWT token granting access to the Premium service plan functionality.
+
+Prerequisites:
+
+  * [Sign in](/rpc-service/getting-started/#via-google-account)
+
+The initial top-up process is the following:
+
+1. In **Navigation**, click **Pricing** to open the corresponding pane.
+2. In the **Premium** box, click **Get Started with Premium** to get scrolled to the **Deposit** box.
+
+<img src="/docs/build/usd-initial-deposit.png" alt="Initial deposit" class="responsive-pic" width="800" />
+
+3. Select one of the payment options to cover your query demands (see [Pricing](/rpc-service/pricing/)), and then click **Top Up**:
+    * **One time** — a single top up by the amount you indicate in the field below (min.: 10 USD); requires manual action for [subsequent top ups](/rpc-service/getting-started/#subsequent-top-ups-1).  
+    * **$15/mo** — an automatic monthly recurrent top up by 15 USD.
+    * **$50/mo** — an automatic monthly recurrent top up by 50 USD.
+    * **$300/mo** — an automatic monthly recurrent top up by 300 USD.
+4. On the **Pay with card** page, fill in the required fields and click **Pay** to get things done.
+
+<img src="/docs/build/card-stripe.png" alt="Initial deposit" class="responsive-pic" width="800" />
+
+Congrats — you've made a USD payment to get the API Credits into your account, and you're all set for using _Premium_ services.
+
+##### Subsequent top ups
+
+If you've selected the **One time** payment option upon the [initial deposit](/rpc-service/getting-started/#initial-deposit-1), then one day your account balance goes low — that's just the fact of life — and you need to top it up to continue querying blockchains:
+
+1. In **Navigation**, click **Billing** to open the pane.
+2. In the **Top Up** section (top right), set the toggle to **USD**.
+
+<img src="/docs/build/usd-subsequent-deposit.png" alt="Initial deposit" class="responsive-pic" width="800" />
+
+3. Select one of the payment options to cover your query demands (see [Pricing](/rpc-service/pricing/)), and then click **Top Up**:
+    * **One time** — a single top up by the amount you indicate in the field below (min.: 10 USD); requires manual action for subsequent top ups.  
+    * **$15/mo** — an automatic monthly recurrent top up by 15 USD.
+    * **$50/mo** — an automatic monthly recurrent top up by 50 USD.
+    * **$300/mo** — an automatic monthly recurrent top up by 300 USD.
+4. On the **Pay with card** page, fill in the required fields and click **Pay** to get things done.
+
+<img src="/docs/build/card-stripe.png" alt="Initial deposit" class="responsive-pic" width="800" />
+
+Congrats — you've made a USD payment to get the API Credits into your account, and you're all set to continue using _Premium_ services.
 
 ### Withdraw funds
 
@@ -141,7 +224,7 @@ We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are
 
 Prerequisites:
 
-  * [Connect wallet](/rpc-service/getting-started/#connect-wallet)
+  * [Sign in](/rpc-service/getting-started/#sign-in)
   * [Deposit funds](/rpc-service/getting-started/#deposit-funds)
 
 As a Premium user, you have private Endpoints at hand to enable your projects to interact with a blockchain.
