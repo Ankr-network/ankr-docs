@@ -55,7 +55,7 @@ Lets the `ankrBNB` smart contract transfer user's ankrBNB tokens.
 
 * [Mainnet aBNBb Proxy — 0xbb1aa6e59e5163d8722a122cd66eba614b59df0d](https://bscscan.com/token/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
 * [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE)
-* [Mainnet ankrBNB Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
+* [Mainnet ankrBNB Proxy — 0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827](https://bscscan.com/address/0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827)
 * [Testnet ankrBNB Proxy — 0x46de2fbaf41499f298457cd2d9288df4eb1452ab](https://testnet.bscscan.com/token/0x46de2fbaf41499f298457cd2d9288df4eb1452ab)
 
 ##### Example
