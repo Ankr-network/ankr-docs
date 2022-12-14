@@ -3,10 +3,5 @@
   "tech-stuff": "Tech Stuff",
   "service-plans": "Service Plans",
   "pricing": "Pricing",
-  "card-flow": {
-    "title": "Card Flow",
-    "type": "page",
-    "hidden": true
-  },
   "chains": "Supported Chains"
 }

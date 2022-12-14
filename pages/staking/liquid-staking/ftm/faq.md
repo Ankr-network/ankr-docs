@@ -1,6 +1,6 @@
-### Which wallets are compatible with the ankrFTM tokens?
+### Which wallets are compatible with the ankrFTM (ex-aFTMс) tokens?
 
-aFTMb/aFTMc is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
+ankrFTM (ex-aFTMс) is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
 
 ### Are there any docs about the FTM staking and how I set up my wallet etc.?
 
@@ -22,23 +22,19 @@ The unstake logic is that each time a lock-up period ends, Ankr claims all rewar
 
 ### How do I receive rewards?
 
-aFTMb is a rebasing token. When holding aFTMb, your balance will increase in proportion to your FTM staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aFTMb increase by a small amount.  
+aFTMb is not actively supported anymore. We recommend you [switch your aFTMb for ankrFTM (ex-aFTMc)](https://www.ankr.com/staking/switch/?from=aFTMb).   
 
   
 
-aFTMc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+ankrFTM (ex-aFTMc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrFTM (ex-aFTMc) to 1 FTM grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
-aFTMb will increase with every rebase; rebasing occurs daily. aFTMc rewards are built into the token. Effectively, your rewards accumulate daily as aFTMc grows in value to FTM.
+ankrFTM (ex-aFTMc) rewards are built into the token. Effectively, your rewards accumulate daily as ankrFTM grows in value to FTM.
 
 ### Does Ankr charge for the service?
 
 When unstaking, users pay a burn fee that depends on the current liquidity and amount to unstake.
-
-### What determines the amount of reward I receive each rebase of aFTMb?
-
-Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
 
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 
@@ -56,9 +52,7 @@ Ankr only delegates to trusted and reputable validator nodes to avoid any valida
 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
-* [aFTMb](https://www.ankr.com/staking/defi/?assets=aFTMb)
-
-* [aFTMс](https://www.ankr.com/staking/defi/?assets=aFTMс)
+* [ankrFTM (ex-aFTMс)](https://www.ankr.com/staking/defi/?assets=ankrFTM)
 
 You can also use your Liquid Staking tokens to:
 
@@ -71,3 +65,7 @@ You can also use your Liquid Staking tokens to:
 ### Can I get staking metrics for my integration?
 
 Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://www.ankr.com/docs/staking/for-integrators/restful-api/staking-metrics/).
+
+### Why do I get less ankrFTM (ex-aFTMc) for my 1 FTM?
+
+ankrFTM (ex-aFTMc) only changes in value, which is why the amount of ankrFTM you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankrftm / (total_staked_ftm + total_rewards_for_staked_ftm - total_unstaked_ankrftm)`.

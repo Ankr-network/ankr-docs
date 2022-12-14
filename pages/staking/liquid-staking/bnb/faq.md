@@ -1,6 +1,6 @@
-### Which wallets are compatible with the aBNBb/ankrBNB tokens?
+### Which wallets are compatible with the ankrBNB (ex-aBNBc) tokens?
 
-aBNBb/aBNBc is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
+ankrBNB (ex-aBNBc) is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
 
 ### Are there any docs about the BNB staking and how I set up my wallet etc.?
 
@@ -10,9 +10,9 @@ Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking
 
 0.502 BNB: user asset — 0.5 BNB, plus the relayer fee for cross-chain transfer of your assets applied during the staking — 0.002 BNB. You must also count in the gas fee on top for sending the transaction.
 
-### Why do I get less aBNBc than aBNBb for my 1 BNB?
+### Why do I get less ankrBNB (ex-aBNBc) for my 1 BNB?
 
-aBNBb is a rebasing token that changes in number, which is why we decided 1 aBNBb is equal to 1 BNB. However, aBNBc only changes in value, which is why the amount of aBNBc you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_abnbc / (total_staked_bnb + total_rewards_for_staked_bnb - total_unstaked_abnbb_and_abnbc)`.
+ankrBNB (ex-aBNBc) only changes in value, which is why the amount of ankrBNB you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankrbnb / (total_staked_bnb + total_rewards_for_staked_bnb - total_unstaked_ankrbnb)`.
 
 ### Is there a maximum amount I can stake?
 
@@ -24,15 +24,15 @@ You receive the unstaked BNB after the unbonding period of up to 7–10 days.
 
 ### How do I receive rewards?
 
-aBNBb is a rebasing token. When holding aBNBb, your balance will increase in proportion to your BNB staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aBNBb increase by a small amount.  
+aBNBb is not actively supported anymore. If you have any aBNBb in your wallet, you should receive ankrBNB automatically via airdrop.  
 
   
 
-aBNBc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+ankrBNB (ex-aBNBc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrBNB to 1 BNB grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
-aBNBb will increase in number with every rebase; rebasing occurs daily. aBNBc rewards are built into the token. Effectively, your rewards accumulate daily as aBNBc grows in value to BNB.
+ankrBNB (ex-aBNBc) rewards are built into the token. Effectively, your rewards accumulate daily as ankrBNB grows in value to BNB.
 
 ### Does Ankr charge for the service?
 
@@ -41,10 +41,6 @@ aBNBb will increase in number with every rebase; rebasing occurs daily. aBNBc re
   
 
 Note that relayer fee is a fee for cross-chain transfer of your assets applied during staking and is not an Ankr fee.
-
-### What determines the amount of reward I receive each rebase of aBNBb?
-
-Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to and how much BNB is validated on the network. The less BNB is staked on the network, the higher the rewards to incentivize more BNB to come online, and vice versa. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
 
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 
@@ -58,9 +54,7 @@ The only risk for stakers is missing out on rewards during any time a validator 
 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
-* [aBNBb](https://www.ankr.com/staking/defi/?assets=aBNBb)
-
-* [aBNBc](https://www.ankr.com/staking/defi/?assets=aBNBc)
+* [ankrBNB (ex-aBNBc)](https://www.ankr.com/staking/defi/?assets=ankrBNB)
 
 You can also use your Liquid Staking tokens to:
 
