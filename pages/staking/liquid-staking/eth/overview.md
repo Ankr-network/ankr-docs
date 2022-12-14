@@ -3,7 +3,7 @@ import { Callout } from "components";
 # Ethereum Liquid Staking
 
 ## What and why is Ethereum Liquid Staking?
-Ankr Staking offers Ethereum token holders the opportunity to stake ETH and in return claim Ethereum Liquid Staking tokens — ankrETH (**ex-aETHc**). 
+Ankr Staking offers Ethereum token holders the opportunity to stake ETH and in return claim Ethereum Liquid Staking tokens — ankrETH (ex-aETHc). 
 <Callout type="info">
 There are no more new stakes getting aETHb token. However, old stakes with aETHb keep generating you rewards. You can also [switch aETHb for ankrETH now](https://www.ankr.com/staking/switch/) (supply is limited).
 </Callout>

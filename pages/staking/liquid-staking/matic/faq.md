@@ -29,24 +29,17 @@ MATIC crosschain staking happens on Polygon. You may have to stake/unstake your 
 If you staked on Ethereum, you’ll receive your MATIC and rewards after the unbonding period of 80+ epochs; typically, it takes 3–4 days.  
 
   
-
 If you staked on Polygon via the crosschain staking pool, you’ll receive your MATIC and rewards instantly.
 
 ### How do I receive rewards?
 
 aMATICb is not actively supported anymore. We recommend you [switch your aMATICb for ankrMATIC (ex-aMATICc)](https://www.ankr.com/staking/switch/?from=aMATICb).   
 
-  
-
 ankrMATIC (ex-aMATICc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrAVAX to 1 AVAX grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
-aMATICb rewards arrive in your wallet with every rebase. Rebasing occurs daily.  
-
-  
-
-aMATICc rewards are built into the token. Effectively, your rewards accumulate daily as aMATICc grows in value to MATIC.
+ankrMATIC rewards are built into the token. Effectively, your rewards accumulate daily as ankrMATIC grows in value to MATIC.
 
 ### Does Ankr charge for the service?
 
@@ -65,6 +58,7 @@ The only risk for stakers is missing out on rewards during any time a validator 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
 * [ankrMATIC (ex-aMATICc)](https://www.ankr.com/staking/defi/?assets=ankrMATIC)
+
 
 You can also use your Liquid Staking tokens to:
 

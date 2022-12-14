@@ -4,15 +4,15 @@ import { Callout } from "components";
 
 We're going to explain bridging, using ankrMATIC (ex-aMATICc).
 
-## Bridge ankrMATIC (ex-aMATICc)
-1. Visit [Ankr Bridge](https://www.ankr.com/staking/bridge/) and choose ankrMATIC (ex-aMATICc). 
-2. Enter the desired ankrMATIC (ex-aMATICc) amount to bridge and click **Approve** to allow Ankr Bridge smart contracts to bridge for you.
+## Bridge ankrMATIC
+1. Visit [Ankr Bridge](https://www.ankr.com/staking/bridge/) and choose ankrMATIC. 
+2. Enter the desired ankrMATIC amount to bridge and click **Approve** to allow Ankr Bridge smart contracts to bridge for you.
    <img src="/docs/staking/bridge/enter-amount-click-approve.jpg" alt="Enter an amount and click Approve" class="responsive-pic" width="550" />
 3. Confirm your approval in MetaMask.
    <img src="/docs/staking/bridge/confirm-approval.jpg" alt="Confirm your approval" class="responsive-pic" width="300" />
-4. Click **Send** to send ankrMATIC (ex-aMATICc) to the destination network.
+4. Click **Send** to send ankrMATIC to the destination network.
    <img src="/docs/staking/bridge/click-send.jpg" alt="Click Send" class="responsive-pic" width="550"/>
-5. Confirm bridging ankrMATIC (ex-aMATICc) in MetMask. We recommend choosing the **high fee** value for faster transaction mining time.
+5. Confirm bridging ankrMATIC in MetMask. We recommend choosing the **high fee** value for faster transaction mining time.
    <img src="/docs/staking/bridge/confirm-sending-transaction.jpg" alt="Confirm bridging" class="responsive-pic" width="300" />
 6. **Keep the page open, do not navigate away or close the tab**. Ankr Bridge shows you the sending progress. Wait till the cross-chain transaction successfully finishes. 
    <img src="/docs/staking/bridge/in-progress.jpg" alt="Don't close the next page" class="responsive-pic" width="550" />
@@ -22,11 +22,11 @@ We're going to explain bridging, using ankrMATIC (ex-aMATICc).
    <img src="/docs/staking/bridge/confirm-switching-networks-binance.jpg" alt="Confirm switching networks" class="responsive-pic" width="300" />
 9. Connect your wallet if asked, choosing MetaMask.
    <img src="/docs/staking/bridge/connect-wallet.jpg" alt="Connect wallet" class="responsive-pic" width="550" />
-10. Click **Receive** to receive ankrMATIC (ex-aMATICc) on the destination network by clicking **Receive**. A gas fee applies.
+10. Click **Receive** to receive ankrMATIC on the destination network by clicking **Receive**. A gas fee applies.
     <img src="/docs/staking/bridge/click-receive.jpg" alt="Click Receive" class="responsive-pic" width="550" />
-11. Confirm receiving ankrMATIC (ex-aMATICc) in MetaMask.
+11. Confirm receiving ankrMATIC in MetaMask.
     <img src="/docs/staking/bridge/confirm-receiving.jpg" alt="Confirm receiving" class="responsive-pic" width="300" />
-12. Click **Add ankrMATIC to wallet** (ex-aMATICc) to add the bridged tokens to MetaMask.<br/> You can also see the transaction in the explorer by clicking the **go-to** button next to the transaction hash.
+12. Click **Add ankrMATIC to wallet** to add the bridged tokens to MetaMask.<br/> You can also see the transaction in the explorer by clicking the **go-to** button next to the transaction hash.
     <img src="/docs/staking/bridge/add-token-to-wallet.jpg" alt="Click Add" class="responsive-pic" width="550" />
 
 If something failed along the way after #5, see the **Finish Bridge** section below.
@@ -39,7 +39,7 @@ The bridging process may fail due to:
 * Closing the page anytime during the process.
 * Ankr Bridge failures due to network instability and other possible issues. 
 
-If the process failed anywhere before #5 from **Bridge ankrMATIC** (ex-aMATICc), no action is needed. Just start bridging again.
+If the process failed anywhere before #5 from **Bridge ankrMATIC**, no action is needed. Just start bridging again.
 
 If the process failed at #5 or later: 
 1. Open your wallet, find and copy the transaction ID from the **Deposit** operation.
@@ -47,5 +47,5 @@ If the process failed at #5 or later:
 3. Click **Finish Bridge**.
    <img src="/docs/staking/bridge/click-finish-bridge.jpg" alt="Click Finish Bridge" class="responsive-pic" width="550" /> 
 4. Paste the deposit transaction ID in the form and click **Proceed bridge**.
-5. Check that it brought you to the **Sending progress** page, then continue from #6 in the **Bridge aMATICc** instructions above.
+5. Check that it brought you to the **Sending progress** page, then continue from #6 in the **Bridge ankrMATIC** instructions above.
    <img src="/docs/staking/bridge/in-progress.jpg" alt="Don't close the next page" class="responsive-pic" width="550" />
