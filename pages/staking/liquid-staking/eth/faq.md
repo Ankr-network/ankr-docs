@@ -32,7 +32,9 @@ Currently, there is no unbonding period, as there is no unstaking for ETH. This 
 
 ### How do I receive rewards?
 
-aETHb is not actively supported anymore. We recommend you [switch your aETHb for ankrETH (ex-aETHc)](https://www.ankr.com/staking/switch/?from=aETHb).    
+aETHb is not actively supported anymore. We recommend you [switch your aETHb for ankrETH (ex-aETHc)](https://www.ankr.com/staking/switch/?from=aETHb).   
+
+  
 
 ankrETH (ex-aETHc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrETH (ex-aETHc) to 1 ETH grows because of reward accumulation. Mind that to pull out your rewards, you’ll need to sell ankrETH (ex-aETHc) on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
 
