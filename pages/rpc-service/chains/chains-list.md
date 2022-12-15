@@ -18,37 +18,37 @@ This docs section provides the list of all chains available on [RPC Service](htt
   <tr>
     <td>[Aptos](/rpc-service/chains/chains-list/#aptos)</td>
     <td>[Celo](/rpc-service/chains/chains-list/#celo)</td>
-    <td>[HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)</td>
-    <td>[Near](/rpc-service/chains/chains-list/#near)</td>
-    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
+    <td>[Harmony](/rpc-service/chains/chains-list/#harmony)</td>
+    <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
+    <td>[Polygon](/rpc-service/chains/chains-list/#polygon)</td>
   </tr>
   <tr>
     <td>[Arbitrum](/rpc-service/chains/chains-list/#arbitrum)</td>
     <td>[Ethereum](/rpc-service/chains/chains-list/#ethereum)</td>
+    <td>[HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)</td>
+    <td>[NEAR](/rpc-service/chains/chains-list/#near)</td>
+    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
+  </tr>
+  <tr>
+    <td>[Avalanche](/rpc-service/chains/chains-list/#avalanche)</td>
+    <td>[Fantom](/rpc-service/chains/chains-list/#fantom)</td>
     <td>[IoTeX](/rpc-service/chains/chains-list/#iotex)</td>
     <td>[Nervos](/rpc-service/chains/chains-list/#nervos)</td>
     <td>[Sui](/rpc-service/chains/chains-list/#sui)</td>
   </tr>
   <tr>
-    <td>[Avalanche](/rpc-service/chains/chains-list/#avalanche)</td>
-    <td>[Fantom](/rpc-service/chains/chains-list/#fantom)</td>
+    <td>[BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)</td>
+    <td>[Filecoin](/rpc-service/chains/chains-list/#filecoin)</td>
     <td>[Klaytn](/rpc-service/chains/chains-list/#klaytn)</td>
     <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
     <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
   </tr>
   <tr>
-    <td>[BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)</td>
+    <td>[BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain)</td>
     <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
     <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
     <td>[Polkadot](/rpc-service/chains/chains-list/#polkadot)</td>
     <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
-  </tr>
-  <tr>
-    <td>[BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain)</td>
-    <td>[Harmony](/rpc-service/chains/chains-list/#harmony)</td>
-    <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
-    <td>[Polygon](/rpc-service/chains/chains-list/#polygon)</td>
-    <td></td>
   </tr>
 </table>
 
@@ -1249,6 +1249,26 @@ def test_block_number(self):
   "id":1
 }
 ```
+
+---
+
+## Filecoin
+
+Filecoin is a distributed storage network based on a blockchain mechanism. Filecoin miners can elect to provide storage capacity for the network, and thereby earn units of the Filecoin cryptocurrency (FIL) by periodically producing cryptographic proofs that certify that they are providing the capacity specified. In addition, Filecoin enables parties to exchange FIL currency through transactions recorded in a shared ledger on the Filecoin blockchain. Rather than using Nakamoto-style proof of work to maintain consensus on the chain, however, Filecoin uses proof of storage itself: a miner’s power in the consensus protocol is proportional to the amount of storage it provides.
+
+The Filecoin blockchain not only maintains the ledger for FIL transactions and accounts, but also implements the Filecoin VM, a replicated state machine which executes a variety of cryptographic contracts and market mechanisms among participants on the network. These contracts include storage deals, in which clients pay FIL currency to miners in exchange for storing the specific file data that the clients request. Via the distributed implementation of the Filecoin VM, storage deals and other contract mechanisms recorded on the chain continue to be processed over time, without requiring further interaction from the original parties (such as the clients who requested the data storage).
+
+Official quick links: [Website](https://filecoin.io/), [Docs](https://docs.filecoin.io/), [GitHub](https://github.com/filecoin-project)
+
+### Networks
+
+<div className="list-with-custom-top-margin mt-6">
+  * Mainnet (`HTTPS` and `WSS`)
+</div>
+
+### API methods
+
+For Filecoin, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
 
 ---
 
