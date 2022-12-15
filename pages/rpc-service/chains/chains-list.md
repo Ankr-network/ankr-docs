@@ -1268,7 +1268,100 @@ Official quick links: [Website](https://filecoin.io/), [Docs](https://docs.filec
 
 ### API methods
 
-For Filecoin, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Filecoin, we support blockchain interaction via the following methods:
+
+**Chain**:
+
+  `Filecoin.ChainGetBlock`,
+  `Filecoin.ChainGetBlockMessages`,
+  `Filecoin.ChainGetGenesis`,
+  `Filecoin.ChainGetMessage`,
+  `Filecoin.ChainGetParentMessages`,
+  `Filecoin.ChainGetParentReceipts`,
+  `Filecoin.ChainGetPath`,
+  `Filecoin.ChainGetTipSet`,
+  `Filecoin.ChainGetTipSetByHeight`,
+  `Filecoin.ChainHasObj`,
+  `Filecoin.ChainHead`,
+  `Filecoin.ChainReadObj`,
+  `Filecoin.ChainStatObj`,
+  `Filecoin.ChainTipSetWeight`,
+  `Filecoin.ChainNotify`
+
+**Client**:
+
+  `Filecoin.ClientQueryAsk`
+
+**Gas**:
+
+  `Filecoin.GasEstimateFeeCap`,
+  `Filecoin.GasEstimateGasLimit`,
+  `Filecoin.GasEstimateGasPremium`,
+  `Filecoin.GasEstimateMessageGas`
+
+**Mpool**:
+
+  `Filecoin.MpoolGetNonce`,
+  `Filecoin.MpoolPending`,
+  `Filecoin.MpoolPush`,
+  `Filecoin.MpoolSub`
+
+**State**:
+
+  `Filecoin.StateAccountKey`,
+  `Filecoin.StateAllMinerFaults`,
+  `Filecoin.StateCall`,
+  `Filecoin.StateChangedActors`,
+  `Filecoin.StateCirculatingSupply`,
+  `Filecoin.StateCompute`,
+  `Filecoin.StateDealProviderCollateralBounds`,
+  `Filecoin.StateDecodeParams`,
+  `Filecoin.StateGetActor`,
+  `Filecoin.StateGetReceipt`,
+  `Filecoin.StateListActors`,
+  `Filecoin.StateListMessages`,
+  `Filecoin.StateListMiners`,
+  `Filecoin.StateLookupID`,
+  `Filecoin.StateMarketBalance`,
+  `Filecoin.StateMarketDeals`,
+  `Filecoin.StateMarketParticipants`,
+  `Filecoin.StateMarketStorageDeal`,
+  `Filecoin.StateMinerActiveSectors`,
+  `Filecoin.StateMinerAvailableBalance`,
+  `Filecoin.StateMinerDeadlines`,
+  `Filecoin.StateMinerFaults`,
+  `Filecoin.StateMinerInfo`,
+  `Filecoin.StateMinerInitialPledgeCollateral`,
+  `Filecoin.StateMinerPartitions`,
+  `Filecoin.StateMinerPower`,
+  `Filecoin.StateMinerPreCommitDepositForPower`,
+  `Filecoin.StateMinerProvingDeadline`,
+  `Filecoin.StateMinerRecoveries`,
+  `Filecoin.StateMinerSector Allocated`,
+  `Filecoin.StateMinerSectorCount'`,
+  `Filecoin.StateMinerSectors`,
+  `Filecoin.StateNetworkName`,
+  `Filecoin.StateNetworkVersion`,
+  `Filecoin.StateReadState`,
+  `Filecoin.StateReplay`,
+  `Filecoin.StateSearchMsg`,
+  `Filecoin.StateSearchMsgLimited`,
+  `Filecoin.StateSectorExpiration`,
+  `Filecoin.StateSectorGetInfo`,
+  `Filecoin.StateSectorPartition`,
+  `Filecoin.StateSectorPreCommitInfo`,
+  `Filecoin.StateVMCirculatingSupplyInternal`,
+  `Filecoin.StateVerifiedClientStatus`,
+  `Filecoin.StateVerifiedRegistryRootKey`,
+  `Filecoin.StateVerifierStatus`,
+  `Filecoin.StateWaitMsg`,
+  `Filecoin.StateWaitMsgLimited`
+
+**Wallet**:
+
+  `Filecoin.WalletBalance`,
+  `Filecoin.WalletValidateAddress`,
+  `Filecoin.WalletVerify`
 
 ---
 
