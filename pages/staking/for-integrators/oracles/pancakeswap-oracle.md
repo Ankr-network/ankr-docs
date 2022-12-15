@@ -9,11 +9,11 @@ Smart contracts involved in PancakeSwap oracle are:
 * [ankrBNB oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06) — an oracle that gets information from the sliding window oracle and provides the user ankrBNB (ex-aBNBc) price in BUSD.
 
 ## Workflow
-To explain how the oracle works, let's show what happens when we request price of ankrBNB (ex-aBNBc) in USD (BUSD).
+To explain how the oracle works, let's show what happens when we request price of ankrBNB in USD (BUSD).
 
 ### Prerequisite knowledge
 Before we dive into the example, you should know two things:
-* Since there is no direct pair ankrBNB-BUSD on PancakeSwap, the price is calculated via 2 pairs — ankrBNB-BNB and BNB-BUSD — which is done automatically, without additional user interaction. The user just asks the oracle for the price of ankrBNB (ex-aBNBc) in BUSD.
+* Since there is no direct pair ankrBNB-BUSD on PancakeSwap, the price is calculated via 2 pairs — ankrBNB-BNB and BNB-BUSD — which is done automatically, without additional user interaction. The user just asks the oracle for the price of ankrBNB in BUSD.
 * The oracle iteratively collects price for a pair every `periodSize` and stores it in an array of the `granularity` length. 
 `periodSize` = `windowSize` / `granularity`.
    * `periodSize` — frequency, which oracle queries PancakeSwap for the price of a pair with.
