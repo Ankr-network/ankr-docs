@@ -72,9 +72,13 @@ For Aptos, we support blockchain interaction via all the applicable methods exce
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `/v1/spec`, `/v1/-/healthy`
 
@@ -98,9 +102,13 @@ For Arbitrum, we support blockchain interaction via all the applicable methods e
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -268,9 +276,13 @@ For Avalanche, we support blockchain interaction via all the applicable methods 
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`, `eth_submitWork`, `eth_submitHashrate`, `net_peerCount`,
 
@@ -439,9 +451,13 @@ For BNB Smart Chain, we support blockchain interaction via all the applicable me
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -592,9 +608,13 @@ For BitTorrent Chain, we support blockchain interaction via all the applicable m
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -747,9 +767,13 @@ For Celo, we support blockchain interaction via all the applicable methods excep
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -946,9 +970,13 @@ For Ethereum, we support blockchain interaction via all the [applicable methods]
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -1113,9 +1141,13 @@ For Fantom, we support blockchain interaction via all the applicable methods exc
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -1268,9 +1300,13 @@ For Gnosis, we support blockchain interaction via all the applicable methods exc
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -1422,9 +1458,13 @@ For Harmony, we support blockchain interaction via all the applicable methods ex
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -1555,9 +1595,13 @@ For HECO, we support blockchain interaction via all the applicable methods excep
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -1610,9 +1654,13 @@ For IoTeX, we support blockchain interaction via all the applicable methods exce
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
   `eth_newFilter`,
   `eth_getFilterChanges`,
@@ -1962,9 +2010,13 @@ For Klaytn, we support blockchain interaction via all the applicable methods exc
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -2114,9 +2166,13 @@ For Kusama, we support blockchain interaction via all the applicable methods exc
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
   `state_getMetadata`,
   `state_getPairs`,
@@ -2196,9 +2252,13 @@ For Moonbeam, we support blockchain interaction via all the applicable methods e
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -2323,9 +2383,13 @@ For Near, we support blockchain interaction via all the applicable methods excep
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
   `sandbox_patch_state`,
   `status`,
@@ -2503,9 +2567,13 @@ For Nervos, we support blockchain interaction via all the applicable methods exc
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -2693,9 +2761,13 @@ For Optimism, we support blockchain interaction via all the applicable methods e
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -2907,9 +2979,13 @@ For Polkadot, we support blockchain interaction via all the applicable methods e
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
   `state_getMetadata`,
   `state_getPairs`,
@@ -3003,9 +3079,13 @@ For Polygon, we support blockchain interaction via all the applicable methods ex
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -3402,9 +3482,13 @@ For Solana, we support blockchain interaction via all the applicable methods exc
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 ---
 
@@ -3450,9 +3534,13 @@ For Sui, we support blockchain interaction via all the applicable methods except
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 None
 
@@ -3502,9 +3590,13 @@ For Syscoin, we support blockchain interaction via all the applicable methods ex
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
@@ -3743,9 +3835,13 @@ For Tron, we support blockchain interaction via all the applicable methods excep
 
 #### Unsupported
 
-<Callout type="tip">
-There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
-</Callout>
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
 
   `/wallet/easytransferbyprivate`,
   `/wallet/easytransferassetbyprivate`,
