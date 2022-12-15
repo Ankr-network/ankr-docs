@@ -2,7 +2,7 @@
 
 ## What is Ankr Switch?
 
-Ankr Switch is a product for switching between reward earning tokens and reward bearing tokens for the same asset. For example, aETHb and ankrETH.
+Ankr Switch is a product for switching from reward bearing tokens to reward earning tokens, for the same type of asset. For example, aETHb to ankrETH.
 
 ### What are reward bearing and rewards earning tokens?
 
@@ -13,21 +13,21 @@ Staking rewards accumulate inside reward bearing tokens, which means the issued 
 When you redeem your stake, you receive your staked original assets plus the accumulated staking rewards.
 
 ### Supported tokens
-Currently, Ankr Switch supports switching between:
-* aAVAXb–ankrAVAX
-* aBNBb–ankrBNB
-* aETHb–ankrETH
-* aFTMb–ankrFTM
-* aMATICb–ankrMATIC
+Currently, Ankr Switch supports switching:
+* aAVAXb–>ankrAVAX
+* aBNBb–>ankrBNB
+* aETHb–>ankrETH
+* aFTMb–>ankrFTM
+* aMATICb–>ankrMATIC
 
 ## Why Ankr Switch?
 
 ### User's benefits
 
 Currently, the main benefit is that can switch your -b tokens for new ankr- tokens, for example, aAVAXb for ankrAVAX.
-The reason for this is that -b tokens are not actively supported by Ankr anymore, and we recommend you do the switch.
+The reason for this is that -b tokens are not actively supported by Ankr anymore, and we recommend you do the switch to keep your tokens liquid.
 
-Also, DeFi platforms are going to drop support for -b tokens and enable support for ankr- tokens, so all the more reasons for you to do the switch to maintain the liquidy of your Liquid Staking tokens.
+Also, DeFi platforms are going to drop support for -b tokens and enable support for ankr- tokens, so all the more reasons for you to do the switch to maintain the liquidity of your Liquid Staking tokens.
 
 
 

@@ -1,6 +1,6 @@
-### Which wallets are compatible with the ankrAVAX tokens?
+### Which wallets are compatible with the ankrAVAX (ex-aAVAXc) tokens?
 
-aAVAXb/aAVAXc is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
+ankrAVAX (ex-aAVAXc) is an ERC-20 token that is compatible with Ethereum-based wallets like MetaMask.
 
 ### Are there any docs about the AVAX staking and how I set up my wallet etc.?
 
@@ -20,23 +20,19 @@ You receive the unstaked AVAX after the unbonding period, which is at end of the
 
 ### How do I receive rewards?
 
-aAVAXb is a rebasing token. When holding aAVAXb, your balance will increase in proportion to your AVAX staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aAVAXb increase by a small amount.  
+aAVAXb is not actively supported anymore. We recommend you [switch your aAVAXb for ankrAVAX (ex-aAVAXc)](https://www.ankr.com/staking/switch/?from=aAVAXb).   
 
   
 
-aAVAXc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+ankrAVAX (ex-aAVAXc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrAVAX to 1 AVAX grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
-aAVAXb will increase in number with every rebase; rebasing occurs daily. aAVAXc rewards are built into the token. Effectively, your rewards accumulate daily as aAVAXc grows in value to AVAX.
+ankrAVAX (ex-aAVAXc) rewards are built into the token. Effectively, your rewards accumulate daily as ankrAVAX grows in value to AVAX.
 
 ### Does Ankr charge for the service?
 
 2% commission on the reward.
-
-### What determines the amount of reward I receive each rebase of aAVAXb?
-
-Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards.
 
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 
@@ -50,9 +46,7 @@ The only risk for stakers is missing out on rewards during any time a validator 
 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
-* [aAVAXb](https://www.ankr.com/staking/defi/?assets=aAVAXb)
-
-* [aAVAXc](https://www.ankr.com/staking/defi/?assets=aAVAXc)
+* [ankrAVAX (ex-aAVAXc)](https://www.ankr.com/staking/defi/?assets=ankrAVAX)
 
 You can also use your Liquid Staking tokens to:
 
@@ -65,3 +59,7 @@ You can also use your Liquid Staking tokens to:
 ### Can I get staking metrics for my integration?
 
 Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liquid Staking Metrics](https://www.ankr.com/docs/staking/for-integrators/restful-api/staking-metrics/).
+
+### Why do I get less ankrAVAX (ex-aAVAXc) for my 1 AVAX?
+
+ankrAVAX (ex-aAVAXc) only changes in value, which is why the amount of ankrAVAX you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankravax / (total_staked_avax + total_rewards_for_staked_avax - total_unstaked_ankravax)`.

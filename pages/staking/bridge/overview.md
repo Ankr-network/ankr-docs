@@ -17,10 +17,14 @@ Currently, Ankr Bridge supports the following native Ankr Liquid Tokens and allo
   * Ethereum–Polygon–Ethereum
   * Ethereum–BNB Smart Chain–Ethereum
   * Polygon–BNB Smart Chain–Polygon
+* ankrMATIC
+  * Ethereum–Polygon–Ethereum
 * aETHb
   * Ethereum–BNB Smart Chain–Ethereum
+* ankrETH
+  * Ethereum–BNB Smart Chain–Ethereum
 
-We're planning to add support for BNB, FTM, AVAX soon. 
+We're planning to add support for BNB, FTM, and AVAX soon. 
 
 ## Audit details
 

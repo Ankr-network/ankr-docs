@@ -6,7 +6,7 @@ TWAP is a compound price that is calculated, using data from a specific period o
 ## Smart contracts
 Smart contracts involved in PancakeSwap oracle are: 
 * [Sliding window oracle](https://bscscan.com/address/0x20861695b71cde434948bba25655704ced64c14f) — a sliding window oracle that uses observations collected over a window to provide moving price averages in the past.
-* [aBNBc oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06) — an oracle that gets information from the sliding window oracle and provides the user ankrBNB (ex-aBNBc) price in BUSD.
+* [ankrBNB oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06) — an oracle that gets information from the sliding window oracle and provides the user ankrBNB (ex-aBNBc) price in BUSD.
 
 ## Workflow
 To explain how the oracle works, let's show what happens when we request price of ankrBNB (ex-aBNBc) in USD (BUSD).
@@ -29,19 +29,19 @@ Each `periodSize` the price of a pair of tokens is updated and stored in an arra
   * `price1Cumulative` — cumulative price of the other asset in a pair.
 
 ### Actual workflow
-To get the ankrBNB–BUSD TWAP price, the user calls the `peek()` method of aBNBc oracle. The aBNBc oracle runs the following logic inside:
+To get the ankrBNB–BUSD TWAP price, the user calls the `peek()` method of ankrBNB oracle. The ankrBNB oracle runs the following logic inside:
 1. Call the sliding window oracle to first obtain the ankrBNB–BNB price. The sliding window oracle calculates the price:
    1. Obtain the current `timestamp`, `price0Cumulative`, and `price1Cumulative` from PancakeSwap, and the oldest observation from the array of stored observations. In our example, it's the one stored 6 hours ago. 
    2. Calculate the TWAP price for the ankrBNB–BNB:
       1. For token0 in the pair, the TWAP price = (currentPrice0Cumulative - oldestPrice0Cumulative) / (currentTimestamp - oldestTimestamp).
       2. For token1 the pair, the TWAP price = (currentPrice1Cumulative - oldestPrice1Cumulative) / (currentTimestamp - oldestTimestamp).
-   3. Return the current ankrBNB–BNB price to aBNBc oracle.
+   3. Return the current ankrBNB–BNB price to ankrBNB oracle.
 2. Call the sliding window oracle to second obtain the BNB-BUSD price. The sliding window oracle calculates the price:
    1. Obtain the current `timestamp`, `price0Cumulative`, and `price1Cumulative` from PancakeSwap, and the oldest observation from the array of stored observations. In our example, it's the one stored 6 hours ago. 
    2. Calculate the TWAP price for the BNB–BUSD:
       1. For token0 in the pair, the TWAP price = (currentPrice0Cumulative - oldestPrice0Cumulative) / (currentTimestamp - oldestTimestamp).
       2. For token1 the pair, the TWAP price = (currentPrice1Cumulative - oldestPrice1Cumulative) / (currentTimestamp - oldestTimestamp).
-   3. Return the current BNB–BUSD price to aBNBc oracle.
+   3. Return the current BNB–BUSD price to ankrBNB oracle.
 3. Return the current ankrBNB–BUSD price to the user.
 
 If you need more details on cumulative prices and TWAP oracles, refer to the [Uniswap oracles documentation](https://docs.uniswap.org/protocol/V2/concepts/core-concepts/oracles).
@@ -59,7 +59,7 @@ The function returns two parameters:
 * query status (bool) — status of the attempt to get the price (success/failure).
 
 #### Smart contracts
-* [Mainnet aBNBc Oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06#readProxyContract)
+* [Mainnet ankrBNB Oracle](https://bscscan.com/address/0xB1aD00B8BB49FB3534120b43f1FEACeAf584AE06#readProxyContract)
 
 #### Examples
 

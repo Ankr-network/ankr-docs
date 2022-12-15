@@ -15,6 +15,11 @@ Liquid Staking SDK supports multiple networks and allows you to interact with:
 * Fantom blockchain: aFTMb/ankrFTM tokens and Fantom Liquid Staking contracts.
 * Ethereum and Polygon blockchains: aMATICb/ankrMATIC tokens, and Polygon Liquid Staking contracts.
 
+<Callout type="info">
+-b tokens are not actively supported anymore, and we're discontinuing their support in the SDK. 
+We recommend you [switch any -b tokens for ankr- tokens](https://www.ankr.com/staking/switch/?from=aETHb) and disable any -b-token-related methods you adopted from our SDK.  
+</Callout>
+
 ## Install and integrate
 To integrate with the SDK, install the [SDK npm package](https://www.npmjs.com/package/@ankr.com/staking-sdk):
 
@@ -33,7 +38,7 @@ To interact with the Testsnet smart contracts, use the `REACT_APP_API_ENV=stagin
 </Callout>
 
 ## Usage examples
-Here are some reference examples on how to user Liquid Stakin SDK in your project.
+Here are some reference examples on how to user Liquid Staking SDK in your project.
 
 ### Live sample
 Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-sdk-e1jvvi) as specific live example of interacting with `@ankr.com/staking-sdk`.<br /> 
@@ -74,7 +79,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    const history = await sdk.getTxEventsHistory();
    ```
 ### Binance   
-1. Stake aBNBc token:
+1. Stake ankrBNB token:
    ```
    import { BinanceSDK } from '@ankr.com/staking-sdk';
    

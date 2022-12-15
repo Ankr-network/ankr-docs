@@ -32,23 +32,19 @@ Currently, there is no unbonding period, as there is no unstaking for ETH. This 
 
 ### How do I receive rewards?
 
-aETHb is a rebasing token. When holding aETHb, your balance will increase in proportion to your ETH staking rewards. A rebase runs daily, and rewards occur each time this runs. So each day, you will see the quantity of your aETHb increase by a small amount. ankrETH is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.  
+aETHb is not actively supported anymore. We recommend you [switch your aETHb for ankrETH (ex-aETHc)](https://www.ankr.com/staking/switch/?from=aETHb).   
 
   
 
-Mind that to pull out your rewards, you’ll need to sell aETHb/aETHc on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
+ankrETH (ex-aETHc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrETH (ex-aETHc) to 1 ETH grows because of reward accumulation. Mind that to pull out your rewards, you’ll need to sell ankrETH (ex-aETHc) on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
 
 ### How soon after staking will I begin to receive rewards?
 
-aETHb will increase with every rebase; rebasing occurs daily. aETHc will increase in value only, daily. aETHc rewards are built into the token. Effectively, your rewards accumulate daily as aETHc grows in value to ETH.
+ankrETH (ex-aETHc) will increase in value only, daily. arnkETH rewards are built into the token. Effectively, your rewards accumulate daily as ankrETH grows in value to ETH.
 
 ### Does Ankr charge for the service?
 
-ANKR does not charge any service fees for ETH Liquid Staking. However, validators charge a fee deducted from your rewards (Ankr’s validator node charges 10%), representing an indirect cost for liquid staking token holders. Ankr's income comes from running one of the several validator nodes that will be used to stake ETH.
-
-### What determines the amount of reward I receive each rebase of aETHb or appreciation of aETHc?
-
-Staking rewards depend mostly on the voting power of the validator node that your stake is delegated to and how much ETH is validated on the network. The less ETH is staked, the higher the rewards to incentivize more ETH to come online, and vice versa. Ankr aims to spread delegations to only the most trustworthy and reliable nodes to increase staking rewards. View the [current amount of staked ETH](https://launchpad.ethereum.org/).
+Ankr does not charge any service fees for ETH Liquid Staking. However, validators charge a fee deducted from your rewards (Ankr’s validator node charges 10%), representing an indirect cost for liquid staking token holders. Ankr's income comes from running one of the several validator nodes that will be used to stake ETH.
 
 ### Is there any risk from staking, like slashing or any penalties?
 
@@ -58,6 +54,16 @@ The only risk for stakers is missing out on rewards during any time a validator 
 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
-* [aETHb](https://www.ankr.com/staking/defi/?assets=aETHb)
+* [ankrETH (ex-aETHc)](https://www.ankr.com/staking/defi/?assets=ankrETH)
 
-* [aETHc](https://www.ankr.com/staking/defi/?assets=aETHc)
+You can also use your Liquid Staking tokens to:
+
+* [Add liquidity on DEXs](https://www.ankr.com/docs/staking/defi/liquidity-pools/) and earn from commissions taken when users swap tokens, using the liquidity pool you're a part of.
+
+* [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farming/) and earn additional rewards in the form of liquidity pool tokens and further farm them.
+
+* [Put your tokens in a vault](https://www.ankr.com/docs/staking/defi/vaults/) and automatically earn additional rewards in the form of one of both assets from the pair.
+
+### Why do I get less ankrETH (ex-aETHc) for my 1 ETH?
+
+ankrETH (ex-aETHc) only changes in value, which is why the amount of ankrETH you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankreth / (total_staked_eth + total_rewards_for_staked_eth - total_unstaked_ankreth)`.

@@ -29,15 +29,24 @@ MATIC crosschain staking happens on Polygon. You may have to stake/unstake your 
 If you staked on Ethereum, you’ll receive your MATIC and rewards after the unbonding period of 80+ epochs; typically, it takes 3–4 days.  
 
   
+
 If you staked on Polygon via the crosschain staking pool, you’ll receive your MATIC and rewards instantly.
 
 ### How do I receive rewards?
 
-ankrMATIC (ex-aMATICc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.
+aMATICb is not actively supported anymore. We recommend you [switch your aMATICb for ankrMATIC (ex-aMATICc)](https://www.ankr.com/staking/switch/?from=aMATICb).   
+
+  
+
+ankrMATIC (ex-aMATICc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrAVAX to 1 AVAX grows because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
-ankrMATIC rewards are built into the token. Effectively, your rewards accumulate daily as ankrMATIC grows in value to MATIC.
+aMATICb rewards arrive in your wallet with every rebase. Rebasing occurs daily.  
+
+  
+
+aMATICc rewards are built into the token. Effectively, your rewards accumulate daily as aMATICc grows in value to MATIC.
 
 ### Does Ankr charge for the service?
 
@@ -55,7 +64,7 @@ The only risk for stakers is missing out on rewards during any time a validator 
 
 You can trade them in the listed liquidity pools on ANKR DeFi:
 
-* [ankrMATIC](https://www.ankr.com/staking/defi/?assets=ankrMATIC)
+* [ankrMATIC (ex-aMATICc)](https://www.ankr.com/staking/defi/?assets=ankrMATIC)
 
 You can also use your Liquid Staking tokens to:
 
@@ -64,3 +73,7 @@ You can also use your Liquid Staking tokens to:
 * [Yield farm](https://www.ankr.com/docs/staking/defi/yield-farming/) and earn additional rewards in the form of liquidity pool tokens and further farm them.
 
 * [Put your tokens in a vault](https://www.ankr.com/docs/staking/defi/vaults/) and automatically earn additional rewards in the form of one of both assets from the pair.
+
+### Why do I get less ankrMATIC (ex-aMATICc) for my 1 MATIC?
+
+ ankrMATIC (ex-aMATICc) only changes in value, which is why the amount of ankrMATIC you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankrmatic / (total_staked_matic + total_rewards_for_staked_matic - total_unstaked_ankrmatic)`.

@@ -2,7 +2,7 @@ import { Callout } from "components";
 
 # Switching ankrETH on BNB Chain
 
-We are decommissioning an [older version of the ankrETH](https://bscscan.com/token/0x973616ff3b9d8f88411c5b4e6f928ee541e4d01f) Liquid Staking token on the BNB Chain and switching to a [new aETHc](https://bscscan.com/token/0xe05a08226c49b636acf99c40da8dc6af83ce5bb3) token that is compatible with Ankr Bridge.
+We are decommissioning an [older version of the ankrETH](https://bscscan.com/token/0x973616ff3b9d8f88411c5b4e6f928ee541e4d01f) Liquid Staking token on the BNB Chain and switching to a [new ankrETH](https://bscscan.com/token/0xe05a08226c49b636acf99c40da8dc6af83ce5bb3) token that is compatible with Ankr Bridge.
 
 The reason is Binance stopped supporting an older ETH bridged version and part of our users got their older ankrETH locked because of that.
 
