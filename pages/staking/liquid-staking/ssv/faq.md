@@ -12,7 +12,7 @@ asETHc is a reward-bearing token, meaning its quantity stays the same from the m
 
   
 
-Mind that to pull out your rewards, you’ll need to sell ankrETH, for example, on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
+Mind that to pull out your rewards, you’ll need to sell aETHc, for example, on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
 
 ### How long does it take to unstake my ETH?
 
