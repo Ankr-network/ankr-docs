@@ -22,7 +22,7 @@ Stakes the `msg.value` of FTM and claims ankrFTM for it.
 
 #### `burnCerts(amount)`
  
-Burns aFTMc and gets FTM for the burned ankrFTM.
+Burns ankrFTM and gets FTM for the burned ankrFTM.
 
 ##### Parameters 
 

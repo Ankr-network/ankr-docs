@@ -17,12 +17,11 @@ The user must also count in the gas fees for outgoing transactions.
    That causes Ankr Switch to call the `approve()` function that permits the involved smart contracts to spend the specified amount of the user's tokens.
 6. The `approve trasaction` remains in the pending state until it's confirmed on the network, which enables the **Switch** button for the user.  
 7. The user clicks **Switch** to switch the tokens and clicks **Confirm** in their wallet.
-   That causes Ankr Switch to call the `lockShares(shares)` when switching ankrETH to aETHb, or `unlockShares()` when switching aETHb to ankrETH.
+   That causes Ankr Switch to call `unlockShares()` when switching -b tokens for ankr-tokens, for example, aETHb for ankrETH.
 8. Ankr waits until the switching transaction is confirmed on the network and displays a **Success** page.
 9. The user can add the switched token to their wallet by clicking **Add ankrETH to wallet**. Alternatively, the user can click **Go to dashboard** to view their tokens there.
 
 To sum up, the flow in any direction is the same: `approve` (if necessary) -> `lockShares`/`unlockShares`.
 
 ## Additional details
-
--b tokens (e.g., aETHb) can be burned or minted, and -c tokens (e.g., aETHс) can be locked or unlocked.
+ankr- tokens (e.g., ankrETH) can be locked or unlocked.
