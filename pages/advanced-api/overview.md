@@ -21,7 +21,7 @@ Currently, Advanced APIs work with the following EVM-compatible chains:
 
   * Ethereum
   * Fantom
-  * Binance Smart Chain
+  * BNB Smart Chain
   * Polygon 
   * Avalanche
   * Arbitrum 
@@ -55,6 +55,7 @@ Check out the latest Advanced APIs for various Web3 scenarios:
   * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
   * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by wallet address.
   * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
 
 ### Token API
@@ -76,22 +77,23 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 > Our PAYG pricing model:  
 > 0.10 USD = 1M API Credits  
 
-| API Collection | Method                       | API Credits | USD/request |
-|----------------|------------------------------|-------------|-------------|
-| NFT API        | `ankr_getNFTsByOwner`        | 700         | $0.00007    |
-|                | `ankr_getNFTMetadata`        | 700         | $0.00007    |
-|                | `ankr_getNFTHolders`         | 700         | $0.00007    |
-| Query API      | `ankr_getBlocks`             | 700         | $0.00007    |
-|                | `ankr_getLogs`               | 700         | $0.00007    |
-|                | `ankr_getTransactionsByHash` | 700         | $0.00007    |
-|                | `ankr_getInteractions`       | 700         | $0.00007    |
-| Token API      | `ankr_getAccountBalance`     | 700         | $0.00007    |
-|                | `ankr_getCurrencies`         | 700         | $0.00007    |
-|                | `ankr_getTokenPrice`         | 700         | $0.00007    |
-|                | `ankr_getTokenHolders`       | 700         | $0.00007    |
-|                | `ankr_getTokenHoldersCount`  | 700         | $0.00007    |
-|                | `ankr_getTransfersByAddress` | 700         | $0.00007    |
-|                | `ankr_getTokenPriceHistory`  | 700         | $0.00007    |
+| API Collection | Method                          | API Credits | USD/request |
+|----------------|---------------------------------|-------------|-------------|
+| NFT API        | `ankr_getNFTsByOwner`           | 700         | $0.00007    |
+|                | `ankr_getNFTMetadata`           | 700         | $0.00007    |
+|                | `ankr_getNFTHolders`            | 700         | $0.00007    |
+| Query API      | `ankr_getBlocks`                | 700         | $0.00007    |
+|                | `ankr_getLogs`                  | 700         | $0.00007    |
+|                | `ankr_getTransactionsByHash`    | 700         | $0.00007    |
+|                | `ankr_getTransactionsByAddress` | 700         | $0.00007    |
+|                | `ankr_getInteractions`          | 700         | $0.00007    |
+| Token API      | `ankr_getAccountBalance`        | 700         | $0.00007    |
+|                | `ankr_getCurrencies`            | 700         | $0.00007    |
+|                | `ankr_getTokenPrice`            | 700         | $0.00007    |
+|                | `ankr_getTokenHolders`          | 700         | $0.00007    |
+|                | `ankr_getTokenHoldersCount`     | 700         | $0.00007    |
+|                | `ankr_getTransfersByAddress`    | 700         | $0.00007    |
+|                | `ankr_getTokenPriceHistory`     | 700         | $0.00007    |
 
 ## Support and Developer Community
 
