@@ -18,6 +18,7 @@ _Query API_ consists of the following methods to request info on the ranges of b
   * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
   * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by wallet address.
   * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
 
 ## `ankr_getBlocks`
@@ -835,6 +836,369 @@ Code: 200 OK
 
 ---
 
+## `ankr_getTransactionsByAddress`
+
+> **Retrieves transactions by wallet address.**
+
+Retrieves the details of transactions specified by wallet address.
+
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
+
+* `id` (int64; required): a request ID (example: 1).
+* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+* `method` (string; required): a method used for the request.
+* `params` (object): the data object containing request body parameters:
+
+    * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+    * `walletAddress` (string; required): a HEX wallet address to look for the transactions info.
+    * `includeLogs` (boolean): set to `true` to include logs, or to `false` to exclude them.
+    * `orderAsc` (boolean): choose data order, either ascending (if `true`) or descending (if `false`).
+    * `pageSize` (int32): a number of result pages you'd like to get.
+    * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
+    * `timestamp` (uint64): a timestamp of the transaction.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "ankr_getTransactionsByAddress",
+    "params": {
+        "blockchain": "string",
+        "includeLogs": true,
+        "orderAsc": true,
+        "pageSize": 0,
+        "pageToken": "string",
+        "timestamp": 0,
+        "walletAddress": "string"
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
+
+### Response
+
+Returns the transactions specified by wallet address.
+
+### Code Examples
+
+#### Request
+
+```shell
+curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+			"jsonrpc": "2.0",
+			"method": "ankr_getTransactionsByAddress",
+			"params": {
+			    "blockchain": "eth",
+				"walletAddress": "0xfa9019df60d3c710d7d583b2d69e18d412257617"
+			},
+			"id": "1"
+		}
+		'
+```
+
+#### Response
+
+Code: 200 OK
+
+<Tabs
+  items={[
+    "Schema",
+    "Example",
+  ]}
+>
+  <Tab>
+
+```json
+{
+    "error": {},
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "nextPageToken": "string",
+        "transactions": [
+            {
+                "blockHash": "string",
+                "blockHeight": 0,
+                "blockchainName": "string",
+                "details": {
+                    "ethTransaction": {
+                        "gasLimit": 0,
+                        "gasPrice": "string",
+                        "gasPriceSymbol": "string",
+                        "gasUsed": 0,
+                        "input": "string",
+                        "method": {
+                            "id": "string",
+                            "inputs": [
+                                {
+                                    "name": "string",
+                                    "size": 0,
+                                    "type": "string",
+                                    "valueDecoded": "string"
+                                }
+                            ],
+                            "name": "string",
+                            "signature": "string",
+                            "string": "string",
+                            "verified": true
+                        },
+                        "nonce": "string",
+                        "success": true,
+                        "transactionFee": "string",
+                        "transactionFeeSymbol": "string"
+                    }
+                },
+                "fromAddress": "string",
+                "fromAddressName": "string",
+                "method": {
+                    "id": "string",
+                    "inputs": [
+                        {
+                            "name": "string",
+                            "size": 0,
+                            "type": "string",
+                            "valueDecoded": "string"
+                        }
+                    ],
+                    "name": "string",
+                    "signature": "string",
+                    "string": "string",
+                    "verified": true
+                },
+                "methodName": "string",
+                "nftTransactions": [
+                    {
+                        "blockHash": "string",
+                        "blockHeight": 0,
+                        "blockchainName": "string",
+                        "collectionName": "string",
+                        "collectionSymbol": "string",
+                        "contractAddress": "string",
+                        "fromAddress": "string",
+                        "fromAddressName": "string",
+                        "imageUrl": "string",
+                        "name": "string",
+                        "success": true,
+                        "timestamp": "string",
+                        "toAddress": "string",
+                        "toAddressName": "string",
+                        "tokenId": "string",
+                        "transactionHash": "string",
+                        "transactionIndex": 0,
+                        "type": "string",
+                        "value": "string"
+                    }
+                ],
+                "timestamp": "string",
+                "toAddress": "string",
+                "toAddressName": "string",
+                "tokenTransfers": [
+                    {
+                        "actionDescription": "string",
+                        "blockHash": "string",
+                        "blockHeight": 0,
+                        "blockchainName": "string",
+                        "contractAddress": "string",
+                        "fromAddress": "string",
+                        "fromAddressName": "string",
+                        "isLog": true,
+                        "logIndex": 0,
+                        "success": true,
+                        "thumbnail": "string",
+                        "timestamp": "string",
+                        "toAddress": "string",
+                        "toAddressName": "string",
+                        "transactionHash": "string",
+                        "transactionIndex": 0,
+                        "value": "string",
+                        "valueDecimals": 0,
+                        "valueHumanReadable": "string",
+                        "valueSymbol": "string"
+                    }
+                ],
+                "transactionHash": "string",
+                "transactionIndex": 0,
+                "value": "string",
+                "valueDecimals": 0,
+                "valueHumanReadable": "string",
+                "valueSymbol": "string"
+            }
+        ]
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "1",
+    "result": {
+        "transactions": [
+            {
+                "blockNumber": "15879948",
+                "from": "0x56eddb7aa87536c09ccc2793473599fd21a8b17f",
+                "to": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "transactionIndex": "31",
+                "blockHash": "0x02a617f4b44cd2a12a4120f2d445c42b3c8ca0b20afbc4b8524a5b4843fdef5a",
+                "value": "1167496600000000000",
+                "contractAddress": "",
+                "transactionHash": "0x973752bd596affaf05eb270cd26f408927604356e0d007677ebd29d8eae4b14b",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1667363279"
+            },
+            {
+                "blockNumber": "15876788",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                "transactionIndex": "142",
+                "blockHash": "0x28e64fa49c9fc78d2055cd27e1c9cdaf1dfbfe90809ad6e05ea361d6e106f663",
+                "value": "0",
+                "contractAddress": "",
+                "transactionHash": "0x92ea84585a1d6f7ad17cf3b11d7b359f503a6aefdd31396012c7427ba6f702b9",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1667325131"
+            },
+            {
+                "blockNumber": "15530564",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                "transactionIndex": "91",
+                "blockHash": "0xf7648716c8d48e1318d0af22c02a06e742cbd3e38ace716976175855397b2020",
+                "value": "0",
+                "contractAddress": "",
+                "transactionHash": "0x39a861a609c257d97e3c9d3373ba2f55de24507a3cbe57ea9f69d1c8d93515d2",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1663123639"
+            },
+            {
+                "blockNumber": "15527948",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                "transactionIndex": "9",
+                "blockHash": "0x6d11ec4e37eccaea1cbd293137e5c3a94dfb8e69fb0cca43c892c39cfc2a473c",
+                "value": "0",
+                "contractAddress": "",
+                "transactionHash": "0x53b667a9a95084054af816a9e107d17451797d094d8f8e4aafb71a0b5efa0810",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1663086567"
+            },
+            {
+                "blockNumber": "15521918",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                "transactionIndex": "1",
+                "blockHash": "0x0c374e26c3ba2c6a9063e95166a65ab5d7a4779f7db670948631961065f74fb4",
+                "value": "0",
+                "contractAddress": "",
+                "transactionHash": "0x4f624e1041f963918d443b8bb093bd05580e7f46a0ce04cd8864b83766c55cdd",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1663000997"
+            },
+            {
+                "blockNumber": "14809367",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0xd52186e62b51f392bd95e51d7e0ad51d747dde48",
+                "transactionIndex": "104",
+                "blockHash": "0x5c1d93ddc04aaa61db9036daf6a2948db0f53ef34b4259cfc6d48bd15de760a6",
+                "value": "1000000000000000000",
+                "contractAddress": "",
+                "transactionHash": "0x50ac0e7b77a4f7b472beb1eede695cd8b2d66f9a953b963519cce94cc850ba56",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1653025465"
+            },
+            {
+                "blockNumber": "14742721",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0x932203907848b2d6b178ceb5c2d527b3861a6864",
+                "transactionIndex": "48",
+                "blockHash": "0x3a61c51cd83a74f1dfd8caf6da802876842fb5515ec841c7300f5fff6bff5108",
+                "value": "100000000000000000",
+                "contractAddress": "",
+                "transactionHash": "0xf3aff9da2821b71d09202d7cd213c40bdc2344a0dc6b06132d69165fd5ac1a8d",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1652103407"
+            },
+            {
+                "blockNumber": "14742611",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                "transactionIndex": "115",
+                "blockHash": "0xdcbabfa5e9bede1f63e97f32f4385f2aea2bbd5417841840e7354fa1751b697c",
+                "value": "0",
+                "contractAddress": "",
+                "transactionHash": "0xf36f3a335f11a14ef55169cf59c1d3347c184aa4ba18934f4ccd89ac866ae1b2",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1652101884"
+            },
+            {
+                "blockNumber": "14479886",
+                "from": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                "transactionIndex": "40",
+                "blockHash": "0xf810bd49b11c060dc933bf5ee85a9f0348f7622a49356f0b23ee7db3b53fd52f",
+                "value": "0",
+                "contractAddress": "",
+                "transactionHash": "0x06c490e633cb19342dae167d5771235820b0f20169d0e629de573918a4a2867d",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1648540298"
+            },
+            {
+                "blockNumber": "14367904",
+                "from": "0x19d4e963b6dc93d361f51696e4e2ba36df6e4698",
+                "to": "0xfa9019df60d3c710d7d583b2d69e18d412257617",
+                "transactionIndex": "188",
+                "blockHash": "0x07521bc9656c047d035098d43d8035b3f863f6a13eede1fb5259d0be7dd3abd7",
+                "value": "5650000000000000000",
+                "contractAddress": "",
+                "transactionHash": "0x25e1f2d66de9277092538a5c9bb1b14f3d697052a5ec6914ee709ccb47b4489b",
+                "status": "success",
+                "blockchain": "eth",
+                "timestamp": "1647034106"
+            }
+        ],
+        "nextPageToken": "RVJXVARv5mvpLwPC6dwjxak5WAzJvXh6pojAkRf2DcTXZEDnEwXSmikc6pDoCR8R8x4kdUA4e74Ta3Qe46Bv9jM"
+    }
+}
+```
+  </Tab>
+</Tabs>
+
+
+
+---
+
 ## `ankr_getInteractions`
 
 > **Retrieves blockchains interacted with a particular address.**
@@ -890,7 +1254,7 @@ Returns the list of blockchains interacted with the address specified in request
 #### Request
 
 ```shell
-curl --location -g --request POST '{{URL}}' \
+curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 			"jsonrpc": "2.0",
