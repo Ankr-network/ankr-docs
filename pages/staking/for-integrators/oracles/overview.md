@@ -8,4 +8,4 @@ This section of Ankr Docs helps you understand how oracles work, what actual dat
 ## Available oracles
 
 * [PancakeSwap price oracle](/staking/for-integrators/oracles/pancakeswap-oracle/)
-* [Ellipsis redemption price oracle](/staking/for-integrators/oracles/ellipsis-redemption-price-oracle/)
+* [Ellipsis redemption price oracle](/staking/for-integrators/oracles/redemption-price-oracle/)
