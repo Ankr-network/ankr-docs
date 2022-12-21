@@ -891,7 +891,6 @@ Official quick links: [Website](https://ethereum.org/en/), [Docs](https://ethere
   * Testnet:
     * Goerli (`HTTPS` and `WSS`)
     * Rinkeby (`HTTPS` and `WSS`)
-    * Ropsten (`HTTPS` and `WSS`)
 </div>
 
 ### Add networks to MetaMask
@@ -945,19 +944,6 @@ To add Ethereum Rinkeby Testnet, follow these steps:
       * **Block explorer URL**: `https://rinkeby.etherscan.io/`.
 
 Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Ethereum Rinkeby Testnet.
-
-To add Ethereum Ropsten Testnet, follow these steps:
-
-  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
-  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
-
-      * **Network name**: `Ethereum Ropsten Testnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/eth_ropsten/`.
-      * **Chain ID**: `3`.
-      * **Currency symbol**: `ETH`.
-      * **Block explorer URL**: `https://ropsten.etherscan.io/`.
-
-Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Ethereum Ropsten Testnet.
 
 ### API methods
 
