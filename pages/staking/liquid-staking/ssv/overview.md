@@ -2,7 +2,7 @@ import { Callout } from "components";
 
 # SSV Trustless Liquid Staking
 
-## What is Polygon Liquid Staking?
+## What is SSV Trustless Liquid Staking?
 Trusting an intermediary with your blockchain-based assets defeats the purpose of blockchain.
 Current Liquid Staking options all require trust and permission at some part of the process.
 The reason that a lot of the staking solutions aren’t fully trustless is that they use custodial validators rather than non-custodial ones. 
