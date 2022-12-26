@@ -38,7 +38,7 @@ aMATICb is not actively supported anymore. We recommend you [switch your aMATICb
 
   
 
-ankrMATIC (ex-aMATICc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrAVAX to 1 AVAX grows because of reward accumulation.
+ankrMATIC (ex-aMATICc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value in relation to MATIC, so the redemption price of 1 ankrMATIC will grow over time because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 

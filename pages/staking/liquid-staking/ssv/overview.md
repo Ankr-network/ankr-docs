@@ -32,7 +32,7 @@ Furthermore, upon successful implementation, this update will help Ankr adapt to
 ## SSV Reward-Bearing Staked ETH (asETHc)
 asETHc is a new reward-bearing token from SSV Trustless Liquid Staking. It enables instant liquidity for staked ETH. asETHc represents the staked ETH plus all future staking rewards.
 
-To reflect the accumulated rewards, the ratio of asETHc to ETH changes over time, meaning that **1 asETHc gradually becomes worth increasingly more than 1 ETH**.
+To reflect the accumulated rewards, the redemption price of asETHc in ETH changes over time, meaning that **1 asETHc gradually becomes worth increasingly more than 1 ETH**.
 
 The amount of asETHc you hold will not increase. Instead, the price of asETHc is expected to grow in ETH value, as your asETHc contains your principal stake plus earned staking rewards.
 
