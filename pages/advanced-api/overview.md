@@ -94,7 +94,8 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 |                | `ankr_getTokenHolders`          | 700         | $0.00007    |
 |                | `ankr_getTokenHoldersCount`     | 700         | $0.00007    |
 |                | `ankr_getTransfersByAddress`    | 700         | $0.00007    |
-|                | `ankr_getTokenPriceHistory`     | 700         | $0.00007    |
+
+[//]: # (|                | `ankr_getTokenPriceHistory`     | 700         | $0.00007    |)
 
 ## Support and Developer Community
 
