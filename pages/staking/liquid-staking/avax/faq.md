@@ -24,7 +24,7 @@ aAVAXb is not actively supported anymore. We recommend you [switch your aAVAXb f
 
   
 
-ankrAVAX (ex-aAVAXc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrAVAX to 1 AVAX grows because of reward accumulation.
+ankrAVAX (ex-aAVAXc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value in relation to AVAX, so the redemption price of 1 ankrAVAX will grow over time because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 

@@ -8,9 +8,7 @@ ANKR does not charge any service fees for SSV Trustless Liquid Staking. However,
 
 ### How do I receive rewards?
 
-asETHc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio grows because of reward accumulation.  
-
-  
+asETHc is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value in relation to ETH, so the redemption price of 1 asETHc will grow over time because of reward accumulation.  
 
 Mind that to pull out your rewards, you’ll need to sell asETHc, for example, on Ankr DeFi, as Ethereum hasn’t implemented the unstaking functionality yet.
 

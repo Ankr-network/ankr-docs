@@ -10,7 +10,7 @@ Ankr principles for the staking are:
 
 * Use a dynamic exchange ratio for ankrMATIC to MATIC.
 
-* Recalculate ankrMATIC/MATIC ratio daily and update it in the ankrMATIC smart contract.
+* Recalculate ankrMATIC/MATIC exchange ratio daily and update it in the ankrMATIC smart contract.
 
 The following section explains staking requirements, fees, rewards, validators, smart contracts and function calls to interact with these smart contracts.
 
@@ -99,7 +99,7 @@ The Ankr backend monitors blockchain events coming from the `PolygonPool` smart 
 
 ## Daily exchange ratio updates
 
-Ratio updates can be obtained by calling the [`ankrMATIC::ratio()`](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c#readProxyContract#F10) read function.
+The ratio updates can be obtained by calling the [`ankrMATIC::ratio()`](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c#readProxyContract#F10) read function.
 
 ## Unstaking workflow
 

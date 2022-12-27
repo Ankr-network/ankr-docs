@@ -28,7 +28,7 @@ aBNBb is not actively supported anymore. If you have any aBNBb in your wallet, y
 
   
 
-ankrBNB (ex-aBNBc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrBNB to 1 BNB grows because of reward accumulation.
+ankrBNB (ex-aBNBc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value in relation to BNB, so the redemption price of 1 ankrBNB will grow over time because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 

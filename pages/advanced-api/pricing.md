@@ -44,4 +44,5 @@ We charge per method used in request. A method's credit value calculates based o
 | `ankr_getTokenHolders`        | 700         | $0.00007    |
 | `ankr_getTokenHoldersCount`   | 700         | $0.00007    |
 | `ankr_getTransfersByAddress`  | 700         | $0.00007    |
-| `ankr_getTokenPriceHistory`   | 700         | $0.00007    |
+
+[//]: # (| `ankr_getTokenPriceHistory`   | 700         | $0.00007    |)

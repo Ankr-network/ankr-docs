@@ -26,7 +26,7 @@ aFTMb is not actively supported anymore. We recommend you [switch your aFTMb for
 
   
 
-ankrFTM (ex-aFTMc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value, as the redemption ratio of 1 ankrFTM (ex-aFTMc) to 1 FTM grows because of reward accumulation.
+ankrFTM (ex-aFTMc) is a reward-bearing token, meaning its quantity stays the same from the moment of staking. Instead, it appreciates in value in relation to FTM, so the redemption price of 1 ankrFTM will grow over time because of reward accumulation.
 
 ### How soon after staking will I begin to receive rewards?
 
