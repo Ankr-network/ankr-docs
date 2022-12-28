@@ -21,7 +21,8 @@ _Token API_ consists of the following methods to request token-related data acro
   * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
   * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
   * [`ankr_getTransfersByAddress`](/advanced-api/token-methods/#ankr_gettransfersbyaddress) — retrieves the transfers info by wallet address.
-  * [`ankr_getTokenPriceHistory`](/advanced-api/token-methods/#ankr_gettokenpricehistory) — retrieves the token's price history on the chain.
+
+[//]: # (  * [`ankr_getTokenPriceHistory`]&#40;/advanced-api/token-methods/#ankr_gettokenpricehistory&#41; — retrieves the token's price history on the chain.)
 
 ## `ankr_getAccountBalance`
 
@@ -1457,167 +1458,311 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 ---
 
-## `ankr_getTokenPriceHistory`
+[//]: # ()
+[//]: # (## `ankr_getTokenPriceHistory`)
 
-> **Retrieves the token's price history on the chain.**
+[//]: # ()
+[//]: # (> **Retrieves the token's price history on the chain.**)
 
-Retrieves the particular token's price history on the chain specified. 
+[//]: # ()
+[//]: # (Retrieves the particular token's price history on the chain specified. )
 
-### Request
+[//]: # ()
+[//]: # (### Request)
 
-Build your request using the parameters below.
+[//]: # ()
+[//]: # (Build your request using the parameters below.)
 
-#### Parameters
+[//]: # ()
+[//]: # (#### Parameters)
 
-* `id` (int64; required): a request ID (example: 1).
-* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-* `method` (string; required): a method used for the request.
-* `params` (object): the data object containing request body parameters:
+[//]: # ()
+[//]: # (* `id` &#40;int64; required&#41;: a request ID &#40;example: 1&#41;.)
 
-  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
-  * `contractAddress` (string; required): an address of the token to search for a price history.
-  * `fromTimestamp` (uint64; required): only a single timestamp (either `fromTimestamp` or `toTimestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `fromTimestamp` corresponds to the time range starting from the timestamp specified in seconds (included in the range) and moving forward in time by the number of `interval`s (see the `interval` parameter).
-  * `toTimestamp` (uint64; required): only a single timestamp (either `fromTimestamp` or `toTimestamp`) MUST be specified for the request to be successful — indicating both parameters leads to an error. `toTimestamp` corresponds to the time range starting from the timestamp specified in seconds (included in the range) and moving backward in time by the number of `interval`s (see the `interval` parameter).
-  * `interval` (uint64): a duration (in seconds) of a single time period you'd like to arrange a price history by. In other words, you receive a single history price value per the interval you define. Default value: 24 hours. Max value: 365 days.
-  * `limit` (uint64): the maximum number of history prices to receive. Default value: `100`. Max value: `1000`.
+[//]: # (* `jsonrpc` &#40;string; required&#41;: a JSON RPC spec used &#40;example: 2.0&#41;. )
 
-<Tabs
-  items={[
-    "Body",
-    "Headers",
-  ]}
->
-  <Tab>
+[//]: # (* `method` &#40;string; required&#41;: a method used for the request.)
 
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ankr_getTokenPriceHistory",
-  "params": {
-    "blockchain": "string",
-    "contractAddress": "string",
-    "fromTimestamp": 0,
-    "interval": 0,
-    "limit": 0,
-    "toTimestamp": 0
-  }
-}
-```
-  </Tab>
-  <Tab>
+[//]: # (* `params` &#40;object&#41;: the data object containing request body parameters:)
 
-```shell
-Content-Type: application/json
-```
-  </Tab>
-</Tabs>
+[//]: # ()
+[//]: # (  * `blockchain` &#40;string; required&#41;: either of the supported chains &#40;`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`&#41;.)
 
-### Response
+[//]: # (  * `contractAddress` &#40;string; required&#41;: an address of the token to search for a price history.)
 
-Returns a price history of a particular token on the chain specified. 
+[//]: # (  * `fromTimestamp` &#40;uint64; required&#41;: only a single timestamp &#40;either `fromTimestamp` or `toTimestamp`&#41; MUST be specified for the request to be successful — indicating both parameters leads to an error. `fromTimestamp` corresponds to the time range starting from the timestamp specified in seconds &#40;included in the range&#41; and moving forward in time by the number of `interval`s &#40;see the `interval` parameter&#41;.)
 
-### Code Examples
+[//]: # (  * `toTimestamp` &#40;uint64; required&#41;: only a single timestamp &#40;either `fromTimestamp` or `toTimestamp`&#41; MUST be specified for the request to be successful — indicating both parameters leads to an error. `toTimestamp` corresponds to the time range starting from the timestamp specified in seconds &#40;included in the range&#41; and moving backward in time by the number of `interval`s &#40;see the `interval` parameter&#41;.)
 
-#### Request
+[//]: # (  * `interval` &#40;uint64&#41;: a duration &#40;in seconds&#41; of a single time period you'd like to arrange a price history by. In other words, you receive a single history price value per the interval you define. Default value: 24 hours. Max value: 365 days.)
 
-```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "ankr_getTokenPriceHistory",
-    "params": {  
-        "blockchain": "eth",
-        "contractAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-        "toTimestamp": 1667195581,
-        "interval": 6000,
-        "limit": 8
-    },
-    "id": 1
-}'
-```
+[//]: # (  * `limit` &#40;uint64&#41;: the maximum number of history prices to receive. Default value: `100`. Max value: `1000`.)
 
-#### Response
+[//]: # ()
+[//]: # (<Tabs)
 
-Code: 200 OK
+[//]: # (  items={[)
 
-<Tabs
-  items={[
-    "Schema",
-    "Example",
-  ]}
->
-  <Tab>
+[//]: # (    "Body",)
 
-```json
-{
-  "error": {},
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "quotes": [
-      {
-        "blockHeight": 0,
-        "timestamp": 0,
-        "usdPrice": "string"
-      }
-    ]
-  }
-}
-```
-  </Tab>
-  <Tab>
+[//]: # (    "Headers",)
 
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "quotes": [
-            {
-                "timestamp": 1667195591,
-                "blockHeight": 15866069,
-                "usdPrice": "1589.886112425257096286"
-            },
-            {
-                "timestamp": 1667189591,
-                "blockHeight": 15865572,
-                "usdPrice": "1583.0151106"
-            },
-            {
-                "timestamp": 1667183591,
-                "blockHeight": 15865079,
-                "usdPrice": "1567.796549909782742262"
-            },
-            {
-                "timestamp": 1667177591,
-                "blockHeight": 15864584,
-                "usdPrice": "1583.132896298479798684"
-            },
-            {
-                "timestamp": 1667171591,
-                "blockHeight": 15864084,
-                "usdPrice": "1584.491716491399097652"
-            },
-            {
-                "timestamp": 1667165591,
-                "blockHeight": 15863589,
-                "usdPrice": "1597.057392438442564297"
-            },
-            {
-                "timestamp": 1667159591,
-                "blockHeight": 15863091,
-                "usdPrice": "1589.308361856425258561"
-            },
-            {
-                "timestamp": 1667153591,
-                "blockHeight": 15862596,
-                "usdPrice": "1583.58262649223497801"
-            }
-        ]
-    }
-}
-```
-  </Tab>
-</Tabs>
+[//]: # (  ]})
+
+[//]: # (>)
+
+[//]: # (  <Tab>)
+
+[//]: # ()
+[//]: # (```json)
+
+[//]: # ({)
+
+[//]: # (  "id": 1,)
+
+[//]: # (  "jsonrpc": "2.0",)
+
+[//]: # (  "method": "ankr_getTokenPriceHistory",)
+
+[//]: # (  "params": {)
+
+[//]: # (    "blockchain": "string",)
+
+[//]: # (    "contractAddress": "string",)
+
+[//]: # (    "fromTimestamp": 0,)
+
+[//]: # (    "interval": 0,)
+
+[//]: # (    "limit": 0,)
+
+[//]: # (    "toTimestamp": 0)
+
+[//]: # (  })
+
+[//]: # (})
+
+[//]: # (```)
+
+[//]: # (  </Tab>)
+
+[//]: # (  <Tab>)
+
+[//]: # ()
+[//]: # (```shell)
+
+[//]: # (Content-Type: application/json)
+
+[//]: # (```)
+
+[//]: # (  </Tab>)
+
+[//]: # (</Tabs>)
+
+[//]: # ()
+[//]: # (### Response)
+
+[//]: # ()
+[//]: # (Returns a price history of a particular token on the chain specified. )
+
+[//]: # ()
+[//]: # (### Code Examples)
+
+[//]: # ()
+[//]: # (#### Request)
+
+[//]: # ()
+[//]: # (```shell)
+
+[//]: # (curl --location --request POST 'https://rpc.ankr.com/multichain' \)
+
+[//]: # (--header 'Content-Type: application/json' \)
+
+[//]: # (--data-raw '{)
+
+[//]: # (    "jsonrpc": "2.0",)
+
+[//]: # (    "method": "ankr_getTokenPriceHistory",)
+
+[//]: # (    "params": {  )
+
+[//]: # (        "blockchain": "eth",)
+
+[//]: # (        "contractAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",)
+
+[//]: # (        "toTimestamp": 1667195581,)
+
+[//]: # (        "interval": 6000,)
+
+[//]: # (        "limit": 8)
+
+[//]: # (    },)
+
+[//]: # (    "id": 1)
+
+[//]: # (}')
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (#### Response)
+
+[//]: # ()
+[//]: # (Code: 200 OK)
+
+[//]: # ()
+[//]: # (<Tabs)
+
+[//]: # (  items={[)
+
+[//]: # (    "Schema",)
+
+[//]: # (    "Example",)
+
+[//]: # (  ]})
+
+[//]: # (>)
+
+[//]: # (  <Tab>)
+
+[//]: # ()
+[//]: # (```json)
+
+[//]: # ({)
+
+[//]: # (  "error": {},)
+
+[//]: # (  "id": 1,)
+
+[//]: # (  "jsonrpc": "2.0",)
+
+[//]: # (  "result": {)
+
+[//]: # (    "quotes": [)
+
+[//]: # (      {)
+
+[//]: # (        "blockHeight": 0,)
+
+[//]: # (        "timestamp": 0,)
+
+[//]: # (        "usdPrice": "string")
+
+[//]: # (      })
+
+[//]: # (    ])
+
+[//]: # (  })
+
+[//]: # (})
+
+[//]: # (```)
+
+[//]: # (  </Tab>)
+
+[//]: # (  <Tab>)
+
+[//]: # ()
+[//]: # (```json)
+
+[//]: # ({)
+
+[//]: # (    "jsonrpc": "2.0",)
+
+[//]: # (    "id": 1,)
+
+[//]: # (    "result": {)
+
+[//]: # (        "quotes": [)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667195591,)
+
+[//]: # (                "blockHeight": 15866069,)
+
+[//]: # (                "usdPrice": "1589.886112425257096286")
+
+[//]: # (            },)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667189591,)
+
+[//]: # (                "blockHeight": 15865572,)
+
+[//]: # (                "usdPrice": "1583.0151106")
+
+[//]: # (            },)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667183591,)
+
+[//]: # (                "blockHeight": 15865079,)
+
+[//]: # (                "usdPrice": "1567.796549909782742262")
+
+[//]: # (            },)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667177591,)
+
+[//]: # (                "blockHeight": 15864584,)
+
+[//]: # (                "usdPrice": "1583.132896298479798684")
+
+[//]: # (            },)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667171591,)
+
+[//]: # (                "blockHeight": 15864084,)
+
+[//]: # (                "usdPrice": "1584.491716491399097652")
+
+[//]: # (            },)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667165591,)
+
+[//]: # (                "blockHeight": 15863589,)
+
+[//]: # (                "usdPrice": "1597.057392438442564297")
+
+[//]: # (            },)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667159591,)
+
+[//]: # (                "blockHeight": 15863091,)
+
+[//]: # (                "usdPrice": "1589.308361856425258561")
+
+[//]: # (            },)
+
+[//]: # (            {)
+
+[//]: # (                "timestamp": 1667153591,)
+
+[//]: # (                "blockHeight": 15862596,)
+
+[//]: # (                "usdPrice": "1583.58262649223497801")
+
+[//]: # (            })
+
+[//]: # (        ])
+
+[//]: # (    })
+
+[//]: # (})
+
+[//]: # (```)
+
+[//]: # (  </Tab>)
+
+[//]: # (</Tabs>)
