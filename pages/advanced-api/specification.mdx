@@ -1,0 +1,39 @@
+import { RedocStandalone } from "redoc";
+import { useEffect, useState } from "react";
+
+
+# Advanced API Specification
+
+export default function Spec() {
+  const rpc = "https://rpc.ankr.com/multichain"
+  const [spec, setSpec] = useState("")
+
+  const getSpec = async () => {
+    const data = await (await fetch(rpc, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ "jsonrpc": "2.0", "method": "docs_schema", "params": {}, "id": 1 })
+    })).json()
+    return data.result.schema
+  }
+
+  useEffect(async () => {
+    setSpec(await getSpec())
+  }, [setSpec])
+
+  return <RedocStandalone
+    spec={spec}
+    options={{
+      scrollYOffset: 50,
+      schemaExpansionLevel: "all",
+      jsonSampleExpandLevel: "all",
+      showObjectSchemaExamples: true,
+    }}
+    onLoaded={error => {
+      if (!error) {
+        // fix sticky redoc menu
+        document.querySelector('.redoc-wrap').parentNode.classList.remove("overflow-x-hidden")
+      }
+    }}
+  />;
+}
