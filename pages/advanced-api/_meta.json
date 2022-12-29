@@ -13,11 +13,9 @@
   },
   "specification": {
     "title": "OpenAPI Specification",
-    "href": "/docs/advanced-api/specification/",
     "theme": {
       "layout": "raw",
       "footer": false
-    },
-    "newWindow": true
+    }
   }
 }
