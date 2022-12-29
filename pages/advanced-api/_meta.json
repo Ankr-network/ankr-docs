@@ -4,18 +4,15 @@
   "nft-methods": "NFT API",
   "query-methods": "Query API",
   "token-methods": "Token API",
-  "javascript-sdk": "AnkrJS SDK",
-  "python-sdk": "AnkrPY SDK",
-  "react-hooks": "Ankr React Hooks",
-  "quickstart": "Quick Start Guide",
-  "---": {
-    "type": "separator"
-  },
   "specification": {
-    "title": "OpenAPI Specification",
+    "title": "OAPI-like Reference",
     "theme": {
       "layout": "raw",
       "footer": false
     }
-  }
+  },
+  "javascript-sdk": "AnkrJS SDK",
+  "python-sdk": "AnkrPY SDK",
+  "react-hooks": "Ankr React Hooks",
+  "quickstart": "Quick Start Guide"
 }
