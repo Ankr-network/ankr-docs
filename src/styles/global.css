@@ -76,6 +76,14 @@ h4.mt-8 {
   padding-bottom: 0.6rem;
 }
 
+.redoc-wrap {
+  background-color: white;
+}
+
+.menu-content {
+  top: 64px !important;
+}
+
 /* Some debatable stylign refinements
 
 h2.mt-10 {

@@ -7,5 +7,17 @@
   "javascript-sdk": "AnkrJS SDK",
   "python-sdk": "AnkrPY SDK",
   "react-hooks": "Ankr React Hooks",
-  "quickstart": "Quick Start Guide"
+  "quickstart": "Quick Start Guide",
+  "---": {
+    "type": "separator"
+  },
+  "specification": {
+    "title": "OpenAPI Specification",
+    "href": "/docs/advanced-api/specification/",
+    "theme": {
+      "layout": "raw",
+      "footer": false
+    },
+    "newWindow": true
+  }
 }
