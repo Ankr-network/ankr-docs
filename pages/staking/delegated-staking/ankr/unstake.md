@@ -35,3 +35,4 @@ Multiple Node Providers support is coming soon.
 9. When ended, repeat #1 and #2 and go to the **Unstaking** tab.
    <img src="/docs/staking/delegated-staking/ankr/unstake-tab.jpg" alt="Go to Unstaking tab" class="responsive-pic" width="900" />
 10. Click **Claim** next to the unstaked ANKR to send it to the address you connected via MetaMask.
+    <img src="/docs/staking/delegated-staking/ankr/claim-unstaked-ankr.jpg" alt="Go to Unstaking tab" class="responsive-pic" width="900" />
