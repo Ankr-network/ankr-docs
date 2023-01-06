@@ -5,7 +5,7 @@
   "query-methods": "Query API",
   "token-methods": "Token API",
   "specification": {
-    "title": "OAPI-like Reference",
+    "title": "OAPI Reference",
     "theme": {
       "layout": "raw",
       "footer": false
