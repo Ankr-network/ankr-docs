@@ -14,7 +14,7 @@ Switches aBNBb to ankrBNB.
 
 ##### Smart contract
 
-* [Mainnet aBNBb Proxy — 0xbb1aa6e59e5163d8722a122cd66eba614b59df0d](https://bscscan.com/address/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
+* [Mainnet aBNBb Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
 * [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE) 
 
 ##### Example
@@ -53,7 +53,7 @@ Lets the `ankrBNB` smart contract transfer user's ankrBNB tokens.
 
 ##### Smart contract
 
-* [Mainnet aBNBb Proxy — 0xbb1aa6e59e5163d8722a122cd66eba614b59df0d](https://bscscan.com/token/0xbb1aa6e59e5163d8722a122cd66eba614b59df0d)
+* [Mainnet aBNBb Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/token/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
 * [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE)
 * [Mainnet ankrBNB Proxy — 0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827](https://bscscan.com/address/0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827)
 * [Testnet ankrBNB Proxy — 0x46de2fbaf41499f298457cd2d9288df4eb1452ab](https://testnet.bscscan.com/token/0x46de2fbaf41499f298457cd2d9288df4eb1452ab)
@@ -99,8 +99,8 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 ##### Example
 
 `averagePercentageRate` being a read function, we suggest you visit the links and make a query entering a desired number of days to see an example. 
-* [Mainnet function address](https://bscscan.com/readContract?m=normal&a=0xbb1aa6e59e5163d8722a122cd66eba614b59df0d&v=0xc6c4e1ca42904efce3bec150329ff637ff2b0fea#readCollapse2)
-* [Testnet function address](https://testnet.bscscan.com/readContract?m=normal&a=0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE&v=0xe94147b33a757fdf8a878bfd80562b08c954f6f9#readCollapse2)
+* [Mainnet aBNBb function address](https://bscscan.com/readContract?m=normal&a=0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e&v=0xc6c4e1ca42904efce3bec150329ff637ff2b0fea#readCollapse2)
+* [Testnet aBNBb function address](https://testnet.bscscan.com/readContract?m=normal&a=0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE&v=0xe94147b33a757fdf8a878bfd80562b08c954f6f9#readCollapse2)
 
 
 ### Get staking metrics
