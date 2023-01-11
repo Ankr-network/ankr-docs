@@ -93,16 +93,17 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 ##### Parameters
 
 * `day` (uint256, required) — number of days to get the APR for. Max value — 7 days.
+* `address` (address, required) — address of the token contract. The address of ankrBNB is `0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827`.
 
 ##### Smart contract
+
+* [Mainnet RatioFeed contract for ankrBNB](https://bscscan.com/address/0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa)
+
 
 ##### Example
 
 `averagePercentageRate` being a read function, we suggest you visit the links and make a query entering a desired number of days to see an example. 
-* [Mainnet aBNBb function address](https://bscscan.com/readContract?m=normal&a=0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e&v=0xc6c4e1ca42904efce3bec150329ff637ff2b0fea#readCollapse2)
-* [Testnet aBNBb function address](https://testnet.bscscan.com/readContract?m=normal&a=0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE&v=0xe94147b33a757fdf8a878bfd80562b08c954f6f9#readCollapse2)
-
-
+* [Mainnet RatioFeed contract for ankrBNB function](https://bscscan.com/address/0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa#readProxyContract#F1)
 ### Get staking metrics
 
 To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](/staking/for-integrators/restful-api/staking-metrics/).
