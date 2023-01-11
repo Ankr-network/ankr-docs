@@ -82,7 +82,7 @@ Unstakes ankrBNB and gets BNB for the unstaked ankrBNB.
 
 ### Get APR
 
-#### `averagePercentageRate(uint256 day)`
+#### `averagePercentageRate(uint256 day, address addr)`
 
 Gets the APR for ankrBNB. 
 
@@ -99,11 +99,11 @@ With `3` provided as the depth, the APR = `((((day 3 - day 2) / day 3) * 100) + 
 
 * [Mainnet RatioFeed contract for ankrBNB](https://bscscan.com/address/0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa)
 
-
 ##### Example
 
 `averagePercentageRate` being a read function, we suggest you visit the links and make a query entering a desired number of days to see an example. 
 * [Mainnet RatioFeed contract for ankrBNB function](https://bscscan.com/address/0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa#readProxyContract#F1)
+
 ### Get staking metrics
 
 To integrate Ankr Staking metrics into your dashboards or use metrics like APY in your products, read [Liquid Staking Metrics](/staking/for-integrators/restful-api/staking-metrics/).
