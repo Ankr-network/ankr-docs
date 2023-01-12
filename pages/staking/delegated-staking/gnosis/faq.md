@@ -43,3 +43,7 @@ Yes, you can.
 ### Must rewards be claimed from the Ankr website, or will they be automatically sent to the supplying wallet?
 
 Rewards must be claimed from the [Ankr website](https://www.ankr.com/staking/dashboard/) after the Ethereum Shangai upgrade in \~Q2/Q3 2023.
+
+### Does Ankr charge for the service?
+
+Ankr charges for the staking service — 10% of your staking rewards.
