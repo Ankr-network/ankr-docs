@@ -42,5 +42,5 @@ You can manage created Tasks from [Ankr Automation Dashboard](https://www.ankr.c
 
 
 ## Supported networks
-Ankr Automation is available on BNB Smart Chain. Support for other networks is coming soon. 
+Ankr Automation supports BNB Smart Chain. Support for other networks is coming soon. 
 
