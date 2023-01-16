@@ -33,7 +33,7 @@ The current APY is 4.97%.
 
 
 ## Validators
-Ankr has roughly [1700 validators on Ethereum](https://beaconcha.in/validators/eth1deposits?q=4069D8A3dE3A72EcA86CA5e0a4B94619085E7362). 
+Ankr has roughly [1700 validators on Ethereum](https://beaconcha.in/validators/initiated-deposits?q=0x4069D8A3dE3A72EcA86CA5e0a4B94619085E7362). 
 
 
 ## Smart contracts
