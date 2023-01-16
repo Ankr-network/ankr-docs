@@ -1218,5 +1218,9 @@
   {
     "from": "docs/rpc-service/card-flow/index.html",
     "to": "/docs/rpc-service/getting-started/"
+  },
+  {
+    "from": "docs/staking/reference/audit-reports/index.html",
+    "to": "/docs/staking/extra/audit-reports/"
   }
 ]
