@@ -5,7 +5,7 @@ import { Callout } from "components";
 To stake mGNO, you'll need to:
 1. Purchase GNO on Ethereum.
 2. Bridge GNO to Gnosis.
-3. Swap the bridged GNO to mGNO.
+3. Convert the bridged GNO to mGNO.
 4. Connect your wallet at Ankr Staking.
 5. Stake mGNO at Ankr.
 
@@ -23,28 +23,27 @@ You'll need a small amount of xDai for gas fees while depositing GNO and staking
 </Callout>
 
 ## Bridge GNO to Gnosis Chain
-
 Your obtained GNO is likely to be the Ethereum Mainnet GNO version.
 To use it on Gnosis, you'll need to bridge it to Gnosis Chain.
 
 * Use the [OmniBridge](https://omni.gnosischain.com/bridge) to move GNO from Ethereum to Gnosis Chain.
 * Add Gnosis to your wallet, visiting [Ankr Gnosis RPC page](https://www.ankr.com/rpc/gnosis/) and clicking **Add network**. Alternatively, use [these manual instructions](https://docs.gnosischain.com/tools/wallets/metamask) from Gnosis.
 
-## Swap the bridged GNO for mGNO
+## Convert the bridged GNO to mGNO
 <Callout type="info">
 Make sure you have some xDai to pay the gas fee for your depositing transaction.<br/>
 Remember that mGNO will remain locked and illiquid until ~Q4 2023 max.
 This is due to Gnosis plans to enable withdrawals in the Shanghai upgrade. Shanghai is planned in 6–12 months from The Merge that is expected in ~Q3/Q4 2022.
 </Callout>
-<Callout type="warning">
-The [original Gnosis deposit instructions](https://docs.gnosischain.com/node/validator-deposits#convert-gno-to-mgno-special-cases) contain a **wrong link** in **Step 1**, so follow the fixed version below.
-</Callout>
-To swap your bridged GNO: 
-1. Go to https://gbc-deposit-old.herokuapp.com/ and connect your web3 wallet toGnosis on the application.
+To convert your bridged GNO to mGNO: 
+1. Visit the GNO–mGNO converter at https://mgno.validategnosis.com/.
 2. Connect your wallet.
-3. Select the **Swap** tab. Enter the amount you would like to convert and click **Convert**. You can convert any amount, be sure to start with a leading 0 to convert less than 1 GNO. For example, 0.1 GNO will be converted to 3.2 mGNO.
-4. Sign 2 transactions in your wallet. The first is a free signature request to allow the application to make the conversion. The second processes the transaction. This will require a small amount of xDai to complete.
-5. The transaction should be initiated and completed within a few seconds. Once completed you can click the link to see the tx in BlockScout and add mGNO to your MetaMask wallet. The mGNO contract address is 0x722fc4DAABFEaff81b97894fC623f91814a1BF68.
+   <img src="/docs/staking/delegated-staking/mgno/gno-mgno-converter-connect-wallet.png" alt="Connect wallet" class="responsive-pic" width="400" />
+3. Choose the amount you would like to convert and click **Convert**. You can convert any amount, be sure to start with a leading 0 to convert less than 1 GNO. For example, 0.1 GNO will be converted to 3.2 mGNO.
+   <img src="/docs/staking/delegated-staking/mgno/gno-mgno-converter-click-convert.png" alt="Click Convert" class="responsive-pic" width="400" />
+4. Sign the transactions in your wallet. This will require a small amount of xDai to complete.
+5. The transaction should be initiated and completed within a few seconds. Once completed you can click the link to see the tx details and add mGNO to your MetaMask wallet.
+   <img src="/docs/staking/delegated-staking/mgno/gno-mgno-converter-add-mgno-to-metamask.png" alt="Check tx details and add mGNO to Metamask" class="responsive-pic" width="400" />
 
 When done, you're ready to stake your mGNO on Ankr Staking. 
 
