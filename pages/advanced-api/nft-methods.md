@@ -11,6 +11,8 @@ _NFT API_ serves to request NFT-related data (owners, listings for particular wa
 
 NFT API empowers the Web3 projects integrating NFTs (virtual worlds, decentralized games, galleries, marketplaces) to instantly fetch all the necessary information across multiple blockchains in a single request.
 
+NFT API implements the [JSON-RPC 2.0 specification](https://www.jsonrpc.org/specification) for interaction.
+
 ## NFT API Methods
 
 _NFT API_ consists of the following methods to request NFT-related data across multiple chains:
