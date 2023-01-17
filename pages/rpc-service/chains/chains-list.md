@@ -3503,7 +3503,7 @@ Official quick links: [Website](https://solana.com/), [Docs](https://docs.solana
 
 ### API methods
 
-For Solana, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Solana, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/solana) except for those listed as unsupported.
 
 [//]: # (Popular methods:)
 
