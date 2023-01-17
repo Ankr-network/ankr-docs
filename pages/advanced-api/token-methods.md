@@ -11,6 +11,8 @@ _Token API_ serves to request token-related data (account balance, supported cur
 
 Token API uses only official on-chain data, leaving third parties behind. Ankr constantly scans for the on-chain transactions coming from DEXs, flagging transactions and aggregating data into accurate real-time token price feeds. This solution is crucial for the Web3 projects like marketplaces and exchanges looking for efficient ways to query accurate on-chain data for tokenized assets.
 
+Token API implements the [JSON-RPC 2.0 specification](https://www.jsonrpc.org/specification) for interaction.
+
 ## Token API Methods
 
 _Token API_ consists of the following methods to request token-related data across multiple chains:
