@@ -4,7 +4,13 @@ The only risk for stakers is missing out on rewards during any time a validator 
 
 ### Where can I get mGNO?
 
-As getting mGNO is a multistep process, you're better off reading how to get it in the [mGNO staking guide](https://www.ankr.com/docs/staking/delegated-staking/mgno/stake/).
+Getting mGNO is a multistep process. Refer to the [mGNO staking guide](https://www.ankr.com/docs/staking/delegated-staking/mgno/stake/). Specifically, steps 1 through 3: 
+
+1. Purchase GNO on Ethereum.
+
+2. Bridge GNO to Gnosis.
+
+3. Swap the bridged GNO to mGNO.
 
 ### What is the minimum and maximum amount of mGNO I can stake?
 
@@ -43,3 +49,7 @@ Yes, you can.
 ### Must rewards be claimed from the Ankr website, or will they be automatically sent to the supplying wallet?
 
 Rewards must be claimed from the [Ankr website](https://www.ankr.com/staking/dashboard/) after the Ethereum Shangai upgrade in \~Q2/Q3 2023.
+
+### Does Ankr charge for the service?
+
+Ankr charges for the staking service — 10% of your staking rewards.

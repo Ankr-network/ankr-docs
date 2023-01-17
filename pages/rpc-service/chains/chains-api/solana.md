@@ -1,21 +1,4933 @@
+import { Tabs, Tab } from "nextra-theme-docs";
+import { Callout } from "components";
+
 # Solana
 
-Solana is an open source project implementing a high-performance, permissionless blockchain.
+Solana nodes accept HTTP requests using the [JSON-RPC 2.0 specification](https://www.jsonrpc.org/specification).
 
-The Solana architecture combines a set of software algorithms to remove software as a performance bottlenecks and allow transaction throughput to scale proportionally with network bandwidth. As a result, the Solana blockchain is **scalable**, **secure** and **decentralized**.
+## Methods
+<br/>
+
+  * [`getAccountInfo`](/rpc-service/chains/chains-api/solana/#getaccountinfo) — returns all information associated with the account of provided Pubkey.
+  * [`getBalance`](/rpc-service/chains/chains-api/solana/#getbalance) — returns the balance of the account of provided Pubkey.
+  * [`getBlock`](/rpc-service/chains/chains-api/solana/#getblock) — returns identity and transaction information about a confirmed block in the ledger.
+  * [`getBlockHeight`](/rpc-service/chains/chains-api/solana/#getblockheight) — returns the current block height of the node.
+  * [`getBlockProduction`](/rpc-service/chains/chains-api/solana/#getblockproduction) — returns recent block production information from the current or previous epoch.
+  * [`getBlockCommitment`](/rpc-service/chains/chains-api/solana/#getblockcommitment) — returns the commitment for particular block.
+  * [`getBlocks`](/rpc-service/chains/chains-api/solana/#getblocks) — returns a list of confirmed blocks between two slots.
+  * [`getBlocksWithLimit`](/rpc-service/chains/chains-api/solana/#getblockswithlimit) — returns a list of confirmed blocks starting at the given slot.
+  * [`getBlockTime`](/rpc-service/chains/chains-api/solana/#getblocktime) — returns the estimated production time of a block.
+  * [`getClusterNodes`](/rpc-service/chains/chains-api/solana/#getclusternodes) — returns information about all the nodes participating in the cluster.
+  * [`getEpochInfo`](/rpc-service/chains/chains-api/solana/#getepochinfo) — returns information about the current epoch.
+  * [`getEpochSchedule`](/rpc-service/chains/chains-api/solana/#getepochschedule) — returns epoch schedule information from this cluster's genesis config.
+  * [`getFeeForMessage`](/rpc-service/chains/chains-api/solana/#getfeeformessage) — returns the fee the network will charge for a particular message.
+  * [`getFirstAvailableBlock`](/rpc-service/chains/chains-api/solana/#getfirstavailableblock) — returns the slot of the lowest confirmed block that has not been purged from the ledger.
+  * [`getGenesisHash`](/rpc-service/chains/chains-api/solana/#getgenesishash) — returns the genesis hash.
+  * [`getHealth`](/rpc-service/chains/chains-api/solana/#gethealth) — returns the current health of the node.
+  * [`getHighestSnapshotSlot`](/rpc-service/chains/chains-api/solana/#gethighestsnapshotslot) — returns the highest slot information that the node has snapshots for.
+  * [`getIdentity`](/rpc-service/chains/chains-api/solana/#getidentity) — returns the identity pubkey for the current node.
+  * [`getInflationGovernor`](/rpc-service/chains/chains-api/solana/#getinflationgovernor) — returns the current inflation governor.
+  * [`getInflationRate`](/rpc-service/chains/chains-api/solana/#getinflationrate) — returns the specific inflation values for the current epoch.
+  * [`getInflationReward`](/rpc-service/chains/chains-api/solana/#getinflationreward) — returns the inflation / staking reward for a list of addresses for an epoch.
+  * [`getLargestAccounts`](/rpc-service/chains/chains-api/solana/#getlargestaccounts) — returns the 20 largest accounts, by lamport balance.
+  * [`getLatestBlockhash`](/rpc-service/chains/chains-api/solana/#getlatestblockhash) — returns the latest blockhash.
+  * [`getLeaderSchedule`](/rpc-service/chains/chains-api/solana/#getleaderschedule) — returns the leader schedule for an epoch.
+  * [`getMaxRetransmitSlot`](/rpc-service/chains/chains-api/solana/#getmaxretransmitslot) — returns the max slot seen from retransmit stage.
+  * [`getMaxShredInsertSlot`](/rpc-service/chains/chains-api/solana/#getmaxshredinsertslot) — returns the max slot seen from after shred insert.
+  * [`getMinimumBalanceForRentExemption`](/rpc-service/chains/chains-api/solana/#getminimumbalanceforrentexemption) — returns minimum balance required to make account rent exempt.
+  * [`getMultipleAccounts`](/rpc-service/chains/chains-api/solana/#getmultipleaccounts) — returns the account information for a list of Pubkeys.
+  * [`getProgramAccounts`](/rpc-service/chains/chains-api/solana/#getprogramaccounts) — returns all accounts owned by the provided program Pubkey.
+  * [`getRecentPerformanceSamples`](/rpc-service/chains/chains-api/solana/#getrecentperformancesamples) — returns the list of recent performance samples.
+  * [`getSignaturesForAddress`](/rpc-service/chains/chains-api/solana/#getsignaturesforaddress) — returns signatures for confirmed transactions that include the given address in their `accountKeys` list.
+  * [`getSignatureStatuses`](/rpc-service/chains/chains-api/solana/#getsignaturestatuses) — returns the statuses of a list of signatures.
+  * [`getSlot`](/rpc-service/chains/chains-api/solana/#getslot) — returns the slot that has reached the given or default commitment level.
+  * [`getSlotLeader`](/rpc-service/chains/chains-api/solana/#getslotleader) — returns the current slot leader.
+  * [`getSlotLeaders`](/rpc-service/chains/chains-api/solana/#getslotleaders) — returns the slot leaders for a given slot range.
+  * [`getStakeActivation`](/rpc-service/chains/chains-api/solana/#getstakeactivation) — returns epoch activation information for a stake account.
+  * [`getStakeMinimumDelegation`](/rpc-service/chains/chains-api/solana/#getstakeminimumdelegation) — returns the stake minimum delegation, in lamports.
+  * [`getSupply`](/rpc-service/chains/chains-api/solana/#getsupply) — returns information about the current supply.
+  * [`getTokenAccountBalance`](/rpc-service/chains/chains-api/solana/#gettokenaccountbalance) — returns the token balance of an SPL Token account.
+  * [`getTokenAccountsByDelegate`](/rpc-service/chains/chains-api/solana/#gettokenaccountsbydelegate) — returns all SPL Token accounts by approved delegate.
+  * [`getTokenAccountsByOwner`](/rpc-service/chains/chains-api/solana/#gettokenaccountsbyowner) — returns all SPL Token accounts by token owner.
+  * [`getTokenLargestAccounts`](/rpc-service/chains/chains-api/solana/#gettokenlargestaccounts) — returns the 20 largest accounts of a particular SPL Token type.
+  * [`getTokenSupply`](/rpc-service/chains/chains-api/solana/#gettokensupply) — returns the total supply of an SPL Token type.
+  * [`getTransaction`](/rpc-service/chains/chains-api/solana/#gettransaction) — returns transaction details for a confirmed transaction.
+  * [`getTransactionCount`](/rpc-service/chains/chains-api/solana/#gettransactioncount) — returns the current Transaction count from the ledger.
+  * [`getVersion`](/rpc-service/chains/chains-api/solana/#getversion) — returns the current solana versions running on the node.
+  * [`getVoteAccounts`](/rpc-service/chains/chains-api/solana/#getvoteaccounts) — returns the account info and associated stake for all the voting accounts in the current bank.
+  * [`isBlockhashValid`](/rpc-service/chains/chains-api/solana/#isblockhashvalid) — returns whether a blockhash is still valid or not.
+  * [`minimumLedgerSlot`](/rpc-service/chains/chains-api/solana/#minimumledgerslot) — returns the lowest slot that the node has information about in its ledger.
+  * [`requestAirdrop`](/rpc-service/chains/chains-api/solana/#requestairdrop) — requests an airdrop of lamports to a Pubkey.
+  * [`sendTransaction`](/rpc-service/chains/chains-api/solana/#sendtransaction) — submits a signed transaction to the cluster for processing.
+  * [`simulateTransaction`](/rpc-service/chains/chains-api/solana/#simulatetransaction) — simulates sending a transaction.
+
+### Deprecated
+<br/>
+
+  * [`getConfirmedBlock`](/rpc-service/chains/chains-api/solana/#getconfirmedblock-deprecated) — Returns identity and transaction information about a confirmed block in the ledger.
+  * [`getConfirmedBlocks`](/rpc-service/chains/chains-api/solana/#getconfirmedblocks-deprecated) — Returns a list of confirmed blocks between two slots.
+  * [`getConfirmedBlocksWithLimit`](/rpc-service/chains/chains-api/solana/#getconfirmedblockswithlimit-deprecated) — Returns a list of confirmed blocks starting at the given slot.
+  * [`getConfirmedSignaturesForAddress2`](/rpc-service/chains/chains-api/solana/#getconfirmedsignaturesforaddress2-deprecated) — Returns signatures for confirmed transactions that include the given address in their `accountKeys` list.
+  * [`getConfirmedTransaction`](/rpc-service/chains/chains-api/solana/#getconfirmedtransaction-deprecated) — Returns transaction details for a confirmed transaction.
+  * [`getFeeCalculatorForBlockhash`](/rpc-service/chains/chains-api/solana/#getfeecalculatorforblockhash-deprecated) — Returns the fee calculator associated with the query blockhash, or `null` if the blockhash has expired.
+  * [`getFeeRateGovernor`](/rpc-service/chains/chains-api/solana/#getfeerategovernor) — Returns the fee rate governor information from the root bank.
+  * [`getFees`](/rpc-service/chains/chains-api/solana/#getfees) — Returns a recent block hash from the ledger, a fee schedule that can be used to compute the cost of submitting a transaction using it, and the last slot in which the blockhash will be valid.
+  * [`getRecentBlockhash`](/rpc-service/chains/chains-api/solana/#getrecentblockhash) — Returns a recent block hash from the ledger, and a fee schedule that can be used to compute the cost of submitting a transaction using it.
+  * [`getSnapshotSlot`](/rpc-service/chains/chains-api/solana/#getsnapshotslot) — Returns the highest slot that the node has a snapshot for.
 
 ---
-## Connect wallet
 
-**Solana** is not evm-compatible and therefore MetaMask cannot currently be configured to work with Solana.
+## `getAccountInfo`
 
-Solana does support several types of wallets via usage of the [Solana native command-line app](https://docs.solana.com/cli) as well as wallets from third-parties.
+> **Returns all information associated with the account of provided Pubkey.**
 
-For developers, [command-line wallets](https://docs.solana.com/wallet-guide/cli) are recommended as new features on the Solana blockchain are supported on the command line first before being integrated into third-party solutions.
+### Parameters
+<br/>
 
-## Integrate CLI
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
 
-Solana uses it's own command-line tools to interact with a Solana cluster.
+    * `<string>`: pubkey of account to query, as base-58 encoded string.
+    * `<object>` (optional): configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `encoding` (string): encoding for Account data, either "base58" (slow), "base64", "base64+zstd", or "jsonParsed". "base58" is limited to Account data of less than 129 bytes. "base64" will return base64 encoded data for Account data of any size. "base64+zstd" compresses the Account data using [Zstandard](https://facebook.github.io/zstd/) and base64-encodes the result. ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific state parsers to return more human-readable and explicit account state data. If "jsonParsed" is requested but a parser cannot be found, the field falls back to "base64" encoding, detectable when the `data` field is type `string`.
+      * `dataSlice` (object): limit the returned account data using the provided `offset: <usize>` and `length: <usize>` fields; only available for "base58", "base64" or "base64+zstd" encodings.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
 
-Solana provides easy to follow guidance in their [documentation on how to install and use Solana Command Line (CLI) tools](https://docs.solana.com/cli).
+### Returns
+<br/>
+
+  * `<null>`: if the requested account doesn't exist.
+  * `<object>`: otherwise a JSON object containing:
+    * `lamports` (u64): number of lamports assigned to this account, as a u64.
+    * `owner` (string): base-58 encoded Pubkey of the program this account has been assigned to.
+    * `data` ([string, encoding]|object): data associated with the account, either as encoded binary data or JSON format `{<program>: <state>}`, depending on the encoding parameter.
+    * `executable` (boolean): boolean indicating if the account contains a program (and is strictly read-only).
+    * `rentEpoch` (u64): the epoch at which this account will next owe rent, as u64.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getAccountInfo",
+      "params": [
+        "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
+        {
+          "encoding": "base58"
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.5",
+            "slot": 171939795
+        },
+        "value": {
+            "data": [
+                "df8aQUMTjEzaM7MBx7gWDVgHXxWNHx5rtjKTNMLR4JXHcXryskBMwTfNn6ksWcJgReufRevDzprYBek226dD3YrE2oXPyyhXvFdzbczZGvuD",
+                "base58"
+            ],
+            "executable": false,
+            "lamports": 2000000,
+            "owner": "11111111111111111111111111111111",
+            "rentEpoch": 361
+        }
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getAccountInfo",
+      "params": [
+        "4fYNw3dojWmQ4dXtSGE9epjRGy9pFSx62YypT7avPYvA",
+        {
+          "encoding": "jsonParsed"
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.5",
+            "slot": 171940021
+        },
+        "value": {
+            "data": {
+                "parsed": {
+                    "info": {
+                        "authority": "Bbqg1M4YVVfbhEzwA9SpC9FhsaG83YMTYoR4a8oTDLX",
+                        "blockhash": "9pf2WiEJT91VKq38PjvEdeom4Aug3NhCGRR7u3kwjhp5",
+                        "feeCalculator": {
+                            "lamportsPerSignature": "5000"
+                        }
+                    },
+                    "type": "initialized"
+                },
+                "program": "nonce",
+                "space": 80
+            },
+            "executable": false,
+            "lamports": 2000000,
+            "owner": "11111111111111111111111111111111",
+            "rentEpoch": 361
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getBalance`
+
+> **Returns the balance of the account of provided Pubkey.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>`: pubkey of account to query, as base-58 encoded string.
+    * `<object>`: configuration object containing the following fields:
+
+      * `commitment` (string; optional): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number; optional): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `value` (u64): an account balance.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBalance",
+      "params": [
+        "4fYNw3dojWmQ4dXtSGE9epjRGy9pFSx62YypT7avPYvA"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.5",
+            "slot": 171949127
+        },
+        "value": 2000000
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getBlock`
+
+> **Returns identity and transaction information about a confirmed block in the ledger.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>`: slot, as a u64 integer.
+    * `<object>` (optional): configuration object containing the following optional fields:
+      * `encoding` (string): encoding for each returned Transaction, either "json", "jsonParsed", "base58" (slow), "base64". If parameter not provided, the default encoding is "json". ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list. If "jsonParsed" is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
+      * `transactionDetails` (string): level of transaction detail to return, either "full", "accounts", "signatures", or "none". If parameter not provided, the default detail level is "full". If "accounts" are requested, transaction details only include signatures and an annotated list of accounts in each transaction. Transaction metadata is limited to only: fee, err, pre_balances, post_balances, pre_token_balances, and post_token_balances.
+      * `rewards` (boolean): whether to populate the `rewards` array. If parameter not provided, the default includes rewards.
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+      * `maxSupportedTransactionVersion` (number): sets the max transaction version to return in responses. If the requested block contains a transaction with a higher version, an error will be returned. If this parameter is omitted, only legacy transactions will be returned, and a block containing any versioned transaction will prompt the error.
+
+### Returns
+<br/>
+
+  * `<null>`: if specified block is not confirmed.
+  * `<object>`: if block is confirmed, an object with the following fields:
+    * `blockhash` (string): the blockhash of this block, as base-58 encoded string.
+    * `previousBlockhash` (string): the blockhash of this block's parent, as base-58 encoded string; if the parent block is not available due to ledger cleanup, this field will return "11111111111111111111111111111111".
+    * `parentSlot` (u64): the slot index of this block's parent.
+    * `transactions` (array): to be included if "full" transaction details are requested; an array of JSON objects containing:
+      * `transaction` (object|[string,encoding]): a [transaction object](https://docs.solana.com/developing/clients/jsonrpc-api#transaction-structure), either in JSON format or encoded binary data, depending on encoding parameter.
+      * `meta` (object): a transaction status metadata object, containing `null` or:
+        * `err` (object|null): an error if transaction failed, null if transaction succeeded. [TransactionError definitions](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13).
+        * `fee` (u64): a fee this transaction was charged with, as u64 integer.
+        * `preBalances` (array): an array of u64 account balances from before the transaction was processed.
+        * `postBalances` (array): an array of u64 account balances after the transaction was processed.
+        * `innerInstructions` (array|null): the list of [inner instructions](https://docs.solana.com/developing/clients/jsonrpc-api#inner-instructions-structure) or null if inner instruction recording was not enabled during this transaction.
+        * `preTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from before the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+        * `postTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from after the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+        * `logMessages` (array|null): an array of string log messages or `null` if log message recording was not enabled during this transaction.
+        * `rewards` (array|null): transaction-level rewards, populated if rewards are requested; an array of JSON objects containing:
+          * `pubkey` (string): the public key, as base-58 encoded string, of the account that received the reward.
+          * `lamports` (i64): the number of reward lamports credited or debited by the account, as an i64.
+          * `postBalance` (u64): an account balance in lamports after the reward was applied.
+          * `rewardType` (string|undefined): the type of reward: "fee", "rent", "voting", "staking".
+          * `commission` (u8|undefined): a vote account commission when the reward was credited, only present for voting and staking rewards.
+        * [DEPRECATED] `status` (object): a transaction status:
+          * `"Ok": <null>`: a transaction was successful.
+          * `"Err": <ERR>`: a transaction failed with TransactionError.
+        * `loadedAddresses` (object|undefined): transaction addresses loaded from address lookup tables. Undefined if `maxSupportedTransactionVersion` is not set in request params:
+          * `writable` (array[string]): an ordered list of base-58 encoded addresses for writable loaded accounts.
+          * `readonly` (array[string]): an ordered list of base-58 encoded addresses for readonly loaded accounts.
+        * `returnData` (object|undefined): the most-recent return data generated by an instruction in the transaction, with the following fields:
+          * `programId` (string): the program that generated the return data, as base-58 encoded Pubkey.
+          * `data` (string, encoding): the return data itself, as base-64 encoded binary data.
+        * `computeUnitsConsumed` (u64|undefined): the number of [compute units](https://docs.solana.com/developing/programming-model/runtime#compute-budget) consumed by the transaction.
+      * `version` ("legacy"|number|undefined): a transaction version; undefined if `maxSupportedTransactionVersion` is not set in request params.
+    * `signatures` (array): to be included if "signatures" are requested for transaction details; an array of signatures strings, corresponding to the transaction order in the block.
+    * `rewards` (array|undefined): block-level rewards, present if rewards are requested; an array of JSON objects containing:
+      * `pubkey` (string): the public key, as base-58 encoded string, of the account that received the reward.
+      * `lamports` (i64): the number of reward lamports credited or debited by the account, as an i64.
+      * `postBalance` (u64): an account balance in lamports after the reward was applied.
+      * `rewardType` (string|undefined): the type of reward: "fee", "rent", "voting", "staking".
+      * `commission` (u8|undefined): the vote account commission when the reward was credited, included for voting and staking rewards only.
+    * `blockTime` (i64|null): estimated production time, as Unix timestamp (seconds since the Unix epoch). null if not available.
+    * `blockHeight` (u64|null): the number of blocks beneath this block.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlock",
+      "params": [430, {"encoding": "json","maxSupportedTransactionVersion":0,"transactionDetails":"full","rewards":false}],
+      "id": 1
+    }'
+```
+
+### Response example 1
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "blockHeight": 428,
+    "blockTime": null,
+    "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
+    "parentSlot": 429,
+    "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
+    "transactions": [
+      {
+        "meta": {
+          "err": null,
+          "fee": 5000,
+          "innerInstructions": [],
+          "logMessages": [],
+          "postBalances": [499998932500, 26858640, 1, 1, 1],
+          "postTokenBalances": [],
+          "preBalances": [499998937500, 26858640, 1, 1, 1],
+          "preTokenBalances": [],
+          "rewards": null,
+          "status": {
+            "Ok": null
+          }
+        },
+        "transaction": {
+          "message": {
+            "accountKeys": [
+              "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
+              "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
+              "SysvarS1otHashes111111111111111111111111111",
+              "SysvarC1ock11111111111111111111111111111111",
+              "Vote111111111111111111111111111111111111111"
+            ],
+            "header": {
+              "numReadonlySignedAccounts": 0,
+              "numReadonlyUnsignedAccounts": 3,
+              "numRequiredSignatures": 1
+            },
+            "instructions": [
+              {
+                "accounts": [1, 2, 3, 0],
+                "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
+                "programIdIndex": 4
+              }
+            ],
+            "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
+          },
+          "signatures": [
+            "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
+          ]
+        }
+      }
+    ]
+  },
+  "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlock",
+      "params": [430, "base64"],
+      "id": 1
+    }'
+```
+
+### Response example 2
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "blockHeight": 428,
+    "blockTime": null,
+    "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
+    "parentSlot": 429,
+    "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
+    "rewards": [],
+    "transactions": [
+      {
+        "meta": {
+          "err": null,
+          "fee": 5000,
+          "innerInstructions": null,
+          "logMessages": null,
+          "postBalances": [499998932500, 26858640, 1, 1, 1],
+          "postTokenBalances": [],
+          "preBalances": [499998937500, 26858640, 1, 1, 1],
+          "preTokenBalances": [],
+          "rewards": [],
+          "status": {
+            "Ok": null
+          }
+        },
+        "transaction": [
+          "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
+          "base64"
+        ]
+      }
+    ]
+  },
+  "id": 1
+}
+```
+
+---
+
+## `getBlockHeight`
+
+> **Returns the current block height of the node.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; optional): 
+
+    * `<object>` (optional): configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `<u64>`: a current block height.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlockHeight",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 156071111,
+    "id": 1
+}
+```
+
+---
+
+## `getBlockProduction`
+
+> **Returns recent block production information from the current or previous epoch.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): configuration object containing the following optional fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `range` (object): a slot range to return block production for. If parameter not provided, defaults to current epoch:
+        * `firstSlot` (u64): the first slot to return block production information for (inclusive).
+        * `lastSlot` (u64): the last slot to return block production information for (inclusive). If parameter not provided, defaults to the highest slot.
+      * `identity` (string): only return results for this validator identity (base-58 encoded).
+
+### Returns
+<br/>
+
+  * `value` (object): the value containing the following parameters:
+    * `byIdentity` (object): a dictionary of validator identities, as base-58 encoded strings. Value is a two element array containing the number of leader slots and the number of blocks produced.
+    * `range` (object): a block production slot range:
+      * `firstSlot` (u64): the first slot of the block production information (inclusive).
+      * `lastSlot` (u64): the last slot of block production information (inclusive).
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlockProduction",
+      "id": 1
+    }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 9887
+        },
+        "value": {
+            "byIdentity": {
+                "85iYT5RuzRTDgjyRa3cP8SYhM2j21fj7NhfJ3peu1DPr": [
+                    9888,
+                    9886
+                ]
+            },
+            "range": {
+                "firstSlot": 0,
+                "lastSlot": 9887
+            }
+        }
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlockProduction",
+      "params": [
+          {
+            "identity": "85iYT5RuzRTDgjyRa3cP8SYhM2j21fj7NhfJ3peu1DPr",
+            "range": {
+              "firstSlot": 40,
+              "lastSlot": 50
+            }
+          }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 10102
+        },
+        "value": {
+            "byIdentity": {
+                "85iYT5RuzRTDgjyRa3cP8SYhM2j21fj7NhfJ3peu1DPr": [
+                    11,
+                    11
+                ]
+            },
+            "range": {
+                "firstSlot": 50,
+                "lastSlot": 40
+            }
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getBlockCommitment`
+
+> **Returns commitment for particular block.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>` (required): the block identified by slot.
+
+### Returns
+<br/>
+
+  * `commitment`: a commitment, comprising either:
+    * `null`: an unknown block.
+    * `<array>`: a commitment, array of u64 integers logging the amount of cluster stake in lamports that has voted on the block at each depth from 0 to `MAX_LOCKOUT_HISTORY` + 1.
+  * `totalStake`: a total active stake, in lamports, of the current epoch.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlockCommitment",
+      "params": [5],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+      "commitment": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 10, 32
+      ],
+      "totalStake": 42
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getBlocks`
+
+> **Returns a list of confirmed blocks between two slots.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>`: `start_slot`, as a u64 integer.
+    * `<u64>`: `end_slot`, as u64 integer (must be no more than 500,000 blocks higher than the `start_slot`).
+    * `<object>`: a configuration object containing the following field:
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+
+### Returns
+
+The result field will be an array of u64 integers listing confirmed blocks between `start_slot` and either `end_slot`, if provided, or latest confirmed block, inclusive. Max range allowed is 500,000 slots.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlocks",
+      "params": [5, 10],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [5, 6, 7, 8, 9, 10],
+    "id": 1
+}
+```
+
+---
+
+## `getBlocksWithLimit`
+
+> **Returns a list of confirmed blocks starting at the given slot.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>`: `start_slot`, as u64 integer.
+    * `<u64>`: limit, as u64 integer (must be no more than 500,000 blocks higher than the `start_slot`).
+    * `<object>` (optional): a configuration object containing the following field:
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+
+### Returns
+
+The result field will be an array of u64 integers listing confirmed blocks starting at `start_slot` for up to `limit` blocks, inclusive.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlocksWithLimit",
+      "params": [5, 3],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [5, 6, 7],
+    "id": 1
+}
+```
+
+---
+
+## `getBlockTime`
+
+> **Returns the estimated production time of a block.**
+
+Each validator reports their UTC time to the ledger on a regular interval by intermittently adding a timestamp to a Vote for a particular block. A requested block's time is calculated from the stake-weighted mean of the Vote timestamps in a set of recent blocks recorded on the ledger.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>`: the block identified by slot.
+
+### Returns
+<br/>
+
+  * `<i64>`: estimated production time, as Unix timestamp (seconds since the Unix epoch).
+  * `null`: the timestamp is not available for this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getBlockTime",
+      "params": [5],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 1574721591,
+    "id": 1
+}
+```
+
+---
+
+## `getClusterNodes`
+
+> **Returns information about all the nodes participating in the cluster.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+
+The result field will be an array of JSON objects, each with the following subfields:
+
+  * `pubkey` (string): the node public key, as base-58 encoded string.
+  * `gossip` (string|null): a gossip network address for the node.
+  * `tpu` (string|null): a TPU network address for the node.
+  * `rpc` (string|null): a JSON RPC network address for the node, or null if the JSON RPC service is not enabled.
+  * `version` (string|null): the software version of the node, or null if the version information is not available.
+  * `featureSet` (u32|null): the unique identifier of the node's feature set.
+  * `shredVersion` (u16|null): the shred version the node has been configured to use.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getClusterNodes",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+      {
+        "gossip": "10.239.6.48:8001",
+        "pubkey": "9QzsJf7LPLj8GkXbYT3LFDKqsj2hHG7TA3xinJHu8epQ",
+        "rpc": "10.239.6.48:8899",
+        "tpu": "10.239.6.48:8856",
+        "version": "1.0.0 c375ce1f"
+      }
+    ],
+    "id": 1
+}
+```
+
+---
+
+## `getEpochInfo`
+
+> **Returns information about the current epoch.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The result field will be an object with the following fields:
+
+  * `absoluteSlot` (u64): the current slot.
+  * `blockHeight` (u64): the current block height.
+  * `epoch` (u64): the current epoch.
+  * `slotIndex` (u64): the current slot relative to the start of the current epoch.
+  * `slotsInEpoch` (u64): the number of slots in this epoch.
+  * `transactionCount` (u64|null) total number of transactions processed without error since genesis.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getEpochInfo",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "absoluteSlot": 172112108,
+        "blockHeight": 156089334,
+        "epoch": 398,
+        "slotIndex": 176108,
+        "slotsInEpoch": 432000,
+        "transactionCount": 132596922065
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getEpochSchedule`
+
+> **Returns epoch schedule information from this cluster's genesis config.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+
+The result is an object containing the following parameters:
+
+  * `slotsPerEpoch` (u64): the maximum number of slots in each epoch.
+  * `leaderScheduleSlotOffset` (u64): the number of slots before beginning of an epoch to calculate a leader schedule for that epoch.
+  * `warmup` (boolean): whether epochs start short and grow.
+  * `firstNormalEpoch` (u64): the first normal-length epoch, log2(slotsPerEpoch) - log2(MINIMUM_SLOTS_PER_EPOCH).
+  * `firstNormalSlot` (u64): MINIMUM_SLOTS_PER_EPOCH * (2.pow(firstNormalEpoch) - 1).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getEpochSchedule",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "firstNormalEpoch": 0,
+        "firstNormalSlot": 0,
+        "leaderScheduleSlotOffset": 432000,
+        "slotsPerEpoch": 432000,
+        "warmup": false
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getFeeForMessage`
+
+> **Returns the fee the network will charge for a particular message.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `message` (string, required): a base-64 encoded message.
+    * `<object>` (optional): a configuration object containing the following optional fields:
+      * `commitment` (string): used for retrieving blockhash; the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number; optional): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+  * `<u64|null>`: the fee corresponding to the message at the specified blockhash.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getFeeForMessage",
+      "params":[
+        "AQABAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAA",
+        {
+          "commitment": "processed"
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.5",
+            "slot": 172266779
+        },
+        "value": 5000
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getFirstAvailableBlock`
+
+> **Returns the slot of the lowest confirmed block that has not been purged from the ledger.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<u64>`: a slot.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getFirstAvailableBlock",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 172148976,
+    "id": 1
+}
+```
+
+---
+
+## `getGenesisHash`
+
+> **Returns the genesis hash.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the hash as base-58 encoded string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getGenesisHash",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
+    "id": 1
+}
+```
+
+---
+
+## `getHealth`
+
+> **Returns the current health of the node.**
+
+If one or more `--known-validator` arguments are provided to `solana-validator`, "ok" is returned when the node has within `HEALTH_CHECK_SLOT_DISTANCE` slots of the highest known validator, otherwise an error is returned. "ok" is always returned if no known validators are provided.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+
+If the node is healthy: "ok" If the node is unhealthy, a JSON RPC error response is returned. The specifics of the error response are UNSTABLE and may change in the future.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getHealth",
+      "id": 1
+    }'
+```
+
+### Response example (healthy)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "ok",
+    "id": 1
+}
+```
+
+### Response example (unhealthy)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": -32005,
+        "message": "Node is unhealthy",
+        "data": {}
+    },
+    "id": 1
+}
+```
+
+### Response example (unhealthy; additional info)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": -32005,
+        "message": "Node is behind by 42 slots",
+        "data": {
+            "numSlotsBehind": 42
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getHighestSnapshotSlot`
+
+<Callout type="tip">
+NEW: This method is only available in solana-core v1.9 or newer. Please use [`getSnapshotSlot`](/rpc-service/chains/chains-api/solana/#getsnapshotslot) for solana-core v1.8
+</Callout>
+
+> **Returns the highest slot information that the node has snapshots for.**
+
+This will find the highest full snapshot slot, and the highest incremental snapshot slot based on the full snapshot slot, if there is one.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<object>`:
+    * `full` (u64): the highest full snapshot slot.
+    * `incremental` (u64|undefined): the highest incremental snapshot slot based on `full`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getHighestSnapshotSlot",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "full": 172260516,
+        "incremental": 172269079
+    },
+    "id": 1
+}
+```
+
+### Response example (no snapshot)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": -32008,
+        "message": "No snapshot"
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getIdentity`
+
+> **Returns the identity pubkey for the current node.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+
+The `result` parameter containing the following field:
+
+  * `identity` (base-58 encoded string): the identity pubkey of the current node.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getIdentity",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "identity": "BJggVt9UvLfrTTAWyffWFvXiHHXpB5yjnvFGg8MYu4yn"
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getInflationGovernor`
+
+> **Returns the current inflation governor.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+<br/>
+
+  * `initial` (f64): the initial inflation percentage from time 0.
+  * `terminal` (f64): the terminal inflation percentage.
+  * `taper` (f64): the rate per year at which inflation is lowered. Rate reduction is derived using the target slot time in genesis config.
+  * `foundation` (f64): the percentage of total inflation allocated to the foundation.
+  * `foundationTerm` (f64): the duration of foundation pool inflation in years.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getInflationGovernor",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "foundation": 0,
+        "foundationTerm": 0,
+        "initial": 0.08,
+        "taper": 0.15,
+        "terminal": 0.015
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getInflationRate`
+
+> **Returns the specific inflation values for the current epoch.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `total` (f64): the total inflation.
+  * `validator` (f64): the inflation allocated to validators.
+  * `foundation` (f64): the inflation allocated to the foundation.
+  * `epoch` (u64): the epoch for which these values are valid.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getInflationRate",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "epoch": 398,
+        "foundation": 0,
+        "total": 0.06409943295104789,
+        "validator": 0.06409943295104789
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getInflationReward`
+
+> **Returns the inflation / staking reward for a list of addresses for an epoch.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<array>`: an array of addresses to query, as base-58 encoded strings:
+    * `<object>` (optional): the configuration object containing the following fields:
+      * commitment (string; optional): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `epoch` (u64; optional): an epoch for which the reward occurs. If omitted, the previous epoch will be used.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `epoch` (u64): the epoch for which reward occurred.
+  * `effectiveSlot`(u64): the slot in which the rewards are effective
+  * `amount` (u64): the reward amount in lamports.
+  * `postBalance` (u64): the post balance of the account in lamports.
+  * `commission` (u8|undefined): the vote account commission when the reward was credited.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getInflationReward",
+      "params": [["6dmNQ5jwLeLk5REvio1JcMshcbvkYMwy26sJ8pbkvStu", "BGsqMegLpV6n6Ve146sSX2dTjUMj3M92HnU8BbNRMhF2"], {"epoch": 2}],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "amount": 2500,
+            "effectiveSlot": 224,
+            "epoch": 2,
+            "postBalance": 499999442500
+        },
+        null
+    ],
+    "id": 1
+}
+```
+
+---
+
+## `getLargestAccounts`
+
+> **Returns the 20 largest accounts, by lamport balance (results may be cached up to two hours).**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): the configuration object containing the following optional fields:
+      * commitment (string; optional): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `filter` (string; optional): filters results by account type; currently supported: `circulating`|`nonCirculating`.
+
+### Returns
+
+The result will be a JSON object with value equal to an array of:
+
+  * `<object>`: a JSON object containing the following fields:
+    * `address` (string): the base-58 encoded address of the account.
+    * `lamports` (u64): the number of lamports in the account, as a u64.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getLargestAccounts",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 54
+        },
+        "value": [
+            {
+                "lamports": 999974,
+                "address": "99P8ZgtJYe1buSK8JXkvpLh8xPsCFuLYhz9hQFNw93WJ"
+            },
+            {
+                "lamports": 42,
+                "address": "uPwWLo16MVehpyWqsLkK3Ka8nLowWvAHbBChqv2FZeL"
+            },
+            {
+                "lamports": 42,
+                "address": "CTvHVtQ4gd4gUcw3bdVgZJJqApXE9nCbbbP4VTS5wE1D"
+            },
+            {
+                "lamports": 20,
+                "address": "4fq3xJ6kfrh9RkJQsmVd5gNMvJbuSHfErywvEjNQDPxu"
+            },
+            {
+                "lamports": 4,
+                "address": "AXJADheGVp9cruP8WYu46oNkRbeASngN5fPCMVGQqNHa"
+            },
+            {
+                "lamports": 2,
+                "address": "8NT8yS6LiwNprgW4yM1jPPow7CwRUotddBVkrkWgYp24"
+            },
+            {
+                "lamports": 1,
+                "address": "SysvarEpochSchedu1e111111111111111111111111"
+            },
+            {
+                "lamports": 1,
+                "address": "11111111111111111111111111111111"
+            },
+            {
+                "lamports": 1,
+                "address": "Vote111111111111111111111111111111111111111"
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getLatestBlockhash`
+
+<Callout type="tip">
+NEW: This method is only available in solana-core v1.9 or newer. Please use [`getRecentBlockhash`](/rpc-service/chains/chains-api/solana/#getrecentblockhash) for solana-core v1.8
+</Callout>
+
+> **Returns the latest blockhash.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string; optional): used for retrieving blockhash); the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number; optional): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `<object>`: a JSON object with value field set to a JSON object including:
+  * `blockhash` (string): a hash as base-58 encoded string.
+  * `lastValidBlockHeight` (u64): the last block height at which the blockhash will be valid.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getLatestBlockhash",
+      "params": [
+        {
+          "commitment": "processed"
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.5",
+            "slot": 172277111
+        },
+        "value": {
+            "blockhash": "Bt6cPEjsvBz3prjJUYw81PvDabCzjPK92UxpgWbYYWvD",
+            "lastValidBlockHeight": 156240579
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getLeaderSchedule`
+
+> **Returns the leader schedule for an epoch.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>` (optional): fetches the leader schedule for the epoch that corresponds to the provided slot. If unspecified, fetches the leader schedule for the current epoch.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `identity` (string): returns only the results for this validator identity (base-58 encoded).
+
+### Returns
+<br/>
+
+  * `null`: if requested epoch is not found.
+  * `<object>`: otherwise, the result field will be a dictionary of validator identities, as base-58 encoded strings, and their corresponding leader slot indices as values (indices are relative to the first slot in the requested epoch).
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getLeaderSchedule",
+      "id": 1
+    }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+      "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F": [
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
+        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
+        57, 58, 59, 60, 61, 62, 63
+      ]
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getLeaderSchedule",
+      "params": [
+        null,
+        {
+          "identity": "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F"
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+      "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F": [
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
+        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
+        57, 58, 59, 60, 61, 62, 63
+      ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getMaxRetransmitSlot`
+
+> **Returns the max slot seen from retransmit stage.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<u64>`: the slot.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getMaxRetransmitSlot",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 1234,
+    "id": 1
+}
+```
+
+---
+
+## `getMaxShredInsertSlot`
+
+Returns the max slot seen from after shred insert.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<u64>`: the slot.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getMaxShredInsertSlot",
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 1234,
+    "id": 1
+}
+```
+
+---
+
+## `getMinimumBalanceForRentExemption`
+
+> **Returns minimum balance required to make account rent exempt.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<usize>`: the account data length.
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+<br/>
+
+  * `<u64>`: the minimum lamports required in an account.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getMinimumBalanceForRentExemption",
+      "params": [50],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 500,
+    "id": 1
+}
+```
+
+---
+
+## `getMultipleAccounts`
+
+> **Returns the account information for a list of pubkeys.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<array>`: an array of Pubkeys to query, as base-58 encoded strings (up to a maximum of 100).
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `encoding` (string): encoding for Account data, either "base58" (slow), "base64", "base64+zstd", or "jsonParsed". "base58" is limited to Account data of less than 129 bytes. "base64" will return base64 encoded data for Account data of any size. "base64+zstd" compresses the Account data using [Zstandard](https://facebook.github.io/zstd/) and base64-encodes the result. ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific state parsers to return more human-readable and explicit account state data. If "jsonParsed" is requested but a parser cannot be found, the field falls back to "base64" encoding, detectable when the `data` field is type `string`.
+      * `dataSlice` (object): limits the returned account data using the provided `offset: <usize>` and `length: <usize>` fields; only available for "base58", "base64" or "base64+zstd" encodings.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The result will be a JSON object with value equal to an array of:
+
+  * `null`: if the account at that Pubkey doesn't exist.
+  * `<object>`: otherwise, a JSON object containing:
+    * `lamports` (u64): the number of lamports assigned to this account, as a u64.
+    * `owner` (string): a base-58 encoded Pubkey of the program this account has been assigned to.
+    * `data`([string, encoding]|object): data associated with the account, either as encoded binary data or JSON format `{<program>: <state>}`, depending on the encoding parameter.
+    * `executable`(boolean): a boolean indicating if the account contains a program (and is strictly read-only).
+    * `rentEpoch` (u64): the epoch at which this account will next owe rent, as u64.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getMultipleAccounts",
+      "params": [
+        [
+          "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
+          "4fYNw3dojWmQ4dXtSGE9epjRGy9pFSx62YypT7avPYvA"
+        ],
+        {
+          "dataSlice": {
+            "offset": 0,
+            "length": 0
+          }
+        }
+      ]
+   }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.6",
+            "slot": 172282067
+        },
+        "value": [
+            null,
+            {
+                "data": [
+                    "",
+                    "base64"
+                ],
+                "executable": false,
+                "lamports": 2000000,
+                "owner": "11111111111111111111111111111111",
+                "rentEpoch": 361
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getMultipleAccounts",
+      "params": [
+        [
+          "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
+          "4fYNw3dojWmQ4dXtSGE9epjRGy9pFSx62YypT7avPYvA"
+        ],
+        {
+          "encoding": "base58"
+        }
+      ]
+   }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 1
+        },
+        "value": [
+            {
+                "data": [
+                    "11116bv5nS2h3y12kD1yUKeMZvGcKLSjQgX6BeV7u1FrjeJcKfsHRTPuR3oZ1EioKtYGiYxpxMG5vpbZLsbcBYBEmZZcMKaSoGx9JZeAuWf",
+                    "base58"
+                ],
+                "executable": false,
+                "lamports": 1000000000,
+                "owner": "11111111111111111111111111111111",
+                "rentEpoch": 2
+            },
+            {
+                "data": [
+                    "",
+                    "base58"
+                ],
+                "executable": false,
+                "lamports": 5000000000,
+                "owner": "11111111111111111111111111111111",
+                "rentEpoch": 2
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getProgramAccounts`
+
+> **Returns all accounts owned by the provided program Pubkey.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>`: the Pubkey of a program, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `encoding` (string): encoding for Account data, either "base58" (slow), "base64", "base64+zstd", or "jsonParsed". "base58" is limited to Account data of less than 129 bytes. "base64" will return base64 encoded data for Account data of any size. "base64+zstd" compresses the Account data using [Zstandard](https://facebook.github.io/zstd/) and base64-encodes the result. ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific state parsers to return more human-readable and explicit account state data. If "jsonParsed" is requested but a parser cannot be found, the field falls back to "base64" encoding, detectable when the `data` field is type `string`.
+      * `dataSlice` (object): limits the returned account data using the provided `offset: <usize>` and `length: <usize>` fields; only available for "base58", "base64" or "base64+zstd" encodings.
+      * `filters` (array): filters the results using up to 4 filter objects; the account must meet all the filter criteria to be included in results:
+        * `memcmp` (object): compares a provided series of bytes with program account data at a particular offset. Fields:
+          * `offset` (usize): an offset into program account data to start comparison.
+          * `bytes` (string): the data to match, as encoded string.
+          * `encoding` (string): an encoding for the filter bytes data, either "base58" or "base64". Data is limited in size to 128 or fewer decoded bytes. NEW: This field, and base64 support generally, is only available in solana-core v1.14.0 or newer. Please omit when querying nodes on earlier versions.
+        * `dataSize` (u64): compares the program account data length with the provided data size
+      * `withContext` (boolean): wraps the result in a JSON object.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+By default, the result field will be an array of JSON objects. If `withContext` flag is set, the array will be wrapped in a JSON object.
+
+  * `pubkey` (string): the account Pubkey as base-58 encoded string.
+  * `account` (object): a JSON object, with the following subfields:
+    * `lamports` (u64): the number of lamports assigned to this account, as a u64.
+    * `owner` (string): the base-58 encoded Pubkey of the program this account has been assigned to.
+    * `data` ([string,encoding]|object): the data associated with the account, either as encoded binary data or JSON format `{<program>: <state>}`, depending on encoding parameter.
+    * `executable` (bool): a boolean indicating if the account contains a program (and is strictly read-only).
+    * `rentEpoch` (u64): the epoch at which this account will next owe rent, as a u64.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getProgramAccounts",
+      "params": ["4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T"]
+   }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "account": {
+                "data": "2R9jLfiAQ9bgdcw6h8s44439",
+                "executable": false,
+                "lamports": 15298080,
+                "owner": "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
+                "rentEpoch": 28
+            },
+            "pubkey": "CxELquR1gPP8wHe33gZ4QxqGB3sZ9RSwsJ2KshVewkFY"
+        }
+    ],
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getProgramAccounts",
+      "params": [
+        "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
+        {
+          "filters": [
+            {
+              "dataSize": 17
+            },
+            {
+              "memcmp": {
+                "offset": 4,
+                "bytes": "3Mc6vR"
+              }
+            }
+          ]
+        }
+      ]
+   }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "account": {
+                "data": "2R9jLfiAQ9bgdcw6h8s44439",
+                "executable": false,
+                "lamports": 15298080,
+                "owner": "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
+                "rentEpoch": 28
+            },
+            "pubkey": "CxELquR1gPP8wHe33gZ4QxqGB3sZ9RSwsJ2KshVewkFY"
+        }
+    ],
+    "id": 1
+}
+```
+
+---
+
+## `getRecentPerformanceSamples`
+
+> **Returns a list of recent performance samples, in reverse slot order.**
+
+Performance samples are taken every 60 seconds and include the number of transactions and slots that occur in a given time window.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `limit` (usize; optional): the number of samples to return (max: 720).
+
+### Returns
+
+The `result` object containing the following parameters:
+
+  * `slot` (u64): the slot in which sample was taken at.
+  * `numTransactions` (u64): the number of transactions in a sample.
+  * `numSlots` (u64): the number of slots in a sample.
+  * `samplePeriodSecs` (u16): the number of seconds in a sample window.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getRecentPerformanceSamples",
+      "params": [4]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "numSlots": 60,
+            "numTransactions": 113284,
+            "samplePeriodSecs": 60,
+            "slot": 172296358
+        },
+        {
+            "numSlots": 69,
+            "numTransactions": 136366,
+            "samplePeriodSecs": 60,
+            "slot": 172296298
+        },
+        {
+            "numSlots": 63,
+            "numTransactions": 120446,
+            "samplePeriodSecs": 60,
+            "slot": 172296229
+        },
+        {
+            "numSlots": 69,
+            "numTransactions": 115511,
+            "samplePeriodSecs": 60,
+            "slot": 172296166
+        }
+    ],
+    "id": 1
+}
+```
+
+---
+
+## `getSignaturesForAddress`
+
+> **Returns signatures for confirmed transactions that include the given address in their `accountKeys` list.**
+
+Returns signatures backwards in time from the provided signature or most recent confirmed block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the account address as a base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `limit` (number): the maximum transaction signatures to return (between 1 and 1,000, default: 1,000).
+      * `before` (string): starts searching backwards from this transaction signature. If not provided the search starts from the top of the highest max confirmed block.
+      * `until` (string): searches until this transaction signature, if found before limit reached.
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The `result` field is an array of transaction signature information, ordered from newest to oldest transaction:
+
+  * `signature` (string): the transaction signature as base-58 encoded string.
+  * `slot` (u64): the slot that contains the block with the transaction.
+  * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError definitions](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13).
+  * `memo` (string|null): the memo associated with the transaction, null if there is no memo.
+  * `blockTime` (i64|null): estimated production time, as Unix timestamp (seconds since the Unix epoch) of when transaction was processed. null if not available.
+  * `confirmationStatus` (string|null): the transaction's cluster confirmation status; either processed, confirmed, or finalized.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getSignaturesForAddress",
+      "params": [
+        "Vote111111111111111111111111111111111111111",
+        {
+          "limit": 1
+        }
+     ]
+  }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "blockTime": 1673625194,
+            "confirmationStatus": "finalized",
+            "err": {
+                "InstructionError": [
+                    0,
+                    {
+                        "Custom": 0
+                    }
+                ]
+            },
+            "memo": null,
+            "signature": "67hjBTJ81at5VQ2BzyfvindwyZnaPLRpE1u9CFznZQRLcnzRSwQ1EuxNohcPdn23XLQbiFDyHPM7XhQobn6WD5Zc",
+            "slot": 172298185
+        }
+    ],
+    "id": 1
+}
+```
+
+---
+
+## `getSignatureStatuses`
+
+> **Returns the statuses of a list of signatures.**
+
+Unless the `searchTransactionHistory` configuration parameter is included, this method only searches the recent status cache of signatures, which retains statuses for all active slots plus `MAX_RECENT_BLOCKHASHES` rooted slots.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<array>`: an array of transaction signatures to confirm, as base-58 encoded strings (up to a maximum of 256).
+    * `<object>` (optional): the object containing the following field:
+      * `searchTransactionHistory` (boolean): if `true`, a Solana node will search its ledger cache for any signatures not found in the recent status cache.
+
+### Returns
+<br/>
+
+  * `null`: an unknown transaction.
+  * `<object>`: a known transaction; contains the following parameters:
+    * `slot` (u64): the slot the transaction was processed at.
+    * `confirmations` (usize|null): the number of blocks since signature confirmation, null if rooted, as well as finalized by a supermajority of the cluster.
+    * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError definitions](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13).
+    * `confirmationStatus` (string|null): the transaction's cluster confirmation status; either `processed`, `confirmed`, or `finalized`.
+    * [DEPRECATED] `status` (object): the transaction status:
+      * `"Ok": <null>`: the transaction was successful.
+      * `"Err": <ERR>`: the transaction failed with `TransactionError`.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+       "jsonrpc": "2.0",
+       "id": 1,
+       "method": "getSignatureStatuses",
+       "params": [
+         [
+           "5VERv8NMvzbJMEkV8xnrLkEaWRtSz9CosKDYjCJjBRnbJLgp8uirBgmQpjKhoR4tjF3ZpRzrFmBV6UjKdiSZkQUW",
+           "5j7s6NiJS3JAkvgkoc18WVAsiSaci2pxB2A6ueCJP4tprA2TFg9wSyTLeYouxPBJEMzJinENTkpA52YStRW5Dia7"
+         ]
+       ]
+  }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 82
+        },
+        "value": [
+            {
+                "slot": 72,
+                "confirmations": 10,
+                "err": null,
+                "status": {
+                    "Ok": null
+                },
+                "confirmationStatus": "confirmed"
+            },
+            null
+        ]
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "getSignatureStatuses",
+     "params": [
+       [
+         "5VERv8NMvzbJMEkV8xnrLkEaWRtSz9CosKDYjCJjBRnbJLgp8uirBgmQpjKhoR4tjF3ZpRzrFmBV6UjKdiSZkQUW"
+       ],
+       {
+         "searchTransactionHistory": true
+       }
+     ]
+  }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 82
+        },
+        "value": [
+            {
+                "slot": 48,
+                "confirmations": null,
+                "err": null,
+                "status": {
+                    "Ok": null
+                },
+                "confirmationStatus": "finalized"
+            },
+            null
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getSlot`
+
+> **Returns the slot that has reached the given (finalized/confirmed/processed) or default (finalized) commitment level.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `<u64>`: the current slot.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getSlot"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 172622778,
+    "id": 1
+}
+```
+
+---
+
+## `getSlotLeader`
+
+> **Returns the current slot leader.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>`: the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `<string>`: the node identity Pubkey as base-58 encoded string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getSlotLeader"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "BPX9WVx1MjVpSWY9fo3hGXfE74yKXcreS2XYKjpiyJfZ",
+    "id": 1
+}
+```
+
+---
+
+## `getSlotLeaders`
+
+> **Returns the slot leaders for a given slot range.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>`: the start slot, as u64 integer.
+    * `<u64>`: the limit, as a u64 integer (between 1 and 5,000).
+
+### Returns
+<br/>
+
+  * `<array[string]>`: the node identity public keys as base-58 encoded strings.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getSlotLeaders",
+      "params": [100, 10]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
+        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
+        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
+        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
+        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
+        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
+        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
+        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
+        "DWvDTSh3qfn88UoQTEKRV2JnLt5jtJAVoiCo3ivtMwXP",
+        "DWvDTSh3qfn88UoQTEKRV2JnLt5jtJAVoiCo3ivtMwXP"
+    ],
+    "id": 1
+}
+```
+
+---
+
+## `getStakeActivation`
+
+> **Returns the epoch activation information for a stake account.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>`: the pubkey of stake account to query, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `epoch` (u64): the epoch for which to calculate activation details. If parameter not provided, defaults to the current epoch.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The `result` object contains the following fields:
+
+  * `state` (string): the stake account's activation state, one of: `active`, `inactive`, `activating`, `deactivating`.
+  * `active` (u64): the stake active during the epoch.
+  * `inactive` (u64): the stake inactive during the epoch.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getStakeActivation",
+      "params": ["CYRJWqiSjLitBAcRxPvWpgX3s5TvmN2SuRY3eEYypFvT"]
+    }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "active": 197717120,
+        "inactive": 0,
+        "state": "active"
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getStakeActivation",
+      "params": [
+        "CYRJWqiSjLitBAcRxPvWpgX3s5TvmN2SuRY3eEYypFvT",
+        {
+          "epoch": 4
+        }
+      ]
+    }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "active": 124429280,
+        "inactive": 73287840,
+        "state": "activating"
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getSupply`
+
+> **Returns information about the current supply.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>`: the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `excludeNonCirculatingAccountsList` (boolean): set to `true` to exclude non-circulating accounts list from response.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `total` (u64): the total supply in lamports.
+  * `circulating` (u64): the circulating supply in lamports.
+  * `nonCirculating` (u64): the non-circulating supply in lamports.
+  * `nonCirculatingAccounts` (array): an array of account addresses of non-circulating accounts, as strings. If `excludeNonCirculatingAccountsList` is enabled, the returned array will be empty.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getSupply"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 1114
+        },
+        "value": {
+            "circulating": 16000,
+            "nonCirculating": 1000000,
+            "nonCirculatingAccounts": [
+                "FEy8pTbP5fEoqMV1GdTz83byuA8EKByqYat1PKDgVAq5",
+                "9huDUZfxoJ7wGMTffUE7vh1xePqef7gyrLJu9NApncqA",
+                "3mi1GmwEE3zo2jmfDuzvjSX9ovRXsDUKHvsntpkhuLJ9",
+                "BYxEJTDerkaRWBem3XgnVcdhppktBXa2HbkHPKj2Ui4Z"
+            ],
+            "total": 1016000
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getTokenAccountBalance`
+
+> **Returns the token balance of an SPL Token account.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the pubkey of Token account to query, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `amount` (string): the raw balance without decimals, a string representation of u64.
+  * `decimals` (u8): the number of base 10 digits to the right of the decimal place.
+  * `uiAmount` (number|null): the balance, using mint-prescribed decimals [DEPRECATED].
+  * `uiAmountString` (string): the balance as a string, using mint-prescribed decimals.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTokenAccountBalance",
+      "params": ["7fUAJdStEuGbc3sM84cKRL6yYaaSstyLSU4ve5oovLS7"]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 1114
+        },
+        "value": {
+            "amount": "9864",
+            "decimals": 2,
+            "uiAmount": 98.64,
+            "uiAmountString": "98.64"
+        },
+        "id": 1
+    }
+}
+```
+
+---
+
+## `getTokenAccountsByDelegate`
+
+> **Returns all SPL Token accounts by approved Delegate.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the pubkey of account delegate to query, as base-58 encoded string.
+    * `<object>` (required): either:
+      * `mint` (string): the pubkey of the specific token Mint to limit accounts to, as base-58 encoded string; or
+      * `programId` (string): the pubkey of the Token program that owns the accounts, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `encoding` (string): encoding for Account data, either "base58" (slow), "base64", "base64+zstd", or "jsonParsed". "base58" is limited to Account data of less than 129 bytes. "base64" will return base64 encoded data for Account data of any size. "base64+zstd" compresses the Account data using [Zstandard](https://facebook.github.io/zstd/) and base64-encodes the result. ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific state parsers to return more human-readable and explicit account state data. If "jsonParsed" is requested but a parser cannot be found, the field falls back to "base64" encoding, detectable when the `data` field is type `string`.
+      * `dataSlice` (object; optional): limits the returned account data using the provided `offset: <usize>` and `length: <usize>` fields; only available for "base58", "base64" or "base64+zstd" encodings.
+      * `minContextSlot` (number; optional): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `pubkey` (string): the account Pubkey as base-58 encoded string.
+  * `account` (object): a JSON object, with the following subfields:
+    * `lamports` (u64): the number of lamports assigned to this account, as a u64.
+    * `owner` (string): the base-58 encoded Pubkey of the program this account has been assigned to.
+    * `data` (object): the Token state data associated with the account, either as encoded binary data or in JSON format `{<program>: <state>}`.
+    * `executable` (boolean): a boolean indicating if the account contains a program (and is strictly read-only).
+    * `rentEpoch` (u64): the epoch at which this account will next owe rent, as u64.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTokenAccountsByDelegate",
+      "params": [
+        "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
+        {
+           "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "encoding": "jsonParsed"
+        }
+      ]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 1114
+        },
+        "value": [
+            {
+                "account": {
+                    "data": {
+                        "program": "spl-token",
+                        "parsed": {
+                            "info": {
+                                "tokenAmount": {
+                                    "amount": "1",
+                                    "decimals": 1,
+                                    "uiAmount": 0.1,
+                                    "uiAmountString": "0.1"
+                                },
+                                "delegate": "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
+                                "delegatedAmount": {
+                                    "amount": "1",
+                                    "decimals": 1,
+                                    "uiAmount": 0.1,
+                                    "uiAmountString": "0.1"
+                                },
+                                "state": "initialized",
+                                "isNative": false,
+                                "mint": "3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E",
+                                "owner": "CnPoSPKXu7wJqxe59Fs72tkBeALovhsCxYeFwPCQH9TD"
+                            },
+                            "type": "account"
+                        },
+                        "space": 165
+                    },
+                    "executable": false,
+                    "lamports": 1726080,
+                    "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "rentEpoch": 4
+                },
+                "pubkey": "28YTZEwqtMHWrhWcvv34se7pjS7wctgqzCPB3gReCFKp"
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getTokenAccountsByOwner`
+
+> **Returns all SPL Token accounts by token owner.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the pubkey of account owner to query, as base-58 encoded string.
+    * `<object>` (required): either:
+      * `mint` (string): the pubkey of the specific token Mint to limit accounts to, as base-58 encoded string; or
+      * `programId` (string): the pubkey of the Token program that owns the accounts, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `encoding` (string): encoding for Account data, either "base58" (slow), "base64", "base64+zstd", or "jsonParsed". "base58" is limited to Account data of less than 129 bytes. "base64" will return base64 encoded data for Account data of any size. "base64+zstd" compresses the Account data using [Zstandard](https://facebook.github.io/zstd/) and base64-encodes the result. ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific state parsers to return more human-readable and explicit account state data. If "jsonParsed" is requested but a parser cannot be found, the field falls back to "base64" encoding, detectable when the `data` field is type `string`.
+      * `dataSlice` (object): limits he returned account data using the provided `offset: <usize>` and `length: <usize>` fields; only available for "base58", "base64" or "base64+zstd" encodings.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `pubkey` (string): the account Pubkey as base-58 encoded string.
+  * `account` (object): a JSON object, with the following subfields:
+    * `lamports` (u64): the number of lamports assigned to this account, as a u64.
+    * `owner` (string): the base-58 encoded Pubkey of the program this account has been assigned to.
+    * `data` (object): the Token state data associated with the account, either as encoded binary data or in JSON format `{<program>: <state>}`.
+    * `executable` (boolean): a boolean indicating if the account contains a program (and is strictly read-only).
+    * `rentEpoch` (u64): the epoch at which this account will next owe rent, as u64.
+
+### Request parameters
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "getTokenAccountsByOwner",
+     "params": [
+        "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F",
+        {
+         "mint": "3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E"
+       },
+       {
+         "encoding": "jsonParsed"
+       }
+     ]
+   }'
+```
+
+### Response parameters
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 1114
+        },
+        "value": [
+            {
+                "account": {
+                    "data": {
+                        "program": "spl-token",
+                        "parsed": {
+                            "accountType": "account",
+                            "info": {
+                                "tokenAmount": {
+                                    "amount": "1",
+                                    "decimals": 1,
+                                    "uiAmount": 0.1,
+                                    "uiAmountString": "0.1"
+                                },
+                                "delegate": "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
+                                "delegatedAmount": {
+                                    "amount": "1",
+                                    "decimals": 1,
+                                    "uiAmount": 0.1,
+                                    "uiAmountString": "0.1"
+                                },
+                                "state": "initialized",
+                                "isNative": false,
+                                "mint": "3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E",
+                                "owner": "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F"
+                            },
+                            "type": "account"
+                        },
+                        "space": 165
+                    },
+                    "executable": false,
+                    "lamports": 1726080,
+                    "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "rentEpoch": 4
+                },
+                "pubkey": "C2gJg6tKpQs41PRS1nC8aw3ZKNZK3HQQZGVrDFDup5nx"
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getTokenLargestAccounts`
+
+> **Returns the 20 largest accounts of a particular SPL Token type.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the Pubkey of token Mint to query, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `address` (string): the address of the token account.
+  * `amount` (string): the raw token account balance without decimals, a string representation of u64.
+  * `decimals` (u8): the number of base 10 digits to the right of the decimal place.
+  * `uiAmount` (number|null): the token account balance, using mint-prescribed decimals [DEPRECATED].
+  * `uiAmountString` (string): the token account balance as a string, using mint-prescribed decimals.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTokenLargestAccounts",
+      "params": ["3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E"]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 1114
+        },
+        "value": [
+            {
+                "address": "FYjHNoFtSQ5uijKrZFyYAxvEr87hsKXkXcxkcmkBAf4r",
+                "amount": "771",
+                "decimals": 2,
+                "uiAmount": 7.71,
+                "uiAmountString": "7.71"
+            },
+            {
+                "address": "BnsywxTcaYeNUtzrPxQUvzAWxfzZe3ZLUJ4wMMuLESnu",
+                "amount": "229",
+                "decimals": 2,
+                "uiAmount": 2.29,
+                "uiAmountString": "2.29"
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getTokenSupply`
+
+> **Returns the total supply of an SPL Token type.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the Pubkey of token Mint to query, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `amount` (string): the raw total token supply without decimals, a string representation of u64.
+  * `decimals` (u8): the number of base 10 digits to the right of the decimal place.
+  * `uiAmount` (number|null): the total token supply, using mint-prescribed decimals [DEPRECATED].
+  * `uiAmountString` (string): the total token supply as a string, using mint-prescribed decimals.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTokenSupply",
+      "params": ["3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E"]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 1114
+        },
+        "value": {
+            "amount": "100000",
+            "decimals": 2,
+            "uiAmount": 1000,
+            "uiAmountString": "1000"
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getTransaction`
+
+> **Returns transaction details for a confirmed transaction.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the transaction signature as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following optional fields:
+      * `encoding` (string): encoding for each returned Transaction, either "json", "jsonParsed", "base58" (slow), "base64". If parameter not provided, the default encoding is "json". ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list. If "jsonParsed" is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+      * `maxSupportedTransactionVersion` (number): sets the max transaction version to return in responses. If the requested transaction is a higher version, an error will be returned. If this parameter is omitted, only legacy transactions will be returned, and any versioned transaction will prompt the error.
+
+### Returns
+<br/>
+
+  * `null`: if transaction is not found or not confirmed.
+  * `<object>`: if transaction is confirmed, an object with the following fields:
+    * `slot` (u64): the slot this transaction was processed in.
+    * `transaction` (object|[string,encoding]): a [transaction](https://docs.solana.com/developing/clients/jsonrpc-api#transaction-structure) object, either in JSON format or encoded binary data, depending on encoding parameter.
+    * `blockTime` (i64|null): the estimated production time, as Unix timestamp (seconds since the Unix epoch) of when the transaction was processed. null if not available.
+    * `meta` (object|null): the transaction status metadata object:
+      * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://docs.rs/solana-sdk/1.14.11/solana_sdk/transaction/enum.TransactionError.html) definitions.
+      * `fee` (u64): the fee this transaction was charged, as u64 integer.
+      * `preBalances` (array): an array of u64 account balances from before the transaction was processed.
+      * `postBalances` (array): an array of u64 account balances after the transaction was processed.
+      * `innerInstructions` (array|null): the list of [inner instructions](https://docs.solana.com/developing/clients/jsonrpc-api#inner-instructions-structure) or `null` if inner instruction recording was not enabled during this transaction.
+      * `preTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from before the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+      * `postTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from after the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+      * `logMessages` (array|null): an array of string log messages or null if log message recording was not enabled during this transaction.
+      * [DEPRECATED] `status: <object>`: the transaction status:
+        * `"Ok": <null>`: the transaction was successful.
+        * `"Err": <ERR>`: the transaction failed with TransactionError.
+      * `rewards` (array|null): the transaction-level rewards, populated if rewards are requested; an array of JSON objects containing:
+        * `pubkey` (string): the public key, as base-58 encoded string, of the account that received the reward.
+        * `lamports` (i64): the number of reward lamports credited or debited by the account, as a i64.
+        * `postBalance` (u64): the account balance in lamports after the reward was applied.
+        * `rewardType` (string): the type of reward: currently only "rent", other types may be added in the future.
+        * `commission` (u8|undefined): a vote account commission when the reward was credited, only present for voting and staking rewards.
+      * `loadedAddresses` (object|undefined): the transaction addresses loaded from address lookup tables. Undefined if `maxSupportedTransactionVersion` is not set in request params.
+        * `writable` (array[string]): the ordered list of base-58 encoded addresses for writable loaded accounts.
+        * `readonly` (array[string]): the ordered list of base-58 encoded addresses for readonly loaded accounts.
+      * `returnData` (object|undefined): the most-recent return data generated by an instruction in the transaction, with the following fields:
+        * `programId` (string): the program that generated the return data, as base-58 encoded Pubkey.
+        * `data` ([string, encoding]): the return data itself, as base-64 encoded binary data.
+      * `computeUnitsConsumed` (u64|undefined): the number of [compute units](https://docs.solana.com/developing/programming-model/runtime#compute-budget) consumed by the transaction.
+    * `version` ("legacy"|number|undefined): the transaction version. Undefined if `maxSupportedTransactionVersion` is not set in request params.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTransaction",
+      "params": [
+        "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
+        "json"
+      ]
+    }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "meta": {
+            "err": null,
+            "fee": 5000,
+            "innerInstructions": [],
+            "postBalances": [
+                499998932500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "postTokenBalances": [],
+            "preBalances": [
+                499998937500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "preTokenBalances": [],
+            "rewards": [],
+            "status": {
+                "Ok": null
+            }
+        },
+        "slot": 430,
+        "transaction": {
+            "message": {
+                "accountKeys": [
+                    "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
+                    "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
+                    "SysvarS1otHashes111111111111111111111111111",
+                    "SysvarC1ock11111111111111111111111111111111",
+                    "Vote111111111111111111111111111111111111111"
+                ],
+                "header": {
+                    "numReadonlySignedAccounts": 0,
+                    "numReadonlyUnsignedAccounts": 3,
+                    "numRequiredSignatures": 1
+                },
+                "instructions": [
+                    {
+                        "accounts": [
+                            1,
+                            2,
+                            3,
+                            0
+                        ],
+                        "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
+                        "programIdIndex": 4
+                    }
+                ],
+                "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
+            },
+            "signatures": [
+                "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
+            ]
+        }
+    },
+    "blockTime": null,
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTransaction",
+      "params": [
+        "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
+        "base64"
+      ]
+    }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "meta": {
+            "err": null,
+            "fee": 5000,
+            "innerInstructions": [],
+            "postBalances": [
+                499998932500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "postTokenBalances": [],
+            "preBalances": [
+                499998937500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "preTokenBalances": [],
+            "rewards": null,
+            "status": {
+                "Ok": null
+            }
+        },
+        "slot": 430,
+        "transaction": [
+            "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
+            "base64"
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getTransactionCount`
+
+> **Returns the current Transaction count from the ledger.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): the configuration object containing the following fields:
+      * commitment (string; optional): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `<u64>`: the count.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTransactionCount"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 133855482658,
+    "id": 1
+}
+```
+
+---
+
+## `getVersion`
+
+> **Returns the current solana versions running on the node.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+
+The `result` object contains the following parameters:
+
+  * `solana-core`: the software version of solana-core.
+  * `feature-set`: a unique identifier of the current software's feature set.
+
+### Request parameters
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getVersion"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "feature-set": 1775889670,
+        "solana-core": "1.13.6"
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getVoteAccounts`
+
+> **Returns the account info and associated stake for all the voting accounts in the current bank.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `votePubkey` (string): only returns the results for this validator vote address (base-58 encoded).
+      * `keepUnstakedDelinquents` (boolean): set to `true` to not filter out delinquent validators with no stake.
+      * `delinquentSlotDistance` (u64): specify the number of slots behind the tip that a validator must fall to be considered delinquent. NOTE: For the sake of consistency between ecosystem products, it is not recommended that this argument be specified.
+
+### Returns
+
+The result field will be a JSON object of `current` and `delinquent` accounts, each containing an array of JSON objects with the following subfields:
+
+  * `votePubkey` (string): the vote account address, as base-58 encoded string.
+  * `nodePubkey` (string): the validator identity, as base-58 encoded string.
+  * `activatedStake` (u64): the stake, in lamports, delegated to this vote account and active in this epoch.
+  * `epochVoteAccount` (boolean): `true` if the vote account is staked for this epoch, otherwise `false`.
+  * `commission` (number): the percentage (0-100) of rewards payout owed to the vote account.
+  * `lastVote` (u64): the most recent slot voted on by this vote account.
+  * `epochCredits` (array): the history of how many credits earned by the end of each epoch, as an array of arrays containing: `[epoch, credits, previousCredits]`.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getVoteAccounts"
+    }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "current": [
+            {
+                "commission": 0,
+                "epochVoteAccount": true,
+                "epochCredits": [
+                    [
+                        1,
+                        64,
+                        0
+                    ],
+                    [
+                        2,
+                        192,
+                        64
+                    ]
+                ],
+                "nodePubkey": "B97CCUW3AEZFGy6uUg6zUdnNYvnVq5VG8PUtb2HayTDD",
+                "lastVote": 147,
+                "activatedStake": 42,
+                "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
+            }
+        ],
+        "delinquent": [
+            {
+                "commission": 127,
+                "epochVoteAccount": false,
+                "epochCredits": [],
+                "nodePubkey": "6ZPxeQaDo4bkZLRsdNrCzchNQr5LN9QMc9sipXv9Kw8f",
+                "lastVote": 0,
+                "activatedStake": 0,
+                "votePubkey": "CmgCk4aMS7KW1SHX3s9K5tBJ6Yng2LBaC8MFov4wx9sm"
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+Restricts the results to a single validator vote account.
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getVoteAccounts",
+      "params": [
+        {
+          "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
+        }
+      ]
+    }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "current": [
+            {
+                "commission": 0,
+                "epochVoteAccount": true,
+                "epochCredits": [
+                    [
+                        1,
+                        64,
+                        0
+                    ],
+                    [
+                        2,
+                        192,
+                        64
+                    ]
+                ],
+                "nodePubkey": "B97CCUW3AEZFGy6uUg6zUdnNYvnVq5VG8PUtb2HayTDD",
+                "lastVote": 147,
+                "activatedStake": 42,
+                "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
+            }
+        ],
+        "delinquent": []
+    },
+    "id": 1
+}
+```
+
+---
+
+## `isBlockhashValid`
+
+<Callout type="tip">
+NEW: This method is only available in solana-core v1.9 or newer. Please use [`getFeeCalculatorForBlockhash`](/rpc-service/chains/chains-api/solana/#getfeecalculatorforblockhash-deprecated) for solana-core v1.8
+</Callout>
+
+> **Returns whether a blockhash is still valid or not.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `blockhash` (string; required): the blockhash of this block, as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): used for retrieving blockhash; the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+<br/>
+
+  * `<boolean>`: returns `true` if the blockhash is still valid.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+     "id":45,
+     "jsonrpc":"2.0",
+     "method":"isBlockhashValid",
+     "params":[
+       "J7rBdM6AecPDEZp8aPq5iPSNKVkU5Q76F3oAV4eW5wsW",
+       {"commitment": "processed"}
+     ]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.6",
+            "slot": 172754624
+        },
+        "value": false
+    },
+    "id": 45
+}
+```
+
+---
+
+## `minimumLedgerSlot`
+
+> **Returns the lowest slot that the node has information about in its ledger.**
+
+This value may increase over time if the node is configured to purge older ledger data.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<u64>`: the minimum ledger slot.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+     "id":45,
+     "jsonrpc":"2.0",
+     "method":"minimumLedgerSlot"
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 172638029,
+    "id": 45
+}
+```
+
+---
+
+## `requestAirdrop`
+
+> **Requests an airdrop of lamports to a Pubkey.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the Pubkey of the account to receive lamports, as base-58 encoded string.
+    * `integer` (required): lamports, as a u64.
+    * `object` (optional): the configuration object containing the follwing field:
+      * `commitment` (string): used for retrieving blockhash and verifying airdrop success; the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+<br/>
+
+  * `<string>`: the Transaction Signature of airdrop, as base-58 encoded string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "requestAirdrop",
+      "params": ["83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri", 1000000000]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "5VERv8NMvzbJMEkV8xnrLkEaWRtSz9CosKDYjCJjBRnbJLgp8uirBgmQpjKhoR4tjF3ZpRzrFmBV6UjKdiSZkQUW",
+    "id": 1
+}
+```
+
+---
+
+## `sendTransaction`
+
+> **Submits a signed transaction to the cluster for processing.**
+
+This method does not alter the transaction in any way; it relays the transaction created by clients to the node as-is.
+
+If the node's rpc service receives the transaction, this method immediately succeeds, without waiting for any confirmations. A successful response from this method does not guarantee the transaction is processed or confirmed by the cluster.
+
+While the rpc service will reasonably retry to submit it, the transaction could be rejected if transaction's `recent_blockhash` expires before it lands.
+
+Use [`getSignatureStatuses`](/rpc-service/chains/chains-api/solana/#getsignaturestatuses) to ensure a transaction is processed and confirmed.
+
+Before submitting, the following preflight checks are performed:
+
+  1. The transaction signatures are verified.
+  2. The transaction is simulated against the bank slot specified by the preflight commitment. On failure an error will be returned. Preflight checks may be disabled if desired. It is recommended to specify the same commitment and preflight commitment to avoid confusing behavior.
+
+The returned signature is the first signature in the transaction, which is used to identify the transaction ([transaction id](https://docs.solana.com/terminology#transaction-id)). This identifier can be easily extracted from the transaction data before submission.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): a fully-signed Transaction, as encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `skipPreflight` (boolean): if `true`, skip the preflight transaction checks (default: `false`).
+      * `preflightCommitment` (string; default: "finalized"): a commitment level to use for preflight. The commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `encoding` (string; default: "base58"): the encoding used for the transaction data. Either "base58" (slow, DEPRECATED), or "base64".
+      * `maxRetries` (usize): the maximum number of times for the RPC node to retry sending the transaction to the leader. If this parameter not provided, the RPC node will retry the transaction until it is finalized or until the blockhash expires.
+      * `minContextSlot` (number): sets the minimum slot at which to perform preflight transaction checks.
+
+### Returns
+<br/>
+
+  * `<string>`: the first Transaction Signature embedded in the transaction, as base-58 encoded string ([transaction id](https://docs.solana.com/terminology#transaction-id)).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "sendTransaction",
+      "params": ["4hXTCkRzt9WyecNzV1XPgCDfGAZzQKNxLXgynz5QDuWWPSAZBZSHptvWRL3BjCvzUXRdKvHL2b7yGrRQcWyaqsaBCncVG7BFggS8w9snUts67BSh3EqKpXLUm5UMHfD7ZBe9GhARjbNQMLJ1QD3Spr6oMTBU6EhdB4RD8CP2xUxr2u3d6fos36PD98XS6oX8TQjLpsMwncs5DAMiD4nNnR8NBfyghGCWvCVifVwvA8B8TJxE1aiyiv2L429BCWfyzAme5sZW8rDb14NeCQHhZbtNqfXhcp2tAnaAT"]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "2id3YC2jK9G5Wo2phDx4gJVAew8DcY5NAojnVuao8rkxwPYPe8cSwE5GzhEgJA2y8fVjDEo6iR6ykBvDxrTQrtpb",
+    "id": 1
+}
+```
+
+---
+
+## `simulateTransaction`
+
+> **Simulates sending a transaction.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the transaction, as an encoded string. The transaction must have a valid blockhash, but is not required to be signed.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `sigVerify` (boolean): if `true` the transaction signatures will be verified (default: `false`, conflicts with `replaceRecentBlockhash`).
+      * `commitment` (string; default: "finalized"): a commitment level to simulate the transaction at. The commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `encoding` (string; default: "base58"): the encoding used for the transaction data. Either "base58" (slow, DEPRECATED), or "base64".
+      * `replaceRecentBlockhash` (boolean): if `true` the transaction recent blockhash will be replaced with the most recent blockhash. (default: `false`, conflicts with `sigVerify`).
+      * `accounts` (object): the accounts configuration object containing the following fields:
+        * `encoding` (string): encoding for returned Account data, either "base64" (default), "base64+zstd" or "jsonParsed". ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific state parsers to return more human-readable and explicit account state data. If "jsonParsed" is requested but a parser cannot be found, the field falls back to binary encoding, detectable when the `data` field is type `<string>`.
+        * `addresses` (array): an array of accounts to return, as base-58 encoded strings.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The result will be a JSON object with the `value` containing the following fields:
+
+  * `err` (object|string|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13) definitions.
+  * `logs` (array|null): an array of log messages the transaction instructions output during execution, null if simulation failed before the transaction was able to execute (for example due to an invalid blockhash or signature verification failure).
+  * `accounts` (array|null): an array of accounts with the same length as the `accounts.addresses` array in the request:
+    * `<null>`: if the account doesn't exist or if `err` is not null.
+    * `<object>`: otherwise, a JSON object containing:
+      * `lamports` (u64): the number of lamports assigned to this account, as a u64.
+      * `owner` (string): the base-58 encoded Pubkey of the program this account has been assigned to.
+      * `data` ([string, encoding]|object): the data associated with the account, either as encoded binary data or JSON format `{<program>: <state>}`, depending on encoding parameter.
+      * `executable` (boolean): a boolean indicating if the account contains a program (and is strictly read-only).
+      * `rentEpoch` (u64): the epoch at which this account will next owe rent, as u64.
+    * `unitsConsumed` (u64|undefined): the number of compute budget units consumed during the processing of this transaction.
+    * `returnData` (object|null): the most-recent return data generated by an instruction in the transaction, with the following fields:
+      * `programId` (string): the program that generated the return data, as base-58 encoded Pubkey.
+      * `data` ([string, encoding]): the return data itself, as base-64 encoded binary data.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "simulateTransaction",
+      "params": ["AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEDArczbMia1tLmq7zz4DinMNN0pJ1JtLdqIJPUw3YrGCzYAMHBsgN27lcgB6H2WQvFgyZuJYHa46puOQo9yQ8CVQbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCp20C7Wj2aiuk5TReAXo+VTVg8QTHjs0UjNMMKCvpzZ+ABAgEBARU=",
+        {
+            "encoding": "base64"
+        }
+      ]
+   }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "context": {
+      "slot": 218
+    },
+    "value": {
+      "err": null,
+      "accounts": null,
+      "logs": [
+        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri invoke [1]",
+        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri consumed 2366 of 1400000 compute units",
+        "Program return: 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri KgAAAAAAAAA=",
+        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri success"
+      ],
+      "returnData": {
+        "data": [
+          "Kg==",
+          "base64"
+        ],
+        "programId": "83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri"
+      },
+      "unitsConsumed": 2366
+    }
+  },
+  "id": 1
+}
+```
+
+---
+
+## `getConfirmedBlock` (DEPRECATED)
+
+<Callout type="warning">
+DEPRECATED: Please use [`getBlock`](/rpc-service/chains/chains-api/solana/#getblock) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns identity and transaction information about a confirmed block in the ledger.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>` (required): the slot, as u64 integer.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `encoding` (string): the encoding for each returned Transaction, either "json", "jsonParsed", "base58" (slow), "base64". If parameter not provided, the default encoding is "json". ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list. If "jsonParsed" is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
+      * `transactionDetails` (string): the level of transaction detail to return, either "full", "signatures", or "none". If parameter not provided, the default detail level is "full".
+      * `rewards` (boolean): whether to populate the rewards array. If parameter not provided, the default includes rewards.
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+
+### Returns
+
+The `result` is an object containing the following fields:
+
+  * `null`: if specified block is not confirmed.
+  * `<object>`: if block is confirmed, an object with the following fields:
+    * `blockhash` (string):  the blockhash of this block, as base-58 encoded string.
+    * `previousBlockhash` (string): the blockhash of this block's parent, as base-58 encoded string; if the parent block is not available due to ledger cleanup, this field will return "11111111111111111111111111111111".
+    * `parentSlot` (u64): the slot index of this block's parent.
+    * `transactions` (array): to be included if "full" transaction details are requested; an array of JSON objects containing:
+      * `transaction` (object|[string,encoding]): the [Transaction](https://docs.solana.com/developing/clients/jsonrpc-api#transaction-structure) object, either in JSON format or encoded binary data, depending on encoding parameter.
+      * `meta` (object): the transaction status metadata object, containing null or:
+        * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13) definitions.
+        * `fee` (u64): the fee this transaction was charged, as u64 integer.
+        * `preBalances` (array): an array of u64 account balances from before the transaction was processed.
+        * `postBalances` (array): an array of u64 account balances after the transaction was processed.
+        * `innerInstructions` (array|null): the list of [inner instructions](https://docs.solana.com/developing/clients/jsonrpc-api#inner-instructions-structure) or null if inner instruction recording was not enabled during this transaction.
+        * `preTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from before the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+        * `postTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from after the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+        * `logMessages` (array|null): an array of string log messages or null if log message recording was not enabled during this transaction.
+        * [DEPRECATED] `status` (object): the transaction status.
+          * `"Ok": <null>`: the transaction was successful.
+          * `"Err": <ERR>`: the Transaction failed with TransactionError.
+    * `signatures` (array): to be included if "signatures" are requested for transaction details; an array of signatures strings, corresponding to the transaction order in the block.
+    * `rewards` (array): to be included if rewards are requested; an array of JSON objects containing:
+      * `pubkey` (string): the public key, as base-58 encoded string, of the account that received the reward.
+      * `lamports` (i64): the number of reward lamports credited or debited by the account, as a i64.
+      * `postBalance` (u64): the account balance in lamports after the reward was applied.
+      * `rewardType` (string|undefined): the type of reward: "fee", "rent", "voting", "staking".
+      * `commission` (u8|undefined): the vote account commission when the reward was credited, only present for voting and staking rewards.
+    * `blockTime` (i64|null): the estimated production time, as Unix timestamp (seconds since the Unix epoch). null if not available.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getConfirmedBlock",
+      "params": [430, {"encoding": "json", "transactionDetails": "full", "rewards": false}]
+    }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "blockTime": null,
+        "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
+        "parentSlot": 429,
+        "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
+        "transactions": [
+            {
+                "meta": {
+                    "err": null,
+                    "fee": 5000,
+                    "innerInstructions": [],
+                    "logMessages": [],
+                    "postBalances": [
+                        499998932500,
+                        26858640,
+                        1,
+                        1,
+                        1
+                    ],
+                    "postTokenBalances": [],
+                    "preBalances": [
+                        499998937500,
+                        26858640,
+                        1,
+                        1,
+                        1
+                    ],
+                    "preTokenBalances": [],
+                    "status": {
+                        "Ok": null
+                    }
+                },
+                "transaction": {
+                    "message": {
+                        "accountKeys": [
+                            "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
+                            "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
+                            "SysvarS1otHashes111111111111111111111111111",
+                            "SysvarC1ock11111111111111111111111111111111",
+                            "Vote111111111111111111111111111111111111111"
+                        ],
+                        "header": {
+                            "numReadonlySignedAccounts": 0,
+                            "numReadonlyUnsignedAccounts": 3,
+                            "numRequiredSignatures": 1
+                        },
+                        "instructions": [
+                            {
+                                "accounts": [
+                                    1,
+                                    2,
+                                    3,
+                                    0
+                                ],
+                                "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
+                                "programIdIndex": 4
+                            }
+                        ],
+                        "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
+                    },
+                    "signatures": [
+                        "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
+                    ]
+                }
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getConfirmedBlock",
+      "params": [430, "base64"]
+    }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "blockTime": null,
+        "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
+        "parentSlot": 429,
+        "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
+        "rewards": [],
+        "transactions": [
+            {
+                "meta": {
+                    "err": null,
+                    "fee": 5000,
+                    "innerInstructions": [],
+                    "logMessages": [],
+                    "postBalances": [
+                        499998932500,
+                        26858640,
+                        1,
+                        1,
+                        1
+                    ],
+                    "postTokenBalances": [],
+                    "preBalances": [
+                        499998937500,
+                        26858640,
+                        1,
+                        1,
+                        1
+                    ],
+                    "preTokenBalances": [],
+                    "status": {
+                        "Ok": null
+                    }
+                },
+                "transaction": [
+                    "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
+                    "base64"
+                ]
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getConfirmedBlocks` (DEPRECATED)
+
+<Callout type="warning">
+DEPRECATED: Please use [`getBlocks`](/rpc-service/chains/chains-api/solana/#getblocks) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns a list of confirmed blocks between two slots.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>` (required): start_slot, as u64 integer.
+    * `<u64>` (optional): end_slot, as u64 integer.
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+
+### Returns
+
+The result field will be an array of u64 integers listing confirmed blocks between `start_slot` and either `end_slot`, if provided, or latest confirmed block, inclusive. Max range allowed is 500,000 slots.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getConfirmedBlocks",
+      "params": [5, 10]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [5, 6, 7, 8, 9, 10],
+    "id": 1
+}
+```
+
+---
+
+## `getConfirmedBlocksWithLimit` (DEPRECATED)
+
+<Callout type="warning">
+DEPRECATED: Please use [`getBlocksWithLimit`](/rpc-service/chains/chains-api/solana/#getblockswithlimit) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns a list of confirmed blocks starting at the given slot.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<u64>` (required): start_slot, as u64 integer.
+    * `<u64>` (required): the limit, as u64 integer.
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+
+### Returns
+
+The result field will be an array of u64 integers listing confirmed blocks starting at start_slot for up to limit blocks, inclusive.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getConfirmedBlocksWithLimit",
+      "params": [5, 3]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [5, 6, 7],
+    "id": 1
+}
+```
+
+---
+
+## `getConfirmedSignaturesForAddress2` (DEPRECATED)
+
+<Callout type="warning">
+DEPRECATED: Please use [`getSignaturesForAddress`](/rpc-service/chains/chains-api/solana/#getsignaturesforaddress) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns signatures for confirmed transactions that include the given address in their `accountKeys` list.**
+
+Returns signatures backwards in time from the provided signature or most recent confirmed block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the account address as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `limit` (number): the maximum transaction signatures to return (between 1 and 1,000, default: 1,000).
+      * `before` (string): starts searching backwards from this transaction signature. If not provided the search starts from the top of the highest max confirmed block.
+      * `until` (string): searches until this transaction signature, if found before limit reached.
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+
+### Returns
+
+The `result` contains the transaction signature information, ordered from newest to oldest transaction:
+
+  * `signature` (string): the transaction signature as base-58 encoded string.
+  * `slot` (u64): the slot that contains the block with the transaction.
+  * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13) definitions.
+  * `memo` (string|null): the memo associated with the transaction, null if no memo is included.
+  * `blockTime` (i64|null): the estimated production time, as Unix timestamp (seconds since the Unix epoch) of when transaction was processed; null if not available.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "getConfirmedSignaturesForAddress2",
+     "params": [
+       "Vote111111111111111111111111111111111111111",
+       {
+         "limit": 1
+       }
+     ]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "blockTime": 1673887779,
+            "confirmationStatus": "finalized",
+            "err": null,
+            "memo": null,
+            "signature": "67qzQSveCwvDQhccgPGdudCSq1Yu3tYViXX63fSxvJA7JwaNqZtL9mybVbGc7og7Eaet292u7FY4mp4zUkTH8PQW",
+            "slot": 172819670
+        }
+    ],
+    "id": 1
+}
+```
+
+---
+
+## `getConfirmedTransaction` (DEPRECATED)
+
+<Callout type="warning">
+DEPRECATED: Please use [`getTransaction`](/rpc-service/chains/chains-api/solana/#gettransaction) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns transaction details for a confirmed transaction.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the transaction signature as base-58 encoded string.
+    * `<object>` (optional): the configuration object containing the following optional fields:
+      * `encoding` (string): the encoding for each returned Transaction, either "json", "jsonParsed", "base58" (slow), "base64". If parameter not provided, the default encoding is "json". ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list. If "jsonParsed" is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
+      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+
+### Returns
+<br/>
+
+  * `null`: if the transaction is not found or not confirmed.
+  * `<object>`: if the transaction is confirmed, an object with the following fields:
+    * `slot` (u64): the slot this transaction was processed in.
+    * `transaction` (object|[string,encoding]): the [Transaction](https://docs.solana.com/developing/clients/jsonrpc-api#transaction-structure) object, either in JSON format or encoded binary data, depending on encoding parameter.
+    * `blockTime` (i64|null): the estimated production time, as Unix timestamp (seconds since the Unix epoch) of when the transaction was processed; null if not available.
+    * `meta` (object|null): the transaction status metadata object:
+      * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://docs.rs/solana-sdk/1.14.11/solana_sdk/transaction/enum.TransactionError.html) definitions.
+      * `fee` (u64): the fee this transaction was charged, as u64 integer.
+      * `preBalances` (array): an array of u64 account balances from before the transaction was processed.
+      * `postBalances` (array): an array of u64 account balances after the transaction was processed.
+      * `innerInstructions` (array|null): the list of [inner instructions](https://docs.solana.com/developing/clients/jsonrpc-api#inner-instructions-structure) or `null` if inner instruction recording was not enabled during this transaction.
+      * `preTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from before the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+      * `postTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from after the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
+      * `logMessages` (array|null): an array of string log messages or `null` if log message recording was not enabled during this transaction.
+      * [DEPRECATED] `status` (object): the Transaction status.
+        * `"Ok": <null>`: the Transaction was successful.
+        * `"Err": <ERR>`: the Transaction failed with TransactionError.
+
+### Request example 1
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "getConfirmedTransaction",
+     "params": [
+       "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
+       "json"
+     ]
+   }'
+```
+
+### Response example 1
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "meta": {
+            "err": null,
+            "fee": 5000,
+            "innerInstructions": [],
+            "postBalances": [
+                499998932500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "postTokenBalances": [],
+            "preBalances": [
+                499998937500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "preTokenBalances": [],
+            "status": {
+                "Ok": null
+            }
+        },
+        "slot": 430,
+        "transaction": {
+            "message": {
+                "accountKeys": [
+                    "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
+                    "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
+                    "SysvarS1otHashes111111111111111111111111111",
+                    "SysvarC1ock11111111111111111111111111111111",
+                    "Vote111111111111111111111111111111111111111"
+                ],
+                "header": {
+                    "numReadonlySignedAccounts": 0,
+                    "numReadonlyUnsignedAccounts": 3,
+                    "numRequiredSignatures": 1
+                },
+                "instructions": [
+                    {
+                        "accounts": [
+                            1,
+                            2,
+                            3,
+                            0
+                        ],
+                        "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
+                        "programIdIndex": 4
+                    }
+                ],
+                "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
+            },
+            "signatures": [
+                "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
+            ]
+        }
+    },
+    "blockTime": null,
+    "id": 1
+}
+```
+
+### Request example 2
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "getConfirmedTransaction",
+     "params": [
+       "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
+       "base64"
+     ]
+   }'
+```
+
+### Response example 2
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "meta": {
+            "err": null,
+            "fee": 5000,
+            "innerInstructions": [],
+            "postBalances": [
+                499998932500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "postTokenBalances": [],
+            "preBalances": [
+                499998937500,
+                26858640,
+                1,
+                1,
+                1
+            ],
+            "preTokenBalances": [],
+            "status": {
+                "Ok": null
+            }
+        },
+        "slot": 430,
+        "transaction": [
+            "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
+            "base64"
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getFeeCalculatorForBlockhash` (DEPRECATED)
+
+<Callout type="warning">
+DEPRECATED: Please use [`isBlockhashValid`](/rpc-service/chains/chains-api/solana/#isblockhashvalid) or [`getFeeForMessage`](/rpc-service/chains/chains-api/solana/#getfeeformessage) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns the fee calculator associated with the query blockhash, or `null` if the blockhash has expired.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<string>` (required): the blockhash to query, as a base58-encoded string.
+    * `<object>` (optional): the configuration object containing the following fields:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
+
+### Returns
+
+The `value` object contains the following fields:
+
+  * `null`: if the query blockhash has expired.
+  * `<object>`:otherwise, a JSON object containing:
+    * `feeCalculator` (object): the object describing the cluster fee rate at the queried blockhash.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getFeeCalculatorForBlockhash",
+      "params": [
+        "GJxqhuxcgfn5Tcj6y3f8X4FeCDd2RQ6SnEMo1AAxrPRZ"
+      ]
+   }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "slot": 221
+        },
+        "value": {
+            "feeCalculator": {
+                "lamportsPerSignature": 5000
+            }
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getFeeRateGovernor`
+
+> **Returns the fee rate governor information from the root bank.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Results
+
+The result is an object with the following fields:
+
+  * `burnPercent` (u8): a percentage of fees collected to be destroyed.
+  * `maxLamportsPerSignature` (u64): the largest value `lamportsPerSignature` can attain for the next slot.
+  * `minLamportsPerSignature` (u64): the smallest value `lamportsPerSignature` can attain for the next slot.
+  * `targetLamportsPerSignature` (u64): the desired fee rate for the cluster.
+  * `targetSignaturesPerSlot` (u64): the desired signature rate for the cluster.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getFeeRateGovernor"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.6",
+            "slot": 172823609
+        },
+        "value": {
+            "feeRateGovernor": {
+                "burnPercent": 50,
+                "maxLamportsPerSignature": 100000,
+                "minLamportsPerSignature": 5000,
+                "targetLamportsPerSignature": 10000,
+                "targetSignaturesPerSlot": 20000
+            }
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getFees`
+
+<Callout type="warning">
+DEPRECATED: Please use [`getFeeForMessage`](/rpc-service/chains/chains-api/solana/#getfeeformessage) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns a recent block hash from the ledger, a fee schedule that can be used to compute the cost of submitting a transaction using it, and the last slot in which the blockhash will be valid.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>` (optional): the configuration object containing the following field:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `blockhash` (string): the Hash as base-58 encoded string.
+  * `feeCalculator` (object): the FeeCalculator object, the fee schedule for this block hash.
+  * `lastValidSlot` (u64): [DEPRECATED]; this value is inaccurate and should not be relied upon.
+  * `lastValidBlockHeight` (u64): the last [block height](https://docs.solana.com/terminology#block-height) at which the blockhash will be valid.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getFees"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.6",
+            "slot": 172824441
+        },
+        "value": {
+            "blockhash": "64kBnRLDV4cbaRK2E3pxdePc8qXSetDp5A5oq2Zr2rFX",
+            "feeCalculator": {
+                "lamportsPerSignature": 5000
+            },
+            "lastValidBlockHeight": 156741543,
+            "lastValidSlot": 172824741
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getRecentBlockhash`
+
+<Callout type="warning">
+DEPRECATED: Please use [`getLatestBlockhash`](/rpc-service/chains/chains-api/solana/#getlatestblockhash) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns a recent block hash from the ledger, and a fee schedule that can be used to compute the cost of submitting a transaction using it.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array):
+
+    * `<object>`: the configuration object containing the following field:
+      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
+        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
+        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
+          * it incorporates votes from gossip and replay.
+          * it does not count votes on descendants of a block, only direct votes on that block.
+          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
+        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
+
+### Returns
+
+The result contains the `value` object with the following fields:
+
+  * `blockhash` (string): the Hash as base-58 encoded string.
+  * `feeCalculator` (object): the FeeCalculator object, the fee schedule for this block hash.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getRecentBlockhash"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.6",
+            "slot": 172824979
+        },
+        "value": {
+            "blockhash": "EDkAjrBjh9zyWMcgTwhTs3ZVnNtDoD3Ep8QTyxksAj38",
+            "feeCalculator": {
+                "lamportsPerSignature": 5000
+            }
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## `getSnapshotSlot`
+
+<Callout type="warning">
+DEPRECATED: Please use [`getHighestSnapshotSlot`](/rpc-service/chains/chains-api/solana/#gethighestsnapshotslot) instead. This method is expected to be removed in solana-core v2.0
+</Callout>
+
+> **Returns the highest slot that the node has a snapshot for.**
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<u64>`: the snapshot slot.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getSnapshotSlot"
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 172806633,
+    "id": 1
+}
+```
+
+### Response example (no snapshot)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": -32008,
+        "message": "No snapshot"
+    },
+    "id": 1
+}
+```
+
 
