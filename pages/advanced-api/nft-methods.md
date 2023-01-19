@@ -20,6 +20,7 @@ _NFT API_ consists of the following methods to request NFT-related data across m
   * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#ankr_getnftsbyowner) — retrieves an account-associated NFTs.
   * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
   * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves holders of a particular NFT.
+  * [`ankr_getNftTransfers`](/advanced-api/nft-methods/#ankr_getnfttransfers) — retrieves NFT transfers info of a particular address.
 
 ## `ankr_getNFTsByOwner`
 
@@ -40,7 +41,7 @@ Build your request using the parameters below.
 
   * `walletAddress` (string; required): an account address to query for NFTs; supports the Ethereum Name Service (ENS).
   * `blockchain` (string): a chain or a combination of chains to query:
-     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
      * Chains combination: `[eth, polygon, bsc]`.
      * All chains: leave the value empty to query all the chains available.
   * `pageSize` (int32): a number of page results you'd like to get (default=10, max=50).
@@ -106,7 +107,7 @@ A successful response contains the following parameters:
 * `jsonrpc` (string; required):
 * `result` (object): the data object containing a list of NFT assets and their metadata:
 
-  * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
   * `collectionName` (string): a collection name the NFT asset belongs to.
   * `contractAddress` (string): an NFT collection's EVM-compatible contract address.
   * `contractType` (int32): a type of the contract — either ERC721 or ERC1155.
@@ -350,7 +351,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters.
 
-  * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
   * `contractAddress` (string): a contract address of the NFT the metadata belongs to; supports the Ethereum Name Service (ENS).
   * `tokenId` (integer): a token ID of the NFT the metadata belongs to.
 
@@ -394,7 +395,7 @@ A successful request returns, along with the general parameters, the `result` ob
 * `result` (object): the data object containing the NFT metadata and NFT attributes:
 
   * `metadata` (object): the data object containing the NFT metadata:
-    * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+    * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
     * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
     * `contractType` (string): a contract type of the NFT the metadata belongs to (example: ERC721, ERC1155).
     * `tokenId` (string): a token ID of the NFT the metadata belongs to (example: 7822).
@@ -548,7 +549,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters.
 
-  * `blockchain` (string; required): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `blockchain` (string; required): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
   * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (integer): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
@@ -667,5 +668,135 @@ Code: 200 OK
   </Tab>
 </Tabs>
 
+---
 
+## `ankr_getNftTransfers`
+
+> **Retrieves info on NFT transfers.**
+
+Retrieves info on NFT transfers for an address specified.
+
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
+
+* `id` (int64; required): a request ID (example: 1).
+* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+* `method` (string; required): a method used for the request.
+* `params` (object): the data object containing request body parameters.
+
+  * `address` (array of strings; required): an address to search for transactions.
+  * `blockchain` (array of strings): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
+  * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`).
+  * `toBlock` (integer): narrow your search indicating the block number to end with (inclusive; `>= 0`).
+  * `fromTimestamp` (integer): narrow your search indicating the timestamp to start from (inclusive; `>= 0`).
+  * `toTimestamp` (integer): narrow your search indicating the timestamp to end with (inclusive; `>=0`).
+  * `pageSize` (integer): a number of result pages you'd like to get.
+  * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "ankr_getNftTransfers",
+    "params": {
+      "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "blockchain": ["string"],
+      "fromTimestamp": 0,
+      "pageSize": 0,
+      "toTimestamp": 0
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
+
+### Response
+
+A successful request returns information on transfers for an address specified.
+
+### Code Examples
+
+#### Request
+
+```shell
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "ankr_getNftTransfers",
+    "params": {
+        "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+        "blockchain": [
+            "bsc"
+        ],
+        "fromTimestamp": 1655197483,
+        "pageSize": 2,
+        "toTimestamp": 1671974699
+    }
+}
+```
+
+#### Response
+
+Code: 200 OK
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "transfers": [
+            {
+                "blockHeight": 19116577,
+                "blockchain": "bsc",
+                "collectionName": "",
+                "collectionSymbol": "",
+                "contractAddress": "0x36f8f51f65fe200311f709b797baf4e193dd0b0d",
+                "fromAddress": "0x186ea56f0a40c5593a697b3e804968b8c5920ff3",
+                "imageUrl": "",
+                "name": "",
+                "timestamp": 1656519782,
+                "toAddress": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+                "tokenId": "12",
+                "transactionHash": "0x95ae64003124fe4c3e8702364136d25c3d0f2fdbbf953bd815785f06d5cb6025",
+                "type": "ERC1155",
+                "value": "1"
+            },
+            {
+                "blockHeight": 19357744,
+                "blockchain": "bsc",
+                "collectionName": "CheersBio Capsule",
+                "collectionSymbol": "CBC",
+                "contractAddress": "0x999017cb5652caf5f324a8e44f813903ba3c46eb",
+                "fromAddress": "0x0000000000000000000000000000000000000000",
+                "imageUrl": "https://ipfs.io/ipfs/QmZCS7HtmQZtUPLTR1LaLhCwW5W22c1jCociw7Pvi3Autg",
+                "name": "RSS3 Chain Friends #36957",
+                "timestamp": 1657244377,
+                "toAddress": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+                "tokenId": "36957",
+                "transactionHash": "0xac2d856630eb80270a3b75538977832ac6d7c19100f41b804d3c100958bcb3ab",
+                "type": "ERC721",
+                "value": "1"
+            }
+        ]
+    }
+}
+```
 

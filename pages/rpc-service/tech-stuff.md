@@ -1,6 +1,7 @@
 ## Architecture
 
 The thing we stand out by is that we don't have a single centralized Gateway. Similar to the competition, our infrastructure consists of nodes behind a load balancer that gets a request from the client and calculates the fastest processing solution to route the request through.
+<br/>
 
 <img src="/docs/build/rpc-flow.png" alt="RPC Service dataflow" class="responsive-pic" width="800" />
 
