@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import cn from "clsx";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Default, Error, Info, Note, Success, Tip, Warning } from "icoins";
+import { Default, Error, Info, Note, Success, Tip, Warning } from "icons";
 
 const themes = {
   default: {
