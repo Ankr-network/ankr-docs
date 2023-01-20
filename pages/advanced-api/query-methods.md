@@ -20,8 +20,10 @@ _Query API_ consists of the following methods to request info on the ranges of b
   * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
   * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
-  * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by wallet address.
+  * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by address.
   * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
+  * [`ankr_getInternalTransactionsByBlockNumber`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyblocknumber) — retrieves info on internal transactions by block number.
+  * [`ankr_getInternalTransactionsByParentHash`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyparenthash) — retrieves info on internal transactions by parent hash.
 
 ## `ankr_getBlocks`
 
@@ -40,7 +42,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
   * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
   * `decodeTxData` (boolean): set to `true` to decode transaction data, or to `false` if not interested in it.
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
@@ -442,7 +444,7 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters:
 
   * `blockchain` (string): a chain or a combination of chains to query:
-    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
     * Chains combination: `[eth, polygon, bsc]`.
     * All chains: leave the value empty to query all the chains available.
   * `transactionHash` (string): a hash of the transactions you'd like to request the details for.
@@ -856,7 +858,7 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters:
 
     * `address` (string; required): an address to search for transactions.
-    * `blockchain` (string): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`).
+    * `blockchain` (string): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
     * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`).
     * `toBlock` (integer): narrow your search indicating the block number to end with (inclusive; `>= 0`).
     * `fromTimestamp` (integer): narrow your search indicating the timestamp to start from (inclusive; `>= 0`).
@@ -1118,3 +1120,233 @@ Code: 200 OK
 ```
   </Tab>
 </Tabs>
+
+---
+
+## `ankr_getInternalTransactionsByBlockNumber`
+
+>  **Retrieves info on internal transactions by block number.**
+
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
+
+* `id` (int64; required): a request ID (example: 1).
+* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+* `method` (string; required): a method used for the request.
+* `params` (object): the data object containing request body parameters:
+
+  * `blockNumber` (integer): narrow your search indicating the block number (`>= 0`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`).
+  * `onlyWithValue` (boolean): set to `true` to receive only the responses containing the `value` parameter.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "ankr_getInternalTransactionsByBlockNumber",
+    "params": {
+      "blockNumber": 0,
+      "blockchain": "string",
+      "onlyWithValue": true
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
+
+### Response
+
+Returns info on internal transactions specified by block number.
+
+### Code Examples
+
+#### Request
+
+```shell
+curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "ankr_getInternalTransactionsByBlockNumber",
+              "params": {
+                "blockNumber": 15218456,
+                "blockchain": "eth",
+                "onlyWithValue": true
+              }
+            }'
+```
+
+#### Response
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "internalTransactions": [
+            {
+                "blockHash": "0xbb07ad76eca8b2a1ed8f58ce107eceb720a1468affa20223fc8cb562efa9639a",
+                "blockHeight": 15218456,
+                "blockchain": "eth",
+                "callPath": "call_2",
+                "callStack": [
+                    2
+                ],
+                "contractAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
+                "error": "",
+                "fromAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
+                "input": null,
+                "output": null,
+                "timestamp": "1658843328",
+                "toAddress": "0x8de9c5a032463c561423387a9648c5c7bcc5bc90",
+                "transactionHash": "0xdfca28001e023c90ab8d67f2b4099df76cda0493865821387734640425637696",
+                "transactionIndex": 4,
+                "value": "33750000000000000"
+            }
+        ]
+    }
+}
+```
+
+---
+
+## `ankr_getInternalTransactionsByParentHash`
+
+>  **Retrieves info on internal transactions by parent hash.**
+
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
+
+* `id` (int64; required): a request ID (example: 1).
+* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+* `method` (string; required): a method used for the request.
+* `params` (object): the data object containing request body parameters:
+
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`).
+  * `onlyWithValue` (boolean): set to `true` to receive only the responses containing the `value` parameter.
+  * `parentTransactionHash` (string, hex encoded; required): the hash of a parent transaction.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "ankr_getInternalTransactionsByParentHash",
+    "params": {
+      "blockchain": "string",
+      "onlyWithValue": true,
+      "parentTransactionHash": "string"
+    }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
+
+### Response
+
+Returns info on internal transactions specified by a parent transaction hash.
+
+### Code Examples
+
+#### Request
+
+```shell
+curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "ankr_getInternalTransactionsByParentHash",
+              "params": {
+                "blockchain": "eth",
+                "onlyWithValue": true,
+                "parentTransactionHash": "0xa50f8744e65cb76f66f9d54499d5401866a75d93db2e784952f55205afc3acc5"
+              }
+            }'
+```
+
+#### Response
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "internalTransactions": [
+            {
+                "blockHash": "0xee3d5db51c965922f589c9ac9a16f5c77ba36ca55df651dccc1ccabdb5146b5f",
+                "blockHeight": 15219110,
+                "blockchain": "eth",
+                "callPath": "call_2",
+                "callStack": [
+                    2
+                ],
+                "contractAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
+                "error": "",
+                "fromAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
+                "input": null,
+                "output": null,
+                "timestamp": "1658852109",
+                "toAddress": "0x8de9c5a032463c561423387a9648c5c7bcc5bc90",
+                "transactionHash": "0xa50f8744e65cb76f66f9d54499d5401866a75d93db2e784952f55205afc3acc5",
+                "transactionIndex": 6,
+                "value": "250000000000000"
+            },
+            {
+                "blockHash": "0xee3d5db51c965922f589c9ac9a16f5c77ba36ca55df651dccc1ccabdb5146b5f",
+                "blockHeight": 15219110,
+                "blockchain": "eth",
+                "callPath": "call_3",
+                "callStack": [
+                    3
+                ],
+                "contractAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
+                "error": "",
+                "fromAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
+                "input": null,
+                "output": null,
+                "timestamp": "1658852109",
+                "toAddress": "0xcc71606c7a3eda45ae010e5a125312f0bad1bae7",
+                "transactionHash": "0xa50f8744e65cb76f66f9d54499d5401866a75d93db2e784952f55205afc3acc5",
+                "transactionIndex": 7,
+                "value": "9750000000000000"
+            }
+        ]
+    }
+}
+```
+
