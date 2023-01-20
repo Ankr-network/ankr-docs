@@ -711,7 +711,7 @@ Build your request using the parameters below.
     "jsonrpc": "2.0",
     "method": "ankr_getNftTransfers",
     "params": {
-      "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      "address": "string",
       "blockchain": ["string"],
       "fromTimestamp": 0,
       "pageSize": 0,
