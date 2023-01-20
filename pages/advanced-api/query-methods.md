@@ -1290,7 +1290,7 @@ curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
 --data-raw '{
               "id": 1,
               "jsonrpc": "2.0",
-              "method": "ankr_getInternalTransactionsByBlockNumber",
+              "method": "ankr_getInternalTransactionsByParentHash",
               "params": {
                 "blockchain": "eth",
                 "onlyWithValue": true,
