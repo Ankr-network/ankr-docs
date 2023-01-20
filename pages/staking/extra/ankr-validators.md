@@ -16,6 +16,7 @@ Here are available Ankr validators.
 | Oasis | [Ankr 1](https://www.oasisscan.com/accounts/detail/oasis1qqdd4nmtcmarf4u9gdg24swxhec52du43cxzf302) <br /> [Ankr 2](https://www.oasisscan.com/accounts/detail/oasis1qzz8zmehzgcynlueydeqfax9cznzdw3lvgark5h3) |
 | Polygon | [Ankr 1](https://staking.polygon.technology/validators/31) |
 | Skale | [Ankr 1](https://skale-analytics.skalelabs.com/#/mainnetstatus/53) <br/> [Ankr 2](https://skale-analytics.skalelabs.com/#/mainnetstatus/54)|
+| Xpla | [Ankr 1](https://vault.xpla.io/validator/xplavaloper1dp8wey8v39nxkhced48kk8jgmgxqcv4vhwm35u) |
 
 
 
