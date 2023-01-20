@@ -21,37 +21,41 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Harmony](/rpc-service/chains/chains-list/#harmony)</td>
     <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
     <td>[Polygon](/rpc-service/chains/chains-list/#polygon)</td>
+    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
   </tr>
   <tr>
     <td>[Arbitrum](/rpc-service/chains/chains-list/#arbitrum)</td>
     <td>[Ethereum](/rpc-service/chains/chains-list/#ethereum)</td>
     <td>[HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)</td>
     <td>[NEAR](/rpc-service/chains/chains-list/#near)</td>
-    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
+    <td>[Secret Network](/rpc-service/chains/chains-list/#secret-network)</td>
+    <td></td>
   </tr>
   <tr>
     <td>[Avalanche](/rpc-service/chains/chains-list/#avalanche)</td>
     <td>[Fantom](/rpc-service/chains/chains-list/#fantom)</td>
     <td>[IoTeX](/rpc-service/chains/chains-list/#iotex)</td>
     <td>[Nervos](/rpc-service/chains/chains-list/#nervos)</td>
-    <td>[Sui](/rpc-service/chains/chains-list/#sui)</td>
+    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
+    <td></td>
   </tr>
   <tr>
     <td>[BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)</td>
     <td>[Filecoin](/rpc-service/chains/chains-list/#filecoin)</td>
     <td>[Klaytn](/rpc-service/chains/chains-list/#klaytn)</td>
     <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
-    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
+    <td>[Sui](/rpc-service/chains/chains-list/#sui)</td>
+    <td></td>
   </tr>
   <tr>
     <td>[BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain)</td>
     <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
     <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
     <td>[Polkadot](/rpc-service/chains/chains-list/#polkadot)</td>
-    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
+    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
+    <td></td>
   </tr>
 </table>
-
 
 ## Aptos
 
@@ -3289,204 +3293,114 @@ def test_block_number(self):
 
 ---
 
-[//]: # (## Secret Network)
-
-[//]: # ()
-[//]: # (> Available for [Premium]&#40;/rpc-service/service-plans/#service-plans-comparison&#41; users only.)
-
-[//]: # ()
-[//]: # (Secret Network is the first blockchain with customizable privacy. You get to choose what you share, who you share with, and how long you share it for. This protects users and empowers developers to build a better Web3.)
-
-[//]: # ()
-[//]: # (Official quick links: [Website]&#40;https://scrt.network/&#41;, [Docs]&#40;https://docs.scrt.network/secret-network-documentation/&#41;, [GitHub]&#40;https://github.com/scrtlabs/SecretNetwork&#41;)
-
-[//]: # ()
-[//]: # (### Networks)
-
-[//]: # ()
-[//]: # (<div className="list-with-custom-top-margin mt-6">)
-
-[//]: # (  * Secret Network RPC API &#40;`HTTPS`&#41;)
-
-[//]: # (  * Secret Network Tendermint REST API &#40;`HTTPS`&#41;)
-
-[//]: # (  * Secret Network Cosmos REST API &#40;`HTTPS`&#41;)
-
-[//]: # (</div>)
-
-[//]: # ()
-[//]: # (### API methods)
-
-[//]: # ()
-[//]: # (For Secret Network, we support blockchain interaction via all the applicable methods except for those listed as unsupported.)
-
-[//]: # ()
-[//]: # (#### Unsupported)
-
-[//]: # ()
-[//]: # (<Callout type="tip">)
-
-[//]: # (There is a list of methods that we don't support for either _Public_ or _Premium_ service plans. If you find the required methods in that list, contact our Sales &#40;`sales@ankr.com`&#41; about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.)
-
-[//]: # (</Callout>)
-
-[//]: # ()
-[//]: # (Tendermint &#40;both for REST and JSON-RPC&#41;:)
-
-[//]: # ()
-[//]: # (  `/health`,)
-
-[//]: # (  `/status`,)
-
-[//]: # (  `/net_info`,)
-
-[//]: # (  `/genesis`,)
-
-[//]: # (  `/broadcast_evidence`,)
-
-[//]: # (  `/dial_seeds`,)
-
-[//]: # (  `/dial_peers`,)
-
-[//]: # ()
-[//]: # (Cosmos:)
-
-[//]: # ()
-[//]: # (  `/cosmos/auth/v1beta1/address_by_id/:id`,)
-
-[//]: # (  `/cosmos/auth/v1beta1/module_accounts`,)
-
-[//]: # (  `/cosmos/auth/v1beta1/bech32`,)
-
-[//]: # (  `/cosmos/auth/v1beta1/bech32/:address_bytes`,)
-
-[//]: # (  `/cosmos/auth/v1beta1/bech32/:address_string`,)
-
-[//]: # (  `/cosmos/bank/v1beta1/supply/by_denom`,)
-
-[//]: # (  `/cosmos/bank/v1beta1/denom_owners/:denom`,)
-
-[//]: # (  `/cosmos/bank/v1beta1/send_enabled`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/interfaces`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/interfaces/:interface_name/implementations`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/app_descriptor/authn`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/app_descriptor/chain`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/app_descriptor/codec`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/app_descriptor/configuration`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/app_descriptor/query_services`,)
-
-[//]: # (  `/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor`,)
-
-[//]: # (  `/cosmos/base/tendermint/v1beta1/abci_query`,)
-
-[//]: # (  `/cosmos/feegrant/v1beta1/issued/:granter`,)
-
-[//]: # (  `/cosmos/gov/v1/proposals/:proposal_id`,)
-
-[//]: # (  `/cosmos/gov/v1/proposals`,)
-
-[//]: # (  `/cosmos/gov/v1/proposals/:proposal_id/votes/:voter`,)
-
-[//]: # (  `/cosmos/gov/v1/proposals/:proposal_id/votes`,)
-
-[//]: # (  `/cosmos/gov/v1/params/:params_type`,)
-
-[//]: # (  `/cosmos/gov/v1/proposals/:proposal_id/deposits/:depositor`,)
-
-[//]: # (  `/cosmos/gov/v1/proposals/:proposal_id/deposits`,)
-
-[//]: # (  `/cosmos/gov/v1/proposals/:proposal_id/tally`,)
-
-[//]: # (  `/cosmos/group/v1/group_info/:group_id`,)
-
-[//]: # (  `/cosmos/group/v1/group_policy_info/:address`,)
-
-[//]: # (  `/cosmos/group/v1/group_members/:group_id`,)
-
-[//]: # (  `/cosmos/group/v1/groups_by_admin/:admin`,)
-
-[//]: # (  `/cosmos/group/v1/group_policies_by_group/:group_id`,)
-
-[//]: # (  `/cosmos/group/v1/group_policies_by_admin/:admin`,)
-
-[//]: # (  `/cosmos/group/v1/proposal/:proposal_id`,)
-
-[//]: # (  `/cosmos/group/v1/proposals_by_group_policy/:address`,)
-
-[//]: # (  `/cosmos/group/v1/vote_by_proposal_voter/:proposal_id/:voter`,)
-
-[//]: # (  `/cosmos/group/v1/votes_by_proposal/:proposal_id`,)
-
-[//]: # (  `/cosmos/group/v1/votes_by_voter/:voter`,)
-
-[//]: # (  `/cosmos/group/v1/groups_by_member/:address`,)
-
-[//]: # (  `/cosmos/group/v1/proposals/:proposal_id/tally`,)
-
-[//]: # (  `/cosmos/nft/v1beta1/balance/:owner/:class_id`,)
-
-[//]: # (  `/cosmos/nft/v1beta1/owner/:class_id/:id`,)
-
-[//]: # (  `/cosmos/nft/v1beta1/supply/:class_id`,)
-
-[//]: # (  `/cosmos/nft/v1beta1/nfts`,)
-
-[//]: # (  `/cosmos/nft/v1beta1/nfts/:class_id/:id`,)
-
-[//]: # (  `/cosmos/nft/v1beta1/classes/:class_id`,)
-
-[//]: # (  `/cosmos/nft/v1beta1/classes`,)
-
-[//]: # (  `/cosmos/params/v1beta1/subspaces`,)
-
-[//]: # (  `/cosmos/upgrade/v1beta1/module_versions`,)
-
-[//]: # (  `/cosmos/upgrade/v1beta1/authority`,)
-
-[//]: # (  `/cosmos/base/tendermint/v1beta1/node_info`,)
-
-[//]: # (  `/cosmos/base/tendermint/v1beta1/syncing`,)
-
-[//]: # (  `/cosmos/params/v1beta1/params`,)
-
-[//]: # ()
-[//]: # (  `/syncing`,)
-
-[//]: # (  `/blocks/latest`,)
-
-[//]: # (  `/blocks/:height`,)
-
-[//]: # (  `/validatorsets/latest`,)
-
-[//]: # (  `/validatorsets/:height`,)
-
-[//]: # ()
-[//]: # (  `/wasm/code`,)
-
-[//]: # (  `/wasm/code/:codeID`,)
-
-[//]: # (  `/wasm/code/:codeID/contracts`,)
-
-[//]: # (  `/wasm/contract/:contractAddress`,)
-
-[//]: # (  `/wasm/contract/:contractAddress/code-hash`,)
-
-[//]: # (  `/wasm/contract/:contractAddress/query/:query`,)
-
-[//]: # (  `/wasm/code/:codeID/hash`,)
-
-[//]: # ()
-[//]: # (  `/reg/consensus-io-exch-pubkey`)
-
-[//]: # ()
-[//]: # (---)
+## Secret Network
+
+Secret Network is the first blockchain with customizable privacy. You get to choose what you share, who you share with, and how long you share it for. This protects users and empowers developers to build a better Web3.
+
+Official quick links: [Website](https://scrt.network/), [Docs](https://docs.scrt.network/secret-network-documentation/), [GitHub](https://github.com/scrtlabs/SecretNetwork)
+
+### Networks
+
+<div className="list-with-custom-top-margin mt-6">
+  * Secret Network RPC API (`HTTPS` and `WSS`)
+  * Secret Network Tendermint REST API (`HTTPS`)
+  * Secret Network Cosmos REST API (`HTTPS`)
+</div>
+
+### API methods
+
+For Secret Network, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+
+#### Unsupported
+
+<Callout type="warning">
+This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+</Callout>
+
+<Callout type="tip">
+If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
+
+**Tendermint (both for REST and JSON-RPC)**:
+
+  `/health`,
+  `/status`,
+  `/net_info`,
+  `/genesis`,
+  `/broadcast_evidence`,
+  `/dial_seeds`,
+  `/dial_peers`,
+
+**Cosmos**:
+
+  `/cosmos/auth/v1beta1/address_by_id/:id`,
+  `/cosmos/auth/v1beta1/module_accounts`,
+  `/cosmos/auth/v1beta1/bech32`,
+  `/cosmos/auth/v1beta1/bech32/:address_bytes`,
+  `/cosmos/auth/v1beta1/bech32/:address_string`,
+  `/cosmos/bank/v1beta1/supply/by_denom`,
+  `/cosmos/bank/v1beta1/denom_owners/:denom`,
+  `/cosmos/bank/v1beta1/send_enabled`,
+  `/cosmos/base/reflection/v1beta1/interfaces`,
+  `/cosmos/base/reflection/v1beta1/interfaces/:interface_name/implementations`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/authn`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/chain`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/codec`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/configuration`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/query_services`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor`,
+  `/cosmos/base/tendermint/v1beta1/abci_query`,
+  `/cosmos/feegrant/v1beta1/issued/:granter`,
+  `/cosmos/gov/v1/proposals/:proposal_id`,
+  `/cosmos/gov/v1/proposals`,
+  `/cosmos/gov/v1/proposals/:proposal_id/votes/:voter`,
+  `/cosmos/gov/v1/proposals/:proposal_id/votes`,
+  `/cosmos/gov/v1/params/:params_type`,
+  `/cosmos/gov/v1/proposals/:proposal_id/deposits/:depositor`,
+  `/cosmos/gov/v1/proposals/:proposal_id/deposits`,
+  `/cosmos/gov/v1/proposals/:proposal_id/tally`,
+  `/cosmos/group/v1/group_info/:group_id`,
+  `/cosmos/group/v1/group_policy_info/:address`,
+  `/cosmos/group/v1/group_members/:group_id`,
+  `/cosmos/group/v1/groups_by_admin/:admin`,
+  `/cosmos/group/v1/group_policies_by_group/:group_id`,
+  `/cosmos/group/v1/group_policies_by_admin/:admin`,
+  `/cosmos/group/v1/proposal/:proposal_id`,
+  `/cosmos/group/v1/proposals_by_group_policy/:address`,
+  `/cosmos/group/v1/vote_by_proposal_voter/:proposal_id/:voter`,
+  `/cosmos/group/v1/votes_by_proposal/:proposal_id`,
+  `/cosmos/group/v1/votes_by_voter/:voter`,
+  `/cosmos/group/v1/groups_by_member/:address`,
+  `/cosmos/group/v1/proposals/:proposal_id/tally`,
+  `/cosmos/nft/v1beta1/balance/:owner/:class_id`,
+  `/cosmos/nft/v1beta1/owner/:class_id/:id`,
+  `/cosmos/nft/v1beta1/supply/:class_id`,
+  `/cosmos/nft/v1beta1/nfts`,
+  `/cosmos/nft/v1beta1/nfts/:class_id/:id`,
+  `/cosmos/nft/v1beta1/classes/:class_id`,
+  `/cosmos/nft/v1beta1/classes`,
+  `/cosmos/params/v1beta1/subspaces`,
+  `/cosmos/upgrade/v1beta1/module_versions`,
+  `/cosmos/upgrade/v1beta1/authority`,
+  `/cosmos/base/tendermint/v1beta1/node_info`,
+  `/cosmos/base/tendermint/v1beta1/syncing`,
+  `/cosmos/params/v1beta1/params`,
+
+  `/syncing`,
+  `/blocks/latest`,
+  `/blocks/:height`,
+  `/validatorsets/latest`,
+  `/validatorsets/:height`,
+  `/wasm/code`,
+  `/wasm/code/:codeID`,
+  `/wasm/code/:codeID/contracts`,
+  `/wasm/contract/:contractAddress`,
+  `/wasm/contract/:contractAddress/code-hash`,
+  `/wasm/contract/:contractAddress/query/:query`,
+  `/wasm/code/:codeID/hash`,
+  `/reg/consensus-io-exch-pubkey`
+
+---
 
 ## Solana
 
