@@ -856,7 +856,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 
 ---
 
-## ankr_getTokenTransfers
+## `ankr_getTokenTransfers`
 
 > **Retrieves info on token transfers.**
 
@@ -871,8 +871,11 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `address` (array of strings; required): .
-  * `blockchain` (array of strings; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `address` (string; required): an address to search for token transfers.
+  * `blockchain` (string): a chain or a combination of chains to query:
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
+    * Chains combination: `[eth, polygon, bsc]`.
+    * All chains: leave the value empty to query all the chains available.
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
   * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`).
   * `toBlock` (integer): narrow your search indicating the block number to end with (inclusive; `>= 0`).
@@ -880,6 +883,39 @@ Build your request using the parameters below.
   * `toTimestamp` (integer): narrow your search indicating the timestamp to end with (inclusive; `>=0`).
   * `pageSize` (integer): a number of result pages you'd like to get.
   * `pageToken` (string): a token provided in the response can be referenced in the request to fetch the next page.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getTokenTransfers",
+  "params": {
+    "address": "string",
+    "blockchain": [
+      "string",
+      "string"
+    ],
+  "fromTimestamp": 0,
+  "toTimestamp": 0
+  }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
 
 ### Response
 
@@ -894,7 +930,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
-    "method": "ankr_getTokenHoldersCount",
+    "method": "ankr_getTokenTransfers",
     "params": {
         "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
         "blockchain": [

@@ -1156,8 +1156,8 @@ Build your request using the parameters below.
     "jsonrpc": "2.0",
     "method": "ankr_getInternalTransactionsByBlockNumber",
     "params": {
-      "blockNumber": 15218456,
-      "blockchain": "eth",
+      "blockNumber": 0,
+      "blockchain": "string",
       "onlyWithValue": true
     }
 }
