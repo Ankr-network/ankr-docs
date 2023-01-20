@@ -17,7 +17,7 @@ Here are available Ankr validators.
 | Polygon | [Ankr 1](https://staking.polygon.technology/validators/31) |
 | Skale | [Ankr 1](https://skale-analytics.skalelabs.com/#/mainnetstatus/53) <br/> [Ankr 2](https://skale-analytics.skalelabs.com/#/mainnetstatus/54)|
 | Xpla | [Ankr 1](https://vault.xpla.io/validator/xplavaloper1dp8wey8v39nxkhced48kk8jgmgxqcv4vhwm35u) |
-| Xpla | [Ankr ~11](https://beacon.gnosischain.com/validators/eth1deposits?q=0x4069d8a3de3a72eca86ca5e0a4b94619085e7362) |
+| Gnosis | [Ankr ~11](https://beacon.gnosischain.com/validators/eth1deposits?q=0x4069d8a3de3a72eca86ca5e0a4b94619085e7362) |
 
 
 
