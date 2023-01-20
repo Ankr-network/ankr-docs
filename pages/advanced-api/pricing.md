@@ -24,25 +24,29 @@ We charge per method used in request. A method's credit value calculates based o
 | `ankr_getNFTsByOwner`  | 700         | $0.00007    |
 | `ankr_getNFTMetadata`  | 700         | $0.00007    |
 | `ankr_getNFTHolders`   | 700         | $0.00007    |
+| `ankr_getNftTransfers` | 700         | $0.00007    |
 
 ### Query API Methods
 
-| Method                        | API Credits | USD/request |
-|:------------------------------|-------------|-------------|
-| `ankr_getBlocks`              | 700         | $0.00007    |
-| `ankr_getLogs`                | 700         | $0.00007    |
-| `ankr_getTransactionsByHash`  | 700         | $0.00007    |
-| `ankr_getInteractions`        | 700         | $0.00007    |
+| Method                                       | API Credits | USD/request |
+|:---------------------------------------------|-------------|-------------|
+| `ankr_getBlocks`                             | 700         | $0.00007    |
+| `ankr_getLogs`                               | 700         | $0.00007    |
+| `ankr_getTransactionsByHash`                 | 700         | $0.00007    |
+| `ankr_getInteractions`                       | 700         | $0.00007    |
+| `ankr_getTransactionsByAddress`              | 700         | $0.00007    |
+| `ankr_getInternalTransactionsByBlockNumber ` | 700         | $0.00007    |
+| `ankr_getInternalTransactionsByParentHash`   | 700         | $0.00007    |
 
 ### Token API Methods
 
-| Method                        | API Credits | USD/request |
-|:------------------------------|-------------|-------------|
-| `ankr_getAccountBalance`      | 700         | $0.00007    |
-| `ankr_getCurrencies`          | 700         | $0.00007    |
-| `ankr_getTokenPrice`          | 700         | $0.00007    |
-| `ankr_getTokenHolders`        | 700         | $0.00007    |
-| `ankr_getTokenHoldersCount`   | 700         | $0.00007    |
-| `ankr_getTransfersByAddress`  | 700         | $0.00007    |
+| Method                      | API Credits | USD/request |
+|:----------------------------|-------------|-------------|
+| `ankr_getAccountBalance`    | 700         | $0.00007    |
+| `ankr_getCurrencies`        | 700         | $0.00007    |
+| `ankr_getTokenPrice`        | 700         | $0.00007    |
+| `ankr_getTokenHolders`      | 700         | $0.00007    |
+| `ankr_getTokenHoldersCount` | 700         | $0.00007    |
+| `ankr_getTokenTransfers`    | 700         | $0.00007    |
 
 [//]: # (| `ankr_getTokenPriceHistory`   | 700         | $0.00007    |)

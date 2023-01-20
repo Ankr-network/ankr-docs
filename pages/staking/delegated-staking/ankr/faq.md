@@ -14,7 +14,7 @@ As of now, staking ANKR is only available on ERC-20.
 
 ### When can I unstake?
 
-After the locking period of 84–91 days, which begins after you stake, you’ll be able to unstake your tokens and/or claim/restake your rewards.
+After the locking period of 84–91 days, which begins after you stake, you’ll be able to unstake your tokens. The locking period is expressed in days, but it is actually counted in epochs: your tokens are locked for 12 epochs, and 1 epoch is 7 days; the countdown starts after the epoch you staked in, so if you stake at the beginning of an epoch, your locking period will be 91 days, whereas if your stake at the end of an epoch, your locking period will be 84 days.
 
 ### How long does it take to unstake my ANKR?
 
@@ -32,9 +32,11 @@ For each staking transaction, a new locking period will apply, i.e. each new sta
 
 Rewards accumulate on the weekly basis.
 
-### How often will I be able to claim my rewards?
+### When and how often can I claim or restake my rewards?
 
-As rewards accumulate on the weekly basis, you'll be able to claim them once a week.
+When you’ve staked, you can claim or restake your first rewards after the epoch following your stake, which translates into current + next epoch. An epoch is 7 days. If you staked at the beginning of an epoch, you can claim your first rewards after 14 days, whereas if you staked at the end of an epoch, you can claim them in 7 days.  
+
+Following this, you can claim or restake new chunks of your rewards each next epoch, which is each 7 days.
 
 ### Can I stake with Ledger if I connect it with MetaMask?
 
