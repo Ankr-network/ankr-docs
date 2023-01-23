@@ -1676,7 +1676,9 @@ def test_block_number(self):
 
 ## Huobi ECO Chain
 
-> Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
 
 Huobi ECO Chain (HECO) is a decentralized, high-efficiency and energy-saving public chain. It is compatible
 with smart contracts and supports high- performance transactions. The endogenous token of Heco is HT
@@ -2251,7 +2253,9 @@ def test_block_number(self):
 
 ## Kusama
 
-> Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
 
 Kusama is an early release of Polkadot: a scalable, multichain network for radical innovation. Kusama serves as a proving ground that allows teams and developers to build and deploy a parachain, and experiment with Polkadot’s governance and NPoS functionality in a real environment.
 
@@ -2977,7 +2981,9 @@ def test_block_number(self):
 
 ## Polkadot
 
-> Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
 
 Polkadot is the first fully-sharded blockchain.
 

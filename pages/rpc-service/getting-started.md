@@ -14,6 +14,11 @@ The platform has the following functionality to offer:
   * *Usage statistics* — the means to have a full view of your blockchain interaction statistics.
   * *RPC methods testing* — a tool for RPC methods testing.
 
+## Interface schema
+<br/>
+
+<img src="/docs/build/ui-schema.png" alt="UI Schema" class="responsive-pic" width="800" />
+
 ## Basics with Public plan
 
 What's available for the [Public service plan](/rpc-service/service-plans/#service-plans-comparison) user:
@@ -22,11 +27,6 @@ What's available for the [Public service plan](/rpc-service/service-plans/#servi
   * Connection code snippets.
   * RPC methods testing tool.
   * Public usage data (stats on requests from all Public service users).
-
-### Interface schema
-<br/>
-
-<img src="/docs/build/rpc-endpoints-public.png" alt="Public Endpoints" class="responsive-pic" width="800" />
 
 ### Use public endpoints
 
@@ -49,7 +49,7 @@ The [Premium service plan](/rpc-service/service-plans/#service-plans-comparison)
 
 `Interface schema` —> `Sign in` —> `Deposit funds` —> `Use private endpoints`
 
-  * **[Interface schema](/rpc-service/getting-started/#interface-schema-1)**: surely, it's always helpful to orient yourself in a new environment. Hardcore users can skip this step and proceed to the following one.
+  * **[Interface schema](/rpc-service/getting-started/#interface-schema)**: surely, it's always helpful to orient yourself in a new environment. Hardcore users can skip this step and proceed to the following one.
 
   * **[Sign in](/rpc-service/getting-started/#sign-in)**: first things first, the road to using Premium starts with signing in into your account (so we can provide you with the private endpoints and know which account to charge under the [PAYG model](/rpc-service/service-plans/#charging-model-pay-as-you-go) for the requests you make).
   
@@ -57,17 +57,23 @@ The [Premium service plan](/rpc-service/service-plans/#service-plans-comparison)
 
   * **[Use private endpoints](/rpc-service/getting-started/#use-private-endpoints)**: finally, after you've signed in and deposited funds into your account, you're all set to start using private RPC API endpoints.
 
-### Interface schema
-<br/>
-
-<img src="/docs/build/ui-premium.png" alt="Public Endpoints" class="responsive-pic" width="800" />
-
 ### Sign in
 
 RPC Service supports two authentication options:
 
-  * [**Web3 wallet**](/rpc-service/getting-started/#via-web3-wallet) — connect your wallet to sign in. This option enables using both Web3 wallet and credit card payment flows.
   * [**Google account**](/rpc-service/getting-started/#via-google-account) — sign in with your Google account. This option provides for the credit card payment flow only, though you can connect your wallet anytime to use the Web3 wallet payment flow.
+  * [**Web3 wallet**](/rpc-service/getting-started/#via-web3-wallet) — connect your wallet to sign in. This option enables using both Web3 wallet and credit card payment flows.
+
+#### Via Google account
+
+The Google sign in procedure is the following:
+
+1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
+2. In the top right corner, click **Sign in >** **Continue with Google**, and then select the account to use.
+
+<img src="/docs/build/getting-started/gauth.png" alt="Google authentication" class="responsive-pic" width="500" />
+
+Congrats — you've signed in into RPC Service using your Google account.
 
 #### Via Web3 wallet
 
@@ -81,15 +87,6 @@ The Web3 wallet sign in procedure is the following:
 <img src="/docs/build/card-metamask.png" alt="MetaMask connection" class="responsive-pic" width="550" />
 
 Congrats — you now have an account with RPC Service, associated with your wallet.
-
-#### Via Google account
-
-The Google sign in procedure is the following:
-
-1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
-2. In the top right corner, click **Sign in >** **Continue with Google**, and then select the account to use.
-
-Congrats — you've signed in into RPC Service using your Google account.
 
 ### Deposit funds
 
