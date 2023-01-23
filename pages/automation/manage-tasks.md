@@ -34,4 +34,10 @@ If you choose to withdraw funds from your Ankr Automation account:
    <img src="/docs/automation/click-withdraw.jpg" alt="Click Withdraw" class="responsive-pic" width="500" />
 4. Confirm the funding transaction in MetaMask.
 
+## Next read 
+* [Automation overview](/automation/overview/)
+* [Time-based automation](/automation/time-based-automation/)
+* [Custom logic automation](/automation/custom-logic-automation/)
+* [Create compatible contracts](/automation/create-compatible-contracts/)
+
 
