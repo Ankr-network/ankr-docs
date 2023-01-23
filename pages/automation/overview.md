@@ -30,7 +30,7 @@ You can manage created Tasks from [Ankr Automation Dashboard](https://www.ankr.c
 ### Custom logic trigger
 Use it when you need to execute a contract function on a certain event. 
 
-First, deploy the contract you want to automate. Your contract needs to be compatible with `AutomationInterface`.
+First, deploy the contract you want to automate. Your contract needs to be compatible with `IAutomateCompatible`.
 
 1. Open [Ankr Automation Dashboard](https://www.ankr.com/automate/dashboard/).
 2. Connect your wallet and switch to a supported network.
@@ -40,7 +40,14 @@ First, deploy the contract you want to automate. Your contract needs to be compa
 
 You can manage created Tasks from [Ankr Automation Dashboard](https://www.ankr.com/automate/dashboard/).
 
-
 ## Supported networks
 Ankr Automation supports BNB Smart Chain. Support for other networks is coming soon. 
+
+## Next read 
+* [Time-based automation](/automation/time-based-automation/)
+* [Custom logic automation](/automation/custom-logic-automation/)
+* [Manage automation tasks](/automation/manage-tasks)
+* [Create compatible contracts](/automation/create-compatible-contracts/)
+
+
 

@@ -2,13 +2,16 @@
   "index": "Welcome to Ankr Docs",
   "rpc-service": "RPC Service",
   "advanced-api": "Advanced APIs/SDKs",
-  "automation": "Contract Automation",
+  "automation": {
+    "title": "Contract Automation",
+    "hidden": true
+  },
   "app-chains": "AppChains",
   "staking": "Staking",
   "gaming": "Gaming",
   "tutorials": "Tutorials",
   "support": {
-    "title": "Support",
+    "title": "Support ↗",
     "href": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
   }
 }
