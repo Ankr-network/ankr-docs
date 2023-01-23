@@ -14,7 +14,7 @@ To add funds:
    <img src="/docs/automation/click-funds.jpg" alt="Click Funds" class="responsive-pic" width="800" />
 3. Enter an amount in the deposit field and click **Deposit**.
    <img src="/docs/automation/click-deposit.jpg" alt="Click Deposit" class="responsive-pic" width="500" />
-4. Confirm the funding transaction in MetaMask.
+4. Confirm the deposit transaction in MetaMask.
 
 ## Pause or activate Tasks 
 Each task can be paused for a time and activated.
@@ -32,7 +32,7 @@ If you choose to withdraw funds from your Ankr Automation account:
    <img src="/docs/automation/click-funds.jpg" alt="Click Funds" class="responsive-pic" width="800" />
 3. Enter an amount in the withdraw field and click **Withdraw**.
    <img src="/docs/automation/click-withdraw.jpg" alt="Click Withdraw" class="responsive-pic" width="500" />
-4. Confirm the funding transaction in MetaMask.
+4. Confirm the withdrawal transaction in MetaMask.
 
 ## Next read 
 * [Automation overview](/automation/overview/)
