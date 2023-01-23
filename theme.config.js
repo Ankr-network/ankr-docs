@@ -91,7 +91,7 @@ export default {
 //Footer content and settings
   footer: {
     text: <div>
-        © {new Date().getFullYear()}  Ankr All rights reserved | <a href="https://ankr.com"><b>Back to ankr.com</b></a>
+        © {new Date().getFullYear()}  Ankr All rights reserved 
       </div>
   },
 };

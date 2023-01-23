@@ -13,5 +13,9 @@
   "support": {
     "title": "Support ↗",
     "href": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
+  },
+  "ankr": {
+    "title": "Back to ankr.com ↗",
+    "href": "https://ankr.com"
   }
 }
