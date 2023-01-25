@@ -1,13 +1,16 @@
 # AppChains step-by-step
-The entire process of customizing, launching, and testing your AppChain in chronological order.
 
-The first thing you’ll do is launch a testnet so you can experiment with your network, test it, and determine which features and customizations you’ll eventually include in the final product.
+If you're new to AppChains and don't yet know what setup to choose, the [AppChain Configurator](https://chainscanner.xyz/ankr/configurator/) will help you decide and will connect you with our experts. 
+
+Once you have an idea about the setup, this is what the process of customizing, launching, and testing your AppChain will look like.
 
 ## Step 1
-First you’ll need to start with some validator nodes, which are essentially the basis of any Proof-of-Stake blockchain network. 
+First, you need to launch a testnet so you can experiment, test, and determine which features and customizations you really want to include in the final product.
+
+Start with validator nodes, which are essentially the basis of any Proof-of-Stake blockchain network. 
 Five to seven validators is a good amount to start with.
 
-Then you’ll need an RPC endpoint to interact with your network. 
+You’ll also need an RPC endpoint to interact with your network. 
 The RPC endpoint is how devs can request data from and interact with your AppChain testnet. 
 Without an RPC endpoint, developers won’t be able to remotely connect with the AppChain. 
 
@@ -30,4 +33,4 @@ This is a crucial step, and Ankr is here to help you ensure everything goes smoo
 
 Once your AppChain is live on mainnet, and you gain some traction and transaction volume, you can participate in Ankr’s Exchange-Readiness program, which helps you prepare to present your native token to CEXs in order to potentially have it listed for trading.
 
-Keep in mind that as part of Ankr’s AppChain program, you’ll have hands-on engineering support throughout this whole process and for any and all issues that arise. [Contact Ankr to get started!](mailto:sales@ankr.com)
+Keep in mind that as part of Ankr’s AppChain program, you’ll have hands-on engineering support throughout this whole process and for any and all issues that arise.
