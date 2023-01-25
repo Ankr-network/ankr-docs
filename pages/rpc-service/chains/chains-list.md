@@ -1254,6 +1254,7 @@ Official quick links: [Website](https://filecoin.io/), [Docs](https://docs.filec
 
 <div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
+  * Testnet (`HTTPS` and `WSS`)
 </div>
 
 ### API methods
