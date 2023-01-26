@@ -1259,7 +1259,7 @@ Official quick links: [Website](https://filecoin.io/), [Docs](https://docs.filec
 
 ### API methods
 
-For Filecoin, we support blockchain interaction via the following methods:
+For the Filecoin Mainnet, we support blockchain interaction via the following methods:
 
 **Chain**:
 
@@ -1353,6 +1353,8 @@ For Filecoin, we support blockchain interaction via the following methods:
   `Filecoin.WalletBalance`,
   `Filecoin.WalletValidateAddress`,
   `Filecoin.WalletVerify`
+
+For the Filecoin Testnet, along with the native Filecoin methods listed above, we also support the applicable EVM-compatible methods except for those listed as unsupported.
 
 #### Unsupported
 
