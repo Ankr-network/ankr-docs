@@ -190,11 +190,14 @@ If you've selected the **One time** payment option upon the [initial deposit](/r
 
 Congrats — you've made a USD payment to get the API Credits into your account, and you're all set to continue using _Premium_ services.
 
-### Withdraw funds
+[//]: # (### Withdraw funds)
 
-<Callout type="warning">
-We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.
-</Callout>
+[//]: # ()
+[//]: # (<Callout type="warning">)
+
+[//]: # (We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.)
+
+[//]: # (</Callout>)
 
 [//]: # (Life goes fast, and it might be the case someday that you'd like to get your ANKR tokens back to your wallet. That's exactly what the withdrawal operation has been implemented for.)
 
