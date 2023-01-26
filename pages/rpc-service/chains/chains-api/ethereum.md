@@ -215,6 +215,65 @@ curl -X POST https://rpc.ankr.com/eth \
 
 ---
 
+## `eth_syncing`
+
+> Returns an object with data about the sync status or false.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<object>`|`<boolean>`: an object with sync status data or FALSE, when not syncing:
+    * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
+    * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
+    * `highestBlock` (quantity): the estimated highest block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/eth \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_syncing",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example (syncing)
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "startingBlock": "0x384",
+        "currentBlock": "0x386",
+        "highestBlock": "0x454"
+    }
+}
+```
+
+### Response example (not syncing)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": false
+}
+```
+
+---
+
 ## `eth_gasPrice`
 
 > Returns the current price per gas in wei.
