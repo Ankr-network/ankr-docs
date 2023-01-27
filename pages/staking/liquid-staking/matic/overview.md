@@ -21,6 +21,10 @@ Polygon Liquid Staking smart contracts have undergone an external audit by Beosi
 ## Smart contracts
 For information onMATIC Liquid Staking smart contracts, visit [MATIC development details](/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/#smart-contracts).  
 
+## Supported wallets
+Polygon Liquid Staking supports several options, including hot and cold wallets. 
+View a complete list at [Compatible wallets](/staking/extra/compatible-wallets/).
+
 ## Benefits
 * **Generate Multiple Layers of Rewards**: Use ankrMATIC on DeFi platforms like OnX. These platforms enable you to multiply your earning potential in APY on top of your staking rewards!
 

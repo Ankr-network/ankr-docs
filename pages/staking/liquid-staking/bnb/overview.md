@@ -18,6 +18,10 @@ BNB Liquid Staking smart contracts have undergone external audits by Beosin Bloc
 ## Smart contracts
 For information on BNB Liquid Staking smart contracts, visit [BNB development details](/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/#smart-contracts). 
 
+## Supported wallets
+Binance Liquid Staking supports several options, including hot and cold wallets. 
+View a complete list at [Compatible wallets](/staking/extra/compatible-wallets/).
+
 ## Benefits
 
 ### Boosted yields

@@ -19,6 +19,10 @@ AVAX Liquid Staking smart contracts have undergone an external audit by Beosin B
 
 For information on AVAX Liquid Staking smart contracts, visit [AVAX development details](/staking/for-integrators/dev-details/avax-liquid-staking-mechanics/#smart-contracts).  
 
+## Supported wallets
+Avalanche Liquid Staking supports several options, including hot and cold wallets. 
+View a complete list at [Compatible wallets](/staking/extra/compatible-wallets/).
+
 ## Benefits
 
 ### Market liquidity

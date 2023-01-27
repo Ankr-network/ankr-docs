@@ -29,6 +29,10 @@ Furthermore, upon successful implementation, this update will help Ankr adapt to
 * [StakingPool](https://goerli.etherscan.io/address/0xEAc6684D77E40B3AF10f90222c90c1E70f105115) — staking functionality.
 * [asETHc](https://goerli.etherscan.io/address/0x1Fb9Ed69C117271Eb84c9F5e4E4bA9f1dA0EF4dC) — Liquid Staking token asETHc.
 
+## Supported wallets
+SSV Trustless Liquid Staking supports several options, including hot and cold wallets. 
+View a complete list at [Compatible wallets](/staking/extra/compatible-wallets/).
+
 ## SSV Reward-Bearing Staked ETH (asETHc)
 asETHc is a new reward-bearing token from SSV Trustless Liquid Staking. It enables instant liquidity for staked ETH. asETHc represents the staked ETH plus all future staking rewards.
 
