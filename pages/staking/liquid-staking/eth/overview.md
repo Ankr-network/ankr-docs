@@ -22,3 +22,6 @@ ETH Liquid Staking smart contracts have undergone external audits by Beosin Bloc
 ## Smart contracts
 For information on ETH Liquid Staking smart contracts, visit [ETH development details](/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/#smart-contracts).  
 
+## Supported wallets
+Ethereum Liquid Staking supports several options, including hot and cold wallets. 
+View a complete list at [Compatible wallets](/staking/extra/compatible-wallets/).

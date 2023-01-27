@@ -18,6 +18,10 @@ FTM Liquid Staking smart contracts have undergone an external audit by Beosin Bl
 ## Smart contracts
 For the addresses of FTM Liquid Staking smart contracts, visit [FTM development details](/staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/#smart-contracts).  
 
+## Supported wallets
+Fantom Liquid Staking supports several options, including hot and cold wallets. 
+View a complete list at [Compatible wallets](/staking/extra/compatible-wallets/).
+
 ## Benefits
 
 ### Instant liquidity

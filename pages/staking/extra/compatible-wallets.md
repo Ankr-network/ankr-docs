@@ -11,7 +11,8 @@ The following hot wallets are compatible with Ankr Staking:
 * [Trust Wallet](https://trustwallet.com/)
 * [WalletConnect](https://walletconnect.com/)
 
-You can also use **Ledger Nano S** cold wallet. 
+The following cold wallets are compatible with Ankr Staking:
+* [Ledger Nano S, X, S plus](https://www.ledger.com/) (through MetaMask) 
 
 Additionally, for some chains such you need to use a chain specific wallet such as in addition to an EVM compatible wallet:
 * Polkadot — [Polkadot.js](https://polkadot.js.org/)

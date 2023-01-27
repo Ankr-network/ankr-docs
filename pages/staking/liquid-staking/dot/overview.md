@@ -12,6 +12,10 @@ Ankr Staking can connect you to the best ways to earn more crypto by staking, ar
 ## Smart contracts
 For information on DOT Liquid Staking smart contracts, visit [DOT development details](/staking/for-integrators/dev-details/dot-liquid-staking-mechanics/#smart-contracts). 
 
+## Supported wallets
+Polkadot Liquid Staking supports several options, including hot and cold wallets. 
+View a complete list at [Compatible wallets](/staking/extra/compatible-wallets/).
+
 ## Benefits
 
 ### Instant liquidity
