@@ -1366,11 +1366,15 @@ This section contains a list of methods we don't support for either _Public_ or 
 If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
-**EVM methods**:
+**HTTPS EVM methods**:
 
 `eth_newFilter`, `eth_getFilterChanges`, `eth_syncing`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS Filecoin methods**:
+
+`Filecoin.ChainNotify`
 
 ---
 
