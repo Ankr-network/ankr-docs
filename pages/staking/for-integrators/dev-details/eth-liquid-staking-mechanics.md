@@ -9,9 +9,9 @@ The following section explains staking requirements, fees, rewards, validators, 
 
 The requirements when staking are:
 
-* Minimum value to stake (minimumStake) — 0.5 ETH.
+* Minimum value to stake (minimumStake) — no min value, any amount.
 
-* Stake change interval — 0.5 ETH. The user can stake 0.5, 1.0, 1.5 ETH, but cannot stake, for example, 0.55, 1.1, 1.88 ETH.
+* Stake change interval — no stake change interval, any amount.
 
 * Maximum value to stake — unlimited, at the user’s discretion. 
 
