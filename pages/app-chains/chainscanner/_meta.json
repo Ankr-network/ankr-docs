@@ -3,6 +3,8 @@
   "chain-data": "Chain Data",
   "block-explorer": "Block Explorer",
   "staking": "Staking",
-  "bridge": "Cross-chain Bridge",
-  "faucet": "Faucet"
+  "bridge": "Bridge",
+  "validator-enrollment-hub": "Validator Enrollment",
+  "governance-portal": "Governance",
+  "dev-tools": "Development Tools"
 }
