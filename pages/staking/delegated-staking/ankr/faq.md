@@ -57,3 +57,7 @@ Yes. You will continue to collect rewards until you unstake.
 ### Must rewards be claimed from the Ankr website, or will they be automatically sent to the supplying wallet?
 
 Rewards must be claimed from the [Ankr website](https://www.ankr.com/staking/dashboard/).
+
+### Can I use cold wallets for staking?
+
+Yes, you can use Ledger Nano cold wallets through MetaMask. Visit the Ledger's [guide on connecting Ledger through MetaMask](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).
