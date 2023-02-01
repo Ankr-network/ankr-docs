@@ -69,3 +69,7 @@ Yes, if you want to integrate Ankr Liquid Staking into your product, read [Liqui
 ### Why do I get less ankrFTM (ex-aFTMc) for my 1 FTM?
 
 ankrFTM (ex-aFTMc) only changes in value, which is why the amount of ankrFTM you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankrftm / (total_staked_ftm + total_rewards_for_staked_ftm - total_unstaked_ankrftm)`.
+
+### Can I use cold wallets for staking?
+
+Yes, you can use Ledger Nano cold wallets through MetaMask. Visit the Ledger's [guide on connecting Ledger through MetaMask](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).
