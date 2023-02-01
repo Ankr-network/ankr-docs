@@ -2,5 +2,7 @@
   "overview": "Overview",
   "chain-data": "Chain Data",
   "block-explorer": "Block Explorer",
-  "staking": "Staking"
+  "staking": "Staking",
+  "bridge": "Cross-chain Bridge",
+  "faucet": "Faucet"
 }

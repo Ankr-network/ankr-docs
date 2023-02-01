@@ -11,6 +11,8 @@ You can see historic events both on AppChains on:
 
 
 ## Use block explorer
+
+### Look up data on AppChain
 To use Chainscanner's block explorer:
 1. Visit [Chainscanner's Block Explorer](https://chainscanner.xyz/ankr/appchains/explorer-dashboard/?network=bas-mapes) (preselected meta-apes network).
 2. Select a network to access. The selection popup shows you Mainnet networks.<br /> To see available Tesnet networks, click on **Access Testnets**.
