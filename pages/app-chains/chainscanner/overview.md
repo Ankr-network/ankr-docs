@@ -14,7 +14,7 @@ The core functionality of Chainscanner includes:
 3. Bridging interface — a third-party solution to bridge tokens between AppChains, powered by BridgeHub.
 4. Validator enrollment hub — provides onboarding to contribute validator nodes.
 5. Governance portal — lets users vote on app updates and the direction of ecosystems.
-6. Development resource — offers devs testnet tokens, docs, and resources for building.
+6. Development tools & resources — offers devs testnet tokens, docs, and resources for building.
 7. Information source — provides unique insight into the hosted chains and apps.
 
 Chainscanner makes all this available to all users, regardless if they have an AppChain or any technical background.

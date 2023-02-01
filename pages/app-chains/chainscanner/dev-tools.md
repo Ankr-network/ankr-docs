@@ -1,4 +1,6 @@
-# Faucet
+# Development tools
+
+## Faucet
 Faucet is a base infrastructure component of Ankr AppChains implemented in Chainscanner.
 
 A faucet is available for Testnet. 
@@ -6,9 +8,9 @@ It allows you to get free assets for your Testnet and set up or test out your Ap
 
 Currently, Ankr provides a faucet only for AppChains on BOMB Testnet.
 
-## Use faucet
+### Use faucet
 
-### Connect your wallet
+#### Connect your wallet
 To connect your wallet:
 1. Visit the [Chainscanner's dashboard](https://chainscanner.xyz/ankr/appchains/?network=bas-mapes) (preselected meta-apes network).
 2. Select a network to access. The selection popup shows you Mainnet networks.<br /> To see available Tesnet networks, click on **Access Testnets**.
@@ -17,7 +19,7 @@ To connect your wallet:
    <img src="/docs/app-chains/infrastructure-within-chainscanner/click-connect-wallet.jpg" alt="Click Connect wallet" class="responsive-pic" width="300" />
 4. In your MetaMask, select an account to connect and click **Next**, then click **Connect**.
 
-### Get Testnet tokens
+#### Get Testnet tokens
 To get some free Testnet assets for testing your BOMB-based AppChain:
 1. Visit the [Chainscanner's dashboard](https://testnet.chainscanner.xyz/ankr/appchains/?network=bomb-testnet) (preselected bomb-testnet network). If you're on another network, click the network selection menu, click **Access Testnets**, and then click **BOMB Money Testnet**. 
 2. Click **Faucet**.
