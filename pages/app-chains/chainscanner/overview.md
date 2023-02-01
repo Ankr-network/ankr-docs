@@ -11,7 +11,7 @@ It combines CoinMarketCap-like research tools with Etherscan-like functionality.
 The core functionality of Chainscanner includes:
 1. Block explorer — transparently displays all on-chain data.
 2. Staking interface — allows users to earn staking rewards with their favorite tokens.
-3. Bridging interface — a third-party solution to bridge tokens between AppChains, powered by BridgeHub.
+3. Bridging interface — a third-party solution to bridge tokens between AppChains, powered by BirdgeHub.
 4. Validator enrollment hub — provides onboarding to contribute validator nodes.
 5. Governance portal — lets users vote on app updates and the direction of ecosystems.
 6. Development resource — offers devs testnet tokens, docs, and resources for building.
@@ -21,7 +21,7 @@ Chainscanner makes all this available to all users, regardless if they have an A
 
 Now users can participate beyond the application level to truly benefit from the unique aspects of Web3 — such as co-ownership, shared rewards, and democratized decision-making.
 
-## Why build Chainscanner?
+## Why Build Chainscanner?
 Just as highways and bridges are the physical infrastructures that allow us to drive, digital infrastructure is what powers the internet applications we use daily.
 Digital infrastructure (specifically blockchain infrastructure) consists of complex lines of code that power dApps.
 However, we can share the important insights that blockchain infrastructure provides without showing the actual code and programming languages that built it.
