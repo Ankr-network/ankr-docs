@@ -2,13 +2,13 @@
 
 Yes — there is a [user guide](https://www.ankr.com/docs/staking/liquid-staking/eth/stake/).
 
-### What is the minimum amount of ETH I can stake?
+### What is the minimum amount of ETH I can stake? 
 
-0.5 ETH.
+There's no minimum amount, you can stake any.
 
 ### What is the change interval to increase my stake?
 
-0.5 ETH. It means you can stake 0.5, 1.0, 1.5 ETH, but cannot stake, for example, 0.55, 1.1, 1.88 ETH.
+There's no change interval, you can stake any amount.
 
 ### Is there a maximum amount I can stake?
 
@@ -69,3 +69,7 @@ You can also use your Liquid Staking tokens to:
 ### Why do I get less ankrETH (ex-aETHc) for my 1 ETH?
 
 ankrETH (ex-aETHc) only changes in value, which is why the amount of ankrETH you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankreth / (total_staked_eth + total_rewards_for_staked_eth - total_unstaked_ankreth)`.
+
+### Can I use cold wallets for staking?
+
+Yes, you can use Ledger Nano cold wallets through MetaMask. Visit the Ledger's [guide on connecting Ledger through MetaMask](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).
