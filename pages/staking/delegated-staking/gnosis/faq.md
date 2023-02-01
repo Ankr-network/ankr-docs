@@ -53,3 +53,7 @@ Rewards must be claimed from the [Ankr website](https://www.ankr.com/staking/das
 ### Does Ankr charge for the service?
 
 Ankr charges for the staking service — 10% of your staking rewards.
+
+### Can I use cold wallets for staking?
+
+Yes, you can use Ledger Nano cold wallets through MetaMask. Visit the Ledger's [guide on connecting Ledger through MetaMask](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).

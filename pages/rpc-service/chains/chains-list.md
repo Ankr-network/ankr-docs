@@ -19,40 +19,40 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Aptos](/rpc-service/chains/chains-list/#aptos)</td>
     <td>[Celo](/rpc-service/chains/chains-list/#celo)</td>
     <td>[Harmony](/rpc-service/chains/chains-list/#harmony)</td>
-    <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
-    <td>[Polygon](/rpc-service/chains/chains-list/#polygon)</td>
-    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
+    <td>[Metis](/rpc-service/chains/chains-list/#metis)</td>
+    <td>[Polkadot](/rpc-service/chains/chains-list/#polkadot)</td>
+    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
   </tr>
   <tr>
     <td>[Arbitrum](/rpc-service/chains/chains-list/#arbitrum)</td>
     <td>[Ethereum](/rpc-service/chains/chains-list/#ethereum)</td>
     <td>[HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)</td>
-    <td>[NEAR](/rpc-service/chains/chains-list/#near)</td>
-    <td>[Secret Network](/rpc-service/chains/chains-list/#secret-network)</td>
-    <td></td>
+    <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
+    <td>[Polygon](/rpc-service/chains/chains-list/#polygon)</td>
+    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
   </tr>
   <tr>
     <td>[Avalanche](/rpc-service/chains/chains-list/#avalanche)</td>
     <td>[Fantom](/rpc-service/chains/chains-list/#fantom)</td>
     <td>[IoTeX](/rpc-service/chains/chains-list/#iotex)</td>
-    <td>[Nervos](/rpc-service/chains/chains-list/#nervos)</td>
-    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
+    <td>[NEAR](/rpc-service/chains/chains-list/#near)</td>
+    <td>[Secret Network](/rpc-service/chains/chains-list/#secret-network)</td>
     <td></td>
   </tr>
   <tr>
     <td>[BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)</td>
     <td>[Filecoin](/rpc-service/chains/chains-list/#filecoin)</td>
     <td>[Klaytn](/rpc-service/chains/chains-list/#klaytn)</td>
-    <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
-    <td>[Sui](/rpc-service/chains/chains-list/#sui)</td>
+    <td>[Nervos](/rpc-service/chains/chains-list/#nervos)</td>
+    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
     <td></td>
   </tr>
   <tr>
     <td>[BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain)</td>
     <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
     <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
-    <td>[Polkadot](/rpc-service/chains/chains-list/#polkadot)</td>
-    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
+    <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
+    <td>[Sui](/rpc-service/chains/chains-list/#sui)</td>
     <td></td>
   </tr>
 </table>
@@ -229,10 +229,10 @@ Official quick links: [Website](https://www.avax.network/), [Docs](https://docs.
 
 <div className="list-with-custom-top-margin mt-6">
   * Mainnet / Fuji Testnet:
+    * Standard EVM API (`HTTPS` and `WSS`)
     * X-Chain (`HTTPS`)
     * P-Chain (`HTTPS`)
-    * C-Chain (`HTTPS`):
-      * Standard EVM API (`HTTPS` and `WSS`)
+    * C-Chain (`HTTPS`)
 </div>
 
 ### Add networks to MetaMask
@@ -894,7 +894,7 @@ Official quick links: [Website](https://ethereum.org/en/), [Docs](https://ethere
   * Mainnet (`HTTPS` and `WSS`)
   * Testnet:
     * Goerli (`HTTPS` and `WSS`)
-    * Rinkeby (`HTTPS` and `WSS`)
+    * Sepolia (`HTTPS` and `WSS`)
 </div>
 
 ### Add networks to MetaMask
@@ -936,18 +936,18 @@ To add Ethereum Goerli Testnet, follow these steps:
 
 Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Ethereum Goerli Testnet.
 
-To add Ethereum Rinkeby Testnet, follow these steps:
+To add Ethereum Sepolia Testnet, follow these steps:
 
   1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
-      * **Network name**: `Ethereum Rinkeby Testnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/eth_rinkeby/`.
-      * **Chain ID**: `4`.
+      * **Network name**: `Ethereum Sepolia Testnet by Ankr RPC`.
+      * **New RPC URL**: `https://rpc.ankr.com/eth_sepolia/`.
+      * **Chain ID**: `11155111`.
       * **Currency symbol**: `ETH`.
-      * **Block explorer URL**: `https://rinkeby.etherscan.io/`.
+      * **Block explorer URL**: `https://sepolia.etherscan.io/`.
 
-Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Ethereum Rinkeby Testnet.
+Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Ethereum Sepolia Testnet.
 
 ### API methods
 
@@ -1735,6 +1735,103 @@ For HECO, we support blockchain interaction via all the applicable methods excep
 
 `debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
 
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc":"2.0",
+      "method":"eth_blockNumber",
+      "params": [],
+      "id":1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/heco/{your_token}"  // url string
+    
+    rpcClient,err := ethclient.Dial(url)
+    
+    if err != nil {
+        panic(err)
+    }
+    
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+    
+    if err != nil {
+        panic(err)
+    }
+    
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/heco/{your_token}'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+          
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/heco/{your_token}'  # url string
+    
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x15bafe2"
+}
+```
+
 ---
 
 ## IoTeX
@@ -1940,6 +2037,7 @@ Official quick links: [Website](https://www.klaytn.foundation/), [Docs](https://
 
 <div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
+  * Testnet (`HTTPS` and `WSS`)
 </div>
 
 ### Add networks to MetaMask
@@ -2335,6 +2433,139 @@ For Kusama, we support blockchain interaction via all the applicable methods exc
   `dev_*`,
   `offchain_*`,
   `author_*`
+
+---
+
+## Metis
+
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
+
+Metis is an Ethereum Layer 2 Rollup platform that offers simple and fast smart contract deployment within the network. Metis provides several solutions to solve the big challenges we face in the main net Ethereum, including transaction speed, cost, and scalability.
+
+Official quick links: [Website](https://www.metis.io/), [Docs](https://docs.metis.io/dev/), [GitHub](https://github.com/MetisProtocol)
+
+### Networks
+
+<div className="list-with-custom-top-margin mt-6">
+  * Mainnet (`HTTPS` and `WSS`)
+</div>
+
+### API methods
+
+For Metis, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc":"2.0",
+      "method":"eth_blockNumber",
+      "params": [],
+      "id":1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/metis/{your_token}"  // url string
+    
+    rpcClient,err := ethclient.Dial(url)
+    
+    if err != nil {
+        panic(err)
+    }
+    
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+    
+    if err != nil {
+        panic(err)
+    }
+    
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/metis/{your_token}'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+          
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/metis/{your_token}'  # url string
+    
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x45cd53"
+}
+```
 
 ---
 

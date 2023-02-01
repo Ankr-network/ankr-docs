@@ -77,3 +77,7 @@ You can also use your Liquid Staking tokens to:
 ### Why do I get less ankrMATIC (ex-aMATICc) for my 1 MATIC?
 
  ankrMATIC (ex-aMATICc) only changes in value, which is why the amount of ankrMATIC you get when staking is calculated by the formula `stake * exchange_ratio`. The exchange ratio is calculated like this: `totals_supply_of_ankrmatic / (total_staked_matic + total_rewards_for_staked_matic - total_unstaked_ankrmatic)`.
+
+### Can I use cold wallets for staking?
+
+Yes, you can use Ledger Nano cold wallets through MetaMask. Visit the Ledger's [guide on connecting Ledger through MetaMask](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).

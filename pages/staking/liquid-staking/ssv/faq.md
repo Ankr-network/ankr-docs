@@ -47,3 +47,7 @@ Staking rewards depend mostly on the voting power of the validator node that you
 ### What is the change interval to increase my stake?
 
 0.5 ETH. It means you can stake 0.5, 1.0, 1.5 ETH, but cannot stake, for example, 0.55, 1.1, 1.88 ETH.
+
+### Can I use cold wallets for staking?
+
+Yes, you can use Ledger Nano cold wallets through MetaMask. Visit the Ledger's [guide on connecting Ledger through MetaMask](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).
