@@ -92,6 +92,8 @@ For Aptos, we support blockchain interaction via all the applicable methods exce
 
 Arbitrum is a side chain that runs parallel to Ethereum Mainnet. Also known as a Layer 2 (L2) scaling solution, Arbitrum improves transaction speeds and cost compared to the mainnet, making it an excellent solution for Ethereum developers.
 
+By the Arbitrum we mean Arbitrum One which is the flagship Arbitrum mainnet chain; it is an Optimistic Rollup chain running on top of Ethereum Mainnet, and is open to all users. In an upgrade on 8/31, the Arbitrum One chain was upgraded to use the [Nitro](https://medium.com/offchainlabs/its-nitro-time-86944693bf29) tech stack, maintaining the same state.
+
 Official quick links: [Website](https://arbitrum.io/), [Docs](https://developer.offchainlabs.com/), [GitHub](https://github.com/OffchainLabs)
 
 ### Networks
@@ -102,7 +104,7 @@ Official quick links: [Website](https://arbitrum.io/), [Docs](https://developer.
 
 ### API methods
 
-For Arbitrum, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Arbitrum, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/arbitrum) except for those listed as unsupported.
 
 #### Unsupported
 
