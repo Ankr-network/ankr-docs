@@ -1,6 +1,6 @@
 # Arbitrum
 
-Arbitrum API is available on [RPC Service](https://www.ankr.com/rpc/arbitrum).
+> Arbitrum API is available on [RPC Service](https://www.ankr.com/rpc/arbitrum).
 
 Arbitrum is designed to be as compatible and consistent with Ethereum as possible, from its high-level RPCs to its low-level bytecode and everything in between. Dapp developers with experience building on Ethereum will likely find that little-to-no new L2-specific knowledge is required to build on Arbitrum.
 
@@ -585,7 +585,7 @@ curl -X POST https://rpc.ankr.com/arbitrum \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": "0x36c1d18",
+      "params": ["0x36c1d18"],
       "id": 1
     }'
 ```
@@ -764,7 +764,7 @@ curl -X POST https://rpc.ankr.com/arbitrum \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/ethereum-new/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/arbitrum/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
