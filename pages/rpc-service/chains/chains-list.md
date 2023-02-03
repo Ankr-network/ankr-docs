@@ -284,7 +284,7 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For Avalanche, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Avalanche, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/avalanche/) except for those listed as unsupported.
 
 #### Unsupported
 
