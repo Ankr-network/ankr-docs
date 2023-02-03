@@ -1,5 +1,7 @@
 # Ethereum API
 
+> Ethereum API is available on [RPC Service](https://www.ankr.com/rpc/ethereum).
+
 In order for your Web3 application to interact with the Ethereum blockchain — either by reading blockchain data or sending transactions to the network — it must connect to an Ethereum node.
 
 For this purpose, every [Ethereum client](https://ethereum.org/en/developers/docs/nodes-and-clients/#execution-clients) implements a [JSON-RPC specification](https://github.com/ethereum/execution-apis), so there are a uniform set of methods that applications can rely on regardless of the specific node or client implementation.
@@ -631,7 +633,7 @@ curl -X POST https://rpc.ankr.com/eth \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": "latest",
+      "params": ["latest"],
       "id": 1
     }'
 ```
@@ -838,7 +840,7 @@ curl -X POST https://rpc.ankr.com/eth \
 
 ## `eth_signTransaction`
 
-> Signs a transaction that can be submitted to the network at a later time using with [eth_sendRawTransaction](/rpc-service/chains/chains-api/ethereum-new/#eth_sendrawtransaction).
+> Signs a transaction that can be submitted to the network at a later time using with [eth_sendRawTransaction](/rpc-service/chains/chains-api/ethereum/#eth_sendrawtransaction).
 
 ### Parameters
 <br/>
@@ -976,7 +978,7 @@ curl -X POST https://rpc.ankr.com/eth \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/ethereum-new/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/ethereum/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
