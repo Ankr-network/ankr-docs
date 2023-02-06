@@ -4,7 +4,7 @@
 
 Arbitrum is designed to be as compatible and consistent with Ethereum as possible, from its high-level RPCs to its low-level bytecode and everything in between. Dapp developers with experience building on Ethereum will likely find that little-to-no new L2-specific knowledge is required to build on Arbitrum.
 
-In order for you Web3 application to interact with the Arbitrum blockchain — either by reading blockchain data or sending transactions to the network — it must connect to an Arbitrum node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with the Arbitrum blockchain — either by reading blockchain data or sending transactions to the network — it must connect to an Arbitrum node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
 

@@ -1222,5 +1222,9 @@
   {
     "from": "docs/staking/reference/audit-reports/index.html",
     "to": "/docs/staking/extra/audit-reports/"
+  },
+  {
+    "from": "docs/rpc-service/chains/chains-api/binance-smart-chain/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/bnb-smart-chain/"
   }
 ]

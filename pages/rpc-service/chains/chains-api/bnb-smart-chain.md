@@ -1,53 +1,54 @@
-import { Callout } from "components";
+# BNB Smart Chain
 
-# Avalanche
+> BNB Smart Chain API is available on [RPC Service](https://www.ankr.com/rpc/bsc).
 
-> Avalanche API is available on [RPC Service](https://www.ankr.com/rpc/avalanche).
+BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 50 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
-Avalanche is an ecosystem made up of three core Blockchains optimized for specific tasks within the network. The **Exchange Chain** (X-Chain), **Platform Chain** (P-Chain), and **Contract Chain** (C-Chain). We also support Standard EVM API for Avalanche.
+The BNB Smart Chain also supports EVM-compatible smart contracts and protocols. Cross-chain transfer and other communication are possible due to native support of interoperability.
 
-Avalanche was built specifically with Defi dApps and protocols in mind, focusing on security, low latency, and high throughput. Avalanche uses a novel consensus protocol by utilizing two different consensus mechanisms. The consensus protocol ensures a high degree of security and fast finality even with multiple chains running simultaneously.
+The BNB Smart Chain highlights:
 
-In order for your Web3 application to interact with the Avalanche blockchain — either by reading blockchain data or sending transactions to the network — it must connect to an Avalanche node. Developers interact with the blockchain using the methods provided by the API.
+  * EVM Compatible
+  * Proof of Staked Authority
+  * Cross-Chain Transfer
+  * Block time `~3` seconds
+
+In order for your Web3 application to interact with BNB Smart Chain — either by reading blockchain data or sending transactions to the network — it must connect to a BNB Smart Chain node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
 
-## Standard EVM API methods
+---
+
+## Methods supported
 <br/>
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/avalanche/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/avalanche/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/avalanche/#net_version) — returns the current network ID.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/avalanche/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/avalanche/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/avalanche/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/avalanche/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/avalanche/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/avalanche/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/avalanche/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/avalanche/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/avalanche/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/avalanche/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/avalanche/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/avalanche/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/avalanche/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/avalanche/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/avalanche/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/avalanche/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/avalanche/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/avalanche/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/avalanche/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/avalanche/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/avalanche/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/avalanche/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/avalanche/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/avalanche/#eth_getlogs) — returns logs matching the parameters specified.
-
-## C-Chain methods (under construction)
-
-## P-Chain methods (under construction)
-
-## X-Chain methods (under construction)
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/bnb-smart-chain/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/bnb-smart-chain/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/bnb-smart-chain/#net_version) — returns the current network ID.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -71,7 +72,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -87,7 +88,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "v0.11.5"
+    "result": "Geth/v1.1.18-03ff2992/linux-amd64/go1.17.13"
 }
 ```
 
@@ -115,7 +116,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -157,7 +158,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -173,7 +174,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "43114"
+    "result": "56"
 }
 ```
 
@@ -199,7 +200,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -244,7 +245,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -300,7 +301,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -316,7 +317,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x5d21dba00"
+    "result": "0x12a05f200"
 }
 ```
 
@@ -342,7 +343,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -386,7 +387,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -402,7 +403,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x18966bd"
+    "result": "0x1841b06"
 }
 ```
 
@@ -436,7 +437,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -488,7 +489,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -539,7 +540,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -583,7 +584,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -632,12 +633,12 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["latest"],
+      "params": ["0x36c1d18"],
       "id": 1
     }'
 ```
@@ -676,7 +677,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -725,7 +726,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/eth \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -775,7 +776,7 @@ curl -X POST https://rpc.ankr.com/eth \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -816,12 +817,12 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/avalanche/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -878,7 +879,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -937,7 +938,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -1001,7 +1002,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1091,7 +1092,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1169,7 +1170,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1244,7 +1245,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1324,7 +1325,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1403,12 +1404,12 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionReceipt",
-      "params": ["0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5"],
+      "params": ["0x3c9329b765d88c03d18f87dc1f2b5138c89d9a415d5c73dc7827b87aca176c8e"],
       "id": 1
     }'
 ```
@@ -1498,7 +1499,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1588,7 +1589,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1677,7 +1678,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/bsc \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1727,3 +1728,4 @@ curl -X POST https://rpc.ankr.com/avalanche \
     ]
 }
 ```
+
