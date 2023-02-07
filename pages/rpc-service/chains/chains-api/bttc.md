@@ -11,7 +11,6 @@ In order for your Web3 application to interact with BitTorrent Chain — either 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
 
 ## EVM methods
-
 <br/>
 
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/bttc/#web3_clientversion) — returns the current client version.
