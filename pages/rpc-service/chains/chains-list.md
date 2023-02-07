@@ -1,7 +1,7 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 import { Callout } from "components";
 
-## Chains list
+## Chains Quickstart
 
 This docs section provides the list of all chains available on [RPC Service](https://www.ankr.com/rpc/). Each chain in the list contains a short overview and the networks supported. It also contains info on adding those networks to MetaMask. Moreover, it outlines the API methods to interact with the network as well as the methods we don't support entirely for either [Public or Premium service plans](/rpc-service/service-plans/#service-plans-comparison). And the cherry on top, each chain contains code snippets with basic requests in various languages and the corresponding JSON responses.
 
@@ -793,7 +793,7 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For Celo, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Celo, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/celo/) except for those listed as unsupported.
 
 #### Unsupported
 
