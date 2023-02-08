@@ -1,43 +1,45 @@
-# Harmony
+# Huobi ECO Chain
 
-> Harmony API is available on [RPC Service](https://www.ankr.com/rpc/harmony).
+> HECO API is available on [RPC Service](https://www.ankr.com/rpc/heco).
 
-Harmony is a powerful EVM-compatible blockchain with sharding and staking features. 
+Huobi ECO Chain (HECO) is a decentralized, high-efficiency and energy-saving public chain. It is compatible with smart contracts and supports high- performance transactions. The endogenous token of Heco is HT, and it adopts the HPoS consensus mechanism. Heco will continue to improve the efficiency of Ethereum by Layer2, which will supplement and empower the Ethereum ecosystem.
 
-Developing on Harmony should be familiar for Ethereum developers, as it is fully Ethereum compatible and inherits almost all the tools and libraries from Ethereum, like Truffle, Remix, web3.js, etc.
-
-In order for your Web3 application to interact with Harmony — either by reading blockchain data or sending transactions to the network — it must connect to a Harmony node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with HECO — either by reading blockchain data or sending transactions to the network — it must connect to a HECO node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
 ---
 
-## EVM methods
+## Methods supported
 <br/>
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/harmony/#web3_clientversion) — returns the current client version.
-  * [`net_version`](/rpc-service/chains/chains-api/harmony/#net_version) — returns the current network ID.
-  * [`eth_protocolversion`](/rpc-service/chains/chains-api/harmony/#eth_protocolversion) — returns the current Ethereum protocol version.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/harmony/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/harmony/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/harmony/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/harmony/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/harmony/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/harmony/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/harmony/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/harmony/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/harmony/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/harmony/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/harmony/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/harmony/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/harmony/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/harmony/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/harmony/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/harmony/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/harmony/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/harmony/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/harmony/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/harmony/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/heco/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/heco/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/heco/#net_version) — returns the current network ID.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/heco/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/heco/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/heco/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/heco/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/heco/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/heco/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/heco/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/heco/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/heco/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/heco/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/heco/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/heco/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/heco/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/heco/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/heco/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/heco/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/heco/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/heco/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/heco/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/heco/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/heco/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/heco/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/heco/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/heco/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -61,7 +63,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -76,8 +78,52 @@ curl -X POST https://rpc.ankr.com/harmony \
 ```json
 {
     "jsonrpc": "2.0",
+    "result": "Geth/v1.3.0-unstable-123ccb14-20220815/linux-amd64/go1.19.1",
+    "id": 1
+}
+```
+
+---
+
+## `web3_sha3`
+
+> Returns Keccak-256 (not the standardized SHA3-256) of the given data.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<string>` (data): the data to convert into a SHA3 hash.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the SHA3 result of the given string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_sha3",
+      "params": ["0x68656c6c6f20776f726c64"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
     "id": 1,
-    "result": "Harmony (C) 2023. harmony, version v7647-v4.3.14.rc3-0-g09dba416 (root@ 2023-01-23T16:33:47+0000)"
+    "result": "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
 }
 ```
 
@@ -103,7 +149,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -119,15 +165,15 @@ curl -X POST https://rpc.ankr.com/harmony \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "1666600000"
+    "result": "128"
 }
 ```
 
 ---
 
-## `eth_protocolVersion`
+## `net_listening`
 
-> Returns the current Ethereum protocol version.
+> Returns `true` if client is actively listening for network connections.
 
 ### Parameters
 <br/>
@@ -140,16 +186,16 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Returns
 <br/>
 
-  * `<string>`: the current Ethereum protocol version.
+  * `<boolean>`: `true` when listening, otherwise `false`.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
-      "method": "eth_protocolVersion",
+      "method": "net_listening",
       "params": [],
       "id": 1
     }'
@@ -160,8 +206,8 @@ curl -X POST https://rpc.ankr.com/harmony \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "0x1",
-    "id": 1
+    "id": 1,
+    "result": true
 }
 ```
 
@@ -190,7 +236,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -246,7 +292,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -262,7 +308,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x22ecb25c00"
+    "result": "2250000000"
 }
 ```
 
@@ -288,7 +334,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -332,7 +378,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -348,7 +394,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x23ea004"
+    "result": "22989937"
 }
 ```
 
@@ -382,7 +428,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -434,7 +480,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -485,7 +531,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -529,7 +575,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -578,12 +624,12 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x36c1d18"],
+      "params": ["22991214"],
       "id": 1
     }'
 ```
@@ -595,6 +641,99 @@ curl -X POST https://rpc.ankr.com/harmony \
     "jsonrpc": "2.0",
     "id": 1,
     "result": "0xb6"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockHash`
+
+> Returns the number of uncles in a block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (data, 32 bytes): a block's hash.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockHash",
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockNumber`
+
+> Returns the number of uncles in a block specified by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockNumber",
+      "params": ["22991214"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
 }
 ```
 
@@ -628,7 +767,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -669,19 +808,19 @@ curl -X POST https://rpc.ankr.com/harmony \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/harmony/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/heco/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_sendRawTransaction",
     "params": ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"],
     "id": 1
-    }'
+}'
 ```
 
 ### Response example
@@ -731,7 +870,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -790,7 +929,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -854,7 +993,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -944,12 +1083,12 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByNumber",
-      "params": ["0x1b4", true],
+      "params": ["22991214", true],
       "id": 1
     }'
 ```
@@ -1023,12 +1162,12 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273"],
       "id": 1
     }'
 ```
@@ -1098,12 +1237,12 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockHashAndIndex",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b", "0x2"],
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273", "0x2"],
       "id": 1
     }'
 ```
@@ -1178,12 +1317,12 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockNumberAndIndex",
-      "params": ["0xc5043f", "0x2"],
+      "params": ["10674793", "0x2"],
       "id": 1
     }'
 ```
@@ -1257,7 +1396,7 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1310,6 +1449,181 @@ curl -X POST https://rpc.ankr.com/harmony \
 
 ---
 
+## `eth_getUncleByBlockHashAndIndex`
+
+> Returns information about an uncle of a block by hash and uncle index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the hash of a block.
+    2. `<string>` (quantity): the uncle's index position.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockHashAndIndex",
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x4ea3f27bc",
+        "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
+        "gasLimit": "0x1388",
+        "gasUsed": "0x0",
+        "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
+        "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
+        "nonce": "0x689056015818adbe",
+        "number": "0x1b4",
+        "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x220",
+        "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
+        "timestamp": "0x55ba467c",
+        "totalDifficulty": "0x78ed983323d",
+        "transactions": [],
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getUncleByBlockNumberAndIndex`
+
+> Returns information about an uncle of a block by number and uncle index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<string>` (quantity): the uncle's  index position.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockNumberAndIndex",
+      "params": ["0x15ed2ed", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x57f117f5c",
+        "extraData": "0x476574682f76312e302e302f77696e646f77732f676f312e342e32",
+        "gasLimit": "0x1388",
+        "gasUsed": "0x0",
+        "hash": "0x932bdf904546a2287a2c9b2ede37925f698a7657484b172d4e5184f80bdd464d",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0x5bf5e9cf9b456d6591073513de7fd69a9bef04bc",
+        "mixHash": "0x4500aa4ee2b3044a155252e35273770edeb2ab6f8cb19ca8e732771484462169",
+        "nonce": "0x24732773618192ac",
+        "number": "0x299",
+        "parentHash": "0xa779859b1ee558258b7008bbabff272280136c5dd3eb3ea3bfa8f6ae03bf91e5",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x21d",
+        "stateRoot": "0x2604fbf5183f5360da249b51f1b9f1e0f315d2ff3ffa1a4143ff221ad9ca1fec",
+        "timestamp": "0x55ba4827",
+        "totalDifficulty": "0xc46826a2c6a",
+        "transactions": [],
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "uncles": []
+    }
+}
+```
+
+---
+
 ## `eth_getLogs`
 
 > Returns an array of all logs matching a given filter object.
@@ -1356,7 +1670,7 @@ curl -X POST https://rpc.ankr.com/harmony \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
