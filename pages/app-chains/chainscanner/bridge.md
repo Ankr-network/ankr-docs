@@ -26,6 +26,29 @@ To bridge your assets to an AppChain of your choice:
 1. Visit the [Bridge](https://chainscanner.xyz/ankr/appchains/bridge/?network=bas-mapes) (preselected meta-apes network).
 2. Select a network to access. The selection popup shows you Mainnet networks.<br /> To see available Tesnet networks, click on **Access Testnets**.
    <img src="/docs/app-chains/infrastructure-within-chainscanner/select-network-in-block-explorer.jpg" alt="Select a network" class="responsive-pic" width="500" />
-3. Choose a **From** and **To** network, enter a desired **Token amount**, and click **Switch network**.
-   <img src="/docs/app-chains/infrastructure-within-chainscanner/bridge-assets.jpg" alt="Bridge tokens" class="responsive-pic" width="500" />
-4. Go through the process of bridging. Confirm the transactions in your MetaMask when needed.
+3. Choose a **From** and **To** network, enter a desired **Token amount**, and click **Approve** to allow the Bridge to access that amount.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/click-approve.jpg" alt="Click Approve" class="responsive-pic" width="900" />
+4. Confirm the approval transaction in MetaMask.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/approve-bridge-accessing-tokens.jpg" alt="Click Confirm in MetaMask" class="responsive-pic" width="300" />
+5. Click **Send** to bridge tokens. Also, check the current network liquidity capacity to make sure it's more than what you're bridging.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/click-send-to-bridge-tokens.jpg" alt="Click Send" class="responsive-pic" width="900" />
+6. Confirm the bridging transaction in MetaMask.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/confirm-bridging-in-metamask.jpg" alt="Click Confirm in MetaMask" class="responsive-pic" width="300" />
+7. Click **Switch network** to continue.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/click-switch-network.jpg" alt="Click Switch network" class="responsive-pic" width="900" />
+8. Confirm the switching in MetaMask.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/confirm-switching.jpg" alt="Click Confirm in MetaMask" class="responsive-pic" width="300" />
+9. **Stay on the page** and wait a moment for the tokens to be auto-claimed in the destination network. When the **Claim** check is there, you'll see the "Bridge successful!" message and can **Close** the page.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/wait-till-claimed-and-click-close.jpg" alt="Wait till tokens are auto-claimed, then click Close" class="responsive-pic" width="900" /> 
+
+### Recover non-finished bridging
+Sometimes you may have a non-finished bridging. This may happen due to an OS crash, closed tab, lost internet connection, and many other reasons.
+If you managed to **Send** tokens from the source network and confirm the bridging transaction (#6 in [**Bridge assets**](/app-chains/chainscanner/bridge/#bridge-assets)), you will have that transaction in your MetaMask history.
+
+To recover a non-finished bridging:
+1. In MetaMask, switch to the network you were bridging from and find the **Deposit Token** transaction from #5–6 in [**Bridge assets**](/app-chains/chainscanner/bridge/#bridge-assets). Copy this transaction hash.
+2. Visit the [Bridge](https://chainscanner.xyz/ankr/appchains/bridge/?network=bas-mapes) (preselected meta-apes network).
+3. Click **Finish bridge** above the **To** field.
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/click-finish-bridge.jpg" alt="Click Finish bridge" class="responsive-pic" width="900" />
+4. Choose the source **Network** as it was in the original bridging attempt, enter the transaction hash from #1, and click **Switch network** to auto-claim your tokens in the destination network. The switching action is equivalent to #7 in [**Bridge assets**](/app-chains/chainscanner/bridge/#bridge-assets).
+   <img src="/docs/app-chains/infrastructure-within-chainscanner/enter-details-to-recover-bridging.jpg" alt="Enter details and click Switch network" class="responsive-pic" width="900" />
