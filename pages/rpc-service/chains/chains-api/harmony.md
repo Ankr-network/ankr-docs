@@ -12,7 +12,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 
 ---
 
-## EVM methods
+## Methods supported
 <br/>
 
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/harmony/#web3_clientversion) — returns the current client version.
