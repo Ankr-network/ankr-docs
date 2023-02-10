@@ -1938,7 +1938,7 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For IoTeX, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For IoTeX, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/iotex/) except for those listed as unsupported.
 
 #### Unsupported
 
