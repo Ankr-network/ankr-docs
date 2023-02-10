@@ -4,7 +4,7 @@ import { Callout } from "components";
 # NFT API
 
 <Callout>
-_NFT API_ is an Advanced APIs' collection of methods that comes as a unique feature along with other extensive capabilities provided to our [Premium Plan](/rpc-service/pricing-plans/) users.
+_NFT API_ is a part of Advanced APIs' collection of methods that can be added as the add-on premium feature to the AppChains package.
 </Callout>
 
 _NFT API_ serves to request NFT-related data (owners, listings for particular wallet addresses, collections, time it's been minted, transaction history, and other metadata) across multiple EVM-compatible chains.
@@ -17,10 +17,12 @@ NFT API implements the [JSON-RPC 2.0 specification](https://www.jsonrpc.org/spec
 
 _NFT API_ consists of the following methods to request NFT-related data across multiple chains:
 
-  * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#ankr_getnftsbyowner) — retrieves an account-associated NFTs.
-  * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
-  * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves holders of a particular NFT.
-  * [`ankr_getNftTransfers`](/advanced-api/nft-methods/#ankr_getnfttransfers) — retrieves NFT transfers info of a particular address.
+  * [`ankr_getNFTsByOwner`](/app-chains/components/advanced-api/nft-methods/#ankr_getnftsbyowner) — retrieves an account-associated NFTs.
+  * [`ankr_getNFTMetadata`](/app-chains/components/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
+  * [`ankr_getNFTHolders`](/app-chains/components/advanced-api/nft-methods/#ankr_getnftholders) — retrieves holders of a particular NFT.
+  * [`ankr_getNftTransfers`](/app-chains/components/advanced-api/nft-methods/#ankr_getnfttransfers) — retrieves NFT transfers info of a particular address.
+
+---
 
 ## `ankr_getNFTsByOwner`
 
@@ -37,12 +39,12 @@ Build your request using the parameters below.
 * `id` (int64; required): a request ID (example: 1).
 * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
 * `method` (string; required): a method used for the request.
-* `params` (object): the data object containing request body parameters:
+* `params` (object; required): the data object containing request body parameters:
 
   * `walletAddress` (string; required): an account address to query for NFTs; supports the Ethereum Name Service (ENS).
   * `blockchain` (string): a chain or a combination of chains to query:
-     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
-     * Chains combination: `[eth, polygon, bsc]`.
+     * Single chain: `bas_bombchain`, `bas_bombchain_testnet`, `bas_metaapes`, `bas_metaapes_testnet`.
+     * Chains combination: `[bas_bombchain, bas_metaapes, bas_bombchain_testnet]`.
      * All chains: leave the value empty to query all the chains available.
   * `pageSize` (int32): a number of page results you'd like to get (default=10, max=50).
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
@@ -107,7 +109,7 @@ A successful response contains the following parameters:
 * `jsonrpc` (string; required):
 * `result` (object): the data object containing a list of NFT assets and their metadata:
 
-  * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): one of the supported chains (`bas_bombchain`, `bas_bombchain_testnet`, `bas_metaapes`, `bas_metaapes_testnet`).
   * `collectionName` (string): a collection name the NFT asset belongs to.
   * `contractAddress` (string): an NFT collection's EVM-compatible contract address.
   * `contractType` (int32): a type of the contract — either ERC721 or ERC1155.
@@ -126,13 +128,13 @@ A successful response contains the following parameters:
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.chainscanner.xyz/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getNFTsByOwner",
     "params": {
-        "blockchain": ["eth"],
+        "blockchain": ["bas_bombchain"],
         "walletAddress": "0x0E11A192d574b342C51be9e306694C41547185DD",
         "pageSize": 2,
         "pageToken": "",
@@ -209,7 +211,7 @@ Code: 200 OK
     "owner": "0x0e11a192d574b342c51be9e306694c41547185dd",
     "assets": [
       {
-        "blockchain": "eth",
+        "blockchain": "bas_bombchain",
         "name": "Happy Bunny #555",
         "tokenId": "555",
         "imageUrl": "https://ipfs.io/ipfs/QmSRkmEDKWUeHi5FiNpQUBAcCq7rKinhf5Pbu8ZPZNkP8r/555",
@@ -245,7 +247,7 @@ Code: 200 OK
         ]
       },
       {
-        "blockchain": "eth",
+        "blockchain": "bas_bombchain",
         "name": "Happy Bunny #6907",
         "tokenId": "6907",
         "imageUrl": "https://ipfs.io/ipfs/QmSRkmEDKWUeHi5FiNpQUBAcCq7rKinhf5Pbu8ZPZNkP8r/6907",
@@ -281,7 +283,7 @@ Code: 200 OK
         ]
       },
       {
-        "blockchain": "eth",
+        "blockchain": "bas_bombchain",
         "name": "Moon Boyz #8937",
         "tokenId": "8937",
         "imageUrl": "https://moon-boyz-api-do.com/metadata/8937",
@@ -349,9 +351,9 @@ Build your request using the parameters below.
 * `id` (int64; required): a request ID (example: 1).
 * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
 * `method` (string; required): a method used for the request.
-* `params` (object): the data object containing request body parameters.
+* `params` (object; required): the data object containing request body parameters.
 
-  * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): one of the supported chains (`bas_bombchain`, `bas_bombchain_testnet`, `bas_metaapes`, `bas_metaapes_testnet`).
   * `contractAddress` (string): a contract address of the NFT the metadata belongs to; supports the Ethereum Name Service (ENS).
   * `tokenId` (integer): a token ID of the NFT the metadata belongs to.
 
@@ -395,7 +397,7 @@ A successful request returns, along with the general parameters, the `result` ob
 * `result` (object): the data object containing the NFT metadata and NFT attributes:
 
   * `metadata` (object): the data object containing the NFT metadata:
-    * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+    * `blockchain` (string; required): one of the supported chains (`bas_bombchain`, `bas_bombchain_testnet`, `bas_metaapes`, `bas_metaapes_testnet`).
     * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
     * `contractType` (string): a contract type of the NFT the metadata belongs to (example: ERC721, ERC1155).
     * `tokenId` (string): a token ID of the NFT the metadata belongs to (example: 7822).
@@ -415,13 +417,13 @@ A successful request returns, along with the general parameters, the `result` ob
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.chainscanner.xyz/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getNFTMetadata",
     "params": {
-        "blockchain": "avalanche",
+        "blockchain": "bas_bombchain",
         "contractAddress": "0x8d01c8ee82e581e55c02117a676b5bbd4734fabb",
         "tokenId": "23240"
     },
@@ -486,7 +488,7 @@ Code: 200 OK
     "id": 1,
     "result": {
         "metadata": {
-            "blockchain": "avalanche",
+            "blockchain": "bas_bombchain",
             "contractAddress": "0x8d01c8ee82e581e55c02117a676b5bbd4734fabb",
             "tokenId": "23240",
             "contractType": "ERC721"
@@ -547,9 +549,9 @@ Build your request using the parameters below.
 * `id` (int64; required): a request ID (example: 1).
 * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
 * `method` (string; required): a method used for the request.
-* `params` (object): the data object containing request body parameters.
+* `params` (object; required): the data object containing request body parameters.
 
-  * `blockchain` (string; required): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported blockchains (`bas_bombchain`, `bas_bombchain_testnet`, `bas_metaapes`, `bas_metaapes_testnet`).
   * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (integer): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
@@ -593,7 +595,7 @@ A successful request returns a list of holders for the NFT specified.
 * `id` (int64; required): a request ID (example: 1).
 * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
 * `result` (object): the data object containing a holder of the NFT specified by request parameters:
-  * `holder` (string): a list of holders.
+  * `holders` (string|null): a list of holders.
   * `nextPageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
 
 ### Code Examples
@@ -601,13 +603,13 @@ A successful request returns a list of holders for the NFT specified.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.chainscanner.xyz/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "ankr_getNFTHolders",
     "params": {
-        "blockchain": "arbitrum",
+        "blockchain": "bas_bombchain",
         "contractAddress": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
         "pageSize": 10,
         "pageToken": ""
@@ -685,10 +687,10 @@ Build your request using the parameters below.
 * `id` (int64; required): a request ID (example: 1).
 * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
 * `method` (string; required): a method used for the request.
-* `params` (object): the data object containing request body parameters.
+* `params` (object; required): the data object containing request body parameters.
 
   * `address` (array of strings; required): an address to search for transactions.
-  * `blockchain` (array of strings): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (array of strings): either of the supported blockchains (`bas_bombchain`, `bas_bombchain_testnet`, `bas_metaapes`, `bas_metaapes_testnet`).
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
   * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`).
   * `toBlock` (integer): narrow your search indicating the block number to end with (inclusive; `>= 0`).
@@ -737,7 +739,7 @@ A successful request returns information on transfers for an address specified.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.chainscanner.xyz/multichain' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "id": 1,
@@ -746,7 +748,7 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
     "params": {
         "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
         "blockchain": [
-            "bsc"
+            "bas_bombchain"
         ],
         "fromTimestamp": 1655197483,
         "pageSize": 2,
@@ -767,7 +769,7 @@ Code: 200 OK
         "transfers": [
             {
                 "blockHeight": 19116577,
-                "blockchain": "bsc",
+                "blockchain": "bas_bombchain",
                 "collectionName": "",
                 "collectionSymbol": "",
                 "contractAddress": "0x36f8f51f65fe200311f709b797baf4e193dd0b0d",
@@ -783,7 +785,7 @@ Code: 200 OK
             },
             {
                 "blockHeight": 19357744,
-                "blockchain": "bsc",
+                "blockchain": "bas_bombchain",
                 "collectionName": "CheersBio Capsule",
                 "collectionSymbol": "CBC",
                 "contractAddress": "0x999017cb5652caf5f324a8e44f813903ba3c46eb",
