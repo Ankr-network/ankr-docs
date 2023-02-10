@@ -16,7 +16,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/iotex/#web3_clientversion) — returns the current client version.
   * [`net_version`](/rpc-service/chains/chains-api/iotex/#net_version) — returns the current network ID.
   * [`net_listening`](/rpc-service/chains/chains-api/iotex/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_protocolversion`](/rpc-service/chains/chains-api/harmony/#eth_protocolversion) — returns the current Ethereum protocol version.
+  * [`eth_protocolversion`](/rpc-service/chains/chains-api/iotex/#eth_protocolversion) — returns the current Ethereum protocol version.
   * [`eth_gasPrice`](/rpc-service/chains/chains-api/iotex/#eth_gasprice) — returns the current price per gas in wei.
   * [`eth_blockNumber`](/rpc-service/chains/chains-api/iotex/#eth_blocknumber) — returns the number of most recent block.
   * [`eth_getBalance`](/rpc-service/chains/chains-api/iotex/#eth_getbalance) — returns the balance of the account specified by address.
