@@ -10,7 +10,7 @@
     "dev": "npm run update-strapi-faq-files && next -p 3016",
     "start": "npm run update-strapi-faq-files && next start",
     "start:css": "tailwindcss -o styles/global.css --watch",
-    "update-strapi-faq-files": "node ./scripts/update-strapi-faq-files.js"
+    "update-strapi-faq-files": "node ./src/scripts/update-strapi-faq-files.js"
   },
   "author": "raproid at Ankr",
   "license": "MIT",

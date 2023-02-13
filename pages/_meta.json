@@ -2,6 +2,10 @@
   "index": "Welcome to Ankr Docs",
   "rpc-service": "RPC Service",
   "advanced-api": "Advanced APIs/SDKs",
+  "node-snapshot": {
+    "title": "Blockchain Node Snapshots",
+    "hidden": true
+  },
   "automation": {
     "title": "Contract Automation",
     "hidden": true
