@@ -1763,10 +1763,7 @@ def test_block_number(self):
 Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
 </Callout>
 
-Huobi ECO Chain (HECO) is a decentralized, high-efficiency and energy-saving public chain. It is compatible
-with smart contracts and supports high- performance transactions. The endogenous token of Heco is HT
-and it adopts the HPoS consensus mechanism. Heco will continue to improve the efficiency of Ethereum
-by Layer2, which will supplement and empower the Ethereum ecosystem.
+Huobi ECO Chain (HECO) is a decentralized, high-efficiency and energy-saving public chain. It is compatible with smart contracts and supports high- performance transactions. The endogenous token of Heco is HT, and it adopts the HPoS consensus mechanism. Heco will continue to improve the efficiency of Ethereum by Layer2, which will supplement and empower the Ethereum ecosystem.
 
 Official quick links: [Website](https://www.hecochain.com/en-us/), [Docs](https://docs.hecochain.com/#/), [GitHub](https://github.com/stars-labs/)
 
@@ -1779,7 +1776,7 @@ Official quick links: [Website](https://www.hecochain.com/en-us/), [Docs](https:
 
 ### API methods
 
-For HECO, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For HECO, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/heco/) except for those listed as unsupported.
 
 #### Unsupported
 
@@ -1941,7 +1938,7 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For IoTeX, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For IoTeX, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/iotex/) except for those listed as unsupported.
 
 #### Unsupported
 

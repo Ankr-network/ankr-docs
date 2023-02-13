@@ -4,6 +4,6 @@
   "testnet-faucet": "TestNet Faucet",
   "block-explorer": "Block Explorer",
   "relay-hub": "Cross-chain Bridge",
-  "staking-ui": "Staking UI"
-
+  "staking-ui": "Staking UI",
+  "advanced-api": "Advanced APIs"
 }

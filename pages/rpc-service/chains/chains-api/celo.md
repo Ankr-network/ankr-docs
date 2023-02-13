@@ -21,6 +21,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/celo/#web3_clientversion) — returns the current client version.
   * [`web3_sha3`](/rpc-service/chains/chains-api/celo/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
   * [`net_version`](/rpc-service/chains/chains-api/celo/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/celo/#net_listening) — returns true if client is actively listening for network connections.
   * [`eth_syncing`](/rpc-service/chains/chains-api/celo/#eth_syncing) — returns data on the sync status or false.
   * [`eth_gasPrice`](/rpc-service/chains/chains-api/celo/#eth_gasprice) — returns the current price per gas in wei.
   * [`eth_accounts`](/rpc-service/chains/chains-api/celo/#eth_accounts) — returns a list of addresses owned by client.

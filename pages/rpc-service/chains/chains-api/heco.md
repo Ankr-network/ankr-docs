@@ -1,55 +1,46 @@
-# BNB Smart Chain
+# Huobi ECO Chain
 
-> BNB Smart Chain API is available on [RPC Service](https://www.ankr.com/rpc/bsc).
+> HECO API is available on [RPC Service](https://www.ankr.com/rpc/heco).
 
-BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 50 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+Huobi ECO Chain (HECO) is a decentralized, high-efficiency and energy-saving public chain. It is compatible with smart contracts and supports high- performance transactions. The endogenous token of Heco is HT, and it adopts the HPoS consensus mechanism. Heco will continue to improve the efficiency of Ethereum by Layer2, which will supplement and empower the Ethereum ecosystem.
 
-The BNB Smart Chain also supports EVM-compatible smart contracts and protocols. Cross-chain transfer and other communication are possible due to native support of interoperability.
+In order for your Web3 application to interact with HECO — either by reading blockchain data or sending transactions to the network — it must connect to a HECO node. Developers interact with the blockchain using the methods provided by the API.
 
-The BNB Smart Chain highlights:
-
-  * EVM Compatible
-  * Proof of Staked Authority
-  * Cross-Chain Transfer
-  * Block time `~3` seconds
-
-In order for your Web3 application to interact with BNB Smart Chain — either by reading blockchain data or sending transactions to the network — it must connect to a BNB Smart Chain node. Developers interact with the blockchain using the methods provided by the API.
-
-The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
 ---
 
 ## Methods supported
 <br/>
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/bnb-smart-chain/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/bnb-smart-chain/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/bnb-smart-chain/#net_version) — returns the current network ID.
-  * [`net_listening`](/rpc-service/chains/chains-api/bnb-smart-chain/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/heco/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/heco/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/heco/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/heco/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/heco/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/heco/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/heco/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/heco/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/heco/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/heco/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/heco/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/heco/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/heco/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/heco/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/heco/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/heco/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/heco/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/heco/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/heco/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/heco/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/heco/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/heco/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/heco/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/heco/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/heco/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/heco/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/heco/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/heco/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -63,7 +54,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -73,7 +64,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -88,8 +79,8 @@ curl -X POST https://rpc.ankr.com/bsc \
 ```json
 {
     "jsonrpc": "2.0",
-    "id": 1,
-    "result": "Geth/v1.1.18-03ff2992/linux-amd64/go1.17.13"
+    "result": "Geth/v1.3.0-unstable-123ccb14-20220815/linux-amd64/go1.19.1",
+    "id": 1
 }
 ```
 
@@ -105,7 +96,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (data): the data to convert into a SHA3 hash.
 
@@ -117,7 +108,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -149,7 +140,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -159,7 +150,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -175,7 +166,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "56"
+    "result": "128"
 }
 ```
 
@@ -191,7 +182,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -201,7 +192,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -233,12 +224,12 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
 
-  * `<object>`|`<boolean>`: an object with sync status data or FALSE, when not syncing:
+  * `<object>`|`<boolean>`: an object with sync status data or `false`, when not syncing:
     * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
     * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
     * `highestBlock` (quantity): the estimated highest block.
@@ -246,7 +237,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -292,7 +283,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -302,7 +293,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -318,7 +309,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x12a05f200"
+    "result": "2250000000"
 }
 ```
 
@@ -344,7 +335,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -378,7 +369,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -388,7 +379,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -404,7 +395,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x1841b06"
+    "result": "22989937"
 }
 ```
 
@@ -420,7 +411,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address to check for balance.
     2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
@@ -438,7 +429,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -470,7 +461,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address of the storage (hex encoded).
     2. `<string>` (quantity): a slot position in the storage (hex encoded unsigned integer).
@@ -490,7 +481,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -522,7 +513,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address.
     2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
@@ -541,7 +532,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -573,7 +564,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a block hash.
 
@@ -585,7 +576,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -617,7 +608,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required): 
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -634,12 +625,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x36c1d18"],
+      "params": ["22991214"],
       "id": 1
     }'
 ```
@@ -666,7 +657,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required): 
 
     1. `<string>` (data, 32 bytes): a block's hash.
 
@@ -678,12 +669,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b"],
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273"],
       "id": 1
     }'
 ```
@@ -710,7 +701,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required): 
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -727,12 +718,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockNumber",
-      "params": ["0xc5043f"],
+      "params": ["22991214"],
       "id": 1
     }'
 ```
@@ -759,7 +750,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required): 
 
     1. `<string>` (data, 20 bytes): an address to get the code from.
     2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
@@ -777,7 +768,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -809,7 +800,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required): 
 
     1. `<string>` (data): the signed transaction data.
 
@@ -818,12 +809,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/bnb-smart-chain/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/heco/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -855,7 +846,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required): 
 
     1. `<object>` (hex encoded): the transaction object:
         * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
@@ -880,7 +871,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -914,7 +905,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required): 
 
     1. `<object>` (hex encoded): the transaction object:
         * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
@@ -939,7 +930,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -971,7 +962,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): the block's hash.
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
@@ -1003,7 +994,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1056,7 +1047,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
        * `earliest`: the lowest numbered block available on the client.
@@ -1093,12 +1084,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByNumber",
-      "params": ["0x1b4", true],
+      "params": ["22991214", true],
       "id": 1
     }'
 ```
@@ -1108,29 +1099,30 @@ curl -X POST https://rpc.ankr.com/bsc \
 ```json
 {
     "jsonrpc": "2.0",
-    "id": 1,
     "result": {
-        "difficulty": "0x4ea3f27bc",
-        "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
-        "gasLimit": "0x1388",
+        "author": "0xcace5b3c29211740e595850e80478416ee77ca21",
+        "difficulty": "0xfffffffffffffffffffffffffffffffe",
+        "extraData": "0xde830201018f5061726974792d457468657265756d86312e32392e30826c69",
+        "gasLimit": "0x989680",
         "gasUsed": "0x0",
-        "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
+        "hash": "0xdd9b627e6f18f92744a6f891f760ee776352fd1100e5929abedd32c181222e0f",
         "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
-        "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
-        "nonce": "0x689056015818adbe",
+        "miner": "0xcace5b3c29211740e595850e80478416ee77ca21",
         "number": "0x1b4",
-        "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
+        "parentHash": "0x32d9d5a23b1fcb6ff5357698b73c0f079ddce7cf50785e749df794e30b675472",
         "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x220",
-        "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
-        "timestamp": "0x55ba467c",
-        "totalDifficulty": "0x78ed983323d",
+        "signature": "0x3bb57dd408202a5577c3a6622d713e9b3e305187dc3346c145f0d5770fe96a7c5f023f77942d2c5f608cd9c3ee6e3033394b7681ad017eaa42da476b85402fca01",
+        "size": "0x24b",
+        "stateRoot": "0x79c51798a041161d441b1f857aa7dcff4713ad1b4ab939ae83e410e461bb7666",
+        "step": 307805272,
+        "totalDifficulty": "0x1b3ffffffffffffffffffffffffeda941f4",
+        "timestamp": "0x5bbbadb8",
         "transactions": [],
         "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
         "uncles": []
-    }
+    },
+    "id": 1
 }
 ```
 
@@ -1146,7 +1138,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a transaction hash.
 
@@ -1171,12 +1163,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273"],
       "id": 1
     }'
 ```
@@ -1220,7 +1212,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a block hash.
     2. `<string>` (quantity): a transaction index position.
@@ -1246,12 +1238,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockHashAndIndex",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b", "0x2"],
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273", "0x2"],
       "id": 1
     }'
 ```
@@ -1295,7 +1287,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -1326,12 +1318,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockNumberAndIndex",
-      "params": ["0xc5043f", "0x2"],
+      "params": ["10674793", "0x2"],
       "id": 1
     }'
 ```
@@ -1343,21 +1335,21 @@ curl -X POST https://rpc.ankr.com/bsc \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xa917fcc721a5465a484e9be17cda0cc5493933dd3bc70c9adbee192cb419c9d7",
+        "blockHash": "0x00005a74000000fec7bf1f56c60d8fc0903da29d13b8e151c768c8630b999b4c",
         "blockNumber": "0xc5043f",
-        "from": "0x829bd824b016326a401d083b33d092293333a830",
-        "gas": "0x33450",
-        "gasPrice": "0x0",
-        "hash": "0xdf8d8677c9cd5f81d8ee3663a4a64ce7fe93d35fcb46004529e77394630f8e11",
-        "input": "0x",
-        "nonce": "0xa16562",
-        "to": "0x6e2edc2af25cd5704d99ba73ac7ece701f50192d",
+        "from": "0xc473ba887c10ec39533fa734d95be5712c556bb1",
+        "gas": "0x445c0",
+        "gasPrice": "0x2e90edd000",
+        "hash": "0x37c19dd4771fd81cd2d0f3379e47dc4c11ff31f74b771ef631b162db0e0b5167",
+        "input": "0xb3d16931000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000030000000000000000000003e63e6ae34fcb270f19fdbe83d506e803fdc402ef650000000000000000000003e5971d049b7bde4ca9192a461708ebb54c8ebc08430000000b53affd05137f800021be370d5312f44cb42ce377bc9b8a0cef1a4c83000000000000000000000000000000000000000000000000000000000000000400000000000000000000000021be370d5312f44cb42ce377bc9b8a0cef1a4c8300000000000000000000000021be370d5312f44cb42ce377bc9b8a0cef1a4c83000000000000000000000000bfaf328fe059c53d936876141f38089df0d1503d000000000000000000000000bfaf328fe059c53d936876141f38089df0d1503d",
+        "nonce": "0xcd",
+        "to": "0xc6e3567cc9cef8cc243343186cb64b4fc9d7cd0c",
         "transactionIndex": "0x2",
-        "value": "0x20b9632b7dc0a3e",
+        "value": "0x0",
         "type": "0x0",
-        "v": "0x26",
-        "r": "0x6fd8d85d440c87e894898ce7c12725eb994d416b0843ae5ddb0f188bc21ac9a2",
-        "s": "0x47fe6bc7bb3ddc8d579509fed960934ab8ed6004152e62b2abca6639393b8e77"
+        "v": "0x218",
+        "r": "0x6bfc4a999f4f3aeea39a872d3b1a44b5f9dae0ffb27c4bb1e1bbb77a473742ff",
+        "s": "0x5ea8bc05b9de3617dd7242ef263defaea92fa239e0f8695d51e5ae335c21de31"
     }
 }
 ```
@@ -1376,7 +1368,7 @@ The receipt is not available for pending transactions.
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a hash of the transaction.
 
@@ -1405,7 +1397,7 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1468,7 +1460,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): the hash of a block.
     2. `<string>` (quantity): the uncle's index position.
@@ -1500,12 +1492,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleByBlockHashAndIndex",
-      "params": ["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],
+      "params": ["0x1d43223707877aeed74baf3aa6892d789293ca7c1ee1cc32ef960b8f72b11273", "0x0"],
       "id": 1
     }'
 ```
@@ -1553,7 +1545,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -1590,12 +1582,12 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleByBlockNumberAndIndex",
-      "params": ["0x29c", "0x0"],
+      "params": ["0x15ed2ed", "0x0"],
       "id": 1
     }'
 ```
@@ -1643,7 +1635,7 @@ curl -X POST https://rpc.ankr.com/bsc \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
       1. `object`: the filter options:
 
@@ -1679,7 +1671,7 @@ curl -X POST https://rpc.ankr.com/bsc \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/heco/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
