@@ -29,14 +29,21 @@ This documentation lets you explore how you can use and integrate Ankr's full su
   [Query multiple chains for most popular Web3 scenarios](advanced-api/overview)↗
 </div>
 
-## Blockchain Node Snapshots
-<div className="list-with-custom-top-margin mt-6">
-* Sync your nodes via the blockchain snapshots our Infrastructure engineering teams use.  
-* Download the snapshots available for Ethereum, Polygon, and BNB Smart Chain.
-</div>
-<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  [Sync your node via the trusted blockchain snapshots](/node-snapshot)↗
-</div>
+[//]: # (## Blockchain Node Snapshots)
+
+[//]: # (<div className="list-with-custom-top-margin mt-6">)
+
+[//]: # (* Sync your nodes via the blockchain snapshots our Infrastructure engineering teams use.  )
+
+[//]: # (* Download the snapshots available for Ethereum, Polygon, and BNB Smart Chain.)
+
+[//]: # (</div>)
+
+[//]: # (<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">)
+
+[//]: # (  [Sync your node via the trusted blockchain snapshots]&#40;/node-snapshot&#41;↗)
+
+[//]: # (</div>)
 
 ## AppChains
 <div className="list-with-custom-top-margin mt-6">
