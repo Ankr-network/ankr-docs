@@ -1,52 +1,60 @@
 import { Callout } from "components";
 
-# Gnosis
+# Klaytn
 
-> Gnosis API is available on [RPC Service](https://www.ankr.com/rpc/gnosis).
+> Klaytn API is available on [RPC Service](https://www.ankr.com/rpc/klaytn).
 
-Gnosis (formerly the xDai Chain) provides stability, scalability, and an extendable beacon chain framework.
+Klaytn is a highly optimized, BFT-based public blockchain that aims to meet the enterprise-grade reliability.
 
-Development on Gnosis is straightforward for Ethereum developers as it is an EVM compatible chain. Smart contracts can be written and deployed in the same way as for Ethereum just by setting a different RPC endpoint.
+Klaytn launched its mainnet, Cypress, on Jun/27/2019 with the following specifications:
 
-Any contract that works on the Ethereum mainnet can be redeployed to the Gnosis chain. Transaction costs are minimized, and all fees and transactions are paid with a single token (xDai). Many tools supporting Ethereum development are compatible with Gnosis.
+  * 1-second block generation and confirmation time.
+  * 4,000 transactions per second.
+  * Low gas price that is almost 1/10 of Ethereum.
+  * Runs EVM (Ethereum Virtual Machine) and supports the execution of Solidity contracts.
+  * 19 reputable corporations worldwide initially formed Klaytn Governance Council to operate consensus nodes. The current number of consensus nodes is shown in the [Klaytnscope](https://scope.klaytn.com/).
+  * More than 50 initial service partners have committed to launch Blockchain Applications on Klaytn.
 
-In order for your Web3 application to interact with Gnosis — either by reading blockchain data or sending transactions to the network — it must connect to a Gnosis node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with Klaytn — either by reading blockchain data or sending transactions to the network — it must connect to a Klaytn node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
 ---
 
-## Methods supported
+## Klaytn native methods (under construction)
+
+---
+
+## EVM Methods
 <br/>
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/gnosis/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/gnosis/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/gnosis/#net_version) — returns the current network ID.
-  * [`net_listening`](/rpc-service/chains/chains-api/gnosis/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/gnosis/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/gnosis/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/gnosis/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/gnosis/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/gnosis/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/gnosis/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/gnosis/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/gnosis/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/gnosis/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/gnosis/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/gnosis/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/gnosis/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/gnosis/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/gnosis/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/gnosis/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/gnosis/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/gnosis/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/klaytn/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/klaytn/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/klaytn/#net_version) — returns the current network ID.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/klaytn/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/klaytn/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/klaytn/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/klaytn/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/klaytn/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/klaytn/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/klaytn/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/klaytn/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/klaytn/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/klaytn/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/klaytn/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/klaytn/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/klaytn/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/klaytn/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -70,7 +78,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -85,8 +93,8 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "Nethermind/v1.16.1+644fe89f/linux-x64/dotnet7.0.2",
-    "id": 1
+    "id": 1,
+    "result": "Klaytn/v1.10.1/linux-amd64/go1.15.7"
 }
 ```
 
@@ -114,7 +122,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -156,7 +164,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -172,91 +180,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "100"
-}
-```
-
----
-
-## `net_listening`
-
-> Returns `true` if client is actively listening for network connections.
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-<br/>
-
-  * `<boolean>`: `true` when listening, otherwise `false`.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/gnosis \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "net_listening",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": true
-}
-```
-
----
-
-## `eth_protocolVersion`
-
-> Returns the current Ethereum protocol version.
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-<br/>
-
-  * `<string>`: the current Ethereum protocol version.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/gnosis \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_protocolVersion",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": "0x42",
-    "id": 1
+    "result": "8217"
 }
 ```
 
@@ -285,7 +209,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -341,7 +265,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -357,7 +281,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xad731380"
+    "result": "0xba43b7400"
 }
 ```
 
@@ -383,7 +307,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -427,7 +351,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -443,7 +367,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x19268eb"
+    "result": "0x6d28a01"
 }
 ```
 
@@ -477,12 +401,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBalance",
-      "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"],
+      "params": ["0xaa920f7b9039e556d2442113f1fd339e4927dd9a", "latest"],
       "id": 1
     }'
 ```
@@ -493,7 +417,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x2c85c3ecfcb5fb"
+    "result": "0x6f861f920892c0647a"
 }
 ```
 
@@ -529,7 +453,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -580,7 +504,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -624,7 +548,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -673,7 +597,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -689,7 +613,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xb6"
+    "result": "0x2"
 }
 ```
 
@@ -717,12 +641,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b"],
+      "params": ["0xf1230a5bd7da128695c63cacc449aa25501d5cb164d710863a0a7a3512e78749"],
       "id": 1
     }'
 ```
@@ -766,7 +690,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -782,7 +706,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x1"
+    "result": "0x0"
 }
 ```
 
@@ -816,12 +740,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getCode",
-      "params": ["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],
+      "params": ["0xd5ae677feed771de3c08524364a1895ce21e220e", "latest"],
       "id": 1
     }'
 ```
@@ -857,12 +781,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/gnosis/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/klaytn/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -919,7 +843,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -978,7 +902,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -994,7 +918,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x53b8"
+    "result": "0x6018"
 }
 ```
 
@@ -1042,12 +966,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByHash",
-      "params": ["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae", false],
+      "params": ["0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653", false],
       "id": 1
     }'
 ```
@@ -1059,25 +983,30 @@ curl -X POST https://rpc.ankr.com/gnosis \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "difficulty": "0x4ea3f27bc",
-        "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
-        "gasLimit": "0x1388",
-        "gasUsed": "0x0",
-        "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
-        "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
-        "nonce": "0x689056015818adbe",
-        "number": "0x1b4",
-        "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "baseFeePerGas": "0x5d21dba00",
+        "difficulty": "0x1",
+        "extraData": "0x",
+        "gasLimit": "0xe8d4a50fff",
+        "gasUsed": "0x3589e",
+        "hash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000080000004100000000000000000000000000000000100800000000000000000000000000000000000000000000000000000000008000000000400000000000000400000000000000008000000020000000000000000c80800000000000000000000000010000000000000000000000400004000000000000000000000000000000010000400000000000000000000000000000000000000001000000000000000000000000820000000000002000000000000000000000000000002000000000000000000000020000000000000010000800000000040000000000000000000001800000000000000",
+        "miner": "0xed6ee8a1877f9582858dbe2509abb0ac33e5f24e",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x6d28d8a",
+        "parentHash": "0x7aa3d6e85de572864174ec430c2809c9401f5abd798765704ee7620d2d87caae",
+        "receiptsRoot": "0x065260f50d5a7d30f2c4b4cba501e8f421fdf0eca78aed3fc2dd84e3a00073bd",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x220",
-        "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
-        "timestamp": "0x55ba467c",
-        "totalDifficulty": "0x78ed983323d",
-        "transactions": [],
-        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "size": "0xd40",
+        "stateRoot": "0x442c12efd3235a82ad539cf6ab827bc4e551662531e0e2768aae8e4b5b61ddbe",
+        "timestamp": "0x63eb5e40",
+        "totalDifficulty": "0x6d28d8b",
+        "transactions": [
+            "0x1461063cff2c33b93fdc4769774bdf8eab5f7036f5a19a9fff9ef2caf0ed586a",
+            "0x282a43264fe886bdd3026f6e8e644312532bb02b48c2c1759ae53b3ff3f46e21",
+            "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9"
+        ],
+        "transactionsRoot": "0x83613a33dbfebd29ce9821cb9415cb27f73e60eb8f5e44c4adb65b0e597021f2",
         "uncles": []
     }
 }
@@ -1132,12 +1061,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByNumber",
-      "params": ["0x1b4", true],
+      "params": ["0x6D28D8A", true],
       "id": 1
     }'
 ```
@@ -1147,30 +1076,48 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ```json
 {
     "jsonrpc": "2.0",
+    "id": 1,
     "result": {
-        "author": "0xcace5b3c29211740e595850e80478416ee77ca21",
-        "difficulty": "0xfffffffffffffffffffffffffffffffe",
-        "extraData": "0xde830201018f5061726974792d457468657265756d86312e32392e30826c69",
-        "gasLimit": "0x989680",
-        "gasUsed": "0x0",
-        "hash": "0xdd9b627e6f18f92744a6f891f760ee776352fd1100e5929abedd32c181222e0f",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xcace5b3c29211740e595850e80478416ee77ca21",
-        "number": "0x1b4",
-        "parentHash": "0x32d9d5a23b1fcb6ff5357698b73c0f079ddce7cf50785e749df794e30b675472",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "baseFeePerGas": "0x5d21dba00",
+        "difficulty": "0x1",
+        "extraData": "0x",
+        "gasLimit": "0xe8d4a50fff",
+        "gasUsed": "0x3589e",
+        "hash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000080000004100000000000000000000000000000000100800000000000000000000000000000000000000000000000000000000008000000000400000000000000400000000000000008000000020000000000000000c80800000000000000000000000010000000000000000000000400004000000000000000000000000000000010000400000000000000000000000000000000000000001000000000000000000000000820000000000002000000000000000000000000000002000000000000000000000020000000000000010000800000000040000000000000000000001800000000000000",
+        "miner": "0xed6ee8a1877f9582858dbe2509abb0ac33e5f24e",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x6d28d8a",
+        "parentHash": "0x7aa3d6e85de572864174ec430c2809c9401f5abd798765704ee7620d2d87caae",
+        "receiptsRoot": "0x065260f50d5a7d30f2c4b4cba501e8f421fdf0eca78aed3fc2dd84e3a00073bd",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "signature": "0x3bb57dd408202a5577c3a6622d713e9b3e305187dc3346c145f0d5770fe96a7c5f023f77942d2c5f608cd9c3ee6e3033394b7681ad017eaa42da476b85402fca01",
-        "size": "0x24b",
-        "stateRoot": "0x79c51798a041161d441b1f857aa7dcff4713ad1b4ab939ae83e410e461bb7666",
-        "step": 307805272,
-        "totalDifficulty": "0x1b3ffffffffffffffffffffffffeda941f4",
-        "timestamp": "0x5bbbadb8",
-        "transactions": [],
-        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "size": "0xd40",
+        "stateRoot": "0x442c12efd3235a82ad539cf6ab827bc4e551662531e0e2768aae8e4b5b61ddbe",
+        "timestamp": "0x63eb5e40",
+        "totalDifficulty": "0x6d28d8b",
+        "transactions": [
+            {
+                "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
+                "blockNumber": "0x6d28d8a",
+                "from": "0x0c59754497698cf7084b7d5f7e5cfae2ea4ff36b",
+                "gas": "0x186a0",
+                "gasPrice": "0xba43b7400",
+                "hash": "0x1461063cff2c33b93fdc4769774bdf8eab5f7036f5a19a9fff9ef2caf0ed586a",
+                "input": "0xa9059cbb00000000000000000000000092af7988324ff1b4f0ff55061304060f63f5ca710000000000000000000000000000000000000000000000000de0b6b3a7640000",
+                "nonce": "0x1ed",
+                "to": "0x275f942985503d8ce9558f8377cc526a3aba3566",
+                "transactionIndex": "0x0",
+                "value": "0x0",
+                "type": "0x0",
+                "v": "0x4055",
+                "r": "0xa9c6402c7b760cff910499e9f4368f81f72366e62e474bac3dc24970de67f6c1",
+                "s": "0x39193fe77dd56f3cb9e48bcf4087f4008d4794f886c77709bfff4233c8c01cc7"
+            }
+        ],
+        "transactionsRoot": "0x83613a33dbfebd29ce9821cb9415cb27f73e60eb8f5e44c4adb65b0e597021f2",
         "uncles": []
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -1211,12 +1158,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+      "params": ["0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9"],
       "id": 1
     }'
 ```
@@ -1228,22 +1175,21 @@ curl -X POST https://rpc.ankr.com/gnosis \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0x1d59ff54b1eb26b013ce3cb5fc9dab3705b415a67127a003c3e61eb445bb8df2",
-        "blockNumber": "0x5daf3b",
-        "from": "0xa7d9ddbe1f17865597fbd27ec712455208b6b76d",
-        "gas": "0xc350",
-        "gasPrice": "0x4a817c800",
-        "hash": "0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b",
-        "input": "0x68656c6c6f21",
-        "nonce": "0x15",
-        "to": "0xf02c1c8e6114b1dbe8937a39260b5b0a374432bb",
-        "transactionIndex": "0x41",
-        "value": "0xf3dbb76162000",
+        "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
+        "blockNumber": "0x6d28d8a",
+        "from": "0xd5ae677feed771de3c08524364a1895ce21e220e",
+        "gas": "0x493e0",
+        "gasPrice": "0x174876e800",
+        "hash": "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9",
+        "input": "0xa9059cbb000000000000000000000000d7f931d02cdf5b7e031faf6537b93ad9c506c059000000000000000000000000000000000000000000000015b96d2345c85d8000",
+        "nonce": "0x3445",
+        "to": "0x9a6469aac7cd70385bdca6fa9e9356acec9c5b16",
+        "transactionIndex": "0x2",
+        "value": "0x0",
         "type": "0x0",
-        "chainId": "0x1",
-        "v": "0x25",
-        "r": "0x1b5e176d927f8e9ab405058b2d2457392da3e20f328b16ddabcebc33eaac5fea",
-        "s": "0x4ba69724e8f69de52f0125ad8b3c5c2cef33019bac3249e2c0a2192766d1721c"
+        "v": "0x4055",
+        "r": "0xf0f7a67a7c7cfcc72d7503cac7597e7d2ea9df6a7d4f2aca06c17bc1c406f66d",
+        "s": "0x171ddc9344e16d2e19ea4433f18d27453979d9c18ad7292fa6bac1eb31aa06d8"
     }
 }
 ```
@@ -1286,12 +1232,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockHashAndIndex",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b", "0x2"],
+      "params": ["0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653", "0x0"],
       "id": 1
     }'
 ```
@@ -1303,22 +1249,21 @@ curl -X POST https://rpc.ankr.com/gnosis \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b",
-        "blockNumber": "0xc4fa88",
-        "from": "0x4e0c43c30964b80c37df90d229e668823b6f36b6",
-        "gas": "0x34ed8",
-        "gasPrice": "0x6c088e200",
-        "hash": "0xd0f7b79f2b38a5e8303ff523da621d6cb04a18e722d6cc0bcce75309cd804b2e",
-        "input": "0x38ed1739000000000000000000000000000000000000000000000012f211da6a00e70ccd0000000000000000000000000000000000000000000000059ddf43d23461577600000000000000000000000000000000000000000000000000000000000000a00000000000000000000000004e0c43c30964b80c37df90d229e668823b6f36b600000000000000000000000000000000000000000000000000000000610039cb00000000000000000000000000000000000000000000000000000000000000030000000000000000000000007d1afa7b718fb893db30a3abc0cfc608aacfebb0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000009813037ee2218799597d83d4a5b6f3b6778218d9",
-        "nonce": "0x26",
-        "to": "0x03f7724180aa6b939894b5ca4314783b0b36b329",
-        "transactionIndex": "0x2",
+        "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
+        "blockNumber": "0x6d28d8a",
+        "from": "0x0c59754497698cf7084b7d5f7e5cfae2ea4ff36b",
+        "gas": "0x186a0",
+        "gasPrice": "0xba43b7400",
+        "hash": "0x1461063cff2c33b93fdc4769774bdf8eab5f7036f5a19a9fff9ef2caf0ed586a",
+        "input": "0xa9059cbb00000000000000000000000092af7988324ff1b4f0ff55061304060f63f5ca710000000000000000000000000000000000000000000000000de0b6b3a7640000",
+        "nonce": "0x1ed",
+        "to": "0x275f942985503d8ce9558f8377cc526a3aba3566",
+        "transactionIndex": "0x0",
         "value": "0x0",
         "type": "0x0",
-        "chainId": "0x1",
-        "v": "0x25",
-        "r": "0x43284f337fce4ab4225dd123935934ebd12067440d8a2a05ac297c2d0f62d8ab",
-        "s": "0x3827daa345b9b30ecef4df256a72059ca04106dee07a6a97ba5b4b719550cde3"
+        "v": "0x4055",
+        "r": "0xa9c6402c7b760cff910499e9f4368f81f72366e62e474bac3dc24970de67f6c1",
+        "s": "0x39193fe77dd56f3cb9e48bcf4087f4008d4794f886c77709bfff4233c8c01cc7"
     }
 }
 ```
@@ -1366,12 +1311,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockNumberAndIndex",
-      "params": ["0xc5043f", "0x2"],
+      "params": ["latest", "0x0"],
       "id": 1
     }'
 ```
@@ -1383,21 +1328,21 @@ curl -X POST https://rpc.ankr.com/gnosis \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0x00005a74000000fec7bf1f56c60d8fc0903da29d13b8e151c768c8630b999b4c",
-        "blockNumber": "0xc5043f",
-        "from": "0xc473ba887c10ec39533fa734d95be5712c556bb1",
-        "gas": "0x445c0",
-        "gasPrice": "0x2e90edd000",
-        "hash": "0x37c19dd4771fd81cd2d0f3379e47dc4c11ff31f74b771ef631b162db0e0b5167",
-        "input": "0xb3d16931000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000030000000000000000000003e63e6ae34fcb270f19fdbe83d506e803fdc402ef650000000000000000000003e5971d049b7bde4ca9192a461708ebb54c8ebc08430000000b53affd05137f800021be370d5312f44cb42ce377bc9b8a0cef1a4c83000000000000000000000000000000000000000000000000000000000000000400000000000000000000000021be370d5312f44cb42ce377bc9b8a0cef1a4c8300000000000000000000000021be370d5312f44cb42ce377bc9b8a0cef1a4c83000000000000000000000000bfaf328fe059c53d936876141f38089df0d1503d000000000000000000000000bfaf328fe059c53d936876141f38089df0d1503d",
-        "nonce": "0xcd",
-        "to": "0xc6e3567cc9cef8cc243343186cb64b4fc9d7cd0c",
-        "transactionIndex": "0x2",
+        "blockHash": "0x33a8fbb29792b49f7bd3e82a8f5f980438dc73ee416b946a7e19de4bc5aa8d4d",
+        "blockNumber": "0x6d29301",
+        "from": "0xbe02aba56bae1624e2c4f029e3a79308e2a19e98",
+        "gas": "0xf4240",
+        "gasPrice": "0xae9f7bcc00",
+        "hash": "0xe15398d4fd67722a0adab5840252fa79cc60f91f870d3af7d83274eca7127a8e",
+        "input": "0xb912b308000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000002733333737393633343538343034313738393230353732303132393432343330303235353033323600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007a4d466b77457759484b6f5a497a6a3043415159494b6f5a497a6a304441516344516741457369556b665044416448454d304c4e687357356736536f574f5042434b46636e5045475478596e44755a323758716b4e637630595843326b7474733667714375656a64587044594e5a66346c73464e66787767436577000000000000000000000000000000000000000000000000000000000000000000000000002836363330633637626630336533656462356365343266653932663933633936346666626130613431000000000000000000000000000000000000000000000000",
+        "nonce": "0x5deca57",
+        "to": "0x42d877932366dcaff751405c3185393f2803962d",
+        "transactionIndex": "0x0",
         "value": "0x0",
         "type": "0x0",
-        "v": "0x218",
-        "r": "0x6bfc4a999f4f3aeea39a872d3b1a44b5f9dae0ffb27c4bb1e1bbb77a473742ff",
-        "s": "0x5ea8bc05b9de3617dd7242ef263defaea92fa239e0f8695d51e5ae335c21de31"
+        "v": "0x4055",
+        "r": "0x31620883f9c0c52dedb5cc971adb2df1309e2d0f26b4eb59aaa1f99c61ba331a",
+        "s": "0x1d28013d102fdbb4db9191c6c0a4403127c3f7cc079109494ff1568976358bae"
     }
 }
 ```
@@ -1445,12 +1390,12 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionReceipt",
-      "params": ["0x3c9329b765d88c03d18f87dc1f2b5138c89d9a415d5c73dc7827b87aca176c8e"],
+      "params": ["0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9"],
       "id": 1
     }'
 ```
@@ -1462,36 +1407,36 @@ curl -X POST https://rpc.ankr.com/gnosis \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xa957d47df264a31badc3ae823e10ac1d444b098d9b73d204c40426e57f47e8c3",
-        "blockNumber": "0xeff35f",
+        "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
+        "blockNumber": "0x6d28d8a",
         "contractAddress": null,
-        "cumulativeGasUsed": "0xa12515",
-        "effectiveGasPrice": "0x5a9c688d4",
-        "from": "0x6221a9c005f6e47eb398fd867784cacfdcfff4e7",
-        "gasUsed": "0xb4c8",
+        "cumulativeGasUsed": "0x3589e",
+        "effectiveGasPrice": "0x5d21dba00",
+        "from": "0xd5ae677feed771de3c08524364a1895ce21e220e",
+        "gasUsed": "0x103f5",
         "logs": [
             {
-                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "address": "0x9a6469aac7cd70385bdca6fa9e9356acec9c5b16",
                 "topics": [
-                    "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
-                    "0x0000000000000000000000006221a9c005f6e47eb398fd867784cacfdcfff4e7",
-                    "0x0000000000000000000000001e0049783f008a0085193e00003d00cd54003c71"
+                    "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                    "0x000000000000000000000000d5ae677feed771de3c08524364a1895ce21e220e",
+                    "0x000000000000000000000000d7f931d02cdf5b7e031faf6537b93ad9c506c059"
                 ],
-                "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-                "blockNumber": "0xeff35f",
-                "transactionHash": "0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5",
-                "transactionIndex": "0x66",
-                "blockHash": "0xa957d47df264a31badc3ae823e10ac1d444b098d9b73d204c40426e57f47e8c3",
-                "logIndex": "0xfa",
+                "data": "0x000000000000000000000000000000000000000000000015b96d2345c85d8000",
+                "blockNumber": "0x6d28d8a",
+                "transactionHash": "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9",
+                "transactionIndex": "0x2",
+                "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
+                "logIndex": "0x2",
                 "removed": false
             }
         ],
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000080000000000000000200000000000000000000020000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020001000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000010200000000000000000000000000000000000000000000000000000020000",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000400000000000000000000000000000000000000000000000000000000880000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000001000000000000000000000000000000000000002000000000000000000000000000002000000000000000000000000000000000000010000000000000040000000000000000000000800000000000000",
         "status": "0x1",
-        "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-        "transactionHash": "0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5",
-        "transactionIndex": "0x66",
-        "type": "0x2"
+        "to": "0x9a6469aac7cd70385bdca6fa9e9356acec9c5b16",
+        "transactionHash": "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9",
+        "transactionIndex": "0x2",
+        "type": "0x0"
     }
 }
 ```
@@ -1540,7 +1485,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1630,7 +1575,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1719,12 +1664,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/klaytn \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getLogs",
-      "params": [{"address": "0xdAC17F958D2ee523a2206206994597C13D831ec7"}],
+      "params": [{"address": "0xd5ae677feed771de3c08524364a1895ce21e220e"}],
       "id": 1
     }'
 ```
@@ -1769,4 +1714,3 @@ curl -X POST https://rpc.ankr.com/gnosis \
     ]
 }
 ```
-
