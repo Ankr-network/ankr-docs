@@ -1,60 +1,48 @@
 import { Callout } from "components";
 
-# Klaytn
+# Metis
 
-> Klaytn API is available on [RPC Service](https://www.ankr.com/rpc/klaytn).
+> Metis API is available on [RPC Service](https://www.ankr.com/rpc/metis).
 
-Klaytn is a highly optimized, BFT-based public blockchain that aims to meet the enterprise-grade reliability.
+Metis is an Ethereum Layer 2 Rollup platform that offers simple and fast smart contract deployment within the network. Metis provides several solutions to solve the big challenges we face in the Ethereum mainnet, including transaction speed, cost, and scalability.
 
-Klaytn launched its mainnet, Cypress, on Jun/27/2019 with the following specification:
-
-  * 1-second block generation and confirmation time.
-  * 4,000 transactions per second.
-  * Low gas price that is almost 1/10 of Ethereum.
-  * Runs EVM (Ethereum Virtual Machine) and supports the execution of Solidity contracts.
-  * 19 reputable corporations worldwide initially formed Klaytn Governance Council to operate consensus nodes. The current number of consensus nodes is shown in the [Klaytnscope](https://scope.klaytn.com/).
-  * More than 50 initial service partners have committed to launch Blockchain Applications on Klaytn.
-
-In order for your Web3 application to interact with Klaytn — either by reading blockchain data or sending transactions to the network — it must connect to a Klaytn node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with Metis — either by reading blockchain data or sending transactions to the network — it must connect to a Metis node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
 ---
 
-## Klaytn native methods (under construction)
-
----
-
-## EVM Methods
+## Methods supported
 <br/>
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/klaytn/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/klaytn/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/klaytn/#net_version) — returns the current network ID.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/klaytn/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/klaytn/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/klaytn/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/klaytn/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/klaytn/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/klaytn/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/klaytn/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/klaytn/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/klaytn/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/klaytn/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/klaytn/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/klaytn/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/klaytn/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/klaytn/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/metis/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/metis/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/metis/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/metis/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/metis/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/metis/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/metis/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/metis/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/metis/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/metis/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/metis/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/metis/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/metis/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/metis/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/metis/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/metis/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/metis/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/metis/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/metis/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/metis/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/metis/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/metis/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/metis/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/metis/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/metis/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/metis/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/metis/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/metis/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -78,7 +66,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -93,8 +81,8 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ```json
 {
     "jsonrpc": "2.0",
-    "id": 1,
-    "result": "Klaytn/v1.10.1/linux-amd64/go1.15.7"
+    "result": "Geth/v1.9.10-stable/linux-amd64/go1.17.7",
+    "id": 1
 }
 ```
 
@@ -122,7 +110,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -164,7 +152,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -180,7 +168,91 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "8217"
+    "result": "1088"
+}
+```
+
+---
+
+## `net_listening`
+
+> Returns `true` if client is actively listening for network connections.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<boolean>`: `true` when listening, otherwise `false`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_listening",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": true
+}
+```
+
+---
+
+## `eth_protocolVersion`
+
+> Returns the current Ethereum protocol version.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the current Ethereum protocol version.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_protocolVersion",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x40",
+    "id": 1
 }
 ```
 
@@ -209,7 +281,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -265,7 +337,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -281,7 +353,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xba43b7400"
+    "result": "0x342770c00"
 }
 ```
 
@@ -307,7 +379,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -351,7 +423,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -367,7 +439,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x6d28a01"
+    "result": "0x48e566"
 }
 ```
 
@@ -401,12 +473,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBalance",
-      "params": ["0xaa920f7b9039e556d2442113f1fd339e4927dd9a", "latest"],
+      "params": ["0xcEcef77c4E078E5BD43d9BE301F8663329c23676", "latest"],
       "id": 1
     }'
 ```
@@ -417,7 +489,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x6f861f920892c0647a"
+    "result": "0x299c0aa0e0889400"
 }
 ```
 
@@ -453,7 +525,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -504,12 +576,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionCount",
-      "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"],
+      "params": ["0xEA1Ea22b5b1252FF05bC3DfA630381e72B87f002", "latest"],
       "id": 1
     }'
 ```
@@ -520,7 +592,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x9"
+    "result": "0x55"
 }
 ```
 
@@ -548,12 +620,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByHash",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b"],
+      "params": ["0xef749c1698c65640348dba86c2a3b17b4a514c527a5c78c203911e68bb350a2d"],
       "id": 1
     }'
 ```
@@ -564,7 +636,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x7b"
+    "result": "0x1"
 }
 ```
 
@@ -597,12 +669,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x36c1d18"],
+      "params": ["0x48E351"],
       "id": 1
     }'
 ```
@@ -613,7 +685,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x2"
+    "result": "0x1"
 }
 ```
 
@@ -641,12 +713,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0xf1230a5bd7da128695c63cacc449aa25501d5cb164d710863a0a7a3512e78749"],
+      "params": ["0xb1fa0b55d289be998eba272f19453148129f4bec451054470415433560191196"],
       "id": 1
     }'
 ```
@@ -690,12 +762,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockNumber",
-      "params": ["0xc5043f"],
+      "params": ["0x48E351"],
       "id": 1
     }'
 ```
@@ -740,12 +812,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getCode",
-      "params": ["0xd5ae677feed771de3c08524364a1895ce21e220e", "latest"],
+      "params": ["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],
       "id": 1
     }'
 ```
@@ -781,12 +853,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/klaytn/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/metis/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -843,7 +915,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -902,12 +974,12 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_estimateGas",
-    "params": [{"from":null,"to":"0x6b175474e89094c44da98b954eedeac495271d0f","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "params": [{"from":"0x07f327929A3A3131EB4BE83f784DBD3E5C2698f8"}],
     "id": 1
 }'
 ```
@@ -918,7 +990,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x6018"
+    "result": "0xcf08"
 }
 ```
 
@@ -966,12 +1038,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByHash",
-      "params": ["0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653", false],
+      "params": ["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae", false],
       "id": 1
     }'
 ```
@@ -983,30 +1055,27 @@ curl -X POST https://rpc.ankr.com/klaytn \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "baseFeePerGas": "0x5d21dba00",
-        "difficulty": "0x1",
-        "extraData": "0x",
-        "gasLimit": "0xe8d4a50fff",
-        "gasUsed": "0x3589e",
-        "hash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000080000004100000000000000000000000000000000100800000000000000000000000000000000000000000000000000000000008000000000400000000000000400000000000000008000000020000000000000000c80800000000000000000000000010000000000000000000000400004000000000000000000000000000000010000400000000000000000000000000000000000000001000000000000000000000000820000000000002000000000000000000000000000002000000000000000000000020000000000000010000800000000040000000000000000000001800000000000000",
-        "miner": "0xed6ee8a1877f9582858dbe2509abb0ac33e5f24e",
+        "difficulty": "0x2",
+        "extraData": "0xd98301090a846765746889676f312e31352e3133856c696e7578000000000000cd3659d2a7c1febcd74da24b3d174958c4513df03b3c98e0f078f05c8ab3ce03401c34d41dbd6a5bb5ac6e6f01ff77c7a15bac31ca9ba0a58a3887d39d24e57200",
+        "gasLimit": "0x4190ab00",
+        "gasUsed": "0x3b583",
+        "hash": "0x818e66df719ac90ebe9d27b2385a96ea49dcdcf7c4fd4144fa9e90dcdb8355c7",
+        "logsBloom": "0x00000000000000000000000000000002000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000008000001000000000000000000000020000000000000000000000000000010000000000000000000000000000000000000000000000000000000040000000000000020020000000000000000000000000000000000000002000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000",
+        "miner": "0x0000000000000000000000000000000000000000",
         "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "nonce": "0x0000000000000000",
-        "number": "0x6d28d8a",
-        "parentHash": "0x7aa3d6e85de572864174ec430c2809c9401f5abd798765704ee7620d2d87caae",
-        "receiptsRoot": "0x065260f50d5a7d30f2c4b4cba501e8f421fdf0eca78aed3fc2dd84e3a00073bd",
+        "number": "0x48e302",
+        "parentHash": "0x1c757a731055437ce12d809b883d9f5ef97742e9e371fa8743beddb6d37379ad",
+        "receiptsRoot": "0x0b1315714349162d1cea1131d0561cdb8f35334d7421a2bd8274f0352fc62fe0",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0xd40",
-        "stateRoot": "0x442c12efd3235a82ad539cf6ab827bc4e551662531e0e2768aae8e4b5b61ddbe",
-        "timestamp": "0x63eb5e40",
-        "totalDifficulty": "0x6d28d8b",
+        "size": "0x3f2",
+        "stateRoot": "0x875b793f2f7e9279bcadf6275fba2bacf3b29c6fbb406d51cb679a83ae6abc6c",
+        "timestamp": "0x63eb7988",
+        "totalDifficulty": "0x91c605",
         "transactions": [
-            "0x1461063cff2c33b93fdc4769774bdf8eab5f7036f5a19a9fff9ef2caf0ed586a",
-            "0x282a43264fe886bdd3026f6e8e644312532bb02b48c2c1759ae53b3ff3f46e21",
-            "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9"
+            "0x7798444af1b2deb8d7a28d95fd1f534fd8101e7f70df7c6d1884fb334f5b4f68"
         ],
-        "transactionsRoot": "0x83613a33dbfebd29ce9821cb9415cb27f73e60eb8f5e44c4adb65b0e597021f2",
+        "transactionsRoot": "0xf037df20dfd0f08eedfb44e989fb680ae9b3157bbe2ed05b18413be26b8288df",
         "uncles": []
     }
 }
@@ -1061,12 +1130,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByNumber",
-      "params": ["0x6D28D8A", true],
+      "params": ["0x1b4", false],
       "id": 1
     }'
 ```
@@ -1076,48 +1145,31 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ```json
 {
     "jsonrpc": "2.0",
-    "id": 1,
     "result": {
-        "baseFeePerGas": "0x5d21dba00",
-        "difficulty": "0x1",
-        "extraData": "0x",
-        "gasLimit": "0xe8d4a50fff",
-        "gasUsed": "0x3589e",
-        "hash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000080000004100000000000000000000000000000000100800000000000000000000000000000000000000000000000000000000008000000000400000000000000400000000000000008000000020000000000000000c80800000000000000000000000010000000000000000000000400004000000000000000000000000000000010000400000000000000000000000000000000000000001000000000000000000000000820000000000002000000000000000000000000000002000000000000000000000020000000000000010000800000000040000000000000000000001800000000000000",
-        "miner": "0xed6ee8a1877f9582858dbe2509abb0ac33e5f24e",
+        "difficulty": "0x2",
+        "extraData": "0xd98301090a846765746889676f312e31352e3133856c696e75780000000000006216d0de730fc686b4e50703c9d88cd26b09d1923bc9729d14582de3b3759f7c7b9bdce78bf0e99abb14bd61360a07698a4b4012d4320130ad4d2bde5ed8389800",
+        "gasLimit": "0x4190ab00",
+        "gasUsed": "0x28ec9",
+        "hash": "0xf97692e5de0db4b9c70ce8f4f7b782fca1b4896166ef1afb928625fd7fe86e81",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000002000001000000000000000000080000000000000000000000800000000000000000000000240000000000024000001000008000000000000000000000000000000000000000100000000020002400000000000020800000000000000400000000018000000000000000000000000000000000000000001800000000000000020000010000000000080000000000000000000000000000000200000000200000000000000000000000002000000000000000000000000000002100000000000000000000020001000000000000000000000400000000000000000000000000000000008000000",
+        "miner": "0x0000000000000000000000000000000000000000",
         "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "nonce": "0x0000000000000000",
-        "number": "0x6d28d8a",
-        "parentHash": "0x7aa3d6e85de572864174ec430c2809c9401f5abd798765704ee7620d2d87caae",
-        "receiptsRoot": "0x065260f50d5a7d30f2c4b4cba501e8f421fdf0eca78aed3fc2dd84e3a00073bd",
+        "number": "0x1b4",
+        "parentHash": "0xd2a492bb17e48ed3958c3e5c50ed9a6f5c30ac4d426202eefebe49e1a773a95f",
+        "receiptsRoot": "0x3a6308c002d4519ec0dcf539e23215f44a3236e13525ea3f4c92cebb2be8cd11",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0xd40",
-        "stateRoot": "0x442c12efd3235a82ad539cf6ab827bc4e551662531e0e2768aae8e4b5b61ddbe",
-        "timestamp": "0x63eb5e40",
-        "totalDifficulty": "0x6d28d8b",
+        "size": "0x5ff",
+        "stateRoot": "0xa50ad5efc0c253c516655b619e0b9f31a91c907a541808a68dde9973f659a9dc",
+        "timestamp": "0x61996f89",
+        "totalDifficulty": "0x369",
         "transactions": [
-            {
-                "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
-                "blockNumber": "0x6d28d8a",
-                "from": "0x0c59754497698cf7084b7d5f7e5cfae2ea4ff36b",
-                "gas": "0x186a0",
-                "gasPrice": "0xba43b7400",
-                "hash": "0x1461063cff2c33b93fdc4769774bdf8eab5f7036f5a19a9fff9ef2caf0ed586a",
-                "input": "0xa9059cbb00000000000000000000000092af7988324ff1b4f0ff55061304060f63f5ca710000000000000000000000000000000000000000000000000de0b6b3a7640000",
-                "nonce": "0x1ed",
-                "to": "0x275f942985503d8ce9558f8377cc526a3aba3566",
-                "transactionIndex": "0x0",
-                "value": "0x0",
-                "type": "0x0",
-                "v": "0x4055",
-                "r": "0xa9c6402c7b760cff910499e9f4368f81f72366e62e474bac3dc24970de67f6c1",
-                "s": "0x39193fe77dd56f3cb9e48bcf4087f4008d4794f886c77709bfff4233c8c01cc7"
-            }
+            "0xbc236329cb3614b9cddd64d55e6ea440a252ee7de48c929f4b988af1b69ac605"
         ],
-        "transactionsRoot": "0x83613a33dbfebd29ce9821cb9415cb27f73e60eb8f5e44c4adb65b0e597021f2",
+        "transactionsRoot": "0xfb0c8583ce9111e8e439862b0d15f9ee0465965f9b98aa31163aeb28f200133d",
         "uncles": []
-    }
+    },
+    "id": 1
 }
 ```
 
@@ -1158,12 +1210,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9"],
+      "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
       "id": 1
     }'
 ```
@@ -1175,21 +1227,22 @@ curl -X POST https://rpc.ankr.com/klaytn \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
-        "blockNumber": "0x6d28d8a",
-        "from": "0xd5ae677feed771de3c08524364a1895ce21e220e",
-        "gas": "0x493e0",
-        "gasPrice": "0x174876e800",
-        "hash": "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9",
-        "input": "0xa9059cbb000000000000000000000000d7f931d02cdf5b7e031faf6537b93ad9c506c059000000000000000000000000000000000000000000000015b96d2345c85d8000",
-        "nonce": "0x3445",
-        "to": "0x9a6469aac7cd70385bdca6fa9e9356acec9c5b16",
-        "transactionIndex": "0x2",
-        "value": "0x0",
+        "blockHash": "0x1d59ff54b1eb26b013ce3cb5fc9dab3705b415a67127a003c3e61eb445bb8df2",
+        "blockNumber": "0x5daf3b",
+        "from": "0xa7d9ddbe1f17865597fbd27ec712455208b6b76d",
+        "gas": "0xc350",
+        "gasPrice": "0x4a817c800",
+        "hash": "0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b",
+        "input": "0x68656c6c6f21",
+        "nonce": "0x15",
+        "to": "0xf02c1c8e6114b1dbe8937a39260b5b0a374432bb",
+        "transactionIndex": "0x41",
+        "value": "0xf3dbb76162000",
         "type": "0x0",
-        "v": "0x4055",
-        "r": "0xf0f7a67a7c7cfcc72d7503cac7597e7d2ea9df6a7d4f2aca06c17bc1c406f66d",
-        "s": "0x171ddc9344e16d2e19ea4433f18d27453979d9c18ad7292fa6bac1eb31aa06d8"
+        "chainId": "0x1",
+        "v": "0x25",
+        "r": "0x1b5e176d927f8e9ab405058b2d2457392da3e20f328b16ddabcebc33eaac5fea",
+        "s": "0x4ba69724e8f69de52f0125ad8b3c5c2cef33019bac3249e2c0a2192766d1721c"
     }
 }
 ```
@@ -1232,12 +1285,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockHashAndIndex",
-      "params": ["0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653", "0x0"],
+      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b", "0x2"],
       "id": 1
     }'
 ```
@@ -1249,21 +1302,22 @@ curl -X POST https://rpc.ankr.com/klaytn \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
-        "blockNumber": "0x6d28d8a",
-        "from": "0x0c59754497698cf7084b7d5f7e5cfae2ea4ff36b",
-        "gas": "0x186a0",
-        "gasPrice": "0xba43b7400",
-        "hash": "0x1461063cff2c33b93fdc4769774bdf8eab5f7036f5a19a9fff9ef2caf0ed586a",
-        "input": "0xa9059cbb00000000000000000000000092af7988324ff1b4f0ff55061304060f63f5ca710000000000000000000000000000000000000000000000000de0b6b3a7640000",
-        "nonce": "0x1ed",
-        "to": "0x275f942985503d8ce9558f8377cc526a3aba3566",
-        "transactionIndex": "0x0",
+        "blockHash": "0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b",
+        "blockNumber": "0xc4fa88",
+        "from": "0x4e0c43c30964b80c37df90d229e668823b6f36b6",
+        "gas": "0x34ed8",
+        "gasPrice": "0x6c088e200",
+        "hash": "0xd0f7b79f2b38a5e8303ff523da621d6cb04a18e722d6cc0bcce75309cd804b2e",
+        "input": "0x38ed1739000000000000000000000000000000000000000000000012f211da6a00e70ccd0000000000000000000000000000000000000000000000059ddf43d23461577600000000000000000000000000000000000000000000000000000000000000a00000000000000000000000004e0c43c30964b80c37df90d229e668823b6f36b600000000000000000000000000000000000000000000000000000000610039cb00000000000000000000000000000000000000000000000000000000000000030000000000000000000000007d1afa7b718fb893db30a3abc0cfc608aacfebb0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000009813037ee2218799597d83d4a5b6f3b6778218d9",
+        "nonce": "0x26",
+        "to": "0x03f7724180aa6b939894b5ca4314783b0b36b329",
+        "transactionIndex": "0x2",
         "value": "0x0",
         "type": "0x0",
-        "v": "0x4055",
-        "r": "0xa9c6402c7b760cff910499e9f4368f81f72366e62e474bac3dc24970de67f6c1",
-        "s": "0x39193fe77dd56f3cb9e48bcf4087f4008d4794f886c77709bfff4233c8c01cc7"
+        "chainId": "0x1",
+        "v": "0x25",
+        "r": "0x43284f337fce4ab4225dd123935934ebd12067440d8a2a05ac297c2d0f62d8ab",
+        "s": "0x3827daa345b9b30ecef4df256a72059ca04106dee07a6a97ba5b4b719550cde3"
     }
 }
 ```
@@ -1311,7 +1365,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1328,21 +1382,27 @@ curl -X POST https://rpc.ankr.com/klaytn \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0x33a8fbb29792b49f7bd3e82a8f5f980438dc73ee416b946a7e19de4bc5aa8d4d",
-        "blockNumber": "0x6d29301",
-        "from": "0xbe02aba56bae1624e2c4f029e3a79308e2a19e98",
-        "gas": "0xf4240",
-        "gasPrice": "0xae9f7bcc00",
-        "hash": "0xe15398d4fd67722a0adab5840252fa79cc60f91f870d3af7d83274eca7127a8e",
-        "input": "0xb912b308000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000002733333737393633343538343034313738393230353732303132393432343330303235353033323600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007a4d466b77457759484b6f5a497a6a3043415159494b6f5a497a6a304441516344516741457369556b665044416448454d304c4e687357356736536f574f5042434b46636e5045475478596e44755a323758716b4e637630595843326b7474733667714375656a64587044594e5a66346c73464e66787767436577000000000000000000000000000000000000000000000000000000000000000000000000002836363330633637626630336533656462356365343266653932663933633936346666626130613431000000000000000000000000000000000000000000000000",
-        "nonce": "0x5deca57",
-        "to": "0x42d877932366dcaff751405c3185393f2803962d",
+        "blockHash": "0x69b7b2d418c241d6be4578ef9934388752ce4645dd2f95b9e3358b58fa60fd8a",
+        "blockNumber": "0x48e833",
+        "from": "0x44aac8a5450461b39eabfa1ca0758ff73498d7f9",
+        "gas": "0x14f778",
+        "gasPrice": "0x342770c00",
+        "hash": "0xf9a677680abfd84badb7dbb0e537e5bb9f32a869c8f3aa997391f1f740594798",
+        "input": "0xe2bbb1580000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000338dcf48f4",
+        "nonce": "0x95b",
+        "to": "0x9cadd693cdb2b118f00252bb3be4c6df6a74d42c",
         "transactionIndex": "0x0",
         "value": "0x0",
-        "type": "0x0",
-        "v": "0x4055",
-        "r": "0x31620883f9c0c52dedb5cc971adb2df1309e2d0f26b4eb59aaa1f99c61ba331a",
-        "s": "0x1d28013d102fdbb4db9191c6c0a4403127c3f7cc079109494ff1568976358bae"
+        "v": "0x8a4",
+        "r": "0xa7c216eae661a5b528fa77d84f0160f4b4222cb1cabff273e4ae394318576563",
+        "s": "0x7df784e8f2dd806a99b15281070d949b38f121f5e35b0896dbd6117df216b26a",
+        "queueOrigin": "sequencer",
+        "l1TxOrigin": "0x0000000000000000000000000000000000000000",
+        "l1BlockNumber": "0xfdb6a0",
+        "l1Timestamp": "0x63eb909e",
+        "index": "0x48e832",
+        "queueIndex": "0x0",
+        "rawTransaction": "0xf8ae82095b850342770c008314f778949cadd693cdb2b118f00252bb3be4c6df6a74d42c80b844e2bbb1580000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000338dcf48f48208a4a0a7c216eae661a5b528fa77d84f0160f4b4222cb1cabff273e4ae394318576563a07df784e8f2dd806a99b15281070d949b38f121f5e35b0896dbd6117df216b26a"
     }
 }
 ```
@@ -1390,12 +1450,12 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionReceipt",
-      "params": ["0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9"],
+      "params": ["0x3c9329b765d88c03d18f87dc1f2b5138c89d9a415d5c73dc7827b87aca176c8e"],
       "id": 1
     }'
 ```
@@ -1407,36 +1467,36 @@ curl -X POST https://rpc.ankr.com/klaytn \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
-        "blockNumber": "0x6d28d8a",
+        "blockHash": "0xa957d47df264a31badc3ae823e10ac1d444b098d9b73d204c40426e57f47e8c3",
+        "blockNumber": "0xeff35f",
         "contractAddress": null,
-        "cumulativeGasUsed": "0x3589e",
-        "effectiveGasPrice": "0x5d21dba00",
-        "from": "0xd5ae677feed771de3c08524364a1895ce21e220e",
-        "gasUsed": "0x103f5",
+        "cumulativeGasUsed": "0xa12515",
+        "effectiveGasPrice": "0x5a9c688d4",
+        "from": "0x6221a9c005f6e47eb398fd867784cacfdcfff4e7",
+        "gasUsed": "0xb4c8",
         "logs": [
             {
-                "address": "0x9a6469aac7cd70385bdca6fa9e9356acec9c5b16",
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
                 "topics": [
-                    "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                    "0x000000000000000000000000d5ae677feed771de3c08524364a1895ce21e220e",
-                    "0x000000000000000000000000d7f931d02cdf5b7e031faf6537b93ad9c506c059"
+                    "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+                    "0x0000000000000000000000006221a9c005f6e47eb398fd867784cacfdcfff4e7",
+                    "0x0000000000000000000000001e0049783f008a0085193e00003d00cd54003c71"
                 ],
-                "data": "0x000000000000000000000000000000000000000000000015b96d2345c85d8000",
-                "blockNumber": "0x6d28d8a",
-                "transactionHash": "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9",
-                "transactionIndex": "0x2",
-                "blockHash": "0xcc9890534e3b8f33d5ab6d88a4b527a1869981a4b78b4adf35262caa882d5653",
-                "logIndex": "0x2",
+                "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+                "blockNumber": "0xeff35f",
+                "transactionHash": "0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5",
+                "transactionIndex": "0x66",
+                "blockHash": "0xa957d47df264a31badc3ae823e10ac1d444b098d9b73d204c40426e57f47e8c3",
+                "logIndex": "0xfa",
                 "removed": false
             }
         ],
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000400000000000000000000000000000000000000000000000000000000880000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000001000000000000000000000000000000000000002000000000000000000000000000002000000000000000000000000000000000000010000000000000040000000000000000000000800000000000000",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000080000000000000000200000000000000000000020000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020001000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000010200000000000000000000000000000000000000000000000000000020000",
         "status": "0x1",
-        "to": "0x9a6469aac7cd70385bdca6fa9e9356acec9c5b16",
-        "transactionHash": "0x0ed52be4882ca9af5c29c59ed429118a1d0b214b97eed22b63543ac06dbd9af9",
-        "transactionIndex": "0x2",
-        "type": "0x0"
+        "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "transactionHash": "0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5",
+        "transactionIndex": "0x66",
+        "type": "0x2"
     }
 }
 ```
@@ -1485,7 +1545,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1575,7 +1635,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1664,12 +1724,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/metis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getLogs",
-      "params": [{"address": "0xd5ae677feed771de3c08524364a1895ce21e220e"}],
+      "params": [{"address": "0xdAC17F958D2ee523a2206206994597C13D831ec7"}],
       "id": 1
     }'
 ```
@@ -1714,3 +1774,4 @@ curl -X POST https://rpc.ankr.com/klaytn \
     ]
 }
 ```
+

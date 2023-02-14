@@ -2517,7 +2517,7 @@ For Kusama, we support blockchain interaction via all the applicable methods exc
 Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
 </Callout>
 
-Metis is an Ethereum Layer 2 Rollup platform that offers simple and fast smart contract deployment within the network. Metis provides several solutions to solve the big challenges we face in the main net Ethereum, including transaction speed, cost, and scalability.
+Metis is an Ethereum Layer 2 Rollup platform that offers simple and fast smart contract deployment within the network. Metis provides several solutions to solve the big challenges we face in the Ethereum mainnet, including transaction speed, cost, and scalability.
 
 Official quick links: [Website](https://www.metis.io/), [Docs](https://docs.metis.io/dev/), [GitHub](https://github.com/MetisProtocol)
 
@@ -2529,7 +2529,7 @@ Official quick links: [Website](https://www.metis.io/), [Docs](https://docs.meti
 
 ### API methods
 
-For Metis, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Metis, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/metis) except for those listed as unsupported.
 
 #### Unsupported
 
