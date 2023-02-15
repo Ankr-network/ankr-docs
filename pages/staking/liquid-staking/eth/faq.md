@@ -46,7 +46,7 @@ ankrETH (ex-aETHc) will increase in value only, daily. arnkETH rewards are built
 
 ### Does Ankr charge for the service?
 
-Ankr does not charge any service fees for ETH Liquid Staking. However, validators charge a fee deducted from your rewards (Ankr’s validator node charges 10%), representing an indirect cost for liquid staking token holders. Ankr's income comes from running one of the several validator nodes that will be used to stake ETH.
+Ankr takes a 10% fee from the staking reward. 
 
 ### Is there any risk from staking, like slashing or any penalties?
 

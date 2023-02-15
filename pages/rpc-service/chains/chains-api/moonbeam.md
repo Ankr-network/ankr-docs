@@ -1,163 +1,1821 @@
 import { Callout } from "components";
-import { Tabs, Tab } from "nextra-theme-docs";
 
 # Moonbeam
 
-Moonbeam combines the easy-to-use tooling of Ethereum and the scalable, interoperable architecture of Polkadot.
-Moonbeam is EVM compatible to an extent but there are important Moonbeam differences that developers should know and understand in terms of the Ethereum API JSON-RPC support.
+> Moonbeam API is available on [RPC Service](https://www.ankr.com/rpc/moonbeam).
+
+Moonbeam is the most Ethereum compatible smart-contract parachain in the Polkadot ecosystem. It combines the best of both worlds: the familiar and easy-to-use tooling of Ethereum and the scalable, interoperable architecture of Polkadot.
+
+In order for your Web3 application to interact with Moonbeam — either by reading blockchain data or sending transactions to the network — it must connect to a Moonbeam node. Developers interact with the blockchain using the methods provided by the API.
+
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
 ---
 
-## Connect wallet
+## Methods supported
+<br/>
 
-You can set up your **MetaMask wallet** to connect to Moonbeam RPC. You can then perform transactions and interact with the network.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/moonbeam/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/moonbeam/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/moonbeam/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/moonbeam/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_protocolversion`](/rpc-service/chains/chains-api/moonbeam/#eth_protocolversion) — returns the current Ethereum protocol version.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/moonbeam/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/moonbeam/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/moonbeam/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/moonbeam/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/moonbeam/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/moonbeam/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/moonbeam/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/moonbeam/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/moonbeam/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/moonbeam/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/moonbeam/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/moonbeam/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/moonbeam/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/moonbeam/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/moonbeam/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/moonbeam/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/moonbeam/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/moonbeam/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/moonbeam/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/moonbeam/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/moonbeam/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/moonbeam/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/moonbeam/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/moonbeam/#eth_getlogs) — returns logs matching the parameters specified.
 
-1. Open your **Metamask Extension** and click the **Network** drop down menu at the top.
-2. Select **Custom RPC**.
-3. Enter the settings for the required project as follows in the table below:
+---
 
+## `web3_clientVersion`
 
-| **Chain** | **Custom RPC Category** | **Details**                                  |
-|-----------|-------------------------|----------------------------------------------|
-| Moonbeam  | NETWORK NAME:           | Moonbeam RPC                                 |
-|           | NEW RPC URL:            | https://rpc.ankr.com/moonbeam/               |
-|           | CHAIN ID:               | 1284 (hex: 0x504)                            |
-|           | SYMBOL:                 | GLMR                                         |
-|           | BLOCK EXPLORER URL:     | [https://moonscan.io/](https://moonscan.io/) |
+> Returns the current client version.
 
-## Get Started
+### Parameters
+<br/>
 
-### Using Ethereum API Libraries
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
 
-The Moonbeam API is very similar to the Ethereum API and is compatible with the majority of Ethereum-style JSON-RPC methods. Developers can leverage this compatibility and use the [**web3.js library**](https://web3js.readthedocs.io/en/v1.7.3/), [**ethers.js library**](https://docs.ethers.io/) and the [**web3.py library**](https://web3py.readthedocs.io/) to interact with a Moonbeam node as if they were doing so on Ethereum.
+### Returns
+<br/>
 
-<Callout type="warning">
-However, not all Ethereum JSON RPC methods are supported, and some of the supported ones return default values. 
+  * `<string>`: the current client version.
 
-The following methods are supported on the Moonbeam RPC. 
+### Request example
 
- - **[eth_protocolVersion](https://eth.wiki/json-rpc/API#eth_protocolversion)** — Returns `1` by default
- - **[eth_syncing](https://eth.wiki/json-rpc/API#eth_syncing)** — Returns an object with data about the sync status or `false`
- - **[eth_hashrate](https://eth.wiki/json-rpc/API#eth_hashrate)** — Not supported
- - **[eth_coinbase](https://eth.wiki/json-rpc/API#eth_coinbase)** — Returns the latest block author. Not necessarily a finalized block
- - **[eth_mining](https://eth.wiki/json-rpc/API#eth_mining)** — Not supported
- - **[eth_chainId](https://eth.wiki/json-rpc/API#eth_chainid)** — Returns the chain ID used for signing at the current block
- - **[eth_gasPrice](https://eth.wiki/json-rpc/API#eth_gasprice)** — Returns the current gas price
- - **[eth_accounts](https://eth.wiki/json-rpc/API#eth_accounts)** — Returns a list of addresses owned by the client
- - **[eth_blockNumber](https://eth.wiki/json-rpc/API#eth_blocknumber)** — Returns the highest available block number
- - **[eth_getBalance](https://eth.wiki/json-rpc/API#eth_getbalance)** — Returns the balance of the given address
- - **[eth_getStorageAt](https://eth.wiki/json-rpc/API#eth_getstorageat)** — Returns content of the storage at a given address
- - **[eth_getBlockByHash](https://eth.wiki/json-rpc/API#eth_getblockbyhash)** — Returns the block of the given hash
- - **[eth_getBlockByNumber](https://eth.wiki/json-rpc/API#eth_getblockbynumber)** — Returns the block of the given block number
- - **[eth_getTransactionCount](https://eth.wiki/json-rpc/API#eth_gettransactioncount)** — Returns the number of transactions sent from the given address (nonce)
- - **[eth_getBlockTransactionCountByHash](https://eth.wiki/json-rpc/API#eth_getblocktransactioncountbyhash)** — Returns the number of transactions in a block with a given block hash
- - **[eth_getBlockTransactionCountByNumber](https://eth.wiki/json-rpc/API#eth_getblocktransactioncountbynumber)** — Returns the number of transactions in a block with a given block number
- - **[eth_getUncleCountByBlockHash](https://eth.wiki/json-rpc/API#eth_getunclecountbyblockhash)** —  Returns `"0x0"` by default
- - **[eth_getUncleCountByBlockNumber](https://eth.wiki/json-rpc/API#eth_getunclecountbyblocknumber)** — Returns `"0x0"` by default
- - **[eth_getCode](https://eth.wiki/json-rpc/API#eth_getcode)** — Returns the code at given address at given block number
- - **[eth_sendTransaction](https://eth.wiki/json-rpc/API#eth_sendtransaction)** — Creates new message call transaction or a contract creation, if the data field contains code. Returns the transaction hash, or the zero hash if the transaction is not yet available
- - **[eth_sendRawTransaction](https://eth.wiki/json-rpc/API#eth_sendrawtransaction)** — Creates new message call transaction or a contract creation for signed transactions. Returns the transaction hash, or the zero hash if the transaction is not yet available
- - **[eth_call](https://eth.wiki/json-rpc/API#eth_call)** — Executes a new message call immediately without creating a transaction on the block chain, returning the value of the executed call
- - **[eth_estimateGas](https://eth.wiki/json-rpc/API#eth_estimategas)** — Returns an estimate amount of how much gas is necessary for a given transaction to succeed
- - **[eth_getTransactionByHash](https://eth.wiki/json-rpc/API#eth_gettransactionbyhash)** — Returns the information about a transaction with a given hash
- - **[eth_getTransactionByBlockHashAndIndex](https://eth.wiki/json-rpc/API#eth_gettransactionbyblockhashandindex)** — Returns information about a transaction at a given block hash, and a given index position
- - **[eth_getTransactionByBlockNumberAndIndex](https://eth.wiki/json-rpc/API#eth_gettransactionbyblocknumberandindex)** — Returns information about a transaction at a given block number, and a given index position
- - **[eth_getTransactionReceipt](https://eth.wiki/json-rpc/API#eth_gettransactionreceipt)** — Returns the transaction receipt of a given transaction hash
- - **[eth_getUncleByBlockHashAndIndex](https://eth.wiki/json-rpc/API#eth_getunclebyblockhashandindex)** — Returns `"null"` by default
- - **[eth_getUncleByBlockNumberAndIndex](https://eth.wiki/json-rpc/API#eth_getunclebyblocknumberandindex)** — Returns `null` by default
- - **[eth_getLogs](https://eth.wiki/json-rpc/API#eth_getlogs)** — Returns the transaction receipt of a given transaction hash
- - **[eth_getWork](https://eth.wiki/json-rpc/API#eth_getwork)** — Returns `["0x0","0x0","0x0"]` by default
- - **[eth_submitWork](https://eth.wiki/json-rpc/API#eth_submitwork)** — Not supported
- - **[eth_submitHashrate](https://eth.wiki/json-rpc/API#eth_submithashrate)** — Not supported
-</Callout>
-
-### How to integrate with Moonbeam
-
-If you're using the Public RPCs, your endpoint is `https://rpc.ankr.com/moonbeam`.
-
-If you're using the Premium Plan, you can copy your two endpoints for HTTPS and WSS from [Ankr Protocol](https://www.ankr.com/protocol/public/)
-
-<Callout>
-In the code samples below, use **EITHER** the public endpoint **OR** the premium endpoint (if you have signed up to the Premium Plan)
-</Callout>
-
-<Tabs
-  items={[
-    "Web3",
-    "Ethers.js",
-  ]}
->
-  <Tab>
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_clientVersion",
+      "params": [],
+      "id": 1
+    }'
 ```
-const Web3 = require('web3'); //Load Web3 library
 
-// Create local Web3 instance - set Moonbeam as provider
-const web3 = new Web3("https://rpc.ankr.com/moonbeam"); // Public RPC URL
+### Response example
 
-const web3 = new Web3("https://rpc.ankr.com/moonbeam/YOUR-API-KEY"); // Premium RPC URL
-
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "moonbeam/v2000.0/fc-rpc-2.0.0-dev",
+    "id": 1
+}
 ```
-  </Tab>
-  <Tab>
+
+---
+
+## `web3_sha3`
+
+> Returns Keccak-256 (not the standardized SHA3-256) of the given data.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<string>` (data): the data to convert into a SHA3 hash.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the SHA3 result of the given string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_sha3",
+      "params": ["0x68656c6c6f20776f726c64"],
+      "id": 1
+    }'
 ```
-const ethers = require('ethers');
 
-const providerURL = "https://rpc.ankr.com/moonbeam"; // Public RPC URL
+### Response example
 
-const providerURL = "https://rpc.ankr.com/moonbeam/YOUR-API-KEY"; // Premium RPC URL
-
-// Define Provider
-const provider = new ethers.providers.StaticJsonRpcProvider(providerURL, {
-    chainId: 1284,
-    name: 'moonbeam'
-});
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+}
 ```
-  </Tab>
-</Tabs>
 
+---
 
+## `net_version`
 
-### Using Substrate API libraries
+> Returns the current network ID.
 
-[Polkadot.js API](https://polkadot.js.org/docs/api/) library allows application developers to query a Moonbeam node and interact with the node's Polkadot or Substrate interfaces using JavaScript. 
+### Parameters
+<br/>
 
-1. **Install node.js (if not already installed)**
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
 
-    ```bash
-    # homebrew (https://docs.brew.sh/Installation)
-    brew install node
+### Returns
+<br/>
 
-    # nvm (https://github.com/nvm-sh/nvm)
-    nvm install node
-    ```
+  * `<string>`: the current network ID.
 
-2. **Install Polkadot.js API library**
+### Request example
 
-    You can install this through a package manager such as `yarn`. Install it in your project directory with the following command:
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_version",
+      "params": [],
+      "id": 1
+    }'
+```
 
-    ```
-    yarn add @polkadot/api
+### Response example
 
-    ```
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "1284"
+}
+```
 
-3. **Install Moonbeam Types Bundle**
+---
 
-    To decode Moonbeam custom events and types, you need to include the [Moonbeam Types Bundle](https://www.npmjs.com/package/moonbeam-types-bundle) into your project by adding the following package information to your `package.json`:
+## `net_listening`
 
-    ```
-    "@polkadot/api": "^6.9.1",
-    "moonbeam-types-bundle": "^2.0.1",
-    "typescript": "4.3.2"
-    ```
+> Returns `true` if client is actively listening for network connections.
 
-4. **Add this `import` statement**
+### Parameters
+<br/>
 
-    Add this statement to the start of your project file. 
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
 
-    ```
-    import { typesBundlePre900 } from "moonbeam-types-bundle"
-    ```
+### Returns
+<br/>
 
+  * `<boolean>`: `true` when listening, otherwise `false`.
 
+### Request example
 
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_listening",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": true
+}
+```
+
+---
+
+## `eth_protocolVersion`
+
+> Returns the current Ethereum protocol version.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the current Ethereum protocol version.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_protocolVersion",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "1",
+    "id": 1
+}
+```
+
+---
+
+## `eth_syncing`
+
+> Returns an object with data about the sync status or false.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<object>`|`<boolean>`: an object with sync status data or `false`, when not syncing:
+    * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
+    * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
+    * `highestBlock` (quantity): the estimated highest block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_syncing",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example (syncing)
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "startingBlock": "0x384",
+        "currentBlock": "0x386",
+        "highestBlock": "0x454"
+    }
+}
+```
+
+### Response example (not syncing)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": false
+}
+```
+
+---
+
+## `eth_gasPrice`
+
+> Returns the current price per gas in wei.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current gas price in wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_gasPrice",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x174876e800"
+}
+```
+
+---
+
+## `eth_accounts`
+
+> Returns a list of addresses owned by client.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<array>` (string; data, 20 bytes): addresses owned by the client.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_accounts",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": [
+        "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
+    ]
+}
+```
+
+---
+
+## `eth_blockNumber`
+
+> Returns the number of most recent block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current block number the client is on.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x2d1189"
+}
+```
+
+---
+
+## `eth_getBalance`
+
+> Returns the balance of the account specified by address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address to check for balance.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current balance in wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBalance",
+      "params": ["0x323B69eaAa302B940f4cAFA9FB8684016959600f", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x158ab28842d51ca0a"
+}
+```
+
+---
+
+## `eth_getStorageAt`
+
+> Returns the value from a storage position at an address specified.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address of the storage (hex encoded).
+    2. `<string>` (quantity): a slot position in the storage (hex encoded unsigned integer).
+    3. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the value at this storage position.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getStorageAt",
+      "params": ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+```
+
+---
+
+## `eth_getTransactionCount`
+
+> Returns the number of transactions sent from an address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions send from this address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionCount",
+      "params": ["0x89Cf1fd98A6EE78bf76B6C0415c185Ec2c5a88f1", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xdae6"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByHash`
+
+> Returns the number of transactions in a block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example:
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByHash",
+      "params": ["0x602b2568b709f2cee3772e1e0f3ede0db80aae312e6c9ed8677d83a4c08a5d50"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByNumber`
+
+> Returns the number of transactions in the block specified by number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByNumber",
+      "params": ["0x2D11E1"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockHash`
+
+> Returns the number of uncles in a block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (data, 32 bytes): a block's hash.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockHash",
+      "params": ["0xbea96809efba35a04aaa912dbe9f5f79ce45a557ddff56806f20acc17a1f5c4b"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockNumber`
+
+> Returns the number of uncles in a block specified by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockNumber",
+      "params": ["0x2D11DF"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getCode`
+
+> Returns code at a given address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (data, 20 bytes): an address to get the code from.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the code from the given address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getCode",
+      "params": ["0xb1398c4D958B97c181Df60148678f04eCEc62c69", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x"
+}
+```
+
+---
+
+## `eth_sendRawTransaction`
+
+> Creates new message call transaction or a contract creation for signed transactions.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (data): the signed transaction data.
+
+### Returns
+<br/>
+
+  * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
+
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/moonbeam/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_sendRawTransaction",
+    "params": ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
+}
+```
+
+---
+
+## `eth_call`
+
+> Executes a new message call immediately without creating a transaction on the blockchain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (hex encoded bytes): the return value of executed contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_call",
+    "params": [{"from":null,"to":"0x6b175474e89094c44da98b954eedeac495271d0f","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0000000000000000000000000000000000000000000000000858898f93629000"
+}
+```
+
+---
+
+## `eth_estimateGas`
+
+> Generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+
+The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the amount of gas used.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_estimateGas",
+    "params": [{"from":"0x07f327929A3A3131EB4BE83f784DBD3E5C2698f8"}],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xd05f"
+}
+```
+
+---
+
+## `eth_getBlockByHash`
+
+> Returns information for the block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the block's hash.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByHash",
+      "params": ["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x2",
+        "extraData": "0xd98301090a846765746889676f312e31352e3133856c696e7578000000000000cd3659d2a7c1febcd74da24b3d174958c4513df03b3c98e0f078f05c8ab3ce03401c34d41dbd6a5bb5ac6e6f01ff77c7a15bac31ca9ba0a58a3887d39d24e57200",
+        "gasLimit": "0x4190ab00",
+        "gasUsed": "0x3b583",
+        "hash": "0x818e66df719ac90ebe9d27b2385a96ea49dcdcf7c4fd4144fa9e90dcdb8355c7",
+        "logsBloom": "0x00000000000000000000000000000002000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000008000001000000000000000000000020000000000000000000000000000010000000000000000000000000000000000000000000000000000000040000000000000020020000000000000000000000000000000000000002000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000",
+        "miner": "0x0000000000000000000000000000000000000000",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x48e302",
+        "parentHash": "0x1c757a731055437ce12d809b883d9f5ef97742e9e371fa8743beddb6d37379ad",
+        "receiptsRoot": "0x0b1315714349162d1cea1131d0561cdb8f35334d7421a2bd8274f0352fc62fe0",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x3f2",
+        "stateRoot": "0x875b793f2f7e9279bcadf6275fba2bacf3b29c6fbb406d51cb679a83ae6abc6c",
+        "timestamp": "0x63eb7988",
+        "totalDifficulty": "0x91c605",
+        "transactions": [
+            "0x7798444af1b2deb8d7a28d95fd1f534fd8101e7f70df7c6d1884fb334f5b4f68"
+        ],
+        "transactionsRoot": "0xf037df20dfd0f08eedfb44e989fb680ae9b3157bbe2ed05b18413be26b8288df",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getBlockByNumber`
+
+> Returns information for the block specified by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
+       * `earliest`: the lowest numbered block available on the client.
+       * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+       * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+       * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+       * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByNumber",
+      "params": ["0x2ACE9F", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "author": "0xabbed75d32f138e6b3366613dcd01a96e8b61b58",
+        "baseFeePerGas": "0x174876e800",
+        "difficulty": "0x0",
+        "extraData": "0x",
+        "gasLimit": "0xe4e1c0",
+        "gasUsed": "0xf68a5",
+        "hash": "0x8ded0db069ae953824a0f4d44aab95dfb50f22185f4f20f821a12da466ea6db6",
+        "logsBloom": "0x00000000000000400000000080000000000000100000000000000000010000000000040000000400000000000000000000000000040000000000000000040000000000000000000000000000000000000000000000040000000000048000002000000008000100000000000000800000000000000000000000100408000000100020000000000001000000000000000000002000000000000000100000000000100000000000000000000000000000000000000000002002000202004000000000010000000000000000800000000000000000000000000400000000101040000900040000000000000000000004000000000c00000000000400000000000100",
+        "miner": "0xabbed75d32f138e6b3366613dcd01a96e8b61b58",
+        "nonce": "0x0000000000000000",
+        "number": "0x2ace9f",
+        "parentHash": "0xb375a1790fadcff4af5da540a95210df5e0be72d2d06748d7ebd80c5d5fc14ca",
+        "receiptsRoot": "0xab3686340e847e2dce85f4e62cc29d591734f516c3a49477792aade09afadace",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x2bf",
+        "stateRoot": "0xd48e447e300b061a13cd3705ecc7e4d228b2d65f351a44a3bde4b87b72332516",
+        "timestamp": "0x63d10d84",
+        "totalDifficulty": "0x0",
+        "transactions": [
+            "0x7e03d44231617caf7a2c58df865129250dd1b6ed7215a28514a4bc4e496eeb00"
+        ],
+        "transactionsRoot": "0xe29256a605f5bc23815073a9c6fe24a2b0859b1083dc359286cf9f8275b07d1e",
+        "uncles": []
+    },
+    "id": 1
+}
+```
+
+---
+
+## `eth_getTransactionByHash`
+
+> Returns information on a transaction specified by transaction hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a transaction hash.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByHash",
+      "params": ["0x0d2fbde2c076f2661e2fd042f0aee61761b8de1f388a251f766107ca6605261c"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "0x0d2fbde2c076f2661e2fd042f0aee61761b8de1f388a251f766107ca6605261c",
+        "nonce": "0x125",
+        "blockHash": "0xc746790f2ae290d8b78bd897dfe287328d12e80bd7d47bf9faf886e562140c83",
+        "blockNumber": "0x299cbb",
+        "transactionIndex": "0xc",
+        "from": "0xb5ab290e152290b6bd5bdb04e23236d3f9d4aaec",
+        "to": "0xd22da948c0ab3a27f5570b604f3adef5f68211c3",
+        "value": "0x0",
+        "gasPrice": "0x174876e800",
+        "maxFeePerGas": "0x174876e800",
+        "maxPriorityFeePerGas": "0x174876e800",
+        "gas": "0x52ab8",
+        "input": "0x0e75270200000000000000000000000000000000000000000000000000000af0f466497b",
+        "creates": null,
+        "raw": "0x02f89582050482012585174876e80085174876e80083052ab894d22da948c0ab3a27f5570b604f3adef5f68211c380a40e75270200000000000000000000000000000000000000000000000000000af0f466497bc080a0bd1f4c3507c8788e26b778843584c1f31d6c30387eaa936503dd1bd635cc0fa9a05fbd3f2ea34611d29f8b0ab0eb10c70db875a14a760685282964d7451fc0965e",
+        "publicKey": "0x3c36cda066dd905dcbc7ebae005086f11781133a9e5190399e3746d2a374fc1281675280299b80ca72510172bce424025acb0cd6c3cd670c5e8717bc4e510a9c",
+        "chainId": "0x504",
+        "standardV": "0x0",
+        "v": "0x0",
+        "r": "0xbd1f4c3507c8788e26b778843584c1f31d6c30387eaa936503dd1bd635cc0fa9",
+        "s": "0x5fbd3f2ea34611d29f8b0ab0eb10c70db875a14a760685282964d7451fc0965e",
+        "accessList": [],
+        "type": "0x2"
+    },
+    "id": 1
+}
+```
+
+---
+
+## `eth_getTransactionByBlockHashAndIndex`
+
+> Returns information on a transaction specified by block hash and transaction index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+    2. `<string>` (quantity): a transaction index position.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByBlockHashAndIndex",
+      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b", "0x2"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blockHash": "0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b",
+        "blockNumber": "0xc4fa88",
+        "from": "0x4e0c43c30964b80c37df90d229e668823b6f36b6",
+        "gas": "0x34ed8",
+        "gasPrice": "0x6c088e200",
+        "hash": "0xd0f7b79f2b38a5e8303ff523da621d6cb04a18e722d6cc0bcce75309cd804b2e",
+        "input": "0x38ed1739000000000000000000000000000000000000000000000012f211da6a00e70ccd0000000000000000000000000000000000000000000000059ddf43d23461577600000000000000000000000000000000000000000000000000000000000000a00000000000000000000000004e0c43c30964b80c37df90d229e668823b6f36b600000000000000000000000000000000000000000000000000000000610039cb00000000000000000000000000000000000000000000000000000000000000030000000000000000000000007d1afa7b718fb893db30a3abc0cfc608aacfebb0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000009813037ee2218799597d83d4a5b6f3b6778218d9",
+        "nonce": "0x26",
+        "to": "0x03f7724180aa6b939894b5ca4314783b0b36b329",
+        "transactionIndex": "0x2",
+        "value": "0x0",
+        "type": "0x0",
+        "chainId": "0x1",
+        "v": "0x25",
+        "r": "0x43284f337fce4ab4225dd123935934ebd12067440d8a2a05ac297c2d0f62d8ab",
+        "s": "0x3827daa345b9b30ecef4df256a72059ca04106dee07a6a97ba5b4b719550cde3"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByBlockNumberAndIndex`
+
+> Returns information on a transaction by block number and transaction index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<string>` (quantity): the transaction index position.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByBlockNumberAndIndex",
+      "params": ["latest", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "0x9fd03a114da6284f49be54dbc34469c28df49207b7e6bdda7515eba38de4ca6c",
+        "nonce": "0xb",
+        "blockHash": "0x24539d0939cd6cefb81558bd01c94ddc3727abc17230c4af679727bd772ded2c",
+        "blockNumber": "0x2d1244",
+        "transactionIndex": "0x0",
+        "from": "0x7d101a07717730043e10a29253c1d5033328f5d8",
+        "to": "0xff6dd348e6eecea2d81d4194b60c5157cd9e64f4",
+        "value": "0x0",
+        "gasPrice": "0x17dd79e100",
+        "maxFeePerGas": "0x2f25f0c900",
+        "maxPriorityFeePerGas": "0x9502f900",
+        "gas": "0x31131",
+        "input": "0x0b4c7e4d00000000000000000000000000000000000000000000010f0cf064dd59200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010f4e239e62856d28df",
+        "creates": null,
+        "raw": "0x02f8d38205040b849502f900852f25f0c9008303113194ff6dd348e6eecea2d81d4194b60c5157cd9e64f480b8640b4c7e4d00000000000000000000000000000000000000000000010f0cf064dd59200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010f4e239e62856d28dfc080a0604476c14d2be646425e347b2ceff9d44c766a65d7cf6287baaafd8b2af06448a019d715d3d403bfd3124edab226a238a3b84ab0b38be883da68c47d37d6861145",
+        "publicKey": "0xcf6c5030a3513bbcc7ac29d9050ab282e9ee32856738878d62d64f7fa55a120c66d605c7500af29378749c2d30464270308cdc2a3b7343f04460800d67776d08",
+        "chainId": "0x504",
+        "standardV": "0x0",
+        "v": "0x0",
+        "r": "0x604476c14d2be646425e347b2ceff9d44c766a65d7cf6287baaafd8b2af06448",
+        "s": "0x19d715d3d403bfd3124edab226a238a3b84ab0b38be883da68c47d37d6861145",
+        "accessList": [],
+        "type": "0x2"
+    },
+    "id": 1
+}
+```
+
+---
+
+## `eth_getTransactionReceipt`
+
+> Returns the receipt of a transaction by transaction hash.
+
+The receipt is not available for pending transactions.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a hash of the transaction.
+
+### Returns
+<br/>
+
+  * `object`: a transaction receipt object, or null when no receipt was found:
+
+      * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
+      * `transactionIndex` (string; quantity): the transactions index position in the block.
+      * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
+      * `blockNumber` (string; quantity): a number of the block containing the transaction.
+      * `from` (string; data, 20 bytes): an address of the sender.
+      * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
+      * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
+      * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
+      * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
+      * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
+      * `logs` (array): an array of log objects, which this transaction generated.
+      * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
+      * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
+
+          * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
+          * `status` (string; quantity): either 1 (success) or 0 (failure).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionReceipt",
+      "params": ["0x65f5998c2b4dfe750e3ada38452d0764130c7d124b0eb3bb4b162d2d0dc32988"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "0x65f5998c2b4dfe750e3ada38452d0764130c7d124b0eb3bb4b162d2d0dc32988",
+        "transactionIndex": "0x0",
+        "blockHash": "0x0a7cee7ed6c2e4b61bfd9d2d203a1d5a2cf2e9d6aac69e70846e60bd571f7682",
+        "from": "0xb5ab290e152290b6bd5bdb04e23236d3f9d4aaec",
+        "to": "0x091608f4e4a15335145be0a279483c0f8e4c7955",
+        "blockNumber": "0x2c50cd",
+        "cumulativeGasUsed": "0x24e86",
+        "gasUsed": "0x24e86",
+        "contractAddress": null,
+        "logs": [
+            {
+                "address": "0x091608f4e4a15335145be0a279483c0f8e4c7955",
+                "topics": [
+                    "0x4dec04e750ca11537cabcd8a9eab06494de08da3735bc8871cd41250e190bc04"
+                ],
+                "data": "0x00000000000000000000000000000000000000000008164a9abb652c7b8404cc00000000000000000000000000000000000000000000000008818747fc7b83880000000000000000000000000000000000000000000000000f181129ad8862f7000000000000000000000000000000000000000000090e5d18882d09241583ee",
+                "blockHash": "0x0a7cee7ed6c2e4b61bfd9d2d203a1d5a2cf2e9d6aac69e70846e60bd571f7682",
+                "blockNumber": "0x2c50cd",
+                "transactionHash": "0x65f5998c2b4dfe750e3ada38452d0764130c7d124b0eb3bb4b162d2d0dc32988",
+                "transactionIndex": "0x0",
+                "logIndex": "0x0",
+                "transactionLogIndex": "0x0",
+                "removed": false
+            },
+            {
+                "address": "0x8e00d5e02e65a19337cdba98bba9f84d4186a180",
+                "topics": [
+                    "0xaccd035d02c456be35306aecd5a5fe62320713dde09ccd68b0a5e8ed93039999",
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0x000000000000000000000000091608f4e4a15335145be0a279483c0f8e4c7955",
+                    "0x000000000000000000000000b5ab290e152290b6bd5bdb04e23236d3f9d4aaec"
+                ],
+                "data": "0x0000000000000000000000000000000000000000000000066e8413a318711a50000000000000000000000000000777c6428a81cd960dfeb794ba38a446c3e87c",
+                "blockHash": "0x0a7cee7ed6c2e4b61bfd9d2d203a1d5a2cf2e9d6aac69e70846e60bd571f7682",
+                "blockNumber": "0x2c50cd",
+                "transactionHash": "0x65f5998c2b4dfe750e3ada38452d0764130c7d124b0eb3bb4b162d2d0dc32988",
+                "transactionIndex": "0x0",
+                "logIndex": "0x1",
+                "transactionLogIndex": "0x1",
+                "removed": false
+            },
+            {
+                "address": "0x8e00d5e02e65a19337cdba98bba9f84d4186a180",
+                "topics": [
+                    "0xaccd035d02c456be35306aecd5a5fe62320713dde09ccd68b0a5e8ed93039999",
+                    "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "0x000000000000000000000000091608f4e4a15335145be0a279483c0f8e4c7955",
+                    "0x000000000000000000000000b5ab290e152290b6bd5bdb04e23236d3f9d4aaec"
+                ],
+                "data": "0x0000000000000000000000000000000000000000000000000005570c57fa1d040000000000000000000000000000906310e9d79d7e34911d228df38dd1fef8a7",
+                "blockHash": "0x0a7cee7ed6c2e4b61bfd9d2d203a1d5a2cf2e9d6aac69e70846e60bd571f7682",
+                "blockNumber": "0x2c50cd",
+                "transactionHash": "0x65f5998c2b4dfe750e3ada38452d0764130c7d124b0eb3bb4b162d2d0dc32988",
+                "transactionIndex": "0x0",
+                "logIndex": "0x2",
+                "transactionLogIndex": "0x2",
+                "removed": false
+            }
+        ],
+        "logsBloom": "0x00000000000000000000000000000000000000000000400000000000000001000000040000000000000000000000000000000000000000000000000000040000000000000000000000000008000000000000000000040000000000000000000000000008020000000000000000800800000000000008000000100018000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000080000000000000000000000000200100000000000000002000000000000000000020000000000000000000000000000000060000900000000000000000000040004000000200800000000000400000000000100",
+        "status": "0x1",
+        "effectiveGasPrice": "0x17a1df1700",
+        "type": "0x2"
+    },
+    "id": 1
+}
+```
+
+---
+
+## `eth_getUncleByBlockHashAndIndex`
+
+> Returns information about an uncle of a block by hash and uncle index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the hash of a block.
+    2. `<string>` (quantity): the uncle's index position.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockHashAndIndex",
+      "params": ["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x4ea3f27bc",
+        "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
+        "gasLimit": "0x1388",
+        "gasUsed": "0x0",
+        "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
+        "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
+        "nonce": "0x689056015818adbe",
+        "number": "0x1b4",
+        "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x220",
+        "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
+        "timestamp": "0x55ba467c",
+        "totalDifficulty": "0x78ed983323d",
+        "transactions": [],
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getUncleByBlockNumberAndIndex`
+
+> Returns information about an uncle of a block by number and uncle index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<string>` (quantity): the uncle's  index position.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockNumberAndIndex",
+      "params": ["0x2B901D", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x57f117f5c",
+        "extraData": "0x476574682f76312e302e302f77696e646f77732f676f312e342e32",
+        "gasLimit": "0x1388",
+        "gasUsed": "0x0",
+        "hash": "0x932bdf904546a2287a2c9b2ede37925f698a7657484b172d4e5184f80bdd464d",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0x5bf5e9cf9b456d6591073513de7fd69a9bef04bc",
+        "mixHash": "0x4500aa4ee2b3044a155252e35273770edeb2ab6f8cb19ca8e732771484462169",
+        "nonce": "0x24732773618192ac",
+        "number": "0x299",
+        "parentHash": "0xa779859b1ee558258b7008bbabff272280136c5dd3eb3ea3bfa8f6ae03bf91e5",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x21d",
+        "stateRoot": "0x2604fbf5183f5360da249b51f1b9f1e0f315d2ff3ffa1a4143ff221ad9ca1fec",
+        "timestamp": "0x55ba4827",
+        "totalDifficulty": "0xc46826a2c6a",
+        "transactions": [],
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getLogs`
+
+> Returns an array of all logs matching a given filter object.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+      1. `object`: the filter options:
+
+         * `fromBlock` (string; quantity|tag; optional; default: "latest"): either a hex of the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `toBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `address` (array of strings; data, 20 bytes; optional): a contract address or a list of addresses from which logs should originate.
+         * `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
+         * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
+
+### Returns
+<br/>
+
+  * `removed` (string; tag): `true` when the log was removed, due to a chain reorganization; `false` if it's a valid log.
+  * `logIndex` (string; quantity): the log index position in the block; null when it's a pending log.
+  * `transactionIndex` (string; quantity): the transactions index position log was created from; null when it's a pending log.
+  * `transactionHash` (string; data, 32 bytes): a hash of the transactions this log was created from; null when it's a pending log.
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the log; null when it's pending; null when it's a pending log.
+  * `blockNumber` (string; quantity): the number of the block containing the log; null when it's pending; null when it's a pending log.
+  * `address` (string; data, 20 bytes): an address from which this log originated.
+  * `data` (string; data): contains one or more 32 bytes non-indexed arguments of the log.
+  * `topics` (array of strings; data): an array of 0 to 4 32 bytes data of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/moonbeam \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getLogs",
+      "params": [{"address": "0xdAC17F958D2ee523a2206206994597C13D831ec7"}],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+            "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x0000000000000000000000009acbb72cf67103a30333a32cd203459c6a9c3311",
+                "0x000000000000000000000000994871e1103c5da4be270365fa62771ea4525520"
+            ],
+            "data": "0x000000000000000000000000000000000000000000000000000000001ec39aa0",
+            "blockNumber": "0xf6289d",
+            "transactionHash": "0xc7ed73c9b219d4243872e5993ad2950c8ea87d15af28562d33b0c05d46a90cee",
+            "transactionIndex": "0x1e",
+            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
+            "logIndex": "0x13",
+            "removed": false
+        },
+        {
+            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+            "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x0000000000000000000000005879975799597392c031f10b6eff282cb7974ac8",
+                "0x0000000000000000000000006d52ab66340f3f78d0c1007bec484268876b5948"
+            ],
+            "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "blockNumber": "0xf6289d",
+            "transactionHash": "0x0118499f7be4c3510bd60fe3a3aee5f5f316743b6cc13a8cb0528d784f962aec",
+            "transactionIndex": "0x20",
+            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
+            "logIndex": "0x14",
+            "removed": false
+        }
+    ]
+}
+```
 
