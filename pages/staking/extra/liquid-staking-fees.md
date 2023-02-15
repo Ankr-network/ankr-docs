@@ -7,6 +7,7 @@ Here are the fees applied during staking and unstaking process.
 * AVAX — 2% of the Liquid Staking rewards as a base fee.
 * BNB — 10% of the Liquid Staking rewards as a base fee; a relayer fee is taken when staking for cross-chain asset transfer (0.002 BNB).
 * DOT — 2% fee from the staking reward.
+* ETH — 10% of the Liquid Staking rewards.
 * FTM — no fees.
 * KSM — no fees.
 * MATIC — 5% of the Liquid Staking rewards as a base fee, both on for MATIC on Ethereum and Polygon.
