@@ -2849,6 +2849,10 @@ For Near, we support blockchain interaction via all the applicable methods excep
 
 Nervos blockchain, also known as Common Knowledge Base, is the rock-bottom layer of the Nervos ecosystem. As the foundation, Nervos blockchain provides trust for all the layers built on top of it. It is designed to maximize decentralization while remaining minimal, flexible, and secure. Its primary objective is to reliably preserve any data and assets stored therein.
 
+Nervos blockchain ecosystem has a multi-layer architecture — both a Layer 1 solution (Nervos CKB) and a Layer 2 (Godwoken). Nervos CKB is a public permissionless blockchain using PoW and improved Nakamoto consensus.
+
+Godwoken comprises two key components: the Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Polyjuice serves as the backend for the Godwoken rollup framework, providing an Ethereum-compatible layer atop Nervos CKB. Polyjuice leverages the account model and the scalability provided by Godwoken, and integrates [evmone](https://github.com/ethereum/evmone) as the EVM engine to run Ethereum smart contracts.
+
 Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [Godwoken Docs](https://docs.godwoken.io/), [GitHub](https://github.com/godwokenrises/godwoken)
 
 ### Networks
@@ -2856,7 +2860,7 @@ Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://doc
 <div className="list-with-custom-top-margin mt-6">
   * Standard EVM and Polyjuice API (`HTTPS`)
   * Godwoken API (`HTTPS`)
-  * CKB API (`HTTPS` and `WSS`)
+  * Nervos CKB API (`HTTPS` and `WSS`)
 </div>
 
 ### Add networks to MetaMask
@@ -2887,7 +2891,7 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For Nervos, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Nervos, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/nervos) except for those listed as unsupported.
 
 [//]: # (Popular methods:)
 
