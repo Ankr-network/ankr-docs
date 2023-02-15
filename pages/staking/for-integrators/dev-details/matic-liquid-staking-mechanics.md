@@ -39,7 +39,7 @@ The requirements when unstaking are:
 
 ## Fees
 Staking fees:
-* Both for staking on Ethereum and on Polygon, Ankr takes 5% fees from user's Liquid Staking rewards. 
+* Both for staking on Ethereum and on Polygon, Ankr takes 5% fee from the staking reward.
 
 Unstaking fees: 
 * When unstaking on Ethereum, user pays a fee of 0.025 ETH.

@@ -19,7 +19,7 @@ There are no unstaking requirements, as there is not unstaking on Ethereum until
 
 
 ## Fees
-When staking, the user pays 10% of their rewards to the validators.
+Ankr takes 10% fee from the staking reward.
 
 The user must also count in the gas price for outgoing transactions.
 
