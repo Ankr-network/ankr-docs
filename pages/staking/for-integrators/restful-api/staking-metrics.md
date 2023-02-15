@@ -9,7 +9,7 @@ The metrics you can obtain are:
 * `serviceName` — name of the staked token, e.g. `eth`. 
 * `totalStaked` — total tokens of a specific type, e.g. `eth`, that are currently staked.
 * `stakers` — total number of stakers, i.e. unique blockchain addresses that have staked with Ankr and haven't withdrawn their stake yet.   
-* `apy` — current annual percentage yield, i.e. the surplus a staker gets yearly from staking their tokens with Ankr.
+* `apy` — current annual percentage yield, i.e. the surplus a staker gets yearly from staking their tokens with Ankr. The formula is: `rewards_for_last_7_days / staked_amount * 5200`.
 * `totalStakedUsd` — total value of all staked tokens of a specific type, e.g. `eth`, expressed in USD.
 
 ## Get metrics
