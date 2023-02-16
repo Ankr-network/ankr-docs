@@ -62,6 +62,7 @@ Check out the latest Advanced APIs for various Web3 scenarios:
 
 [_Query API Methods_](/advanced-api/query-methods/) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
 
+  * [`ankr_getBlockchainStats`](/advanced-api/query-methods/#ankr_getblockchainstats) — retrieves blockchain statistics.
   * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
   * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
