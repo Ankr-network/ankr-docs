@@ -22,6 +22,7 @@ ankr_w3 = AnkrWeb3("YOUR-TOKEN")
    ```
 
 3. Use the SDK to call the methods supported:
+
   * Node API
 
 ```python
@@ -73,7 +74,7 @@ logs = ankr_w3.query.get_logs(
 Currently, `ankr.py` supports interaction with the following chains using their aliases:
 
   * Ethereum: `eth`
-  * BSC: `bsc`
+  * BNB Smart Chain: `bsc`
   * Polygon: `polygon`
   * Fantom: `fantom`
   * Arbitrum: `arbitrum`
@@ -82,17 +83,15 @@ Currently, `ankr.py` supports interaction with the following chains using their 
 
 ## Methods available
 
-  * [`nft.get_nfts`](/advanced-api/python-sdk/#get_nfts)
-  * [`nft.get_nft_metadata`](/advanced-api/python-sdk/#get_nft_metadata)
-  * `nft.get_nft_holders`
-  * [`token.get_token_holders`](/advanced-api/python-sdk/#get_token_holders)
-  * [`token.get_token_holders_count_history`](/advanced-api/python-sdk/#get_token_holders_count_history)
-  * [`token.get_token_holders_count`](/advanced-api/python-sdk/#get_token_holders_count)
-  * `token.get_token_price`
-  * [`token.get_account_balance`](/advanced-api/python-sdk/#get_account_balance)
-  * [`query.get_logs`](/advanced-api/python-sdk/#get_logs)
-  * [`query.get_blocks`](/advanced-api/python-sdk/#get_blocks)
-  * [`query.get_transaction`](/advanced-api/python-sdk/#get_transaction)
+  * [`nft.get_nfts`](/advanced-api/python-sdk/#get_nfts) — retrieves data on all the NFTs (collectibles) owned by a wallet.
+  * [`nft.get_nft_metadata`](/advanced-api/python-sdk/#get_nft_metadata) — retrieves metadata of a particular NFT.
+  * [`token.get_token_holders`](/advanced-api/python-sdk/#get_token_holders) — retrieves holders of a particular NFT.
+  * [`token.get_token_holders_count_history`](/advanced-api/python-sdk/#get_token_holders_count_history) — retrieves the number of token holders for the particular period of time.
+  * [`token.get_token_holders_count`](/advanced-api/python-sdk/#get_token_holders_count) — retrieves the number of token holders for the latest block.
+  * [`token.get_account_balance`](/advanced-api/python-sdk/#get_account_balance) — retrieves the balance of a particular account.
+  * [`query.get_logs`](/advanced-api/python-sdk/#get_logs) — retrieves history data of a particular block range.
+  * [`query.get_blocks`](/advanced-api/python-sdk/#get_blocks) — retrieves full info of a particular block.
+  * [`query.get_transaction`](/advanced-api/python-sdk/#get_transaction) — retrieves the details of a transaction specified by hash.
 
 ### `get_nfts`
 
@@ -121,6 +120,8 @@ nfts = ankr_w3.nft.get_nft_metadata(
 )
 ```
 
+---
+
 ### `get_token_holders`
 
 Retrieves holders of a particular NFT.
@@ -132,6 +133,8 @@ holders = ankr_w3.token.get_token_holders(
     limit=10,
 )
 ```
+
+---
 
 ### `get_token_holders_count_history`
 
@@ -145,6 +148,8 @@ daily_holders_history = ankr_w3.token.get_token_holders_count_history(
 )
 ```
 
+---
+
 ### `get_token_holders_count`
 
 Retrieves the number of token holders on the latest block.
@@ -156,6 +161,8 @@ holders_count = ankr_w3.token.get_token_holders_count(
 )
 ```
 
+---
+
 ### `get_account_balance`
 
 Retrieves the balance of a particular account.
@@ -166,6 +173,8 @@ assets = ankr_w3.token.get_account_balance(
     blockchain=["eth", "bsc"],
 )
 ```
+
+---
 
 ### `get_logs`
 
@@ -185,6 +194,8 @@ logs = ankr_w3.query.get_logs(
 )
 ```
 
+---
+
 ### `get_blocks`
 
 Retrieves full info of a particular block.
@@ -200,6 +211,8 @@ blocks = ankr_w3.query.get_blocks(
     decode_logs=True,
 )
 ```
+
+---
 
 ### `get_transaction`
 

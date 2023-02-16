@@ -28,7 +28,7 @@ aKSMb will increase with every rebase; rebasing occurs daily.
 
 ### Does Ankr charge for the service?
 
-2% commission from the staking reward.
+Ankr takes a 2% fee from the staking reward.
 
 ### What determines the amount of reward I receive each rebase of aKSMb?
 
