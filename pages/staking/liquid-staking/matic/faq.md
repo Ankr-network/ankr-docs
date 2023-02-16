@@ -50,7 +50,7 @@ aMATICc rewards are built into the token. Effectively, your rewards accumulate d
 
 ### Does Ankr charge for the service?
 
-When staking on Ethereum, the user pays a gas fee (typically, 0.0005 ETH). When staking on Polygon, the user may pay a small dynamic fee. Both for staking on Ethereum and Polygon, Ankr takes 5% fees from user's Liquid Staking rewards. When unstaking on Ethereum, the user pays a fee of 0.025 ETH. When unstaking on Polygon, the user pays a fee of 0.5% from the unstaking amount.
+When staking on Ethereum, the user pays a gas fee (typically, 0.0005 ETH). When staking on Polygon, the user may pay a small dynamic fee. For staking both on Ethereum and Polygon, Ankr takes a 5% fee from the staking reward. When unstaking on Ethereum, the user pays a fee of 0.025 ETH. When unstaking on Polygon, the user pays a fee of 0.5% from the unstaking amount.
 
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 

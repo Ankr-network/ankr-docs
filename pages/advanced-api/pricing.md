@@ -30,6 +30,7 @@ We charge per method used in request. A method's credit value calculates based o
 
 | Method                                       | API Credits | USD/request |
 |:---------------------------------------------|-------------|-------------|
+| `ankr_getBlockchainStats`                    | 700         | $0.00007    |
 | `ankr_getBlocks`                             | 700         | $0.00007    |
 | `ankr_getLogs`                               | 700         | $0.00007    |
 | `ankr_getTransactionsByHash`                 | 700         | $0.00007    |

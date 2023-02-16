@@ -97,7 +97,8 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 |                | `ankr_getNFTMetadata`                       | 700         | $0.00007    |
 |                | `ankr_getNFTHolders`                        | 700         | $0.00007    |
 |                | `ankr_getNftTransfers`                      | 700         | $0.00007    |
-| Query API      | `ankr_getBlocks`                            | 700         | $0.00007    |
+| Query API      | `ankr_getBlockchainStats`                   | 700         | $0.00007    |
+|                | `ankr_getBlocks`                            | 700         | $0.00007    |
 |                | `ankr_getLogs`                              | 700         | $0.00007    |
 |                | `ankr_getTransactionsByHash`                | 700         | $0.00007    |
 |                | `ankr_getTransactionsByAddress`             | 700         | $0.00007    |

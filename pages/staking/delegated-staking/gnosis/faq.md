@@ -52,7 +52,7 @@ Rewards must be claimed from the [Ankr website](https://www.ankr.com/staking/das
 
 ### Does Ankr charge for the service?
 
-Ankr charges for the staking service — 10% of your staking rewards.
+Ankr takes a 10% fee from the staking reward.
 
 ### Can I use cold wallets for staking?
 
