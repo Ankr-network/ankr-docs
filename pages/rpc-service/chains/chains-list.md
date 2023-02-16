@@ -21,7 +21,7 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Harmony](/rpc-service/chains/chains-list/#harmony)</td>
     <td>[Metis](/rpc-service/chains/chains-list/#metis)</td>
     <td>[Polkadot](/rpc-service/chains/chains-list/#polkadot)</td>
-    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
+    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
   </tr>
   <tr>
     <td>[Arbitrum](/rpc-service/chains/chains-list/#arbitrum)</td>
@@ -29,7 +29,7 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)</td>
     <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
     <td>[Polygon](/rpc-service/chains/chains-list/#polygon)</td>
-    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
+    <td></td>
   </tr>
   <tr>
     <td>[Avalanche](/rpc-service/chains/chains-list/#avalanche)</td>
@@ -52,7 +52,7 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
     <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
     <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
-    <td>[Sui](/rpc-service/chains/chains-list/#sui)</td>
+    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
     <td></td>
   </tr>
 </table>
@@ -3876,59 +3876,77 @@ None
 
 ---
 
-## Sui
-
-Sui is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in Web3. Sui is horizontally scalable to support a wide range of application development with unrivaled speed at low cost.
-
-Official quick links: [Website](https://sui.io/), [Docs](https://docs.sui.io/), [GitHub](https://github.com/MystenLabs)
-
-### Networks
-
-<div className="list-with-custom-top-margin mt-6">
-  * Testnet (`HTTPS` and `WSS`)
-</div>
-
-### API methods
-
-For Sui, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+[//]: # ()
+[//]: # (## Sui)
 
 [//]: # ()
-[//]: # ([//]: # &#40;Popular methods:&#41;)
+[//]: # (Sui is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in Web3. Sui is horizontally scalable to support a wide range of application development with unrivaled speed at low cost.)
+
 [//]: # ()
-[//]: # ([//]: # &#40;&#41;)
-[//]: # ([//]: # &#40;  `sui_getObjectsOwnedByAddress`,&#41;)
+[//]: # (Official quick links: [Website]&#40;https://sui.io/&#41;, [Docs]&#40;https://docs.sui.io/&#41;, [GitHub]&#40;https://github.com/MystenLabs&#41;)
+
 [//]: # ()
-[//]: # ([//]: # &#40;  `sui_getObjectsOwnedByObject`,&#41;)
+[//]: # (### Networks)
+
 [//]: # ()
-[//]: # ([//]: # &#40;  `sui_getObject`,&#41;)
+[//]: # (<div className="list-with-custom-top-margin mt-6">)
+
+[//]: # (  * Testnet &#40;`HTTPS` and `WSS`&#41;)
+
+[//]: # (</div>)
+
 [//]: # ()
-[//]: # ([//]: # &#40;  `sui_getRawObject`,&#41;)
+[//]: # (### API methods)
+
 [//]: # ()
-[//]: # ([//]: # &#40;  `sui_getRecentTransactions`,&#41;)
-[//]: # ()
-[//]: # ([//]: # &#40;  `sui_getTotalTransactionNumber`,&#41;)
-[//]: # ()
-[//]: # ([//]: # &#40;  `sui_syncAccountState`,&#41;)
+[//]: # (For Sui, we support blockchain interaction via all the applicable methods except for those listed as unsupported.)
+
 [//]: # ()
 [//]: # ([//]: # &#40;&#41;)
-[//]: # ([//]: # &#40;  `sui_getTransactionsInRange`,&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;Popular methods:&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;&#41;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getObjectsOwnedByAddress`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getObjectsOwnedByObject`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getObject`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getRawObject`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getRecentTransactions`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getTotalTransactionNumber`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_syncAccountState`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;&#41;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getTransactionsInRange`,&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
+[//]: # ([//]: # &#40;[//]: # &#40;  `sui_getTransaction`&#41;&#41;)
+[//]: # ([//]: # &#40;&#41;)
 [//]: # ()
-[//]: # ([//]: # &#40;  `sui_getTransaction`&#41;)
+[//]: # (#### Unsupported)
+
 [//]: # ()
+[//]: # ( <Callout type="warning">)
 
-#### Unsupported
+[//]: # ( This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.)
 
- <Callout type="warning">
- This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
- </Callout>
+[//]: # ( </Callout>)
 
- <Callout type="tip">
- If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
- </Callout>
+[//]: # ()
+[//]: # ( <Callout type="tip">)
 
-None
+[//]: # ( If you require any of the methods from the list, contact our Sales &#40;`sales@ankr.com`&#41; about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.)
 
----
+[//]: # ( </Callout>)
+
+[//]: # ()
+[//]: # (None)
+
+[//]: # ()
+[//]: # (---)
 
 ## Syscoin
 
