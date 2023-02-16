@@ -36,7 +36,7 @@ ankrBNB (ex-aBNBc) rewards are built into the token. Effectively, your rewards a
 
 ### Does Ankr charge for the service?
 
-5% are subtracted from your Liquid Staking rewards to cover the services and operations provided by Ankr. Your APY already includes the fee so no need to recalculate it, you get what you see.  
+Ankr takes a 5% fee from the staking reward to cover the provided services and operations. Your APY already includes the fee so no need to recalculate it, you get what you see.  
 
   
 

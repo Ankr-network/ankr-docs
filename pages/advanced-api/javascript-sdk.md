@@ -19,7 +19,7 @@ yarn add @ankr.com/ankr.js
 ```javascript
 import { AnkrProvider } from '@ankr.com/ankr.js';
 
-const provider = new AnkrProvider('');
+const provider = new AnkrProvider();
 
 // or if you have a premium account
 const provider = new AnkrProvider('YOUR_API_KEY');
@@ -39,26 +39,27 @@ await provider.getNFTsByOwner({
 Currently, `ankr.js` supports interaction with the following chains using their aliases:
 
   * Ethereum: `eth`
-  * BSC: `bsc`
+  * BNB Smart Chain: `bsc`
   * Polygon: `polygon`
   * Fantom: `fantom`
   * Arbitrum: `arbitrum`
   * Avalanche: `avalanche`
   * Syscoin NEVM: `syscoin`
   * Optimism: `optimism`
+  * Ethereum Goerly: `eth_goerli`
+  * Avalanche Fuji: `avalanche_fuji`
 
 ## Methods available
 
-  * [`getLogs`](/advanced-api/javascript-sdk/#getlogs)
-  * [`getBlocks`](/advanced-api/javascript-sdk/#getblocks)
-  * [`getTransactionsByHash`](/advanced-api/javascript-sdk/#gettransactionsbyhash)
-  * [`getAccountBalance`](/advanced-api/javascript-sdk/#getaccountbalance)
-  * [`getNFTsByOwner`](/advanced-api/javascript-sdk/#getnftsbyowner)
-  * [`getTokenHolders`](/advanced-api/javascript-sdk/#gettokenholders)
-  * [`getTokenHoldersCount`](/advanced-api/javascript-sdk/#gettokenholderscount)
-  * [`getCurrencies`](/advanced-api/javascript-sdk/#getcurrencies)
-  * [`getNFTMetadata`](/advanced-api/javascript-sdk/#getnftmetadata)
-  * [`getTokenPriceHistory`](/advanced-api/javascript-sdk/#gettokenpricehistory)
+  * [`getLogs`](/advanced-api/javascript-sdk/#getlogs) — retrieves the logs matching the filter indicated.
+  * [`getBlocks`](/advanced-api/javascript-sdk/#getblocks) — retrieves the data on the blocks within the indicated range.
+  * [`getTransactionsByHash`](/advanced-api/javascript-sdk/#gettransactionsbyhash) — retrieves transaction details for a transaction specified by hash.
+  * [`getAccountBalance`](/advanced-api/javascript-sdk/#getaccountbalance) — retrieves the coin and token balances of the wallet specified.
+  * [`getNFTsByOwner`](/advanced-api/javascript-sdk/#getnftsbyowner) — retrieves the data on all the NFTs (collectibles) owned by the indicated wallet.
+  * [`getTokenHolders`](/advanced-api/javascript-sdk/#gettokenholders) — retrieves the list of token holders for a given contract address. 
+  * [`getTokenHoldersCount`](/advanced-api/javascript-sdk/#gettokenholderscount) — retrieves current and historical data on the number of token holders for a given contract address.
+  * [`getCurrencies`](/advanced-api/javascript-sdk/#getcurrencies) — retrieves a list of supported currencies for a given blockchain.
+  * [`getTokenPriceHistory`](/advanced-api/javascript-sdk/#gettokenpricehistory) — retrieves the particular token's price history on the chain specified.
 
 ### `getLogs`
 
@@ -80,6 +81,8 @@ const logs = async () => {
 };
 ```
 
+---
+
 ### `getBlocks`
 
 Retrieves the data on the blocks within the indicated range.
@@ -93,6 +96,8 @@ const blocks = async () => {
   });
 };
 ```
+
+---
 
 ### `getTransactionsByHash`
 
@@ -108,6 +113,8 @@ const transactions = async () => {
 };
 ```
 
+---
+
 ### `getAccountBalance`
 
 Retrieves the coin and token balances of the wallet specified.
@@ -120,6 +127,8 @@ const balances = async () => {
   });
 };
 ```
+
+---
 
 ### `getNFTsByOwner`
 
@@ -138,6 +147,8 @@ const nfts = async () => {
 };
 ```
 
+---
+
 ### `getTokenHolders`
 
 Retrieves the list of token holders for a given contract address.
@@ -150,6 +161,8 @@ const tokenHolders = async () => {
   });
 };
 ```
+
+---
 
 ### `getTokenHoldersCount`
 
@@ -164,6 +177,8 @@ const tokenHoldersCount = async () => {
 };
 ```
 
+---
+
 ### `getCurrencies`
 
 Retrieves a list of supported currencies for a given blockchain.
@@ -174,21 +189,7 @@ const currencies = async () => {
 };
 ```
 
-### `getNFTMetadata`
-
-Gets metadata of a given NFT.
-
-```javascript
-
-const nftMetadata = async () => {
-  return await provider.getNFTMetadata({
-    blockchain: 'avalanche',
-    contractAddress: '0x8d01c8ee82e581e55c02117a676b5bbd4734fabb',
-    tokenId: '23240',
-  });
-};
-
-```
+---
 
 ### `getTokenPriceHistory`
 

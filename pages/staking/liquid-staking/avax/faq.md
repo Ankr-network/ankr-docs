@@ -32,7 +32,7 @@ ankrAVAX (ex-aAVAXc) rewards are built into the token. Effectively, your rewards
 
 ### Does Ankr charge for the service?
 
-2% commission on the reward.
+Ankr takes a 2% fee from the staking reward.
 
 ### If I click Unstake, does my stake immediately stop accumulating rewards?
 

@@ -21,7 +21,7 @@ This documentation lets you explore how you can use and integrate Ankr's full su
 ## Advanced APIs/SDKs
 <div className="list-with-custom-top-margin mt-6">
 * Access a specifically-tailored collection of JSON-RPC API endpoints.
-* Interact with 8 supported blockchains.
+* Interact with 8 mainnet and 3 testnet chains supported.
 * Use Ankr JavaScript/Python SDKs and React Hooks.
 * Tailored to support most popular Web3 scenarios. 
 </div>
