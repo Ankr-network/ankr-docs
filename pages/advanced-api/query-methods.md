@@ -17,6 +17,7 @@ Query API implements the [JSON-RPC 2.0 specification](https://www.jsonrpc.org/sp
 
 _Query API_ consists of the following methods to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
 
+  * [`ankr_getBlockchainStats`](/advanced-api/query-methods/#ankr_getblockchainstats) — retrieves blockchain statistics.
   * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
   * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
@@ -24,6 +25,103 @@ _Query API_ consists of the following methods to request info on the ranges of b
   * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
   * [`ankr_getInternalTransactionsByBlockNumber`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyblocknumber) — retrieves info on internal transactions by block number.
   * [`ankr_getInternalTransactionsByParentHash`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyparenthash) — retrieves info on internal transactions by parent hash.
+
+## `ankr_getBlockchainStats`
+
+> **Retrieves blockchain statistics.**
+
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
+
+* `id` (int64; required): a request ID (example: 1).
+* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+* `method` (string; required): a method used for the request.
+* `params` (object): the data object containing request body parameters:
+
+  * `blockchain` (string): a chain or a combination of chains to query:
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
+    * Chains combination: `[eth, polygon, bsc]`.
+    * All chains: leave the value empty to query all the chains available.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getInteractions",
+  "params": {
+    "address": "string"
+  }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
+
+### Response
+
+Returns statistics for the blockchains specified.
+
+### Code Examples
+
+#### Request
+
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getBlockchainStats",
+    "params": {},
+    "id": 1
+}'
+```
+
+#### Response
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "stats": [
+      {
+        "blockTimeMs": 3000,
+        "blockchain": "eth",
+        "latestBlockNumber": 24274429,
+        "nativeCoinUsdPrice": "245.153233940444766334",
+        "totalEventsCount": 11643833187,
+        "totalTransactionsCount": 3764960943
+      },
+      {
+        "blockTimeMs": 4000,
+        "blockchain": "bsc",
+        "latestBlockNumber": 37350500,
+        "nativeCoinUsdPrice": "0.803307052493372837",
+        "totalEventsCount": 8710949888,
+        "totalTransactionsCount": 2318753716
+      }
+    ]
+  }
+}
+```
+
+---
 
 ## `ankr_getBlocks`
 
@@ -42,7 +140,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.).
   * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
   * `decodeTxData` (boolean): set to `true` to decode transaction data, or to `false` if not interested in it.
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
@@ -218,7 +316,7 @@ Build your request using the parameters below.
 
   * `address` (uint8): an address of the contract created the logs. Supported value formats: hex or array of hexes.
   * `blockchain` (string): a chain or a combination of chains to query:
-    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`.
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
     * Chains combination: `[eth, polygon, bsc]`.
     * All chains: leave the value empty to query all the chains available.
   * `decodeLogs` (boolean): set to `true` to decode logs, or to `false` if you don't need this kind of info.
@@ -444,7 +542,7 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters:
 
   * `blockchain` (string): a chain or a combination of chains to query:
-    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
     * Chains combination: `[eth, polygon, bsc]`.
     * All chains: leave the value empty to query all the chains available.
   * `transactionHash` (string): a hash of the transactions you'd like to request the details for.
@@ -858,7 +956,10 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters:
 
     * `address` (string; required): an address to search for transactions.
-    * `blockchain` (string): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+    * `blockchain` (string): a chain or a combination of chains to query:
+      * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
+      * Chains combination: `[eth, polygon, bsc]`.
+      * All chains: leave the value empty to query all the chains available.
     * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`).
     * `toBlock` (integer): narrow your search indicating the block number to end with (inclusive; `>= 0`).
     * `fromTimestamp` (integer): narrow your search indicating the timestamp to start from (inclusive; `>= 0`).

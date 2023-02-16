@@ -41,7 +41,7 @@ Build your request using the parameters below.
 
   * `walletAddress` (string; required): an account address to query for NFTs; supports the Ethereum Name Service (ENS).
   * `blockchain` (string): a chain or a combination of chains to query:
-     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
+     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
      * Chains combination: `[eth, polygon, bsc]`.
      * All chains: leave the value empty to query all the chains available.
   * `pageSize` (int32): a number of page results you'd like to get (default=10, max=50).
@@ -351,7 +351,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters.
 
-  * `blockchain` (string; required): one of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`).
   * `contractAddress` (string): a contract address of the NFT the metadata belongs to; supports the Ethereum Name Service (ENS).
   * `tokenId` (integer): a token ID of the NFT the metadata belongs to.
 
@@ -549,7 +549,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters.
 
-  * `blockchain` (string; required): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`).
   * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (integer): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
@@ -688,7 +688,7 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters.
 
   * `address` (array of strings; required): an address to search for transactions.
-  * `blockchain` (array of strings): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (array of strings): either of the supported blockchains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`).
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
   * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`).
   * `toBlock` (integer): narrow your search indicating the block number to end with (inclusive; `>= 0`).

@@ -44,7 +44,7 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters:
 
   * `blockchain` (string): a chain or a combination of chains to query:
-    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
     * Chains combination: `[eth, polygon, bsc]`.
     * All chains: leave the value empty to query all the chains available.
   * `onlyWhitelisted` (boolean; default: `true`): set to `true` to filter through unrecognized tokens to return account balance based on the recognized ones; set to `false` to show balance based on all the tokens available.
@@ -238,7 +238,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`).
 
 <Tabs
   items={[
@@ -426,7 +426,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`).
   * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS). If not provided, returns the native coin price of the blockchain specified. 
 
 <Tabs
@@ -539,7 +539,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`).
   * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (int32): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
@@ -684,7 +684,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`).
+  * `blockchain` (string; required): either of the supported chains (`eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`).
   * `contractAddress` (string): a contract address of the tokens collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (string): a number of results you'd like to get.
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
@@ -873,7 +873,7 @@ Build your request using the parameters below.
 
   * `address` (string; required): an address to search for token transfers.
   * `blockchain` (string): a chain or a combination of chains to query:
-    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `avalanche_fuji`.
+    * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `arbitrum`, `syscoin`, `optimism`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
     * Chains combination: `[eth, polygon, bsc]`.
     * All chains: leave the value empty to query all the chains available.
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
