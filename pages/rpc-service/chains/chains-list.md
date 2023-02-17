@@ -3161,9 +3161,9 @@ def test_block_number(self):
 
 ## Optimism
 
-Optimism is a low-cost and lightning-fast Ethereum L2 blockchain, but it's also so much more than that.
+Optimism is a fast, stable, and scalable L2 blockchain built by Ethereum developers, for Ethereum developers. Built as a minimal extension to existing Ethereum software, Optimism’s [EVM-equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) architecture scales your Ethereum apps without surprises. If it works on Ethereum, it works on Optimism at a fraction of the cost.
 
-With the OVM 2.0 upgrade, which happened on November 11th, 2021, the Optimism protocol went through its biggest upgrade to date. The primary focus of this upgrade was EVM Equivalence (opens new window), a new design for Optimism that brought it close to 1:1 parity with Ethereum.
+With the OVM 2.0 upgrade, which happened on November 11th, 2021, the Optimism protocol went through its biggest upgrade to date. The primary focus of this upgrade was EVM Equivalence, a new design for Optimism that brought it close to 1:1 parity with Ethereum.
 
 Official quick links: [Website](https://www.optimism.io/), [Docs](https://community.optimism.io/), [GitHub](https://github.com/ethereum-optimism)
 
@@ -3215,7 +3215,7 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For Optimism, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Optimism, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/optimism) except for those listed as unsupported.
 
 #### Unsupported
 
