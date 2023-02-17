@@ -1,0 +1,1806 @@
+import { Callout } from "components";
+
+# Optimism
+
+> Optimism API is available on [RPC Service](https://www.ankr.com/rpc/optimism).
+
+Optimism is a fast, stable, and scalable L2 blockchain built by Ethereum developers, for Ethereum developers. Built as a minimal extension to existing Ethereum software, Optimism’s EVM-equivalent architecture scales your Ethereum apps without surprises. If it works on Ethereum, it works on Optimism at a fraction of the cost.
+
+In order for your Web3 application to interact with Optimism — either by reading blockchain data or sending transactions to the network — it must connect to an Optimism node. Developers interact with the blockchain using the methods provided by the API.
+
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
+
+---
+
+## Methods supported
+<br/>
+
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/optimism/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/optimism/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/optimism/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/optimism/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_protocolversion`](/rpc-service/chains/chains-api/optimism/#eth_protocolversion) — returns the current Ethereum protocol version.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/optimism/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/optimism/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/optimism/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/optimism/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/optimism/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/optimism/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/optimism/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/optimism/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/optimism/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/optimism/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/optimism/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/optimism/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/optimism/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/optimism/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/optimism/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/optimism/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/optimism/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/optimism/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/optimism/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/optimism/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/optimism/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/optimism/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/optimism/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/optimism/#eth_getlogs) — returns logs matching the parameters specified.
+
+---
+
+## `web3_clientVersion`
+
+> Returns the current client version.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the current client version.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_clientVersion",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "Geth/v1.9.10-stable/linux-amd64/go1.19.3",
+    "id": 1
+}
+```
+
+---
+
+## `web3_sha3`
+
+> Returns Keccak-256 (not the standardized SHA3-256) of the given data.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<string>` (data): the data to convert into a SHA3 hash.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the SHA3 result of the given string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_sha3",
+      "params": ["0x68656c6c6f20776f726c64"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+}
+```
+
+---
+
+## `net_version`
+
+> Returns the current network ID.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the current network ID.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_version",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "10"
+}
+```
+
+---
+
+## `net_listening`
+
+> Returns `true` if client is actively listening for network connections.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<boolean>`: `true` when listening, otherwise `false`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_listening",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": true
+}
+```
+
+---
+
+## `eth_protocolVersion`
+
+> Returns the current Ethereum protocol version.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the current Ethereum protocol version.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_protocolVersion",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x40",
+    "id": 1
+}
+```
+
+---
+
+## `eth_syncing`
+
+> Returns an object with data about the sync status or false.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<object>`|`<boolean>`: an object with sync status data or `false`, when not syncing:
+    * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
+    * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
+    * `highestBlock` (quantity): the estimated highest block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_syncing",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example (syncing)
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "startingBlock": "0x384",
+        "currentBlock": "0x386",
+        "highestBlock": "0x454"
+    }
+}
+```
+
+### Response example (not syncing)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": false
+}
+```
+
+---
+
+## `eth_gasPrice`
+
+> Returns the current price per gas in wei.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current gas price in wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_gasPrice",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xf4240"
+}
+```
+
+---
+
+## `eth_accounts`
+
+> Returns a list of addresses owned by client.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array): None.
+
+### Returns
+<br/>
+
+  * `<array>` (string; data, 20 bytes): addresses owned by the client.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_accounts",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": [
+        "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
+    ]
+}
+```
+
+---
+
+## `eth_blockNumber`
+
+> Returns the number of most recent block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current block number the client is on.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x47774df"
+}
+```
+
+---
+
+## `eth_getBalance`
+
+> Returns the balance of the account specified by address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes; required): an address to check for balance.
+    2. `<string>` (quantity|tag; required): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current balance in wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBalance",
+      "params": ["0x323B69eaAa302B940f4cAFA9FB8684016959600f", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x158ab28842d51ca0a"
+}
+```
+
+---
+
+## `eth_getStorageAt`
+
+> Returns the value from a storage position at an address specified.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes; required): an address of the storage (hex encoded).
+    2. `<string>` (quantity; required): a slot position in the storage (hex encoded unsigned integer).
+    3. `<string>` (quantity|tag; required): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the value at this storage position.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getStorageAt",
+      "params": ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+```
+
+---
+
+## `eth_getTransactionCount`
+
+> Returns the number of transactions sent from an address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions send from this address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionCount",
+      "params": ["0xf9e8466141d032AAaE3306227bb34c8278737425", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x4d"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByHash`
+
+> Returns the number of transactions in a block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example:
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByHash",
+      "params": ["0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByNumber`
+
+> Returns the number of transactions in the block specified by number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByNumber",
+      "params": ["0x4777962"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockHash`
+
+> Returns the number of uncles in a block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (data, 32 bytes): a block's hash.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockHash",
+      "params": ["0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockNumber`
+
+> Returns the number of uncles in a block specified by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockNumber",
+      "params": ["0x4777962"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getCode`
+
+> Returns code at a given address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (data, 20 bytes): an address to get the code from.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the code from the given address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getCode",
+      "params": ["0xb1398c4D958B97c181Df60148678f04eCEc62c69", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x"
+}
+```
+
+---
+
+## `eth_sendRawTransaction`
+
+> Creates new message call transaction or a contract creation for signed transactions.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<string>` (data): the signed transaction data.
+
+### Returns
+<br/>
+
+  * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
+
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/optimism/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_sendRawTransaction",
+    "params": ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
+}
+```
+
+---
+
+## `eth_call`
+
+> Executes a new message call immediately without creating a transaction on the blockchain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (hex encoded bytes): the return value of executed contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_call",
+    "params": [{"from":null,"to":"0x6b175474e89094c44da98b954eedeac495271d0f","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0000000000000000000000000000000000000000000000000858898f93629000"
+}
+```
+
+---
+
+## `eth_estimateGas`
+
+> Generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+
+The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): 
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the amount of gas used.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_estimateGas",
+    "params": [{"from":"0x07f327929A3A3131EB4BE83f784DBD3E5C2698f8"}],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xcf08"
+}
+```
+
+---
+
+## `eth_getBlockByHash`
+
+> Returns information for the block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the block's hash.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByHash",
+      "params": ["0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x2",
+        "extraData": "0xd98301090a846765746889676f312e31352e3133856c696e7578000000000000960f93ea46e2665a34c02840497b8cb8507574e76bae487c9e4d72a8c72313f408c9d460e9a0974d2180f906c3057357afe35482ce26338ba6c85427f16aa60d00",
+        "gasLimit": "0xe4e1c0",
+        "gasUsed": "0x1d969",
+        "hash": "0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824",
+        "logsBloom": "0x04000000000000000000001001000000000000000020000000000000000200000000000000000000000000000000000000000000000000800000000040000000000000000000000000000008000000000000000000000000000000000000000000000000020000000000008000000800000000000000000000000010000000000000000000000000000000000000000000000000000000000000010000000000000000800000000000400102000000000000000000000000000000000100000000000002020000000000000000000000000000000002000000000200800020000000000000000000200000000000000000000000008000000000000000000000",
+        "miner": "0x0000000000000000000000000000000000000000",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x4777962",
+        "parentHash": "0xc1c52c72a20f9717472d2682205ff9a2e26e7450af0e3c70f45c65e695e27916",
+        "receiptsRoot": "0x30362eab5823888eaf08ea4ec8c2bf7856d7bfeba9eb98cad0c1a6de92ca754a",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x337",
+        "stateRoot": "0x7fdbea84428c764d4a8757e6057046dfcd15f0f482a57a51f1f3659c4b1059ce",
+        "timestamp": "0x63ef4ee7",
+        "totalDifficulty": "0x8eef2c5",
+        "transactions": [
+            "0x8fcf92cce7a7a7803a18737d5ead11ab3afffd8394e8ee1fb8ccfd7227d1cdbd"
+        ],
+        "transactionsRoot": "0x6dc519ebb4d0acbdbea7a7e676264e66f22cd847016ce584ff20259a00bb74a3",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getBlockByNumber`
+
+> Returns information for the block specified by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
+       * `earliest`: the lowest numbered block available on the client.
+       * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+       * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+       * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+       * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByNumber",
+      "params": ["0x4777962", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x2",
+        "extraData": "0xd98301090a846765746889676f312e31352e3133856c696e7578000000000000960f93ea46e2665a34c02840497b8cb8507574e76bae487c9e4d72a8c72313f408c9d460e9a0974d2180f906c3057357afe35482ce26338ba6c85427f16aa60d00",
+        "gasLimit": "0xe4e1c0",
+        "gasUsed": "0x1d969",
+        "hash": "0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824",
+        "logsBloom": "0x04000000000000000000001001000000000000000020000000000000000200000000000000000000000000000000000000000000000000800000000040000000000000000000000000000008000000000000000000000000000000000000000000000000020000000000008000000800000000000000000000000010000000000000000000000000000000000000000000000000000000000000010000000000000000800000000000400102000000000000000000000000000000000100000000000002020000000000000000000000000000000002000000000200800020000000000000000000200000000000000000000000008000000000000000000000",
+        "miner": "0x0000000000000000000000000000000000000000",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x4777962",
+        "parentHash": "0xc1c52c72a20f9717472d2682205ff9a2e26e7450af0e3c70f45c65e695e27916",
+        "receiptsRoot": "0x30362eab5823888eaf08ea4ec8c2bf7856d7bfeba9eb98cad0c1a6de92ca754a",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x337",
+        "stateRoot": "0x7fdbea84428c764d4a8757e6057046dfcd15f0f482a57a51f1f3659c4b1059ce",
+        "timestamp": "0x63ef4ee7",
+        "totalDifficulty": "0x8eef2c5",
+        "transactions": [
+            "0x8fcf92cce7a7a7803a18737d5ead11ab3afffd8394e8ee1fb8ccfd7227d1cdbd"
+        ],
+        "transactionsRoot": "0x6dc519ebb4d0acbdbea7a7e676264e66f22cd847016ce584ff20259a00bb74a3",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByHash`
+
+> Returns information on a transaction specified by transaction hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a transaction hash.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByHash",
+      "params": ["0x635add970f86930850511ed1a490512d72135ea255f9e2e37b17ab4e4331f726"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blockHash": "0xa2456a6d9186112c41e8e00a182a390d0453cd97bdbd0702f362c75db4f11703",
+        "blockNumber": "0x4777969",
+        "from": "0xf9e8466141d032aaae3306227bb34c8278737425",
+        "gas": "0x73347",
+        "gasPrice": "0xf4240",
+        "hash": "0x635add970f86930850511ed1a490512d72135ea255f9e2e37b17ab4e4331f726",
+        "input": "0xd294f093",
+        "nonce": "0x4c",
+        "to": "0x4a16a42407aa491564643e1dfc1fd50af29794ef",
+        "transactionIndex": "0x0",
+        "value": "0x0",
+        "v": "0x37",
+        "r": "0xf0d949424a51f2f1e2f61fd095588d42ad89f0b861cdb1d16f3d2471bb17a3e",
+        "s": "0x285287ca022d5a057cc3c498f7bab00340379544db9064f81c7933cab48cda79",
+        "queueOrigin": "sequencer",
+        "l1TxOrigin": null,
+        "l1BlockNumber": "0xfe05cd",
+        "l1Timestamp": "0x63ef4ef6",
+        "index": "0x4777968",
+        "queueIndex": null,
+        "rawTransaction": "0xf8674c830f424083073347944a16a42407aa491564643e1dfc1fd50af29794ef8084d294f09337a00f0d949424a51f2f1e2f61fd095588d42ad89f0b861cdb1d16f3d2471bb17a3ea0285287ca022d5a057cc3c498f7bab00340379544db9064f81c7933cab48cda79"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByBlockHashAndIndex`
+
+> Returns information on a transaction specified by block hash and transaction index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+    2. `<string>` (quantity): a transaction index position.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByBlockHashAndIndex",
+      "params": ["0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blockHash": "0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824",
+        "blockNumber": "0x4777962",
+        "from": "0x7e9c7856d6d5c676bc4e8ba916fb9e0d9f56c0e7",
+        "gas": "0x1f2d4",
+        "gasPrice": "0xf4240",
+        "hash": "0x8fcf92cce7a7a7803a18737d5ead11ab3afffd8394e8ee1fb8ccfd7227d1cdbd",
+        "input": "0x3a1b1d570000000000000000000000007e9c7856d6d5c676bc4e8ba916fb9e0d9f56c0e700000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x11",
+        "to": "0xf2d409bc24300f248fdd3b1e067de24be28abb85",
+        "transactionIndex": "0x0",
+        "value": "0x38d7ea4c68000",
+        "v": "0x37",
+        "r": "0xfc37422e663092cda2f59aeb848ec306d503c7a09a074f778014168bf718aeb2",
+        "s": "0x7eeb40d7d0c95fba51d096560a4aa3a47d5803ab54d98bd39209ac298ecd3039",
+        "queueOrigin": "sequencer",
+        "l1TxOrigin": null,
+        "l1BlockNumber": "0xfe05cd",
+        "l1Timestamp": "0x63ef4ee7",
+        "index": "0x4777961",
+        "queueIndex": null,
+        "rawTransaction": "0xf8cf11830f42408301f2d494f2d409bc24300f248fdd3b1e067de24be28abb8587038d7ea4c68000b8643a1b1d570000000000000000000000007e9c7856d6d5c676bc4e8ba916fb9e0d9f56c0e70000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000037a0fc37422e663092cda2f59aeb848ec306d503c7a09a074f778014168bf718aeb2a07eeb40d7d0c95fba51d096560a4aa3a47d5803ab54d98bd39209ac298ecd3039"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByBlockNumberAndIndex`
+
+> Returns information on a transaction by block number and transaction index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<string>` (quantity): the transaction index position.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByBlockNumberAndIndex",
+      "params": ["0x4777962", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blockHash": "0x6326ed6707a6c28b52994295610963173655a1d127ea637f174ed733d66d4824",
+        "blockNumber": "0x4777962",
+        "from": "0x7e9c7856d6d5c676bc4e8ba916fb9e0d9f56c0e7",
+        "gas": "0x1f2d4",
+        "gasPrice": "0xf4240",
+        "hash": "0x8fcf92cce7a7a7803a18737d5ead11ab3afffd8394e8ee1fb8ccfd7227d1cdbd",
+        "input": "0x3a1b1d570000000000000000000000007e9c7856d6d5c676bc4e8ba916fb9e0d9f56c0e700000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x11",
+        "to": "0xf2d409bc24300f248fdd3b1e067de24be28abb85",
+        "transactionIndex": "0x0",
+        "value": "0x38d7ea4c68000",
+        "v": "0x37",
+        "r": "0xfc37422e663092cda2f59aeb848ec306d503c7a09a074f778014168bf718aeb2",
+        "s": "0x7eeb40d7d0c95fba51d096560a4aa3a47d5803ab54d98bd39209ac298ecd3039",
+        "queueOrigin": "sequencer",
+        "l1TxOrigin": null,
+        "l1BlockNumber": "0xfe05cd",
+        "l1Timestamp": "0x63ef4ee7",
+        "index": "0x4777961",
+        "queueIndex": null,
+        "rawTransaction": "0xf8cf11830f42408301f2d494f2d409bc24300f248fdd3b1e067de24be28abb8587038d7ea4c68000b8643a1b1d570000000000000000000000007e9c7856d6d5c676bc4e8ba916fb9e0d9f56c0e70000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000037a0fc37422e663092cda2f59aeb848ec306d503c7a09a074f778014168bf718aeb2a07eeb40d7d0c95fba51d096560a4aa3a47d5803ab54d98bd39209ac298ecd3039"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionReceipt`
+
+> Returns the receipt of a transaction by transaction hash.
+
+The receipt is not available for pending transactions.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a hash of the transaction.
+
+### Returns
+<br/>
+
+  * `object`: a transaction receipt object, or null when no receipt was found:
+
+      * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
+      * `transactionIndex` (string; quantity): the transactions index position in the block.
+      * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
+      * `blockNumber` (string; quantity): a number of the block containing the transaction.
+      * `from` (string; data, 20 bytes): an address of the sender.
+      * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
+      * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
+      * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
+      * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
+      * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
+      * `logs` (array): an array of log objects, which this transaction generated.
+      * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
+      * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
+
+          * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
+          * `status` (string; quantity): either 1 (success) or 0 (failure).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionReceipt",
+      "params": ["0x33bf901ebb3e623a06069dbffd91eeb32e5355f88b500e18b7e35ae643ccaa85"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blockHash": "0xba3b252e1c01a6519c8e7e10889ef856daebae7be561cd209df5c9f371442b3d",
+        "blockNumber": "0x4777963",
+        "contractAddress": null,
+        "cumulativeGasUsed": "0x196bc",
+        "from": "0xb1a396af608a464344c6d61894260144419bcfb3",
+        "gasUsed": "0x196bc",
+        "l1Fee": "0x6422c2699180",
+        "l1FeeScalar": "1",
+        "l1GasPrice": "0x589ffb0e0",
+        "l1GasUsed": "0x1214",
+        "logs": [
+            {
+                "address": "0x4200000000000000000000000000000000000006",
+                "topics": [
+                    "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                    "0x00000000000000000000000068f5c0a2de713a54991e01858fd27a3832401849",
+                    "0x000000000000000000000000ff8c6e782bdbceba8bd0ee7ea2556ea7df580b9b"
+                ],
+                "data": "0x000000000000000000000000000000000000000000000000190fc71d7d5ef813",
+                "blockNumber": "0x4777963",
+                "transactionHash": "0x33bf901ebb3e623a06069dbffd91eeb32e5355f88b500e18b7e35ae643ccaa85",
+                "transactionIndex": "0x0",
+                "blockHash": "0xba3b252e1c01a6519c8e7e10889ef856daebae7be561cd209df5c9f371442b3d",
+                "logIndex": "0x0",
+                "removed": false
+            },
+            {
+                "address": "0x4200000000000000000000000000000000000042",
+                "topics": [
+                    "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                    "0x000000000000000000000000ff8c6e782bdbceba8bd0ee7ea2556ea7df580b9b",
+                    "0x00000000000000000000000068f5c0a2de713a54991e01858fd27a3832401849"
+                ],
+                "data": "0x00000000000000000000000000000000000000000000003bce4a60159782cc40",
+                "blockNumber": "0x4777963",
+                "transactionHash": "0x33bf901ebb3e623a06069dbffd91eeb32e5355f88b500e18b7e35ae643ccaa85",
+                "transactionIndex": "0x0",
+                "blockHash": "0xba3b252e1c01a6519c8e7e10889ef856daebae7be561cd209df5c9f371442b3d",
+                "logIndex": "0x1",
+                "removed": false
+            }
+
+        ],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000040000000000000000000000000000000000100000000000000000000020000000000000000040000000000000000820000008080000000000000000000000000200000000000000000000100000000004000000000000000000000000000000000010000800000000000004000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000002000000000000000000000000008000000002000000000000000000000000000000000000000000401000000000000000000000000000000000000000",
+        "status": "0x1",
+        "to": "0xff8c6e782bdbceba8bd0ee7ea2556ea7df580b9b",
+        "transactionHash": "0x33bf901ebb3e623a06069dbffd91eeb32e5355f88b500e18b7e35ae643ccaa85",
+        "transactionIndex": "0x0"
+    }
+}
+```
+
+---
+
+## `eth_getUncleByBlockHashAndIndex`
+
+> Returns information about an uncle of a block by hash and uncle index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the hash of a block.
+    2. `<string>` (quantity): the uncle's index position.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockHashAndIndex",
+      "params": ["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x4ea3f27bc",
+        "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
+        "gasLimit": "0x1388",
+        "gasUsed": "0x0",
+        "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
+        "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
+        "nonce": "0x689056015818adbe",
+        "number": "0x1b4",
+        "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x220",
+        "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
+        "timestamp": "0x55ba467c",
+        "totalDifficulty": "0x78ed983323d",
+        "transactions": [],
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getUncleByBlockNumberAndIndex`
+
+> Returns information about an uncle of a block by number and uncle index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<string>` (quantity): the uncle's  index position.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockNumberAndIndex",
+      "params": ["0x2B901D", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "difficulty": "0x57f117f5c",
+        "extraData": "0x476574682f76312e302e302f77696e646f77732f676f312e342e32",
+        "gasLimit": "0x1388",
+        "gasUsed": "0x0",
+        "hash": "0x932bdf904546a2287a2c9b2ede37925f698a7657484b172d4e5184f80bdd464d",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0x5bf5e9cf9b456d6591073513de7fd69a9bef04bc",
+        "mixHash": "0x4500aa4ee2b3044a155252e35273770edeb2ab6f8cb19ca8e732771484462169",
+        "nonce": "0x24732773618192ac",
+        "number": "0x299",
+        "parentHash": "0xa779859b1ee558258b7008bbabff272280136c5dd3eb3ea3bfa8f6ae03bf91e5",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x21d",
+        "stateRoot": "0x2604fbf5183f5360da249b51f1b9f1e0f315d2ff3ffa1a4143ff221ad9ca1fec",
+        "timestamp": "0x55ba4827",
+        "totalDifficulty": "0xc46826a2c6a",
+        "transactions": [],
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getLogs`
+
+> Returns an array of all logs matching a given filter object.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+      1. `object`: the filter options:
+
+         * `fromBlock` (string; quantity|tag; optional; default: "latest"): either a hex of the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `toBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `address` (array of strings; data, 20 bytes; optional): a contract address or a list of addresses from which logs should originate.
+         * `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
+         * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
+
+### Returns
+<br/>
+
+  * `removed` (string; tag): `true` when the log was removed, due to a chain reorganization; `false` if it's a valid log.
+  * `logIndex` (string; quantity): the log index position in the block; null when it's a pending log.
+  * `transactionIndex` (string; quantity): the transactions index position log was created from; null when it's a pending log.
+  * `transactionHash` (string; data, 32 bytes): a hash of the transactions this log was created from; null when it's a pending log.
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the log; null when it's pending; null when it's a pending log.
+  * `blockNumber` (string; quantity): the number of the block containing the log; null when it's pending; null when it's a pending log.
+  * `address` (string; data, 20 bytes): an address from which this log originated.
+  * `data` (string; data): contains one or more 32 bytes non-indexed arguments of the log.
+  * `topics` (array of strings; data): an array of 0 to 4 32 bytes data of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/optimism \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getLogs",
+      "params": [{"address": "0x5Da70A90CaAf7015DE9754709400a97A988476DB"}],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+            "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x0000000000000000000000009acbb72cf67103a30333a32cd203459c6a9c3311",
+                "0x000000000000000000000000994871e1103c5da4be270365fa62771ea4525520"
+            ],
+            "data": "0x000000000000000000000000000000000000000000000000000000001ec39aa0",
+            "blockNumber": "0xf6289d",
+            "transactionHash": "0xc7ed73c9b219d4243872e5993ad2950c8ea87d15af28562d33b0c05d46a90cee",
+            "transactionIndex": "0x1e",
+            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
+            "logIndex": "0x13",
+            "removed": false
+        },
+        {
+            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+            "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x0000000000000000000000005879975799597392c031f10b6eff282cb7974ac8",
+                "0x0000000000000000000000006d52ab66340f3f78d0c1007bec484268876b5948"
+            ],
+            "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "blockNumber": "0xf6289d",
+            "transactionHash": "0x0118499f7be4c3510bd60fe3a3aee5f5f316743b6cc13a8cb0528d784f962aec",
+            "transactionIndex": "0x20",
+            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
+            "logIndex": "0x14",
+            "removed": false
+        }
+    ]
+}
+```
+
