@@ -4,7 +4,7 @@
   "advanced-api": "Advanced APIs/SDKs",
   "node-snapshot": {
     "title": "Blockchain Node Snapshots",
-    "hidden": true
+    "hidden": false
   },
   "automation": {
     "title": "Contract Automation",
