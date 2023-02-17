@@ -10,7 +10,7 @@ Ankr has partnered with [Storj](https://www.storj.io/) to provide the community 
 
 Find the full list of available snapshots [here](https://www.chainsnap.io/).
 
-## Snapshot download process
+## Snapshot download
 
 **Prerequisites**:
 
