@@ -3489,7 +3489,7 @@ For Polkadot, we support blockchain interaction via all the applicable methods e
 
 ## Polygon
 
-Polygon is a scaling solution for public blockchains that combines the best of Ethereum and sovereign blockchains to offer a full-stack scaling solution.
+Polygon is a scaling solution for public blockchains. Polygon PoS supports all the existing Ethereum tooling along with faster and cheaper transactions.
 
 Official quick links: [Website](https://polygon.technology/), [Docs](https://wiki.polygon.technology/), [GitHub](https://github.com/maticnetwork/)
 
@@ -3541,7 +3541,7 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For Polygon, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Polygon, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/polygon) except for those listed as unsupported.
 
 #### Unsupported
 
