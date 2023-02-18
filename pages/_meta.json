@@ -1,25 +1,69 @@
 {
   "index": "Welcome to Ankr Docs",
+
+  "-- Building": {
+    "type": "separator",
+    "title": "Building With Ankr"
+  },
   "rpc-service": "RPC Service",
   "advanced-api": "Advanced APIs/SDKs",
-  "node-snapshot": {
-    "title": "Blockchain Node Snapshots",
-    "hidden": true
-  },
+  "node-snapshot": "Blockchain Node Snapshots",
+
   "automation": {
+    "type": "folder",
     "title": "Contract Automation",
-    "hidden": true
+    "display": "hidden"
+  },
+
+  "-- AppChains": {
+    "type": "separator",
+    "title": "AppChains"
   },
   "app-chains": "AppChains",
-  "staking": "Staking",
-  "gaming": "Gaming",
-  "tutorials": "Tutorials",
-  "support": {
-    "title": "Support ↗",
-    "href": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
+  "chainscanner": "Chainscanner",
+  "affiliated-chains": "Affiliated Chains",
+
+  "-- Staking": {
+    "type": "separator",
+    "title": "Staking With Ankr"
   },
+  "staking-overview": "Overview",
+  "staking-for-developers": "For Developers",
+  "delegated-staking": "Delegated Staking",
+  "liquid-staking": "Liquid Staking",
+  "liquid-crowdloan": "Liquid Crowdloan",
+  "defi": "DeFi",
+  "bridge": "Bridge",
+  "switch": "Switch",
+  "staking-extra": "Extra",
+
+  "-- Gaming": {
+    "type": "separator",
+    "title": "Making Games"
+  },
+  "gaming-overview": "Mirage Gaming",
+
+  "-- Tutorials": {
+    "type": "separator",
+    "title": "Tutorials"
+  },
+  "basic-tutorials": "Basic Tutorials",
+  "smart-contract-tutorials": "Smart Contract Development",
+  "advanced-tutorials": "Advanced Tutorials",
+
+  "-- Support": {
+    "type": "separator",
+    "title": "Support"
+  },
+  "support": {
+    "title": "Open A Ticket ↗",
+    "href": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10",
+    "newWindow": true
+  },
+
   "ankr": {
-    "title": "Back to ankr.com",
+  "title": "To ankr.com",
+    "type": "page",
     "href": "https://ankr.com"
   }
 }
