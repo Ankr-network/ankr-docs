@@ -1,16 +1,16 @@
 # Redemption price oracle
 The oracle allows you to get the latest ratio and calculate the Redemption Price by one of the formulas mentioned in the Redemption Price explanation.
 
-**Although, technically, it isn't a separate oracle** contract but a method from Liquid Staking token contracts, we chose to present it as such, as logically it can be perceived as a service, and also for better discoverability. 
+**Although, technically, it isn't a separate oracle** contract but a method from Liquid Staking token contracts, we chose to present it as such, as logically it can be perceived as a service, and also for better discoverability.
 
 ## What is Redemption Price?
 The Redemption Price defines the exact amount of tokens that a user will get if he redeems its liquid staking after waiting its respective unbonding period, and it also defines the amount of Liquid Staking tokens that he receives when staking on the Ankr platform.
 
 The formula is:
-1. `1 * ratio` when the user stakes their assets. This is why the user gets less Liquid Staking tokens than the number of the staked assets.
-2. `1 / ratio` when the user redeems their Liquid Staking tokens for the assets, i.e., unstakes their assets. This is why the user gets more assets than the number of the redeemed Liquid Staking tokens.
+1. `1 / ratio` when the user redeems their Liquid Staking tokens for the assets, i.e., unstakes their assets. This is why the user gets more assets than the number of the redeemed Liquid Staking tokens.
+2. `1 * ratio` when the user stakes their assets. This is why the user gets less Liquid Staking tokens than the number of the staked assets.
 
-All this is due to Liquid Staking tokens increasing in value overtime to the originally staked assets, which happens because `ratio = TVL / (TVL + rewards)`. 
+All this is due to Liquid Staking tokens increasing in value overtime to the originally staked assets, which happens because `ratio = TVL / (TVL + rewards)`.
 
 Ankr's Redemption Price should be considered as the primary market, and market prices on Exchanges should be perceived as the second market.
 
@@ -20,7 +20,7 @@ Ankr's Redemption Price should be considered as the primary market, and market p
 
 #### `ratio()`
 
-Returns how many ankrAVAX tokens the user gets when staking their AVAX. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
+Returns the number of ankrAVAX tokens the user gets when staking their AVAX. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
 
 ##### Parameters
 The function returns:
@@ -38,7 +38,7 @@ You can query for a ratio on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Returns how many ankrBNB tokens the user gets when staking their BNB. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
+Returns the number of ankrBNB tokens the user gets when staking their BNB. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
 
 ##### Parameters
 The function returns:
@@ -56,7 +56,7 @@ You can query for a ratio on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Returns how many ankrETH tokens the user gets when staking their ETH. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
+Returns the number of ankrETH tokens the user gets when staking their ETH. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
 
 ##### Parameters
 The function returns:
@@ -74,7 +74,7 @@ You can query for a ratio on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Returns how many ankrFTM tokens the user gets when staking their FTM. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
+Returns the number of ankrFTM tokens the user gets when staking their FTM. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
 
 ##### Parameters
 The function returns:
@@ -92,7 +92,7 @@ You can query for a ratio on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Returns how many aKSMb tokens the user gets when staking their KSM. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
+Returns the number of aKSMb tokens the user gets when staking their KSM. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
 
 ##### Parameters
 The function returns:
@@ -110,7 +110,7 @@ You can query for a ratio on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Returns how many aDOTb tokens the user gets when staking their DOT. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
+Returns the number of aDOTb tokens the user gets when staking their DOT. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
 
 ##### Parameters
 The function returns:
@@ -128,7 +128,7 @@ You can query for a ratio on the contract page by the links above, anytime.
 
 #### `ratio()`
 
-Returns how many ankrMATIC tokens the user gets when staking their MATIC. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
+Returns the number of ankrMATIC tokens the user gets when staking their MATIC. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`.
 
 ##### Parameters
 The function returns:
@@ -141,7 +141,3 @@ The function returns:
 ##### Examples
 
 You can query for a ratio on the contract page by the links above, anytime.
-
-
-
-
