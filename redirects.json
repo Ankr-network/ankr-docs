@@ -1776,10 +1776,6 @@
     "to": "/staking-overview/"
   },
   {
-    "from": "support/index.html",
-    "to": "/open-a-ticket/"
-  },
-  {
     "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/AvalancheSDK.html/index.html",
     "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/AvalancheSDK.html"
   },
@@ -1802,5 +1798,9 @@
   {
     "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/PolygonOnPolygonSDK.htmll/index.html",
     "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/PolygonOnPolygonSDK.html"
+  },
+  {
+    "from": "support/index.html",
+    "to": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
   }
 ]
