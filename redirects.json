@@ -1228,579 +1228,579 @@
     "to": "/docs/rpc-service/chains/chains-api/bnb-smart-chain/"
   },
   {
-    "from": "staking/for-integrators/oracles/apr-oracle/index.html",
-    "to": "/staking-for-developers/oracles/apr-oracle/"
+    "from": "docs/staking/for-integrators/oracles/apr-oracle/index.html",
+    "to": "/docs/staking-for-developers/oracles/apr-oracle/"
   },
   {
-    "from": "staking/for-integrators/oracles/overview/index.html",
-    "to": "/staking-for-developers/oracles/overview/"
+    "from": "docs/staking/for-integrators/oracles/overview/index.html",
+    "to": "/docs/staking-for-developers/oracles/overview/"
   },
   {
-    "from": "staking/for-integrators/oracles/pancakeswap-oracle/index.html",
-    "to": "/staking-for-developers/oracles/pancakeswap-oracle/"
+    "from": "docs/staking/for-integrators/oracles/pancakeswap-oracle/index.html",
+    "to": "/docs/staking-for-developers/oracles/pancakeswap-oracle/"
   },
   {
-    "from": "staking/for-integrators/oracles/redemption-price-oracle/index.html",
-    "to": "/staking-for-developers/oracles/redemption-price-oracle/"
+    "from": "docs/staking/for-integrators/oracles/redemption-price-oracle/index.html",
+    "to": "/docs/staking-for-developers/oracles/redemption-price-oracle/"
   },
   {
-    "from": "staking/for-integrators/referral-program/overview/index.html",
-    "to": "/staking-for-developers/referral-program/overview/"
+    "from": "docs/staking/for-integrators/referral-program/overview/index.html",
+    "to": "/docs/staking-for-developers/referral-program/overview/"
   },
   {
-    "from": "staking/for-integrators/dev-details/avax-liquid-staking-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/avax-liquid-staking-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/avax-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/avax-liquid-staking-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/bnb-liquid-staking-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/bnb-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/bnb-liquid-staking-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/bridge-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/bridge-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/bridge-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/bridge-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/dot-liquid-staking-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/dot-liquid-staking-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/dot-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/dot-liquid-staking-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/eth-liquid-staking-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/eth-liquid-staking-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/eth-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/eth-liquid-staking-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/ftm-liquid-staking-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/ftm-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/ftm-liquid-staking-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/ksm-liquid-staking-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/ksm-liquid-staking-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/ksm-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/ksm-liquid-staking-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/matic-liquid-staking-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/matic-liquid-staking-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/matic-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/matic-liquid-staking-mechanics/"
   },
   {
-    "from": "staking/for-integrators/dev-details/switch-mechanics/index.html",
-    "to": "/staking-for-developers/dev-details/switch-mechanics/"
+    "from": "docs/staking/for-integrators/dev-details/switch-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/switch-mechanics/"
   },
   {
-    "from": "staking/for-integrators/flash-loan/overview/index.html",
-    "to": "/staking-for-developers/flash-loan/overview/"
+    "from": "docs/staking/for-integrators/flash-loan/overview/index.html",
+    "to": "/docs/staking-for-developers/flash-loan/overview/"
   },
   {
-    "from": "staking/for-integrators/sdk/overview/index.html",
-    "to": "/staking-for-developers/sdk/overview/"
+    "from": "docs/staking/for-integrators/sdk/overview/index.html",
+    "to": "/docs/staking-for-developers/sdk/overview/"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-crowdloan-sdk/index.html",
-    "to": "/staking-for-developers/sdk/liquid-crowdloan-sdk/"
+    "from": "docs/staking/for-integrators/sdk/liquid-crowdloan-sdk/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-crowdloan-sdk/"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-staking-sdk/index.html",
-    "to": "/staking-for-developers/sdk/liquid-staking-sdk/"
+    "from": "docs/staking/for-integrators/sdk/liquid-staking-sdk/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-staking-sdk/"
   },
   {
-    "from": "staking/for-integrators/restful-api/staking-metrics/index.html",
-    "to": "/staking-for-developers/restful-api/staking-metrics/"
+    "from": "docs/staking/for-integrators/restful-api/staking-metrics/index.html",
+    "to": "/docs/staking-for-developers/restful-api/staking-metrics/"
   },
   {
-    "from": "staking/for-integrators/restful-api/validator-api/index.html",
-    "to": "/staking-for-developers/restful-api/validator-api/"
+    "from": "docs/staking/for-integrators/restful-api/validator-api/index.html",
+    "to": "/docs/staking-for-developers/restful-api/validator-api/"
   },
   {
-    "from": "staking/for-integrators/smart-contract-api/avax-api/index.html",
-    "to": "/staking-for-developers/smart-contract-api/avax-api/"
+    "from": "docs/staking/for-integrators/smart-contract-api/avax-api/index.html",
+    "to": "/docs/staking-for-developers/smart-contract-api/avax-api/"
   },
   {
-    "from": "staking/for-integrators/smart-contract-api/bnb-api/index.html",
-    "to": "/staking-for-developers/smart-contract-api/bnb-api/"
+    "from": "docs/staking/for-integrators/smart-contract-api/bnb-api/index.html",
+    "to": "/docs/staking-for-developers/smart-contract-api/bnb-api/"
   },
   {
-    "from": "staking/for-integrators/smart-contract-api/eth-api/index.html",
-    "to": "/staking-for-developers/smart-contract-api/eth-api/"
+    "from": "docs/staking/for-integrators/smart-contract-api/eth-api/index.html",
+    "to": "/docs/staking-for-developers/smart-contract-api/eth-api/"
   },
   {
-    "from": "staking/for-integrators/smart-contract-api/ftm-api/index.html",
-    "to": "/staking-for-developers/smart-contract-api/ftm-api/"
+    "from": "docs/staking/for-integrators/smart-contract-api/ftm-api/index.html",
+    "to": "/docs/staking-for-developers/smart-contract-api/ftm-api/"
   },
   {
-    "from": "staking/for-integrators/smart-contract-api/matic-api/index.html",
-    "to": "/staking-for-developers/smart-contract-api/matic-api/"
+    "from": "docs/staking/for-integrators/smart-contract-api/matic-api/index.html",
+    "to": "/docs/staking-for-developers/smart-contract-api/matic-api/"
   },
   {
-    "from": "staking/for-integrators/smart-contract-api/overview/index.html",
-    "to": "/staking-for-developers/smart-contract-api/overview/"
+    "from": "docs/staking/for-integrators/smart-contract-api/overview/index.html",
+    "to": "/docs/staking-for-developers/smart-contract-api/overview/"
   },
   {
-    "from": "build-with-advanced-apis/overview/index.html",
-    "to": "/advanced-api/quickstart/overview/"
+    "from": "docs/build-with-advanced-apis/overview/index.html",
+    "to": "/docs/advanced-api/quickstart/overview/"
   },
   {
-    "from": "staking/defi/faq/index.html",
-    "to": "/defi/faq/"
+    "from": "docs/staking/defi/faq/index.html",
+    "to": "/docs/defi/faq/"
   },
   {
-    "from": "staking/defi/liquidity-pools/index.html",
-    "to": "/defi/liquidity-pools/"
+    "from": "docs/staking/defi/liquidity-pools/index.html",
+    "to": "/docs/defi/liquidity-pools/"
   },
   {
-    "from": "staking/defi/overview/index.html",
-    "to": "/defi/overview/"
+    "from": "docs/staking/defi/overview/index.html",
+    "to": "/docs/defi/overview/"
   },
   {
-    "from": "staking/defi/yield-farming/index.html",
-    "to": "/defi/yield-farming/"
+    "from": "docs/staking/defi/yield-farming/index.html",
+    "to": "/docs/defi/yield-farming/"
   },
   {
-    "from": "staking/defi/vaults/index.html",
-    "to": "/defi/vaults/"
+    "from": "docs/staking/defi/vaults/index.html",
+    "to": "/docs/defi/vaults/"
   },
   {
-    "from": "staking/switch/overview/index.html",
-    "to": "/switch/overview/"
+    "from": "docs/staking/switch/overview/index.html",
+    "to": "/docs/switch/overview/"
   },
   {
-    "from": "staking/switch/switch-tokens/index.html",
-    "to": "/switch/switch-tokens/"
+    "from": "docs/staking/switch/switch-tokens/index.html",
+    "to": "/docs/switch/switch-tokens/"
   },
   {
-    "from": "staking/extra/compatible-wallets/index.html",
-    "to": "/staking-extra/compatible-wallets/"
+    "from": "docs/staking/extra/compatible-wallets/index.html",
+    "to": "/docs/staking-extra/compatible-wallets/"
   },
   {
-    "from": "staking/extra/ankr-governance-mechanics/index.html",
-    "to": "/staking-extra/ankr-governance-mechanics/"
+    "from": "docs/staking/extra/ankr-governance-mechanics/index.html",
+    "to": "/docs/staking-extra/ankr-governance-mechanics/"
   },
   {
-    "from": "staking/extra/ankr-tokenomics/index.html",
-    "to": "/staking-extra/ankr-tokenomics/"
+    "from": "docs/staking/extra/ankr-tokenomics/index.html",
+    "to": "/docs/staking-extra/ankr-tokenomics/"
   },
   {
-    "from": "staking/extra/ankr-validators/index.html",
-    "to": "/staking-extra/ankr-validators/"
+    "from": "docs/staking/extra/ankr-validators/index.html",
+    "to": "/docs/staking-extra/ankr-validators/"
   },
   {
-    "from": "staking/extra/audit-reports/index.html",
-    "to": "/staking-extra/audit-reports/"
+    "from": "docs/staking/extra/audit-reports/index.html",
+    "to": "/docs/staking-extra/audit-reports/"
   },
   {
-    "from": "staking/extra/brand-assets/index.html",
-    "to": "/staking-extra/brand-assets/"
+    "from": "docs/staking/extra/brand-assets/index.html",
+    "to": "/docs/staking-extra/brand-assets/"
   },
   {
-    "from": "staking/extra/glossary/index.html",
-    "to": "/staking-extra/glossary/"
+    "from": "docs/staking/extra/glossary/index.html",
+    "to": "/docs/staking-extra/glossary/"
   },
   {
-    "from": "staking/extra/integrations/index.html",
-    "to": "/staking-extra/integrations/"
+    "from": "docs/staking/extra/integrations/index.html",
+    "to": "/docs/staking-extra/integrations/"
   },
   {
-    "from": "staking/extra/liquid-crowdloan-market-makers/index.html",
-    "to": "/staking-extra/liquid-crowdloan-market-makers/"
+    "from": "docs/staking/extra/liquid-crowdloan-market-makers/index.html",
+    "to": "/docs/staking-extra/liquid-crowdloan-market-makers/"
   },
   {
-    "from": "staking/extra/liquid-staking-fees/index.html",
-    "to": "/staking-extra/liquid-staking-fees/"
+    "from": "docs/staking/extra/liquid-staking-fees/index.html",
+    "to": "/docs/staking-extra/liquid-staking-fees/"
   },
   {
-    "from": "staking/extra/liquidity-tokens/index.html",
-    "to": "/staking-extra/liquidity-tokens/"
+    "from": "docs/staking/extra/liquidity-tokens/index.html",
+    "to": "/docs/staking-extra/liquidity-tokens/"
   },
   {
-    "from": "staking/extra/ls-sc-addresses-mn/index.html",
-    "to": "/staking-extra/ls-sc-addresses-mn/"
+    "from": "docs/staking/extra/ls-sc-addresses-mn/index.html",
+    "to": "/docs/staking-extra/ls-sc-addresses-mn/"
   },
   {
-    "from": "staking/extra/ls-sc-addresses-tn/index.html",
-    "to": "/staking-extra/ls-sc-addresses-tn/"
+    "from": "docs/staking/extra/ls-sc-addresses-tn/index.html",
+    "to": "/docs/staking-extra/ls-sc-addresses-tn/"
   },
   {
-    "from": "staking/extra/micropool-staking/index.html",
-    "to": "/staking-extra/micropool-staking/"
+    "from": "docs/staking/extra/micropool-staking/index.html",
+    "to": "/docs/staking-extra/micropool-staking/"
   },
   {
-    "from": "staking/extra/principles/index.html",
-    "to": "/staking-extra/principles/"
+    "from": "docs/staking/extra/principles/index.html",
+    "to": "/docs/staking-extra/principles/"
   },
   {
-    "from": "staking/extra/switch-ankreth-binance/index.html",
-    "to": "/staking-extra/switch-ankreth-binance/"
+    "from": "docs/staking/extra/switch-ankreth-binance/index.html",
+    "to": "/docs/staking-extra/switch-ankreth-binance/"
   },
   {
-    "from": "tutorials/smart-contract-tutorials/cryptokitties-like-nft-with-erc-721-smart-contract/index.html",
-    "to": "/smart-contract-tutorials/cryptokitties-like-nft-with-erc-721-smart-contract/index.html"
+    "from": "docs/tutorials/smart-contract-tutorials/cryptokitties-like-nft-with-erc-721-smart-contract/index.html",
+    "to": "/docs/smart-contract-tutorials/cryptokitties-like-nft-with-erc-721-smart-contract/index.html"
   },
   {
-    "from": "tutorials/smart-contract-tutorials/erc-20-token-on-optimism/index.html",
-    "to": "/smart-contract-tutorials/erc-20-token-on-optimism/index.html"
+    "from": "docs/tutorials/smart-contract-tutorials/erc-20-token-on-optimism/index.html",
+    "to": "/docs/smart-contract-tutorials/erc-20-token-on-optimism/index.html"
   },
   {
-    "from": "tutorials/smart-contract-tutorials/erc-20-token-with-ankr-hardhat-on-goerli/index.html",
-    "to": "/smart-contract-tutorials/erc-20-token-with-ankr-hardhat-on-goerli/index.html"
+    "from": "docs/tutorials/smart-contract-tutorials/erc-20-token-with-ankr-hardhat-on-goerli/index.html",
+    "to": "/docs/smart-contract-tutorials/erc-20-token-with-ankr-hardhat-on-goerli/index.html"
   },
   {
-    "from": "tutorials/smart-contract-tutorials/erc-721-smart-contract-on-avalanche/index.html",
-    "to": "/smart-contract-tutorials/erc-721-smart-contract-on-avalanche/index.html"
+    "from": "docs/tutorials/smart-contract-tutorials/erc-721-smart-contract-on-avalanche/index.html",
+    "to": "/docs/smart-contract-tutorials/erc-721-smart-contract-on-avalanche/index.html"
   },
   {
-    "from": "tutorials/smart-contract-tutorials/non-rentable-soulbound-nft/index.html",
-    "to": "/smart-contract-tutorials/non-rentable-soulbound-nft/index.html"
+    "from": "docs/tutorials/smart-contract-tutorials/non-rentable-soulbound-nft/index.html",
+    "to": "/docs/smart-contract-tutorials/non-rentable-soulbound-nft/index.html"
   },
   {
-    "from": "tutorials/smart-contract-tutorials/rentable-nft-on-optimism/index.html",
-    "to": "/smart-contract-tutorials/rentable-nft-on-optimism/index.html"
+    "from": "docs/tutorials/smart-contract-tutorials/rentable-nft-on-optimism/index.html",
+    "to": "/docs/smart-contract-tutorials/rentable-nft-on-optimism/index.html"
   },
   {
-    "from": "tutorials/overview/index.html",
-    "to": "/basic-tutorials/dapp-on-ethereum-using-nocode/"
+    "from": "docs/tutorials/overview/index.html",
+    "to": "/docs/basic-tutorials/dapp-on-ethereum-using-nocode/"
   },
   {
-    "from": "staking/liquid-crowdloan/overview/index.html",
-    "to": "/liquid-crowdloan/overview/"
+    "from": "docs/staking/liquid-crowdloan/overview/index.html",
+    "to": "/docs/liquid-crowdloan/overview/"
   },
   {
-    "from": "app-chains/chainscanner/block-explorer/index.html",
-    "to": "/chainscanner/block-explorer/"
+    "from": "docs/app-chains/chainscanner/block-explorer/index.html",
+    "to": "/docs/chainscanner/block-explorer/"
   },
   {
-    "from": "app-chains/chainscanner/bridge/index.html",
-    "to": "/chainscanner/bridge/"
+    "from": "docs/app-chains/chainscanner/bridge/index.html",
+    "to": "/docs/chainscanner/bridge/"
   },
   {
-    "from": "app-chains/chainscanner/chain-data/index.html",
-    "to": "/chainscanner/chain-data/"
+    "from": "docs/app-chains/chainscanner/chain-data/index.html",
+    "to": "/docs/chainscanner/chain-data/"
   },
   {
-    "from": "app-chains/chainscanner/dev-tools/index.html",
-    "to": "/chainscanner/dev-tools/"
+    "from": "docs/app-chains/chainscanner/dev-tools/index.html",
+    "to": "/docs/chainscanner/dev-tools/"
   },
   {
-    "from": "app-chains/chainscanner/governance-portal/index.html",
-    "to": "/chainscanner/governance-portal/"
+    "from": "docs/app-chains/chainscanner/governance-portal/index.html",
+    "to": "/docs/chainscanner/governance-portal/"
   },
   {
-    "from": "app-chains/chainscanner/staking/index.html",
-    "to": "/chainscanner/staking/"
+    "from": "docs/app-chains/chainscanner/staking/index.html",
+    "to": "/docs/chainscanner/staking/"
   },
   {
-    "from": "app-chains/chainscanner/overview/index.html",
-    "to": "/chainscanner/overview/"
+    "from": "docs/app-chains/chainscanner/overview/index.html",
+    "to": "/docs/chainscanner/overview/"
   },
   {
-    "from": "app-chains/chainscanner/validator-enrollment-hub/index.html",
-    "to": "/chainscanner/validator-enrollment-hub/"
+    "from": "docs/app-chains/chainscanner/validator-enrollment-hub/index.html",
+    "to": "/docs/chainscanner/validator-enrollment-hub/"
   },
   {
-    "from": "staking/bridge-tokens/overview/index.html",
-    "to": "/bridge-tokens/overview/"
+    "from": "docs/staking/bridge-tokens/overview/index.html",
+    "to": "/docs/bridge-tokens/overview/"
   },
   {
-    "from": "staking/bridge-tokens/bridge-tokens/index.html",
-    "to": "/bridge-tokens/bridge-tokens/"
+    "from": "docs/staking/bridge-tokens/bridge-tokens/index.html",
+    "to": "/docs/bridge-tokens/bridge-tokens/"
   },
   {
-    "from": "tutorials/get-started/ankrjs-advanced-apis-react-quickstart-guide/index.html",
-    "to": "/basic-tutorials/ankrjs-advanced-apis-react-quickstart-guide/"
+    "from": "docs/tutorials/get-started/ankrjs-advanced-apis-react-quickstart-guide/index.html",
+    "to": "/docs/basic-tutorials/ankrjs-advanced-apis-react-quickstart-guide/"
   },
   {
-    "from": "tutorials/get-started/backend-nodejs-ipfs-file-uploader-with-filebase/index.html",
-    "to": "/basic-tutorials/backend-nodejs-ipfs-file-uploader-with-filebase/"
+    "from": "docs/tutorials/get-started/backend-nodejs-ipfs-file-uploader-with-filebase/index.html",
+    "to": "/docs/basic-tutorials/backend-nodejs-ipfs-file-uploader-with-filebase/"
   },
   {
-    "from": "tutorials/get-started/dao-in-5min/index.html",
-    "to": "/basic-tutorials/dao-in-5min/"
+    "from": "docs/tutorials/get-started/dao-in-5min/index.html",
+    "to": "/docs/basic-tutorials/dao-in-5min/"
   },
   {
-    "from": "tutorials/get-started/dapp-on-ethereum-using-nocode/index.html",
-    "to": "/basic-tutorials/dapp-on-ethereum-using-nocode/"
+    "from": "docs/tutorials/get-started/dapp-on-ethereum-using-nocode/index.html",
+    "to": "/docs/basic-tutorials/dapp-on-ethereum-using-nocode/"
   },
   {
-    "from": "tutorials/get-started/file-storage-on-ipfs-with-filebase/index.html",
-    "to": "/basic-tutorials/file-storage-on-ipfs-with-filebase/"
+    "from": "docs/tutorials/get-started/file-storage-on-ipfs-with-filebase/index.html",
+    "to": "/docs/basic-tutorials/file-storage-on-ipfs-with-filebase/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/demo/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/demo/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/demo/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/demo/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/faq/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/faq/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/faq/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/faq/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/glossary/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/glossary/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/glossary/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/glossary/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/overview/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/overview/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/overview/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/overview/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/staking/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/staking/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/staking/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/staking/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/security/system-smart-contracts/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/security/system-smart-contracts/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/security/system-smart-contracts/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/security/system-smart-contracts/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/security/on-chain-security/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/security/on-chain-security/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/security/on-chain-security/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/security/on-chain-security/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/security/off-chain-security/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/security/off-chain-security/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/security/off-chain-security/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/security/off-chain-security/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/security/blockchain-and-evm-security/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/security/blockchain-and-evm-security/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/security/blockchain-and-evm-security/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/security/blockchain-and-evm-security/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/how-to-launch/configure-genesis-file/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/how-to-launch/configure-genesis-file/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/configure-genesis-file/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/how-to-launch/configure-genesis-file/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc20-token/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc20-token/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc20-token/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc20-token/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc721-token/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/deploy-erc721-token/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc721-token/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/deploy-erc721-token/"
   },
   {
-    "from": "app-chains/affiliated-chains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/"
+    "from": "docs/app-chains/affiliated-chains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/circulation-model-native-bridge/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/architecture/circulation-model-native-bridge/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/circulation-model-native-bridge/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/architecture/circulation-model-native-bridge/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/fast-finality/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/architecture/fast-finality/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/fast-finality/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/architecture/fast-finality/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/governance/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/architecture/governance/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/governance/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/architecture/governance/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/native-bridge/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/architecture/native-bridge/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/native-bridge/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/architecture/native-bridge/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/overview/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/architecture/overview/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/overview/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/architecture/overview/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/runtime-upgrades/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/architecture/runtime-upgrades/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/runtime-upgrades/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/architecture/runtime-upgrades/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/index.html",
-    "to": "/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/index.html",
+    "to": "/docs/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/"
   },
   {
-    "from": "build-blockchain/app-chains/affiliated-chains/polygon-supernetse/overview/index.html",
-    "to": "/affiliated-chains/polygon-supernetse/overview/"
+    "from": "docs/build-blockchain/app-chains/affiliated-chains/polygon-supernetse/overview/index.html",
+    "to": "/docs/affiliated-chains/polygon-supernetse/overview/"
   },
   {
-    "from": "tutorials/advanced-web3/donation-based-crowdfunding-dapp-on-polygon-with-ankr/index.html",
-    "to": "/advanced-tutorials/donation-based-crowdfunding-dapp-on-polygon-with-ankr/"
+    "from": "docs/tutorials/advanced-web3/donation-based-crowdfunding-dapp-on-polygon-with-ankr/index.html",
+    "to": "/docs/advanced-tutorials/donation-based-crowdfunding-dapp-on-polygon-with-ankr/"
   },
   {
-    "from": "staking/delegated-staking/ankr/claim-restake-rewards/index.html",
-    "to": "/delegated-staking/ankr/claim-restake-rewards/"
+    "from": "docs/staking/delegated-staking/ankr/claim-restake-rewards/index.html",
+    "to": "/docs/delegated-staking/ankr/claim-restake-rewards/"
   },
   {
-    "from": "staking/delegated-staking/ankr/overview/index.html",
-    "to": "/delegated-staking/ankr/overview/"
+    "from": "docs/staking/delegated-staking/ankr/overview/index.html",
+    "to": "/docs/delegated-staking/ankr/overview/"
   },
   {
-    "from": "staking/delegated-staking/ankr/faq/index.html",
-    "to": "/delegated-staking/ankr/faq/"
+    "from": "docs/staking/delegated-staking/ankr/faq/index.html",
+    "to": "/docs/delegated-staking/ankr/faq/"
   },
   {
-    "from": "staking/delegated-staking/ankr/stake/index.html",
-    "to": "/delegated-staking/ankr/stake/"
+    "from": "docs/staking/delegated-staking/ankr/stake/index.html",
+    "to": "/docs/delegated-staking/ankr/stake/"
   },
   {
-    "from": "staking/delegated-staking/ankr/unstake/index.html",
-    "to": "/delegated-staking/ankr/unstake/"
+    "from": "docs/staking/delegated-staking/ankr/unstake/index.html",
+    "to": "/docs/delegated-staking/ankr/unstake/"
   },
   {
-    "from": "staking/delegated-staking/gnosis/overview/index.html",
-    "to": "/delegated-staking/gnosis/overview/"
+    "from": "docs/staking/delegated-staking/gnosis/overview/index.html",
+    "to": "/docs/delegated-staking/gnosis/overview/"
   },
   {
-    "from": "staking/delegated-staking/gnosis/faq/index.html",
-    "to": "/delegated-staking/gnosis/faq/"
+    "from": "docs/staking/delegated-staking/gnosis/faq/index.html",
+    "to": "/docs/delegated-staking/gnosis/faq/"
   },
   {
-    "from": "staking/delegated-staking/gnosis/stake/index.html",
-    "to": "/delegated-staking/gnosis/stake/"
+    "from": "docs/staking/delegated-staking/gnosis/stake/index.html",
+    "to": "/docs/delegated-staking/gnosis/stake/"
   },
   {
-    "from": "staking/liquid-staking/overview/index.html",
-    "to": "/liquid-staking/overview/"
+    "from": "docs/staking/liquid-staking/overview/index.html",
+    "to": "/docs/liquid-staking/overview/"
   },
   {
-    "from": "staking/liquid-staking/avax/overview/index.html",
-    "to": "/liquid-staking/avax/overview/"
+    "from": "docs/staking/liquid-staking/avax/overview/index.html",
+    "to": "/docs/liquid-staking/avax/overview/"
   },
   {
-    "from": "staking/liquid-staking/avax/faq/index.html",
-    "to": "/liquid-staking/avax/faq/"
+    "from": "docs/staking/liquid-staking/avax/faq/index.html",
+    "to": "/docs/liquid-staking/avax/faq/"
   },
   {
-    "from": "staking/liquid-staking/avax/stake/index.html",
-    "to": "/liquid-staking/avax/stake/"
+    "from": "docs/staking/liquid-staking/avax/stake/index.html",
+    "to": "/docs/liquid-staking/avax/stake/"
   },
   {
-    "from": "staking/liquid-staking/avax/unstake/index.html",
-    "to": "/liquid-staking/avax/unstake/"
+    "from": "docs/staking/liquid-staking/avax/unstake/index.html",
+    "to": "/docs/liquid-staking/avax/unstake/"
   },
   {
-    "from": "staking/liquid-staking/bnb/overview/index.html",
-    "to": "/liquid-staking/bnb/overview/"
+    "from": "docs/staking/liquid-staking/bnb/overview/index.html",
+    "to": "/docs/liquid-staking/bnb/overview/"
   },
   {
-    "from": "staking/liquid-staking/bnb/faq/index.html",
-    "to": "/liquid-staking/bnb/faq/"
+    "from": "docs/staking/liquid-staking/bnb/faq/index.html",
+    "to": "/docs/liquid-staking/bnb/faq/"
   },
   {
-    "from": "staking/liquid-staking/bnb/stake/index.html",
-    "to": "/liquid-staking/bnb/stake/"
+    "from": "docs/staking/liquid-staking/bnb/stake/index.html",
+    "to": "/docs/liquid-staking/bnb/stake/"
   },
   {
-    "from": "staking/liquid-staking/bnb/unstake/index.html",
-    "to": "/liquid-staking/bnb/unstake/"
+    "from": "docs/staking/liquid-staking/bnb/unstake/index.html",
+    "to": "/docs/liquid-staking/bnb/unstake/"
   },
   {
-    "from": "staking/liquid-staking/dot/overview/index.html",
-    "to": "/liquid-staking/dot/overview/"
+    "from": "docs/staking/liquid-staking/dot/overview/index.html",
+    "to": "/docs/liquid-staking/dot/overview/"
   },
   {
-    "from": "staking/liquid-staking/dot/faq/index.html",
-    "to": "/liquid-staking/dot/faq/"
+    "from": "docs/staking/liquid-staking/dot/faq/index.html",
+    "to": "/docs/liquid-staking/dot/faq/"
   },
   {
-    "from": "staking/liquid-staking/dot/stake/index.html",
-    "to": "/liquid-staking/dot/stake/"
+    "from": "docs/staking/liquid-staking/dot/stake/index.html",
+    "to": "/docs/liquid-staking/dot/stake/"
   },
   {
-    "from": "staking/liquid-staking/dot/unstake/index.html",
-    "to": "/liquid-staking/dot/unstake/"
+    "from": "docs/staking/liquid-staking/dot/unstake/index.html",
+    "to": "/docs/liquid-staking/dot/unstake/"
   },
   {
-    "from": "staking/liquid-staking/eth/overview/index.html",
-    "to": "/liquid-staking/eth/overview/"
+    "from": "docs/staking/liquid-staking/eth/overview/index.html",
+    "to": "/docs/liquid-staking/eth/overview/"
   },
   {
-    "from": "staking/liquid-staking/eth/faq/index.html",
-    "to": "/liquid-staking/eth/faq/"
+    "from": "docs/staking/liquid-staking/eth/faq/index.html",
+    "to": "/docs/liquid-staking/eth/faq/"
   },
   {
-    "from": "staking/liquid-staking/eth/stake/index.html",
-    "to": "/liquid-staking/eth/stake/"
+    "from": "docs/staking/liquid-staking/eth/stake/index.html",
+    "to": "/docs/liquid-staking/eth/stake/"
   },
   {
-    "from": "staking/liquid-staking/eth/unstake/index.html",
-    "to": "/liquid-staking/eth/unstake/"
+    "from": "docs/staking/liquid-staking/eth/unstake/index.html",
+    "to": "/docs/liquid-staking/eth/unstake/"
   },
   {
-    "from": "staking/liquid-staking/ftm/overview/index.html",
-    "to": "/liquid-staking/ftm/overview/"
+    "from": "docs/staking/liquid-staking/ftm/overview/index.html",
+    "to": "/docs/liquid-staking/ftm/overview/"
   },
   {
-    "from": "staking/liquid-staking/ftm/faq/index.html",
-    "to": "/liquid-staking/ftm/faq/"
+    "from": "docs/staking/liquid-staking/ftm/faq/index.html",
+    "to": "/docs/liquid-staking/ftm/faq/"
   },
   {
-    "from": "staking/liquid-staking/ftm/stake/index.html",
-    "to": "/liquid-staking/ftm/stake/"
+    "from": "docs/staking/liquid-staking/ftm/stake/index.html",
+    "to": "/docs/liquid-staking/ftm/stake/"
   },
   {
-    "from": "staking/liquid-staking/ftm/unstake/index.html",
-    "to": "/liquid-staking/ftm/unstake/"
+    "from": "docs/staking/liquid-staking/ftm/unstake/index.html",
+    "to": "/docs/liquid-staking/ftm/unstake/"
   },
   {
-    "from": "staking/liquid-staking/ksm/overview/index.html",
-    "to": "/liquid-staking/ksm/overview/"
+    "from": "docs/staking/liquid-staking/ksm/overview/index.html",
+    "to": "/docs/liquid-staking/ksm/overview/"
   },
   {
-    "from": "staking/liquid-staking/ksm/faq/index.html",
-    "to": "/liquid-staking/ksm/faq/"
+    "from": "docs/staking/liquid-staking/ksm/faq/index.html",
+    "to": "/docs/liquid-staking/ksm/faq/"
   },
   {
-    "from": "staking/liquid-staking/ksm/stake/index.html",
-    "to": "/liquid-staking/ksm/overview/"
+    "from": "docs/staking/liquid-staking/ksm/stake/index.html",
+    "to": "/docs/liquid-staking/ksm/overview/"
   },
   {
-    "from": "staking/liquid-staking/ksm/unstake/index.html",
-    "to": "/liquid-staking/ksm/unstake/"
+    "from": "docs/staking/liquid-staking/ksm/unstake/index.html",
+    "to": "/docs/liquid-staking/ksm/unstake/"
   },
   {
-    "from": "staking/liquid-staking/matic/overview/index.html",
-    "to": "/liquid-staking/matic/overview/"
+    "from": "docs/staking/liquid-staking/matic/overview/index.html",
+    "to": "/docs/liquid-staking/matic/overview/"
   },
   {
-    "from": "staking/liquid-staking/matic/faq/index.html",
-    "to": "/liquid-staking/matic/faq/"
+    "from": "docs/staking/liquid-staking/matic/faq/index.html",
+    "to": "/docs/liquid-staking/matic/faq/"
   },
   {
-    "from": "staking/liquid-staking/matic/stake/index.html",
-    "to": "/liquid-staking/matic/stake/"
+    "from": "docs/staking/liquid-staking/matic/stake/index.html",
+    "to": "/docs/liquid-staking/matic/stake/"
   },
   {
-    "from": "staking/liquid-staking/matic/unstake/index.html",
-    "to": "/liquid-staking/matic/unstake/"
+    "from": "docs/staking/liquid-staking/matic/unstake/index.html",
+    "to": "/docs/liquid-staking/matic/unstake/"
   },
   {
-    "from": "staking/liquid-staking/ssv/overview/index.html",
-    "to": "/liquid-staking/ssv/overview/"
+    "from": "docs/staking/liquid-staking/ssv/overview/index.html",
+    "to": "/docs/liquid-staking/ssv/overview/"
   },
   {
-    "from": "staking/liquid-staking/ssv/faq/index.html",
-    "to": "/liquid-staking/ssv/faq/"
+    "from": "docs/staking/liquid-staking/ssv/faq/index.html",
+    "to": "/docs/liquid-staking/ssv/faq/"
   },
   {
-    "from": "staking/liquid-staking/ssv/stake/index.html",
-    "to": "/liquid-staking/ssv/stake/"
+    "from": "docs/staking/liquid-staking/ssv/stake/index.html",
+    "to": "/docs/liquid-staking/ssv/stake/"
   },
   {
-    "from": "gaming/index.html",
-    "to": "/gaming-overview/"
+    "from": "docs/gaming/index.html",
+    "to": "/docs/gaming-overview/"
   },
   {
-    "from": "staking/overview/index.html",
-    "to": "/staking-overview/"
+    "from": "docs/staking/overview/index.html",
+    "to": "/docs/staking-overview/"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/AvalancheSDK.html/index.html",
-    "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/AvalancheSDK.html"
+    "from": "docs/staking/for-integrators/sdk/liquid-staking/reference/classes/AvalancheSDK.html/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-staking/reference/classes/AvalancheSDK.html"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/BinanceSDK.html/index.html",
-    "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/BinanceSDK.html"
+    "from": "docs/staking/for-integrators/sdk/liquid-staking/reference/classes/BinanceSDK.html/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-staking/reference/classes/BinanceSDK.html"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/EthereumSDK.html/index.html",
-    "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/EthereumSDK.html"
+    "from": "docs/staking/for-integrators/sdk/liquid-staking/reference/classes/EthereumSDK.html/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-staking/reference/classes/EthereumSDK.html"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/FantomSDK.html/index.html",
-    "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/FantomSDK.html"
+    "from": "docs/staking/for-integrators/sdk/liquid-staking/reference/classes/FantomSDK.html/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-staking/reference/classes/FantomSDK.html"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/PolygonOnEthereumSDK.html/index.html",
-    "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/PolygonOnEthereumSDK.html"
+    "from": "docs/staking/for-integrators/sdk/liquid-staking/reference/classes/PolygonOnEthereumSDK.html/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-staking/reference/classes/PolygonOnEthereumSDK.html"
   },
   {
-    "from": "staking/for-integrators/sdk/liquid-staking/reference/classes/PolygonOnPolygonSDK.htmll/index.html",
-    "to": "/staking-for-developers/sdk/liquid-staking/reference/classes/PolygonOnPolygonSDK.html"
+    "from": "docs/staking/for-integrators/sdk/liquid-staking/reference/classes/PolygonOnPolygonSDK.htmll/index.html",
+    "to": "/docs/staking-for-developers/sdk/liquid-staking/reference/classes/PolygonOnPolygonSDK.html"
   },
   {
-    "from": "support/index.html",
+    "from": "docs/support/index.html",
     "to": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
   }
 ]
