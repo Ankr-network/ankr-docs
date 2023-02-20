@@ -55,7 +55,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -97,11 +97,11 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    * `<string>` (data): the data to convert into a SHA3 hash.
+* `<string>` (data): the data to convert into a SHA3 hash.
 
 ### Returns
 <br/>
@@ -141,7 +141,7 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -183,7 +183,7 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -225,7 +225,7 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -267,7 +267,7 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -275,9 +275,9 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `<object>`|`<boolean>`: an object with sync status data or `false`, when not syncing:
-    * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
-    * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
-    * `highestBlock` (quantity): the estimated highest block.
+* `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
+* `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
+* `highestBlock` (quantity): the estimated highest block.
 
 ### Request example
 
@@ -326,7 +326,7 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -368,7 +368,7 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array): None.
 
@@ -412,7 +412,7 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -454,17 +454,17 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 20 bytes; required): an address to check for balance.
-    2. `<string>` (quantity|tag; required): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+1. `<string>` (data, 20 bytes; required): an address to check for balance.
+2. `<string>` (quantity|tag; required): either the hex value of a _block number_ or one of the following _block tags_:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -504,19 +504,19 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 20 bytes; required): an address of the storage (hex encoded).
-    2. `<string>` (quantity; required): a slot position in the storage (hex encoded unsigned integer).
-    3. `<string>` (quantity|tag; required): either the hex value of a _block number_ or one of the following _block tags_:
+1. `<string>` (data, 20 bytes; required): an address of the storage (hex encoded).
+2. `<string>` (quantity; required): a slot position in the storage (hex encoded unsigned integer).
+3. `<string>` (quantity|tag; required): either the hex value of a _block number_ or one of the following _block tags_:
 
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -556,18 +556,18 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 20 bytes): an address.
-    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+1. `<string>` (data, 20 bytes): an address.
+2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
 
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -607,11 +607,11 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): a block hash.
+1. `<string>` (data, 32 bytes): a block hash.
 
 ### Returns
 <br/>
@@ -651,16 +651,16 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -700,11 +700,11 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): a block's hash.
+1. `<string>` (data, 32 bytes): a block's hash.
 
 ### Returns
 <br/>
@@ -744,16 +744,16 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -793,17 +793,17 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
-    1. `<string>` (data, 20 bytes): an address to get the code from.
-    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+1. `<string>` (data, 20 bytes): an address to get the code from.
+2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -843,11 +843,11 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
-    1. `<string>` (data): the signed transaction data.
+1. `<string>` (data): the signed transaction data.
 
 ### Returns
 <br/>
@@ -889,24 +889,24 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
-    1. `<object>` (hex encoded): the transaction object:
-        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
-        * `to` (string; data, 20 bytes): the address the transaction is directed to.
-        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
-        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
-        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
-        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+1. `<object>` (hex encoded): the transaction object:
+ * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+ * `to` (string; data, 20 bytes): the address the transaction is directed to.
+ * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+ * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+ * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+ * `data` (string; data; optional): the hash of the method signature and encoded parameters.
 
-    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -948,24 +948,24 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
-    1. `<object>` (hex encoded): the transaction object:
-        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
-        * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
-        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
-        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
-        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
-        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+1. `<object>` (hex encoded): the transaction object:
+ * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+ * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
+ * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+ * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+ * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+ * `data` (string; data; optional): the hash of the method signature and encoded parameters.
 
-    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -1005,36 +1005,36 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): the block's hash.
-    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+1. `<string>` (data, 32 bytes): the block's hash.
+2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
 
 ### Returns
 <br/>
 
   * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
+  * `number` (string; quantity): the block number; null when it's a pending block.
+  * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+  * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+  * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+  * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+  * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+  * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+  * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+  * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+  * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+  * `difficulty` (string; quantity): the difficulty for this block.
+  * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+  * `extraData` (string; data): the **extra data** field of this block.
+  * `size` (string; quantity): the size of this block in bytes.
+  * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+  * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+  * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+  * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+  * `uncles` (array of strings): an array of uncle hashes.
 
 ### Request example
 
@@ -1092,41 +1092,41 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
-       * `earliest`: the lowest numbered block available on the client.
-       * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-       * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-       * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-       * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
+* `earliest`: the lowest numbered block available on the client.
+* `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+* `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+* `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+* `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
 
 ### Returns
 <br/>
 
   * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
+  * `number` (string; quantity): the block number; null when it's a pending block.
+  * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+  * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+  * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+  * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+  * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+  * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+  * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+  * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+  * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+  * `difficulty` (string; quantity): the difficulty for this block.
+  * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+  * `extraData` (string; data): the **extra data** field of this block.
+  * `size` (string; quantity): the size of this block in bytes.
+  * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+  * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+  * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+  * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+  * `uncles` (array of strings): an array of uncle hashes.
 
 ### Request example
 
@@ -1184,11 +1184,11 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): a transaction hash.
+1. `<string>` (data, 32 bytes): a transaction hash.
 
 ### Returns
 <br/>
@@ -1263,12 +1263,12 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): a block hash.
-    2. `<string>` (quantity): a transaction index position.
+1. `<string>` (data, 32 bytes): a block hash.
+2. `<string>` (quantity): a transaction index position.
 
 ### Returns
 <br/>
@@ -1343,17 +1343,17 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-    2. `<string>` (quantity): the transaction index position.
+1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+2. `<string>` (quantity): the transaction index position.
 
 ### Returns
 <br/>
@@ -1430,33 +1430,33 @@ The receipt is not available for pending transactions.
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): a hash of the transaction.
+1. `<string>` (data, 32 bytes): a hash of the transaction.
 
 ### Returns
 <br/>
 
   * `object`: a transaction receipt object, or null when no receipt was found:
 
-      * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
-      * `transactionIndex` (string; quantity): the transactions index position in the block.
-      * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
-      * `blockNumber` (string; quantity): a number of the block containing the transaction.
-      * `from` (string; data, 20 bytes): an address of the sender.
-      * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
-      * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
-      * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
-      * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
-      * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
-      * `logs` (array): an array of log objects, which this transaction generated.
-      * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
-      * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
+  * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
+  * `transactionIndex` (string; quantity): the transactions index position in the block.
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
+  * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
+  * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
+  * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
+  * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
+  * `logs` (array): an array of log objects, which this transaction generated.
+  * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
+  * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
 
-          * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
-          * `status` (string; quantity): either 1 (success) or 0 (failure).
+  * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
+  * `status` (string; quantity): either 1 (success) or 0 (failure).
 
 ### Request example
 
@@ -1540,36 +1540,36 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): the hash of a block.
-    2. `<string>` (quantity): the uncle's index position.
+1. `<string>` (data, 32 bytes): the hash of a block.
+2. `<string>` (quantity): the uncle's index position.
 
 ### Returns
 <br/>
 
   * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
+  * `number` (string; quantity): the block number; null when it's a pending block.
+  * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+  * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+  * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+  * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+  * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+  * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+  * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+  * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+  * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+  * `difficulty` (string; quantity): the difficulty for this block.
+  * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+  * `extraData` (string; data): the **extra data** field of this block.
+  * `size` (string; quantity): the size of this block in bytes.
+  * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+  * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+  * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+  * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+  * `uncles` (array of strings): an array of uncle hashes.
 
 ### Request example
 
@@ -1625,41 +1625,41 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-    2. `<string>` (quantity): the uncle's  index position.
+1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+ * `earliest`: the lowest numbered block available on the client.
+ * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+ * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+ * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+ * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+2. `<string>` (quantity): the uncle's  index position.
 
 ### Returns
 <br/>
 
   * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
+  * `number` (string; quantity): the block number; null when it's a pending block.
+  * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+  * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+  * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+  * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+  * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+  * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+  * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+  * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+  * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+  * `difficulty` (string; quantity): the difficulty for this block.
+  * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+  * `extraData` (string; data): the **extra data** field of this block.
+  * `size` (string; quantity): the size of this block in bytes.
+  * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+  * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+  * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+  * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+  * `uncles` (array of strings): an array of uncle hashes.
 
 ### Request example
 
@@ -1715,27 +1715,27 @@ curl -X POST https://rpc.ankr.com/optimism \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-      1. `object`: the filter options:
+  1. `object`: the filter options:
 
-         * `fromBlock` (string; quantity|tag; optional; default: "latest"): either a hex of the _block number_ or one of the following _block tags_:
+* `fromBlock` (string; quantity|tag; optional; default: "latest"): either a hex of the _block number_ or one of the following _block tags_:
 
-             * `latest`: for the last mined block.
-             * `earliest`: for the lowest numbered block available on the client.
-             * `pending`: for not yet mined transactions.
+  * `latest`: for the last mined block.
+  * `earliest`: for the lowest numbered block available on the client.
+  * `pending`: for not yet mined transactions.
 
-         * `toBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
+* `toBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
 
-             * `latest`: for the last mined block.
-             * `earliest`: for the lowest numbered block available on the client.
-             * `pending`: for not yet mined transactions.
+  * `latest`: for the last mined block.
+  * `earliest`: for the lowest numbered block available on the client.
+  * `pending`: for not yet mined transactions.
 
-         * `address` (array of strings; data, 20 bytes; optional): a contract address or a list of addresses from which logs should originate.
-         * `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
-         * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
+* `address` (array of strings; data, 20 bytes; optional): a contract address or a list of addresses from which logs should originate.
+* `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
+* `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
 ### Returns
 <br/>
@@ -1803,4 +1803,3 @@ curl -X POST https://rpc.ankr.com/optimism \
     ]
 }
 ```
-
