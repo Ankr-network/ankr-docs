@@ -1,16 +1,16 @@
 # DeFi-Dashboard dApp using Advanced APIs
 
-In this tutorial, we’ll be building a "What's in Your Wallet?" dApp where users can check their net worth, credits in native balance by chain, and NFTs they hold on multiple blockchains such as Ethereum, Polygon and Fantom (to name a few) using [Ankr's Advanced Multichain APIs](https://www.ankr.com/advanced-api/)↗. 
+In this tutorial, we’ll be building a "What's in Your Wallet?" dApp where users can check their net worth, credits in native balance by chain, and NFTs they hold on multiple blockchains such as Ethereum, Polygon and Fantom (to name a few) using [Advanced APIs](https://www.ankr.com/advanced-api/)↗.
 
 ## Advanced APIs
 
-Ankr's Advanced Multichain APIs are the collection of RPC methods created to simplify querying blockchain data. These APIs does all the heavy lifting for us so that we can query on-chain data in a matter of seconds.
+Advanced APIs is the collection of RPC methods created to simplify querying blockchain data. These APIs does all the heavy lifting for us so that we can query on-chain data in a matter of seconds.
 
 
-Currently, it support eight EVM compatible chains: 
-- ETH
+Currently, it supports eight EVM compatible chains:
+- Ethereum
 - Polygon
-- BSC
+- BNB Smart Chain
 - Fantom
 - Avalanche
 - Arbitrum 
@@ -97,7 +97,7 @@ To interact with Ankr's Advanced APIs, we have created a provider instance which
 
 ## Creating Function to Fetch Total Balance
 
-In this step, we will first create a `getAccountBalance` function in the `src/api.ts` file, which will accept a `walletAddress`, and return the coin and the respective token balances. Here we are going to utilize the [getAccountBalance](https://documenter.getpostman.com/view/19024547/UVsEVUGQ#74b5cc68-fba2-415c-a53b-28c08818f970)↗ method provided by Ankr.js to calculate the sum of balance (net worth) across the chains in the `getTotalMultichainBalance` function.
+In this step, we will first create a `getAccountBalance` function in the `src/api.ts` file, which will accept a `walletAddress`, and return the coin and the respective token balances. Here we are going to utilize the [getAccountBalance](/advanced-api/javascript-sdk/#getaccountbalance)↗ method provided by Ankr.js to calculate the sum of balance (net worth) across the chains in the `getTotalMultichainBalance` function.
 
 **File: **`src/api.ts`
 ```javascript
@@ -195,7 +195,7 @@ You can now revert back the changes we made in the `App.tsx` file as we will wor
 
 ### Creating More Functions
 
-Now that we have created a function to get total balance, in this section we will write three more functions as follow:
+Now that we have created a function to get total balance, in this section we will write three more functions as follows:
 
 - **getNativeCurrencyBalance:** This function will fetch account balance for a particular chain.
 
