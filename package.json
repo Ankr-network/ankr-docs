@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npm run update-strapi-faq-files && next build && next export",
     "debug": "NODE_OPTIONS='--inspect' next",
-    "dev": "npm run update-strapi-faq-files && next -p 3016",
+    "dev": "npm run update-strapi-faq-files && next",
     "start": "npm run update-strapi-faq-files && next start",
     "start:css": "tailwindcss -o styles/global.css --watch",
     "update-strapi-faq-files": "node ./src/scripts/update-strapi-faq-files.js"
@@ -38,13 +38,12 @@
     "react-dom": "^17.0.2",
     "react-gtm-module": "^2.0.11",
     "react-intersection-observer": "^8.26.2",
-    "react-router-dom": "^6.3.0",
-    "redoc": "^2.0.0",
-    "styled-components": "^5.3.6"
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@heroicons/react": "^1.0.6",
     "autoprefixer": "^10.4.2",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.16"

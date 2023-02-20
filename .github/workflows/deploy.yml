@@ -60,12 +60,12 @@ jobs:
 
       - name: Copy build
         run: |
-          cd out/staking/for-integrators/sdk/
+          cd out/staking-for-developers/sdk/
           mkdir liquid-staking
           cd liquid-staking
           mkdir reference
-          cd ../../../../../
-          mv frontend/packages/staking-sdk/docs/*  out/staking/for-integrators/sdk/liquid-staking/reference
+          cd ../../../../
+          mv frontend/packages/staking-sdk/docs/*  out/staking-for-developers/sdk/liquid-staking/reference
 
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
