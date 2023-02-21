@@ -20,6 +20,14 @@ This docs section provides the list of all chains available on [RPC Service](htt
   <tbody>
   <tr>
     <td>[Aptos](/rpc-service/chains/chains-list/#aptos)</td>
+    <td>[BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain)</td>
+    <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
+    <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
+    <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
+    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
+  </tr>
+  <tr>
+    <td>[Arbitrum](/rpc-service/chains/chains-list/#arbitrum)</td>
     <td>[Celo](/rpc-service/chains/chains-list/#celo)</td>
     <td>[Harmony](/rpc-service/chains/chains-list/#harmony)</td>
     <td>[Metis](/rpc-service/chains/chains-list/#metis)</td>
@@ -27,7 +35,7 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
   </tr>
   <tr>
-    <td>[Arbitrum](/rpc-service/chains/chains-list/#arbitrum)</td>
+    <td>[Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)</td>
     <td>[Ethereum](/rpc-service/chains/chains-list/#ethereum)</td>
     <td>[HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)</td>
     <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
@@ -48,14 +56,6 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Klaytn](/rpc-service/chains/chains-list/#klaytn)</td>
     <td>[Nervos](/rpc-service/chains/chains-list/#nervos)</td>
     <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain)</td>
-    <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
-    <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
-    <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
-    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
     <td></td>
   </tr>
   </tbody>
@@ -224,6 +224,141 @@ def test_block_number(self):
   "jsonrpc":"2.0",
   "id":1,
   "result":"0x2484729"
+}
+```
+
+---
+
+## Arbitrum Nova
+
+Arbitrum Nova offers an ultra-low transaction costs with high security. Nova powers dapps with high transaction volumes that seek to drive costs even lower.
+
+Official quick links: [Website](https://nova.arbitrum.io/), [Docs](https://developer.offchainlabs.com/getting-started-devs), [GitHub](https://github.com/OffchainLabs/arbitrum)
+
+### Networks
+
+<div className="list-with-custom-top-margin mt-6">
+  * Mainnet (`HTTPS` and `WSS`)
+</div>
+
+### API methods
+
+For Arbitrum Nova, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/arbitrum-nova) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/arbitrumnova \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc":"2.0",
+      "method":"eth_blockNumber",
+      "params": [],
+      "id":1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/arbitrumnova"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/arbitrumnova'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/arbitrumnova'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x257932"
 }
 ```
 
