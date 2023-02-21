@@ -9,9 +9,8 @@
     "title": "Auto-gen OAPI Ref",
     "display": "hidden",
     "theme": {
-      "layout": "full",
-      "sidebar": false,
-      "toc": false
+      "layout": "raw",
+      "footer": false
     }
   },
   "javascript-sdk": "AnkrJS SDK",
