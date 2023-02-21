@@ -123,12 +123,12 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ├ ○ public — images to use in the docs.
 ├ ○ src  
 ├     ○ components — custom React components to import and use in the project.
-├     ○ hooks — hooks to sync wasm-docs and other projects.
+├     ○ hooks — hooks to sync ankr-docs and other projects.
 ├     ○ icons — icons to use in the metainfo.
 ├     ○ scripts — scripts implementing additional custom functionality.
 ├     ○ styles — custom CSS styles overwriting the default Nextra styles.
 ├   .gitignore — list of intentionally untracked files and folders to skip when committing.
-├   jsconfig.json — paths to different features of wasm-docs as a JS project. 
+├   jsconfig.json — paths to custom features of ankr-docs as a JS project. 
 ├   next.config.js — configuration file for the Next.js framework, which powers Nextra.
 ├   package.json — project dependencies and dev commands.
 ├   postcss.config.js — configuration file listing additional packages to import to Nextra.
@@ -149,7 +149,7 @@ yarn install
 yarn dev
 ```
 
-FYI, it's `http://localhost:3016/docs/`.
+FYI, it's `http://localhost:3000/docs/`.
 
 
 ### Work with the content and resources in your favorite IDE.
