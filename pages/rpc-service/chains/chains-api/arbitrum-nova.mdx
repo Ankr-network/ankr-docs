@@ -99,7 +99,7 @@ curl -X POST https://rpc.ankr.com/arbitrumnova \
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-* `<string>` (data; required): the data to convert into a SHA3 hash.
+    * `<string>` (data; required): the data to convert into a SHA3 hash.
 
 ### Returns
 <br/>
@@ -374,6 +374,7 @@ curl -X POST https://rpc.ankr.com/arbitrumnova \
 
     1. `<string>` (data, 20 bytes; required): an address to check for balance.
     2. `<string>` (quantity|tag; required): either the hex value of a _block number_ or one of the following _block tags_:
+
        * `earliest`: the lowest numbered block available on the client.
        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
@@ -930,6 +931,7 @@ curl -X POST https://rpc.ankr.com/arbitrumnova \
 <br/>
 
   * `<object>`: a block object, or null when no block was found:
+
     * `number` (string; quantity): the block number; null when it's a pending block.
     * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
     * `parentHash` (string; data, 32 bytes): the hash of the parent block.
@@ -1027,6 +1029,7 @@ curl -X POST https://rpc.ankr.com/arbitrumnova \
 <br/>
 
   * `<object>`: a block object, or null when no block was found:
+
     * `number` (string; quantity): the block number; null when it's a pending block.
     * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
     * `parentHash` (string; data, 32 bytes): the hash of the parent block.
