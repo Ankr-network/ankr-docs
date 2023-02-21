@@ -91,7 +91,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>`: pubkey of account to query, as base-58 encoded string.
     * `<object>` (optional): configuration object containing the following fields:
@@ -225,7 +225,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>`: pubkey of account to query, as base-58 encoded string.
     * `<object>`: configuration object containing the following fields:
@@ -287,7 +287,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>`: slot, as a u64 integer.
     * `<object>` (optional): configuration object containing the following optional fields:
@@ -486,7 +486,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array; optional): 
+  * `params` (array; required):
 
     * `<object>` (optional): configuration object containing the following fields:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -537,7 +537,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): configuration object containing the following optional fields:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -658,7 +658,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>` (required): the block identified by slot.
 
@@ -711,7 +711,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>`: `start_slot`, as a u64 integer.
     * `<u64>`: `end_slot`, as u64 integer (must be no more than 500,000 blocks higher than the `start_slot`).
@@ -762,7 +762,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>`: `start_slot`, as u64 integer.
     * `<u64>`: limit, as u64 integer (must be no more than 500,000 blocks higher than the `start_slot`).
@@ -815,7 +815,7 @@ Each validator reports their UTC time to the ledger on a regular interval by int
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>`: the block identified by slot.
 
@@ -860,7 +860,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 
@@ -916,7 +916,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): configuration object containing the following fields:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -980,7 +980,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 
@@ -1032,7 +1032,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `message` (string, required): a base-64 encoded message.
     * `<object>` (optional): a configuration object containing the following optional fields:
@@ -1095,7 +1095,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -1136,7 +1136,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -1179,7 +1179,7 @@ If one or more `--known-validator` arguments are provided to `solana-validator`,
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 
@@ -1255,7 +1255,7 @@ This will find the highest full snapshot slot, and the highest incremental snaps
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -1314,7 +1314,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 
@@ -1358,7 +1358,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): the configuration object containing the following field:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -1418,7 +1418,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -1467,7 +1467,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<array>`: an array of addresses to query, as base-58 encoded strings:
     * `<object>` (optional): the configuration object containing the following fields:
@@ -1533,7 +1533,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): the configuration object containing the following optional fields:
       * commitment (string; optional): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -1633,7 +1633,7 @@ NEW: This method is only available in solana-core v1.9 or newer. Please use [`ge
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): the configuration object containing the following fields:
       * `commitment` (string; optional): used for retrieving blockhash); the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -1700,7 +1700,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>` (optional): fetches the leader schedule for the epoch that corresponds to the provided slot. If unspecified, fetches the leader schedule for the current epoch.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -1795,7 +1795,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -1836,7 +1836,7 @@ Returns the max slot seen from after shred insert.
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -1877,7 +1877,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<usize>`: the account data length.
     * `<object>` (optional): the configuration object containing the following field:
@@ -1929,7 +1929,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<array>`: an array of Pubkeys to query, as base-58 encoded strings (up to a maximum of 100).
     * `<object>` (optional): the configuration object containing the following fields:
@@ -2077,7 +2077,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>`: the Pubkey of a program, as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -2208,7 +2208,7 @@ Performance samples are taken every 60 seconds and include the number of transac
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `limit` (usize; optional): the number of samples to return (max: 720).
 
@@ -2283,7 +2283,7 @@ Returns signatures backwards in time from the provided signature or most recent 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the account address as a base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -2368,7 +2368,7 @@ Unless the `searchTransactionHistory` configuration parameter is included, this 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<array>`: an array of transaction signatures to confirm, as base-58 encoded strings (up to a maximum of 256).
     * `<object>` (optional): the object containing the following field:
@@ -2489,7 +2489,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): the configuration object containing the following fields:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -2540,7 +2540,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>`: the configuration object containing the following fields:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -2591,7 +2591,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>`: the start slot, as u64 integer.
     * `<u64>`: the limit, as a u64 integer (between 1 and 5,000).
@@ -2647,7 +2647,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>`: the pubkey of stake account to query, as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -2740,7 +2740,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>`: the configuration object containing the following fields:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -2810,7 +2810,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the pubkey of Token account to query, as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following field:
@@ -2876,7 +2876,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the pubkey of account delegate to query, as base-58 encoded string.
     * `<object>` (required): either:
@@ -2990,7 +2990,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the pubkey of account owner to query, as base-58 encoded string.
     * `<object>` (required): either:
@@ -3105,7 +3105,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the Pubkey of token Mint to query, as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following field:
@@ -3182,7 +3182,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the Pubkey of token Mint to query, as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following field:
@@ -3248,7 +3248,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the transaction signature as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following optional fields:
@@ -3451,7 +3451,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): the configuration object containing the following fields:
       * commitment (string; optional): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -3502,7 +3502,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 
@@ -3548,7 +3548,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): the configuration object containing the following fields:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -3699,7 +3699,7 @@ NEW: This method is only available in solana-core v1.9 or newer. Please use [`ge
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `blockhash` (string; required): the blockhash of this block, as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -3763,7 +3763,7 @@ This value may increase over time if the node is configured to purge older ledge
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -3804,7 +3804,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the Pubkey of the account to receive lamports, as base-58 encoded string.
     * `integer` (required): lamports, as a u64.
@@ -3872,7 +3872,7 @@ The returned signature is the first signature in the transaction, which is used 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): a fully-signed Transaction, as encoded string.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -3928,7 +3928,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the transaction, as an encoded string. The transaction must have a valid blockhash, but is not required to be signed.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -4031,7 +4031,7 @@ DEPRECATED: Please use [`getBlock`](/rpc-service/chains/chains-api/solana/#getbl
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>` (required): the slot, as u64 integer.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -4244,7 +4244,7 @@ DEPRECATED: Please use [`getBlocks`](/rpc-service/chains/chains-api/solana/#getb
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>` (required): start_slot, as u64 integer.
     * `<u64>` (optional): end_slot, as u64 integer.
@@ -4299,7 +4299,7 @@ DEPRECATED: Please use [`getBlocksWithLimit`](/rpc-service/chains/chains-api/sol
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<u64>` (required): start_slot, as u64 integer.
     * `<u64>` (required): the limit, as u64 integer.
@@ -4356,7 +4356,7 @@ Returns signatures backwards in time from the provided signature or most recent 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the account address as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -4433,7 +4433,7 @@ DEPRECATED: Please use [`getTransaction`](/rpc-service/chains/chains-api/solana/
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the transaction signature as base-58 encoded string.
     * `<object>` (optional): the configuration object containing the following optional fields:
@@ -4623,7 +4623,7 @@ DEPRECATED: Please use [`isBlockhashValid`](/rpc-service/chains/chains-api/solan
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (required): the blockhash to query, as a base58-encoded string.
     * `<object>` (optional): the configuration object containing the following fields:
@@ -4690,7 +4690,7 @@ curl -X POST https://rpc.ankr.com/solana \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Results
 
@@ -4754,7 +4754,7 @@ DEPRECATED: Please use [`getFeeForMessage`](/rpc-service/chains/chains-api/solan
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>` (optional): the configuration object containing the following field:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -4825,7 +4825,7 @@ DEPRECATED: Please use [`getLatestBlockhash`](/rpc-service/chains/chains-api/sol
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<object>`: the configuration object containing the following field:
       * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
@@ -4892,7 +4892,7 @@ DEPRECATED: Please use [`getHighestSnapshotSlot`](/rpc-service/chains/chains-api
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>

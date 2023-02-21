@@ -55,7 +55,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -97,7 +97,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     * `<string>` (data): the data to convert into a SHA3 hash.
 
@@ -141,7 +141,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -183,7 +183,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -225,7 +225,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -284,7 +284,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -326,7 +326,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -370,7 +370,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array; required): None.
 
 ### Returns
 <br/>
@@ -412,7 +412,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address to check for balance.
     2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
@@ -462,7 +462,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address of the storage (hex encoded).
     2. `<string>` (quantity): a slot position in the storage (hex encoded unsigned integer).
@@ -514,7 +514,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address.
     2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
@@ -565,7 +565,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a block hash.
 
@@ -609,7 +609,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -658,7 +658,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address to get the code from.
     2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
@@ -708,7 +708,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required):
 
     1. `<string>` (data): the signed transaction data.
 
@@ -754,7 +754,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required):
 
     1. `<object>` (hex encoded): the transaction object:
         * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
@@ -813,7 +813,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): 
+  * `params` (array; required):
 
     1. `<object>` (hex encoded): the transaction object:
         * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
@@ -870,7 +870,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): the block's hash.
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
@@ -955,7 +955,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
        * `earliest`: the lowest numbered block available on the client.
@@ -1044,7 +1044,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a transaction hash.
 
@@ -1118,7 +1118,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a block hash.
     2. `<string>` (quantity): a transaction index position.
@@ -1193,7 +1193,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -1278,7 +1278,7 @@ The receipt is not available for pending transactions.
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a hash of the transaction.
 
@@ -1370,7 +1370,7 @@ curl -X POST https://rpc.ankr.com/celo \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array):
+  * `params` (array; required):
 
       1. `object`: the filter options:
 
