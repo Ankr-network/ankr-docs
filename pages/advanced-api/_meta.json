@@ -4,6 +4,16 @@
   "nft-methods": "NFT API",
   "query-methods": "Query API",
   "token-methods": "Token API",
+  "specification": {
+    "type": "folder",
+    "title": "Auto-gen OAPI Ref",
+    "display": "hidden",
+    "theme": {
+      "layout": "full",
+      "sidebar": false,
+      "toc": false
+    }
+  },
   "javascript-sdk": "AnkrJS SDK",
   "python-sdk": "AnkrPY SDK",
   "react-hooks": "Ankr React Hooks",
