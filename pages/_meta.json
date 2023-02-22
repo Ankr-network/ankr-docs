@@ -15,6 +15,14 @@
     "display": "hidden"
   },
 
+  "-- Tutorials": {
+    "type": "separator",
+    "title": "Ankr Tutorials"
+  },
+  "basic-tutorials": "Basic Tutorials",
+  "smart-contract-tutorials": "Smart Contract Development",
+  "advanced-tutorials": "Advanced Tutorials",
+
   "-- AppChains": {
     "type": "separator",
     "title": "AppChains"
@@ -42,14 +50,6 @@
     "title": "Making Games"
   },
   "gaming-overview": "Mirage Gaming",
-
-  "-- Tutorials": {
-    "type": "separator",
-    "title": "Tutorials"
-  },
-  "basic-tutorials": "Basic Tutorials",
-  "smart-contract-tutorials": "Smart Contract Development",
-  "advanced-tutorials": "Advanced Tutorials",
 
   "-- Support": {
     "type": "separator",
