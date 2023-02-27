@@ -1600,8 +1600,8 @@
     "to": "/docs/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/"
   },
   {
-    "from": "docs/build-blockchain/app-chains/affiliated-chains/polygon-supernetse/overview/index.html",
-    "to": "/docs/affiliated-chains/polygon-supernetse/overview/"
+    "from": "docs/app-chains/affiliated-chains/polygon-supernets/overview/index.html",
+    "to": "/docs/affiliated-chains/polygon-supernets/overview/"
   },
   {
     "from": "docs/tutorials/advanced-web3/donation-based-crowdfunding-dapp-on-polygon-with-ankr/index.html",
