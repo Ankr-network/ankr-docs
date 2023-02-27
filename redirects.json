@@ -1356,6 +1356,14 @@
     "to": "/docs/defi/vaults/"
   },
   {
+    "from": "docs/staking/bridge/overview/index.html",
+    "to": "/docs/bridge/overview/"
+  },
+  {
+    "from": "docs/staking/bridge/bridge-tokens/index.html",
+    "to": "/docs/bridge/bridge-tokens/"
+  },
+  {
     "from": "docs/staking/switch/overview/index.html",
     "to": "/docs/switch/overview/"
   },
