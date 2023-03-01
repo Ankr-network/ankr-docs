@@ -25,6 +25,12 @@ While it offers instant release of your funds, it poses a few limitations:
 1. You have to pay a flash-unstake fee, which is 0.5% of the amount you're unstaking.
 2. Your unstake is limited by the current capacity of the flash-unstake pool. If you exceed it, the interface switches to the standard unstake with its regular release time.
 
+### Unstaking large amounts
+Large amounts may be split when unstaked:
+* With the flash unstake, the pool's capacity may not be sufficiently large at the moment of your unstake, and you'll be switched to the standard unstake interface.
+* With the standard unstake, nodes can't process them at once and the amount is splitted, and you may have to wait few standard unstake periods to get all your funds.
+
+
 ## Unstake BNB 
 <Callout type="info">
 Ensure you have a small amount of BNB to pay the Binance gas fee for your unstaking transaction.
