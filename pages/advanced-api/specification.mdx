@@ -17,8 +17,11 @@ export default function Spec() {
         return data.result.schema
     }
 
-    useEffect(async () => {
+    const loadSpec = async () => {
         setSpec(await getSpec())
+    }
+    useEffect(() => {
+        loadSpec()
     }, [setSpec])
 
     return <RedocStandalone
