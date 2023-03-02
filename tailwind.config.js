@@ -1,16 +1,17 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  // mode: 'jit',
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{md,mdx}",
-    "./theme.config.js",
-    ],
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './theme.config.tsx'
+  ],
   theme: {
-    extend: {},
+    extend: {}
   },
   plugins: [],
-};
+  darkMode: 'class'
+}

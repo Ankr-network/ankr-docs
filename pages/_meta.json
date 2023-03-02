@@ -1,6 +1,5 @@
 {
   "index": "Welcome to Ankr Docs",
-
   "-- Building": {
     "type": "separator",
     "title": "Building With Ankr"
@@ -8,13 +7,11 @@
   "rpc-service": "RPC Service",
   "advanced-api": "Advanced APIs/SDKs",
   "node-snapshot": "Blockchain Node Snapshots",
-
   "automation": {
-    "type": "folder",
     "title": "Contract Automation",
+    "type": "folder",
     "display": "hidden"
   },
-
   "-- Tutorials": {
     "type": "separator",
     "title": "Ankr Tutorials"
@@ -22,7 +19,6 @@
   "basic-tutorials": "Basic Tutorials",
   "smart-contract-tutorials": "Smart Contract Development",
   "advanced-tutorials": "Advanced Tutorials",
-
   "-- AppChains": {
     "type": "separator",
     "title": "AppChains"
@@ -30,7 +26,6 @@
   "app-chains": "AppChains",
   "chainscanner": "Chainscanner",
   "affiliated-chains": "Affiliated Chains",
-
   "-- Staking": {
     "type": "separator",
     "title": "Staking With Ankr"
@@ -44,7 +39,6 @@
   "bridge": "Bridge",
   "switch": "Switch",
   "staking-extra": "Extra",
-
   "-- Gaming": {
     "type": "separator",
     "title": "Making Games"
@@ -60,7 +54,6 @@
     "href": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10",
     "newWindow": true
   },
-
   "ankr": {
   "title": "To Ankr",
     "type": "page",

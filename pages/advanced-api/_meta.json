@@ -5,8 +5,8 @@
   "query-methods": "Query API",
   "token-methods": "Token API",
   "specification": {
-    "type": "folder",
     "title": "Auto-gen OAPI Ref",
+    "type": "doc",
     "display": "hidden",
     "theme": {
       "layout": "raw",
