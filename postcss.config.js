@@ -3,7 +3,7 @@
 /** @type {import('postcss').Postcss} */
 module.exports = {
   plugins: {
-    tailwindcss: {},
+    tailwindcss: { config: './tailwind.config.js' },
     autoprefixer: {}
   }
 }
