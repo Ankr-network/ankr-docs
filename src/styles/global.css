@@ -103,12 +103,12 @@ code.text-\[\.9em\] {
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-/* Make space before a list and before a nested list of a diff kind shorter */
-ul.mt-6,
-ol.mt-6 {
-  margin-top: 0.6em;
-  margin-bottom: 0.5em;
+/* less space between lines of text in callouts */
+.nx-leading-7 {
+  line-height: 1.5rem;
 }
+
+/* Make space before a list and before a nested list of a diff kind shorter */
 
 /* Make embedded YouTube container responsive */
 .responsive-youtube
