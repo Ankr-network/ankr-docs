@@ -3,6 +3,10 @@
 @tailwind components;
 
 /* new */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-feature-settings: 'rlig' 1, 'calt' 1;
 }
@@ -48,6 +52,7 @@ code.text-\[\.9em\] {
   }
 }
 
+/*
 .steps-container {
   margin-left: 1rem;
   padding-left: 1.5rem;
@@ -85,7 +90,7 @@ code.text-\[\.9em\] {
   color: #999;
   border: 4px solid rgba(17, 17, 17, var(--tw-bg-opacity));
   background: #2e2e2e;
-}
+} */
 
 /* Position custom callouts icons */
 .nextra-callout-icon-area {
