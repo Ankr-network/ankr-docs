@@ -3841,13 +3841,13 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 
 **Cosmos**:
 
-  `/cosmos/auth/v1beta1/address_by_id/:id`,
+  `/cosmos/auth/v1beta1/address_by_id/{id}`,
   `/cosmos/auth/v1beta1/module_accounts`,
   `/cosmos/auth/v1beta1/bech32`,
-  `/cosmos/auth/v1beta1/bech32/:address_bytes`,
-  `/cosmos/auth/v1beta1/bech32/:address_string`,
-  `/cosmos/bank/v1beta1/supply/by_denom`,
-  `/cosmos/bank/v1beta1/denom_owners/:denom`,
+  `/cosmos/auth/v1beta1/bech32/{address_bytes}`,
+  `/cosmos/auth/v1beta1/bech32/{address_string}`,
+  `/cosmos/bank/v1beta1/supply/{denom}`,
+  `/cosmos/bank/v1beta1/denom_owners/{denom}`,
   `/cosmos/bank/v1beta1/send_enabled`,
   `/cosmos/base/reflection/v1beta1/interfaces`,
   `/cosmos/base/reflection/v1beta1/interfaces/:interface_name/implementations`,
@@ -3858,34 +3858,34 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   `/cosmos/base/reflection/v1beta1/app_descriptor/query_services`,
   `/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor`,
   `/cosmos/base/tendermint/v1beta1/abci_query`,
-  `/cosmos/feegrant/v1beta1/issued/:granter`,
-  `/cosmos/gov/v1/proposals/:proposal_id`,
+  `/cosmos/feegrant/v1beta1/issued/{granter}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}`,
   `/cosmos/gov/v1/proposals`,
-  `/cosmos/gov/v1/proposals/:proposal_id/votes/:voter`,
-  `/cosmos/gov/v1/proposals/:proposal_id/votes`,
-  `/cosmos/gov/v1/params/:params_type`,
-  `/cosmos/gov/v1/proposals/:proposal_id/deposits/:depositor`,
-  `/cosmos/gov/v1/proposals/:proposal_id/deposits`,
-  `/cosmos/gov/v1/proposals/:proposal_id/tally`,
-  `/cosmos/group/v1/group_info/:group_id`,
-  `/cosmos/group/v1/group_policy_info/:address`,
-  `/cosmos/group/v1/group_members/:group_id`,
-  `/cosmos/group/v1/groups_by_admin/:admin`,
-  `/cosmos/group/v1/group_policies_by_group/:group_id`,
-  `/cosmos/group/v1/group_policies_by_admin/:admin`,
-  `/cosmos/group/v1/proposal/:proposal_id`,
-  `/cosmos/group/v1/proposals_by_group_policy/:address`,
-  `/cosmos/group/v1/vote_by_proposal_voter/:proposal_id/:voter`,
-  `/cosmos/group/v1/votes_by_proposal/:proposal_id`,
-  `/cosmos/group/v1/votes_by_voter/:voter`,
-  `/cosmos/group/v1/groups_by_member/:address`,
-  `/cosmos/group/v1/proposals/:proposal_id/tally`,
-  `/cosmos/nft/v1beta1/balance/:owner/:class_id`,
-  `/cosmos/nft/v1beta1/owner/:class_id/:id`,
-  `/cosmos/nft/v1beta1/supply/:class_id`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/votes`,
+  `/cosmos/gov/v1/params/{params_type}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/deposits`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/tally`,
+  `/cosmos/group/v1/group_info/{group_id}`,
+  `/cosmos/group/v1/group_policy_info/{address}`,
+  `/cosmos/group/v1/group_members/{group_id}`,
+  `/cosmos/group/v1/groups_by_admin/{admin}`,
+  `/cosmos/group/v1/group_policies_by_group/{group_id}`,
+  `/cosmos/group/v1/group_policies_by_admin/{admin}`,
+  `/cosmos/group/v1/proposal/{proposal_id}`,
+  `/cosmos/group/v1/proposals_by_group_policy/{address}`,
+  `/cosmos/group/v1/vote_by_proposal_voter/{proposal_id}/{voter}`,
+  `/cosmos/group/v1/votes_by_proposal/{proposal_id}`,
+  `/cosmos/group/v1/votes_by_voter/{voter}`,
+  `/cosmos/group/v1/groups_by_member/{address}`,
+  `/cosmos/group/v1/proposals/{proposal_id}/tally`,
+  `/cosmos/nft/v1beta1/balance/{owner}/{class_id}`,
+  `/cosmos/nft/v1beta1/owner/{class_id}/{id}`,
+  `/cosmos/nft/v1beta1/supply/{class_id}`,
   `/cosmos/nft/v1beta1/nfts`,
-  `/cosmos/nft/v1beta1/nfts/:class_id/:id`,
-  `/cosmos/nft/v1beta1/classes/:class_id`,
+  `/cosmos/nft/v1beta1/nfts/{class_id}/{id}`,
+  `/cosmos/nft/v1beta1/classes/{class_id}`,
   `/cosmos/nft/v1beta1/classes`,
   `/cosmos/params/v1beta1/subspaces`,
   `/cosmos/upgrade/v1beta1/module_versions`,
@@ -3896,16 +3896,16 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 
   `/syncing`,
   `/blocks/latest`,
-  `/blocks/:height`,
+  `/blocks/{height}`,
   `/validatorsets/latest`,
-  `/validatorsets/:height`,
+  `/validatorsets/{height}`,
   `/wasm/code`,
-  `/wasm/code/:codeID`,
-  `/wasm/code/:codeID/contracts`,
-  `/wasm/contract/:contractAddress`,
-  `/wasm/contract/:contractAddress/code-hash`,
-  `/wasm/contract/:contractAddress/query/:query`,
-  `/wasm/code/:codeID/hash`,
+  `/wasm/code/{codeID}`,
+  `/wasm/code/{codeID}/contracts`,
+  `/wasm/contract/{contractAddress}`,
+  `/wasm/contract/{contractAddress}/code-hash`,
+  `/wasm/contract/{contractAddress}/query/{query}`,
+  `/wasm/code/{codeID}/hash`,
   `/reg/consensus-io-exch-pubkey`
 
 ### API querying
@@ -3914,8 +3914,9 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 
 <Tabs
   items={[
-    "JSON-RPC",
-    "REST",
+    "Tendermint JSON-RPC",
+    "Tendermint REST",
+    "Cosmos REST"
   ]}
 >
   <Tab>
@@ -3934,7 +3935,13 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/blockchain?height=1
+curl https://rpc.ankr.com/http/scrt/block?height=1
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
   </Tab>
 </Tabs>
