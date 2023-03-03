@@ -8,7 +8,6 @@ The docs are built on [Nextra](https://nextra.vercel.app/) — a Next.js based s
 
 
 ## Contribute to the project as an end-user
-
 As an ever-developing company, we welcome you to contribute to Ankr Docs — via feedback raising an issue or a pull request adding/updating content.
 
 As raising an issue and describing a problem is pretty self-explanatory, let's jump straight to adding/updating content.
