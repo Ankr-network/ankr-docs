@@ -7,14 +7,14 @@ function gtmVirtualPageView(rest) {
     event: 'VirtualPageView',
     ...rest,
   });
-}
+};
 
 export function useGtm(pageProps) {
   useEffect(() => {
     initGoogleGtm();
   }, []);
 
-  const router = useRouter();
+  const router = useRouter(); 
 
   useEffect(() => {
     const mainDataLayer = {
