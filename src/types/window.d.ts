@@ -1,3 +1,8 @@
-export interface CustomWindow extends Window {
-    dataLayer?: any[];
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export {};
+
+declare global {
+    interface Window {
+        dataLayer?: any[];
+    }
 }

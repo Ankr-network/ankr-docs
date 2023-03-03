@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router'
 import { initGoogleGtm } from 'components';
-import { CustomWindow } from '../types/window';
-
-declare let window: CustomWindow;
 
 function gtmVirtualPageView(rest) {
   window.dataLayer?.push({
