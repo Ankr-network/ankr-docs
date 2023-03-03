@@ -568,10 +568,6 @@
     "to": "/docs/staking/defi/yield-farming/"
   },
   {
-    "from": "docs/staking/for-integrators/overview/index.html",
-    "to": "/docs/staking-for-developers/overview/"
-  },
-  {
     "from": "docs/staking/liquid-staking/oracles/overview/index.html",
     "to": "/docs/staking/for-integrators/oracles/overview/"
   },
@@ -1230,6 +1226,10 @@
   {
     "from": "docs/rpc-service/chains/chains-api/binance-smart-chain/index.html",
     "to": "/docs/rpc-service/chains/chains-api/bnb-smart-chain/"
+  },
+  {
+    "from": "docs/staking/for-integrators/overview/index.html",
+    "to": "/docs/staking-for-developers/overview/"
   },
   {
     "from": "docs/staking/for-integrators/oracles/apr-oracle/index.html",
