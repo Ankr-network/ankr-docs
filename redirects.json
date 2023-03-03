@@ -568,6 +568,10 @@
     "to": "/docs/staking/defi/yield-farming/"
   },
   {
+    "from": "docs/staking/for-integrators/overview/index.html",
+    "to": "/docs/staking-for-developers/overview/"
+  },
+  {
     "from": "docs/staking/liquid-staking/oracles/overview/index.html",
     "to": "/docs/staking/for-integrators/oracles/overview/"
   },
