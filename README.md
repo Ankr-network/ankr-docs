@@ -127,16 +127,15 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ├     ○ scripts — scripts implementing additional custom functionality.
 ├     ○ styles — custom CSS styles overwriting the default Nextra styles.
 ├   .gitignore — list of intentionally untracked files and folders to skip when committing.
-├   next.config.mjs — configuration file for the Next.js framework, which powers Nextra.
-├   next-env.d.ts — ensures Next.js types are picked up by the TypeScript compiler. Don't remove or edit!
+├   jsconfig.json — paths to different features of wasm-docs as a JS project. 
+├   next.config.js — configuration file for the Next.js framework, which powers Nextra.
 ├   package.json — project dependencies and dev commands.
 ├   postcss.config.js — configuration file listing additional packages to import to Nextra.
 ├   README.md — readme of the project.
 ├   redirects.js — redirects solution.
 ├   redirects.json — map of redirects for the redirects solution.
 ├   tailwind.config.js — additional CSS framework (imported in postcss.config.js).
-├   theme.config.tsx — configuration file for Nextra with the essential project parameters.
-├   tsconfig.json — paths to different features of wasm-docs as a TS project. 
+├   theme.config.js — configuration file for Nextra with the essential project parameters.
 └   yarn.lock — lock file to ensure the same environment across devices.
 ```
 ## Install dependencies for the docs
