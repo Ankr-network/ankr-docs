@@ -1,49 +1,49 @@
 # MATIC staking mechanics
 
-MATIC Liquid Staking lets the user stake their funds through the corresponding smart contracts on the **Ethereum** network, accumulate rewards, and receive their stake and rewards when unstaking.
+MATIC Liquid Staking lets the user stake their funds through the corresponding smart contracts on Ethereum or a swap pool on Polygon, accumulate rewards, and receive their stake and rewards when unstaking.
 
 Ankr principles for the staking are:
 
-* Make all staking transactions on the Ethereum network.
-
+* Make all staking transactions on the Ethereum or Polygon network.
+* On Ethereum, use classic Ankr Liquid Staking logic.
+* On Polygon, use a swap pool to perform a simple swap MATIC–ankrMATIC–MATIC with a fixed price.
+* Accumulate and bridge together all the staked MATIC within Ankr.
 * Use the existing MATIC validator node owned by Ankr, thus there are no limits on staking amount and staking period.
-
 * Use a dynamic exchange ratio for ankrMATIC to MATIC.
-
 * Recalculate ankrMATIC/MATIC exchange ratio daily and update it in the ankrMATIC smart contract.
 
-The following section explains staking requirements, fees, rewards, validators, smart contracts and function calls to interact with these smart contracts.
-
+The following explains staking requirements, fees, rewards, validators, smart contracts and function calls to interact with these smart contracts.
 
 ## Requirements
 The requirements when staking are:
 
 * Minimum value to stake — 1 MATIC.
-
-* Maximum value to stake — unlimited, at the user’s discretion.
-
+* Maximum value to stake:
+  * On Ethereum — unlimited, at the user’s discretion.
+  * On Polygon — limited by the swap pool's provider capacity. Current provider — Ankr itself.
 * Staking can be repeated anytime, without waiting for the current staking to complete.
 
 The requirements when unstaking are:
 
 * Minimum value to unstake — 0 MATIC.
-
-* Maximum value to unstake — staked amount + % of the reward, up to the user’s balance.
-
-* Withdrawal period after unstaking — >= 80 epochs. Typically, it’s around 1-2 days.
-
+* Maximum value to unstake:
+* On Ethereum — staked amount + % of the reward, up to the user’s balance.
+* On Polygon — limited by the swap pool's provider capacity. Current provider — Ankr itself. If max capacity is reached in an unstaking request, switch to classic unstake on Ethereum.
+* Withdrawal period after unstaking:
+  * On Ethereum — >= 80 epochs. Typically, it’s around 1-2 days.
+  * On Polygon — instantly.
 * ankrMATIC to MATIC exchange ratio is dynamic, as ankrMATIC grows in value to MATIC, daily.
-
 * User can unstake a part of or all the staked MATIC anytime.
 
 
 ## Fees
 Staking fees:
-* Both for staking on Ethereum and on Polygon, Ankr takes 5% fee from the staking reward.
+* On Ethereum — 5% fee from the staking reward.
+* On Polygon — 5% fee from the staking reward.
 
 Unstaking fees: 
-* When unstaking on Ethereum, user pays a fee of 0.025 ETH.
-* When unstaking on Polygon, user pays a fee — 0.5% from the unstaking amount.
+* On Ethereum — 0.025 ETH.
+* On Polygon — 0.5% from the unstaked amount.
 
 The user must also count in the gas price in ETH for outgoing transactions for staking/unstaking on Ethereum.
 
@@ -62,7 +62,7 @@ There is a single [Ankr validator on Polygon](https://staking.polygon.technology
 
 
 ## Smart contracts
-Smart contracts involved in ETH Liquid Staking are:
+Smart contracts involved in MATIC Liquid Staking on Ethereum are:
 * [Matic](https://etherscan.io/address/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0) — contract on Ethereum that the user calls to approve the chosen MATIC amount to be sent to the PolygonPool
 * [PolygonPool](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89) — contract on Ethereum where the user sends their initial staking request.
 * [aMATICb](https://etherscan.io/address/0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe) — contract on Ethereum that may be used as an intermediary step in the low-level logic.
@@ -72,6 +72,8 @@ Smart contract code can be viewed by following the links and selecting the *Cont
 
 
 ## Staking workflow
+
+### On Ethereum
 The workflow is both user and Ankr-driven. The user part is Steps 1–2, the Ankr part is Steps 3–7.
 
 User calls `Matic::approve(address spender, uint256 amountToSpend)` to approve the chosen MATIC amount to be sent to the `PolygonPool` smart contract.
@@ -96,6 +98,8 @@ The Ankr backend monitors blockchain events coming from the `PolygonPool` smart 
 
 3. The Ankr backend monitors staking status and rewards, and restakes the rewards when the sum of the staked MATIC reward is > threshold. The threshold is a config parameter.
 
+### On Polygon
+User swaps their assets via the Ankr's swap pool on Polygon for ankrMATIC.
 
 ## Daily exchange ratio updates
 
@@ -103,6 +107,7 @@ The ratio updates can be obtained by calling the [`ankrMATIC::ratio()`](https://
 
 ## Unstaking workflow
 
+### On Ethereum
 The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr part is Steps 2–11.
 
 1. User navigates to the dedicated page on Ankr Staking and unstakes their MATIC.
@@ -114,3 +119,7 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 8. Ankr backend detects the unstake event and sends an unstake request to the MATIC smart contract on the Ethereum blockchain.
 9. When unstake is completed and MATIC received at the platform address, the backend sends the MATIC to the Polygon Pool smart contract: `PolygonPool::serveClaims()`.
 10. `PolygonPool` sends the MATIC to the user address, burns the ankrMATIC tokens, and issues an event saying the unstake request has been completed.
+
+### On Polygon
+If the current pool capacity matches the unstake request, the user swaps their ankrMATIC via the Ankr's swap pool on Polygon for MATIC.
+No unbonding period applied for sending MATIC to the user's wallet, since it's an instant swap procedure.
