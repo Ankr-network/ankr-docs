@@ -66,7 +66,8 @@ Smart contracts involved in MATIC Liquid Staking on Ethereum are:
 * [Matic](https://etherscan.io/address/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0) — contract on Ethereum that the user calls to approve the chosen MATIC amount to be sent to the PolygonPool
 * [PolygonPool](https://etherscan.io/address/0xCfD4B4Bc15C8bF0Fd820B0D4558c725727B3ce89) — contract on Ethereum where the user sends their initial staking request.
 * [aMATICb](https://etherscan.io/address/0x99534Ef705Df1FFf4e4bD7bbaAF9b0dFf038EbFe) — contract on Ethereum that may be used as an intermediary step in the low-level logic.
-* [ankrMATIC](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c) — contract on Ethereum that mints or burns ankrMATIC tokens for the user. All interactions go through the Proxy part. 
+* [ankrMATIC](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c) — contract on Ethereum that mints or burns ankrMATIC tokens for the user. All interactions go through the Proxy part.
+* [MaticSwapPool](https://polygonscan.com/address/0x62a509ba95c75cabc7190469025e5abee4eddb2a) — swap pool that holds MATIC and ankrMATC with the main liquidity provider being Ankr; used for staking/unstaking MATIC on Polygon.
 
 Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 
@@ -99,10 +100,16 @@ The Ankr backend monitors blockchain events coming from the `PolygonPool` smart 
 3. The Ankr backend monitors staking status and rewards, and restakes the rewards when the sum of the staked MATIC reward is > threshold. The threshold is a config parameter.
 
 ### On Polygon
-User swaps their assets via the Ankr's swap pool on Polygon for ankrMATIC.
+User sends a transaction to `MaticSwapPool` to swaps their MATIC for ankrMATIC.
+
+Ankr, being the main liquidity provider, rebalances the pool to have enough MATIC and ankrMATIC in it for the users.
+
+## Rebalancing MaticSwapPool
+The pool must be kept in balance, so:
+* Whenever there's more MATIC in it than ankrMATIC, Ankr bridges MATIC to the Ethereum network, stakes it, gets ankrMATIC and bridges it back to Polygon to add to the pool.
+* Whenever there's more ankrMATIC in it than MATIC, Ankr bridges ankrMATIC to the Ethereum network, unstakes it, gets MATIC and bridges it back to Polygon to add to the pool.
 
 ## Daily exchange ratio updates
-
 The ratio updates can be obtained by calling the [`ankrMATIC::ratio()`](https://etherscan.io/token/0x26dcfbfa8bc267b250432c01c982eaf81cc5480c#readProxyContract#F10) read function.
 
 ## Unstaking workflow
@@ -121,5 +128,8 @@ The workflow is both user and Ankr-driven. The user part is Step 1, the Ankr par
 10. `PolygonPool` sends the MATIC to the user address, burns the ankrMATIC tokens, and issues an event saying the unstake request has been completed.
 
 ### On Polygon
+User sends a transaction to `MaticSwapPool` to swaps their ankrMATIC for MATIC.
 If the current pool capacity matches the unstake request, the user swaps their ankrMATIC via the Ankr's swap pool on Polygon for MATIC.
 No unbonding period applied for sending MATIC to the user's wallet, since it's an instant swap procedure.
+
+Ankr, being the main liquidity provider, rebalances the pool to have enough MATIC and ankrMATIC in it for the users.
