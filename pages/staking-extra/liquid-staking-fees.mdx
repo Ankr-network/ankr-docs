@@ -1,21 +1,26 @@
+import { Callout } from "components";
+
 # Liquid Staking fees
 Ankr charges fees for Liquid Staking.
 
-Here are the fees applied during staking and unstaking process.
+Here are the fees applied during staking and unstaking.
 
 ## Staking
-* AVAX — 2% from the staking reward.
-* BNB — 10% from the staking reward; a relayer fee is taken when staking for cross-chain asset transfer (0.002 BNB).
-* DOT — 2% from the staking reward.
-* ETH — 10% from the staking reward.
-* FTM — no fees.
-* KSM — no fees.
-* MATIC — 5% from the staking reward, both on for MATIC on Ethereum and Polygon.
+<Callout type="info">
+Ankr applies a fee deducted from your staking reward. It is deducted automatically each cycle Ankr receives total rewards from the validators — right before Ankr distributes the received rewards among the stakers.
+</Callout>
+* AVAX — 2% from the staking reward; network gas fee.
+* BNB — 10% from the staking reward; a relayer fee is taken when staking for cross-chain asset transfer (0.002 BNB); network gas fee.
+* DOT — 2% from the staking reward; network gas fee.
+* ETH — 10% from the staking reward; network gas fee.
+* FTM — network gas fee.
+* KSM — network gas fee.
+* MATIC — 5% from the staking reward, either on Ethereum or Polygon; network gas fee.
 
 ## Unstaking
-* AVAX — no fees.
-* BNB — no fees.
-* DOT — no fees.
-* FTM — burnFee; depends on the current liquidity and amount to unstake, calculated by the `FantomPool` smart contract, deducted from the amount the user unstakes.
-* KSM — no fees.
-* MATIC — for MATIC Liquid Staking on Ethereum, the fee is 0.025 ETH; for MATIC Liquid Staking on Polygon — 0.5% of the unstaking amount.
+* AVAX — network gas fee.
+* BNB — network gas fee.
+* DOT — network gas fee.
+* FTM — a burnFee, which depends on the current liquidity and amount to unstake, calculated by the `FantomPool` smart contract, deducted from the amount the user unstakes.
+* KSM — network gas fee.
+* MATIC — network gas fee; also, for MATIC Liquid Staking on Ethereum, a fee of around 0.025 ETH and for MATIC Liquid Staking on Polygon, a fee of 0.5% of the unstaking amount.
