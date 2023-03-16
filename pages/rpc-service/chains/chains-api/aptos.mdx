@@ -1,0 +1,1821 @@
+# Aptos
+
+> Aptos API is available on [RPC Service](https://www.ankr.com/rpc/aptos).
+
+The Aptos blockchain, designed with scalability, safety, reliability, and upgradability as key principles, to address blockchain challenges, such as frequent outages, high costs, low throughput limits, and security concerns. The Aptos blockchain has been developed over the past three years by over 350+ developers across the globe. It offers new and novel innovations in consensus, smart contract design, system security, performance, and decentralization. The combination of these technologies will provide a fundamental building block to bring web3 to the masses.
+
+In order for your Web3 application to interact with the Aptos blockchain — either by reading blockchain data or sending transactions to the network — it must connect to an Aptos node. Developers interact with the blockchain using the methods provided by the API.
+
+Aptos API uses the REST interface for querying, responses come in [JSON format](https://www.json.org/json-en.html).
+
+## Methods supported
+
+**Accounts**:
+
+  * [Get account](/rpc-service/chains/chains-api/aptos/#get-account) — retrieves the authentication key and the sequence number for an account address.
+  * [Get account resources](/rpc-service/chains/chains-api/aptos/#get-account-resources) — retrieves all account resources for a given account and a specific ledger version.
+  * [Get account modules](/rpc-service/chains/chains-api/aptos/#get-account-modules) — retrieves all account modules' bytecode for a given account at a specific ledger version.
+  * [Get account resource](/rpc-service/chains/chains-api/aptos/#get-account-resource) — retrieves an individual resource from a given account and at a specific ledger version.
+  * [Get account module](/rpc-service/chains/chains-api/aptos/#get-account-module) — retrieves an individual module from a given account and at a specific ledger version.
+
+**Blocks**:
+
+  * [Get blocks by height](/rpc-service/chains/chains-api/aptos/#get-blocks-by-height) — retrieves the transactions in a block and the corresponding block information.
+  * [Get blocks by version](/rpc-service/chains/chains-api/aptos/#get-blocks-by-version) — retrieves the transactions in a block and the corresponding block information by version in the block.
+
+**Events**:
+
+  * [Get events by creation number](/rpc-service/chains/chains-api/aptos/#get-events-by-creation-number) — retrieves events by creation number.
+  * [Get events by event handle](/rpc-service/chains/chains-api/aptos/#get-events-by-event-handle) — retrieves events by event handle.
+
+**General**:
+
+  * [Get ledger info](/rpc-service/chains/chains-api/aptos/#get-ledger-info) — retrieves the latest ledger information.
+
+**Table**:
+
+  * [Get table item](/rpc-service/chains/chains-api/aptos/#get-table-item) — retrieves a table item.
+  * [Get raw table item](/rpc-service/chains/chains-api/aptos/#get-raw-table-item) — retrieves a raw table item.
+
+**Transactions**:
+
+  * [Get transactions](/rpc-service/chains/chains-api/aptos/#get-transactions) — retrieves on-chain committed transactions.
+  * [Submit transaction](/rpc-service/chains/chains-api/aptos/#submit-transaction) — submits a transaction in JSON or BCS.
+  * [Get transaction by hash](/rpc-service/chains/chains-api/aptos/#get-transaction-by-hash) — retrieves a transaction by its hash.
+  * [Get transaction by version](/rpc-service/chains/chains-api/aptos/#get-transaction-by-version) — retrieves a transaction by a given version.
+  * [Get account transactions](/rpc-service/chains/chains-api/aptos/#get-account-transactions) — retrieves on-chain committed transactions from an account.
+  * [Submit batch transactions](/rpc-service/chains/chains-api/aptos/#submit-batch-transactions) — submits multiple transactions.
+  * [Simulate transaction](/rpc-service/chains/chains-api/aptos/#simulate-transaction) — simulates transaction submission.
+  * [Encode submission](/rpc-service/chains/chains-api/aptos/#encode-submission) — accepts an EncodeSubmissionRequest, which internally is a UserTransactionRequestInner (and optionally secondary signers) encoded as JSON, validates the request format, and then returns that request encoded in BCS.
+  * [Estimate gas price](/rpc-service/chains/chains-api/aptos/#estimate-gas-price) — estimates gas price.
+
+**View**:
+
+  * [Execute view function of a module](/rpc-service/chains/chains-api/aptos/#execute-view-function-of-a-module) — executes the Move function with the given parameters and return its execution result.
+
+---
+
+## Accounts
+
+### Get account
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}`**
+
+Returns the authentication key and the sequence number for an account address. Optionally, a ledger version can be specified. If the ledger version is not specified in the request, the latest ledger version is used.
+
+#### Parameters
+
+  * `address` (string; hex; path; required): an address of account with or without a `0x` prefix.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>   Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "sequence_number": "32425224034",
+  "authentication_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+}
+```
+
+---
+
+### Get account resources
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resources`**
+
+Retrieves all account resources for a given account and a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
+
+The Aptos nodes prune account state history, via a configurable time window. If the requested ledger version has been pruned, the server responds with a 410.
+
+#### Parameters
+
+  * `address` (string; hex; path; required): an address of account with or without a `0x` prefix.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>   Example: `32425224034`
+  * `limit` (integer; query): max number of account resources to retrieve. If not provided, retrieves a default page size.
+  * `start` (string; query): cursor specifying where to start for pagination. This cursor cannot be derived manually client-side. Instead, you must call this endpoint once without this query parameter specified, and then use the cursor returned in the X-Aptos-Cursor header in the response.<br/>
+    Example: `0000000000000000000000000000000000000000000000000000000000000000012f0000000000000000000000000000000000000000000000000000000000000000010d7374616b696e675f70726f7879
+`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resources \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+[
+  {
+    "type": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+    "data": {
+      "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "coin_register_events": {
+        "counter": "0",
+        "guid": {
+          "id": {
+            "addr": "0x1",
+            "creation_num": "0"
+          }
+        }
+      },
+      "self_address": "0x1",
+      "sequence_number": "0"
+    }
+  }
+]
+```
+
+---
+
+### Get account modules
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/modules`**
+
+Retrieves all account modules' bytecode for a given account at a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
+
+The Aptos nodes prune account state history, via a configurable time window. If the requested ledger version has been pruned, the server responds with a 410.
+
+#### Parameters
+
+  * `address` (string; hex; path; required): an address of account with or without a `0x` prefix.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>   Example: `32425224034`
+  * `limit` (integer; query): max number of account resources to retrieve. If not provided, retrieves a default page size.
+  * `start` (string; query): cursor specifying where to start for pagination. This cursor cannot be derived manually client-side. Instead, you must call this endpoint once without this query parameter specified, and then use the cursor returned in the X-Aptos-Cursor header in the response.<br/>
+    Example: `0000000000000000000000000000000000000000000000000000000000000000012f0000000000000000000000000000000000000000000000000000000000000000010d7374616b696e675f70726f7879
+`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/modules \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+[
+  {
+    "bytecode": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "abi": {
+      "address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+      "name": "string",
+      "friends": [
+        "0x1::aptos_coin"
+      ],
+      "exposed_functions": [
+        {
+          "name": "string",
+          "visibility": "private",
+          "is_entry": true,
+          "generic_type_params": [
+            {
+              "constraints": [
+                "string"
+              ]
+            }
+          ],
+          "params": [
+            "string"
+          ],
+          "return": [
+            "string"
+          ]
+        }
+      ],
+      "structs": [
+        {
+          "name": "string",
+          "is_native": true,
+          "abilities": [
+            "string"
+          ],
+          "generic_type_params": [
+            {
+              "constraints": [
+                "string"
+              ]
+            }
+          ],
+          "fields": [
+            {
+              "name": "string",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
+```
+
+---
+
+### Get account resource
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resource/{resource_type}`**
+
+Retrieves an individual resource from a given account and at a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
+
+The Aptos nodes prune account state history, via a configurable time window. If the requested ledger version has been pruned, the server responds with a 410.
+
+#### Parameters
+
+  * `address` (string; hex; path; required): an address of account with or without a `0x` prefix.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `resource_type` (string; path; required) a name of struct to retrieve.<br/>
+    Example: `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`<br/>
+    Match pattern: `^0x[0-9a-zA-Z:_<>]+$`
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>   Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resource/{resource_type} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "type": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+  "data": {
+    "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "coin_register_events": {
+      "counter": "0",
+      "guid": {
+        "id": {
+          "addr": "0x1",
+          "creation_num": "0"
+        }
+      }
+    },
+    "self_address": "0x1",
+    "sequence_number": "0"
+  }
+}
+```
+
+---
+
+### Get account module
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/module/{module_name}`**
+
+Retrieves an individual module from a given account and at a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
+
+The Aptos nodes prune account state history, via a configurable time window. If the requested ledger version has been pruned, the server responds with a 410.
+
+#### Parameters
+
+  * `address` (string; hex; path; required): an address of account with or without a `0x` prefix.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `module_name` (string; path; required): a name of module to retrieve (example: `coin`).
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>   Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/module/{module_name} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "bytecode": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+  "abi": {
+    "address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "name": "string",
+    "friends": [
+      "0x1::aptos_coin"
+    ],
+    "exposed_functions": [
+      {
+        "name": "string",
+        "visibility": "private",
+        "is_entry": true,
+        "generic_type_params": [
+          {
+            "constraints": [
+              "string"
+            ]
+          }
+        ],
+        "params": [
+          "string"
+        ],
+        "return": [
+          "string"
+        ]
+      }
+    ],
+    "structs": [
+      {
+        "name": "string",
+        "is_native": true,
+        "abilities": [
+          "string"
+        ],
+        "generic_type_params": [
+          {
+            "constraints": [
+              "string"
+            ]
+          }
+        ],
+        "fields": [
+          {
+            "name": "string",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+
+## Blocks
+
+### Get blocks by height
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/blocks/by_height/{block_height}`**
+
+This endpoint allows you to get the transactions in a block and the corresponding block information.
+
+Transactions are limited by max default transactions size. If not all transactions are present, the user will need to query for the rest of the transactions via the get transactions API.
+
+If the block is pruned, it will return a 410
+
+#### Parameters
+
+  * `block_height` (integer; path; required): a block height to look up. Starts at 0.
+  * `with_transactions` (boolean; query): if set to true, includes all transactions in the block. If not provided, no transactions will be retrieved.
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/blocks/by_height/{block_height} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "block_height": "32425224034",
+  "block_hash": "string",
+  "block_timestamp": "32425224034",
+  "first_version": "32425224034",
+  "last_version": "32425224034",
+  "transactions": [
+    {
+      "type": "pending_transaction",
+      "hash": "string",
+      "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+      "sequence_number": "32425224034",
+      "max_gas_amount": "32425224034",
+      "gas_unit_price": "32425224034",
+      "expiration_timestamp_secs": "32425224034",
+      "payload": {
+        "type": "entry_function_payload",
+        "function": "0x1::aptos_coin::transfer",
+        "type_arguments": [
+          "string"
+        ],
+        "arguments": [
+          null
+        ]
+      },
+      "signature": {
+        "type": "ed25519_signature",
+        "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+        "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+      }
+    }
+  ]
+}
+```
+
+---
+
+### Get blocks by version
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/blocks/by_version/{version}`**
+
+This endpoint allows you to get the transactions in a block and the corresponding block information given a version in the block.
+
+Transactions are limited by max default transactions size. If not all transactions are present, the user will need to query for the rest of the transactions via the get transactions API.
+
+If the block has been pruned, it will return a 410
+
+#### Parameters
+
+  * `version` (integer; path; required): a ledger version to look up block information for.
+  * `with_transactions` (boolean; query): if set to true, includes all transactions in the block. If not provided, no transactions will be retrieved.
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/blocks/by_version/{version} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "block_height": "32425224034",
+  "block_hash": "string",
+  "block_timestamp": "32425224034",
+  "first_version": "32425224034",
+  "last_version": "32425224034",
+  "transactions": [
+    {
+      "type": "pending_transaction",
+      "hash": "string",
+      "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+      "sequence_number": "32425224034",
+      "max_gas_amount": "32425224034",
+      "gas_unit_price": "32425224034",
+      "expiration_timestamp_secs": "32425224034",
+      "payload": {
+        "type": "entry_function_payload",
+        "function": "0x1::aptos_coin::transfer",
+        "type_arguments": [
+          "string"
+        ],
+        "arguments": [
+          null
+        ]
+      },
+      "signature": {
+        "type": "ed25519_signature",
+        "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+        "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+      }
+    }
+  ]
+}
+```
+
+---
+
+## Events
+
+### Get events by creation number
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{creation_number}`**
+
+Event types are globally identifiable by an account `address` and monotonically increasing `creation_number`, one per event type emitted to the given account. This API returns events corresponding to that that event type.
+
+#### Parameters
+
+  * `address` (string; hex; path; required): a hex-encoded 32 byte Aptos account, with or without a `0x` prefix, for which events are queried. This refers to the account that events were emitted to, not the account hosting the move module that emits that event type.<br/>
+  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `creation_number` (string; uint64; path; required): a creation number corresponding to the event stream originating from the given account.
+  * `limit` (integer; query): max number of events to retrieve. If unspecified, defaults to default page size.
+  * `start` (string; uint64; query): the starting sequence number of events. If unspecified, by default will retrieve the most recent events.<br/>
+    Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{creation_number} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+[
+  {
+    "version": "32425224034",
+    "guid": {
+      "creation_number": "32425224034",
+      "account_address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+    },
+    "sequence_number": "32425224034",
+    "type": "string",
+    "data": null
+  }
+]
+```
+
+---
+
+### Get events by event handle
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{event_handle}/{field_name}`**
+
+This API uses the given account `address`, `eventHandle`, and `fieldName` to build a key that can globally identify an event types. It then uses this key to return events emitted to the given account matching that event type.
+
+#### Parameters
+
+  * `address` (string; hex; path; required): a hex-encoded 32 byte Aptos account, with or without a `0x` prefix, for which events are queried. This refers to the account that events were emitted to, not the account hosting the move module that emits that event type.<br/>
+  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `event_handle` (string; path; required): a name of struct to look up event handle.<br/>
+    Example: `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`<br/>
+    Match pattern: `^0x[0-9a-zA-Z:_<>]+$`
+  * `field_name` (string; path; required): a name of field to look up event handle (example: `withdraw_events`).
+  * `limit` (integer; query): max number of events to retrieve. If unspecified, defaults to default page size.
+  * `start` (string; uint64; query): the starting sequence number of events. If unspecified, by default will retrieve the most recent events.<br/>
+    Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{event_handle}/{field_name} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+[
+  {
+    "version": "32425224034",
+    "guid": {
+      "creation_number": "32425224034",
+      "account_address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+    },
+    "sequence_number": "32425224034",
+    "type": "string",
+    "data": null
+  }
+]
+```
+
+---
+
+## General
+
+### Get ledger info
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/`**
+
+Retrieves the latest ledger information, including data such as chain ID, role type, ledger versions, epoch, etc.
+
+#### Parameters
+
+None.
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/ \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "chain_id": 0,
+  "epoch": "32425224034",
+  "ledger_version": "32425224034",
+  "oldest_ledger_version": "32425224034",
+  "ledger_timestamp": "32425224034",
+  "node_role": "validator",
+  "oldest_block_height": "32425224034",
+  "block_height": "32425224034",
+  "git_hash": "string"
+}
+```
+
+---
+
+## Table
+
+### Get table item
+
+> **POST `https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item`**
+
+Get a table item at a specific ledger version from the table identified by `{table_handle}` in the path and the "key" (TableItemRequest) provided in the request body.
+
+The Aptos nodes prune account state history, via a configurable time window. If the requested ledger version has been pruned, the server responds with a 410.
+
+#### Parameters
+
+  * `table_handle` (string; hex; path; required): a table handle hex encoded 32-byte string.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>
+    Example: `32425224034`
+  * `key_type` (string; body; required): a string representation of an on-chain Move type tag that is exposed in transaction payload. Values: - bool - u8 - u16 - u32 - u64 - u128 - u256 - address - signer - vector: `vector<{non-reference MoveTypeId}>` - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`<br/>
+    ```
+    Vector type value examples:
+      - `vector<u8>`
+      - `vector<vector<u64>>`
+      - `vector<0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>>`
+
+    Struct type value examples:
+      - `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+      - `0x1::account::Account`
+
+    Note:
+      1. Empty chars should be ignored when comparing 2 struct tag ids.
+      2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).
+    ```
+    Match patterns: `^(bool|u8|u64|u128|address|signer|vector<.+>|0x[0-9a-zA-Z:_<, >]+)$`
+  * `value_type` (string; body; required): a string representation of an on-chain Move type tag that is exposed in transaction payload. Values: - bool - u8 - u16 - u32 - u64 - u128 - u256 - address - signer - vector: `vector<{non-reference MoveTypeId}>` - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`<br/>
+    ```
+    Vector type value examples:
+      - `vector<u8>`
+      - `vector<vector<u64>>`
+      - `vector<0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>>`
+
+    Struct type value examples:
+      - `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+      - `0x1::account::Account`
+
+    Note:
+      1. Empty chars should be ignored when comparing 2 struct tag ids.
+      2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).
+    ```
+    Match pattern: `^(bool|u8|u64|u128|address|signer|vector<.+>|0x[0-9a-zA-Z:_<, >]+)$`
+  * `key` (body; required): the value of the table item's key.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item \
+-H 'Content-Type: application/json' \
+-d '{
+      "key_type": "string",
+      "value_type": "string",
+      "key": null
+}'
+```
+
+#### Response example
+
+```json
+0
+```
+
+---
+
+### Get raw table item
+
+> **POST `https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/raw_item`**
+
+Get a table item at a specific ledger version from the table identified by `{table_handle}` in the path and the "key" (RawTableItemRequest) provided in the request body.
+
+The `get_raw_table_item` requires only a serialized key comparing to the full move type information comparing to the `get_table_item` api, and can only return the query in the bcs format.
+
+The Aptos nodes prune account state history, via a configurable time window. If the requested ledger version has been pruned, the server responds with a 410.
+
+#### Parameters
+
+  * `table_handle` (string; hex; path; required): a table handle hex encoded 32-byte string.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>
+    Example: `32425224034`
+  * `key` (string; hex; body; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+    Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item \
+-H 'Content-Type: application/json' \
+-d '{
+  "key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+}'
+```
+
+#### Response example
+
+```json
+0
+```
+
+---
+
+## Transactions
+
+### Get transactions
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/transactions`**
+
+Retrieves on-chain committed transactions. The page size and start ledger version can be provided to get a specific sequence of transactions.
+
+If the version has been pruned, then a 410 will be returned.
+
+To retrieve a pending transaction, use [Get transactions by hash](/rpc-service/chains/chains-api/aptos/#get-transaction-by-hash).
+
+#### Parameters
+
+  * `limit` (integer; query): max number of events to retrieve. If unspecified, defaults to default page size.
+  * `start` (string; uint64; query): a ledger version to start th list of transactions. If not provided, defaults to showing the latest transactions<br/>
+    Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+[
+  {
+    "type": "pending_transaction",
+    "hash": "string",
+    "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "sequence_number": "32425224034",
+    "max_gas_amount": "32425224034",
+    "gas_unit_price": "32425224034",
+    "expiration_timestamp_secs": "32425224034",
+    "payload": {
+      "type": "entry_function_payload",
+      "function": "0x1::aptos_coin::transfer",
+      "type_arguments": [
+        "string"
+      ],
+      "arguments": [
+        null
+      ]
+    },
+    "signature": {
+      "type": "ed25519_signature",
+      "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+      "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+    }
+  }
+]
+```
+
+---
+
+### Submit transaction
+
+> **POST `https://rpc.ankr.com/http/aptos/v1/transactions`**
+
+This endpoint accepts transaction submissions in two formats.
+
+To submit a transaction as JSON, you must create a SubmitTransactionRequest. To build this request, do the following:
+
+  1. Encode the transaction as BCS. If you are using a language that has
+  2. Sign the encoded transaction and use it to create a TransactionSignature.
+  3. Submit the request. Make sure to use the "application/json" Content-Type.
+
+To submit a transaction as BCS, you must submit a SignedTransaction encoded as BCS. Make sure to use the `application/x.aptos.signed_transaction+bcs` Content-Type.
+
+#### Parameters
+
+Request is an `application/json` body with the following parameters:
+
+  * `sender` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `sequence_number` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `max_gas_amount` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `gas_unit_price` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `expiration_timestamp_secs` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `payload` (object; required): a payload is one of the following objects:
+    1. A payload which runs a single entry function:
+        * `type` (string; required): a payload type. Example: `entry_function_payload`.
+        * `function` (string; required): an entry function ID is a string representation of an entry function defined on-chain.<br/>
+          Format: `{address}::{module name}::{function name}`<br/>
+          Both `module name` and `function name` are case-sensitive.<br/>
+          Example: `0x1::aptos_coin::transfer`
+        * `type_arguments` (array[string]; required): type arguments of the function.
+        * `arguments` (array; required): arguments of the function.
+    2. A payload which runs a script that can run multiple functions:
+        * `type` (string; required): a payload type. Example: `script_payload`.
+        * `code` (object; required): a Move script bytecode:
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with `0x` and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move function:
+                * `name` (string; required): a name of the function.
+                * `visibility` (string; required): Move function visibility.<br/>
+                  Allowed values: `private`, `public`, `friend`
+                * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                    * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                * `params` (array[string]; required): parameters associated with the Move function.
+                * `return` (array[string]: required): a return type of the function.
+            * `type_arguments` (array[string]; required): type arguments of the function.
+            * `arguments` (array; required): arguments of the function.
+    3. An enum of possible transaction payloads:
+        * `type` (string; required): a payload type. Example: `module_bundle_payload`.
+        * `modules` (array[object]; required):
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move module:
+                * `address` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `name` (string; required): a name of the module.
+                * `friends` (array[string]: required): friends of the module.
+                * `exposed_functions` (array[object]; required): public functions of the module:
+                    * `name` (string; required): a name of the function.
+                    * `visibility` (string; required): Move function visibility.<br/>
+                      Allowed values: `private`, `public`, `friend`
+                    * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                    * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                    * `params` (array[string]; required): parameters associated with the Move function.
+                    * `return` (array[string]; required): a return type of the function.
+                * `structs` (array[object]; required): structs of the module:
+                    * `name` (string; required): a name of the struct.
+                    * `is_native` (boolean; required): whether the struct is a native struct of Move.
+                    * `abilities` (array[string]; required): abilities associated with the struct.
+                    * `generic_type_params` (array[object]; required): generic types associated with the struct:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the type that uses it.
+                    * `fields` (array[object]; required): fields associated with the struct:
+                        * `name` (string; required): a name of the field.
+                        * `type` (string; required): a string representation of an on-chain Move type tag that is exposed in transaction payload.<br/>
+                          Values: - bool - u8 - u16 - u32 - u64 - u128 - u256 - address - signer - vector: `vector<{non-reference MoveTypeId}>` - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`
+                          ```
+                          Vector type value examples:
+                            - `vector<u8>`
+                            - `vector<vector<u64>>`
+                            - `vector<0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>>`
+
+                          Struct type value examples:
+                            - `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+                            - `0x1::account::Account`
+
+                          Note:
+                            1. Empty chars should be ignored when comparing 2 struct tag ids.
+                            2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).
+                          ```
+                          Match pattern: `^(bool|u8|u64|u128|address|signer|vector<.+>|0x[0-9a-zA-Z:_<, >]+)$`
+  * `signature` (object; required): a signature is one of the following objects:
+    1. A single Ed25519 signature:
+        * `type` (string; required): a signature type. Example: `ed25519_signature`.
+        * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+        * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+    2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+        * `type` (string; required): a type of signature. Example: `multi_ed25519_signature`.
+        * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+        * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+        * `threshold` (integer; required): the number of signatures required for a successful transaction.
+        * `bitmap` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+    3. A multi-agent signature for multi-agent transactions (allows you to have transactions across multiple accounts):
+        * `type` (string; required): a type of signature. Example: `multi_agent_signature`.
+        * `sender` (object; required): a sender is on of the following objects:
+            1. A single Ed25519 signature:
+                * `type` (string; required): a type of sender signature. Example: `ed25519_signature`.
+                * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+                * `type` (string; required): a type of sender signature. Example: `multi_ed25519_signature`.
+                * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+                * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+                * `threshold` (integer; required): the number of signatures required for a successful transaction.
+                * `bitmap` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+        * `secondary_signer_addresses` (array[string]; hex; required): the other involved parties' addresses.
+        * `secondary_signers` (array of objects): an array of on of the following objects:
+            1. A single Ed25519 signature:
+                * `type` (string; required): a type of secondary signers' signature. Example: `ed25519_signature`.
+                * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+                * `type` (string; required): a type of secondary signers' signature. Example: `multi_ed25519_signature`.
+                * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+                * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+                * `threshold` (integer; required): the number of signatures required for a successful transaction.
+                * `bitmap` (string; hex; required): bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions \
+-H 'Content-Type: application/json'
+-d '{
+  "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+  "sequence_number": "32425224034",
+  "max_gas_amount": "32425224034",
+  "gas_unit_price": "32425224034",
+  "expiration_timestamp_secs": "32425224034",
+  "payload": {
+    "type": "entry_function_payload",
+    "function": "0x1::aptos_coin::transfer",
+    "type_arguments": [
+      "string"
+    ],
+    "arguments": [
+      null
+    ]
+  },
+  "signature": {
+    "type": "ed25519_signature",
+    "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "hash": "string",
+  "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+  "sequence_number": "32425224034",
+  "max_gas_amount": "32425224034",
+  "gas_unit_price": "32425224034",
+  "expiration_timestamp_secs": "32425224034",
+  "payload": {
+    "type": "entry_function_payload",
+    "function": "0x1::aptos_coin::transfer",
+    "type_arguments": [
+      "string"
+    ],
+    "arguments": [
+      null
+    ]
+  },
+  "signature": {
+    "type": "ed25519_signature",
+    "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+  }
+}
+```
+
+---
+
+### Get transaction by hash
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/transactions/by_hash/{txn_hash}`**
+
+Retrieves a transaction by its hash. This is the same hash that is returned by the API when submitting a transaction (see PendingTransaction).
+
+When given a transaction hash, the server first looks for the transaction in storage (on-chain, committed). If no on-chain transaction is found, it looks the transaction up by hash in the mempool (pending, not yet committed).
+
+To create a transaction hash by yourself, do the following:
+
+  1. Hash message bytes: "RawTransaction" bytes + BCS bytes of Transaction.
+  2. Apply hash algorithm `SHA3-256` to the hash message bytes.
+  3. Hex-encode the hash bytes with `0x` prefix.
+
+#### Parameters
+
+  * `txn_hash` (string; path; required): a hash of the transaction to retrieve.
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions/by_hash/{txn_hash} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "type": "pending_transaction",
+  "hash": "string",
+  "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+  "sequence_number": "32425224034",
+  "max_gas_amount": "32425224034",
+  "gas_unit_price": "32425224034",
+  "expiration_timestamp_secs": "32425224034",
+  "payload": {
+    "type": "entry_function_payload",
+    "function": "0x1::aptos_coin::transfer",
+    "type_arguments": [
+      "string"
+    ],
+    "arguments": [
+      null
+    ]
+  },
+  "signature": {
+    "type": "ed25519_signature",
+    "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+  }
+}
+```
+
+---
+
+### Get transaction by version
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/transactions/by_version/{txn_version}`**
+
+Retrieves a transaction by a given version. If the version has been pruned, a 410 will be returned.
+
+#### Parameters
+
+  * `txn_version` (string; uint64; path; required): a version of the transaction to retrieve.<br/>
+    Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions/by_version/{txn_version} \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "type": "pending_transaction",
+  "hash": "string",
+  "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+  "sequence_number": "32425224034",
+  "max_gas_amount": "32425224034",
+  "gas_unit_price": "32425224034",
+  "expiration_timestamp_secs": "32425224034",
+  "payload": {
+    "type": "entry_function_payload",
+    "function": "0x1::aptos_coin::transfer",
+    "type_arguments": [
+      "string"
+    ],
+    "arguments": [
+      null
+    ]
+  },
+  "signature": {
+    "type": "ed25519_signature",
+    "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+  }
+}
+```
+
+---
+
+### Get account transactions
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/transactions`**
+
+Retrieves on-chain committed transactions from an account. If the start version is too far in the past, a 410 will be returned.
+
+If no start version is given, it will start at version 0.
+
+To retrieve a pending transaction, use [Get transaction by hash](/rpc-service/chains/chains-api/aptos/#get-transaction-by-hash).
+
+#### Parameters
+
+  * `address` (string; hex; path; required): an address of account with or without a `0x` prefix.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `limit` (integer; query): a max number of transactions to retrieve. If not provided, retrieves a default page size.
+  * `start` (string; uint64; query): a ledger version to start the list of transactions. If not provided, defaults to showing the latest transactions.<br/>
+    Example: `32425224034`
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/transactions \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+[
+  {
+    "type": "pending_transaction",
+    "hash": "string",
+    "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "sequence_number": "32425224034",
+    "max_gas_amount": "32425224034",
+    "gas_unit_price": "32425224034",
+    "expiration_timestamp_secs": "32425224034",
+    "payload": {
+      "type": "entry_function_payload",
+      "function": "0x1::aptos_coin::transfer",
+      "type_arguments": [
+        "string"
+      ],
+      "arguments": [
+        null
+      ]
+    },
+    "signature": {
+      "type": "ed25519_signature",
+      "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+      "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+    }
+  }
+]
+```
+
+---
+
+### Submit batch transactions
+
+> **POST `https://rpc.ankr.com/http/aptos/v1/transactions/batch`**
+
+Submits multiple transactions. The response has three outcomes:
+
+  1. All transactions succeed, and it will return a 202.
+  2. Some transactions succeed, and it will return the failed transactions and a 206.
+  3. No transactions succeed, and it will also return the failed transactions and a 206.
+
+To submit a transaction as JSON, you must submit a SubmitTransactionRequest. To build this request, do the following:
+
+  1. Encode the transaction as BCS. If you are using a language that has native BCS support, make sure to use that library. If not, you may take advantage of [Encode submission](/rpc-service/chains/chains-api/aptos/#encode-submission). When using this endpoint, make sure you trust the node you're talking to, as it is possible they could manipulate your request.
+  2. Sign the encoded transaction and use it to create a TransactionSignature.
+  3. Submit the request. Make sure to use the "application/json" Content-Type.
+
+To submit a transaction as BCS, you must submit a SignedTransaction encoded as BCS. Make sure to use the application/x.aptos.signed_transaction+bcs Content-Type.
+
+#### Parameters
+
+A request body is represented by an array of the following parameters:
+
+  * `sender` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `sequence_number` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `max_gas_amount` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `gas_unit_price` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `expiration_timestamp_secs` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `payload` (object; required): a payload is one of the following objects:
+    1. A payload which runs a single entry function:
+        * `type` (string; required): a payload type. Example: `entry_function_payload`.
+        * `function` (string; required): an entry function ID is a string representation of an entry function defined on-chain.<br/>
+          Format: `{address}::{module name}::{function name}`<br/>
+          Both `module name` and `function name` are case-sensitive.<br/>
+          Example: `0x1::aptos_coin::transfer`
+        * `type_arguments` (array[string]; required): type arguments of the function.
+        * `arguments` (array; required): arguments of the function.
+    2. A payload which runs a script that can run multiple functions:
+        * `type` (string; required): a payload type. Example: `script_payload`.
+        * `code` (object; required): a Move script bytecode:
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with `0x` and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move function:
+                * `name` (string; required): a name of the function.
+                * `visibility` (string; required): Move function visibility.<br/>
+                  Allowed values: `private`, `public`, `friend`
+                * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                    * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                * `params` (array[string]; required): parameters associated with the Move function.
+                * `return` (array[string]: required): a return type of the function.
+            * `type_arguments` (array[string]; required): type arguments of the function.
+            * `arguments` (array; required): arguments of the function.
+    3. An enum of possible transaction payloads:
+        * `type` (string; required): a payload type. Example: `module_bundle_payload`.
+        * `modules` (array[object]; required):
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move module:
+                * `address` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `name` (string; required): a name of the module.
+                * `friends` (array[string]: required): friends of the module.
+                * `exposed_functions` (array[object]; required): public functions of the module:
+                    * `name` (string; required): a name of the function.
+                    * `visibility` (string; required): Move function visibility.<br/>
+                      Allowed values: `private`, `public`, `friend`
+                    * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                    * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                    * `params` (array[string]; required): parameters associated with the Move function.
+                    * `return` (array[string]; required): a return type of the function.
+                * `structs` (array[object]; required): structs of the module:
+                    * `name` (string; required): a name of the struct.
+                    * `is_native` (boolean; required): whether the struct is a native struct of Move.
+                    * `abilities` (array[string]; required): abilities associated with the struct.
+                    * `generic_type_params` (array[object]; required): generic types associated with the struct:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the type that uses it.
+                    * `fields` (array[object]; required): fields associated with the struct:
+                        * `name` (string; required): a name of the field.
+                        * `type` (string; required): a string representation of an on-chain Move type tag that is exposed in transaction payload.<br/>
+                          Values: - bool - u8 - u16 - u32 - u64 - u128 - u256 - address - signer - vector: `vector<{non-reference MoveTypeId}>` - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`
+                          ```
+                          Vector type value examples:
+                            - `vector<u8>`
+                            - `vector<vector<u64>>`
+                            - `vector<0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>>`
+
+                          Struct type value examples:
+                            - `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+                            - `0x1::account::Account`
+
+                          Note:
+                            1. Empty chars should be ignored when comparing 2 struct tag ids.
+                            2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).
+                          ```
+                          Match pattern: `^(bool|u8|u64|u128|address|signer|vector<.+>|0x[0-9a-zA-Z:_<, >]+)$`
+  * `signature` (object; required): a signature is one of the following objects:
+    1. A single Ed25519 signature:
+        * `type` (string; required): a signature type. Example: `ed25519_signature`.
+        * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+        * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+    2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+        * `type` (string; required): a type of signature. Example: `multi_ed25519_signature`.
+        * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+        * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+        * `threshold` (integer; required): the number of signatures required for a successful transaction.
+        * `bitmap` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+    3. A multi-agent signature for multi-agent transactions (allows you to have transactions across multiple accounts):
+        * `type` (string; required): a type of signature. Example: `multi_agent_signature`.
+        * `sender` (object; required): a sender is on of the following objects:
+            1. A single Ed25519 signature:
+                * `type` (string; required): a type of sender signature. Example: `ed25519_signature`.
+                * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+                * `type` (string; required): a type of sender signature. Example: `multi_ed25519_signature`.
+                * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+                * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+                * `threshold` (integer; required): the number of signatures required for a successful transaction.
+                * `bitmap` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+        * `secondary_signer_addresses` (array[string]; hex; required): the other involved parties' addresses.
+        * `secondary_signers` (array of objects): an array of on of the following objects:
+            1. A single Ed25519 signature:
+                * `type` (string; required): a type of secondary signers' signature. Example: `ed25519_signature`.
+                * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+                * `type` (string; required): a type of secondary signers' signature. Example: `multi_ed25519_signature`.
+                * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+                * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+                * `threshold` (integer; required): the number of signatures required for a successful transaction.
+                * `bitmap` (string; hex; required): bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/batch \
+-H 'Content-Type: application/json'
+-d '[
+  {
+    "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "sequence_number": "32425224034",
+    "max_gas_amount": "32425224034",
+    "gas_unit_price": "32425224034",
+    "expiration_timestamp_secs": "32425224034",
+    "payload": {
+      "type": "entry_function_payload",
+      "function": "0x1::aptos_coin::transfer",
+      "type_arguments": [
+        "string"
+      ],
+      "arguments": [
+        null
+      ]
+    },
+    "signature": {
+      "type": "ed25519_signature",
+      "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+      "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+    }
+  }
+]'
+```
+
+#### Response example
+
+```json
+{
+  "transaction_failures": [
+    {
+      "error": {
+        "message": "string",
+        "error_code": "account_not_found",
+        "vm_error_code": 0
+      },
+      "transaction_index": 0
+    }
+  ]
+}
+```
+
+---
+
+### Simulate transaction
+
+> **POST `https://rpc.ankr.com/http/aptos/v1/transactions/simulate`**
+
+Simulates a transaction. The output of the transaction will have the exact transaction outputs and events that running an actual signed transaction would have. However, it will not have the associated state hashes, as they are not updated in storage. This can be used to estimate the maximum gas units for a submitted transaction.
+
+To use this, you must:
+
+  * Create a SignedTransaction with a zero-padded signature.
+  * Submit a SubmitTransactionRequest containing a UserTransactionRequest containing that signature.
+
+To use this endpoint with BCS, you must submit a SignedTransaction encoded as BCS.
+
+#### Parameters
+
+  * `estimate_gas_unit_price` (boolean, query): if set to true, the gas unit price in the transaction will be ignored and the estimated value will be used.
+  * `estimate_max_gas_amount` (boolean; query): if set to true, the max gas value in the transaction will be ignored and the maximum possible gas will be used.
+  * `estimate_prioritized_gas_unit_price` (boolean; query): if set to true, the transaction will use a higher price than the original estimate.
+
+**Body**
+
+A request body is represented by an array of the following parameters:
+
+  * `sender` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `sequence_number` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `max_gas_amount` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `gas_unit_price` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `expiration_timestamp_secs` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `payload` (object; required): a payload is one of the following objects:
+    1. A payload which runs a single entry function:
+        * `type` (string; required): a payload type. Example: `entry_function_payload`.
+        * `function` (string; required): an entry function ID is a string representation of an entry function defined on-chain.<br/>
+          Format: `{address}::{module name}::{function name}`<br/>
+          Both `module name` and `function name` are case-sensitive.<br/>
+          Example: `0x1::aptos_coin::transfer`
+        * `type_arguments` (array[string]; required): type arguments of the function.
+        * `arguments` (array; required): arguments of the function.
+    2. A payload which runs a script that can run multiple functions:
+        * `type` (string; required): a payload type. Example: `script_payload`.
+        * `code` (object; required): a Move script bytecode:
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with `0x` and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move function:
+                * `name` (string; required): a name of the function.
+                * `visibility` (string; required): Move function visibility.<br/>
+                  Allowed values: `private`, `public`, `friend`
+                * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                    * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                * `params` (array[string]; required): parameters associated with the Move function.
+                * `return` (array[string]: required): a return type of the function.
+            * `type_arguments` (array[string]; required): type arguments of the function.
+            * `arguments` (array; required): arguments of the function.
+    3. An enum of possible transaction payloads:
+        * `type` (string; required): a payload type. Example: `module_bundle_payload`.
+        * `modules` (array[object]; required):
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move module:
+                * `address` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `name` (string; required): a name of the module.
+                * `friends` (array[string]: required): friends of the module.
+                * `exposed_functions` (array[object]; required): public functions of the module:
+                    * `name` (string; required): a name of the function.
+                    * `visibility` (string; required): Move function visibility.<br/>
+                      Allowed values: `private`, `public`, `friend`
+                    * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                    * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                    * `params` (array[string]; required): parameters associated with the Move function.
+                    * `return` (array[string]; required): a return type of the function.
+                * `structs` (array[object]; required): structs of the module:
+                    * `name` (string; required): a name of the struct.
+                    * `is_native` (boolean; required): whether the struct is a native struct of Move.
+                    * `abilities` (array[string]; required): abilities associated with the struct.
+                    * `generic_type_params` (array[object]; required): generic types associated with the struct:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the type that uses it.
+                    * `fields` (array[object]; required): fields associated with the struct:
+                        * `name` (string; required): a name of the field.
+                        * `type` (string; required): a string representation of an on-chain Move type tag that is exposed in transaction payload.<br/>
+                          Values: - bool - u8 - u16 - u32 - u64 - u128 - u256 - address - signer - vector: `vector<{non-reference MoveTypeId}>` - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`
+                          ```
+                          Vector type value examples:
+                            - `vector<u8>`
+                            - `vector<vector<u64>>`
+                            - `vector<0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>>`
+
+                          Struct type value examples:
+                            - `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+                            - `0x1::account::Account`
+
+                          Note:
+                            1. Empty chars should be ignored when comparing 2 struct tag ids.
+                            2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).
+                          ```
+                          Match pattern: `^(bool|u8|u64|u128|address|signer|vector<.+>|0x[0-9a-zA-Z:_<, >]+)$`
+  * `signature` (object; required): a signature is one of the following objects:
+    1. A single Ed25519 signature:
+        * `type` (string; required): a signature type. Example: `ed25519_signature`.
+        * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+        * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+    2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+        * `type` (string; required): a type of signature. Example: `multi_ed25519_signature`.
+        * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+        * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+        * `threshold` (integer; required): the number of signatures required for a successful transaction.
+        * `bitmap` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+          Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+          Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+    3. A multi-agent signature for multi-agent transactions (allows you to have transactions across multiple accounts):
+        * `type` (string; required): a type of signature. Example: `multi_agent_signature`.
+        * `sender` (object; required): a sender is on of the following objects:
+            1. A single Ed25519 signature:
+                * `type` (string; required): a type of sender signature. Example: `ed25519_signature`.
+                * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+                * `type` (string; required): a type of sender signature. Example: `multi_ed25519_signature`.
+                * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+                * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+                * `threshold` (integer; required): the number of signatures required for a successful transaction.
+                * `bitmap` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+        * `secondary_signer_addresses` (array[string]; hex; required): the other involved parties' addresses.
+        * `secondary_signers` (array of objects): an array of on of the following objects:
+            1. A single Ed25519 signature:
+                * `type` (string; required): a type of secondary signers' signature. Example: `ed25519_signature`.
+                * `public_key` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `signature` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            2. An Ed25519 multi-sig signature (allows k-of-n signing for a transaction):
+                * `type` (string; required): a type of secondary signers' signature. Example: `multi_ed25519_signature`.
+                * `public_keys` (array[string]; hex; required): the public keys for the Ed25519 signature.
+                * `signatures` (array[string]; hex; required): signatures associated with the public keys in the same order.
+                * `threshold` (integer; required): the number of signatures required for a successful transaction.
+                * `bitmap` (string; hex; required): bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+                  Unlike the Address type, HexEncodedBytes will not trim any zeros.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/simulate \
+-H 'Content-Type: application/json' \
+-d '{
+  "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+  "sequence_number": "32425224034",
+  "max_gas_amount": "32425224034",
+  "gas_unit_price": "32425224034",
+  "expiration_timestamp_secs": "32425224034",
+  "payload": {
+    "type": "entry_function_payload",
+    "function": "0x1::aptos_coin::transfer",
+    "type_arguments": [
+      "string"
+    ],
+    "arguments": [
+      null
+    ]
+  },
+  "signature": {
+    "type": "ed25519_signature",
+    "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+  }
+}'
+```
+
+#### Response example
+
+```json
+[
+  {
+    "version": "32425224034",
+    "hash": "string",
+    "state_change_hash": "string",
+    "event_root_hash": "string",
+    "state_checkpoint_hash": "string",
+    "gas_used": "32425224034",
+    "success": true,
+    "vm_status": "string",
+    "accumulator_root_hash": "string",
+    "changes": [
+      {
+        "type": "delete_module",
+        "address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+        "state_key_hash": "string",
+        "module": "0x1::aptos_coin"
+      }
+    ],
+    "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+    "sequence_number": "32425224034",
+    "max_gas_amount": "32425224034",
+    "gas_unit_price": "32425224034",
+    "expiration_timestamp_secs": "32425224034",
+    "payload": {
+      "type": "entry_function_payload",
+      "function": "0x1::aptos_coin::transfer",
+      "type_arguments": [
+        "string"
+      ],
+      "arguments": [
+        null
+      ]
+    },
+    "signature": {
+      "type": "ed25519_signature",
+      "public_key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+      "signature": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+    },
+    "events": [
+      {
+        "guid": {
+          "creation_number": "32425224034",
+          "account_address": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+        },
+        "sequence_number": "32425224034",
+        "type": "string",
+        "data": null
+      }
+    ],
+    "timestamp": "32425224034"
+  }
+]
+```
+
+---
+
+### Encode submission
+
+> **POST `https://rpc.ankr.com/http/aptos/v1/transactions/encode_submission`**
+
+This endpoint accepts an EncodeSubmissionRequest, which internally is a UserTransactionRequestInner (and optionally secondary signers) encoded as JSON, validates the request format, and then returns that request encoded in BCS. The client can then use this to create a transaction signature to be used in a SubmitTransactionRequest, which it then passes to the [Submit transaction](/rpc-service/chains/chains-api/aptos/#submit-transaction) POST endpoint.
+
+To be clear, this endpoint makes it possible to submit transaction requests to the API from languages that do not have library support for BCS. If you are using an SDK that has BCS support, such as the official Rust, TypeScript, or Python SDKs, you do not need to use this endpoint.
+
+To sign a message using the response from this endpoint:
+
+  * Decode the hex encoded string in the response to bytes.
+  * Sign the bytes to create the signature.
+  * Use that as the signature field in something like Ed25519Signature, which you then use to build a TransactionSignature.
+
+#### Parameters
+
+Submission encoding request body contains the following parameters:
+
+  * `sender` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+    Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+  * `sequence_number` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `max_gas_amount` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `gas_unit_price` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `expiration_timestamp_secs` (string; uint64; required): a string containing a 64-bit unsigned integer. We represent u64 values as a string to ensure compatibility with languages such as JavaScript that do not parse u64s in JSON natively.<br/>
+    Example: `32425224034`
+  * `payload` (object; required): a payload is one of the following objects:
+    1. A payload which runs a single entry function:
+        * `type` (string; required): a payload type. Example: `entry_function_payload`.
+        * `function` (string; required): an entry function ID is a string representation of an entry function defined on-chain.<br/>
+          Format: `{address}::{module name}::{function name}`<br/>
+          Both `module name` and `function name` are case-sensitive.<br/>
+          Example: `0x1::aptos_coin::transfer`
+        * `type_arguments` (array[string]; required): type arguments of the function.
+        * `arguments` (array; required): arguments of the function.
+    2. A payload which runs a script that can run multiple functions:
+        * `type` (string; required): a payload type. Example: `script_payload`.
+        * `code` (object; required): a Move script bytecode:
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with `0x` and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move function:
+                * `name` (string; required): a name of the function.
+                * `visibility` (string; required): Move function visibility.<br/>
+                  Allowed values: `private`, `public`, `friend`
+                * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                    * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                * `params` (array[string]; required): parameters associated with the Move function.
+                * `return` (array[string]: required): a return type of the function.
+            * `type_arguments` (array[string]; required): type arguments of the function.
+            * `arguments` (array; required): arguments of the function.
+    3. An enum of possible transaction payloads:
+        * `type` (string; required): a payload type. Example: `module_bundle_payload`.
+        * `modules` (array[object]; required):
+            * `bytecode` (string; hex; required): all bytes (Vec) data is represented as hex-encoded string prefixed with 0x and fulfilled with two hex digits per byte.<br/>
+              Unlike the `Address` type, HexEncodedBytes will not trim any zeros.<br/>
+              Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+            * `abi` (object): a Move module:
+                * `address` (string; hex; required): a hex-encoded 32-byte Aptos account address. This is represented in a string as a 64 character hex string, sometimes shortened by stripping leading 0s, and adding a 0x. For example, address `0x0000000000000000000000000000000000000000000000000000000000000001` is represented as `0x1`.<br/>
+                  Example: `0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1`
+                * `name` (string; required): a name of the module.
+                * `friends` (array[string]: required): friends of the module.
+                * `exposed_functions` (array[object]; required): public functions of the module:
+                    * `name` (string; required): a name of the function.
+                    * `visibility` (string; required): Move function visibility.<br/>
+                      Allowed values: `private`, `public`, `friend`
+                    * `is_entry` (boolean; required): whether the function can be called as an entry function directly in a transaction.
+                    * `generic_type_params` (array[object]; required): generic type params associated with the Move function:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the function that uses it.
+                    * `params` (array[string]; required): parameters associated with the Move function.
+                    * `return` (array[string]; required): a return type of the function.
+                * `structs` (array[object]; required): structs of the module:
+                    * `name` (string; required): a name of the struct.
+                    * `is_native` (boolean; required): whether the struct is a native struct of Move.
+                    * `abilities` (array[string]; required): abilities associated with the struct.
+                    * `generic_type_params` (array[object]; required): generic types associated with the struct:
+                        * `constraints` (array[string]; required): Move abilities tied to the generic type param and associated with the type that uses it.
+                    * `fields` (array[object]; required): fields associated with the struct:
+                        * `name` (string; required): a name of the field.
+                        * `type` (string; required): a string representation of an on-chain Move type tag that is exposed in transaction payload.<br/>
+                          Values: - bool - u8 - u16 - u32 - u64 - u128 - u256 - address - signer - vector: `vector<{non-reference MoveTypeId}>` - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`
+                          ```
+                          Vector type value examples:
+                            - `vector<u8>`
+                            - `vector<vector<u64>>`
+                            - `vector<0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>>`
+
+                          Struct type value examples:
+                            - `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+                            - `0x1::account::Account`
+
+                          Note:
+                            1. Empty chars should be ignored when comparing 2 struct tag ids.
+                            2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).
+                          ```
+                          Match pattern: `^(bool|u8|u64|u128|address|signer|vector<.+>|0x[0-9a-zA-Z:_<, >]+)$`
+  * `secondary_signers` (array[string]; hex): secondary signer accounts of the request for Multi-agent.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/encode_submission \
+-H 'Content-Type: application/json' \
+-d '{
+  "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
+  "sequence_number": "32425224034",
+  "max_gas_amount": "32425224034",
+  "gas_unit_price": "32425224034",
+  "expiration_timestamp_secs": "32425224034",
+  "payload": {
+    "type": "entry_function_payload",
+    "function": "0x1::aptos_coin::transfer",
+    "type_arguments": [
+      "string"
+    ],
+    "arguments": [
+      null
+    ]
+  },
+  "secondary_signers": [
+    "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
+  ]
+}'
+```
+
+---
+
+#### Response example
+
+```json
+0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1
+```
+
+---
+
+### Estimate gas price
+
+> **GET `https://rpc.ankr.com/http/aptos/v1/estimate_gas_price`**
+
+Currently, the gas estimation is handled by taking the median of the last 100,000 transactions If a user wants to prioritize their transaction and is willing to pay, they can pay more than the gas price. If they're willing to wait longer, they can pay less. Note that the gas price moves with the fee market, and should only increase when demand outweighs supply.
+
+If there have been no transactions in the last 100,000 transactions, the price will be 1.
+
+#### Parameters
+
+None.
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/estimate_gas_price \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "deprioritized_gas_estimate": 0,
+  "gas_estimate": 0,
+  "prioritized_gas_estimate": 0
+}
+```
+
+---
+
+## View
+
+### Execute view function of a module
+
+> **POST `https://rpc.ankr.com/http/aptos/v1/view`**
+
+Executes the Move function with the given parameters and return its execution result.
+
+The Aptos nodes prune account state history, via a configurable time window. If the requested ledger version has been pruned, the server responds with a 410.
+
+#### Parameters
+
+  * `ledger_version` (string; uint64; query): a ledger version to get state of account. If not provided, it will be the latest version.<br/>
+    Example: `32425224034`
+
+**Body**
+
+The Move view function request body contains the following parameters:
+
+  * `function` (string; required): an entry function ID is a string representation of an entry function defined on-chain.<br/>
+    Format: `{address}::{module name}::{function name}`<br/>
+    Both the module name and function name are case-sensitive.<br/>
+    Example: `0x1::aptos_coin::transfer`
+  * `type_arguments` (array[string]; required): type arguments of the function.
+  * `arguments` (array; required): arguments of the function.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/http/aptos/v1/view \
+-H 'Content-Type: application/json' \
+-d '{
+  "function": "0x1::aptos_coin::transfer",
+  "type_arguments": [
+    "string"
+  ],
+  "arguments": [
+    null
+  ]
+}'
+```
+
+#### Response example
+
+```json
+[
+  0
+]
+```
