@@ -1427,9 +1427,11 @@ def test_block_number(self):
 
 ## Filecoin
 
-Filecoin is a distributed storage network based on a blockchain mechanism. Filecoin miners can elect to provide storage capacity for the network, and thereby earn units of the Filecoin cryptocurrency (FIL) by periodically producing cryptographic proofs that certify that they are providing the capacity specified. In addition, Filecoin enables parties to exchange FIL currency through transactions recorded in a shared ledger on the Filecoin blockchain. Rather than using Nakamoto-style proof of work to maintain consensus on the chain, however, Filecoin uses proof of storage itself: a miner’s power in the consensus protocol is proportional to the amount of storage it provides.
+Filecoin is a peer-to-peer network that stores files, with built-in economic incentives and cryptography to ensure files are stored reliably over time.
 
-The Filecoin blockchain not only maintains the ledger for FIL transactions and accounts, but also implements the Filecoin VM, a replicated state machine which executes a variety of cryptographic contracts and market mechanisms among participants on the network. These contracts include storage deals, in which clients pay FIL currency to miners in exchange for storing the specific file data that the clients request. Via the distributed implementation of the Filecoin VM, storage deals and other contract mechanisms recorded on the chain continue to be processed over time, without requiring further interaction from the original parties (such as the clients who requested the data storage).
+Filecoin is built on top of the same software powering [IPFS](https://docs.ipfs.tech/concepts/what-is-ipfs/) protocol, which is a peer-to-peer distributed storage network that leverages [content addressing](https://docs.ipfs.tech/concepts/content-addressing/) to allow permanent references to the data, and avoids relying on specific devices or cloud servers for addressing the content. Filecoin is different from IPFS because it has an incentive layer on top to incentivize contents to be reliably stored and accessed.
+
+Filecoin enables several use cases, from Web3 native NFT and metaverse/game assets storage, incentivized permanent storage, to archiving Web2 datasets as a cheaper alternative to cloud storage.
 
 Official quick links: [Website](https://filecoin.io/), [Docs](https://docs.filecoin.io/), [GitHub](https://github.com/filecoin-project)
 
@@ -1442,7 +1444,7 @@ Official quick links: [Website](https://filecoin.io/), [Docs](https://docs.filec
 
 ### API methods
 
-For the Filecoin Mainnet, we support blockchain interaction via the following methods:
+For the Filecoin Mainnet, we support blockchain interaction either via the [applicable FEVM methods](/rpc-service/chains/chains-api/filecoin/#fevm-methods-supported) and the following native Filecoin methods:
 
 **Chain**:
 
