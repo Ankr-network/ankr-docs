@@ -14,13 +14,12 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 
 Filecoin API supports interaction via the following methods:
 
-  * [FEVM methods](/rpc-service/chains/chains-api/filecoin/#fevm-methods-supported)
-  * native Filecoin methods
+  * [Filecoin EVM methods](/rpc-service/chains/chains-api/filecoin/#filecoin-evm-methods)
+  * [Filecoin native methods](/rpc-service/chains/chains-api/filecoin/#filecoin-native-methods)
 
 ---
 
-## FEVM methods supported
-<br/>
+## Filecoin EVM methods
 
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/filecoin/#web3_clientversion) — returns the current client version.
   * [`net_version`](/rpc-service/chains/chains-api/filecoin/#net_version) — returns the current network ID.
@@ -50,7 +49,6 @@ Filecoin API supports interaction via the following methods:
 > Returns the current client version.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -58,7 +56,6 @@ Filecoin API supports interaction via the following methods:
   * `params` (array; required): None.
 
 ### Returns
-<br/>
 
   * `<string>`: the current client version.
 
@@ -92,7 +89,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the current network ID.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -100,7 +96,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
   * `params` (array; required): None.
 
 ### Returns
-<br/>
 
   * `<string>`: the current network ID.
 
@@ -134,7 +129,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns `true` if client is actively listening for network connections.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -142,7 +136,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
   * `params` (array; required): None.
 
 ### Returns
-<br/>
 
   * `<boolean>`: `true` when listening, otherwise `false`.
 
@@ -176,7 +169,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the current Ethereum protocol version.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -184,7 +176,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
   * `params` (array; required): None.
 
 ### Returns
-<br/>
 
   * `<string>`: the current Ethereum protocol version.
 
@@ -218,7 +209,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the current price per gas in wei.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -226,7 +216,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
   * `params` (array; required): None.
 
 ### Returns
-<br/>
 
   * `<string>` (quantity): the current gas price in wei.
 
@@ -260,7 +249,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns a list of addresses owned by client.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -268,7 +256,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
   * `params` (array; required): None.
 
 ### Returns
-<br/>
 
   * `<array>` (string; data, 20 bytes): addresses owned by the client.
 
@@ -304,7 +291,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the number of most recent block.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -312,7 +298,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
   * `params` (array; required): None.
 
 ### Returns
-<br/>
 
   * `<string>` (quantity): the current block number the client is on.
 
@@ -346,7 +331,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the balance of the account specified by address.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -362,7 +346,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
-<br/>
 
   * `<string>` (quantity): the current balance in wei.
 
@@ -396,7 +379,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the value from a storage position at an address specified.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -414,7 +396,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
-<br/>
 
   * `<string>` (data): the value at this storage position.
 
@@ -448,7 +429,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the number of transactions sent from an address.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -465,7 +445,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
-<br/>
 
   * `<string>` (quantity): the number of transactions send from this address.
 
@@ -499,7 +478,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the number of transactions in a block specified by block hash.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -509,7 +487,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
     1. `<string>` (data, 32 bytes): a block hash.
 
 ### Returns
-<br/>
 
   * `<string>` (quantity): the number of transactions in this block.
 
@@ -543,7 +520,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns the number of transactions in the block specified by number.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -553,7 +529,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
     1. `<string>` (quantity|tag): the hex value of a _block number_:
 
 ### Returns
-<br/>
 
   * `<string>` (quantity): the number of transactions in this block.
 
@@ -587,7 +562,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns code at a given address.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -603,7 +577,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
-<br/>
 
   * `<string>` (data): the code from the given address.
 
@@ -637,7 +610,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Creates new message call transaction or a contract creation for signed transactions.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -647,7 +619,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
     1. `<string>` (data): the signed transaction data.
 
 ### Returns
-<br/>
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
@@ -683,7 +654,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Executes a new message call immediately without creating a transaction on the blockchain.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -706,7 +676,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
-<br/>
 
   * `<string>` (hex encoded bytes): the return value of executed contract.
 
@@ -742,7 +711,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -758,7 +726,6 @@ The transaction will not be added to the blockchain. Note that the estimate may 
         * `data` (string; data; optional): the hash of the method signature and encoded parameters.
 
 ### Returns
-<br/>
 
   * `<string>` (quantity): the amount of gas used.
 
@@ -792,7 +759,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns information for the block specified by block hash.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -803,7 +769,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
 
 ### Returns
-<br/>
 
   * `<object>`: a block object, or null when no block was found:
       * `number` (string; quantity): the block number; null when it's a pending block.
@@ -886,7 +851,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns information for the block specified by block number.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -902,7 +866,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
 
 ### Returns
-<br/>
 
   * `<object>`: a block object, or null when no block was found:
       * `number` (string; quantity): the block number; null when it's a pending block.
@@ -989,7 +952,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns information on a transaction specified by transaction hash.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -999,7 +961,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
     1. `<string>` (data, 32 bytes): a transaction hash.
 
 ### Returns
-<br/>
 
   * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
   * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
@@ -1067,7 +1028,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 The receipt is not available for pending transactions.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -1077,7 +1037,6 @@ The receipt is not available for pending transactions.
     1. `<string>` (data, 32 bytes): a hash of the transaction.
 
 ### Returns
-<br/>
 
   * `object`: a transaction receipt object, or null when no receipt was found:
 
@@ -1175,7 +1134,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
 > Returns an array of all logs matching a given filter object.
 
 ### Parameters
-<br/>
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
@@ -1201,7 +1159,6 @@ curl -X POST https://rpc.ankr.com/filecoin \
          * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
 ### Returns
-<br/>
 
   * `removed` (string; tag): `true` when the log was removed, due to a chain reorganization; `false` if it's a valid log.
   * `logIndex` (string; quantity): the log index position in the block; null when it's a pending log.
@@ -1266,4 +1223,4528 @@ curl -X POST https://rpc.ankr.com/filecoin \
     ]
 }
 ```
+
+---
+
+## Filecoin native methods
+
+**Chain**:
+
+  * [`Filecoin.ChainGetBlock`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetblock) — returns the block specified by the given CID.
+  * [`Filecoin.ChainGetBlockMessages`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetblockmessages) — returns messages stored in the specified block.
+  * [`Filecoin.ChainGetGenesis`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetgenesis) — returns the genesis tipset.
+  * [`Filecoin.ChainGetMessage`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetmessage) — reads a message referenced by the specified CID from the chain blockstore.
+  * [`Filecoin.ChainGetParentMessages`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetparentmessages) — returns messages stored in parent tipset of the specified block.
+  * [`Filecoin.ChainGetParentReceipts`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetparentreceipts) — returns receipts for messages in parent tipset of the specified block.
+  * [`Filecoin.ChainGetPath`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetpath) — returns a set of revert/apply operations needed to get from one tipset to another.
+  * [`Filecoin.ChainGetTipSet`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingettipset) — returns the tipset specified by the given TipSetKey.
+  * [`Filecoin.ChainGetTipSetByHeight`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingettipsetbyheight) — looks back for a tipset at the specified epoch.
+  * [`Filecoin.ChainHasObj`](/rpc-service/chains/chains-api/filecoin/#filecoinchainhasobj) — checks if a given CID exists in the chain blockstore.
+  * [`Filecoin.ChainHead`](/rpc-service/chains/chains-api/filecoin/#filecoinchainhead) — returns the current head of the chain.
+  * [`Filecoin.ChainReadObj`](/rpc-service/chains/chains-api/filecoin/#filecoinchainreadobj) — reads ipld nodes referenced by the specified CID from chain blockstore and returns raw bytes.
+  * [`Filecoin.ChainStatObj`](/rpc-service/chains/chains-api/filecoin/#filecoinchainstatobj) — returns statistics about the graph referenced by ‘obj’.
+  * [`Filecoin.ChainTipSetWeight`](/rpc-service/chains/chains-api/filecoin/#filecoinchaintipsetweight) — computes weight for the specified tipset.
+
+**Client**:
+
+  * [`Filecoin.ClientQueryAsk`](/rpc-service/chains/chains-api/filecoin/#filecoinclientqueryask) — returns a signed StorageAsk from the specified miner.
+
+**Gas**:
+
+  * [`Filecoin.GasEstimateFeeCap`](/rpc-service/chains/chains-api/filecoin/#filecoingasestimatefeecap) — estimates gas fee cap.
+  * [`Filecoin.GasEstimateGasLimit`](/rpc-service/chains/chains-api/filecoin/#filecoingasestimategaslimit) — estimates gas used by the message and returns it.
+  * [`Filecoin.GasEstimateGasPremium`](/rpc-service/chains/chains-api/filecoin/#filecoingasestimategaspremium) — estimates what gas price should be used for a message to have high likelihood of inclusion in `nblocksincl` epochs.
+  * [`Filecoin.GasEstimateMessageGas`](/rpc-service/chains/chains-api/filecoin/#filecoingasestimatemessagegas) — estimates gas values for unset message gas fields.
+
+**Mpool**:
+
+  * [`Filecoin.MpoolGetNonce`](/rpc-service/chains/chains-api/filecoin/#filecoinmpoolgetnonce) — gets next nonce for the specified sender.
+  * [`Filecoin.MpoolPending`](/rpc-service/chains/chains-api/filecoin/#filecoinmpoolpending) — returns pending mempool messages.
+  * [`Filecoin.MpoolPush`](/rpc-service/chains/chains-api/filecoin/#filecoinmpoolpush) — pushes a signed message to mempool.
+  * [`Filecoin.MpoolSub`](/rpc-service/chains/chains-api/filecoin/#filecoinmpoolsub)
+
+**State**:
+
+  * [`Filecoin.StateAccountKey`](/rpc-service/chains/chains-api/filecoin/#filecoinstateaccountkey) — returns the public key address of the given ID address.
+  * [`Filecoin.StateAllMinerFaults`](/rpc-service/chains/chains-api/filecoin/#filecoinstateallminerfaults) — returns all non-expired Faults that occur within lookback epochs of the given tipset.
+  * [`Filecoin.StateCall`](/rpc-service/chains/chains-api/filecoin/#filecoinstatecall) — runs the given message and returns its result without any persisted changes.
+  * [`Filecoin.StateChangedActors`](/rpc-service/chains/chains-api/filecoin/#filecoinstatechangedactors) — returns all the actors whose states change between the two given state CIDs.
+  * [`Filecoin.StateCirculatingSupply`](/rpc-service/chains/chains-api/filecoin/#filecoinstatecirculatingsupply) — returns the exact circulating supply of Filecoin at the given tipset.
+  * [`Filecoin.StateCompute`](/rpc-service/chains/chains-api/filecoin/#filecoinstatecompute) — applies the given messages on the given tipset.
+  * [`Filecoin.StateDealProviderCollateralBounds`](/rpc-service/chains/chains-api/filecoin/#filecoinstatedealprovidercollateralbounds) — returns the min and max collateral a storage provider can issue.
+  * [`Filecoin.StateDecodeParams`](/rpc-service/chains/chains-api/filecoin/#filecoinstatedecodeparams) — attempts to decode the provided params, based on the recipient actor address and method number.
+  * [`Filecoin.StateGetActor`](/rpc-service/chains/chains-api/filecoin/#filecoinstategetactor) — returns the indicated actor’s nonce and balance.
+  * [`Filecoin.StateGetReceipt`](/rpc-service/chains/chains-api/filecoin/#filecoinstategetreceipt) — returns the message receipt for the given message or for a matching gas-repriced replacing message.
+  * [`Filecoin.StateListActors`](/rpc-service/chains/chains-api/filecoin/#filecoinstatelistactors) — returns the addresses of every actor in the state.
+  * [`Filecoin.StateListMessages`](/rpc-service/chains/chains-api/filecoin/#filecoinstatelistmessages) — looks back and returns all messages with a matching to or from address, stopping at the given height.
+  * [`Filecoin.StateListMiners`](/rpc-service/chains/chains-api/filecoin/#filecoinstatelistminers) — returns the addresses of every miner that has claimed power in the Power Actor.
+  * [`Filecoin.StateLookupID`](/rpc-service/chains/chains-api/filecoin/#filecoinstatelookupid) — retrieves the ID address of the given address.
+  * [`Filecoin.StateMarketBalance`](/rpc-service/chains/chains-api/filecoin/#filecoinstatemarketbalance) — looks up the Escrow and Locked balances of the given address in the Storage Market.
+  * [`Filecoin.StateMarketDeals`](/rpc-service/chains/chains-api/filecoin/#filecoinstatemarketdeals) — returns information about every deal in the Storage Market.
+  * [`Filecoin.StateMarketParticipants`](/rpc-service/chains/chains-api/filecoin/#filecoinstatemarketparticipants) — returns the Escrow and Locked balances of every participant in the Storage Market.
+  * [`Filecoin.StateMarketStorageDeal`](/rpc-service/chains/chains-api/filecoin/#filecoinstatemarketstoragedeal) — returns information about the indicated deal.
+  * [`Filecoin.StateMinerActiveSectors`](/rpc-service/chains/chains-api/filecoin/#filecoinstatemineractivesectors) — returns info about sectors that a given miner is actively proving.
+  * [`Filecoin.StateMinerAvailableBalance`](/rpc-service/chains/chains-api/filecoin/#filecoinstatemineravailablebalance) — returns the portion of a miner’s balance that can be withdrawn or spent.
+  * [`Filecoin.StateMinerDeadlines`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerdeadlines) — returns all the proving deadlines for the given miner.
+  * [`Filecoin.StateMinerFaults`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerfaults) — returns a bitfield indicating the faulty sectors of the given miner.
+  * [`Filecoin.StateMinerInfo`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerinfo) — returns info about the indicated miner.
+  * [`Filecoin.StateMinerInitialPledgeCollateral`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerinitialpledgecollateral) — returns the initial pledge collateral for the specified miner’s sector.
+  * [`Filecoin.StateMinerPartitions`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerpartitions) — returns all partitions in the specified deadline.
+  * [`Filecoin.StateMinerPower`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerpower) — returns the power of the indicated miner.
+  * [`Filecoin.StateMinerPreCommitDepositForPower`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerprecommitdepositforpower) — returns the pre-commit deposit for the specified miner’s sector.
+  * [`Filecoin.StateMinerProvingDeadline`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerprovingdeadline) — calculates the deadline at some epoch for a proving period and returns the deadline-related calculations.
+  * [`Filecoin.StateMinerRecoveries`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminerrecoveries) — returns a bitfield indicating the recovering sectors of the given miner.
+  * [`Filecoin.StateMinerSectorAllocated`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminersectorallocated) — checks if a sector is allocated.
+  * [`Filecoin.StateMinerSectorCount`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminersectorcount) — returns the number of sectors in a miner’s sector set and proving set.
+  * [`Filecoin.StateMinerSectors`](/rpc-service/chains/chains-api/filecoin/#filecoinstateminersectors) — returns info about the given miner’s sectors.
+  * [`Filecoin.StateNetworkName`](/rpc-service/chains/chains-api/filecoin/#filecoinstatenetworkname) — returns the name of the network the node is synced to.
+  * [`Filecoin.StateNetworkVersion`](/rpc-service/chains/chains-api/filecoin/#filecoinstatenetworkversion) — returns the network version at the given tipset.
+  * [`Filecoin.StateReadState`](/rpc-service/chains/chains-api/filecoin/#filecoinstatereadstate) — returns the indicated actor’s state.
+  * [`Filecoin.StateReplay`](/rpc-service/chains/chains-api/filecoin/#filecoinstatereplay) — replays a given message, assuming it was included in a block in the specified tipset.
+  * [`Filecoin.StateSearchMsg`](/rpc-service/chains/chains-api/filecoin/#filecoinstatesearchmsg) — searches for a message in the chain, and returns its receipt and the tipset where it was executed.
+  * [`Filecoin.StateSearchMsgLimited`](/rpc-service/chains/chains-api/filecoin/#filecoinstatesearchmsglimited) — looks back up to limit epochs in the chain for a message, and returns its receipt and the tipset where it was executed.
+  * [`Filecoin.StateSectorExpiration`](/rpc-service/chains/chains-api/filecoin/#filecoinstatesectorexpiration) — returns epoch at which given sector will expire
+  * [`Filecoin.StateSectorGetInfo`](/rpc-service/chains/chains-api/filecoin/#filecoinstatesectorgetinfo) — returns the on-chain info for the specified miner’s sector.
+  * [`Filecoin.StateSectorPartition`](/rpc-service/chains/chains-api/filecoin/#filecoinstatesectorpartition) — finds deadline/partition with the specified sector.
+  * [`Filecoin.StateSectorPreCommitInfo`](/rpc-service/chains/chains-api/filecoin/#filecoinstatesectorprecommitinfo) — returns the PreCommit info for the specified miner’s sector.
+  * [`Filecoin.StateVMCirculatingSupplyInternal`](/rpc-service/chains/chains-api/filecoin/#filecoinstatevmcirculatingsupplyinternal) — returns an approximation of the circulating supply of Filecoin at the given tipset.
+  * [`Filecoin.StateVerifiedClientStatus`](/rpc-service/chains/chains-api/filecoin/#filecoinstateverifiedclientstatus) — returns the data cap for the given address.
+  * [`Filecoin.StateVerifiedRegistryRootKey`](/rpc-service/chains/chains-api/filecoin/#filecoinstateverifiedregistryrootkey) — returns the address of the Verified Registry’s root key.
+  * [`Filecoin.StateVerifierStatus`](/rpc-service/chains/chains-api/filecoin/#filecoinstateverifierstatus) — returns the data cap for the given address.
+  * [`Filecoin.StateWaitMsg`](/rpc-service/chains/chains-api/filecoin/#filecoinstatewaitmsg) — looks back in the chain for a message.
+  * [`Filecoin.StateWaitMsgLimited`](/rpc-service/chains/chains-api/filecoin/#filecoinstatewaitmsglimited) —  looks back up to limit epochs in the chain for a message.
+
+**Wallet**:
+
+  * [`Filecoin.WalletBalance`](/rpc-service/chains/chains-api/filecoin/#filecoinwalletbalance) — returns the balance of the given address at the current head of the chain.
+  * [`Filecoin.WalletValidateAddress`](/rpc-service/chains/chains-api/filecoin/#filecoinwalletvalidateaddress) — validates whether a given string can be decoded as a well-formed address.
+  * [`Filecoin.WalletVerify`](/rpc-service/chains/chains-api/filecoin/#filecoinwalletverify) — takes an address, a signature, and some bytes, and indicates whether the signature is valid.
+
+## Permissions
+
+Each method has specific permissions that must be met before you can receive a response from a Filecoin node. Methods with the read permission can be called by anyone at anytime, without the need for a token. All other permissions require you to send an authentication along with you request.
+
+  * `read`: Read node state, no private data.
+  * `write`: Write to local store / chain, and read permissions.
+  * `sign`: Use private keys stored in wallet for signing, read and write permissions.
+  * `admin`: Manage permissions, read, write, and sign permissions.
+
+---
+
+## Chain
+
+The Chain method group contains methods for interacting with the blockchain, but that do not require any form of state computation.
+
+### `Filecoin.ChainGetBlock`
+
+> Returns the block specified by the given CID.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetBlock",
+      "params": [
+                  {
+                    "/": "bafy2bzacecbzs3i5qubhgozauss4nvifgty5zvyvf6cy6frnnznojdmfl6phe"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Miner": "f0427989",
+        "Ticket": {
+            "VRFProof": "pbmP9mctFpH6BoFFh22uvzv8Ixx0rJq9YanJLFTRsgIWDibuomloU2UTWiN8007KBYAnB5Xj1jw7o81VJzKrUByqHUpZHWZM34CgVkuzcHPoSJpM8XGxs2GQkfNAncK2"
+        },
+        "ElectionProof": {
+            "WinCount": 1,
+            "VRFProof": "oLSLThMoFfGX4E8cDIEULGmUteJY/10nCfun3hiRE1PDIpkPOnoBACmto7/SCz1yFixgQaysEcKK6RCx1ImUW2Q9dlrj3MCbjRQtNiumTXviDqAWgoxYU55QSBDpLbel"
+        },
+        "BeaconEntries": [
+            {
+                "Round": 2787998,
+                "Data": "h+zHzc0DvUFIWFpFzqREiA2f3Uk4sn5NExnJJUtfju3Hlc0/dkNXq31+su9kh/q1CK69TRUy9562jx/eV4XXw1lA4QhDxBBWKoxQL/xR+zoCcfm4nzoD3HximnPCEEQA"
+            }
+        ],
+        "WinPoStProof": [
+            {
+                "PoStProof": 3,
+                "ProofBytes": "pK36Z/ehsV5sqyoX/Gc64tsV2yQOW6X+p8Wy1wH03WC9VA6qyc3ZaTt4d9oI6xVniJdyHiu22yMsXfimEfVSc/UzThf8KrnIBMWZr3sSQsOVusdf1zV5zNfvDr1wccHhCjIExyinkvGRW/irioDZ49Jrm5PUvaBERIuJC4hUp0DijM8UgY7FIYTA16HHp7gbpUzU7mpofBz42tL3c/8LgOmLd7FKOh69fk0xHYaeQU1Oz3cbSSHWL8a/wRf4y3nV"
+            }
+        ],
+        "Parents": [
+            {
+                "/": "bafy2bzaceaxasycsjnixwqqbx4o3fsspal2zspnhmdjdtyke5xwtjkut7asyw"
+            },
+            {
+                "/": "bafy2bzaceadqtqu4wcecrk2akfb4mw7y3bedihwanwk2l4dxbcu4fonu3x6pe"
+            },
+            {
+                "/": "bafy2bzacecoqk52mag2xpxn2eq3pfmyr6mafvogju4znyagmkah4oo4fjgh5i"
+            },
+            {
+                "/": "bafy2bzaced46b2tewkbg6qfa5jnoecvbpdn5k7loz7qsoon3m5mgeb63de46s"
+            }
+        ],
+        "ParentWeight": "63400884650",
+        "Height": 2692153,
+        "ParentStateRoot": {
+            "/": "bafy2bzacec5o4ffqnp4zmkn44i6h7oajurvtsb5zvstudvgwhha7y25alt3ck"
+        },
+        "ParentMessageReceipts": {
+            "/": "bafy2bzacebvll7rq7wscnsgbvgdc7xeuzsp2quu4hhfx4pjvq3hydhw2auvd6"
+        },
+        "Messages": {
+            "/": "bafy2bzacechrvqknf26ff4pihyatewfx64ae4bawbp4ibtasy72hr63fds4iq"
+        },
+        "BLSAggregate": {
+            "Type": 2,
+            "Data": "mQuz4wd292+Qh8oeZmpl+4QX7/90Oz7VDFLgPhRjIGgvYTEj0FYAecHTaxKaH0GGDwt0nqEvoVbFGf6PA6wCNtzwpLTMqQXZrT2cFeSAtC62vOOn7KTSdqtFxJvBwX1a"
+        },
+        "Timestamp": 1679070990,
+        "BlockSig": {
+            "Type": 2,
+            "Data": "qiMSk+hQ1E9WGMRn2o5dQmCpz1uO8JK4oIoh8NUwybN7GzrLEaSTv1W5IGx5AAnrAIYgE1MA+Y+CQ677iBC6wD3YUpzdSIt0QCv3cbf8SJgeOVusC+x0Vo/29zRGBgU/"
+        },
+        "ForkSignaling": 0,
+        "ParentBaseFee": "403334159"
+    },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainGetBlockMessages`
+
+> Returns the messages stored in the specified block.
+
+ If there are multiple blocks in a tipset, it’s likely that some messages will be duplicated. It’s also possible for blocks in a tipset to have different messages from the same sender at the same nonce. When that happens, only the first message (in a block with the lowest ticket) will be considered for execution.
+
+<Callout type="warning">
+  This method should only be used for getting messages in a specific block.<br/>
+  Do not use this method to get messages included in a tipset.
+</Callout>
+
+<Callout type="tip">
+  To get messages included in a tipset, use [`Filecoin.ChainGetParentMessages`](/rpc-service/chains/chains-api/filecoin/#filecoinchaingetparentmessages) which performs correct message deduplication.
+</Callout>
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetBlockMessages",
+      "params": [
+                  {
+                    "/": "bafy2bzaceblys3pf5uejw4dvqgpfumoxjnkxcz22pqkjcztj4xumva52mzthe"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "BlsMessages": [
+            {
+                "Version": 42,
+                "To": "f01234",
+                "From": "f01234",
+                "Nonce": 42,
+                "Value": "0",
+                "GasLimit": 9,
+                "GasFeeCap": "0",
+                "GasPremium": "0",
+                "Method": 1,
+                "Params": "Ynl0ZSBhcnJheQ==",
+                "CID": {
+                    "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                }
+            }
+        ],
+        "SecpkMessages": [
+            {
+                "Message": {
+                    "Version": 42,
+                    "To": "f01234",
+                    "From": "f01234",
+                    "Nonce": 42,
+                    "Value": "0",
+                    "GasLimit": 9,
+                    "GasFeeCap": "0",
+                    "GasPremium": "0",
+                    "Method": 1,
+                    "Params": "Ynl0ZSBhcnJheQ==",
+                    "CID": {
+                        "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                    }
+                },
+                "Signature": {
+                    "Type": 2,
+                    "Data": "Ynl0ZSBhcnJheQ=="
+                },
+                "CID": {
+                    "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                }
+            }
+        ],
+        "Cids": [
+            {
+                "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+            }
+        ]
+    }
+}
+```
+
+---
+
+### `Filecoin.ChainGetGenesis`
+
+> Returns the genesis tipset.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Parameters
+
+None.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetGenesis",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Cids": [
+            {
+                "/": "bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2"
+            }
+        ],
+        "Blocks": [
+            {
+                "Miner": "f00",
+                "Ticket": {
+                    "VRFProof": "X4oDOWswmmD7fT0z3RNIPQVGS85f2dBhceeowoDiQhY="
+                },
+                "ElectionProof": {
+                    "WinCount": 0,
+                    "VRFProof": null
+                },
+                "BeaconEntries": [
+                    {
+                        "Round": 0,
+                        "Data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+                    }
+                ],
+                "WinPoStProof": null,
+                "Parents": [
+                    {
+                        "/": "bafyreiaqpwbbyjo4a42saasj36kkrpv4tsherf2e7bvezkert2a7dhonoi"
+                    }
+                ],
+                "ParentWeight": "0",
+                "Height": 0,
+                "ParentStateRoot": {
+                    "/": "bafy2bzacech3yb7xlb7c57v2xh7rvmt4skeidk7z2g36llksaz4biflblbt24"
+                },
+                "ParentMessageReceipts": {
+                    "/": "bafy2bzacedswlcz5ddgqnyo3sak3jmhmkxashisnlpq6ujgyhe4mlobzpnhs6"
+                },
+                "Messages": {
+                    "/": "bafy2bzacecmda75ovposbdateg7eyhwij65zklgyijgcjwynlklmqazpwlhba"
+                },
+                "BLSAggregate": null,
+                "Timestamp": 1598306400,
+                "BlockSig": null,
+                "ForkSignaling": 0,
+                "ParentBaseFee": "100000000"
+            }
+        ],
+        "Height": 0
+    },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainGetMessage`
+
+> Reads a message referenced by the specified CID from the chain blockstore.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetMessage",
+      "params": [
+                  {
+                    "/": "bafy2bzacedhxkyr5qwilac37vrdzr6wllxszrjhqrkiwjahoo45y4ihrtboqg"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Version": 0,
+        "To": "f02028138",
+        "From": "f3rqkaccyhdce5tzsvjbpxqgpi75aozdqcazvknr737hb4y7fon6tievirc63rywtvpbvqxsoihgxkcf7ygkna",
+        "Nonce": 15420,
+        "Value": "0",
+        "GasLimit": 210764850,
+        "GasFeeCap": "237231208",
+        "GasPremium": "1833106",
+        "Method": 7,
+        "Params": "ghkiv1kHgJNuEGP9kyySXgeR9wHbpEZ/CMrU0fZ1EcozdrC9jIwPy4k+54mQTEDR6tfR8U6LS5MmoYJO1gwmKDSXiHXQScO+ZfSb6cBi7PyXkoXmlfqjRQMskEA2fUfnrnYV7DK3FhkbtR6a4zKpEubtMkVh9GBZ4dQC+A5/4LSL+huaacWXIZIZF6tYyqU+N9qNUe60CaXPhREUwYoI/COfCrBJNXuj27vvMlnyh7AaiRPlI8JsyTTUsaZHzce8icJ47r6mnIOlycBvW4W1IcUzkc/DPDOg9JR0NHEzt97cPyG3ZeRHNyCFN5eXTwmemX9Z30zmlo01LVakpDK4Ioecbx5kJ01zCdVV7DIXRBSJ9g9sTH1V94CIT8ffP69BGYKVMEQDgBjApA4lE6QGpRiOADjldwoHyi5WrXhgj2gt8yF3Y+H2/mTRFRKKV8HGIK5E99qKuYo3cVDmXsK7ey42OazN54dW+V3bUVU87ejHQCcstwCWUwwO+rZDqXc7na0O6DmwFJDpWxQZvOGcDO0B8vaw2krGxDr4JwhJTxAHeyIpVFDgjtibEvTKwnStWqn32v9vqbK6LdUG9P3Qln8qVtVtIBf3LR/gPCnCwxaJ1R3taHilJQdea9BvXWMqM5vkdj6ZEwvFm8Y8HBqe6MHCp7RHgShfKo/FgjGCaXg5/nvP1z7VUwjFnMbdqjKtc4hwOzjrhYtMo5CBX4sP0SdIdvCU1NPhQwPr7Csb7/k1ucr5ppw855wfahrYTiTXGLphlTBMw6AOSZNv48qEZg62MNgMzvSF5zZUVDmgQN4qOF5fP8MBMyjqTyFvkZMJ+H+CToEj8K8UPX6J9qjMjt0t9BYfz+gccqAHCU+iUpUxc9OqEEXqmqZDnyZoZiOVRP1ACxJ2QgMRSwy03vgve2rFUw+WDmpTUSfcSikTWq2q01pUTDf7l5+af/CyhQOlCpdURz1XRLYrRRAOa69+c2hRtkZEZfk7yp9EDzeEIKHJSdljnkX/0hPi7q1oMA2C0daFOcJefY0zAtycNvm96Po6hh1k0NDlUyfgAU+U/96X3eCzMFvDErL7GKi+yV0QN7BZlHdKsZDBKsMSHa9Mkp2q1h3dmx5BbBJ6RIxZBo0zYPSAF6/sh4uQj9hHnqeV/lIk9n+7mQA7VKM89lJnUvlAj8EOoWBNS4RQXGcfQppAfBmZfU5Tl7jGymsiegLXri+WMkOIt7bQUzkoLJM8670OGmh6WqVwIsOEyBrYAtDhaUMNhR+C4kN7NeADF0p3Vwm+Tzk4ialmfiHOnKJ18lTP9kVJHxLdOoPJGmffBhQ40OMg4Z1/T2xEjtmFboIO7tAtqOqP/4f5wfOCuQn4Dq8E9hOAotHmInkOPcQylq7CH37l5eqQYlLSSiUekHaj0NLIc5B3uxDg3tEPmn2/Wkt33IEUdUTdbfhkMiLt8KVjYchUIFkDrwRpYBZvxwF9JsAm5YcYWLAHKvFW3+vv85V36nClOyNexuXCv1VU+fM7HHRjJrwzDbh2WdYlBq2l696dfYqM3KqHPmHJxIZOgT3GT3f0jZsdrMUiFGQdmeKEDZHFihK8lomo2d3k0B++PdyZg7hb26RW62hkLcxxNh6OcbcIUVHUkIKtUI00XkrPd7+JKqJxcAgSc0zXW54qSyhB0OT1KBXQPONHk0Q6h4t7qk/zx2VRKCu0T4okkKoB0jZTBscmTIB/qAvnKllakPpqtrFZGalbQKKUfeuINJ1Er3mqTcpQ1fiiRhOeIm2PFRqHnAWAvgBh6H3kBdLqWUr2aw3xZYWDL0tYeJmsSAWlPHAKGyX8qdQQ/xrdtvgo3ZtZ3lIVR/jAXX3cLUFwOnIKV0FlKJZiqPF+LAnoBKhIvDoLUEvELg6Y9DKU96zIAhroCaOpRglOGSmpgwlkG95xPSdPngIN0zin2h+Og7lLg8wBbNhwznYorYPzVYoOCypZHZoxjGp6X4QItMcHypuvTX0dprM7OdkKjx53WTj5QlWik8R+TjEtwTp8+IIMJMsX8XdNV4pTpUS57TOJ60jMn0odabGLIGWCs73JNT9XpBkvuwlMFJ06qfGViMA/DAjOU1n76jBeufXJCeQuO8xjVFJbQoPlazhYDKoQva5pbC8261K6jbjwWPpYoXlCdLOO2QqpQmbGLHEcgvMm3dZ0fpz4vBNmipNq7BwfR3Rcj/PoF5VHLpxadTaJ6ob6VheCYHD1YSf3TiVZDGsCenQwTVYIYrRtPsN7QVMX0ONBQLOZ4/r8HZi3D1fXuRCscsDTkOy3nraU9L0yUeURalchP7BsvoMO5kT2O5Wyy83Oh7Beap9xdGcJrQ6j7qdNlYjluOZPI6kZUfkdrzs3KVYC5wpERJmjv2XmhhowfFjtgO66JqqJXehV20AvBMPNnHvLshBAR40fKVlpE8kHMlffSCpBexQSFt1ixUkBOsG18iZOsc2tqDDi/oz0su5OgpPKq/2U2lK2Cm1RhHTgvq3faa+4fq2XUU3exLfezkyLWXb/1m7nJxdd/B1i5n9or1AX7AhH2VSWl6wZUyQW5OXloR1r6Q==",
+        "CID": {
+            "/": "bafy2bzacedhxkyr5qwilac37vrdzr6wllxszrjhqrkiwjahoo45y4ihrtboqg"
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainGetParentMessages`
+
+> Returns the messages stored in a parent tipset of the specified block.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetParentMessages",
+      "params": [
+                  {
+                    "/": "bafy2bzacedfsum47y4l2b6qbkacknqqy2glny3kcpvz4ejzgyktz7jiaxqs52"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "Cid": {
+                "/": "bafy2bzacedfsum47y4l2b6qbkacknqqy2glny3kcpvz4ejzgyktz7jiaxqs52"
+            },
+            "Message": {
+                "Version": 0,
+                "To": "f0144952",
+                "From": "f3r57nuqjq3clxj7kcvzap4enamxjdqqine3zoa44e57724hnlrzgza7okwq5jkijey7ggrf5z72su2ijmaona",
+                "Nonce": 96476,
+                "Value": "0",
+                "GasLimit": 69299801,
+                "GasFeeCap": "851888851",
+                "GasPremium": "175944425",
+                "Method": 5,
+                "Params": "hQmCggBAggFAgYIJWQGAtAUBh5SvpDsoMrtMI8Ym2rcqLwMsGrJjK9lgxJo81of5mwwXupoBzi0lJkrJQ4dcpojsqU87DpVsdOe+CECSXivSx2dQS2NpkktMX7m009ZbBdr8fWKlmqvDvfm4CCAYBOEMwtewimxECC48sBwe2n2m1DWwNHSw9F7CpjLWazW17nzJnrTQoPYXTZaXHE/hhDBPR53PpDgaCrgqpVvrFyqaS8pumo/AEKHKBgXvVqmV29YwGtDFONHAitsnIA4RuD9elRYxMnevfoms4UwNofb7eeFTfxCnguKwiFXMDh5b3gU7lzsaGJ/I31oiwWizhAICiR2nTICoM5PSpQ6sgfYDa8wqbuyN/f5RqmjdqnYfEM134rmM+B6LYv2lvyVhCXOrNTIS3F4foQMCQvRQu/15duFvaRijHOwnx2ZmF+EAzZPF30LPGZ5HHxn0Ag1IoW6TKtnd+LntvJXIh+KSG7FnodAQcHb3HxLrzgGkabP4Vjj8W405KVApUqWzB8gHGgApM7dYIMdg2Tt314GyEAoENWioh3g+e1eynIjei+J4jIOboAgt",
+                "CID": {
+                    "/": "bafy2bzacedfsum47y4l2b6qbkacknqqy2glny3kcpvz4ejzgyktz7jiaxqs52"
+                }
+            }
+        }
+    ]
+}
+```
+
+---
+
+### `Filecoin.ChainGetParentReceipts`
+
+> Returns the receipts for messages in a parent tipset of the specified block.
+
+The receipts in the list returned is one-to-one with the messages returned by a call to FilecoinChainGetParentMessages with the same `blockCid`.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetParentReceipts",
+      "params": [
+                  {
+                    "/": "bafy2bzaceb5cniilj3iwjldztqqrizyred3qmfzqheav4awhrskkufkgkxegw"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "ExitCode": 0,
+            "Return": null,
+            "GasUsed": 57225646,
+            "EventsRoot": null
+        }
+    ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainGetPath`
+
+> Returns a set of revert/apply operations needed to get from one tipset to another.
+
+For example:
+
+```
+       to
+        ^
+from   tAA
+  ^     ^
+tBA    tAB
+ ^---*--^
+     ^
+    tRR
+```
+
+Would return `[revert(tBA), apply(tAB), apply(tAA)]`
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetPath",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ],
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "Type": "string value",
+                  "Val": {
+                    "Cids": null,
+                    "Blocks": null,
+                    "Height": 0
+                  }
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainGetTipSet`
+
+> Returns the tipset specified by the given TipSetKey.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetTipSet",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacec7fhpigs5q22hvfbgsilu7pyxrho3ribd74wka53vezjufpd4u3a"
+                    },
+                    {
+                      "/": "bafy2bzacecdokusaktiqx2xnex2o7n6wgidbtxhnweakkn5oiund7hovvf7w2"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Cids": [
+            {
+                "/": "bafy2bzacec7fhpigs5q22hvfbgsilu7pyxrho3ribd74wka53vezjufpd4u3a"
+            },
+            {
+                "/": "bafy2bzacecdokusaktiqx2xnex2o7n6wgidbtxhnweakkn5oiund7hovvf7w2"
+            }
+        ],
+        "Blocks": [
+            {
+                "Miner": "f01754403",
+                "Ticket": {
+                    "VRFProof": "ldBoeUhQP09lH+YUAjC6WAQ4a4yTq0cLQ9wYPOGILhP4iBKnNfQdrqJsIMsg60MJCB8CYFe2Nt8MxKctpJt/wDj1vUuf9m75s3vwgrAWN85EDypnWW/XK/LgO8ddGCgB"
+                },
+                "ElectionProof": {
+                    "WinCount": 1,
+                    "VRFProof": "uDr6N8LoH6ArwyR97yAlPvMDutFtGp7ErkYc85o+uVxBdONIOawoeFEL1JvhQ2g3FtWZZsDcVhvGOLzlPAXYs9fvVlJB5hU4XenGv2/Wq8WeaWb6/9jAuE1FJ/3TUsmj"
+                },
+                "BeaconEntries": [
+                    {
+                        "Round": 2798928,
+                        "Data": "gOPMgJQ07/JtWfBTyE2uIukZ/m4eJh1tNE1K9IRd3lbHjlotD6HiDQ5+BoKZJvm6DVp2jdAMgEU3PDaoEvIVBlrgRe/5cwuLlC2u+tDU33Prg/qdCGRik3P1J+nFIZh3"
+                    }
+                ],
+                "WinPoStProof": [
+                    {
+                        "PoStProof": 3,
+                        "ProofBytes": "mZDPZ+4BXGbwGT5js2Moh0lvQkVXrzr/Bo93GlWTEzeAVlHNnt4//TYxdNxcHwGBldpg4u/Q2TvTcX9MfNyUbZZ4YI+JHKtYEWQAcBjOaZC0ayOUT+ciSqSAfBBmel82E5HruU1V8aOMaBlQqbLp5wkGmpZB5SFsWi79MY47NovtnkLU51GZnrCEGNfOqLlHl4fMjGVgOesKxZ6X4BfCXF2BSPHn+7Rfx/5OoXVU2fkUQ3Ws01acfHknX7HL1gC+"
+                    }
+                ],
+                "Parents": [
+                    {
+                        "/": "bafy2bzacec3neqtqc5os4hej5u3v34wdvitd7zroolf2s5fkbnscyqvznddgy"
+                    },
+                    {
+                        "/": "bafy2bzacec6mhuuoqieiif5cey435hjouesst374myepjmi6wvrurrxkzsjjk"
+                    },
+                    {
+                        "/": "bafy2bzaceawvnovcw7yymak3i5ww3frouz7sii46rcjsahrkcabztegpxfd3s"
+                    }
+                ],
+                "ParentWeight": "63664567644",
+                "Height": 2703083,
+                "ParentStateRoot": {
+                    "/": "bafy2bzaced3ozdd6gnok6346jnmfr2oxm6s77hoyecfylk2ru6brjtuvrycng"
+                },
+                "ParentMessageReceipts": {
+                    "/": "bafy2bzaced6hbdv3nqre77ssevjukh5rvmh6fdjrby3j2roaggfxrw2kfrqs6"
+                },
+                "Messages": {
+                    "/": "bafy2bzaceaqkeppyjtn7bfnmnms2qudoyhboqxrfagj5nbwurhezx4rk5bbfw"
+                },
+                "BLSAggregate": {
+                    "Type": 2,
+                    "Data": "kz1Tg9escAznXjko9VM7S/8celHuyqOJoW4SNH5GIlZjp2/fgFwjTYl6gzQVmaO/EC9DuMIYMiNnl6IBnDwQtwxQQEyG5cN9Ua9B3SqQc8b+8/9XWtxNGklX1A+1pnQa"
+                },
+                "Timestamp": 1679398890,
+                "BlockSig": {
+                    "Type": 2,
+                    "Data": "oTlXYBCX8KNvsrE863LmTlUeGSDzgT/x/wYXY9awK6pQNR03d+schbhLVsi1t1mjF5XeH8+O1uLUGQbqpNMeTuzqKOAwVCXbYP0WE4gcPrmy0j7ErPqzyxn/iHXH8dnO"
+                },
+                "ForkSignaling": 0,
+                "ParentBaseFee": "261138717"
+            }
+        ],
+        "Height": 2703083
+    },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainGetTipSetByHeight`
+
+> Looks back for a tipset at the specified epoch.
+
+If there are no blocks at the specified epoch, a tipset at an earlier epoch will be returned.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetTipSetByHeight",
+      "params": [
+                  2703083,
+                  [
+                    {
+                      "/": "bafy2bzacec7fhpigs5q22hvfbgsilu7pyxrho3ribd74wka53vezjufpd4u3a"
+                    },
+                    {
+                      "/": "bafy2bzacecdokusaktiqx2xnex2o7n6wgidbtxhnweakkn5oiund7hovvf7w2"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Cids": [
+            {
+                "/": "bafy2bzacec7fhpigs5q22hvfbgsilu7pyxrho3ribd74wka53vezjufpd4u3a"
+            },
+            {
+                "/": "bafy2bzacecdokusaktiqx2xnex2o7n6wgidbtxhnweakkn5oiund7hovvf7w2"
+            }
+        ],
+        "Blocks": [
+            {
+                "Miner": "f01754403",
+                "Ticket": {
+                    "VRFProof": "ldBoeUhQP09lH+YUAjC6WAQ4a4yTq0cLQ9wYPOGILhP4iBKnNfQdrqJsIMsg60MJCB8CYFe2Nt8MxKctpJt/wDj1vUuf9m75s3vwgrAWN85EDypnWW/XK/LgO8ddGCgB"
+                },
+                "ElectionProof": {
+                    "WinCount": 1,
+                    "VRFProof": "uDr6N8LoH6ArwyR97yAlPvMDutFtGp7ErkYc85o+uVxBdONIOawoeFEL1JvhQ2g3FtWZZsDcVhvGOLzlPAXYs9fvVlJB5hU4XenGv2/Wq8WeaWb6/9jAuE1FJ/3TUsmj"
+                },
+                "BeaconEntries": [
+                    {
+                        "Round": 2798928,
+                        "Data": "gOPMgJQ07/JtWfBTyE2uIukZ/m4eJh1tNE1K9IRd3lbHjlotD6HiDQ5+BoKZJvm6DVp2jdAMgEU3PDaoEvIVBlrgRe/5cwuLlC2u+tDU33Prg/qdCGRik3P1J+nFIZh3"
+                    }
+                ],
+                "WinPoStProof": [
+                    {
+                        "PoStProof": 3,
+                        "ProofBytes": "mZDPZ+4BXGbwGT5js2Moh0lvQkVXrzr/Bo93GlWTEzeAVlHNnt4//TYxdNxcHwGBldpg4u/Q2TvTcX9MfNyUbZZ4YI+JHKtYEWQAcBjOaZC0ayOUT+ciSqSAfBBmel82E5HruU1V8aOMaBlQqbLp5wkGmpZB5SFsWi79MY47NovtnkLU51GZnrCEGNfOqLlHl4fMjGVgOesKxZ6X4BfCXF2BSPHn+7Rfx/5OoXVU2fkUQ3Ws01acfHknX7HL1gC+"
+                    }
+                ],
+                "Parents": [
+                    {
+                        "/": "bafy2bzacec3neqtqc5os4hej5u3v34wdvitd7zroolf2s5fkbnscyqvznddgy"
+                    },
+                    {
+                        "/": "bafy2bzacec6mhuuoqieiif5cey435hjouesst374myepjmi6wvrurrxkzsjjk"
+                    },
+                    {
+                        "/": "bafy2bzaceawvnovcw7yymak3i5ww3frouz7sii46rcjsahrkcabztegpxfd3s"
+                    }
+                ],
+                "ParentWeight": "63664567644",
+                "Height": 2703083,
+                "ParentStateRoot": {
+                    "/": "bafy2bzaced3ozdd6gnok6346jnmfr2oxm6s77hoyecfylk2ru6brjtuvrycng"
+                },
+                "ParentMessageReceipts": {
+                    "/": "bafy2bzaced6hbdv3nqre77ssevjukh5rvmh6fdjrby3j2roaggfxrw2kfrqs6"
+                },
+                "Messages": {
+                    "/": "bafy2bzaceaqkeppyjtn7bfnmnms2qudoyhboqxrfagj5nbwurhezx4rk5bbfw"
+                },
+                "BLSAggregate": {
+                    "Type": 2,
+                    "Data": "kz1Tg9escAznXjko9VM7S/8celHuyqOJoW4SNH5GIlZjp2/fgFwjTYl6gzQVmaO/EC9DuMIYMiNnl6IBnDwQtwxQQEyG5cN9Ua9B3SqQc8b+8/9XWtxNGklX1A+1pnQa"
+                },
+                "Timestamp": 1679398890,
+                "BlockSig": {
+                    "Type": 2,
+                    "Data": "oTlXYBCX8KNvsrE863LmTlUeGSDzgT/x/wYXY9awK6pQNR03d+schbhLVsi1t1mjF5XeH8+O1uLUGQbqpNMeTuzqKOAwVCXbYP0WE4gcPrmy0j7ErPqzyxn/iHXH8dnO"
+                },
+                "ForkSignaling": 0,
+                "ParentBaseFee": "261138717"
+            }
+        ],
+        "Height": 2703083
+    },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainHasObj`
+
+> Checks if a given CID exists in the chain blockstore.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainHasObj",
+      "params": [
+                  {
+                    "/": "bafy2bzaceblynopdwvbewq7fbod6bh366uaevdmcaqivygmjyowgptg54jti2"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": true,
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainHead`
+
+> Returns the current head of the chain.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainHead",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Cids": [
+            {
+                "/": "bafy2bzacedv3b5pwefqexzvpwiry7w6wakrbyssdhsgp5c33rm5dgyj5khgbg"
+            },
+            {
+                "/": "bafy2bzacedd7y77bk44nm7rok2nwvne3trnolpzasy3y3z6od6axyg7uiert4"
+            },
+            {
+                "/": "bafy2bzacearxvzcu2ypwauyyy4oqsfwetx3qojtvaorjmxgb2im4k5tddxqiu"
+            },
+            {
+                "/": "bafy2bzacedgcwhuvkzk7iagl2mkxyp6qblk3gprtlqamkq67knb7ykrhqymgg"
+            },
+            {
+                "/": "bafy2bzaceajcpcyjksojvh4ai7wzwnizeshpey27cmodjkee2q4nhyhrid6b4"
+            },
+            {
+                "/": "bafy2bzaceb4wyiih3szexdsljmsfddbm4smse7nshxxu2eky4q3w67hqxtvmm"
+            }
+        ],
+        "Blocks": [
+            {
+                "Miner": "f01895783",
+                "Ticket": {
+                    "VRFProof": "kcWn6V1EhLUKaRMLqYN42SewNWguCDc5F+ZIk9exfBJkaaocOb9uGIbB2KNCxywAGd8wHpYjkgfZWw1nbule0fd5pJwSMp4LQwQm2FWp9QpHK3XvkjcY/KC/mSfP/lHi"
+                },
+                "ElectionProof": {
+                    "WinCount": 1,
+                    "VRFProof": "haD99IerMQWOYh3JGordctFVBnM3sk3LmpezrIJJt+pSwTe+eRer32fOebTRA64QCwHD6lAB38PfQm1djelrKb5I6bzmKma50LPLjdclWiLbmKUXQ7A9msu/T1Yoghjw"
+                },
+                "BeaconEntries": [
+                    {
+                        "Round": 2798977,
+                        "Data": "rVZpSi/6bB86qEK+xZ5KoQ9TxQs0S8GO/aTBTLIIiNooHHZcY7X45tMJnLYK8dN+ET7mYX6Wry0c3CIW6a2RI03iBlckwmiJlzM9LhI2HnWo5B7fol0ocXXJ0MkRkl9d"
+                    }
+                ],
+                "WinPoStProof": [
+                    {
+                        "PoStProof": 3,
+                        "ProofBytes": "g6gO0PjQB8JIcqu2ICQownNoPdryQq3kkshOzTPF1oW1XkXXI9kwejExKYK4xwrotxZHLVeFEF/qnCCnxiNZgUJm/PSYoQwFQu20e0YC5/qCPwCfTr8A2PQZc966la3QFXgq05XIdMNh0F782QkTJyscsl9doWhntQEcqY5kHpcxdtKQucVqGJcOc0/SuAtmpCHH5St2qXOyxSmm287GxUtvpVI9MwO/yQa9dDkapSFFUHuncxhAQf+sAvy2ksNe"
+                    }
+                ],
+                "Parents": [
+                    {
+                        "/": "bafy2bzaced5o6oawg5o6rx3obkj6cuzkyjahz2lpk6qvy5xvq2rjyvygi65bq"
+                    },
+                    {
+                        "/": "bafy2bzacecaxvtk5ckni7awdbynfbifj24oi3eymjc3b44ux3asnpxvpm7rea"
+                    },
+                    {
+                        "/": "bafy2bzacea64cscz2rjm7tr3c55bojpq5nwqq55sxon7hrxkbtzag3ekbgojs"
+                    },
+                    {
+                        "/": "bafy2bzacebw22qt7nay7c4yyp3msay2fgw5anoio4gv3pu4g2mketipy72rcs"
+                    },
+                    {
+                        "/": "bafy2bzacecl4fvgm3tn6opwmdibedcpkw2wk43ufqxsqijuolwvpx5obsoti6"
+                    }
+                ],
+                "ParentWeight": "63665812806",
+                "Height": 2703132,
+                "ParentStateRoot": {
+                    "/": "bafy2bzacec5d2mxtnfswv7fq3fx7beg2s2xdcwjj3szgpjhnj3pu3ople7vrm"
+                },
+                "ParentMessageReceipts": {
+                    "/": "bafy2bzacebponxrcdicmhh2mlzrihmq7iinq73liojcykakrto27gkaexxrdi"
+                },
+                "Messages": {
+                    "/": "bafy2bzacebqx7ajoaiuqrw56xd56fkasmicptv5v7wpfe4o7rl77wtvywwfuk"
+                },
+                "BLSAggregate": {
+                    "Type": 2,
+                    "Data": "sseDTsMGghVci2Wf1ZHQqAl1igaEhcaUm6Uebl/NsQ7frZkaS3cG8gfEb5xUZnIwDvNTRzfR8RibNq2wQ7dTgn9PgZEskBLdisdNsGyOakbu3g+en4c1Uuqe7WjtwJeo"
+                },
+                "Timestamp": 1679400360,
+                "BlockSig": {
+                    "Type": 2,
+                    "Data": "rfECxuyJJHwTO4GAr2yY01PLk0AiL8IV+N+U8XLbgmANEXcUYebHSIxtwyqTV6jNAZbJf6wqILMx+VV8OMqxaRs6PBEYt2uT5aQ8QVnsrl6UonDhORfn6Y+w/lS7SAdy"
+                },
+                "ForkSignaling": 0,
+                "ParentBaseFee": "279330655"
+            }
+        ],
+        "Height": 2703132
+    },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainReadObj`
+
+> Reads ipld nodes referenced by the specified CID from chain blockstore and returns raw bytes.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainReadObj",
+      "params": [
+                  {
+                    "/": "bafy2bzacecdcexybh5urgevm3vsqypphvtaphfkbrp5ypailznwsesxex4inc"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "kEQA269rgVhgkeRpEukXUprHdFngflEOVICJPzoKvN9ylKtAF87LGaMrA2NUROxHjhViBCBRw6UGF1kArbMcXNAx5TJ7cl5POUfdm99scOY/fxy4fwnWXkCaqID24zSh42191IPkxy2fggFYYI/x67542bcmsoRTdjL/XQEx2st/pgzD8JWLsniDau7JYu1X3zZ9ndBtluodw7jKtRCqxsHBYV/PtRuyEESvY5qd1wBJYRJBso7pwstQh/QGQ7YXSkLx4RpklGhTBTuAfYGCGgAqtXlYYLBj5/MRmpNwrEjO6wX4JnCLenOJ9fM/7Y3LkT3JH3O65f+AKHWmLQKnPE2P+wTcChipDoZ1IX33QWEZUVsRVd4dQceHTJi8JzE79KEhtwmHAlm6DZa23NynGHFspBPIGIGCA1jAmAMkXyq47em8jpqzQ2F+3XCvH8nGljQjIl6IKs45ma/Gx5H4LzXrJYsQH84EyQ2howEQ4OA7JYx4nlm0XqMgGYLEib/gh8PgspMJ/xtOMxamV7PGhoLxYzDqzXsEidHvDdX3vHAa9/V3e+gC+eJoYuJK1cJNf4NaGYBOC8He7F1EKPFOPztSbmU2f/KKEejOkKV3dpu5TNQJiY5ZpREgorJBe/s6t4rEuPTNsdjN+3w0dt/jigDHYrdOgBwpTca4idgqWCcAAXGg5AIgdh+kSsOAv/b6v2EDrgze60ckuI1Jg1cMgAR8opaTu5TYKlgnAAFxoOQCIFeGueO1QktD5QuH4J9+9QBKjYIEEVwZicOsZ8zd4maN2CpYJwABcaDkAiBiWxgVs8cHQ71BJFt2vB+zvvhC6dp2yCXhZ61nFkUzP9gqWCcAAXGg5AIgJNmip0/8BY0OEfcvO6q5+eK6r3joTsQFnVEdSBm+B43YKlgnAAFxoOQCIHmVb5Tv73UW74QRwYd5ceaz+IBCDrsyaGn1yxlAV9G12CpYJwABcaDkAiCSR23BHqr7K91w5T98zqNqRkv8E+mToztQiCOyHkJwStgqWCcAAXGg5AIgz3zVjzDaJt5Xgbr9bMMgXPEbyv3GyD8iQhqIOl9DwoXYKlgnAAFxoOQCICWF9cTUreiW5yT884pyehwHsjRqskmp57PfNQO+d1ZP2CpYJwABcaDkAiAbY+i6KT89/8UjW9pXxAxVV5UNJTN0sHxsoTOLxRPCvUYADtLEG7AaACk/FNgqWCcAAXGg5AIgZ8DuWPK1t7ssKJweNNqxAdcMGqWM7EMnoG7QazPhQgTYKlgnAAFxoOQCIKiyng3LPYVIEL8IIaqui4dVwM+7xo+0sBmbbi8GOUkx2CpYJwABcaDkAiBf6+uFCb6YH92/pHwEDfTrpTYoljkqvFh06spSBAd9kVhhArKn1tzPM7kt93dhHbfrudJ8FDTZb1IRGQ2F6lApEdH2YTtgyAMj2oiqgFyyPola1xl5vKeGf7LdbMI1QeUiPb0MiC9cwrl8kYYMrM4ceTATvue+fF5YbDleLBBOYOk7uBpkGZy4WGECsx+OTbv3WplM4gzAxGIBw6GpvO5t7oVxhAt13ZyiOj0Zot5q5MhM0wQa91x+9hkvBgFm2cNGGBMVM4AjuQ3o7a9R1AKwTHBUpz7MC3MqVpSBkeFRau8mF82tVkQlPmTdAEUAEEaVYQ==",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainStatObj`
+
+> Returns statistics about the graph referenced by ‘obj’.
+
+If ‘base’ is also specified, then the returned stat will be a diff between the two objects.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainStatObj",
+      "params": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Size": 42,
+                "Links": 42
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.ChainTipSetWeight`
+
+> Computes weight for the specified tipset.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainTipSetWeight",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea5dwduzwi4n4wjvdw4s4dsablhnqp3kujrmgqgxnxwz3m4gght4s"
+                    },
+                    {
+                      "/": "bafy2bzaceci4q5qljz5rzglddqrtipyrv6i72zbecv5xzpqy43ptreqyj3s3e"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "63667007179",
+    "id": 1
+}
+```
+
+---
+
+## Client
+
+The Client methods all have to do with interacting with the storage and retrieval markets as a client.
+
+### `Filecoin.ClientQueryAsk`
+
+> Returns a signed StorageAsk from the specified miner.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ClientQueryAsk",
+      "params": [
+                  "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+                  "f01234"
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Price": "0",
+                "VerifiedPrice": "0",
+                "MinPieceSize": 1032,
+                "MaxPieceSize": 1032,
+                "Miner": "f01234",
+                "Timestamp": 10101,
+                "Expiry": 10101,
+                "SeqNo": 42
+              },
+    "id": 1
+}
+```
+
+---
+
+## Gas
+
+The Gas methods are used for gas estimation.
+
+### `Filecoin.GasEstimateFeeCap`
+
+> Estimates gas fee cap.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "Filecoin.GasEstimateFeeCap",
+    "params": [
+                  {
+                      "Version": 42,
+                      "To": "f01234",
+                      "From": "f01234",
+                      "Nonce": 42,
+                      "Value": "0",
+                      "GasLimit": 0,
+                      "GasFeeCap": "0",
+                      "GasPremium": "0",
+                      "Method": 1,
+                      "Params": "Ynl0ZSBhcnJheQ==",
+                      "CID": "bafy2bzaceatjqvmrqlta7gouetgltx3ezw23xyh2ahy2h5zqvhcleo6rttmqw"
+                  },
+                  9,
+                  [
+                      {
+                          "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                      },
+                      {
+                          "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                      }
+                  ]
+              ],
+    "id": 1
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "1269908302",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.GasEstimateGasLimit`
+
+> Estimates gas used by the message and returns it.
+
+It fails if message fails to execute.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.GasEstimateGasLimit",
+      "params": [
+                    {
+                        "Version": 42,
+                        "To": "f01234",
+                        "From": "f01234",
+                        "Nonce": 42,
+                        "Value": "0",
+                        "GasLimit": 0,
+                        "GasFeeCap": "0",
+                        "GasPremium": "0",
+                        "Method": 1,
+                        "Params": "Ynl0ZSBhcnJheQ==",
+                        "CID": "bafy2bzacediy5wtkxs46shn7d56hyzn6zl4mepfm3j4u25xtun5742u6de6h6"
+                    },
+                    [
+                        {
+                            "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                        },
+                        {
+                            "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                        }
+                    ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "2392839",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.GasEstimateGasPremium`
+
+> Estimates what gas price should be used for a message to have high likelihood of inclusion in `nblocksincl` epochs.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.GasEstimateGasPremium",
+      "params": [
+                  42,
+                  "f01234",
+                  9,
+                  [
+                    {
+                      "/": "bafy2bzaceb5c256p6xkn4eaksxgmu3cszzeimrcs6643qwlxrwcnpehhzzdyo"
+                    },
+                    {
+                      "/": "bafy2bzacebpan6qb7k2xgjdyp2fcnirwdc2xmvzh7em6ntvsxqa5l7ejpfw64"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "3352604",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.GasEstimateMessageGas`
+
+> Estimates gas values for unset message gas fields.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.GasEstimateMessageGas",
+      "params": [
+                  {
+                    "Version": 42,
+                    "To": "f01234",
+                    "From": "f01234",
+                    "Nonce": 42,
+                    "Value": "0",
+                    "GasLimit": 9,
+                    "GasFeeCap": "0",
+                    "GasPremium": "0",
+                    "Method": 1,
+                    "Params": "Ynl0ZSBhcnJheQ==",
+                    "CID": {
+                      "/": "bafy2bzaceaele6zvcnuvzkwxvespae7qozzcs6brtgnvywnxqkxq2z67cgmyg"
+                    }
+                  },
+                  {
+                    "MaxFee": "0"
+                  },
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Version": 42,
+        "To": "f01234",
+        "From": "f01234",
+        "Nonce": 42,
+        "Value": "0",
+        "GasLimit": 9,
+        "GasFeeCap": "3023506976",
+        "GasPremium": "3352018",
+        "Method": 1,
+        "Params": "Ynl0ZSBhcnJheQ==",
+        "CID": {
+            "/": "bafy2bzacedxnoclckkyz3nrnf7xe2pnaojvtr4hzpdagbfxkkfr5o5ry5x57y"
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+## Mpool
+
+The Mpool methods are used for interacting with the message pool. The message pool manages all incoming and outgoing ‘messages’ going over the network.
+
+### `Filecoin.MpoolGetNonce`
+
+> Gets next nonce for the specified sender.
+
+Note that this method may not be atomic. Use MpoolPushMessage instead.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.MpoolGetNonce",
+      "params": [
+                  "f01234"
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 42,
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.MpoolPending`
+
+> Returns pending mempool messages.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.MpoolPending",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacect7cxrcmvbvbwwe2gxbjd4kwb5f4kmk34yecq5lzqzuntb3xlxve"
+                    },
+                    {
+                      "/": "bafy2bzaceb7upir45mhrpwljphikxkg257pxat5e6mztrt4ywd6rkv5byd2vg"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "Message": {
+                    "Version": 42,
+                    "To": "f01234",
+                    "From": "f01234",
+                    "Nonce": 42,
+                    "Value": "0",
+                    "GasLimit": 9,
+                    "GasFeeCap": "0",
+                    "GasPremium": "0",
+                    "Method": 1,
+                    "Params": "Ynl0ZSBhcnJheQ==",
+                    "CID": {
+                      "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                    }
+                  },
+                  "Signature": {
+                    "Type": 2,
+                    "Data": "Ynl0ZSBhcnJheQ=="
+                  },
+                  "CID": {
+                    "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                  }
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.MpoolPush`
+
+> Pushes a signed message to mempool.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `write`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.MpoolPush",
+      "params": [
+                  {
+                    "Message": {
+                      "Version": 42,
+                      "To": "f01234",
+                      "From": "f01234",
+                      "Nonce": 42,
+                      "Value": "0",
+                      "GasLimit": 9,
+                      "GasFeeCap": "0",
+                      "GasPremium": "0",
+                      "Method": 1,
+                      "Params": "Ynl0ZSBhcnJheQ==",
+                      "CID": {
+                        "/": "bafy2bzaceclufzjmo6tm2h6v3zykdl7cabgynfbbdwsrmcwn5ef77qjbar5jg"
+                      }
+                    },
+                    "Signature": {
+                      "Type": 2,
+                      "Data": "Ynl0ZSBhcnJheQ=="
+                    },
+                    "CID": {
+                      "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                    }
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.MpoolSub`
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.MpoolSub",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Type": 0,
+                "Message": {
+                  "Message": {
+                    "Version": 42,
+                    "To": "f01234",
+                    "From": "f01234",
+                    "Nonce": 42,
+                    "Value": "0",
+                    "GasLimit": 9,
+                    "GasFeeCap": "0",
+                    "GasPremium": "0",
+                    "Method": 1,
+                    "Params": "Ynl0ZSBhcnJheQ==",
+                    "CID": {
+                      "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                    }
+                  },
+                  "Signature": {
+                    "Type": 2,
+                    "Data": "Ynl0ZSBhcnJheQ=="
+                  },
+                  "CID": {
+                    "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                  }
+                }
+              },
+    "id": 1
+}
+```
+
+---
+
+## State
+
+The State methods are used to query, inspect, and interact with chain state. Most methods take a TipSetKey as a parameter. The state looked up is the parent state of the tipset.
+
+A nil TipSetKey can be provided as a param, this will cause the heaviest tipset in the chain to be used.
+
+### `Filecoin.StateAccountKey`
+
+> Returns the public key address of the given ID address.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateAccountKey",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "f01234",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateAllMinerFaults`
+
+> Returns all non-expired Faults that occur within lookback epochs of the given tipset.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateAllMinerFaults",
+      "params": [
+                  10101,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "Miner": "f01234",
+                  "Epoch": 10101
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateCall`
+
+> Runs the given message and returns its result without any persisted changes.
+
+StateCall applies the message to the tipset’s parent state. The message is not applied on-top-of the messages in the passed-in tipset.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateCall",
+      "params": [
+                  {
+                    "Version": 42,
+                    "To": "f01234",
+                    "From": "f01234",
+                    "Nonce": 42,
+                    "Value": "0",
+                    "GasLimit": 9,
+                    "GasFeeCap": "0",
+                    "GasPremium": "0",
+                    "Method": 1,
+                    "Params": "Ynl0ZSBhcnJheQ==",
+                    "CID": {
+                      "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                    }
+                  },
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "MsgCid": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Msg": {
+                  "Version": 42,
+                  "To": "f01234",
+                  "From": "f01234",
+                  "Nonce": 42,
+                  "Value": "0",
+                  "GasLimit": 9,
+                  "GasFeeCap": "0",
+                  "GasPremium": "0",
+                  "Method": 1,
+                  "Params": "Ynl0ZSBhcnJheQ==",
+                  "CID": {
+                    "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                  }
+                },
+                "MsgRct": {
+                  "ExitCode": 0,
+                  "Return": "Ynl0ZSBhcnJheQ==",
+                  "GasUsed": 9
+                },
+                "GasCost": {
+                  "Message": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "GasUsed": "0",
+                  "BaseFeeBurn": "0",
+                  "OverEstimationBurn": "0",
+                  "MinerPenalty": "0",
+                  "MinerTip": "0",
+                  "Refund": "0",
+                  "TotalCost": "0"
+                },
+                "ExecutionTrace": {
+                  "Msg": {
+                    "Version": 42,
+                    "To": "f01234",
+                    "From": "f01234",
+                    "Nonce": 42,
+                    "Value": "0",
+                    "GasLimit": 9,
+                    "GasFeeCap": "0",
+                    "GasPremium": "0",
+                    "Method": 1,
+                    "Params": "Ynl0ZSBhcnJheQ==",
+                    "CID": {
+                      "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                    }
+                  },
+                  "MsgRct": {
+                    "ExitCode": 0,
+                    "Return": "Ynl0ZSBhcnJheQ==",
+                    "GasUsed": 9
+                  },
+                  "Error": "string value",
+                  "Duration": 60000000000,
+                  "GasCharges": [
+                    {
+                      "Name": "string value",
+                      "loc": [
+                        {
+                          "File": "string value",
+                          "Line": 123,
+                          "Function": "string value"
+                        }
+                      ],
+                      "tg": 9,
+                      "cg": 9,
+                      "sg": 9,
+                      "vtg": 9,
+                      "vcg": 9,
+                      "vsg": 9,
+                      "tt": 60000000000,
+                      "ex": {}
+                    }
+                  ],
+                  "Subcalls": [
+                    {
+                      "Msg": {
+                        "Version": 42,
+                        "To": "f01234",
+                        "From": "f01234",
+                        "Nonce": 42,
+                        "Value": "0",
+                        "GasLimit": 9,
+                        "GasFeeCap": "0",
+                        "GasPremium": "0",
+                        "Method": 1,
+                        "Params": "Ynl0ZSBhcnJheQ==",
+                        "CID": {
+                          "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                        }
+                      },
+                      "MsgRct": {
+                        "ExitCode": 0,
+                        "Return": "Ynl0ZSBhcnJheQ==",
+                        "GasUsed": 9
+                      },
+                      "Error": "string value",
+                      "Duration": 60000000000,
+                      "GasCharges": [
+                        {
+                          "Name": "string value",
+                          "loc": [
+                            {
+                              "File": "string value",
+                              "Line": 123,
+                              "Function": "string value"
+                            }
+                          ],
+                          "tg": 9,
+                          "cg": 9,
+                          "sg": 9,
+                          "vtg": 9,
+                          "vcg": 9,
+                          "vsg": 9,
+                          "tt": 60000000000,
+                          "ex": {}
+                        }
+                      ],
+                      "Subcalls": null
+                    }
+                  ]
+                },
+                "Error": "string value",
+                "Duration": 60000000000
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateChangedActors`
+
+> Returns all the actors whose states change between the two given state CIDs.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Response example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateChangedActors",
+      "params": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "t01236": {
+                  "Code": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "Head": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "Nonce": 42,
+                  "Balance": "0"
+                }
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateCirculatingSupply`
+
+> Returns the exact circulating supply of Filecoin at the given tipset.
+
+This is not used anywhere in the protocol itself, and is only for external consumption.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateCirculatingSupply",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateCompute`
+
+> Applies the given messages on the given tipset.
+
+The messages are run as though the VM were at the provided height.
+
+When called, StateCompute will:
+
+  * Load the provided tipset, or use the current chain head if not provided
+  * Compute the tipset state of the provided tipset on top of the parent state
+    * (note that this step runs before vmheight is applied to the execution)
+    * Execute state upgrade if any were scheduled at the epoch, or in null blocks preceding the tipset
+    * Call the cron actor on null blocks preceding the tipset
+    * For each block in the tipset
+      * Apply messages in blocks in the specified
+      * Award block reward by calling the reward actor
+    * Call the cron actor for the current epoch
+  * If the specified vmheight is higher than the current epoch, apply any needed state upgrades to the state
+  * Apply the specified messages to the state
+
+The vmheight parameter sets VM execution epoch, and can be used to simulate message execution in different network versions. If the specified vmheight epoch is higher than the epoch of the specified tipset, any state upgrades until the vmheight will be executed on the state before applying messages specified by the user.
+
+Note that the initial tipset state computation is not affected by the vmheight parameter — only the messages in the `apply` set are
+
+If the caller wants to simply compute the state, vmheight should be set to the epoch of the specified tipset.
+
+Messages in the `apply` parameter must have the correct nonces, and gas values set.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateCompute",
+      "params": [
+                  10101,
+                  [
+                    {
+                      "Version": 42,
+                      "To": "f01234",
+                      "From": "f01234",
+                      "Nonce": 42,
+                      "Value": "0",
+                      "GasLimit": 9,
+                      "GasFeeCap": "0",
+                      "GasPremium": "0",
+                      "Method": 1,
+                      "Params": "Ynl0ZSBhcnJheQ==",
+                      "CID": {
+                        "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                      }
+                    }
+                  ],
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Root": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Trace": [
+                  {
+                    "MsgCid": {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    "Msg": {
+                      "Version": 42,
+                      "To": "f01234",
+                      "From": "f01234",
+                      "Nonce": 42,
+                      "Value": "0",
+                      "GasLimit": 9,
+                      "GasFeeCap": "0",
+                      "GasPremium": "0",
+                      "Method": 1,
+                      "Params": "Ynl0ZSBhcnJheQ==",
+                      "CID": {
+                        "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                      }
+                    },
+                    "MsgRct": {
+                      "ExitCode": 0,
+                      "Return": "Ynl0ZSBhcnJheQ==",
+                      "GasUsed": 9
+                    },
+                    "GasCost": {
+                      "Message": {
+                        "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                      },
+                      "GasUsed": "0",
+                      "BaseFeeBurn": "0",
+                      "OverEstimationBurn": "0",
+                      "MinerPenalty": "0",
+                      "MinerTip": "0",
+                      "Refund": "0",
+                      "TotalCost": "0"
+                    },
+                    "ExecutionTrace": {
+                      "Msg": {
+                        "Version": 42,
+                        "To": "f01234",
+                        "From": "f01234",
+                        "Nonce": 42,
+                        "Value": "0",
+                        "GasLimit": 9,
+                        "GasFeeCap": "0",
+                        "GasPremium": "0",
+                        "Method": 1,
+                        "Params": "Ynl0ZSBhcnJheQ==",
+                        "CID": {
+                          "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                        }
+                      },
+                      "MsgRct": {
+                        "ExitCode": 0,
+                        "Return": "Ynl0ZSBhcnJheQ==",
+                        "GasUsed": 9
+                      },
+                      "Error": "string value",
+                      "Duration": 60000000000,
+                      "GasCharges": [
+                        {
+                          "Name": "string value",
+                          "loc": [
+                            {
+                              "File": "string value",
+                              "Line": 123,
+                              "Function": "string value"
+                            }
+                          ],
+                          "tg": 9,
+                          "cg": 9,
+                          "sg": 9,
+                          "vtg": 9,
+                          "vcg": 9,
+                          "vsg": 9,
+                          "tt": 60000000000,
+                          "ex": {}
+                        }
+                      ],
+                      "Subcalls": [
+                        {
+                          "Msg": {
+                            "Version": 42,
+                            "To": "f01234",
+                            "From": "f01234",
+                            "Nonce": 42,
+                            "Value": "0",
+                            "GasLimit": 9,
+                            "GasFeeCap": "0",
+                            "GasPremium": "0",
+                            "Method": 1,
+                            "Params": "Ynl0ZSBhcnJheQ==",
+                            "CID": {
+                              "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                            }
+                          },
+                          "MsgRct": {
+                            "ExitCode": 0,
+                            "Return": "Ynl0ZSBhcnJheQ==",
+                            "GasUsed": 9
+                          },
+                          "Error": "string value",
+                          "Duration": 60000000000,
+                          "GasCharges": [
+                            {
+                              "Name": "string value",
+                              "loc": [
+                                {
+                                  "File": "string value",
+                                  "Line": 123,
+                                  "Function": "string value"
+                                }
+                              ],
+                              "tg": 9,
+                              "cg": 9,
+                              "sg": 9,
+                              "vtg": 9,
+                              "vcg": 9,
+                              "vsg": 9,
+                              "tt": 60000000000,
+                              "ex": {}
+                            }
+                          ],
+                          "Subcalls": null
+                        }
+                      ]
+                    },
+                    "Error": "string value",
+                    "Duration": 60000000000
+                  }
+                ]
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateDealProviderCollateralBounds`
+
+> Returns the min and max collateral a storage provider can issue.
+
+It takes the deal size and verified status as parameters.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateDealProviderCollateralBounds",
+      "params": [
+                  1032,
+                  true,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Min": "0",
+                "Max": "0"
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateDecodeParams`
+
+> Attempts to decode the provided params, based on the recipient actor address and method number.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateDecodeParams",
+      "params": [
+                  "f01234",
+                  1,
+                  "Ynl0ZSBhcnJheQ==",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {},
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateGetActor`
+
+> Returns the indicated actor’s nonce and balance.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateGetActor",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Code": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Head": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Nonce": 42,
+                "Balance": "0"
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateGetReceipt`
+
+> Returns the message receipt for the given message or for a matching gas-repriced replacing message.
+
+<Callout type="tip">
+If the requested message was replaced, this method will return the receipt for the replacing message — if the caller needs the receipt for exactly the requested message, use StateSearchMsg().Receipt, and check that MsgLookup.Message is matching the requested CID.
+</Callout>
+
+<Callout type="warning">
+DEPRECATED: Use StateSearchMsg, this method won’t be supported in v1 API
+</Callout>
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateGetReceipt",
+      "params": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "ExitCode": 0,
+                "Return": "Ynl0ZSBhcnJheQ==",
+                "GasUsed": 9
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateListActors`
+
+> Returns the addresses of every actor in the state.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateListActors",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": ["f01234"],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateListMessages`
+
+> Looks back and returns all messages with a matching to or from address, stopping at the given height.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateListMessages",
+      "params": [
+                  {
+                    "To": "f01234",
+                    "From": "f01234"
+                  },
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ],
+                  10101
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateListMiners`
+
+> Returns the addresses of every miner that has claimed power in the Power Actor.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateListMiners",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                "f01234"
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateLookupID`
+
+> Retrieves the ID address of the given address.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateLookupID",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "f01234",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMarketBalance`
+
+> Looks up the Escrow and Locked balances of the given address in the Storage Market.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMarketBalance",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Escrow": "0",
+                "Locked": "0"
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMarketDeals`
+
+> Returns information about every deal in the Storage Market.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMarketDeals",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "t026363": {
+                  "Proposal": {
+                    "PieceCID": {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    "PieceSize": 1032,
+                    "VerifiedDeal": true,
+                    "Client": "f01234",
+                    "Provider": "f01234",
+                    "Label": "string value",
+                    "StartEpoch": 10101,
+                    "EndEpoch": 10101,
+                    "StoragePricePerEpoch": "0",
+                    "ProviderCollateral": "0",
+                    "ClientCollateral": "0"
+                  },
+                  "State": {
+                    "SectorStartEpoch": 10101,
+                    "LastUpdatedEpoch": 10101,
+                    "SlashEpoch": 10101
+                  }
+                }
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMarketParticipants`
+
+> Returns the Escrow and Locked balances of every participant in the Storage Market.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMarketParticipants",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "t026363": {
+                  "Escrow": "0",
+                  "Locked": "0"
+                }
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMarketStorageDeal`
+
+> Returns information about the indicated deal.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMarketStorageDeal",
+      "params": [
+                  5432,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Proposal": {
+                  "PieceCID": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "PieceSize": 1032,
+                  "VerifiedDeal": true,
+                  "Client": "f01234",
+                  "Provider": "f01234",
+                  "Label": "string value",
+                  "StartEpoch": 10101,
+                  "EndEpoch": 10101,
+                  "StoragePricePerEpoch": "0",
+                  "ProviderCollateral": "0",
+                  "ClientCollateral": "0"
+                },
+                "State": {
+                  "SectorStartEpoch": 10101,
+                  "LastUpdatedEpoch": 10101,
+                  "SlashEpoch": 10101
+                }
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerActiveSectors`
+
+> Returns info about sectors that a given miner is actively proving.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerActiveSectors",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "SectorNumber": 9,
+                  "SealProof": 8,
+                  "SealedCID": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "DealIDs": [
+                    5432
+                  ],
+                  "Activation": 10101,
+                  "Expiration": 10101,
+                  "DealWeight": "0",
+                  "VerifiedDealWeight": "0",
+                  "InitialPledge": "0",
+                  "ExpectedDayReward": "0",
+                  "ExpectedStoragePledge": "0",
+                  "SectorKeyCID": null
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerAvailableBalance`
+
+> Returns the portion of a miner’s balance that can be withdrawn or spent.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerAvailableBalance",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerDeadlines`
+
+> Returns all the proving deadlines for the given miner.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerDeadlines",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "PostSubmissions": [
+                    5,
+                    1
+                  ],
+                  "DisputableProofCount": 42
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerFaults`
+
+> Returns a bitfield indicating the faulty sectors of the given miner.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerFaults",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                5,
+                1
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerInfo`
+
+> Returns info about the indicated miner.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerInfo",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Owner": "f01234",
+                "Worker": "f01234",
+                "NewWorker": "f01234",
+                "ControlAddresses": [
+                  "f01234"
+                ],
+                "WorkerChangeEpoch": 10101,
+                "PeerId": "12D3KooWGzxzKZYveHXtpG6AsrUJBcWxHBFS2HsEoGTxrMLvKXtf",
+                "Multiaddrs": [
+                  "Ynl0ZSBhcnJheQ=="
+                ],
+                "WindowPoStProofType": 8,
+                "SectorSize": 34359738368,
+                "WindowPoStPartitionSectors": 42,
+                "ConsensusFaultElapsed": 10101
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerInitialPledgeCollateral`
+
+> Returns the initial pledge collateral for the specified miner’s sector.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerInitialPledgeCollateral",
+      "params": [
+                  "f01234",
+                  {
+                    "SealProof": 8,
+                    "SectorNumber": 9,
+                    "SealedCID": {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    "SealRandEpoch": 10101,
+                    "DealIDs": [
+                      5432
+                    ],
+                    "Expiration": 10101,
+                    "ReplaceCapacity": true,
+                    "ReplaceSectorDeadline": 42,
+                    "ReplaceSectorPartition": 42,
+                    "ReplaceSectorNumber": 9
+                  },
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerPartitions`
+
+> Returns all partitions in the specified deadline.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerPartitions",
+      "params": [
+                  "f01234",
+                  42,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "AllSectors": [
+                    5,
+                    1
+                  ],
+                  "FaultySectors": [
+                    5,
+                    1
+                  ],
+                  "RecoveringSectors": [
+                    5,
+                    1
+                  ],
+                  "LiveSectors": [
+                    5,
+                    1
+                  ],
+                  "ActiveSectors": [
+                    5,
+                    1
+                  ]
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerPower`
+
+> Returns the power of the indicated miner.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerPower",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "MinerPower": {
+                  "RawBytePower": "0",
+                  "QualityAdjPower": "0"
+                },
+                "TotalPower": {
+                  "RawBytePower": "0",
+                  "QualityAdjPower": "0"
+                },
+                "HasMinPower": true
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerPreCommitDepositForPower`
+
+> Returns the pre-commit deposit for the specified miner’s sector.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerPreCommitDepositForPower",
+      "params": [
+                  "f01234",
+                  {
+                    "SealProof": 8,
+                    "SectorNumber": 9,
+                    "SealedCID": {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    "SealRandEpoch": 10101,
+                    "DealIDs": [
+                      5432
+                    ],
+                    "Expiration": 10101,
+                    "ReplaceCapacity": true,
+                    "ReplaceSectorDeadline": 42,
+                    "ReplaceSectorPartition": 42,
+                    "ReplaceSectorNumber": 9
+                  },
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerProvingDeadline`
+
+> Calculates the deadline at some epoch for a proving period and returns the deadline-related calculations.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerProvingDeadline",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "CurrentEpoch": 10101,
+                "PeriodStart": 10101,
+                "Index": 42,
+                "Open": 10101,
+                "Close": 10101,
+                "Challenge": 10101,
+                "FaultCutoff": 10101,
+                "WPoStPeriodDeadlines": 42,
+                "WPoStProvingPeriod": 10101,
+                "WPoStChallengeWindow": 10101,
+                "WPoStChallengeLookback": 10101,
+                "FaultDeclarationCutoff": 10101
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerRecoveries`
+
+> Returns a bitfield indicating the recovering sectors of the given miner.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerRecoveries",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                5,
+                1
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerSectorAllocated`
+
+> Checks if a sector is allocated.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerSectorAllocated",
+      "params": [
+                  "f01234",
+                  9,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": true,
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerSectorCount`
+
+> Returns the number of sectors in a miner’s sector set and proving set.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerSectorCount",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Live": 42,
+                "Active": 42,
+                "Faulty": 42
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateMinerSectors`
+
+> Returns info about the given miner’s sectors.
+
+If the filter bitfield is nil, all sectors are included.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateMinerSectors",
+      "params": [
+                  "f01234",
+                  [
+                    0
+                  ],
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+                {
+                  "SectorNumber": 9,
+                  "SealProof": 8,
+                  "SealedCID": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "DealIDs": [
+                    5432
+                  ],
+                  "Activation": 10101,
+                  "Expiration": 10101,
+                  "DealWeight": "0",
+                  "VerifiedDealWeight": "0",
+                  "InitialPledge": "0",
+                  "ExpectedDayReward": "0",
+                  "ExpectedStoragePledge": "0",
+                  "SectorKeyCID": null
+                }
+              ],
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateNetworkName`
+
+> Returns the name of the network the node is synced to.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateNetworkName",
+      "params": [],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "lotus",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateNetworkVersion`
+
+> Returns the network version at the given tipset.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateNetworkVersion",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 15,
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateReadState`
+
+> Returns the indicated actor’s state.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateReadState",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Balance": "0",
+                "Code": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "State": {}
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateReplay`
+
+> Replays a given message, assuming it was included in a block in the specified tipset.
+
+If a tipset key is provided, and a replacing message is found on chain, the method will return an error saying that the message wasn’t found
+
+If no tipset key is provided, the appropriate tipset is looked up, and if the message was gas-repriced, the on-chain message will be replayed — in that case the returned InvocResult.MsgCid will not match the Cid param
+
+If the caller wants to ensure that exactly the requested message was executed, they MUST check that InvocResult.MsgCid is equal to the provided Cid. Without this check both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
+
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateReplay",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ],
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "MsgCid": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Msg": {
+                  "Version": 42,
+                  "To": "f01234",
+                  "From": "f01234",
+                  "Nonce": 42,
+                  "Value": "0",
+                  "GasLimit": 9,
+                  "GasFeeCap": "0",
+                  "GasPremium": "0",
+                  "Method": 1,
+                  "Params": "Ynl0ZSBhcnJheQ==",
+                  "CID": {
+                    "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                  }
+                },
+                "MsgRct": {
+                  "ExitCode": 0,
+                  "Return": "Ynl0ZSBhcnJheQ==",
+                  "GasUsed": 9
+                },
+                "GasCost": {
+                  "Message": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "GasUsed": "0",
+                  "BaseFeeBurn": "0",
+                  "OverEstimationBurn": "0",
+                  "MinerPenalty": "0",
+                  "MinerTip": "0",
+                  "Refund": "0",
+                  "TotalCost": "0"
+                },
+                "ExecutionTrace": {
+                  "Msg": {
+                    "Version": 42,
+                    "To": "f01234",
+                    "From": "f01234",
+                    "Nonce": 42,
+                    "Value": "0",
+                    "GasLimit": 9,
+                    "GasFeeCap": "0",
+                    "GasPremium": "0",
+                    "Method": 1,
+                    "Params": "Ynl0ZSBhcnJheQ==",
+                    "CID": {
+                      "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                    }
+                  },
+                  "MsgRct": {
+                    "ExitCode": 0,
+                    "Return": "Ynl0ZSBhcnJheQ==",
+                    "GasUsed": 9
+                  },
+                  "Error": "string value",
+                  "Duration": 60000000000,
+                  "GasCharges": [
+                    {
+                      "Name": "string value",
+                      "loc": [
+                        {
+                          "File": "string value",
+                          "Line": 123,
+                          "Function": "string value"
+                        }
+                      ],
+                      "tg": 9,
+                      "cg": 9,
+                      "sg": 9,
+                      "vtg": 9,
+                      "vcg": 9,
+                      "vsg": 9,
+                      "tt": 60000000000,
+                      "ex": {}
+                    }
+                  ],
+                  "Subcalls": [
+                    {
+                      "Msg": {
+                        "Version": 42,
+                        "To": "f01234",
+                        "From": "f01234",
+                        "Nonce": 42,
+                        "Value": "0",
+                        "GasLimit": 9,
+                        "GasFeeCap": "0",
+                        "GasPremium": "0",
+                        "Method": 1,
+                        "Params": "Ynl0ZSBhcnJheQ==",
+                        "CID": {
+                          "/": "bafy2bzacebbpdegvr3i4cosewthysg5xkxpqfn2wfcz6mv2hmoktwbdxkax4s"
+                        }
+                      },
+                      "MsgRct": {
+                        "ExitCode": 0,
+                        "Return": "Ynl0ZSBhcnJheQ==",
+                        "GasUsed": 9
+                      },
+                      "Error": "string value",
+                      "Duration": 60000000000,
+                      "GasCharges": [
+                        {
+                          "Name": "string value",
+                          "loc": [
+                            {
+                              "File": "string value",
+                              "Line": 123,
+                              "Function": "string value"
+                            }
+                          ],
+                          "tg": 9,
+                          "cg": 9,
+                          "sg": 9,
+                          "vtg": 9,
+                          "vcg": 9,
+                          "vsg": 9,
+                          "tt": 60000000000,
+                          "ex": {}
+                        }
+                      ],
+                      "Subcalls": null
+                    }
+                  ]
+                },
+                "Error": "string value",
+                "Duration": 60000000000
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateSearchMsg`
+
+> Searches for a message in the chain, and returns its receipt and the tipset where it was executed.
+
+NOTE: If a replacing message is found on chain, this method will return a MsgLookup for the replacing message — the MsgLookup.Message will be a different CID than the one provided in the ‘cid’ param, MsgLookup.Receipt will contain the result of the execution of the replacing message.
+
+If the caller wants to ensure that exactly the requested message was executed, they MUST check that MsgLookup.Message is equal to the provided ‘cid’. Without this check both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
+
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateSearchMsg",
+      "params": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Message": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Receipt": {
+                  "ExitCode": 0,
+                  "Return": "Ynl0ZSBhcnJheQ==",
+                  "GasUsed": 9
+                },
+                "ReturnDec": {},
+                "TipSet": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  {
+                    "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                  }
+                ],
+                "Height": 10101
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateSearchMsgLimited`
+
+> Looks back up to limit epochs in the chain for a message, and returns its receipt and the tipset where it was executed.
+
+NOTE: If a replacing message is found on chain, this method will return a MsgLookup for the replacing message — the MsgLookup.Message will be a different CID than the one provided in the ‘cid’ param, MsgLookup.Receipt will contain the result of the execution of the replacing message.
+
+If the caller wants to ensure that exactly the requested message was executed, they MUST check that MsgLookup.Message is equal to the provided ‘cid’. Without this check both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
+
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateSearchMsgLimited",
+      "params": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  10101
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Message": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Receipt": {
+                  "ExitCode": 0,
+                  "Return": "Ynl0ZSBhcnJheQ==",
+                  "GasUsed": 9
+                },
+                "ReturnDec": {},
+                "TipSet": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  {
+                    "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                  }
+                ],
+                "Height": 10101
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateSectorExpiration`
+
+> Returns epoch at which given sector will expire
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateSectorExpiration",
+      "params": [
+                  "f01234",
+                  9,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "OnTime": 10101,
+                "Early": 10101
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateSectorGetInfo`
+
+> Returns the on-chain info for the specified miner’s sector.
+
+Returns null in case the sector info isn’t found.
+
+<Callout type="tip">
+NOTE: returned info.Expiration may not be accurate in some cases, use StateSectorExpiration to get accurate expiration epoch.
+</Callout>
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateSectorGetInfo",
+      "params": [
+                  "f01234",
+                  9,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "SectorNumber": 9,
+                "SealProof": 8,
+                "SealedCID": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "DealIDs": [
+                  5432
+                ],
+                "Activation": 10101,
+                "Expiration": 10101,
+                "DealWeight": "0",
+                "VerifiedDealWeight": "0",
+                "InitialPledge": "0",
+                "ExpectedDayReward": "0",
+                "ExpectedStoragePledge": "0",
+                "SectorKeyCID": null
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateSectorPartition`
+
+> Finds deadline/partition with the specified sector.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateSectorPartition",
+      "params": [
+                  "f01234",
+                  9,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Deadline": 42,
+                "Partition": 42
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateSectorPreCommitInfo`
+
+> Returns the PreCommit info for the specified miner’s sector.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateSectorPreCommitInfo",
+      "params": [
+                  "f01234",
+                  9,
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Info": {
+                  "SealProof": 8,
+                  "SectorNumber": 9,
+                  "SealedCID": {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  "SealRandEpoch": 10101,
+                  "DealIDs": [
+                    5432
+                  ],
+                  "Expiration": 10101,
+                  "ReplaceCapacity": true,
+                  "ReplaceSectorDeadline": 42,
+                  "ReplaceSectorPartition": 42,
+                  "ReplaceSectorNumber": 9
+                },
+                "PreCommitDeposit": "0",
+                "PreCommitEpoch": 10101,
+                "DealWeight": "0",
+                "VerifiedDealWeight": "0"
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateVMCirculatingSupplyInternal`
+
+> Returns an approximation of the circulating supply of Filecoin at the given tipset.
+
+This is the value reported by the runtime interface to actors code.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateVMCirculatingSupplyInternal",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "FilVested": "0",
+                "FilMined": "0",
+                "FilBurnt": "0",
+                "FilLocked": "0",
+                "FilCirculating": "0",
+                "FilReserveDisbursed": "0"
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateVerifiedClientStatus`
+
+> Returns the data cap for the given address.
+
+Returns nil if there is no entry in the data cap table for the address.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateVerifiedClientStatus",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateVerifiedRegistryRootKey`
+
+> Returns the address of the Verified Registry’s root key.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateVerifiedRegistryRootKey",
+      "params": [
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "f01234",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateVerifierStatus`
+
+> Returns the data cap for the given address.
+
+Returns nil if there is no entry in the data cap table for the address.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateVerifierStatus",
+      "params": [
+                  "f01234",
+                  [
+                    {
+                      "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                    },
+                    {
+                      "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                    }
+                  ]
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateWaitMsg`
+
+> Looks back in the chain for a message.
+
+If not found, it blocks until the message arrives on chain, and gets to the indicated confidence depth.
+
+NOTE: If a replacing message is found on chain, this method will return a MsgLookup for the replacing message — the MsgLookup.Message will be a different CID than the one provided in the ‘cid’ param, MsgLookup.Receipt will contain the result of the execution of the replacing message.
+
+If the caller wants to ensure that exactly the requested message was executed, they MUST check that MsgLookup.Message is equal to the provided ‘cid’. Without this check both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
+
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateWaitMsg",
+      "params": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  42
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Message": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Receipt": {
+                  "ExitCode": 0,
+                  "Return": "Ynl0ZSBhcnJheQ==",
+                  "GasUsed": 9
+                },
+                "ReturnDec": {},
+                "TipSet": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  {
+                    "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                  }
+                ],
+                "Height": 10101
+              },
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.StateWaitMsgLimited`
+
+> Looks back up to limit epochs in the chain for a message.
+
+ If not found, it blocks until the message arrives on chain, and gets to the indicated confidence depth.
+
+NOTE: If a replacing message is found on chain, this method will return a MsgLookup for the replacing message — the MsgLookup.Message will be a different CID than the one provided in the ‘cid’ param, MsgLookup.Receipt will contain the result of the execution of the replacing message.
+
+If the caller wants to ensure that exactly the requested message was executed, they MUST check that MsgLookup.Message is equal to the provided ‘cid’. Without this check both the requested and original message may appear as successfully executed on-chain, which may look like a double-spend.
+
+A replacing message is a message with a different CID, any of Gas values, and different signature, but with all other parameters matching (source/destination, nonce, params, etc.)
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.StateWaitMsgLimited",
+      "params": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  42,
+                  10101
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+                "Message": {
+                  "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                },
+                "Receipt": {
+                  "ExitCode": 0,
+                  "Return": "Ynl0ZSBhcnJheQ==",
+                  "GasUsed": 9
+                },
+                "ReturnDec": {},
+                "TipSet": [
+                  {
+                    "/": "bafy2bzacea3wsdh6y3a36tb3skempjoxqpuyompjbmfeyf34fi3uy6uue42v4"
+                  },
+                  {
+                    "/": "bafy2bzacebp3shtrn43k7g3unredz7fxn4gj533d3o43tqn2p2ipxxhrvchve"
+                  }
+                ],
+                "Height": 10101
+              },
+    "id": 1
+}
+```
+
+---
+
+## Wallet
+
+The Wallet methods are used for wallet operations.
+
+### `Filecoin.WalletBalance`
+
+> Returns the balance of the given address at the current head of the chain.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.WalletBalance",
+      "params": [
+                  "f01234"
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.WalletValidateAddress`
+
+> Validates whether a given string can be decoded as a well-formed address.
+
+[Permission](/rpc-service/chains/chains-api/filecoin/#permissions): `read`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.WalletValidateAddress",
+      "params": [
+                  "string value"
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "f01234",
+    "id": 1
+}
+```
+
+---
+
+### `Filecoin.WalletVerify`
+
+> Takes an address, a signature, and some bytes, and indicates whether the signature is valid.
+
+The address does not have to be in the wallet.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.WalletVerify",
+      "params": [
+                  "f01234",
+                  "Ynl0ZSBhcnJheQ==",
+                  {
+                    "Type": 2,
+                    "Data": "Ynl0ZSBhcnJheQ=="
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+####  Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": true,
+    "id": 1
+}
+```
+
 

@@ -19,7 +19,7 @@ _Query API_ consists of the following methods to request info on the ranges of b
 
   * [`ankr_getBlockchainStats`](/advanced-api/query-methods/#ankr_getblockchainstats) — retrieves blockchain statistics.
   * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
-  * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
+  * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves historical data for the specified range of blocks.
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
   * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by address.
   * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
@@ -301,9 +301,7 @@ Code: 200 OK
 
 ## `ankr_getLogs`
 
-> **Retrieves the blocks' history data.**
-
-Retrieves history data for the blocks specified.
+> **Retrieves historical data for the specified range of blocks.**
 
 ### Request
 
