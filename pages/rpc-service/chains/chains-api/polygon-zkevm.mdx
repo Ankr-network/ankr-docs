@@ -1,12 +1,14 @@
 import { Callout } from "components";
 
-# Polygon
+# Polygon zkEVM
 
-> Polygon API is available on [RPC Service](https://www.ankr.com/rpc/polygon).
+> Polygon zkEVM API is available on [RPC Service](https://www.ankr.com/rpc/polygon_zkevm).
 
-Polygon is a scaling solution for public blockchains. Polygon PoS supports all the existing Ethereum tooling along with faster and cheaper transactions.
+Polygon zkEVM is the first zero-knowledge scaling solution that is fully equivalent to an EVM. All existing smart contracts, developer toolings and wallets work seamlessly. Polygon zkEVM harnesses the power of zero-knowledge proofs in order to reduce transaction costs and massively increase throughput, all while inheriting the security of Ethereum.
 
-In order for your Web3 application to interact with Polygon — either by reading blockchain data or sending transactions to the network — it must connect to a Polygon node. Developers interact with the blockchain using the methods provided by the API.
+Building dApps on zkEVM is completely similar to Ethereum. Simply switch to the zkEVM RPC and start building on a network with much higher throughput and lower fees. Polygon zkEVM provides a complete EVM-like experience for Developers and Users alike. So you do not need special toolings or new wallets for building or interacting with zkEVM.
+
+In order for your Web3 application to interact with Polygon zkEVM — either by reading blockchain data or sending transactions to the network — it must connect to a Polygon zkEVM node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
@@ -14,35 +16,33 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 
 ## Methods supported
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/polygon/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/polygon/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/polygon/#net_version) — returns the current network ID.
-  * [`net_listening`](/rpc-service/chains/chains-api/polygon/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_protocolversion`](/rpc-service/chains/chains-api/polygon/#eth_protocolversion) — returns the current Ethereum protocol version.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/polygon/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/polygon/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/polygon/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/polygon/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/polygon/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/polygon/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/polygon/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/polygon/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/polygon/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/polygon/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/polygon/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/polygon/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/polygon/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/polygon/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/polygon/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/polygon/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/polygon/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/polygon/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/polygon/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/polygon/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/polygon/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/polygon/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/polygon/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/polygon/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/polygon-zkevm/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/polygon-zkevm/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/polygon-zkevm/#net_version) — returns the current network ID.
+  * [`eth_protocolversion`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_protocolversion) — returns the current Ethereum protocol version.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -64,7 +64,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -106,7 +106,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -146,7 +146,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -163,46 +163,6 @@ curl -X POST https://rpc.ankr.com/polygon \
     "jsonrpc": "2.0",
     "id": 1,
     "result": "137"
-}
-```
-
----
-
-## `net_listening`
-
-> Returns `true` if client is actively listening for network connections.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<boolean>`: `true` when listening, otherwise `false`.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/polygon \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "net_listening",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": true
 }
 ```
 
@@ -226,7 +186,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -269,7 +229,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -323,7 +283,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -340,48 +300,6 @@ curl -X POST https://rpc.ankr.com/polygon \
     "jsonrpc": "2.0",
     "id": 1,
     "result": "0x3495ba9628"
-}
-```
-
----
-
-## `eth_accounts`
-
-> Returns a list of addresses owned by client.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array): None.
-
-### Returns
-
-  * `<array>` (string; data, 20 bytes): addresses owned by the client.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/polygon \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_accounts",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": [
-        "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
-    ]
 }
 ```
 
@@ -405,7 +323,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -453,7 +371,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -503,7 +421,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -552,7 +470,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -594,7 +512,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -641,7 +559,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -683,7 +601,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -730,7 +648,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -779,7 +697,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -818,12 +736,12 @@ curl -X POST https://rpc.ankr.com/polygon \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/polygon/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/polygon-zkevm/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -878,7 +796,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -935,7 +853,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -997,7 +915,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1108,7 +1026,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1206,7 +1124,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1282,7 +1200,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1363,7 +1281,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1444,7 +1362,7 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1567,7 +1485,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1656,7 +1574,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1743,7 +1661,7 @@ curl -X POST https://rpc.ankr.com/polygon \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon \
+curl -X POST https://rpc.ankr.com/polygon-zkevm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
