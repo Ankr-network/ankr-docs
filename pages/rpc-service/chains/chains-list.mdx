@@ -24,7 +24,7 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Gnosis](/rpc-service/chains/chains-list/#gnosis)</td>
     <td>[Kusama](/rpc-service/chains/chains-list/#kusama)</td>
     <td>[Optimism](/rpc-service/chains/chains-list/#optimism)</td>
-    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
+    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
   </tr>
   <tr>
     <td>[Arbitrum](/rpc-service/chains/chains-list/#arbitrum)</td>
@@ -32,7 +32,7 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Harmony](/rpc-service/chains/chains-list/#harmony)</td>
     <td>[Metis](/rpc-service/chains/chains-list/#metis)</td>
     <td>[Polkadot](/rpc-service/chains/chains-list/#polkadot)</td>
-    <td>[Tron](/rpc-service/chains/chains-list/#tron)</td>
+    <td>[Syscoin](/rpc-service/chains/chains-list/#syscoin)</td>
   </tr>
   <tr>
     <td>[Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)</td>
@@ -40,14 +40,14 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)</td>
     <td>[Moonbeam](/rpc-service/chains/chains-list/#moonbeam)</td>
     <td>[Polygon](/rpc-service/chains/chains-list/#polygon)</td>
-    <td></td>
+    <td>[TRON](/rpc-service/chains/chains-list/#tron)</td>
   </tr>
   <tr>
     <td>[Avalanche](/rpc-service/chains/chains-list/#avalanche)</td>
     <td>[Fantom](/rpc-service/chains/chains-list/#fantom)</td>
     <td>[IoTeX](/rpc-service/chains/chains-list/#iotex)</td>
     <td>[NEAR](/rpc-service/chains/chains-list/#near)</td>
-    <td>[Secret Network](/rpc-service/chains/chains-list/#secret-network)</td>
+    <td>[Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)</td>
     <td></td>
   </tr>
   <tr>
@@ -55,7 +55,7 @@ This docs section provides the list of all chains available on [RPC Service](htt
     <td>[Filecoin](/rpc-service/chains/chains-list/#filecoin)</td>
     <td>[Klaytn](/rpc-service/chains/chains-list/#klaytn)</td>
     <td>[Nervos](/rpc-service/chains/chains-list/#nervos)</td>
-    <td>[Solana](/rpc-service/chains/chains-list/#solana)</td>
+    <td>[Secret Network](/rpc-service/chains/chains-list/#secret-network)</td>
     <td></td>
   </tr>
   </tbody>
@@ -3714,6 +3714,49 @@ def test_block_number(self):
 
 ---
 
+## Polygon zkEVM
+
+Polygon zkEVM is a decentralized Ethereum Layer 2 scalability solution that uses cryptographic zero-knowledge proofs to offer validity and quick finality to off-chain transaction computation, also known as a ZK-Rollup.
+
+The ZK-Rollup executes smart contracts transparently, by publishing zero-knowledge validity proofs, while maintaining opcode compatibility with the Ethereum Virtual Machine.
+
+Building dApps on zkEVM is completely similar to Ethereum. Simply switch to the zkEVM RPC and start building on a network with much higher throughput and lower fees. Polygon zkEVM provides a complete EVM-like experience for Developers and Users alike.
+
+Official quick links: [Website](https://polygon.technology/polygon-zkevm), [Docs](https://wiki.polygon.technology/docs/zkEVM/), [GitHub](https://github.com/maticnetwork/)
+
+### Networks
+
+  * Mainnet (`HTTPS`)
+  * Testnet (`HTTPS`)
+
+### API methods
+
+For Polygon zkEVM, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/polygon-zkevm/) except for those listed as unsupported.
+
+#### Unsupported
+
+<Callout type="warning">
+This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+</Callout>
+
+<Callout type="tip">
+If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
+
+**HTTPS**:
+
+`eth_accounts`, `eth_compileSolidity`, `eth_compileLLL`, `eth_compileSerpent`, `eth_sendTransaction`, `eth_sign`, `eth_signTransaction`, `net_listening`, `zkevm_getBroadcastURI`,
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+---
+
 ## Secret Network
 
 Secret Network is the first blockchain with customizable privacy. You get to choose what you share, who you share with, and how long you share it for. This protects users and empowers developers to build a better Web3.
@@ -4292,7 +4335,7 @@ def test_block_number(self):
 
 ---
 
-## Tron
+## TRON
 
 TRON is an open source public blockchain platform that supports smart contracts. TRON is compatible with Ethereum, which means that you can migrate smart contracts on Ethereum to TRON directly or with minor modifications. TRON relies on a unique consensus mechanism to realize the high TPS of the TRON network that is far beyond Ethereum, bringing developers a good experience of a faster transaction.
 
@@ -4306,123 +4349,7 @@ Official quick links: [Website](https://tron.network/), [Docs](https://developer
 
 ### API methods
 
-For Tron, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
-
-[//]: # (Popular methods:)
-
-[//]: # ()
-[//]: # (  `/wallet/getnowblock`,)
-
-[//]: # (  `/wallet/getblockbynum`,)
-
-[//]: # (  `/wallet/getblockbyid`,)
-
-[//]: # (  `/wallet/gettransactionbyid`,)
-
-[//]: # (  `/wallet/getaccountbalance`,)
-
-[//]: # (  `/wallet/gettransactioncountbyblocknum`,)
-
-[//]: # (  `/wallet/gettransactioninfobyblocknum`,)
-
-[//]: # (  `/wallet/getaccount`,)
-
-[//]: # (  `/wallet/getassetissuelist`,)
-
-[//]: # (  `/wallet/getpaginatedassetissuelist`,)
-
-[//]: # (  `/wallet/getpaginatedproposallist`,)
-
-[//]: # (  `/wallet/getpaginatedexchangelist`,)
-
-[//]: # (  `/wallet/getcontract`,)
-
-[//]: # (  `/wallet/getproposalbyid`,)
-
-[//]: # (  `/wallet/listproposals`,)
-
-[//]: # (  `/wallet/getaccountresource`,)
-
-[//]: # (  `/wallet/getexchangebyid`,)
-
-[//]: # (  `/wallet/listexchanges`,)
-
-[//]: # (  `/wallet/getchainparameters`,)
-
-[//]: # (  `/wallet/getdelegatedresource`,)
-
-[//]: # (  `/wallet/getdelegatedresourceaccountindex`,)
-
-[//]: # (  `/wallet/getaccountbyid`,)
-
-[//]: # (  `/wallet/getdeferredtransactionbyid`,)
-
-[//]: # (  `/wallet/getdeferredtransactioninfobyid`,)
-
-[//]: # (  `/wallet/triggerconstantcontract`,)
-
-[//]: # (  `/wallet/getmerkletreevoucherinfo`,)
-
-[//]: # ()
-[//]: # (  `/walletsolidity/getnowblock`,)
-
-[//]: # (  `/walletsolidity/getblockbynum`,)
-
-[//]: # (  `/walletsolidity/getblockbyid`,)
-
-[//]: # (  `/walletsolidity/gettransactionbyid`,)
-
-[//]: # (  `/walletsolidity/getaccountbalance`,)
-
-[//]: # (  `/walletsolidity/gettransactioncountbyblocknum`,)
-
-[//]: # (  `/walletsolidity/gettransactioninfobyblocknum`,)
-
-[//]: # (  `/walletsolidity/getaccount`,)
-
-[//]: # (  `/walletsolidity/getassetissuelist`,)
-
-[//]: # (  `/walletsolidity/getpaginatedassetissuelist`,)
-
-[//]: # (  `/walletsolidity/getpaginatedproposallist`,)
-
-[//]: # (  `/walletsolidity/getpaginatedexchangelist`,)
-
-[//]: # (  `/walletsolidity/getcontract`,)
-
-[//]: # (  `/walletsolidity/getproposalbyid`,)
-
-[//]: # (  `/walletsolidity/listproposals`,)
-
-[//]: # (  `/walletsolidity/getaccountresource`,)
-
-[//]: # (  `/walletsolidity/getexchangebyid`,)
-
-[//]: # (  `/walletsolidity/listexchanges`,)
-
-[//]: # (  `/walletsolidity/getchainparameters`,)
-
-[//]: # (  `/walletsolidity/getdelegatedresource`,)
-
-[//]: # (  `/walletsolidity/getdelegatedresourceaccountindex`,)
-
-[//]: # (  `/walletsolidity/getaccountbyid`,)
-
-[//]: # (  `/walletsolidity/getdeferredtransactionbyid`,)
-
-[//]: # (  `/walletsolidity/getdeferredtransactioninfobyid`,)
-
-[//]: # (  `/walletsolidity/triggerconstantcontract`,)
-
-[//]: # (  `/walletsolidity/getmerkletreevoucherinfo`,)
-
-[//]: # ()
-[//]: # (  `/wallet/getblockbylimitnext`,)
-
-[//]: # (  `/wallet/getblockbylatestnum`,)
-
-[//]: # ()
-[//]: # (  `/some/archiveMethod`)
+For Tron, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/tron/) except for those listed as unsupported.
 
 #### Unsupported
 

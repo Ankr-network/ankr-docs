@@ -9,15 +9,15 @@ import { Callout } from "components";
 
 The platform has the following functionality to offer:
 
-  * *JSON-RPC API* — the endpoints (either [public](/rpc-service/getting-started/#use-public-endpoints) or [private](/rpc-service/getting-started/#use-private-endpoints)) to integrate into your project for blockchain interaction. 
-  * *[Advanced APIs](/advanced-api/overview)* — collections of endpoints that supports simultaneous querying of multiple blockchains for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks).
+  * *JSON-RPC/REST API* — the endpoints (either [public](/rpc-service/getting-started/#use-public-endpoints) or [private](/rpc-service/getting-started/#use-private-endpoints)) to provide your project with blockchain interaction.
+  * *[Advanced APIs](/advanced-api/overview)* — collections of endpoints that support simultaneous querying of multiple blockchains for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks).
   * *Usage statistics* — the means to have a full view of your blockchain interaction statistics.
-  * *RPC methods testing* — a tool for RPC methods testing.
+  * *Query checker* — a tool for a free test-querying of RPC methods before using them.
 
 ## Interface schema
 <br/>
 
-<img src="/docs/build/ui-schema.jpg" alt="UI Schema" class="responsive-pic" width="800" />
+<img src="/docs/build/ui-schema.png" alt="UI Schema" class="responsive-pic" width="800" />
 
 ## Basics with Public plan
 
@@ -25,7 +25,7 @@ What's available for the [Public service plan](/rpc-service/service-plans/#servi
 
   * RPC Endpoints and Advanced APIs at the corresponding [rate limits](/rpc-service/service-plans/#rate-limits).
   * Connection code snippets.
-  * RPC methods testing tool.
+  * Query checker.
   * Public usage data (stats on requests from all Public service users).
 
 ### Use public endpoints
@@ -34,10 +34,11 @@ To enable your project to interact with a blockchain, add the blockchain's endpo
 
 1. In **Navigation**, click **Endpoints** to open the pane.
 2. In the **Chain Selection** area, click a chain you'd like to query.
+<img src="/docs/build/chain-select.png" alt="Chain selection" class="responsive-pic" width="600" />
 3. In the **Chain** opened, select a network (**Mainnet**/**Testnet**) needed for your project.
+<img src="/docs/build/network-select.png" alt="Network selection" class="responsive-pic" width="600" />
 4. In the **Endpoint** field, copy the URL and paste it into your project's library or config file.
-
-<img src="/docs/build/use-endp-public.jpg" alt="Use public endpoint" class="responsive-pic" width="800" />
+<img src="/docs/build/copy-endpoint-public.png" alt="Use public endpoint" class="responsive-pic" width="600" />
 
 Congrats — you've just added a public endpoint into your project to enable blockchain interaction.
 
@@ -61,6 +62,8 @@ The [Premium service plan](/rpc-service/service-plans/#service-plans-comparison)
 
 RPC Service supports two authentication options:
 
+<img src="/docs/build/sign-in-method.png" alt="Authentication method" class="responsive-pic" width="600" />
+
   * [**Google account**](/rpc-service/getting-started/#via-google-account) — sign in with your Google account. This option provides for the credit card payment flow only, though you can connect your wallet anytime to use the Web3 wallet payment flow.
   * [**Web3 wallet**](/rpc-service/getting-started/#via-web3-wallet) — connect your wallet to sign in. This option enables using both Web3 wallet and credit card payment flows.
 
@@ -71,7 +74,7 @@ The Google sign in procedure is the following:
 1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
 2. In the top right corner, click **Sign in >** **Continue with Google**, and then select the account to use.
 
-<img src="/docs/build/getting-started/gauth.png" alt="Google authentication" class="responsive-pic" width="500" />
+<img src="/docs/build/getting-started/gauth.png" alt="Google authentication" class="responsive-pic" width="450" />
 
 Congrats — you've signed in into RPC Service using your Google account.
 
@@ -80,7 +83,12 @@ Congrats — you've signed in into RPC Service using your Google account.
 The Web3 wallet sign in procedure is the following:
 
 1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
-2. In the top right corner, click **Sign in**, select the wallet to use (example: **MetaMask**), and then go through required steps:
+2. In the top right corner, click **Sign in > Continue with ETH Wallet**, select the wallet to use (example: **MetaMask**).
+
+<img src="/docs/build/wallet-select.png" alt="Wallet selection" class="responsive-pic" width="550" />
+
+3. In your wallet, go through required steps:
+
    * Click **Provide** — to use your public key for token encryption.
    * Click **Sign** — to confirm interactions with our platform.
 
