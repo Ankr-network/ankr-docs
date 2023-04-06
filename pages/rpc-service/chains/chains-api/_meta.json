@@ -23,5 +23,6 @@
   "polygon-zkevm": "Polygon zkEVM",
   "secret-network": "Secret Network",
   "solana": "Solana",
-  "syscoin": "Syscoin"
+  "syscoin": "Syscoin",
+  "tron": "TRON"
 }
