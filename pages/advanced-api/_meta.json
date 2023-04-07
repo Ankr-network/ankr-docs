@@ -1,20 +1,16 @@
 {
   "overview": "Overview",
   "pricing": "Pricing",
+  "specification": {
+    "title": "Interactive AAPI Reference",
+    "type": "page",
+    "href": "https://ankr.readme.io/reference/"
+  },
   "nft-methods": "NFT API",
   "query-methods": "Query API",
   "token-methods": "Token API",
-  "specification": {
-    "title": "Auto-gen OAPI Ref",
-    "type": "doc",
-    "display": "hidden",
-    "theme": {
-      "layout": "raw",
-      "footer": false
-    }
-  },
-  "javascript-sdk": "AnkrJS SDK",
-  "python-sdk": "AnkrPY SDK",
+  "javascript-sdk": "Ankr.js SDK",
+  "python-sdk": "Ankr.py SDK",
   "react-hooks": "Ankr React Hooks",
   "quickstart": "Quick Start Guide"
 }
