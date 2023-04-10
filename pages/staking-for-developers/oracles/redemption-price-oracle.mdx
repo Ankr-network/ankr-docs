@@ -34,6 +34,24 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
+#### `getRatioFor()`
+
+Returns the ratio for any Liquid Staking token *if it was bridged to Avalanche*. `ankrETH/ratio=ETH`, etc.
+
+##### Parameters
+The function takes:
+* token (address) — contract address of the original Liquid Staking token. For example, `0xE95A203B1a91a908F9B9CE46459d101078c2c3cb` which is the address of ankrETH.
+
+The function returns:
+* ratio (uint256) — ratio for any Liquid Staking token *that was bridged to Avalanche*.
+
+##### Smart contracts
+* [Mainnet Ratiofeed](https://snowtrace.io/address/0xef3c162450e1d08804493aa27be60cdaa054050f#readProxyContract#F3)
+
+##### Examples
+
+You can query for a ratio on the contract page by the links above, anytime.
+
 ### Binance
 
 #### `ratio()`
