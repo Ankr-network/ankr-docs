@@ -85,9 +85,9 @@ Next, create a new file named `utils.ts` inside the `src` directory. You will in
 **File:** `./src/utils.ts`
 
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 ```
 Your `provider` instance will be your interface to the Ankr Advanced APIs whenever you want to fetch some data from them.
 
@@ -99,9 +99,9 @@ You can utilize the `getNFTsByOwner` function provided by Ankr.js for this.
 **File:** `./src/utils.ts`
 
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 export const getNFTs = async (walletAddress: string) => {
   return provider.getNFTsByOwner({
@@ -174,9 +174,9 @@ You can use the `getNFTsByOwner` function provided by Ankr.js for this.
 **File:** `./src/utils.ts`
 
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 export const getNFTs = async (walletAddress: string) => {
   return provider.getNFTsByOwner({

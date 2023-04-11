@@ -2,13 +2,10 @@
   "overview": "Overview",
   "pricing": "Pricing",
   "specification": {
-    "title": "Interactive AAPI Reference",
+    "title": "Full AAPI Reference",
     "type": "page",
     "href": "https://ankr.readme.io/reference/"
   },
-  "nft-methods": "NFT API",
-  "query-methods": "Query API",
-  "token-methods": "Token API",
   "javascript-sdk": "Ankr.js SDK",
   "python-sdk": "Ankr.py SDK",
   "react-hooks": "Ankr React Hooks",

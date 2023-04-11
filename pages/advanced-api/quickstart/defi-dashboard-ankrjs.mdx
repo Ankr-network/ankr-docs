@@ -86,10 +86,10 @@ and you will be able to see the start-kit webpage. Here's the [live demo](https:
 
 
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 ``` 
 To interact with Ankr's Advanced APIs, we have created a provider instance which will serve as an interface to the APIs required to fetch data.
@@ -101,10 +101,10 @@ In this step, we will first create a `getAccountBalance` function in the `src/ap
 
 **File: **`src/api.ts`
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
 const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
@@ -243,10 +243,10 @@ And with that, we have our `api.ts` file all ready where we created methods for 
 
 
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
 const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
