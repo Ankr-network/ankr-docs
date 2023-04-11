@@ -53,10 +53,10 @@ Now that we have installed the Ankr.js library, let's set up Ankr.js by **creati
 
 **File:** `./apis.ts`
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 ```
 To interact with Ankr's Advanced APIs, we have created a provider instance that will serve as an interface to the APIs required to fetch data.
@@ -69,10 +69,10 @@ In this step, we will first create a `getAccountBalance` function in the `./apis
 File: `./apis.ts`
 
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
 const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
@@ -147,10 +147,10 @@ To calculate the sum of balances (net worth) across the chains we will create a 
 File: `./apis.ts`
 
 ```javascript
-import AnkrscanProvider from '@ankr.com/ankr.js';
+import AnkrProvider from '@ankr.com/ankr.js';
 import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
-const provider = new AnkrscanProvider('');
+const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
 const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
