@@ -23,7 +23,8 @@ Currently, Advanced APIs work with the following EVM-compatible chains:
   * Ethereum
   * Fantom
   * BNB Smart Chain
-  * Polygon 
+  * Polygon
+  * Polygon zkEVM
   * Avalanche
   * Arbitrum 
   * Syscoin
@@ -43,40 +44,38 @@ Query our Advanced APIs at the following URL:
 
 > `https://rpc.ankr.com/multichain`
 
-Go to our [OpenAPI specification](https://www.ankr.com/docs/advanced-api/specification/) or check out the latest Advanced APIs for various Web3 scenarios:
-
 ### NFT API
 
-[_NFT API Methods_](/advanced-api/nft-methods/) serve to request NFT-related data across multiple chains:
+[_NFT API Methods_](https://ankr.readme.io/reference/introduction#nft-api) serve to request NFT-related data across multiple chains:
 
-  * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#ankr_getnftsbyowner) — retrieves an account-associated NFTs.
-  * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
-  * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#ankr_getnftholders) — retrieves holders of a particular NFT.
-  * [`ankr_getNftTransfers`](/advanced-api/nft-methods/#ankr_getnfttransfers) — retrieves NFT transfers info of a particular address.
+  * [`ankr_getNFTsByOwner`](https://ankr.readme.io/reference/post_ankr-getnftsbyowner) — retrieves an account-associated NFTs.
+  * [`ankr_getNFTMetadata`](https://ankr.readme.io/reference/post_ankr-getnftmetadata) — retrieves metadata of a particular NFT.
+  * [`ankr_getNFTHolders`](https://ankr.readme.io/reference/post_ankr-getnftholders) — retrieves holders of a particular NFT.
+  * [`ankr_getNftTransfers`](https://ankr.readme.io/reference/post_ankr-getnfttransfers) — retrieves NFT transfers info of a particular address.
 
 ### Query API
 
-[_Query API Methods_](/advanced-api/query-methods/) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
+[_Query API Methods_](https://ankr.readme.io/reference/introduction#query-api) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
 
-  * [`ankr_getBlockchainStats`](/advanced-api/query-methods/#ankr_getblockchainstats) — retrieves blockchain statistics.
-  * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
-  * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
-  * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
-  * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by wallet address.
-  * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
-  * [`ankr_getInternalTransactionsByBlockNumber`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyblocknumber) — retrieves info on internal transactions by block number.
-  * [`ankr_getInternalTransactionsByParentHash`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyparenthash) — retrieves info on internal transactions by parent hash. 
+  * [`ankr_getBlockchainStats`](https://ankr.readme.io/reference/post_ankr-getblockchainstats) — retrieves blockchain statistics.
+  * [`ankr_getBlocks`](https://ankr.readme.io/reference/post_ankr-getblocks) — retrieves full info of a particular block.
+  * [`ankr_getLogs`](https://ankr.readme.io/reference/post_ankr-getlogs) — retrieves history data of a particular block range.
+  * [`ankr_getTransactionsByHash`](https://ankr.readme.io/reference/post_ankr-gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getTransactionsByAddress`](https://ankr.readme.io/reference/post_ankr-gettransactionsbyaddress) — retrieves the details of a transaction specified by wallet address.
+  * [`ankr_getInteractions`](https://ankr.readme.io/reference/post_ankr-getinteractions) — retrieves blockchains interacted with a particular wallet.
+  * [`ankr_getInternalTransactionsByBlockNumber`](https://ankr.readme.io/reference/post_ankr-getinternaltransactionsbyblocknumber) — retrieves info on internal transactions by block number.
+  * [`ankr_getInternalTransactionsByParentHash`](https://ankr.readme.io/reference/post_ankr-getinternaltransactionsbyparenthash) — retrieves info on internal transactions by parent hash.
 
 ### Token API
 
-[_Token API Methods_](/advanced-api/token-methods/) serve to request token-related data across multiple chains:
+[_Token API Methods_](https://ankr.readme.io/reference/introduction#token-api) serve to request token-related data across multiple chains:
 
-  * [`ankr_getAccountBalance`](/advanced-api/token-methods/#ankr_getaccountbalance) — retrieves the balance of a particular account.
-  * [`ankr_getCurrencies`](/advanced-api/token-methods/#ankr_getcurrencies) — retrieves a list of currencies used on a particular blockchain.
-  * [`ankr_getTokenPrice`](/advanced-api/token-methods/#ankr_gettokenprice) — retrieves the price of a particular token.
-  * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
-  * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
-  * [`ankr_getTokenTransfers`](/advanced-api/token-methods/#ankr_gettokentransfers) — retrieves token transfers info.
+  * [`ankr_getAccountBalance`](https://ankr.readme.io/reference/post_ankr-getaccountbalance) — retrieves the balance of a particular account.
+  * [`ankr_getCurrencies`](https://ankr.readme.io/reference/post_ankr-getcurrencies) — retrieves a list of currencies used on a particular blockchain.
+  * [`ankr_getTokenPrice`](https://ankr.readme.io/reference/post_ankr-gettokenprice) — retrieves the price of a particular token.
+  * [`ankr_getTokenHolders`](https://ankr.readme.io/reference/post_ankr-gettokenholders) — retrieves info on holders of a particular token.
+  * [`ankr_getTokenHoldersCount`](https://ankr.readme.io/reference/post_ankr-gettokenholderscount) — retrieves the number of token holders.
+  * [`ankr_getTokenTransfers`](https://ankr.readme.io/reference/post_ankr-gettokentransfers) — retrieves token transfers info.
 
 
 ## Advanced APIs PAYG Pricing
