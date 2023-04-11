@@ -8,6 +8,10 @@
   "rpc-service": "RPC Service",
   "advanced-api": "Advanced APIs/SDKs",
   "node-snapshot": "Blockchain Node Snapshots",
+  "node-runners": {
+    "title": "Node Runners",
+    "display": "hidden"
+  },
   "automation": {
     "title": "Contract Automation",
     "type": "folder",

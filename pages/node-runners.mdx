@@ -1,0 +1,54 @@
+# Node Runners
+
+## Node requirements
+
+### Ethereum
+
+Requirements for an Ethereum node with an HTTP interface can be divided into the following types:
+
+  * [Node hardware and network](/node-runners/#node-hardware-and-network).
+  * [Node HTTP interface](/node-runners/#node-http-interface).
+  * [Node location](/node-runners/#node-location).
+
+#### Node hardware and network
+
+Ethereum Mainnet archive nodes:
+
+  * Recommended client — Erigon.
+  * Erigon client hardware recommendation:
+    * Storage: 3TB storage space: 2.2TB state (as of March 2023)
+    * RAM: 32GB
+    * CPU: 16 cores
+    * Required interfaces: HTTP
+
+Ethereum Mainnet full nodes:
+
+  * Recommended client — Geth.
+  * Geth client hardware recommendation:
+    * Storage: 5TB storage space: 4.4TB state (as of March 2023)
+    * RAM: 128GB
+    * CPU: 16 cores
+    * Required interfaces: HTTP
+
+#### Node HTTP interface
+
+   * Access via domain, not IP-address is desirable.
+   * Only standard ports are acceptable (80 for HTTP scheme and 443 for HTTPS scheme).
+   * Preferably allow access by HTTPS scheme, SSL certificate should be issued and managed by node providers themselves, we won’t be doing that.
+
+#### Node location
+
+A node can be deployed in any region. A node runner has to provide us with following data:
+  * Country, Continent, City
+  * Reverse proxy
+
+The Node must be accessed through a reverse proxy for the following reasons:
+
+  * Ensure Node’s interfaces are accessible on port 443.
+  * Secure the connection with SSL certificates.
+  * [Optional] Limit access to the node by incorporating random characters or an API KEY into the path.
+Sample of the URL structure:
+`https://your.domain.com/<path>/<api-key>`
+
+
+
