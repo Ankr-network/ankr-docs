@@ -1814,5 +1814,17 @@
   {
     "from": "docs/support/index.html",
     "to": "https://ankrnetwork.atlassian.net/servicedesk/customer/portal/10"
+  },
+  {
+    "from": "docs/advanced-api/nft-methods/index.html",
+    "to": "https://ankr.readme.io/reference/introduction#nft-api"
+  },
+  {
+    "from": "docs/advanced-api/token-methods/index.html",
+    "to": "https://ankr.readme.io/reference/introduction#token-api"
+  },
+  {
+    "from": "docs/advanced-api/query-methods/index.html",
+    "to": "https://ankr.readme.io/reference/introduction#query-api"
   }
 ]
