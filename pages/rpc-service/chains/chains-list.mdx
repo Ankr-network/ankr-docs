@@ -1275,7 +1275,7 @@ Official quick links: [Website](https://ethereum.org/en/roadmap/beacon-chain/), 
 
 ### API methods
 
-For the Beacon Chain, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For the Beacon Chain, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/beacon/) except for those listed as unsupported.
 
 #### Unsupported
 
@@ -1288,6 +1288,27 @@ For the Beacon Chain, we support blockchain interaction via all the applicable m
  </Callout>
 
 `/eth/v1/node/identity`
+
+### API querying
+
+#### Request example
+
+```shell
+curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/genesis" \
+-H "Accept: application/json"
+```
+
+#### Response example
+
+```json
+{
+    "data": {
+        "genesis_time": "1606824023",
+        "genesis_validators_root": "0x4b363db94e286120d76eb905340fdd4e54bfe9f06bf33ff6cf5ad27f511bfe95",
+        "genesis_fork_version": "0x00000000"
+    }
+}
+```
 
 ---
 
