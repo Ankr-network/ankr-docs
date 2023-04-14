@@ -14,11 +14,9 @@ All this is due to Liquid Staking tokens increasing in value overtime to the ori
 
 Ankr's Redemption Price should be considered as the primary market, and market prices on Exchanges should be perceived as the second market.
 
-## Smart Contract API
+## Avalanche
 
-### Avalanche
-
-#### `ratio()`
+#### Avalanche `ratio()` 
 
 Returns the number of ankrAVAX tokens the user gets when staking their 1 AVAX. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`. `ankrAVAX/ratio=AVAX`.
 
@@ -34,9 +32,9 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
-#### `getRatioFor()`
+#### Avalanche `getRatioFor()`
 
-Returns the ratio for any Liquid Staking token *if it was bridged to Avalanche*. `ankrETH/ratio=ETH`, etc.
+Returns the ratio for any Liquid Staking token if it was **bridged** to Avalanche. `ankrETH/ratio=ETH`, etc.
 
 ##### Parameters
 The function takes:
@@ -52,9 +50,9 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
-### Binance
+## Binance
 
-#### `ratio()`
+#### Binance `ratio()`
 
 Returns the number of ankrBNB tokens the user gets when staking their BNB. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`. `ankrBNB/ratio=BNB`.
 
@@ -70,9 +68,9 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
-### Ethereum
+## Ethereum
 
-#### `ratio()`
+#### Ethereum `ratio()`
 
 Returns the number of ankrETH tokens the user gets when staking their ETH. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`. `ankrETH/ratio=ETH`.
 
@@ -88,9 +86,9 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
-### Fantom
+## Fantom
 
-#### `ratio()`
+#### Fantom `ratio()`
 
 Returns the number of ankrFTM tokens the user gets when staking their FTM. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`. `ankrFTM/ratio=FTM`.
 
@@ -106,9 +104,27 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
-### Kusama
+#### Fantom `getRatioFor()`
 
-#### `ratio()`
+Returns the ratio for any Liquid Staking token if it was **bridged** to Fantom. `ankrETH/ratio=ETH`, etc.
+
+##### Parameters
+The function takes:
+* token (address) — contract address of the original Liquid Staking token. For example, `0xE95A203B1a91a908F9B9CE46459d101078c2c3cb` which is the address of ankrETH.
+
+The function returns:
+* ratio (uint256) — ratio for any Liquid Staking token *that was bridged to Avalanche*.
+
+##### Smart contracts
+* [Mainnet Ratiofeed](https://ftmscan.com/address/0xef3c162450e1d08804493aa27be60cdaa054050f#readProxyContract#F3)
+
+##### Examples
+
+You can query for a ratio on the contract page by the links above, anytime.
+
+## Kusama
+
+#### Kusama `ratio()`
 
 Returns the number of aKSMb tokens the user gets when staking their KSM.
 
@@ -124,9 +140,9 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
-### Polkadot
+## Polkadot
 
-#### `ratio()`
+#### Polkadot `ratio()`
 
 Returns the number of aDOTb tokens the user gets when staking their DOT.
 
@@ -142,9 +158,9 @@ The function returns:
 
 You can query for a ratio on the contract page by the links above, anytime.
 
-### Polygon
+## Polygon
 
-#### `ratio()`
+#### Polygon `ratio()`
 
 Returns the number of ankrMATIC tokens the user gets when staking their MATIC. Practically, the returned value is also ratio, since `1 * ratio` is effectively `ratio`. `ankrMATIC/ratio=MATIC`.
 
