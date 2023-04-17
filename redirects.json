@@ -1817,14 +1817,18 @@
   },
   {
     "from": "docs/advanced-api/nft-methods/index.html",
-    "to": "https://ankr.readme.io/reference/introduction#nft-api"
+    "to": "https://api-docs.ankr.com/reference/introduction#nft-api"
   },
   {
     "from": "docs/advanced-api/token-methods/index.html",
-    "to": "https://ankr.readme.io/reference/introduction#token-api"
+    "to": "https://api-docs.ankr.com/reference/introduction#token-api"
   },
   {
     "from": "docs/advanced-api/query-methods/index.html",
-    "to": "https://ankr.readme.io/reference/introduction#query-api"
+    "to": "https://api-docs.ankr.com/reference/introduction#query-api"
+  },
+  {
+    "from": "docs/advanced-api/specification/index.html",
+    "to": "https://api-docs.ankr.com/reference/introduction"
   }
 ]

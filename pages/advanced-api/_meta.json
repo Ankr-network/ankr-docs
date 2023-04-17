@@ -4,7 +4,7 @@
   "specification": {
     "title": "Full AAPI Reference",
     "type": "page",
-    "href": "https://ankr.readme.io/reference/"
+    "href": "https://api-docs.ankr.com/reference/"
   },
   "javascript-sdk": "Ankr.js SDK",
   "python-sdk": "Ankr.py SDK",
