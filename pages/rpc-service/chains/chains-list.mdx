@@ -4607,3 +4607,205 @@ And all the methods with the following segments in their path:
   `scanshieldedtrc20notesbyivk`,
   `scanshieldedtrc20notesbyovk`,
   `isshieldedtrc20contractnotespent`
+
+---
+
+## ZetaChain
+
+ZetaChain is the foundational, public blockchain that enables omnichain, generic smart contracts and messaging between any blockchain. It solves the problems of “cross-chain” and “multi-chain” and aims to open the crypto and global financial ecosystem to anyone. ZetaChain envisions and supports a truly fluid, multi-chain crypto ecosystem, where users and developers can move between and appreciate the benefits of any blockchain: payments, DeFi, liquidity, games, art, social graphs, performance, security, privacy, and so on.
+
+Key features:
+
+  * Decentralized and public
+  * Hyper-connected nodes
+  * Omnichain message passing
+  * Omnichain smart contracts
+  * Managed external assets
+
+Official quick links: [Website](https://www.zetachain.com/), [Docs](https://www.zetachain.com/docs/), [GitHub](https://github.com/zeta-chain)
+
+### Networks
+
+  * Testnet:
+    * Standard EVM API (`HTTPS` and `WSS`)
+    * Tendermint JSON-RPC (`HTTPS` and `WSS`)
+    * Tendermint REST API (`HTTPS`)
+    * Cosmos REST API (`HTTPS`)
+
+### API methods
+
+For ZetaChain, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+
+#### Unsupported
+
+<Callout type="warning">
+This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+</Callout>
+
+<Callout type="tip">
+If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
+
+**Standard EVM API**:
+
+**HTTPS**
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+**Tendermint (both for REST and JSON-RPC)**:
+
+  `/health`,
+  `/status`,
+  `/net_info`,
+  `/genesis`,
+  `/broadcast_evidence`,
+  `/dial_seeds`,
+  `/dial_peers`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "Standard EVM",
+    "Tendermint JSON-RPC",
+    "Tendermint REST",
+    "Cosmos REST"
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/zetachain_evm_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/zetachain_tendermint_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block",
+      "params": ["1779001"],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/zetachain_tendermint_testnet/block?height=1779001
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/zetachain_testnet/cosmos/base/tendermint/v1beta1/blocks/1779001
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "block_id": {
+        "hash": "rissVgf52PzPVf0IukSnr99/1Gs2Ht3R9WzsuRFcnX0=",
+        "part_set_header": {
+            "total": 1,
+            "hash": "lnOcDhHm0TtB/mVUDxK0+kFNQG753teckwl1cniUCUE="
+        }
+    },
+    "block": {
+        "header": {
+            "version": {
+                "block": "11",
+                "app": "0"
+            },
+            "chain_id": "athens_7001-1",
+            "height": "1779001",
+            "time": "2023-03-10T10:15:25.128851006Z",
+            "last_block_id": {
+                "hash": "r1v9lTL4rP+dZZvkMzDrsCiRFIqZSEJUAvCnr3zglIs=",
+                "part_set_header": {
+                    "total": 1,
+                    "hash": "vMF5qQXaS372yosrVvtz24uri1rvJ0tgWXrZyrACkFo="
+                }
+            },
+            "last_commit_hash": "gAOZd1yZSQ3kgViyhpW+zz9mPDztTPdpkuOjsNb+4OY=",
+            "data_hash": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+            "validators_hash": "Pq0R9XGtDCNW25TUMYcNRsEkPAIMpB8cCU/4hGO/KMY=",
+            "next_validators_hash": "Pq0R9XGtDCNW25TUMYcNRsEkPAIMpB8cCU/4hGO/KMY=",
+            "consensus_hash": "2XYFHxYg0ViArdTG4tVb4szm+pZCb2vZjS9L6A2Afao=",
+            "app_hash": "qjSFccDAzd6lTdRNPjqNaTN7sYiDRhe3dkLcJgcaiHI=",
+            "last_results_hash": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+            "evidence_hash": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+            "proposer_address": "DOd6ZkImkhhfTufa/CEtKiKUu64="
+        },
+        "data": {
+            "txs": []
+        },
+        "evidence": {
+            "evidence": []
+        },
+        "last_commit": {
+            "height": "1779000",
+            "round": 0,
+            "block_id": {
+                "hash": "r1v9lTL4rP+dZZvkMzDrsCiRFIqZSEJUAvCnr3zglIs=",
+                "part_set_header": {
+                    "total": 1,
+                    "hash": "vMF5qQXaS372yosrVvtz24uri1rvJ0tgWXrZyrACkFo="
+                }
+            },
+            "signatures": [
+                {
+                    "block_id_flag": "BLOCK_ID_FLAG_COMMIT",
+                    "validator_address": "DOd6ZkImkhhfTufa/CEtKiKUu64=",
+                    "timestamp": "2023-03-10T10:15:25.129068645Z",
+                    "signature": "/DIaUbH0tfPg81efqr0KRH4ATGQQlg02YX91O8YSIWzSWDQni9y0eN+6IbMLq4mzhT3FtPOvUizJc/M57xHLDA=="
+                },
+                {
+                    "block_id_flag": "BLOCK_ID_FLAG_COMMIT",
+                    "validator_address": "e6EFKZklmDLqXSN+VtpGVHAGyp0=",
+                    "timestamp": "2023-03-10T10:15:25.125541438Z",
+                    "signature": "ouX8/4VmJOdDggzRPulXwmEtHZqEuPrzFg6uu9T9Xhl/nnzHGMMvqTYJPSqLgpj9o7WPCLEMQNEzMJTLrNpkBQ=="
+                },
+                {
+                    "block_id_flag": "BLOCK_ID_FLAG_COMMIT",
+                    "validator_address": "jVgEve+jnt+kiAYsH2dxglDDZs0=",
+                    "timestamp": "2023-03-10T10:15:25.128851006Z",
+                    "signature": "7ECgaea3l7vGvbfkyX+wSW0p2g/9Xj6JI/kvtGwqKmFlJY7ctCRae+QG3lvwLJdgFJHNm1vcWlPwoIWH+2PIAw=="
+                },
+                {
+                    "block_id_flag": "BLOCK_ID_FLAG_COMMIT",
+                    "validator_address": "2EkI/cFUmRcCjHcntejXgDYh9XM=",
+                    "timestamp": "2023-03-10T10:15:25.125457324Z",
+                    "signature": "+U3Rc0CftXnd5T/ehjg6XbnpuIaMTQrfCrwtnYyQ4AV2oYRmxOD3uSJJsElq3qV0VZonOO4Oljw2DG0epOhkAQ=="
+                },
+                {
+                    "block_id_flag": "BLOCK_ID_FLAG_COMMIT",
+                    "validator_address": "TcRf4RHQi0eOps7EXeSPm4mzv2I=",
+                    "timestamp": "2023-03-10T10:15:25.129762943Z",
+                    "signature": "47OKD9t7/p7gdAHqhn1ffPHZgK/7bfSoLkjZBs5nNTpg+X8GwOjWzZqA0rWJFqwWw4aurOq+i+ud5cL7wz6jBw=="
+                }
+            ]
+        }
+    }
+}
+```
