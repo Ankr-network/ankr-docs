@@ -1084,11 +1084,6 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 For Ethereum, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/ethereum/) except for those listed as unsupported.
 
-[//]: # (#### Popular)
-
-[//]: # ()
-[//]: # (`eth_blockNumber`, `txpool_content`, `txpool_inspect`, `txpool_status`, `net_version`, `eth_chainId`, `eth_gasPrice`, `eth_call`, `eth_getBalance`, `eth_getTransactionCount`, `eth_getBlockByNumber`, `eth_getBlockByHash`, `eth_getBlockTransactionCountByHash`, `eth_getBlockTransactionCountByNumber`, `eth_getTransactionByHash`, `eth_getTransactionByBlockHashAndIndex`, `eth_getTransactionByBlockNumberAndIndex`, `eth_getTransactionReceipt`)
-
 #### Unsupported
 
  <Callout type="warning">
@@ -3907,6 +3902,149 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 
 ---
 
+## Rollux
+
+Rollux is a suite of rollup-based Layer 2 solutions designed to enable EVM users with near-instant low-cost transfers, executions, and contract deployments. Rollux utilizes Syscoin's Layer 1 for best-of-breed secure decentralized [settlement](https://docs.syscoin.org/docs/intro/syscoin-what/#settlement-layer) and Syscoin PoDA for Layer 1 data availability, offering more efficiency, lower costs, and higher throughput than other L1 DA alternatives.
+
+As a suite, Rollux is set to encompass both Optimistic and ZK (zero-knowledge) based approaches, enabling users and projects to choose a network or solution that fits them best.
+
+Official quick links: [Website](https://syscoin.org/rollux), [Docs](https://docs.syscoin.org/docs/tech/rollux), [GitHub](https://github.com/syscoin)
+
+### Networks
+
+  * Testnet (`HTTPS` and `WSS`)
+  * Op-node Testnet (`HTTPS` and `WSS`)
+
+### API methods
+
+For Rollux Testnet, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+
+For Rollux Op-node Testnet, currently we support blockchain interaction via the following methods only:
+
+  * `optimism_outputAtBlock`
+  * `optimism_syncStatus`
+  * `optimism_rollupConfig`
+  * `optimism_version`
+
+#### Unsupported
+
+<Callout type="warning">
+This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+</Callout>
+
+<Callout type="tip">
+If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/rollux_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/rollux_testnet"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/rollux_testnet'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/rollux_testnet'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x16bef5"
+}
+```
+
+---
+
 ## Secret Network
 
 Secret Network is the first blockchain with customizable privacy. You get to choose what you share, who you share with, and how long you share it for. This protects users and empowers developers to build a better Web3.
@@ -4163,80 +4301,6 @@ Official quick links: [Website](https://solana.com/), [Docs](https://docs.solana
 ### API methods
 
 For Solana, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/solana) except for those listed as unsupported.
-
-[//]: # (Popular methods:)
-
-[//]: # ()
-[//]: # (  `getAccountInfo`,)
-
-[//]: # (  `getBalance`,)
-
-[//]: # (  `getMultipleAccounts`,)
-
-[//]: # (  `getProgramAccounts`,)
-
-[//]: # (  `getTokenAccountBalance`,)
-
-[//]: # (  `getBlockTime`,)
-
-[//]: # (  `getFees`,)
-
-[//]: # (  `getFirstAvailableBlock`,)
-
-[//]: # (  `getLargestAccounts`,)
-
-[//]: # (  `getTokenLargestAccounts`,)
-
-[//]: # (  `getRecentBlockhash`,)
-
-[//]: # (  `getSlot`,)
-
-[//]: # (  `getVersion`,)
-
-[//]: # (  `getClusterNodes`,)
-
-[//]: # (  `getGenesisHash`,)
-
-[//]: # (  `getIdentity`,)
-
-[//]: # (  `getRecentPerformanceSamples`,)
-
-[//]: # (  `getSnapshotSlot`,)
-
-[//]: # ()
-[//]: # (  `getBlock`,)
-
-[//]: # (  `getBlocks`,)
-
-[//]: # (  `getBlocksWithLimit`,)
-
-[//]: # (  `getFeeCalculatorForBlockhash`,)
-
-[//]: # (  `getStakeActivation`,)
-
-[//]: # (  `getSupply`,)
-
-[//]: # (  `getTokenSupply`,)
-
-[//]: # (  `getTransaction`,)
-
-[//]: # ()
-[//]: # (  `getConfirmedBlock`,)
-
-[//]: # (  `getConfirmedBlocks`,)
-
-[//]: # (  `getConfirmedBlocksWithLimit`,)
-
-[//]: # (  `getConfirmedTransaction`,)
-
-[//]: # ()
-[//]: # (  `getProgramAccounts`,)
-
-[//]: # (  `getTokenLargestAccounts`,)
-
-[//]: # (  `getTokenAccountsByDelegate`,)
-
-[//]: # (  `getTokenAccountsByOwner`)
 
 #### Unsupported
 
