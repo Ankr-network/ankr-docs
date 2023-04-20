@@ -24,6 +24,7 @@ Filecoin API supports interaction via the following methods:
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/filecoin/#web3_clientversion) — returns the current client version.
   * [`net_version`](/rpc-service/chains/chains-api/filecoin/#net_version) — returns the current network ID.
   * [`net_listening`](/rpc-service/chains/chains-api/filecoin/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_protocolVersion`](/rpc-service/chains/chains-api/filecoin/#eth_protocolversion) — returns the current protocol version.
   * [`eth_gasPrice`](/rpc-service/chains/chains-api/filecoin/#eth_gasprice) — returns the current price per gas in wei.
   * [`eth_accounts`](/rpc-service/chains/chains-api/filecoin/#eth_accounts) — returns a list of addresses owned by client.
   * [`eth_blockNumber`](/rpc-service/chains/chains-api/filecoin/#eth_blocknumber) — returns the number of most recent block.
@@ -622,7 +623,7 @@ curl -X POST https://rpc.ankr.com/filecoin \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/filecoin/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/filecoin/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
