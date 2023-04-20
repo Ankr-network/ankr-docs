@@ -2,7 +2,7 @@ import { Callout } from "components";
 
 # Mantle
 
-> API is available on [RPC Service](https://www.ankr.com/rpc/mantle).
+> Mantle API is available on [RPC Service](https://www.ankr.com/rpc/mantle).
 
 Mantle is a high-performance Ethereum layer-2 network built with modular architecture delivering low fees and high security. Builders can leverage Mantle’s unique design to build dApps with exceptional UX, all while relying on Ethereum’s unrivaled security.
 
@@ -19,6 +19,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`net_version`](/rpc-service/chains/chains-api/mantle/#net_version) — returns the current network ID.
   * [`net_listening`](/rpc-service/chains/chains-api/mantle/#net_listening) — returns true if client is actively listening for network connections.
   * [`eth_syncing`](/rpc-service/chains/chains-api/mantle/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_protocolVersion`](/rpc-service/chains/chains-api/mantle/#eth_protocolversion) — returns the current protocol version.
   * [`eth_gasPrice`](/rpc-service/chains/chains-api/mantle/#eth_gasprice) — returns the current price per gas in wei.
   * [`eth_accounts`](/rpc-service/chains/chains-api/mantle/#eth_accounts) — returns a list of addresses owned by client.
   * [`eth_blockNumber`](/rpc-service/chains/chains-api/mantle/#eth_blocknumber) — returns the number of most recent block.
@@ -816,7 +817,7 @@ curl -X POST https://rpc.ankr.com/mantle_testnet \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/mantle/#eth_getTransactionReceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/mantle/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
