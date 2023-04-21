@@ -48,11 +48,6 @@ const filesMap = [
     urlPath: `${STRAPI_ROOT_URL}/faq-ethereum-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "ssv", "faq.mdx"),
-    name: "eth-ssv",
-    urlPath: `${STRAPI_ROOT_URL}/faq-ssv-items`,
-  },
-  {
     filePath: join(FILES_ROOT_PATH, "liquid-staking", "ftm", "faq.mdx"),
     name: "ftm",
     urlPath: `${STRAPI_ROOT_URL}/faq-fantom-items`,
