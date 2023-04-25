@@ -4629,10 +4629,11 @@ Official quick links: [Website](https://www.zetachain.com/), [Docs](https://www.
 
 ### API methods
 
-For ZetaChain, we support blockchain interaction via the following methods:
+For ZetaChain, we support blockchain interaction via the applicable methods except for those listed as unsupported:
 
   * [Standard EVM](/rpc-service/chains/chains-api/zetachain/#evm-methods)
   * [Tendermint JSON-PRC/REST](/rpc-service/chains/chains-api/zetachain/#tendermint-json-rpcrest-methods)
+  * [Cosmos REST](/rpc-service/chains/chains-api/zetachain/#cosmos-rest-methods)
 
 #### Unsupported
 
@@ -4665,6 +4666,10 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   `/broadcast_evidence`,
   `/dial_seeds`,
   `/dial_peers`
+
+**Cosmos**:
+
+`/syncing`, `/blocks/latest`, `/blocks/{height}`, `/validatorsets/latest`, `/validatorsets/{height}`, `/cosmos/bank/v1beta1/denom_owners/{denom}`, `/cosmos/bank/v1beta1/supply/{denom}`, `/cosmos/params/v1beta1/params`, `/cosmos/upgrade/v1beta1/module_versions`, `/cosmos/base/tendermint/v1beta1/node_info`, `/cosmos/base/tendermint/v1beta1/syncing`
 
 ### API querying
 
