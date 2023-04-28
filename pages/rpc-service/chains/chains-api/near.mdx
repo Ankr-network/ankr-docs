@@ -2,71 +2,964 @@ import { Callout } from "components";
 
 # NEAR
 
-NEAR is a decentralized, development platform built on a [sharded](https://near.org/downloads/Nightshade.pdf), Proof-of-Stake, Layer 1 blockchain designed for ease of use.
+> NEAR API is available on [RPC Service](https://www.ankr.com/rpc/near).
 
-NEAR developers can host serverless applications and smart contracts that easily connect to "open finance" networks and benefit from an ecosystem of "open web"  components.
+NEAR is a user-friendly and carbon-neutral blockchain, built from the ground up to be performant, secure, and infinitely scalable.
 
-<Callout type="warning">
-NEAR is not compatible with the Ethereum Virtual Machine.  All contract code is deployed and run inside a WASM Compatible Virtual Machine. 
-</Callout>
+In technical terms, NEAR is a layer one, sharded, proof-of-stake blockchain built with usability in mind.
+
+In order for your Web3 application to interact with NEAR — either by reading blockchain data or sending transactions to the network — it must connect to a NEAR node. Developers interact with the blockchain using the methods provided by the API.
+
+Responses come in [JSON format](https://www.json.org/json-en.html).
+
+## Methods supported
+
+**Access Keys** — to retrieve information about an account's access keys.
+
+  * [View access key](/rpc-service/chains/chains-api/near/#view-access-key) — retrieves information about a single access key for a given account.
+  * [View access key list](/rpc-service/chains/chains-api/near/#view-access-key-list) — retrieves all access keys for a given account.
+  * [View access key changes (single)](/rpc-service/chains/chains-api/near/#view-access-key-changes-single) — retrieves individual access key changes in a specific block.
+  * [View access key changes (all)](/rpc-service/chains/chains-api/near/#view-access-key-changes-all) — retrieves changes to all access keys of a specific block.
+
+**Accounts/Contracts** — to view details about accounts and contracts as well as perform contract calls.
+
+  * [View account](/rpc-service/chains/chains-api/near/#view-account) — retrieves basic account information.
+  * [View account changes](/rpc-service/chains/chains-api/near/#view-account-changes) — retrieves account changes from transactions in a given account.
+  * [View contract code](/rpc-service/chains/chains-api/near/#view-contract-code) — retrieves the contract code (Wasm binary) deployed to the account.
+  * [View contract state](/rpc-service/chains/chains-api/near/#view-contract-state) — retrieves the state (key value pairs) of a contract based on the key prefix (base64 encoded).
+  * [View contract state changes](/rpc-service/chains/chains-api/near/#view-contract-state-changes) — retrieves the state change details of a contract based on the key prefix (encoded to base64).
+  * [View contract code changes](/rpc-service/chains/chains-api/near/#view-contract-code-changes) — retrieves code changes made when deploying a contract.
+  * [Call a contract function](/rpc-service/chains/chains-api/near/#call-a-contract-function) — calls a contract method as a view function.
+
+**Block/Chunk** —  to query the network and get details about specific blocks or chunks.
+
+  * [Block details](/rpc-service/chains/chains-api/near/#block-details) — retrieves the block for a given height or hash.
+  * [Changes in block](/rpc-service/chains/chains-api/near/#changes-in-block) — retrieves the changes in a block for a given block height or hash.
+  * [Chunk details](/rpc-service/chains/chains-api/near/#chunk-details) — retrieves details of a specific chunk.
+
+**Gas** — to query the gas price for a specific block or hash.
+
+  * [Gas price](/rpc-service/chains/chains-api/near/#gas-price) — retrieves the gas price for a specific block height or block hash.
+
+**Protocol** — to retrieve the current genesis and protocol configuration.
+
+  * [Genesis config](/rpc-service/chains/chains-api/near/#genesis-config) — retrieves the current genesis configuration.
+  * [Protocol config](/rpc-service/chains/chains-api/near/#protocol-config) — retrieves the most recent protocol configuration or a specified block.
+
+**Network** — to query status information for nodes and validators.
+
+  * [Validation status](/rpc-service/chains/chains-api/near/#validation-status) — queries active validators on the network returning details and the state of validation on the blockchain.
+
+**Transactions** — to send transactions and query their status.
+
+  * [Send transaction (async)](/rpc-service/chains/chains-api/near/#send-transaction-async) — sends a transaction and immediately returns transaction hash.
+  * [Send transaction (await)](/rpc-service/chains/chains-api/near/#send-transaction-await) — sends a transaction and waits until transaction is fully completed (has a 10-second timeout).
+  * [Transaction status](/rpc-service/chains/chains-api/near/#transaction-status) — queries status of a transaction by hash and returns the final transaction result.
+  * [Transaction status with receipts](/rpc-service/chains/chains-api/near/#transaction-status-with-receipts) — queries status of a transaction by hash, returning the final transaction result and details of all receipts.
+  * [Receipt by ID](/rpc-service/chains/chains-api/near/#receipt-by-id) — retrieves a receipt by its ID (as is, without a status or execution outcome).
 
 ---
 
-## Connect wallet
+## Access Keys
 
-The NEAR Protocol has its own wallet — [Rainbow Bridge](https://near.org/bridge/). This is an in-browser, web-based wallet for creating and interacting with NEAR accounts.
+The API enables you to retrieve information about an account's access keys.
 
-Rainbow Bridge allows the migration of ETH assets to the NEAR platform.
+### View access key
 
-Ethereum users can onboard to NEAR using the [ETH Faucet](https://faucet.paras.id), hosted by Paras, and MetaMask.
+> Retrieves information about a single access key for a given account.
 
-Users must login to MetaMask and prove that their account has a balance higher than 0.05 ETH to  claim a NEAR account and start using Rainbow Bridge.
+If `permission` of the key is `FunctionCall`, it will return more details such as the `allowance`, `receiver_id`, and `method_names`.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other networks, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `query`.
+  * `params` (array; required):
+
+    * `request_type`: `view_access_key`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+    * `account_id`: `"example.testnet"`
+    * `public_key`: `"example.testnet's public key"`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "view_access_key",
+    "finality": "final",
+    "account_id": "client.chainlink.testnet",
+    "public_key": "ed25519:H9k5eiU4xXS3M4z8HzKJSLaZdqGdGwBG49o7orNC4eZW"
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "nonce": 85,
+    "permission": {
+      "FunctionCall": {
+        "allowance": "18501534631167209000000000",
+        "receiver_id": "client.chainlink.testnet",
+        "method_names": ["get_token_price"]
+      }
+    },
+    "block_height": 19884918,
+    "block_hash": "GGJQ8yjmo7aEoj8ZpAhGehnq9BSWFx4xswHYzDwwAP2n"
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/access-keys#what-could-go-wrong) section.
 
 ---
 
-## Integrate code
+### View access key list
 
-Near is non-evm compatible and has its own native RPC methods.
-Check out the [Near RPC docs](https://docs.near.org/docs/api/rpc)
-Below are some examples
+> Retrieves all access keys for a given account.
 
-### Gas price
+#### Parameters
 
-Returns gas price for a specific block_height or block_hash. Using `null` will return the most recent block's gas price.
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `query`.
+  * `params` (array; required):
 
-#### Example request
+    * `request_type`: `view_access_key`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+    * `account_id`: `"example.testnet"`
 
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "view_access_key_list",
+    "finality": "final",
+    "account_id": "example.testnet"
+  }
+}'
 ```
-curl https://rpc.ankr.com/near \
-  -X POST \
-  -H "Content-Type: application/json" \
-   --data '{"jsonrpc": "2.0",
-   "id": "dontcare",
-   "method": "gas_price",
-   "params": [17824600]}'
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "keys": [
+      {
+        "public_key": "ed25519:2j6qujbkPFuTstQLLTxKZUw63D5Wu3SG79Gop5JQrNJY",
+        "access_key": {
+          "nonce": 17,
+          "permission": {
+            "FunctionCall": {
+              "allowance": "9999203942481156415000",
+              "receiver_id": "place.meta",
+              "method_names": []
+            }
+          }
+        }
+      },
+      {
+        "public_key": "ed25519:46etzhzZHN4NSQ8JEQtbHCX7sT8WByS3vmSEb3fbmSgf",
+        "access_key": {
+          "nonce": 2,
+          "permission": {
+            "FunctionCall": {
+              "allowance": "9999930655034196535000",
+              "receiver_id": "dev-1596616186817-8588944",
+              "method_names": []
+            }
+          }
+        }
+      },
+      {
+        "public_key": "ed25519:4F9TwuSqWwvoyu7JVZDsupPhC7oYbYNsisBV2yQvyXFn",
+        "access_key": {
+          "nonce": 0,
+          "permission": "FullAccess"
+        }
+      },
+      {
+        "public_key": "ed25519:4bZqp6nm1btr92UfKbyADDzJ4oPK9JetHXqEYqbYZmkD",
+        "access_key": {
+          "nonce": 2,
+          "permission": "FullAccess"
+        }
+      },
+      {
+        "public_key": "ed25519:6ZPzX7hS37jiU9dRxbV1Waf8HSyKKFypJbrnZXzNhqjs",
+        "access_key": {
+          "nonce": 2,
+          "permission": {
+            "FunctionCall": {
+              "allowance": "9999922083697042955000",
+              "receiver_id": "example.testnet",
+              "method_names": []
+            }
+          }
+        }
+      },
+      {
+        "public_key": "ed25519:81RKfuo7mBbsaviTmBsq18t6Eq4YLnSi3ye2CBLcKFUX",
+        "access_key": {
+          "nonce": 8,
+          "permission": "FullAccess"
+        }
+      },
+      {
+        "public_key": "ed25519:B4W1oAYTcG8GxwKev8jQtsYWkGwGdqP24W7eZ6Fmpyzc",
+        "access_key": {
+          "nonce": 0,
+          "permission": {
+            "FunctionCall": {
+              "allowance": "10000000000000000000000",
+              "receiver_id": "dev-1594144238344",
+              "method_names": []
+            }
+          }
+        }
+      },
+      {
+        "public_key": "ed25519:BA3AZbACoEzAsxKeToFd36AVpPXFSNhSMW2R6UYeGRwM",
+        "access_key": {
+          "nonce": 0,
+          "permission": {
+            "FunctionCall": {
+              "allowance": "10000000000000000000000",
+              "receiver_id": "new-corgis",
+              "method_names": []
+            }
+          }
+        }
+      },
+      {
+        "public_key": "ed25519:BRyHUGAJjRKVTc9ZqXTTSJnFmSca8WLj8TuVe1wXK3LZ",
+        "access_key": {
+          "nonce": 17,
+          "permission": "FullAccess"
+        }
+      },
+      {
+        "public_key": "ed25519:DjytaZ1HZ5ZFmH3YeJeMCiC886K1XPYeGsbz2E1AZj2J",
+        "access_key": {
+          "nonce": 31,
+          "permission": "FullAccess"
+        }
+      },
+      {
+        "public_key": "ed25519:DqJn5UCq6vdNAvfhnbpdAeuui9a6Hv9DKYDxeRACPUDP",
+        "access_key": {
+          "nonce": 0,
+          "permission": "FullAccess"
+        }
+      },
+      {
+        "public_key": "ed25519:FFxG8x6cDDyiErFtRsdw4dBNtCmCtap4tMTjuq3umvSq",
+        "access_key": {
+          "nonce": 0,
+          "permission": "FullAccess"
+        }
+      }
+    ],
+    "block_height": 17798231,
+    "block_hash": "Gm7YSdx22wPuciW1jTTeRGP9mFqmon69ErFQvgcFyEEB"
+  },
+  "id": "dontcare"
+}
 ```
 
-#### Example response
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/access-keys#what-could-go-wrong-1) section.
 
+---
+
+### View access key changes (single)
+
+> Retrieves individual access key changes in a specific block.
+
+You can query multiple keys by passing an array of objects containing the `account_id` and `public_key`.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_changes`.
+  * `params` (array; required):
+
+    * `changes_type`: `single_access_key_changes`
+    * `keys`: `[{ account_id, public_key }]`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes",
+  "params": {
+    "changes_type": "single_access_key_changes",
+    "keys": [
+      {
+        "account_id": "example-acct.testnet",
+        "public_key": "ed25519:25KEc7t7MQohAJ4EDThd2vkksKkwangnuJFzcoiXj9oM"
+      }
+    ],
+    "finality": "final"
+  }
+}'
 ```
-{"jsonrpc":"2.0","result":{"gas_price":"100000000"},"id":"dontcare"}
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block_hash": "4kvqE1PsA6ic1LG7S5SqymSEhvjqGqumKjAxnVdNN3ZH",
+    "changes": [
+      {
+        "cause": {
+          "type": "transaction_processing",
+          "tx_hash": "HshPyqddLxsganFxHHeH9LtkGekXDCuAt6axVgJLboXV"
+        },
+        "type": "access_key_update",
+        "change": {
+          "account_id": "example-acct.testnet",
+          "public_key": "ed25519:25KEc7t7MQohAJ4EDThd2vkksKkwangnuJFzcoiXj9oM",
+          "access_key": {
+            "nonce": 1,
+            "permission": "FullAccess"
+          }
+        }
+      }
+    ]
+  },
+  "id": "dontcare"
+}
 ```
 
-### Block
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/access-keys#what-could-go-wrong-2) section.
 
-Queries network and returns block details for given height or hash. You can also use `finality` param to return latest block details.
+---
 
-<Callout>
-You may choose to search by a specific block or finality, you can not choose both.
-</Callout>
+### View access key changes (all)
 
-#### Example request
+> Retrieves the changes to all access keys of a specific block.
 
+Multiple accounts can be queried by passing an array of `account_ids`.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_changes`.
+  * `params` (array; required):
+
+    * `changes_type`: `single_access_key_changes`
+    * `account_ids`: `["example.testnet", "example2.testnet"]`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes",
+  "params": {
+    "changes_type": "all_access_key_changes",
+    "account_ids": ["example-acct.testnet"],
+    "block_id": "4kvqE1PsA6ic1LG7S5SqymSEhvjqGqumKjAxnVdNN3ZH"
+  }
+}'
 ```
-curl https://rpc.ankr.com/near \
-  -X POST \
-  -H "Content-Type: application/json" \
-   --data '{
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block_hash": "4kvqE1PsA6ic1LG7S5SqymSEhvjqGqumKjAxnVdNN3ZH",
+    "changes": [
+      {
+        "cause": {
+          "type": "transaction_processing",
+          "tx_hash": "HshPyqddLxsganFxHHeH9LtkGekXDCuAt6axVgJLboXV"
+        },
+        "type": "access_key_update",
+        "change": {
+          "account_id": "example-acct.testnet",
+          "public_key": "ed25519:25KEc7t7MQohAJ4EDThd2vkksKkwangnuJFzcoiXj9oM",
+          "access_key": {
+            "nonce": 1,
+            "permission": "FullAccess"
+          }
+        }
+      },
+      {
+        "cause": {
+          "type": "receipt_processing",
+          "receipt_hash": "CetXstu7bdqyUyweRqpY9op5U1Kqzd8pq8T1kqfcgBv2"
+        },
+        "type": "access_key_update",
+        "change": {
+          "account_id": "example-acct.testnet",
+          "public_key": "ed25519:96pj2aVJH9njmAxakjvUMnNvdB3YUeSAMjbz9aRNU6XY",
+          "access_key": {
+            "nonce": 0,
+            "permission": "FullAccess"
+          }
+        }
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/access-keys#what-could-go-wrong-3) section.
+
+---
+
+## Accounts/Contracts
+
+The API enables you to view details about accounts and contracts as well as perform contract calls.
+
+### View account
+
+> Retrieves basic account information.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `query`.
+  * `params` (array; required):
+
+    * `request_type`: `view_account`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+    * `account_id`: `"example.testnet"`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "view_account",
+    "finality": "final",
+    "account_id": "nearkat.testnet"
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "amount": "399992611103597728750000000",
+    "locked": "0",
+    "code_hash": "11111111111111111111111111111111",
+    "storage_usage": 642,
+    "storage_paid_at": 0,
+    "block_height": 17795474,
+    "block_hash": "9MjpcnwW3TSdzGweNfPbkx8M74q1XzUcT1PAN8G5bNDz"
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/contracts#what-could-go-wrong) section.
+
+---
+
+### View account changes
+
+> Retrieves account changes from transactions in a given account.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_changes`.
+  * `params` (array; required):
+
+    * `changes_type`: `account_changes`
+    * `account_id`: `"example.testnet"`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes",
+  "params": {
+    "changes_type": "account_changes",
+    "account_ids": ["your_account.testnet"],
+    "block_id": 19703467
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block_hash": "6xsfPSG89s6fCMShxxxQTP6D4ZHM9xkGCgubayTDRzAP",
+    "changes": [
+      {
+        "cause": {
+          "type": "transaction_processing",
+          "tx_hash": "HLvxLKFM7gohFSqXPp5SpyydNEVpAno352qJJbnddsz3"
+        },
+        "type": "account_update",
+        "change": {
+          "account_id": "your_account.testnet",
+          "amount": "499999959035075000000000000",
+          "locked": "0",
+          "code_hash": "11111111111111111111111111111111",
+          "storage_usage": 182,
+          "storage_paid_at": 0
+        }
+      },
+      {
+        "cause": {
+          "type": "receipt_processing",
+          "receipt_hash": "CPenN1dp4DNKnb9LiL5hkPmu1WiKLMuM7msDjEZwDmwa"
+        },
+        "type": "account_update",
+        "change": {
+          "account_id": "your_account.testnet",
+          "amount": "499999959035075000000000000",
+          "locked": "0",
+          "code_hash": "11111111111111111111111111111111",
+          "storage_usage": 264,
+          "storage_paid_at": 0
+        }
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/contracts#what-could-go-wrong-1) section.
+
+---
+
+### View contract code
+
+> Retrieves the contract code (Wasm binary) deployed to the account.
+
+The returned code will be encoded in base64.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `query`.
+  * `params` (array; required):
+
+    * `request_type`: `view_code`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+    * `account_id`: `"guest-book.testnet"`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "view_code",
+    "finality": "final",
+    "account_id": "guest-book.testnet"
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "code_base64": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+    "hash": "7KoFshMQkdyo5iTx8P2LbLu9jQpxRn24d27FrKShNVXs",
+    "block_height": 17814234,
+    "block_hash": "GT1D8nweVQU1zyCUv399x8vDv2ogVq71w17MyR66hXBB"
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/contracts#what-could-go-wrong-2) section.
+
+---
+
+### View contract state
+
+> Retrieves the state (key value pairs) of a contract based on the key prefix (base64 encoded).
+
+Pass an empty string for `prefix_base64` if you would like to return the entire state. Please note that the returned state will be base64 encoded as well.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `query`.
+  * `params` (array; required):
+
+    * `request_type`: `view_state`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+    * `account_id`: `"guest-book.testnet"`
+    * `prefix_base64`: `""`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "view_state",
+    "finality": "final",
+    "account_id": "guest-book.testnet",
+    "prefix_base64": ""
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "values": [
+      {
+        "key": "bTo6MA==",
+        "value": "eyJwcmVtaXVtIjp0cnVlLCJzZW5kZXIiOiJqb3NoZm9yZC50ZXN0bmV0IiwidGV4dCI6ImhlbGxvIn0=",
+        "proof": []
+      },
+      {
+        "key": "bTo6MQ==",
+        "value": "eyJwcmVtaXVtIjpmYWxzZSwic2VuZGVyIjoiY2hhZG9oIiwidGV4dCI6ImhlbGxvIGVyeWJvZHkifQ==",
+        "proof": []
+      },
+      {
+        "key": "bTo6MTA=",
+        "value": "eyJwcmVtaXVtIjpmYWxzZSwic2VuZGVyIjoic2F0b3NoaWYudGVzdG5ldCIsInRleHQiOiJIaWxsbyEifQ==",
+        "proof": []
+      },
+      {
+        "key": "bTo6MTE=",
+        "value": "eyJwcmVtaXVtIjpmYWxzZSwic2VuZGVyIjoidmFsZW50aW5lc29rb2wudGVzdG5ldCIsInRleHQiOiJIaSEifQ==",
+        "proof": []
+      },
+      {
+        "key": "bTo6MTI=",
+        "value": "eyJwcmVtaXVtIjp0cnVlLCJzZW5kZXIiOiJobngudGVzdG5ldCIsInRleHQiOiJoZWxsbyJ9",
+        "proof": []
+      }
+    ],
+    "proof": [],
+    "block_height": 17814234,
+    "block_hash": "GT1D8nweVQU1zyCUv399x8vDv2ogVq71w17MyR66hXBB"
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/contracts#what-could-go-wrong-3) section.
+
+---
+
+### View contract state changes
+
+> Retrieves the state change details of a contract based on the key prefix (encoded to base64).
+
+Pass an empty string for this param if you would like to return all state changes.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_changes`.
+  * `params` (array; required):
+
+    * `changes_type`: `data_changes`
+    * `account_ids`: `["example.testnet"]`
+    * `key_prefix_base64`: `"base64 encoded key value"`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes",
+  "params": {
+    "changes_type": "data_changes",
+    "account_ids": ["guest-book.testnet"],
+    "key_prefix_base64": "",
+    "block_id": 19450732
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block_hash": "6U8Yd4JFZwJUNfqkD4KaKgTKmpNSmVRTSggpjmsRWdKY",
+    "changes": [
+      {
+        "cause": {
+          "type": "receipt_processing",
+          "receipt_hash": "9ewznXgs2t7vRCssxW4thgaiwggnMagKybZ7ryLNTT2z"
+        },
+        "type": "data_update",
+        "change": {
+          "account_id": "guest-book.testnet",
+          "key_base64": "bTo6Mzk=",
+          "value_base64": "eyJwcmVtaXVtIjpmYWxzZSwic2VuZGVyIjoiZmhyLnRlc3RuZXQiLCJ0ZXh0IjoiSGkifQ=="
+        }
+      },
+      {
+        "cause": {
+          "type": "receipt_processing",
+          "receipt_hash": "9ewznXgs2t7vRCssxW4thgaiwggnMagKybZ7ryLNTT2z"
+        },
+        "type": "data_update",
+        "change": {
+          "account_id": "guest-book.testnet",
+          "key_base64": "bTpsZW4=",
+          "value_base64": "NDA="
+        }
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/contracts#what-could-go-wrong-4) section.
+
+---
+
+### View contract code changes
+
+> Retrieves code changes made when deploying a contract.
+
+The change are returned as a base64-encoded WASM file.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_changes`.
+  * `params` (array; required):
+
+    * `changes_type`: `contract_code_changes`
+    * `account_ids`: `["example.testnet"]`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes",
+  "params": {
+    "changes_type": "contract_code_changes",
+    "account_ids": ["dev-1602714453032-7566969"],
+    "block_id": 20046655
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block_hash": "3yLNV5zdpzRJ8HP5xTXcF7jdFxuHnmKNUwWcok4616WZ",
+    "changes": [
+      {
+        "cause": {
+          "type": "receipt_processing",
+          "receipt_hash": "CEm3NNaNdu9cijh9NvZMM1srbtEYSsBVwGbZxFQYKt5B"
+        },
+        "type": "contract_code_update",
+        "change": {
+          "account_id": "dev-1602714453032-7566969",
+          "code_base64": "AGFzbQEAAAABpAM3YAF/AGAAAX9gAn9+AGADf35+AGAEf35+fgF+YAZ/fn5+fn4BfmADf35+AX5gAn9+AX5gAn9/AX9gAn9/AGADf39/AX9gAX8BfmACfn4AYAF+AX5gAX4AYAABfmADfn5+AGAAAGAIfn5+fn5+fn4BfmAJfn5+fn5+fn5+AX5gAn5+AX5gA35+fgF+YAd+fn5+fn5+AGAEfn5+fgBgCX5+fn5+fn5+fgBgBX5+fn5+AX5gA39/fwBgAX8Bf2ACf3wAYAR/f39+AGAFf39/fn8AYAV/f39/fwBgBH9/f38AYAN/f38BfmADf39+AGACf38BfmAFf39/f38Bf2AEf39/fwF/YAZ/f39/f38AYAV/f35/fwBgBH9+f38Bf2ACf34Bf2AHf35+f39+fwBgBX9/f39+AGAEf35+fgBgCX9+fn5+fn5+fgF+YAp/fn5+fn5+fn5+AX5gCH9+fn5+fn5+AGAFf35+fn4AYAp/fn5+fn5+fn5+AGAHf39/f39/fwBgBH98f38Bf2AGf39/f39..."
+        }
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/contracts#what-could-go-wrong-5) section.
+
+---
+
+### Call a contract function
+
+> Calls a contract method as a view function.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `query`.
+  * `params` (array; required):
+
+    * `request_type`: `call_function`
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+    * `account_id`: `"example.testnet"`
+    * `method_name`: `name_of_a_example.testnet_method` (example: [`view` methods](https://github.com/near/core-contracts/blob/master/staking-pool/src/lib.rs#L317))
+    * `args_base64`: `method_arguments_base_64_encoded`
+
+#### Request example (`get_num`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "call_function",
+    "finality": "final",
+    "account_id": "dev-1588039999690",
+    "method_name": "get_num",
+    "args_base64": "e30="
+  }
+}'
+```
+
+#### Request example (`get_account_staked_balance`)
+
+The `args_base64` in this example is decoded as `{"account_id":"dev-1588039999690"}`. The `account_id` would likely be the validator and not the same account for this particular view function.
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "call_function",
+    "finality": "final",
+    "account_id": "dev-1588039999690",
+    "method_name": "get_account_staked_balance",
+    "args_base64": "eyJhY2NvdW50X2lkIjoiZGV2LTE1ODgwMzk5OTk2OTAifQ=="
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "result": [48],
+    "logs": [],
+    "block_height": 17817336,
+    "block_hash": "4qkA4sUUG8opjH5Q9bL5mWJTnfR4ech879Db1BZXbx6P"
+  },
+  "id": "dontcare"
+}
+```
+
+Note: `[48]` is an array of bytes, to be specific it is an ASCII code of `0`. `near-sdk-rs` and `near-sdk-js` return JSON-serialized results.
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/contracts#what-could-go-wrong-6) section.
+
+---
+
+## Block/Chunk
+
+The API enables you to query the network and get details about specific blocks or chunks.
+
+### Block details
+
+> Retrieves the block for a given height or hash.
+
+You can also use `finality` param to return latest block details.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `block`.
+  * `params` (array; required):
+
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example (`finality`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
   "jsonrpc": "2.0",
   "id": "dontcare",
   "method": "block",
@@ -76,28 +969,1229 @@ curl https://rpc.ankr.com/near \
 }'
 ```
 
-#### Example response (Extract)
+#### Request example (`block_id`)
 
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "block",
+  "params": {
+    "block_id": 17821130
+  }
+}'
 ```
-{"jsonrpc":"2.0","result":{"author":"moonlet.poolv1.near","header":{"height":61437572,"prev_height":61437571,"epoch_id":"9tqM9PSuQQXjvrAEhvRb45Q7XpDNS8itEcjr8yACDe2C","next_epoch_id":"2Ri3EriB9b5hBHmSPLLfJQhUyqCDx8Q8zsrpVK6aMFCo","hash":"GtGb4NnzLKxNYxWLum3eNhto6oWE1syc6ryrj9xAYqJU","prev_hash":"4LA5n9S72HCBbxwyR38gLZnZtcksc27kmFYZzZ2fQJob","prev_state_root":"AtdLpdibkTxhGu2CJRtgyWF5rGSpMeUEXH1Gb9SrjSQU","chunk_receipts_root":"CkUi6LaNxEeHrWsrm1QVj7vD...
+
+#### Request example (`block_hash`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "block",
+  "params": {
+    "block_id": "7nsuuitwS7xcdGnD9JgrE22cRB2vf2VS4yh1N9S71F4d"
+  }
+}'
 ```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "author": "bitcat.pool.f863973.m0",
+    "header": {
+      "height": 17821130,
+      "epoch_id": "7Wr3GFJkYeCxjVGz3gDaxvAMUzXuzG8MjFXTFoAXB6ZZ",
+      "next_epoch_id": "A5AdnxEn7mfHieQ5fRxx9AagCkHNJz6wr61ppEXiWvvh",
+      "hash": "CLo31YCUhzz8ZPtS5vXLFskyZgHV5qWgXinBQHgu9Pyd",
+      "prev_hash": "2yUTTubrv1gJhTUVnHXh66JG3qxStBqySoN6wzRzgdVD",
+      "prev_state_root": "5rSz37fySS8XkVgEy3FAZwUncX4X1thcSpuvCgA6xmec",
+      "chunk_receipts_root": "9ETNjrt6MkwTgSVMMbpukfxRshSD1avBUUa4R4NuqwHv",
+      "chunk_headers_root": "HMpEoBhPvThWZvppLwrXQSSfumVdaDW7WfZoCAPtjPfo",
+      "chunk_tx_root": "7tkzFg8RHBmMw1ncRJZCCZAizgq4rwCftTKYLce8RU8t",
+      "outcome_root": "7tkzFg8RHBmMw1ncRJZCCZAizgq4rwCftTKYLce8RU8t",
+      "chunks_included": 1,
+      "challenges_root": "11111111111111111111111111111111",
+      "timestamp": 1601280114229875635,
+      "timestamp_nanosec": "1601280114229875635",
+      "random_value": "ACdUSF3nehbMTwT7qjUB6Mm4Ynck5TVAWbNH3DR1cjQ7",
+      "validator_proposals": [],
+      "chunk_mask": [true],
+      "gas_price": "100000000",
+      "rent_paid": "0",
+      "validator_reward": "0",
+      "total_supply": "1042339182040791154864822502764857",
+      "challenges_result": [],
+      "last_final_block": "AaxTqjYND5WAKbV2UZaFed6DH1DShN9fEemtnpTsv3eR",
+      "last_ds_final_block": "2yUTTubrv1gJhTUVnHXh66JG3qxStBqySoN6wzRzgdVD",
+      "next_bp_hash": "3ZNEoFYh2CQeJ9dc1pLBeUd1HWG8657j2c1v72ENE45Q",
+      "block_merkle_root": "H3912Nkw6rtamfjsjmafe2uV2p1XmUKDou5ywgxb1gJr",
+      "approvals": [
+        "ed25519:4hNtc9vLhn2PQhktWtLKJV9g8SBfpm6NBT1w4syNFqoKE7ZMts2WwKA9x1ZUSBGVKYCuDGEqogLvwCF25G7e1UR3",
+        "ed25519:2UNmbTqysMMevVPqJEKSq57hkcxVFcAMdGq7CFhpW65yBKFxYwpoziiWsAtARusLn9Sy1eXM7DkGTXwAqFiSooS6",
+        "ed25519:4sumGoW9dnQCsJRpzkd4FQ5NSJypGQRCppWp7eQ9tpsEcJXjHZN8GVTCyeEk19WmbbMEJ5KBNypryyHzaH2gBxd4",
+        "ed25519:3fP2dri6GjYkmHgEqQWWP9GcoQEgakbaUtfr3391tXtYBgxmiJUEymRe54m7D8bQrSJ3LhKD8gTFT7qqdemRnizR",
+        "ed25519:3mwdqSWNm6RiuZAoZhD6pqsirC2cL48nEZAGoKixpqbrsBpAzqV3W2paH4KtQQ4JPLvk5pnzojaint2kNBCcUyq1",
+        "ed25519:D4hMnxqLyQW4Wo29MRNMej887GH46yJXDKNN4es8UDSi9shJ9Y4FcGqkxdV4AZhn1yUjwN5LwfgAgY6fyczk5L3",
+        null,
+        "ed25519:4WCVm4dn88VJxTkUgcvdS7vs34diBqtQY4XWMRctSN1NpbgdkwwVyxg7d2SbGC22SuED7w4nrToMhcpJXrkhkDmF",
+        "ed25519:JqtC7TFP7U14s7YhRKQEqwbc2RUxoctq75mrBdX91f7DuCWsPpe6ZTTnfHPmuJPjTzFHVZTsaQJWzwfSrrgNpnc",
+        "ed25519:ngGUpWc2SyHmMCkWGTNNNfvZAJQ5z7P92JCmDqB7JW3j8fNH6LobvFFXb2zVdssibJKgnjwBj8CRe6qiZtuYQZM",
+        "ed25519:5kzW6RbjukyJZiw9NTzTPPsQdoqN6EecafjVFEoWmTxQ4uSv1uSXhQYcHK2eq4m84oMmPABQDz2mm73Qx8mDdCQX",
+        "ed25519:5wHnuuxwJJiZ4bXNq5cESnr4YovFU2yaUcuHRDUw3DnLoxkqc15CsegoyUSQKEwtCZ4yETv8Z9QcD6Wr9zHV4AUk",
+        "ed25519:3F9XzWBxto31e8RAcBShAJBzJPgSJQsWbPXR38AfQnJn6AiveGz3JjebQm9Ye63BrnNA57QrPshwknxpzSrcNEZW",
+        "ed25519:2g5s4SKsHt9PMdekkDqVtwwtz14v4edhqdBX1MYA8tB6nDpj3vDCDCTy9pEU8dX31PoQe5ygnf88aTZukMBMK1Yt",
+        "ed25519:3Xz4jqhdyS3qs6xTmWdgjwt5gJraU5czMA89hPhmvbAN4aA7SUKL1HkevpmutRQqqxe7c7uCFeGiDHvDcxhhmD8W",
+        null,
+        "ed25519:55xs3vwPEys39egf9Z8SNyn1JsHPRMgj9HCX1GE7GJsVTcAuutQUCo91E12ZdXkuToYRXb9KzoT8n9XQRCNuLpwY",
+        null,
+        "ed25519:28JrFw7KnhnQPN89qZnnw17KDBjS6CDN7zB1hTg7KGg8qQPoCzakz9DNnaSnx39ji7e2fQSpZt4cNJaD7K7Yu7yo",
+        "ed25519:41hAr5qhtvUYpdD2NK9qqTVnpG325ZoAiwrcmk1MJH7fdpxm7oSKXvXZqh7bTmPhv61hH2RpHnhcGuN4QqLzK2zt",
+        "ed25519:4QacMsQ5FJgvecAYDFq8QBh19BBjh4qU8oeD5bV7p6Zhhu3e6r2iSHTvDBU2Q62RZAaWQQkkEwDUC9rsXdkGVhAt",
+        "ed25519:27smtCZ3WobEvBuD5DggY6kkGxjB9qRVY6kPixgwqvBT1eKbRVoV8cLj1z51S8RTcp7YzAr1vhHJUHgksatR9Udz",
+        "ed25519:4wspCWoAbhYxb3th2eX6ZXvKep1Fsco7mFP5zBodXBR8Wr344ANXSUCri3gUgNCCSoQ2CKSdqDEsvE6Y2jQ9hmbB",
+        "ed25519:46XpYf9ZB9gjDfdnJLHqqhYJpQCuvCgB9tzKWS88GANMCb2j9BM3KXyjaEzynSsaPK8VrKFXQuTsTzgQSeo9cWGW",
+        null,
+        "ed25519:Y5ehsrhEpTRGjG6fHJHsEXj2NYPGMmKguiJHXP7TqsCWHBvNzaJbieR7UDp78hJ1ib7C18J5MB2kCzTXBCF9c3b",
+        "ed25519:3P9363Dc8Kqvgjt3TsNRncUrncCHid7aSRnuySjF4JYmQbApkAxomyMu8xm9Rgo3mj9rqXb16PM7Xjn7hKP6TyVr",
+        null,
+        null,
+        "ed25519:65ATjGsigZ3vMp7sGcp1c4ptxoqhHPkBeAaZ5GWJguVDLyrRLPJrtXhLGjH9DpXd7CZswjyMYq5aRtorLnmmJ7GW",
+        null,
+        "ed25519:5SvqSViXbtsLoFMdtCufyyDgZnrEK7LheFi38X5M2ic17gfV5cz37r85RyixjUv98MbAmgVdmkxVFDGfSbeoHW7X",
+        null,
+        null,
+        "ed25519:2n3fQiBEiDKkB84biXWyQmvnupKX7B8faugY37jVi8hVXuWLggJmaEjqub511RCYwFnwW1RBxYpuJQ455KaniCd4",
+        "ed25519:2K9xKFLJ2fW74tddXtghFGFurKWomAqaJmkKYVZKHQT6zHe5wNSYT3vzMotLQcez5JD1Ta57N9zQ4H1RysB2s5DZ",
+        null,
+        null,
+        "ed25519:3qeCRtcLAqLtQ2YSQLcHDa26ykKX1BvAhP9jshLLYapxSEGGgZJY8sU72p9E78AkXwHP3X2Eq74jvts7gTRzNgMg",
+        null,
+        "ed25519:2czSQCF8wBDomEeSdDRH4gFoyJrp2ppZqR6JDaDGoYpaFkpWxZf2oGDkKfQLZMbfvU6LXkQjJssVHcLCJRMzG8co"
+      ],
+      "signature": "ed25519:58sdWd6kxzhQdCGvHzxqvdtDLJzqspe74f3gytnqdxDLHf4eesXi7B3nYq2YaosCHZJYmcR4HPHKSoFm3WE4MbxT",
+      "latest_protocol_version": 35
+    },
+    "chunks": [
+      {
+        "chunk_hash": "EBM2qg5cGr47EjMPtH88uvmXHDHqmWPzKaQadbWhdw22",
+        "prev_block_hash": "2yUTTubrv1gJhTUVnHXh66JG3qxStBqySoN6wzRzgdVD",
+        "outcome_root": "11111111111111111111111111111111",
+        "prev_state_root": "HqWDq3f5HJuWnsTfwZS6jdAUqDjGFSTvjhb846vV27dx",
+        "encoded_merkle_root": "9zYue7drR1rhfzEEoc4WUXzaYRnRNihvRoGt1BgK7Lkk",
+        "encoded_length": 8,
+        "height_created": 17821130,
+        "height_included": 17821130,
+        "shard_id": 0,
+        "gas_used": 0,
+        "gas_limit": 1000000000000000,
+        "rent_paid": "0",
+        "validator_reward": "0",
+        "balance_burnt": "0",
+        "outgoing_receipts_root": "H4Rd6SGeEBTbxkitsCdzfu9xL9HtZ2eHoPCQXUeZ6bW4",
+        "tx_root": "11111111111111111111111111111111",
+        "validator_proposals": [],
+        "signature": "ed25519:4iPgpYAcPztAvnRHjfpegN37Rd8dTJKCjSd1gKAPLDaLcHUySJHjexMSSfC5iJVy28vqF9VB4psz13x2nt92cbR7"
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/block-chunk#what-could-go-wrong) section.
+
+---
+
+### Changes in block
+
+> Retrieves the changes in a block for a given block height or hash.
+
+You can also use `finality` param to return latest block details.
+
+You may choose to search by a specific block or finality, you can not choose both.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_changes_in_block`.
+  * `params` (array; required):
+
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example (`finality`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes_in_block",
+  "params": {
+    "finality": "final"
+  }
+}'
+```
+
+#### Request example (`block_id`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes_in_block",
+  "params": {
+    "block_id": 17821135
+  }
+}'
+```
+
+#### Request example (`block_hash`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_changes_in_block",
+  "params": {
+    "block_id": "81k9ked5s34zh13EjJt26mxw5npa485SY4UNoPi6yYLo"
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block_hash": "81k9ked5s34zh13EjJt26mxw5npa485SY4UNoPi6yYLo",
+    "changes": [
+      {
+        "type": "account_touched",
+        "account_id": "lee.testnet"
+      },
+      {
+        "type": "contract_code_touched",
+        "account_id": "lee.testnet"
+      },
+      {
+        "type": "access_key_touched",
+        "account_id": "lee.testnet"
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/block-chunk#what-could-go-wrong-1) section.
+
+---
+
+### Chunk details
+
+> Retrieves the details of a specific chunk.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `chunk`.
+  * `params` (array; required):
+
+    * `chunk_id`/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param), [`shard_id`]()https://docs.near.org/api/rpc/setup#using-block_id-param
+
+#### Request example (`chunk_id`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "chunk",
+  "params": {"chunk_id": "EBM2qg5cGr47EjMPtH88uvmXHDHqmWPzKaQadbWhdw22"}
+}'
+```
+
+#### Request example (`block_id`, `shard_id`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "chunk",
+  "params": {"block_id": 58934027, "shard_id": 0}
+}'
+```
+
+#### Request example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "author": "bitcat.pool.f863973.m0",
+    "header": {
+      "chunk_hash": "EBM2qg5cGr47EjMPtH88uvmXHDHqmWPzKaQadbWhdw22",
+      "prev_block_hash": "2yUTTubrv1gJhTUVnHXh66JG3qxStBqySoN6wzRzgdVD",
+      "outcome_root": "11111111111111111111111111111111",
+      "prev_state_root": "HqWDq3f5HJuWnsTfwZS6jdAUqDjGFSTvjhb846vV27dx",
+      "encoded_merkle_root": "9zYue7drR1rhfzEEoc4WUXzaYRnRNihvRoGt1BgK7Lkk",
+      "encoded_length": 8,
+      "height_created": 17821130,
+      "height_included": 17821130,
+      "shard_id": 0,
+      "gas_used": 0,
+      "gas_limit": 1000000000000000,
+      "rent_paid": "0",
+      "validator_reward": "0",
+      "balance_burnt": "0",
+      "outgoing_receipts_root": "H4Rd6SGeEBTbxkitsCdzfu9xL9HtZ2eHoPCQXUeZ6bW4",
+      "tx_root": "11111111111111111111111111111111",
+      "validator_proposals": [],
+      "signature": "ed25519:4iPgpYAcPztAvnRHjfpegN37Rd8dTJKCjSd1gKAPLDaLcHUySJHjexMSSfC5iJVy28vqF9VB4psz13x2nt92cbR7"
+    },
+    "transactions": [],
+    "receipts": []
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/block-chunk#what-could-go-wrong-2) section.
+
+---
+
+## Gas
+
+The API enables you to query the gas price for a specific block or hash.
+
+### Gas price
+
+> Retrieves the gas price for a specific `block_height` or `block_hash`.
+
+Using `[null]` will return the most recent block's gas price.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `gas_price`.
+  * `params` (array; required):
+
+    * `[block_height]`, `["block_hash"]`, or `[null]`
+
+#### Request example (`[block_height]`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "gas_price",
+  "params": [17824600]
+}'
+```
+
+#### Request example (`["block_hash"]`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "gas_price",
+  "params": ["AXa8CHDQSA8RdFCt12rtpFraVq4fDUgJbLPxwbaZcZrj"]
+}'
+```
+
+#### Request example (`[null]`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "gas_price",
+  "params": [null]
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "gas_price": "100000000"
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/gas#what-could-go-wrong) section.
+
+---
+
+## Protocol
+
+The API enables you to retrieve the current genesis and protocol configuration.
+
+### Genesis config
+
+> Retrieves the current genesis configuration.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_genesis_config`.
+  * `params` (array; required): None.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_genesis_config",
+  "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "protocol_version": 29,
+    "genesis_time": "2020-07-31T03:39:42.911378Z",
+    "chain_id": "testnet",
+    "genesis_height": 10885359,
+    "num_block_producer_seats": 100,
+    "num_block_producer_seats_per_shard": [100],
+    "avg_hidden_validator_seats_per_shard": [0],
+    "dynamic_resharding": false,
+    "protocol_upgrade_stake_threshold": [4, 5],
+    "protocol_upgrade_num_epochs": 2,
+    "epoch_length": 43200,
+    "gas_limit": 1000000000000000,
+    "min_gas_price": "5000",
+    "max_gas_price": "10000000000000000000000",
+    "block_producer_kickout_threshold": 80,
+    "chunk_producer_kickout_threshold": 90,
+    "online_min_threshold": [90, 100],
+    "online_max_threshold": [99, 100],
+    "gas_price_adjustment_rate": [1, 100],
+    "runtime_config": {
+      "storage_amount_per_byte": "90949470177292823791",
+      "transaction_costs": {
+        "action_receipt_creation_config": {
+          "send_sir": 108059500000,
+          "send_not_sir": 108059500000,
+          "execution": 108059500000
+        },
+        "data_receipt_creation_config": {
+          "base_cost": {
+            "send_sir": 4697339419375,
+            "send_not_sir": 4697339419375,
+            "execution": 4697339419375
+          },
+          "cost_per_byte": {
+            "send_sir": 59357464,
+            "send_not_sir": 59357464,
+            "execution": 59357464
+          }
+        },
+        "action_creation_config": {
+          "create_account_cost": {
+            "send_sir": 99607375000,
+            "send_not_sir": 99607375000,
+            "execution": 99607375000
+          },
+          "deploy_contract_cost": {
+            "send_sir": 184765750000,
+            "send_not_sir": 184765750000,
+            "execution": 184765750000
+          },
+          "deploy_contract_cost_per_byte": {
+            "send_sir": 6812999,
+            "send_not_sir": 6812999,
+            "execution": 6812999
+          },
+          "function_call_cost": {
+            "send_sir": 2319861500000,
+            "send_not_sir": 2319861500000,
+            "execution": 2319861500000
+          },
+          "function_call_cost_per_byte": {
+            "send_sir": 2235934,
+            "send_not_sir": 2235934,
+            "execution": 2235934
+          },
+          "transfer_cost": {
+            "send_sir": 115123062500,
+            "send_not_sir": 115123062500,
+            "execution": 115123062500
+          },
+          "stake_cost": {
+            "send_sir": 141715687500,
+            "send_not_sir": 141715687500,
+            "execution": 102217625000
+          },
+          "add_key_cost": {
+            "full_access_cost": {
+              "send_sir": 101765125000,
+              "send_not_sir": 101765125000,
+              "execution": 101765125000
+            },
+            "function_call_cost": {
+              "send_sir": 102217625000,
+              "send_not_sir": 102217625000,
+              "execution": 102217625000
+            },
+            "function_call_cost_per_byte": {
+              "send_sir": 1925331,
+              "send_not_sir": 1925331,
+              "execution": 1925331
+            }
+          },
+          "delete_key_cost": {
+            "send_sir": 94946625000,
+            "send_not_sir": 94946625000,
+            "execution": 94946625000
+          },
+          "delete_account_cost": {
+            "send_sir": 147489000000,
+            "send_not_sir": 147489000000,
+            "execution": 147489000000
+          }
+        },
+        "storage_usage_config": {
+          "num_bytes_account": 100,
+          "num_extra_bytes_record": 40
+        },
+        "burnt_gas_reward": [3, 10],
+        "pessimistic_gas_price_inflation_ratio": [103, 100]
+      },
+      "wasm_config": {
+        "ext_costs": {
+          "base": 264768111,
+          "contract_compile_base": 35445963,
+          "contract_compile_bytes": 216750,
+          "read_memory_base": 2609863200,
+          "read_memory_byte": 3801333,
+          "write_memory_base": 2803794861,
+          "write_memory_byte": 2723772,
+          "read_register_base": 2517165186,
+          "read_register_byte": 98562,
+          "write_register_base": 2865522486,
+          "write_register_byte": 3801564,
+          "utf8_decoding_base": 3111779061,
+          "utf8_decoding_byte": 291580479,
+          "utf16_decoding_base": 3543313050,
+          "utf16_decoding_byte": 163577493,
+          "sha256_base": 4540970250,
+          "sha256_byte": 24117351,
+          "keccak256_base": 5879491275,
+          "keccak256_byte": 21471105,
+          "keccak512_base": 5811388236,
+          "keccak512_byte": 36649701,
+          "log_base": 3543313050,
+          "log_byte": 13198791,
+          "storage_write_base": 64196736000,
+          "storage_write_key_byte": 70482867,
+          "storage_write_value_byte": 31018539,
+          "storage_write_evicted_byte": 32117307,
+          "storage_read_base": 56356845750,
+          "storage_read_key_byte": 30952533,
+          "storage_read_value_byte": 5611005,
+          "storage_remove_base": 53473030500,
+          "storage_remove_key_byte": 38220384,
+          "storage_remove_ret_value_byte": 11531556,
+          "storage_has_key_base": 54039896625,
+          "storage_has_key_byte": 30790845,
+          "storage_iter_create_prefix_base": 0,
+          "storage_iter_create_prefix_byte": 0,
+          "storage_iter_create_range_base": 0,
+          "storage_iter_create_from_byte": 0,
+          "storage_iter_create_to_byte": 0,
+          "storage_iter_next_base": 0,
+          "storage_iter_next_key_byte": 0,
+          "storage_iter_next_value_byte": 0,
+          "touching_trie_node": 16101955926,
+          "promise_and_base": 1465013400,
+          "promise_and_per_promise": 5452176,
+          "promise_return": 560152386,
+          "validator_stake_base": 911834726400,
+          "validator_total_stake_base": 911834726400
+        },
+        "grow_mem_cost": 1,
+        "regular_op_cost": 3856371,
+        "limit_config": {
+          "max_gas_burnt": 200000000000000,
+          "max_gas_burnt_view": 200000000000000,
+          "max_stack_height": 16384,
+          "initial_memory_pages": 1024,
+          "max_memory_pages": 2048,
+          "registers_memory_limit": 1073741824,
+          "max_register_size": 104857600,
+          "max_number_registers": 100,
+          "max_number_logs": 100,
+          "max_total_log_length": 16384,
+          "max_total_prepaid_gas": 300000000000000,
+          "max_actions_per_receipt": 100,
+          "max_number_bytes_method_names": 2000,
+          "max_length_method_name": 256,
+          "max_arguments_length": 4194304,
+          "max_length_returned_data": 4194304,
+          "max_contract_size": 4194304,
+          "max_length_storage_key": 4194304,
+          "max_length_storage_value": 4194304,
+          "max_promises_per_function_call_action": 1024,
+          "max_number_input_data_dependencies": 128
+        }
+      },
+      "account_creation_config": {
+        "min_allowed_top_level_account_length": 0,
+        "registrar_account_id": "registrar"
+      }
+    },
+    "validators": [
+      {
+        "account_id": "node0",
+        "public_key": "ed25519:7PGseFbWxvYVgZ89K1uTJKYoKetWs7BJtbyXDzfbAcqX",
+        "amount": "1000000000000000000000000000000"
+      },
+      {
+        "account_id": "node1",
+        "public_key": "ed25519:6DSjZ8mvsRZDvFqFxo8tCKePG96omXW7eVYVSySmDk8e",
+        "amount": "1000000000000000000000000000000"
+      },
+      {
+        "account_id": "node2",
+        "public_key": "ed25519:GkDv7nSMS3xcqA45cpMvFmfV1o4fRF6zYo1JRR6mNqg5",
+        "amount": "1000000000000000000000000000000"
+      },
+      {
+        "account_id": "node3",
+        "public_key": "ed25519:ydgzeXHJ5Xyt7M1gXLxqLBW1Ejx6scNV5Nx2pxFM8su",
+        "amount": "1000000000000000000000000000000"
+      }
+    ],
+    "transaction_validity_period": 86400,
+    "protocol_reward_rate": [1, 10],
+    "max_inflation_rate": [1, 20],
+    "total_supply": "1031467299046044096035532756810080",
+    "num_blocks_per_year": 31536000,
+    "protocol_treasury_account": "near",
+    "fishermen_threshold": "10000000000000000000",
+    "minimum_stake_divisor": 10
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/protocol#what-could-go-wrong) section.
+
+---
+
+### Protocol config
+
+> Retrieves the most recent protocol configuration or a specified block.
+
+Useful for finding current storage and transaction costs.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_protocol_config`.
+  * `params` (array; required):
+
+    * [`finality`](https://docs.near.org/api/rpc/setup#using-finality-param)/[`block_id`](https://docs.near.org/api/rpc/setup#using-block_id-param)
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_protocol_config",
+  "params": {
+    "finality": "final"
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "protocol_version": 45,
+    "genesis_time": "2020-07-31T03:39:42.911378Z",
+    "chain_id": "testnet",
+    "genesis_height": 42376888,
+    "num_block_producer_seats": 200,
+    "num_block_producer_seats_per_shard": [200],
+    "avg_hidden_validator_seats_per_shard": [0],
+    "dynamic_resharding": false,
+    "protocol_upgrade_stake_threshold": [4, 5],
+    "epoch_length": 43200,
+    "gas_limit": 1000000000000000,
+    "min_gas_price": "5000",
+    "max_gas_price": "10000000000000000000000",
+    "block_producer_kickout_threshold": 80,
+    "chunk_producer_kickout_threshold": 90,
+    "online_min_threshold": [90, 100],
+    "online_max_threshold": [99, 100],
+    "gas_price_adjustment_rate": [1, 100],
+    "runtime_config": {
+      "storage_amount_per_byte": "10000000000000000000",
+      "transaction_costs": {
+        "action_receipt_creation_config": {
+          "send_sir": 108059500000,
+          "send_not_sir": 108059500000,
+          "execution": 108059500000
+        },
+        "data_receipt_creation_config": {
+          "base_cost": {
+            "send_sir": 4697339419375,
+            "send_not_sir": 4697339419375,
+            "execution": 4697339419375
+          },
+          "cost_per_byte": {
+            "send_sir": 59357464,
+            "send_not_sir": 59357464,
+            "execution": 59357464
+          }
+        },
+        "action_creation_config": {
+          "create_account_cost": {
+            "send_sir": 99607375000,
+            "send_not_sir": 99607375000,
+            "execution": 99607375000
+          },
+          "deploy_contract_cost": {
+            "send_sir": 184765750000,
+            "send_not_sir": 184765750000,
+            "execution": 184765750000
+          },
+          "deploy_contract_cost_per_byte": {
+            "send_sir": 6812999,
+            "send_not_sir": 6812999,
+            "execution": 6812999
+          },
+          "function_call_cost": {
+            "send_sir": 2319861500000,
+            "send_not_sir": 2319861500000,
+            "execution": 2319861500000
+          },
+          "function_call_cost_per_byte": {
+            "send_sir": 2235934,
+            "send_not_sir": 2235934,
+            "execution": 2235934
+          },
+          "transfer_cost": {
+            "send_sir": 115123062500,
+            "send_not_sir": 115123062500,
+            "execution": 115123062500
+          },
+          "stake_cost": {
+            "send_sir": 141715687500,
+            "send_not_sir": 141715687500,
+            "execution": 102217625000
+          },
+          "add_key_cost": {
+            "full_access_cost": {
+              "send_sir": 101765125000,
+              "send_not_sir": 101765125000,
+              "execution": 101765125000
+            },
+            "function_call_cost": {
+              "send_sir": 102217625000,
+              "send_not_sir": 102217625000,
+              "execution": 102217625000
+            },
+            "function_call_cost_per_byte": {
+              "send_sir": 1925331,
+              "send_not_sir": 1925331,
+              "execution": 1925331
+            }
+          },
+          "delete_key_cost": {
+            "send_sir": 94946625000,
+            "send_not_sir": 94946625000,
+            "execution": 94946625000
+          },
+          "delete_account_cost": {
+            "send_sir": 147489000000,
+            "send_not_sir": 147489000000,
+            "execution": 147489000000
+          }
+        },
+        "storage_usage_config": {
+          "num_bytes_account": 100,
+          "num_extra_bytes_record": 40
+        },
+        "burnt_gas_reward": [3, 10],
+        "pessimistic_gas_price_inflation_ratio": [103, 100]
+      },
+      "wasm_config": {
+        "ext_costs": {
+          "base": 264768111,
+          "contract_compile_base": 35445963,
+          "contract_compile_bytes": 216750,
+          "read_memory_base": 2609863200,
+          "read_memory_byte": 3801333,
+          "write_memory_base": 2803794861,
+          "write_memory_byte": 2723772,
+          "read_register_base": 2517165186,
+          "read_register_byte": 98562,
+          "write_register_base": 2865522486,
+          "write_register_byte": 3801564,
+          "utf8_decoding_base": 3111779061,
+          "utf8_decoding_byte": 291580479,
+          "utf16_decoding_base": 3543313050,
+          "utf16_decoding_byte": 163577493,
+          "sha256_base": 4540970250,
+          "sha256_byte": 24117351,
+          "keccak256_base": 5879491275,
+          "keccak256_byte": 21471105,
+          "keccak512_base": 5811388236,
+          "keccak512_byte": 36649701,
+          "log_base": 3543313050,
+          "log_byte": 13198791,
+          "storage_write_base": 64196736000,
+          "storage_write_key_byte": 70482867,
+          "storage_write_value_byte": 31018539,
+          "storage_write_evicted_byte": 32117307,
+          "storage_read_base": 56356845750,
+          "storage_read_key_byte": 30952533,
+          "storage_read_value_byte": 5611005,
+          "storage_remove_base": 53473030500,
+          "storage_remove_key_byte": 38220384,
+          "storage_remove_ret_value_byte": 11531556,
+          "storage_has_key_base": 54039896625,
+          "storage_has_key_byte": 30790845,
+          "storage_iter_create_prefix_base": 0,
+          "storage_iter_create_prefix_byte": 0,
+          "storage_iter_create_range_base": 0,
+          "storage_iter_create_from_byte": 0,
+          "storage_iter_create_to_byte": 0,
+          "storage_iter_next_base": 0,
+          "storage_iter_next_key_byte": 0,
+          "storage_iter_next_value_byte": 0,
+          "touching_trie_node": 16101955926,
+          "promise_and_base": 1465013400,
+          "promise_and_per_promise": 5452176,
+          "promise_return": 560152386,
+          "validator_stake_base": 911834726400,
+          "validator_total_stake_base": 911834726400
+        },
+        "grow_mem_cost": 1,
+        "regular_op_cost": 3856371,
+        "limit_config": {
+          "max_gas_burnt": 200000000000000,
+          "max_gas_burnt_view": 200000000000000,
+          "max_stack_height": 16384,
+          "initial_memory_pages": 1024,
+          "max_memory_pages": 2048,
+          "registers_memory_limit": 1073741824,
+          "max_register_size": 104857600,
+          "max_number_registers": 100,
+          "max_number_logs": 100,
+          "max_total_log_length": 16384,
+          "max_total_prepaid_gas": 300000000000000,
+          "max_actions_per_receipt": 100,
+          "max_number_bytes_method_names": 2000,
+          "max_length_method_name": 256,
+          "max_arguments_length": 4194304,
+          "max_length_returned_data": 4194304,
+          "max_contract_size": 4194304,
+          "max_length_storage_key": 4194304,
+          "max_length_storage_value": 4194304,
+          "max_promises_per_function_call_action": 1024,
+          "max_number_input_data_dependencies": 128
+        }
+      },
+      "account_creation_config": {
+        "min_allowed_top_level_account_length": 0,
+        "registrar_account_id": "registrar"
+      }
+    },
+    "transaction_validity_period": 86400,
+    "protocol_reward_rate": [1, 10],
+    "max_inflation_rate": [1, 20],
+    "num_blocks_per_year": 31536000,
+    "protocol_treasury_account": "near",
+    "fishermen_threshold": "340282366920938463463374607431768211455",
+    "minimum_stake_divisor": 10
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/protocol#what-could-go-wrong-1) section.
+
+---
+
+## Network
+
+The API enables you to query status information for nodes and validators.
+
+### Validation status
+
+> Queries active validators on the network returning details and the state of validation on the blockchain.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `validators`.
+  * `params` (array; required):
+
+    * `["block hash"]`, `[block number]`, or `[null]` for the latest block.
+
+Note: For `["block hash"]` & `[block number]` you will need to query from the last block in an epoch.
+
+#### Request example (`["block number"]`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "validators",
+  "params": [17791098]
+}'
+```
+
+#### Request example (`["block hash"]`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "validators",
+  "params": ["FiG2nMjjue3YdgYAyM3ZqWXSaG6RJj5Gk7hvY8vrEoGw"]
+}'
+```
+
+#### Request example (`["null"]`)
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "validators",
+  "params": [null]
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "current_validators": [
+      {
+        "account_id": "01node.pool.f863973.m0",
+        "public_key": "ed25519:3iNqnvBgxJPXCxu6hNdvJso1PEAc1miAD35KQMBCA3aL",
+        "is_slashed": false,
+        "stake": "176429739989396285019500901780",
+        "shards": [0],
+        "num_produced_blocks": 213,
+        "num_expected_blocks": 213
+      },
+      {
+        "account_id": "alexandruast.pool.f863973.m0",
+        "public_key": "ed25519:A3XJ3uVGxSi9o2gnG2r8Ra3fqqodRpL4iuLTc6fNdGUj",
+        "is_slashed": false,
+        "stake": "151430394143736014372434860532",
+        "shards": [0],
+        "num_produced_blocks": 213,
+        "num_expected_blocks": 213
+      },
+      {
+        "account_id": "aquarius.pool.f863973.m0",
+        "public_key": "ed25519:8NfEarjStDYjJTwKUgQGy7Z7UTGsZaPhTUsExheQN3r1",
+        "is_slashed": false,
+        "stake": "130367563121508828296664196836",
+        "shards": [0],
+        "num_produced_blocks": 212,
+        "num_expected_blocks": 212
+      }
+    ],
+    "next_validators": [
+      {
+        "account_id": "01node.pool.f863973.m0",
+        "public_key": "ed25519:3iNqnvBgxJPXCxu6hNdvJso1PEAc1miAD35KQMBCA3aL",
+        "stake": "177341160716540400974121040893",
+        "shards": [0]
+      },
+      {
+        "account_id": "alexandruast.pool.f863973.m0",
+        "public_key": "ed25519:A3XJ3uVGxSi9o2gnG2r8Ra3fqqodRpL4iuLTc6fNdGUj",
+        "stake": "152212670433756011274558210225",
+        "shards": [0]
+      }
+    ],
+    "current_fishermen": [
+      {
+        "account_id": "staked.stakingpool",
+        "public_key": "ed25519:5VmCXxWepj22uFoKmrxk6DTiFa3fuTzDcwGxM8uUErpr",
+        "stake": "5957256918881889179239884296"
+      },
+      {
+        "account_id": "bisontrails.stakingpool",
+        "public_key": "ed25519:ED2v5KtScbk6aNjGcTn1YMDUu3EXfD5HPt1x6RiYBypk",
+        "stake": "7679439354334034871130713908"
+      }
+    ],
+    "next_fishermen": [
+      {
+        "account_id": "staked.stakingpool",
+        "public_key": "ed25519:5VmCXxWepj22uFoKmrxk6DTiFa3fuTzDcwGxM8uUErpr",
+        "stake": "5957256918881889179239884296"
+      },
+      {
+        "account_id": "bisontrails.stakingpool",
+        "public_key": "ed25519:ED2v5KtScbk6aNjGcTn1YMDUu3EXfD5HPt1x6RiYBypk",
+        "stake": "7679439354334034871130713908"
+      }
+    ],
+    "current_proposals": [
+      {
+        "account_id": "kytzu.pool.f863973.m0",
+        "public_key": "ed25519:61tgPZpy8tqFeAwG4vtf2ZKCRoENiP2A1TJVWEwnbxZU",
+        "stake": "114346100195275968419224582943"
+      },
+      {
+        "account_id": "nodeasy.pool.f863973.m0",
+        "public_key": "ed25519:25Dhg8NBvQhsVTuugav3t1To1X1zKiomDmnh8yN9hHMb",
+        "stake": "132333066144809013154670461579"
+      }
+    ],
+    "prev_epoch_kickout": [],
+    "epoch_start_height": 17754191,
+    "epoch_height": 321
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/network#what-could-go-wrong-2) section.
+
+---
+
+## Transactions
+
+The RPC API enables you to send transactions and query their status.
+
+### Send transaction (async)
+
+> Sends a transaction and immediately returns transaction hash.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `broadcast_tx_async`.
+  * `params` (array; required):
+
+    * `<SignedTransaction encoded in base64>`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "broadcast_tx_async",
+  "params": [
+    "DgAAAHNlbmRlci50ZXN0bmV0AOrmAai64SZOv9e/naX4W15pJx0GAap35wTT1T/DwcbbDwAAAAAAAAAQAAAAcmVjZWl2ZXIudGVzdG5ldNMnL7URB1cxPOu3G8jTqlEwlcasagIbKlAJlF5ywVFLAQAAAAMAAACh7czOG8LTAAAAAAAAAGQcOG03xVSFQFjoagOb4NBBqWhERnnz45LY4+52JgZhm1iQKz7qAdPByrGFDQhQ2Mfga8RlbysuQ8D8LlA6bQE="
+  ]
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "6zgh2u9DqHHiXzdy9ouTP7oGky2T4nugqzqt9wJZwNFm",
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/transactions#what-could-go-wrong) section.
+
+---
+
+### Send transaction (await)
+
+> Sends a transaction and waits until transaction is fully completed (has a 10-second timeout).
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `broadcast_tx_commit`.
+  * `params` (array; required):
+
+    * `<SignedTransaction encoded in base64>`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "broadcast_tx_commit",
+  "params": [
+    "DgAAAHNlbmRlci50ZXN0bmV0AOrmAai64SZOv9e/naX4W15pJx0GAap35wTT1T/DwcbbDQAAAAAAAAAQAAAAcmVjZWl2ZXIudGVzdG5ldIODI4YfV/QS++blXpQYT+bOsRblTRW4f547y/LkvMQ9AQAAAAMAAACh7czOG8LTAAAAAAAAAAXcaTJzu9GviPT7AD4mNJGY79jxTrjFLoyPBiLGHgBi8JK1AnhK8QknJ1ourxlvOYJA2xEZE8UR24THmSJcLQw="
+  ]
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "signer_id": "sender.testnet",
+      "public_key": "ed25519:Gowpa4kXNyTMRKgt5W7147pmcc2PxiFic8UHW9rsNvJ6",
+      "nonce": 13,
+      "receiver_id": "receiver.testnet",
+      "actions": [
+        {
+          "Transfer": {
+            "deposit": "1000000000000000000000000"
+          }
+        }
+      ],
+      "signature": "ed25519:7oCBMfSHrZkT7tzPDBxxCd3tWFhTES38eks3MCZMpYPJRfPWKxJsvmwQiVBBxRLoxPTnXVaMU2jPV3MdFKZTobH",
+      "hash": "ASS7oYwGiem9HaNwJe6vS2kznx2CxueKDvU9BAYJRjNR"
+    },
+    "transaction_outcome": {
+      "proof": [],
+      "block_hash": "9MzuZrRPW1BGpFnZJUJg6SzCrixPpJDfjsNeUobRXsLe",
+      "id": "ASS7oYwGiem9HaNwJe6vS2kznx2CxueKDvU9BAYJRjNR",
+      "outcome": {
+        "logs": [],
+        "receipt_ids": ["BLV2q6p8DX7pVgXRtGtBkyUNrnqkNyU7iSksXG7BjVZh"],
+        "gas_burnt": 223182562500,
+        "tokens_burnt": "22318256250000000000",
+        "executor_id": "sender.testnet",
+        "status": {
+          "SuccessReceiptId": "BLV2q6p8DX7pVgXRtGtBkyUNrnqkNyU7iSksXG7BjVZh"
+        }
+      }
+    },
+    "receipts_outcome": [
+      {
+        "proof": [],
+        "block_hash": "5Hpj1PeCi32ZkNXgiD1DrW4wvW4Xtic74DJKfyJ9XL3a",
+        "id": "BLV2q6p8DX7pVgXRtGtBkyUNrnqkNyU7iSksXG7BjVZh",
+        "outcome": {
+          "logs": [],
+          "receipt_ids": ["3sawynPNP8UkeCviGqJGwiwEacfPyxDKRxsEWPpaUqtR"],
+          "gas_burnt": 223182562500,
+          "tokens_burnt": "22318256250000000000",
+          "executor_id": "receiver.testnet",
+          "status": {
+            "SuccessValue": ""
+          }
+        }
+      },
+      {
+        "proof": [],
+        "block_hash": "CbwEqMpPcu6KwqVpBM3Ry83k6M4H1FrJjES9kBXThcRd",
+        "id": "3sawynPNP8UkeCviGqJGwiwEacfPyxDKRxsEWPpaUqtR",
+        "outcome": {
+          "logs": [],
+          "receipt_ids": [],
+          "gas_burnt": 0,
+          "tokens_burnt": "0",
+          "executor_id": "sender.testnet",
+          "status": {
+            "SuccessValue": ""
+          }
+        }
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/transactions#what-could-go-wrong-1) section.
+
+---
 
 ### Transaction status
 
-Queries status of a transaction by hash and returns the final transaction result.
+> Queries status of a transaction by hash and returns the final transaction result.
 
-method: tx
-params:
-transaction hash (see NEAR Explorer for a valid transaction hash)
-sender account id
+#### Parameters
 
-#### Example request 
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `tx`.
+  * `params` (array; required):
 
-```
-curl https://rpc.ankr.com/near \
-  -X POST \
-  -H "Content-Type: application/json" \
-   --data '{
+    * `transaction hash`
+    * `sender account id`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
   "jsonrpc": "2.0",
   "id": "dontcare",
   "method": "tx",
@@ -105,6 +2199,419 @@ curl https://rpc.ankr.com/near \
 }'
 ```
 
+#### Response example
 
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "signer_id": "sender.testnet",
+      "public_key": "ed25519:Gowpa4kXNyTMRKgt5W7147pmcc2PxiFic8UHW9rsNvJ6",
+      "nonce": 15,
+      "receiver_id": "receiver.testnet",
+      "actions": [
+        {
+          "Transfer": {
+            "deposit": "1000000000000000000000000"
+          }
+        }
+      ],
+      "signature": "ed25519:3168QMdTpcwHvM1dmMYBc8hg9J3Wn8n7MWBSE9WrEpns6P5CaY87RM6k4uzyBkQuML38CZhU18HzmQEevPG1zCvk",
+      "hash": "6zgh2u9DqHHiXzdy9ouTP7oGky2T4nugqzqt9wJZwNFm"
+    },
+    "transaction_outcome": {
+      "proof": [
+        {
+          "hash": "F7mL76CMdfbdZ3xCehVGNh1fCyaR37gr3MeGX3EZkiVf",
+          "direction": "Right"
+        }
+      ],
+      "block_hash": "ADTMLVtkhsvzUxuf6m87Pt1dnF5vi1yY7ftxmNpFx7y",
+      "id": "6zgh2u9DqHHiXzdy9ouTP7oGky2T4nugqzqt9wJZwNFm",
+      "outcome": {
+        "logs": [],
+        "receipt_ids": ["3dMfwczW5GQqXbD9GMTnmf8jy5uACxG6FC5dWxm3KcXT"],
+        "gas_burnt": 223182562500,
+        "tokens_burnt": "22318256250000000000",
+        "executor_id": "sender.testnet",
+        "status": {
+          "SuccessReceiptId": "3dMfwczW5GQqXbD9GMTnmf8jy5uACxG6FC5dWxm3KcXT"
+        }
+      }
+    },
+    "receipts_outcome": [
+      {
+        "proof": [
+          {
+            "hash": "6h95oEd7ih62KXfyPT4zsZYont4qy9sWEXc5VQVDhqtG",
+            "direction": "Right"
+          },
+          {
+            "hash": "6DnibgZk1T669ZprcehUy1GpCSPw1kjzXRGu69nSaUNn",
+            "direction": "Right"
+          }
+        ],
+        "block_hash": "GgFTVr33r4MrpAiHc9mr8TZqLnpZAX1BaZTNvhBnciy2",
+        "id": "3dMfwczW5GQqXbD9GMTnmf8jy5uACxG6FC5dWxm3KcXT",
+        "outcome": {
+          "logs": [],
+          "receipt_ids": ["46KYgN8ddxs4Qy8C7BDQH49XUfcYZsaQmAvdU1nfcL9V"],
+          "gas_burnt": 223182562500,
+          "tokens_burnt": "22318256250000000000",
+          "executor_id": "receiver.testnet",
+          "status": {
+            "SuccessValue": ""
+          }
+        }
+      },
+      {
+        "proof": [
+          {
+            "hash": "CD9Y7Bw3MSFgaPZzpc1yP51ajhGDCAsR61qXcMNcRoHf",
+            "direction": "Left"
+          }
+        ],
+        "block_hash": "EGAgKuW6Bd6QKYSaxAkx2pPGmnjrjAcq4UpoUiqMXvPH",
+        "id": "46KYgN8ddxs4Qy8C7BDQH49XUfcYZsaQmAvdU1nfcL9V",
+        "outcome": {
+          "logs": [],
+          "receipt_ids": [],
+          "gas_burnt": 0,
+          "tokens_burnt": "0",
+          "executor_id": "sender.testnet",
+          "status": {
+            "SuccessValue": ""
+          }
+        }
+      }
+    ]
+  },
+  "id": "dontcare"
+}
+```
 
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/transactions#what-could-go-wrong-2) section.
 
+---
+
+### Transaction status with receipts
+
+> Queries status of a transaction by hash, returning the final transaction result and details of all receipts.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_tx_status`.
+  * `params` (array; required):
+
+    * `transaction hash`
+    * `sender account id` (used to determine which shard to query for transaction)
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_tx_status",
+  "params": ["HEgnVQZfs9uJzrqTob4g2Xmebqodq9waZvApSkrbcAhd", "bowen"]
+}'
+```
+
+#### Response example
+
+```json
+{
+  "id": "123",
+  "jsonrpc": "2.0",
+  "result": {
+    "receipts": [
+      {
+        "predecessor_id": "bowen",
+        "receipt": {
+          "Action": {
+            "actions": [
+              {
+                "FunctionCall": {
+                  "args": "eyJhbW91bnQiOiIxMDAwIiwicmVjZWl2ZXJfaWQiOiJib3dlbiJ9",
+                  "deposit": "0",
+                  "gas": 100000000000000,
+                  "method_name": "transfer"
+                }
+              }
+            ],
+            "gas_price": "186029458",
+            "input_data_ids": [],
+            "output_data_receivers": [],
+            "signer_id": "bowen",
+            "signer_public_key": "ed25519:2f9Zv5kuyuPM5DCyEP5pSqg58NQ8Ct9uSRerZXnCS9fK"
+          }
+        },
+        "receipt_id": "FXMVxdhSUZaZftbmPJWaoqhEB9GrKB2oqg9Wgvuyvom8",
+        "receiver_id": "evgeny.lockup.m0"
+      },
+      {
+        "predecessor_id": "evgeny.lockup.m0",
+        "receipt": {
+          "Action": {
+            "actions": [
+              {
+                "Transfer": {
+                  "deposit": "1000"
+                }
+              }
+            ],
+            "gas_price": "186029458",
+            "input_data_ids": [],
+            "output_data_receivers": [],
+            "signer_id": "bowen",
+            "signer_public_key": "ed25519:2f9Zv5kuyuPM5DCyEP5pSqg58NQ8Ct9uSRerZXnCS9fK"
+          }
+        },
+        "receipt_id": "3Ad7pUygUegMUWUb1rEazfjnTaHfptXCABqKQ6WNq6Wa",
+        "receiver_id": "bowen"
+      },
+      {
+        "predecessor_id": "system",
+        "receipt": {
+          "Action": {
+            "actions": [
+              {
+                "Transfer": {
+                  "deposit": "19200274886926125000"
+                }
+              }
+            ],
+            "gas_price": "0",
+            "input_data_ids": [],
+            "output_data_receivers": [],
+            "signer_id": "bowen",
+            "signer_public_key": "ed25519:2f9Zv5kuyuPM5DCyEP5pSqg58NQ8Ct9uSRerZXnCS9fK"
+          }
+        },
+        "receipt_id": "5DdQg9pfoJMX1q6bvhsjyyRihzA3sb9Uq5K1J7vK43Ze",
+        "receiver_id": "bowen"
+      },
+      {
+        "predecessor_id": "system",
+        "receipt": {
+          "Action": {
+            "actions": [
+              {
+                "Transfer": {
+                  "deposit": "18663792669276228632284"
+                }
+              }
+            ],
+            "gas_price": "0",
+            "input_data_ids": [],
+            "output_data_receivers": [],
+            "signer_id": "bowen",
+            "signer_public_key": "ed25519:2f9Zv5kuyuPM5DCyEP5pSqg58NQ8Ct9uSRerZXnCS9fK"
+          }
+        },
+        "receipt_id": "FDp8ovTf5uJYDFemW5op6ebjCT2n4CPExHYie3S1h4qp",
+        "receiver_id": "bowen"
+      }
+    ],
+    "receipts_outcome": [
+      {
+        "block_hash": "HuqYrYsC7h2VERFMgFkqaNqSiFuTH9CA3uJr3BkyNxhF",
+        "id": "FXMVxdhSUZaZftbmPJWaoqhEB9GrKB2oqg9Wgvuyvom8",
+        "outcome": {
+          "executor_id": "evgeny.lockup.m0",
+          "gas_burnt": 3493189769144,
+          "logs": ["Transferring 1000 to account @bowen"],
+          "receipt_ids": [
+            "3Ad7pUygUegMUWUb1rEazfjnTaHfptXCABqKQ6WNq6Wa",
+            "FDp8ovTf5uJYDFemW5op6ebjCT2n4CPExHYie3S1h4qp"
+          ],
+          "status": {
+            "SuccessReceiptId": "3Ad7pUygUegMUWUb1rEazfjnTaHfptXCABqKQ6WNq6Wa"
+          },
+          "tokens_burnt": "349318976914400000000"
+        },
+        "proof": [
+          {
+            "direction": "Right",
+            "hash": "5WwHEszBcpfrHnt2VTvVDVnEEACNq5EpQdjz1aW9gTAa"
+          }
+        ]
+      },
+      {
+        "block_hash": "DJ6oK5FtPPSwksS6pKdEjFvHWAaSVocnVNLoyi8aYk1k",
+        "id": "3Ad7pUygUegMUWUb1rEazfjnTaHfptXCABqKQ6WNq6Wa",
+        "outcome": {
+          "executor_id": "bowen",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "receipt_ids": ["5DdQg9pfoJMX1q6bvhsjyyRihzA3sb9Uq5K1J7vK43Ze"],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "22318256250000000000"
+        },
+        "proof": [
+          {
+            "direction": "Right",
+            "hash": "CXSXmKpDU8R3UUrBAsffWMeGfKanKqEHCQrHeZkR3RKT"
+          },
+          {
+            "direction": "Right",
+            "hash": "2dNo7A1VHKBmMA86m1k3Z9DVXwWgQJGkKGRg8wUR3co9"
+          }
+        ]
+      },
+      {
+        "block_hash": "9cjUoqAksMbs7ZJ4CXiuwm8vppz9QctTwGmgwZ5mDmUA",
+        "id": "5DdQg9pfoJMX1q6bvhsjyyRihzA3sb9Uq5K1J7vK43Ze",
+        "outcome": {
+          "executor_id": "bowen",
+          "gas_burnt": 0,
+          "logs": [],
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": []
+      },
+      {
+        "block_hash": "DJ6oK5FtPPSwksS6pKdEjFvHWAaSVocnVNLoyi8aYk1k",
+        "id": "FDp8ovTf5uJYDFemW5op6ebjCT2n4CPExHYie3S1h4qp",
+        "outcome": {
+          "executor_id": "bowen",
+          "gas_burnt": 0,
+          "logs": [],
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": [
+          {
+            "direction": "Left",
+            "hash": "A2Ry6NCeuK8WhRCWc41hy6uddadc5nLJ1NBX5wVYo3Yb"
+          },
+          {
+            "direction": "Right",
+            "hash": "2dNo7A1VHKBmMA86m1k3Z9DVXwWgQJGkKGRg8wUR3co9"
+          }
+        ]
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        {
+          "FunctionCall": {
+            "args": "eyJhbW91bnQiOiIxMDAwIiwicmVjZWl2ZXJfaWQiOiJib3dlbiJ9",
+            "deposit": "0",
+            "gas": 100000000000000,
+            "method_name": "transfer"
+          }
+        }
+      ],
+      "hash": "HEgnVQZfs9uJzrqTob4g2Xmebqodq9waZvApSkrbcAhd",
+      "nonce": 77,
+      "public_key": "ed25519:2f9Zv5kuyuPM5DCyEP5pSqg58NQ8Ct9uSRerZXnCS9fK",
+      "receiver_id": "evgeny.lockup.m0",
+      "signature": "ed25519:5v1hJuw5RppKGezJHBFU6z3hwmmdferETud9rUbwxVf6xSBAWyiod93Lezaq4Zdcp4zbukDusQY9PjhV47JVCgBx",
+      "signer_id": "bowen"
+    },
+    "transaction_outcome": {
+      "block_hash": "9RX2pefXKw8M4EYjLznDF3AMvbkf9asAjN8ACK7gxKsa",
+      "id": "HEgnVQZfs9uJzrqTob4g2Xmebqodq9waZvApSkrbcAhd",
+      "outcome": {
+        "executor_id": "bowen",
+        "gas_burnt": 2428026088898,
+        "logs": [],
+        "receipt_ids": ["FXMVxdhSUZaZftbmPJWaoqhEB9GrKB2oqg9Wgvuyvom8"],
+        "status": {
+          "SuccessReceiptId": "FXMVxdhSUZaZftbmPJWaoqhEB9GrKB2oqg9Wgvuyvom8"
+        },
+        "tokens_burnt": "242802608889800000000"
+      },
+      "proof": [
+        {
+          "direction": "Right",
+          "hash": "DXf4XVmAF5jnjZhcxi1CYxGPuuQrcAmayq9X5inSAYvJ"
+        }
+      ]
+    }
+  }
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/transactions#what-could-go-wrong-3) section.
+
+---
+
+### Receipt by ID
+
+> Retrieves a receipt by its ID (as is, without a status or execution outcome).
+
+#### Parameters
+
+  * `id` (integer; required): a request ID; unlike other chains, NEAR "dontcare" about a number you use (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request — `EXPERIMENTAL_receipt`.
+  * `params` (array; required):
+
+    * `receipt id`
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "EXPERIMENTAL_receipt",
+  "params": { "receipt_id": "2EbembRPJhREPtmHCrGv3Xtdm3xoc5BMVYHm3b2kjvMY" }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "id": "dontcare",
+  "jsonrpc": "2.0",
+  "result": {
+    "predecessor_id": "bohdan.testnet",
+    "receipt": {
+      "Action": {
+        "actions": [
+          {
+            "Transfer": {
+              "deposit": "1000000000000000000000000"
+            }
+          }
+        ],
+        "gas_price": "103000000",
+        "input_data_ids": [],
+        "output_data_receivers": [],
+        "signer_id": "bohdan.testnet",
+        "signer_public_key": "ed25519:DhC7rPNTBwWJtmVXs1U1SqJztkn9AWbj6jCmQtkrg3TA"
+      }
+    },
+    "receipt_id": "2EbembRPJhREPtmHCrGv3Xtdm3xoc5BMVYHm3b2kjvMY",
+    "receiver_id": "frol.testnet"
+  }
+}
+```
+
+For understanding what could go wrong and the error codes involved, refer to corresponding NEAR [docs](https://docs.near.org/api/rpc/transactions#what-could-go-wrong-4) section.
