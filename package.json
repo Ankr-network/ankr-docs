@@ -2,7 +2,7 @@
   "name": "docs",
   "private": true,
   "scripts": {
-    "build": "export NODE_OPTIONS='--max_old_space_size=256' && npm run update-strapi-faq-files && next build && next export",
+    "build": "npm run update-strapi-faq-files && NODE_OPTIONS='--max_old_space_size=4096' next build && next export",
     "debug": "NODE_OPTIONS='--inspect' next",
     "dev": "npm run update-strapi-faq-files && next",
     "start": "npm run update-strapi-faq-files && next start",
