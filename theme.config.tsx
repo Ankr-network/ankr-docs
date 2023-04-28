@@ -1,8 +1,6 @@
 import type { DocsThemeConfig} from 'nextra-theme-docs';
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
-import AnkrLogo from "./public/logo/ankr-docs-with-logo.svg";
-import NextraFooter from "./public/logo/nextra-footer.svg";
 
 const config: DocsThemeConfig = {
   project: {
