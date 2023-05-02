@@ -13,12 +13,12 @@ This docs section provides the list of all chains available on [RPC Service](htt
 
 |                         |           |              |   |     |    |
 |-----------------------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------|
-| [Aptos](/rpc-service/chains/chains-list/#aptos)                       | [Celo](/rpc-service/chains/chains-list/#celo)         | [Harmony](/rpc-service/chains/chains-list/#harmony)            | [Metis](/rpc-service/chains/chains-list/#metis)       | [Polygon](/rpc-service/chains/chains-list/#polygon)               | [TRON](/rpc-service/chains/chains-list/#tron)           |
-| [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)                 | [Ethereum](/rpc-service/chains/chains-list/#ethereum) | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [ZetaChain](/rpc-service/chains/chains-list/#zetachain) |
-| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)       | [Beacon](/rpc-service/chains/chains-list/#beacon)     | [IoTeX](/rpc-service/chains/chains-list/#iotex)                | [NEAR](/rpc-service/chains/chains-list/#near)         | [Rollux](/rpc-service/chains/chains-list/#rollux)                 |                                                         |
-| [Avalanche](/rpc-service/chains/chains-list/#avalanche)               | [Fantom](/rpc-service/chains/chains-list/#fantom)     | [Klaytn](/rpc-service/chains/chains-list/#klaytn)              | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Secret Network](/rpc-service/chains/chains-list/#secret-network) |                                                         |
-| [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)   | [Filecoin](/rpc-service/chains/chains-list/#filecoin) | [Kusama](/rpc-service/chains/chains-list/#kusama)              | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Solana](/rpc-service/chains/chains-list/#solana)                 |                                                         |
-| [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Gnosis](/rpc-service/chains/chains-list/#gnosis)     | [Mantle](/rpc-service/chains/chains-list/#mantle)              | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                         |
+| [Aptos](/rpc-service/chains/chains-list/#aptos)                     | [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Filecoin](/rpc-service/chains/chains-list/#filecoin)          | [Kusama](/rpc-service/chains/chains-list/#kusama)     | [Optimism](/rpc-service/chains/chains-list/#optimism)             | [Solana](/rpc-service/chains/chains-list/#solana)       |
+| [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)               | [Celo](/rpc-service/chains/chains-list/#celo)                         | [Harmony](/rpc-service/chains/chains-list/#harmony)            | [Metis](/rpc-service/chains/chains-list/#metis)       | [Polygon](/rpc-service/chains/chains-list/#polygon)               | [Syscoin](/rpc-service/chains/chains-list/#syscoin)     |
+| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)     | [Ethereum](/rpc-service/chains/chains-list/#ethereum)                 | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [TRON](/rpc-service/chains/chains-list/#tron)           |
+| [Avalanche](/rpc-service/chains/chains-list/#avalanche)             | [Beacon](/rpc-service/chains/chains-list/#beacon)                     | [IoTeX](/rpc-service/chains/chains-list/#iotex)                | [NEAR](/rpc-service/chains/chains-list/#near)         | [Rollux](/rpc-service/chains/chains-list/#rollux)                 | [ZetaChain](/rpc-service/chains/chains-list/#zetachain) |
+| [Base](/rpc-service/chains/chains-list/#base)                       | [Fantom](/rpc-service/chains/chains-list/#fantom)                     | [Klaytn](/rpc-service/chains/chains-list/#klaytn)              | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Scroll](/rpc-service/chains/chains-list/#scroll)                 |                                                         |
+| [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain) | [Gnosis](/rpc-service/chains/chains-list/#gnosis)                     | [Mantle](/rpc-service/chains/chains-list/#mantle)              | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [Secret Network](/rpc-service/chains/chains-list/#secret-network) |                                                         |
 
 ## Aptos
 
@@ -507,6 +507,57 @@ def test_block_number(self):
   "id":1
 }
 ```
+
+---
+
+## Base
+
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
+
+Base is a secure, low-cost, developer-friendly Ethereum L2 built to bring the next billion users to web3.
+
+Base is built on the [Bedrock](https://stack.optimism.io/docs/releases/bedrock/explainer/) release of the [OP Stack](https://stack.optimism.io/), which is designed from the ground up to be as close to Ethereum as possible. Because of this, there are very little differences when it comes to building on Base and Ethereum.
+
+However, there are still some minor discrepancies between the behavior of Base and Ethereum that you should be aware of when building apps on top of Base.
+
+These minor differences include:
+
+  * [Opcodes](https://stack.optimism.io/docs/releases/bedrock/differences/#opcode-differences)
+  * [Blocks](https://stack.optimism.io/docs/releases/bedrock/differences/#blocks)
+  * [Network specifications](https://stack.optimism.io/docs/releases/bedrock/differences/#network-specifications)
+  * [Transaction costs](https://stack.optimism.io/docs/releases/bedrock/differences/#transaction-costs)
+
+Official quick links: [Website](https://base.org/), [Docs](https://docs.base.org/), [GitHub](https://github.com/base-org)
+
+### Networks
+
+  * Testnet (`HTTPS` and `WSS`)
+
+### API methods
+
+For Base, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
 
 ---
 
@@ -4037,6 +4088,44 @@ def test_block_number(self):
   "result": "0x16bef5"
 }
 ```
+
+---
+
+## Scroll
+
+Scroll is a zkEVM-based zkRollup on Ethereum that enables native compatibility for existing Ethereum applications and tools.
+
+Official quick links: [Website](https://scroll.io/), [Docs](https://guide.scroll.io/), [GitHub](https://github.com/scroll-tech)
+
+### Networks
+
+  * Alpha Testnet (`HTTPS` and `WSS`)
+
+The Alpha Testnet consists of Ethereum's Goerli Testnet and the Scroll Alpha test network. Goerli is an Ethereum test network with PoS-based consensus, while Scroll Alpha is a zero-knowledge rollup testnet deployed on top of the former.
+
+### API methods
+
+For Scroll's Alpha Testnet, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+
+#### Unsupported
+
+<Callout type="warning">
+This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+</Callout>
+
+<Callout type="tip">
+If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
 
 ---
 
