@@ -1,11 +1,17 @@
 import { Callout } from "components";
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Scroll
+# Base
 
-Scroll is a zkEVM-based zkRollup on Ethereum that enables native compatibility for existing Ethereum applications and tools.
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
 
-In order for your Web3 application to interact with Scroll — either by reading blockchain data or sending transactions to the network — it must connect to a Scroll node. Developers interact with the blockchain using the methods provided by the API.
+Base is a secure, low-cost, developer-friendly Ethereum L2 built to bring the next billion users to web3.
+
+Base is built on the [Bedrock](https://stack.optimism.io/docs/releases/bedrock/explainer/) release of the [OP Stack](https://stack.optimism.io/), which is designed from the ground up to be as close to Ethereum as possible. Because of this, there are very little differences when it comes to building on Base and Ethereum.
+
+In order for your Web3 application to interact with Base — either by reading blockchain data or sending transactions to the network — it must connect to a Base node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
@@ -13,34 +19,34 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 
 ## Methods supported
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/scroll/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/scroll/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/scroll/#net_version) — returns the current network ID.
-  * [`net_listening`](/rpc-service/chains/chains-api/scroll/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/scroll/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/scroll/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/scroll/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/scroll/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/scroll/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/scroll/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/scroll/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/scroll/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/scroll/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/scroll/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/scroll/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/scroll/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/scroll/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/scroll/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/scroll/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/scroll/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/scroll/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/scroll/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/scroll/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/scroll/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/scroll/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/scroll/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/scroll/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/scroll/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/base/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/base/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/base/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/base/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/base/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/base/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/base/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/base/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/base/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/base/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/base/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/base/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/base/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/base/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/base/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/base/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/base/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/base/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/base/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/base/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/base/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/base/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/base/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/base/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/base/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/base/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/base/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/base/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -62,7 +68,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -78,7 +84,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "Geth/v3.1.2-alpha-b986f1ea/linux-amd64/go1.20"
+    "result": "Geth/v0.1.0-unstable-11f0554a-20230321/linux-amd64/go1.19.7"
 }
 ```
 
@@ -104,7 +110,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -144,7 +150,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -160,7 +166,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "534353"
+    "result": "84531"
 }
 ```
 
@@ -184,7 +190,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -227,7 +233,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -281,7 +287,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -297,7 +303,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xf4240"
+    "result": "0x59682f31"
 }
 ```
 
@@ -321,7 +327,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -363,7 +369,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -379,7 +385,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x1bd107"
+    "result": "0x3c7362"
 }
 ```
 
@@ -411,12 +417,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBalance",
-      "params": ["0xED628DB74acC951d6B622BA37836cE7115aD0D3E", "latest"],
+      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "latest"],
       "id": 1
     }'
 ```
@@ -427,7 +433,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x0"
+    "result": "0x3782dace9d90000"
 }
 ```
 
@@ -461,12 +467,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getStorageAt",
-      "params": ["0x2A0529679712FE748E948B03B2c6A25D71cedC7E", "0x0", "latest"],
+      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "0x0", "latest"],
       "id": 1
     }'
 ```
@@ -510,12 +516,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionCount",
-      "params": ["0x6186d5Fbd5437E2E1884d12eFde897850C12c1b4", "latest"],
+      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "latest"],
       "id": 1
     }'
 ```
@@ -526,7 +532,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x281"
+    "result": "0x1"
 }
 ```
 
@@ -552,12 +558,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByHash",
-      "params": ["0x63d3e62c42e9e6249835fc493167189e5b0a44e4ffea04096aee169686776084"],
+      "params": ["0x44a64e8765b4c3980711cc7bd89dae8569dcd79cad282323b33619233c8bfec1"],
       "id": 1
     }'
 ```
@@ -568,7 +574,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "null"
+    "result": "0x8"
 }
 ```
 
@@ -599,12 +605,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["latest"],
+      "params": ["0x3C73DC"],
       "id": 1
     }'
 ```
@@ -615,7 +621,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x3"
+    "result": "0x8"
 }
 ```
 
@@ -641,12 +647,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0x63d3e62c42e9e6249835fc493167189e5b0a44e4ffea04096aee169686776084"],
+      "params": ["0x44a64e8765b4c3980711cc7bd89dae8569dcd79cad282323b33619233c8bfec1"],
       "id": 1
     }'
 ```
@@ -657,7 +663,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "null"
+    "result": "0x0"
 }
 ```
 
@@ -688,12 +694,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockNumber",
-      "params": ["latest"],
+      "params": ["0x3C73DC"],
       "id": 1
     }'
 ```
@@ -736,12 +742,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getCode",
-      "params": ["0x3418eaFea1B214E419Bf8D90D94d33348e85577C", "latest"],
+      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "latest"],
       "id": 1
     }'
 ```
@@ -775,12 +781,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/scroll/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/base/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -835,12 +841,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_call",
-    "params": [{"from":null,"to":"0xce95205Bd0C62b07632a58Ce014DF56a8826C895","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "params": [{"from":null,"to":"0x4200000000000000000000000000000000000006","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
     "id": 1
 }'
 ```
@@ -892,12 +898,12 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_estimateGas",
-    "params": [{"to":"0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"}],
+    "params": [{"to":"0x57b3a84E18d6302E2482841a1Bc9839Ab172b26F"}],
     "id": 1
 }'
 ```
@@ -954,12 +960,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByHash",
-      "params": ["0xa27ed65225f17e52e37fe17179c7555ef7872f327b207003052526f8984bc555", false],
+      "params": ["0x4389f44951cf44a521dd07c5e246ddd396212194ae72cd5c707661209dca1881", false],
       "id": 1
     }'
 ```
@@ -971,29 +977,32 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "baseFeePerGas": "0x7",
+        "baseFeePerGas": "0x31",
         "difficulty": "0x0",
         "extraData": "0x",
-        "gasLimit": "0x1dcd6500",
-        "gasUsed": "0xbf3e21",
-        "hash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "logsBloom": "0x00000000000000000000000000000000800000000000000000000000100000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000002000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xfe5c98dc6083eacfe955c095880335ca1ab7e89f",
-        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "gasLimit": "0x17d7840",
+        "gasUsed": "0x94012",
+        "hash": "0x4389f44951cf44a521dd07c5e246ddd396212194ae72cd5c707661209dca1881",
+        "logsBloom": "0x00000000000000000000000000000000000000000400040000000000000000000000004000000000000001000000000000000000000000000100000000000000000000000000020800000008000000000000000000000000000000000000000004000000028040004000000000008800200000000000000000000110200100200008800000000040000000000000800000000000000000000002000000000000000000000000000000000000000000000000000000004000000000000000000000000002000000000000000000000008000000000000200000000000000820000001000000000000000000000000800000000000000000000008000000000000",
+        "miner": "0x4200000000000000000000000000000000000011",
+        "mixHash": "0x7180a31b9dd9cee2c54b01e8f2159f8f319344a6bef98ddb2ba1c7aa7b6f7881",
         "nonce": "0x0000000000000000",
-        "number": "0x258d48",
-        "parentHash": "0x20e6410c7730e15a294f008ba67803c48b6945c7159e5b95fff24d362fa587fa",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "number": "0x3c755c",
+        "parentHash": "0xd101d2af1b670fbe88eb0defb057cc4c0384df350edbe771a6a199e7898f9d65",
+        "receiptsRoot": "0x70f185eb69e67c0c084b299237c1503198cc1b7b7c27f4cf1279595a16cc038b",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x57d0",
-        "stateRoot": "0x9da992aa17632dab93e1679d2fdd1610bbc63e20f0584f2bce3a7b006704f2c8",
-        "timestamp": "0x6442808d",
+        "size": "0x7e8",
+        "stateRoot": "0x15f9c468bc700599a24a230e60847f50e689617b033b27f371f703a91e3e5dc6",
+        "timestamp": "0x645257c8",
         "totalDifficulty": "0x0",
         "transactions": [
-            "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-            "0xffed7a903eb8e35dee7fc6fb0958d17e9f45abae74b47e7876640b9d81852a25"
+            "0xf14686c9327d897ab5b0754b18cea248cf08a9caa3c9d7c98e73690d46d2cb39",
+            "0xc263dd53e1aaaabb951c49cfd4aa7a9e1251b0c5db1ad00226d72870f08c8d78",
+            "0xbb7ee1471cfd836d759e1df26b5726a3f6250459e1f0bc34fc3818f7f7736c3b",
+            "0x023fb744a61685e453db52bd35473c8593ecdf57e6642146c8de60a5cf642396",
+            "0xf4c8bfb6c3e9eefa28f297bdab17954e1e74532df3bd8c71e87c257408f56bea"
         ],
-        "transactionsRoot": "0xa5dbf4dd415d4b17dbb49ed09ef5228fa4311fc66e713ca3e8251d1f7cd7a1f2",
+        "transactionsRoot": "0x1c21ae0871abb6a8a1fc9b5e5d3b5d10b840903f628dfdf18da8b02fd16c972f",
         "uncles": []
     }
 }
@@ -1046,7 +1055,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1063,32 +1072,30 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "difficulty": "0x2",
-        "extraData": "0xd983030102846765746889676f312e31382e3130856c696e7578000000000000162454003bbc8571ef43bd352a9b2c6df90dfdbe66d2942b8b3209c01821e2d67fc7c8f3abde5c06358d36e9c7f4711fd847c0781ee5aa9271169fca4577365900",
-        "gasLimit": "0x7a1200",
-        "gasUsed": "0x2350bd",
-        "hash": "0xe07f4c85980a3f032456a52d8015eb1c33df87b5fedd2952fe0d81a34aaf98d9",
-        "logsBloom": "0x000000000000004000201018008000000000080002000001028020008000000000000100000000200000400000000100000000000002200004040001402010000080001000800c0800000008000800000001000000200000000000008000040000400000020000020000002200000820000000000800200000000010040944400000020048000000000000020000000000040001008000000001000000000000020000000080200000040000000200200020000000000000100000000000000800000002000008000020080008000000000000000000000000000000000020000010000000000040000020040000008000400080000200600000100000004a00",
-        "miner": "0x0000000000000000000000000000000000000000",
-        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "baseFeePerGas": "0x31",
+        "difficulty": "0x0",
+        "extraData": "0x",
+        "gasLimit": "0x17d7840",
+        "gasUsed": "0x25faa",
+        "hash": "0x798fb0b460166fffd7d53a2058d956220f7395387bf7a0eed0f5c4453444091f",
+        "logsBloom": "0x04200000000200000000000080000000020010000000000000200000000900000000000004000000000000000000000000000000000000000000000000008000000000000000000000280008000000200000000000000000040000008000000000000000000000000000000000000000000000040000000002000410000000000000000000000001400000000000000000200001000000080000004000000040000000000000000100000000000000000000000000000000400000000020000000800002008000000000000000000000000000000000001000000100000000000000000000000000000010000000000000000000000004400000000000000000",
+        "miner": "0x4200000000000000000000000000000000000011",
+        "mixHash": "0xc0400fc07af9edad173f52c217440a40dab619f7d138738b53f3370b1799440c",
         "nonce": "0x0000000000000000",
-        "number": "0x1bd335",
-        "parentHash": "0xd8153412ddb0d95a2eb4911f279ea1506318648061df37dacecc77bb1a80a5ba",
-        "receiptsRoot": "0x513a8f472f83f34893982bc3c012ab65d5b30b3491acf3ab92165244ffb230b1",
+        "number": "0x3c75f5",
+        "parentHash": "0xc84319dc3b967ba0484cdee4fbf2ac2897113cd836b3709ad9bfac938c5dde3b",
+        "receiptsRoot": "0x1d04113e9ccf95a9013827132a7d0e53d703d84f2e61b97b03a238dc5c83461f",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x2a2d",
-        "stateRoot": "0x2455bcdbb354e7684dfafa5a01b5360b24363578e494bfa050993780823cf498",
-        "timestamp": "0x64511d7e",
-        "totalDifficulty": "0x37a62c",
+        "size": "0x59e",
+        "stateRoot": "0x086ecac7b5f5cd70fbecda366472417c2a1e9fcad0575720b6934190b1315176",
+        "timestamp": "0x645258fa",
+        "totalDifficulty": "0x0",
         "transactions": [
-            "0x0c70bcb18492df1e2f9253af520ad9f7b4bbbf5d932503f421d62b692e254823",
-            "0x080615f071b01dfc549742805650c141d9af344b1d0e63320cdcbce9e2ea33c4",
-            "0x327b5bbba0d96b64ab3702f900d745ae03c936b885a33eed3a66f0d73d5707fc",
-            "0x9e17acdc0d315a25ba92ad50036ff415a01ecf92457aa7fedf2a4c82b3ae7a3c",
-            "0x574fd33b9eb85f35dd8930f230cb4719c4e1e5a3a0a3ec414a4947df1fb8c363",
-            "0x28bb7b06b6d5f1253440db05922643af50ebfac4bc1054c27701320720b3b84a"
+            "0xb3b523a38b8d61fe578d83714b829c23213892d882df12ed914868c1b1e7ada6",
+            "0x6b3f47444637df1ca316601dc870fc09298bc35ebb3995e597a91768d093d48f",
+            "0xfb114453c2105430fc4e522171b10eb772b1ae4931b7e30cb3fef2dd31e92868"
         ],
-        "transactionsRoot": "0x9c42d059812cd46eb8a7cade5d17dbc3fa952dfec1729948b24b77828950fb2f",
+        "transactionsRoot": "0xaaaca0a01bd4561f88176f56f0ec5706798376b147b3084cdd34eb47ddadc031",
         "uncles": []
     }
 }
@@ -1129,12 +1136,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0x56bd9725a88d6c921be73989a9b07aa510aea960bed3fe1e4a2079e5a7080866"],
+      "params": ["0xbb7ee1471cfd836d759e1df26b5726a3f6250459e1f0bc34fc3818f7f7736c3b"],
       "id": 1
     }'
 ```
@@ -1146,25 +1153,23 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "blockNumber": "0x258d48",
-        "from": "0x2bcfe12a949267e3da5874e44554b29fa4b753e6",
-        "gas": "0x5208",
-        "gasPrice": "0x59682f07",
-        "maxFeePerGas": "0x59682f0e",
-        "maxPriorityFeePerGas": "0x59682f00",
-        "hash": "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
+        "blockHash": "0x4389f44951cf44a521dd07c5e246ddd396212194ae72cd5c707661209dca1881",
+        "blockNumber": "0x3c755c",
+        "from": "0x57b3a84e18d6302e2482841a1bc9839ab172b26f",
+        "gas": "0x186a0",
+        "gasPrice": "0x0",
+        "hash": "0xbb7ee1471cfd836d759e1df26b5726a3f6250459e1f0bc34fc3818f7f7736c3b",
         "input": "0x",
-        "nonce": "0x1495",
-        "to": "0xce95205bd0c62b07632a58ce014df56a8826c895",
-        "transactionIndex": "0x0",
-        "value": "0x29a2241af62c0000",
-        "type": "0x2",
-        "accessList": [],
-        "chainId": "0x1b59",
-        "v": "0x1",
-        "r": "0xe792908cf13aaf7feb3647a5f6dbcb43b792044193e7fe2f3b072fe3e0b2c9f5",
-        "s": "0x71e89e72e509dd7d9f21c522ae4c4511d2016fc1ccb988fbb6b6c81736ffc1a5"
+        "nonce": "0x0",
+        "to": "0x57b3a84e18d6302e2482841a1bc9839ab172b26f",
+        "transactionIndex": "0x2",
+        "value": "0x21ec894ca2f7b800",
+        "type": "0x7e",
+        "v": "0x0",
+        "r": "0x0",
+        "s": "0x0",
+        "sourceHash": "0x4b34328ff3466ddda82a19e849e6724e03cae75075709ec600c7d8bf6c7b5e9b",
+        "mint": "0x21ec894ca2f7b800"
     }
 }
 ```
@@ -1205,12 +1210,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockHashAndIndex",
-      "params": ["0x78a2ee41bf3e3aa90ca86a417a570dae0b7a2fb6d07e930a8863b113714b28aa", "0x0"],
+      "params": ["0x4389f44951cf44a521dd07c5e246ddd396212194ae72cd5c707661209dca1881", "0x0"],
       "id": 1
     }'
 ```
@@ -1222,25 +1227,24 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "blockNumber": "0x258d48",
-        "from": "0x2bcfe12a949267e3da5874e44554b29fa4b753e6",
-        "gas": "0x5208",
-        "gasPrice": "0x59682f07",
-        "maxFeePerGas": "0x59682f0e",
-        "maxPriorityFeePerGas": "0x59682f00",
-        "hash": "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-        "input": "0x",
-        "nonce": "0x1495",
-        "to": "0xce95205bd0c62b07632a58ce014df56a8826c895",
+        "blockHash": "0x4389f44951cf44a521dd07c5e246ddd396212194ae72cd5c707661209dca1881",
+        "blockNumber": "0x3c755c",
+        "from": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "gas": "0x8f0d180",
+        "gasPrice": "0x0",
+        "hash": "0xf14686c9327d897ab5b0754b18cea248cf08a9caa3c9d7c98e73690d46d2cb39",
+        "input": "0x015d8eb90000000000000000000000000000000000000000000000000000000000885554000000000000000000000000000000000000000000000000000000006452579400000000000000000000000000000000000000000000000000000009abdfc80badc6a92f7b910d6eb19519df02d5f553acf1916705b5c8ffc363f19eae6378bb00000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d679b567db6187c0c8323fa982cfb88b74dbcc7000000000000000000000000000000000000000000000000000000000000083400000000000000000000000000000000000000000000000000000000000f4240",
+        "nonce": "0x0",
+        "to": "0x4200000000000000000000000000000000000015",
         "transactionIndex": "0x0",
-        "value": "0x29a2241af62c0000",
-        "type": "0x2",
-        "accessList": [],
-        "chainId": "0x1b59",
-        "v": "0x1",
-        "r": "0xe792908cf13aaf7feb3647a5f6dbcb43b792044193e7fe2f3b072fe3e0b2c9f5",
-        "s": "0x71e89e72e509dd7d9f21c522ae4c4511d2016fc1ccb988fbb6b6c81736ffc1a5"
+        "value": "0x0",
+        "type": "0x7e",
+        "v": "0x0",
+        "r": "0x0",
+        "s": "0x0",
+        "sourceHash": "0x8d211d9a6c156ad43a3330c0f07904f319936ae4eadf6d57cce64c1f52a569b1",
+        "mint": "0x0",
+        "isSystemTx": true
     }
 }
 ```
@@ -1286,7 +1290,7 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1303,21 +1307,24 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xc0dacceafa20dfa3b17d7eac4c92a1c9f634156cf4208634d962c330ff00c6d4",
-        "blockNumber": "0x1bd373",
-        "from": "0x9e88f77a3bad85f77d4d7a71ad5029921fb1a3bf",
-        "gas": "0x5eba",
-        "gasPrice": "0xf4240",
-        "hash": "0x3d495cd9c17914ad455070fce019e88a97c52fccc05f1488838a83150b903889",
-        "input": "0xd09de08a",
-        "nonce": "0x4f",
-        "to": "0x14cf6809d47a90774f3e454e22464e2208bcdbc2",
+        "blockHash": "0xa72d3db5dc554ec1eee6be321d3d7fa5eadf68ef19e1ddba2cbdde65bd049325",
+        "blockNumber": "0x3c764e",
+        "from": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "gas": "0x8f0d180",
+        "gasPrice": "0x0",
+        "hash": "0xfa21b7302972609248949646b06703f94010c724f1565949da1e050a56672504",
+        "input": "0x015d8eb9000000000000000000000000000000000000000000000000000000000088557000000000000000000000000000000000000000000000000000000000645259680000000000000000000000000000000000000000000000000000000d6a1b7750abf0a584e9f633edf00ea6ca61d6a845313965c3f39426e66ed959ba18f1c6d900000000000000000000000000000000000000000000000000000000000000020000000000000000000000002d679b567db6187c0c8323fa982cfb88b74dbcc7000000000000000000000000000000000000000000000000000000000000083400000000000000000000000000000000000000000000000000000000000f4240",
+        "nonce": "0x0",
+        "to": "0x4200000000000000000000000000000000000015",
         "transactionIndex": "0x0",
         "value": "0x0",
-        "type": "0x0",
-        "v": "0x104ec5",
-        "r": "0xd34890b17836c1bac4b93abc96dce2d02605dcfe4171da23737290d4acd0454b",
-        "s": "0x256c12db87e41e7fabfc9f26ca244570bc8687185cfb592c5e4973f7052dc450"
+        "type": "0x7e",
+        "v": "0x0",
+        "r": "0x0",
+        "s": "0x0",
+        "sourceHash": "0x0d55c4a6698e3facccbb99f7d27a091886a9c4286c36f2789b850b70e7f83a0c",
+        "mint": "0x0",
+        "isSystemTx": true
     }
 }
 ```
@@ -1363,12 +1370,12 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionReceipt",
-      "params": ["0x4f8f2af943f4772cc839630a0eee717ef772effd17108b71d3682f88397dc35c"],
+      "params": ["0xbb7ee1471cfd836d759e1df26b5726a3f6250459e1f0bc34fc3818f7f7736c3b"],
       "id": 1
     }'
 ```
@@ -1380,19 +1387,20 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "blockNumber": "0x258d48",
+        "blockHash": "0x4389f44951cf44a521dd07c5e246ddd396212194ae72cd5c707661209dca1881",
+        "blockNumber": "0x3c755c",
         "contractAddress": null,
-        "cumulativeGasUsed": "0x76b8ce",
-        "effectiveGasPrice": "0x59682f07",
-        "from": "0x2bcfe12a949267e3da5874e44554b29fa4b753e6",
-        "gasUsed": "0x5208",
+        "cumulativeGasUsed": "0x30d40",
+        "effectiveGasPrice": "0x0",
+        "from": "0x57b3a84e18d6302e2482841a1bc9839ab172b26f",
+        "gasUsed": "0x186a0",
         "logs": [],
         "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
         "status": "0x1",
-        "to": "0xce95205bd0c62b07632a58ce014df56a8826c895",
-        "transactionHash": "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-        "transactionIndex": "0x0"
+        "to": "0x57b3a84e18d6302e2482841a1bc9839ab172b26f",
+        "transactionHash": "0xbb7ee1471cfd836d759e1df26b5726a3f6250459e1f0bc34fc3818f7f7736c3b",
+        "transactionIndex": "0x2",
+        "type": "0x7e"
     }
 }
 ```
@@ -1439,12 +1447,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleByBlockHashAndIndex",
-      "params": ["0xe2e91bbe607850e420ddaf88c86cfb3b866d1720ab34ad3b6e210129aa4cb4b8", "0x0"],
+      "params": ["0xf54b65b1c0ba67b2fb64add9151df5a5f2ee6366e16c3e6f01adb4c9a2e58bdf", "0x0"],
       "id": 1
     }'
 ```
@@ -1493,7 +1501,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (quantity|tag): the hex value of a _block number_.
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
     2. `<string>` (quantity): the uncle's  index position.
 
 ### Returns
@@ -1522,12 +1535,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleByBlockNumberAndIndex",
-      "params": ["0x88402E", "0x0"],
+      "params": ["latest", "0x0"],
       "id": 1
     }'
 ```
@@ -1609,12 +1622,12 @@ curl -X POST https://rpc.ankr.com/scroll_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/base_goerli \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getLogs",
-      "params": [{"address": "0xB962416d5166BA33251a7c0516691dEfbC4F3416"}],
+      "params": [{"address": "0x647830A95A754BDFf41a75ff8786392760f17Fc4"}],
       "id": 1
     }'
 ```
