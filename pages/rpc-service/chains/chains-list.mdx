@@ -385,7 +385,12 @@ Congrats — you've just added Ankr as the blockchain provider for MetaMask to i
 
 ### API methods
 
-For Avalanche, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/avalanche/) except for those listed as unsupported.
+For Avalanche, we support blockchain interaction via the following methods:
+
+  * [Standard EVM methods](/rpc-service/chains/chains-api/avalanche/#evm-methods)
+  * [P-Chain methods](/rpc-service/chains/chains-api/avalanche/#p-chain-methods)
+  * [C-Chain methods](/rpc-service/chains/chains-api/avalanche/#c-chain-methods)
+  * [X-Chain methods](/rpc-service/chains/chains-api/avalanche/#x-chain-methods)
 
 #### Unsupported
 
@@ -413,7 +418,7 @@ For Avalanche, we support blockchain interaction via all the [applicable methods
 
 ### API querying
 
-#### Request example
+#### Request example (Standard EVM)
 
 <Tabs
   items={[
@@ -498,13 +503,120 @@ def test_block_number(self):
   </Tab>
 </Tabs>
 
-#### Response example
+#### Response example (Standard EVM)
 
 ```json
 {
   "jsonrpc":"2.0",
   "result":"0x155ea63",
   "id":1
+}
+```
+
+#### Request example (P-Chain)
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getBalance",
+    "params" :{
+      "address":"P-custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p"
+    }
+}'
+```
+
+#### Response example (P-Chain)
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "txID": "NUPLwbt2hsYxpQg4H2o451hmTWQ4JZx2zMzM4SinwtHgAdX1JLPHXvWSXEnpecStLj"
+  }
+}
+```
+
+#### Request example (C-Chain)
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avax.getAtomicTx",
+    "params" : {
+        "txID":"2GD5SRYJQr2kw5jE73trBFiAgVQyrCaeg223TaTyJFYXf2kPty",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example (C-Chain)
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "tx": "0x000000000000000030399d0775f450604bd2fbc49ce0c5c1c6dfeb2dc2acb8c92c26eeae6e6df4502b19d891ad56056d9c01f18f43f58b5c784ad07a4a49cf3d1f11623804b5cba2c6bf000000018212d6807a0ec9c1b26321418fe7a548180b5be728ce53fe7e98ab5755ed316100000001dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db00000005000003a352a382400000000100000000000000018db97c7cece249c2b98bdc0226cc4c2a57bf52fc000003a3529edd17dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db000000010000000900000001ead19377f015422fbb8731204fcf6d6879dd05146c2d5b5594e2fea2cb420b2f40bd457b71e279e547790b28fe5482f278c76cf39b2dce5c2e6c53352fe6827d002cc7d20d",
+    "encoding": "hex",
+    "blockHeight": "1"
+  },
+  "id": 1
+}
+```
+
+#### Request example (P-Chain)
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getBalance",
+    "params" :{
+      "address":"P-custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p"
+    }
+}'
+```
+
+#### Response example (P-Chain)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "balance": "30000000000000000",
+        "unlocked": "20000000000000000",
+        "lockedStakeable": "10000000000000000",
+        "lockedNotStakeable": "0",
+        "balances": {
+            "BUuypiq2wyuLMvyhzFXcPyxPMCgSp7eeDohhQRqTChoBjKziC": "30000000000000000"
+        },
+        "unlockeds": {
+            "BUuypiq2wyuLMvyhzFXcPyxPMCgSp7eeDohhQRqTChoBjKziC": "20000000000000000"
+        },
+        "lockedStakeables": {
+            "BUuypiq2wyuLMvyhzFXcPyxPMCgSp7eeDohhQRqTChoBjKziC": "10000000000000000"
+        },
+        "lockedNotStakeables": {},
+        "utxoIDs": [
+            {
+                "txID": "11111111111111111111111111111111LpoYY",
+                "outputIndex": 1
+            },
+            {
+                "txID": "11111111111111111111111111111111LpoYY",
+                "outputIndex": 0
+            }
+        ]
+    },
+    "id": 1
 }
 ```
 
