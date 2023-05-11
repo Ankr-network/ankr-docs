@@ -8,12 +8,18 @@ Avalanche is an ecosystem made up of three core Blockchains optimized for specif
 
 Avalanche was built specifically with Defi dApps and protocols in mind, focusing on security, low latency, and high throughput. Avalanche uses a novel consensus protocol by utilizing two different consensus mechanisms. The consensus protocol ensures a high degree of security and fast finality even with multiple chains running simultaneously.
 
+For Avalanche, we support the following APIs:
+
+  * [Standard EVM API](/rpc-service/chains/chains-api/avalanche/#evm-methods)
+  * [P-Chain API](/rpc-service/chains/chains-api/avalanche/#p-chain-methods)
+  * [C-Chain API](/rpc-service/chains/chains-api/avalanche/#c-chain-methods)
+  * [X-Chain API](/rpc-service/chains/chains-api/avalanche/#x-chain-methods)
+
 In order for your Web3 application to interact with the Avalanche blockchain — either by reading blockchain data or sending transactions to the network — it must connect to an Avalanche node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
 
-## Standard EVM API methods
-<br/>
+## EVM methods
 
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/avalanche/#web3_clientversion) — returns the current client version.
   * [`web3_sha3`](/rpc-service/chains/chains-api/avalanche/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
@@ -44,32 +50,29 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/avalanche/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
   * [`eth_getLogs`](/rpc-service/chains/chains-api/avalanche/#eth_getlogs) — returns logs matching the parameters specified.
 
-## C-Chain methods (under construction)
-
-## P-Chain methods (under construction)
-
-## X-Chain methods (under construction)
+  * [`eth_getAssetBalance`]() — retrieves the balance of first class Avalanche Native Tokens on the C-Chain (excluding AVAX, which must be fetched with eth_getBalance).
+  * [`eth_baseFee`]() — retrieves the base fee for the next block.
+  * [`eth_maxPriorityFeePerGas`]() — retrieves the priority fee needed to be included in a block.
+  * [`eth_getChainConfig`]() — retrieves chain config.
 
 ---
 
-## `web3_clientVersion`
+### `web3_clientVersion`
 
 > Returns the current client version.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>`: the current client version.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -82,7 +85,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -94,12 +97,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `web3_sha3`
+### `web3_sha3`
 
 > Returns Keccak-256 (not the standardized SHA3-256) of the given data.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -108,12 +110,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
     * `<string>` (data): the data to convert into a SHA3 hash.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (data): the SHA3 result of the given string.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -126,7 +127,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -138,24 +139,22 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `net_version`
+### `net_version`
 
 > Returns the current network ID.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>`: the current network ID.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -168,7 +167,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -180,24 +179,22 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `net_listening`
+### `net_listening`
 
 > Returns `true` if client is actively listening for network connections.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
-### Returns
-<br/>
+#### Returns
 
   * `<boolean>`: `true` when listening, otherwise `false`.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -210,7 +207,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -222,27 +219,25 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_syncing`
+### `eth_syncing`
 
 > Returns an object with data about the sync status or false.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
-### Returns
-<br/>
+#### Returns
 
   * `<object>`|`<boolean>`: an object with sync status data or FALSE, when not syncing:
     * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
     * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
     * `highestBlock` (quantity): the estimated highest block.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -255,7 +250,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example (syncing)
+#### Response example (syncing)
 
 ```json
 {
@@ -269,7 +264,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 }
 ```
 
-### Response example (not syncing)
+#### Response example (not syncing)
 
 ```json
 {
@@ -281,24 +276,22 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_gasPrice`
+### `eth_gasPrice`
 
 > Returns the current price per gas in wei.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the current gas price in wei.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -311,7 +304,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -323,24 +316,22 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_accounts`
+### `eth_accounts`
 
 > Returns a list of addresses owned by client.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
-### Returns
-<br/>
+#### Returns
 
   * `<array>` (string; data, 20 bytes): addresses owned by the client.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -353,7 +344,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -367,24 +358,22 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_blockNumber`
+### `eth_blockNumber`
 
 > Returns the number of most recent block.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the current block number the client is on.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -397,7 +386,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -409,12 +398,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getBalance`
+### `eth_getBalance`
 
 > Returns the balance of the account specified by address.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -429,12 +417,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the current balance in wei.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -447,7 +434,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -459,12 +446,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getStorageAt`
+### `eth_getStorageAt`
 
 > Returns the value from a storage position at an address specified.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -481,12 +467,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (data): the value at this storage position.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -499,7 +484,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -511,12 +496,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getTransactionCount`
+### `eth_getTransactionCount`
 
 > Returns the number of transactions sent from an address.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -532,12 +516,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the number of transactions send from this address.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -550,7 +533,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -562,12 +545,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getBlockTransactionCountByHash`
+### `eth_getBlockTransactionCountByHash`
 
 > Returns the number of transactions in a block specified by block hash.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -576,12 +558,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
     1. `<string>` (data, 32 bytes; required): a block hash.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the number of transactions in this block.
 
-### Request example:
+#### Request example:
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -594,7 +575,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -606,12 +587,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getBlockTransactionCountByNumber`
+### `eth_getBlockTransactionCountByNumber`
 
 > Returns the number of transactions in the block specified by number.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -625,12 +605,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the number of transactions in this block.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -643,7 +622,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -655,12 +634,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getUncleCountByBlockHash`
+### `eth_getUncleCountByBlockHash`
 
 > Returns the number of uncles in a block specified by block hash.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -669,12 +647,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
     1. `<string>` (data, 32 bytes): a block's hash.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the number of uncles in this block.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -687,7 +664,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -699,12 +676,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getUncleCountByBlockNumber`
+### `eth_getUncleCountByBlockNumber`
 
 > Returns the number of uncles in a block specified by block number.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -718,12 +694,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the number of uncles in this block.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/eth \
@@ -736,7 +711,7 @@ curl -X POST https://rpc.ankr.com/eth \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -748,12 +723,11 @@ curl -X POST https://rpc.ankr.com/eth \
 
 ---
 
-## `eth_getCode`
+### `eth_getCode`
 
 > Returns code at a given address.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -768,12 +742,11 @@ curl -X POST https://rpc.ankr.com/eth \
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (data): the code from the given address.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -786,7 +759,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -798,12 +771,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_sendRawTransaction`
+### `eth_sendRawTransaction`
 
 > Creates new message call transaction or a contract creation for signed transactions.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -812,14 +784,13 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
     1. `<string>` (data): the signed transaction data.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
 Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/avalanche/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -832,7 +803,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -844,12 +815,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_call`
+### `eth_call`
 
 > Executes a new message call immediately without creating a transaction on the blockchain.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -871,12 +841,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (hex encoded bytes): the return value of executed contract.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -889,7 +858,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -901,14 +870,13 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_estimateGas`
+### `eth_estimateGas`
 
 > Generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
 
 The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -930,12 +898,11 @@ The transaction will not be added to the blockchain. Note that the estimate may 
         * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
-### Returns
-<br/>
+#### Returns
 
   * `<string>` (quantity): the amount of gas used.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -948,7 +915,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -960,12 +927,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getBlockByHash`
+### `eth_getBlockByHash`
 
 > Returns information for the block specified by block hash.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -975,8 +941,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     1. `<string>` (data, 32 bytes): the block's hash.
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
 
-### Returns
-<br/>
+#### Returns
 
   * `<object>`: a block object, or null when no block was found:
       * `number` (string; quantity): the block number; null when it's a pending block.
@@ -999,7 +964,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
       * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
       * `uncles` (array of strings): an array of uncle hashes.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1012,7 +977,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1060,12 +1025,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getBlockByNumber`
+### `eth_getBlockByNumber`
 
 > Returns information for the block specified by block number.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1080,8 +1044,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
 
-### Returns
-<br/>
+#### Returns
 
   * `<object>`: a block object, or null when no block was found:
       * `number` (string; quantity): the block number; null when it's a pending block.
@@ -1104,7 +1067,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
       * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
       * `uncles` (array of strings): an array of uncle hashes.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1117,7 +1080,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1165,12 +1128,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getTransactionByHash`
+### `eth_getTransactionByHash`
 
 > Returns information on a transaction specified by transaction hash.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1179,8 +1141,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
     1. `<string>` (data, 32 bytes): a transaction hash.
 
-### Returns
-<br/>
+#### Returns
 
   * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
   * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
@@ -1197,7 +1158,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
   * `r` (string; quantity): ECDSA signature r.
   * `s` (string; quantity): ECDSA signature s.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1210,7 +1171,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1242,12 +1203,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getTransactionByBlockHashAndIndex`
+### `eth_getTransactionByBlockHashAndIndex`
 
 > Returns information on a transaction specified by block hash and transaction index position.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1257,8 +1217,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     1. `<string>` (data, 32 bytes): a block hash.
     2. `<string>` (quantity): a transaction index position.
 
-### Returns
-<br/>
+#### Returns
 
   * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
   * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
@@ -1275,7 +1234,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
   * `r` (string; quantity): ECDSA signature r.
   * `s` (string; quantity): ECDSA signature s.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1288,7 +1247,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1317,12 +1276,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getTransactionByBlockNumberAndIndex`
+### `eth_getTransactionByBlockNumberAndIndex`
 
 > Returns information on a transaction by block number and transaction index position.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1337,8 +1295,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
     2. `<string>` (quantity): the transaction index position.
 
-### Returns
-<br/>
+#### Returns
 
   * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
   * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
@@ -1355,7 +1312,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
   * `r` (string; quantity): ECDSA signature r.
   * `s` (string; quantity): ECDSA signature s.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1368,7 +1325,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1397,14 +1354,13 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getTransactionReceipt`
+### `eth_getTransactionReceipt`
 
 > Returns the receipt of a transaction by transaction hash.
 
 The receipt is not available for pending transactions.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1413,8 +1369,7 @@ The receipt is not available for pending transactions.
 
     1. `<string>` (data, 32 bytes): a hash of the transaction.
 
-### Returns
-<br/>
+#### Returns
 
   * `object`: a transaction receipt object, or null when no receipt was found:
 
@@ -1435,7 +1390,7 @@ The receipt is not available for pending transactions.
           * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
           * `status` (string; quantity): either 1 (success) or 0 (failure).
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1448,7 +1403,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1491,12 +1446,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getUncleByBlockHashAndIndex`
+### `eth_getUncleByBlockHashAndIndex`
 
 > Returns information about an uncle of a block by hash and uncle index position.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1506,8 +1460,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     1. `<string>` (data, 32 bytes): the hash of a block.
     2. `<string>` (quantity): the uncle's index position.
 
-### Returns
-<br/>
+#### Returns
 
   * `<object>`: a block object, or null when no block was found:
       * `number` (string; quantity): the block number; null when it's a pending block.
@@ -1530,7 +1483,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
       * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
       * `uncles` (array of strings): an array of uncle hashes.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1543,7 +1496,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1576,12 +1529,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getUncleByBlockNumberAndIndex`
+### `eth_getUncleByBlockNumberAndIndex`
 
 > Returns information about an uncle of a block by number and uncle index position.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1596,8 +1548,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
         * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
     2. `<string>` (quantity): the uncle's  index position.
 
-### Returns
-<br/>
+#### Returns
 
   * `<object>`: a block object, or null when no block was found:
       * `number` (string; quantity): the block number; null when it's a pending block.
@@ -1620,7 +1571,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
       * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
       * `uncles` (array of strings): an array of uncle hashes.
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1633,7 +1584,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1666,12 +1617,11 @@ curl -X POST https://rpc.ankr.com/avalanche \
 
 ---
 
-## `eth_getLogs`
+### `eth_getLogs`
 
 > Returns an array of all logs matching a given filter object.
 
-### Parameters
-<br/>
+#### Parameters
 
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
@@ -1696,8 +1646,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
          * `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
          * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
-### Returns
-<br/>
+#### Returns
 
   * `removed` (string; tag): `true` when the log was removed, due to a chain reorganization; `false` if it's a valid log.
   * `logIndex` (string; quantity): the log index position in the block; null when it's a pending log.
@@ -1709,7 +1658,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
   * `data` (string; data): contains one or more 32 bytes non-indexed arguments of the log.
   * `topics` (array of strings; data): an array of 0 to 4 32 bytes data of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
 
-### Request example
+#### Request example
 
 ```shell
 curl -X POST https://rpc.ankr.com/avalanche \
@@ -1722,7 +1671,7 @@ curl -X POST https://rpc.ankr.com/avalanche \
     }'
 ```
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -1760,5 +1709,3542 @@ curl -X POST https://rpc.ankr.com/avalanche \
             "removed": false
         }
     ]
+}
+```
+
+---
+
+### `eth_getAssetBalance`
+
+> Retrieves the balance of first class Avalanche Native Tokens on the C-Chain.
+
+In addition to the standard Ethereum APIs, Avalanche offers `eth_getAssetBalance` to retrieve the balance of first class Avalanche Native Tokens on the C-Chain (excluding AVAX, which must be fetched with eth_getBalance).
+
+#### Parameters
+
+**Signature**:
+
+```
+eth_getAssetBalance({
+    address: string,
+    blk: BlkNrOrHash,
+    assetID: string,
+}) -> {balance: int}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `address`: owner of the asset.
+    * `blk`: the block number or hash at which to retrieve the balance.
+    * `assetID`: an ID of the asset for which the balance is requested.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"eth_getAssetBalance",
+    "params" : [
+        "0x8723e5773847A4Eb5FeEDabD9320802c5c812F46",
+        "latest",
+        "3RvKBAmQnfYionFXMfW5P8TDZgZiogKbHjM8cjpu16LKAgF5T"
+    ]
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x1388"
+}
+```
+
+---
+
+### `eth_baseFee`
+
+> Retrieves the base fee for the next block.
+
+#### Parameters
+
+**Signature**:
+
+```
+eth_baseFee() -> {}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"eth_baseFee",
+    "params" : []
+}'
+```
+
+#### Request example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x34630b8a00"
+}
+```
+
+---
+
+### `eth_maxPriorityFeePerGas`
+
+> Retrieves the priority fee needed to be included in a block.
+
+#### Parameters
+
+**Signature**:
+
+```
+eth_maxPriorityFeePerGas() -> {}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"eth_maxPriorityFeePerGas",
+    "params" : []
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x2540be400"
+}
+```
+
+---
+
+### `eth_getChainConfig`
+
+> Retrieves chain config.
+
+#### Parameters
+
+**Signature**:
+
+```
+eth_getChainConfig({}) -> {chainConfig: json}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"eth_getChainConfig",
+    "params" : []
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "chainId": 43112,
+    "homesteadBlock": 0,
+    "daoForkBlock": 0,
+    "daoForkSupport": true,
+    "eip150Block": 0,
+    "eip150Hash": "0x2086799aeebeae135c246c65021c82b4e15a2c451340993aacfd2751886514f0",
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "apricotPhase1BlockTimestamp": 0,
+    "apricotPhase2BlockTimestamp": 0,
+    "apricotPhase3BlockTimestamp": 0,
+    "apricotPhase4BlockTimestamp": 0,
+    "apricotPhase5BlockTimestamp": 0
+  }
+}
+```
+
+---
+
+## P-Chain methods
+
+  * [`platform.getBalance`](/rpc-service/chains/chains-api/avalanche/#platformgetbalance) — retrieves the balance of AVAX for a given address.
+  * [`platform.getBlock`](/rpc-service/chains/chains-api/avalanche/#platformgetblock) — retrieves a block by its ID.
+  * [`platform.getBlockchains`](/rpc-service/chains/chains-api/avalanche/#platformgetblockchains) — retrieves all the blockchains that exist (excluding the P-Chain).
+  * [`platform.getBlockchainStatus`](/rpc-service/chains/chains-api/avalanche/#platformgetblockchainstatus) — retrieves the status of a blockchain.
+  * [`platform.getCurrentSupply`](/rpc-service/chains/chains-api/avalanche/#platformgetcurrentsupply) — retrieves an upper bound on the amount of existing tokens that can stake the requested Subnet.
+  * [`platform.getCurrentValidators`](/rpc-service/chains/chains-api/avalanche/#platformgetcurrentvalidators) — retrieves the list of current validators of the given Subnet.
+  * [`platform.getHeight`](/rpc-service/chains/chains-api/avalanche/#platformgetheight) — retrieves the height of the latest accepted block.
+  * [`platform.getMaxStakeAmount`](/rpc-service/chains/chains-api/avalanche/#platformgetmaxstakeamount) — retrieves the maximum amount of nAVAX staking to the named node during a particular time period.
+  * [`platform.getMinStake`](/rpc-service/chains/chains-api/avalanche/#platformgetminstake) — retrieves the minimum amount of tokens required to validate the requested Subnet and the minimum amount of tokens that can be delegated.
+  * [`platform.getPendingValidators`](/rpc-service/chains/chains-api/avalanche/#platformgetpendingvalidators) — retrieves the list of validators in the pending validator set of the specified Subnet.
+  * [`platform.getRewardUTXOs`](/rpc-service/chains/chains-api/avalanche/#platformgetrewardutxos) — retrieves the UTXOs rewarded after the provided transaction's staking or delegation period has ended.
+  * [`platform.getStake`](/rpc-service/chains/chains-api/avalanche/#platformgetstake) — retrieves the amount of nAVAX staked by a set of addresses.
+  * [`platform.getStakingAssetID`](/rpc-service/chains/chains-api/avalanche/#platformgetstakingassetid) — retrieves an assetID for a Subnet’s staking asset.
+  * [`platform.getSubnets`](/rpc-service/chains/chains-api/avalanche/#platformgetsubnets) — retrieves info about the Subnets.
+  * [`platform.getTimestamp`](/rpc-service/chains/chains-api/avalanche/#platformgettimestamp) — retrieves the current P-Chain timestamp.
+  * [`platform.getTotalStake`](/rpc-service/chains/chains-api/avalanche/#platformgettotalstake) — retrieves the total amount of tokens staked on the requested Subnet.
+  * [`platform.getTx`](/rpc-service/chains/chains-api/avalanche/#platformgettx) — retrieves a transaction by its ID.
+  * [`platform.getTxStatus`](/rpc-service/chains/chains-api/avalanche/#platformgettxstatus) — retrieves a transaction’s status by its ID.
+  * [`platform.getUTXOs`](/rpc-service/chains/chains-api/avalanche/#platformgetutxos) — retrieves the UTXOs that reference a given set of addresses.
+  * [`platform.getValidatorsAt`](/rpc-service/chains/chains-api/avalanche/#platformgetvalidatorsat) — retrieves the validators and their weights of a Subnet or the Primary Network at a given P-Chain height.
+  * [`platform.issueTx`](/rpc-service/chains/chains-api/avalanche/#platformissuetx) — issues a transaction to the Platform Chain.
+  * [`platform.listAddresses`](/rpc-service/chains/chains-api/avalanche/#platformsamplevalidators) — retrieves the list of addresses controlled by the given user.
+  * [`platform.sampleValidators`](/rpc-service/chains/chains-api/avalanche/#platformvalidatedby) — retrieves the validators from the specified Subnet.
+  * [`platform.validatedBy`](/rpc-service/chains/chains-api/avalanche/#platformvalidatedby) — retrieves the Subnet that validates a given blockchain.
+  * [`platform.validates`](/rpc-service/chains/chains-api/avalanche/#platformvalidates) — retrieves the IDs of the blockchains a Subnet validates.
+
+---
+
+### `platform.getBalance`
+
+> Retrieves the balance of AVAX for a given address.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getBalance({
+    addresses: []string
+}) -> {
+    balances: string -> int,
+    unlockeds: string -> int,
+    lockedStakeables: string -> int,
+    lockedNotStakeables: string -> int,
+    utxoIDs: []{
+        txID: string,
+        outputIndex: int
+    }
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `addresses`: the addresses to get the balance for.
+
+**Response parameters**:
+
+  * `balances`: a map from assetID to the total balance.
+  * `unlockeds`: a map from assetID to the unlocked balance.
+  * `lockedStakeables`: a map from assetID to the locked stakeable balance.
+  * `lockedNotStakeables`: a map from assetID to the locked and not stakeable balance.
+  * `utxoIDs`: the IDs of the UTXOs that reference `address`.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getBalance",
+    "params" :{
+      "address":"P-custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "balance": "30000000000000000",
+        "unlocked": "20000000000000000",
+        "lockedStakeable": "10000000000000000",
+        "lockedNotStakeable": "0",
+        "balances": {
+            "BUuypiq2wyuLMvyhzFXcPyxPMCgSp7eeDohhQRqTChoBjKziC": "30000000000000000"
+        },
+        "unlockeds": {
+            "BUuypiq2wyuLMvyhzFXcPyxPMCgSp7eeDohhQRqTChoBjKziC": "20000000000000000"
+        },
+        "lockedStakeables": {
+            "BUuypiq2wyuLMvyhzFXcPyxPMCgSp7eeDohhQRqTChoBjKziC": "10000000000000000"
+        },
+        "lockedNotStakeables": {},
+        "utxoIDs": [
+            {
+                "txID": "11111111111111111111111111111111LpoYY",
+                "outputIndex": 1
+            },
+            {
+                "txID": "11111111111111111111111111111111LpoYY",
+                "outputIndex": 0
+            }
+        ]
+    },
+    "id": 1
+}
+```
+
+---
+
+### `platform.getBlock`
+
+> Retrieves a block by its ID.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getBlock({
+    blockID: string
+    encoding: string // optional
+}) -> {
+    block: string,
+    encoding: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `blockID`: a block ID in cb58 format.
+    * `encoding`: the encoding format to use; can be either hex or json; defaults to hex.
+
+#### Request example (hex)
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getBlock",
+    "params" :{
+      "blockID": "d7WYmb8VeZNHsny3EJCwMm6QA37s1EHwMxw1Y71V3FqPZ5EFG",
+      "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block": "0x00000000000309473dc99a0851a29174d84e522da8ccb1a56ac23f7b0ba79f80acce34cf576900000000000f4241000000010000001200000001000000000000000000000000000000000000000000000000000000000000000000000000000000011c4c57e1bcb3c567f9f03caa75563502d1a21393173c06d9d79ea247b20e24800000000021e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff000000050000000338e0465f0000000100000000000000000427d4b22a2a78bcddd456742caf91b56badbff985ee19aef14573e7343fd6520000000121e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff000000070000000338d1041f0000000000000000000000010000000195a4467dd8f939554ea4e6501c08294386938cbf000000010000000900000001c79711c4b48dcde205b63603efef7c61773a0eb47efb503fcebe40d21962b7c25ebd734057400a12cce9cf99aceec8462923d5d91fffe1cb908372281ed738580119286dde",
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+#### Request example (JSON)
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getBlock",
+    "params" :{
+      "blockID": "d7WYmb8VeZNHsny3EJCwMm6QA37s1EHwMxw1Y71V3FqPZ5EFG",
+      "encoding": "json"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block": {
+      "parentID": "5615di9ytxujackzaXNrVuWQy5y8Yrt8chPCscMr5Ku9YxJ1S",
+      "height": 1000001,
+      "txs": [
+        {
+          "unsignedTx": {
+            "inputs": {
+              "networkID": 1,
+              "blockchainID": "11111111111111111111111111111111LpoYY",
+              "outputs": [],
+              "inputs": [
+                {
+                  "txID": "DTqiagiMFdqbNQ62V2Gt1GddTVLkKUk2caGr4pyza9hTtsfta",
+                  "outputIndex": 0,
+                  "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+                  "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+                  "input": {
+                    "amount": 13839124063,
+                    "signatureIndices": [0]
+                  }
+                }
+              ],
+              "memo": "0x"
+            },
+            "destinationChain": "2q9e4r6Mu3U68nU1fYjgbR6JvwrRx36CohpAX5UQxse55x1Q5",
+            "exportedOutputs": [
+              {
+                "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+                "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+                "output": {
+                  "addresses": [
+                    "P-avax1jkjyvlwclyu42n4yuegpczpfgwrf8r9lyj0d3c"
+                  ],
+                  "amount": 13838124063,
+                  "locktime": 0,
+                  "threshold": 1
+                }
+              }
+            ]
+          },
+          "credentials": [
+            {
+              "signatures": [
+                "0xc79711c4b48dcde205b63603efef7c61773a0eb47efb503fcebe40d21962b7c25ebd734057400a12cce9cf99aceec8462923d5d91fffe1cb908372281ed7385801"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "encoding": "json"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getBlockchains`
+
+> Retrieves all the blockchains that exist (excluding the P-Chain).
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getBlockchains() ->
+{
+    blockchains: []{
+        id: string,
+        name:string,
+        subnetID: string,
+        vmID: string
+    }
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required): None.
+
+**Response parameters**:
+
+  * `blockchains`: all of the blockchains that exists on the Avalanche network.
+  * `name`: the human-readable name of this blockchain.
+  * `id`: the blockchain ID.
+  * `subnetID`: the ID of the Subnet that validates this blockchain.
+  * `vmID`: the ID of the Virtual Machine the blockchain runs.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getBlockchains",
+    "params" :{}
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "blockchains": [
+      {
+        "id": "2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM",
+        "name": "X-Chain",
+        "subnetID": "11111111111111111111111111111111LpoYY",
+        "vmID": "jvYyfQTxGMJLuGWa55kdP2p2zSUYsQ5Raupu4TW34ZAUBAbtq"
+      },
+      {
+        "id": "2q9e4r6Mu3U68nU1fYjgbR6JvwrRx36CohpAX5UQxse55x1Q5",
+        "name": "C-Chain",
+        "subnetID": "11111111111111111111111111111111LpoYY",
+        "vmID": "mgj786NP7uDwBCcq6YwThhaN8FLyybkCa4zBWTQbNgmK6k9A6"
+      },
+      {
+        "id": "CqhF97NNugqYLiGaQJ2xckfmkEr8uNeGG5TQbyGcgnZ5ahQwa",
+        "name": "Simple DAG Payments",
+        "subnetID": "11111111111111111111111111111111LpoYY",
+        "vmID": "sqjdyTKUSrQs1YmKDTUbdUhdstSdtRTGRbUn8sqK8B6pkZkz1"
+      },
+      {
+        "id": "VcqKNBJsYanhVFxGyQE5CyNVYxL3ZFD7cnKptKWeVikJKQkjv",
+        "name": "Simple Chain Payments",
+        "subnetID": "11111111111111111111111111111111LpoYY",
+        "vmID": "sqjchUjzDqDfBPGjfQq2tXW1UCwZTyvzAWHsNzF2cb1eVHt6w"
+      },
+      {
+        "id": "2SMYrx4Dj6QqCEA3WjnUTYEFSnpqVTwyV3GPNgQqQZbBbFgoJX",
+        "name": "Simple Timestamp Server",
+        "subnetID": "11111111111111111111111111111111LpoYY",
+        "vmID": "tGas3T58KzdjLHhBDMnH2TvrddhqTji5iZAMZ3RXs2NLpSnhH"
+      },
+      {
+        "id": "KDYHHKjM4yTJTT8H8qPs5KXzE6gQH5TZrmP1qVr1P6qECj3XN",
+        "name": "My new timestamp",
+        "subnetID": "2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r",
+        "vmID": "tGas3T58KzdjLHhBDMnH2TvrddhqTji5iZAMZ3RXs2NLpSnhH"
+      },
+      {
+        "id": "2TtHFqEAAJ6b33dromYMqfgavGPF3iCpdG3hwNMiart2aB5QHi",
+        "name": "My new AVM",
+        "subnetID": "2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r",
+        "vmID": "jvYyfQTxGMJLuGWa55kdP2p2zSUYsQ5Raupu4TW34ZAUBAbtq"
+      }
+    ]
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getBlockchainStatus`
+
+> Retrieves the status of a blockchain.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getBlockchainStatus(
+    {
+        blockchainID: string
+    }
+) -> {status: string}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `blockchainID`: a blockchain ID to return the status for.
+
+**Response parameters**:
+
+  * `status`: either of the following:
+    * `Validating`: the blockchain is being validated by this node.
+    * `Created`: the blockchain exists but isn’t being validated by this node.
+    * `Preferred`: the blockchain was proposed to be created and is likely to be created but the transaction isn’t yet accepted.
+    * `Syncing`: the node is participating in this blockchain as a non-validating node.
+    * `Unknown`: the blockchain either wasn’t proposed or the proposal to create it isn’t preferred. The proposal may be resubmitted.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getBlockchainStatus",
+    "params" :{
+        "blockchainID":"2NbS4dwGaf2p1MaXb65PrkZdXRwmSX4ZzGnUu7jm3aykgThuZE"}
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "status": "Created"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getCurrentSupply`
+
+> Retrieves an upper bound on the amount of existing tokens that can stake the requested Subnet.
+
+This is an upper bound because it does not account for burnt tokens, including transaction fees.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getCurrentSupply({
+    subnetID: string // optional
+}) -> {supply: int}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: a Subnet ID.
+
+**Response parameters**:
+
+  * `supply`: an upper bound on the number of tokens that exist.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getCurrentSupply",
+    "params" :{
+        "subnetID":"11111111111111111111111111111111LpoYY"}
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "supply": "365865167637779183"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getCurrentValidators`
+
+> Retrieves the list of current validators of the given Subnet.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getCurrentValidators({
+    subnetID: string, // optional
+    nodeIDs: string[], // optional
+}) -> {
+    validators: []{
+        txID: string,
+        startTime: string,
+        endTime: string,
+        stakeAmount: string,
+        nodeID: string,
+        weight: string,
+        validationRewardOwner: {
+            locktime: string,
+            threshold: string,
+            addresses: string[]
+        },
+        delegationRewardOwner: {
+            locktime: string,
+            threshold: string,
+            addresses: string[]
+        },
+        potentialReward: string,
+        delegationFee: string,
+        uptime: string,
+        connected: bool,
+        signer: {
+            publicKey: string,
+            proofOfPosession: string
+        },
+        delegatorCount: string,
+        delegatorWeight: string,
+        delegators: []{
+            txID: string,
+            startTime: string,
+            endTime: string,
+            stakeAmount: string,
+            nodeID: string,
+            rewardOwner: {
+                locktime: string,
+                threshold: string,
+                addresses: string[]
+            },
+            potentialReward: string,
+        }
+    }
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: the Subnet whose current validators are returned; if omitted, returns the current validators of the Primary Network.
+    * `nodeIDs`: a list of the NodeIDs of current validators to request; if omitted, all current validators are returned; if a specified NodeID is not in the set of current validators, it will not be included in the response.
+
+**Response parameters**:
+
+  * `validators`:
+    * `txID`: the validator transaction.
+    * `startTime`: the Unix time when the validator starts validating the Subnet.
+    * `endTime`: the Unix time when the validator stops validating the Subnet.
+    * `stakeAmount`: the amount of tokens this validator staked. Omitted if `subnetID` is not a PoS Subnet.
+    * `nodeID`: the validator’s node ID.
+    * `weight`: the validator’s weight when sampling validators. Omitted if `subnetID` is a PoS Subnet.
+    * `validationRewardOwner`: an `OutputOwners` output which includes `locktime`, `threshold`, and array of `addresses`. Specifies the owner of the potential reward earned from staking. Omitted if `subnetID` is not a PoS Subnet.
+    * `delegationRewardOwner`: an `OutputOwners` output which includes `locktime`, `threshold`, and array of `addresses`. Specifies the owner of the potential reward earned from delegations. Omitted if `subnetID` is not a PoS Subnet.
+    * `potentialReward`: the potential reward earned from staking. Omitted if `subnetID` is not a PoS Subnet.
+    * `delegationFeeRate`: the percentage fee this validator charges when others delegate stake to them. Omitted if `subnetID` is not a PoS Subnet.
+    * `uptime`: the % of time the queried node has reported the peer as online and validating the Subnet.
+    * `connected`: if the node is connected and tracks the Subnet.
+    * `signer`: the node's BLS public key and proof of possession. Omitted if the validator doesn't have a BLS public key.
+    * `delegatorCount`: the number of delegators on this validator. Omitted if `subnetID` is not a PoS Subnet.
+    * `delegatorWeight`: total weight of delegators on this validator. Omitted if `subnetID` is not a PoS Subnet.
+    * `delegators`: the list of delegators to this validator. Omitted if `subnetID` is not a PoS Subnet. Omitted unless `nodeIDs` specifies a single NodeID.
+      * `txID`: the delegator transaction.
+      * `startTime`: the Unix time when the delegator started.
+      * `endTime`: the Unix time when the delegator stops.
+      * `stakeAmount`: the amount of nAVAX this delegator staked.
+      * `nodeID`: the validating node’s node ID.
+      * `rewardOwner`: an `OutputOwners` output which includes `locktime`, `threshold`, and array of `addresses`.
+      * `potentialReward`: the potential reward earned from staking.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getCurrentValidators",
+    "params" :{
+        "nodeIDs": ["NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD"]
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "validators": [
+      {
+        "txID": "2NNkpYTGfTFLSGXJcHtVv6drwVU2cczhmjK2uhvwDyxwsjzZMm",
+        "startTime": "1600368632",
+        "endTime": "1602960455",
+        "stakeAmount": "2000000000000",
+        "nodeID": "NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD",
+        "validationRewardOwner": {
+          "locktime": "0",
+          "threshold": "1",
+          "addresses": ["P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"]
+        },
+        "delegationRewardOwner": {
+          "locktime": "0",
+          "threshold": "1",
+          "addresses": ["P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"]
+        },
+        "potentialReward": "117431493426",
+        "delegationFee": "10.0000",
+        "uptime": "0.0000",
+        "connected": false,
+        "delegatorCount": "1",
+        "delegatorWeight": "25000000000",
+        "delegators": [
+          {
+            "txID": "Bbai8nzGVcyn2VmeYcbS74zfjJLjDacGNVuzuvAQkHn1uWfoV",
+            "startTime": "1600368523",
+            "endTime": "1602960342",
+            "stakeAmount": "25000000000",
+            "nodeID": "NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD",
+            "rewardOwner": {
+              "locktime": "0",
+              "threshold": "1",
+              "addresses": ["P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"]
+            },
+            "potentialReward": "11743144774"
+          }
+        ]
+      }
+    ]
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getHeight`
+
+> Retrieves the height of the latest accepted block.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getHeight() ->
+{
+    height: int,
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required): None.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getHeight",
+    "params" :{}
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "height": "56"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getMaxStakeAmount`
+
+> Retrieves the maximum amount of nAVAX staking to the named node during a particular time period.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getMaxStakeAmount(
+    {
+        subnetID: string,
+        nodeID: string,
+        startTime: int,
+        endTime: int
+    }
+) ->
+{
+    amount: uint64
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: a Buffer or cb58 string representing Subnet.
+    * `nodeID`: a string representing ID of the node whose stake amount is required during the given duration.
+    * `startTime`: a big number denoting start time of the duration during which stake amount of the node is required.
+    * `endTime`: a big number denoting end time of the duration during which stake amount of the node is required.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getMaxStakeAmount",
+    "params" :{
+        "subnetID":"11111111111111111111111111111111LpoYY",
+        "nodeID":"NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg",
+        "startTime": 1644240334,
+        "endTime": 1644240634
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "amount": "2000000000000000"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getMinStake`
+
+> Retrieves the minimum amount of tokens required to validate the requested Subnet and the minimum amount of tokens that can be delegated.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getMinStake({
+    subnetID: string // optional
+}) ->
+{
+    minValidatorStake : uint64,
+    minDelegatorStake : uint64
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: a string representing Subnet.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getMinStake",
+    "params" :{
+        "subnetID":"11111111111111111111111111111111LpoYY"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "minValidatorStake": "2000000000000",
+    "minDelegatorStake": "25000000000"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getPendingValidators`
+
+> Retrieves the list of validators in the pending validator set of the specified Subnet.
+
+Each validator is not currently validating the Subnet but will be doing so in the future.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getPendingValidators({
+    subnetID: string, // optional
+    nodeIDs: string[], // optional
+}) -> {
+    validators: []{
+        txID: string,
+        startTime: string,
+        endTime: string,
+        stakeAmount: string,
+        nodeID: string,
+        delegationFee: string,
+        connected: bool,
+        signer: {
+            publicKey: string,
+            proofOfPosession: string
+        },
+        weight: string,
+    },
+    delegators: []{
+        txID: string,
+        startTime: string,
+        endTime: string,
+        stakeAmount: string,
+        nodeID: string
+    }
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: the Subnet whose current validators are returned; if omitted, returns the current validators of the Primary Network.
+    * `nodeIDs`: a list of the NodeIDs of pending validators to request; if omitted, all pending validators are returned; if a specified NodeID is not in the set of pending validators, it will not be included in the response.
+
+**Response parameters**:
+
+  * `validators`:
+    * `txID`: the validator transaction.
+    * `startTime`: the Unix time when the validator starts validating the Subnet.
+    * `endTime`: the Unix time when the validator stops validating the Subnet.
+    * `stakeAmount`: the amount of tokens this validator staked. Omitted if subnetID is not a PoS Subnet.
+    * `nodeID`: the validator’s node ID.
+    * `connected`: shows if the node is connected and tracks the Subnet.
+    * `signer`: the node's BLS public key and proof of possession. Omitted if the validator doesn't have a BLS public key.
+    * `weight` the validator’s weight when sampling validators. Omitted if subnetID is a PoS Subnet.
+  * `delegators`:
+    * `txID`: the delegator transaction.
+    * `startTime`: the Unix time when the delegator starts.
+    * `endTime`: the Unix time when the delegator stops.
+    * `stakeAmount`: the amount of tokens this delegator staked.
+    * `nodeID` the validating node’s node ID.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getPendingValidators",
+    "params" :{}
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "validators": [
+      {
+        "txID": "2NNkpYTGfTFLSGXJcHtVv6drwVU2cczhmjK2uhvwDyxwsjzZMm",
+        "startTime": "1600368632",
+        "endTime": "1602960455",
+        "stakeAmount": "200000000000",
+        "nodeID": "NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD",
+        "delegationFee": "10.0000",
+        "connected": false
+      }
+    ],
+    "delegators": [
+      {
+        "txID": "Bbai8nzGVcyn2VmeYcbS74zfjJLjDacGNVuzuvAQkHn1uWfoV",
+        "startTime": "1600368523",
+        "endTime": "1602960342",
+        "stakeAmount": "20000000000",
+        "nodeID": "NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg"
+      }
+    ]
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getRewardUTXOs`
+
+> Retrieves the UTXOs rewarded after the provided transaction's staking or delegation period has ended.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getRewardUTXOs({
+    txID: string,
+    encoding: string // optional
+}) -> {
+    numFetched: integer,
+    utxos: []string,
+    encoding: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `txID`: the ID of the staking or delegating transaction.
+
+**Response parameters**:
+
+  * `numFetched`: the number of returned UTXOs.
+  * `utxos`: an array of encoded reward UTXOs.
+  * `encoding` specifies the format for the returned UTXOs; can only be `hex` when a value is provided.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getRewardUTXOs",
+    "params" :{
+        "txID":"2nmH8LithVbdjaXsxVQCQfXtzN9hBbmebrsaEYnLM9T32Uy2Y5",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "numFetched": "2",
+    "utxos": [
+      "0x0000a195046108a85e60f7a864bb567745a37f50c6af282103e47cc62f036cee404700000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216c1f01765",
+      "0x0000ae8b1b94444eed8de9a81b1222f00f1b4133330add23d8ac288bffa98b85271100000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216473d042a"
+    ],
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getStake`
+
+> Retrieves the amount of nAVAX staked by a set of addresses.
+
+The amount returned does not include staking rewards.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getStake({
+    addresses: []string,
+    validatorsOnly: true or false
+}) ->
+{
+    stakeds: string -> int,
+    stakedOutputs:  []string,
+    encoding: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `addresses`: the addresses to get information about.
+    * `validatorsOnly`: can be either `true` or `false`. If `true`, will skip checking delegators for stake.
+
+**Response parameters**:
+
+  * `stakeds`: a map from assetID to the amount staked by addresses provided.
+  * `stakedOutputs`: the string representation of staked outputs.
+  * `encoding`: specifies the format for the returned outputs.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getStake",
+    "params" :{
+        "addresses": [
+            "P-avax1pmgmagjcljjzuz2ve339dx82khm7q8getlegte"
+        ],
+        "validatorsOnly": true
+    },
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "staked": "6500000000000",
+    "stakeds": {
+      "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z": "6500000000000"
+    },
+    "stakedOutputs": [
+      "0x000021e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff00000007000005e96630e800000000000000000000000001000000011f1c933f38da6ba0ba46f8c1b0a7040a9a991a80dd338ed1"
+    ],
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getStakingAssetID`
+
+> Retrieves an assetID for a Subnet’s staking asset.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getStakingAssetID({
+    subnetID: string // optional
+}) -> {
+    assetID: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: the Subnet whose assetID is requested.
+
+**Response parameters**:
+
+  * `assetID`: the assetID for a Subnet’s staking asset.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getStakingAssetID",
+    "params" :{
+        "subnetID": "11111111111111111111111111111111LpoYY"
+    },
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "assetID": "2fombhL7aGPwj3KH4bfrmJwW6PVnMobf9Y2fn9GwxiAAJyFDbe"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getSubnets`
+
+> Retrieves info about the Subnets.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getSubnets({
+    ids: []string
+}) ->
+{
+    subnets: []{
+        id: string,
+        controlKeys: []string,
+        threshold: string
+    }
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `ids`: the IDs of the Subnets to get information about. If omitted, gets information about all Subnets.
+
+**Response parameters**:
+
+  * `subnets`:
+    * `id`: the Subnet’s ID.
+    * `threshold`: signatures from addresses in `controlKeys` are needed to add a validator to the Subnet; if the Subnet is a PoS Subnet, then `threshold` will be `0` and `controlKeys` will be empty.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getSubnets",
+    "params" :{
+        "ids":[
+          "hW8Ma7dLMA7o4xmJf3AXBbo17bXzE7xnThUd3ypM4VAWo1sNJ"
+        ]
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "subnets": [
+      {
+        "id": "hW8Ma7dLMA7o4xmJf3AXBbo17bXzE7xnThUd3ypM4VAWo1sNJ",
+        "controlKeys": [
+          "KNjXsaA1sZsaKCD1cd85YXauDuxshTes2",
+          "Aiz4eEt5xv9t4NCnAWaQJFNz5ABqLtJkR"
+        ],
+        "threshold": "2"
+      }
+    ]
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getTimestamp`
+
+> Retrieves the current P-Chain timestamp.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getTimestamp() -> {time: string}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required): None.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getTimestamp",
+    "params" :{}
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "timestamp": "2021-09-07T00:00:00-04:00"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getTotalStake`
+
+> Retrieves the total amount of tokens staked on the requested Subnet.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getTotalStake({
+    subnetID: string
+}) -> {
+    stake: int
+    weight: int
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: a string of a Subnet.
+
+#### Request example (Primary network)
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getTotalStake",
+    "params" :{
+        "subnetID": "11111111111111111111111111111111LpoYY"
+    }
+}'
+```
+
+#### Response example (Primary network)
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "stake": "279825917679866811",
+    "weight": "279825917679866811"
+  },
+  "id": 1
+}
+```
+
+#### Request example (Subnet)
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getTotalStake",
+    "params" :{
+        "subnetID": "2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r"
+    }
+}'
+```
+
+#### Response example (Subnet)
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "weight": "100000"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getTx`
+
+> Retrieves a transaction by its ID.
+
+Optional `encoding` parameter to specify the format for the returned transaction. Can be either `hex` or `json`. Defaults to `hex`.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getTx({
+    txID: string,
+    encoding: string // optional
+}) -> {
+    tx: string,
+    encoding: string,
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `txID`: a string of a transaction ID.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getTx",
+    "params" :{
+        "txID": "28KVjSw5h3XKGuNpJXWY74EdnGq4TUWvCgEtJPymgQTvudiugb",
+        "encoding": "json"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "tx": {
+      "unsignedTx": {
+        "networkID": 1,
+        "blockchainID": "11111111111111111111111111111111LpoYY",
+        "outputs": [],
+        "inputs": [
+          {
+            "txID": "NXNJHKeaJyjjWVSq341t6LGQP5UNz796o1crpHPByv1TKp9ZP",
+            "outputIndex": 0,
+            "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+            "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+            "input": {
+              "amount": 20824279595,
+              "signatureIndices": [
+                0
+              ]
+            }
+          },
+          {
+            "txID": "2ahK5SzD8iqi5KBqpKfxrnWtrEoVwQCqJsMoB9kvChCaHgAQC9",
+            "outputIndex": 1,
+            "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+            "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+            "input": {
+              "amount": 28119890783,
+              "signatureIndices": [
+                0
+              ]
+            }
+          }
+        ],
+        "memo": "0x",
+        "validator": {
+          "nodeID": "NodeID-VT3YhgFaWEzy4Ap937qMeNEDscCammzG",
+          "start": 1682945406,
+          "end": 1684155006,
+          "weight": 48944170378
+        },
+        "stake": [
+          {
+            "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+            "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+            "output": {
+              "addresses": [
+                "P-avax1tnuesf6cqwnjw7fxjyk7lhch0vhf0v95wj5jvy"
+              ],
+              "amount": 48944170378,
+              "locktime": 0,
+              "threshold": 1
+            }
+          }
+        ],
+        "rewardsOwner": {
+          "addresses": [
+            "P-avax19zfygxaf59stehzedhxjesads0p5jdvfeedal0"
+          ],
+          "locktime": 0,
+          "threshold": 1
+        }
+      },
+      "credentials": [
+        {
+          "signatures": [
+            "0x6954e90b98437646fde0c1d54c12190fc23ae5e319c4d95dda56b53b4a23e43825251289cdc3728f1f1e0d48eac20e5c8f097baa9b49ea8a3cb6a41bb272d16601"
+          ]
+        },
+        {
+          "signatures": [
+            "0x6954e90b98437646fde0c1d54c12190fc23ae5e319c4d95dda56b53b4a23e43825251289cdc3728f1f1e0d48eac20e5c8f097baa9b49ea8a3cb6a41bb272d16601"
+          ]
+        }
+      ],
+      "id": "28KVjSw5h3XKGuNpJXWY74EdnGq4TUWvCgEtJPymgQTvudiugb"
+    },
+    "encoding": "json"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getTxStatus`
+
+> Retrieves a transaction’s status by its ID.
+
+ If the transaction was dropped, response will include a `reason` field with more information why the transaction was dropped.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getTxStatus({
+    txID: string
+}) -> {status: string}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `txID`: a string of a transaction ID.
+
+**Response parameters**:
+
+  * `status`: either of the following:
+    * `Committed`: the transaction is (or will be) accepted by every node.
+    * `Processing`: the transaction is being voted on by this node.
+    * `Dropped`: the transaction will never be accepted by any node in the network, check reason field for more information.
+    * `Unknown`: the transaction hasn’t been seen by this node.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getTxStatus",
+    "params" :{
+        "txID":"TAG9Ns1sa723mZy1GSoGqWipK6Mvpaj7CAswVJGM6MkVJDF9Q"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "status": "Committed"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getUTXOs`
+
+> Retrieves the UTXOs that reference a given set of addresses.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getUTXOs(
+    {
+        addresses: []string,
+        limit: int, // optional
+        startIndex: { // optional
+            address: string,
+            utxo: string
+        },
+        sourceChain: string, // optional
+        encoding: string, // optional
+    },
+) ->
+{
+    numFetched: int,
+    utxos: []string,
+    endIndex: {
+        address: string,
+        utxo: string
+    },
+    encoding: string,
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `addresses`: a list of addresses to retrieve the info for.
+    * `limit`: the max number of UTXOs to be returned; if limit is omitted or greater than 1024, it is set to 1024.
+    * `encoding` specifies the format for the returned UTXOs; can only be `hex` when a value is provided.
+
+**Response parameters**:
+
+  * `utxos` is a list of UTXOs such that each UTXO references at least one address in addresses.
+  * At most limit UTXOs are returned. If limit is omitted or greater than 1024, it is set to 1024.
+  * This method supports pagination. endIndex denotes the last UTXO returned. To get the next set of UTXOs, use the value of `endIndex` as `startIndex` in the next call.
+  * If `startIndex` is omitted, will fetch all UTXOs up to `limit`.
+  * When using pagination (that is when `startIndex` is provided), UTXOs are not guaranteed to be unique across multiple calls. That is, a UTXO may appear in the result of the first call, and then again in the second call.
+  * When using pagination, consistency is not guaranteed across multiple calls. That is, the UTXO set of the addresses may have changed between calls.
+  * `encoding` specifies the format for the returned UTXOs; can only be `hex` when a value is provided.
+
+#### Request example
+
+Suppose we want all UTXOs that reference at least one of `P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5` and `P-avax1d09qn852zcy03sfc9hay2llmn9hsgnw4tp3dv6`.
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getUTXOs",
+    "params" :{
+        "addresses":["P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5", "P-avax1d09qn852zcy03sfc9hay2llmn9hsgnw4tp3dv6"],
+        "limit":5,
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "numFetched": "5",
+    "utxos": [
+      "0x0000a195046108a85e60f7a864bb567745a37f50c6af282103e47cc62f036cee404700000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216c1f01765",
+      "0x0000ae8b1b94444eed8de9a81b1222f00f1b4133330add23d8ac288bffa98b85271100000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216473d042a",
+      "0x0000731ce04b1feefa9f4291d869adc30a33463f315491e164d89be7d6d2d7890cfc00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f21600dd3047",
+      "0x0000b462030cc4734f24c0bc224cf0d16ee452ea6b67615517caffead123ab4fbf1500000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216c71b387e",
+      "0x000054f6826c39bc957c0c6d44b70f961a994898999179cc32d21eb09c1908d7167b00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f2166290e79d"
+    ],
+    "endIndex": {
+      "address": "P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "utxo": "kbUThAUfmBXUmRgTpgD6r3nLj7rJUGho6xyht5nouNNypH45j"
+    },
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+#### Request example
+
+Since numFetched is the same as limit, we can tell that there may be more UTXOs that were not fetched. We call the method again, this time with `startIndex`:
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getUTXOs",
+    "params" :{
+        "addresses":["P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"],
+        "limit":5,
+        "startIndex": {
+            "address": "P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+            "utxo": "0x62fc816bb209857923770c286192ab1f9e3f11e4a7d4ba0943111c3bbfeb9e4a5ea72fae"
+        },
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "numFetched": "4",
+    "utxos": [
+      "0x000020e182dd51ee4dcd31909fddd75bb3438d9431f8e4efce86a88a684f5c7fa09300000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f21662861d59",
+      "0x0000a71ba36c475c18eb65dc90f6e85c4fd4a462d51c5de3ac2cbddf47db4d99284e00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f21665f6f83f",
+      "0x0000925424f61cb13e0fbdecc66e1270de68de9667b85baa3fdc84741d048daa69fa00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216afecf76a",
+      "0x000082f30327514f819da6009fad92b5dba24d27db01e29ad7541aa8e6b6b554615c00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216779c2d59"
+    ],
+    "endIndex": {
+      "address": "P-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "utxo": "21jG2RfqyHUUgkTLe2tUp6ETGLriSDTW3th8JXFbPRNiSZ11jK"
+    },
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.getValidatorsAt`
+
+> Retrieves the validators and their weights of a Subnet or the Primary Network at a given P-Chain height.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.getValidatorsAt(
+    {
+        height: int,
+        subnetID: string, // optional
+    }
+)
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `height`: the P-Chain height to get the validator set at.
+    * `subnetID`: the Subnet ID to get the validator set of; if not given, gets validator set of the Primary Network.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.getValidatorsAt",
+    "params" :{
+        "height": 1,
+        "subnetID": "11111111111111111111111111111111LpoYY"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "validators": {
+      "NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg": 2000000000000000,
+      "NodeID-GWPcbFJZFfZreETSoWjPimr846mXEKCtu": 2000000000000000,
+      "NodeID-MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ": 2000000000000000,
+      "NodeID-NFBbbJ4qCmNaCzeW7sxErhvWqvEQMnYcN": 2000000000000000,
+      "NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5": 2000000000000000
+    }
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.issueTx`
+
+> Issues a transaction to the Platform Chain.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.issueTx({
+    tx: string,
+    encoding: string, // optional
+}) -> {txID: string}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `tx`: the byte representation of a transaction.
+    * `encoding`: specifies the encoding format for the transaction bytes; can only be hex when a value is provided.
+
+**Response parameters**:
+
+  * `txID`: the transaction’s ID.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.issueTx",
+    "params" :{
+        "tx": "0x00000009de31b4d8b22991d51aa6aa1fc733f23a851a8c9400000000000186a0000000005f041280000000005f9ca900000030390000000000000001fceda8f90fcb5d30614b99d79fc4baa29307762668f16eb0259a57c2d3b78c875c86ec2045792d4df2d926c40f829196e0bb97ee697af71f5b0a966dabff749634c8b729855e937715b0e44303fd1014daedc752006011b730",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "txID": "G3BuH6ytQ2averrLxJJugjWZHTRubzCrUZEXoheG5JMqL5ccY"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.sampleValidators`
+
+> Retrieves the validators from the specified Subnet.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.sampleValidators(
+    {
+        size: int,
+        subnetID: string, // optional
+    }
+) ->
+{
+    validators: []string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `size`: the number of validators to sample.
+    * `subnetID`: the Subnet to sampled from; if omitted, defaults to the Primary Network.
+
+**Response parameters**:
+
+  * `validators`: each element of validators is the ID of a validator.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.sampleValidators",
+    "params" :{
+        "size":2
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "validators": [
+      "NodeID-MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ",
+      "NodeID-NFBbbJ4qCmNaCzeW7sxErhvWqvEQMnYcN"
+    ]
+  }
+}
+```
+
+---
+
+### `platform.validatedBy`
+
+> Retrieves the Subnet that validates a given blockchain.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.validatedBy(
+    {
+        blockchainID: string
+    }
+) -> {subnetID: string}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `blockchainID`: the blockchain’s ID.
+
+**Response parameters**:
+
+  * `subnetID` the ID of the Subnet that validates the blockchain.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.validatedBy",
+    "params" : {
+        "blockchainID": "DKtd96mRjG1fgfL1Bcr9gppJaPxi9345iLR3W9ZZwq8ZChY9A"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "subnetID": "2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `platform.validates`
+
+> Retrieves the IDs of the blockchains a Subnet validates.
+
+#### Parameters
+
+**Signature**:
+
+```
+platform.validates(
+    {
+        subnetID: string
+    }
+) -> {blockchainIDs: []string}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `subnetID`: the Subnet’s ID.
+
+**Response parameters**:
+
+  * `blockchainIDs`: each element of blockchainIDs is the ID of a blockchain the Subnet validates.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"platform.validates",
+    "params" : {
+        "subnetID":"4vczxAbLhSpzypadHFEfY8Kn2kibhcZLQgoX9A34rAnADyXnp"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "blockchainIDs": [
+      "KDYHHKjM4yTJTT8H8qPs5KXzE6gQH5TZrmP1qVr1P6qECj3XN",
+      "2TtHFqEAAJ6b33dromYMqfgavGPF3iCpdG3hwNMiart2aB5QHi"
+    ]
+  },
+  "id": 1
+}
+```
+
+---
+
+## C-Chain methods
+
+  * [`avax.getAtomicTx`](/rpc-service/chains/chains-api/avalanche/#avaxgetatomictx) — retrieves a transaction by its ID.
+  * [`avax.getAtomicTxStatus`](/rpc-service/chains/chains-api/avalanche/#avaxgetatomictxstatus) — retrieves the status of an atomic transaction sent to the network.
+  * [`avax.getUTXOs`](/rpc-service/chains/chains-api/avalanche/#avaxgetutxos) — retrieves the UTXOs that reference a given address.
+  * [`avax.issueTx`](/rpc-service/chains/chains-api/avalanche/#avaxissuetx) — sends a signed transaction to the network.
+
+---
+
+### `avax.getAtomicTx`
+
+> Retrieves a transaction by its ID.
+
+Optional encoding parameter to specify the format for the returned transaction. Can only be `hex` when a value is provided.
+
+#### Parameters
+
+**Signature**:
+
+```
+avax.getAtomicTx({
+    txID: string,
+    encoding: string, //optional
+}) -> {
+    tx: string,
+    encoding: string,
+    blockHeight: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `txID`: the transaction ID in cb58 format.
+    * `encoding`: the encoding format to use; can only be `hex` when a value is provided.
+
+**Response parameters**:
+
+  * `tx`: the transaction encoded to encoding.
+  * `encoding`: the encoding.
+  * `blockHeight`: the height of the block at which the transaction was included in.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avax.getAtomicTx",
+    "params" : {
+        "txID":"2GD5SRYJQr2kw5jE73trBFiAgVQyrCaeg223TaTyJFYXf2kPty",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "tx": "0x000000000000000030399d0775f450604bd2fbc49ce0c5c1c6dfeb2dc2acb8c92c26eeae6e6df4502b19d891ad56056d9c01f18f43f58b5c784ad07a4a49cf3d1f11623804b5cba2c6bf000000018212d6807a0ec9c1b26321418fe7a548180b5be728ce53fe7e98ab5755ed316100000001dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db00000005000003a352a382400000000100000000000000018db97c7cece249c2b98bdc0226cc4c2a57bf52fc000003a3529edd17dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db000000010000000900000001ead19377f015422fbb8731204fcf6d6879dd05146c2d5b5594e2fea2cb420b2f40bd457b71e279e547790b28fe5482f278c76cf39b2dce5c2e6c53352fe6827d002cc7d20d",
+    "encoding": "hex",
+    "blockHeight": "1"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avax.getAtomicTxStatus`
+
+> Retrieves the status of an atomic transaction sent to the network.
+
+#### Parameters
+
+**Signature**:
+
+```
+avax.getAtomicTxStatus({txID: string}) -> {
+  status: string,
+  blockHeight: string // returned when status is Accepted
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `txID`: the transaction ID in cb58 format.
+
+**Response parameters**:
+
+  * `status`: either of the following items:
+    * `Accepted`: the transaction is (or will be) accepted by every node. Check the `blockHeight` property.
+    * `Processing`: the transaction is being voted on by this node.
+    * `Dropped`: the transaction was dropped by this node because it thought the transaction invalid.
+    * `Unknown`: the transaction hasn’t been seen by this node.
+
+#### Response example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avax.getAtomicTxStatus",
+    "params" : {
+        "txID":"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "status": "Accepted",
+    "blockHeight": "1"
+  }
+}
+```
+
+---
+
+### `avax.getUTXOs`
+
+> Retrieves the UTXOs that reference a given address.
+
+#### Parameters
+
+**Signature**:
+
+```
+avax.getUTXOs(
+    {
+        addresses: string,
+        limit: int, //optional
+        startIndex: { //optional
+            address: string,
+            utxo: string
+        },
+        sourceChain: string,
+        encoding: string, //optional
+    },
+) ->
+{
+    numFetched: int,
+    utxos: []string,
+    endIndex: {
+        address: string,
+        utxo: string
+    }
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `utxos`: a list of UTXOs such that each UTXO references at least one address in addresses.
+    * `limit`: the max number of UTXOs to be returned; if limit is omitted or greater than 1024, it is set to 1024.
+    * This method supports pagination. `endIndex` denotes the last UTXO returned. To get the next set of UTXOs, use the value of `endIndex` as `startIndex` in the next call.
+    * If `startIndex` is omitted, will fetch all UTXOs up to limit.
+    * When using pagination (that is when `startIndex` is provided), UTXOs are not guaranteed to be unique across multiple calls. That is, a UTXO may appear in the result of the first call, and then again in the second call.
+    * When using pagination, consistency is not guaranteed across multiple calls. That is, the UTXO set of the addresses may have changed between calls.
+    * `encoding` sets the format for the returned UTXOs; can only be `hex` when a value is provided.
+
+#### Request example
+
+Suppose we want all UTXOs that reference at least one of `C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5`.
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avax.getUTXOs",
+    "params" : {
+        "addresses":["C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"],
+        "sourceChain": "X",
+        "startIndex": {
+            "address": "C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+            "utxo": "22RXW7SWjBrrxu2vzDkd8uza7fuEmNpgbj58CxBob9UbP37HSB"
+        },
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "numFetched": "3",
+    "utxos": [
+      "0x0000a799e7448acf74ca9223159a04f93b948f99cf28509f908839532b2f85baffc300000001dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db00000007000003a352a38240000000000000000000000001000000013cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c22d23171",
+      "0x00006385c683d43bdbe754c224be36c5004ea7ce49c0849cadeaea6af93dae18cc7700000001dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db00000007000003a352a38240000000000000000000000001000000013cb7d3842e8cee6a0ebd09f1fe884f6861e1b29cb81cc877",
+      "0x000038137283c94582351b86c3e90808312636769e3f5c14fbf1152d6634f770695c00000001dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db00000007000003a352a38240000000000000000000000001000000013cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c7412490e"
+    ],
+    "endIndex": {
+      "address": "C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "utxo": "0x9333ef8a05f26acf2d8766f94723f749870fa2ca80c19c33cc945d79013d7c50fd023beb"
+    },
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avax.issueTx`
+
+> Sends a signed transaction to the network.
+
+`encoding` specifies the format of the signed transaction. Can only be hex when a value is provided.
+
+#### Parameters
+
+**Signature**:
+
+```
+avax.issueTx({
+    tx: string,
+    encoding: string, //optional
+}) -> {
+    txID: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `tx`: a transaction.
+    * `encoding`: the encoding format to use; can only be `hex` when a value is provided.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avax.issueTx",
+    "params" : {
+        "tx": "0x00000009de31b4d8b22991d51aa6aa1fc733f23a851a8c9400000000000186a0000000005f041280000000005f9ca900000030390000000000000001fceda8f90fcb5d30614b99d79fc4baa29307762668f16eb0259a57c2d3b78c875c86ec2045792d4df2d926c40f829196e0bb97ee697af71f5b0a966dabff749634c8b729855e937715b0e44303fd1014daedc752006011b730",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "txID": "NUPLwbt2hsYxpQg4H2o451hmTWQ4JZx2zMzM4SinwtHgAdX1JLPHXvWSXEnpecStLj"
+  }
+}
+```
+
+---
+
+## X-Chain methods
+
+  * [`avm.buildGenesis`](/rpc-service/chains/chains-api/avalanche/#avmbuildgenesis) — creates the byte representation of the given JSON representation of the Virtual Machine's genesis state.
+  * [`avm.getAddressTxs`](/rpc-service/chains/chains-api/avalanche/#avmgetaddresstxs) — retrieves all transactions that change the balance of the given address.
+  * [`avm.getAllBalances`](/rpc-service/chains/chains-api/avalanche/#avmgetallbalances) — retrieves the balances of all assets controlled by a given address.
+  * [`avm.getAssetDescription`](/rpc-service/chains/chains-api/avalanche/#avmgetassetdescription) — retrieves information about an asset.
+  * [`avm.getBalance`](/rpc-service/chains/chains-api/avalanche/#avmgetbalance) — retrieves the balance of an asset controlled by a given address.
+  * [`avm.getBlock`](/rpc-service/chains/chains-api/avalanche/#avmgetblock) — retrieves the block with the given ID.
+  * [`avm.getBlockByHeight`](/rpc-service/chains/chains-api/avalanche/#avmgetblockbyheight) — retrieves a block at the given height.
+  * [`avm.getHeight`](/rpc-service/chains/chains-api/avalanche/#avmgetheight) — retrieves the height of the last accepted block.
+  * [`avm.getTx`](/rpc-service/chains/chains-api/avalanche/#avmgettx) — retrieves the specified transaction.
+  * [`avm.getTxStatus`](/rpc-service/chains/chains-api/avalanche/#avmgettxstatus) — retrieves the status of a transaction sent to the network.
+  * [`avm.getUTXOs`](/rpc-service/chains/chains-api/avalanche/#avmgetutxos) — retrieves the UTXOs that reference a given address.
+  * [`avm.issueTx`](/rpc-service/chains/chains-api/avalanche/#avmissuetx) — sends a signed transaction to the network.
+
+---
+
+### `avm.buildGenesis`
+
+> Creates the byte representation of the given JSON representation of the Virtual Machine's genesis state.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.buildGenesis({
+    networkID: int,
+    genesisData: JSON,
+    encoding: string, //optional
+}) -> {
+    bytes: string,
+    encoding: string,
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `networkID`: a network ID.
+    * `encoding`: the encoding format to use for arbitrary bytes, that is the genesis bytes that are returned; can only be `hex` when a value is provided.
+    * `genesisData`: has the following structure:
+
+```json
+{
+"genesisData" :
+    {
+        "assetAlias1": {               // Each object defines an asset
+            "name": "human readable name",
+            "symbol":"AVAL",           // Symbol is between 0 and 4 characters
+            "initialState": {
+                "fixedCap" : [         // Choose the asset type.
+                    {                  // Can be "fixedCap", "variableCap", "limitedTransfer", "nonFungible"
+                        "amount":1000, // At genesis, address A has
+                        "address":"A"  // 1000 units of asset
+                    },
+                    {
+                        "amount":5000, // At genesis, address B has
+                        "address":"B"  // 1000 units of asset
+                    },
+                    ...                // Can have many initial holders
+                ]
+            }
+        },
+        "assetAliasCanBeAnythingUnique": { // Asset alias can be used in place of assetID in calls
+            "name": "human readable name", // names need not be unique
+            "symbol": "AVAL",              // symbols need not be unique
+            "initialState": {
+                "variableCap" : [          // No units of the asset exist at genesis
+                    {
+                        "minters": [       // The signature of A or B can mint more of
+                            "A",           // the asset.
+                            "B"
+                        ],
+                        "threshold":1
+                    },
+                    {
+                        "minters": [       // The signatures of 2 of A, B and C can mint
+                            "A",           // more of the asset
+                            "B",
+                            "C"
+                        ],
+                        "threshold":2
+                    },
+                    ...                    // Can have many minter sets
+                ]
+            }
+        },
+        ...                                // Can list more assets
+    }
+}
+```
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.buildGenesis",
+    "params" : {
+        "networkId": 16,
+        "genesisData": {
+            "asset1": {
+                "name": "myFixedCapAsset",
+                "symbol":"MFCA",
+                "initialState": {
+                    "fixedCap" : [
+                        {
+                            "amount":100000,
+                            "address": "avax13ery2kvdrkd2nkquvs892gl8hg7mq4a6ufnrn6"
+                        },
+                        {
+                            "amount":100000,
+                            "address": "avax1rvks3vpe4cm9yc0rrk8d5855nd6yxxutfc2h2r"
+                        },
+                        {
+                            "amount":50000,
+                            "address": "avax1ntj922dj4crc4pre4e0xt3dyj0t5rsw9uw0tus"
+                        },
+                        {
+                            "amount":50000,
+                            "address": "avax1yk0xzmqyyaxn26sqceuky2tc2fh2q327vcwvda"
+                        }
+                    ]
+                }
+            },
+            "asset2": {
+                "name": "myVarCapAsset",
+                "symbol":"MVCA",
+                "initialState": {
+                    "variableCap" : [
+                        {
+                            "minters": [
+                                "avax1kcfg6avc94ct3qh2mtdg47thsk8nrflnrgwjqr",
+                                "avax14e2s22wxvf3c7309txxpqs0qe9tjwwtk0dme8e"
+                            ],
+                            "threshold":1
+                        },
+                        {
+                            "minters": [
+                                "avax1y8pveyn82gjyqr7kqzp72pqym6xlch9gt5grck",
+                                "avax1c5cmm0gem70rd8dcnpel63apzfnfxye9kd4wwe",
+                                "avax12euam2lwtwa8apvfdl700ckhg86euag2hlhmyw"
+                            ],
+                            "threshold":2
+                        }
+                    ]
+                }
+            }
+        },
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "bytes": "0x0000000000010006617373657431000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f6d794669786564436170417373657400044d464341000000000100000000000000010000000700000000000186a10000000000000000000000010000000152b219bc1b9ab0a9f2e3f9216e4460bd5db8d153bfa57c3c",
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.getAddressTxs`
+
+> Retrieves all transactions that change the balance of the given address.
+
+A transaction is said to change an address's balance if either is true:
+
+  * A UTXO that the transaction consumes was at least partially owned by the address.
+  * A UTXO that the transaction produces is at least partially owned by the address.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getAddressTxs({
+    address: string,
+    cursor: uint64,     // optional, leave empty to get the first page
+    assetID: string,
+    pageSize: uint64    // optional, defaults to 1024
+}) -> {
+    txIDs: []string,
+    cursor: uint64,
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `address`: the address for which we're fetching related transactions.
+    * `assetID`: only return transactions that changed the balance of this asset. Must be an ID or an alias for an asset.
+    * `pageSize`: number of items to return per page. Optional. Defaults to 1024.
+
+**Response parameters**:
+
+  * `txIDs`: a list of transaction IDs that affected the balance of this address.
+  * `cursor`: a page number or offset; use this in request to get the next page.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getAddressTxs",
+    "params" : {
+      "address":"X-avax1dp6707ka34puejwg7ntnenxry98h37yvsqsm7f",
+      "assetID":"AVAX",
+      "pageSize":20
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "txIDs": ["SsJF7KKwxiUJkczygwmgLqo3XVRotmpKP8rMp74cpLuNLfwf6"],
+    "cursor": "1"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.getAllBalances`
+
+> Retrieves the balances of all assets controlled by a given address.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getAllBalances({address:string}) -> {
+    balances: []{
+        asset: string,
+        balance: int
+    }
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `address`: an address to retrieves the balances for.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getAllBalances",
+    "params" : {
+        "address":"X-avax1dp6707ka34puejwg7ntnenxry98h37yvsqsm7f"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "balances": [
+      {
+        "asset": "AVAX",
+        "balance": "102"
+      },
+      {
+        "asset": "2sdnziCz37Jov3QSNMXcFRGFJ1tgauaj6L7qfk7yUcRPfQMC79",
+        "balance": "10000"
+      }
+    ]
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.getAssetDescription`
+
+> Retrieves information about an asset.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getAssetDescription({assetID: string}) -> {
+    assetId: string,
+    name: string,
+    symbol: string,
+    denomination: int
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `assetID`: the id of the asset for which the information is requested.
+
+**Response parameters**:
+
+  * `name`: the asset’s human-readable, not necessarily unique name.
+  * `symbol`: the asset’s symbol.
+  * `denomination`: determines how balances of this asset are displayed by user interfaces. If denomination is 0, 100 units of this asset are displayed as 100. If denomination is 1, 100 units of this asset are displayed as 10.0. If denomination is 2, 100 units of this asset are displays as .100, etc.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getAssetDescription",
+    "params" : {
+        "assetID" :"FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+        "name": "Avalanche",
+        "symbol": "AVAX",
+        "denomination": "9"
+    },
+    "id": 1
+}`
+```
+
+---
+
+### `avm.getBalance`
+
+> Retrieves the balance of an asset controlled by a given address.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getBalance({
+    address: string,
+    assetID: string
+}) -> {balance: int}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `address`: an owner of the asset.
+    * `assetID`: an ID of the asset for which the balance is requested.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getBalance",
+    "params" : {
+      "address":"X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "assetID": "2pYGetDWyKdHxpFxh2LHeoLNCH6H5vxxCxHQtFnnFaYxLsqtHC"
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "balance": "299999999999900",
+    "utxoIDs": [
+      {
+        "txID": "WPQdyLNqHfiEKp4zcCpayRHYDVYuh1hqs9c1RqgZXS4VPgdvo",
+        "outputIndex": 1
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `avm.getBlock`
+
+> Retrieves the block with the given ID.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getBlock({
+    blockID: string
+    encoding: string // optional
+}) -> {
+    block: string,
+    encoding: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `blockID`: the block ID. It should be in cb58 format.
+    * `encoding`: the encoding format to use; can be either `hex` or `json`; defaults to `hex`.
+
+**Response parameters**:
+
+  * `block`: the transaction encoded to `encoding`.
+  * `encoding`: the encoding.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getBlock",
+    "params" : {
+        "blockID": "295FiDpgy35WZmzQbXVdCTQccQ1JTPAdBV7FYHtwgM7YLcFyV6",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block": "0x00000000002000000000641ad33ede17f652512193721df87994f783ec806bb5640c39ee73676caffcc3215e0651000000000049a80a000000010000000e0000000100000000000000000000000000000000000000000000000000000000000000000000000121e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff000000070000002e1a2a3910000000000000000000000001000000015cf998275803a7277926912defdf177b2e97b0b400000001e0d825c5069a7336671dd27eaa5c7851d2cf449e7e1cdc469c5c9e5a953955950000000021e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff000000050000008908223b680000000100000000000000005e45d02fcc9e585544008f1df7ae5c94bf7f0f2600000000641ad3b600000000642d48b60000005aedf802580000000121e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff000000070000005aedf80258000000000000000000000001000000015cf998275803a7277926912defdf177b2e97b0b40000000b000000000000000000000001000000012892441ba9a160bcdc596dcd2cc3ad83c3493589000000010000000900000001adf2237a5fe2dfd906265e8e14274aa7a7b2ee60c66213110598ba34fb4824d74f7760321c0c8fb1e8d3c5e86909248e48a7ae02e641da5559351693a8a1939800286d4fa2",
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.getBlockByHeight`
+
+> Retrieves a block at the given height.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getBlockByHeight({
+    height: string
+    encoding: string // optional
+}) -> {
+    block: string,
+    encoding: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `blockHeight`: the block height.
+    * `encoding`: the encoding format to use; can be either `hex` or `json`; defaults to `hex`.
+
+**Response parameters**:
+
+  * `block`: the transaction encoded to `encoding`.
+  * `encoding`: the encoding.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "avm.getBlockByHeight",
+    "params": {
+        “height”: “275686313486”,
+        "encoding": “hex”
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "block": "0x00000000002000000000642f6739d4efcdd07e4d4919a7fc2020b8a0f081dd64c262aaace5a6dad22be0b55fec0700000000004db9e100000001000000110000000100000000000000000000000000000000000000000000000000000000000000000000000121e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff000000070000005c6ece390000000000000000000000000100000001930ab7bf5018bfc6f9435c8b15ba2fe1e619c0230000000000000000ed5f38341e436e5d46e2bb00b45d62ae97d1b050c64bc634ae10626739e35c4b00000001c6dda861341665c3b555b46227fb5e56dc0a870c5482809349f04b00348af2a80000000021e67317cbc4be2aeb00677ad6462778a8f52274b9d605df2591b23027a87dff000000050000005c6edd7b40000000010000000000000001000000090000000178688f4d5055bd8733801f9b52793da885bef424c90526c18e4dd97f7514bf6f0c3d2a0e9a5ea8b761bc41902eb4902c34ef034c4d18c3db7c83c64ffeadd93600731676de",
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.getHeight`
+
+> Retrieves the height of the last accepted block.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getHeight() ->
+{
+    height: uint64,
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required): none.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "avm.getHeight",
+    "params": {}
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "height": "5094088"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.getTx`
+
+> Retrieves the specified transaction.
+
+The `encoding` parameter sets the format of the returned transaction. Can be either `hex` or `json`. Defaults to `hex`.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getTx({
+    txID: string,
+    encoding: string, //optional
+}) -> {
+    tx: string,
+    encoding: string,
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `txID`: a transaction ID.
+    * `encoding`: the encoding format to use; can be either `hex` or `json`; defaults to `hex`.
+
+**Response parameters**:
+
+  * `credentials`: a list of this transaction's credentials. Each credential proves that this transaction's creator is allowed to consume one of this transaction's inputs. Each credential is a list of signatures.
+  * `unsignedTx`: the non-signature portion of the transaction.
+  * `networkID`: the ID of the network this transaction happened on. (Avalanche Mainnet is 1.)
+  * `blockchainID`: the ID of the blockchain this transaction happened on. (Avalanche Mainnet X-Chain is 2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM.)
+  * Each element of `outputs` is an output (UTXO) of this transaction that is not being exported to another chain.
+  * Each element of `inputs` is an input of this transaction which has not been imported from another chain.
+  * Import Transactions have additional fields `sourceChain` and `importedInputs`, which specify the blockchain ID that assets are being imported from, and the inputs that are being imported.
+  * Export Transactions have additional fields `destinationChain` and `exportedOutputs`, which specify the blockchain ID that assets are being exported to, and the UTXOs that are being exported.
+
+An output contains:
+
+  * `assetID`: the ID of the asset being transferred. (The Mainnet Avax ID is `FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z`.)
+  * `fxID`: the ID of the FX this output uses.
+  * `output`: the FX-specific contents of this output.
+
+Most outputs use the secp256k1 FX, look like this:
+
+```json
+{
+  "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+  "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+  "output": {
+    "addresses": ["X-avax126rd3w35xwkmj8670zvf7y5r8k36qa9z9803wm"],
+    "amount": 1530084210,
+    "locktime": 0,
+    "threshold": 1
+  }
+}
+```
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getTx",
+    "params" :{
+        "txID":"2oJCbb8pfdxEHAf9A8CdN4Afj9VSR3xzyzNkf8tDv7aM1sfNFL",
+        "encoding": "json"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "tx": {
+      "unsignedTx": {
+        "networkID": 1,
+        "blockchainID": "2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM",
+        "outputs": [],
+        "inputs": [
+          {
+            "txID": "2jbZUvi6nHy3Pgmk8xcMpSg5cW6epkPqdKkHSCweb4eRXtq4k9",
+            "outputIndex": 1,
+            "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+            "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+            "input": {
+              "amount": 2570382395,
+              "signatureIndices": [
+                0
+              ]
+            }
+          }
+        ],
+        "memo": "0x",
+        "destinationChain": "11111111111111111111111111111111LpoYY",
+        "exportedOutputs": [
+          {
+            "assetID": "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z",
+            "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+            "output": {
+              "addresses": [
+                "X-avax1tnuesf6cqwnjw7fxjyk7lhch0vhf0v95wj5jvy"
+              ],
+              "amount": 2569382395,
+              "locktime": 0,
+              "threshold": 1
+            }
+          }
+        ]
+      },
+      "credentials": [
+        {
+          "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
+          "credential": {
+            "signatures": [
+              "0x46ebcbcfbee3ece1fd15015204045cf3cb77f42c48d0201fc150341f91f086f177cfca8894ca9b4a0c55d6950218e4ea8c01d5c4aefb85cd7264b47bd57d224400"
+            ]
+          }
+        }
+      ],
+      "id": "2oJCbb8pfdxEHAf9A8CdN4Afj9VSR3xzyzNkf8tDv7aM1sfNFL"
+    },
+    "encoding": "json"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.getTxStatus`
+
+> Retrieves the status of a transaction sent to the network.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getTxStatus({txID: string}) -> {status: string}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `txID`: a transaction ID.
+
+**Response example**:
+
+  * `status`: either of the following items:
+    * `Accepted`: the transaction is (or will be) accepted by every node.
+    * `Processing`: the transaction is being voted on by this node.
+    * `Rejected`: the transaction will never be accepted by any node in the network.
+    * `Unknown`: the transaction hasn’t been seen by this node.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getTxStatus",
+    "params" :{
+        "txID":"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "status": "Accepted"
+  }
+}
+```
+
+---
+
+### `avm.getUTXOs`
+
+> Retrieves the UTXOs that reference a given address.
+
+If `sourceChain` is specified, then it will retrieve the atomic UTXOs exported from that chain to the X Chain.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.getUTXOs({
+    addresses: []string,
+    limit: int, //optional
+    startIndex: { //optional
+        address: string,
+        utxo: string
+    },
+    sourceChain: string, //optional
+    encoding: string //optional
+}) -> {
+    numFetched: int,
+    utxos: []string,
+    endIndex: {
+        address: string,
+        utxo: string
+    },
+    sourceChain: string, //optional
+    encoding: string
+}
+```
+
+**Request parameters**:
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `utxos`: a list of UTXOs such that each UTXO references at least one address in addresses.
+    * `limit`: the max number of UTXOs to be returned; if limit is omitted or greater than 1024, it is set to 1024.
+    * This method supports pagination. endIndex denotes the last UTXO returned. To get the next set of UTXOs, use the value of endIndex as startIndex in the next call.
+    * If `startIndex` is omitted, will fetch all UTXOs up to limit.
+    * When using pagination (when startIndex is provided), UTXOs are not guaranteed to be unique across multiple calls. That is, a UTXO may appear in the result of the first call, and then again in the second call.
+    * When using pagination, consistency is not guaranteed across multiple calls. That is, the UTXO set of the addresses may have changed between calls.
+    * `encoding`: sets the format for the returned UTXOs. Can only be hex when a value is provided.
+
+#### Request example
+
+Suppose we want all UTXOs that reference at least one of `X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5` and `X-avax1d09qn852zcy03sfc9hay2llmn9hsgnw4tp3dv6`.
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getUTXOs",
+    "params" :{
+        "addresses":["X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5", "X-avax1d09qn852zcy03sfc9hay2llmn9hsgnw4tp3dv6"],
+        "limit":5,
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "numFetched": "5",
+    "utxos": [
+      "0x0000a195046108a85e60f7a864bb567745a37f50c6af282103e47cc62f036cee404700000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216c1f01765",
+      "0x0000ae8b1b94444eed8de9a81b1222f00f1b4133330add23d8ac288bffa98b85271100000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216473d042a",
+      "0x0000731ce04b1feefa9f4291d869adc30a33463f315491e164d89be7d6d2d7890cfc00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f21600dd3047",
+      "0x0000b462030cc4734f24c0bc224cf0d16ee452ea6b67615517caffead123ab4fbf1500000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216c71b387e",
+      "0x000054f6826c39bc957c0c6d44b70f961a994898999179cc32d21eb09c1908d7167b00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f2166290e79d"
+    ],
+    "endIndex": {
+      "address": "X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "utxo": "kbUThAUfmBXUmRgTpgD6r3nLj7rJUGho6xyht5nouNNypH45j"
+    },
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+#### Request example
+
+Since `numFetched` is the same as `limit`, we can tell that there may be more UTXOs that were not fetched. We call the method again, this time with `startIndex`:
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getUTXOs",
+    "params" :{
+        "addresses":["X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"],
+        "limit":5,
+        "startIndex": {
+            "address": "X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+            "utxo": "kbUThAUfmBXUmRgTpgD6r3nLj7rJUGho6xyht5nouNNypH45j"
+        },
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "numFetched": "4",
+    "utxos": [
+      "0x000020e182dd51ee4dcd31909fddd75bb3438d9431f8e4efce86a88a684f5c7fa09300000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f21662861d59",
+      "0x0000a71ba36c475c18eb65dc90f6e85c4fd4a462d51c5de3ac2cbddf47db4d99284e00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f21665f6f83f",
+      "0x0000925424f61cb13e0fbdecc66e1270de68de9667b85baa3fdc84741d048daa69fa00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216afecf76a",
+      "0x000082f30327514f819da6009fad92b5dba24d27db01e29ad7541aa8e6b6b554615c00000000345aa98e8a990f4101e2268fab4c4e1f731c8dfbcffa3a77978686e6390d624f000000070000000000000001000000000000000000000001000000018ba98dabaebcd83056799841cfbc567d8b10f216779c2d59"
+    ],
+    "endIndex": {
+      "address": "X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "utxo": "21jG2RfqyHUUgkTLe2tUp6ETGLriSDTW3th8JXFbPRNiSZ11jK"
+    },
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+#### Request example
+
+Since `numFetched` is less than `limit`, we know that we are done fetching UTXOs and don’t need to call this method again.
+
+Suppose we want to fetch the UTXOs exported from the P Chain to the X Chain in order to build an ImportTx. Then we need to call GetUTXOs with the `sourceChain` argument in order to retrieve the atomic UTXOs:
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.getUTXOs",
+    "params" :{
+        "addresses":["X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5", "X-avax1d09qn852zcy03sfc9hay2llmn9hsgnw4tp3dv6"],
+        "limit":5,
+        "sourceChain": "P",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "numFetched": "1",
+    "utxos": [
+      "0x00001f989ffaf18a18a59bdfbf209342aa61c6a62a67e8639d02bb3c8ddab315c6fa0000000039c33a499ce4c33a3b09cdd2cfa01ae70dbf2d18b2d7d168524440e55d550088000000070011c304cd7eb5c0000000000000000000000001000000013cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c83497819"
+    ],
+    "endIndex": {
+      "address": "X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "utxo": "2Sz2XwRYqUHwPeiKoRnZ6ht88YqzAF1SQjMYZQQaB5wBFkAqST"
+    },
+    "encoding": "hex"
+  },
+  "id": 1
+}
+```
+
+---
+
+### `avm.issueTx`
+
+> Sends a signed transaction to the network.
+
+#### Parameters
+
+**Signature**:
+
+```
+avm.issueTx({
+    tx: string,
+    encoding: string, //optional
+}) -> {
+    txID: string
+}
+```
+
+**Request parameters**
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `tx`: a transaction.
+    * `encoding`: the encoding format to use; can be either `hex` or `json`; defaults to `hex`.
+
+#### Request example
+
+```shell
+curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"avm.issueTx",
+    "params" :{
+      "tx": "0x00000009de31b4d8b22991d51aa6aa1fc733f23a851a8c9400000000000186a0000000005f041280000000005f9ca900000030390000000000000001fceda8f90fcb5d30614b99d79fc4baa29307762668f16eb0259a57c2d3b78c875c86ec2045792d4df2d926c40f829196e0bb97ee697af71f5b0a966dabff749634c8b729855e937715b0e44303fd1014daedc752006011b730",
+        "encoding": "hex"
+    }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "txID": "NUPLwbt2hsYxpQg4H2o451hmTWQ4JZx2zMzM4SinwtHgAdX1JLPHXvWSXEnpecStLj"
+  }
 }
 ```
