@@ -1925,31 +1925,31 @@ curl -X POST 'https://rpc.ankr.com/avalanche' \
 
 ## P-Chain methods
 
-  * [`platform.getBalance`]() — retrieves the balance of AVAX for a given address.
-  * [`platform.getBlock`]() — retrieves a block by its ID.
-  * [`platform.getBlockchains`]() — retrieves all the blockchains that exist (excluding the P-Chain).
-  * [`platform.getBlockchainStatus`]() — retrieves the status of a blockchain.
-  * [`platform.getCurrentSupply`]() — retrieves an upper bound on the amount of existing tokens that can stake the requested Subnet.
-  * [`platform.getCurrentValidators`]() — retrieves the list of current validators of the given Subnet.
-  * [`platform.getHeight`]() — retrieves the height of the latest accepted block.
-  * [`platform.getMaxStakeAmount`]() — retrieves the maximum amount of nAVAX staking to the named node during a particular time period.
-  * [`platform.getMinStake`]() — retrieves the minimum amount of tokens required to validate the requested Subnet and the minimum amount of tokens that can be delegated.
-  * [`platform.getPendingValidators`]() — retrieves the list of validators in the pending validator set of the specified Subnet.
-  * [`platform.getRewardUTXOs`]() — retrieves the UTXOs rewarded after the provided transaction's staking or delegation period has ended.
-  * [`platform.getStake`]() — retrieves the amount of nAVAX staked by a set of addresses.
-  * [`platform.getStakingAssetID`]() — retrieves an assetID for a Subnet’s staking asset.
-  * [`platform.getSubnets`]() — retrieves info about the Subnets.
-  * [`platform.getTimestamp`]() — retrieves the current P-Chain timestamp.
-  * [`platform.getTotalStake`]() — retrieves the total amount of tokens staked on the requested Subnet.
-  * [`platform.getTx`]() — retrieves a transaction by its ID.
-  * [`platform.getTxStatus`]() — retrieves a transaction’s status by its ID.
-  * [`platform.getUTXOs`]() — retrieves the UTXOs that reference a given set of addresses.
-  * [`platform.getValidatorsAt`]() — retrieves the validators and their weights of a Subnet or the Primary Network at a given P-Chain height.
-  * [`platform.issueTx`]() — issues a transaction to the Platform Chain.
-  * [`platform.listAddresses`]() — retrieves the list of addresses controlled by the given user.
-  * [`platform.sampleValidators`]() — retrieves the validators from the specified Subnet.
-  * [`platform.validatedBy`]() — retrieves the Subnet that validates a given blockchain.
-  * [`platform.validates`]() — retrieves the IDs of the blockchains a Subnet validates.
+  * [`platform.getBalance`](/rpc-service/chains/chains-api/avalanche/#platformgetbalance) — retrieves the balance of AVAX for a given address.
+  * [`platform.getBlock`](/rpc-service/chains/chains-api/avalanche/#platformgetblock) — retrieves a block by its ID.
+  * [`platform.getBlockchains`](/rpc-service/chains/chains-api/avalanche/#platformgetblockchains) — retrieves all the blockchains that exist (excluding the P-Chain).
+  * [`platform.getBlockchainStatus`](/rpc-service/chains/chains-api/avalanche/#platformgetblockchainstatus) — retrieves the status of a blockchain.
+  * [`platform.getCurrentSupply`](/rpc-service/chains/chains-api/avalanche/#platformgetcurrentsupply) — retrieves an upper bound on the amount of existing tokens that can stake the requested Subnet.
+  * [`platform.getCurrentValidators`](/rpc-service/chains/chains-api/avalanche/#platformgetcurrentvalidators) — retrieves the list of current validators of the given Subnet.
+  * [`platform.getHeight`](/rpc-service/chains/chains-api/avalanche/#platformgetheight) — retrieves the height of the latest accepted block.
+  * [`platform.getMaxStakeAmount`](/rpc-service/chains/chains-api/avalanche/#platformgetmaxstakeamount) — retrieves the maximum amount of nAVAX staking to the named node during a particular time period.
+  * [`platform.getMinStake`](/rpc-service/chains/chains-api/avalanche/#platformgetminstake) — retrieves the minimum amount of tokens required to validate the requested Subnet and the minimum amount of tokens that can be delegated.
+  * [`platform.getPendingValidators`](/rpc-service/chains/chains-api/avalanche/#platformgetpendingvalidators) — retrieves the list of validators in the pending validator set of the specified Subnet.
+  * [`platform.getRewardUTXOs`](/rpc-service/chains/chains-api/avalanche/#platformgetrewardutxos) — retrieves the UTXOs rewarded after the provided transaction's staking or delegation period has ended.
+  * [`platform.getStake`](/rpc-service/chains/chains-api/avalanche/#platformgetstake) — retrieves the amount of nAVAX staked by a set of addresses.
+  * [`platform.getStakingAssetID`](/rpc-service/chains/chains-api/avalanche/#platformgetstakingassetid) — retrieves an assetID for a Subnet’s staking asset.
+  * [`platform.getSubnets`](/rpc-service/chains/chains-api/avalanche/#platformgetsubnets) — retrieves info about the Subnets.
+  * [`platform.getTimestamp`](/rpc-service/chains/chains-api/avalanche/#platformgettimestamp) — retrieves the current P-Chain timestamp.
+  * [`platform.getTotalStake`](/rpc-service/chains/chains-api/avalanche/#platformgettotalstake) — retrieves the total amount of tokens staked on the requested Subnet.
+  * [`platform.getTx`](/rpc-service/chains/chains-api/avalanche/#platformgettx) — retrieves a transaction by its ID.
+  * [`platform.getTxStatus`](/rpc-service/chains/chains-api/avalanche/#platformgettxstatus) — retrieves a transaction’s status by its ID.
+  * [`platform.getUTXOs`](/rpc-service/chains/chains-api/avalanche/#platformgetutxos) — retrieves the UTXOs that reference a given set of addresses.
+  * [`platform.getValidatorsAt`](/rpc-service/chains/chains-api/avalanche/#platformgetvalidatorsat) — retrieves the validators and their weights of a Subnet or the Primary Network at a given P-Chain height.
+  * [`platform.issueTx`](/rpc-service/chains/chains-api/avalanche/#platformissuetx) — issues a transaction to the Platform Chain.
+  * [`platform.listAddresses`](/rpc-service/chains/chains-api/avalanche/#platformsamplevalidators) — retrieves the list of addresses controlled by the given user.
+  * [`platform.sampleValidators`](/rpc-service/chains/chains-api/avalanche/#platformvalidatedby) — retrieves the validators from the specified Subnet.
+  * [`platform.validatedBy`](/rpc-service/chains/chains-api/avalanche/#platformvalidatedby) — retrieves the Subnet that validates a given blockchain.
+  * [`platform.validates`](/rpc-service/chains/chains-api/avalanche/#platformvalidates) — retrieves the IDs of the blockchains a Subnet validates.
 
 ---
 
@@ -3910,10 +3910,10 @@ curl -X POST 'https://rpc.ankr.com/avalanche-p' \
 
 ## C-Chain methods
 
-  * [`avax.getAtomicTx`]() — retrieves a transaction by its ID.
-  * [`avax.getAtomicTxStatus`]() — retrieves the status of an atomic transaction sent to the network.
-  * [`avax.getUTXOs`]() — retrieves the UTXOs that reference a given address.
-  * [`avax.issueTx`]() — sends a signed transaction to the network.
+  * [`avax.getAtomicTx`](/rpc-service/chains/chains-api/avalanche/#avaxgetatomictx) — retrieves a transaction by its ID.
+  * [`avax.getAtomicTxStatus`](/rpc-service/chains/chains-api/avalanche/#avaxgetatomictxstatus) — retrieves the status of an atomic transaction sent to the network.
+  * [`avax.getUTXOs`](/rpc-service/chains/chains-api/avalanche/#avaxgetutxos) — retrieves the UTXOs that reference a given address.
+  * [`avax.issueTx`](/rpc-service/chains/chains-api/avalanche/#avaxissuetx) — sends a signed transaction to the network.
 
 ---
 
@@ -4202,18 +4202,18 @@ curl -X POST 'https://rpc.ankr.com/avalanche-c' \
 
 ## X-Chain methods
 
-  * [`avm.buildGenesis`]() — creates the byte representation of the given JSON representation of the Virtual Machine's genesis state.
-  * [`avm.getAddressTxs`]() — retrieves all transactions that change the balance of the given address.
-  * [`avm.getAllBalances`]() — retrieves the balances of all assets controlled by a given address.
-  * [`avm.getAssetDescription`]() — retrieves information about an asset.
-  * [`avm.getBalance`]() — retrieves the balance of an asset controlled by a given address.
-  * [`avm.getBlock`]() — retrieves the block with the given ID.
-  * [`avm.getBlockByHeight`]() — retrieves a block at the given height.
-  * [`avm.getHeight`]() — retrieves the height of the last accepted block.
-  * [`avm.getTx`]() — retrieves the specified transaction.
-  * [`avm.getTxStatus`]() — retrieves the status of a transaction sent to the network.
-  * [`avm.getUTXOs`]() — retrieves the UTXOs that reference a given address.
-  * [`avm.issueTx`]() — sends a signed transaction to the network.
+  * [`avm.buildGenesis`](/rpc-service/chains/chains-api/avalanche/#avmbuildgenesis) — creates the byte representation of the given JSON representation of the Virtual Machine's genesis state.
+  * [`avm.getAddressTxs`](/rpc-service/chains/chains-api/avalanche/#avmgetaddresstxs) — retrieves all transactions that change the balance of the given address.
+  * [`avm.getAllBalances`](/rpc-service/chains/chains-api/avalanche/#avmgetallbalances) — retrieves the balances of all assets controlled by a given address.
+  * [`avm.getAssetDescription`](/rpc-service/chains/chains-api/avalanche/#avmgetassetdescription) — retrieves information about an asset.
+  * [`avm.getBalance`](/rpc-service/chains/chains-api/avalanche/#avmgetbalance) — retrieves the balance of an asset controlled by a given address.
+  * [`avm.getBlock`](/rpc-service/chains/chains-api/avalanche/#avmgetblock) — retrieves the block with the given ID.
+  * [`avm.getBlockByHeight`](/rpc-service/chains/chains-api/avalanche/#avmgetblockbyheight) — retrieves a block at the given height.
+  * [`avm.getHeight`](/rpc-service/chains/chains-api/avalanche/#avmgetheight) — retrieves the height of the last accepted block.
+  * [`avm.getTx`](/rpc-service/chains/chains-api/avalanche/#avmgettx) — retrieves the specified transaction.
+  * [`avm.getTxStatus`](/rpc-service/chains/chains-api/avalanche/#avmgettxstatus) — retrieves the status of a transaction sent to the network.
+  * [`avm.getUTXOs`](/rpc-service/chains/chains-api/avalanche/#avmgetutxos) — retrieves the UTXOs that reference a given address.
+  * [`avm.issueTx`](/rpc-service/chains/chains-api/avalanche/#avmissuetx) — sends a signed transaction to the network.
 
 ---
 
