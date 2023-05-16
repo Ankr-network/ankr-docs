@@ -1,19 +1,13 @@
 import { Callout } from "components";
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Base
+# Chiliz
 
-<Callout type="tip">
-Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
-</Callout>
+> Chiliz API is available on [RPC Service](https://www.ankr.com/rpc/chiliz).
 
-> Base API is available on [RPC Service](https://www.ankr.com/rpc/base).
+Chiliz is an EVM-compatible Layer-1 blockchain built to serve as the foundation for an ever-growing ecosystem of enterprise-level sports and entertainment stakeholders developing blockchain-based user/fan experiences and B2B/B2C tools within their respective industries.
 
-Base is a secure, low-cost, developer-friendly Ethereum L2 built to bring the next billion users to web3.
-
-Base is built on the [Bedrock](https://stack.optimism.io/docs/releases/bedrock/explainer/) release of the [OP Stack](https://stack.optimism.io/), which is designed from the ground up to be as close to Ethereum as possible. Because of this, there are very little differences when it comes to building on Base and Ethereum.
-
-In order for your Web3 application to interact with Base — either by reading blockchain data or sending transactions to the network — it must connect to a Base node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with Chiliz — either by reading blockchain data or sending transactions to the network — it must connect to a Chiliz node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
@@ -21,34 +15,34 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 
 ## Methods supported
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/base/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/base/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/base/#net_version) — returns the current network ID.
-  * [`net_listening`](/rpc-service/chains/chains-api/base/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/base/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/base/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/base/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/base/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/base/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/base/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/base/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/base/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/base/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/base/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/base/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/base/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/base/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/base/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/base/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/base/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/base/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/base/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/base/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/base/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/base/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/base/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/base/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/base/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/chiliz/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/chiliz/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/chiliz/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/chiliz/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/chiliz/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/chiliz/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/chiliz/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/chiliz/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/chiliz/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/chiliz/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/chiliz/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/chiliz/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/chiliz/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/chiliz/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/chiliz/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/chiliz/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/chiliz/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/chiliz/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/chiliz/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/chiliz/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/chiliz/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/chiliz/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/chiliz/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/chiliz/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/chiliz/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/chiliz/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/chiliz/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/chiliz/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -70,7 +64,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -86,7 +80,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "Geth/v0.1.0-unstable-11f0554a-20230321/linux-amd64/go1.19.7"
+    "result": "Geth/v1.1.8/linux-amd64/go1.16.15"
 }
 ```
 
@@ -112,7 +106,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -152,7 +146,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -168,7 +162,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "84531"
+    "result": "88888"
 }
 ```
 
@@ -192,7 +186,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -235,7 +229,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -289,7 +283,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -305,7 +299,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x59682f31"
+    "result": "0x246139ca800"
 }
 ```
 
@@ -329,7 +323,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -371,7 +365,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -387,7 +381,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x3c7362"
+    "result": "0x2a36ed"
 }
 ```
 
@@ -419,12 +413,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBalance",
-      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "latest"],
+      "params": ["0x94E7358492C968FCA9D984aB507067Ea734233Ce", "latest"],
       "id": 1
     }'
 ```
@@ -435,7 +429,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x3782dace9d90000"
+    "result": "0x0"
 }
 ```
 
@@ -469,12 +463,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getStorageAt",
-      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "0x0", "latest"],
+      "params": ["0x46bb5369701C44E3F1a78825A5E55743B0D81401", "0x0", "latest"],
       "id": 1
     }'
 ```
@@ -518,12 +512,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionCount",
-      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "latest"],
+      "params": ["0x46bb5369701C44E3F1a78825A5E55743B0D81401", "latest"],
       "id": 1
     }'
 ```
@@ -534,7 +528,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x1"
+    "result": "0x0"
 }
 ```
 
@@ -560,12 +554,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByHash",
-      "params": ["0x44a64e8765b4c3980711cc7bd89dae8569dcd79cad282323b33619233c8bfec1"],
+      "params": ["0x2b64fbd89591504539f013f3a00fbeb01d6927fc72e08e9ef0bc0d0c041492fa"],
       "id": 1
     }'
 ```
@@ -607,12 +601,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x3C73DC"],
+      "params": ["0x15A846B"],
       "id": 1
     }'
 ```
@@ -649,12 +643,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0x44a64e8765b4c3980711cc7bd89dae8569dcd79cad282323b33619233c8bfec1"],
+      "params": ["0x2b64fbd89591504539f013f3a00fbeb01d6927fc72e08e9ef0bc0d0c041492fa"],
       "id": 1
     }'
 ```
@@ -696,12 +690,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockNumber",
-      "params": ["0x3C73DC"],
+      "params": ["0x15A844D"],
       "id": 1
     }'
 ```
@@ -744,12 +738,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getCode",
-      "params": ["0xf69D6767a2317172C2B049E8260af2986505177F", "latest"],
+      "params": ["0x4D5a7038ca6573eA6682e788843f53d33B453BeE", "latest"],
       "id": 1
     }'
 ```
@@ -783,12 +777,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/base/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/chiliz/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -843,12 +837,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_call",
-    "params": [{"from":null,"to":"0x4200000000000000000000000000000000000006","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "params": [{"from":null,"to":"0x4D5a7038ca6573eA6682e788843f53d33B453BeE","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
     "id": 1
 }'
 ```
@@ -883,7 +877,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
         * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
         * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
         * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
-        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei; note that if the value exceeds the `from` address balance (which is 0.000000000000000001 ETH by default), then you'll receive an `insufficient funds` error in response.
         * `data` (string; data; optional): the hash of the method signature and encoded parameters.
 
     2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
@@ -900,12 +894,12 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_estimateGas",
-    "params": [{"to":"0x57b3a84E18d6302E2482841a1Bc9839Ab172b26F"}],
+    "params": [{"to":"0x6E9681c9cbCF23Fc3B9a044B04941B792B0dCBd9"}],
     "id": 1
 }'
 ```
@@ -962,12 +956,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByHash",
-      "params": ["0x4389f44951cf44a521dd07c5e246ddd396212194ae72cd5c707661209dca1881", false],
+      "params": ["0x23b361994b3c5cf8101623b6efa01d5d20abbdb3e50e522e65094d6b2bd93280", false],
       "id": 1
     }'
 ```
@@ -1057,7 +1051,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1074,30 +1068,25 @@ curl -X POST https://rpc.ankr.com/base_goerli \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "baseFeePerGas": "0x31",
-        "difficulty": "0x0",
-        "extraData": "0x",
-        "gasLimit": "0x17d7840",
-        "gasUsed": "0x25faa",
-        "hash": "0x798fb0b460166fffd7d53a2058d956220f7395387bf7a0eed0f5c4453444091f",
-        "logsBloom": "0x04200000000200000000000080000000020010000000000000200000000900000000000004000000000000000000000000000000000000000000000000008000000000000000000000280008000000200000000000000000040000008000000000000000000000000000000000000000000000040000000002000410000000000000000000000001400000000000000000200001000000080000004000000040000000000000000100000000000000000000000000000000400000000020000000800002008000000000000000000000000000000000001000000100000000000000000000000000000010000000000000000000000004400000000000000000",
-        "miner": "0x4200000000000000000000000000000000000011",
-        "mixHash": "0xc0400fc07af9edad173f52c217440a40dab619f7d138738b53f3370b1799440c",
+        "difficulty": "0x2",
+        "extraData": "0xd983010108846765746889676f312e31362e3135856c696e75780000bd7c1b1b4d5395dcb04ebc3bca5f8d501b11eae55e194bbddf2ba2a1b0957822b1fa632b547ec992b469068caaeb5f0fcf74062e4e65fbb0636a1f2f62423906b5f01a7c01",
+        "gasLimit": "0x1c9c380",
+        "gasUsed": "0x0",
+        "hash": "0x68ca2f7050fbf04874b9614e652b8bd4f6ac44bb5c1e600bb66c6070a5424170",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0xf84aed72066e635fd9b0f2fbddbdb77a8761d028",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "nonce": "0x0000000000000000",
-        "number": "0x3c75f5",
-        "parentHash": "0xc84319dc3b967ba0484cdee4fbf2ac2897113cd836b3709ad9bfac938c5dde3b",
-        "receiptsRoot": "0x1d04113e9ccf95a9013827132a7d0e53d703d84f2e61b97b03a238dc5c83461f",
+        "number": "0x2a3cde",
+        "parentHash": "0xb6bcca7a7e91f9854ef66a27eb7fa2e77f957903601f2fed214f87570591adc2",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x59e",
-        "stateRoot": "0x086ecac7b5f5cd70fbecda366472417c2a1e9fcad0575720b6934190b1315176",
-        "timestamp": "0x645258fa",
-        "totalDifficulty": "0x0",
-        "transactions": [
-            "0xb3b523a38b8d61fe578d83714b829c23213892d882df12ed914868c1b1e7ada6",
-            "0x6b3f47444637df1ca316601dc870fc09298bc35ebb3995e597a91768d093d48f",
-            "0xfb114453c2105430fc4e522171b10eb772b1ae4931b7e30cb3fef2dd31e92868"
-        ],
-        "transactionsRoot": "0xaaaca0a01bd4561f88176f56f0ec5706798376b147b3084cdd34eb47ddadc031",
+        "size": "0x262",
+        "stateRoot": "0x6506ff6f995b6d1defd5f3fecff5054eb9266ce9be310afef12011f627f23aaf",
+        "timestamp": "0x6463776e",
+        "totalDifficulty": "0x54648b",
+        "transactions": [],
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
         "uncles": []
     }
 }
@@ -1138,12 +1127,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0xbb7ee1471cfd836d759e1df26b5726a3f6250459e1f0bc34fc3818f7f7736c3b"],
+      "params": ["0x58a525386e069209bad64c761fe1b6b79e758ef2989e3659e1ef7cba6f4d594d"],
       "id": 1
     }'
 ```
@@ -1212,7 +1201,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1292,7 +1281,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1372,12 +1361,12 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionReceipt",
-      "params": ["0xbb7ee1471cfd836d759e1df26b5726a3f6250459e1f0bc34fc3818f7f7736c3b"],
+      "params": ["0x58a525386e069209bad64c761fe1b6b79e758ef2989e3659e1ef7cba6f4d594d"],
       "id": 1
     }'
 ```
@@ -1449,7 +1438,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1537,7 +1526,7 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1624,12 +1613,12 @@ curl -X POST https://rpc.ankr.com/base_goerli \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/chiliz \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getLogs",
-      "params": [{"address": "0x647830A95A754BDFf41a75ff8786392760f17Fc4"}],
+      "params": [{"address": "0xB7Ce2087829FC7672E23cd044A3039908780262d"}],
       "id": 1
     }'
 ```
