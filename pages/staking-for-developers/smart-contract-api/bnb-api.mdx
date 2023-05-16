@@ -23,9 +23,9 @@ Switches aBNBb to ankrBNB.
 
 ### Stake BNB and claim ankrBNB
 
-#### `stakeAndClaimCerts(payableAmount)`
+#### `stakeCerts(payableAmount)`
  
-Stakes BNB and claims ankrBNB for the staked BNB. 
+Stakes BNB and claims ankrBNB.
 
 ##### Parameters
 
@@ -33,35 +33,14 @@ Stakes BNB and claims ankrBNB for the staked BNB.
 
 ##### Smart contract
 
-* [Mainnet BinancePool Proxy — 0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD](https://bscscan.com/address/0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD#writeProxyContract)
-* [Testnet BinancePool Proxy — 0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
+* [Mainnet BNBStakingPool Proxy](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
+* [Testnet BinancePool Proxy](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94) (0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
 
 ##### Example
 
-[Mainnet live transaction example](https://bscscan.com/tx/0xd8378256021c2a0928b9f13865dc2e6ed9f47a963805aa683930f1722a0b9424)
+[Mainnet live transaction example](https://bscscan.com/tx/0xe8710d1e0d5081f13ad4f7bb5e2f275f0e44fb0d4fd94c6cc3689c04a7a53108)
 
 ### Unstake ankrBNB and get BNB
-
-#### `approve(spender, rawAmount)`
-
-Lets the `ankrBNB` smart contract transfer user's ankrBNB tokens.
-
-##### Parameters
-
-* `spender` (address, required) — address of the `aBNBb`smart contract.
-* `rawAmount` (uint256, required) - amount of ankrBNB to be unstaked.
-
-##### Smart contract
-
-* [Mainnet aBNBb Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/token/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
-* [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE)
-* [Mainnet ankrBNB Proxy — 0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827](https://bscscan.com/address/0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827)
-* [Testnet ankrBNB Proxy — 0x46de2fbaf41499f298457cd2d9288df4eb1452ab](https://testnet.bscscan.com/token/0x46de2fbaf41499f298457cd2d9288df4eb1452ab)
-
-##### Example
-
-* [Mainnet live transaction example](https://bscscan.com/tx/0xd47702732f82703f3fef3c6f73b872faf39cf60715843871c93c786eb57627ab)
-* [Testnet live transaction example](https://testnet.bscscan.com/tx/0xe84279ab822beeeb744079e305fd554dcb0c7d5827b9a2f0d78e3d0bd2b6de97)
 
 #### `unstakeCerts(shares)`
 
@@ -71,14 +50,12 @@ Unstakes ankrBNB and gets BNB for the unstaked ankrBNB.
 `shares` (uint256, required) — amount of ankrBNB to be unstaked.
 
 ##### Smart contract
-* [Mainnet BinancePool Proxy — 0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD](https://bscscan.com/address/0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD#writeProxyContract)
+* [Mainnet BNBStakingPool Proxy](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
 * [Testnet BinancePool Proxy](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
 
 ##### Example
 
-* [Mainnet live transaction example](https://bscscan.com/tx/0x5c610a2569f06592c82b5b239c23b37a2ecee6115d899024b0a7bdebb02f392e)
 * [Testnet live transaction example](https://testnet.bscscan.com/tx/0x71f95dfcfe5543777ada8900551585c124bcbbd5a52ec76d930c957e7227515f)
-
 
 ### Get APR
 

@@ -51,7 +51,8 @@ The following entities are involved:
 
 ## Smart contracts
 Smart contracts and addresses involved in BNB Liquid Staking are:
-* [BinancePool Proxy](https://bscscan.com/address/0xa0c92efdceA55ca19396e4850B8D29Df6F907bcD#writeProxyContract) — contracts on BNB Chain where the user sends their initial staking or unstaking request.
+* [BNBStakingPool](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) — contract on BNB Chain where the user sends their initial staking or unstaking request.
+* [Staking](https://bscscan.com/address/0x0000000000000000000000000000000000002001) — withdraws the rewards and send them to `BNBStakingPool`.
 * [aBNBb Proxy](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e) — contract on BNB Chain is an intermediary in the ankrBNB staking and unstaking process.
 * [ankrBNB Proxy](https://bscscan.com/address/0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827) — contract on BNB Chain that mints or burns ankrBNB tokens for the user. All interactions go through the Proxy part.
 * [TokenHub](https://bscscan.com/address/0x0000000000000000000000000000000000001004) — contract on BNB Chain that makes cross-chain transfers between BNB Chain and Binance Chain.
@@ -70,10 +71,8 @@ Smart contracts and addresses involved in BNB Liquid Staking are:
 * [Tranchess](https://www.bnbchain.org/en/staking/validator/bva1m3nj2sglp7mlz3y08qjlqyhycenz8m9cl4h4ht)
 
 ## Staking workflow
-1. User sends a request to the `BinancePool::stake({value:stake+relayer_fee})` on BNB Chain. `stake` specifies the staked amount and should meet the requirements described above, while `fee` specifies the fee deducted from the user’s wallet for the staking. 
-2. `BinancePool` verifies the request checking the `minimal_stake_value` and the user-paid `relayer_fee`, executes `TokenHub::transferOut()` to make a cross-chain transaction to Binance Chain, mints ankrBNB in the amount defined by the current exchange ratio, and then issues a `Staked()` event with the `sender`, `stake`, `intermediary` parameters.
-3. BNB backend service detects the issued `Staked()` event and creates a record in its Postgres database, then waits for the successful cross-chain transaction completion to Binance Chain, which usually takes around 45s.
-4. Upon transaction completion, the staked amount ends up at `intermediaryAddress` — the BNB backend service address on Binance Chain. Then the BNB backend service executes `sendDelegation(validatorAddress, stake)` on Binance Chain to send the stake to `validatorAddress`of one of the validators from the Ankr set.
+1. User sends a request to the `BNBStakingPool::stakeCerts({value:stake})` on BNB Chain. `stake` specifies the staked amount and should meet the requirements described above. `BNBStakingPool` verifies the request checking the `_minimumStake` and mints ankrBNB in the amount defined by the current exchange ratio, and then issues a `Staked()` event with the `staker`, `amount` (staked amount), `shares` (issued ankrBNB), `false` (because ankrBNB is a reward-bearing token) parameters.
+2. `BNBStakingPool` accumulates minimum 100 BNB and then sends the accumulated amount via `BNBStakingPool:delegate(validator, amount)` to an address of one of the validators from the Ankr set.
 
 ## Exchange ratio 
 When staking, the user receives:
@@ -90,21 +89,10 @@ uint256 denominator = _totalStaked + totalRewards - _totalUnbondedBonds;
 _ratio = (totalShares * 1e18) / denominator;
 ```
 
-## Unstaking workflow
-1. For ankrBNB, the user sends a request to the `ankrBNB::approve(aBNBb.address, amount)` to let the `aBNBb` smart contract transfer the user's Liquid Staking tokens.  
-2. User sends a request to the `BinancePool::unstake(amount)` on BNB Chain. `amount` specifies the amount to be released back to the user.
-3. BinancePool verifies the request checking the `minimal_stake_value` and `balance_of_user`, then executes `aBNBb::lockSharesFor()` to transfer ankrBNB from user to the `aBNBb` smart contract address (input amount) then `aBNBb::burn()` executes to decrease total supply of tokens. 
-4. BNB backend service detects the `UnstakePending()` event and creates a record in Postgres database, then starts to check the database for new `Unstake` requests every day at 00:00. If it finds a new `Unstake` request, it executes `sideChainUnbond(bsc, validatorAddress, totalPendingAmount)` on the Binance Chain where `totalPendingAmount` specifies the aggregate pending amount to unstake for different users and `validatorAddress` specifies the address of one of the validators from the Ankr set to get `totalPendingAmount` from. 
-5. After the `UnbondTime`, `intermediaryAddress` receives `undelegated(unbonded)` funds. Then the BNB backend service makes a cross-chain transaction to `operatorAddress` on BNB Chain.
-6. Upon the cross-transaction completion, the unstaked amount ends up at `operatorAddress`. Then the BNB backend service executes `BinancePool::distributeRewards({value: totalPendingAmount})` on BNB Chain to distribute stakes and rewards to the users.
-   
-### The unstake process
-To understand the Step 4 through 6 clearer, look at the following description. 
-1. Ankr accumulated all the unstaking transaction from Liquid Staking users in a pool.
-2. Once every 24 hours, Ankr check if there is a validator that doesn't have a pending unstaking transaction.
-3. If such validator is found, Ankr sends an unstaking transaction to it. The amount in this transaction is an aggregate of all the total users unstaking transactions since the last Ankr unstaking transaction.      
-4. The transaction takes 7 days to be processes, which is the BNB Chain unbond time period.
-5. After the unbond time period ends, Ankr receives the unstaked funds and redistributes them to the users. 
+## Unstaking workflow`
+1. User sends a request to the `BNBStakingPool::unstakeCerts(shares)` on BNB Chain. `shares` specifies the amount to unstake. You can also unstake to an arbitrarily chosen address via `BNBStakingPool::unstakeCertsFor(receiverAddress, shares)`. `BNBStakingPool` verifies the request checking the `_minimumUnstake` and `balance_of_user`, to transfer ankrBNB from user to the `aBNBb` smart contract address (input amount) then `aBNBb::burn()` executes to decrease total supply of tokens, and then issues a `Unstaked()` event with the `ownerAddress` (message sender), `receiverAddress` (user address for receiving unstaked funds and rewards), `amount` (amount of BNBs to be send to the user), `shares` (amount of ankrBNB to unstake), `false` (because ankrBNB is a reward-bearing token) parameters.
+2. BNB backend service waits until `_pendingTotalUnstakes` reaches minimum 100 BNB at `BNBStakingPool`, then calls `BNBStakingPool:undelegate{value: relayerFee}(validator, amount)`.
+3. After the `UnbondTime`, `BNBStakingPool` gets the rewards via `Staking:claimUndelegated()` and distributes unstaked funds and rewards to the users.
 
 ## Additional information
 Additional details
