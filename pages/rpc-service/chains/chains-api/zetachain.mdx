@@ -1724,6 +1724,7 @@ curl -X POST https://rpc.ankr.com/zetachain_evm_testnet \
   * [`block_results`](/rpc-service/chains/chains-api/zetachain/#block_results) — retrieves block results at a specified height.
   * [`commit`](/rpc-service/chains/chains-api/zetachain/#commit) — retrieves commit results at a specified height.
   * [`validators`](/rpc-service/chains/chains-api/zetachain/#validators) — retrieves a validator set at a specified height.
+  * [`genesis`](/rpc-service/chains/chains-api/zetachain/#genesis) — retrieves the Genesis.
   * [`genesis_chunked`](/rpc-service/chains/chains-api/zetachain/#genesis_chunked) — retrieves the Genesis in multiple chunks.
   * [`dump_consensus_state`](/rpc-service/chains/chains-api/zetachain/#dump_consensus_state) — retrieves consensus state.
   * [`consensus_state`](/rpc-service/chains/chains-api/zetachain/#consensus_state) — retrieves consensus state.
@@ -2411,6 +2412,93 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_testnet/validators?height=1&
     ],
     "count": "1",
     "total": "25"
+  }
+}
+```
+
+---
+
+### `genesis`
+
+> Retrieves the Genesis.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Genesis results.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/zetachain_tendermint_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "genesis",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/zetachain_tendermint_testnet/genesis
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "genesis": {
+      "genesis_time": "2019-04-22T17:00:00Z",
+      "chain_id": "cosmoshub-2",
+      "initial_height": "2",
+      "consensus_params": {
+        "block": {
+          "max_bytes": "22020096",
+          "max_gas": "1000",
+          "time_iota_ms": "1000"
+        },
+        "evidence": {
+          "max_age": "100000"
+        },
+        "validator": {
+          "pub_key_types": [
+            "ed25519"
+          ]
+        }
+      },
+      "validators": [
+        {
+          "address": "B00A6323737F321EB0B8D59C6FD497A14B60938A",
+          "pub_key": {
+            "type": "tendermint/PubKeyEd25519",
+            "value": "cOQZvh/h9ZioSeUMZB/1Vy1Xo5x2sjrVjlE/qHnYifM="
+          },
+          "power": "9328525",
+          "name": "Certus One"
+        }
+      ],
+      "app_hash": "",
+      "app_state": {}
+    }
   }
 }
 ```
