@@ -49,6 +49,31 @@ For Aptos, we support blockchain interaction via all the [applicable methods](/r
 
 `/v1/spec`, `/v1/-/healthy`
 
+### API querying
+
+#### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/aptos/v1/ \
+-H 'Content-Type: application/json'
+```
+
+#### Response example
+
+```json
+{
+  "chain_id": 0,
+  "epoch": "32425224034",
+  "ledger_version": "32425224034",
+  "oldest_ledger_version": "32425224034",
+  "ledger_timestamp": "32425224034",
+  "node_role": "validator",
+  "oldest_block_height": "32425224034",
+  "block_height": "32425224034",
+  "git_hash": "string"
+}
+```
+
 ---
 
 ## Arbitrum
@@ -650,6 +675,103 @@ For Base, we support blockchain interaction via all the [applicable methods](/rp
 **WSS**:
 
 `txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/base_goerli \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc":"2.0",
+      "method":"eth_blockNumber",
+      "params": [],
+      "id":1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/base_goerli"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/base_goerli'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/base_goerli'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x459996"
+}
+```
 
 ---
 
@@ -1728,10 +1850,8 @@ Official quick links: [Website](https://filecoin.io/), [Docs](https://docs.filec
 
 ### Networks
 
-<div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
-</div>
 
 ### API methods
 
@@ -1763,6 +1883,115 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 **WSS Filecoin methods**:
 
 `Filecoin.ChainNotify`
+
+### API querying
+
+#### Request example (Standard EVM)
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example (Standard EVM)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x2910f9"
+}
+```
+
+#### Request example (Filecoin native)
+
+```shell
+curl -X POST https://rpc.ankr.com/filecoin \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "Filecoin.ChainGetBlock",
+      "params": [
+                  {
+                    "/": "bafy2bzacecbzs3i5qubhgozauss4nvifgty5zvyvf6cy6frnnznojdmfl6phe"
+                  }
+                ],
+      "id": 1
+    }'
+```
+
+#### Response example (Filecoin native)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Miner": "f0427989",
+        "Ticket": {
+            "VRFProof": "pbmP9mctFpH6BoFFh22uvzv8Ixx0rJq9YanJLFTRsgIWDibuomloU2UTWiN8007KBYAnB5Xj1jw7o81VJzKrUByqHUpZHWZM34CgVkuzcHPoSJpM8XGxs2GQkfNAncK2"
+        },
+        "ElectionProof": {
+            "WinCount": 1,
+            "VRFProof": "oLSLThMoFfGX4E8cDIEULGmUteJY/10nCfun3hiRE1PDIpkPOnoBACmto7/SCz1yFixgQaysEcKK6RCx1ImUW2Q9dlrj3MCbjRQtNiumTXviDqAWgoxYU55QSBDpLbel"
+        },
+        "BeaconEntries": [
+            {
+                "Round": 2787998,
+                "Data": "h+zHzc0DvUFIWFpFzqREiA2f3Uk4sn5NExnJJUtfju3Hlc0/dkNXq31+su9kh/q1CK69TRUy9562jx/eV4XXw1lA4QhDxBBWKoxQL/xR+zoCcfm4nzoD3HximnPCEEQA"
+            }
+        ],
+        "WinPoStProof": [
+            {
+                "PoStProof": 3,
+                "ProofBytes": "pK36Z/ehsV5sqyoX/Gc64tsV2yQOW6X+p8Wy1wH03WC9VA6qyc3ZaTt4d9oI6xVniJdyHiu22yMsXfimEfVSc/UzThf8KrnIBMWZr3sSQsOVusdf1zV5zNfvDr1wccHhCjIExyinkvGRW/irioDZ49Jrm5PUvaBERIuJC4hUp0DijM8UgY7FIYTA16HHp7gbpUzU7mpofBz42tL3c/8LgOmLd7FKOh69fk0xHYaeQU1Oz3cbSSHWL8a/wRf4y3nV"
+            }
+        ],
+        "Parents": [
+            {
+                "/": "bafy2bzaceaxasycsjnixwqqbx4o3fsspal2zspnhmdjdtyke5xwtjkut7asyw"
+            },
+            {
+                "/": "bafy2bzaceadqtqu4wcecrk2akfb4mw7y3bedihwanwk2l4dxbcu4fonu3x6pe"
+            },
+            {
+                "/": "bafy2bzacecoqk52mag2xpxn2eq3pfmyr6mafvogju4znyagmkah4oo4fjgh5i"
+            },
+            {
+                "/": "bafy2bzaced46b2tewkbg6qfa5jnoecvbpdn5k7loz7qsoon3m5mgeb63de46s"
+            }
+        ],
+        "ParentWeight": "63400884650",
+        "Height": 2692153,
+        "ParentStateRoot": {
+            "/": "bafy2bzacec5o4ffqnp4zmkn44i6h7oajurvtsb5zvstudvgwhha7y25alt3ck"
+        },
+        "ParentMessageReceipts": {
+            "/": "bafy2bzacebvll7rq7wscnsgbvgdc7xeuzsp2quu4hhfx4pjvq3hydhw2auvd6"
+        },
+        "Messages": {
+            "/": "bafy2bzacechrvqknf26ff4pihyatewfx64ae4bawbp4ibtasy72hr63fds4iq"
+        },
+        "BLSAggregate": {
+            "Type": 2,
+            "Data": "mQuz4wd292+Qh8oeZmpl+4QX7/90Oz7VDFLgPhRjIGgvYTEj0FYAecHTaxKaH0GGDwt0nqEvoVbFGf6PA6wCNtzwpLTMqQXZrT2cFeSAtC62vOOn7KTSdqtFxJvBwX1a"
+        },
+        "Timestamp": 1679070990,
+        "BlockSig": {
+            "Type": 2,
+            "Data": "qiMSk+hQ1E9WGMRn2o5dQmCpz1uO8JK4oIoh8NUwybN7GzrLEaSTv1W5IGx5AAnrAIYgE1MA+Y+CQ677iBC6wD3YUpzdSIt0QCv3cbf8SJgeOVusC+x0Vo/29zRGBgU/"
+        },
+        "ForkSignaling": 0,
+        "ParentBaseFee": "403334159"
+    },
+    "id": 1
+}
+```
 
 ---
 
@@ -3314,7 +3543,48 @@ For Near, we support blockchain interaction via all the [applicable methods](/rp
 
   `sandbox_patch_state`,
   `status`,
-  `network_info` 
+  `network_info`
+
+### API querying
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/near \
+-H "content-type: application/json" \
+-d '{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "view_access_key",
+    "finality": "final",
+    "account_id": "client.chainlink.testnet",
+    "public_key": "ed25519:H9k5eiU4xXS3M4z8HzKJSLaZdqGdGwBG49o7orNC4eZW"
+  }
+}'
+```
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "nonce": 85,
+    "permission": {
+      "FunctionCall": {
+        "allowance": "18501534631167209000000000",
+        "receiver_id": "client.chainlink.testnet",
+        "method_names": ["get_token_price"]
+      }
+    },
+    "block_height": 19884918,
+    "block_hash": "GGJQ8yjmo7aEoj8ZpAhGehnq9BSWFx4xswHYzDwwAP2n"
+  },
+  "id": "dontcare"
+}
+```
 
 ---
 
@@ -4176,6 +4446,103 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 
 `txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
 
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/polygon_zkevm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc":"2.0",
+      "method":"eth_blockNumber",
+      "params": [],
+      "id":1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/polygon_zkevm"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/polygon_zkevm'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/polygon_zkevm'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x43e16"
+}
+```
+
 ---
 
 ## Rollux
@@ -4351,6 +4718,103 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 **WSS**:
 
 `txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/scroll_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/scroll_testnet"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/scroll_testnet'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/scroll_testnet'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x215d8b"
+}
+```
 
 ---
 
@@ -4602,10 +5066,8 @@ Official quick links: [Website](https://solana.com/), [Docs](https://docs.solana
 
 ### Networks
 
-<div className="list-with-custom-top-margin mt-6">
   * Mainnet (`HTTPS` and `WSS`)
   * Devnet (`HTTPS` and `WSS`)
-</div>
 
 ### API methods
 
@@ -4621,16 +5083,59 @@ For Solana, we support blockchain interaction via all the [applicable methods](/
  If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
  </Callout>
 
-None
+None.
+
+### API querying
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/solana \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "getAccountInfo",
+      "params": [
+        "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
+        {
+          "encoding": "base58"
+        }
+      ],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "1.13.5",
+            "slot": 171939795
+        },
+        "value": {
+            "data": [
+                "df8aQUMTjEzaM7MBx7gWDVgHXxWNHx5rtjKTNMLR4JXHcXryskBMwTfNn6ksWcJgReufRevDzprYBek226dD3YrE2oXPyyhXvFdzbczZGvuD",
+                "base58"
+            ],
+            "executable": false,
+            "lamports": 2000000,
+            "owner": "11111111111111111111111111111111",
+            "rentEpoch": 361
+        }
+    },
+    "id": 1
+}
+```
 
 ---
 
 
 ## Sui
 
-
 Sui is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in Web3. Sui is horizontally scalable to support a wide range of application development with unrivaled speed at low cost.
-
 
 Official quick links: [Website](https://sui.io/), [Docs](https://docs.sui.io/), [GitHub](https://github.com/MystenLabs)
 
@@ -4877,6 +5382,90 @@ And all the methods with the following segments in their path:
   `scanshieldedtrc20notesbyovk`,
   `isshieldedtrc20contractnotespent`
 
+### API querying
+
+#### Request example (JSON-RPC)
+
+```shell
+curl -X POST https://rpc.ankr.com/tron_jsonrpc \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example (JSON-RPC)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x30dc665"
+}
+```
+
+#### Request example (REST)
+
+```shell
+curl -X GET 'https://rpc.ankr.com/http/tron/walletsolidity/getnowblock'
+```
+
+#### Response example (REST)
+
+```json
+{
+    "blockID": "0000000002fa7ad50ad1632efffc6f8376488681897834ac17bdf137e961b5f3",
+    "block_header": {
+        "raw_data": {
+            "number": 49969877,
+            "txTrieRoot": "9fb478348a2f48bd15eb5cff7d6b6a3845e7014a444125981e41c761c05c8898",
+            "witness_address": "411761716b76c6a3d885299c366826046c09b08d26",
+            "parentHash": "0000000002fa7ad442c90c1be8ab67467e1940017258cb28496bcafe7bcb1bbd",
+            "version": 27,
+            "timestamp": 1680522399000
+        },
+        "witness_signature": "50243f8d127f417f407e1df845c77bdf600d33d155cbcebe82b6b6903b8e74492c1bfabbf7be683ff0a20f9ce22565f9e6fe05c4202bb950e0390d4bbc38f7f301"
+    },
+    "transactions": [
+        {
+            "ret": [
+                {
+                    "contractRet": "SUCCESS"
+                }
+            ],
+            "signature": [
+                "8939604c6e12c894a5c45abca9337121f172281522227b51a78ddeaf3105c6a959378ef0d7541473ae15b28ee6c744525552577cac04d4ec0a48925e69a2f1ca00"
+            ],
+            "txID": "e8a35f80078d8e7f562d7b19c91102388d400029f9454d90d4b638bf6094621e",
+            "raw_data": {
+                "contract": [
+                    {
+                        "parameter": {
+                            "value": {
+                                "data": "a9059cbb000000000000000000000000149e4be8e140208f5640814249406404f475fb1700000000000000000000000000000000000000000000000000000000097a25c0",
+                                "owner_address": "41cebabc6a66da33d2135f11207d6ab88b82829813",
+                                "contract_address": "41a614f803b6fd780986a42c78ec9c7f77e6ded13c"
+                            },
+                            "type_url": "type.googleapis.com/protocol.TriggerSmartContract"
+                        },
+                        "type": "TriggerSmartContract"
+                    }
+                ],
+                "ref_block_bytes": "7ac2",
+                "ref_block_hash": "182e27a1484a4f66",
+                "expiration": 1680533174894,
+                "fee_limit": 30000000,
+                "timestamp": 1680522374779
+            },
+            "raw_data_hex": "0a027ac22208182e27a1484a4f6640eef4d4bcf4305aae01081f12a9010a31747970652e676f6f676c65617069732e636f6d2f70726f746f636f6c2e54726967676572536d617274436f6e747261637412740a1541cebabc6a66da33d2135f11207d6ab88b82829813121541a614f803b6fd780986a42c78ec9c7f77e6ded13c2244a9059cbb000000000000000000000000149e4be8e140208f5640814249406404f475fb1700000000000000000000000000000000000000000000000000000000097a25c070fbdcc1b7f43090018087a70e"
+        }
+    ]
+}
+```
+
 ---
 
 ## ZetaChain
@@ -4936,7 +5525,6 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   `/health`,
   `/status`,
   `/net_info`,
-  `/genesis`,
   `/broadcast_evidence`,
   `/dial_seeds`,
   `/dial_peers`
