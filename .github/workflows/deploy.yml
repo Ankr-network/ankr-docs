@@ -37,7 +37,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.0
         with:
-          node-version: '16.13.0'
+          node-version: '16.14.0'
 
       - name: Build
         working-directory: .
