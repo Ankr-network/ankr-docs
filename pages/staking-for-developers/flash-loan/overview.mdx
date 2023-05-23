@@ -22,7 +22,7 @@ SwapPool can be used to borrow and repay BNB, with a fee, in one transaction. EO
 
 ## Flash loan fee
 
-The fee is 0.5% with the minimum of 10000 wei. 
+The technical service fee is 0.5% with the minimum of 10000 wei.
 
 ## Step-by-step
 
@@ -149,7 +149,7 @@ require(receiver.onFlashLoan(msg.sender, token, amount, fee, data) == CALLBACK_S
 1. `initiator` (address) — address of the flashBorrower smart contract deployed by EOA.
 2. `token` (address) — address of the BNB ERC-20 token that EOA flash-loans.
 3. `amount` (uint256) — amount of the flash loan.
-4. `fee` (uint256) — the fee paid for the flash loan, by flashBorrower. 
+4. `fee` (uint256) — the technical service fee paid for the flash loan, by flashBorrower.
 5. `data` (bytes calldata) — rudimentary non-used parameter left not to change the `onflashLoan()` signature.
 
 ### 2. Understand how to interact with SwapPool
