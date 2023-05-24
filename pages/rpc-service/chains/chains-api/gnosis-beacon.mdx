@@ -1,12 +1,12 @@
 import { Callout } from "components";
 
-# Beacon
+# Gnosis Beacon
 
 <Callout type="tip">
 Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
 </Callout>
 
-> Beacon API is available on [RPC Service](https://www.ankr.com/rpc/eth) upon switching on the **Beacon** toggle.
+> Gnosis Beacon API is available on [RPC Service](https://www.ankr.com/rpc/gnosis) upon switching on the **Beacon** toggle.
 
 The Beacon Chain is a consensus layer that introduced a [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) to Ethereum. The Beacon Chain mechanism is responsible for creating new blocks, making sure those new blocks are valid, and rewarding validators with ETH for keeping the network secure.
 
@@ -18,99 +18,99 @@ Beacon API uses the REST interface for querying, responses come in [JSON format]
 
 **Beacon**:
 
-  * [`GET /eth/v1/beacon/genesis`](/rpc-service/chains/chains-api/beacon/#get-ethv1beacongenesis) — retrieves the details of the chain's genesis.
-  * [`GET /eth/v1/beacon/states/{state_id}/root`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idroot) — retrieves the state SSZ HashTreeRoot.
-  * [`GET /eth/v1/beacon/states/{state_id}/fork`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idfork) — retrieves the Fork object for a requested state.
-  * [`GET /eth/v1/beacon/states/{state_id}/finality_checkpoints`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idfinality_checkpoints) — retrieves state finality checkpoints.
-  * [`GET /eth/v1/beacon/states/{state_id}/validators`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idvalidators) — retrieves validators from state.
-  * [`GET /eth/v1/beacon/states/{state_id}/validators/{validator_id}`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idvalidatorsvalidator_id) — retrieves the validator from state by ID.
-  * [`GET /eth/v1/beacon/states/{state_id}/validator_balances`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idvalidator_balances) — retrieves validator balances from state.
-  * [`GET /eth/v1/beacon/states/{state_id}/committees`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idcommittees) — retrieves all committees for a state.
-  * [`GET /eth/v1/beacon/states/{state_id}/sync_committees`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idsync_committees) — retrieves sync committees for a state.
-  * [`GET /eth/v1/beacon/headers`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconheaders) — retrieves block headers.
-  * [`GET /eth/v1/beacon/headers/{block_id}`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconheadersblock_id) — retrieves a block header.
-  * [`POST /eth/v1/beacon/blocks`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconblocks) — publishes a signed block.
-  * [`POST /eth/v1/beacon/blinded_blocks`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconblinded_blocks) — publishes a signed block.
-  * [`GET /eth/v2/beacon/blocks/{block_id}`](/rpc-service/chains/chains-api/beacon/#get-ethv2beaconblocksblock_id) — retrieves a block.
-  * [`GET /eth/v1/beacon/blocks/{block_id}/root`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconblocksblock_idroot) — retrieves a block root.
-  * [`GET /eth/v1/beacon/blocks/{block_id}/attestations`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconblocksblock_idattestations) — retrieves block attestations.
-  * [`GET /eth/v1/beacon/pool/attestations`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconpoolattestations) — retrieves attestations from the operations pool.
-  * [`POST /eth/v1/beacon/pool/attestations`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconpoolattestations) — submits attestation objects to the node.
-  * [`GET /eth/v1/beacon/pool/attester_slashings`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconpoolattester_slashings) — retrieves attester slashings from the operations pool.
-  * [`POST /eth/v1/beacon/pool/attester_slashings`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconpoolattester_slashings) — submits the AttesterSlashing object to the node's pool.
-  * [`GET /eth/v1/beacon/pool/proposer_slashings`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconpoolproposer_slashings) — retrieves proposer slashings from the operations pool.
-  * [`POST /eth/v1/beacon/pool/proposer_slashings`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconpoolproposer_slashings) — submits the ProposerSlashing object to the node's pool.
-  * [`POST /eth/v1/beacon/pool/sync_committees`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconpoolsync_committees) — submits sync committee signatures to the node.
-  * [`GET /eth/v1/beacon/pool/voluntary_exits`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconpoolvoluntary_exits) — retrieves SignedVoluntaryExit from the operations pool.
-  * [`POST /eth/v1/beacon/pool/voluntary_exits`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconpoolvoluntary_exits) — submits the SignedVoluntaryExit object to the node's pool.
+  * [`GET /eth/v1/beacon/genesis`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beacongenesis) — retrieves the details of the chain's genesis.
+  * [`GET /eth/v1/beacon/states/{state_id}/root`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idroot) — retrieves the state SSZ HashTreeRoot.
+  * [`GET /eth/v1/beacon/states/{state_id}/fork`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idfork) — retrieves the Fork object for a requested state.
+  * [`GET /eth/v1/beacon/states/{state_id}/finality_checkpoints`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idfinality_checkpoints) — retrieves state finality checkpoints.
+  * [`GET /eth/v1/beacon/states/{state_id}/validators`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idvalidators) — retrieves validators from state.
+  * [`GET /eth/v1/beacon/states/{state_id}/validators/{validator_id}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idvalidatorsvalidator_id) — retrieves the validator from state by ID.
+  * [`GET /eth/v1/beacon/states/{state_id}/validator_balances`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idvalidator_balances) — retrieves validator balances from state.
+  * [`GET /eth/v1/beacon/states/{state_id}/committees`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idcommittees) — retrieves all committees for a state.
+  * [`GET /eth/v1/beacon/states/{state_id}/sync_committees`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idsync_committees) — retrieves sync committees for a state.
+  * [`GET /eth/v1/beacon/headers`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconheaders) — retrieves block headers.
+  * [`GET /eth/v1/beacon/headers/{block_id}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconheadersblock_id) — retrieves a block header.
+  * [`POST /eth/v1/beacon/blocks`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconblocks) — publishes a signed block.
+  * [`POST /eth/v1/beacon/blinded_blocks`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconblinded_blocks) — publishes a signed block.
+  * [`GET /eth/v2/beacon/blocks/{block_id}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv2beaconblocksblock_id) — retrieves a block.
+  * [`GET /eth/v1/beacon/blocks/{block_id}/root`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconblocksblock_idroot) — retrieves a block root.
+  * [`GET /eth/v1/beacon/blocks/{block_id}/attestations`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconblocksblock_idattestations) — retrieves block attestations.
+  * [`GET /eth/v1/beacon/pool/attestations`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconpoolattestations) — retrieves attestations from the operations pool.
+  * [`POST /eth/v1/beacon/pool/attestations`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconpoolattestations) — submits attestation objects to the node.
+  * [`GET /eth/v1/beacon/pool/attester_slashings`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconpoolattester_slashings) — retrieves attester slashings from the operations pool.
+  * [`POST /eth/v1/beacon/pool/attester_slashings`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconpoolattester_slashings) — submits the AttesterSlashing object to the node's pool.
+  * [`GET /eth/v1/beacon/pool/proposer_slashings`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconpoolproposer_slashings) — retrieves proposer slashings from the operations pool.
+  * [`POST /eth/v1/beacon/pool/proposer_slashings`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconpoolproposer_slashings) — submits the ProposerSlashing object to the node's pool.
+  * [`POST /eth/v1/beacon/pool/sync_committees`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconpoolsync_committees) — submits sync committee signatures to the node.
+  * [`GET /eth/v1/beacon/pool/voluntary_exits`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconpoolvoluntary_exits) — retrieves SignedVoluntaryExit from the operations pool.
+  * [`POST /eth/v1/beacon/pool/voluntary_exits`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconpoolvoluntary_exits) — submits the SignedVoluntaryExit object to the node's pool.
 
 
 **Config**:
 
-  * [`GET /eth/v1/config/fork_schedule`](/rpc-service/chains/chains-api/beacon/#get-ethv1configfork_schedule) — retrieves scheduled upcoming forks.
-  * [`GET /eth/v1/config/spec`](/rpc-service/chains/chains-api/beacon/#get-ethv1configspec) — retrieves spec parameters.
-  * [`GET /eth/v1/config/deposit_contract`](/rpc-service/chains/chains-api/beacon/#get-ethv1configdeposit_contract) — retrieves a deposit contract address.
+  * [`GET /eth/v1/config/fork_schedule`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1configfork_schedule) — retrieves scheduled upcoming forks.
+  * [`GET /eth/v1/config/spec`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1configspec) — retrieves spec parameters.
+  * [`GET /eth/v1/config/deposit_contract`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1configdeposit_contract) — retrieves a deposit contract address.
 
 **Debug**:
 
-  * [`GET /eth/v2/debug/beacon/states/{state_id}`](/rpc-service/chains/chains-api/beacon/#get-ethv2debugbeaconstatesstate_id) — retrieves the full BeaconState object.
-  * [`GET /eth/v2/debug/beacon/heads`](/rpc-service/chains/chains-api/beacon/#get-ethv2debugbeaconheads) — retrieves fork choice leaves.
+  * [`GET /eth/v2/debug/beacon/states/{state_id}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv2debugbeaconstatesstate_id) — retrieves the full BeaconState object.
+  * [`GET /eth/v2/debug/beacon/heads`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv2debugbeaconheads) — retrieves fork choice leaves.
 
 **Events**:
 
-  * [`GET /eth/v1/events`](/rpc-service/chains/chains-api/beacon/#get-ethv1events) — subscribes to Beacon node events.
+  * [`GET /eth/v1/events`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1events) — subscribes to Beacon node events.
 
 **Node**:
 
-  * [`GET /eth/v1/node/peers`](/rpc-service/chains/chains-api/beacon/#get-ethv1nodepeers) — retrieves node network peers.
-  * [`GET /eth/v1/node/peers/{peer_id}`](/rpc-service/chains/chains-api/beacon/#get-ethv1nodepeerspeer_id) — retrieves a peer.
-  * [`GET /eth/v1/node/peer_count`](/rpc-service/chains/chains-api/beacon/#get-ethv1nodepeer_count) — retrieves peer count.
-  * [`GET /eth/v1/node/version`](/rpc-service/chains/chains-api/beacon/#get-ethv1nodeversion) — retrieves a version string of the running Beacon node.
-  * [`GET /eth/v1/node/syncing`](/rpc-service/chains/chains-api/beacon/#get-ethv1nodesyncing) — retrieves a node syncing status.
-  * [`GET /eth/v1/node/health`](/rpc-service/chains/chains-api/beacon/#get-ethv1nodehealth) — retrieves health check.
+  * [`GET /eth/v1/node/peers`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1nodepeers) — retrieves node network peers.
+  * [`GET /eth/v1/node/peers/{peer_id}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1nodepeerspeer_id) — retrieves a peer.
+  * [`GET /eth/v1/node/peer_count`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1nodepeer_count) — retrieves peer count.
+  * [`GET /eth/v1/node/version`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1nodeversion) — retrieves a version string of the running Beacon node.
+  * [`GET /eth/v1/node/syncing`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1nodesyncing) — retrieves a node syncing status.
+  * [`GET /eth/v1/node/health`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1nodehealth) — retrieves health check.
 
 **Validator**:
 
-  * [`POST /eth/v1/validator/duties/attester/{epoch}`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatordutiesattesterepoch) — retrieves attester duties.
-  * [`GET /eth/v1/validator/duties/proposer/{epoch}`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatordutiesproposerepoch) — retrieves block proposer duties.
-  * [`POST /eth/v1/validator/duties/sync/{epoch}`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatordutiessyncepoch) — retrieves sync committee duties.
-  * [`GET /eth/v1/validator/blocks/{slot}`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorblocksslot) — produces a new block, without signature.
-  * [`GET /eth/v1/validator/blinded_blocks/{slot}`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorblinded_blocksslot) — produces a new block, without signature.
-  * [`GET /eth/v1/validator/attestation_data`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorattestation_data) — produces attestation data.
-  * [`GET /eth/v1/validator/aggregate_attestation`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatoraggregate_attestation) — retrieves aggregated attestation.
-  * [`POST /eth/v1/validator/aggregate_and_proofs`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatoraggregate_and_proofs) — publishes multiple aggregate and proofs.
-  * [`POST /eth/v1/validator/beacon_committee_subscriptions`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorbeacon_committee_subscriptions) — signals the Beacon node to prepare for a committee subnet.
-  * [`POST /eth/v1/validator/sync_committee_subscriptions`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorsync_committee_subscriptions) — subscribes to sync committee subnets.
-  * [`GET /eth/v1/validator/sync_committee_contribution`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorsync_committee_contribution) — produces a sync committee contribution.
-  * [`POST /eth/v1/validator/contribution_and_proofs`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorcontribution_and_proofs) — publishes multiple contribution and proofs.
-  * [`POST /eth/v1/validator/prepare_beacon_proposer`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorprepare_beacon_proposer) — provides the Beacon node with proposals for the given validators.
-  * [`POST /eth/v1/validator/register_validator`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorregister_validator) — provides the Beacon node with registrations for the given validators to the external builder network.
+  * [`POST /eth/v1/validator/duties/attester/{epoch}`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatordutiesattesterepoch) — retrieves attester duties.
+  * [`GET /eth/v1/validator/duties/proposer/{epoch}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatordutiesproposerepoch) — retrieves block proposer duties.
+  * [`POST /eth/v1/validator/duties/sync/{epoch}`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatordutiessyncepoch) — retrieves sync committee duties.
+  * [`GET /eth/v1/validator/blocks/{slot}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorblocksslot) — produces a new block, without signature.
+  * [`GET /eth/v1/validator/blinded_blocks/{slot}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorblinded_blocksslot) — produces a new block, without signature.
+  * [`GET /eth/v1/validator/attestation_data`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorattestation_data) — produces attestation data.
+  * [`GET /eth/v1/validator/aggregate_attestation`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatoraggregate_attestation) — retrieves aggregated attestation.
+  * [`POST /eth/v1/validator/aggregate_and_proofs`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatoraggregate_and_proofs) — publishes multiple aggregate and proofs.
+  * [`POST /eth/v1/validator/beacon_committee_subscriptions`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorbeacon_committee_subscriptions) — signals the Beacon node to prepare for a committee subnet.
+  * [`POST /eth/v1/validator/sync_committee_subscriptions`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorsync_committee_subscriptions) — subscribes to sync committee subnets.
+  * [`GET /eth/v1/validator/sync_committee_contribution`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorsync_committee_contribution) — produces a sync committee contribution.
+  * [`POST /eth/v1/validator/contribution_and_proofs`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorcontribution_and_proofs) — publishes multiple contribution and proofs.
+  * [`POST /eth/v1/validator/prepare_beacon_proposer`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorprepare_beacon_proposer) — provides the Beacon node with proposals for the given validators.
+  * [`POST /eth/v1/validator/register_validator`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorregister_validator) — provides the Beacon node with registrations for the given validators to the external builder network.
 
 **ValidatorRequiredApi**:
 
-  * [`GET /eth/v1/beacon/genesis`](/rpc-service/chains/chains-api/beacon/#get-ethv1beacongenesis-1) — retrieves details of the chain's genesis.
-  * [`GET /eth/v1/beacon/states/{state_id}/fork`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idfork-1) — retrieves the Fork object for a requested state.
-  * [`GET /eth/v1/beacon/states/{state_id}/validators/{validator_id}`](/rpc-service/chains/chains-api/beacon/#get-ethv1beaconstatesstate_idvalidatorsvalidator_id-1) — retrieves the validator from state by ID.
-  * [`POST /eth/v1/beacon/blocks`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconblocks-1) — publishes a signed block.
-  * [`POST /eth/v1/beacon/blinded_blocks`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconblinded_blocks-1) — publishes a signed block.
-  * [`POST /eth/v1/beacon/pool/attestations`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconpoolattestations-1) — submits attestation objects to the node.
-  * [`POST /eth/v1/beacon/pool/sync_committees`](/rpc-service/chains/chains-api/beacon/#post-ethv1beaconpoolsync_committees-1) — submits sync committee signatures to the node.
-  * [`GET /eth/v1/node/syncing`](/rpc-service/chains/chains-api/beacon/#get-ethv1nodesyncing-1) — retrieves a node syncing status.
-  * [`GET /eth/v1/config/spec`](/rpc-service/chains/chains-api/beacon/#get-ethv1configspec-1) — retrieves spec parameters.
-  * [`POST /eth/v1/validator/duties/attester/{epoch}`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatordutiesattesterepoch-1) — retrieves attester duties.
-  * [`GET /eth/v1/validator/duties/proposer/{epoch}`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatordutiesproposerepoch-1) — retrieves block proposer duties.
-  * [`POST /eth/v1/validator/duties/sync/{epoch}`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatordutiessyncepoch-1) — retrieves sync committee duties.
-  * [`GET /eth/v1/validator/blocks/{slot}`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorblocksslot-1) — produces a new block, without signature.
-  * [`GET /eth/v1/validator/blinded_blocks/{slot}`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorblinded_blocksslot-1) — produces a new block, without signature.
-  * [`GET /eth/v1/validator/attestation_data`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorattestation_data-1) — produces attestation data.
-  * [`GET /eth/v1/validator/aggregate_attestation`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatoraggregate_attestation-1) — retrieves aggregated attestation.
-  * [`POST /eth/v1/validator/aggregate_and_proofs`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatoraggregate_and_proofs-1) — publishes multiple aggregate and proofs.
-  * [`POST /eth/v1/validator/beacon_committee_subscriptions`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorbeacon_committee_subscriptions-1) — signals the Beacon node to prepare for a committee subnet.
-  * [`POST /eth/v1/validator/sync_committee_subscriptions`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorsync_committee_subscriptions-1) — subscribes to sync committee subnets.
-  * [`GET /eth/v1/validator/sync_committee_contribution`](/rpc-service/chains/chains-api/beacon/#get-ethv1validatorsync_committee_contribution-1) — produces a sync committee contribution.
-  * [`POST /eth/v1/validator/contribution_and_proofs`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorcontribution_and_proofs-1) — publishes multiple contribution and proofs.
-  * [`POST /eth/v1/validator/prepare_beacon_proposer`](/rpc-service/chains/chains-api/beacon/#post-ethv1validatorprepare_beacon_proposer-1) — provides the Beacon node with proposals for the given validators.
-  * [`GET /eth/v1/events`](/rpc-service/chains/chains-api/beacon/#get-ethv1events-1) — subscribes to Beacon node events.
+  * [`GET /eth/v1/beacon/genesis`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beacongenesis-1) — retrieves details of the chain's genesis.
+  * [`GET /eth/v1/beacon/states/{state_id}/fork`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idfork-1) — retrieves the Fork object for a requested state.
+  * [`GET /eth/v1/beacon/states/{state_id}/validators/{validator_id}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1beaconstatesstate_idvalidatorsvalidator_id-1) — retrieves the validator from state by ID.
+  * [`POST /eth/v1/beacon/blocks`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconblocks-1) — publishes a signed block.
+  * [`POST /eth/v1/beacon/blinded_blocks`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconblinded_blocks-1) — publishes a signed block.
+  * [`POST /eth/v1/beacon/pool/attestations`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconpoolattestations-1) — submits attestation objects to the node.
+  * [`POST /eth/v1/beacon/pool/sync_committees`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1beaconpoolsync_committees-1) — submits sync committee signatures to the node.
+  * [`GET /eth/v1/node/syncing`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1nodesyncing-1) — retrieves a node syncing status.
+  * [`GET /eth/v1/config/spec`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1configspec-1) — retrieves spec parameters.
+  * [`POST /eth/v1/validator/duties/attester/{epoch}`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatordutiesattesterepoch-1) — retrieves attester duties.
+  * [`GET /eth/v1/validator/duties/proposer/{epoch}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatordutiesproposerepoch-1) — retrieves block proposer duties.
+  * [`POST /eth/v1/validator/duties/sync/{epoch}`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatordutiessyncepoch-1) — retrieves sync committee duties.
+  * [`GET /eth/v1/validator/blocks/{slot}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorblocksslot-1) — produces a new block, without signature.
+  * [`GET /eth/v1/validator/blinded_blocks/{slot}`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorblinded_blocksslot-1) — produces a new block, without signature.
+  * [`GET /eth/v1/validator/attestation_data`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorattestation_data-1) — produces attestation data.
+  * [`GET /eth/v1/validator/aggregate_attestation`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatoraggregate_attestation-1) — retrieves aggregated attestation.
+  * [`POST /eth/v1/validator/aggregate_and_proofs`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatoraggregate_and_proofs-1) — publishes multiple aggregate and proofs.
+  * [`POST /eth/v1/validator/beacon_committee_subscriptions`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorbeacon_committee_subscriptions-1) — signals the Beacon node to prepare for a committee subnet.
+  * [`POST /eth/v1/validator/sync_committee_subscriptions`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorsync_committee_subscriptions-1) — subscribes to sync committee subnets.
+  * [`GET /eth/v1/validator/sync_committee_contribution`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1validatorsync_committee_contribution-1) — produces a sync committee contribution.
+  * [`POST /eth/v1/validator/contribution_and_proofs`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorcontribution_and_proofs-1) — publishes multiple contribution and proofs.
+  * [`POST /eth/v1/validator/prepare_beacon_proposer`](/rpc-service/chains/chains-api/gnosis-beacon/#post-ethv1validatorprepare_beacon_proposer-1) — provides the Beacon node with proposals for the given validators.
+  * [`GET /eth/v1/events`](/rpc-service/chains/chains-api/gnosis-beacon/#get-ethv1events-1) — subscribes to Beacon node events.
 
 ---
 
@@ -129,7 +129,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/genesis" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/genesis" \
 -H "Accept: application/json"
 ```
 
@@ -161,7 +161,7 @@ Calculates HashTreeRoot for state with given 'stateId'. If stateId is root, same
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/state/{state_id}/root" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/state/{state_id}/root" \
 -H "Accept: application/json"
 ```
 
@@ -192,7 +192,7 @@ Retrieves the [Fork](https://github.com/ethereum/consensus-specs/blob/v0.11.1/sp
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/state/{state_id}/fork" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/state/{state_id}/fork" \
 -H "Accept: application/json"
 ```
 
@@ -225,7 +225,7 @@ Returns finality checkpoints for state with given 'stateId'. In case finality is
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/states/{state_id}/finality_checkpoints" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/states/{state_id}/finality_checkpoints" \
 -H "Accept: application/json"
 ```
 
@@ -271,7 +271,7 @@ Information will be returned for all indices or public key that match known vali
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your-token}/eth/v1/beacon/states/{state_id}/validators" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your-token}/eth/v1/beacon/states/{state_id}/validators" \
 -H "Accept: application/json"
 ```
 
@@ -317,7 +317,7 @@ Returns validator specified by state and id or public key along with status and 
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/states/{state_id}/validators/{validator_id}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/states/{state_id}/validators/{validator_id}" \
 -H "Accept: application/json"
 ```
 
@@ -363,7 +363,7 @@ Balances will be returned for all indices or public key that match known validat
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/states/{state_id}/validator_balances" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/states/{state_id}/validator_balances" \
 -H "Accept: application/json"
 ```
 
@@ -400,7 +400,7 @@ Retrieves the committees for the given state.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/states/{state_id}/committees" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/states/{state_id}/committees" \
 -H "Accept: application/json"
 ```
 
@@ -438,7 +438,7 @@ Retrieves the sync committees for the given state.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/states/{state_id}/sync_committees" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/states/{state_id}/sync_committees" \
 -H "Accept: application/json"
 ```
 
@@ -476,7 +476,7 @@ Retrieves block headers matching given query. By default, it will fetch current 
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/your_token/eth/v1/beacon/headers" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/your_token/eth/v1/beacon/headers" \
 -H "Accept: application/json"
 ```
 
@@ -520,7 +520,7 @@ Retrieves a block header for a given block ID.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/headers/{block_id}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/headers/{block_id}" \
 -H "Accept: application/json"
 ```
 
@@ -722,7 +722,7 @@ Instructs the beacon node to broadcast a newly signed beacon block to the beacon
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/blocks" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/blocks" \
 -H "Eth-Consensus-Version: bellatrix" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
@@ -938,7 +938,7 @@ Instructs the beacon node to use the components of the `SignedBlindedBeaconBlock
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/blinded_blocks" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/blinded_blocks" \
 -H "Eth-Consensus-Version: bellatrix" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
@@ -991,7 +991,7 @@ Retrieves block details for given block id. Depending on `Accept` header it can 
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v2/beacon/blocks/{block_id}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v2/beacon/blocks/{block_id}" \
 -H "Accept: application/json"
 ```
 
@@ -1206,7 +1206,7 @@ Retrieves hashTreeRoot of BeaconBlock/BeaconBlockHeader
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/blocks/{block_id}/root" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/blocks/{block_id}/root" \
 -H "Accept: application/json"
 ```
 
@@ -1265,7 +1265,7 @@ Retrieves attestation included in requested block.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your-token}/eth/v1/beacon/blocks/{block_id}/attestations" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your-token}/eth/v1/beacon/blocks/{block_id}/attestations" \
 -H "Accept: application/json"
 ```
 
@@ -1341,7 +1341,7 @@ Retrieves attestations known by the node but not necessarily incorporated into a
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your-token}/eth/v1/beacon/pool/attestations" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your-token}/eth/v1/beacon/pool/attestations" \
 -H "Accept: application/json"
 ```
 
@@ -1432,7 +1432,7 @@ If one or more attestations fail validation the node MUST return a 400 error wit
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/attestations" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/attestations" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -1480,7 +1480,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/attester_slashings" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/attester_slashings" \
 -H "Accept: application/json"
 ```
 
@@ -1602,7 +1602,7 @@ Submits AttesterSlashing object to node's pool and if passes validation node MUS
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/attester_slashings" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/attester_slashings" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -1644,7 +1644,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/proposer_slashings" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/proposer_slashings" \
 -H "Accept: application/json"
 ```
 
@@ -1730,7 +1730,7 @@ Submits ProposerSlashing object to node's pool and if passes validation node MUS
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/proposer_slashings" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/proposer_slashings" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -1789,7 +1789,7 @@ If one or more sync committee signatures fail validation the node MUST return a 
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/sync_committees" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/sync_committees" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -1837,7 +1837,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/voluntary_exits" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/voluntary_exits" \
 -H "Accept: application/json"
 ```
 
@@ -1893,7 +1893,7 @@ Submits SignedVoluntaryExit object to node's pool and if passes validation node 
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/voluntary_exits" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/voluntary_exits" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -1937,7 +1937,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/config/fork_schedule" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/config/fork_schedule" \
 -H "Accept: application/json"
 ```
 
@@ -1990,7 +1990,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/config/spec" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/config/spec" \
 -H "Accept: application/json"
 ```
 
@@ -2032,7 +2032,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/config/deposit_contract" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/config/deposit_contract" \
 -H "Accept: application/json"
 ```
 
@@ -2076,7 +2076,7 @@ Returns full BeaconState object for given stateId. Depending on `Accept` header 
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v2/debug/beacon/states/{state_id}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v2/debug/beacon/states/{state_id}" \
 -H "Accept: application/json"
 ```
 
@@ -2207,7 +2207,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v2/debug/beacon/heads" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v2/debug/beacon/heads" \
 -H "Accept: application/json"
 ```
 
@@ -2255,7 +2255,7 @@ Servers *may* send SSE comments beginning with `:` for any purpose, including to
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/events" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/events" \
 -H "Accept: text/event-stream"
 ```
 
@@ -2344,7 +2344,7 @@ Retrieves data about the node's network peers. By default, this returns all peer
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/node/peers" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/node/peers" \
 -H "Accept: application/json"
 ```
 
@@ -2393,7 +2393,7 @@ Retrieves data about the given peer.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/node/peers/{peer_id}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/node/peers/{peer_id}" \
 -H "Accept: application/json"
 ```
 
@@ -2455,7 +2455,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/node/peer_count" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/node/peer_count" \
 -H "Accept: application/json"
 ```
 
@@ -2498,7 +2498,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/node/version" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/node/version" \
 -H "Accept: application/json"
 ```
 
@@ -2538,7 +2538,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/node/syncing" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/node/syncing" \
 -H "Accept: application/json"
 ```
 
@@ -2581,7 +2581,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/node/health"
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/node/health"
 ```
 
 #### Responses
@@ -2620,7 +2620,7 @@ The dependent_root value is `get_block_root_at_slot(state, compute_start_slot_at
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/duties/attester/{epoch}" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/duties/attester/{epoch}" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -2695,7 +2695,7 @@ The dependent_root value is `get_block_root_at_slot(state, compute_start_slot_at
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/duties/proposer/{epoch}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/duties/proposer/{epoch}" \
 -H "Accept: application/json"
 ```
 
@@ -2766,7 +2766,7 @@ Requests the beacon node to provide a set of sync committee duties for a particu
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/duties/sync/{epoch}" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/duties/sync/{epoch}" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -2837,7 +2837,7 @@ Metadata in the response indicates the type of block produced, and the supported
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/blocks/{slot}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/blocks/{slot}" \
 -H "Accept: application/json"
 ```
 
@@ -3054,7 +3054,7 @@ Pre-Bellatrix, this endpoint will return a `BeaconBlock`.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/blinded_blocks/{slot}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/blinded_blocks/{slot}" \
 -H "Accept: application/json"
 ```
 
@@ -3264,7 +3264,7 @@ Requests that the beacon node to produce an AttestationData.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/attestation_data" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/attestation_data" \
 -H "Accept: application/json"
 ```
 
@@ -3336,7 +3336,7 @@ Aggregates all attestations matching given attestation data root and slot.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/aggregate_attestation" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/aggregate_attestation" \
 -H "Accept: application/json"
 ```
 
@@ -3441,7 +3441,7 @@ Verifies given aggregate and proofs and publishes them on appropriate gossipsub 
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/aggregate_and_proofs" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/aggregate_and_proofs" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -3501,7 +3501,7 @@ After beacon node receives this request, search using discv5 for peers related t
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/beacon_committee_subscriptions" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/beacon_committee_subscriptions" \
 -H "Content-Type: application/json" \
 -H  "Accept: application/json" \
 -d '{request body}'
@@ -3574,7 +3574,7 @@ Subscribing to sync committee subnets is an action performed by VC to enable net
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/sync_committee_subscriptions" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/sync_committee_subscriptions" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -3621,7 +3621,7 @@ Requests that the beacon node to produce a sync committee contribution.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/sync_committee_contribution" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/sync_committee_contribution" \
 -H "Accept: application/json"
 ```
 
@@ -3714,7 +3714,7 @@ Publishes multiple signed sync committee contribution and proofs.
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/contribution_and_proofs" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/contribution_and_proofs" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -3772,7 +3772,7 @@ Also note that requests containing currently inactive or unknown validator indic
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/prepare_beacon_proposer" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/prepare_beacon_proposer" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -3833,7 +3833,7 @@ Note that requests containing currently inactive or unknown validator pubkeys wi
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/register_validator" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/register_validator" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -3880,7 +3880,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/genesis" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/genesis" \
 -H "Accept: application/json"
 ```
 
@@ -3912,7 +3912,7 @@ Retrieves the [Fork](https://github.com/ethereum/consensus-specs/blob/v0.11.1/sp
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/state/{state_id}/fork" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/state/{state_id}/fork" \
 -H "Accept: application/json"
 ```
 
@@ -3946,7 +3946,7 @@ Returns validator specified by state and id or public key along with status and 
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/states/{state_id}/validators/{validator_id}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/states/{state_id}/validators/{validator_id}" \
 -H "Accept: application/json"
 ```
 
@@ -4149,7 +4149,7 @@ Instructs the beacon node to broadcast a newly signed beacon block to the beacon
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/blocks" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/blocks" \
 -H "Eth-Consensus-Version: bellatrix" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
@@ -4365,7 +4365,7 @@ Instructs the beacon node to use the components of the `SignedBlindedBeaconBlock
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/blinded_blocks" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/blinded_blocks" \
 -H "Eth-Consensus-Version: bellatrix" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
@@ -4444,7 +4444,7 @@ If one or more attestations fail validation the node MUST return a 400 error wit
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/attestations" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/attestations" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -4509,7 +4509,7 @@ If one or more sync committee signatures fail validation the node MUST return a 
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/beacon/pool/sync_committees" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/pool/sync_committees" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -4557,7 +4557,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/node/syncing" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/node/syncing" \
 -H "Accept: application/json"
 ```
 
@@ -4609,7 +4609,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/config/spec" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/config/spec" \
 -H "Accept: application/json"
 ```
 
@@ -4664,7 +4664,7 @@ The dependent_root value is `get_block_root_at_slot(state, compute_start_slot_at
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/duties/attester/{epoch}" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/duties/attester/{epoch}" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -4739,7 +4739,7 @@ The dependent_root value is `get_block_root_at_slot(state, compute_start_slot_at
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/duties/proposer/{epoch}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/duties/proposer/{epoch}" \
 -H "Accept: application/json"
 ```
 
@@ -4810,7 +4810,7 @@ Requests the beacon node to provide a set of sync committee duties for a particu
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/duties/sync/{epoch}" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/duties/sync/{epoch}" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -4881,7 +4881,7 @@ Metadata in the response indicates the type of block produced, and the supported
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/blocks/{slot}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/blocks/{slot}" \
 -H "Accept: application/json"
 ```
 
@@ -5098,7 +5098,7 @@ Pre-Bellatrix, this endpoint will return a `BeaconBlock`.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/blinded_blocks/{slot}" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/blinded_blocks/{slot}" \
 -H "Accept: application/json"
 ```
 
@@ -5308,7 +5308,7 @@ Requests that the beacon node to produce an AttestationData.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/attestation_data" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/attestation_data" \
 -H "Accept: application/json"
 ```
 
@@ -5380,7 +5380,7 @@ Aggregates all attestations matching given attestation data root and slot.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/aggregate_attestation" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/aggregate_attestation" \
 -H "Accept: application/json"
 ```
 
@@ -5485,7 +5485,7 @@ Verifies given aggregate and proofs and publishes them on appropriate gossipsub 
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/aggregate_and_proofs" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/aggregate_and_proofs" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -5545,7 +5545,7 @@ After beacon node receives this request, search using discv5 for peers related t
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/beacon_committee_subscriptions" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/beacon_committee_subscriptions" \
 -H "Content-Type: application/json" \
 -H  "Accept: application/json" \
 -d '{request body}'
@@ -5618,7 +5618,7 @@ Subscribing to sync committee subnets is an action performed by VC to enable net
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/sync_committee_subscriptions" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/sync_committee_subscriptions" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -5665,7 +5665,7 @@ Requests that the beacon node to produce a sync committee contribution.
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/sync_committee_contribution" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/sync_committee_contribution" \
 -H "Accept: application/json"
 ```
 
@@ -5758,7 +5758,7 @@ Publishes multiple signed sync committee contribution and proofs.
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/contribution_and_proofs" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/contribution_and_proofs" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -5816,7 +5816,7 @@ Also note that requests containing currently inactive or unknown validator indic
 #### Request example
 
 ```shell
-curl -X POST "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/validator/prepare_beacon_proposer" \
+curl -X POST "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/validator/prepare_beacon_proposer" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{request body}'
@@ -5863,7 +5863,7 @@ Servers *may* send SSE comments beginning with `:` for any purpose, including to
 #### Request example
 
 ```shell
-curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/events" \
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/events" \
 -H "Accept: text/event-stream"
 ```
 
