@@ -13,12 +13,13 @@ This docs section provides the list of all chains available on [RPC Service](htt
 
 |                         |           |              |   |     |    |
 |-----------------------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------|
-| [Aptos](/rpc-service/chains/chains-list/#aptos)                     | [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Gnosis](/rpc-service/chains/chains-list/#gnosis)              | [Kusama](/rpc-service/chains/chains-list/#kusama)     | [Optimism](/rpc-service/chains/chains-list/#optimism)           | [Secret Network](/rpc-service/chains/chains-list/#secret-network) |
-| [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)               | [Celo](/rpc-service/chains/chains-list/#celo)                         | [Filecoin](/rpc-service/chains/chains-list/#filecoin)          | [Mantle](/rpc-service/chains/chains-list/#mantle)     | [Polkadot](/rpc-service/chains/chains-list/#polkadot)           | [Solana](/rpc-service/chains/chains-list/#solana)                 |
-| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)     | [Chiliz](/rpc-service/chains/chains-list/#chiliz)                     | [Harmony](/rpc-service/chains/chains-list/#harmony)            | [Metis](/rpc-service/chains/chains-list/#metis)       | [Polygon](/rpc-service/chains/chains-list/#polygon)             | [Sui](/rpc-service/chains/chains-list/#sui)                       |
-| [Avalanche](/rpc-service/chains/chains-list/#avalanche)             | [Ethereum](/rpc-service/chains/chains-list/#ethereum)                 | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm) | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |
-| [Base](/rpc-service/chains/chains-list/#base)                       | [Beacon](/rpc-service/chains/chains-list/#beacon)                     | [IoTeX](/rpc-service/chains/chains-list/#iotex)                | [NEAR](/rpc-service/chains/chains-list/#near)         | [Rollux](/rpc-service/chains/chains-list/#rollux)               | [TRON](/rpc-service/chains/chains-list/#tron)                     |
-| [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain) | [Fantom](/rpc-service/chains/chains-list/#fantom)                     | [Klaytn](/rpc-service/chains/chains-list/#klaytn)              | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Scroll](/rpc-service/chains/chains-list/#scroll)               | [ZetaChain](/rpc-service/chains/chains-list/#zetachain)           |
+| [Aptos](/rpc-service/chains/chains-list/#aptos)                       | [Celo](/rpc-service/chains/chains-list/#celo)                   | [Filecoin](/rpc-service/chains/chains-list/#filecoin)          | [Metis](/rpc-service/chains/chains-list/#metis)       | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [TRON](/rpc-service/chains/chains-list/#tron)           |
+| [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)                 | [Chiliz](/rpc-service/chains/chains-list/#chiliz)               | [Harmony](/rpc-service/chains/chains-list/#harmony)            | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Rollux](/rpc-service/chains/chains-list/#rollux)                 | [ZetaChain](/rpc-service/chains/chains-list/#zetachain) |
+| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)       | [Ethereum](/rpc-service/chains/chains-list/#ethereum)           | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [NEAR](/rpc-service/chains/chains-list/#near)         | [Scroll](/rpc-service/chains/chains-list/#scroll)                 |                                                         |
+| [Avalanche](/rpc-service/chains/chains-list/#avalanche)               | [Ethereum Beacon](/rpc-service/chains/chains-list/#ethereum-beacon)  | [IoTeX](/rpc-service/chains/chains-list/#iotex)                | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Secret Network](/rpc-service/chains/chains-list/#secret-network) |                                                         |
+| [Base](/rpc-service/chains/chains-list/#base)                         | [Fantom](/rpc-service/chains/chains-list/#fantom)               | [Klaytn](/rpc-service/chains/chains-list/#klaytn)              | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Solana](/rpc-service/chains/chains-list/#solana)                 |                                                         |
+| [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)   | [Gnosis](/rpc-service/chains/chains-list/#gnosis)               | [Kusama](/rpc-service/chains/chains-list/#kusama)              | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                         |
+| [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Gnosis Beacon](/rpc-service/chains/chains-list/#gnosis-beacon) | [Mantle](/rpc-service/chains/chains-list/#mantle)              | [Polygon](/rpc-service/chains/chains-list/#polygon)   | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                         |
 
 ## Aptos
 
@@ -1603,7 +1604,7 @@ def test_block_number(self):
 
 ---
 
-## Beacon
+## Ethereum Beacon
 
 <Callout type="tip">
 Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
@@ -1630,7 +1631,7 @@ Official quick links: [Website](https://ethereum.org/en/roadmap/beacon-chain/), 
 
 ### API methods
 
-For the Beacon Chain, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/beacon/) except for those listed as unsupported.
+For the Beacon Chain, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/eth-beacon/) except for those listed as unsupported.
 
 #### Unsupported
 
@@ -2163,6 +2164,67 @@ def test_block_number(self):
   "jsonrpc":"2.0",
   "result":"0x17d5c3d",
   "id":1
+}
+```
+
+---
+
+## Gnosis Beacon
+
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
+
+> Gonsis Beacon API is available on [RPC Service](https://www.ankr.com/rpc/gnosis) upon switching on the **Beacon** toggle.
+
+The Beacon Chain is a consensus layer that introduced a [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) to Ethereum. The Beacon Chain mechanism is responsible for creating new blocks, making sure those new blocks are valid, and rewarding validators with ETH for keeping the network secure.
+
+The Beacon Chain has several clients to choose from, serving the same purpose but built with slightly different focus in mind:
+
+  * [Prysm](https://launchpad.ethereum.org/en/prysm) —  focuses on usability, security, and reliability. Prysm is developed by Prysmatic Labs, a company with the sole focus on the development of their client.
+  * [Lighthouse](https://launchpad.ethereum.org/en/lighthouse) — a client with a heavy focus on speed and security. Built by Sigma Prime, an information security and software engineering firm who have funded Lighthouse along with the Ethereum Foundation, ConsenSys, and private individuals.
+  * [Nimbus](https://launchpad.ethereum.org/en/nimbus) — strives to be as lightweight as possible in terms of resources used. This allows it to perform well on embedded systems, resource-restricted devices — including Raspberry Pis — and multi-purpose servers.
+
+Official quick links: [Website](https://ethereum.org/en/roadmap/beacon-chain/), [Docs](https://ethereum.org/en/developers/docs/), [GitHub](https://github.com/gnosischain)
+
+### Networks
+
+  * Mainnet (`HTTPS`)
+
+### API methods
+
+For the Beacon Chain, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/gnosis-beacon/) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+`/eth/v1/node/identity`
+
+### API querying
+
+#### Request example
+
+```shell
+curl -X GET "https://rpc.ankr.com/premium-http/gnosis_beacon/{your_token}/eth/v1/beacon/genesis" \
+-H "Accept: application/json"
+```
+
+#### Response example
+
+```json
+{
+    "data": {
+        "genesis_time": "1606824023",
+        "genesis_validators_root": "0x4b363db94e286120d76eb905340fdd4e54bfe9f06bf33ff6cf5ad27f511bfe95",
+        "genesis_fork_version": "0x00000000"
+    }
 }
 ```
 
