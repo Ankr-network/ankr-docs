@@ -1,0 +1,38 @@
+import { Callout } from "components";
+
+# Unstake time
+If needed, you can check the unstake time.
+
+<Callout type="info"">
+Currently, we only provide an unstake time endpoint for the Ethereum blockchain.
+</Callout>
+
+## Get unstake time on Ethereum
+Unstake time on Ethereum is dynamic and depends on the unstaking queue.<br/>
+The endpoint returns the current unstake time value. This value determines the max waiting period you're guaranteed to get your ETH by the end of.
+You may actually get your ETH sooner.
+
+The values you obtain by calling the endpoint are:
+* `timestamp` (UNIX timestamp) — determines the date and time you're guaranteed to get your ETH by.
+* `withdrawableEpoch` (uint256) — determines the Ethereum epoch you're guaranteed to get your ETH by.
+
+### Host
+
+https://api.dev.staking.ankr.com/
+
+### Endpoint
+
+`GET /v1alpha/beaconmonitor/withdraw_estimation`
+
+### Request
+
+```
+curl https://api.dev.staking.ankr.com/v1alpha/beaconmonitor/withdraw_estimation
+```
+
+### Response
+
+#### 200
+```
+{"timestamp":1685408832,"withdrawableEpoch":204648}
+```

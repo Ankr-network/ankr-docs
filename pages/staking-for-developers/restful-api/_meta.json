@@ -1,4 +1,5 @@
 {
   "staking-metrics": "Staking Metrics API",
-  "validator-api": "Validator API"
+  "validator-api": "Validator API",
+  "unstake-time": "Unstake Time API"
 }
