@@ -14,7 +14,7 @@
   },
   "automation": {
     "title": "Contract Automation",
-    "type": "page",
+    "type": "folder",
     "display": "hidden"
   },
   "-- Tutorials": {
