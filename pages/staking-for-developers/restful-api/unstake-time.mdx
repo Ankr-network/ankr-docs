@@ -10,7 +10,7 @@ Currently, we only provide an unstake time endpoint for the Ethereum blockchain.
 ## Get unstake time on Ethereum
 Unstake time on Ethereum is dynamic and depends on the unstaking queue.<br/>
 The endpoint returns the current unstake time value. This value determines the max waiting period you're guaranteed to get your ETH by the end of.
-You may actually get your ETH sooner.
+You may actually get your ETH sooner. The formula is `time.now()-timestamp=current_max_unstake_time`.
 
 The values you obtain by calling the endpoint are:
 * `timestamp` (UNIX timestamp) — determines the date and time you're guaranteed to get your ETH by.
