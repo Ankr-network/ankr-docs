@@ -2,12 +2,13 @@
   "overview": "Overview",
   "pricing": "Pricing",
   "specification": {
-    "title": "Full AAPI Reference",
+    "title": "API Reference ↗",
     "type": "page",
-    "href": "https://api-docs.ankr.com/reference/"
+    "href": "https://api-docs.ankr.com/reference/",
+    "newWindow": true
   },
   "javascript-sdk": "Ankr.js SDK",
   "python-sdk": "Ankr.py SDK",
   "react-hooks": "Ankr React Hooks",
-  "quickstart": "Quick Start Guide"
+  "quickstart": "Quickstart Guide"
 }
