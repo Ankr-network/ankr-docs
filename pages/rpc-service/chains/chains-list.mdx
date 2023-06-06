@@ -4956,12 +4956,12 @@ Official quick links: [Website](https://sui.io/), [Docs](https://docs.sui.io/), 
 
 ### Networks
 
-  * Mainnet (`HTTPS` and `WSS`) — coming soon.
+  * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
 
 ### API methods
 
-For Sui, we support blockchain interaction via all the applicable methods except for those listed as unsupported.
+For Sui, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/sui/) except for those listed as unsupported.
 
 #### Unsupported
 
@@ -4974,6 +4974,31 @@ For Sui, we support blockchain interaction via all the applicable methods except
  </Callout>
 
 None.
+
+### API querying
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/sui/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "sui_getChainIdentifier",
+  "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "4c78adac",
+    "id": 1
+}
+```
 
 ---
 
