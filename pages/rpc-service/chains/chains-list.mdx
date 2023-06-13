@@ -11,11 +11,11 @@ This docs section provides the list of all chains available on [RPC Service](htt
 
 **Chains supported**:
 
-|                         |           |              |   |     |    |
+|                         |           |              |   |     |                                                         |
 |-----------------------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------|
 | [Aptos](/rpc-service/chains/chains-list/#aptos)                       | [Celo](/rpc-service/chains/chains-list/#celo)                   | [Filecoin](/rpc-service/chains/chains-list/#filecoin)          | [Metis](/rpc-service/chains/chains-list/#metis)       | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [TRON](/rpc-service/chains/chains-list/#tron)           |
 | [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)                 | [Chiliz](/rpc-service/chains/chains-list/#chiliz)               | [Harmony](/rpc-service/chains/chains-list/#harmony)            | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Rollux](/rpc-service/chains/chains-list/#rollux)                 | [ZetaChain](/rpc-service/chains/chains-list/#zetachain) |
-| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)       | [Ethereum](/rpc-service/chains/chains-list/#ethereum)           | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [NEAR](/rpc-service/chains/chains-list/#near)         | [Scroll](/rpc-service/chains/chains-list/#scroll)                 |                                                         |
+| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)       | [Ethereum](/rpc-service/chains/chains-list/#ethereum)           | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [NEAR](/rpc-service/chains/chains-list/#near)         | [Scroll](/rpc-service/chains/chains-list/#scroll)                 | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era)         |
 | [Avalanche](/rpc-service/chains/chains-list/#avalanche)               | [Ethereum Beacon](/rpc-service/chains/chains-list/#ethereum-beacon)  | [IoTeX](/rpc-service/chains/chains-list/#iotex)                | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Secret Network](/rpc-service/chains/chains-list/#secret-network) |                                                         |
 | [Base](/rpc-service/chains/chains-list/#base)                         | [Fantom](/rpc-service/chains/chains-list/#fantom)               | [Klaytn](/rpc-service/chains/chains-list/#klaytn)              | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Solana](/rpc-service/chains/chains-list/#solana)                 |                                                         |
 | [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)   | [Gnosis](/rpc-service/chains/chains-list/#gnosis)               | [Kusama](/rpc-service/chains/chains-list/#kusama)              | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                         |
@@ -5514,5 +5514,68 @@ curl https://rpc.ankr.com/http/zetachain_testnet/cosmos/base/tendermint/v1beta1/
             ]
         }
     }
+}
+```
+
+---
+
+## zkSync Era
+
+> zkSync Era API is available on [RPC Service](https://www.ankr.com/rpc/zksync_era).
+
+zkSync Era is a layer 2 rollup that uses zero-knowledge proofs to scale Ethereum without compromising on security or decentralization. Since it's EVM compatible (Solidity/Vyper), 99% of Ethereum projects can redeploy without refactoring or re-auditing a single line of code. zkSync Era also uses an LLVM-based compiler that will eventually let developers write smart contracts in C++, Rust, and other popular languages.
+
+Official quick links: [Website](https://zksync.io/), [Docs](https://era.zksync.io/docs/), [GitHub](https://github.com/matter-labs/)
+
+### Networks
+
+  * Mainnet (`HTTPS` and `WSS`)
+
+### API methods
+
+For Tron, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/zksync-era/) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/zksync_era \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x5ac192",
+    "id": 1
 }
 ```
