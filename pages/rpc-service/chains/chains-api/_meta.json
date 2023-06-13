@@ -35,5 +35,6 @@
   "sui": "Sui",
   "syscoin": "Syscoin",
   "tron": "TRON",
-  "zetachain": "ZetaChain"
+  "zetachain": "ZetaChain",
+  "zksync-era": "zkSync Era"
 }
