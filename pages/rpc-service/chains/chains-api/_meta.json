@@ -16,6 +16,7 @@
   "gnosis-beacon": "Gnosis Beacon",
   "harmony": "Harmony",
   "heco": "Huobi ECO Chain",
+  "horizen-eon": "Horizen EON",
   "iotex": "IoTeX",
   "klaytn": "Klaytn",
   "kusama": "Kusama",
@@ -34,6 +35,7 @@
   "solana": "Solana",
   "sui": "Sui",
   "syscoin": "Syscoin",
+  "tenet": "Tenet",
   "tron": "TRON",
   "zetachain": "ZetaChain",
   "zksync-era": "zkSync Era"
