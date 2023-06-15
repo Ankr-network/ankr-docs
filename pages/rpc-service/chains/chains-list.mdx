@@ -14,10 +14,10 @@ This docs section provides the list of all chains available on [RPC Service](htt
 |                         |           |              |   |     |                                                         |
 |-----------------------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------|
 | [Aptos](/rpc-service/chains/chains-list/#aptos)                       | [Celo](/rpc-service/chains/chains-list/#celo)                   | [Filecoin](/rpc-service/chains/chains-list/#filecoin)          | [Mantle](/rpc-service/chains/chains-list/#mantle)     | [Polygon](/rpc-service/chains/chains-list/#polygon)               | [Syscoin](/rpc-service/chains/chains-list/#syscoin)       |
-| [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)                 | [Chiliz](/rpc-service/chains/chains-list/#chiliz)               | [Harmony](/rpc-service/chains/chains-list/#harmony)            | [Metis](/rpc-service/chains/chains-list/#metis)       | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [TRON](/rpc-service/chains/chains-list/#tron)             |
-| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)       | [Ethereum](/rpc-service/chains/chains-list/#ethereum)           | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Rollux](/rpc-service/chains/chains-list/#rollux)                 | [ZetaChain](/rpc-service/chains/chains-list/#zetachain)   |
-| [Avalanche](/rpc-service/chains/chains-list/#avalanche)               | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)  | [Horizen](/rpc-service/chains/chains-list/#horizen)            | [NEAR](/rpc-service/chains/chains-list/#near)         | [Scroll](/rpc-service/chains/chains-list/#scroll)                 | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
-| [Base](/rpc-service/chains/chains-list/#base)                         | [Fantom](/rpc-service/chains/chains-list/#fantom)               | [IoTeX](/rpc-service/chains/chains-list/#iotex)                | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Secret Network](/rpc-service/chains/chains-list/#secret-network) |                                                           |
+| [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)                 | [Chiliz](/rpc-service/chains/chains-list/#chiliz)               | [Harmony](/rpc-service/chains/chains-list/#harmony)            | [Metis](/rpc-service/chains/chains-list/#metis)       | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [Tenet](/rpc-service/chains/chains-list/#tenet)           |
+| [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)       | [Ethereum](/rpc-service/chains/chains-list/#ethereum)           | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain) | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Rollux](/rpc-service/chains/chains-list/#rollux)                 | [TRON](/rpc-service/chains/chains-list/#tron)             |
+| [Avalanche](/rpc-service/chains/chains-list/#avalanche)               | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)  | [Horizen EON](/rpc-service/chains/chains-list/#horizen-eon)            | [NEAR](/rpc-service/chains/chains-list/#near)         | [Scroll](/rpc-service/chains/chains-list/#scroll)                 | [ZetaChain](/rpc-service/chains/chains-list/#zetachain)   |
+| [Base](/rpc-service/chains/chains-list/#base)                         | [Fantom](/rpc-service/chains/chains-list/#fantom)               | [IoTeX](/rpc-service/chains/chains-list/#iotex)                | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Secret Network](/rpc-service/chains/chains-list/#secret-network) | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
 | [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)   | [Gnosis](/rpc-service/chains/chains-list/#gnosis)               | [Klaytn](/rpc-service/chains/chains-list/#klaytn)              | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Solana](/rpc-service/chains/chains-list/#solana)                 |                                                           |
 | [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Gnosis Beacon](/rpc-service/chains/chains-list/#gnosis-beacon) | [Kusama](/rpc-service/chains/chains-list/#kusama)              | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                           |
 
@@ -2538,31 +2538,21 @@ def test_block_number(self):
 
 ---
 
-## Horizen
+## Horizen EON
 
-> Horizen API is available on [RPC Service](https://www.ankr.com/rpc/horizen).
+> Horizen EON API is available on [RPC Service](https://www.ankr.com/rpc/horizen).
 
-Horizen is a fully EVM-compatible sidechain and smart contracting platform. Horizen’s cross-chain protocol, Zendoo, is designed for developers to build blockchains and applications that solve today’s real-world problems with the flexibility to capture tomorrow’s opportunities.
+EON is Horizen's Ethereum VM (Virtual Machine). EON has adopted Ethereum’s account-based transaction model to represent assets as balances within accounts. The account model, in VM capable blockchains, differentiate account types on whether they represent a normal account balance or an account which is bound to some code that has to be executed by the VM.
 
-Horizen claims to be the first decentralized and fully customizable sidechain protocol in the industry that solves the biggest problems in applying blockchain solutions to real-world use cases.
-
-Horizen is build with the following ideas in mind:
-
-  * A novel construction.
-  * Scalability and flexibility.
-  * Decentralization.
-  * Privacy and auditability.
-  * Easy deployment with the sidechain SDK.
-
-Official quick links: [Website](https://www.horizen.io/), [Docs](https://docs.horizen.io/en/latest/), [GitHub](https://github.com/horizenofficial)
+Official quick links: [Website](https://eon.horizen.io/), [Docs](https://eon.horizen.io/docs/), [GitHub](https://github.com/horizenofficial)
 
 ### Networks
 
-  * Testnet (`HTTPS` and `WSS`)
+  * Gobi Testnet (`HTTPS` and `WSS`)
 
 ### API methods
 
-For Horizen, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/horizen/) except for those listed as unsupported.
+For Horizen EON, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/horizen-eon/) except for those listed as unsupported.
 
 #### Unsupported
 
@@ -5231,6 +5221,69 @@ def test_block_number(self):
   "jsonrpc":"2.0",
   "id":1,
   "result":"0x2fb1c"
+}
+```
+
+---
+
+## Tenet
+
+> Tenet API is available on [RPC Service](https://www.ankr.com/rpc/tenet).
+
+Tenet is an EVM-compatible Layer-1 bringing liquidity and yield opportunities to LSDs by using them as collateral for network validators through [Diversified Proof of Stake](https://docs.tenet.org/diversified-pos/diversified-proof-of-stake-implementation). This increases network security and improves governance inclusivity.
+
+Official quick links: [Website](https://tenet.org/), [Docs](https://docs.tenet.org/tenet/general), [GitHub](https://github.com/tenet-org)
+
+### Networks
+
+  * Mainnet Beta (`HTTPS` and `WSS`)
+
+### API methods
+
+For Tenet, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/tenet/) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/tenet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x14f6b9"
 }
 ```
 
