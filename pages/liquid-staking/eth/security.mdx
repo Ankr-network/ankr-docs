@@ -1,0 +1,27 @@
+# Cubist-powered security
+
+To protect the Ankr validators' private keys, Ankr has teamed up with Cubist — a Polychain-backed company that specializes in high-security web3 development and deployment tools. Cubist's team including industry veterans and professors from CMU and UCSD who are leading experts in cryptography and computer security drives an HSM approach to managing private keys.
+
+## Problem
+This way, we're solving the problem of compromizing private keys which is notoriously long-resolved: if a validator's key is compromised, there is a significant risk of double-signing and subsequent slashing; even if you quickly exit (unstake) funds from such a validator, you will keep losing rewards until the exiting process is complete and a new key gets in action.
+
+## Solution
+Now, instead of keeping private keys to the validators within the company, Ankr switches to **remote signing** and lets Cubist securely store them in an HSM, a hardware security module with a dedicated crypto processor that is specifically designed for the protection of the crypto key lifecycle. The HSM is replicated in different location in case one of the location suffers a natural disaster such as flood or earthquake damaging the hardware.
+
+Whenever Ankr needs a signature, our server calculates what needs to be signed, sends a signature request to Cubist who runs the double-signing check and other security checks then signs the data. Cubist immediately alerts us if any malicious actions were detected.
+
+### Ankr's main signing activities
+There are two main activities Ankr needs signatures for: block validation and withdrawal from validators (exit) when we need to unstake funds for our users.<br/>
+1. For block validation, we create short-lived tokens and lets our validators use these tokens to authenticate signing requests to Cubist when validating and publishing blocks to network. Additionally, we can use short-lived tokens to decrypt an HSM backup in case of an emergency, such as if all the HSM replicas are dead, which is unlikely to happen with the Cubist's geo-distributed replication policy.
+2. For withdrawals from validators (exit), we create long-lived tokens with a higher security level, only whitelisting our server's IPs in Cubists to accept such tokens and restricting the unstake amount. In case our users make a very big unstake, and we need to temporarily increase the amount, the majority of hardware token holders within the company have to sign to create a new token.
+
+### In case of an attack
+1. If a short-lived token gets stolen and used for malicious activities such as double-signing to slash the validator and demand ransom for stopping doing so, the Cubist notifies us after the first double-signing event, and we quickly issue a new token, rendering the attacker's actions useless. We use multiple hardware tokens and a JWT-like mechanics for creating tokens, which eliminates the possibility for an attacker to issue a new token.
+2. If a long-lived tokens gets stolen, the attacker won't be able to withdraw any assets to a custom address, since they can only be withdrawn to a set address. And again, we use multiple hardware tokens and a JWT-like mechanics for creating tokens, which eliminates the possibility for an attacker to issue a new token.
+
+## Official news and more details
+You can read the official announcement on [Ankr Blog](https://www.ankr.com/blog/securing-upcoming-eth-withdrawals-with-cubist/?search=cubist&page=1).<br/>
+For more details on Cubist, read "[Securing staking keys properly](https://cubist.dev/blog/staking-keys-status-quo)" on their blog.
+
+
+
