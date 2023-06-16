@@ -8,7 +8,7 @@ This way, we're solving the problem of compromizing private keys which is notori
 ## Solution
 Now, instead of keeping private keys to the validators within the company, Ankr switches to **remote signing** and lets Cubist securely store them in an HSM, a hardware security module with a dedicated crypto processor that is specifically designed for the protection of the crypto key lifecycle. The HSM is replicated in different location in case one of the location suffers a natural disaster such as flood or earthquake damaging the hardware.
 
-Whenever Ankr needs a signature, our server calculates what needs to be signed, sends a signature request to Cubist who checks no double-signing happened then signs the data.
+Whenever Ankr needs a signature, our server calculates what needs to be signed, sends a signature request to Cubist who runs the double-signing check and other security checks then signs the data. Cubist immediately alerts us if any malicious actions were detected.
 
 ### Ankr's main signing activities
 There are two main activities Ankr needs signatures for: block validation and withdrawal from validators (exit) when we need to unstake funds for our users.<br/>
