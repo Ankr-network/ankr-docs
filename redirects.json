@@ -1830,5 +1830,9 @@
   {
     "from": "docs/advanced-api/specification/index.html",
     "to": "https://api-docs.ankr.com/reference/introduction"
+  },
+  {
+    "from": "docs/rpc-service/getting-started/index.html",
+    "to": "/docs/rpc-service/getting-started/intro/"
   }
 ]
