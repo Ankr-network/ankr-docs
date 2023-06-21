@@ -15,7 +15,7 @@ Using HSM protects us from attacks where an attacker steals a validator's privat
 If you ask how...
 
 First, HSM securely stores our keys and runs various security checks whenever it receives a signing request.
-Second, to send any signing requests it we use short-lived and long-lived keys that we issue via **multiple hardware tokens**.
+Second, to send any signing request, we use short-lived and long-lived keys that we issue via **multiple hardware tokens**.
 1. Short-lived tokens are used to authenticate signing requests from validators they publish blocks to the network. These tokens secure us from double-signing and subsequent slashing. If an attacker somehow manages to steal it, they only have that single token. HSM alerts us at the first double-singing event and we quickly issue and register a new short-lived token, rendering the attacker's actions useless.
 2. Long-lived tokens are used to authenticate signing request when unstaking, i.e., withdrawing from our validators. These tokens along with whitelisting only our server IP, restricting the unstake amount, and more, secure us from any attacker meddling with our unstakes. Moreover, validators only allow withdrawing to the pre-programmed address that belongs to Ankr, not a custom one.
 
