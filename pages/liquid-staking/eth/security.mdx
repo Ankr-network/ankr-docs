@@ -26,7 +26,7 @@ The mechanics are very simple:
 3. If all checks pass, HSM signs the data. Otherwise, we're immediately alerted if any malicious actions have been detected.
 
 ## Additional details
-HSM is protected from physical damage by being replicated in multiple geo-locations. In case of an unlikely emergency event where all the HSMs are damaged, we can apply the majority of our hardware tokens to decrypt an HSM backup.
+HSM is protected from physical damage by being replicated in multiple geo-locations. In case of an unlikely emergency event where all the replicas are damaged, we can apply the majority of our hardware tokens to decrypt an HSM backup.
 
 In case our users make a very big unstake, we can temporarily adjust the security policy by using our hardware keys.
 
