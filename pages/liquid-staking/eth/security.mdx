@@ -20,7 +20,7 @@ Second, to send any signing request, we use short-lived and long-lived keys that
 2. Long-lived tokens are used to authenticate signing request when unstaking, i.e., withdrawing from our validators. These tokens along with whitelisting only our server IP, restricting the unstake amount, and more, secure us from any attacker meddling with our unstakes. Moreover, validators only allow withdrawing to the pre-programmed address that belongs to Ankr, not a custom one.
 
 ## Mechanics of remote signing
-The mechanics is very simple:
+The mechanics are very simple:
 1. Our server calculates what needs to be signed.
 2. We send a signing request to HSM which runs multiple checks, including the double-signing check.
 3. If all checks pass, HSM signs the data. Otherwise, we're immediately alerted if any malicious actions have been detected.
