@@ -1,29 +1,32 @@
+import { Callout } from "components";
+
 # Security
 
-To protect Ankr validators' private keys, Ankr has teamed up with Cubist — a Polychain-backed company that specializes in high-security Web3 development and deployment tools. Cubist's team that includes leading experts in cryptography and computer security drives an HSM approach to managing private keys.
+To protect Ankr validators' private keys, Ankr has teamed up with Cubist — a Polychain-backed company that specializes in high-security Web3 development and deployment tools. Cubist's team includes leading experts in cryptography and computer security and drives an HSM approach to managing private keys.
 
 ## Problem
-The problem we had to tackle is loss of money: if a validator's key is compromised, there is a significant risk of double-signing and subsequent slashing; even if you quickly exit (unstake) funds from such a validator, the exiting process is long enough, and you will lose money (part of the deposit and upcoming rewards) until it is complete and a new key gets in action.
+The problem we had to tackle is loss of money due to validator's private key exposure. If the key is compromised, there is a significant risk of double-signing and subsequent slashing. Even if you quickly exit (unstake funds from) the validator, exiting process takes several days, and you'll have to wait several weeks for the activation of a new validator — you lose a lot of rewards. It translates into a noticeable loss of money.
 
 ## Solution
-Instead of keeping validators' private keys inside the company, Ankr switches to **remote signing** and storing the keys in HSM.
+We improve our security system and keep validators' keys in HSM.
 
-HSM is a hardware security module with a dedicated crypto processor that is specifically designed to protect crypto key's lifecycle.
+<Callout type="info">
+    HSM is a hardware security module with a dedicated crypto processor that is specifically designed to protect crypto key's lifecycle.
+</Callout>
 
-Using HSM protects us from attacks where an attacker steals a validator's private key and plans to demand ransom otherwise creating double-signing events that lead to the validator's slashing and loss of money.
+These measures shield us from popular attacks such as the one where attacker steals the key and plans to demand ransom otherwise creating double-signing events that lead to the validator's slashing and loss of money.
 
-If you ask how...
-
-First, HSM securely stores our keys, and we run various security checks before we send a signing request to it.
-Second, to send any signing request, we use short-lived and long-lived keys that we issue via **multiple hardware tokens**.
-1. Short-lived tokens are used to authenticate signing requests from validators they publish blocks to the network and validate other blocks. These tokens secure us from double-signing and subsequent slashing. If an attacker somehow manages to steal it, they only have that single token. At the first double-singing event, we quickly issue and register a new short-lived token, rendering the attacker's actions useless.
-2. Long-lived tokens are used to authenticate signing request when unstaking, i.e., withdrawing from our validators. These tokens along with whitelisting only our server IP, restricting the unstake amount, and more, secure us from any attacker meddling with our unstakes. Moreover, validators only allow withdrawing to the pre-programmed address that belongs to Ankr, not a custom one.
+### How do our security system and HSM protect us?
+While HSM keeps our keys safe, we run various security checks before sending a signing request to it.
+For signing requests, we use short-lived and long-lived tokens that we issue through multiple hardware tokens.
+1. Short-lived tokens are used to authenticate signing requests from validators when they validate and publish blocks to the network. An attacker stealing a short-lived token will not be able to produce a double-signing event — our security system will run a double-signing check, reject attacker's request, and inform us. We will quickly issue a new token.
+2. Long-lived tokens are used to authenticate signing request when unstaking — withdrawing from our validators. These tokens, whitelisting the IP of our server, restricting the unstake amount, and other measures protect us from any attacker meddling with the unstakes. What's more, Ethereum doesn't allow withdrawing to a custom address, only to one pre-programmed at the validator.
 
 ## Mechanics of remote signing
 The mechanics are very simple:
 1. Our server calculates what needs to be signed.
 2. We run multiple checks, incl. the double-signing one.
-3. If all checks pass, we send a signing request to HSM. Otherwise, we immediately take action about any malicious activities.
+3. If security checks pass, we send a signing request to HSM; and if they fail, we immediately take action about any malicious activities.
 
 ## Additional details
 HSM is protected from physical damage by being replicated in multiple geo-locations. In case of an unlikely emergency event where all the replicas are damaged, we can apply the majority of our hardware tokens to decrypt an HSM backup.
