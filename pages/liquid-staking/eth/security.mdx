@@ -3,7 +3,7 @@
 To protect Ankr validators' private keys, Ankr has teamed up with Cubist — a Polychain-backed company that specializes in high-security Web3 development and deployment tools. Cubist's team that includes leading experts in cryptography and computer security drives an HSM approach to managing private keys.
 
 ## Problem
-The problem we had to tackle is losing validator's rewards: if a validator's key is compromised, there is a significant risk of double-signing and subsequent slashing; even if you quickly exit (unstake) funds from such a validator, the exiting process is long enough, and you will lose money (part of the deposit and upcoming rewards) until it is complete and a new key gets in action.
+The problem we had to tackle is loss of money: if a validator's key is compromised, there is a significant risk of double-signing and subsequent slashing; even if you quickly exit (unstake) funds from such a validator, the exiting process is long enough, and you will lose money (part of the deposit and upcoming rewards) until it is complete and a new key gets in action.
 
 ## Solution
 Instead of keeping validators' private keys inside the company, Ankr switches to **remote signing** and storing the keys in HSM.
@@ -14,7 +14,7 @@ Using HSM protects us from attacks where an attacker steals a validator's privat
 
 If you ask how...
 
-First, HSM securely stores our keys and we run various security checks before we send a signing request to it.
+First, HSM securely stores our keys, and we run various security checks before we send a signing request to it.
 Second, to send any signing request, we use short-lived and long-lived keys that we issue via **multiple hardware tokens**.
 1. Short-lived tokens are used to authenticate signing requests from validators they publish blocks to the network and validate other blocks. These tokens secure us from double-signing and subsequent slashing. If an attacker somehow manages to steal it, they only have that single token. At the first double-singing event, we quickly issue and register a new short-lived token, rendering the attacker's actions useless.
 2. Long-lived tokens are used to authenticate signing request when unstaking, i.e., withdrawing from our validators. These tokens along with whitelisting only our server IP, restricting the unstake amount, and more, secure us from any attacker meddling with our unstakes. Moreover, validators only allow withdrawing to the pre-programmed address that belongs to Ankr, not a custom one.
