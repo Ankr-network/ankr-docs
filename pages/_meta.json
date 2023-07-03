@@ -13,11 +13,7 @@
     "title": "Node Runners",
     "display": "hidden"
   },
-  "automation": {
-    "title": "Contract Automation",
-    "type": "page",
-    "display": "hidden"
-  },
+  "automation": "Contract Automation",
   "-- Tutorials": {
     "type": "separator",
     "title": "Ankr Tutorials"
