@@ -6,5 +6,6 @@
   "ftm": "Fantom",
   "ksm": "Kusama",
   "dot": "Polkadot",
-  "matic": "Polygon"
+  "matic": "Polygon",
+  "sui": "Sui"
 }
