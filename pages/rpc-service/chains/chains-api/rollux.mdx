@@ -1,17 +1,20 @@
 import { Callout } from "components";
 
 # Rollux
+<br/>
+
+<img src="/docs/build/chains-list/rollux.png" class="responsive-pic" width="800" />
 
 > Rollux API is available on [RPC Service](https://www.ankr.com/rpc/rollux).
 
-Rollux is a suite of rollup-based Layer 2 solutions designed to enable EVM users with near-instant low-cost transfers, executions, and contract deployments. Rollux utilizes Syscoin's Layer 1 for best-of-breed secure decentralized [settlement](https://docs.syscoin.org/docs/intro/syscoin-what/#settlement-layer) and Syscoin PoDA for Layer 1 data availability, offering more efficiency, lower costs, and higher throughput than other L1 DA alternatives.
+*Rollux* is a suite of rollup-based Layer 2 solutions designed to enable EVM users with near-instant low-cost transfers, executions, and contract deployments. Rollux utilizes Syscoin's Layer 1 for best-of-breed secure decentralized [settlement](https://docs.syscoin.org/docs/intro/syscoin-what/#settlement-layer) and Syscoin PoDA for Layer 1 data availability, offering more efficiency, lower costs, and higher throughput than other L1 DA alternatives.
 
 As a suite, Rollux is set to encompass both Optimistic and ZK (zero-knowledge) based approaches, enabling users and projects to choose a network or solution that fits them best.
 
 Rollux API supports the following requests:
 
-  * [EVM methods](/rpc-service/chains/chains-api/rollux/#evm-methods) — Rollux testnet.
-  * [Op-node methods](/rpc-service/chains/chains-api/rollux/#op-node-methods) — Rollux Op-node Testnet.
+  * [EVM methods](/rpc-service/chains/chains-api/rollux/#evm-methods) — Rollux Mainnet/Testnet.
+  * [Op-node methods](/rpc-service/chains/chains-api/rollux/#op-node-methods) — Rollux Op-node Mainnet/Testnet.
 
 In order for your Web3 application to interact with Rollux — either by reading blockchain data or sending transactions to the network — it must connect to a Rollux node. Developers interact with the blockchain using the methods provided by the API.
 
@@ -70,7 +73,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -112,7 +115,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -152,7 +155,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -192,7 +195,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -235,7 +238,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -289,7 +292,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -329,7 +332,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -371,7 +374,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -419,7 +422,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -469,7 +472,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -518,7 +521,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -560,7 +563,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -607,7 +610,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -649,7 +652,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -696,7 +699,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -744,7 +747,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -788,7 +791,7 @@ Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/rollux/#eth_gettr
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -843,7 +846,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -900,7 +903,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -962,7 +965,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1053,7 +1056,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1132,7 +1135,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1206,7 +1209,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1285,7 +1288,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1364,7 +1367,7 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1442,7 +1445,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1530,7 +1533,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1617,7 +1620,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1703,7 +1706,7 @@ curl -X POST https://rpc.ankr.com/rollux_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_opnode_testnet \
+curl -X POST https://rpc.ankr.com/rollux_opnode \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1742,7 +1745,7 @@ curl -X POST https://rpc.ankr.com/rollux_opnode_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_opnode_testnet \
+curl -X POST https://rpc.ankr.com/rollux_opnode \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1837,7 +1840,7 @@ curl -X POST https://rpc.ankr.com/rollux_opnode_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_opnode_testnet \
+curl -X POST https://rpc.ankr.com/rollux_opnode \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1898,7 +1901,7 @@ curl -X POST https://rpc.ankr.com/rollux_opnode_testnet \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_opnode_testnet \
+curl -X POST https://rpc.ankr.com/rollux_opnode \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",

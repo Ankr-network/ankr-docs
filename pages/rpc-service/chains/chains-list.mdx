@@ -4520,14 +4520,16 @@ Official quick links: [Website](https://syscoin.org/rollux), [Docs](https://docs
 
 ### Networks
 
+  * Mainnet (`HTTPS` and `WSS`)
+  * Op-node Mainnet (`HTTPS`)
   * Testnet (`HTTPS` and `WSS`)
-  * Op-node Testnet (`HTTPS` and `WSS`)
+  * Op-node Testnet (`HTTPS`)
 
 ### API methods
 
-For Rollux Testnet, we support blockchain interaction via all the [applicable EVM methods](/rpc-service/chains/chains-api/rollux/#evm-methods) except for those listed as unsupported.
+For Rollux, we support blockchain interaction via all the [applicable EVM methods](/rpc-service/chains/chains-api/rollux/#evm-methods) except for those listed as unsupported.
 
-For Rollux Op-node Testnet, we support blockchain interaction via the applicable [Op-node methods](/rpc-service/chains/chains-api/rollux/#op-node-methods).
+For Rollux Op-node, we support blockchain interaction via the applicable [Op-node methods](/rpc-service/chains/chains-api/rollux/#op-node-methods).
 
 #### Unsupported
 
@@ -4564,7 +4566,7 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/rollux_testnet \
+curl -X POST https://rpc.ankr.com/rollux \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -4586,7 +4588,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/rollux_testnet"  // url string
+    const url = "https://rpc.ankr.com/rollux"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -4609,7 +4611,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/rollux_testnet'  // url string
+const url = 'https://rpc.ankr.com/rollux'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -4628,7 +4630,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/rollux_testnet'  # url string
+    url = 'https://rpc.ankr.com/rollux'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
