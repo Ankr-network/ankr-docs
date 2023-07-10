@@ -14,15 +14,14 @@ npm install @ankr.com/ankr.js
 yarn add @ankr.com/ankr.js
 ```
 
-2. Initialize the provider.
+2. Initialize the SDK.
+
+[Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform, get your individual endpoint from the [Advanced APIs](https://www.ankr.com/rpc/advanced-api) pane, and provide it to the `AnkrProvider` constructor.
 
 ```javascript
 import { AnkrProvider } from '@ankr.com/ankr.js';
 
-const provider = new AnkrProvider();
-
-// or if you have a premium account
-const provider = new AnkrProvider('YOUR_API_KEY');
+const provider = new AnkrProvider('YOUR_ENDPOINT');
 ```
 
 3. Use the provider to call either of the supported methods.
