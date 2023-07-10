@@ -12,13 +12,12 @@ pip install ankr-sdk
 
 2. Initialize the SDK.
 
+[Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform, get your individual endpoint from the [Advanced APIs](https://www.ankr.com/rpc/advanced-api) pane, and provide it to the `AnkrWeb3` class.
+
 ```python
 from ankr import AnkrWeb3
 
-ankr_w3 = AnkrWeb3()
-
-# Or, if you have an Ankr Protocol premium plan
-ankr_w3 = AnkrWeb3("YOUR-TOKEN")
+ankr_w3 = AnkrWeb3("YOUR_ENDPOINT")
    ```
 
 3. Use the SDK to call the methods supported:
