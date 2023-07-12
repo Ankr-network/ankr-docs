@@ -3,20 +3,12 @@ import { Callout } from "components";
 # Projects
 
 <Callout type="tip">
-**Coming soon**. Available *upon request* for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+**Coming soon**. Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
 </Callout>
 
-*Projects* is a feature that provides the means to use several (up to 5) unique tokens in private endpoints of a single user account. That might help traffic distribution for the most demanding throughput.
+*Projects* is a feature that provides the means to use several unique tokens in private endpoints of a single user account and secure your project's blockchain interaction by specifying a particular smart contract to communicate through. That might help with project structuring, interaction security, as well as with traffic distribution for the most demanding throughput.
 
-In simple words, each new project provides a new unique token to be used either in your private endpoints or for viewing their individual statistics.
-
-**How it works**:
-
-`Request` —> `Provision` —> `Usage`
-
-  * `Request` — ask us if you'd like to use the feature.
-  * `Provision` — we do some magic under the hood.
-  * `Usage` — start using it in your account.
+In simple words, each new project provides a new unique token to be used in your private endpoints and specifies a particular smart contract for project communication.
 
 ## Usage
 
@@ -25,25 +17,33 @@ You can use the *Projects* feature working with the following panes:
   * **Endpoints**/**Advanced APIs** — for creating and using multiple tokens.
   * **Dashboard** — for filtering statistics data by project.
 
-<br/>
-<img src="/docs/build/getting-started/projects.png" alt="Projects feature" class="responsive-pic" width="800" />
+<img src="/docs/build/getting-started/projects.png" class="responsive-pic" width="800" />
+
+  * **Projects** — for creating new unique tokens and specifying a smart contract for project interaction.
+
+<img src="/docs/build/getting-started/projects-pane.png" class="responsive-pic" width="500" />
 
 ### Add project
 
 To add a new project, follow these steps:
 
-1. In **Navigation**, click **Endpoints** to open the corresponding pane.
-2. In the **Endpoints** pane, click **Add new project**, and then click **Create**.
-<br/>
-<img src="/docs/build/getting-started/add-project.png" alt="Add project" class="responsive-pic" width="700" />
+1. In **Navigation**, click **Projects** to open the corresponding pane.
+2. In the **Projects** pane, click **+ Add Project**, and go through the steps to configure it:
 
-Congrats — you're all set for using endpoints with multiple unique tokens.
+<img src="/docs/build/getting-started/add-project.png" class="responsive-pic" width="600" />
+
+    * **Project** — here your project automatically receives a name, and you can select a chain the project to work with.
+    * **White list** — here you enter the smart contract address used for project communication.
+    * **Plan** — here you select a service plan for your project.
+    * **Checkout** — here you check and confirm your project configuration by clicking **Next**.
+
+Congrats — you've just configured and created a new project with smart contract white listing.
 
 ### View project
 
-To view a project's unique token, click the **Exclamation mark** (`!`) icon of the corresponding project.
+To view a project's unique token, click the **Info** (`i`) icon of the corresponding project.
 <br/>
-<img src="/docs/build/getting-started/view-project.png" alt="View project's token" class="responsive-pic" width="700" />
+<img src="/docs/build/getting-started/view-project.png" alt="View project's token" class="responsive-pic" width="500" />
 
 Congrats — you can view or copy your project's unique token.
 
@@ -53,7 +53,7 @@ Congrats — you can view or copy your project's unique token.
 For your own good, you won't be able to delete your primary project.
 </Callout>
 
-To delete a project, click the **Exclamation mark** (`!`) icon of the corresponding project, then click **Delete project** and confirm your action.
+To delete a project, click the **Info** (`i`) icon of the corresponding project, then click **Delete project** and confirm your action.
 <br/>
 <img src="/docs/build/getting-started/delete-project.png" alt="Delete project" class="responsive-pic" width="600" />
 
