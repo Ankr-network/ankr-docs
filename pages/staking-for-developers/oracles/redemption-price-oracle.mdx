@@ -4,7 +4,7 @@ The oracle allows you to get the latest ratio and calculate the Redemption Price
 **Although, technically, it isn't a separate oracle** contract but a method from Liquid Staking token contracts, we chose to present it as such, as logically it can be perceived as a service, and also for better discoverability.
 
 ## What is Redemption Price?
-The Redemption Price defines the exact amount of assets that a user will get if they redeem their Liquid Staking tokens, after waiting its respective unbonding period. It also defines the amount of Liquid Staking tokens that they receives when staking their assets on the Ankr platform.
+The Redemption Price defines the exact amount of assets that a user will get if they redeem their Liquid Staking tokens, after waiting its respective unbonding period. It also defines the amount of Liquid Staking tokens (LSTs) they receive when staking their assets on the Ankr platform.
 
 The formula is:
 1. `original_asset = liquid_staking_token / ratio` when the user unstakes their assets. This is why the user gets more assets than the number of the redeemed Liquid Staking tokens.
@@ -14,9 +14,8 @@ All this is due to Liquid Staking tokens increasing in value overtime to the ori
 
 Ankr's Redemption Price should be considered as the primary market, and market prices on Exchanges should be perceived as the second market.
 
-## Rate per token
-You can check the amount of original assets you get when you redeem an amount of a Liquid Staking Token.
-To check it per token, use the `rateProvider` contracts:
+## Redemption price
+To get the Redemption Price for an LST, use the `rateProvider` contracts:
 * [ankrAVAX on Avalanche](https://snowtrace.io/address/0xd70c8aac058e6dafe3446f78091325f9e29bcee4#readContract) (0xd70c8aac058e6dafe3446f78091325f9e29bcee4)
 * [ankrETH on Arbitrum](https://arbiscan.io/address/0xFC8d81A01deD207aD3DEB4FE91437CAe52deD0b5#readContract) (0xFC8d81A01deD207aD3DEB4FE91437CAe52deD0b5)
 * [ankrETH on Avalanche](https://snowtrace.io/address/0xd6Fd021662B83bb1aAbC2006583A62Ad2Efb8d4A#readContract) (0xd6Fd021662B83bb1aAbC2006583A62Ad2Efb8d4A)
@@ -24,9 +23,9 @@ To check it per token, use the `rateProvider` contracts:
 * [ankrETH on Polygon zkEVM](https://zkevm.polygonscan.com/address/0xfc8d81a01ded207ad3deb4fe91437cae52ded0b5#readContract) (0xfc8d81a01ded207ad3deb4fe91437cae52ded0b5)
 
 ## Ratio for bridged tokens
-For your convenience, there an explanation of `getRatioFor()` and contract address in a single place.
-
-You can get ratio for bridged tokens via the `getRatioFor()` function. The common formula is `ankrETH/ratio=ETH`, etc.<br/>
+You may also want to get ratio for bridged tokens.<br/>
+To remind you what the ratio is, here's the formula: `liquid_staking_token/ratio=original_asset`, e.g., `ankrETH/ratio=ETH`.<br/>
+You can get it, calling the `getRatioFor()` function.
 The function takes a contract address of the original Liquid Staking token, e.g., `0xE95A203B1a91a908F9B9CE46459d101078c2c3cb` (ankrETH), and returns the ratio as a uint256 if the token has been bridged to the network you're calling the function on.
 
 The addresses of all contracts on all supported networks are:
