@@ -6,8 +6,8 @@
     "type": "separator",
     "title": "Building With Ankr"
   },
-  "rpc-service": "RPC Service",
-  "advanced-api": "Advanced APIs",
+  "rpc-service": "RPC API",
+  "advanced-api": "Advanced API",
   "node-snapshot": "Blockchain Node Snapshots",
   "node-runners": {
     "title": "Node Runners",

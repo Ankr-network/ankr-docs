@@ -1838,5 +1838,9 @@
   {
     "from": "docs/staking-extra/liquid-staking-fees/index.html",
     "to": "/docs/staking-extra/staking-fees/"
+  },
+  {
+    "from": "docs/rpc-service/getting-started/overview/index.html",
+    "to": "/docs/rpc-service/overview/"
   }
 ]
