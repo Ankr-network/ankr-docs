@@ -3,17 +3,23 @@ import { Callout } from "components";
 # Service plans
 
 Ankr provides the top-performing globally-distributed decentralized infrastructure of nodes to empower your Web3 projects with blockchain interaction capabilities.
+
+Our solutions work under the following Service Plans:
+
+  * **Public** — public endpoints for free blockchain interaction provided with Public [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits).
+  * **Premium** — private endpoints for high-performing blockchain interaction provided with Premium [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits).
+  * **Enterprise** — customer-tailored solutions for the most demanding blockchain interaction cases.
 <br/>
 
 <img src="/docs/build/service-plans.png" class="responsive-pic" width="800" />
 
-There is a couple of solutions we have at your disposal on the [RPC Service](https://www.ankr.com/rpc/) platform:
+Here is the list of solutions we have at your disposal on the [RPC Service](https://www.ankr.com/rpc/) platform under the Service Plan you've selected:
 
-  * *[RPC API](/rpc-service/overview/)* — the endpoints that enable your Web3 projects to start interacting with an extensive list of [supported blockchains](/rpc-service/chains/chains-list/), give access to viewing the usage statistics for the data queried, and provide the means for RPC API methods testing.
+  * *[Chains API](/rpc-service/overview/)* — the endpoints that enable your Web3 projects to start interacting with an extensive list of [supported blockchains](/rpc-service/chains/chains-list/), give access to viewing the usage statistics for the data queried, and provide the means for RPC API methods testing.
 
   * *[Advanced API](/advanced-api/overview)* — a ready-to-use indexed collection of endpoints that supports simultaneous querying of multiple blockchains (9 currently available) for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks). Advanced API also gives you access to the usage statistics for the data queried.
 
-To find info on the blockchains supported, see [Chains Quickstart](/rpc-service/chains/chains-list/).
+Here is the list of blockchains supported: [Chains Quickstart](/rpc-service/chains/chains-list/).
 
 ## Service plans comparison
 
@@ -21,7 +27,7 @@ To find info on the blockchains supported, see [Chains Quickstart](/rpc-service/
  Advanced API is available for an [authenticated user](/rpc-service/getting-started/basics-premium/#sign-in) only.
 </Callout>
 
-The `RPC API` and `Advanced API` solutions come with both *Public* and *Premium* service plans but differ significantly by the rate limits and other performance features supported depending on the plan selected.
+The `Chains API` and `Advanced API` solutions come with both *Public* and *Premium* service plans but differ significantly by the rate limits and other performance features supported depending on the plan selected.
 
 ### Feature list
 
@@ -29,7 +35,7 @@ The `RPC API` and `Advanced API` solutions come with both *Public* and *Premium*
 |----------------------------------------|-----------------------------|-------------------------------------------------------------------------------|
 | Full and Archive data                  | ✅                           | ✅                                                                             |
 | Global node coverage                   | ✅                           | ✅                                                                             |
-| RPC API                                | ✅                           | ✅                                                                             |
+| Chains API                             | ✅                           | ✅                                                                             |
 | Advanced API                           | ✅ (required: sign in)       | ✅                                                                             |
 | Dashboard                              | ❌                           | ✅                                                                             |
 | Usage stats and reports                | ❌                           | ✅                                                                             |
@@ -45,10 +51,10 @@ The `RPC API` and `Advanced API` solutions come with both *Public* and *Premium*
 
 ### Rate limits
 
-| Service                             | Public                                                                                                                                        | Premium                                                      |
-|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| RPC API<br/>(EVM-compatible chains) | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈1.5k requests/second` |
-| RPC API<br/>(Solana)                | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈4k requests/second`   |
+| Service                                | Public                                                                                                                                        | Premium                                                      |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| Chains API<br/>(EVM-compatible chains) | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈1.5k requests/second` |
+| Chains API<br/>(Solana)                      | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈4k requests/second`   |
 | Advanced API                           | `50 requests/minute`                                                                                                                          | `1k+ requests/minute`                                        |
 
 ## Charging model: Pay-as-you-go
@@ -57,7 +63,7 @@ _Pay-as-you-go_ (PAYG) is a usage-based charging model for the Premium Plan serv
 
 ### How we charge?
 
-Premium Plan's RPC usage measures in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
+Premium Plan's chain requests measure in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
 
 [//]: # (Premium Plan supports two communication protocols:)
 
