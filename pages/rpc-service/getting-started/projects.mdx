@@ -3,18 +3,32 @@ import { Callout } from "components";
 # Projects
 
 <Callout type="tip">
-**Coming soon**. Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
 </Callout>
 
-*Projects* is a feature that provides the means to use several unique tokens in private endpoints of a single user account and secure your project's blockchain interaction by specifying a particular smart contract to communicate through. That might help with project structuring, interaction security, as well as with traffic distribution for the most demanding throughput.
+*Projects* is a feature that provides the means to use several unique tokens in private endpoints of a single user account and secure your project's user interaction by specifying a particular smart contract to communicate through. That might help with project structuring, interaction security, as well as with traffic distribution for the most demanding throughput.
 
 In simple words, each new project provides a new unique token to be used in your private endpoints and specifies a particular smart contract for project communication.
+
+The first iteration of Projects aims at providing you with the means to control your endpoint usage by `smart contract whitelisting`. This feature would be handy for a dApp where users communicate with a smart contract via Frontend — to protect your endpoint from misuse. A specified smart contract will allow your dApp users to request only a selected chain using a limited number of methods supported.
+
+<Callout type="warning">
+All requests using unsupported methods or chains get blocked.
+</Callout>
+
+**Supported chains**:
+
+  * `Arbitrum`, `BNB Smart Chain`, `Ethereum`, `Gnosis`, `Polygon`
+
+**Supported methods**:
+
+  * `eth_call`, `eth_getLogs`, `eth_sendRawTransaction`
 
 ## Usage
 
 You can use the *Projects* feature working with the following panes:
 
-  * **Endpoints**/**Advanced APIs** — for creating and using multiple tokens.
+  * **Endpoints** / **Advanced API** — for creating and using multiple tokens.
   * **Dashboard** — for filtering statistics data by project.
 
 <img src="/docs/build/getting-started/projects.png" class="responsive-pic" width="800" />
@@ -33,9 +47,13 @@ To add a new project, follow these steps:
 <img src="/docs/build/getting-started/add-project.png" class="responsive-pic" width="600" />
 
     * **Project** — here your project automatically receives a name, and you can select a chain the project to work with.
-    * **White list** — here you enter the smart contract address used for project communication.
+<img src="/docs/build/getting-started/select-chain.png" class="responsive-pic" width="600" />
+    * **White list** — here you enter the smart contract address used for project communication. Note that your smart contract have to be deployed either on Ethereum or on other EVM-compatible blockchain.
+<img src="/docs/build/getting-started/enter-smart.png" class="responsive-pic" width="600" />
     * **Plan** — here you select a service plan for your project.
+<img src="/docs/build/getting-started/project-plan.png" class="responsive-pic" width="600" />
     * **Checkout** — here you check and confirm your project configuration by clicking **Next**.
+<img src="/docs/build/getting-started/project-checkout.png" class="responsive-pic" width="600" />
 
 Congrats — you've just configured and created a new project with smart contract white listing.
 
