@@ -10,7 +10,7 @@ The formula is:
 1. `original_asset = liquid_staking_token / ratio` when the user unstakes their assets. This is why the user gets more assets than the number of the redeemed Liquid Staking tokens.
 2. `liquid_staking_token = original_asset * ratio` when the user stakes their assets. This is why the user gets less Liquid Staking tokens than the number of the staked assets.
 
-All this is due to Liquid Staking tokens increasing in value overtime to the originally staked assets, which happens because `ratio = TVL / (TVL + rewards)`.
+All this is due to Liquid Staking tokens increasing in value overtime to the originally staked assets, which happens because `ratio = supply / (TVL + rewards * (1-fee))`. For example, `ETH ratio = supply / (TVL + rewards * 0.9)`.
 
 Ankr's Redemption Price should be considered as the primary market, and market prices on Exchanges should be perceived as the second market.
 
