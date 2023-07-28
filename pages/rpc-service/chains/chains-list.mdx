@@ -719,7 +719,7 @@ For Base, we support blockchain interaction via all the [applicable methods](/rp
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/base_goerli \
+curl -X POST https://rpc.ankr.com/base \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -741,7 +741,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/base_goerli"  // url string
+    const url = "https://rpc.ankr.com/base"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -764,7 +764,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/base_goerli'  // url string
+const url = 'https://rpc.ankr.com/base'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -783,7 +783,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/base_goerli'  # url string
+    url = 'https://rpc.ankr.com/base'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
