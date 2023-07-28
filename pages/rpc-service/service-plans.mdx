@@ -68,25 +68,6 @@ Our Premium service plan users can choose to query blockchains under the followi
 
 _Pay-as-you-go_ (PAYG) is a usage-based charging model for the Premium Plan services. PAYG means that you commit to no subscriptions but pay for each request you make. To start using the Premium Plan features, you deposit a minimum amount of 1000 ANKR tokens and create an Ankr Premium account.
 
-#### How we charge?
-
-Premium Plan's chain requests measure in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
-
-[//]: # (Premium Plan supports two communication protocols:)
-
-[//]: # ()
-[//]: # (* **HTTPS** — this one is used either for individual or batch requests.)
-
-[//]: # (* **WebSocket** — this one is used to establish a communication channel.)
-
-We charge no matter whether a request has been successful or not. In other words, a charge is taken for each request coming to our worker, regardless of a node's response.
-
-Here is the summary on PAYG charging:
-
-  * **Correct request** (charged) — a request uses a supported method and has a valid JSON-RPC structure. 
-  * **Incorrect request** (not charged) — a request has an invalid JSON-RPC structure or a batch request has the same ID in multiple requests. We can't parse such a request.
-  * **Correct request + incorrect method** (charged default amount) — a request uses an unsupported method though has a valid JSON-RPC structure. We charge default amount of credits for the infrastructure usage.
-
 [//]: # (## Get started with Premium)
 
 [//]: # ()
@@ -114,6 +95,23 @@ Here is the summary on PAYG charging:
 
 > **Our PAYG pricing model:**
 > **0.10 USD = 1M API Credits**
+<br/>
+
+<img src="/docs/build/pricing-section.png" class="responsive-pic" width="800" />
+
+### How we charge?
+
+Premium Plan's chain requests measure in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
+
+We charge no matter whether a request has been successful or not. In other words, a charge is taken for each request coming to our worker, regardless of a node's response.
+
+PAYG charging summary:
+
+> `Correct call` — `Incorrect call` — `Currect call + incorrect method`
+
+  * **Correct call** (charged) — a request uses a supported method and has a valid JSON-RPC structure.
+  * **Incorrect call** (not charged) — a request has an invalid JSON-RPC structure or a batch request has the same ID in multiple requests. We can't parse such a request.
+  * **Correct call + incorrect method** (charged default amount) — a request uses an unsupported method though has a valid JSON-RPC structure. We charge default amount of credits for the infrastructure usage.
 
 ### Pricing per request
 
