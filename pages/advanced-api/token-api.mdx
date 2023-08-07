@@ -1,9 +1,39 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 import { Callout } from "components";
 
+## Contract Allowances Agenda
+
+Interacting with DeFi apps, we usually approve token allowances to enable the dApp making transactions on our behalf. It's easy to forget about those allowances and the spending limits involved.
+
+Later on it can mean that an exploited project's contract has unlimited access to the tokens in your wallet. And malicious actors can spend those tokens even if you have withdrawn your funds from the smart contract back into your wallet.
+
+Having the means to keep track of the contracts authorized to spend your tokens would help DeFi users control their funds, take preventive measures to eliminate malicious spending, or build reactive mechanisms to minimize an exploit:
+
+  * Know who can spend your tokens
+  * Be aware of allowed spending limits
+  * Revoke allowances for smart contracts you no longer use or trust
+
+We have a specific API to help keeping your mind at peace in this matter — `ankr_getTokenAllowances`.
+
 ## `ankr_getTokenAllowances`
 
-> **Retrieves all contract allowances of a particular wallet address.**
+> **Retrieves smart contracts allowed to spend tokens owned by a particular account.**
+
+The idea of this method is rather straightforward: you provide the account address, and the API lists all smart contracts allowed to spend your tokens along with the metadata available for those allowances.
+
+The method itself is part of our Advanced API collection that optimizes, indexes, caches, and stores blockchain data, so you can query it at near-instant speeds and search across multiple supported chains at once.
+
+API features:
+
+  * Review who can spend your funds.
+  * Check spending limits (and other metadata).
+  * View allowances across 10 chains.
+  * Make informed decisions to reduce the risk of losing funds to hacks or exploits.
+
+Possible users:
+
+  * **dApps** — to check addresses that can spend tokens owned by a wallet, and then build code that offers a revoke.
+  * **Wallet providers**/**Portfolio dashboards** — to show their users contract allowances for improved security and token management.
 
 ### Parameters
 
@@ -12,7 +42,7 @@ import { Callout } from "components";
 * `method` (string; required): a method used for the request.
 * `params` (array): request body parameters:
 
-  * `walletAddress` (required; string): the wallet address to check for smart contract allowances; supports the Ethereum Name Service (ENS).
+  * `walletAddress` (required; string): the account address to check for smart contract allowances; supports ENS naming.
   * `blockchain` (optional; string): a chain or a combination of chains to query:
     * Single chain: `eth`, `bsc`, `fantom`, `avalanche`, `polygon`, `polygon_zkevm`, `arbitrum`, `syscoin`, `optimism`, `rollux`, `eth_goerli`, `polygon_mumbai`, `avalanche_fuji`.
     * Chains combination: `[eth, polygon, bsc]`.
@@ -22,7 +52,7 @@ import { Callout } from "components";
 
 ### Response
 
-Returns detailed metadata for contract allowances of the wallet address specified.
+Returns detailed metadata for the contracts allowed to spend tokens of the account address specified. Can query multiple chains in a single request.
 
 ### Code Examples
 
