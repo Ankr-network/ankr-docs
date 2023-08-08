@@ -1,7 +1,7 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 import { Callout } from "components";
 
-## Token Allowance Agenda
+## Who Can Spend Your Tokens?
 
 Interacting with DeFi apps, we usually approve token allowances to enable the dApp making transactions on our behalf. It's easy to forget about those allowances and the spending limits involved.
 
@@ -9,9 +9,9 @@ Later on it can mean that an exploited project's contract has unlimited access t
 
 Having the means to keep track of the contracts authorized to spend your tokens would help DeFi users control their funds, take preventive measures to eliminate malicious spending, or build reactive mechanisms to minimize an exploit:
 
-  * Know who can spend your tokens
-  * Be aware of allowed spending limits
-  * Revoke allowances for smart contracts you no longer use or trust
+  * Know who can spend your tokens.
+  * Be aware of allowed spending limits.
+  * Revoke allowances for smart contracts you no longer use or trust (in progress).
 
 We have a specific API to help keeping your mind at peace in this matter — `ankr_getTokenAllowances`.
 
@@ -23,14 +23,14 @@ The idea of this method is rather straightforward: you provide the account addre
 
 The method itself is part of our Advanced API collection that optimizes, indexes, caches, and stores blockchain data, so you can query it at near-instant speeds and search across multiple supported chains at once.
 
-API features:
+**API features**:
 
   * Review who can spend your funds.
   * Check spending limits (and other metadata).
   * View allowances across 10 chains.
   * Make informed decisions to reduce the risk of losing funds to hacks or exploits.
 
-Possible users:
+**Possible users**:
 
   * **dApps** — to check addresses that can spend tokens owned by a wallet, and then build code that offers a revoke.
   * **Wallet providers**/**Portfolio dashboards** — to show their users contract allowances for improved security and token management.
@@ -64,7 +64,8 @@ Returns detailed metadata for the contracts allowed to spend tokens of the accou
     "Multiple chains",
     "All chains",
     "ENS name",
-    "Specific contract"
+    "Specific contract",
+    "Revoke allowance"
   ]}
 >
   <Tab>
@@ -146,6 +147,12 @@ curl --location --request POST 'https://rpc.ankr.com/multichain' \
     },
     "id": 1
 }'
+```
+  </Tab>
+  <Tab>
+
+```shell
+Revoke allowance code sample
 ```
   </Tab>
 </Tabs>
