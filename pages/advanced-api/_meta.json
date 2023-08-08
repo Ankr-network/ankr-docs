@@ -1,6 +1,10 @@
 {
   "overview": "Overview",
   "pricing": "Pricing",
+  "token-api": {
+    "title": "Token API",
+    "display": "hidden"
+  },
   "specification": {
     "title": "API Reference ↗",
     "type": "page",

@@ -2644,7 +2644,7 @@ For Horizen EON, we support blockchain interaction via all the [applicable metho
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/horizen_evm \
+curl -X POST https://rpc.ankr.com/horizen_eon \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -4676,12 +4676,13 @@ Official quick links: [Website](https://scroll.io/), [Docs](https://guide.scroll
 ### Networks
 
   * Alpha Testnet (`HTTPS` and `WSS`)
+  * Sepolia Testnet (`HTTPS` and `WSS`)
 
 The Alpha Testnet consists of Ethereum's Goerli Testnet and the Scroll Alpha test network. Goerli is an Ethereum test network with PoS-based consensus, while Scroll Alpha is a zero-knowledge rollup testnet deployed on top of the former.
 
 ### API methods
 
-For Scroll's Alpha Testnet, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/scroll/) except for those listed as unsupported.
+For Scroll Testnets, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/scroll/) except for those listed as unsupported.
 
 #### Unsupported
 
