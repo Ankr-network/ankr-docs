@@ -150,7 +150,7 @@ yarn install
 yarn dev
 ```
 
-FYI, it's `http://localhost:3016/docs/`.
+FYI, it's `http://localhost:3000/docs/`.
 
 
 ### Work with the content and resources in your favorite IDE.
