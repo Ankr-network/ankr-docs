@@ -118,7 +118,7 @@ When the value of the UnstakeTicket is reached, the contract stops unstaking fun
 
 <img src="/docs/staking/liquid-staking/sui/burn_ticket_flow.png" alt="burn_ticket() flow" class="responsive-pic" width="600" />
 
-#### Workflow
+### Workflow
 1. The user calls `mint_ticket(NativePool, Metadata<CERT>, Coin<CERT>)`. Inside, the following happens:
    1. `NATIVE_POOL::` calculates the amount of SUI to return to the user: _SUI = unstake amount / ratio_.
    2. `NATIVE_POOL::` checks the amount from Step a is > 1 SUI.
@@ -141,7 +141,7 @@ When the value of the UnstakeTicket is reached, the contract stops unstaking fun
    5. `NATIVE_POOL::` transfers the user the unstake amount.
    6. A `TicketBurnedEvent` event is emitted.
 
-#### Unstaking corner cases
+### Unstaking corner cases
 1. If the user tries to unstake in the current epoch an amount bigger than the one that was staked before the beginning of it, such unstake is impossible to pay out instantly. The user will have to wait till the end of the current epoch to get their tokens. A telling example can be: previous epoch stakes are 100K (TVL 100K), current epoch stakesare 200K, the user unstakes 150K in the current epoch (150% of the previous epoch TVL). From our practice, however, such cases arise during QA, and the users must never see them in the production environment.
 2. If the user makes multiple stake/unstake transactions, it can significantly decrease the APR, as each transaction decreases the active TVL that gets rewards and increases the passive TVL that will get rewards only in 2 epochs. Although this malicious user will not gain any profit and, in fact, will pay a fee for each transaction, this behavior still affects all users of the protocol. To discourage attacks of this kind, we take a small fee that is nearly equal to the APR decrease if unstakes in the current epoch have used more than 10% of the TVL in the previous epoch.
 
@@ -150,6 +150,7 @@ To sum up:
 2. Unstakes higher than the `unstake_fee_threshold` are instant and bear the unstake_fee, which is included in the body of unstaked amount, i.e., the user gets `value` - `unstake_fee`.
 3. Unstakes as big as or higher than the active part of the pool TVL make the `epoch` value in the UnstakeTicket equal to _current_epoch + 1_.
 
+## Validators
 ### Updating validators
 `update_validators(NativePool, vector<address>, vector<u64>, OperatorCap)`
 
@@ -178,5 +179,5 @@ Sorts the validators in the list by priority. For priority details, see the Upda
 #### Example
 * [Testnet transaction](https://www.suiscan.com/txblock/2daQb3gF9z1uXRQktgrYm91Wcq1LEG9dYVA5W9ea5M7A?network=testnet)
 
-### Ankr's operator
+## Ankr's operator
 <img src="/docs/staking/liquid-staking/sui/ankr-operator.png" alt="Ankr's operator" class="responsive-pic" width="600" />
