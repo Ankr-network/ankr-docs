@@ -1,0 +1,182 @@
+import { Callout } from "components";
+
+# SUI staking mechanics
+
+SUI Liquid Staking lets the user stake their funds through the corresponding smart contracts on Sui, accumulate rewards, and receive their stake and rewards when unstaking.
+
+## Problem and solution
+The SUI Staking mechanics doesn’t allow to return the user their funds if they requested an unstake the same epoch they staked while the funds are still in the pending state.
+
+Our goal is to fulfill unstake requests as soon as possible while avoiding big plunges in the APR that happen because such requests can only be served by stakes (StakedSUI) actively accruing rewards.
+
+To solve this problem, we have implemented the following mechanics:
+* Delayed unstake managed via UnstakeTicket for requests that take up the whole active SUI balance.
+* Fee that lowers the financial appeal of unstake requests that are fulfilled within the current epoch.
+
+<img src="/docs/staking/liquid-staking/sui/sui-staking-workflow.png" alt="Sui Liquid Staking flow" class="responsive-pic" width="600" />
+
+
+## Requirements
+The requirements when staking are:
+
+* Minimum value to stake or unstake — any.
+* Maximum value to stake or unstake — any.
+* Withdrawal period — current epoch for unstake requests < total active stakes, next epoch for requests > total active stakes.
+
+## Fees
+When staking:
+* A 10% technical service fee from the user reward.
+
+When unstaking:
+* If the unstake_amount > n% of total stake of the pool, the unstake_fee is appplied — 0.05% is deducted from the unstake_amount.
+
+## Rewards
+User's ankrSUI value grows steadily in relation to SUI over time, i.e., user rewards are built into the LST.
+
+## Smart contracts and objects
+* Liquid Staking (PACKAGE) — entry point for interaction with Liquid Staking modules.
+* CERT_METADATA — object that stores the total supply of ankrSUI.
+* NATIVE_POOL — main pool object that stores ValidatorSet and main data for the pool operations ( balance, stakes, etc).
+* COIN_METADATA — object that stores ```Metadata(<CERT>)``` (name, ticker, icon) of ankrSUI.
+* OwnerCap — capability to call functions with the owner role access level.
+* OperatorCap — capability to call functions with the operator role acces level.
+* Vault — object that stores the staking queue for a specific validator; the queue is freed in the FIFO order in the unstake process.
+* ValidatorSet — object that stores validators sorted by their priority level and their Vaults.
+* Smart contract code can be viewed by following the links and selecting the *Contract* tab.
+
+### Sui Testnet
+* [PACKAGE](https://suiexplorer.com/object/0x9ada5e2775ece271d80c8731c3f388a5228d3d2c8bc312fbad9ab8b6d4c852fb?network=testnet) (0x9ada5e2775ece271d80c8731c3f388a5228d3d2c8bc312fbad9ab8b6d4c852fb)
+* [CERT_METADATA](https://suiexplorer.com/object/0x82b87af16cfad07fa28a244158bf1a18c78db2f3f7181f0f545ce2a19199005d?network=testnet) (0x82b87af16cfad07fa28a244158bf1a18c78db2f3f7181f0f545ce2a19199005d)
+* [NATIVE_POOL](https://suiexplorer.com/object/0xe36b9d308fb64623a8a31e482c81d46dda506a597cda6f9c55fc5c79bd051b6b?network=testnet) (0xe36b9d308fb64623a8a31e482c81d46dda506a597cda6f9c55fc5c79bd051b6b)
+* [COIN_METADATA](https://suiexplorer.com/object/0xd9775f8ab2ccadb1d0695a4b75cbfc94fd49454a7b4af0b803e167ba9e0b6207?network=testnet) (0xd9775f8ab2ccadb1d0695a4b75cbfc94fd49454a7b4af0b803e167ba9e0b6207)
+
+## Dependencies
+Some methods depends on Sui system objects.
+* `SuiSystemState` — 0x5 (addresses).
+* `Clock` — 0x6 (addresses).
+
+
+## Staking
+`stake(NativePool, Metadata<CERT>, SuiSystemState, Coin<SUI>)`
+
+The main entry point for the user. Exchanges SUI to CERT (ankrSUI), adds SUI to the pool in the pending state and if pending balance is greater than 1SUI tries to stake all of it to a validator that holds the highest priority, otherwise the tokens remain in the pool. The stake amount must be greater or equal to native_pool::min_stake. The user begins receiving their rewards instantly, however the stake itself will start earning since next epoch after it has been staked.
+
+### Workflow
+1. The user calls ```stake(NativePool, Metadata<CERT>, SuiSystemState, Coin<SUI>)```. Inside, the following happens:
+   1. `NATIVE_POOL::` checks that the amount of SUI in the transaction is > than the min limit.
+   2. `NATIVE_POOL::` calculates the amount the user will get: `ankrSUI = stake amount * ratio`.
+   3. `NATIVE_POOL::` adds the SUI to the pool pending balance.
+   4. If the pending balance >= 1 SUI:
+      1. `NATIVE_POOL::` finds a validator with the highest priority from the list committed by our backend.
+      2. `NATIVE_POOL::` calls the SUI system contract `sui_system::request_add_stake_non_entry()` which returns a StakedSUI object (stake).
+      3. `NATIVE_POOL::` puts the StakedSUI object in an array associated with the validator from Step i.
+   5. `NATIVE_POOL::` mints and transfers to the user ankrSUI in the amount calculated at Step b.
+2. A `StakedEvent` event is emitted.
+
+### Example transaction
+* [Testnet transaction](https://www.suiscan.com/txblock/7Kg5L48FznkKoYjrmWMEvFUJSdFSSw3QVnwcRMqvKCps?network=https%3A%2F%2Frpc.ankr.com%2Fsui_testnet)
+
+## Rewards
+After an epoch change, our backend queries for the total amount of accrued rewards for all StakedSUI, and stores the resulting sum to the contract.
+
+As a result of this action, ratio gets updated by the formula: _shares_supply / (total_staked + (total_rewards - collected_rewards) - tickets_supply)_ where _shares_supply_ is `CERT_METADATA::total_supply`, _total_staked_ is the value from the staking event and _total_staked = total_rewards - collected_rewards_, _total_rewards_ is `NATIVE_POOL:total_rewards`, _collected_rewards_ is `NATIVE_POOL::collected_rewards`, _tickes_supply_ is the number of all unburned UnstakeTickets.
+
+## Unstaking
+
+Unstaking process involves 2 stages, that can be performed individually or in a single function call.
+
+### First stage
+`mint_ticket(NativePool, Metadata<CERT>, Coin<CERT>)`
+
+Burns ankrSUI tokens (which stops rewards generation for the staker) and mints UnstakeTicket object, that allows it’s owner to receive SUI initial funds and rewards.
+
+In most cases user can unstake in a single function call `unstake(NativePool, Metadata<CERT>, SuiSystemState, Coin<CERT>)` that includes both ticket minting and burning, if _total value of all unstake tickets > total_active_stake_.
+
+#### UnstakeTicket
+An UnstakeTicket is an non-transferrable object that gives the right to it’s owner to unstake specified amount of SUI since a certain epoch.
+
+An UnstakeTicket contains the following fields:
+* `value` (uint64) — the amount of SUI to unstake. When burning an UnstakeTicket, the user receives value - unstake_fee where value is calculated by the ankrSUI-to-SUI exchange rate from the day the UnstakeTicket was created.
+* `unstake_fee` (uint64) — a fee the protocol deducts during the second unstake stage if the total value of all minted UnstakeTickets for the last 2 SUI Chain epochs is higher than  unstake_fee_threshold % from the total_staked (sum of all user stakes). unstake_fee is a fixed percentage N% (0.05% by default) and is calculated by the following formula: unstake_fee = value * base_unstake_fee.
+* `epoch` (uint64) — number of SUI Chain epoch since a ticket can be burned (User is free to burn their ticket any epoch later). It is the current epoch by default, however, if _total value of all unstake tickets_ > _total_active_stake_, then `epoch` = current_epoch + 1, where _total_active_stake = sum of all stakes up to the current epoch - sum of all burned unstake tickets_, incl. current epoch. In other words if all StakedSUI on validators is in the “pending” state, then user has to wait until the next epoch when it becomes “active” and available for unstake.
+
+### Second stage
+The second stage is initiated by calling the `burn_ticket(NativePool, SuiSystemState, UnstakeTicket)` method, which sends the SUI value defined in the UnstakeTicket to the user.
+
+To obtain the value, the protocol unstakes funds the following way:
+1. Starting from the validator that holds the lowest priority.
+2. Within the validator, in a queue starting from the oldest stake (StakedSUI) through the newest.
+3. For each StakedSUI that accrued rewards, the contract deducts a base_reward_fee% from the rewards and adds it to the NativePool::collectable_fee variable for the owner to collect later.
+
+When the value of the UnstakeTicket is reached, the contract stops unstaking funds and sends the user their SUI (value - unstake_fee).
+
+<Callout type="info">
+    A surplus can remain — the contract can unstake an amount of SUI greater than the value. It can happen, as StakedSUI is an object containing >= 1 SUI, which is not only the body of the stake, but also the accrued staking rewards, and the final StakedSUI in the queue can have more funds that needed to cover the value.
+
+    The surplus is added to the pending contract balance, waiting to be staked when >=1 SUI.
+</Callout>
+
+<img src="/docs/staking/liquid-staking/sui/burn_ticket_flow.png" alt="burn_ticket() flow" class="responsive-pic" width="600" />
+
+#### Workflow
+1. The user calls `mint_ticket(NativePool, Metadata<CERT>, Coin<CERT>)`. Inside, the following happens:
+   1. `NATIVE_POOL::` calculates the amount of SUI to return to the user: _SUI = unstake amount / ratio_.
+   2. `NATIVE_POOL::` checks the amount from Step a is > 1 SUI.
+   3. `NATIVE_POOL::` burns the ankrSUI the user sent at Step 1 (`Coin<CERT>`).
+   4. `NATIVE_POOL::` calculates the `unstake_fee`:
+      1. `NATIVE_POOL::` checks how much has been unstaked for the last 2 epochs and adds to it the amount the user unstakes.
+      2. If the sum from Step i > n% of total stake of the pool, `NATIVE_POOL::` calculates the `unstake_fee`.
+   5. `NATIVE_POOL::` checks if the unstake request can be fulfilled in the current epoch: sum of all unfulfilled unstake request + `unstake_amount` from the current request.
+      1. If the result is > total active stake (all stakes before the current epoch), the request cannot be fulfilled this epoch and will be fulfilled the next epoch.
+   6. `NATIVE_POOL::` creates and transfers the user an UnstakeTicket with the unstake amount from Step 1.1, `unstake_fee` from Step 1.4, `epoch` from Step 5.1.
+   7. An `UnstakedEvent` event is emitted.
+2. The user calls `burn_ticket(NativePool, SuiSystemState, UnstakeTicket)`.
+   1. `NATIVE_POOL::` checks that the epoch in the ticket is >= current epoch. If no, the transaction is reverted.
+   2. If yes, `NATIVE_POOL::` gets the list with validators ranged by their priority committed by our backend and unstakes starting from the validator with the lowest priority:
+      1. `NATIVE_POOL::` gets the validator’s array of StakedSUI objects and calls `sui_system::request_withdraw_stake_non_entry()` for each object until the unstake amount in the ticket is reached.
+      2. `NATIVE_POOL::` subtracts base_reward_fee from the rewards each StakedSUI object accrued, and adds it to to the Ankr treasury.
+   3. `NATIVE_POOL::` subtracts unstake_fee from the unstake amount, and adds it to Ankr treasury.
+   4. If there is any surplus, `NATIVE_POOL::` adds it to the pending balance.
+      1. If the pending balance > 1 SUI, `NATIVE_POOL::` restakes it.
+   5. `NATIVE_POOL::` transfers the user the unstake amount.
+   6. A `TicketBurnedEvent` event is emitted.
+
+#### Unstaking corner cases
+1. If the user tries to unstake in the current epoch an amount bigger than the one that was staked before the beginning of it, such unstake is impossible to pay out instantly. The user will have to wait till the end of the current epoch to get their tokens. A telling example can be: previous epoch stakes are 100K (TVL 100K), current epoch stakesare 200K, the user unstakes 150K in the current epoch (150% of the previous epoch TVL). From our practice, however, such cases arise during QA, and the users must never see them in the production environment.
+2. If the user makes multiple stake/unstake transactions, it can significantly decrease the APR, as each transaction decreases the active TVL that gets rewards and increases the passive TVL that will get rewards only in 2 epochs. Although this malicious user will not gain any profit and, in fact, will pay a fee for each transaction, this behavior still affects all users of the protocol. To discourage attacks of this kind, we take a small fee that is nearly equal to the APR decrease if unstakes in the current epoch have used more than 10% of the TVL in the previous epoch.
+
+To sum up:
+1. Unstakes lower than the `unstake_fee_threshold` are instant and bear no fee (see [UnstakeTicket](#unstaketicket)).
+2. Unstakes higher than the `unstake_fee_threshold` are instant and bear the unstake_fee, which is included in the body of unstaked amount, i.e., the user gets `value` - `unstake_fee`.
+3. Unstakes as big as or higher than the active part of the pool TVL make the `epoch` value in the UnstakeTicket equal to _current_epoch + 1_.
+
+### Updating validators
+`update_validators(NativePool, vector<address>, vector<u64>, OperatorCap)`
+
+Our backend observes the network state and prioritizes validators based on their APY, reputation and already staked amount; the number of validators may vary starting from minimum 5 validators, each validator receiving stakes until it reaches 20% TVL, then its priority is lowered not to receive any more stakes. The contract makes decision based on the priority: stake with the validator that holds the highest priority, unstake starting with the validator that holds the lowest priority.
+
+<Callout type="info">
+    To apply priority, see [Sorting validators](#sorting-validators).
+</Callout>
+
+#### Example
+We want to send all new stakes to the validator `0xba4d20899c7fd438d50b2de2486d08e03f34beb78a679142629a6baacb88b013`<br/>
+ and unstake from the validators `0x3d618b03660f4e8b4ec99c52af08a814f5248154937782d22b5a8f2e44ba15fc` and `0x9c4155f9e901324198fc9c737e15e6b14da5b9d2f38243213f115a7d45f3d048`.
+
+The address who owns the Operator Cap should make a call with this 3 validators addresses and prioritize them in this way: [3,1,2]. As a result, `0xba4d` will take the first place, and contract will stake with it. The last one at the bottom of queue, `0x3d61`, will be the first candidate for unstakes.
+
+* [Testnet transaction](https://www.suiscan.com/txblock/9ZCZZKpqvUQZHUY14qXbJfC1atRSBhBzHrySdK8Voekj?network=testnet)
+
+#### Zero priority
+If our backend sets a validator 0 priority, it means we want to prune its state from the module. Upon the last user unstake form this validator, we remove it from the validator_set module.
+
+### Sorting validators
+`sort_validators(NativePool)`
+
+Sorts the validators in the list by priority. For priority details, see the Update Validators method description above.
+
+#### Example
+* [Testnet transaction](https://www.suiscan.com/txblock/2daQb3gF9z1uXRQktgrYm91Wcq1LEG9dYVA5W9ea5M7A?network=testnet)
+
+### Ankr's operator
+<img src="/docs/staking/liquid-staking/sui/ankr-operator.png" alt="Ankr's operator" class="responsive-pic" width="600" />
