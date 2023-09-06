@@ -42,8 +42,8 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters:
   * `walletAddress` (string; required): an account address to query for NFTs; supports the Ethereum Name Service (ENS).
   * `blockchain` (string): a chain or a combination of chains to query:
-     * Single chain: `arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `zksync_era`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`.
-     * Chains combination: `[arbitrum, avalanche, base, bsc, eth, fantom, optimism, polygon, polygon_zkevm, rollux, syscoin, zksync_era, avalanche_fuji, eth_goerli, optimism_testnet, polygon_mumbai]`.
+     * Single chain: `arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`.
+     * Chains combination: `[arbitrum, avalanche, base, bsc, eth, fantom, optimism, polygon, polygon_zkevm, rollux, syscoin, avalanche_fuji, eth_goerli, optimism_testnet, polygon_mumbai]`.
      * All chains: leave the value empty to query all the chains available.
   * `pageSize` (int32): a number of page results you'd like to get (default=10, max=50).
   * `pageToken` (string): a token is provided at the end of the response body and can be referenced in the request to fetch the next page.
@@ -107,7 +107,7 @@ A successful response contains the following parameters:
 * `id` (int64; required):
 * `jsonrpc` (string; required):
 * `result` (object): the data object containing a list of NFT assets and their metadata:
-  * `blockchain` (string; required): one of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `zksync_era`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (string; required): one of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
   * `collectionName` (string): a collection name the NFT asset belongs to.
   * `contractAddress` (string): an NFT collection's EVM-compatible contract address.
   * `contractType` (int32): a type of the contract — either ERC721 or ERC1155.
@@ -349,7 +349,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters.
 
-  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `zksync_era`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
   * `contractAddress` (string): an address of the NFT contract the metadata belongs to; supports the Ethereum Name Service (ENS).
   * `tokenId` (integer): a token ID of the NFT the metadata belongs to.
 
@@ -393,7 +393,7 @@ A successful request returns, along with the general parameters, the `result` ob
 * `result` (object): the data object containing the NFT metadata and NFT attributes:
 
   * `metadata` (object): the data object containing the NFT metadata:
-    * `blockchain` (string; required): one of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `zksync_era`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+    * `blockchain` (string; required): one of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
     * `contractAddress` (string): a contract address of the NFT Collection; supports the Ethereum Name Service (ENS).
     * `contractType` (string): a contract type of the NFT the metadata belongs to (example: ERC721, ERC1155).
     * `tokenId` (string): a token ID of the NFT the metadata belongs to (example: 7822).
@@ -547,7 +547,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters.
 
-  * `blockchain` (string; required): either of the supported blockchains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `zksync_era`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (string; required): either of the supported blockchains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
   * `contractAddress` (string): a contract address of the NFT collection; supports the Ethereum Name Service (ENS).
   * `pageSize` (integer): a number of results you'd like to get (max: `10000`, default: `1000`).
   * `pageToken` (string): a current page token provided at the end of the response body; can be referenced in the request to fetch the next page.
@@ -686,7 +686,7 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters.
 
   * `address` (array of strings; required): an address (or list of addresses) to search for transactions.
-  * `blockchain` (array of strings): either of the supported blockchains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `zksync_era`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (array of strings): either of the supported blockchains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
   * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`).
   * `toBlock` (integer): narrow your search indicating the block number to end with (inclusive; `>= 0`).
