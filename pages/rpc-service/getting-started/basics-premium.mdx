@@ -10,7 +10,7 @@ The [Premium service plan](/rpc-service/service-plans/#service-plans-comparison)
 
   * **[Sign in](/rpc-service/getting-started/basics-premium/#sign-in)**: first things first, the road to using Premium starts with signing in into your account (so we can provide you with the private endpoints and know which account to charge under the [PAYG model](/rpc-service/service-plans/#charging-model-pay-as-you-go) for the requests you make).
 
-  * **[Deposit funds](/rpc-service/getting-started/basics-premium/#deposit-funds)**: second, the positive balance of [API Credits](/rpc-service/service-plans/#how-we-charge) in your account is a must to be able to query the endpoints. That's why you'll have to deposit funds (we support both *Web3 wallet* and *credit card* payment flows) to be converted into API Credits and stored into your account to make requests. It might be useful to know the [prices](/rpc-service/pricing/) before depositing funds.
+  * **[Deposit funds](/rpc-service/getting-started/basics-premium/#deposit-funds)**: second, the positive balance of [API Credits](/rpc-service/service-plans/#how-we-charge) in your account is a must to be able to query the endpoints. That's why you'll have to deposit funds (we support both *Ethereum wallet* and *credit card* payment flows) to be converted into API Credits and stored into your account to make requests. It might be useful to know the [prices](/rpc-service/pricing/) before depositing funds.
 
   * **[Use private endpoints](/rpc-service/getting-started/basics-premium/#use-private-endpoints)**: finally, after you've signed in and deposited funds into your account, you're all set to start using private RPC API endpoints.
 
@@ -20,8 +20,8 @@ RPC Service supports two authentication options:
 
 <img src="/docs/build/sign-in-method.png" alt="Authentication method" class="responsive-pic" width="500" />
 
-  * [**Google account**](/rpc-service/getting-started/basics-premium/#via-google-account) — sign in with your Google account. This option provides for the credit card payment flow only, though you can connect your wallet anytime to use the Web3 wallet payment flow.
-  * [**Web3 wallet**](/rpc-service/getting-started/basics-premium/#via-web3-wallet) — connect your wallet to sign in. This option enables using both Web3 wallet and credit card payment flows.
+  * [**Google account**](/rpc-service/getting-started/basics-premium/#via-google-account) — sign in with your Google account. This option provides for the credit card payment flow only, though you can connect your wallet anytime to use the Ethereum wallet payment flow.
+  * [**Ethereum wallet**](/rpc-service/getting-started/basics-premium/#via-ethereum-wallet) — connect your wallet to sign in. This option enables using both Ethereum wallet and credit card payment flows.
 
 ### Via Google account
 
@@ -34,9 +34,14 @@ The Google sign in procedure is the following:
 
 Congrats — you've signed in into RPC Service using your Google account.
 
-### Via Web3 wallet
+### Via Ethereum wallet
 
-The Web3 wallet sign in procedure is the following:
+<Callout type="warning">
+Upon authentication, the system checks whether your Ethereum account has prior transactions.<br/>
+Accounts with no transactions can't be used for authentication.
+</Callout>
+
+The Ethereum wallet sign in procedure is the following:
 
 1. Go to the [RPC Service](https://www.ankr.com/rpc/) platform.
 2. In the top right corner, click **Sign in > Continue with ETH Wallet**, select the wallet to use (example: **MetaMask**).
@@ -60,12 +65,12 @@ We’ve pegged the price of our API Credits to USD. It means that upon using ANK
 
 Depending on the [sign-in](/rpc-service/getting-started/basics-premium/#sign-in) option selected, you can deposit funds the following way:
 
-  * [Web3 wallet flow](/rpc-service/getting-started/basics-premium/#web3-wallet-flow)
+  * [Ethereum wallet flow](/rpc-service/getting-started/basics-premium/#ethereum-wallet-flow)
   * [Credit card flow](/rpc-service/getting-started/basics-premium/#credit-card-flow)
 
-### Web3 wallet flow
+### Ethereum wallet flow
 
-The Web3 wallet flow has the following parts to it:
+The Ethereum wallet flow has the following parts to it:
 
   * [Initial deposit](/rpc-service/getting-started/basics-premium/#initial-deposit)
   * [Subsequent top ups](/rpc-service/getting-started/basics-premium/#subsequent-top-ups)
@@ -76,7 +81,7 @@ Initial deposit is a required step to access Premium services, as, upon depositi
 
 Prerequisites:
 
-  * [Sign in](/rpc-service/getting-started/basics-premium/#via-web3-wallet)
+  * [Sign in](/rpc-service/getting-started/basics-premium/#via-ethereum-wallet)
 
 The initial top-up process is the following:
 
