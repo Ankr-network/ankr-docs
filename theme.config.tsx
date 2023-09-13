@@ -13,8 +13,11 @@ const config: DocsThemeConfig = {
     const { asPath } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s – Ankr'
+        titleTemplate: '%s – Ankr',
+        canonical: `https://www.ankr.com/docs${asPath}`
       }
+    } return {
+      canonical: 'https://www.ankr.com/docs/'
     }
   },
   logo: <AnkrLogo />,
