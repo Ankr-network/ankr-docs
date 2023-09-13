@@ -1,16 +1,13 @@
 import { Callout } from "components";
 
-# Stake mGNO token
-
-To stake mGNO, you'll need to:
+# Stake GNO token
+To stake GNO, you'll need to:
 1. Purchase GNO on Ethereum.
 2. Bridge GNO to Gnosis.
-3. Convert the bridged GNO to mGNO.
 4. Connect your wallet at Ankr Staking.
-5. Stake mGNO at Ankr.
+5. Stake GNO at Ankr.
 
 ## Before you start
-
 Ensure the following:
 * You are using a Chrome Browser.
 * You have a [MetaMask wallet extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) installed and set up in Chrome.
@@ -19,7 +16,7 @@ Ensure the following:
 Visit one of the [recommended DEXs](https://docs.gnosischain.com/ecosystems/defi#dex-aggregators) and swap your assets for the desired amount of GNO tokens.
 
 <Callout type="info">
-You'll need a small amount of xDai for gas fees while depositing GNO and staking mGNO.
+You'll need a small amount of xDai the gas fee while staking GNO.
 </Callout>
 
 ## Bridge GNO to Gnosis Chain
@@ -29,23 +26,7 @@ To use it on Gnosis, you'll need to bridge it to Gnosis Chain.
 * Use the [OmniBridge](https://omni.gnosischain.com/bridge) to move GNO from Ethereum to Gnosis Chain.
 * Add Gnosis to your wallet, visiting [Ankr Gnosis RPC page](https://www.ankr.com/rpc/gnosis/) and clicking **Add network**. Alternatively, use [these manual instructions](https://docs.gnosischain.com/tools/wallets/metamask) from Gnosis.
 
-## Convert the bridged GNO to mGNO
-<Callout type="info">
-Make sure you have some xDai to pay the gas fee for your depositing transaction.<br/>
-Remember that mGNO will remain locked and illiquid until ~Q4 2023 max.
-This is due to Gnosis plans to enable withdrawals in the Shanghai upgrade. Shanghai is planned in 6–12 months from The Merge that is expected in ~Q3/Q4 2022.
-</Callout>
-To convert your bridged GNO to mGNO: 
-1. Visit the GNO–mGNO converter at https://mgno.validategnosis.com/.
-2. Connect your wallet.
-   <img src="/docs/staking/delegated-staking/mgno/gno-mgno-converter-connect-wallet.png" alt="Connect wallet" class="responsive-pic" width="400" />
-3. Choose the amount you would like to convert and click **Convert**. You can convert any amount, be sure to start with a leading 0 to convert less than 1 GNO. For example, 0.1 GNO will be converted to 3.2 mGNO.
-   <img src="/docs/staking/delegated-staking/mgno/gno-mgno-converter-click-convert.png" alt="Click Convert" class="responsive-pic" width="400" />
-4. Sign the transactions in your wallet. This will require a small amount of xDai to complete.
-5. The transaction should be initiated and completed within a few seconds. Once completed you can click the link to see the tx details and add mGNO to your MetaMask wallet.
-   <img src="/docs/staking/delegated-staking/mgno/gno-mgno-converter-add-mgno-to-metamask.png" alt="Check tx details and add mGNO to Metamask" class="responsive-pic" width="400" />
-
-When done, you're ready to stake your mGNO on Ankr Staking. 
+You're ready to stake your GNO on Ankr Staking.
 
 ## Connect your wallet
 1. Visit [Ankr Staking Dashboard](https://www.ankr.com/staking/dashboard/).
@@ -65,28 +46,33 @@ When done, you're ready to stake your mGNO on Ankr Staking.
 8. Click **Switch network** to confirm switching.
    <img src="/docs/staking/connect-wallet/confirm-switching-networks-gnosis.jpg" alt="Confirm switching networks" class="responsive-pic" width="250" />
 
-## Stake mGNO
-
+## Stake GNO
 <Callout type="info">
 Your stake does not immediately gets staked on Gnosis.
-Gnosis accepts stakes with minimum 1 GNO (32 mGNO).
+Gnosis accepts stakes with minimum 1 GNO.
 To bypass this and accept your stake if it's lower than 1 GNO, we created a micropool that accumulates user stakes.
 Once it has 1 GNO, we stake it with Gnosis.<br/>
 Make sure you have some xDai to pay the gas fee for your staking transaction.
 </Callout>
 
 1. Visit [Ankr Staking](https://www.ankr.com/staking/stake).
-2. In the **Delegated staking** section, click **Stake** under **mGNO**.
-   <img src="/docs/staking/delegated-staking/mgno/mgno-staking-box.jpg" alt="Locate the mGNO box" class="responsive-pic" width="400" />
+2. In the **Delegated staking** section, click **Stake** under **GNO**.
+   <img src="/docs/staking/delegated-staking/gnosis/gno-staking-box.jpg" alt="Locate the GNO box" class="responsive-pic" width="400" />
 3. Choose a Node Provider (currently only Ankr; more providers in future releases).
-   <img src="/docs/staking/delegated-staking/mgno/choose-node-provider.jpg" alt="Choose a Node Provider" class="responsive-pic" width="400" />
+   <img src="/docs/staking/delegated-staking/gnosis/choose-node-provider.jpg" alt="Choose a Node Provider" class="responsive-pic" width="400" />
 5. Enter the desired amount to stake and click **Approve** to allow Ankr Staking smart contracts to stake for you.
-   <img src="/docs/staking/delegated-staking/mgno/enter-amount-click-approve.jpg" alt="Enter an amount and click Approve" class="responsive-pic" width="400" />
-6. Confirm your approval in MetaMask.
-   <img src="/docs/staking/delegated-staking/mgno/confirm-approval.jpg" alt="Confirm your approval" class="responsive-pic" width="250" />
-7. Click **Stake** to send your delegated stake to the chosen Node Provider..
-   <img src="/docs/staking/delegated-staking/mgno/click-stake.jpg" alt="Click Stake" class="responsive-pic" width="400" />
-8. Confirm the staking transaction in MetaMask.
-   <img src="/docs/staking/delegated-staking/mgno/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="250" />
-9. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
-   <img src="/docs/staking/delegated-staking/mgno/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="450" />
+   <img src="/docs/staking/delegated-staking/gnosis/enter-amount-click-approve.jpg" alt="Enter an amount and click Approve" class="responsive-pic" width="400" />
+6. Set a spending cap in MetaMask.
+   <img src="/docs/staking/delegated-staking/gnosis/set-spending-cap.jpg" alt="Set a spending cap" class="responsive-pic" width="250" />
+7. Confirm your approval in MetaMask.
+   <img src="/docs/staking/delegated-staking/gnosis/confirm-approval.jpg" alt="Confirm your approval" class="responsive-pic" width="250" />
+8. Click **Stake** to send your delegated stake to the chosen Node Provider..
+   <img src="/docs/staking/delegated-staking/gnosis/click-stake.jpg" alt="Click Stake" class="responsive-pic" width="400" />
+9. Confirm the staking transaction in MetaMask.
+   <img src="/docs/staking/delegated-staking/gnosis/confirm-staking-transaction.jpg" alt="Confirm staking transaction" class="responsive-pic" width="250" />
+10. Click **Go to dashboard** to see the added token. You may need to wait a little for the transaction to finalize and **Dashboard** to automatically update.
+   <img src="/docs/staking/delegated-staking/gnosis/click-go-to-dashboard.jpg" alt="Click Go to dashboard" class="responsive-pic" width="450" />
+
+<Callout type="info">
+    As for now, there is no separate reward-claiming mechanism. You get the staking rewards when you unstake GNO.
+</Callout>
