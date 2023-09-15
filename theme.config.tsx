@@ -2,6 +2,8 @@ import type { DocsThemeConfig} from 'nextra-theme-docs';
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import AnkrLogo from './public/logo/ankr-docs-with-logo.svg'
+import FooterMenu from './src/components/FooterMenu'
+
 import NextraFooter from './public/logo/nextra-footer.svg'
 
 const config: DocsThemeConfig = {
@@ -13,8 +15,11 @@ const config: DocsThemeConfig = {
     const { asPath } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s – Ankr'
+        titleTemplate: '%s – Ankr',
+        canonical: `https://www.ankr.com/docs${asPath}`
       }
+    } return {
+      canonical: 'https://www.ankr.com/docs/'
     }
   },
   logo: <AnkrLogo />,
@@ -94,6 +99,7 @@ const config: DocsThemeConfig = {
   footer: {
     text: (
       <div className="flex w-full flex-col items-center sm:items-start">
+        <FooterMenu/>
         <div>
             <a
                 className="flex items-center gap-1 text-current"
