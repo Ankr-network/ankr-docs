@@ -21,13 +21,15 @@
   "basic-tutorials": "Basic Tutorials",
   "smart-contract-tutorials": "Smart Contract Development",
   "advanced-tutorials": "Advanced Tutorials",
-  "-- AppChains": {
+  "-- Sphere": {
     "type": "separator",
-    "title": "AppChains"
+    "title": "Sphere"
   },
-  "app-chains": "AppChains",
-  "chainscanner": "Chainscanner",
-  "affiliated-chains": "Affiliated Chains",
+  "sphere-introduction": "Introduction",
+  "sphere-rollups": "Rollups as a Service",
+  "sphere-sidechains": "Sidechains as a Service",
+  "sphere-developer-marketplace": "Developer Marketplace",
+  "sphere-troubleshooting": "Troubleshooting",
   "-- Staking": {
     "type": "separator",
     "title": "Staking With Ankr"
