@@ -29,11 +29,14 @@ Unstaking ankrBNB is a two-step process:
 
 #### `approve(spender, amount)`
 
-Approve access for the aBNBb contract to the specified amount of ankrBNB. aBNB is a legacy contract used in Ankr's BNB Liquid Staking.
+Approve access for the aBNBb contract to the specified amount of ankrBNB.<br/>
+aBNB is a legacy contract used in Ankr's BNB Liquid Staking.
 
 ##### Parameters
-`sender` (address, required) — address of aBNBb; static value: `0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e` for Mainnet, `0x93405327644eDF8aD908e41F9a2Ecbb6714769D1` for Testnet.
-`amount` (uint256, required) — amount of ankrBNB to approve access to.
+* `sender` (address, required) — address of aBNBb. Possible values:
+  * `0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e` for Mainnet
+  * `0x93405327644eDF8aD908e41F9a2Ecbb6714769D1` for Testnet.
+* `amount` (uint256, required) — amount of ankrBNB to approve access to.
 
 ##### Smart contract
 * [Mainnet ankrBNB](https://bscscan.com/address/0x52f24a5e03aee338da5fd9df68d2b6fae1178827#writeProxyContract#F1) (0x52f24a5e03aee338da5fd9df68d2b6fae1178827)
