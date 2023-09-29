@@ -164,12 +164,12 @@ sup a {
 
 
 /* Make space before a list and before a nested list of a diff kind shorter */
-/*  ul.mt-6,
-ol.mt-6 {
+ul.nx-mt-6,
+ol.nx-mt-6 {
   margin-top: 0.6em;
   margin-bottom: 0.5em;
 }
-*/
+
 
 /* Make Prev/Next links font for the desktop version as small as for mobile */
 /* @media (min-width: 768px) {
