@@ -2,25 +2,6 @@
 
 To integrate with BNB Liquid Staking, use the smart contract functions and examples below.
 
-### Switch aBNBb to ankrBNB
-
-#### `unlockShares(shares)`
- 
-Switches aBNBb to ankrBNB. 
-
-##### Parameters 
-
-`shares` (uint256, required) — amount of aBNBb to be switched to ankrBNB. 
-
-##### Smart contract
-
-* [Mainnet aBNBb Proxy — 0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e](https://bscscan.com/address/0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e)
-* [Testnet aBNBb Proxy — 0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE](https://testnet.bscscan.com/token/0xaB56897fE4e9f0757e02B54C27E81B9ddd6A30AE) 
-
-##### Example
-
-[Mainnet live transaction example](https://bscscan.com/tx/0x17d3db497c5ad42bbd3b5133c752f3028d79e16632319e6a2d490905357f31c4)
-
 ### Stake BNB and claim ankrBNB
 
 #### `stakeCerts(payableAmount)`
@@ -33,14 +14,34 @@ Stakes BNB and claims ankrBNB.
 
 ##### Smart contract
 
-* [Mainnet BNBStakingPool Proxy](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
-* [Testnet BinancePool Proxy](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94) (0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
+* [Mainnet BNBStakingPool Proxy](https://bscscan.com/address/0x9e347af362059bf2e55839002c699f7a5bafe86e#writeProxyContract#F20) (0x9e347af362059bf2e55839002c699f7a5bafe86e)
+* [Testnet BNBStakingPool Proxy](https://testnet.bscscan.com/address/0x0ecf14f54c5ff190e025bc5e80c6351f91bfcb1c#writeProxyContract#F20) (0x0ecf14f54c5ff190e025bc5e80c6351f91bfcb1c)
 
 ##### Example
 
-[Mainnet live transaction example](https://bscscan.com/tx/0xe8710d1e0d5081f13ad4f7bb5e2f275f0e44fb0d4fd94c6cc3689c04a7a53108)
+* [Mainnet live transaction example](https://bscscan.com/tx/0xcb6df60cf08b2700743f23a747cd692b60d9dfe5d422529451ace43be9365761)
+* [Testnet live transaction example](https://testnet.bscscan.com/tx/0x9d805fb1bd571f9771b709cba07a8f3855ba1a2b8f49ded266d2d74173d5501b)
 
 ### Unstake ankrBNB and get BNB
+Unstaking ankrBNB is a two-step process:
+1. Approve access to ankrBNB.
+2. Unstake ankrBNB.
+
+#### `approve(spender, amount)`
+
+Approve access for the aBNBb contract to the specified amount of ankrBNB. aBNB is a legacy contract used in Ankr's BNB Liquid Staking.
+
+##### Parameters
+`sender` (address, required) — address of aBNBb; static value: `0xfe39985D7eFF914c50A06bA0cFfcCA8361e00C0e` for Mainnet, `0x93405327644eDF8aD908e41F9a2Ecbb6714769D1` for Testnet.
+`amount` (uint256, required) — amount of ankrBNB to approve access to.
+
+##### Smart contract
+* [Mainnet ankrBNB](https://bscscan.com/address/0x52f24a5e03aee338da5fd9df68d2b6fae1178827#writeProxyContract#F1) (0x52f24a5e03aee338da5fd9df68d2b6fae1178827)
+* [Testnet ankrBNB](https://testnet.bscscan.com/address/0x3c1039c346bd5141bf2d5e855928e61655658fa7#writeProxyContract#F1)(0x3c1039c346bd5141bf2d5e855928e61655658fa7)
+
+##### Example
+* [Mainnet live transaction example](https://bscscan.com/tx/0x378cfea77088d37397ef8f4a66f5452853191169eadf6d8efeff660164374750)
+* [Testnet live transaction example](https://testnet.bscscan.com/tx/0xf164130cf49507e0e1e1b6697e2fe966b325938c60d1a1a2e3ddf34e5ab15efc)
 
 #### `unstakeCerts(shares)`
 
@@ -50,12 +51,12 @@ Unstakes ankrBNB and gets BNB for the unstaked ankrBNB.
 `shares` (uint256, required) — amount of ankrBNB to be unstaked.
 
 ##### Smart contract
-* [Mainnet BNBStakingPool Proxy](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
-* [Testnet BinancePool Proxy](https://testnet.bscscan.com/address/0x3c9205b5d4b312ca7c4d28110c91fe2c74718a94)
+* [Mainnet BNBStakingPool Proxy](https://bscscan.com/address/0x9e347af362059bf2e55839002c699f7a5bafe86e#writeProxyContract#F27) (0x9e347af362059bf2e55839002c699f7a5bafe86e)
+* [Testnet BinancePool Proxy](https://testnet.bscscan.com/address/0x0ecf14f54c5ff190e025bc5e80c6351f91bfcb1c#writeProxyContract#F27)(0x0ecf14f54c5ff190e025bc5e80c6351f91bfcb1c)
 
 ##### Example
-
-* [Testnet live transaction example](https://testnet.bscscan.com/tx/0x71f95dfcfe5543777ada8900551585c124bcbbd5a52ec76d930c957e7227515f)
+* [Mainnet live transaction example](https://bscscan.com/tx/0x486328afbac4f695827b244e2a794fed5545795d4704db8a31771e332912a6ca)
+* [Testnet live transaction example](https://testnet.bscscan.com/tx/0x63b7c5c09ff61461fe70e42c9655fe9a841e13dee59d23aac76cc66bc9197e1e)
 
 ### Get APR
 
