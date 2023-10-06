@@ -1,0 +1,114 @@
+import { Callout } from "components";
+
+# Trustless ratio
+
+## Ethereum
+For the transparency, we decided to apply a “proof-of-reserves” solution to the Ethereum Liquid Staking ratio.
+All the data is taken from the consensus layer (Beacon) and execution layer (Ethereum) at the same time.
+The moment of data fixation' is recorded as a slot (for Beacon; the latest at the time of calculation) and a block (from the slot’s payload).
+
+Ratio — the proportion of ankrETH shares supply in relation to total staked ETH & new ETH that has been earned by validators (block & attestation rewards, MEV, tips).
+
+### Formula:
+Given *tvl = (fee_recipient + staking_pool + withdrawal_pool + clBalance - pending_withdrawal - collectable_fee)*, *ratio = shares_supply / tvl*.
+
+### Calculation example:
+Given *shares_supply = 27215630108443761510111*
+and *tvl = 31789243852435000000000 - 1334272127500000000 + 279331299124130160 - 957321814817038989347 + 3273569179535509862 + 98868842000000000*,
+*ratio = shares_supply \* 1e18 / tvl = 882643143435334753*.
+
+### Get ratio
+RESTful API endpoint that returns the historical ratio calculation.
+
+#### Host
+
+https://api.staking.ankr.com
+
+#### Endpoint
+
+`GET /v1alpha/beacon/eth/ratio/history`
+
+#### Request
+
+```
+curl https://api.staking.ankr.com/v1alpha/beacon/eth/ratio/history?page=0&size=1
+```
+
+#####Request params
+* `page` — page number.
+* `size` — page size.
+
+#### Response
+
+##### 200
+```
+{"content":
+  [
+    {
+       "ratio":"882718285663503849",
+       "block":"18283573",
+       "clBalance":"31786654231688000000000",
+       "collectableFee":"1073665184800000000",
+       "feeRecipient":"315854633781247534",
+       "pendingWithdrawal":"922323106280285134548",
+       "sharesSupply":"27246524108443761510111",
+       "txHash":"0x04ae51b4f38bf61c744170ce598c1da6c7b1574a42f11289c29a0d74266048bb",
+       "slot":7472998,
+       "stakingPool":"2957714545754262328",
+       "withdrawalPool":"82420169000000000"
+     }
+...
+```
+
+##### Response params
+content — array of data.
+
+* ratio (wei) —  the current ratio; ratio = shares_supply / (fee_recipient + staking_pool + withdrawal_pool + clBalance - pending_withdrawal - collectable_fee).
+* block (uint64) — block that store the calculations.
+* clBalance (wei) — sum of all the Ankr ETH validator balances on the consensus layer (Beacon Chain); see "Get deposits of validators” to understand how clBalance is calculated.
+* collectableFee (wei) — total Ankr_fee across all Ankr validators.
+* feeRecipient (wei) — total collected Ankr_fee.
+* pendingWithdrawal (wei) — total amount of pending unstakes.
+* sharesSupply (wei) — total amount of minted ankrETH.
+* txHash — hash of the transaction where the ratio was published.
+* slot — slot (block) to get the clBalance value from.
+* stakingPool  — staking pool balance.
+* withdrawalPool — withdrawal pool balance.
+
+### How ratio gets validated
+#### Data from Beacon Chain: (clBalance, collectable_fee)
+<Callout type="tip">
+The examples are using web3.py.
+</Callout>
+1) Get the Ankr ETH validatorindex from Beaconcha.<br/>
+   You can get the validators addresses from the [validator index page](https://beaconcha.in/validators/deposits?q=0x4069D8A3dE3A72EcA86CA5e0a4B94619085E7362) and then use them in the API.<br/>
+   For example, for Ankr ETH Liquid Staking validators: `https://beaconcha.in/api/v1/validator/eth1/0x4069d8a3de3a72eca86ca5e0a4b94619085e7362` and `https://beaconcha.in/api/v1/validator/eth1/0x4069d8a3de3a72eca86ca5e0a4b94619085e7362`.
+2) Get the Beacon ETH balances of the validators on a specific slot: `balance = beacon.get_validator_balances(state_id=slot)`, using the addresses of the validators from API results at Step 1.<br/>
+    To calculate clBalance, sum up the retrieved balance: clBalance = sum(balance).
+    To calculate the fee: collectable_fee = sum (balance (if balance>32*1e18) - 32*1e18).
+
+For more details, refer to the [Beacon API docs](https://web3py.readthedocs.io/en/stable/web3.beacon.html#Beacon.get_validators) and [Beaconcha API interactive docs in Swagger UI](https://beaconcha.in/api/v1/docs/index.html#/).<br/>
+
+#### Data from Ethereum RPC
+<Callout type="tip">
+The examples are using web3.py.
+</Callout>
+You can obtain the parts of the [ratio formula](#formula):
+* Resulting ratio: `contract.functions.ratio().call(block_identifier = block_number)` from the contract `0xE95A203B1a91a908F9B9CE46459d101078c2c3cb`.
+* sharesSupply: `contract.functions.totalSupply().call(block_identifier = block_number)` from the contract `0xE95A203B1a91a908F9B9CE46459d101078c2c3cb`.
+* pendingWithdrawal: `contract.functions.getTotalPendingUnstakes().call(block_identifier = block_number)` from the contract `0x84db6eE82b7Cf3b47E8F19270abdE5718B936670`.
+* withdrawalPool: `web3.eth.get_balance(account = '0x67428dE0680494E448F1A19d33C2022a51719348' , block_identifier= block_number)`.
+* stakingPool: `web3.eth.get_balance(account = '0x84db6eE82b7Cf3b47E8F19270abdE5718B936670' , block_identifier= block_number)`.
+* MEVaccount balance: `web3.eth.get_balance(account = '0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08' , block_identifier= block_number)`.
+
+### Flow
+The flow is as follows:
+<img src="/docs/staking/liquid-staking/eth/trustless-ratio-eth.png" alt="ETH flow" class="responsive-pic" width="900" />
+
+### Smart Contracts
+The smart contracts that are shown in the diagram are:
+* [mev_balance](https://etherscan.io/address/0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) (0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) — recipient of MEV and tips.
+* [stakingPool](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) (0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) — ETH staking pool.
+* [withdrawalPool](https://etherscan.io/address/0x67428dE0680494E448F1A19d33C2022a51719348) (0x67428dE0680494E448F1A19d33C2022a51719348) — withdrawal address for Ankr validators.
+* [treasury](https://etherscan.io/address/0x67428dE0680494E448F1A19d33C2022a51719348) (0x67428dE0680494E448F1A19d33C2022a51719348) — storage of Ankr fees.
+* [ankrETH](https://etherscan.io/address/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb) — Liquid Staking Token ankETH.
