@@ -1,1758 +1,412 @@
-import { Callout } from "components";
 import { Tabs, Tab } from "nextra-theme-docs";
+import { Callout } from "components";
 
-# ZetaChain
-<br/>
+# Sei
 
-<img src="/docs/build/chains-list/zetachain.png" class="responsive-pic" width="800" />
+> Sei API is available on [RPC Service](https://www.ankr.com/rpc/sei).
 
-> ZetaChain API is available on [RPC Service](https://www.ankr.com/rpc/zetachain).
+Sei is a general purpose, open-source Layer 1 blockchain specialized for the exchange of digital assets. Sei has only one value prop: exchange apps — whether it’s an NFT marketplace or gaming economy — Sei offers the best user experience to build upon.
 
-*ZetaChain* is the foundational, public blockchain that enables omnichain, generic smart contracts and messaging between any blockchain. It solves the problems of “cross-chain” and “multi-chain” and aims to open the crypto and global financial ecosystem to anyone. ZetaChain envisions and supports a truly fluid, multi-chain crypto ecosystem, where users and developers can move between and appreciate the benefits of any blockchain: payments, DeFi, liquidity, games, art, social graphs, performance, security, privacy, and so on.
+We support the following networks and protocols for Sei:
 
-In order for your Web3 application to interact with ZetaChain — either by reading blockchain data or sending transactions to the network — it must connect to a ZetaChain node. Developers interact with the blockchain using the methods provided by the API.
+  * [Tendermint JSON-RPC/REST API](/rpc-service/chains/chains-api/sei/#tendermint-json-rpcrest-methods)
+  * [Cosmos REST API](/rpc-service/chains/chains-api/sei/#cosmos-rest-methods)
+  * Cosmos gRPC
 
-We support the following networks and protocols for ZetaChain:
+Currently, we provide two interfaces to query Sei API — [JSON-RPC](https://www.jsonrpc.org/specification) and REST. Responses for both of them come in [JSON format](https://www.json.org/json-en.html).
 
-  * [Standard EVM API](/rpc-service/chains/chains-api/zetachain/#evm-methods)
-  * [Tendermint JSON-RPC/REST API](/rpc-service/chains/chains-api/zetachain/#tendermint-json-rpcrest-methods)
-  * [Cosmos REST API](/rpc-service/chains/chains-api/zetachain/#cosmos-rest-methods)
+Here is the request/response structure to use for querying:
 
-Responses come in [JSON format](https://www.json.org/json-en.html).
-
----
-
-## EVM methods
-
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/zetachain/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/zetachain/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/zetachain/#net_version) — returns the current network ID.
-  * [`net_listening`](/rpc-service/chains/chains-api/zetachain/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_protocolVersion`](/rpc-service/chains/chains-api/mantle/#eth_protocolversion) — returns the current protocol version.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/zetachain/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/zetachain/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/zetachain/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/zetachain/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/zetachain/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/zetachain/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/zetachain/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/zetachain/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/zetachain/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/zetachain/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/zetachain/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/zetachain/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/zetachain/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/zetachain/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/zetachain/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/zetachain/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/zetachain/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/zetachain/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/zetachain/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/zetachain/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/zetachain/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/zetachain/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/zetachain/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/zetachain/#eth_getlogs) — returns logs matching the parameters specified.
-
----
-
-## `web3_clientVersion`
-
-> Returns the current client version.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<string>`: the current client version.
-
-### Request example
+<Tabs
+  items={[
+    "Tendermint JSON-RPC request",
+    "Tendermint REST request",
+    "Cosmos REST request",
+    "JSON response"
+  ]}
+>
+  <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
-      "method": "web3_clientVersion",
-      "params": [],
+      "method": "block",
+      "params": ["1"],
       "id": 1
     }'
 ```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "Version dev ()\nCompiled at  using Go go1.18.10 (amd64)"
-}
-```
-
----
-
-## `web3_sha3`
-
-> Returns Keccak-256 (not the standardized SHA3-256) of the given data.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<string>` (data): the data to convert into a SHA3 hash.
-
-### Returns
-
-  * `<string>` (data): the SHA3 result of the given string.
-
-### Request example
+  </Tab>
+  <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "web3_sha3",
-      "params": ["0x68656c6c6f20776f726c64"],
-      "id": 1
-    }'
+curl https://rpc.ankr.com/http/sei/block?height=1
 ```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x5b2c76da96136d193336fad3fbc049867b8ca157da22f69ae0e4923648250acc"
-}
-```
-
----
-
-## `net_version`
-
-> Returns the current network ID.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<string>`: the current network ID.
-
-### Request example
+  </Tab>
+  <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "net_version",
-      "params": [],
-      "id": 1
-    }'
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
-
-### Response example
+  </Tab>
+  <Tab>
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "7001"
-}
-```
-
----
-
-## `net_listening`
-
-> Returns `true` if client is actively listening for network connections.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<boolean>`: `true` when listening, otherwise `false`.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "net_listening",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": true
-}
-```
-
----
-
-
-## `eth_protocolVersion`
-
-> Returns the current Ethereum protocol version.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<string>`: the current Ethereum protocol version.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_protocolVersion",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": "0x41",
-    "id": 1
-}
-```
-
----
-
-## `eth_syncing`
-
-> Returns an object with data about the sync status or false.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<object>`|`<boolean>`: an object with sync status data or `false`, when not syncing:
-    * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
-    * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
-    * `highestBlock` (quantity): the estimated highest block.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_syncing",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example (syncing)
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-        "startingBlock": "0x384",
-        "currentBlock": "0x386",
-        "highestBlock": "0x454"
-    }
-}
-```
-
-### Response example (not syncing)
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": false
-}
-```
-
----
-
-## `eth_gasPrice`
-
-> Returns the current price per gas in wei.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<string>` (quantity): the current gas price in wei.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_gasPrice",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x7"
-}
-```
-
----
-
-## `eth_accounts`
-
-> Returns a list of addresses owned by client.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<array>` (string; data, 20 bytes): addresses owned by the client.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_accounts",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": [
-        "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
-    ]
-}
-```
-
----
-
-## `eth_blockNumber`
-
-> Returns the number of most recent block.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-
-  * `<string>` (quantity): the current block number the client is on.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_blockNumber",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x258d1f"
-}
-```
-
----
-
-## `eth_getBalance`
-
-> Returns the balance of the account specified by address.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 20 bytes): an address to check for balance.
-    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (quantity): the current balance in wei.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getBalance",
-      "params": ["0x71Ec5c05Aa669c4922569c1D33F7a81aaa218138", "latest"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x0"
-}
-```
-
----
-
-## `eth_getStorageAt`
-
-> Returns the value from a storage position at an address specified.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 20 bytes): an address of the storage (hex encoded).
-    2. `<string>` (quantity): a slot position in the storage (hex encoded unsigned integer).
-    3. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (data): the value at this storage position.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getStorageAt",
-      "params": ["0x71Ec5c05Aa669c4922569c1D33F7a81aaa218138", "0x0", "latest"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x0000000000000000000000005f0b1a82749cb4e2278ec87f8bf6b618dc71a8bf"
-}
-```
-
----
-
-## `eth_getTransactionCount`
-
-> Returns the number of transactions sent from an address.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 20 bytes): an address.
-    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (quantity): the number of transactions send from this address.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getTransactionCount",
-      "params": ["0x2BCfE12a949267e3Da5874E44554b29FA4B753E6", "latest"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x1495"
-}
-```
-
----
-
-## `eth_getBlockTransactionCountByHash`
-
-> Returns the number of transactions in a block specified by block hash.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 32 bytes): a block hash.
-
-### Returns
-
-  * `<string>` (quantity): the number of transactions in this block.
-
-### Request example:
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getBlockTransactionCountByHash",
-      "params": ["0x5b3e4c2ac5f30c57150c7ff944b85cdfa9241d33448421e9422dc94d5c146fdd"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x2"
-}
-```
-
----
-
-## `eth_getBlockTransactionCountByNumber`
-
-> Returns the number of transactions in the block specified by number.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (quantity): the number of transactions in this block.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x258D21"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x2"
-}
-```
-
----
-
-## `eth_getUncleCountByBlockHash`
-
-> Returns the number of uncles in a block specified by block hash.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 32 bytes): a block hash.
-
-### Returns
-
-  * `<string>` (quantity): the number of uncles in this block.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getUncleCountByBlockHash",
-      "params": ["0xd3a1923da06a34bc2bc1dbb3d59edf7e046d9dc6f2ee8479b0ef853833af515c"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x0"
-}
-```
-
----
-
-## `eth_getUncleCountByBlockNumber`
-
-> Returns the number of uncles in a block specified by block number.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (quantity): the number of uncles in this block.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getUncleCountByBlockNumber",
-      "params": ["0x258D27"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x0"
-}
-```
-
----
-
-## `eth_getCode`
-
-> Returns code at a given address.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 20 bytes): an address to get the code from.
-    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (data): the code from the given address.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getCode",
-      "params": ["0x2BCfE12a949267e3Da5874E44554b29FA4B753E6", "latest"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x"
-}
-```
-
----
-
-## `eth_sendRawTransaction`
-
-> Creates new message call transaction or a contract creation for signed transactions.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data): the signed transaction data.
-
-### Returns
-
-  * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
-
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/zetachain/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-    "jsonrpc": "2.0",
-    "method": "eth_sendRawTransaction",
-    "params": ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"],
-    "id": 1
-}'
-```
-
-### Response example
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
-}
-```
-
----
-
-## `eth_call`
-
-> Executes a new message call immediately without creating a transaction on the blockchain.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<object>` (hex encoded): the transaction object:
-        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
-        * `to` (string; data, 20 bytes): the address the transaction is directed to.
-        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
-        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
-        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
-        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
-
-    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (hex encoded bytes): the return value of executed contract.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-    "jsonrpc": "2.0",
-    "method": "eth_call",
-    "params": [{"from":null,"to":"0xce95205Bd0C62b07632a58Ce014DF56a8826C895","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
-    "id": 1
-}'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x0000000000000000000000000000000000000000000000000858898f93629000"
-}
-```
-
----
-
-## `eth_estimateGas`
-
-> Generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-
-The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<object>` (hex encoded): the transaction object:
-        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
-        * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
-        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
-        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
-        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
-        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
-
-    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-
-### Returns
-
-  * `<string>` (quantity): the amount of gas used.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-    "jsonrpc": "2.0",
-    "method": "eth_estimateGas",
-    "params": [{"to":"0xce95205Bd0C62b07632a58Ce014DF56a8826C895"}],
-    "id": 1
-}'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x5208"
-}
-```
-
----
-
-## `eth_getBlockByHash`
-
-> Returns information for the block specified by block hash.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 32 bytes): the block hash.
-    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
-
-### Returns
-
-  * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getBlockByHash",
-      "params": ["0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4", false],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "baseFeePerGas": "0x7",
-        "difficulty": "0x0",
-        "extraData": "0x",
-        "gasLimit": "0x1dcd6500",
-        "gasUsed": "0xbf3e21",
-        "hash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "logsBloom": "0x00000000000000000000000000000000800000000000000000000000100000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000002000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xfe5c98dc6083eacfe955c095880335ca1ab7e89f",
-        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "nonce": "0x0000000000000000",
-        "number": "0x258d48",
-        "parentHash": "0x20e6410c7730e15a294f008ba67803c48b6945c7159e5b95fff24d362fa587fa",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x57d0",
-        "stateRoot": "0x9da992aa17632dab93e1679d2fdd1610bbc63e20f0584f2bce3a7b006704f2c8",
-        "timestamp": "0x6442808d",
-        "totalDifficulty": "0x0",
-        "transactions": [
-            "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-            "0xffed7a903eb8e35dee7fc6fb0958d17e9f45abae74b47e7876640b9d81852a25"
-        ],
-        "transactionsRoot": "0xa5dbf4dd415d4b17dbb49ed09ef5228fa4311fc66e713ca3e8251d1f7cd7a1f2",
-        "uncles": []
-    }
-}
-```
-
----
-
-## `eth_getBlockByNumber`
-
-> Returns information for the block specified by block number.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
-       * `earliest`: the lowest numbered block available on the client.
-       * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-       * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-       * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-       * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
-
-### Returns
-
-  * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getBlockByNumber",
-      "params": ["latest", false],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "baseFeePerGas": "0x7",
-        "difficulty": "0x0",
-        "extraData": "0x",
-        "gasLimit": "0x1dcd6500",
-        "gasUsed": "0x6521510",
-        "hash": "0xf2d5b08b89e77258b48baa7b8c69c57e1e424d369e3195b7da34283154b9a786",
-        "logsBloom": "0x00300000000000000000000088020008800040000020000000000000100020020000002108000000000000000000400082010000400000050000000400640000200000000002004020000008020000200000000100000002000000008000000000000000020000000018000000800800001000080000300000000010000004000000000000000000000002000000020000001001000004080001404000000000020002000000000000000000000000000000000000000000000000000000030000000002010000000000008000000040000000800800001000000002000021000050000000000000000000400400000000020000040300400081000000000000",
-        "miner": "0xd61ee5bb2257a3a342f7eebc949507f60f3bd0ee",
-        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "nonce": "0x0000000000000000",
-        "number": "0x258dae",
-        "parentHash": "0xf6d20685418513bf90fafeb57dabeec009bf6616bd4dfd346b28c6ed493005dd",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x126d5",
-        "stateRoot": "0x98c1736323a5b5f8f1f572c771e9f48897a5c0f643ba3f56573271a154564aff",
-        "timestamp": "0x644282ab",
-        "totalDifficulty": "0x0",
-        "transactions": [
-            "0x435a28688c40db893b376e7c8c26723d2952f3bd243fadf3c31c8104b4abbbf6",
-            "0xa9d3a6169929c5ddb2cb68aad87bbb85e1912e22a79dae32b1d5569ca0c8b9cd"
-        ],
-        "transactionsRoot": "0xaa467a68741756fdd5638d87ef03a272fbc6783873dc716e5a81b9448bbc187a",
-        "uncles": []
-    }
-}
-```
-
----
-
-## `eth_getTransactionByHash`
-
-> Returns information on a transaction specified by transaction hash.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 32 bytes): a transaction hash.
-
-### Returns
-
-  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
-  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
-  * `from` (string; data, 20 bytes): an address of the sender.
-  * `gas` (string; quantity): the gas provided by the sender.
-  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
-  * `hash` (string; data, 32 bytes): the hash of the transaction.
-  * `input` (string; data): the data send along with the transaction.
-  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
-  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
-  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
-  * `value` (string; quantity): the value transferred in wei.
-  * `v` (string; quantity): ECDSA recovery ID.
-  * `r` (string; quantity): ECDSA signature r.
-  * `s` (string; quantity): ECDSA signature s.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getTransactionByHash",
-      "params": ["0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "blockHash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "blockNumber": "0x258d48",
-        "from": "0x2bcfe12a949267e3da5874e44554b29fa4b753e6",
-        "gas": "0x5208",
-        "gasPrice": "0x59682f07",
-        "maxFeePerGas": "0x59682f0e",
-        "maxPriorityFeePerGas": "0x59682f00",
-        "hash": "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-        "input": "0x",
-        "nonce": "0x1495",
-        "to": "0xce95205bd0c62b07632a58ce014df56a8826c895",
-        "transactionIndex": "0x0",
-        "value": "0x29a2241af62c0000",
-        "type": "0x2",
-        "accessList": [],
-        "chainId": "0x1b59",
-        "v": "0x1",
-        "r": "0xe792908cf13aaf7feb3647a5f6dbcb43b792044193e7fe2f3b072fe3e0b2c9f5",
-        "s": "0x71e89e72e509dd7d9f21c522ae4c4511d2016fc1ccb988fbb6b6c81736ffc1a5"
-    }
-}
-```
-
----
-
-## `eth_getTransactionByBlockHashAndIndex`
-
-> Returns information on a transaction specified by block hash and transaction index position.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 32 bytes): a block hash.
-    2. `<string>` (quantity): a transaction index position.
-
-### Returns
-
-  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
-  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
-  * `from` (string; data, 20 bytes): an address of the sender.
-  * `gas` (string; quantity): the gas provided by the sender.
-  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
-  * `hash` (string; data, 32 bytes): the hash of the transaction.
-  * `input` (string; data): the data send along with the transaction.
-  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
-  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
-  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
-  * `value` (string; quantity): the value transferred in wei.
-  * `v` (string; quantity): ECDSA recovery ID.
-  * `r` (string; quantity): ECDSA signature r.
-  * `s` (string; quantity): ECDSA signature s.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getTransactionByBlockHashAndIndex",
-      "params": ["0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4", "0x0"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "blockHash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "blockNumber": "0x258d48",
-        "from": "0x2bcfe12a949267e3da5874e44554b29fa4b753e6",
-        "gas": "0x5208",
-        "gasPrice": "0x59682f07",
-        "maxFeePerGas": "0x59682f0e",
-        "maxPriorityFeePerGas": "0x59682f00",
-        "hash": "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-        "input": "0x",
-        "nonce": "0x1495",
-        "to": "0xce95205bd0c62b07632a58ce014df56a8826c895",
-        "transactionIndex": "0x0",
-        "value": "0x29a2241af62c0000",
-        "type": "0x2",
-        "accessList": [],
-        "chainId": "0x1b59",
-        "v": "0x1",
-        "r": "0xe792908cf13aaf7feb3647a5f6dbcb43b792044193e7fe2f3b072fe3e0b2c9f5",
-        "s": "0x71e89e72e509dd7d9f21c522ae4c4511d2016fc1ccb988fbb6b6c81736ffc1a5"
-    }
-}
-```
-
----
-
-## `eth_getTransactionByBlockNumberAndIndex`
-
-> Returns information on a transaction by block number and transaction index position.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
-    2. `<string>` (quantity): the transaction index position.
-
-### Returns
-
-  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
-  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
-  * `from` (string; data, 20 bytes): an address of the sender.
-  * `gas` (string; quantity): the gas provided by the sender.
-  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
-  * `hash` (string; data, 32 bytes): the hash of the transaction.
-  * `input` (string; data): the data send along with the transaction.
-  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
-  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
-  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
-  * `value` (string; quantity): the value transferred in wei.
-  * `v` (string; quantity): ECDSA recovery ID.
-  * `r` (string; quantity): ECDSA signature r.
-  * `s` (string; quantity): ECDSA signature s.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getTransactionByBlockNumberAndIndex",
-      "params": ["0x258D48", "0x0"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "blockHash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "blockNumber": "0x258d48",
-        "from": "0x2bcfe12a949267e3da5874e44554b29fa4b753e6",
-        "gas": "0x5208",
-        "gasPrice": "0x59682f07",
-        "maxFeePerGas": "0x59682f0e",
-        "maxPriorityFeePerGas": "0x59682f00",
-        "hash": "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-        "input": "0x",
-        "nonce": "0x1495",
-        "to": "0xce95205bd0c62b07632a58ce014df56a8826c895",
-        "transactionIndex": "0x0",
-        "value": "0x29a2241af62c0000",
-        "type": "0x2",
-        "accessList": [],
-        "chainId": "0x1b59",
-        "v": "0x1",
-        "r": "0xe792908cf13aaf7feb3647a5f6dbcb43b792044193e7fe2f3b072fe3e0b2c9f5",
-        "s": "0x71e89e72e509dd7d9f21c522ae4c4511d2016fc1ccb988fbb6b6c81736ffc1a5"
-    }
-}
-```
-
----
-
-## `eth_getTransactionReceipt`
-
-> Returns the receipt of a transaction by transaction hash.
-
-The receipt is not available for pending transactions.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 32 bytes): a hash of the transaction.
-
-### Returns
-
-  * `object`: a transaction receipt object, or null when no receipt was found:
-
-      * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
-      * `transactionIndex` (string; quantity): the transactions index position in the block.
-      * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
-      * `blockNumber` (string; quantity): a number of the block containing the transaction.
-      * `from` (string; data, 20 bytes): an address of the sender.
-      * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
-      * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
-      * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
-      * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
-      * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
-      * `logs` (array): an array of log objects, which this transaction generated.
-      * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
-      * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
-
-          * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
-          * `status` (string; quantity): either 1 (success) or 0 (failure).
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getTransactionReceipt",
-      "params": ["0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "blockHash": "0xe57223771971444a9f9974bf9d71b5c5063096f8797cea488ebed3b0982cdef4",
-        "blockNumber": "0x258d48",
-        "contractAddress": null,
-        "cumulativeGasUsed": "0x76b8ce",
-        "effectiveGasPrice": "0x59682f07",
-        "from": "0x2bcfe12a949267e3da5874e44554b29fa4b753e6",
-        "gasUsed": "0x5208",
-        "logs": [],
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "status": "0x1",
-        "to": "0xce95205bd0c62b07632a58ce014df56a8826c895",
-        "transactionHash": "0x89155bd6674bce4118473c5f77b8b8c8d673708059e408509472a03de2d610a8",
-        "transactionIndex": "0x0"
-    }
-}
-```
-
----
-
-## `eth_getUncleByBlockHashAndIndex`
-
-> Returns information about an uncle of a block by hash and uncle index position.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (data, 32 bytes): the hash of a block.
-    2. `<string>` (quantity): the uncle's index position.
-
-### Returns
-
-  * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getUncleByBlockHashAndIndex",
-      "params": ["0x7a0018f0217e1207ecb56983f65fc110e5c98c6dc69e3a3e1d4a2f2f85139ea4", "0x0"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "difficulty": "0x4ea3f27bc",
-        "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
-        "gasLimit": "0x1388",
-        "gasUsed": "0x0",
-        "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
-        "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
-        "nonce": "0x689056015818adbe",
-        "number": "0x1b4",
-        "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x220",
-        "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
-        "timestamp": "0x55ba467c",
-        "totalDifficulty": "0x78ed983323d",
-        "transactions": [],
-        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "uncles": []
-    }
-}
-```
-
----
-
-## `eth_getUncleByBlockNumberAndIndex`
-
-> Returns information about an uncle of a block by number and uncle index position.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    1. `<string>` (quantity|tag): the hex value of a _block number_.
-    2. `<string>` (quantity): the uncle's  index position.
-
-### Returns
-
-  * `<object>`: a block object, or null when no block was found:
-      * `number` (string; quantity): the block number; null when it's a pending block.
-      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
-      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
-      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
-      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
-      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
-      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
-      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
-      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
-      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
-      * `difficulty` (string; quantity): the difficulty for this block.
-      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
-      * `extraData` (string; data): the **extra data** field of this block.
-      * `size` (string; quantity): the size of this block in bytes.
-      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
-      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
-      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
-      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
-      * `uncles` (array of strings): an array of uncle hashes.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getUncleByBlockNumberAndIndex",
-      "params": ["0x258C44", "0x0"],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "difficulty": "0x57f117f5c",
-        "extraData": "0x476574682f76312e302e302f77696e646f77732f676f312e342e32",
-        "gasLimit": "0x1388",
-        "gasUsed": "0x0",
-        "hash": "0x932bdf904546a2287a2c9b2ede37925f698a7657484b172d4e5184f80bdd464d",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0x5bf5e9cf9b456d6591073513de7fd69a9bef04bc",
-        "mixHash": "0x4500aa4ee2b3044a155252e35273770edeb2ab6f8cb19ca8e732771484462169",
-        "nonce": "0x24732773618192ac",
-        "number": "0x299",
-        "parentHash": "0xa779859b1ee558258b7008bbabff272280136c5dd3eb3ea3bfa8f6ae03bf91e5",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x21d",
-        "stateRoot": "0x2604fbf5183f5360da249b51f1b9f1e0f315d2ff3ffa1a4143ff221ad9ca1fec",
-        "timestamp": "0x55ba4827",
-        "totalDifficulty": "0xc46826a2c6a",
-        "transactions": [],
-        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "uncles": []
-    }
-}
-```
-
----
-
-## `eth_getLogs`
-
-> Returns an array of all logs matching a given filter object.
-
-### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-      1. `object`: the filter options:
-
-         * `fromBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
-
-             * `latest`: for the last mined block.
-             * `earliest`: for the lowest numbered block available on the client.
-             * `pending`: for not yet mined transactions.
-
-         * `toBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
-
-             * `latest`: for the last mined block.
-             * `earliest`: for the lowest numbered block available on the client.
-             * `pending`: for not yet mined transactions.
-
-         * `address` (array of strings; data, 20 bytes; optional): a contract address or a list of addresses from which logs should originate.
-         * `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
-         * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
-
-### Returns
-
-  * `removed` (string; tag): `true` when the log was removed, due to a chain reorganization; `false` if it's a valid log.
-  * `logIndex` (string; quantity): the log index position in the block; null when it's a pending log.
-  * `transactionIndex` (string; quantity): the transactions index position log was created from; null when it's a pending log.
-  * `transactionHash` (string; data, 32 bytes): a hash of the transactions this log was created from; null when it's a pending log.
-  * `blockHash` (string; data, 32 bytes): a hash of the block containing the log; null when it's pending; null when it's a pending log.
-  * `blockNumber` (string; quantity): the number of the block containing the log; null when it's pending; null when it's a pending log.
-  * `address` (string; data, 20 bytes): an address from which this log originated.
-  * `data` (string; data): contains one or more 32 bytes non-indexed arguments of the log.
-  * `topics` (array of strings; data): an array of 0 to 4 32 bytes data of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_getLogs",
-      "params": [{"address": "0x2BCfE12a949267e3Da5874E44554b29FA4B753E6"}],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": [
-        {
-            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-            "topics": [
-                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                "0x0000000000000000000000009acbb72cf67103a30333a32cd203459c6a9c3311",
-                "0x000000000000000000000000994871e1103c5da4be270365fa62771ea4525520"
-            ],
-            "data": "0x000000000000000000000000000000000000000000000000000000001ec39aa0",
-            "blockNumber": "0xf6289d",
-            "transactionHash": "0xc7ed73c9b219d4243872e5993ad2950c8ea87d15af28562d33b0c05d46a90cee",
-            "transactionIndex": "0x1e",
-            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
-            "logIndex": "0x13",
-            "removed": false
+  "id": 0,
+  "jsonrpc": "2.0",
+  "result": {
+    "block_id": {
+      "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+      "parts": {
+        "total": 1,
+        "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+      }
+    },
+    "block": {
+      "header": {
+        "version": {
+          "block": "10",
+          "app": "0"
         },
+        "chain_id": "cosmoshub-2",
+        "height": "12",
+        "time": "2019-04-22T17:01:51.701356223Z",
+        "last_block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "last_commit_hash": "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812",
+        "data_hash": "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73",
+        "validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "next_validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "consensus_hash": "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8",
+        "app_hash": "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C",
+        "last_results_hash": "",
+        "evidence_hash": "",
+        "proposer_address": "D540AB022088612AC74B287D076DBFBC4A377A2E"
+      },
+      "data": [
+        "yQHwYl3uCkKoo2GaChRnd+THLQ2RM87nEZrE19910Z28ABIUWW/t8AtIMwcyU0sT32RcMDI9GF0aEAoFdWF0b20SBzEwMDAwMDASEwoNCgV1YXRvbRIEMzEwMRCd8gEaagom61rphyEDoJPxlcjRoNDtZ9xMdvs+lRzFaHe2dl2P5R2yVCWrsHISQKkqX5H1zXAIJuC57yw0Yb03Fwy75VRip0ZBtLiYsUqkOsPUoQZAhDNP+6LY+RUwz/nVzedkF0S29NZ32QXdGv0="
+      ],
+      "evidence": [
         {
-            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-            "topics": [
-                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                "0x0000000000000000000000005879975799597392c031f10b6eff282cb7974ac8",
-                "0x0000000000000000000000006d52ab66340f3f78d0c1007bec484268876b5948"
-            ],
-            "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
-            "blockNumber": "0xf6289d",
-            "transactionHash": "0x0118499f7be4c3510bd60fe3a3aee5f5f316743b6cc13a8cb0528d784f962aec",
-            "transactionIndex": "0x20",
-            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
-            "logIndex": "0x14",
-            "removed": false
+          "type": "string",
+          "height": 0,
+          "time": 0,
+          "total_voting_power": 0,
+          "validator": {
+            "pub_key": {
+              "type": "tendermint/PubKeyEd25519",
+              "value": "A6DoBUypNtUAyEHWtQ9bFjfNg8Bo9CrnkUGl6k6OHN4="
+            },
+            "voting_power": 0,
+            "address": "string"
+          }
         }
-    ]
+      ],
+      "last_commit": {
+        "height": 0,
+        "round": 0,
+        "block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "signatures": [
+          {
+            "type": 2,
+            "height": "1262085",
+            "round": 0,
+            "block_id": {
+              "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+              "parts": {
+                "total": 1,
+                "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+              }
+            },
+            "timestamp": "2019-08-01T11:39:38.867269833Z",
+            "validator_address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+            "validator_index": 0,
+            "signature": "DBchvucTzAUEJnGYpNvMdqLhBAHG4Px8BsOBB3J3mAFCLGeuG7uJqy+nVngKzZdPhPi8RhmE/xcw/M9DOJjEDg=="
+          }
+        ]
+      }
+    }
+  }
 }
 ```
+  </Tab>
+</Tabs>
 
 ---
-
 
 ## Tendermint JSON-RPC/REST methods
 
 **Info — node information**:
 
-  * [`blockchain`](/rpc-service/chains/chains-api/zetachain/#blockchain) — retrieves block headers (max: 20) for `minHeight <= height <= maxHeight`.
-  * [`block`](/rpc-service/chains/chains-api/zetachain/#block) — retrieves a block at a specified height.
-  * [`block_by_hash`](/rpc-service/chains/chains-api/zetachain/#block_by_hash) — retrieves a block by hash.
-  * [`block_results`](/rpc-service/chains/chains-api/zetachain/#block_results) — retrieves block results at a specified height.
-  * [`commit`](/rpc-service/chains/chains-api/zetachain/#commit) — retrieves commit results at a specified height.
-  * [`validators`](/rpc-service/chains/chains-api/zetachain/#validators) — retrieves a validator set at a specified height.
-  * [`genesis`](/rpc-service/chains/chains-api/zetachain/#genesis) — retrieves the Genesis.
-  * [`genesis_chunked`](/rpc-service/chains/chains-api/zetachain/#genesis_chunked) — retrieves the Genesis in multiple chunks.
-  * [`dump_consensus_state`](/rpc-service/chains/chains-api/zetachain/#dump_consensus_state) — retrieves consensus state.
-  * [`consensus_state`](/rpc-service/chains/chains-api/zetachain/#consensus_state) — retrieves consensus state.
-  * [`consensus_params`](/rpc-service/chains/chains-api/zetachain/#consensus_params) — retrieves consensus parameters.
-  * [`unconfirmed_txs`](/rpc-service/chains/chains-api/zetachain/#unconfirmed_txs) — retrieves the list of unconfirmed transactions.
-  * [`num_unconfirmed_txs`](/rpc-service/chains/chains-api/zetachain/#num_unconfirmed_txs) — retrieves data about unconfirmed transactions.
-  * [`tx_search`](/rpc-service/chains/chains-api/zetachain/#tx_search) — searches for transactions.
-  * [`block_search`](/rpc-service/chains/chains-api/zetachain/#block_search) — searches for blocks by `BeginBlock` and `EndBlock` events.
-  * [`tx`](/rpc-service/chains/chains-api/zetachain/#tx) — retrieves transactions by hash.
+  * [`status`](/rpc-service/chains/chains-api/sei/#net_info) — retrieves Tendermint status including node info, pubkey, latest block hash, app hash, block height and time.
+  * [`net_info`](/rpc-service/chains/chains-api/sei/#net_info) — retrieves network info.
+  * [`blockchain`](/rpc-service/chains/chains-api/sei/#blockchain) — retrieves block headers (max: 20) for `minHeight <= height <= maxHeight`.
+  * [`block`](/rpc-service/chains/chains-api/sei/#block) — retrieves a block at a specified height.
+  * [`block_by_hash`](/rpc-service/chains/chains-api/sei/#block_by_hash) — retrieves a block by hash.
+  * [`block_results`](/rpc-service/chains/chains-api/sei/#block_results) — retrieves block results at a specified height.
+  * [`commit`](/rpc-service/chains/chains-api/sei/#commit) — retrieves commit results at a specified height.
+  * [`validators`](/rpc-service/chains/chains-api/sei/#validators) — retrieves a validator set at a specified height.
+  * [`genesis_chunked`](/rpc-service/chains/chains-api/sei/#genesis_chunked) — retrieves the Genesis in multiple chunks.
+  * [`dump_consensus_state`](/rpc-service/chains/chains-api/sei/#dump_consensus_state) — retrieves consensus state.
+  * [`consensus_state`](/rpc-service/chains/chains-api/sei/#consensus_state) — retrieves consensus state.
+  * [`consensus_params`](/rpc-service/chains/chains-api/sei/#consensus_params) — retrieves consensus parameters.
+  * [`unconfirmed_txs`](/rpc-service/chains/chains-api/sei/#unconfirmed_txs) — retrieves the list of unconfirmed transactions.
+  * [`num_unconfirmed_txs`](/rpc-service/chains/chains-api/sei/#num_unconfirmed_txs) — retrieves data about unconfirmed transactions.
+  * [`tx_search`](/rpc-service/chains/chains-api/sei/#tx_search) — searches for transactions.
+  * [`block_search`](/rpc-service/chains/chains-api/sei/#block_search) — searches for blocks by `BeginBlock` and `EndBlock` events.
+  * [`tx`](/rpc-service/chains/chains-api/sei/#tx) — retrieves transactions by hash.
 
 **Tx — transactions broadcast information**:
 
-  * [`broadcast_tx_sync`](/rpc-service/chains/chains-api/zetachain/#broadcast_tx_sync) — returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
-  * [`broadcast_tx_async`](/rpc-service/chains/chains-api/zetachain/#broadcast_tx_async) — returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
-  * [`broadcast_tx_commit`](/rpc-service/chains/chains-api/zetachain/#broadcast_tx_commit) — returns with the responses from `CheckTx` and `DeliverTx`.
-  * [`check_tx`](/rpc-service/chains/chains-api/zetachain/#check_tx) — checks the transaction without executing it.
+  * [`broadcast_tx_sync`](/rpc-service/chains/chains-api/sei/#broadcast_tx_sync) — returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
+  * [`broadcast_tx_async`](/rpc-service/chains/chains-api/sei/#broadcast_tx_async) — returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
+  * [`broadcast_tx_commit`](/rpc-service/chains/chains-api/sei/#broadcast_tx_commit) — returns with the responses from `CheckTx` and `DeliverTx`.
+  * [`check_tx`](/rpc-service/chains/chains-api/sei/#check_tx) — checks the transaction without executing it.
 
 **ABCI — ABCI info**:
 
-  * [`abci_info`](/rpc-service/chains/chains-api/zetachain/#abci_info) — retrieves info about the application.
-  * [`abci_query`](/rpc-service/chains/chains-api/zetachain/#abci_query) — queries the application for some information.
+  * [`abci_info`](/rpc-service/chains/chains-api/sei/#abci_info) — retrieves info about the application.
+  * [`abci_query`](/rpc-service/chains/chains-api/sei/#abci_query) — queries the application for some information.
 
 ---
 
 ## Information
+
+### `status`
+
+> Retrieves Tendermint status including node info, pubkey, latest block hash, app hash, block height and time.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Status of the node.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/sei \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "status",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/sei/status
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "node_info": {
+        "protocol_version": {
+            "p2p": "8",
+            "block": "11",
+            "app": "0"
+        },
+        "id": "f7628f970a504f59954f073d65671001a408b5da",
+        "listen_addr": "45.250.253.81:29210",
+        "network": "pacific-1",
+        "version": "0.35.0-unreleased",
+        "channels": "40202122233038606162630070717273",
+        "moniker": "Ankr",
+        "other": {
+            "tx_index": "off",
+            "rpc_address": "tcp://127.0.0.1:29211"
+        }
+    },
+    "application_info": {
+        "version": "8"
+    },
+    "sync_info": {
+        "latest_block_hash": "567CCF80A233999FBB6CF97B0AA4F8D4FD44A5EDE1AE3C228511D8C98AC62CF2",
+        "latest_app_hash": "70FFC418FC9780E1075B115AB22441DADB45F1BE67F769642F205D4B6ED67092",
+        "latest_block_height": "30191943",
+        "latest_block_time": "2023-10-05T13:18:58.805856021Z",
+        "earliest_block_hash": "914496D8EAD67328E544949B4C508AB691837901DB676652F89AD60025AEFC06",
+        "earliest_app_hash": "861D037323EA61AF6AB403C126F6892826B9C44F59ED5FB1568910D6923B67BD",
+        "earliest_block_height": "29574999",
+        "earliest_block_time": "2023-10-02T18:51:50.626034842Z",
+        "max_peer_block_height": "30191926",
+        "catching_up": false,
+        "total_synced_time": "0",
+        "remaining_time": "0",
+        "total_snapshots": "0",
+        "chunk_process_avg_time": "0",
+        "snapshot_height": "0",
+        "snapshot_chunks_count": "0",
+        "snapshot_chunks_total": "0",
+        "backfilled_blocks": "0",
+        "backfill_blocks_total": "0"
+    },
+    "validator_info": {
+        "address": "2602B589666DD6F3D0FB9DD4414ED39C0FEEE385",
+        "pub_key": {
+            "type": "tendermint/PubKeyEd25519",
+            "value": "qvHCe2sqN9VJRl/cDAF36LnNXbktLVR1zqnj0d7zt1I="
+        },
+        "voting_power": "0"
+    }
+}
+```
+
+---
+
+### `net_info`
+
+> Retrieves network info.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Network info.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/sei \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_info",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/sei/net_info
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "id": 0,
+  "jsonrpc": "2.0",
+  "result": {
+    "listening": true,
+    "listeners": [
+      "Listener(@)"
+    ],
+    "n_peers": "1",
+    "peers": [
+      {
+        "node_info": {
+          "protocol_version": {
+            "p2p": "7",
+            "block": "10",
+            "app": "0"
+          },
+          "id": "5576458aef205977e18fd50b274e9b5d9014525a",
+          "listen_addr": "tcp:0.0.0.0:26656",
+          "network": "cosmoshub-2",
+          "version": "0.32.1",
+          "channels": "4020212223303800",
+          "moniker": "moniker-node",
+          "other": {
+            "tx_index": "on",
+            "rpc_address": "tcp:0.0.0.0:26657"
+          }
+        },
+        "is_outbound": true,
+        "connection_status": {
+          "Duration": "168901057956119",
+          "SendMonitor": {
+            "Active": true,
+            "Start": "2019-07-31T14:31:28.66Z",
+            "Duration": "168901060000000",
+            "Idle": "168901040000000",
+            "Bytes": "5",
+            "Samples": "1",
+            "InstRate": "0",
+            "CurRate": "0",
+            "AvgRate": "0",
+            "PeakRate": "0",
+            "BytesRem": "0",
+            "TimeRem": "0",
+            "Progress": 0
+          },
+          "RecvMonitor": {
+            "Active": true,
+            "Start": "2019-07-31T14:31:28.66Z",
+            "Duration": "168901060000000",
+            "Idle": "168901040000000",
+            "Bytes": "5",
+            "Samples": "1",
+            "InstRate": "0",
+            "CurRate": "0",
+            "AvgRate": "0",
+            "PeakRate": "0",
+            "BytesRem": "0",
+            "TimeRem": "0",
+            "Progress": 0
+          },
+          "Channels": [
+            {
+              "ID": 48,
+              "SendQueueCapacity": "1",
+              "SendQueueSize": "0",
+              "Priority": "5",
+              "RecentlySent": "0"
+            }
+          ]
+        },
+        "remote_ip": "95.179.155.35"
+      }
+    ]
+  }
+}
+```
+
+---
 
 ### `blockchain`
 
@@ -1761,6 +415,7 @@ curl -X POST https://rpc.ankr.com/zetachain_evm_athens_testnet \
 At most 20 items will return for the `minHeight` or `maxHeight` parameters specified. If `maxHeight` does not yet exist, the blocks up to the current height will return. If `minHeight` does not exist (pruning), the earliest existing height will be used.
 
 #### Parameters
+<br/>
 
   * `minHeight` (integer): the minimum block height to return.
   * `maxHeight` (integer): the maximum block height to return.
@@ -1780,7 +435,7 @@ Block headers, in descending order (highest first).
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1793,7 +448,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/blockchain?minHeight=1&maxHeight=2
+curl https://rpc.ankr.com/http/sei/blockchain?minHeight=1&maxHeight=2
 ```
   </Tab>
 </Tabs>
@@ -1855,6 +510,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/blockchain?mi
 > Retrieves a block at a specified height.
 
 #### Parameters
+<br/>
 
   * `height` (integer; default: 0): the height to return. If no height is provided, the latest block is to be fetched.
 
@@ -1873,7 +529,7 @@ Block information.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1886,7 +542,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/blockchain?height=1
+curl https://rpc.ankr.com/http/sei/blockchain?height=1
 ```
   </Tab>
 </Tabs>
@@ -1991,6 +647,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/blockchain?he
 > Retrieves a block by hash.
 
 #### Parameters
+<br/>
 
   * `hash` (string; required): a block hash.
 
@@ -2009,12 +666,12 @@ Block information.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "block_by_hash",
-      "params": ["0x9e24ba5ec00008e66ccda9de8f787e8676845da41a0966d2c0035b8885d36d06"],
+      "params": ["0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED"],
       "id": 1
     }'
 ```
@@ -2022,7 +679,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/block_by_hash?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED
+curl https://rpc.ankr.com/http/sei/block_by_hash?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED
 ```
   </Tab>
 </Tabs>
@@ -2127,6 +784,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/block_by_hash
 > Retrieves block results at a specified height.
 
 #### Parameters
+<br/>
 
   * `height` (integer; default: 0): the height to return. If no height is provided, the latest block info is to be fetched.
 
@@ -2145,7 +803,7 @@ Block results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2158,7 +816,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/block_results?height=1
+curl https://rpc.ankr.com/http/sei/block_results?height=1
 ```
   </Tab>
 </Tabs>
@@ -2253,6 +911,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/block_results
 > Retrieves commit results at a specified height.
 
 #### Parameters
+<br/>
 
   * `height` (integer; default: 0): the height to return. If no height is provided, the latest block commit info is to be fetched.
 
@@ -2271,7 +930,7 @@ Commit results. Canonical switches from false to true for block H once block H+1
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2284,7 +943,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/commit?height=1
+curl https://rpc.ankr.com/http/sei/commit?height=1
 ```
   </Tab>
 </Tabs>
@@ -2356,6 +1015,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/commit?height
 Validators are sorted by voting power.
 
 #### Parameters
+<br/>
 
   * `height` (integer; default: 0): the height to return. If no height is provided, the validator set corresponding to the latest block is to be fetched.
   * `page` (integer; default: 1): a page number (1-based).
@@ -2376,7 +1036,7 @@ Commit results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2389,7 +1049,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/validators?height=1&page=2&per_page=30
+curl https://rpc.ankr.com/http/sei/validators?height=1&page=2&per_page=30
 ```
   </Tab>
 </Tabs>
@@ -2421,93 +1081,6 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/validators?he
 
 ---
 
-### `genesis`
-
-> Retrieves the Genesis.
-
-#### Parameters
-
-None.
-
-#### Returns
-
-Genesis results.
-
-#### Request example
-
-<Tabs
-  items={[
-    "JSON-RPC",
-    "REST",
-  ]}
->
-  <Tab>
-
-```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "genesis",
-      "params": [],
-      "id": 1
-    }'
-```
-  </Tab>
-  <Tab>
-
-```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/genesis
-```
-  </Tab>
-</Tabs>
-
-#### Response example
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": {
-    "genesis": {
-      "genesis_time": "2019-04-22T17:00:00Z",
-      "chain_id": "cosmoshub-2",
-      "initial_height": "2",
-      "consensus_params": {
-        "block": {
-          "max_bytes": "22020096",
-          "max_gas": "1000",
-          "time_iota_ms": "1000"
-        },
-        "evidence": {
-          "max_age": "100000"
-        },
-        "validator": {
-          "pub_key_types": [
-            "ed25519"
-          ]
-        }
-      },
-      "validators": [
-        {
-          "address": "B00A6323737F321EB0B8D59C6FD497A14B60938A",
-          "pub_key": {
-            "type": "tendermint/PubKeyEd25519",
-            "value": "cOQZvh/h9ZioSeUMZB/1Vy1Xo5x2sjrVjlE/qHnYifM="
-          },
-          "power": "9328525",
-          "name": "Certus One"
-        }
-      ],
-      "app_hash": "",
-      "app_state": {}
-    }
-  }
-}
-```
-
----
-
 ### `genesis_chunked`
 
 > Retrieves Genesis in multiple chunks.
@@ -2515,6 +1088,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/genesis
 Gets genesis document in multiple chunks to make it easier to iterate through larger genesis structures. Each chunk is produced by converting the genesis document to JSON and then splitting the resulting payload into 16MB blocks, and then Base64-encoding each block.
 
 #### Parameters
+<br/>
 
   * `chunk` (integer; default: 0): a sequence number of the chunk to download.
 
@@ -2533,7 +1107,7 @@ A Genesis chunk response.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2546,7 +1120,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/genesis_chunked?chunk=1
+curl https://rpc.ankr.com/http/sei/genesis_chunked?chunk=1
 ```
   </Tab>
 </Tabs>
@@ -2574,6 +1148,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/genesis_chunk
 Not safe to call from inside the ABCI application during a block execution.
 
 #### Parameters
+<br/>
 
 None.
 
@@ -2592,7 +1167,7 @@ A complete consensus state. See the [Vote string description](https://pkg.go.dev
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2605,7 +1180,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/dump_consensus_state
+curl https://rpc.ankr.com/http/sei/dump_consensus_state
 ```
   </Tab>
 </Tabs>
@@ -2736,6 +1311,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/dump_consensu
 Not safe to call from inside the ABCI application during a block execution.
 
 #### Parameters
+<br/>
 
 None.
 
@@ -2754,7 +1330,7 @@ Consensus state results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2767,7 +1343,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/consensus_state
+curl https://rpc.ankr.com/http/sei/consensus_state
 ```
   </Tab>
 </Tabs>
@@ -2816,6 +1392,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/consensus_sta
 > Retrieves consensus parameters.
 
 #### Parameters
+<br/>
 
   * `height` (integer; default: 0): the height to return. If no height is provided, the latest block commit info is to be returned.
 
@@ -2834,7 +1411,7 @@ Consensus parameters results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2847,7 +1424,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/consensus_params?height=1
+curl https://rpc.ankr.com/http/sei/consensus_params?height=1
 ```
   </Tab>
 </Tabs>
@@ -2886,6 +1463,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/consensus_par
 > Retrieves the list of unconfirmed transactions.
 
 #### Parameters
+<br/>
 
   * `limit` (integer; default: 30; max: 100): the maximum number of unconfirmed transactions to return.
 
@@ -2904,7 +1482,7 @@ The list of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2917,7 +1495,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/unconfirmed_txs?limit=1
+curl https://rpc.ankr.com/http/sei/unconfirmed_txs?limit=1
 ```
   </Tab>
 </Tabs>
@@ -2966,7 +1544,7 @@ The status of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2979,7 +1557,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/num_unconfirmed_txs
+curl https://rpc.ankr.com/http/sei/num_unconfirmed_txs
 ```
   </Tab>
 </Tabs>
@@ -3005,6 +1583,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/num_unconfirm
 > Searches for transactions with their results.
 
 #### Parameters
+<br/>
 
   * `query` (string; required): query is a string, which has a form: "condition AND condition ..." (no OR at the moment). condition has a form: "key operation operand". key is a string with a restricted set of possible symbols ( \t\n\r\()"'=>< are not allowed). operation can be `=`, `<`, `<=`, `>`, `>=`, `CONTAINS`. An operand can be a string (escaped with single quotes), number, date, or time.
   * `prove` (boolean; default: false): adds proofs of the transactions inclusion in the block.
@@ -3028,7 +1607,7 @@ The list of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3041,7 +1620,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/tx_search?query=tx.height%4D2000&prove=true&page=1&per_page=30&order_by=asc
+curl https://rpc.ankr.com/http/sei/tx_search?query=tx.height%4D2000&prove=true&page=1&per_page=30&order_by=asc
 ```
   </Tab>
 </Tabs>
@@ -3095,6 +1674,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/tx_search?que
 > Searches for blocks by `BeginBlock` and `EndBlock` events.
 
 #### Parameters
+<br/>
 
   * `query` (string; required): query is a string, which has a form: "condition AND condition ..." (no OR at the moment). condition has a form: "key operation operand". key is a string with a restricted set of possible symbols ( \t\n\r\()"'=>< are not allowed). operation can be `=`, `<`, `<=`, `>`, `>=`, `CONTAINS`. An operand can be a string (escaped with single quotes), number, date, or time.
   * `page` (integer; default: 1): a page number (1-based).
@@ -3117,7 +1697,7 @@ The list of paginated blocks matching the search criteria.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3130,7 +1710,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/block_search?query=block.height%4D2000&page=1&per_page=30&order_by=asc
+curl https://rpc.ankr.com/http/sei/block_search?query=block.height%4D2000&page=1&per_page=30&order_by=asc
 ```
   </Tab>
 </Tabs>
@@ -3148,6 +1728,7 @@ No example available
 > Retrieves a transaction by hash.
 
 #### Parameters
+<br/>
 
   * `hash` (string; required): a hash of a transaction to retrieve.
   * `prove` (boolean; default: false): adds proofs of the transaction's inclusion in the block.
@@ -3167,7 +1748,7 @@ Transaction info.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3180,7 +1761,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/tx?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED&prove=true
+curl https://rpc.ankr.com/http/sei/tx?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED&prove=true
 ```
   </Tab>
 </Tabs>
@@ -3228,6 +1809,7 @@ If you want to be sure that the transaction is included in a block, you can subs
 Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#formatting) for formatting/encoding rules.
 
 ### Parameters
+<br/>
 
   * `tx` (string; required): the transaction.
 
@@ -3242,7 +1824,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3255,7 +1837,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/broadcast_tx_sync?tx=456
+curl https://rpc.ankr.com/http/sei/broadcast_tx_sync?tx=456
 ```
   </Tab>
 </Tabs>
@@ -3292,6 +1874,7 @@ If you want to be sure that the transaction is included in a block, you can subs
 Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#formatting) for formatting/encoding rules.
 
 #### Parameters
+<br/>
 
   * `tx` (string; required): the transaction.
 
@@ -3306,7 +1889,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3319,7 +1902,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/broadcast_tx_async?tx=123
+curl https://rpc.ankr.com/http/sei/broadcast_tx_async?tx=123
 ```
   </Tab>
 </Tabs>
@@ -3358,6 +1941,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
 </Callout>
 
 #### Parameters
+<br/>
 
   * `tx` (string; required): the transaction.
 
@@ -3372,7 +1956,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3385,7 +1969,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/broadcast_tx_commit?tx=785
+curl https://rpc.ankr.com/http/sei/broadcast_tx_commit?tx=785
 ```
   </Tab>
 </Tabs>
@@ -3425,6 +2009,7 @@ The transaction won't be added to the mempool.
 Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#formatting) for formatting/encoding rules.
 
 #### Parameters
+<br/>
 
   * `tx` (string; required): the transaction.
 
@@ -3439,7 +2024,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3452,7 +2037,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/check_tx?tx=785
+curl https://rpc.ankr.com/http/sei/check_tx?tx=785
 ```
   </Tab>
 </Tabs>
@@ -3497,6 +2082,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/check_tx?tx=7
 > Retrieves application info.
 
 #### Parameters
+<br/>
 
 None.
 
@@ -3515,7 +2101,7 @@ Application info.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3528,7 +2114,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/abci_info
+curl https://rpc.ankr.com/http/sei/abci_info
 ```
   </Tab>
 </Tabs>
@@ -3557,6 +2143,7 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/abci_info
 > Queries the application for particular information.
 
 #### Parameters
+<br/>
 
   * `path` (string; required): a path to the data ("/a/b/c").
   * `data` (string; required): the data.
@@ -3578,7 +2165,7 @@ Particular info according to the query submitted.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
+curl -X POST https://rpc.ankr.com/sei \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3591,7 +2178,7 @@ curl -X POST https://rpc.ankr.com/zetachain_tendermint_athens_testnet \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
+curl https://rpc.ankr.com/http/sei/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
 ```
   </Tab>
 </Tabs>
@@ -3623,84 +2210,89 @@ curl https://rpc.ankr.com/http/zetachain_tendermint_athens_testnet/blockchain?pa
 
 **Gaia REST**:
 
-  * [`/node_info`](/rpc-service/chains/chains-api/zetachain/#node_info) — retrieves the properties of the connected node.
+  * [`/node_info`](/rpc-service/chains/chains-api/sei/#node_info) — retrieves the properties of the connected node.
 
 **Transactions**:
 
-  * [`/txs`](/rpc-service/chains/chains-api/zetachain/#txs) — broadcasts a signed transaction to a full node.
+  * [`/txs`](/rpc-service/chains/chains-api/sei/#txs) — broadcasts a signed transaction to a full node.
 
 **Staking**:
 
-  * [`/staking/delegators/{delegatorAddr}/delegations`](/rpc-service/chains/chains-api/zetachain/#stakingdelegatorsdelegatoraddrdelegations) — submits a delegation.
-  * [`/staking/delegators/{delegatorAddr}/unbonding_delegations`](/rpc-service/chains/chains-api/zetachain/#stakingdelegatorsdelegatoraddrunbonding_delegations) — submits an unbonding delegation.
+  * [`/staking/delegators/{delegatorAddr}/delegations`](/rpc-service/chains/chains-api/sei/#stakingdelegatorsdelegatoraddrdelegations) — submits a delegation.
+  * [`/staking/delegators/{delegatorAddr}/unbonding_delegations`](/rpc-service/chains/chains-api/sei/#stakingdelegatorsdelegatoraddrunbonding_delegations) — submits an unbonding delegation.
 
 **Query**:
 
-  * [`/cosmos/auth/v1beta1/accounts`](/rpc-service/chains/chains-api/zetachain/#cosmosauthv1beta1accounts) — retrieves all the existing accounts.
-  * [`/cosmos/auth/v1beta1/accounts/{address}`](/rpc-service/chains/chains-api/zetachain/#cosmosauthv1beta1accountsaddress) — retrieves account details based on address.
-  * [`/cosmos/auth/v1beta1/params`](/rpc-service/chains/chains-api/zetachain/#cosmosauthv1beta1params) — retrieves all parameters.
-  * [`/cosmos/bank/v1beta1/balances/{address}`](/rpc-service/chains/chains-api/zetachain/#cosmosbankv1beta1balancesaddress) — retrieves the balance of all coins for a single account.
-  * [`/cosmos/bank/v1beta1/balances/{address}/{denom}`](/rpc-service/chains/chains-api/zetachain/#cosmosbankv1beta1balancesaddressdenom) — retrieves the balance of a single coin for a single account.
-  * [`/cosmos/bank/v1beta1/denoms_metadata`](/rpc-service/chains/chains-api/zetachain/#cosmosbankv1beta1denoms_metadata) — retrieves the client metadata for all registered coin denominations.
-  * [`/cosmos/bank/v1beta1/denoms_metadata/{denom}`](/rpc-service/chains/chains-api/zetachain/#cosmosbankv1beta1denoms_metadatadenom) — retrieves the client metadata of a given coin denomination.
-  * [`/cosmos/bank/v1beta1/params`](/rpc-service/chains/chains-api/zetachain/#cosmosbankv1beta1params) — retrieves the parameters of x/bank module.
-  * [`/cosmos/bank/v1beta1/supply`](/rpc-service/chains/chains-api/zetachain/#cosmosbankv1beta1supply) — retrieves the total supply of all coins.
-  * [`/cosmos/distribution/v1beta1/community_pool`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1community_pool) — retrieves the community pool coins.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1delegatorsdelegator_addressrewards) — retrieves the total rewards accrued by each validator.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1delegatorsdelegator_addressrewardsvalidator_address) — retrieves the total rewards accrued by a delegation.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1delegatorsdelegator_addressvalidators) — retrieves the validators of a delegator.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1delegatorsdelegator_addresswithdraw_address) — retrieves a withdrawal address of a delegator.
-  * [`/cosmos/distribution/v1beta1/params`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1params) — retrieves parameters of the distribution module.
-  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/commission`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1validatorsvalidator_addresscommission) — retrieves accumulated commission for a validator.
-  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1validatorsvalidator_addressoutstanding_rewards) — retrieves rewards of a validator address.
-  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/slashes`](/rpc-service/chains/chains-api/zetachain/#cosmosdistributionv1beta1validatorsvalidator_addressslashes) — retrieves slash events of a validator.
-  * [`/cosmos/evidence/v1beta1/evidence`](/rpc-service/chains/chains-api/zetachain/#cosmosevidencev1beta1evidence) — retrieves all evidence.
-  * [`/cosmos/evidence/v1beta1/evidence/{evidence_hash}`](/rpc-service/chains/chains-api/zetachain/#cosmosevidencev1beta1evidenceevidence_hash) — retrieves evidence based on evidence hash.
-  * [`/cosmos/gov/v1beta1/params/{params_type}`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1paramsparams_type) — retrieves all parameters of the gov module.
-  * [`/cosmos/gov/v1beta1/proposals`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1proposals) — retrieves all proposals based on given status.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1proposalsproposal_id) — retrieves proposal details based on proposal ID.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1proposalsproposal_iddeposits) — retrieves all deposits of a single proposal.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1proposalsproposal_iddepositsdepositor) — retrieves single deposit information based on proposal ID and deposit address.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/tally`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1proposalsproposal_idtally) — retrieves the tally of a proposal vote.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1proposalsproposal_idvotes) — retrieves votes of a given proposal.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}`](/rpc-service/chains/chains-api/zetachain/#cosmosgovv1beta1proposalsproposal_idvotesvoter) — retrieves voted information based on proposal ID and voter address.
-  * [`/cosmos/mint/v1beta1/annual_provisions`](/rpc-service/chains/chains-api/zetachain/#cosmosmintv1beta1annual_provisions) — retrieves the current minting annual provisions value.
-  * [`/cosmos/mint/v1beta1/inflation`](/rpc-service/chains/chains-api/zetachain/#cosmosmintv1beta1inflation) — retrieves the current minting inflation value.
-  * [`/cosmos/mint/v1beta1/params`](/rpc-service/chains/chains-api/zetachain/#cosmosmintv1beta1params) — retrieves the total set of minting parameters.
-  * [`/cosmos/slashing/v1beta1/params`](/rpc-service/chains/chains-api/zetachain/#cosmosslashingv1beta1params) — retrieves the parameters of a slashing module.
-  * [`/cosmos/slashing/v1beta1/signing_infos`](/rpc-service/chains/chains-api/zetachain/#cosmosslashingv1beta1signing_infos) — retrieves signing info of all validators.
-  * [`/cosmos/slashing/v1beta1/signing_infos/{cons_address}`](/rpc-service/chains/chains-api/zetachain/#cosmosslashingv1beta1signing_infoscons_address) — retrieves the signing info of given cons address.
-  * [`/cosmos/staking/v1beta1/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1delegationsdelegator_addr) — retrieves all delegations of a given delegator address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1delegatorsdelegator_addrredelegations) — retrieves redelegations of a given address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1delegatorsdelegator_addrunbonding_delegations) — retrieves all unbonding delegations of a given delegator address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1delegatorsdelegator_addrvalidators) — retrieves all validators info for a given delegator address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1delegatorsdelegator_addrvalidatorsvalidator_addr) — retrieves validator info by given delegator validator pair.
-  * [`/cosmos/staking/v1beta1/historical_info/{height}`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1historical_infoheight) — retrieves the historical info for a given height.
-  * [`/cosmos/staking/v1beta1/params`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1params) — retrieves the staking parameters.
-  * [`/cosmos/staking/v1beta1/pool`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1pool) — retrieves the pool info.
-  * [`/cosmos/staking/v1beta1/validators`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1validators) — retrieves all validators that match the given status.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1validatorsvalidator_addr) — retrieves validator info for a given validator address.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1validatorsvalidator_addrdelegations) — retrieves delegate info for a given validator.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addr) — retrieves delegate info for given validator delegator pair.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addrunbonding_delegation) — retrieves unbonding info for given validator delegator pair.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/zetachain/#cosmosstakingv1beta1validatorsvalidator_addrunbonding_delegations) — retrieves unbonding delegations of a given validator address.
-  * [`/cosmos/upgrade/v1beta1/applied_plan/{name}`](/rpc-service/chains/chains-api/zetachain/#cosmosupgradev1beta1applied_planname) — retrieves a previously applied upgrade plan by its name.
-  * [`/cosmos/upgrade/v1beta1/current_plan`](/rpc-service/chains/chains-api/zetachain/#cosmosupgradev1beta1current_plan) — retrieves the current upgrade plan.
-  * [`/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}`](/rpc-service/chains/chains-api/zetachain/#cosmosupgradev1beta1upgraded_consensus_statelast_height) — retrieves the consensus state that will serve as a trusted kernel for the next version of this chain.
-  * [`/cosmos/authz/v1beta1/grants`](/rpc-service/chains/chains-api/zetachain/#cosmosauthzv1beta1grants) — retrieves the list of `Authorization`, granted to the grantee by the granter.
-  * [`/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}`](/rpc-service/chains/chains-api/zetachain/#cosmosfeegrantv1beta1allowancegrantergrantee) — retrieves the fee granted to the grantee by the granter.
-  * [`/cosmos/feegrant/v1beta1/allowances/{grantee}`](/rpc-service/chains/chains-api/zetachain/#cosmosfeegrantv1beta1allowancesgrantee) — retrieves all the grants for an address.
+  * [`/cosmos/auth/v1beta1/accounts`](/rpc-service/chains/chains-api/sei/#cosmosauthv1beta1accounts) — retrieves all the existing accounts.
+  * [`/cosmos/auth/v1beta1/accounts/{address}`](/rpc-service/chains/chains-api/sei/#cosmosauthv1beta1accountsaddress) — retrieves account details based on address.
+  * [`/cosmos/auth/v1beta1/params`](/rpc-service/chains/chains-api/sei/#cosmosauthv1beta1params) — retrieves all parameters.
+  * [`/cosmos/bank/v1beta1/balances/{address}`](/rpc-service/chains/chains-api/sei/#cosmosbankv1beta1balancesaddress) — retrieves the balance of all coins for a single account.
+  * [`/cosmos/bank/v1beta1/balances/{address}/{denom}`](/rpc-service/chains/chains-api/sei/#cosmosbankv1beta1balancesaddressdenom) — retrieves the balance of a single coin for a single account.
+  * [`/cosmos/bank/v1beta1/denoms_metadata`](/rpc-service/chains/chains-api/sei/#cosmosbankv1beta1denoms_metadata) — retrieves the client metadata for all registered coin denominations.
+  * [`/cosmos/bank/v1beta1/denoms_metadata/{denom}`](/rpc-service/chains/chains-api/sei/#cosmosbankv1beta1denoms_metadatadenom) — retrieves the client metadata of a given coin denomination.
+  * [`/cosmos/bank/v1beta1/params`](/rpc-service/chains/chains-api/sei/#cosmosbankv1beta1params) — retrieves the parameters of x/bank module.
+  * [`/cosmos/bank/v1beta1/supply`](/rpc-service/chains/chains-api/sei/#cosmosbankv1beta1supply) — retrieves the total supply of all coins.
+  * [`/cosmos/bank/v1beta1/supply/{denom}`](#cosmosbankv1beta1supplydenom) — retrieves the supply of a single coin.
+  * [`/cosmos/distribution/v1beta1/community_pool`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1community_pool) — retrieves the community pool coins.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1delegatorsdelegator_addressrewards) — retrieves the total rewards accrued by each validator.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1delegatorsdelegator_addressrewardsvalidator_address) — retrieves the total rewards accrued by a delegation.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1delegatorsdelegator_addressvalidators) — retrieves the validators of a delegator.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1delegatorsdelegator_addresswithdraw_address) — retrieves a withdrawal address of a delegator.
+  * [`/cosmos/distribution/v1beta1/params`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1params) — retrieves parameters of the distribution module.
+  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/commission`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1validatorsvalidator_addresscommission) — retrieves accumulated commission for a validator.
+  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1validatorsvalidator_addressoutstanding_rewards) — retrieves rewards of a validator address.
+  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/slashes`](/rpc-service/chains/chains-api/sei/#cosmosdistributionv1beta1validatorsvalidator_addressslashes) — retrieves slash events of a validator.
+  * [`/cosmos/evidence/v1beta1/evidence`](/rpc-service/chains/chains-api/sei/#cosmosevidencev1beta1evidence) — retrieves all evidence.
+  * [`/cosmos/evidence/v1beta1/evidence/{evidence_hash}`](/rpc-service/chains/chains-api/sei/#cosmosevidencev1beta1evidenceevidence_hash) — retrieves evidence based on evidence hash.
+  * [`/cosmos/gov/v1beta1/params/{params_type}`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1paramsparams_type) — retrieves all parameters of the gov module.
+  * [`/cosmos/gov/v1beta1/proposals`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1proposals) — retrieves all proposals based on given status.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1proposalsproposal_id) — retrieves proposal details based on proposal ID.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1proposalsproposal_iddeposits) — retrieves all deposits of a single proposal.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1proposalsproposal_iddepositsdepositor) — retrieves single deposit information based on proposal ID and deposit address.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/tally`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1proposalsproposal_idtally) — retrieves the tally of a proposal vote.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1proposalsproposal_idvotes) — retrieves votes of a given proposal.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}`](/rpc-service/chains/chains-api/sei/#cosmosgovv1beta1proposalsproposal_idvotesvoter) — retrieves voted information based on proposal ID and voter address.
+  * [`/cosmos/mint/v1beta1/annual_provisions`](/rpc-service/chains/chains-api/sei/#cosmosmintv1beta1annual_provisions) — retrieves the current minting annual provisions value.
+  * [`/cosmos/mint/v1beta1/inflation`](/rpc-service/chains/chains-api/sei/#cosmosmintv1beta1inflation) — retrieves the current minting inflation value.
+  * [`/cosmos/mint/v1beta1/params`](/rpc-service/chains/chains-api/sei/#cosmosmintv1beta1params) — retrieves the total set of minting parameters.
+  * [`/cosmos/params/v1beta1/params`](/rpc-service/chains/chains-api/sei/#cosmosparamsv1beta1params) — retrieves a specific parameter of a module, given its subspace and key.
+  * [`/cosmos/slashing/v1beta1/params`](/rpc-service/chains/chains-api/sei/#cosmosslashingv1beta1params) — retrieves the parameters of a slashing module.
+  * [`/cosmos/slashing/v1beta1/signing_infos`](/rpc-service/chains/chains-api/sei/#cosmosslashingv1beta1signing_infos) — retrieves signing info of all validators.
+  * [`/cosmos/slashing/v1beta1/signing_infos/{cons_address}`](/rpc-service/chains/chains-api/sei/#cosmosslashingv1beta1signing_infoscons_address) — retrieves the signing info of given cons address.
+  * [`/cosmos/staking/v1beta1/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1delegationsdelegator_addr) — retrieves all delegations of a given delegator address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1delegatorsdelegator_addrredelegations) — retrieves redelegations of a given address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1delegatorsdelegator_addrunbonding_delegations) — retrieves all unbonding delegations of a given delegator address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1delegatorsdelegator_addrvalidators) — retrieves all validators info for a given delegator address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1delegatorsdelegator_addrvalidatorsvalidator_addr) — retrieves validator info by given delegator validator pair.
+  * [`/cosmos/staking/v1beta1/historical_info/{height}`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1historical_infoheight) — retrieves the historical info for a given height.
+  * [`/cosmos/staking/v1beta1/params`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1params) — retrieves the staking parameters.
+  * [`/cosmos/staking/v1beta1/pool`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1pool) — retrieves the pool info.
+  * [`/cosmos/staking/v1beta1/validators`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1validators) — retrieves all validators that match the given status.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1validatorsvalidator_addr) — retrieves validator info for a given validator address.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1validatorsvalidator_addrdelegations) — retrieves delegate info for a given validator.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addr) — retrieves delegate info for given validator delegator pair.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addrunbonding_delegation) — retrieves unbonding info for given validator delegator pair.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/sei/#cosmosstakingv1beta1validatorsvalidator_addrunbonding_delegations) — retrieves unbonding delegations of a given validator address.
+  * [`/cosmos/upgrade/v1beta1/applied_plan/{name}`](/rpc-service/chains/chains-api/sei/#cosmosupgradev1beta1applied_planname) — retrieves a previously applied upgrade plan by its name.
+  * [`/cosmos/upgrade/v1beta1/current_plan`](/rpc-service/chains/chains-api/sei/#cosmosupgradev1beta1current_plan) — retrieves the current upgrade plan.
+  * [`/cosmos/upgrade/v1beta1/module_versions`](/rpc-service/chains/chains-api/sei/#cosmosupgradev1beta1module_versions) — retrieves the list of module versions from state.
+  * [`/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}`](/rpc-service/chains/chains-api/sei/#cosmosupgradev1beta1upgraded_consensus_statelast_height) — retrieves the consensus state that will serve as a trusted kernel for the next version of this chain.
+  * [`/cosmos/authz/v1beta1/grants`](/rpc-service/chains/chains-api/sei/#cosmosauthzv1beta1grants) — retrieves the list of `Authorization`, granted to the grantee by the granter.
+  * [`/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}`](/rpc-service/chains/chains-api/sei/#cosmosfeegrantv1beta1allowancegrantergrantee) — retrieves the fee granted to the grantee by the granter.
+  * [`/cosmos/feegrant/v1beta1/allowances/{grantee}`](/rpc-service/chains/chains-api/sei/#cosmosfeegrantv1beta1allowancesgrantee) — retrieves all the grants for an address.
 
 **Services**:
 
-  * [`/cosmos/base/tendermint/v1beta1/blocks/latest`](/rpc-service/chains/chains-api/zetachain/#cosmosbasetendermintv1beta1blockslatest) — retrieves the latest block.
-  * [`/cosmos/base/tendermint/v1beta1/blocks/{height}`](/rpc-service/chains/chains-api/zetachain/#cosmosbasetendermintv1beta1blocksheight) — retrieves the block for a given height.
-  * [`/cosmos/base/tendermint/v1beta1/validatorsets/latest`](/rpc-service/chains/chains-api/zetachain/#cosmosbasetendermintv1beta1validatorsetslatest) — retrieves the latest validator-set.
-  * [`/cosmos/base/tendermint/v1beta1/validatorsets/{height}`](/rpc-service/chains/chains-api/zetachain/#cosmosbasetendermintv1beta1validatorsetsheight) — retrieves the validator-set at a given height.
-  * [`/cosmos/tx/v1beta1/simulate`](/rpc-service/chains/chains-api/zetachain/#cosmostxv1beta1simulate) — simulates executing a transaction to estimate gas usage.
-  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/zetachain/#cosmostxv1beta1txs) — retrieves transactions by event.
-  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/zetachain/#cosmostxv1beta1txs-1) — broadcasts a transaction.
-  * [`/cosmos/tx/v1beta1/txs/{hash}`](/rpc-service/chains/chains-api/zetachain/#cosmostxv1beta1txshash) — retrieves a transaction by hash.
+  * [`/cosmos/base/tendermint/v1beta1/blocks/latest`](/rpc-service/chains/chains-api/sei/#cosmosbasetendermintv1beta1blockslatest) — retrieves the latest block.
+  * [`/cosmos/base/tendermint/v1beta1/blocks/{height}`](/rpc-service/chains/chains-api/sei/#cosmosbasetendermintv1beta1blocksheight) — retrieves the block for a given height.
+  * [`/cosmos/base/tendermint/v1beta1/node_info`](/rpc-service/chains/chains-api/sei/#cosmosbasetendermintv1beta1node_info) — retrieves the current node info.
+  * [`/cosmos/base/tendermint/v1beta1/syncing`](/rpc-service/chains/chains-api/sei/#cosmosbasetendermintv1beta1syncing) — retrieves a node syncing state.
+  * [`/cosmos/base/tendermint/v1beta1/validatorsets/latest`](/rpc-service/chains/chains-api/sei/#cosmosbasetendermintv1beta1validatorsetslatest) — retrieves the latest validator-set.
+  * [`/cosmos/base/tendermint/v1beta1/validatorsets/{height}`](/rpc-service/chains/chains-api/sei/#cosmosbasetendermintv1beta1validatorsetsheight) — retrieves the validator-set at a given height.
+  * [`/cosmos/tx/v1beta1/simulate`](/rpc-service/chains/chains-api/sei/#cosmostxv1beta1simulate) — simulates executing a transaction to estimate gas usage.
+  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/sei/#cosmostxv1beta1txs) — retrieves transactions by event.
+  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/sei/#cosmostxv1beta1txs-1) — broadcasts a transaction.
+  * [`/cosmos/tx/v1beta1/txs/{hash}`](/rpc-service/chains/chains-api/sei/#cosmostxv1beta1txshash) — retrieves a transaction by hash.
 
 ---
 
@@ -3721,7 +2313,7 @@ Node status.
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/node_info
+curl https://rpc.ankr.com/http/sei_cosmos/node_info
 ```
 
 #### Response example
@@ -3806,7 +2398,7 @@ Tx broadcasting result.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/zetachain_athens_testnet/txs
+curl -X POST https://rpc.ankr.com/http/sei_cosmos/txs
 ```
 
 #### Response example
@@ -3853,6 +2445,7 @@ curl -X POST https://rpc.ankr.com/http/zetachain_athens_testnet/txs
 #### Parameters
 
   * `delegation` (body): delegates an amount of liquid coins to a validator.
+
 ```json
 {
   "base_req": {
@@ -3894,7 +2487,7 @@ Submission result codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/zetachain_athens_testnet/staking/delegators/{delegatorAddr}/delegations
+curl -X POST https://rpc.ankr.com/http/sei_cosmos/staking/delegators/{delegatorAddr}/delegations
 ```
 
 #### Response example
@@ -3963,6 +2556,7 @@ curl -X POST https://rpc.ankr.com/http/zetachain_athens_testnet/staking/delegato
 ```
 
   * `delegatorAddr` (string; required): a Bech32 AccAddress of a delegator.
+
 ```
 cosmos16xyempempp92x9hyzz9wrgf94r6j9h5f06pxxv
 ```
@@ -3979,7 +2573,7 @@ Result codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/zetachain_athens_testnet/staking/delegators/{delegatorAddr}/unbonding_delegations
+curl -X POST https://rpc.ankr.com/http/sei_cosmos/staking/delegators/{delegatorAddr}/unbonding_delegations
 ```
 
 #### Response example
@@ -4037,7 +2631,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/auth/v1beta1/accounts
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/auth/v1beta1/accounts
 ```
 
 #### Response example
@@ -4077,7 +2671,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/auth/v1beta1/accounts/{address}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/auth/v1beta1/accounts/{address}
 ```
 
 #### Response example
@@ -4111,7 +2705,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/auth/v1beta1/params
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/auth/v1beta1/params
 ```
 
 #### Request example
@@ -4153,7 +2747,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/bank/v1beta1/balances/{address}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/balances/{address}
 ```
 
 #### Response example
@@ -4194,7 +2788,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/bank/v1beta1/balances/{address}/{denom}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/balances/{address}/{denom}
 ```
 
 #### Response example
@@ -4204,6 +2798,54 @@ curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/bank/v1beta1/bala
   "balance": {
     "denom": "string",
     "amount": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/bank/v1beta1/denom_owners/{denom}`
+
+> Retrieves all account addresses that own a particular token denomination.
+
+#### Parameters
+
+  * `denom` (string; path; required): defines the coin denomination to query all account holders for.
+  * `pagination.key` (string; byte; query): key is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of the pagination parameters should be set — `pagination.key` or `pagination.offset`.
+  * `pagination.offset` (string; uint64; query): offset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of the pagination parameters should be set — `pagination.key` or `pagination.offset`.
+  * `pagination.limit` (string; uint64; query): limit is the total number of results to be returned in the result page. If left empty, it will default to a value to be set by each app.
+  * `pagination.count_total` (boolean; query): count_total is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
+  * `pagination.reverse` (boolean; query): reverse is set to true if results are to be returned in the descending order.
+
+#### Returns
+
+Response codes:
+
+  * 200 — success.
+  * default — unexpected error.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/denom_owners/{denom}
+```
+
+#### Response example
+
+```json
+{
+  "denom_owners": [
+    {
+      "address": "string",
+      "balance": {
+        "denom": "string",
+        "amount": "string"
+      }
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
   }
 }
 ```
@@ -4232,7 +2874,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/bank/v1beta1/denoms_metadata
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/denoms_metadata
 ```
 
 #### Response example
@@ -4286,7 +2928,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/bank/v1beta1/denoms_metadata/{denom}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/denoms_metadata/{denom}
 ```
 
 #### Response example
@@ -4334,7 +2976,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet//cosmos/bank/v1beta1/params
+curl https://rpc.ankr.com/http/sei_cosmos//cosmos/bank/v1beta1/params
 ```
 
 #### Response example
@@ -4377,7 +3019,7 @@ Code responses:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/bank/v1beta1/supply
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/supply
 ```
 
 #### Response example
@@ -4393,6 +3035,40 @@ curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/bank/v1beta1/supp
   "pagination": {
     "next_key": "string",
     "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/bank/v1beta1/supply/{denom}`
+
+> Retrieves the supply of a single coin.
+
+#### Parameters
+
+  * `denom` (string; path; required): the coin denom to query balances for.
+
+#### Returns
+
+Code responses:
+
+  * 200 — success.
+  * default — unexpected error.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/supply/{denom}
+```
+
+#### Response example
+
+```json
+{
+  "amount": {
+    "denom": "string",
+    "amount": "string"
   }
 }
 ```
@@ -4417,7 +3093,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/community_pool
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/community_pool
 ```
 
 #### Response example
@@ -4453,7 +3129,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
 ```
 
 #### Response example
@@ -4501,7 +3177,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
 ```
 
 #### Response example
@@ -4537,7 +3213,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
 ```
 
 #### Response example
@@ -4570,7 +3246,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
 ```
 
 #### Response example
@@ -4601,7 +3277,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/params
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/params
 ```
 
 #### Response example
@@ -4637,7 +3313,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/commission
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/commission
 ```
 
 #### Response example
@@ -4675,7 +3351,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
 ```
 
 #### Response example
@@ -4720,7 +3396,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/slashes
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/slashes
 ```
 
 #### Response example
@@ -4764,7 +3440,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/evidence/v1beta1/evidence
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/evidence/v1beta1/evidence
 ```
 
 #### Response example
@@ -4804,7 +3480,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/evidence/v1beta1/evidence/{evidence_hash}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/evidence/v1beta1/evidence/{evidence_hash}
 ```
 
 #### Response example
@@ -4838,7 +3514,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/gov/v1beta1/params/{params_type}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/params/{params_type}
 ```
 
 #### Response example
@@ -4898,7 +3574,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/gov/v1beta1/proposals
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals
 ```
 
 #### Response example
@@ -4958,7 +3634,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}
 ```
 
 #### Response example
@@ -5017,7 +3693,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
 ```
 
 #### Response example
@@ -5064,7 +3740,8 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
+
 ```
 
 #### Response example
@@ -5104,7 +3781,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/tally
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/tally
 ```
 
 #### Response example
@@ -5145,7 +3822,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/votes
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/votes
 ```
 
 #### Response example
@@ -5193,7 +3870,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
 ```
 
 #### Response example
@@ -5234,7 +3911,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/mint/v1beta1/annual_provisions
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/mint/v1beta1/annual_provisions
 ```
 
 ### Response example
@@ -5265,7 +3942,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/mint/v1beta1/inflation
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/mint/v1beta1/inflation
 ```
 
 #### Response example
@@ -5296,7 +3973,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/mint/v1beta1/params
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/mint/v1beta1/params
 ```
 
 #### Response example
@@ -5310,6 +3987,42 @@ curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/mint/v1beta1/para
     "inflation_min": "string",
     "goal_bonded": "string",
     "blocks_per_year": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/params/v1beta1/params`
+
+> Retrieves the total set of minting parameters.
+
+#### Parameters
+
+  * `subspace` (string; query): defines the module to query the parameter for.
+  * `key` (string; query): defines the key of the parameter in the subspace.
+
+#### Returns
+
+Response codes:
+
+  * 200 — success.
+  * default — unexpected error.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/params/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "param": {
+    "subspace": "string",
+    "key": "string",
+    "value": "string"
   }
 }
 ```
@@ -5334,7 +4047,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/slashing/v1beta1/params
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/slashing/v1beta1/params
 ```
 
 #### Response example
@@ -5375,7 +4088,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/slashing/v1beta1/signing_infos
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/slashing/v1beta1/signing_infos
 ```
 
 #### Response example
@@ -5419,7 +4132,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/slashing/v1beta1/signing_infos/{cons_address}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/slashing/v1beta1/signing_infos/{cons_address}
 ```
 
 #### Response example
@@ -5462,7 +4175,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/delegations/{delegator_addr}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegations/{delegator_addr}
 ```
 
 #### Response example
@@ -5516,7 +4229,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
 ```
 
 #### Response example
@@ -5583,7 +4296,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
 ```
 
 #### Reponse example
@@ -5636,7 +4349,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
 ```
 
 #### Response example
@@ -5702,7 +4415,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
 ```
 
 #### Response example
@@ -5761,7 +4474,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/historical_info/{height}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/historical_info/{height}
 ```
 
 #### Response example
@@ -5849,7 +4562,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/params
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/params
 ```
 
 #### Response example
@@ -5886,7 +4599,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/pool
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/pool
 ```
 
 #### Response example
@@ -5925,7 +4638,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/validators
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators
 ```
 
 #### Response example
@@ -5990,7 +4703,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/validators/{validator_addr}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}
 ```
 
 #### Response example
@@ -6054,7 +4767,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations
 ```
 
 #### Response example
@@ -6102,7 +4815,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
 ```
 
 #### Response example
@@ -6144,7 +4857,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
 ```
 
 #### Response example
@@ -6192,7 +4905,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
 ```
 
 #### Response example
@@ -6240,7 +4953,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/upgrade/v1beta1/applied_plan/{name}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/applied_plan/{name}
 ```
 
 #### Response example
@@ -6271,7 +4984,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/upgrade/v1beta1/current_plan
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/current_plan
 ```
 
 #### Response example
@@ -6288,6 +5001,42 @@ curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/upgrade/v1beta1/c
       "value": "string"
     }
   }
+}
+```
+
+---
+
+### `/cosmos/upgrade/v1beta1/module_versions`
+
+> Retrieves the list of module versions from state.
+
+#### Parameters
+
+  * `module_name` (string; query): a field to query a specific module consensus version from state. Leaving this empty will fetch the full list of module versions from state.
+
+#### Returns
+
+Response codes:
+
+  * 200 — success.
+  * default — unexpected error.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/module_versions
+```
+
+#### Response example
+
+```json
+{
+  "module_versions": [
+    {
+      "name": "string",
+      "version": "string"
+    }
+  ]
 }
 ```
 
@@ -6313,7 +5062,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
 ```
 
 #### Response example
@@ -6351,7 +5100,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/authz/v1beta1/grants
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/authz/v1beta1/grants
 ```
 
 #### Response example
@@ -6395,7 +5144,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
 ```
 
 #### Response example
@@ -6438,7 +5187,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/feegrant/v1beta1/allowances/{grantee}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/feegrant/v1beta1/allowances/{grantee}
 ```
 
 #### Response example
@@ -6484,7 +5233,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/base/tendermint/v1beta1/blocks/latest
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/latest
 ```
 
 #### Response example
@@ -6702,7 +5451,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/base/tendermint/v1beta1/blocks/{height}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
 
 #### Response example
@@ -6900,6 +5649,102 @@ curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/base/tendermint/v
 }
 ```
 
+---
+
+### `/cosmos/base/tendermint/v1beta1/blocks/node_info`
+
+> Retrieves the current node info.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Response codes:
+
+  * 200 — success.
+  * default — unexpected error.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/node_info
+```
+
+#### Response example
+
+```json
+{
+  "default_node_info": {
+    "protocol_version": {
+      "p2p": "string",
+      "block": "string",
+      "app": "string"
+    },
+    "default_node_id": "string",
+    "listen_addr": "string",
+    "network": "string",
+    "version": "string",
+    "channels": "string",
+    "moniker": "string",
+    "other": {
+      "tx_index": "string",
+      "rpc_address": "string"
+    }
+  },
+  "application_version": {
+    "name": "string",
+    "app_name": "string",
+    "version": "string",
+    "git_commit": "string",
+    "build_tags": "string",
+    "go_version": "string",
+    "build_deps": [
+      {
+        "path": "string",
+        "version": "string",
+        "sum": "string"
+      }
+    ],
+    "cosmos_sdk_version": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/base/tendermint/v1beta1/blocks/syncing`
+
+> Retrieves node syncing state.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Response codes:
+
+  * 200 — success.
+  * default — unexpected error.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/syncing
+```
+
+#### Response example
+
+```json
+{
+  "syncing": true
+}
+```
+
+---
+
 ### `/cosmos/base/tendermint/v1beta1/validatorsets/latest`
 
 > Retrieves the latest validator-set.
@@ -6922,7 +5767,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/base/tendermint/v1beta1/validatorsets/latest
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/validatorsets/latest
 ```
 
 #### Response example
@@ -6973,7 +5818,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/base/tendermint/v1beta1/validatorsets/{height}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/validatorsets/{height}
 ```
 
 #### Response example
@@ -7087,7 +5932,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/tx/v1beta1/simulate
+curl -X POST https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/simulate
 ```
 
 #### Response example
@@ -7147,7 +5992,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/tx/v1beta1/txs
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/txs
 ```
 
 #### Response example
@@ -7288,7 +6133,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/tx/v1beta1/txs
+curl -X POST https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/txs
 ```
 
 #### Response example
@@ -7351,7 +6196,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/zetachain_athens_testnet/cosmos/tx/v1beta1/txs/{hash}
+curl https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/txs/{hash}
 ```
 
 #### Response example
