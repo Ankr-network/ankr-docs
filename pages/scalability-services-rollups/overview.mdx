@@ -1,0 +1,72 @@
+# Rollups as a service (RAAS)
+
+## What is RAAS?
+Rollups as a service (RAAS) is a scalability service offered by Ankr to large and small businesses.
+
+RAAS allows you to have a turnkey scalability solution easily implemented into your business processes.
+Great reputation of the leading Web3 infrastructure company guarantees that quality and involvement of Ankr engineers collecting initial parameters, setting a RAAS up, and supporting streamlining it into your company's daily routine.
+
+## What are Rollups?
+Rollups are a Layer 2 scaling solution that increases transaction output by bundling multiple transactions into batches, which are processed off-chain.
+After that, the transaction data is recorded on the main chain with data compression techniques that help lower cost and increase speed.
+Assets are always held in an on-chain smart contract.
+
+This approach reduces congestion and computation load on the base or main blockchain, thereby increasing transaction throughput.
+
+The first reason for the growing adoption of rollups is the increasing popularity of crypto and blockchain, which has lead to many popular blockchains meeting their speed limits.
+The rising crypto demand could lead to network congestion and expensive transaction costs.
+To address this, scaling solutions are being developed and tested, among them, rollups.
+
+The second reason for their adoption is the use cases of many legal and baning companies that require privacy due to various business and legal reasons.
+An example can be a bank that wants to be ready and compliant for ledger audits, but doesn't want to reveal any sensitive information, such as the parties involved in the banking transactions.
+
+## Types of rollups
+There are two main types of rollups:
+* Optimistic rollups — rollups that assume transactions are valid by default and only runs computation, via a fraud proof, in the event of a challenge.
+* Zero-knowledge rollups (zkRollups) — rolups that run computation off-chain and submits a validity proof to the chain.
+
+### Optimistic rollups
+Optimistic rollups are named for the "optimistic" approach to executing off-chain transactions — all layer 2 transactions are valid unless challenged and proven wrong by an honest network validator.
+
+They use a "fraud-proof" mechanism to detect invalid transactions.
+There is a "challenge" period during which someone can submit fraud proof to challenge a set of approved transactions.
+
+If the proof is valid, it nullifies the faulty transaction and re-executes it to update the rollup's state.
+Also, malicious validators are penalized for approving wrong transactions.
+
+However, if the rollup batch is unchallenged during the dispute period, the transaction data is successfully added to the Ethereum Mainnet.
+
+For more information, read ["Optimistic rollups"](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/) on the Ethereum docs.
+
+### Zero-knowledge rollups
+Zero-knowledge rollups (zkRollups) are named for the Zero-knowledge Proofs mechanism.
+Zero-knowledge Proofs (ZKP) is a method for one party to cryptographically prove to another that they possess knowledge about a piece of information without revealing the actual underlying information.
+Validators on zkRollups prove a transaction’s authenticity without revealing any transaction details.
+
+Unlike optimistic rollups, zkRollups assume all transactions are false until proven valid through ZKP.
+zkRollups rely on validity proofs to determine if a transaction is true or not, having the verifier ask the prover to perform a series of actions that can only be performed accurately if the prover knows the underlying information.
+If the prover is only guessing as to the result of these actions, then they will eventually be proven wrong by the verifier’s test with a high degree of probability.
+ZkRollup nodes have to provide validity proofs for all transactions to ensure that the transaction data on the main chain is valid.
+
+For more information on how zkRollups work and ZKP types, read ["Zero-knowledge rollups"](https://ethereum.org/en/developers/docs/scaling/zk-rollups/) and ["Zero-Knowledge Proofs"](https://blog.chain.link/what-is-a-zero-knowledge-proof-zkp/).
+
+### Which is better: optimistic or zkRollups?
+By many, zkRollups are considered safer and faster.
+
+The primary benefit of zero-knowledge proofs in zkRollups is the ability to leverage privacy-preserving datasets within transparent systems such as public blockchain networks.
+
+The challenge period of optimistic rollups, that zkRollups do not have, increases the time taken for transactions to be finalized.
+The finality of chains with optimistic rollups is also lower than that of zkRollups.
+Finality is the measure of how long a user has to wait for a reasonable guarantee that the transactions will not be reversed or altered.
+In optimistic rollups, all transaction data must be posted on-chain to finalize transactions, while in zkRollups only validity proofs are required on-chain.
+
+## Do I need a rollup or a sidechain?
+A sidechain is an independent EVM-compatible blockchain which runs in parallel to Mainnet.
+Sidechains are compatible with he Mainnet via two-way bridges, and run under their own chosen rules of consensus, and block parameters.
+
+Rollups are a Layer 2 scaling solution on-top of a blockchain that increases transaction output by bundling multiple transactions into batches, which are processed off-chain.
+
+You would need a sidechain if you need own blockchain network with custom rules and parameters.
+And you would need a rollup if you need hide sensitive transaction data for privacy reason and constantly process big batches of transactions.
+
+By the way, zkRollups are considerably safer than pure off-chain scaling solutions, such as sidechains, which are responsible for their security properties.
