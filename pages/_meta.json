@@ -21,15 +21,13 @@
   "basic-tutorials": "Basic Tutorials",
   "smart-contract-tutorials": "Smart Contract Development",
   "advanced-tutorials": "Advanced Tutorials",
-  "-- Sphere": {
+  "-- Ankr Scalability Services": {
     "type": "separator",
-    "title": "Sphere"
+    "title": "Ankr Scalability Services"
   },
-  "sphere-introduction": "Introduction",
-  "sphere-rollups": "Rollups as a Service",
-  "sphere-sidechains": "Sidechains as a Service",
-  "sphere-marketplace": "Developer Marketplace",
-  "sphere-troubleshooting": "Troubleshooting",
+  "scalability-services-introduction": "Introduction",
+  "scalability-services-rollups": "Rollups as a Service",
+  "scalability-services-sidechains": "Sidechains as a Service",
   "-- Staking": {
     "type": "separator",
     "title": "Staking With Ankr"
