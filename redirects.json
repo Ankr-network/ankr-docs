@@ -1833,186 +1833,186 @@
   },
   {
     "from": "docs/app-chains/overview/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/enterprise-packages/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/rpc-endpoints/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/validator-nodes/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/testnet-faucet/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/block-explorer/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/relay-hub/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/staking-ui/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/advanced-api/overview/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/advanced-api/nft-methods/index.html",
-    "to": "/docs/rpc-service/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/advanced-api/query-methods/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/components/advanced-api/token-methods/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/use-cases/web3-gaming/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/use-cases/finance/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/exchange-readiness-program/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/start-with-app-chains/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/app-chains/faq/index.html",
-    "to": "/docs/scalability-services-introduction/faq/"
+    "to": "/docs/scaling-services-introduction/faq/"
   },
   {
     "from": "docs/chainscanner/overview/index.html",
-    "to": "/docs/rpc-service/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/chainscanner/chain-data/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/chainscanner/block-explorer/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/chainscanner/staking/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/chainscanner/bridge/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/chainscanner/validator-enrollment-hub/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/chainscanner/governance-portal/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/chainscanner/dev-tools/index.html",
-    "to": "/docs/scalability-services-introduction/overview/"
+    "to": "/docs/scaling-services-introduction/overview/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/overview/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/overview/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/overview/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/architecture/overview/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/architecture/overview/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/architecture/overview/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/architecture/circulation-model-native-bridge/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/architecture/circulation-model-native-bridge/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/architecture/circulation-model-native-bridge/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/architecture/native-bridge/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/architecture/native-bridge/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/architecture/native-bridge/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/architecture/fast-finality/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/architecture/fast-finality/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/architecture/fast-finality/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/architecture/system-smart-contracts/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/architecture/system-smart-contracts/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/architecture/system-smart-contracts/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/architecture/governance/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/architecture/governance/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/architecture/governance/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/architecture/runtime-upgrades/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/architecture/runtime-upgrades/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/architecture/runtime-upgrades/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/security/blockchain-and-evm-security/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/security/blockchain-and-evm-security/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/security/blockchain-and-evm-security/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/security/system-smart-contracts/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/security/system-smart-contracts/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/security/system-smart-contracts/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/security/on-chain-security/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/security/on-chain-security/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/security/on-chain-security/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/security/off-chain-security/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/security/off-chain-security/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/security/off-chain-security/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/how-to-launch/configure-genesis-file/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/how-to-launch/configure-genesis-file/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/how-to-launch/configure-genesis-file/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/how-to-launch/launch-bnb-sidechain/"
   },
   {
     "from": "docs/affiliated-chains/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc20-token/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/how-to-launch/deploy-erc20-token/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/how-to-launch/deploy-erc20-token/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/how-to-launch/deploy-erc721-token/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/how-to-launch/deploy-erc721-token/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/how-to-launch/deploy-erc721-token/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/staking/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/staking/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/staking/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/demo/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/demo/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/demo/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/faq/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/faq/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/faq/"
   },
   {
     "from": "docs/affiliated-chains/bnb-sidechain/glossary/index.html",
-    "to": "/docs/scalability-services-sidechains/bnb-sidechain/glossary/"
+    "to": "/docs/scaling-services-sidechains/bnb-sidechain/glossary/"
   },
   {
     "from": "docs/affiliated-chains/polygon-supernets/overview/index.html",
-    "to": "/docs/scalability-services-sidechains/polygon-supernets/overview/"
+    "to": "/docs/scaling-services-sidechains/polygon-supernets/overview/"
   }
 ]
