@@ -4833,8 +4833,10 @@ Official quick links: [Website](https://scroll.io/), [Docs](https://guide.scroll
 
 ### Networks
 
-  * Alpha Testnet (`HTTPS` and `WSS`)
-  * Sepolia Testnet (`HTTPS` and `WSS`)
+  * Mainnet (`HTTPS` and `WSS`)
+  * Testnet:
+    * Alpha (`HTTPS` and `WSS`)
+    * Sepolia (`HTTPS` and `WSS`)
 
 The Alpha Testnet consists of Ethereum's Goerli Testnet and the Scroll Alpha test network. Goerli is an Ethereum test network with PoS-based consensus, while Scroll Alpha is a zero-knowledge rollup testnet deployed on top of the former.
 
@@ -4877,7 +4879,7 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scroll_testnet \
+curl -X POST https://rpc.ankr.com/scroll \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -4899,7 +4901,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/scroll_testnet"  // url string
+    const url = "https://rpc.ankr.com/scroll"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -4922,7 +4924,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/scroll_testnet'  // url string
+const url = 'https://rpc.ankr.com/scroll'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -4941,7 +4943,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/scroll_testnet'  # url string
+    url = 'https://rpc.ankr.com/scroll'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -4955,7 +4957,7 @@ def test_block_number(self):
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x215d8b"
+    "result": "0x1965e"
 }
 ```
 
