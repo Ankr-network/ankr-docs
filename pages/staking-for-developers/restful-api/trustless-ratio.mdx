@@ -102,12 +102,15 @@ You can obtain the parts of the [ratio formula](#formula):
 * MEVaccount balance: `web3.eth.get_balance(account = '0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08' , block_identifier= block_number)`.
 
 ### Flow
+<Callout type="tip">
+    Right-click on the diagram and open it in a new tab to see in a bigger size)
+</Callout>
 The flow is as follows:
 <img src="/docs/staking/liquid-staking/eth/trustless-ratio-eth.png" alt="ETH flow" class="responsive-pic" width="900" />
 
 ### Smart Contracts
 The smart contracts that are shown in the diagram are:
-* [mev_balance](https://etherscan.io/address/0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) (0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) — recipient of MEV and tips.
+* [mev_balance](https://etherscan.io/address/0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) (0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) — MEV & tips collector.
 * [stakingPool](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) (0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) — ETH staking pool.
 * [withdrawalPool](https://etherscan.io/address/0x67428dE0680494E448F1A19d33C2022a51719348) (0x67428dE0680494E448F1A19d33C2022a51719348) — withdrawal address for Ankr validators.
 * [treasury](https://etherscan.io/address/0x67428dE0680494E448F1A19d33C2022a51719348) (0x67428dE0680494E448F1A19d33C2022a51719348) — storage of Ankr fees.
