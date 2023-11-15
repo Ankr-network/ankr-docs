@@ -4,7 +4,6 @@ ETH Liquid Staking lets the user stake their funds through the corresponding sma
 
 The following section explains staking requirements, fees, rewards, validators, smart contracts and function calls to interact with these smart contracts.
 
-
 ## Requirements
 
 The requirements when staking are:
@@ -20,7 +19,6 @@ Ankr takes a 10% technical service fee from the staking reward.
 
 The user must also count in the gas price for outgoing transactions.
 
-
 ## Rewards
 User's ankrETH grows steadily in value to ETH over time, but never changes in number. The formula can be described as `total share supply / (total stake amount + rewards)`.
 
@@ -31,11 +29,15 @@ You can get the current APY from the JSON returned by https://api.staking.ankr.c
 ## Validators
 Ankr has roughly [1700 validators on Ethereum](https://beaconcha.in/validators/initiated-deposits?q=0x4069D8A3dE3A72EcA86CA5e0a4B94619085E7362). 
 
+## Trustless ratio
+Read [Trustless ratio](/staking-for-developers/restful-api/trustless-ratio/#ethereum) to understand how we made our Ethereum Liquid Staking ratio transparent.
 
 ## Smart contracts
 Smart contracts involved in ETH Liquid Staking are:
 * [ethereumPool](https://etherscan.io/address/0x84db6eE82b7Cf3b47E8F19270abdE5718B936670) — contract with the staking logic, also accumulates stakes and distributes them across the validators.
 * [ankrETH](https://etherscan.io/token/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb) — contract that implements the ERC-20-like token ankrETH. ankrETH doesn't grow in number, but grows in value.
+* [mev_balance](https://etherscan.io/address/0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) (0x90B0c836a19A74195d45Fad2d2D3895a7a3eab08) — receives all MEV & tips.
+* [withdrawalPool](https://etherscan.io/address/0x67428dE0680494E448F1A19d33C2022a51719348) (0x67428dE0680494E448F1A19d33C2022a51719348) — withdrawal address for Ankr validators; receives all unstakes and attestation rewards.
 
 Smart contract code can be viewed by following the links and selecting the *Contract* tab.
 
