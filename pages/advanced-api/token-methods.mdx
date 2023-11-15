@@ -44,8 +44,8 @@ Build your request using the parameters below.
 * `params` (object): the data object containing request body parameters:
 
   * `blockchain` (string): a chain or a combination of chains to query:
-    * Single chain: `arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`.
-    * Chains combination: `[arbitrum, avalanche, base, bsc, eth, fantom, flare, gnosis, optimism, polygon, polygon_zkevm, rollux, syscoin, avalanche_fuji, eth_goerli, optimism_testnet, polygon_mumbai]`.
+    * Single chain: `arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `scroll`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`.
+    * Chains combination: `[arbitrum, avalanche, base, bsc, eth, fantom, flare, gnosis, linea, optimism, polygon, polygon_zkevm, rollux, scroll, syscoin, avalanche_fuji, eth_goerli, optimism_testnet, polygon_mumbai]`.
     * All chains: leave the value empty to query all the chains available.
   * `nativeFirst` (boolean): sorting order. Native network token first (true) or not (false).
   * `onlyWhitelisted` (boolean; default: `true`): only show tokens listed on CoinGekko (`true`) or all the tokens (`false`). Default — `true`.
@@ -239,7 +239,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `scroll`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
 
 <Tabs
   items={[
@@ -427,7 +427,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `scroll`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
   * `contractAddress` (string): an address of the token contract; supports the Ethereum Name Service (ENS). If not provided, returns the native coin price of the blockchain specified.
 
 <Tabs
@@ -540,7 +540,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
   * `contractAddress` (string): an address of the token contract; supports the Ethereum Name Service (ENS).
   * `pageSize` (int32): a number of results you'd like to get (max: `10000`; default: `10000`).
   * `pageToken` (string): a current page token provided at the end of the response body; can be referenced in the request to fetch the next page.
@@ -685,7 +685,7 @@ Build your request using the parameters below.
 * `method` (string; required): a method used for the request.
 * `params` (object): the data object containing request body parameters:
 
-  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
+  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `scroll`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`).
   * `contractAddress` (string): an address of the token contract; supports the Ethereum Name Service (ENS).
   * `pageSize` (string): a number of results you'd like to get (max: `10000`; default: `10000`).
   * `pageToken` (string): a current page token provided at the end of the response body; can be referenced in the request to fetch the next page.
@@ -874,8 +874,8 @@ Build your request using the parameters below.
 
   * `address` (array of strings; required): an address or a list of addresses to search for token transfers.
   * `blockchain` (string): a chain or a combination of chains to query:
-    * Single chain: `arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`.
-    * Chains combination: `[arbitrum, avalanche, base, bsc, eth, fantom, flare, gnosis, optimism, polygon, polygon_zkevm, rollux, syscoin, avalanche_fuji, eth_goerli, optimism_testnet, polygon_mumbai]`.
+    * Single chain: `arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `scroll`, `syscoin`, `avalanche_fuji`, `eth_goerli`, `optimism_testnet`, `polygon_mumbai`.
+    * Chains combination: `[arbitrum, avalanche, base, bsc, eth, fantom, flare, gnosis, linea, optimism, polygon, polygon_zkevm, rollux, scroll, syscoin, avalanche_fuji, eth_goerli, optimism_testnet, polygon_mumbai]`.
     * All chains: leave the value empty to query all the chains available.
   * `descOrder` (boolean): choose data order, either descending (if `true`) or ascending (if `false`).
   * `fromBlock` (integer): narrow your search indicating the block number to start from (inclusive; `>= 0`). Supported value formats: hex, decimal, "earliest", "latest".
