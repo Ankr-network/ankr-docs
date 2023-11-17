@@ -1,19 +1,18 @@
 import { Callout } from "components";
 
-# Gnosis
-<br/>
+# Linea
 
-<img src="/docs/build/chains-list/gnosis.png" class="responsive-pic" width="800" />
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
 
-> Gnosis API is available on [RPC Service](https://www.ankr.com/rpc/gnosis).
+> Linea API is available on [RPC Service](https://www.ankr.com/rpc/linea).
 
-*Gnosis* (formerly the xDai Chain) provides stability, scalability, and an extendable beacon chain framework.
+*Linea* is a network that scales the experience of Ethereum. Its out-of-the-box compatibility with the Ethereum Virtual Machine enables the deployment of already-existing applications, as well as the creation of new ones that would be too costly on Mainnet. It also enables the community to use those dapps, at a fraction of the cost, and at multiples the speed of Mainnet.
 
-Development on Gnosis is straightforward for Ethereum developers as it is an EVM compatible chain. Smart contracts can be written and deployed in the same way as for Ethereum just by setting a different RPC endpoint.
+It does this by leveraging quantum-resistant lattice-based cryptography to create zero-knowledge proofs that include every transaction performed on the network, and rolling them up to Mainnet. This ensures that every transaction is recorded to the Ethereum ledger while dividing the cost of that security by magnitudes.
 
-Any contract that works on the Ethereum mainnet can be redeployed to the Gnosis chain. Transaction costs are minimized, and all fees and transactions are paid with a single token (xDai). Many tools supporting Ethereum development are compatible with Gnosis.
-
-In order for your Web3 application to interact with Gnosis — either by reading blockchain data or sending transactions to the network — it must connect to a Gnosis node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with Linea — either by reading blockchain data or sending transactions to the network — it must connect to a Linea node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
@@ -22,35 +21,34 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ## Methods supported
 <br/>
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/gnosis/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/gnosis/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/gnosis/#net_version) — returns the current network ID.
-  * [`net_listening`](/rpc-service/chains/chains-api/gnosis/#net_listening) — returns true if client is actively listening for network connections.
-  * [`eth_protocolVersion`](/rpc-service/chains/chains-api/gnosis/#eth_protocolversion) — returns the current protocol version.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/gnosis/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/gnosis/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/gnosis/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/gnosis/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/gnosis/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/gnosis/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/gnosis/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/gnosis/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/gnosis/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/gnosis/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/gnosis/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/gnosis/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/gnosis/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/gnosis/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/gnosis/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/gnosis/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/gnosis/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/gnosis/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/linea/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/linea/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/linea/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/linea/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/linea/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/linea/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/linea/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/linea/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/linea/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/linea/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/linea/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/linea/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/linea/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/linea/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/linea/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/linea/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/linea/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/linea/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/linea/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/linea/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/linea/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/linea/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/linea/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/linea/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/linea/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/linea/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/linea/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/linea/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -62,7 +60,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -74,7 +72,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -89,7 +87,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "Nethermind/v1.16.1+644fe89f/linux-x64/dotnet7.0.2",
+    "result": "Geth/v1.13.3-stable-0d45d72d/linux-amd64/go1.21.3",
     "id": 1
 }
 ```
@@ -104,7 +102,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -118,7 +116,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -148,7 +146,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -160,7 +158,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -176,7 +174,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "100"
+    "result": "59144"
 }
 ```
 
@@ -190,7 +188,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -202,7 +200,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -224,48 +222,6 @@ curl -X POST https://rpc.ankr.com/gnosis \
 
 ---
 
-## `eth_protocolVersion`
-
-> Returns the current Ethereum protocol version.
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-<br/>
-
-  * `<string>`: the current Ethereum protocol version.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/gnosis \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_protocolVersion",
-      "params": [],
-      "id": 1
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": "0x42",
-    "id": 1
-}
-```
-
----
-
 ## `eth_syncing`
 
 > Returns an object with data about the sync status or false.
@@ -274,7 +230,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -289,7 +245,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -333,7 +289,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -345,7 +301,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -361,7 +317,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xad731380"
+    "result": "0xd023b107"
 }
 ```
 
@@ -375,7 +331,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -387,7 +343,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -419,7 +375,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required): None.
 
@@ -431,7 +387,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -447,7 +403,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x19268eb"
+    "result": "0xd107f"
 }
 ```
 
@@ -461,7 +417,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -481,12 +437,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBalance",
-      "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"],
+      "params": ["0x8B926f2AA1E2F6a212C0566e32Ae4FD288752450", "latest"],
       "id": 1
     }'
 ```
@@ -497,7 +453,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x2c85c3ecfcb5fb"
+    "result": "0x28eabd2c993994"
 }
 ```
 
@@ -511,7 +467,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -533,12 +489,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getStorageAt",
-      "params": ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"],
+      "params": ["0x8B926f2AA1E2F6a212C0566e32Ae4FD288752450", "0x0", "latest"],
       "id": 1
     }'
 ```
@@ -563,7 +519,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -584,7 +540,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -600,7 +556,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x9"
+    "result": "0xaeb"
 }
 ```
 
@@ -614,7 +570,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -628,12 +584,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByHash",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b"],
+      "params": ["0xd73fad747d2f103fe14fbe15a6ff282f1df706d9d413c8242f0e9c5359398ae9"],
       "id": 1
     }'
 ```
@@ -658,9 +614,9 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -677,12 +633,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x36c1d18"],
+      "params": ["latest"],
       "id": 1
     }'
 ```
@@ -693,7 +649,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xb6"
+    "result": "0x80"
 }
 ```
 
@@ -707,9 +663,9 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
     1. `<string>` (data, 32 bytes): a block's hash.
 
@@ -721,12 +677,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b"],
+      "params": ["0xd73fad747d2f103fe14fbe15a6ff282f1df706d9d413c8242f0e9c5359398ae9"],
       "id": 1
     }'
 ```
@@ -751,9 +707,9 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
     1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
         * `earliest`: the lowest numbered block available on the client.
@@ -770,12 +726,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockNumber",
-      "params": ["0xc5043f"],
+      "params": ["latest"],
       "id": 1
     }'
 ```
@@ -786,7 +742,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x1"
+    "result": "0x0"
 }
 ```
 
@@ -800,9 +756,9 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
     1. `<string>` (data, 20 bytes): an address to get the code from.
     2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
@@ -820,12 +776,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getCode",
-      "params": ["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],
+      "params": ["0xaDDD2A0a68942a979127885389f1cb673D6F1169", "latest"],
       "id": 1
     }'
 ```
@@ -850,9 +806,9 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
     1. `<string>` (data): the signed transaction data.
 
@@ -861,12 +817,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/gnosis/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/linea/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -896,9 +852,9 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
     1. `<object>` (hex encoded): the transaction object:
         * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
@@ -923,7 +879,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -955,9 +911,9 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): 
+  * `params` (array; required):
 
     1. `<object>` (hex encoded): the transaction object:
         * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
@@ -982,7 +938,7 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
@@ -1012,11 +968,11 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (data, 32 bytes): the block's hash.
+    1. `<string>` (data, 32 bytes): the block hash.
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
 
 ### Returns
@@ -1046,12 +1002,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByHash",
-      "params": ["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae", false],
+      "params": ["0xe0907320b42accf74f4e5d78438c90f04bebf2c0d82d032d82a94f8ba462c86c", false],
       "id": 1
     }'
 ```
@@ -1097,7 +1053,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1136,12 +1092,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByNumber",
-      "params": ["0x1b4", true],
+      "params": ["0xD2AE0", true],
       "id": 1
     }'
 ```
@@ -1188,7 +1144,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1215,12 +1171,12 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+      "params": ["0xbf5d41d7f70e371bb075b199f89c3d143d5ecf3060a7ceb99331bdf35aea308c"],
       "id": 1
     }'
 ```
@@ -1262,7 +1218,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1290,7 +1246,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1337,7 +1293,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1370,7 +1326,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1418,7 +1374,7 @@ The receipt is not available for pending transactions.
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1449,7 +1405,7 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1510,7 +1466,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1544,7 +1500,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1595,7 +1551,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1634,7 +1590,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1685,7 +1641,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 <br/>
 
   * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
@@ -1723,7 +1679,7 @@ curl -X POST https://rpc.ankr.com/gnosis \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/linea/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
