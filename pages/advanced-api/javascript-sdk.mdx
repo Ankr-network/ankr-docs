@@ -37,18 +37,32 @@ await provider.getNFTsByOwner({
 
 Currently, `ankr.js` supports interaction with the following chains using their aliases:
 
-  * Ethereum: `eth`
-  * BNB Smart Chain: `bsc`
-  * Polygon: `polygon`
-  * Fantom: `fantom`
-  * Arbitrum: `arbitrum`
-  * Avalanche: `avalanche`
-  * Syscoin NEVM: `syscoin`
-  * Optimism: `optimism`
-  * Ethereum Goerly: `eth_goerli`
-  * Avalanche Fuji: `avalanche_fuji`
+**Mainnet**:
 
-## Methods available
+  * Arbitrum: `arbitrum`.
+  * Avalanche: `avalanche`.
+  * Base: `base`.
+  * BNB Smart Chain: `bsc`.
+  * Ethereum: `eth`.
+  * Fantom: `fantom`.
+  * Flare: `flare`.
+  * Gnosis: `gnosis`.
+  * Linea: `linea`.
+  * Optimism: `optimism`.
+  * Polygon: `polygon`.
+  * Polygon zkEVM: `polygon_zkevm`.
+  * Rollux: `rollux`.
+  * Scroll: `scroll`.
+  * Syscoin: `syscoin`.
+
+**Testnet**:
+
+  * Avalanche Fuji: `avalanche_fuji`.
+  * Ethereum Goerli: `eth_goerli`.
+  * Optimism Testnet: `optimism_testnet`.
+  * Polygon Mumbai: `polygon_mumbai`.
+
+## Methods supported
 
   * [`getLogs`](/advanced-api/javascript-sdk/#getlogs) — retrieves the logs matching the filter indicated.
   * [`getBlocks`](/advanced-api/javascript-sdk/#getblocks) — retrieves the data on the blocks within the indicated range.

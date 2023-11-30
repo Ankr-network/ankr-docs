@@ -72,15 +72,32 @@ logs = ankr_w3.query.get_logs(
 
 Currently, `ankr.py` supports interaction with the following chains using their aliases:
 
-  * Ethereum: `eth`
-  * BNB Smart Chain: `bsc`
-  * Polygon: `polygon`
-  * Fantom: `fantom`
-  * Arbitrum: `arbitrum`
-  * Avalanche: `avalanche`
-  * Syscoin NEVM: `syscoin`
+**Mainnet**:
 
-## Methods available
+  * Arbitrum: `arbitrum`.
+  * Avalanche: `avalanche`.
+  * Base: `base`.
+  * BNB Smart Chain: `bsc`.
+  * Ethereum: `eth`.
+  * Fantom: `fantom`.
+  * Flare: `flare`.
+  * Gnosis: `gnosis`.
+  * Linea: `linea`.
+  * Optimism: `optimism`.
+  * Polygon: `polygon`.
+  * Polygon zkEVM: `polygon_zkevm`.
+  * Rollux: `rollux`.
+  * Scroll: `scroll`.
+  * Syscoin: `syscoin`.
+
+**Testnet**:
+
+  * Avalanche Fuji: `avalanche_fuji`.
+  * Ethereum Goerli: `eth_goerli`.
+  * Optimism Testnet: `optimism_testnet`.
+  * Polygon Mumbai: `polygon_mumbai`.
+
+## Methods supported
 
   * [`nft.get_nfts`](/advanced-api/python-sdk/#get_nfts) — retrieves data on all the NFTs (collectibles) owned by a wallet.
   * [`nft.get_nft_metadata`](/advanced-api/python-sdk/#get_nft_metadata) — retrieves metadata of a particular NFT.
