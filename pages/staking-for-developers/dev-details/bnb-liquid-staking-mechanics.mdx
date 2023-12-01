@@ -13,16 +13,22 @@ The requirements when staking are:
 
 * Maximum value to stake — unlimited, at the user’s discretion.
 
-The requirements when unstaking are:
-* Minimum value to unstake — 0.5 BNB.
+The requirements when classic-unstaking are:
+* Minimum value to unstake — 0.1 BNB.
 * Maximum value to unstake — up to the initial stake for ankrBNB.
 * Unbond time (before user gets their unstaked funds) — 7–15 days.
 * Splitting large unstaked amounts between several unbond times due to limited nodes capacities.
+
+The requirements when flash-unstaking are:
+* Minimum value to unstake — 0.1 BNB.
+* Maximum value to unstake — up to the flash ustake pool capacity.
+* Unbond time (before user gets their unstaked funds) — no unbond time, instant release of funds to the user.
 
 
 ## Fees
 
 * Ankr takes a 10% technical service fee from the staking reward.
+* Ankr takes a 0.05% flash-unstake fee from the unstaked amount when the user flash-unstakes.
 
 The user must also count in the gas price for outgoing transactions.
 
@@ -42,6 +48,7 @@ The following entities are involved:
 * Ankr validators
 
 ## Smart contracts
+
 Smart contracts and addresses involved in BNB Liquid Staking are:
 * [BNBStakingPool](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) — contract on BNB Chain where the user sends their initial staking or unstaking request.
 * [Staking](https://bscscan.com/address/0x0000000000000000000000000000000000002001) — withdraws the rewards and send them to `BNBStakingPool`.
@@ -55,12 +62,15 @@ Smart contracts and addresses involved in BNB Liquid Staking are:
   * When unstaking, receives the unstaked funds+rewards to send to stakers.
 
 ## Validators
+
 * [Ankr validator](https://www.bnbchain.world/en/staking/validator/bva1xnudjls7x4p48qrk0j247htt7rl2k2dzp3mr3j)
 * [Avengers](https://www.bnbchain.org/en/staking/validator/bva1s0ntnh523dc2u5ez3dcj2t34k2x7y60cue46rt)
 * [BNB48 Club validator](https://www.bnbchain.world/en/staking/validator/bva1ygrhjdjfyn2ffh5ha5llf5g6l3wxjt29hz9q4s)
 * [CertiK](https://www.bnbchain.org/en/staking/validator/bva1lva9unyerjwcnayyd9kukyde96tvcfdgqk4930)
 * [MathWallet](https://www.bnbchain.org/en/staking/validator/bva1y52k5rfmqv46p8x8jsnppzgkjgzt5m0zgx5h37)
 * [Tranchess](https://www.bnbchain.org/en/staking/validator/bva1m3nj2sglp7mlz3y08qjlqyhycenz8m9cl4h4ht)
+
+
 
 ## Staking workflow
 1. User sends a request to the `BNBStakingPool::stakeCerts({value:stake})` on BNB Chain. `stake` specifies the staked amount and should meet the requirements described above. `BNBStakingPool` verifies the request checking the `_minimumStake` and mints ankrBNB in the amount defined by the current exchange ratio, and then issues a `Staked()` event with the `staker`, `amount` (staked amount), `shares` (issued ankrBNB), `false` (because ankrBNB is a reward-bearing token) parameters.
@@ -81,7 +91,9 @@ uint256 denominator = _totalStaked + totalRewards - _totalUnbondedBonds;
 _ratio = (totalShares * 1e18) / denominator;
 ```
 
-## Unstaking workflow`
+## Unstaking workflow
+
+### Classic unstake
 1. User sends a request to the `BNBStakingPool::unstakeCerts(shares)` on BNB Chain. `shares` specifies the amount to unstake. You can also unstake to an arbitrarily chosen address via `BNBStakingPool::unstakeCertsFor(receiverAddress, shares)`. `BNBStakingPool` verifies the request checking the `_minimumUnstake` and `balance_of_user`, to transfer ankrBNB from user to the `aBNBb` smart contract address (input amount) then `aBNBb::burn()` executes to decrease total supply of tokens, and then issues a `Unstaked()` event with the `ownerAddress` (message sender), `receiverAddress` (user address for receiving unstaked funds and rewards), `amount` (amount of BNBs to be send to the user), `shares` (amount of ankrBNB to unstake), `false` (because ankrBNB is a reward-bearing token) parameters.
 2. BNB backend service waits until `_pendingTotalUnstakes` reaches minimum 100 BNB at `BNBStakingPool`, then calls `BNBStakingPool:undelegate{value: relayerFee}(validator, amount)`.
 3. After the `UnbondTime`, `BNBStakingPool` gets the rewards via `Staking:claimUndelegated()` and distributes unstaked funds and rewards to the users.
