@@ -6,75 +6,76 @@ import { Callout } from "components";
 Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
 </Callout>
 
-*Projects* is a feature that provides the means to use several unique tokens in private endpoints of a single user account and secure your project's user interaction by specifying a particular smart contract to communicate through. That might help with project structuring, interaction security, as well as with traffic distribution for the most demanding throughput.
+## Introduction
 
-In simple words, each new project provides a new unique token to be used in your private endpoints and specifies a particular smart contract for project communication.
+The Projects feature aims to provide a business that manages multiple projects — dApps/platforms (powered with Ankr's blockchain interaction) — with the means to organize, monitor, control, and secure the endpoints used to power each of those projects.
 
-The first iteration of Projects aims at providing you with the means to control your endpoint usage by `smart contract whitelisting`. This feature would be handy for a dApp where users communicate with a smart contract via Frontend — to protect your endpoint from misuse. A specified smart contract will allow your dApp users to request only a selected chain using a limited number of methods supported.
+ The Projects feature is built to help you with the following:
 
-<Callout type="warning">
-All requests using unsupported methods or chains get blocked.
-</Callout>
+  * **Organize endpoints**: Now you can organize your endpoints by their specific sphere of usage — by project.
+  * **Monitor projects**: Our Dashboard now serves to build your insights around a particular project's statistics, equipping your business with proactive tools for decision-making.
+  * **Freeze projects**: You now have a single-click ability to put your projects on/off handbrake — to stop/start powering your projects with our endpoints.
+  * **Safeguard endpoints**: We have your project's back covered with the whitelist security mechanisms safeguarding your endpoints from abuse and enabling you to define domains, IPs, or smart contracts allowed for endpoints communication.
 
-**Supported chains**:
-
-  * `Arbitrum`, `BNB Smart Chain`, `Ethereum`, `Gnosis`, `Polygon`
-
-**Supported methods**:
-
-  * `eth_call`, `eth_getLogs`, `eth_sendRawTransaction`
+In simple terms, each new project provides a new unique token to be used in your private endpoints. Your projects differ from each other based on that token. The endpoints with the same token power a single project. And you can view each project's statistics in the Dashboard.
 
 ## Usage
 
-You can use the *Projects* feature working with the following panes:
+The **Default** project contains all your previously configured data — chains, networks, and transactions history. On top of that, now you can configure additional projects and secure your endpoints with multiple whitelist options.
 
-  * **Endpoints** / **Advanced API** — for creating and using multiple tokens.
-  * **Dashboard** — for filtering statistics data by project.
+<img src="/docs/build/getting-started/projects.png" class="responsive-pic" width="700" />
 
-<img src="/docs/build/getting-started/projects.png" class="responsive-pic" width="800" />
+### Create project
 
-  * **Projects** — for creating new unique tokens and specifying a smart contract for project interaction.
-
-<img src="/docs/build/getting-started/projects-pane.png" class="responsive-pic" width="500" />
-
-### Add project
-
-To add a new project, follow these steps:
+To create a new project, follow these steps:
 
 1. In **Navigation**, click **Projects** to open the corresponding pane.
-2. In the **Projects** pane, click **+ Add Project**, and go through the steps to configure it:
+2. In the **Projects** pane, click **+ Create Project**, and go through the steps to configure it:
+<img src="/docs/build/getting-started/create-project.png" class="responsive-pic" width="600" />
+    * **General info** — enter a name (required) and give your project a description (optional) to identify its purpose; click **Next**.
+<img src="/docs/build/getting-started/general-info.png" class="responsive-pic" width="600" />
+    * **Chains** — select chains and networks your project requires; click **Next**.
+<img src="/docs/build/getting-started/select-chains.png" class="responsive-pic" width="700" />
+    * **Whitelist** — click **Configure whitelist**, select whitelist option (**Domain**/**IP**/**Smart contract**), enter **Address**, select chains the endpoints of which cab be accessed by the address provided, then click **Confirm** and **Next**; this step can be configured right away or later (**Skip for now**).
+<img src="/docs/build/getting-started/configure-whitelist.png" class="responsive-pic" width="600" />
 
-<img src="/docs/build/getting-started/add-project.png" class="responsive-pic" width="600" />
-
-    * **Project** — here your project automatically receives a name, and you can select a chain the project to work with.
-<img src="/docs/build/getting-started/select-chain.png" class="responsive-pic" width="600" />
-    * **White list** — here you enter the smart contract address used for project communication. Note that your smart contract have to be deployed either on Ethereum or on other EVM-compatible blockchain.
-<img src="/docs/build/getting-started/enter-smart.png" class="responsive-pic" width="600" />
-    * **Plan** — here you select a service plan for your project.
-<img src="/docs/build/getting-started/project-plan.png" class="responsive-pic" width="600" />
-    * **Checkout** — here you check and confirm your project configuration by clicking **Next**.
-<img src="/docs/build/getting-started/project-checkout.png" class="responsive-pic" width="600" />
-
-Congrats — you've just configured and created a new project with smart contract white listing.
+Congrats — you've just configured and created a new project.
 
 ### View project
 
-To view a project's unique token, click the **Info** (`i`) icon of the corresponding project.
+To view a project, click the corresponding project's tile.
+
+Each project consists of four main blocks:
+
+> [`General info`](/rpc-service/getting-started/projects/#general-info) — [`Total requests (1h/24h)`](/rpc-service/getting-started/projects/#total-requests) — [`Whitelist`](/rpc-service/getting-started/projects/#whitelist) — [`Endpoints`](/rpc-service/getting-started/projects/#endpoints)
+
+#### General info
+
+The `General info` block contains your private token, buttons to enable/disable the project's endpoints, and the button for project deletion.
+
+<img src="/docs/build/getting-started/general-info-ui.png" class="responsive-pic" width="700" />
+
+#### Total requests
+
+The `Total requests` block shows total requests for the past 1h or 24h and contains the button that moves you to a larger statistics dashboard.
 <br/>
-<img src="/docs/build/getting-started/view-project.png" alt="View project's token" class="responsive-pic" width="500" />
+<img src="/docs/build/getting-started/total-requests-ui.png" class="responsive-pic" width="450" />
 
-Congrats — you can view or copy your project's unique token.
+#### Whitelist
 
-### Delete project
-
-<Callout>
-For your own good, you won't be able to delete your primary project.
-</Callout>
-
-To delete a project, click the **Info** (`i`) icon of the corresponding project, then click **Delete project** and confirm your action.
+The `Whitelist` block contains the button to create whitelists, and shows the number of configured and available whitelist entities.
 <br/>
-<img src="/docs/build/getting-started/delete-project.png" alt="Delete project" class="responsive-pic" width="600" />
+<img src="/docs/build/getting-started/whitelist-ui.png" class="responsive-pic" width="450" />
 
-Congrats — your additional project has been deleted.
+#### Endpoints
+
+The `Endpoints` block helps you add chains and networks required for your project, access HTTPS and WSS endpoints.
+
+<img src="/docs/build/getting-started/projects-endpoints-ui.png" class="responsive-pic" width="700" />
+
+And copy connection code snippets.
+<br/>
+<img src="/docs/build/getting-started/projects-snippets.png" class="responsive-pic" width="700" />
+
 
 
