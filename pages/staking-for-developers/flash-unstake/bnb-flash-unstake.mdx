@@ -1,18 +1,18 @@
 # BNB flash unstake
 
-Ankr provides an additional opportunity to operate the LST tokens by introducing a flash unstake feature.
-This feature significantly decreases the unstake time — the user receives their unstaked BNBs in the same transaction.
-For this convenience, Ankr charges the user an additional flash-unstake fee, subtracting it from the unstaked amount.
+Ankr provides an additional opportunity to operate its LSTs by introducing a flash unstake feature.
+This feature significantly decreases the unstake time — the user receives their unstaked BNB in the same transaction.
+For this convenience, Ankr charges the user an additional flash unstake fee, subtracting it from the unstaked amount.
 Flash unstake is implemented via a pool — the same BNBStakingPool that provides functionality for Binance Liquid Staking.
 
 ## Requirements
-* Min amount to unstake — 0.1 BNB
-* Max amount to unstake — up to the capacity of the pool, as flash unstake is performed via a pool swap (ankrBNB to BNB)
+* Min amount to unstake — 0.1 BNB.
+* Max amount to unstake — up to the capacity of the pool, as flash unstake is performed via a pool swap (ankrBNB to BNB).
 * Unbond time — none, the unstaked BNBs are instantly released to the user's address.
 * Splitting amounts larger than the pool capacity — not possible, the user will have to use the classic version of BNB unstake.
 
 ## Smart contracts
-* BNStakingPool — the main entry point to BNB Liquid Staking; stake, unstake, flash-unstake, etc.
+* BNBStakingPool — the main entry point to BNB Liquid Staking; stake, unstake, flash-unstake, etc.
 * ankrBNB (proxy) — the Liquid Staking token (ankrBNB) contract; mint or burn ankrBNB tokens for the user.
 
 ### Addresses
@@ -20,7 +20,7 @@ Flash unstake is implemented via a pool — the same BNBStakingPool that provide
 * [BNBStakingPool](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
 * [ankrBNB](https://bscscan.com/address/0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827) (0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827)
 #### Testnet
-* [BNStakingPool](https://testnet.bscscan.com/address/0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c) (0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c)
+* [BNBStakingPool](https://testnet.bscscan.com/address/0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c) (0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c)
 * [ankrBNB](https://testnet.bscscan.com/address/0x3C1039C346bd5141BF2D5e855928E61655658fA7) (0x3C1039C346bd5141BF2D5e855928E61655658fA7)
 
 ## Functions
@@ -28,7 +28,7 @@ Flash unstake is implemented via a pool — the same BNBStakingPool that provide
 Get the minimum unstake value.
 
 ##### Addresses
-* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F9) ((0x9e347Af362059bf2E55839002c699F7A5BaFE86E))
+* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F9) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
 * [Testent](https://testnet.bscscan.com/address/0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c#readProxyContract#F9) (0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c)
 
 #### `ankrBNB.sharesToBonds(unit256 amount)`
@@ -36,34 +36,34 @@ Get the initial amount of BNB (before the flash-unstake fee subtraction) for the
 You can use it to calculate the final BNB amount, for example:
 ```
 uint256 amount = ankrBNB.sharesToBonds(shares);
-// calculate the amount of BNBs with no flash unstake fee
+// calculate the amount of BNB with no flash unstake fee
 
 uint256 unstakeFeeAmt = (amount * _flashUnstakeFee) / _FEE_MAX;
 // Calculate the flash unstake fee; _FEE_MAX is 10000
 
 amount -= unstakeFeeAmt;
-// Calculate the final amount of BNBs the user gets after the fee subtraction
+// Calculate the final amount of BNB the user gets after the fee subtraction
 ```
 
 ##### Parameters
-`amount` (uint256, required) — amount of ankrBNBs to convert to BNBs.
+`amount` (uint256, required) — amount of ankrBNB to convert to BNB.
 
 ##### Addresses
-* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F12) ((0x9e347Af362059bf2E55839002c699F7A5BaFE86E))
+* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F12) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
 * [Testent](https://testnet.bscscan.com/address/0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c#readProxyContract#F12) (0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c)
 
 #### `await BNBStakingPool.getFlashUnstakeFee()`
 Get the flash unstake fee.
 
 ##### Addresses
-* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F5) ((0x9e347Af362059bf2E55839002c699F7A5BaFE86E))
+* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F5) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
 * [Testent](https://testnet.bscscan.com/address/0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c#readProxyContract#F5) (0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c)
 
 #### `await BNBStakingPool.flashPoolCapacity()`
 Get the current flash pool capacity.
 
 ##### Addresses
-* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F1) ((0x9e347Af362059bf2E55839002c699F7A5BaFE86E))
+* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#readProxyContract#F1) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
 * [Testent](https://testnet.bscscan.com/address/0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c#readProxyContract#F1) (0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c)
 
 #### `BNBStakingPool.swap(uint256 shares, address receiverAddress)`
@@ -74,10 +74,10 @@ const tx = await BNBStakingPool.swap(uint256 shares, address receiverAddress);
 ```
 ##### Parameters
 * `shares` (uint256; required) — the amount of ankrBNB to flash unstake.
-* `receiverAddress` (address; required) — the user's address to release the unstaked BNBs to.
+* `receiverAddress` (address; required) — the user's address to release the unstaked BNB to.
 
 ##### Addresses
-* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#writeProxyContract#F22) ((0x9e347Af362059bf2E55839002c699F7A5BaFE86E))
+* [Mainnet](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E#writeProxyContract#F22) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E)
 * [Testent](https://testnet.bscscan.com/address/0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c#writeProxyContract#F22) (0x0eCf14f54C5fF190e025Bc5e80c6351F91BFcB1c)
 
 
