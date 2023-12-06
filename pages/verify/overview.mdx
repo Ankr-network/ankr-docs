@@ -35,11 +35,12 @@ Whenever a new user signs up and tries your service, they will be asked to provi
 To simplify and repeat, Ankr Verify works this way:
 1. A user creates a digital ID and submits their credentials.
 2. Synaps, Ankr's KYC partner, verifies them and stores them in a secure vault.
-3. Ankr Verify generates claims, corresponding the user's credentials and binds them to the digital ID.
-4. A Web3 service asks if the user meets a certain requirement via ZK proof.
+3. Ankr Verify generates claims, corresponding the user's credentials, and binds them to the digital ID.
+4. A Web3 service asks if the user meets a certain requirement via ZK proofs.
 5. Relying on the corresponding claim, Ankr Verify sends a "yes/no" answer. No sensitive data is ever sent in this process.
 
 <img src="/docs/verify/ankr-verify-simplified.jpg" alt="How Ankr Verify works" class="responsive-pic" width="900" />
+<center><i>Right-click and open the image in a new tab for a larger size</i></center>
 
 If you're looking for more low-level technical details, refer to the [Ankr Verify development details](/verify/dev-details).
 
