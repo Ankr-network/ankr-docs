@@ -1,6 +1,6 @@
 # Anrk Verify development details
 
-AnkrVerify is a Web3 proof-verification service. It allows any Web3 participant (DeFi protocol, developer, ordinary user) to request proof that meets a specific policy (e.g., age => 18).
+AnkrVerify is a Web3 proof-verification service. It allows any Web3 participant (DeFi protocol, developer, ordinary user) to request proof to comply a specific policy (e.g., age => 18).
 
 ## Architecture
 Ankr Verify is implemented in a modular manner:
@@ -10,12 +10,12 @@ Ankr Verify is implemented in a modular manner:
 * AnkrVerify smart contract
 
 ## Actors
-* User — anybody who wants to prove they meet the required policies of a blockchain, DeFi platform, or a dApp.
+* User — anybody who wants to prove they comply with the required policies of a blockchain, DeFi platform, or a dApp.
 * Synaps — the KYC provider. Synaps requests, processes, and stores real user data.
 * AnkrVerify Wallet Service (backend + frontend) — a service for generating proofs (claims) for policies.
 * AnkrVerify smart contract — a contract deployed on a specific chain; stores links to the IPFS proofs (claims).
 * Chain — a blockchain where a Ankr Verify smart contract is deployed.
-* DeFi platform, dApp, developer — any third-party that wants to check if the user meets specific policies.
+* DeFi platform, dApp, developer — any third-party that wants the user to comply with a specific policy.
 
 ## Workflow
 <img src="/docs/verify/ankr-verify-architecture.png" alt="Ankr Verify architecture" class="responsive-pic" width="800" />
