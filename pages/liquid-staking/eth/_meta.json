@@ -2,6 +2,8 @@
   "overview": "Overview",
   "security": "Security",
   "stake": "Stake",
+  "restake-ankreth-on-eigen": "Restake on EigenLayer",
   "unstake": "Unstake",
+  "unstake-ankreth-on-eigen": "Unstake on EigenLayer",
   "faq": "FAQ"
 }
