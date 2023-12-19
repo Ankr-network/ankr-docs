@@ -41,7 +41,7 @@ MEV & tips are instantly released to the address the user staked from.
 The unbonding period for unstakes is currently up to 5 days on average. The release period for the attestation rewards is 1 day on average. MEV & tips are released instantly from all validators within the node provider that are bound to the NFT, even if unstaking was only from 1 validator.
 
 ## Architecture
-Validator Hub is implemented as a set of smart contracts, backend, and frontend.
+Validator Hub is implemented as a set of smart contracts, a backend, and a frontend.
 * The smart contracts implement:
   * Receiving the stake.
   * Storing the stake before it is bound to a validator.
@@ -72,7 +72,13 @@ Validator Hub is implemented as a set of smart contracts, backend, and frontend.
 * vStaker — manages stakes made via vNFT. Available managing actions: stake, unstake, claim rewards. The stakes are accessible only to the current vNFT owner. vStaker also serves as the withdrawal address for the attestation rewards. The owning rights of a vStaker instance are held by the current vNFT owner and are transferred along with the vNFT.
 
 ### Addresses
-Coming soon.
+* [InsurancePool](https://holesky.etherscan.io/address/0xCE83591a3e273f4887F8DBa775f538E7A5600D0B) (0xCE83591a3e273f4887F8DBa775f538E7A5600D0B)
+* [Marketplace](https://holesky.etherscan.io/address/0x4017Edf31956a48BA51779D973fbE759182Ff5A0) (0x4017Edf31956a48BA51779D973fbE759182Ff5A0)
+* [ProviderVault](https://holesky.etherscan.io/address/0xe6971403250C699F29540d26ba64C57375686e69) (0xe6971403250C699F29540d26ba64C57375686e69)
+* [ProviderVaultManager](https://holesky.etherscan.io/address/0x0aC734B60EE55563968E373f2361A56892Ac0DfF) (0x0aC734B60EE55563968E373f2361A56892Ac0DfF)
+* [StakingConfig](https://holesky.etherscan.io/address/0xC78F464d3D92f8E191cAd28771a52faCAB90D723) (0xC78F464d3D92f8E191cAd28771a52faCAB90D723)
+* [vNFT](https://holesky.etherscan.io/address/0x2D0D1B6fFc279A0890c04A705DFde6acf5482F33) (0x2D0D1B6fFc279A0890c04A705DFde6acf5482F33)
+* [vStaker](https://holesky.etherscan.io/address/0x4c9A360a07FC6F21E0bdcC7caA7d3D4eF8aB3Aba) (0x4c9A360a07FC6F21E0bdcC7caA7d3D4eF8aB3Aba)
 
 ## Workflow
 
@@ -112,7 +118,7 @@ The attestation rewards are auto-released to the withdrawal address the user cho
 
 ### Claim rewards and MEV & tips (NFT)
 1. The user calls `vStaker::claim()` to receive the MEV & tips and attestation rewards.
-The attestation rewards are accumulated in portions, on average each day (24h).
+The attestation rewards are accumulated in portions, on average each 7 days per validator.
 
 ### Classic unstaking
 1. The user calls `Marketplace::unstake(address provider, bytes32[] calldata pubkeyHashes) external` where `provider` is the address of the node provider, `pubkeyHashes` is an array of validators pubkeys each hashed through the keccak256 function.
@@ -127,4 +133,4 @@ The attestation rewards are accumulated in portions, on average each day (24h).
 ### NFT unstaking
 1. The user calls `vStaker::unstake(bytes32[] calldata pubkeyHashes)` where `pubkeyHashes` is an array of validators pubkeys each hashed through the keccak256 function.
    1. `vStaker` then executes the whole logic of classic unstaking (see above). Note that the withdrawal address is the `vStaker` instance address, and the released assets (unstake, rewards, MEV & tips) need to be manually claimed by the user.
-2. Once the assets are available for claiming, the user claims them via `vStaker::claim(). Note that the assets become available at a different timing: unstake become available in 5 days on average, MEV & tips become available instantly, attestation rewards become available in 1 day on average.
+2. Once the assets are available for claiming, the user claims them via `vStaker::claim(). Note that the assets become available at a different timing: unstake and attestation rewards become available after the full validator withdrawal (7 days on average), MEV & tips become available instantly.
