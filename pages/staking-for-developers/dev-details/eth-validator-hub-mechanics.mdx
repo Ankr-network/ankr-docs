@@ -2,57 +2,67 @@
 ## Overview
 Ethereum Delegated Staking is implemented via the Validator Hub.
 
-Validator Hub is a module that allows users to delegate-stake with a validator of their choice from the list of available validators. Validators are deployed by node providers.
+Validator Hub is a module that allows users to delegate-stake with a node provider of their choice.<br/>
+Node providers run servers with validator keys, and user's stake is deposited to a key within the chosen provider.
 
 ### Node providers & validators
-A node provider is a legal entity that made a contract with Ankr to provide delegate-staking services through Validator Hub.
+A node provider is a legal entity that provides delegate-staking services and is registered in Ankr's Validator Hub.
 
-A node provider can have multiple validators. A provider deploys them and keeps them in a non-active state.
+A provider can have multiple validators, which it adds them to the server and waits for a user deposit.
 
-A node provider can choose an insurance policy, % of MEV & tips to keep (which is the direct financial incentive for the node provider). All this applied to all the validators registered and deployed by a specific node provider.
+A provider can choose an insurance policy, a fee (a % of MEV & tips to keep; a direct financial incentive for the node provider).
+All this applied to all validators within a specific provider.
 
 ### Staking modes
 * Classic staking — direct staking.
-* NFT staking — user gets an NFT as proof of validator ownership. The user can get either 1 NFT per validator or a single NFT for all their validators. The NFT is fully operable and to be used in DeFi activities, such as using it as collateral (not implemented yet) or buying/selling it to exit with no unbonding period (available now).
+* NFT staking — the user gets an NFT as proof of validator ownership.<br/>
+  The user can get either 1 NFT per validator or a single NFT for all their validators.
+The NFT is fully operable and transferable, and can be used in DeFi activities, such as using it as collateral or buying/selling it to exit with no unbonding period.
+The current NFT owner is able to claim the rewards and trigger unstake.
 
 ### Staking process
-The user deposits to Ankr 32 ETH and chooses a node provider. Ankr chooses a validator deployed by this node provider and deposits these 32 ETH to it, which causes the validator to start the activation process. When the validator is fully activated, it starts to perform its duties (proposing blocks, attesting blocks).
+The user deposits to Ankr any amount of ETH that is multiple of 32 and chooses a node provider.
+Ankr chooses a validator within this node provider and deposits 32 ETH to it, which causes the validator to start the activation process.
+When the validator is fully activated, it starts to perform its duties (proposing blocks, attesting blocks, getting rewards).
 
 ### Rewards
 #### Classic staking
-After the validator activation, the user starts to receive rewards to their withdrawal address, which the user chose when staking their ETH. Ergo, the address isn’t necessarily the same addr the user deposited ETH from.
+After the validator activation, the user starts to receive rewards to their withdrawal address, which the user chose when staking their ETH.
+Ergo, this address isn’t necessarily the same addr the user deposited ETH from.
 
-The rewards are actually accumulate at the validator’s address and are released to the user’s withdrawal address each 1 days on average (the actual time depends on the current queue size).
+Technically, the rewards accumulate at the validator’s address and are released to the user’s withdrawal address each 7 days on average (the actual time depends on the current queue size).
 
 #### NFT staking
-After the validator activation, the attestation rewards star to accumulate at the VirtualStaker contract, where they later can be claimed by the user via the ETH Delegated Staking dashboard.
+After the validator activation, the attestation rewards start to accumulate at the vStaker contract each 7 days on average (the actual time depends on the current queue size), where they can be claimed by the NFT holder via the ETH Validator Hub dashboard.
 
 ### MEV & tips
 #### Classic staking
-From the moment the user has staked their ETH with a node provider, the user starts to receive a % of MEV & tips, acc. to their share with that provider. E.g., if the provider runs 10 validators and the user has staked with 5 of them, the user receives 50% of all the MEV & tips that this node provider gets.
+From the moment the user has staked their ETH with a node provider, the user starts to receive a % of MEV & tips, according to their share with that provider and the provider's policy.
 
 #### NFT staking
-From the moment Ankr deposits the 32 ETH to a validators, a % of MEV & tips allocated for the user start to accumulate at the VirtualStaker contract, where they later can be claimed by the user via the ETH Delegated Staking dashboard.
+From the moment a validator is activated and starts to perform its duties, a % of MEV & tips allocated for the user starts to accumulate and can be claimed by the NFT holder via the ETH Validator Hub dashboard.
 
 ### Unstaking process
-* Classic unstaking — the unstake and attestation rewards are automatically released to the withdrawal address chosen by the user at the staking stage. The unbonding period for unstakes is currently up to 5 days on average. The release period for the attestation rewards is 1 day on average.
-MEV & tips are instantly released to the address the user staked from.
-* NFT staking — the unstake, attestation rewards, and MEV & tips are released to the vStaker contract instance associated with the NFT contract. The user can then claim them from the ETH Delegated Staking dashboard.
-The unbonding period for unstakes is currently up to 5 days on average. The release period for the attestation rewards is 1 day on average. MEV & tips are released instantly from all validators within the node provider that are bound to the NFT, even if unstaking was only from 1 validator.
+#### Classic unstaking
+The unstaked amount and attestation rewards are automatically released to the withdrawal address chosen by the user at the staking stage. The unbonding period for unstakes is currently up to 5 days on average. The release period for the attestation rewards is 7 day on average.
+MEV & tips from all validators within the node provider bound to the user are instantly released to the address the user staked from, even if unstaking was only from 1 validator.
+#### NFT unstaking
+The unstaked amount, attestation rewards, and MEV & tips are released to the vStaker contract instance associated with the NFT contract. The user can then claim them from the ETH Delegated Staking dashboard.
+The unbonding period for unstakes and release period for the attestation rewards are currently up to 7 days on average. MEV & tips are released instantly from all validators within the node provider that are bound to the NFT, even if unstaking was only from 1 validator.
 
 ## Architecture
 Validator Hub is implemented as a set of smart contracts, a backend, and a frontend.
 * The smart contracts implement:
   * Receiving the stake.
-  * Storing the stake before it is bound to a validator.
+  * Storing the stake before it is deposited to a validator.
   * Keeping the validator-user map.
   * Managing validators (allowing the user to choose a validator when unstaking).
-  * Insurance (slashing, pre-deposit checks against a front-running attack).
+  * Pre-depositing and activation of a stake.
   * Collecting and distributing MEV & tips.
 * The backend implements:
   * Validator monitoring logic (checks against a front-running attack, slashing event).
   * Binding a validator to a stake (32 ETH).
-  * Depositing to a validator (on the consensus layer) and exit validator (on the consensus layer).
+  * Depositing to a validator (on the consensus layer) and exiting a validator (on the consensus layer).
   * Generating NFT details (pic, name, desc, etc).
 * The frontend implements the user interface for interacting with the Validator Hub.
 
@@ -60,31 +70,29 @@ Validator Hub is implemented as a set of smart contracts, a backend, and a front
 * Stake amount per validator — 32 ETH.
 * Specific node provider (allowing the user to choose one from the list).
 * No direct staking to an NFT contract, only through our contracts (we only store variables when the user stakes through our contracts).
-* When unstaking in the NFT mode, MEV & tips are released from all the validators within the node provider that are bound to the specific NFT, not from a single validator. Even if the unstake was from a single validator.
+* When unstaking in the NFT mode, MEV & tips are released from *all validators* within the node provider that are bound to the specific NFT, not from a single validator. Even if the unstake was from a single validator.
 
 ## Smart Contracts
-* InsurancePool — receives and stores the assets allocated for insurance and an insurance-provider map. A propos, insurance assets can be deposited by anybody, not just by a provider.
-* Marketplace — entry point for the users; allows the user to stake and unstake with a chosen node provider.
-* ProviderVault — receives, stores and stakes 32 ETH to a validator key associated with a specific node provider; receives and stores MEV & tips associated with a specific node provider; each provider has a designated instance of ProviderVault.
+* Marketplace — entry point for the users; allows a user to stake and unstake with a chosen node provider.
+* ProviderVault — receives, stores and stakes 32 ETH onto a validator key associated with a specific node provider; receives and stores MEV & tips associated with a specific node provider. Deployed as a separate instance for each provider.
 * ProviderVaultManager — entry point for node operators; allows a node operator to register and deploy an instance of ProviderVault.
 * StakingConfig — stores the main variables (addresses of all other Hub contracts, Ankr technical service fee).
-* vNFT — creates NFTs and deploys vStaker (virtual staker) instances.
-* vStaker — manages stakes made via vNFT. Available managing actions: stake, unstake, claim rewards. The stakes are accessible only to the current vNFT owner. vStaker also serves as the withdrawal address for the attestation rewards. The owning rights of a vStaker instance are held by the current vNFT owner and are transferred along with the vNFT.
+* vNFTFactory — creates vNFTs and deploys vStaker instances.
+* vStaker — manages stakes made via vNFT. Deployed as a separate instance for each vNFT. <br/> Available managing actions: stake, unstake, claim rewards. The stakes are accessible only to the current vNFT owner. vStaker also serves as the withdrawal address for the attestation rewards. The owning rights of a vStaker instance are held by the current vNFT owner and are transferred along with the vNFT.
 
 ### Addresses
-* [InsurancePool](https://holesky.etherscan.io/address/0xCE83591a3e273f4887F8DBa775f538E7A5600D0B) (0xCE83591a3e273f4887F8DBa775f538E7A5600D0B)
 * [Marketplace](https://holesky.etherscan.io/address/0x4017Edf31956a48BA51779D973fbE759182Ff5A0) (0x4017Edf31956a48BA51779D973fbE759182Ff5A0)
-* [ProviderVault](https://holesky.etherscan.io/address/0xe6971403250C699F29540d26ba64C57375686e69) (0xe6971403250C699F29540d26ba64C57375686e69)
+* [ProviderVault (Ankr)](https://holesky.etherscan.io/address/0xe6971403250C699F29540d26ba64C57375686e69) (0xe6971403250C699F29540d26ba64C57375686e69)
 * [ProviderVaultManager](https://holesky.etherscan.io/address/0x0aC734B60EE55563968E373f2361A56892Ac0DfF) (0x0aC734B60EE55563968E373f2361A56892Ac0DfF)
 * [StakingConfig](https://holesky.etherscan.io/address/0xC78F464d3D92f8E191cAd28771a52faCAB90D723) (0xC78F464d3D92f8E191cAd28771a52faCAB90D723)
-* [vNFT](https://holesky.etherscan.io/address/0x2D0D1B6fFc279A0890c04A705DFde6acf5482F33) (0x2D0D1B6fFc279A0890c04A705DFde6acf5482F33)
-* [vStaker](https://holesky.etherscan.io/address/0x4c9A360a07FC6F21E0bdcC7caA7d3D4eF8aB3Aba) (0x4c9A360a07FC6F21E0bdcC7caA7d3D4eF8aB3Aba)
+* [vNFTFactory](https://holesky.etherscan.io/address/0x2D0D1B6fFc279A0890c04A705DFde6acf5482F33) (0x2D0D1B6fFc279A0890c04A705DFde6acf5482F33)
+* [vStaker (implementation](https://holesky.etherscan.io/address/0x4c9A360a07FC6F21E0bdcC7caA7d3D4eF8aB3Aba) (0x4c9A360a07FC6F21E0bdcC7caA7d3D4eF8aB3Aba)
 
 ## Workflow
 
 ### Classic staking
 
-1. The user calls `Marketplace::stake(address provider, address withdrAddr) external` where `provider` is the chosen node provider and `withdrAddr` is the user-chosen withdrawal address. A `StakedToVault(address provider, address staker, uint256 amount, address withdrawalAddr)` event is emitted.
+1. The user calls `Marketplace::stake(address provider, address withdrAddr)` where `provider` is the chosen node provider and `withdrAddr` is the user-chosen withdrawal address. A `StakedToVault(address provider, address staker, uint256 amount, address withdrawalAddr)` event is emitted.
    1. The backend reacts to the `StakedToVault` event, binding a validator to the stake.
    2. The backend calls the following function of the `ProviderVault` instance associated with the current provider, which causes a deposit of 1 ETH to the validator, from the staked amount.
       ```
@@ -108,9 +116,9 @@ Validator Hub is implemented as a set of smart contracts, a backend, and a front
 
 ### NFT staking
 1. The user calls `vNFT::mint(address provider)` where `provider` is the address of the node provider. The caller also assigns the staking amount to the transaction. The following logic within the transaction:
-   1. A mint of 1 NFT associated with the chosen number of validators.
-   2. For this NFT, `vNFT` deploys an instance of `vStaker`.
-   3. `vStaker` then executes the whole logic of classic staking (see above), passing its own address in the `withdrAddr input param.
+   1. A mint of 1 vNFT associated with the chosen number of validators.
+   2. For this vNFT, `vNFT Factory` deploys an instance of `vStaker`.
+   3. `vStaker` then executes the whole logic of classic staking (see above), passing its own address in the `withdrAddr` input param.
 
 ### Claim rewards and MEV & tips (classic)
 1. To collect MEV & tips, the user calls `Marketplace::claimRewards(address provider, address staker)` where `provider` is the address of the node provider and `staker` is the address the user staked from.
@@ -121,16 +129,16 @@ The attestation rewards are auto-released to the withdrawal address the user cho
 The attestation rewards are accumulated in portions, on average each 7 days per validator.
 
 ### Classic unstaking
-1. The user calls `Marketplace::unstake(address provider, bytes32[] calldata pubkeyHashes) external` where `provider` is the address of the node provider, `pubkeyHashes` is an array of validators pubkeys each hashed through the keccak256 function.
-   1. The MEV & tips are auto-claimed to the address the user staked from. It happens via an internal transaction from `Marketplace to ProviderVault::claimRewards(address stakerAddr) external`.
+1. The user calls `Marketplace::unstake(address provider, bytes32[] calldata pubkeyHashes)` where `provider` is the address of the node provider, `pubkeyHashes` is an array of validators pubkeys each hashed through the keccak256 function. Then the following internal logic is executed:
+   1. The MEV & tips are auto-claimed to the address the user staked from. It happens via an internal transaction from `Marketplace` to `ProviderVault::claimRewards(address stakerAddr)`.
    2. A `ValidatorsUnstaked(address provider, address staker, bytes32[] validatorHashes)` event is emitted.
-   3. The backend reacts to this event by changing the stake status to pending exit.
-   4. The backend triggers an exit by calling the Beaconchain node on the consensus layer.
-   5. The backend changes the stake status pending unstake.
-   6. After the unbonding period of 5 days on average, the unstaked ETH is released to the withdrawal address (`withdrAddr`).
+   3. The backend reacts to this event by changing the stake status to *pending exit*.
+   4. The backend triggers an exit by calling Ankr's Beaconchain node on the consensus layer.
+   5. The backend changes the stake status *pending unstake*.
+   6. After the unbonding period of 7 days on average, the unstaked ETH is released to the withdrawal address (`withdrAddr`).
    7. The backend updates the stake status to *unstaked*.
 
 ### NFT unstaking
-1. The user calls `vStaker::unstake(bytes32[] calldata pubkeyHashes)` where `pubkeyHashes` is an array of validators pubkeys each hashed through the keccak256 function.
+1. The user calls `vStaker::unstake(bytes32[] calldata pubkeyHashes)` where `pubkeyHashes` is an array of validators pubkeys each hashed with the keccak256 function.
    1. `vStaker` then executes the whole logic of classic unstaking (see above). Note that the withdrawal address is the `vStaker` instance address, and the released assets (unstake, rewards, MEV & tips) need to be manually claimed by the user.
-2. Once the assets are available for claiming, the user claims them via `vStaker::claim(). Note that the assets become available at a different timing: unstake and attestation rewards become available after the full validator withdrawal (7 days on average), MEV & tips become available instantly.
+2. Once the assets are available for claiming, the user claims them via `vStaker::claim()`. Note that the assets become available at a different timing: unstake and attestation rewards become available after the full validator withdrawal (7 days on average), MEV & tips become available instantly.
