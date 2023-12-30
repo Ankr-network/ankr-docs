@@ -2018,5 +2018,17 @@
   {
     "from": "docs/staking-extra/vote-for-ankreth-on-eigeinlayer/index.html",
     "to": "/docs/"
+  },
+  {
+    "from": "docs/liquid-staking/ksm/overview/index.html",
+    "to": "/docs/liquid-staking/overview/"
+  },
+  {
+    "from": "docs/liquid-staking/ksm/unstake/index.html",
+    "to": "/docs/liquid-staking/overview/"
+  },
+  {
+    "from": "docs/liquid-staking/ksm/faq/index.html",
+    "to": "/docs/liquid-staking/overview/"
   }
 ]
