@@ -1,4 +1,5 @@
 name: Docs deploy
+run-name: Deploy of ${{ github.ref_name }} to ${{github.event.inputs.environment}}
 
 on:
   workflow_dispatch:
