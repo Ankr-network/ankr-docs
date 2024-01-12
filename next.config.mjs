@@ -24,5 +24,7 @@ export default withNextra({
       use: ['@svgr/webpack'],
     })
     return config
-  }
+  },
+  siteUrl: process.env.SITE_URL || 'https://www.ankr.com/docs',
+  generateIndexSitemap: false,
 })
