@@ -1,0 +1,46 @@
+# Policy check-up
+
+Ankr Verify features a policy verification check-up.
+Calling the `exist()` function and providing it a policy ID, you can check if a specific policy has been successfully verified on the Ankr's side.
+
+## Smart Contracts
+[PolicyRegistry](https://testnet.opbnbscan.com/address/0xc492E85779BdCCEC18A099C6d8C2c9A3F74C94C5) (0xc492E85779BdCCEC18A099C6d8C2c9A3F74C94C5) — allows the user to check if a policy has been verified on the Ankr Verify's side.
+
+## Functions
+### `exist(address user, uint256 id) returns (bool)`
+Checks if a specific policy has been successfully verified on the Ankr's side.
+
+#### Parameters
+* `user` (address) — address of a vendor to check.
+* `id` (uint256) — policy ID.
+
+#### Response
+The function return a boolean: `true` if the policy has been verified and `false` if not.
+
+#### Example
+As a read function, you can call exist() anytime and check the result.
+
+### Usage Example
+```
+contract DAPP {
+   IPoliciesRegistry policyRegistry;
+   uint256 policyId;
+   bool isExecuted;
+
+   modifier onlyVerified(){
+       require(policyRegistry.exist(msg.sender, policyId), "DAPP: user is not verified");
+       _;
+   }
+
+   function execute() external onlyVerified {
+       isExecuted = true;
+   }
+}
+```
+
+
+
+
+
+
+
