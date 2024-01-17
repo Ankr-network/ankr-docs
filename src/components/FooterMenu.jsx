@@ -69,7 +69,7 @@ const FooterMenu = () => {
           { href: 'https://www.ankr.com/case-studies/polygon/', text: 'Polygon' },
           { href: 'https://www.ankr.com/case-studies/sushi/', text: 'SushiSwap' },
           { href: 'https://www.ankr.com/case-studies/meta-apes/', text: 'Meta Apes' },
-          { href: 'https://www.ankr.com/case-studies/', text: 'See all case studies' },
+          { href: 'https://www.ankr.com/case-studies/', text: 'See All Case Studies' },
         ]
     },
     {
