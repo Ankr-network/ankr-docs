@@ -3,15 +3,18 @@ import { Callout } from "components";
 # Restake ankrETH on EigenLayer
 
 Once you have staked ETH in Ethereum Liquid Staking, you have an opportunity to restake it on EigenLayer.
-<Callout type="info">
-  Currently, EigenLayer only offers restaking on Goerli Testnet. <br/>
-    If you want to test restaking, please [get goETH](staking-extra/get-goerli-eth/) and stake it in the [testnet version of Ethereum Liquid Staking on Goerli](https://testnet.ankr.com/staking/stake/ethereum/).
-    Then proceed with the guide below.
-</Callout>
 
-To restake your ankrETH, you need to first deposit ankrETH on EigenLayer and then delegate it to an AVS operator.
+To restake your ankrETH, you need to:
+1. Deposit ankrETH on EigenLayer.
+2. Delegate your deposit to an AVS operator (currently only available for testing on Goerli; Mainnet version is coming around April 2024).
+
 ## Deposit ankrETH on EigenLayer
-1. Make sure you have first staked your ETH in [Ethereum Liquid Staking](https://testnet.ankr.com/staking/stake/ethereum/) and then visit the [ankrETH restaking page](https://goerli.eigenlayer.xyz/token/ankrETH).
+<Callout type="info">
+  EigenLayer [reopens for restaking on Ethereum Mainnet](https://www.blog.eigenlayer.xyz/introducing-new-lsts-and-unpausing-restaking-caps/).<br/>
+    You will be able to deposit from *Jan 29th, 12 PM PT to Feb 2nd, 12 PM PT*.<br/>
+    Why deposit? Your deposit gains you restaking points that make you eligible for the upcoming EigenLayer's airdrop — giveaway of a protocol’s tokens that could have great worth on the market.
+</Callout>
+1. Make sure you've first staked your ETH in [Ethereum Liquid Staking](https://ankr.com/staking/stake/ethereum/) and then visit the [ankrETH restaking page](https://app.eigenlayer.xyz/token/ankrETH).
 2. Click **Connect Wallet**.
    <img src="/docs/staking/liquid-staking/eth/connect-wallet-eigenlayer.jpg" alt="Click Connect Wallet" class="responsive-pic" width="600" />
 3. Click MetaMask and proceed to connect the address you have ankrETH on.
@@ -23,8 +26,15 @@ To restake your ankrETH, you need to first deposit ankrETH on EigenLayer and the
 6. Confirm first the approval transaction, to allow EigenLayer to access the chosen amount, and then the deposit transaction in MetaMask.
 
 ## Delegate your deposit to an operator
-Now you need to delegate your deposit to an operator to earn you rewards:
-1. Visit the [Operator page](https://goerli.eigenlayer.xyz/operator).
+<Callout type="info">
+  *EigenLayer has not yet released the delegating feature on their Mainnet.*<br/>
+    The release is [touted to be around April 2024](https://twitter.com/eigenlayer/status/1742353872537190801?s=20).<br/>
+</Callout>
+Right now, you have a chance to test out delegating to Ankr's AVS operator on Ethereum Goerli.<br/>
+Before testing out, ensure you have [staked goETH on Ankr](https://testnet.ankr.com/staking/stake/ethereum/) and [deposited ankrETH on EigenLayer Goerli](https://goerli.eigenlayer.xyz/token/ankrETH).
+
+When you're ready, delegate your deposit to a Testnet operator to earn you rewards:
+1. Visit the [Goerli operator page](https://eigenlayer.xyz/operator).
 2. Choose an operator and click **Manage**. We recommend Ankr as a stable operator with favorable reward terms.
    <img src="/docs/staking/liquid-staking/eth/choose-operator-eigenlayer.jpg" alt="Choose an operator, for example, Ankr" class="responsive-pic" width="600" />
 3. On the operator detail page, click **Delegate**.
