@@ -20,11 +20,11 @@ A provider can choose an insurance policy, a fee (a % of MEV & tips to keep; a d
 All this applied to all validators within a specific provider.
 
 ### Staking modes
-* Classic staking — direct staking.
-* NFT staking — the user gets an NFT as proof of validator ownership.<br/>
-  The user can get either 1 NFT per validator or a single NFT for all their validators.
-The NFT is fully operable and transferable, and can be used in DeFi activities, such as using it as collateral or buying/selling it to exit with no unbonding period.
-The current NFT owner is able to claim the rewards and trigger unstake.
+* Node staking — direct staking.
+* vNFT staking — the user gets an NFT (vNFT) as proof of validator ownership.<br/>
+  The user can get either 1 vNFT per validator or a single vNFT for all their validators.
+The vNFT is fully operable and transferable, and can be used in DeFi activities, such as using it as collateral or buying/selling it to exit with no unbonding period.
+The current vNFT owner is able to claim the rewards and trigger unstake.
 
 ### Staking process
 The user deposits to Ankr any amount of ETH that is multiple of 32 and chooses a node provider.
@@ -32,29 +32,29 @@ Ankr chooses a validator within this node provider and deposits 32 ETH to it, wh
 When the validator is fully activated, it starts to perform its duties (proposing blocks, attesting blocks, getting rewards).
 
 ### Rewards
-#### Classic staking
+#### Node staking
 After the validator activation, the user starts to receive rewards to their withdrawal address, which the user chose when staking their ETH.
 Ergo, this address isn’t necessarily the same addr the user deposited ETH from.
 
 Technically, the rewards accumulate at the validator’s address and are released to the user’s withdrawal address each 7 days on average (the actual time depends on the current queue size).
 
-#### NFT staking
-After the validator activation, the attestation rewards start to accumulate at the vStaker contract each 7 days on average (the actual time depends on the current queue size), where they can be claimed by the NFT holder via the ETH Validator Hub dashboard.
+#### vNFT staking
+After the validator activation, the attestation rewards start to accumulate at the vStaker contract each 7 days on average (the actual time depends on the current queue size), where they can be claimed by the vNFT holder via the ETH Validator Hub dashboard.
 
 ### MEV & tips
-#### Classic staking
+#### Node staking
 From the moment the user has staked their ETH with a node provider, the user starts to receive a % of MEV & tips, according to their share with that provider and the provider's policy.
 
-#### NFT staking
-From the moment a validator is activated and starts to perform its duties, a % of MEV & tips allocated for the user starts to accumulate and can be claimed by the NFT holder via the ETH Validator Hub dashboard.
+#### vNFT staking
+From the moment a validator is activated and starts to perform its duties, a % of MEV & tips allocated for the user starts to accumulate and can be claimed by the vNFT holder via the ETH Validator Hub dashboard.
 
 ### Unstaking process
-#### Classic unstaking
+#### Node unstaking
 The unstaked amount and attestation rewards are automatically released to the withdrawal address chosen by the user at the staking stage. The unbonding period for unstakes is currently up to 5 days on average. The release period for the attestation rewards is 7 day on average.
 MEV & tips from all validators within the node provider bound to the user are instantly released to the address the user staked from, even if unstaking was only from 1 validator.
-#### NFT unstaking
-The unstaked amount, attestation rewards, and MEV & tips are released to the vStaker contract instance associated with the NFT contract. The user can then claim them from the ETH Delegated Staking dashboard.
-The unbonding period for unstakes and release period for the attestation rewards are currently up to 7 days on average. MEV & tips are released instantly from all validators within the node provider that are bound to the NFT, even if unstaking was only from 1 validator.
+#### vNFT unstaking
+The unstaked amount, attestation rewards, and MEV & tips are released to the vStaker contract instance associated with the vNFT contract. The user can then claim them from the ETH Delegated Staking dashboard.
+The unbonding period for unstakes and release period for the attestation rewards are currently up to 7 days on average. MEV & tips are released instantly from all validators within the node provider that are bound to the vNFT, even if unstaking was only from 1 validator.
 
 ## Architecture
 Validator Hub is implemented as a set of smart contracts, a backend, and a frontend.
@@ -69,14 +69,14 @@ Validator Hub is implemented as a set of smart contracts, a backend, and a front
   * Validator monitoring logic (checks against a front-running attack, slashing event).
   * Binding a validator to a stake (32 ETH).
   * Depositing to a validator (on the consensus layer) and exiting a validator (on the consensus layer).
-  * Generating NFT details (pic, name, desc, etc).
+  * Generating vNFT details (pic, name, desc, etc).
 * The frontend implements the user interface for interacting with the Validator Hub.
 
 ## Requirements
 * Stake amount per validator — 32 ETH.
 * Specific node provider (allowing the user to choose one from the list).
-* No direct staking to an NFT contract, only through our contracts (we only store variables when the user stakes through our contracts).
-* When unstaking in the NFT mode, MEV & tips are released from *all validators* within the node provider that are bound to the specific NFT, not from a single validator. Even if the unstake was from a single validator.
+* No direct staking to a vNFT contract, only through our contracts (we only store variables when the user stakes through our contracts).
+* When unstaking in the vNFT mode, MEV & tips are released from *all validators* within the node provider that are bound to the specific vNFT, not from a single validator. Even if the unstake was from a single validator.
 
 ## Smart Contracts
 * Marketplace — entry point for the users; allows a user to stake and unstake with a chosen node provider.
@@ -96,7 +96,7 @@ Validator Hub is implemented as a set of smart contracts, a backend, and a front
 
 ## Workflow
 
-### Classic staking
+### Node staking
 
 1. The user calls `Marketplace::stake(address provider, address withdrAddr)` where `provider` is the chosen node provider and `withdrAddr` is the user-chosen withdrawal address. A `StakedToVault(address provider, address staker, uint256 amount, address withdrawalAddr)` event is emitted.
    1. The backend reacts to the `StakedToVault` event, binding a validator to the stake.
@@ -120,21 +120,21 @@ Validator Hub is implemented as a set of smart contracts, a backend, and a front
       ```
    6. Once the validator has been activated, the backend changes the stake status to *staked*.
 
-### NFT staking
+### vNFT staking
 1. The user calls `vNFT::mint(address provider)` where `provider` is the address of the node provider. The caller also assigns the staking amount to the transaction. The following logic within the transaction:
    1. A mint of 1 vNFT associated with the chosen number of validators.
    2. For this vNFT, `vNFT Factory` deploys an instance of `vStaker`.
-   3. `vStaker` then executes the whole logic of classic staking (see above), passing its own address in the `withdrAddr` input param.
+   3. `vStaker` then executes the whole logic of Node staking (see above), passing its own address in the `withdrAddr` input param.
 
-### Claim rewards and MEV & tips (classic)
+### Claim rewards and MEV & tips (Node)
 1. To collect MEV & tips, the user calls `Marketplace::claimRewards(address provider, address staker)` where `provider` is the address of the node provider and `staker` is the address the user staked from.
 The attestation rewards are auto-released to the withdrawal address the user chose when staking.
 
-### Claim rewards and MEV & tips (NFT)
+### Claim rewards and MEV & tips (vNFT)
 1. The user calls `vStaker::claim()` to receive the MEV & tips and attestation rewards.
 The attestation rewards are accumulated in portions, on average each 7 days per validator.
 
-### Classic unstaking
+### Node unstaking
 1. The user calls `Marketplace::unstake(address provider, bytes32[] calldata pubkeyHashes)` where `provider` is the address of the node provider, `pubkeyHashes` is an array of validators pubkeys each hashed through the keccak256 function. Then the following internal logic is executed:
    1. The MEV & tips are auto-claimed to the address the user staked from. It happens via an internal transaction from `Marketplace` to `ProviderVault::claimRewards(address stakerAddr)`.
    2. A `ValidatorsUnstaked(address provider, address staker, bytes32[] validatorHashes)` event is emitted.
@@ -144,7 +144,7 @@ The attestation rewards are accumulated in portions, on average each 7 days per 
    6. After the unbonding period of 7 days on average, the unstaked ETH is released to the withdrawal address (`withdrAddr`).
    7. The backend updates the stake status to *unstaked*.
 
-### NFT unstaking
+### vNFT unstaking
 1. The user calls `vStaker::unstake(bytes32[] calldata pubkeyHashes)` where `pubkeyHashes` is an array of validators pubkeys each hashed with the keccak256 function.
-   1. `vStaker` then executes the whole logic of classic unstaking (see above). Note that the withdrawal address is the `vStaker` instance address, and the released assets (unstake, rewards, MEV & tips) need to be manually claimed by the user.
+   1. `vStaker` then executes the whole logic of Node unstaking (see above). Note that the withdrawal address is the `vStaker` instance address, and the released assets (unstake, rewards, MEV & tips) need to be manually claimed by the user.
 2. Once the assets are available for claiming, the user claims them via `vStaker::claim()`. Note that the assets become available at a different timing: unstake and attestation rewards become available after the full validator withdrawal (7 days on average), MEV & tips become available instantly.
