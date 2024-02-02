@@ -130,7 +130,7 @@ Given *availableBalance* is (*poolBalance - stashedAmount - flashUnstakeCollecte
 *ratio = sharesSupply / (totalStaked + availableBalance + pendingUnstakeAmount)*
 
 ### Calculation example:
-One of the easier ways to calculate such big numbers is to fire up a termnial instance initiate a python session and calculate the ratio right there.
+One of the easier ways to calculate such big numbers is to fire up a termnial instance initiate a python session and calculate the ratio right there.<br/>
 Given *sharesSupply = 39675028034839723289963*, *totalStaked = 41976176945120000000000*, * availableBalance = 174722818576387031488*, and *pendingUnstakes = 483180222750000000000*, calculating in Python3 syntax will be:
 1. `41976176945120000000000 + 174722818576387031488 + 483180222750000000000`, which is 42634079986446387031488.
 2. `39675028034839723289963 * 10**18 // 42634079986446387031488`, which is 930594211190968283 — precisely the ratio from our API.
