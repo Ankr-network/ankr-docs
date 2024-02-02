@@ -1,0 +1,129 @@
+import { Callout } from "components";
+
+# Team Accounts
+
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
+
+*Team account* is a type of account that provides the means for collaboration. In a nutshell, it's an account that can be simultaneously accessed by several teammates to perform their specific tasks.
+
+<Callout type="note">
+A team account is a separate account with its individual account balance, service plan, and dedicated endpoints using a JWT token different from that of the personal account. In other words, an account owner can use both their personal and team accounts.
+</Callout>
+
+As a personal account owner, you have the means to establish and manage multiple teams focused on particular tasks. As a team account participant, you can perform tasks according to the access rights provided to you.
+
+`Personal account owner`:
+
+  * Creates a team-specific account.
+  * Adds required teammates to it.
+  * Provides teammates with access rights to perform their duties.
+
+`Team account participant`:
+
+  * Switches between multiple team accounts to exercise the roles according to the access rights granted.
+
+## Personal account owner
+
+Premium users can establish up to *5 team accounts* to structure and manage their business. That procedure consists of two parts:
+
+  * [Create team account](/rpc-service/getting-started/business-accounts/#create-team-account)
+  * [Invite teammates](/rpc-service/getting-started/business-accounts/#invite-teammates)
+
+### Create team account
+
+<Callout type="warning">
+Only Premium users registered on our platform via Google or GitHub account can use the **Enable assets transfer** option upon creating a team account.
+</Callout>
+
+To create a team account, follow these steps:
+
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
+2. Click the **Accounts** menu > **+ Create team account** to start the procedure.
+<img src="/docs/build/getting-started/account-menu.png" class="responsive-pic" width="800" />
+
+3. In the **Create team account** dialog, specify the following parameters:
+    * **Name** — enter a team account's name.
+<img src="/docs/build/getting-started/account-name.png" class="responsive-pic" width="500" />
+    * **Enable assets transfer (personal —> team)** — here you have 2 options available for account creation:
+<img src="/docs/build/getting-started/account-transfer-toggle.png" class="responsive-pic" width="500" />
+      * **Toggle On** — to create a team account based on your personal account's structure. This means that all the assets (JWT token, Premium service plan, account balance, projects, and analytics) will be cut from your personal account's structure and pasted as the structure for the team account you create.
+
+        Meanwhile, your personal account obtains a new JWT token and switches to the **Free Personal** [service plan](/rpc-service/service-plans/) until you make the [initial deposit](/rpc-service/getting-started/basics-premium/#initial-deposit-1). Other personal account's assets (account balance, projects, and analytics) will look like you've just started using our service from scratch.
+
+      * **Toggle Off** — to create a team account from scratch. This means that your personal account stays the same, and you start creating the whole structure for the team account from ground zero.
+
+4. Click **Confirm and create** if you've toggled **On** the **Enable assets transfer** option, or just **Create** if you've toggled it **Off**.
+<img src="/docs/build/getting-started/account-created.png" class="responsive-pic" width="450" />
+
+Congrats — you've just created a team account. The next step is to invite teammates to the account created.
+
+### Invite teammates
+
+<Callout type="warning">
+Currently, only users with **Google email addresses** can be added as teammates.
+</Callout>
+
+To invite teammates (max.: `20`) to a team account, follow these steps:
+
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
+2. Click the **Accounts** menu > **Manage team accounts** to open the **Team accounts** pane.
+<img src="/docs/build/getting-started/manage-accounts.png" class="responsive-pic" width="800" />
+3. In the **Team accounts** pane, click **Invite** to open the **Invite teammates** dialog.
+<img src="/docs/build/getting-started/invite-teammate.png" class="responsive-pic" width="800" />
+4. In **Invite teammates** dialog, add your teammates' gmails, assign the applicable access roles for them, and then click **Invite**:
+<img src="/docs/build/getting-started/invite-dialog.png" class="responsive-pic" width="400" />
+    * **Admin** — manages the account's service plan, adds/deletes teammates, edits teammates' access roles, and manages projects.
+    * **Developer** — adds/edits endpoints and whitelists, views projects' statistics.
+    * **Finance** — manages the account's service plan, deposits funds into account balance, views financial data (payments history, expense chart).
+
+Congrats — you've just added teammates to a team account. The selected teammates will receive email invitations that they need to accept to join the team.
+
+### Edit access roles
+
+To edit teammates' access roles, do the following:
+
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
+2. Click the **Accounts** menu > **Manage team accounts** to open the **Team accounts** pane.
+<img src="/docs/build/getting-started/manage-accounts.png" class="responsive-pic" width="800" />
+3. In the **Team accounts** pane, click the required account to expand its contents.
+4. For the required user, click the **Access role** drop-down menu, select an applicable access role, and then click **Update role**:
+<img src="/docs/build/getting-started/update-role.png" class="responsive-pic" width="800" />
+    * **Admin** — manages the account's service plan, adds/deletes teammates, edits teammates' access roles, and manages projects.
+    * **Developer** — adds/edits endpoints and whitelists, views projects' statistics.
+    * **Finance** — manages the account's service plan, deposits funds into account balance, views financial data (payments history, expense chart).
+
+Congrats — you've just edited your teammate's access role. The teammate will receive the email invitation that they need to accept to join the team in the new role.
+
+### Switch accounts
+
+To switch your current account, do the following:
+
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
+2. Click the **Accounts** menu and select the account you'd like to switch to.
+<img src="/docs/build/getting-started/switch-accounts.png" class="responsive-pic" width="800" />
+
+Congrats — you've selected an account to work with.
+
+## Team account participant
+
+### Accept invitation
+
+1. In your Google mailbox, find the team account invitation and open it.
+2. In the **Team account invitation** email, click **View invitation** to get to our Platform.
+<img src="/docs/build/getting-started/email-invite.png" class="responsive-pic" width="400" />
+3. In the **Welcome to the team** dialog, click **Join team** to accept the invitation.
+<img src="/docs/build/getting-started/join-team.png" class="responsive-pic" width="400" />
+
+Congrats — you've just joined the team and can collaborate according to your access rights.
+
+### Switch accounts
+
+To switch between the team accounts you belong to and exercise the corresponding access rights granted, do the following:
+
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
+2. Click the **Accounts** menu and select the account you'd like to switch to.
+<img src="/docs/build/getting-started/switch-accounts.png" class="responsive-pic" width="800" />
+
+Congrats — now you can start performing the tasks according to your access rights.
