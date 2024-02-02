@@ -34,7 +34,7 @@ https://api.staking.ankr.com
 curl https://api.staking.ankr.com/v1alpha/beacon/eth/ratio/history?page=0&size=1
 ```
 
-#####Request params
+##### Request params
 * `page` — page number.
 * `size` — page size.
 
@@ -115,3 +115,75 @@ The smart contracts that are shown in the diagram are:
 * [withdrawalPool](https://etherscan.io/address/0x67428dE0680494E448F1A19d33C2022a51719348) (0x67428dE0680494E448F1A19d33C2022a51719348) — withdrawal address for Ankr validators; receives all unstakes and attestation rewards.
 * [treasury](https://etherscan.io/address/0x67428dE0680494E448F1A19d33C2022a51719348) (0x67428dE0680494E448F1A19d33C2022a51719348) — storage of Ankr fees.
 * [ankrETH](https://etherscan.io/address/0xE95A203B1a91a908F9B9CE46459d101078c2c3cb) — Liquid Staking Token ankETH.
+
+## Binance
+For the transparency, we decided to apply a “proof-of-reserves” solution to the Binance Liquid Staking ratio.
+All the data is taken from the BNB Smart Chain, except *pendingUnstakes* which is taken from BNB Chain.
+Ratio — the proportion of ankrBNB shares supply in relation to total staked BNB & new BNB that has been earned by validators (block & attestation rewards, MEV, tips).
+
+### Formula:
+Given *availableBalance* is (*poolBalance - stashedAmount - flashUnstakeCollectedFee - totalPendingUnstakes) where:
+* shashedAmount — amount for manual claim.
+* flashUnstakeCollectedFee — the fee recieved from the swap method.
+* totalPendingUnstakes — reserved amount for further distribution.
+
+*ratio = sharesSupply / (totalStaked + availableBalance + pendingUnstakeAmount)*
+
+### Calculation example:
+One of the easier ways to calculate such big numbers is to fire up a termnial instance initiate a python session and calculate the ratio right there.
+Given *sharesSupply = 39675028034839723289963*, *totalStaked = 41976176945120000000000*, * availableBalance = 174722818576387031488*, and *pendingUnstakes = 483180222750000000000*, calculating in Python3 syntax will be:
+1. `41976176945120000000000 + 174722818576387031488 + 483180222750000000000`, which is 42634079986446387031488.
+2. `39675028034839723289963 * 10**18 // 42634079986446387031488`, which is 930594211190968283 — precisely the ratio from our API.
+
+### Get ratio
+RESTful API endpoint that returns the historical ratio calculation.
+
+#### Host
+
+https://api.staking.ankr.com
+
+#### Endpoint
+
+`GET /v1alpha/beacon/bnb/ratio/history`
+
+#### Request
+
+```
+curl https://api.staking.ankr.com/v1alpha/bnb/ratio/history?page=0&size=1
+```
+
+##### Request params
+* `page` — page number.
+* `size` — page size.
+
+#### Response
+
+##### 200
+```
+{"content":
+  [
+    {
+      "ratio":"930594211190968283",
+      "sharesSupply":"39675028034839723289963",
+      "totalStaked":"41976176945120000000000",
+      "availableBalance":"174722818576387031488",
+      "pendingUnstakes":"483180222750000000000",
+      "bscBlock":"35777905",
+      "bcBlock":"366165883",
+      "txHash":"0x46b2febd5429107ee4a8abe4814b498a1aeedeb27c787e72c6daf630cc8a0a04"
+    }
+  ]
+}
+```
+
+##### Response params
+content — array of data.
+
+* ratio (wei) — the current ratio; ratio = sharesSupply / (totalStaked + availableBalance + pendingUnstakeAmount).
+* sharesSupply — total minted ankrBNB.
+* totalStaked — total staked BNB.
+* availableBalance — current balance available for staking; availableBalance = poolBalance - stashedAmount - flashUnstakeCollectedFee - totalPendingUnstakes).
+* pendingUnstakes — pending unstakes.
+* bscBlock — block we got all params to calculate the ratio from, except *pendingUnstakes*.
+* bcBlock — block we get *pendingUnstakes* from.
+* txHash — hash of the transaction where the ratio was published.
