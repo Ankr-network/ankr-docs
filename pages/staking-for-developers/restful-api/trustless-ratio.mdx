@@ -118,22 +118,29 @@ The smart contracts that are shown in the diagram are:
 
 ## Binance
 For the transparency, we decided to apply a “proof-of-reserves” solution to the Binance Liquid Staking ratio.
-All the data is taken from the BNB Smart Chain, except *pendingUnstakes* which is taken from BNB Chain.
+All data is taken from the consensus layer (BNB Beacon; *pendingUnstakes*) and execution layer (BSC; rest of the formula vars) at the same time.
+The moment of data fixation is recorded as blocks for both network.
+
 Ratio — the proportion of ankrBNB shares supply in relation to total staked BNB & new BNB that has been earned by validators (block & attestation rewards, MEV, tips).
 
-### Formula:
-Given *availableBalance* is (*poolBalance - stashedAmount - flashUnstakeCollectedFee - totalPendingUnstakes) where:
+### Formula
+Given availableBalance is (poolBalance - stashedAmount - flashUnstakeCollectedFee - totalPendingUnstakes) where:
 * shashedAmount — amount for manual claim.
 * flashUnstakeCollectedFee — the fee recieved from the swap method.
 * totalPendingUnstakes — reserved amount for further distribution.
 
 *ratio = sharesSupply / (totalStaked + availableBalance + pendingUnstakeAmount)*
 
-### Calculation example:
-One of the easier ways to calculate such big numbers is to fire up a termnial instance initiate a python session and calculate the ratio right there.<br/>
-Given *sharesSupply = 39675028034839723289963*, *totalStaked = 41976176945120000000000*, * availableBalance = 174722818576387031488*, and *pendingUnstakes = 483180222750000000000*, calculating in Python3 syntax will be:
-1. `41976176945120000000000 + 174722818576387031488 + 483180222750000000000`, which is 42634079986446387031488.
-2. `39675028034839723289963 * 10**18 // 42634079986446387031488`, which is 930594211190968283 — precisely the ratio from our API.
+### Calculation example
+Given:
+* sharesSupply = 39675028034839723289963
+* totalStaked = 41976176945120000000000
+* availableBalance = 174722818576387031488
+* pendingUnstakes = 483180222750000000000
+
+An easy way to operate numbers as big as these is to open a terminal instance, type `python3` and hit **Enter**, and calculate right there:
+1. `41976176945120000000000 + 174722818576387031488 + 483180222750000000000` — 42634079986446387031488.
+2. `39675028034839723289963 * 10**18 // 42634079986446387031488` — 930594211190968283, precisely the ratio from our API.
 
 ### Get ratio
 RESTful API endpoint that returns the historical ratio calculation.
@@ -187,3 +194,52 @@ content — array of data.
 * bscBlock — block we got all params to calculate the ratio from, except *pendingUnstakes*.
 * bcBlock — block we get *pendingUnstakes* from.
 * txHash — hash of the transaction where the ratio was published.
+
+### How ratio gets validated
+Let’s break down the response:
+* totalShares = ankrBNB.totalSupply()
+* totalStaked = Staking.getTotalDelegated(BNBStakingPool.address)
+* availableBalance = BNBStakingPool.getFreeBalance() - BNBStakingPool.getTotalPendingUnstakes()
+* pendingUnstakeAmount =  response.pendingUnstakes
+
+To get the parts of the [ratio formula](#formula-1), pull:
+1. Data from BNB Smart Chain RPC.
+2. Data from Binance API.
+
+#### Data from BNB Smart Chain RPC
+<Callout type="tip">
+The examples are using web3.py.
+</Callout>
+
+Getting sharesSupply, availableBalance:
+```
+contract = web3.eth.contract(address='0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827', abi=abi)
+sharesSupply = contract.functions.totalSupply().call(block_identifier = block_number)
+```
+```
+contract = web3.eth.contract(address='0x9e347Af362059bf2E55839002c699F7A5BaFE86E', abi=abi)
+
+totalStaked = contract.functions.getTotalDelegated().call(block_identifier=block_number)
+
+poolBalance = web3.eth.get_balance(account='0x9e347Af362059bf2E55839002c699F7A5BaFE86E', block_identifier=block_number) #balance request
+stashedAmount = contract.functions.getStashedForManualClaims().call(block_identifier=block_number)
+flashUnstakeCollectedFee = contract.functions.getFlashUnstakeCollectedFee().call(block_identifier=block_number)
+totalPendingUnstakes = contract.functions.getTotalPendingUnstakes().call(block_identifier=block_number)
+availableBalance = poolBalance - stashedAmount - flashUnstakeCollectedFee - totalPendingUnstakes
+```
+
+#### Data from Binance API
+
+Getting pendingUnstakeAmount:
+```
+url = 'https://api.binance.org/v1/staking/chains/bsc/delegators/bnb1j3xwg6zjjgwp7yjful42908zs089450827wgvm/ubds?limit=100&offset=0'
+response = requests.get(url)
+data = response.json()['unbondingDelegations']
+```
+To calculate *pendingUnstakeAmount* on specific block, you need to do SUM unstakes where specific block was between `creationHeight` and `completeHeight`. Check `completeHeight`; if it is `null`, it mean the unstake is currently still in progress.
+
+### Smart Contracts
+The smart contracts that provide data for the ratio calculation are:
+* [BNBStakingPool](https://bscscan.com/address/0x9e347Af362059bf2E55839002c699F7A5BaFE86E) (0x9e347Af362059bf2E55839002c699F7A5BaFE86E) — BNB staking pool.
+* [Staking](https://bscscan.com/address/0x0000000000000000000000000000000000002001) (0x0000000000000000000000000000000000002001) — Binance system contract.
+* [ankrBNB](https://bscscan.com/address/0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827) (0x52F24a5e03aee338Da5fd9Df68D2b6FAe1178827) — Liquid Staking token ankrBNB.
