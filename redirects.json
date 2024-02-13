@@ -2030,5 +2030,9 @@
   {
     "from": "docs/liquid-staking/ksm/faq/index.html",
     "to": "/docs/liquid-staking/overview/"
+  },
+  {
+    "from": "docs/verify/policy-check-up/index.html",
+    "to": "/docs/verify/check-user-compliance/"
   }
 ]
