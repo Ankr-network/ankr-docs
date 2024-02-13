@@ -2033,6 +2033,6 @@
   },
   {
     "from": "docs/verify/policy-check-up/index.html",
-    "to": "/docs/verify/check-user-compliance/"
+    "to": "/docs/verify/integrating/check-user-compliance/"
   }
 ]
