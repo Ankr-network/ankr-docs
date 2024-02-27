@@ -32,7 +32,7 @@ The `RPC/REST API` and `Advanced API` solutions come with both *Public* and *Pre
 
 ### Feature list
 
-| Feature                                | Public                      | Free Personal               | Premium                                                    |
+| Feature                                | Public                      | Freemium               | Premium                                                    |
 |----------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------|
 | Full and Archive data                  | ✅                          | ✅                         | ✅                                                         |
 | Global node coverage                   | ✅                          | ✅                         | ✅                                                         |
@@ -71,17 +71,6 @@ Our Premium service plan users can choose to query blockchains under the followi
 
 _Pay-as-you-go_ (PAYG) is a usage-based charging model for the Premium Plan services. PAYG means that you commit to no subscriptions but pay for each request you make. To start using the Premium Plan features, you deposit a minimum amount of 1000 ANKR tokens and create an Ankr Premium account.
 
-[//]: # (## Get started with Premium)
-
-[//]: # ()
-[//]: # (1. Go to the [RPC Services]&#40;https://www.ankr.com/rpc/&#41; platform.)
-
-[//]: # (2. [Connect your wallet]&#40;/rpc-service/premium-account-operations/#connect-wallet&#41;.)
-
-[//]: # (3. [Deposit funds]&#40;/rpc-service/premium-account-operations/#top-up&#41;.)
-
-[//]: # (4. [Add Premium Endpoints into your project]&#40;/rpc-service/blockchain-interactions/#rpc-apis-for-your-project&#41; to interact with a blockchain.)
-
 ### Subscription
 
 *Subscription* is a charging model under which you pay a fixed price for a particular bundle of services on a monthly basis. Our current `500 USD` subscription offers the following service bundle:
@@ -108,7 +97,7 @@ We charge no matter whether a request has been successful or not. In other words
 
 PAYG charging summary:
 
-> `Correct call` — `Incorrect call` — `Currect call + incorrect method`
+> `Correct call` — `Incorrect call` — `Correct call + incorrect method`
 
   * **Correct call** (charged) — a request uses a supported method and has a valid JSON-RPC structure.
   * **Incorrect call** (not charged) — a request has an invalid JSON-RPC structure or a batch request has the same ID in multiple requests. We can't parse such a request.
