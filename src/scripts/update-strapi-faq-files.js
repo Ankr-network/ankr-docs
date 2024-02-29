@@ -16,44 +16,44 @@ const STRAPI_ROOT_URL = "https://strapi.ankr.com";
 const filesMap = [
   // delegated-staking
   {
-    filePath: join(FILES_ROOT_PATH, "delegated-staking", "ankr", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "delegated-staking", "ankr", "scaling-services-faq.mdx"),
     name: "ankr",
     urlPath: `${STRAPI_ROOT_URL}/faq-ankr-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "delegated-staking", "gnosis", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "delegated-staking", "gnosis", "scaling-services-faq.mdx"),
     name: "gnosis",
     urlPath: `${STRAPI_ROOT_URL}/faq-m-gno-items`,
   },
 
   // liquid-staking
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "avax", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "avax", "scaling-services-faq.mdx"),
     name: "avax",
     urlPath: `${STRAPI_ROOT_URL}/faq-avalanche-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "bnb", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "bnb", "scaling-services-faq.mdx"),
     name: "bnb",
     urlPath: `${STRAPI_ROOT_URL}/faq-binance-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "dot", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "dot", "scaling-services-faq.mdx"),
     name: "dot",
     urlPath: `${STRAPI_ROOT_URL}/faq-polkadot-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "eth", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "eth", "scaling-services-faq.mdx"),
     name: "eth",
     urlPath: `${STRAPI_ROOT_URL}/faq-ethereum-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "ftm", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "ftm", "scaling-services-faq.mdx"),
     name: "ftm",
     urlPath: `${STRAPI_ROOT_URL}/faq-fantom-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "matic", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "matic", "scaling-services-faq.mdx"),
     name: "matic",
     urlPath: `${STRAPI_ROOT_URL}/faq-polygon-items`,
   },

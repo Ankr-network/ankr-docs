@@ -1,0 +1,11 @@
+# Celestia
+
+[Celestia](https://docs.celestia.org/) is a data availability (DA) layer that provides a scalable solution to the [data availability problem](https://coinmarketcap.com/academy/article/what-is-data-availability). Due to the permissionless nature of the blockchain networks, a DA layer must provide a mechanism for the execution and settlement layers to check in a trust-minimized way whether transaction data is indeed available.
+
+## Key features
+
+Two key features of Celestia's DA layer are [data availability sampling](https://docs.celestia.org/learn/how-celestia-works/data-availability-layer#data-availability-sampling-das) (DAS) and [Namespaced Merkle trees](https://docs.celestia.org/learn/how-celestia-works/data-availability-layer#namespaced-merkle-trees-nmts) (NMTs). DAS enables light nodes to verify data availability without needing to download an entire block; NMTs enable execution and settlement layers on Celestia to download transactions that are only relevant to them.
+
+  * Data availability sampling light clients play an important role in the security, scalability and interoperability of the Celestia ecosystem.
+  * Celestia light clients enjoy nearly the same security as full nodes and do not rely on an honest consensus majority for state validity.
+  * Celestia's implementation integrates 2D Reed-Solomon erasure coding with Tendermint consensus and components of IPFS to achieve data availability sampling.
