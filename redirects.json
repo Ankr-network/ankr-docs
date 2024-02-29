@@ -2034,5 +2034,21 @@
   {
     "from": "docs/verify/policy-check-up/index.html",
     "to": "/docs/verify/integrating/check-user-compliance/"
+  },
+  {
+    "from": "docs/scaling-services-introduction/overview/index.html",
+    "to": "/docs/scaling-services-overview/"
+  },
+  {
+    "from": "docs/scaling-services-introduction/faq/index.html",
+    "to": "/docs/scaling-services-faq/"
+  },
+  {
+    "from": "docs/scaling-services-rollups/overview/index.html",
+    "to": "/docs/scaling-services-rollups/overview/"
+  },
+  {
+    "from": "docs/scaling-services-rollups/faq/index.html",
+    "to": "/docs/scaling-services-faq/"
   }
 ]
