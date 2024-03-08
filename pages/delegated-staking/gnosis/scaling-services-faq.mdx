@@ -1,0 +1,55 @@
+### Are there any risks from staking, like slashing or penalties?
+
+The only risk for stakers is missing out on rewards during any time a validator they staked with is slashed. Slashing is a protocol-level penalty associated with a validator failure if it validates an invalid transaction or goes offline. To avoid looses of staked GNO we made insurance system, each Node Provider has insurance pool with locked GNO. This GNO will be used to cover provider's slashing.
+
+### Where can I get GNO?
+
+Refer to the [GNO staking guide](https://www.ankr.com/docs/delegated-staking/gnosis/stake/#get-gno). You will need to:
+
+1. Purchase GNO on Ethereum.
+
+2. Bridge GNO to Gnosis.
+
+### What is the minimum and maximum amount of GNO I can stake?
+
+* Minimum — 0.00001 GNO.
+
+* Maximum — limited by the specific Node Provider capacity (count of supported keys by the provider, each key allows to stake 1 GNO).
+
+### Is my GNO staked immediately?
+
+Gnosis Protocol accepts stakes with a minimum of 1 GNO. To bypass this and accept your stake if it's lower than 1 GNO, we created a micropool that accumulates user stakes. Once it has 1 GNO, we stake it with Gnosis.  
+
+  
+
+This is why your stake may have to wait a while until it's really staked with Gnosis.
+
+### What if I want to stake more after already staking some GNO?
+
+You're limited only by the capacity of a specific Node Provider.
+
+### How soon after staking will I begin to receive rewards?
+
+Rewards accumulate on the daily basis.
+
+### How long does it take to unstake my GNO?
+
+The unbond period is dynamic on the Gnosis Protocol and changes depending on the number of unstake requests in the unstake queue.  
+
+After you unstake, it takes on average 3-4 days before the GNO is released to your wallet.
+
+### Can I stake with Ledger if I connect it with MetaMask?
+
+Yes, you can.
+
+### Must rewards be claimed from the Ankr website, or will they be automatically sent to the supplying wallet?
+
+Currently, rewards cannot be claimed manually. They are released to your address when you unstake GNO.
+
+### Does Ankr charge for the service?
+
+Ankr takes a 30% technical service fee from the staking reward to cover the provided services and operations.
+
+### Can I use cold wallets for staking?
+
+Yes, you can use Ledger Nano cold wallets through MetaMask. Visit the Ledger's [guide on connecting Ledger through MetaMask](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).
