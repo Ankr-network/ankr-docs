@@ -1,6 +1,41 @@
 # OP Stack
 
-Optimism Bedrock is the current iteration of the OP Stack. The Bedrock release provides the tools for launching a production-quality Optimistic Rollup blockchain. At this point in time, the APIs for the different layers of the OP Stack are still tightly coupled to this Rollup configuration of the stack.
+Optimism Bedrock is the current iteration of the OP Stack. The Bedrock release provides the tools for launching a production-quality Optimistic Rollup blockchain. The OP Stack serves as a comprehensive framework designed to simplify and secure the development of Layer 2 (L2) scaling solutions.
+
+According to the [layer 2 statistics](https://l2beat.com/scaling/summary), the OP Stack is being used as a backbone to power 6 active projects — OP Mainnet, Blast, Base, Mode Network, Kroma, and Zora — with collectively secured TVL value of 13.6 Billion USD.
+
+## Optimism Bedrock benefits
+
+### Lower fees
+
+In addition, Bedrock implements an optimized data [compression](https://community.optimism.io/docs/developers/bedrock/#optimized-data-compression) strategy to minimize data costs. We are currently benchmarking the impact of this change, but we expect it to reduce fees significantly.
+
+Bedrock also removes all L1 execution gas, reducing L1 data fees to the theoretical minimum. This reduces fees by an additional 10% over the previous version of the protocol.
+
+### Shorter deposit times
+
+Bedrock introduces support for L1 re-orgs in the node software, which significantly reduces the amount of time users need to wait for deposits. Earlier versions of the protocol could take up to 10 minutes to confirm deposits. With Bedrock, we expect deposits to confirm within 3 minutes.
+
+### Improved proof modularity
+
+Bedrock abstracts the proof system from the OP Stack so that a rollup may use either a fault proof or validity proof (e.g., a zk-SNARK) to prove correct execution of inputs on the rollup. This abstraction enables systems like [Cannon](https://github.com/ethereum-optimism/cannon) to be used to prove faults in the system.
+
+### Improved node performance
+
+The node software performance has been significantly improved by enabling execution of several transactions in a single rollup "block" as opposed to the prior "one transaction per block" model in the previous version. This allows the cost of merkle trie updates to be amortized across multiple transactions. At current transaction volume, this reduces state growth by approximately 15GB/year.
+
+Node performance is further improved by removing technical debt from the previous version of the protocol. This includes removing the need for a separate "data transport layer" node to index L1, and updating the node software to efficiently query for transaction data from L1.
+
+### Improved Ethereum equivalence
+
+Bedrock was designed from the ground up to be as close to Ethereum as possible. Multiple deviations from Ethereum in the previous version of the protocol have been removed, including:
+
+  1. The one-transaction-per-block model.
+  2. Custom opcodes to get L1 block information.
+  3. Separate L1/L2 fee fields in the JSON-RPC API.
+  4. A custom ERC20 representation of ETH balances.
+
+Bedrock also adds support for EIP-1559, chain re-orgs, and other Ethereum features present on L1.
 
 ## OP Stack and Superchain
 
