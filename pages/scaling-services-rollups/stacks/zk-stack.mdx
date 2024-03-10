@@ -4,6 +4,32 @@ The goal of the ZK Stack is to power the internet of value. Value needs to be se
 
 ZK Rollups use advanced mathematics called zero-knowledge proofs to show that the execution of the rollup was done correctly. They also send ("roll up") their data to another chain, in our case this is Ethereum. The ZK Stack uses the zkEVM to execute transactions, making it Ethereum compatible.
 
+Active blockchain projects utilizing ZK Stack technology include:
+
+  * **Cronos zkEVM Chain**: A zero-knowledge rollup blockchain network developed by Cronos Labs, leveraging ZK Stack technology from zkSync. This testnet is part of the Cronos ecosystem, focusing on DeFi, GameFi, and Web3 adoption, and includes partnerships with entities like Crypto.com, VVS Finance, Fulcrom Finance, and Veno Finance. It aims to enhance scalability and mainstream adoption of blockchain technology.
+
+  * **Hyperchains Network**: Initiated by zkSync Era, this network utilizes the ZK Stack for creating a series of interoperable custom blockchains known as Hyperchains. These chains operate as new layers on top of existing layer-2 protocols and are designed for specific requirements around privacy, speed, and data availability. Potential users include games, social networks, low-latency exchanges, and banks. zkSync Era's Hyperchains are intended to facilitate almost-instantaneous liquidity transfers and flash loans between protocols within the system.
+
+According to the [layer 2 statistics](https://l2beat.com/scaling/summary), the ZK Stack is being used in zkSync Era project with collectively secured TVL value of 828 Million USD.
+
+## ZK Stack benefits
+
+  * **Scalability**: ZK rollups can process thousands of transactions off-chain and then bundle them into a single transaction to be verified on the main blockchain. This reduces the amount of data stored and processed on the main chain, significantly improving scalability.
+
+  * **Security**: Despite the computations being done off-chain, ZK rollups maintain a high level of security. They use zero-knowledge proofs, which allow validators to verify transactions without needing to see the actual data, ensuring privacy and security.
+
+  * **Privacy**: The zero-knowledge proofs also provide privacy for the users. Since the validator can verify the correctness of transactions without seeing the actual data, personal and transactional information remains confidential.
+
+  * **Speed**: Transactions processed through ZK rollups can be completed faster than traditional on-chain transactions, as they are bundled and verified in large batches off-chain before being submitted to the main chain.
+
+  * **Reduced gas fees**: By bundling many transactions into one, ZK rollups reduce the overall gas fees required for transaction validation on the Ethereum network. This makes transactions more cost-effective for users.
+
+  * **Interoperability**: ZK rollups are designed to be compatible with existing blockchain infrastructure, which means they can often be integrated without significant changes to the underlying network.
+
+  * **Data Compression**: Zero-knowledge proofs allow for a high degree of data compression, meaning that the proofs can be very small relative to the amount of data they represent. This is crucial for reducing the blockchain's storage and processing requirements.
+
+  * **Finality and consistency**: ZK rollups can provide faster finality (the time it takes for a transaction to be considered final and irreversible) compared to other scaling solutions, improving the user experience and consistency of the network.
+
 ## ZK stack and Hyperchains
 
 Hyperchains are fractal-like instances of zkEVM running in parallel and with the common settlement on the L1 mainnet. The name Hyperbridge comes from the traditional web, where users can navigate websites using hyperlinks. Similarly, our rollups will be connected with Hyperbridges.
