@@ -1079,7 +1079,6 @@ curl -X POST https://rpc.ankr.com/polygon \
     1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
       * `earliest`: the lowest numbered block available on the client.
       * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-      * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
       * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
       * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
     2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
