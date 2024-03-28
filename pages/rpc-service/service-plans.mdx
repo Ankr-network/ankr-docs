@@ -8,13 +8,13 @@ Our solutions work under the following Service Plans:
 
   * **Public** — public endpoints for free blockchain interaction provided with Public [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits).
   * **Premium** — private endpoints for high-performing blockchain interaction provided with Premium [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits).
-    * **Free Personal** — this is not a service plan per se, but can be perceived as a transition state between Public and Premium services. You have to sign in on the platform without topping up your account balance to access Premium [features](/rpc-service/service-plans/#feature-list) but under Public [rate limits](/rpc-service/service-plans/#rate-limits).
+    * **Freemium** — this is not a service plan per se, but can be perceived as a transition state between Public and Premium services. You have to sign in on the platform without topping up your account balance to access Premium [features](/rpc-service/service-plans/#feature-list) but under Public [rate limits](/rpc-service/service-plans/#rate-limits).
   * **Enterprise** — customer-tailored solutions for the most demanding blockchain interaction cases.
 <br/>
 
 <img src="/docs/build/service-plans.png" class="responsive-pic" width="800" />
 
-Here is the list of solutions we have at your disposal on the [RPC Service](https://www.ankr.com/rpc/) platform under the Service Plan you've selected:
+Here is the list of solutions we have at your disposal on the [Web3 API](https://www.ankr.com/rpc/) platform under the Service Plan you've selected:
 
   * *[Node API](/rpc-service/overview/)* — the endpoints that enable your Web3 projects to start interacting with an extensive list of [supported blockchains](/rpc-service/chains/chains-list/), give access to viewing the usage statistics for the data queried, and provide the means for RPC API methods testing.
 
@@ -28,36 +28,36 @@ Here is the list of blockchains supported: [Chains Quickstart](/rpc-service/chai
  Advanced API is available for an [authenticated user](/rpc-service/getting-started/basics-premium/#sign-in) only.
 </Callout>
 
-The `RPC/REST API` and `Advanced API` solutions come with both *Public* and *Premium* service plans but differ significantly by the rate limits and other performance features supported depending on the plan selected.
+The `Node API` and `Advanced API` solutions come with both *Public* and *Premium* service plans but differ significantly by the rate limits and other performance features supported depending on the plan selected.
 
 ### Feature list
 
-| Feature                                | Public                      | Freemium               | Premium                                                    |
-|----------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------|
-| Full and Archive data                  | ✅                          | ✅                         | ✅                                                         |
-| Global node coverage                   | ✅                          | ✅                         | ✅                                                         |
-| RPC/REST API                           | ✅                          | ✅                         | ✅                                                         |
-| Advanced API                           | ❌                          | ✅                         | ✅                                                         |
-| Dashboard                              | ❌                          | ✅                         | ✅                                                         |
-| Projects                               | ❌                          | ✅ (single)                | ✅ (multiple)                                              |
-| Usage stats and reports                | ❌                          | ✅ (single-project)        | ✅ (multi-project)                                         |
-| Private endpoints                      | ❌                          | ✅                         | ✅                                                         |
-| Support *Polkadot*, *Kusama*, & *HECO* | ❌                          | ✅                         | ✅                                                         |
-| Batch requests                         | ✅                          | ✅                         | ✅                                                         |
-| `eth_getLogs` batch size               | `10` per batch              | `10` per batch              | `up to 1000` per batch                                     |
-| Priority order                         | Limited during high traffic | Limited during high traffic | Prioritized during high traffic                            |
-| Connection                             | HTTPS                       | HTTPS and WebSocket         | HTTPS and WebSocket                                        |
-| Support                                | Discord and Support Portal  | Discord and Support Portal  | Direct Email Support                                       |
-| Terms                                  | No Contract                 | No Contract                 | Both Contract and No Contract                              |
-| Cost                                   | **Free**                    | **Free** | **[Pay-as-you-go](/rpc-service/service-plans/#charging-model-pay-as-you-go)** |
+| Feature                                 | Public                      | Freemium                    | Premium                                                    |
+|-----------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------|
+| Chains                                  | 40+                         | 50+                         | 50+                                                        |
+| Full and Archive data                   | ✅                          | ✅                         | ✅                                                         |
+| Global node coverage                    | ✅                          | ✅                         | ✅                                                         |
+| Node API                                | ✅                          | ✅                         | ✅                                                         |
+| Advanced API                            | ❌                          | ✅                         | ✅                                                         |
+| Projects (personal API tokens)          | ❌                          | ✅ (1)                     | ✅ (3)                                                     |
+| Multi-project statistics                | ❌                          | ❌                         | ✅                                                         |
+| Team accounts                           | ❌                          | ✅                         | ✅                                                         |
+| Whitelists (IP, domain, smart contract) | ❌                          | ❌                         | ✅                                                         |
+| Support *Polkadot*, *Kusama*, & *HECO*  | ❌                          | ✅                         | ✅                                                         |
+| Batch requests                          | ✅                          | ✅                         | ✅                                                         |
+| Priority order                          | Limited during high traffic | Limited during high traffic | Prioritized during high traffic                            |
+| Connection                              | HTTPS                       | HTTPS and WebSocket         | HTTPS and WebSocket                                        |
+| Support                                 | Community Support (Discord) | Community Support (Discord) | Priority Portal Support                                    |
+| Terms                                   | No Contract                 | No Contract                 | Both Contract and No Contract                              |
+| Cost                                    | **Free**                    | **Free** | **[Pay-as-you-go](/rpc-service/service-plans/#charging-model-pay-as-you-go)** |
 
 
 ### Rate limits
 
-| Service                                  | Public / Free Premium                                                                                                                                       | Premium                                                      |
+| Service                                  | Public / Freemium                                                                                                                                       | Premium                                                      |
 |------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| RPC/REST API<br/>(EVM-compatible chains) | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈1.5k requests/second` |
-| RPC/REST API<br/>(Solana)                | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈4k requests/second`   |
+| Node API<br/>(EVM-compatible chains) | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈1.5k requests/second` |
+| Node API<br/>(Solana)                | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈4k requests/second`   |
 | Advanced API                             | `50 requests/minute`                                                                                                                          | `1k+ requests/minute`                                        |
 
 ## Charging models
