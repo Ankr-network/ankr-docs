@@ -816,6 +816,7 @@ Official quick links: [Website](https://www.bitlayer.org/), [Docs](https://docs.
 
 ### Networks
 
+  * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
 
 ### API methods
@@ -857,7 +858,7 @@ For Bitlayer, we support blockchain interaction via all the [applicable methods]
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/bitlayer_testnet \
+curl -X POST https://rpc.ankr.com/bitlayer \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -879,7 +880,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/bitlayer_testnet"  // url string
+    const url = "https://rpc.ankr.com/bitlayer"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -902,7 +903,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/bitlayer_testnet'  // url string
+const url = 'https://rpc.ankr.com/bitlayer'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -921,7 +922,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/bitlayer_testnet'  # url string
+    url = 'https://rpc.ankr.com/bitlayer'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -935,7 +936,7 @@ def test_block_number(self):
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": "0x167056"
+  "result": "0x4718"
 }
 ```
 
