@@ -25,7 +25,7 @@ Find the chain you require and go to its docs section by clicking it.
 | [Aptos](/rpc-service/chains/chains-list/#aptos)                       | [Celo](/rpc-service/chains/chains-list/#celo)                  | [Gnosis Beacon](/rpc-service/chains/chains-list/#gnosis-beacon) | [Linea](/rpc-service/chains/chains-list/#linea)       | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [Taiko](/rpc-service/chains/chains-list/#taiko)           |
 | [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)                 | [Chiliz](/rpc-service/chains/chains-list/#chiliz)              | [Harmony](/rpc-service/chains/chains-list/#harmony)             | [Mantle](/rpc-service/chains/chains-list/#mantle)     | [Rollux](/rpc-service/chains/chains-list/#rollux)                 | [Tenet](/rpc-service/chains/chains-list/#tenet)           |
 | [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova)       | [Core](/rpc-service/chains/chains-list/#core)                  | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)  | [Metis](/rpc-service/chains/chains-list/#metis)       | [Scroll](/rpc-service/chains/chains-list/#scroll)                 | [TRON](/rpc-service/chains/chains-list/#tron)             |
-| [Avalanche](/rpc-service/chains/chains-list/#avalanche)               | [Ethereum](/rpc-service/chains/chains-list/#ethereum)          | [Horizen](/rpc-service/chains/chains-list/#horizen)             | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Secret Network](/rpc-service/chains/chains-list/#secret-network) | [XDC](/rpc-service/chains/chains-list/#xdc)               |
+| [Avalanche](/rpc-service/chains/chains-list/#avalanche)               | [Ethereum](/rpc-service/chains/chains-list/#ethereum)          | [Horizen EON](/rpc-service/chains/chains-list/#horizen-eon)             | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Secret Network](/rpc-service/chains/chains-list/#secret-network) | [XDC](/rpc-service/chains/chains-list/#xdc)               |
 | [Base](/rpc-service/chains/chains-list/#base)                         | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon) | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [NEAR](/rpc-service/chains/chains-list/#near)         | [Sei](/rpc-service/chains/chains-list/#sei)                       | [X Layer](/rpc-service/chains/chains-list/#x-layer)        |
 | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)                 | [Fantom](/rpc-service/chains/chains-list/#fantom)              | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Solana](/rpc-service/chains/chains-list/#solana)                 | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
 | [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Filecoin](/rpc-service/chains/chains-list/#filecoin)          | [Kinto](/rpc-service/chains/chains-list/#kinto)                 | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Stellar](/rpc-service/chains/chains-list/#stellar)               |                                                           |
@@ -816,6 +816,7 @@ Official quick links: [Website](https://www.bitlayer.org/), [Docs](https://docs.
 
 ### Networks
 
+  * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
 
 ### API methods
@@ -857,7 +858,7 @@ For Bitlayer, we support blockchain interaction via all the [applicable methods]
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/bitlayer_testnet \
+curl -X POST https://rpc.ankr.com/bitlayer \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -879,7 +880,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/bitlayer_testnet"  // url string
+    const url = "https://rpc.ankr.com/bitlayer"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -902,7 +903,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/bitlayer_testnet'  // url string
+const url = 'https://rpc.ankr.com/bitlayer'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -921,7 +922,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/bitlayer_testnet'  # url string
+    url = 'https://rpc.ankr.com/bitlayer'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -935,7 +936,7 @@ def test_block_number(self):
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": "0x167056"
+  "result": "0x4718"
 }
 ```
 
@@ -7022,151 +7023,6 @@ curl -X GET 'https://rpc.ankr.com/http/tron/walletsolidity/getnowblock'
 
 ---
 
-## X Layer
-
-> X Layer API is available on [Web3 API platform](https://www.ankr.com/rpc/xlayer/).
-
-X Layer is a decentralized Ethereum Layer 2 network that offers a secure and user-friendly blockchain experience to all users, using advanced cryptographic zero-knowledge proofs to provide validity and near-instant finality to off-chain transaction computations.
-
-**Benefits**:
-
-  * **Lower fees**: X Layer does not consume expensive gas (i.e., DA to store transaction data off-chain).
-  * **ZKP-powered scalability**: X1 is not bounded by the amount of transaction data that can be published to Ethereum with ZK-validity proofs.
-  * **Ethereum security**: X Layer natively inherits the security of Ethereum, securing user funds from malicious operators.
-  * **Unified liquidity**: X Layer ensures fluid asset transfers across different CDK-developed chains within Polygon 2.0's L2 ecosystem, building a vibrant, efficient, and interconnected digital economy.
-  * **Near-instant finality**: X Layer utilizes cryptographic security to ensure the integrity of transactions, achieving near-instant finality and robust security.
-  * **Powered by OKX**: X Layer provides seamless OKX product integrations, an all-in-one Web3 gateway, and access to 50M users in the OKX ecosystem.
-  * **Portal to Web3**: Enter the world of Web3 via OKX Wallet, built with compact infrastructure modules to create innovative DApps.
-
-Official quick links: [Website](https://www.okx.com/xlayer), [Docs](https://www.okx.com/xlayer/docs/getting-started/welcome/welcome-to-xlayer)
-
-### Networks
-
-  * Testnet (`HTTPS` and `WSS`)
-
-### API methods
-
-For X Layer, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/xlayer/) except for those listed as unsupported.
-
-#### Unsupported
-
- <Callout type="warning">
- This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
- </Callout>
-
- <Callout type="tip">
- If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
- </Callout>
-
-**HTTPS**:
-
-`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
-
-`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
-
-**WSS**:
-
-`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
-
-### API querying
-
-#### Request example
-
-<Tabs
-  items={[
-    "cURL",
-    "Golang",
-    "Web3.JS",
-    "Python",
-  ]}
->
-  <Tab>
-
-```shell
-curl -X POST https://rpc.ankr.com/xlayer \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc":"2.0",
-      "method":"eth_blockNumber",
-      "params": [],
-      "id":1
-    }'
-```
-  </Tab>
-  <Tab>
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "github.com/ethereum/go-ethereum/ethclient"
-)
-
-func main() {
-    const url = "https://rpc.ankr.com/xlayer"  // url string
-
-    rpcClient,err := ethclient.Dial(url)
-
-    if err != nil {
-        panic(err)
-    }
-
-    blockNumber, err := rpcClient.BlockNumber(context.Background())
-
-    if err != nil {
-        panic(err)
-    }
-
-    fmt.Println(blockNumber)
-}
-```
-  </Tab>
-  <Tab>
-
-```js
-const Web3 = require('web3');
-
-const url = 'https://rpc.ankr.com/xlayer'  // url string
-
-const web3 = new Web3(new Web3.providers.HttpProvider(url));
-
-web3.eth.getBlockNumber((error, blockNumber) => {
-    if(!error) {
-        console.log(blockNumber);
-    } else {
-        console.log(error);
-    }
-});
-```
-  </Tab>
-  <Tab>
-
-```python
-from web3 import Web3
-
-def test_block_number(self):
-    url = 'https://rpc.ankr.com/xlayer'  # url string
-
-    web3 = Web3(HTTPProvider(url))
-    print(web3.eth.block_number)
-```
-  </Tab>
-</Tabs>
-
-#### Response example
-
-```json
-{
-  "jsonrpc":"2.0",
-  "id":1,
-  "result":"0x148b7"
-}
-```
-
----
-
 ## XDC Network
 
 > XDC Network API is available on [Web3 API platform](https://www.ankr.com/rpc/xdc).
@@ -7298,6 +7154,152 @@ def test_block_number(self):
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x3f76cd6"
+}
+```
+
+---
+
+## X Layer
+
+> X Layer API is available on [Web3 API platform](https://www.ankr.com/rpc/xlayer/).
+
+X Layer is a decentralized Ethereum Layer 2 network that offers a secure and user-friendly blockchain experience to all users, using advanced cryptographic zero-knowledge proofs to provide validity and near-instant finality to off-chain transaction computations.
+
+**Benefits**:
+
+  * **Lower fees**: X Layer does not consume expensive gas (i.e., DA to store transaction data off-chain).
+  * **ZKP-powered scalability**: X1 is not bounded by the amount of transaction data that can be published to Ethereum with ZK-validity proofs.
+  * **Ethereum security**: X Layer natively inherits the security of Ethereum, securing user funds from malicious operators.
+  * **Unified liquidity**: X Layer ensures fluid asset transfers across different CDK-developed chains within Polygon 2.0's L2 ecosystem, building a vibrant, efficient, and interconnected digital economy.
+  * **Near-instant finality**: X Layer utilizes cryptographic security to ensure the integrity of transactions, achieving near-instant finality and robust security.
+  * **Powered by OKX**: X Layer provides seamless OKX product integrations, an all-in-one Web3 gateway, and access to 50M users in the OKX ecosystem.
+  * **Portal to Web3**: Enter the world of Web3 via OKX Wallet, built with compact infrastructure modules to create innovative DApps.
+
+Official quick links: [Website](https://www.okx.com/xlayer), [Docs](https://www.okx.com/xlayer/docs/getting-started/welcome/welcome-to-xlayer)
+
+### Networks
+
+  * Mainnet (`HTTPS` and `WSS`)
+  * Testnet (`HTTPS` and `WSS`)
+
+### API methods
+
+For X Layer, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/xlayer/) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*`, `personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/xlayer \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc":"2.0",
+      "method":"eth_blockNumber",
+      "params": [],
+      "id":1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/xlayer"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/xlayer'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/xlayer'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc":"2.0",
+  "id":1,
+  "result":"0x148b7"
 }
 ```
 
