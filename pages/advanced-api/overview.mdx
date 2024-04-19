@@ -34,11 +34,20 @@ Currently, Advanced API works with the following EVM-compatible chains:
 
 And more EVM and non-EVM chains coming soon.
 
-## API Methods Supported
+## AAPI Methods Supported
 
-> Supported methods in OpenAPI format: [`aapi-swagger.json`](/build/aapi-swagger.json)
+> To get all supported AAPI methods in the OpenAPI-formatted `aapi-swagger` JSON, use the following request:
 
-To view interactive AAPI docs, click the required method below.
+```shell
+curl --location 'https://rpc.ankr.com/multichain/79258ce7f7ee046decc3b5292a24eb4bf7c910d7e39b691384c7ce0cfb839a01' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "docs_schema",
+    "params": {},
+    "id": 1
+}'
+```
 
 ### NFT API
 
