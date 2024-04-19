@@ -1,0 +1,25 @@
+# NEAR Data Availability
+
+NEAR provides an efficient and robust Data Availability solution designed specifically to handle the Layer 2 scaling demands. The NEAR Data Availability layer, integral to the NEAR Protocol, is designed to enhance scalability by efficiently handling the storage and accessibility of data necessary for validating transactions.
+
+It operates using a sharded architecture, where data is stored across multiple shards, allowing parallel processing and increased throughput. This layer ensures that all nodes in the network can access the necessary data to verify the correctness of transactions, particularly for rollups that execute transactions off-chain but require on-chain data posting for finality and integrity checks.
+
+By providing a decentralized, secure, and cost-effective data storage solution, the NEAR Data Availability layer supports and amplifies the performance and scalability of both layer 1 and layer 2 blockchain solutions.
+
+## NEAR DA advantages
+
+  * **Drastically reduces costs**: Storing rollup calldata on NEAR Protocol is approximately 8000x cheaper than storing the same amount of data on Ethereum. Harness the power of NEAR's robust blockchain, optimized for speed, scalability, and cost. Say goodbye to high DA fees and embrace a new era of cost-effective modular blockchain solutions.
+  * **Easily validates proofs**: Validate proofs effortlessly with NEAR's trustless off-chain light client. Seamlessly access and verify the storage of rollup data on-chain. NEAR's developer-friendly interface allows for convenient validation of blockchain transactions, enhancing transparency and trust in the system.
+  * **Simple to interact with**: NEAR Protocol offers an RPC interface for the effortless retrieval of on-chain data from anywhere. Accessing transaction data has never been easier. Experience the ease of NEAR's Data Availability solution and unlock new potential for your Ethereum rollup.
+
+## NEAR DA architecture components
+
+The NEAR protocol implements [data availability (DA)](https://docs.near.org/build/chain-abstraction/data-availability) through several key components: the [Blob Store Contract](https://docs.near.org/build/chain-abstraction/data-availability#blob-store-contract), the [Light Client](https://docs.near.org/build/chain-abstraction/data-availability#light-client), and the [DA RPC Client](https://docs.near.org/build/chain-abstraction/data-availability#da-rpc). Each plays a critical role in maintaining efficient and secure data storage and retrieval across the network.
+
+  * **Blob Store Contract**: A crucial component of NEAR’s data availability framework, the Blob Store Contract facilitates the storage of arbitrary data blobs. These blobs can encapsulate a variety of data types vital for the operation of rollups. The contract efficiently manages storage costs by integrating with NEAR’s system of transaction receipts. Once a blob is no longer required for active consensus, it is pruned from the immediate blockchain environment but remains accessible via archival nodes. This ensures that data is retrievable in the long term without burdening the blockchain's active consensus layer with excessive data storage.
+
+  * **Light Client**: The light client in NEAR supports data availability with several advanced features, including Merkle proofs for data inclusion. This enables the verification of whether specific data has been correctly submitted to and stored on the blockchain. The client operates off-chain, enhancing scalability and reducing the burden on the main chain. Future upgrades are expected to include non-interactive proofs to streamline verifications further.
+
+  * **DA RPC Client**: This component provides the necessary interface for submitting and retrieving data blobs to and from NEAR's Blob Store. It is designed as a black box model, where data submissions result in a combined output of transaction ID and a commitment hash. This system supports multiple programming environments through various client bindings, making it accessible for developers working in different tech stacks.
+
+Together, these elements allow NEAR to handle data efficiently, providing robustness for operations like rollups and other Layer 2 solutions. The integration of these components helps maintain NEAR's performance and reliability, ensuring that data is both accessible when needed and does not unduly burden the network.
