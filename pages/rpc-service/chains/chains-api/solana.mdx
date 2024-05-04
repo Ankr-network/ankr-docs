@@ -3813,7 +3813,7 @@ curl -X POST https://rpc.ankr.com/solana \
 
     * `<string>` (required): the Pubkey of the account to receive lamports, as base-58 encoded string.
     * `integer` (required): lamports, as a u64.
-    * `object` (optional): the configuration object containing the follwing field:
+    * `object` (optional): the configuration object containing the following field:
       * `commitment` (string): used for retrieving blockhash and verifying airdrop success; the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
         * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
         * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.

@@ -232,7 +232,7 @@ For example, if you have a contract where you create a timer in checkTask() that
 ### Perform only when data is verified
 Some actions must be performed using data you intend to use. Revalidate that the performData is allowed before execution.
 
-For example, if you have a performTask() that funds a wallet and the address of the wallet is received via the performData parameter, ensure you have a list of permissable addresses to compare against to prevent third-party calling your function to send money to their address.
+For example, if you have a performTask() that funds a wallet and the address of the wallet is received via the performData parameter, ensure you have a list of permissible addresses to compare against to prevent third-party calling your function to send money to their address.
 
 ### When performing is not harmful
 Sometimes actions must be performed when conditions are met, but performing actions when conditions are not met is still acceptable. 
