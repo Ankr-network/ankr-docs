@@ -18,7 +18,7 @@ const List = ({ title, items }) => (
     <ul>
       {items.map((item, index) => (
         <ListItem key={index}>
-          <a href={item.href} target="_blank" rel="noreferrer" className={item.className}>
+          <a href={item.href} target="_blank" className={item.className}>
             {item.icon && <item.icon />}
             {item.text}
           </a>
