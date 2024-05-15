@@ -18,7 +18,7 @@ const List = ({ title, items }) => (
     <ul>
       {items.map((item, index) => (
         <ListItem key={index}>
-          <a href={item.href} target="_blank" className={item.className}>
+          <a href={item.href} target="_blank" className={item.className} {...(item.rel && { rel: item.rel })}>
             {item.icon && <item.icon />}
             {item.text}
           </a>
@@ -82,8 +82,8 @@ const FooterMenu = () => {
         title: 'Resources',
         items: [
           { href: 'https://www.ankr.com/docs', text: 'Docs' },
-          { href: 'https://ankr.hashnode.dev/', text: 'Tutorials' },
-          { href: 'https://github.com/Ankr-network', text: 'Github' },
+          { href: 'https://ankr.hashnode.dev/', text: 'Tutorials', rel: 'noreferrer' },
+          { href: 'https://github.com/Ankr-network', text: 'Github', rel: 'noreferrer' },
           { href: 'https://www.ankr.com/ankr-whitepaper-2.0.pdf', text: 'Ankr Whitepaper 2.0' },
           { href: 'https://www.ankr.com/assets/', text: 'Brand Assets' },
         ]
@@ -94,20 +94,20 @@ const FooterMenu = () => {
           { href: 'https://www.ankr.com/about/our-purpose/', text: 'About Us' },
           { href: 'https://www.ankr.com/blog/', text: 'Blog' },
           { href: 'https://www.ankr.com/press/', text: 'Press' },
-          { href: 'https://boards.greenhouse.io/ankrnetwork', text: 'Careers' },
+          { href: 'https://boards.greenhouse.io/ankrnetwork', text: 'Careers', rel: 'noreferrer' },
         ]
       },
       {
         title: 'Socials',
         items: [
-          { href: 'https://twitter.com/ankr', text: 'Twitter', icon: Twitter, className: 'flex' },
-          { href: 'https://t.me/ankrnetwork', text: 'Telegram', icon: Telegram, className: 'flex' },
-          { href: 'https://discord.ankr.com/', text: 'Discord', icon: Discord, className: 'flex' },
-          { href: 'https://medium.com/ankr-network', text: 'Medium', icon: Medium, className: 'flex' },
-          { href: 'https://www.reddit.com/r/Ankrofficial/', text: 'Reddit', icon: Reddit, className: 'flex' },
-          { href: 'https://www.instagram.com/ankr/', text: 'Instagram', icon: Instagram, className: 'flex' },
-          { href: 'https://www.youtube.com/c/AnkrOfficial', text: 'YouTube', icon: Youtube, className: 'flex' },
-          { href: 'https://www.linkedin.com/company/ankr/', text: 'LinkedIn', icon: LinkedIn, className: 'flex' },
+          { href: 'https://twitter.com/ankr', text: 'Twitter', icon: Twitter, className: 'flex', rel: 'noreferrer' },
+          { href: 'https://t.me/ankrnetwork', text: 'Telegram', icon: Telegram, className: 'flex', rel: 'noreferrer' },
+          { href: 'https://discord.ankr.com/', text: 'Discord', icon: Discord, className: 'flex', rel: 'noreferrer' },
+          { href: 'https://medium.com/ankr-network', text: 'Medium', icon: Medium, className: 'flex', rel: 'noreferrer' },
+          { href: 'https://www.reddit.com/r/Ankrofficial/', text: 'Reddit', icon: Reddit, className: 'flex', rel: 'noreferrer' },
+          { href: 'https://www.instagram.com/ankr/', text: 'Instagram', icon: Instagram, className: 'flex', rel: 'noreferrer' },
+          { href: 'https://www.youtube.com/c/AnkrOfficial', text: 'YouTube', icon: Youtube, className: 'flex', rel: 'noreferrer' },
+          { href: 'https://www.linkedin.com/company/ankr/', text: 'LinkedIn', icon: LinkedIn, className: 'flex', rel: 'noreferrer' },
         ]
       },
   ];
