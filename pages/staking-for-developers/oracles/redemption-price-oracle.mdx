@@ -33,6 +33,7 @@ The addresses of all contracts on all supported networks are:
 * [Avalanche](https://snowtrace.io/address/0xEf3C162450E1d08804493aA27BE60CDAa054050F) (0xEf3C162450E1d08804493aA27BE60CDAa054050F)
 * [BNB Smart Chain](https://bscscan.com/address/0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa) (0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa)
 * [Fantom](https://ftmscan.com/address/0xEf3C162450E1d08804493aA27BE60CDAa054050F) (0xEf3C162450E1d08804493aA27BE60CDAa054050F)
+* [Linea](https://lineascan.build/address/0xc437DF90B37C1dB6657339E31BfE54627f0e7181) (0xc437DF90B37C1dB6657339E31BfE54627f0e7181)
 * [Mode](https://modescan.io/address/0xEf3C162450E1d08804493aA27BE60CDAa054050F) (0xEf3C162450E1d08804493aA27BE60CDAa054050F)
 * [Optimism](https://optimistic.etherscan.io/address/0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa) (0xCb0006B31e6b403fEeEC257A8ABeE0817bEd7eBa)
 * [Polygon](https://polygonscan.com/address/0xEf3C162450E1d08804493aA27BE60CDAa054050F) (0xEf3C162450E1d08804493aA27BE60CDAa054050F)
@@ -159,6 +160,25 @@ The function returns:
 
 ##### Smart contracts
 * [Mainnet Ratiofeed](https://ftmscan.com/address/0xef3c162450e1d08804493aa27be60cdaa054050f#readProxyContract#F3)
+
+##### Examples
+
+You can query for a ratio on the contract page by the links above, anytime.
+
+## Linea
+#### Linea `getRatioFor()`
+
+Returns the ratio for any Liquid Staking token if it was **bridged** to Linea. `ankrETH/ratio=ETH`, etc.
+
+##### Parameters
+The function takes:
+* token (address) — contract address of the original Liquid Staking token. For example, `0xE95A203B1a91a908F9B9CE46459d101078c2c3cb` which is the address of ankrETH.
+
+The function returns:
+* ratio (uint256) — ratio for any Liquid Staking token *that was bridged to Linea*.
+
+##### Smart contracts
+* [Mainnet Ratiofeed](https://lineascan.build/address/0xc437DF90B37C1dB6657339E31BfE54627f0e7181#readProxyContract)
 
 ##### Examples
 
