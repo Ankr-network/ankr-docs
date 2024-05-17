@@ -6746,7 +6746,7 @@ Official quick links: [Website](https://taiko.xyz/), [Docs](https://docs.taiko.x
 
 ### Networks
 
-  * Katla Testnet (`HTTPS` and `WSS`)
+  * Hekla Testnet (`HTTPS` and `WSS`)
 
 ### API methods
 
@@ -6787,7 +6787,7 @@ For Taiko, we support blockchain interaction via all the [applicable methods](/r
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/taiko_katla \
+curl -X POST https://rpc.ankr.com/taiko_hekla \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -6809,7 +6809,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/taiko_katla"  // url string
+    const url = "https://rpc.ankr.com/taiko_hekla"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -6832,7 +6832,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/taiko_katla'  // url string
+const url = 'https://rpc.ankr.com/taiko_hekla'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -6851,7 +6851,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/taiko_katla'  # url string
+    url = 'https://rpc.ankr.com/taiko_hekla'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -6865,7 +6865,7 @@ def test_block_number(self):
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": "0xa2722"
+  "result": "0x28244"
 }
 ```
 
