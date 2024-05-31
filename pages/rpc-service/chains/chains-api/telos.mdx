@@ -25,15 +25,11 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`net_listening`](/rpc-service/chains/chains-api/telos/#net_listening) — returns true if client is actively listening for network connections.
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/telos/#web3_clientversion) — returns the current client version.
   * [`net_version`](/rpc-service/chains/chains-api/telos/#net_version) — returns the current network ID.
-  * [`parity_pendingTransactions`]() — retrieves a list of all pending transactions in the transaction pool.
-
-
+  * [`parity_pendingTransactions`](/rpc-service/chains/chains-api/telos/#parity_pendingtransactions) — retrieves a list of all pending transactions in the transaction pool.
   * [`eth_gasPrice`](/rpc-service/chains/chains-api/telos/#eth_gasprice) — returns the current price per gas in wei.
-
   * [`eth_blockNumber`](/rpc-service/chains/chains-api/telos/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_chainId`]()
+  * [`eth_chainId`](/rpc-service/chains/chains-api/telos/#eth_chainid) —  retrieves the chain ID of the connected network.
   * [`eth_accounts`](/rpc-service/chains/chains-api/telos/#eth_accounts) — returns a list of addresses owned by client.
-
   * [`eth_getBalance`](/rpc-service/chains/chains-api/telos/#eth_getbalance) — returns the balance of the account specified by address.
   * [`eth_getBalanceHuman`]() — returns human-readable info on the balance of the account specified by address.
   * [`eth_getStorageAt`](/rpc-service/chains/chains-api/telos/#eth_getstorageat) — returns the value from a storage position at an address specified.
@@ -52,12 +48,11 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/telos/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
   * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/telos/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
   * [`eth_getLogs`](/rpc-service/chains/chains-api/telos/#eth_getlogs) — returns logs matching the parameters specified.
-
-  * [`trace_filter`]()
-  * [`trace_transaction`]()
-  * [`trace_replayTransaction`]()
-  * [`trace_replayBlockTransactions`]()
-  * [`trace_block`]()
+  * [`trace_filter`](/rpc-service/chains/chains-api/telos/#trace_filter) — retrieve traces that match filter criteria.
+  * [`trace_transaction`](/rpc-service/chains/chains-api/telos/#trace_transaction) — retrieves the traces created during the execution of a given transaction.
+  * [`trace_replayTransaction`](/rpc-service/chains/chains-api/telos/#trace_replaytransaction) — replays a transaction and returns the traces produced by its execution along with the state changes.
+  * [`trace_replayBlockTransactions`](/rpc-service/chains/chains-api/telos/#trace_replayblocktransactions) — replays all the transactions in a given block and returns the traces produced by their execution along with the state changes.
+  * [`trace_block`](/rpc-service/chains/chains-api/telos/#trace_block) — retrieves a detailed trace of all the transactions in a specific block.
 
 ---
 
@@ -228,7 +223,11 @@ curl -X POST https://rpc.ankr.com/telos \
 ### Response example
 
 ```json
-
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": []
+}
 ```
 
 ---
@@ -269,7 +268,7 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x5f5e100"
+    "result": "0x7834da65aa"
 }
 ```
 
@@ -353,7 +352,49 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x5f20f3"
+    "result": "0x14868685"
+}
+```
+
+---
+
+## `eth_chainId`
+
+> Retrieves the chain ID of the connected network.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+<br/>
+
+  * `result` (string): the chain ID of the connected network in hexadecimal format.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_chainId",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x28"
 }
 ```
 
@@ -392,7 +433,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBalance",
-      "params": ["0x261a7acefed3b8e6f3f81d08bf60d1a0c853c3f6", "latest"],
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "0x1486854B"],
       "id": 1
     }'
 ```
@@ -403,7 +444,55 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xab588c5740"
+    "result": "0x10533d8375c9c90000"
+}
+```
+
+---
+
+## `eth_getBalanceHuman`
+
+> Retrieves the balance of an Ethereum address in a human-readable format.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<string>`: the Ethereum address for which you want to retrieve the balance.
+    * `<string>` (optional): the hex of the block number or one of the following block tags:
+        * `latest` (default): the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `earliest`: the lowest numbered block available on the client.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `result` (string): the balance of the specified Ethereum address in a human-readable format, usually in Ether (ETH).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBalanceHuman",
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "1004.1086"
 }
 ```
 
@@ -444,7 +533,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getStorageAt",
-      "params": ["0x2f318C334780961FB129D2a6c30D0763d9a5C970", "0x0", "latest"],
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "0x0", "latest"],
       "id": 1
     }'
 ```
@@ -495,7 +584,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionCount",
-      "params": ["0xA4b000000000000000000073657175656e636572", "0x400058"],
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "latest"],
       "id": 1
     }'
 ```
@@ -506,7 +595,7 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x0"
+    "result": "0x1"
 }
 ```
 
@@ -539,7 +628,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByHash",
-      "params": ["0xcf4d0158f20872ec5851fbe1676019f7d630d25ed7a09f9b020b98bd6ab20186"],
+      "params": ["0xd33b9a7c7050f1f207e5cd6f9eeec68231b34ff6e7eaf5d9443e2a8967645143"],
       "id": 1
     }'
 ```
@@ -550,7 +639,7 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x2"
+    "result": "0x0"
 }
 ```
 
@@ -568,12 +657,7 @@ curl -X POST https://rpc.ankr.com/telos \
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    1. `<string>` (quantity|tag): the hex value of a _block number_.
 
 ### Returns
 <br/>
@@ -588,7 +672,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x400058"],
+      "params": ["0x14867817"],
       "id": 1
     }'
 ```
@@ -599,7 +683,7 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x2"
+    "result": "0x1"
 }
 ```
 
@@ -632,7 +716,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0xcf4d0158f20872ec5851fbe1676019f7d630d25ed7a09f9b020b98bd6ab20186"],
+      "params": ["0xd33b9a7c7050f1f207e5cd6f9eeec68231b34ff6e7eaf5d9443e2a8967645143"],
       "id": 1
     }'
 ```
@@ -681,7 +765,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockNumber",
-      "params": ["0x400058"],
+      "params": ["latest"],
       "id": 1
     }'
 ```
@@ -731,7 +815,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getCode",
-      "params": ["0x2f318C334780961FB129D2a6c30D0763d9a5C970", "0x400058"],
+      "params": ["0x9D7665151B49a5F15C3ef757dFc152DbEF7Cbdd7", "latest"],
       "id": 1
     }'
 ```
@@ -788,7 +872,7 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "id": 1,
     "jsonrpc": "2.0",
-    "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
+    "result": "your_result"
 }
 ```
 
@@ -835,8 +919,8 @@ curl -X POST https://rpc.ankr.com/telos \
     "jsonrpc": "2.0",
     "method": "eth_call",
     "params": [{
-        "to": "0x2f318C334780961FB129D2a6c30D0763d9a5C970",
-        "data": "0x70a082310000000000000000000000007cB57B5A97eAbe94205C07890BE4c1D51F80F8a5"
+        "to": "0x1234567890abcdef1234567890abcdef12345678",
+        "data": "0xabcdef"
     }, "latest"],
     "id": 1
 }'
@@ -896,14 +980,12 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_estimateGas",
-    "params": [
-        {
-            "from": null,
-            "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
-            "data": "0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"
-        },
-        "latest"
-    ],
+    "params": [{
+        "to": "0x1234567890abcdef1234567890abcdef12345678",
+        "data": "0xabcdef",
+        "value": "0x0",
+        "from": "0x9D7665151B49a5F15C3ef757dFc152DbEF7Cbdd7"
+    }],
     "id": 1
 }'
 ```
@@ -914,7 +996,7 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x53c9"
+    "result": "0x66c6"
 }
 ```
 
@@ -967,7 +1049,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockByHash",
-      "params": ["0xcf4d0158f20872ec5851fbe1676019f7d630d25ed7a09f9b020b98bd6ab20186", false],
+      "params": ["0x603208c5ad8ef4a061f7c1da3791f67384ed1de70a77a108ee06ff53d0966113", false],
       "id": 1
     }'
 ```
@@ -978,35 +1060,7 @@ curl -X POST https://rpc.ankr.com/telos \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": {
-        "baseFeePerGas": "0x5f5e100",
-        "difficulty": "0x1",
-        "extraData": "0xaa55d4025e441de59a39d7d3d2dac5fd5ac8938cbcb07f24339796db5682a8e1",
-        "gasLimit": "0x4000000000000",
-        "gasUsed": "0xd0a6",
-        "hash": "0xcf4d0158f20872ec5851fbe1676019f7d630d25ed7a09f9b020b98bd6ab20186",
-        "l1BlockNumber": "0x12b29aa",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000080000000000000000000100000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xa4b000000000000000000073657175656e636572",
-        "mixHash": "0x000000000000038600000000012b29aa000000000000000b0000000000000000",
-        "nonce": "0x00000000000039a4",
-        "number": "0x3ff718",
-        "parentHash": "0xc640a3a8b946f08965e7c125aec457cd7e2905527f5b59819e249b96e753d874",
-        "receiptsRoot": "0xeb2f05e73fa4889bf6e2e753f574e10d7fc71e606be490cbf7a545b85105c9f1",
-        "sendCount": "0x386",
-        "sendRoot": "0xaa55d4025e441de59a39d7d3d2dac5fd5ac8938cbcb07f24339796db5682a8e1",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x44d",
-        "stateRoot": "0x1580f815e9aa77771024bf93cc3db9439033220c86e8fa3aed354c6063d68ee1",
-        "timestamp": "0x6612f583",
-        "totalDifficulty": "0x3ff719",
-        "transactions": [
-            "0x0a351df10b5e28c21a5f78946530d2bac586fece6def1b294a2e35f17f0244b4",
-            "0xaa0026df8df2b26fe27ceb40fa69311b7fed829f587bbd4076a7897336a19d9d"
-        ],
-        "transactionsRoot": "0x7e1457eafc48baccccf063835c9df250cd9e215b89718d669eb70374406c1585",
-        "uncles": []
-    }
+    "result": null
 }
 ```
 
@@ -1076,33 +1130,26 @@ curl -X POST https://rpc.ankr.com/telos \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "baseFeePerGas": "0x5f5e100",
-        "difficulty": "0x1",
-        "extraData": "0xaa55d4025e441de59a39d7d3d2dac5fd5ac8938cbcb07f24339796db5682a8e1",
-        "gasLimit": "0x4000000000000",
-        "gasUsed": "0xd0a4",
-        "hash": "0x5378dc646fd7bdb48b9032252b1206e0112815356a1b7287bfbbe8e78c860c11",
-        "l1BlockNumber": "0x12b2a82",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000080000000000000000000100000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xa4b000000000000000000073657175656e636572",
-        "mixHash": "0x000000000000038600000000012b2a82000000000000000b0000000000000000",
-        "nonce": "0x00000000000039a7",
-        "number": "0x400058",
-        "parentHash": "0x702dc9f21f76d1bd96929dea907edd4768de77113d1838d7acb7521a499a125e",
-        "receiptsRoot": "0x94c3c053e7e7f1f0888957d9c9a7c4236962a1f4c5c2a8440aea7204d8fe010e",
-        "sendCount": "0x386",
-        "sendRoot": "0xaa55d4025e441de59a39d7d3d2dac5fd5ac8938cbcb07f24339796db5682a8e1",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "0x21e",
+        "totalDifficulty": "0x0",
+        "uncles": [],
+        "difficulty": "0x0",
+        "extraData": "0x0040007c2db951fff6f5f28c61e11e1739b5fb83c69aa685b78ffdb37c20dae0",
+        "gasLimit": "0x7fffffff",
+        "miner": "0x0000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "parentHash": "0xff25bb20294def3c19a13da19d037b35e2f518575dc9d3365ffc759af4ad2a88",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
         "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x44d",
-        "stateRoot": "0xa07443c552f914c72817d4a130916ba3aa4d3791299420748b92ffd32c026565",
-        "timestamp": "0x6612ffd4",
-        "totalDifficulty": "0x400059",
-        "transactions": [
-            "0x14280c773783b86df783663b640fd83d257fd63ac9e991b9739feb8c33055609",
-            "0xeaf34ebcca662f529bcdcee3e4f4f6cd91a3d471b88f9dab0818a3e5d0599256"
-        ],
-        "transactionsRoot": "0x78417b25cdf0f498f759bb4eeaf5cc8b2f28aab02daa2d2cfe973852db813290",
-        "uncles": []
+        "stateRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "gasUsed": "0x0",
+        "hash": "0x024eb6dbebfdbc8e6e268d6c312aee2e31489a74bf0982146515de0e0fd1bab9",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "number": "0x400058",
+        "timestamp": "0x5c32b723",
+        "transactions": []
     }
 }
 ```
@@ -1149,7 +1196,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByHash",
-      "params": ["0xa98bf9be2a7f8f88ee46f738d3f27f5f50cde686322616c461e9300cc909ad22"],
+      "params": ["0x0c584a3407492e87f5de2a1bb647a56fb1090822664f6d49f3153ba7b961c0e3"],
       "id": 1
     }'
 ```
@@ -1161,26 +1208,20 @@ curl -X POST https://rpc.ankr.com/telos \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0x4633726357538ef4d0840a589e7dc7207702e65f7ebd855a7ce0fbb332693bb5",
-        "blockNumber": "0x5f2338",
-        "from": "0x3bdcdb2610d2f2d4f8e7bf71c830cb8493216e6b",
-        "gas": "0x26370",
-        "gasPrice": "0x5f5e100",
-        "maxFeePerGas": "0xbebc200",
-        "maxPriorityFeePerGas": "0x0",
-        "hash": "0xa98bf9be2a7f8f88ee46f738d3f27f5f50cde686322616c461e9300cc909ad22",
-        "input": "0x3804df03000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000cc42023103307866663063636633393561343862643363366139396639346135346330666234383039336431623934033078383835363866326162326239356338653538653162383539626365623736323563653663613831663663653535346431313735363936393432386330383062373363363262316636356434353639373338613036623735353038616632306263373030336330343938323930323538613633353166316137656533346535313331620340667c3530307c35303003313731353836383730333637330000000000000000000000000000000000000000",
-        "nonce": "0x255c0b",
-        "to": "0xf7cd914bd083ba44025300911be54b2db670f41d",
-        "transactionIndex": "0x1",
-        "value": "0x2540be400",
-        "type": "0x2",
-        "accessList": [],
-        "chainId": "0xa1337",
-        "v": "0x0",
-        "r": "0x64b1459cef2b064f66f739ae05dc4976e3e391216932b9bcfe9781c141e1c2e6",
-        "s": "0x6289d05793846a80ede6eaa17403b6309610bb8432df587b25db96d21f76fa8e",
-        "yParity": "0x0"
+        "blockHash": "0x2e7641dc6b7c7043ea087d7b8236c66c08fc52568a6a43c5350768c9ca9308a5",
+        "blockNumber": "0x14867ff4",
+        "from": "0x339d413CCEfD986b1B3647A9cfa9CBbE70A30749",
+        "gas": "0x35f30",
+        "gasPrice": "0x7834da65aa",
+        "hash": "0x0c584a3407492e87f5de2a1bb647a56fb1090822664f6d49f3153ba7b961c0e3",
+        "input": "0x3161b7f600000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000010a000000000000000000000000000000000000000000134a651e39df6d8d8e90910000000000000000000000000000000000000000000000000000000008f0d1800000000000000000000000000000000000000000000000000000000000000010",
+        "nonce": "0x38a86",
+        "to": "0x2D61DCDD36F10b22176E0433B86F74567d529aAa",
+        "transactionIndex": "0x0",
+        "value": "0x0",
+        "v": "0x73",
+        "r": "0x671cd2321393945bb8bc98129236adde83576b1839cb30d5a094926cec19e822",
+        "s": "0x29e578e39c589a448c9493c81136f715871dba421f813b7e43f54eae02604b65"
     }
 }
 ```
@@ -1228,36 +1269,9 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionByBlockHashAndIndex",
-      "params": ["0xcf4d0158f20872ec5851fbe1676019f7d630d25ed7a09f9b020b98bd6ab20186", "0x0"],
+      "params": ["0x7b7344658882c4f0700d39e84fb4e50cb56cbcd0acadb7550d0c265cccc60474", "0x0"],
       "id": 1
     }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-        "blockHash": "0xcf4d0158f20872ec5851fbe1676019f7d630d25ed7a09f9b020b98bd6ab20186",
-        "blockNumber": "0x3ff718",
-        "from": "0x00000000000000000000000000000000000a4b05",
-        "gas": "0x0",
-        "gasPrice": "0x0",
-        "hash": "0x0a351df10b5e28c21a5f78946530d2bac586fece6def1b294a2e35f17f0244b4",
-        "input": "0x6bf6a42d000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012b29aa00000000000000000000000000000000000000000000000000000000003ff7180000000000000000000000000000000000000000000000000000000000000002",
-        "nonce": "0x0",
-        "to": "0x00000000000000000000000000000000000a4b05",
-        "transactionIndex": "0x0",
-        "value": "0x0",
-        "type": "0x6a",
-        "chainId": "0xa1337",
-        "v": "0x0",
-        "r": "0x0",
-        "s": "0x0"
-    }
-}
 ```
 
 ---
@@ -1308,7 +1322,7 @@ curl -X POST https://rpc.ankr.com/telos \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getTransactionReceipt",
-      "params": ["0xa98bf9be2a7f8f88ee46f738d3f27f5f50cde686322616c461e9300cc909ad22"],
+      "params": ["0x9ef60f8828b3157200c51ae2690063a8539eb250782c7c5e0c3e5d7d13d10d2b"],
       "id": 1
     }'
 ```
@@ -1320,37 +1334,34 @@ curl -X POST https://rpc.ankr.com/telos \
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
-        "blockHash": "0x4633726357538ef4d0840a589e7dc7207702e65f7ebd855a7ce0fbb332693bb5",
-        "blockNumber": "0x5f2338",
+        "blockHash": "0x2e7641dc6b7c7043ea087d7b8236c66c08fc52568a6a43c5350768c9ca9308a5",
+        "blockNumber": "0x14867ff4",
         "contractAddress": null,
-        "cumulativeGasUsed": "0x7b3c",
-        "effectiveGasPrice": "0x5f5e100",
-        "from": "0x3bdcdb2610d2f2d4f8e7bf71c830cb8493216e6b",
-        "gasUsed": "0x7b3c",
-        "gasUsedForL1": "0x24",
-        "l1BlockNumber": "0x12f6427",
+        "cumulativeGasUsed": "0x466c1",
+        "from": "0x6daF055c99883D920849D7022f2EfABb13e2af57",
+        "gasUsed": "0x466c1",
+        "logsBloom": "0x0008000000000000000000001000000000000000000800000000400000000000000000000000020000000000000000000000080000200400000000000020000000000000000000000800000800000000000000000000004000000000000010000100000000080000000000000000000000010000000000000020001420010000000000000000000000000000208000000c004000000040001000000440000000200000000000000000000000000000000000000000000000000000000000008001000003000000000080000000008000000000010000200000000000000000000000000000000000000000000000000000000010040000000000000000020000",
+        "status": "0x1",
+        "to": "0xAbf938482cd67055e537029887bcFa44b9ab84b5",
+        "transactionHash": "0x9ef60f8828b3157200c51ae2690063a8539eb250782c7c5e0c3e5d7d13d10d2b",
+        "transactionIndex": "0x1",
         "logs": [
             {
-                "address": "0xf7cd914bd083ba44025300911be54b2db670f41d",
-                "topics": [
-                    "0xffa7cf79b6173c04d5ec2b41bce25acc6e48f9cf86349011288bab7da23fc517",
-                    "0x0000000000000000000000003bdcdb2610d2f2d4f8e7bf71c830cb8493216e6b"
-                ],
-                "data": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000002540be40000000000000000000000000000000000000000000000000000000000000000cc42023103307866663063636633393561343862643363366139396639346135346330666234383039336431623934033078383835363866326162326239356338653538653162383539626365623736323563653663613831663663653535346431313735363936393432386330383062373363363262316636356434353639373338613036623735353038616632306263373030336330343938323930323538613633353166316137656533346535313331620340667c3530307c35303003313731353836383730333637330000000000000000000000000000000000000000",
-                "blockNumber": "0x5f2338",
-                "transactionHash": "0xa98bf9be2a7f8f88ee46f738d3f27f5f50cde686322616c461e9300cc909ad22",
-                "transactionIndex": "0x1",
-                "blockHash": "0x4633726357538ef4d0840a589e7dc7207702e65f7ebd855a7ce0fbb332693bb5",
+                "address": "0x8D97Cea50351Fb4329d591682b148D43a0C3611b",
+                "blockHash": "0x2e7641dc6b7c7043ea087d7b8236c66c08fc52568a6a43c5350768c9ca9308a5",
+                "blockNumber": "0x14867ff4",
+                "data": "0x000000000000000000000000000000000000000000000000000000000bebc200",
                 "logIndex": "0x0",
-                "removed": false
+                "removed": false,
+                "topics": [
+                    "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                    "0x0000000000000000000000006daf055c99883d920849d7022f2efabb13e2af57",
+                    "0x00000000000000000000000017d3fdf3b017c96782de322a286c03106c75c62e"
+                ],
+                "transactionHash": "0x9ef60f8828b3157200c51ae2690063a8539eb250782c7c5e0c3e5d7d13d10d2b",
+                "transactionIndex": "0x1"
             }
-        ],
-        "logsBloom": "0x00000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000002000100000000000000000000000000000000000000000000000000800000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000040000000000080000000000000000000000000000000000000",
-        "status": "0x1",
-        "to": "0xf7cd914bd083ba44025300911be54b2db670f41d",
-        "transactionHash": "0xa98bf9be2a7f8f88ee46f738d3f27f5f50cde686322616c461e9300cc909ad22",
-        "transactionIndex": "0x1",
-        "type": "0x2"
+        ]
     }
 }
 ```
@@ -1409,9 +1420,9 @@ curl -X POST https://rpc.ankr.com/telos \
       "jsonrpc": "2.0",
       "method": "eth_getLogs",
       "params": [{
-          "fromBlock": "0x4A817C",
-          "toBlock": "0x4A8186",
-          "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "fromBlock": "0x14869E9E",
+          "toBlock": "0x14869EA5",
+          "address": "0x339d413CCEfD986b1B3647A9cfa9CBbE70A30749",
           "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]
       }],
       "id": 1
@@ -1427,3 +1438,524 @@ curl -X POST https://rpc.ankr.com/telos \
     "result": []
 }
 ```
+
+---
+
+## `trace_filter`
+
+> Retrieve traces that match filter criteria.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `fromBlock` (string, optional): the starting block number, given as a hexadecimal string. Example: "0x1" for the first block.
+    * `toBlock` (string, optional): the ending block number, given as a hexadecimal string. Example: "latest" for the most recent block.
+    * `fromAddress` (array of strings, optional): an array of addresses that initiated the transactions. Example: ["0xAddress1", "0xAddress2"].
+    * `toAddress` (array of strings, optional): an array of addresses that received the transactions. Example: ["0xAddress1", "0xAddress2"].
+    * `after` (integer, optional): the offset for pagination. Example: 0.
+    * `count` (integer, optional): the number of results to return. Example: 100.
+    * `topics` (array of arrays of strings, optional): an array of log topics to filter by. Each inner array represents a set of possible values for that topic. Example: [["0xTopic1", "0xTopic2"], ["0xTopic3"]].
+
+### Returns
+<br/>
+
+  * `action` (object)
+    * For `call`:
+      * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+      * `from` (string): the address that initiated the call.
+      * `to` (string): the address that was called.
+      * `gas` (string): the amount of gas provided for the call.
+      * `input` (string): the input data for the call.
+      * `value` (string): the amount of Wei sent with the call.
+    * For `create`:
+      * `from` (string): the address that created the contract.
+      * `gas` (string): the amount of gas provided for the creation.
+      * `init` (string): the initialization code for the contract.
+      * `value` (string): the amount of Wei sent with the creation.
+    * For `reward`:
+      * `author` (string): the address that received the reward.
+      * `value` (string): the amount of Wei rewarded.
+      * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+    * For `suicide`:
+      * `address` (string): the address of the contract that self-destructed.
+      * `refundAddress` (string): the address that received the remaining balance.
+      * `balance` (string): the remaining balance of the contract.
+
+  * `blockHash` (string): the hash of the block containing the transaction.
+  * `blockNumber` (string): The number of the block containing the transaction.
+
+  * `result` (object)
+    * For `call`:
+      * `gasUsed` (string): The amount of gas used by the call.
+      * `output` (string): The output data from the call.
+    * For `create`:
+      * `address` (string): The address of the created contract.
+      * `code` (string): The runtime code of the created contract.
+      * `gasUsed` (string): The amount of gas used by the creation.
+    * For `reward`: No additional fields.
+    * For `suicide`: No additional fields.
+
+  * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+  * `traceAddress` (array of integers): The address within the trace hierarchy.
+  * `transactionHash` (string): The hash of the transaction containing the trace.
+  * `transactionPosition` (integer): The index position of the transaction within the block.
+  * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_filter",
+      "params": [{
+          "fromBlock": "0x3ff718",
+          "toBlock": "0x3ff720",
+          "fromAddress": ["0x1234567890abcdef1234567890abcdef12345678"],
+          "toAddress": ["0xabcdefabcdefabcdefabcdefabcdefabcdefabcd"],
+          "topics": [["0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"]]
+      }],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": []
+}
+```
+
+---
+
+## `trace_transaction`
+
+> Retrieves the traces created during the execution of a given transaction.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `transactionHash` (string; required): the hash of the transaction for which you want to retrieve the traces.
+
+### Returns
+<br/>
+
+  * `action` (object)
+    * For `call`:
+      * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+      * `from` (string): the address that initiated the call.
+      * `to` (string): the address that was called.
+      * `gas` (string): the amount of gas provided for the call.
+      * `input` (string): the input data for the call.
+      * `value` (string): the amount of Wei sent with the call.
+    * For `create`:
+      * `from` (string): the address that created the contract.
+      * `gas` (string): the amount of gas provided for the creation.
+      * `init` (string): the initialization code for the contract.
+      * `value` (string): the amount of Wei sent with the creation.
+    * For `reward`:
+      * `author` (string): the address that received the reward.
+      * `value` (string): the amount of Wei rewarded.
+      * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+    * For `suicide`:
+      * `address` (string): the address of the contract that self-destructed.
+      * `refundAddress` (string): the address that received the remaining balance.
+      * `balance` (string): the remaining balance of the contract.
+
+  * `blockHash` (string): the hash of the block containing the transaction.
+  * `blockNumber` (string): The number of the block containing the transaction.
+
+  * `result` (object)
+    * For call:
+      * `gasUsed` (string): The amount of gas used by the call.
+      * `output` (string): The output data from the call.
+    * For `create`:
+      * `address` (string): The address of the created contract.
+      * `code` (string): The runtime code of the created contract.
+      * `gasUsed` (string): The amount of gas used by the creation.
+    * For `reward`: No additional fields.
+    * For `suicide`: No additional fields.
+
+  * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+  * `traceAddress` (array of integers): The address within the trace hierarchy.
+  * `transactionHash` (string): The hash of the transaction containing the trace.
+  * `transactionPosition` (integer): The index position of the transaction within the block.
+  * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_transaction",
+      "params": ["0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "action": {
+                "callType": "call",
+                "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                "gas": "0x38025",
+                "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                "value": "0x0",
+                "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+            },
+            "result": {
+                "gasUsed": "0x38025",
+                "output": "0x"
+            },
+            "subtraces": 1,
+            "traceAddress": [],
+            "type": "call",
+            "blockHash": "0xb20d0897ac3567d603afb646238b66e455bf28d234ce96cdbbe86ddc8d27c9e9",
+            "blockNumber": 344366750,
+            "transactionHash": "0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e",
+            "transactionPosition": 0
+        },
+        {
+            "action": {
+                "callType": "delegatecall",
+                "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                "gas": "0x02e970",
+                "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                "value": "0x0",
+                "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+            },
+            "result": {
+                "gasUsed": "0x2a78"
+            },
+            "subtraces": 0,
+            "traceAddress": [
+                0
+            ],
+            "type": "call",
+            "blockHash": "0xb20d0897ac3567d603afb646238b66e455bf28d234ce96cdbbe86ddc8d27c9e9",
+            "blockNumber": 344366750,
+            "transactionHash": "0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e",
+            "transactionPosition": 0
+        }
+    ]
+}
+```
+
+---
+
+## `trace_replayTransaction`
+
+> Replays a transaction and returns the traces produced by its execution along with the state changes.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `transactionHash` (string): the hash of the transaction to be replayed.
+    * `traceTypes` (array of strings): the types of traces to be included in the response. Possible value: `trace`.
+
+### Returns
+
+The method returns an object that can include the following fields:
+
+  * `trace` (array): an array of trace objects, similar to those returned by `trace_transaction` and `trace_filter`:
+
+    * `action` (object)
+      * For `call`:
+        * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+        * `from` (string): the address that initiated the call.
+        * `to` (string): the address that was called.
+        * `gas` (string): the amount of gas provided for the call.
+        * `input` (string): the input data for the call.
+        * `value` (string): the amount of Wei sent with the call.
+      * For `create`:
+        * `from` (string): the address that created the contract.
+        * `gas` (string): the amount of gas provided for the creation.
+        * `init` (string): the initialization code for the contract.
+        * `value` (string): the amount of Wei sent with the creation.
+      * For `reward`:
+        * `author` (string): the address that received the reward.
+        * `value` (string): the amount of Wei rewarded.
+        * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+      * For `suicide`:
+        * `address` (string): the address of the contract that self-destructed.
+        * `refundAddress` (string): the address that received the remaining balance.
+        * `balance` (string): the remaining balance of the contract.
+
+    * `blockHash` (string): the hash of the block containing the transaction.
+    * `blockNumber` (string): The number of the block containing the transaction.
+
+    * `result` (object)
+      * For call:
+        * `gasUsed` (string): The amount of gas used by the call.
+        * `output` (string): The output data from the call.
+      * For `create`:
+        * `address` (string): The address of the created contract.
+        * `code` (string): The runtime code of the created contract.
+        * `gasUsed` (string): The amount of gas used by the creation.
+      * For `reward`: No additional fields.
+      * For `suicide`: No additional fields.
+
+    * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+    * `traceAddress` (array of integers): The address within the trace hierarchy.
+    * `transactionHash` (string): The hash of the transaction containing the trace.
+    * `transactionPosition` (integer): The index position of the transaction within the block.
+    * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_replayTransaction",
+      "params": ["0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e", ["trace"]],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "output": "0x",
+        "stateDiff": null,
+        "trace": [
+            {
+                "action": {
+                    "callType": "call",
+                    "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                    "gas": "0x38025",
+                    "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                    "value": "0x0",
+                    "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+                },
+                "result": {
+                    "gasUsed": "0x38025",
+                    "output": "0x"
+                },
+                "subtraces": 1,
+                "traceAddress": [],
+                "type": "call"
+            },
+            {
+                "action": {
+                    "callType": "delegatecall",
+                    "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                    "gas": "0x02e970",
+                    "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                    "value": "0x0",
+                    "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+                },
+                "result": {
+                    "gasUsed": "0x2a78"
+                },
+                "subtraces": 0,
+                "traceAddress": [
+                    0
+                ],
+                "type": "call"
+            }
+        ],
+        "vmTrace": null
+    }
+}
+```
+
+---
+
+## `trace_replayBlockTransactions`
+
+> Replays all the transactions in a given block and returns the traces produced by their execution along with the state changes.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `blockHash` (string): the hash of the block whose transactions you want to replay.
+    * `traceTypes` (array of strings): the types of traces to be included in the response. Possible value: `trace`.
+
+### Returns
+
+The method returns an object that can include the following fields:
+
+  * `trace` (array): an array of trace objects, similar to those returned by `trace_transaction` and `trace_filter`:
+
+    * `action` (object)
+      * For `call`:
+        * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+        * `from` (string): the address that initiated the call.
+        * `to` (string): the address that was called.
+        * `gas` (string): the amount of gas provided for the call.
+        * `input` (string): the input data for the call.
+        * `value` (string): the amount of Wei sent with the call.
+      * For `create`:
+        * `from` (string): the address that created the contract.
+        * `gas` (string): the amount of gas provided for the creation.
+        * `init` (string): the initialization code for the contract.
+        * `value` (string): the amount of Wei sent with the creation.
+      * For `reward`:
+        * `author` (string): the address that received the reward.
+        * `value` (string): the amount of Wei rewarded.
+        * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+      * For `suicide`:
+        * `address` (string): the address of the contract that self-destructed.
+        * `refundAddress` (string): the address that received the remaining balance.
+        * `balance` (string): the remaining balance of the contract.
+
+    * `blockHash` (string): the hash of the block containing the transaction.
+    * `blockNumber` (string): The number of the block containing the transaction.
+
+    * `result` (object)
+      * For call:
+        * `gasUsed` (string): The amount of gas used by the call.
+        * `output` (string): The output data from the call.
+      * For `create`:
+        * `address` (string): The address of the created contract.
+        * `code` (string): The runtime code of the created contract.
+        * `gasUsed` (string): The amount of gas used by the creation.
+      * For `reward`: No additional fields.
+      * For `suicide`: No additional fields.
+
+    * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+    * `traceAddress` (array of integers): The address within the trace hierarchy.
+    * `transactionHash` (string): The hash of the transaction containing the trace.
+    * `transactionPosition` (integer): The index position of the transaction within the block.
+    * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_replayBlockTransactions",
+      "params": ["0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e", ["trace"]],
+      "id": 1
+    }'
+```
+
+---
+
+## `trace_block`
+
+> Retrieves a detailed trace of all the transactions in a specific block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `blockNumber` (string): the number of the block you want to trace, given as a hexadecimal string.
+
+### Returns
+
+The method returns an array of trace objects, each of which contains detailed information about a particular operation. These trace objects include the following fields:
+
+  * `action` (object): describes the action that was performed. The structure of this object varies based on the type of action.
+    * For `call` actions:
+      * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+      * `from` (string): the address that initiated the call.
+      * `to` (string): the address that was called.
+      * `gas` (string): the amount of gas provided for the call.
+      * `input` (string): the input data for the call.
+      * `value` (string): the amount of Wei sent with the call.
+    * For `create` actions:
+      * `from` (string): the address that created the contract.
+      * `gas` (string): the amount of gas provided for the creation.
+      * `init` (string): the initialization code for the contract.
+      * `value` (string): the amount of Wei sent with the creation.
+    * For `reward` actions:
+      * `author` (string): the address that received the reward.
+      * `value` (string): the amount of Wei rewarded.
+      * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+    * For `suicide` actions:
+      * `address` (string): the address of the contract that self-destructed.
+      * `refundAddress` (string): the address that received the remaining balance.
+      * `balance` (string): the remaining balance of the contract.
+
+    * `blockHash` (string): the hash of the block containing the transaction.
+    * `blockNumber` (string): the number of the block containing the transaction.
+
+    * `result` (object): describes the result of the action.
+      * For `call` actions:
+        * `gasUsed` (string): the amount of gas used by the call.
+        * `output` (string): the output data from the call.
+      * For `create` actions:
+        * `address` (string): the address of the created contract.
+        * `code` (string): the runtime code of the created contract.
+        * `gasUsed` (string): the amount of gas used by the creation.
+
+      * For `reward` actions: no additional fields.
+      * For `suicide` actions: no additional fields.
+    * `subtraces` (integer): the number of subtraces (nested traces) generated by this trace.
+    * `traceAddress` (array of integers): the address within the trace hierarchy, indicating the position of the trace in the call stack.
+    * `transactionHash` (string): the hash of the transaction containing the trace.
+    * `transactionPosition` (integer): the index position of the transaction within the block.
+    * `type` (string): the type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_block",
+      "params": ["0x14869E9E"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": []
+}
+```
+
+
+
+
+
