@@ -1,0 +1,1961 @@
+import { Callout } from "components";
+
+# Telos
+
+> Telos API is available on [Web3 API platform](https://www.ankr.com/rpc/telos).
+
+*Telos* EVM integrates the Telos blockchain's high performance with Ethereum's development environment. It offers fast transactions, low fees, and full compatibility with Ethereum tools and smart contracts. Key features include:
+
+  * **High Performance**: Thousands of transactions per second with low latency.
+  * **Low Fees**: Significantly cheaper transactions than Ethereum.
+  * **Compatibility**: Supports Ethereum smart contracts and development tools like Solidity and Metamask.
+  * **Governance**: Robust governance model allowing token holder participation.
+  * **Frontrunning Protection**: Built-in mechanisms to prevent frontrunning, ensuring fairer transaction execution.
+  * **Arbitration**: Dispute resolution mechanism to handle conflicts, enhancing trust and security.
+
+In order for your Web3 application to interact with Telos — either by reading blockchain data or sending transactions to the network — it must connect to a Telos node. Developers interact with the blockchain using the methods provided by the API.
+
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
+
+---
+
+## Methods supported
+<br/>
+
+  * [`net_listening`](/rpc-service/chains/chains-api/telos/#net_listening) — returns true if client is actively listening for network connections.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/telos/#web3_clientversion) — returns the current client version.
+  * [`net_version`](/rpc-service/chains/chains-api/telos/#net_version) — returns the current network ID.
+  * [`parity_pendingTransactions`](/rpc-service/chains/chains-api/telos/#parity_pendingtransactions) — retrieves a list of all pending transactions in the transaction pool.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/telos/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/telos/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_chainId`](/rpc-service/chains/chains-api/telos/#eth_chainid) —  retrieves the chain ID of the connected network.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/telos/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/telos/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getBalanceHuman`]() — returns human-readable info on the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/telos/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/telos/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/telos/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/telos/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/telos/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/telos/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/telos/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/telos/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/telos/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/telos/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/telos/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/telos/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/telos/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/telos/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/telos/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/telos/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`trace_filter`](/rpc-service/chains/chains-api/telos/#trace_filter) — retrieve traces that match filter criteria.
+  * [`trace_transaction`](/rpc-service/chains/chains-api/telos/#trace_transaction) — retrieves the traces created during the execution of a given transaction.
+  * [`trace_replayTransaction`](/rpc-service/chains/chains-api/telos/#trace_replaytransaction) — replays a transaction and returns the traces produced by its execution along with the state changes.
+  * [`trace_replayBlockTransactions`](/rpc-service/chains/chains-api/telos/#trace_replayblocktransactions) — replays all the transactions in a given block and returns the traces produced by their execution along with the state changes.
+  * [`trace_block`](/rpc-service/chains/chains-api/telos/#trace_block) — retrieves a detailed trace of all the transactions in a specific block.
+
+---
+
+## `net_listening`
+
+> Returns `true` if client is actively listening for network connections.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+
+  * `<boolean>`: `true` when listening, otherwise `false`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_listening",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": true
+}
+```
+
+---
+
+## `web3_clientVersion`
+
+> Returns the current client version.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the current client version.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_clientVersion",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "nitro/v2.3.3-6a1c1a7/linux-amd64/go1.20.14",
+    "id": 1
+}
+```
+
+---
+
+## `net_version`
+
+> Returns the current network ID.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>`: the current network ID.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_version",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "660279"
+}
+```
+
+---
+
+## `parity_pendingTransactions`
+
+> Retrieves a list of all pending transactions in the transaction pool.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `hash`: the transaction hash.
+  * `nonce`: the number of transactions sent from the sender's address.
+  * `blockHash`: this will be null for pending transactions.
+  * `blockNumber`: this will be null for pending transactions.
+  * `transactionIndex`: this will be null for pending transactions.
+  * `from`: the address of the sender.
+  * `to`: the address of the receiver (null if it’s a contract creation transaction).
+  * `value`: the amount of value transferred in Wei.
+  * `gas`: the gas provided by the sender.
+  * `gasPrice`: the gas price provided by the sender in Wei.
+  * `input`: the data sent with the transaction.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "parity_pendingTransactions",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": []
+}
+```
+
+---
+
+## `eth_gasPrice`
+
+> Returns the current price per gas in wei.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current gas price in Wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_gasPrice",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x7834da65aa"
+}
+```
+
+---
+
+## `eth_accounts`
+
+> Returns a list of addresses owned by client.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<array>` (string; data, 20 bytes): addresses owned by the client.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_accounts",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": []
+}
+```
+
+---
+
+## `eth_blockNumber`
+
+> Returns the number of most recent block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current block number the client is on.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x14868685"
+}
+```
+
+---
+
+## `eth_chainId`
+
+> Retrieves the chain ID of the connected network.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+<br/>
+
+  * `result` (string): the chain ID of the connected network in hexadecimal format.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_chainId",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x28"
+}
+```
+
+---
+
+## `eth_getBalance`
+
+> Returns the balance of the account specified by address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address to check for balance.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the current balance in wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBalance",
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "0x1486854B"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x10533d8375c9c90000"
+}
+```
+
+---
+
+## `eth_getBalanceHuman`
+
+> Retrieves the balance of an Ethereum address in a human-readable format.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<string>`: the Ethereum address for which you want to retrieve the balance.
+    * `<string>` (optional): the hex of the block number or one of the following block tags:
+        * `latest` (default): the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `earliest`: the lowest numbered block available on the client.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `result` (string): the balance of the specified Ethereum address in a human-readable format, usually in Ether (ETH).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBalanceHuman",
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "1004.1086"
+}
+```
+
+---
+
+## `eth_getStorageAt`
+
+> Returns the value from a storage position at an address specified.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address of the storage (hex encoded).
+    2. `<string>` (quantity): a slot position in the storage (hex encoded unsigned integer).
+    3. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the value at this storage position.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getStorageAt",
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "0x0", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+```
+
+---
+
+## `eth_getTransactionCount`
+
+> Returns the number of transactions sent from an address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions send from this address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionCount",
+      "params": ["0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByHash`
+
+> Returns the number of transactions in a block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example:
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByHash",
+      "params": ["0xd33b9a7c7050f1f207e5cd6f9eeec68231b34ff6e7eaf5d9443e2a8967645143"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByNumber`
+
+> Returns the number of transactions in the block specified by number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): the hex value of a _block number_.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByNumber",
+      "params": ["0x14867817"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockHash`
+
+> Returns the number of uncles in a block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockHash",
+      "params": ["0xd33b9a7c7050f1f207e5cd6f9eeec68231b34ff6e7eaf5d9443e2a8967645143"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockNumber`
+
+> Returns the number of uncles in a block specified by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockNumber",
+      "params": ["latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getCode`
+
+> Returns code at a given address.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address to get the code from.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (data): the code from the given address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getCode",
+      "params": ["0x9D7665151B49a5F15C3ef757dFc152DbEF7Cbdd7", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x"
+}
+```
+
+---
+
+## `eth_sendRawTransaction`
+
+> Creates new message call transaction or a contract creation for signed transactions.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data): the signed transaction data.
+
+### Returns
+<br/>
+
+  * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
+
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/telos/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_sendRawTransaction",
+    "params": ["signed_transaction_data"],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "your_result"
+}
+```
+
+---
+
+## `eth_call`
+
+> Executes a new message call immediately without creating a transaction on the blockchain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (hex encoded bytes): the return value of executed contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_call",
+    "params": [{
+        "to": "0x1234567890abcdef1234567890abcdef12345678",
+        "data": "0xabcdef"
+    }, "latest"],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x"
+}
+```
+
+---
+
+## `eth_estimateGas`
+
+> Generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+
+The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+<br/>
+
+  * `<string>` (quantity): the amount of gas used.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_estimateGas",
+    "params": [{
+        "to": "0x1234567890abcdef1234567890abcdef12345678",
+        "data": "0xabcdef",
+        "value": "0x0",
+        "from": "0x9D7665151B49a5F15C3ef757dFc152DbEF7Cbdd7"
+    }],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x66c6"
+}
+```
+
+---
+
+## `eth_getBlockByHash`
+
+> Returns information for the block specified by block hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the block hash.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByHash",
+      "params": ["0x603208c5ad8ef4a061f7c1da3791f67384ed1de70a77a108ee06ff53d0966113", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": null
+}
+```
+
+---
+
+## `eth_getBlockByNumber`
+
+> Returns information for the block specified by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
+       * `earliest`: the lowest numbered block available on the client.
+       * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+       * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+       * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+       * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+<br/>
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByNumber",
+      "params": ["0x400058", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "0x21e",
+        "totalDifficulty": "0x0",
+        "uncles": [],
+        "difficulty": "0x0",
+        "extraData": "0x0040007c2db951fff6f5f28c61e11e1739b5fb83c69aa685b78ffdb37c20dae0",
+        "gasLimit": "0x7fffffff",
+        "miner": "0x0000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "parentHash": "0xff25bb20294def3c19a13da19d037b35e2f518575dc9d3365ffc759af4ad2a88",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "stateRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "gasUsed": "0x0",
+        "hash": "0x024eb6dbebfdbc8e6e268d6c312aee2e31489a74bf0982146515de0e0fd1bab9",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "number": "0x400058",
+        "timestamp": "0x5c32b723",
+        "transactions": []
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByHash`
+
+> Returns information on a transaction specified by transaction hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a transaction hash.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByHash",
+      "params": ["0x0c584a3407492e87f5de2a1bb647a56fb1090822664f6d49f3153ba7b961c0e3"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blockHash": "0x2e7641dc6b7c7043ea087d7b8236c66c08fc52568a6a43c5350768c9ca9308a5",
+        "blockNumber": "0x14867ff4",
+        "from": "0x339d413CCEfD986b1B3647A9cfa9CBbE70A30749",
+        "gas": "0x35f30",
+        "gasPrice": "0x7834da65aa",
+        "hash": "0x0c584a3407492e87f5de2a1bb647a56fb1090822664f6d49f3153ba7b961c0e3",
+        "input": "0x3161b7f600000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000010a000000000000000000000000000000000000000000134a651e39df6d8d8e90910000000000000000000000000000000000000000000000000000000008f0d1800000000000000000000000000000000000000000000000000000000000000010",
+        "nonce": "0x38a86",
+        "to": "0x2D61DCDD36F10b22176E0433B86F74567d529aAa",
+        "transactionIndex": "0x0",
+        "value": "0x0",
+        "v": "0x73",
+        "r": "0x671cd2321393945bb8bc98129236adde83576b1839cb30d5a094926cec19e822",
+        "s": "0x29e578e39c589a448c9493c81136f715871dba421f813b7e43f54eae02604b65"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByBlockHashAndIndex`
+
+> Returns information on a transaction specified by block hash and transaction index position.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+    2. `<string>` (quantity): a transaction index position.
+
+### Returns
+<br/>
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByBlockHashAndIndex",
+      "params": ["0x7b7344658882c4f0700d39e84fb4e50cb56cbcd0acadb7550d0c265cccc60474", "0x0"],
+      "id": 1
+    }'
+```
+
+---
+
+## `eth_getTransactionReceipt`
+
+> Returns the receipt of a transaction by transaction hash.
+
+The receipt is not available for pending transactions.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a hash of the transaction.
+
+### Returns
+<br/>
+
+  * `object`: a transaction receipt object, or null when no receipt was found:
+
+      * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
+      * `transactionIndex` (string; quantity): the transactions index position in the block.
+      * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
+      * `blockNumber` (string; quantity): a number of the block containing the transaction.
+      * `from` (string; data, 20 bytes): an address of the sender.
+      * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
+      * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
+      * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
+      * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
+      * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
+      * `logs` (array): an array of log objects, which this transaction generated.
+      * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
+      * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
+
+          * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
+          * `status` (string; quantity): either 1 (success) or 0 (failure).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionReceipt",
+      "params": ["0x9ef60f8828b3157200c51ae2690063a8539eb250782c7c5e0c3e5d7d13d10d2b"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "blockHash": "0x2e7641dc6b7c7043ea087d7b8236c66c08fc52568a6a43c5350768c9ca9308a5",
+        "blockNumber": "0x14867ff4",
+        "contractAddress": null,
+        "cumulativeGasUsed": "0x466c1",
+        "from": "0x6daF055c99883D920849D7022f2EfABb13e2af57",
+        "gasUsed": "0x466c1",
+        "logsBloom": "0x0008000000000000000000001000000000000000000800000000400000000000000000000000020000000000000000000000080000200400000000000020000000000000000000000800000800000000000000000000004000000000000010000100000000080000000000000000000000010000000000000020001420010000000000000000000000000000208000000c004000000040001000000440000000200000000000000000000000000000000000000000000000000000000000008001000003000000000080000000008000000000010000200000000000000000000000000000000000000000000000000000000010040000000000000000020000",
+        "status": "0x1",
+        "to": "0xAbf938482cd67055e537029887bcFa44b9ab84b5",
+        "transactionHash": "0x9ef60f8828b3157200c51ae2690063a8539eb250782c7c5e0c3e5d7d13d10d2b",
+        "transactionIndex": "0x1",
+        "logs": [
+            {
+                "address": "0x8D97Cea50351Fb4329d591682b148D43a0C3611b",
+                "blockHash": "0x2e7641dc6b7c7043ea087d7b8236c66c08fc52568a6a43c5350768c9ca9308a5",
+                "blockNumber": "0x14867ff4",
+                "data": "0x000000000000000000000000000000000000000000000000000000000bebc200",
+                "logIndex": "0x0",
+                "removed": false,
+                "topics": [
+                    "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                    "0x0000000000000000000000006daf055c99883d920849d7022f2efabb13e2af57",
+                    "0x00000000000000000000000017d3fdf3b017c96782de322a286c03106c75c62e"
+                ],
+                "transactionHash": "0x9ef60f8828b3157200c51ae2690063a8539eb250782c7c5e0c3e5d7d13d10d2b",
+                "transactionIndex": "0x1"
+            }
+        ]
+    }
+}
+```
+
+---
+
+## `eth_getLogs`
+
+> Returns an array of all logs matching a given filter object.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+      1. `object`: the filter options:
+
+         * `fromBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `toBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `address` (array of strings; data, 20 bytes; optional): a contract address or a list of addresses from which logs should originate.
+         * `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
+         * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
+
+### Returns
+<br/>
+
+  * `removed` (string; tag): `true` when the log was removed, due to a chain reorganization; `false` if it's a valid log.
+  * `logIndex` (string; quantity): the log index position in the block; null when it's a pending log.
+  * `transactionIndex` (string; quantity): the transactions index position log was created from; null when it's a pending log.
+  * `transactionHash` (string; data, 32 bytes): a hash of the transactions this log was created from; null when it's a pending log.
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the log; null when it's pending; null when it's a pending log.
+  * `blockNumber` (string; quantity): the number of the block containing the log; null when it's pending; null when it's a pending log.
+  * `address` (string; data, 20 bytes): an address from which this log originated.
+  * `data` (string; data): contains one or more 32 bytes non-indexed arguments of the log.
+  * `topics` (array of strings; data): an array of 0 to 4 32 bytes data of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getLogs",
+      "params": [{
+          "fromBlock": "0x14869E9E",
+          "toBlock": "0x14869EA5",
+          "address": "0x339d413CCEfD986b1B3647A9cfa9CBbE70A30749",
+          "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]
+      }],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": []
+}
+```
+
+---
+
+## `trace_filter`
+
+> Retrieve traces that match filter criteria.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `fromBlock` (string, optional): the starting block number, given as a hexadecimal string. Example: "0x1" for the first block.
+    * `toBlock` (string, optional): the ending block number, given as a hexadecimal string. Example: "latest" for the most recent block.
+    * `fromAddress` (array of strings, optional): an array of addresses that initiated the transactions. Example: ["0xAddress1", "0xAddress2"].
+    * `toAddress` (array of strings, optional): an array of addresses that received the transactions. Example: ["0xAddress1", "0xAddress2"].
+    * `after` (integer, optional): the offset for pagination. Example: 0.
+    * `count` (integer, optional): the number of results to return. Example: 100.
+    * `topics` (array of arrays of strings, optional): an array of log topics to filter by. Each inner array represents a set of possible values for that topic. Example: [["0xTopic1", "0xTopic2"], ["0xTopic3"]].
+
+### Returns
+<br/>
+
+  * `action` (object)
+    * For `call`:
+      * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+      * `from` (string): the address that initiated the call.
+      * `to` (string): the address that was called.
+      * `gas` (string): the amount of gas provided for the call.
+      * `input` (string): the input data for the call.
+      * `value` (string): the amount of Wei sent with the call.
+    * For `create`:
+      * `from` (string): the address that created the contract.
+      * `gas` (string): the amount of gas provided for the creation.
+      * `init` (string): the initialization code for the contract.
+      * `value` (string): the amount of Wei sent with the creation.
+    * For `reward`:
+      * `author` (string): the address that received the reward.
+      * `value` (string): the amount of Wei rewarded.
+      * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+    * For `suicide`:
+      * `address` (string): the address of the contract that self-destructed.
+      * `refundAddress` (string): the address that received the remaining balance.
+      * `balance` (string): the remaining balance of the contract.
+
+  * `blockHash` (string): the hash of the block containing the transaction.
+  * `blockNumber` (string): The number of the block containing the transaction.
+
+  * `result` (object)
+    * For `call`:
+      * `gasUsed` (string): The amount of gas used by the call.
+      * `output` (string): The output data from the call.
+    * For `create`:
+      * `address` (string): The address of the created contract.
+      * `code` (string): The runtime code of the created contract.
+      * `gasUsed` (string): The amount of gas used by the creation.
+    * For `reward`: No additional fields.
+    * For `suicide`: No additional fields.
+
+  * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+  * `traceAddress` (array of integers): The address within the trace hierarchy.
+  * `transactionHash` (string): The hash of the transaction containing the trace.
+  * `transactionPosition` (integer): The index position of the transaction within the block.
+  * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_filter",
+      "params": [{
+          "fromBlock": "0x3ff718",
+          "toBlock": "0x3ff720",
+          "fromAddress": ["0x1234567890abcdef1234567890abcdef12345678"],
+          "toAddress": ["0xabcdefabcdefabcdefabcdefabcdefabcdefabcd"],
+          "topics": [["0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"]]
+      }],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": []
+}
+```
+
+---
+
+## `trace_transaction`
+
+> Retrieves the traces created during the execution of a given transaction.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `transactionHash` (string; required): the hash of the transaction for which you want to retrieve the traces.
+
+### Returns
+<br/>
+
+  * `action` (object)
+    * For `call`:
+      * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+      * `from` (string): the address that initiated the call.
+      * `to` (string): the address that was called.
+      * `gas` (string): the amount of gas provided for the call.
+      * `input` (string): the input data for the call.
+      * `value` (string): the amount of Wei sent with the call.
+    * For `create`:
+      * `from` (string): the address that created the contract.
+      * `gas` (string): the amount of gas provided for the creation.
+      * `init` (string): the initialization code for the contract.
+      * `value` (string): the amount of Wei sent with the creation.
+    * For `reward`:
+      * `author` (string): the address that received the reward.
+      * `value` (string): the amount of Wei rewarded.
+      * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+    * For `suicide`:
+      * `address` (string): the address of the contract that self-destructed.
+      * `refundAddress` (string): the address that received the remaining balance.
+      * `balance` (string): the remaining balance of the contract.
+
+  * `blockHash` (string): the hash of the block containing the transaction.
+  * `blockNumber` (string): The number of the block containing the transaction.
+
+  * `result` (object)
+    * For call:
+      * `gasUsed` (string): The amount of gas used by the call.
+      * `output` (string): The output data from the call.
+    * For `create`:
+      * `address` (string): The address of the created contract.
+      * `code` (string): The runtime code of the created contract.
+      * `gasUsed` (string): The amount of gas used by the creation.
+    * For `reward`: No additional fields.
+    * For `suicide`: No additional fields.
+
+  * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+  * `traceAddress` (array of integers): The address within the trace hierarchy.
+  * `transactionHash` (string): The hash of the transaction containing the trace.
+  * `transactionPosition` (integer): The index position of the transaction within the block.
+  * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_transaction",
+      "params": ["0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "action": {
+                "callType": "call",
+                "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                "gas": "0x38025",
+                "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                "value": "0x0",
+                "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+            },
+            "result": {
+                "gasUsed": "0x38025",
+                "output": "0x"
+            },
+            "subtraces": 1,
+            "traceAddress": [],
+            "type": "call",
+            "blockHash": "0xb20d0897ac3567d603afb646238b66e455bf28d234ce96cdbbe86ddc8d27c9e9",
+            "blockNumber": 344366750,
+            "transactionHash": "0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e",
+            "transactionPosition": 0
+        },
+        {
+            "action": {
+                "callType": "delegatecall",
+                "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                "gas": "0x02e970",
+                "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                "value": "0x0",
+                "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+            },
+            "result": {
+                "gasUsed": "0x2a78"
+            },
+            "subtraces": 0,
+            "traceAddress": [
+                0
+            ],
+            "type": "call",
+            "blockHash": "0xb20d0897ac3567d603afb646238b66e455bf28d234ce96cdbbe86ddc8d27c9e9",
+            "blockNumber": 344366750,
+            "transactionHash": "0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e",
+            "transactionPosition": 0
+        }
+    ]
+}
+```
+
+---
+
+## `trace_replayTransaction`
+
+> Replays a transaction and returns the traces produced by its execution along with the state changes.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `transactionHash` (string): the hash of the transaction to be replayed.
+    * `traceTypes` (array of strings): the types of traces to be included in the response. Possible value: `trace`.
+
+### Returns
+
+The method returns an object that can include the following fields:
+
+  * `trace` (array): an array of trace objects, similar to those returned by `trace_transaction` and `trace_filter`:
+
+    * `action` (object)
+      * For `call`:
+        * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+        * `from` (string): the address that initiated the call.
+        * `to` (string): the address that was called.
+        * `gas` (string): the amount of gas provided for the call.
+        * `input` (string): the input data for the call.
+        * `value` (string): the amount of Wei sent with the call.
+      * For `create`:
+        * `from` (string): the address that created the contract.
+        * `gas` (string): the amount of gas provided for the creation.
+        * `init` (string): the initialization code for the contract.
+        * `value` (string): the amount of Wei sent with the creation.
+      * For `reward`:
+        * `author` (string): the address that received the reward.
+        * `value` (string): the amount of Wei rewarded.
+        * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+      * For `suicide`:
+        * `address` (string): the address of the contract that self-destructed.
+        * `refundAddress` (string): the address that received the remaining balance.
+        * `balance` (string): the remaining balance of the contract.
+
+    * `blockHash` (string): the hash of the block containing the transaction.
+    * `blockNumber` (string): The number of the block containing the transaction.
+
+    * `result` (object)
+      * For call:
+        * `gasUsed` (string): The amount of gas used by the call.
+        * `output` (string): The output data from the call.
+      * For `create`:
+        * `address` (string): The address of the created contract.
+        * `code` (string): The runtime code of the created contract.
+        * `gasUsed` (string): The amount of gas used by the creation.
+      * For `reward`: No additional fields.
+      * For `suicide`: No additional fields.
+
+    * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+    * `traceAddress` (array of integers): The address within the trace hierarchy.
+    * `transactionHash` (string): The hash of the transaction containing the trace.
+    * `transactionPosition` (integer): The index position of the transaction within the block.
+    * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_replayTransaction",
+      "params": ["0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e", ["trace"]],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "output": "0x",
+        "stateDiff": null,
+        "trace": [
+            {
+                "action": {
+                    "callType": "call",
+                    "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                    "gas": "0x38025",
+                    "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                    "value": "0x0",
+                    "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+                },
+                "result": {
+                    "gasUsed": "0x38025",
+                    "output": "0x"
+                },
+                "subtraces": 1,
+                "traceAddress": [],
+                "type": "call"
+            },
+            {
+                "action": {
+                    "callType": "delegatecall",
+                    "from": "0x339d413ccefd986b1b3647a9cfa9cbbe70a30749",
+                    "gas": "0x02e970",
+                    "input": "0x3161b7f60000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a50000000000000000000000000000000000000000000123a8d6d9f1c9e741075000000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000000000000000000010",
+                    "value": "0x0",
+                    "to": "0x2d61dcdd36f10b22176e0433b86f74567d529aaa"
+                },
+                "result": {
+                    "gasUsed": "0x2a78"
+                },
+                "subtraces": 0,
+                "traceAddress": [
+                    0
+                ],
+                "type": "call"
+            }
+        ],
+        "vmTrace": null
+    }
+}
+```
+
+---
+
+## `trace_replayBlockTransactions`
+
+> Replays all the transactions in a given block and returns the traces produced by their execution along with the state changes.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `blockHash` (string): the hash of the block whose transactions you want to replay.
+    * `traceTypes` (array of strings): the types of traces to be included in the response. Possible value: `trace`.
+
+### Returns
+
+The method returns an object that can include the following fields:
+
+  * `trace` (array): an array of trace objects, similar to those returned by `trace_transaction` and `trace_filter`:
+
+    * `action` (object)
+      * For `call`:
+        * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+        * `from` (string): the address that initiated the call.
+        * `to` (string): the address that was called.
+        * `gas` (string): the amount of gas provided for the call.
+        * `input` (string): the input data for the call.
+        * `value` (string): the amount of Wei sent with the call.
+      * For `create`:
+        * `from` (string): the address that created the contract.
+        * `gas` (string): the amount of gas provided for the creation.
+        * `init` (string): the initialization code for the contract.
+        * `value` (string): the amount of Wei sent with the creation.
+      * For `reward`:
+        * `author` (string): the address that received the reward.
+        * `value` (string): the amount of Wei rewarded.
+        * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+      * For `suicide`:
+        * `address` (string): the address of the contract that self-destructed.
+        * `refundAddress` (string): the address that received the remaining balance.
+        * `balance` (string): the remaining balance of the contract.
+
+    * `blockHash` (string): the hash of the block containing the transaction.
+    * `blockNumber` (string): The number of the block containing the transaction.
+
+    * `result` (object)
+      * For call:
+        * `gasUsed` (string): The amount of gas used by the call.
+        * `output` (string): The output data from the call.
+      * For `create`:
+        * `address` (string): The address of the created contract.
+        * `code` (string): The runtime code of the created contract.
+        * `gasUsed` (string): The amount of gas used by the creation.
+      * For `reward`: No additional fields.
+      * For `suicide`: No additional fields.
+
+    * `subtraces` (integer): The number of subtraces (nested traces) generated by this trace.
+    * `traceAddress` (array of integers): The address within the trace hierarchy.
+    * `transactionHash` (string): The hash of the transaction containing the trace.
+    * `transactionPosition` (integer): The index position of the transaction within the block.
+    * `type` (string): The type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_replayBlockTransactions",
+      "params": ["0x58ddccddbc8d1deddf91e43e6623cdc2e1186f067dc687bb3928076a02bad39e", ["trace"]],
+      "id": 1
+    }'
+```
+
+---
+
+## `trace_block`
+
+> Retrieves a detailed trace of all the transactions in a specific block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `blockNumber` (string): the number of the block you want to trace, given as a hexadecimal string.
+
+### Returns
+
+The method returns an array of trace objects, each of which contains detailed information about a particular operation. These trace objects include the following fields:
+
+  * `action` (object): describes the action that was performed. The structure of this object varies based on the type of action.
+    * For `call` actions:
+      * `callType` (string): the type of call (e.g., "call", "delegatecall", "staticcall").
+      * `from` (string): the address that initiated the call.
+      * `to` (string): the address that was called.
+      * `gas` (string): the amount of gas provided for the call.
+      * `input` (string): the input data for the call.
+      * `value` (string): the amount of Wei sent with the call.
+    * For `create` actions:
+      * `from` (string): the address that created the contract.
+      * `gas` (string): the amount of gas provided for the creation.
+      * `init` (string): the initialization code for the contract.
+      * `value` (string): the amount of Wei sent with the creation.
+    * For `reward` actions:
+      * `author` (string): the address that received the reward.
+      * `value` (string): the amount of Wei rewarded.
+      * `rewardType` (string): the type of reward (e.g., "block", "uncle").
+    * For `suicide` actions:
+      * `address` (string): the address of the contract that self-destructed.
+      * `refundAddress` (string): the address that received the remaining balance.
+      * `balance` (string): the remaining balance of the contract.
+
+    * `blockHash` (string): the hash of the block containing the transaction.
+    * `blockNumber` (string): the number of the block containing the transaction.
+
+    * `result` (object): describes the result of the action.
+      * For `call` actions:
+        * `gasUsed` (string): the amount of gas used by the call.
+        * `output` (string): the output data from the call.
+      * For `create` actions:
+        * `address` (string): the address of the created contract.
+        * `code` (string): the runtime code of the created contract.
+        * `gasUsed` (string): the amount of gas used by the creation.
+
+      * For `reward` actions: no additional fields.
+      * For `suicide` actions: no additional fields.
+    * `subtraces` (integer): the number of subtraces (nested traces) generated by this trace.
+    * `traceAddress` (array of integers): the address within the trace hierarchy, indicating the position of the trace in the call stack.
+    * `transactionHash` (string): the hash of the transaction containing the trace.
+    * `transactionPosition` (integer): the index position of the transaction within the block.
+    * `type` (string): the type of trace (e.g., "call", "create", "reward", "suicide").
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/telos \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "trace_block",
+      "params": ["0x14869E9E"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": []
+}
+```
+
+
+
+
+
