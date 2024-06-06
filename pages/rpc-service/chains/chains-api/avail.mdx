@@ -1,24 +1,17 @@
 import { Callout } from "components";
 import { Tabs, Tab } from "nextra-theme-docs";
 
-# Polkadot
-<br/>
+# Avail
 
-<img src="/docs/build/chains-list/polkadot.png" class="responsive-pic" width="800" />
+> Avail API is available on [Web3 API platform](https://www.ankr.com/rpc/avail).
 
-<Callout type="tip">
-Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
-</Callout>
+*Avail* is a Web3 infrastructure layer that allows modular execution layers to scale and interoperate in a trust-minimized way.
 
-> Polkadot API is available on [Web3 API platform](https://www.ankr.com/rpc/polkadot).
+Avail's mission is to streamline the rollup experience, offering a unified, efficient platform for both users and developers from any ecosystem. This vertically integrated stack aims to dissolve the growing pains and user fragmentation experienced today, enabling Rollups to seamlessly access users and liquidity across the entire blockchain landscape.
 
-*Polkadot* is the first fully-sharded blockchain.
+The Turing Testnet is live and marks Avail's final and definitive pre-Mainnet testing environment, aimed at vetting Mainnet deployments, executing extensive stress tests, and assessing network topologies for scalability and resilience.
 
-Polkadot enables scalability by allowing specialized blockchains to communicate with each other in a secure, trust-free environment.
-
-Polkadot is built to connect and secure unique blockchains, whether they be public, permissionless networks, private consortium chains, or other Web3 technologies. It enables an internet where independent blockchains can exchange information under common security guarantees.
-
-In order for your Web3 application to interact with Polkadot — either by reading blockchain data or sending transactions to the network — it must connect to a Polkadot node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with Avail — either by reading blockchain data or sending transactions to the network — it must connect to an Avail node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
@@ -26,17 +19,17 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 
 ## Methods supported
 
-  * [`chain_getBlock`](/rpc-service/chains/chains-api/polkadot/#chain_getblock) — retrieves the header and body of a relay chain block.
-  * [`chain_getBlockHash`](/rpc-service/chains/chains-api/polkadot/#chain_getblockhash) — retrieves the block hash for a specific block.
-  * [`chain_getHeader`](/rpc-service/chains/chains-api/polkadot/#chain_getheader) — retrieves the header for a specific block.
-  * [`chain_getFinalizedHead`](/rpc-service/chains/chains-api/polkadot/#chain_getfinalizedhead) — retrieves the hash of the last finalized block in the canon chain.
-  * [`state_getStorage`](/rpc-service/chains/chains-api/polkadot/#state_getstorage) — retrieves the storage for a key.
-  * [`state_getStorageHash`](/rpc-service/chains/chains-api/polkadot/#state_getstoragehash) — retrieves the storage hash.
-  * [`state_getStorageSize`](/rpc-service/chains/chains-api/polkadot/#state_getstoragesize) — retrieves the storage size.
-  * [`grandpa_proveFinality`](/rpc-service/chains/chains-api/polkadot/#grandpa_provefinality) — proves finality for the given block number, returning the Justification for the last block in the set.
-  * [`grandpa_roundState`](/rpc-service/chains/chains-api/polkadot/#grandpa_roundstate) — returns the state of the current best round state as well as the ongoing background rounds.
-  * [`system_chain`](/rpc-service/chains/chains-api/polkadot/#system_chain) — retrieves the chain.
-  * [`system_chainType`](/rpc-service/chains/chains-api/polkadot/#system_chaintype) — retrieves the chain type.
+  * [`chain_getBlock`](/rpc-service/chains/chains-api/avail/#chain_getblock) — retrieves the header and body of a relay chain block.
+  * [`chain_getBlockHash`](/rpc-service/chains/chains-api/avail/#chain_getblockhash) — retrieves the block hash for a specific block.
+  * [`chain_getHeader`](/rpc-service/chains/chains-api/avail/#chain_getheader) — retrieves the header for a specific block.
+  * [`chain_getFinalizedHead`](/rpc-service/chains/chains-api/avail/#chain_getfinalizedhead) — retrieves the hash of the last finalized block in the canon chain.
+  * [`state_getStorage`](/rpc-service/chains/chains-api/avail/#state_getstorage) — retrieves the storage for a key.
+  * [`state_getStorageHash`](/rpc-service/chains/chains-api/avail/#state_getstoragehash) — retrieves the storage hash.
+  * [`state_getStorageSize`](/rpc-service/chains/chains-api/avail/#state_getstoragesize) — retrieves the storage size.
+  * [`grandpa_proveFinality`](/rpc-service/chains/chains-api/avail/#grandpa_provefinality) — proves finality for the given block number, returning the Justification for the last block in the set.
+  * [`grandpa_roundState`](/rpc-service/chains/chains-api/avail/#grandpa_roundstate) — returns the state of the current best round state as well as the ongoing background rounds.
+  * [`system_chain`](/rpc-service/chains/chains-api/avail/#system_chain) — retrieves the chain.
+  * [`system_chainType`](/rpc-service/chains/chains-api/avail/#system_chaintype) — retrieves the chain type.
 
 ---
 
@@ -60,7 +53,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -78,20 +71,44 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
     "result": {
         "block": {
             "header": {
-                "parentHash": "0xe121a7c43cbe19eab2601d422df9173a84553cda9f0cd59e0656227696f46d30",
-                "number": "0xedaaed",
-                "stateRoot": "0x4f4dd4f1bc408dfd01222a8d1401a96c9abb8be86ab60c0e01f10b4a54834b6f",
-                "extrinsicsRoot": "0xf310b41030a9bbf5788176a0a187a7fe84833729fb763883329bcc2f9a308a03",
+                "parentHash": "0x32d67a9e5843dd8527bf0e2ec1f4c6d2f8642ef264348ef7d610575619a5b6e8",
+                "number": "0x49993",
+                "stateRoot": "0x7d0860d48e20e42886aeac479dd339d1f75387d3be844a490ca1734efd430213",
+                "extrinsicsRoot": "0x07d2cb3154a4bc3ff485d0101bb1cba8045bf1bd74a34a977cc2672a41e76596",
                 "digest": {
                     "logs": [
-                        "0x0642414245b50103fc000000f4aebb1000000000440c17d240df02d42ddab5c961fe2649e30f69aea189e5bc95487ae5f889a74bc516a159ccc7db48e5253dae8f1168be0c66597b18ab1e2248ecd3862eae9e0a8c74b856d20d6916ab8cbe3cd4955f183c231bde98ca24dbb3f201468cc23b0f",
-                        "0x054241424501015a6148654f94084ca0373a6d708704ce54ae704e159d51eb00d7de032b2b3824a91a4509f94f90fda82a3ff372b0003c0440475b9218e6469d883eeba276ac8a"
+                        "0x0642414245b5010359000000757a1e0500000000841bf8fb61a548ec94caba8ddedcf85e02de0110990ffe3c4216277ee0b9734a9b966b69d9025691e82043d9a647ce917871b1b2d2082afc3ce3b195c96e1c039b2e312d9028cf976284d61c41f1069b1df154b5e6b6bef9ad4455dd24ea160d",
+                        "0x05424142450101c2be2a753a256b1261e00d5d31a20befa735767d5debe27edfff52149e4ce53398135479d97a0e594a2160cf78b3743ca42899138b0c5b58334bc7c4d0217080"
                     ]
+                },
+                "extension": {
+                    "V3": {
+                        "appLookup": {
+                            "size": 114,
+                            "index": [
+                                {
+                                    "appId": 36,
+                                    "start": 0
+                                }
+                            ]
+                        },
+                        "commitment": {
+                            "rows": 1,
+                            "cols": 128,
+                            "commitment": [
+                                128,
+                                27,
+                                216,
+                                161
+                            ],
+                            "dataRoot": "0x67e432157400275ba4e6e7c9d61312afa5cbbea68d8b718fa8be3038980a9970"
+                        }
+                    }
                 }
             },
             "extrinsics": [
-                "0x280403000bc076d42e8801",
-                "0xdd02040c00ecaaed009c98002408011220c9b7d94c0c8dc84ca9034c1a6926bfb2e0b1e31c0c9fbaee8126874d32d122840878742f6970342f3134312e39382e3231392e3139392f7463702f33303333336c682f6970342f3130302e36342e332e31322f7463702f333033333379190000f600000029010000903755c7655994b2ca1f457d26c947041f9e6970e6b3cf578ee8459d061cc20d3d7e65d5c166fcca21059ad60b89d21f8a2b5574da4414adb72941c0c2e44d8c"
+                "0x280403000ba0f41eed8f01",
+                "0xc90384007ce8ccf46bbdf7561f0d1419857dab91bfbda9866d564c2c5cfe43210a75db310122850737c933478016ee92ddcbd1eda470ead30b6a7938adba396b9e51922949b1bba1bf56ca8bd67f2241b1240fa1f2bd18f07b42111fe70f9f386b78f66f87040162760100000001020c0603004e558a63713b227cb661a5cb639c5bea499bd00039d7dabe16cb891e8fc2025213000064a7b3b6e00d06030006aa84733a1b39c3cc83586e589fd6bb82228321e1f75d4e2bc3af8d4957785213000064a7b3b6e00d0603003a1e5289c81ff9dfd53cf55e64aaaee9aeb31e5ae43c9679de15a841b406521d13000064a7b3b6e00d"
             ]
         },
         "justifications": null
@@ -122,13 +139,13 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "chain_getBlockHash",
-      "params": ["0xb48f90"]
+      "params": ["0x499A4"]
 }'
 ```
 
@@ -137,7 +154,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "0x92f387735d1d4459c8e6d5931bc350712a1697866ed708fb241ee97a1bd0da94",
+    "result": "0xfe9e859407f0ceb39140690d34a12e2ff34fef0e38fda83ecf3474d31a1a3526",
     "id": 1
 }
 ```
@@ -164,13 +181,13 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "chain_getHeader",
-      "params": ["0x56547256415c6ca5d7e43e32f0664ede1aa78aae59e07cdc64f2037beba31e9e"]
+      "params": ["0x1d8ec46e226db5453ab546efb873e7a2bf611aded65818b68206747c646bd478"]
 }'
 ```
 
@@ -180,15 +197,29 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 {
     "jsonrpc": "2.0",
     "result": {
-        "parentHash": "0x88ac4b5bc7ea4e0cb1b8d8e1d2dce838e37d1a4480c4bde37bdfdcc9c8fffb64",
-        "number": "0xb48f75",
-        "stateRoot": "0xa2baf709447aa9055b4ca5046fc76a0ca05ace90758fcf3bc3bc004612173bfa",
-        "extrinsicsRoot": "0xe94f82eae3aba9331e0370f1c3b7d72da3bd9a82dd36711448d6197b6659e308",
+        "parentHash": "0x23c72818d0462766e69f90895ce47b6251eca7112ca2be56e2efe56c9546f5b9",
+        "number": "0x499b7",
+        "stateRoot": "0xa31b41414cba3ecd32dbf23cf1541c9105de308d396b76e840635076c5dedd95",
+        "extrinsicsRoot": "0xb3fea001c50633dcbcb8304486061c433e5e33d32f3d21759368228e58defadd",
         "digest": {
             "logs": [
-                "0x0642414245b50103c0000000076382100000000084c21f756e3473b8717c13d27c85a94466cbd0f64fe8bbd37cbf23dd46c70e5a49626481005b811dfcff67dda4b12ee502cb3589c6b2ff6450c6537f18298c08fd2942aaa2f0ee1591522fe4dc0482949c920a046201cf39f7ba766af4907509",
-                "0x05424142450101340de0372f172ba4d9c12d767ddd42e2f1844691c93f74773e7839ccba29b96f400a6b8bbea109e807033696c182f08c8c02918c3521968612cd20ed82af0b89"
+                "0x0642414245b5010337000000997a1e050000000078c42af8d5e7733c9aff7cd090c873a89892c101276b7dc96e1610ceca285a3d35133d72233df237ac7aa399c25c4d88b2a58835d93dc903919722ac312e4900ab66b214730d7280a9b9dbb4ef020efa785ef444d6477f9e34b7d295ddd6fb0a",
+                "0x05424142450101ea438e2f3314fc10aba33b53aa79b4a75ba89131d9a847b96eb70c0bf70bbb6bc4720a57f973833c02f8dd3f0f7596ca83e76af9f9933b3ea33f14c2e84e8781"
             ]
+        },
+        "extension": {
+            "V3": {
+                "appLookup": {
+                    "size": 0,
+                    "index": []
+                },
+                "commitment": {
+                    "rows": 0,
+                    "cols": 0,
+                    "commitment": [],
+                    "dataRoot": "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
+                }
+            }
         }
     },
     "id": 1
@@ -215,7 +246,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -230,7 +261,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "0xc487e58e468240ea30fa17a2d982fb47d0213dd64e6b980e4a0cb4fb6bcc3ca6",
+    "result": "0x7021a6a7aa0d6db341684d0969b1a31248d7568596a7028f0d7f490d9b7990ed",
     "id": 1
 }
 ```
@@ -258,7 +289,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -273,7 +304,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "0xf08af92e88010000",
+    "result": "0xc1772bed8f010000",
     "id": 1
 }
 ```
@@ -301,7 +332,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -316,7 +347,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "0xcadcddea7fce8dd4169f521f2c043b3637bca8b07870994491d3b3d9bdfb4102",
+    "result": "0xd63ffee954d00ba81f68297f8f7d866ca2ed141fea270c994cca8bab47fb580d",
     "id": 1
 }
 ```
@@ -344,7 +375,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -386,14 +417,24 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "grandpa_proveFinality",
-      "params": [11833440]
+      "params": [301495]
 }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x3c59e6bc2b424b11686ab978fae65eff7f2fb689d710b188eec62a0325fc8cadcda769030000000000003c59e6bc2b424b11686ab978fae65eff7f2fb689d710b188eec62a0325fc8cadbf99040045013c59e6bc2b424b11686ab978fae65eff7f2fb689d710b188eec62a0325fc8cadbf99040094841d8cb36056bc3d0da86f09cb1a71294ddbc3284207f7f820f0f2cbe6aa029e91db5a755e5a7f892b918fa3ee89af090dbc4ffedf95813e9f47d56f65cb0a00ea76...",
+    "id": 1
+}
 ```
 
 ---
@@ -416,7 +457,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -432,21 +473,27 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 {
     "jsonrpc": "2.0",
     "result": {
-        "setId": 1446,
+        "setId": 93,
         "best": {
-            "round": 14118,
-            "totalWeight": 297,
-            "thresholdWeight": 199,
+            "round": 899,
+            "totalWeight": 120,
+            "thresholdWeight": 81,
             "prevotes": {
-                "currentWeight": 297,
-                "missing": []
+                "currentWeight": 0,
+                "missing": [
+                    "5C5uWLcr4Sjb6bFeJpqev1sEdBehiTAMuj1dftYVR9NkBnjS",
+                    "5C65142vucMnMu8baXL5qi7qfNzTd9sRtBqvksdwwW3BPHYN",
+                    "5C9DSoURqitE1WQKgztnHnX8BARFtpTRwtFio5Kkq1pQv96E",
+                    "5C9tvEcZF4Zx7TAnywwu9ZmFGQSjT5WNW44p8PuGb9wEodX4"
+                ]
             },
             "precommits": {
                 "currentWeight": 0,
                 "missing": [
-                    "12cCLNxo2WqvqizuMrgHtpjUz2s5xmomTM7y3FWESbvjcwq",
-                    "14ZryeDT1MmSSX29QaJ2pbNjJDv8hoLTfwFmDwe6mDMh3Vj",
-                    "15E5zYJhV2iqZXmL1FKe8MdFocj9n1phEaJob4izAaXA9bw"
+                    "5C5uWLcr4Sjb6bFeJpqev1sEdBehiTAMuj1dftYVR9NkBnjS",
+                    "5C65142vucMnMu8baXL5qi7qfNzTd9sRtBqvksdwwW3BPHYN",
+                    "5C9DSoURqitE1WQKgztnHnX8BARFtpTRwtFio5Kkq1pQv96E",
+                    "5C9tvEcZF4Zx7TAnywwu9ZmFGQSjT5WNW44p8PuGb9wEodX4"
                 ]
             }
         },
@@ -476,7 +523,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -491,7 +538,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "Polkadot",
+    "result": "Avail Turing Network",
     "id": 1
 }
 ```
@@ -516,7 +563,7 @@ curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
