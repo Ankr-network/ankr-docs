@@ -23,7 +23,6 @@ _Query API_ consists of the following methods to request info on the ranges of b
   * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
   * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by address.
   * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
-  * [`ankr_getInternalTransactionsByBlockNumber`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyblocknumber) — retrieves info on internal transactions by block number.
   * [`ankr_getInternalTransactionsByParentHash`](/advanced-api/query-methods/#ankr_getinternaltransactionsbyparenthash) — retrieves info on internal transactions by parent hash.
 
 > Prefer interactive docs? See our [OpenAPI specification](https://www.ankr.com/docs/advanced-api/specification/#tag/Query-API) for Query API methods.
@@ -1221,113 +1220,6 @@ Code: 200 OK
 ```
   </Tab>
 </Tabs>
-
----
-
-## `ankr_getInternalTransactionsByBlockNumber`
-
->  **Retrieves info on internal transactions by block number.**
-
-Internal transactions are callbacks that happen during contract-to-contract interactions.
-
-### Request
-
-Build your request using the parameters below.
-
-#### Parameters
-
-* `id` (int64; required): a request ID (example: 1).
-* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-* `method` (string; required): a method used for the request.
-* `params` (object): the data object containing request body parameters:
-
-  * `blockNumber` (integer): number of the block that contains the transaction.
-  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `rollux`, `scroll`, `stellar`, `syscoin`, `telos`, `xai`, `avalanche_fuji`, `base_sepolia`, `eth_holesky`, `eth_sepolia`, `optimism_testnet`, `polygon_amoy`).
-  * `onlyWithValue` (boolean): set to `true` to receive only the responses containing the `value` parameter, or `false` — to receive all responses.
-
-<Tabs
-  items={[
-    "Body",
-    "Headers",
-  ]}
->
-  <Tab>
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "ankr_getInternalTransactionsByBlockNumber",
-    "params": {
-      "blockNumber": 0,
-      "blockchain": "string",
-      "onlyWithValue": true
-    }
-}
-```
-  </Tab>
-  <Tab>
-
-```shell
-Content-Type: application/json
-```
-  </Tab>
-</Tabs>
-
-### Response
-
-Returns info on internal transactions specified by block number.
-
-### Code Examples
-
-#### Request
-
-```shell
-curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
---header 'Content-Type: application/json' \
---data-raw '{
-              "id": 1,
-              "jsonrpc": "2.0",
-              "method": "ankr_getInternalTransactionsByBlockNumber",
-              "params": {
-                "blockNumber": 15218456,
-                "blockchain": "eth",
-                "onlyWithValue": true
-              }
-            }'
-```
-
-#### Response
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-        "internalTransactions": [
-            {
-                "blockHash": "0xbb07ad76eca8b2a1ed8f58ce107eceb720a1468affa20223fc8cb562efa9639a",
-                "blockHeight": 15218456,
-                "blockchain": "eth",
-                "callPath": "call_2",
-                "callStack": [
-                    2
-                ],
-                "contractAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
-                "error": "",
-                "fromAddress": "0x00000000006c3852cbef3e08e8df289169ede581",
-                "input": null,
-                "output": null,
-                "timestamp": "1658843328",
-                "toAddress": "0x8de9c5a032463c561423387a9648c5c7bcc5bc90",
-                "transactionHash": "0xdfca28001e023c90ab8d67f2b4099df76cda0493865821387734640425637696",
-                "transactionIndex": 4,
-                "value": "33750000000000000"
-            }
-        ]
-    }
-}
-```
 
 ---
 
