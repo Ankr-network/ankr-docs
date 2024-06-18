@@ -2,17 +2,16 @@ import { Callout } from "components";
 
 # No-Code Deployer
 
-——> What's a no-code deployer???
+No-code Deployer is a Rollup-as-a-Service (RaaS) platform that offers the infrastructure and tools required to implement and manage rollup solutions, eliminating the need for deep expertise in the underlying technology.
 
 ## Rollup Deployment
 
-A rollup deployment process contains the following parts:
+A rollup deployment process consists of the following parts:
 
-> [`Sign in`](/scaling-services-nocode-deployer/#sign-in) —> [`Deploy Rollup`](/scaling-services-nocode-deployer/#deploy-testnet-rollup) —> `Add Billing Info`
+> [`Sign in`](/scaling-services-nocode-deployer/#sign-in) —> [`Deploy Rollup`](/scaling-services-nocode-deployer/#deploy-testnet-rollup)
 
-  * **Sign in**: Authenticate on the platform start using its functionality.
-  * **Deploy Rollup**: Define your rollup's general, configuration, and infrastructure settings, and then deploy it.
-  * **Add Billing Info**: .
+  * **Sign in**: Authenticate on the platform to start using its functionality.
+  * **Deploy Rollup**: Define your rollup settings, and then deploy it.
 
 ### Sign in
 
@@ -23,22 +22,74 @@ First things first, you need to sign in to use the platform's functionality:
 
 Congrats — you've just signed in to the Scaling Services platform!
 
+---
+
 ### Deploy Testnet Rollup
 
 To deploy a rollup using a Testnet network, follow these steps:
 
   1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
   2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
-  3. On the **General Settings** tab, select the following rollup parameters:
+  3. On the **General Settings** tab, select the following rollup parameters, and then click **Next**:
       * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack), [OP Stack](/scaling-services-overview/#op-stack).
-     <img src="/docs/scale/stack.png" class="responsive-pic" width="600" />
-      * **Network**: Testnet — an option to explore the rollup functionality for free (48 hours). To start using Testnet, you must have `1 ankrETH` in your wallet.
-     <img src="/docs/scale/network.png" class="responsive-pic" width="600" />
-      * **Data Availability Layer**:
+     <img src="/docs/scale/stack.png" class="responsive-pic" width="650" />
+      * **Network**: Select **Testnet** — an option to explore the rollup functionality for free (48 hours).
+     <img src="/docs/scale/network.png" class="responsive-pic" width="650" />
+      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer).
+     <img src="/docs/scale/da-layer.png" class="responsive-pic" width="650" />
+  4. On the **Configuration** tab, specify the following parameters, and then click **Next**:
+      * **Chain ID**
+     <img src="/docs/scale/chain-id.png" class="responsive-pic" width="500" />
+      * **Network Name**
+     <img src="/docs/scale/network-name.png" class="responsive-pic" width="500" />
+      * **Gas Token**
+     <img src="/docs/scale/native-token.png" class="responsive-pic" width="500" />
+  5. On the **Infra Package** tab, check the components included in the Starter package, and then click **Confirm**.
+<img src="/docs/scale/infra-package.png" class="responsive-pic" width="650" />
+  6. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm**.
+<img src="/docs/scale/summary.png" class="responsive-pic" width="350" />
+  7. As an anti-abuse measure, to deploy a rollup on a Testnet, you must have `1 ankrETH` in your wallet.<br/>
+In the **Prove ankrETH** dialog, perform the following actions to start your rollup deployment:
+      * Click **Connect MetaMask and prove address**.
+     <img src="/docs/scale/prove-ankr.png" class="responsive-pic" width="400" />
+      * In MetaMask, select the Ethereum address to associate with your account.
+      * Sign with MetaMask wallet.
 
+Congrats — you've just configured and deployed your Testnet rollup!
 
-
+---
 
 ### Deploy Mainnet Rollup
 
+To deploy a rollup using a Mainnet network, follow these steps:
 
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
+  2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
+  3. On the **General Settings** tab, select the following rollup parameters, and then click **Next**:
+      * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack), [OP Stack](/scaling-services-overview/#op-stack).
+     <img src="/docs/scale/stack.png" class="responsive-pic" width="650" />
+      * **Network**: Select **Mainnet** — to deploy your rollup on a fully operational blockchain network.
+     <img src="/docs/scale/network-mainnet.png" class="responsive-pic" width="650" />
+      * **Infrastructure Package**: Upon selecting Mainnet, you have to select the Infrastructure to be used for your rollup solution:
+        * **Starter Package**: 2 RPC Nodes, Bridge, Block Explorer, Aggregator, Synchronizer.
+        * **Advanced Package**: 6 RPC Nodes, Bridge, Block Explorer, Aggregator, Synchronizer.
+        * **Starter Package with Prover**: 2 RPC Nodes, Bridge, Block Explorer, Aggregator, Synchronizer, Prover.
+        * **Advanced Package with Prover**: 6 RPC Nodes, Bridge, Block Explorer, Aggregator, Synchronizer, Prover.
+      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer).
+     <img src="/docs/scale/da-layer.png" class="responsive-pic" width="650" />
+  4. On the **Sequencer** tab, select whether you'd like to have an Ankr-managed sequencer or a self-managed sequencer.
+<img src="/docs/scale/sequencer.png" class="responsive-pic" width="700" />
+  5. On the **Configuration** tab, specify the following parameters, and then click **Next**:
+      * **Chain ID**
+     <img src="/docs/scale/chain-id.png" class="responsive-pic" width="500" />
+      * **Network Name**
+     <img src="/docs/scale/network-name.png" class="responsive-pic" width="500" />
+      * **Gas Token**
+     <img src="/docs/scale/gas-token.png" class="responsive-pic" width="500" />
+  5. On the **Infra Package** tab, check the components included in your package, and then click **Confirm**.
+<img src="/docs/scale/mainnet-infra-package.png" class="responsive-pic" width="650" />
+  6. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm and Pay**.
+<img src="/docs/scale/mainnet-summary.png" class="responsive-pic" width="350" />
+  7. On the Stripe checkout page, provide your card details, and then click **Pay and subscribe** to deploy the configured rollup.
+
+Congrats — you've just configured and deployed your Mainnet rollup!
