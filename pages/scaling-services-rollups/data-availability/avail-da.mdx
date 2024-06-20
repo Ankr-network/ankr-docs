@@ -1,0 +1,32 @@
+# Avail DA
+
+Avail DA is a cutting-edge data availability layer designed to support the next generation of trust-minimized applications and sovereign rollups. It enables light clients to verify data availability efficiently via peer-to-peer sampling, simplifies blockchain integration for developers by removing complexities related to validator sets and tokenomics, and supports multiple execution environments.
+
+Avail DA is a data availability layer that combines validity proofs with data availability sampling to enhance scalability, security, and interoperability for entire networks of blockchains built on top.
+
+**Avail DA's technology**:
+
+  * **KZG Commitments**: A type of validity proof that makes it simple for even a light client to independently generate their own mathematically verified data availability guarantees.
+
+  * **Light Clients**: Lightweight nodes that enable users to access blockchain data by downloading only essential information, making them ideal for low-resource devices while maintaining security levels close to full nodes.
+
+  * **Data Availability Sampling (DAS)**: Data Availability Sampling is a technique used by light clients to verify the availability of block data without having to download the entire block. This method allows clients to confirm with high certainty (99.99%) that the data is available by sampling only a small fraction (~1%) of it.
+
+  * **Erasure Coding**: A redundancy method that splits data into multiple chunks and extends them, ensuring that the original data can be reconstructed even if some chunks are missing, making it difficult for malicious actors to hide data parts.
+
+  * **Multiple Execution Environments**: It is designed to be data-agnostic, supporting a variety of execution environments including EVM, WASM, and custom runtimes, which provides a versatile foundation for a broad range of blockchain applications.
+
+## How Avail DA works
+
+Avail DA redefines blockchain scalability by combining erasure coding, KZG polynomial commitments, and data availability sampling to deliver world-class data availability guarantees. It functions as a foundational (base) layer, offering scalable data hosting without transaction execution, specifically for rollups.
+
+**Transaction lifecycle**:
+
+  1. **Transaction Submission**: Rollups initiate the process by submitting transactions to Avail DA. Each transaction includes a unique application ID to identify its origin within the ecosystem.
+  2. **Data Reliability Enhancement via Erasure Coding**: Transactions are processed using erasure coding to enhance data reliability and integrity. This technique divides data into chunks, allowing for reconstruction from a subset. While Avail DA incorporates mechanisms for fraud proofs, its data integrity primarily relies on validators supermajority in reaching consensus, ensuring robust security for the erasure-coded data.
+  3. **Commitment Creation for Data Integrity**: Avail DA applies KZG polynomial commitments to each block of data, providing cryptographic proofs of data integrity. Validators use these commitments to verify data before it is attested and transmitted to main chain via Avail DA’s data attestation bridge.
+  4. **Consensus and Block Propagation**: Validators verify the commitments, reach a consensus on the block's integrity, and propagate only the verified data through the network. This ensures that data attested by Avail DA remains accurate and tamper-proof.
+  5. **Light Clients and Data Availability Sampling (DAS)**: Light clients use Data Availability Sampling to verify the integrity of block data independently. They check KZG polynomial openings against block commitments, enabling quick and decentralized verification without full data reconstruction. On the other side, full nodes can reconstruct the full data for network-wide verification or create fraud proofs to challenge any discrepancies in the data.
+  6. **Proof Verification by Light Clients**: The process concludes with light clients generating and verifying cell-level proofs from the data matrix, allowing them to independently confirm the blockchain's state.
+
+
