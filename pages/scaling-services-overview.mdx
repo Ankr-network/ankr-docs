@@ -155,6 +155,26 @@ Using Celestia as a data availability layer for Rollups presents several advanta
 
   * **Increased Transaction Throughput and Reduced Costs**: The architecture designed by Celestia allows for increased transaction throughput while also reducing the costs associated with transactions, beneficial for applications needing high on-chain data throughput.
 
+#### Avail DA
+
+Avail DA is a cutting-edge data availability layer designed to support the next generation of trust-minimized applications and sovereign rollups. It enables light clients to verify data availability efficiently via peer-to-peer sampling, simplifies blockchain integration for developers by removing complexities related to validator sets and tokenomics, and supports multiple execution environments.
+
+Avail DA is a data availability layer that combines validity proofs with data availability sampling to enhance scalability, security, and interoperability for entire networks of blockchains built on top.
+
+Avail DA's technology:
+
+  * **KZG Commitments**: A type of validity proof that makes it simple for even a light client to independently generate their own mathematically verified data availability guarantees.
+
+  * **Light Clients**: Lightweight nodes that enable users to access blockchain data by downloading only essential information, making them ideal for low-resource devices while maintaining security levels close to full nodes.
+
+  * **Data Availability Sampling (DAS)**: Data Availability Sampling is a technique used by light clients to verify the availability of block data without having to download the entire block. This method allows clients to confirm with high certainty (99.99%) that the data is available by sampling only a small fraction (~1%) of it.
+
+  * **Erasure Coding**: A redundancy method that splits data into multiple chunks and extends them, ensuring that the original data can be reconstructed even if some chunks are missing, making it difficult for malicious actors to hide data parts.
+
+  * **Multiple Execution Environments**: It is designed to be data-agnostic, supporting a variety of execution environments including EVM, WASM, and custom runtimes, which provides a versatile foundation for a broad range of blockchain applications.
+
+See more on Avail DA's [transaction life cycle](/scaling-services-rollups/data-availability/avail-da/#how-avail-da-works).
+
 ### Interoperability Layers
 
 Interoperability layers refer to frameworks or systems that enable different blockchain networks to communicate and interact with each other. These layers are crucial because they allow for the transfer of data, assets, and value between otherwise isolated blockchain ecosystems, facilitating a more integrated and functional global blockchain infrastructure.
