@@ -34,7 +34,7 @@ The `Node API` and `Advanced API` solutions come with both *Public* and *Premium
 
 | Feature                                 | Public                      | Freemium                    | Premium                                                    |
 |-----------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------|
-| Chains                                  | 40+                         | 50+                         | 50+                                                        |
+| Chains                                  | 50+                         | 55+                         | 55+                                                        |
 | Full and Archive data                   | ✅                          | ✅                         | ✅                                                         |
 | Global node coverage                    | ✅                          | ✅                         | ✅                                                         |
 | Node API                                | ✅                          | ✅                         | ✅                                                         |
@@ -69,7 +69,7 @@ Our Premium service plan users can choose to query blockchain data under the fol
 
 ### Pay-as-you-go
 
-*Pay-as-you-go* (PAYG) is a usage-based charging model for the Premium Plan services. PAYG means that you commit to no subscriptions but pay for each request you make. To start using the Premium Plan features, you deposit a minimum amount of 1000 ANKR tokens and create an Ankr Premium account.
+*Pay-as-you-go* (PAYG) is a usage-based charging model for the Premium Plan services. PAYG means that you commit to no subscriptions but pay for each request you make. The minimum PAYG deposit to start using the Premium Plan features is `10USD` (or equivalent amount in ANKR tokens).
 
 ### Deal
 
@@ -91,7 +91,6 @@ We discontinue the `500USD` *Package* subscription to introduce a more cost-effi
   * Before the renewal, the *Package* users continue to operate under their current subscription (30M calls, Node API, EVM-compatible protocols).
   * Starting from the first subscription renewal, there is no more *Package* — let's have a *Deal*!
 
-
 ## PAYG pricing
 
 **The price of our API Credits is pegged to USD**. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the latest _ANKR/USD_ exchange rate.
@@ -104,11 +103,11 @@ We discontinue the `500USD` *Package* subscription to introduce a more cost-effi
 
 ### How we charge?
 
-Premium Plan's chain requests measure in *API Credits*. PAYG model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
+For both our Premium plan's charging models — [Pay-as-you-go (PAYG)](/rpc-service/service-plans/#pay-as-you-go) and [Deal](/rpc-service/service-plans/#deal) — we charge per method used in request. Various methods have different API credit values per request. A method's API credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
 
 We charge no matter whether a request has been successful or not. In other words, a charge is taken for each request coming to our worker, regardless of a node's response.
 
-PAYG charging summary:
+**PAYG/Deal charging summary**:
 
 > `Correct call` — `Incorrect call` — `Correct call + incorrect method`
 
@@ -116,7 +115,7 @@ PAYG charging summary:
   * **Incorrect call** (not charged) — a request has an invalid JSON-RPC structure or a batch request has the same ID in multiple requests. We can't parse such a request.
   * **Correct call + incorrect method** (charged default amount) — a request uses an unsupported method though has a valid JSON-RPC structure. We charge default amount of credits for the infrastructure usage.
 
-### Pricing per request
+### Pricing per request: HTTPS
 
 | API Type       | Method      | API Credits | in USD   |
 |----------------|-------------|-------------|----------|
@@ -125,3 +124,16 @@ PAYG charging summary:
 | Solana         | all methods | 500         | $0.00005 |
 | Advanced API   | all methods | 700         | $0.00007 |
 | Other          |             | 100         | $0.00001 |
+
+### Pricing per request: WSS
+
+WebSockets interaction consists of the following actions:
+
+  * **Subscription**: Establishing WSS connection and subscribing to events.
+  * **Notification**: Receiving real-time notifications from the events you've subscribed for.
+
+| Action Type    | Chain       | API Credits | in USD   |
+|----------------|-------------|-------------|----------|
+| Subscription   | All chains  | 700         | $0.00007 |
+| Notification   | Solana      | 500         | $0.00005 |
+|                | Other       | 100         | $0.00001 |
