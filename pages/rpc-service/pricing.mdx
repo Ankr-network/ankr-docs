@@ -1,6 +1,8 @@
 # Pricing
 
-Premium Plan's chain requests measure in *API Credits*. Our Pay-as-you-go (PAYG) model charges per method used in request. Various methods have different credit values per request. A method's credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
+> Premium plan's blockchain requests measure in *API Credits*.
+
+For both our Premium plan's charging models — [Pay-as-you-go (PAYG)](/rpc-service/service-plans/#pay-as-you-go) and [Deal](/rpc-service/service-plans/#deal) — we charge per method used in request. Various methods have different API credit values per request. A method's API credit value calculates based on a method's usage intensity and multiple factors that include using the computational, memory, storage, and network resources.
 <br/>
 
 <img src="/docs/build/pricing-section.png" class="responsive-pic" width="800" />
@@ -10,7 +12,7 @@ Premium Plan's chain requests measure in *API Credits*. Our Pay-as-you-go (PAYG)
 > **Our PAYG pricing model:**  
 > **0.10 USD = 1M API Credits**
 
-## Pricing per request
+## Pricing per request: HTTPS
 
 | API Type       | Method      | API Credits | in USD   |
 |----------------|-------------|-------------|----------|
@@ -19,3 +21,17 @@ Premium Plan's chain requests measure in *API Credits*. Our Pay-as-you-go (PAYG)
 | Solana         | all methods | 500         | $0.00005 |
 | Advanced API   | all methods | 700         | $0.00007 |
 | Other          |             | 100         | $0.00001 |
+
+## Pricing per request: WSS
+
+WebSockets interaction consists of the following actions:
+
+  * **Subscription**: Establishing WSS connection and subscribing to events.
+  * **Notification**: Receiving real-time notifications from the events you've subscribed for.
+
+| Action Type    | Chain       | API Credits | in USD   |
+|----------------|-------------|-------------|----------|
+| Subscription   | All chains  | 700         | $0.00007 |
+| Notification   | Solana      | 500         | $0.00005 |
+|                | Other       | 100         | $0.00001 |
+
