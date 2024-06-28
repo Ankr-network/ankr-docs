@@ -429,7 +429,7 @@ FILEBASE_REGION=us-east-1
 FILE_SERVER_URL=http://localhost:5002
 ```
 
-What we want to do is create a way so that when we’re running in `development` mode that the files upload to our local `bucket` folder, but when we’re in production mode, the files upload to IPFS with Filebase. To do this, we’re going to take advantage of our `NODE_ENV` and modify our `upload` middleware to use a different multer configuration when the `NODE_ENV` is set to production. More specifically, we’ll be using an extension of `multer` called `multer-s3` that handles requests regularly to AWS S3 but because Filebase is an AWS S3 compatible service, we’ll just configure it to point to Filebase.
+What we want to do is create a way so that when we’re running in `development` mode the files upload to our local `bucket` folder, but when we’re in production mode, the files upload to IPFS with Filebase. To do this, we’re going to take advantage of our `NODE_ENV` and modify our `upload` middleware to use a different multer configuration when the `NODE_ENV` is set to production. More specifically, we’ll be using an extension of `multer` called `multer-s3` that handles requests regularly to AWS S3 but because Filebase is an AWS S3 compatible service, we’ll just configure it to point to Filebase.
 
 File: `./src/app.ts`
 
