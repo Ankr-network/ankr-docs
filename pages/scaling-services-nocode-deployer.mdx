@@ -1,0 +1,177 @@
+import { Callout } from "components";
+
+# No-Code Deployer
+
+No-code Deployer is a Rollup-as-a-Service (RaaS) platform that offers the infrastructure and tools required to implement and manage rollup solutions, eliminating the need for deep expertise in the underlying technology.
+
+## Rollup Deployment
+
+A rollup deployment process consists of the following parts:
+
+> [`Sign in`](/scaling-services-nocode-deployer/#sign-in) —> [`Deploy Rollup`](/scaling-services-nocode-deployer/#deploy-testnet-rollup)
+
+  * **Sign in**: Authenticate on the platform to start using its functionality.
+  * **Deploy Rollup**: Define your rollup settings, and then deploy it.
+
+### Sign in
+
+First things first, sign in to use the platform's functionality:
+
+  1. Go to the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
+  2. Click **Sign in > Continue with Google**, and then select an account you'd like to use.
+
+Congrats — you've just signed in to the Scaling Services platform!
+
+For those signing in for the first time, please enter your basic company information so that we know our customers.
+
+---
+
+### Deploy Testnet Rollup
+
+To deploy a rollup using a Testnet network, follow these steps:
+
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
+  2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
+  3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
+      * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack), [OP Stack](/scaling-services-overview/#op-stack).
+     <img src="/docs/scale/stack.png" class="responsive-pic" width="700" />
+      * **Network**: Select **Testnet** — an option to explore the rollup functionality for free (48 hours).
+     <img src="/docs/scale/network.png" class="responsive-pic" width="700" />
+      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
+     <img src="/docs/scale/da-layer.png" class="responsive-pic" width="700" />
+  4. On the **Configuration** tab, specify the following parameters, and then click **Next**:
+      * **Chain ID**
+     <img src="/docs/scale/chain-id.png" class="responsive-pic" width="500" />
+      * **Rollup Name**
+     <img src="/docs/scale/rollup-name.png" class="responsive-pic" width="500" />
+      * **Gas Token**
+     <img src="/docs/scale/native-token.png" class="responsive-pic" width="500" />
+  5. On the **Infrastructure** tab, check the components included in the Starter package, and then click **Confirm**.
+<img src="/docs/scale/infra-package.png" class="responsive-pic" width="700" />
+  6. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm**.
+<img src="/docs/scale/summary.png" class="responsive-pic" width="350" />
+  7. As an anti-abuse measure, to deploy a rollup on a Testnet, you must have `1 ankrETH` in your wallet.<br/>
+In the **Prove ankrETH** dialog, perform the following actions to start your rollup deployment:
+      * Click **Connect MetaMask and prove address**.
+     <img src="/docs/scale/prove-ankr.png" class="responsive-pic" width="400" />
+      * In MetaMask, select the Ethereum address to associate with your account.
+      * Sign with MetaMask wallet.
+
+Congrats — you've just configured and deployed your Testnet rollup!
+
+---
+
+### Deploy Mainnet Rollup
+
+To deploy a rollup using a Mainnet network, follow these steps:
+
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
+  2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
+  3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
+      * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack), [OP Stack](/scaling-services-overview/#op-stack).
+     <img src="/docs/scale/stack.png" class="responsive-pic" width="700" />
+      * **Network**: Select **Mainnet** — to deploy your rollup on a fully operational blockchain network.
+     <img src="/docs/scale/network-mainnet.png" class="responsive-pic" width="700" />
+      * **Infrastructure Package**: Upon selecting Mainnet, you have to select the Infrastructure to be used for your rollup solution:
+        * **Starter Package**: Starter RPC Package, Bridge, Block Explorer, Aggregator, Synchronizer.
+        * **Advanced Package**: Pro RPC Package, Bridge, Block Explorer, Aggregator, Synchronizer.
+      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
+     <img src="/docs/scale/da-layer.png" class="responsive-pic" width="700" />
+  4. On the **Sequencer** tab, select whether you'd like to have an Ankr-managed sequencer or a self-managed sequencer.
+<img src="/docs/scale/sequencer.png" class="responsive-pic" width="700" />
+  5. On the **Configuration** tab, specify the following parameters, and then click **Next**:
+      * **Chain ID**
+     <img src="/docs/scale/chain-id.png" class="responsive-pic" width="500" />
+      * **Rollup Name**
+     <img src="/docs/scale/rollup-name.png" class="responsive-pic" width="500" />
+      * **Gas Token**
+     <img src="/docs/scale/gas-token.png" class="responsive-pic" width="500" />
+  6. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
+<img src="/docs/scale/mainnet-infra-package.png" class="responsive-pic" width="700" />
+  7. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm and Pay**.
+<img src="/docs/scale/mainnet-summary.png" class="responsive-pic" width="350" />
+  8. On the Stripe checkout page, provide your card details, and then click **Subscribe** to deploy the configured rollup.
+
+Congrats — you've just configured and deployed your Mainnet rollup!
+
+---
+
+## Arbitrum Bridge Setup
+
+You might be interested in how-tos for the following scenarios:
+  * [Add Testnet to Arbitrum bridge](/scaling-services-nocode-deployer/#add-testnet-to-arbitrum-bridge)
+  * [Add Mainnet to Arbitrum bridge](/scaling-services-nocode-deployer/#add-mainnet-to-arbitrum-bridge)
+
+### Add Testnet to Arbitrum Bridge
+
+Currently, adding a Testnet Orbit chain to the Arbitrum bridge must be done locally. This means that you will configure the bridge UI to display the desired chain, but this change will only apply to you and be accessible from localhost.
+
+To add a Testnet chain to Arbitrum bridge, follow these steps:
+
+  1. Navigate to https://bridge.arbitrum.io/.
+  2. Connect to the bridge UI using your Ethereum wallet.
+<img src="/docs/scale/connect-wallet.png" class="responsive-pic" width="180" />
+  3. In the bridge UI, click your **Wallet address > Settings > Turn on testnet mode** to activate a Testnet mode.
+<img src="/docs/scale/dev-mode.png" class="responsive-pic" width="800" />
+  4. In **Settings > Add Testnet Orbit Chain**, add a JSON configuration, and then click **Add Chain**. The JSON configuration must contain the following data:
+      * A transaction output from bridge deployment
+      * Bridge setup data from `OrbitSetupScript.json`
+
+```json
+{
+  "chainInfo": {
+    "minL2BaseFee": 100000000,
+    "networkFeeReceiver": "0x72efD0dA4E05E1db05eB4Cd34e736Ee892437065",
+    "infrastructureFeeCollector": "0x72efD0dA4E05E1db05eB4Cd34e736Ee892437065",
+    "batchPoster": "0x11CF25037F5E7e789D4cF3D0AEF22bE84220BF68",
+    "staker": "0xB9a52331D21c0b4F26b48c57A4d56C7725bCBa29",
+    "chainOwner": "0x72efD0dA4E05E1db05eB4Cd34e736Ee892437065",
+    "chainName": "REGEN",
+    "chainId": 749,
+    "parentChainId": 17000,
+    "rpcUrl": "https://rpc-nitro.testnet-social-network.raas.ankr.com",
+    "explorerUrl": "http://localhost",
+    "nativeToken": "0x4c007cDcC5355f53cfD61B29cEa68174170745F8"
+  },
+  "coreContracts": {
+    "rollup": "0x27F339cfe4e43DF353370fcA6Bbd0cF2DF0F74d5",
+    "inbox": "0x9C71868E01A91298aD3DbF9EF64C932aeC08aEb4",
+    "outbox": "0x865A8Ab91FA987B3D5A4ED5d74932Bf1b24e75F7",
+    "adminProxy": "0x114439795524e011944a0E69F087a497cE681e41",
+    "sequencerInbox": "0x39eDedfaaC0EF97ffE8FD189fA18E7D8Bf2B24b7",
+    "bridge": "0x7caDa6Efc126d59afCAeEd763E51c8A15d57269B",
+    "utils": "0x0D5CbCc8D2c97F1dEB94f6f4dd3a36A7C01c01EE",
+    "validatorWalletCreator": "0x653A6F645b680bF0E3c57d1eE0c0fcD1e01470F3"
+  },
+  "tokenBridgeContracts": {
+    "l2Contracts": {
+      "customGateway": "0xA004f196Aa2c00a6743ca6850862fDAAc20FAA54",
+      "multicall": "0xF3cA368BeF5252476E84de2A835167c90262D3C1",
+      "proxyAdmin": "0x114439795524e011944a0E69F087a497cE681e41",
+      "router": "0xfFbFdAd733822485b88bA1AfDB42dF76f07F802a",
+      "standardGateway": "0xe762bED1C0fA4F49bac04580D42E2D3570E9357c",
+      "weth": "0x0000000000000000000000000000000000000000",
+      "wethGateway": "0x0000000000000000000000000000000000000000"
+    },
+    "l3Contracts": {
+      "customGateway": "0x850d2501E6Da6B105aFb689529497B7024776E78",
+      "multicall": "0xc5DD7Dab959Eb221911a58dC469d769270C2De2F",
+      "proxyAdmin": "0xe762728C1022dAe5D2d0f4a0317944B9d70B309C",
+      "router": "0x9A2e67eE268cE392A2D91D8fF87bac1D45980B98",
+      "standardGateway": "0xe17851222aba0821EAfc4F0AE8fDf4d8827124fa",
+      "weth": "0x0000000000000000000000000000000000000000",
+      "wethGateway": "0x0000000000000000000000000000000000000000"
+    }
+  }
+}
+```
+
+Congrats — you've just added a Testnet chain to the bridge UI for local use!
+
+---
+
+### Add Mainnet to Arbitrum Bridge
+
+To have a Mainnet chain added to the Arbitrum bridge, there are two options available:
+  * Request adding a Mainnet chain by filling out the [form](https://docs.google.com/forms/d/e/1FAIpQLSeHusW27KPta53XMD2HAIfgzubQbIxW1ghqOCuXfg-ocWpMeQ/viewform).
+  * Fork and host the bridge UI, modifying it to add mainnet chains. The bridge UI can be found on [OffchainLabs' GitHib](https://github.com/OffchainLabs/arbitrum-token-bridge).
