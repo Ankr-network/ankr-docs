@@ -11,8 +11,8 @@ The BNB Smart Chain also supports EVM-compatible smart contracts and protocols. 
 
 The BNB Smart Chain highlights:
 
-  * EVM Compatible
-  * Proof of Staked Authority
+  * EVM-Compatible
+  * Proof-of-Staked Authority
   * Cross-Chain Transfer
   * Block time `~3` seconds
 
@@ -919,20 +919,13 @@ The transaction will not be added to the blockchain. Note that the estimate may 
   * `method` (string; required): a method used for the request.
   * `params` (array; required):
 
-    1. `<object>` (hex encoded): the transaction object:
+    * `<object>` (hex encoded; required): the transaction object:
         * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
-        * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
+        * `to` (string; data, 20 bytes; required): the address the transaction is directed to.
         * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
         * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
         * `value` (string; quantity; optional): the value sent with this transaction, in wei.
         * `data` (string; data; optional): the hash of the method signature and encoded parameters.
-
-    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
-        * `earliest`: the lowest numbered block available on the client.
-        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
-        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
-        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
-        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
 
 ### Returns
 <br/>
@@ -947,7 +940,13 @@ curl -X POST https://rpc.ankr.com/bsc \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_estimateGas",
-    "params": [{"from":null,"to":"0x6b175474e89094c44da98b954eedeac495271d0f","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "params": [
+        {
+            "from": "0xf5d4405248DC3078e21438Ac0919C63eA004BA04",
+            "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+            "data": "0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"
+        }
+    ],
     "id": 1
 }'
 ```
