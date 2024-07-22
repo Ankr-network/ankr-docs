@@ -17,7 +17,7 @@ A rollup deployment process consists of the following parts:
 
 First things first, sign in to use the platform's functionality:
 
-  1. Go to the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
+  1. Go to the [**Scaling Services**](https://rollup.asphere.xyz/) platform.
   2. Click **Sign in > Continue with Google**, and then select an account you'd like to use.
 
 Congrats — you've just signed in to the Scaling Services platform!
@@ -30,14 +30,14 @@ For those signing in for the first time, please enter your basic company informa
 
 To deploy a rollup using a Testnet network, follow these steps:
 
-  1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://rollup.asphere.xyz/) platform.
   2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
   3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
       * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack), [OP Stack](/scaling-services-overview/#op-stack).
      <img src="/docs/scale/stack.png" class="responsive-pic" width="700" />
       * **Network**: Select **Testnet** — an option to explore the rollup functionality for free (48 hours).
      <img src="/docs/scale/network.png" class="responsive-pic" width="700" />
-      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
+      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Arbitrum AnyTrust](/scaling-services-overview/#arbitrum-anytrust), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
      <img src="/docs/scale/da-layer.png" class="responsive-pic" width="700" />
   4. On the **Configuration** tab, specify the following parameters, and then click **Next**:
       * **Chain ID**
@@ -75,7 +75,7 @@ To deploy a rollup using a Mainnet network, follow these steps:
       * **Infrastructure Package**: Upon selecting Mainnet, you have to select the Infrastructure to be used for your rollup solution:
         * **Starter Package**: Starter RPC Package, Bridge, Block Explorer, Aggregator, Synchronizer.
         * **Advanced Package**: Pro RPC Package, Bridge, Block Explorer, Aggregator, Synchronizer.
-      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
+      * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Arbitrum AnyTrust](/scaling-services-overview/#arbitrum-anytrust), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
      <img src="/docs/scale/da-layer.png" class="responsive-pic" width="700" />
   4. On the **Sequencer** tab, select whether you'd like to have an Ankr-managed sequencer or a self-managed sequencer.
 <img src="/docs/scale/sequencer.png" class="responsive-pic" width="700" />
@@ -85,6 +85,8 @@ To deploy a rollup using a Mainnet network, follow these steps:
       * **Rollup Name**
      <img src="/docs/scale/rollup-name.png" class="responsive-pic" width="500" />
       * **Gas Token**
+        * **ETH**: Use ETH to pay your network's gas fees.
+        * **Custom Gas Token** (If DA layer = AnyTrust): For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#custom-gas-token) created and deployed on the network.
      <img src="/docs/scale/gas-token.png" class="responsive-pic" width="500" />
   6. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
 <img src="/docs/scale/mainnet-infra-package.png" class="responsive-pic" width="700" />
@@ -95,6 +97,27 @@ To deploy a rollup using a Mainnet network, follow these steps:
 Congrats — you've just configured and deployed your Mainnet rollup!
 
 ---
+
+## Custom Gas Token
+
+Deploying your AnyTrust Orbit chain, you have the option of using a custom gas token, other than ETH, for gas payments on the network. When choosing this option, there are certain requirements that the token needs to comply with.
+
+### Requirements
+
+A custom gas token must meet the following requirements:
+
+  * **ERC-20 Compliance**: The token must conform to the ERC-20 standard.
+  * **Native Deployment**: The token must be natively deployed on the parent chain.
+  * **Native Bridging and Proper Configuration**: During chain deployment, the gas token must be "natively bridged" and configured as the native gas token on the Orbit chain.
+
+**Custom gas token restrictions for ERC-20**:
+
+  * The token must be configured with 18 decimals.
+  * The token can't be rebasing or have a transfer fee.
+  * The token must only be transferable via direct calls to the token address.
+  * The token must only be able to set allowances via direct calls to the token address.
+  * The token must not have a callback on transfer.
+  * Users must not be able to make a transfer to themselves that results in a revert.
 
 ## Arbitrum Bridge Setup
 
