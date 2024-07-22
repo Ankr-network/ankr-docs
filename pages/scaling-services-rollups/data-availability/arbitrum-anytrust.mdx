@@ -1,0 +1,15 @@
+# Arbitrum AnyTrust
+
+AnyTrust is an Arbitrum protocol that manages data availability with a permissioned set of parties known as the Data Availability Committee (DAC). AnyTrust settles transactions securely on the parent chain, relying on a DAC to store and verify data, which requires only two honest parties independent of the committee size. Arbitrum chains that implement the AnyTrust protocol are referred to as Arbitrum AnyTrust chains.
+
+## Key features
+
+  * **Data Availability Committee (DAC)**: The AnyTrust model uses a committee-based approach, where a group of validators, known as the Data Availability Committee (DAC), is responsible for storing and providing access to transaction data. The DAC ensures that the data for each rollup batch is available and can be retrieved by any party who needs to verify or interact with the rollup.
+
+  * **Trust Assumptions:**: AnyTrust’s security model relies on the assumption that at least one committee member will behave honestly and make the data available. This is a less stringent requirement compared to other models that assume a majority of participants are honest. This model allows for faster and more efficient data availability without compromising on security.
+
+  * **Efficiency and Cost Reduction**: By offloading the data availability responsibility to the DAC, Arbitrum significantly reduces the amount of data that needs to be stored and processed on the Ethereum mainnet. This reduction in data load translates to lower gas fees for users and increased throughput for the network.
+
+  * **Fallback Mechanism**: In the unlikely event that the DAC fails to make the data available, Arbitrum includes a fallback mechanism that leverages Ethereum’s mainnet for data storage. This ensures that the system remains secure and operational even in cases of DAC malfunction or collusion.
+
+AnyTrust protocol provides a scalable, efficient, and secure solution to the data availability challenge, making it a cornerstone of Arbitrum’s ability to scale Ethereum effectively.
