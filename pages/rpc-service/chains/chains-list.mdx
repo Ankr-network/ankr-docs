@@ -1397,7 +1397,10 @@ Official quick links: [Website](https://bitcoin.org/), [Docs](https://developer.
 
 ### API methods
 
-For Bitcoin, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/btc/) except for those listed as unsupported.
+For Bitcoin, we support blockchain interaction via the following interfaces:
+
+  * [Bitcoin API native methods](/rpc-service/chains/chains-api/btc/#bitcoin-native-methods)
+  * [Blockbook API methods](/rpc-service/chains/chains-api/btc/#blockbook-api-methods)
 
 #### Unsupported
 
@@ -1409,13 +1412,26 @@ For Bitcoin, we support blockchain interaction via all the [applicable methods](
  If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
  </Callout>
 
-**HTTPS**:
+**Bitcoin's HTTPS**:
 
 `savemempool`, `verifychain`, `getmemoryinfo`, `getrpcinfo`, `gettransaction`, `help`, `logging`, `stop`, `uptime`, `getblocktemplate`, `getmininginfo`, `getnetworkhashps`, `pruneblockchain`, `generateblock`, `generatetoaddress`, `generatetodescriptor`, `prioritisetransaction`, `submitblock`, `submitheader`, `addnode`, `clearbanned`, `disconnectnode`, `getaddednodeinfo`, `getconnectioncount`, `getnettotals`, `getnetworkinfo`, `getnodeaddresses`, `getpeerinfo`, `listbanned`, `ping`, `setban`, `setnetworkactive`, `signrawtransactionwithkey`, `createmultisig`, `getdescriptorinfo`, `signmessagewithprivkey`, `abandontransaction`, `abortrescan`, `addmultisigaddress`, `backupwallet`, `bumpfee`, `createwallet`, `dumpprivkey`, `dumpwallet`, `encryptwallet`, `getaddressesbylabel`, `getbalance`, `getbalances`, `getnewaddress`, `getrawchangeaddress`, `getreceivedbyaddress`, `getreceivedbylabel`, `getunconfirmedbalance`, `getwalletinfo`, `importaddress`, `importdescriptors`, `importmulti`, `importprivkey`, `importprunedfunds`, `importpubkey`, `importwallet`, `keypoolrefill`, `listaddressgroupings`, `listlabels`, `listlockunspent`, `listreceivedbyaddress`, `listreceivedbylabel`, `listtransactions`, `listsinceblock`, `listunspent`, `listwalletdir`, `listwallets`, `loadwallet`, `lockunspent`, `psbtbumpfee`, `removeprunedfunds`, `rescanblockchain`, `send`, `sendmany`, `sendtoaddress`, `sethdseed`, `setlabel`, `setwalletflag`, `signmessage`, `settxfee`, `signrawtransactionwithwallet`, `unloadwallet`, `upgradewallet`, `walletcreatefundedpsbt`, `walletlock`, `walletpassphrase`, `walletpassphrasechange`, `walletprocesspsbt`, `deriveaddresses`, `fundrawtransaction`, `scantxoutset`, `preciousblock`, `gettxoutsetinfo`
+
+**Blockbook API**:
+
+  * All WebSocket methods
+  * All `socket.io` methods
 
 ### API querying
 
 #### Request example
+
+<Tabs
+  items={[
+    "Bitcoin JSON-RPC",
+    "Blockbook REST"
+  ]}
+>
+  <Tab>
 
 ```shell
 curl -X POST https://rpc.ankr.com/btc \
@@ -1425,8 +1441,24 @@ curl -X POST https://rpc.ankr.com/btc \
       "params": []
 }'
 ```
+  </Tab>
+  <Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/utxo/bc1qxhmdufsvnuaaaer4ynz88fspdsxq2h9e9cetdj?confirmed=true
+```
+  </Tab>
+</Tabs>
 
 #### Response example
+
+<Tabs
+  items={[
+    "Bitcoin",
+    "Blockbook"
+  ]}
+>
+  <Tab>
 
 ```json
 {
@@ -1444,6 +1476,39 @@ curl -X POST https://rpc.ankr.com/btc \
     "id": "hmm"
 }
 ```
+  </Tab>
+  <Tab>
+
+```json
+[
+    {
+        "txid": "c80f70c48aff883b060aed28544aec0fbdeb3db913a214d37194cee6337b0437",
+        "vout": 1,
+        "value": "319691557",
+        "height": 854658,
+        "confirmations": 3,
+        "coinbase": true
+    },
+    {
+        "txid": "d6957ef0d3a8a13b369f4996f3a80182acc26445508f22ac50a4cea468663f06",
+        "vout": 1,
+        "value": "317092804",
+        "height": 854649,
+        "confirmations": 12,
+        "coinbase": true
+    },
+    {
+        "txid": "9b11befa61b7e7bc7440fcb68213c6ecf2c19f50bfac4fc5a4bbe37dad138d0d",
+        "vout": 1,
+        "value": "319367244",
+        "height": 854646,
+        "confirmations": 15,
+        "coinbase": true
+    }
+]
+```
+  </Tab>
+</Tabs>
 
 ---
 

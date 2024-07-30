@@ -9,11 +9,14 @@ import { Tabs, Tab } from "nextra-theme-docs";
 
 In order for your Web3 application to interact with Bitcoin — either by reading blockchain data or sending transactions to the network — it must connect to a Bitcoin node. Developers interact with the blockchain using the methods provided by the API.
 
-The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
+**Bitcoin interaction interfaces supported**:
+
+  * [Bitcoin API native methods](/rpc-service/chains/chains-api/btc/#methods-supported) — [JSON-RPC](https://www.jsonrpc.org/specification).
+  * [Blockbook API methods](/rpc-service/chains/chains-api/btc/#blockbook-api-methods) — indexed data via REST.
 
 ---
 
-## Methods supported
+## Bitcoin native methods
 <br/>
 
 **Blockchain RPCs**:
@@ -2907,8 +2910,7 @@ getaddressinfo "address"
   "hdkeypath" : "str",              (string, optional) The HD keypath, if the key is HD and available.
   "hdseedid" : "hex",               (string, optional) The Hash160 of the HD seed.
   "hdmasterfingerprint" : "hex",    (string, optional) The fingerprint of the master key.
-  "labels" : [                      (json array) Array of labels associated with the address. Currently limited to one label but returned
-                                    as an array to keep the API stable if multiple labels are enabled in the future.
+  "labels" : [                      (json array) Array of labels associated with the address. Currently limited to one label but returned as an array to keep the API stable if multiple labels are enabled in the future.
     "str",                          (string) Label name (defaults to "").
     ...
   ]
@@ -2924,4 +2926,897 @@ curl -X POST https://rpc.ankr.com/btc \
       "method": "getaddressinfo",
       "params": ["bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl"]
 }'
+```
+
+---
+
+## Blockbook API methods
+<br/>
+
+Blockbook is an open-source blockchain indexer and API backend developed by the cryptocurrency wallet company Trezor. It is designed to be a high-performance and scalable solution for accessing blockchain data.
+
+Blockbook provides interaction with the indexed blockchain data via the following API interfaces:
+
+  * [Blockbook API v.2 REST](/rpc-service/chains/chains-api/btc/#blockbook-api-v2-rest) — current methods.
+  * [Blockbook API v.1 REST](/rpc-service/chains/chains-api/btc/#blockbook-api-v1-rest) — legacy methods.
+
+**Common principles used in Blockbook API V2**:
+
+  * all crypto amounts are transferred as strings, in the lowest denomination (satoshis, wei, ...), without decimal point
+  * empty fields are omitted. Empty field is a string of value null or "", a number of value 0, an object of value null or an array without elements.
+
+### Blockbook API v.2 REST
+
+The following methods are supported:
+
+  * [Get block hash](/rpc-service/chains/chains-api/btc/#get-block-hash) — retrieve the hash of a specific block by its height.
+  * [Get transaction](/rpc-service/chains/chains-api/btc/#get-transaction) — retrieves detailed information about a specific transaction by its ID.
+  * [Get transaction specific](/rpc-service/chains/chains-api/btc/#get-transaction-specific) — retrieves detailed and specific information about a particular transaction.
+  * [Get address](/rpc-service/chains/chains-api/btc/#get-address) — retrieves info about a specific cryptocurrency address.
+  * [Get xpub](/rpc-service/chains/chains-api/btc/#get-xpub) — retrieves info about an extended public key (xpub) or descriptor.
+  * [Get utxo](/rpc-service/chains/chains-api/btc/#get-utxo) — retrieves unspent transaction outputs (UTXOs) for a specific address.
+  * [Get block](/rpc-service/chains/chains-api/btc/#get-block) — retrieves detailed information about a specific block by its height or hash.
+  * [Send transaction](/rpc-service/chains/chains-api/btc/#send-transaction) — broadcasts a raw transaction to the blockchain network.
+  * [Tickers list](/rpc-service/chains/chains-api/btc/#tickers-list) — retrieves a list of all available tickers.
+  * [Tickers](/rpc-service/chains/chains-api/btc/#tickers) — retrieves detailed information about specific tickers.
+  * [Balance history](/rpc-service/chains/chains-api/btc/#balance-history) — retrieves the balance history for a specific xpub or address over a specified time range.
+
+---
+
+#### Get block hash
+
+> `GET /api/v2/block-index/<block-height>`
+
+Retrieves the hash of the block specified by the block number.
+
+##### Parameters
+<br/>
+
+  * `block-height` (string; path; required): the height (block number) of the block for which you want to retrieve the hash.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/block-index/854043
+```
+
+##### Response example
+
+```json
+{
+  "blockHash": "000000000000000000020c91b9e0ded91c1b69c00fa0c0611c636425b52f7f98"
+}
+```
+
+_Note: Blockbook always follows the main chain of the backend it is attached to. See notes on **Get Block** below_
+
+#### Get transaction
+
+> `GET /api/v2/tx/<txid>`
+
+Retrieves detailed information about a specific transaction on the blockchain. It does not return coin specific fields.
+
+##### Parameters
+<br/>
+
+  * `txid` (string; path; required): the transaction ID of the transaction you want to retrieve information about.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tx/950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9
+```
+
+##### Response example
+
+```json
+{
+    "txid": "950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9",
+    "version": 1,
+    "vin": [
+        {
+            "sequence": 4294967295,
+            "n": 0,
+            "isAddress": false,
+            "coinbase": "03700a0d194d696e656420627920416e74506f6f6c2048008a0022d76023fabe6d6d457f44903a18fde9ef74fe2f8fcec7bdc2bfea8f0cdca4a7e8d93713dec1ca491000000000000000ea4000001802000000000000"
+        }
+    ],
+    "vout": [
+        {
+            "value": "546",
+            "n": 0,
+            "hex": "a91442402a28dd61f2718a4b27ae72a4791d5bbdade787",
+            "addresses": [
+                "37jKPSmbEGwgfacCr2nayn1wTaqMAbA94Z"
+            ],
+            "isAddress": true
+        },
+        {
+            "value": "319767249",
+            "n": 1,
+            "hex": "a9145249bdf2c131d43995cff42e8feee293f79297a887",
+            "addresses": [
+                "39C7fxSzEACPjM78Z7xdPxhf7mKxJwvfMJ"
+            ],
+            "isAddress": true
+        },
+        {
+            "value": "0",
+            "n": 2,
+            "hex": "6a24aa21a9ed6daa62fdbed57bd0fa6aa10c9522a4a6f602ab0206310d432541ed7dc33a26d0",
+            "addresses": [
+                "OP_RETURN aa21a9ed6daa62fdbed57bd0fa6aa10c9522a4a6f602ab0206310d432541ed7dc33a26d0"
+            ],
+            "isAddress": false
+        },
+        {
+            "value": "0",
+            "n": 3,
+            "hex": "6a2d434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a030",
+            "addresses": [
+                "OP_RETURN 434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a030"
+            ],
+            "isAddress": false
+        },
+        {
+            "value": "0",
+            "n": 4,
+            "hex": "6a2952534b424c4f434b3a68162ad9bace1bb20c1d2121e9634bc1be6c6dbe32c32684e291622200642fad",
+            "addresses": [
+                "OP_RETURN 52534b424c4f434b3a68162ad9bace1bb20c1d2121e9634bc1be6c6dbe32c32684e291622200642fad"
+            ],
+            "isAddress": false
+        }
+    ],
+    "blockHash": "000000000000000000008fe0320eb7034ecababe30a838308b5df4fab8c7a176",
+    "blockHeight": 854640,
+    "confirmations": 16,
+    "blockTime": 1722330680,
+    "size": 392,
+    "vsize": 365,
+    "value": "319767795",
+    "valueIn": "0",
+    "fees": "0",
+    "hex": "010000000001010000000000000000000000000000000000000000000000000000000000000000ffffffff5603700a0d194d696e656420627920416e74506f6f6c2048008a0022d76023fabe6d6d457f44903a18fde9ef74fe2f8fcec7bdc2bfea8f0cdca4a7e8d93713dec1ca491000000000000000ea4000001802000000000000ffffffff05220200000000000017a91442402a28dd61f2718a4b27ae72a4791d5bbdade787d1420f130000000017a9145249bdf2c131d43995cff42e8feee293f79297a8870000000000000000266a24aa21a9ed6daa62fdbed57bd0fa6aa10c9522a4a6f602ab0206310d432541ed7dc33a26d000000000000000002f6a2d434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a03000000000000000002b6a2952534b424c4f434b3a68162ad9bace1bb20c1d2121e9634bc1be6c6dbe32c32684e291622200642fad0120000000000000000000000000000000000000000000000000000000000000000000000000"
+}
+```
+
+##### Response (unconfirmed tx)
+
+> (_blockHeight_: -1, _confirmations_: 0, mining estimates _confirmationETABlocks_ and _confirmationETASeconds_):
+
+```json
+{
+  "txid": "cd8ec77174e426070d0a50779232bba7312b712e2c6843d82d963d7076c61366",
+  "version": 2,
+  "vin": [
+    {
+      "txid": "47687cc4abb58d815168686465a38113a0608b2568a6d6480129d197e653f6dc",
+      "sequence": 4294967295,
+      "n": 0,
+      "addresses": ["bc1qka0gpenex558g8gpxmpx247mwhw695k6a7yhs4"],
+      "isAddress": true,
+      "value": "1983687"
+    }
+  ],
+  "vout": [
+    {
+      "value": "3106",
+      "n": 0,
+      "hex": "0020d7da4868055fde790a8581637ab81c216e17a3f8a099283da6c4a27419ffa539",
+      "addresses": [
+        "bc1q6ldys6q9tl08jz59s93h4wquy9hp0glc5zvjs0dxcj38gx0l55uspu8x86"
+      ],
+      "isAddress": true
+    },
+    {
+      "value": "1979101",
+      "n": 1,
+      "hex": "0014381be30ca46ddf378ef69ebc4a601bd6ff30b754",
+      "addresses": ["bc1q8qd7xr9ydh0n0rhkn67y5cqm6mlnpd65dcyeeg"],
+      "isAddress": true
+    }
+  ],
+  "blockHeight": -1,
+  "confirmations": 0,
+  "confirmationETABlocks": 3,
+  "confirmationETASeconds": 2055,
+  "blockTime": 1675270935,
+  "size": 234,
+  "vsize": 153,
+  "value": "1982207",
+  "valueIn": "1983687",
+  "fees": "1480",
+  "hex": "020000000001...b18f00000000"
+}
+```
+
+A note about the `blockTime` field:
+
+  * For already mined transactions (`confirmations > 0`), the field `blockTime` contains time of the block.
+  * For transactions in mempool (`confirmations == 0`), the field contains time when the running instance of Blockbook was first time notified about the transaction. This time may be different in different instances of Blockbook.
+
+#### Get transaction specific
+
+> `GET /api/v2/tx-specific/<txid>`
+
+Returns transaction data in the exact format as returned by backend, including all coin specific fields.
+
+##### Parameters
+<br/>
+
+  * `txid` (string; path; required): the unique identifier of the transaction you want to retrieve information about.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tx-specific/950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9
+```
+
+##### Response example
+
+```json
+{
+    "txid": "950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9",
+    "hash": "9dedf821ffda5a9e235e455c699983b5c76ce6ab962454317a78aeb84b59519f",
+    "version": 1,
+    "size": 392,
+    "vsize": 365,
+    "weight": 1460,
+    "locktime": 0,
+    "vin": [
+        {
+            "coinbase": "03700a0d194d696e656420627920416e74506f6f6c2048008a0022d76023fabe6d6d457f44903a18fde9ef74fe2f8fcec7bdc2bfea8f0cdca4a7e8d93713dec1ca491000000000000000ea4000001802000000000000",
+            "txinwitness": [
+                "0000000000000000000000000000000000000000000000000000000000000000"
+            ],
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 0.00000546,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "OP_HASH160 42402a28dd61f2718a4b27ae72a4791d5bbdade7 OP_EQUAL",
+                "desc": "addr(37jKPSmbEGwgfacCr2nayn1wTaqMAbA94Z)#avhxp88d",
+                "hex": "a91442402a28dd61f2718a4b27ae72a4791d5bbdade787",
+                "address": "37jKPSmbEGwgfacCr2nayn1wTaqMAbA94Z",
+                "type": "scripthash"
+            }
+        },
+        {
+            "value": 3.19767249,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "OP_HASH160 5249bdf2c131d43995cff42e8feee293f79297a8 OP_EQUAL",
+                "desc": "addr(39C7fxSzEACPjM78Z7xdPxhf7mKxJwvfMJ)#vjljy0jc",
+                "hex": "a9145249bdf2c131d43995cff42e8feee293f79297a887",
+                "address": "39C7fxSzEACPjM78Z7xdPxhf7mKxJwvfMJ",
+                "type": "scripthash"
+            }
+        },
+        {
+            "value": 0.00000000,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "OP_RETURN aa21a9ed6daa62fdbed57bd0fa6aa10c9522a4a6f602ab0206310d432541ed7dc33a26d0",
+                "desc": "raw(6a24aa21a9ed6daa62fdbed57bd0fa6aa10c9522a4a6f602ab0206310d432541ed7dc33a26d0)#e7gqcaj2",
+                "hex": "6a24aa21a9ed6daa62fdbed57bd0fa6aa10c9522a4a6f602ab0206310d432541ed7dc33a26d0",
+                "type": "nulldata"
+            }
+        },
+        {
+            "value": 0.00000000,
+            "n": 3,
+            "scriptPubKey": {
+                "asm": "OP_RETURN 434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a030",
+                "desc": "raw(6a2d434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a030)#jcuzcwf4",
+                "hex": "6a2d434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a030",
+                "type": "nulldata"
+            }
+        },
+        {
+            "value": 0.00000000,
+            "n": 4,
+            "scriptPubKey": {
+                "asm": "OP_RETURN 52534b424c4f434b3a68162ad9bace1bb20c1d2121e9634bc1be6c6dbe32c32684e291622200642fad",
+                "desc": "raw(6a2952534b424c4f434b3a68162ad9bace1bb20c1d2121e9634bc1be6c6dbe32c32684e291622200642fad)#c8yvmutu",
+                "hex": "6a2952534b424c4f434b3a68162ad9bace1bb20c1d2121e9634bc1be6c6dbe32c32684e291622200642fad",
+                "type": "nulldata"
+            }
+        }
+    ],
+    "hex": "010000000001010000000000000000000000000000000000000000000000000000000000000000ffffffff5603700a0d194d696e656420627920416e74506f6f6c2048008a0022d76023fabe6d6d457f44903a18fde9ef74fe2f8fcec7bdc2bfea8f0cdca4a7e8d93713dec1ca491000000000000000ea4000001802000000000000ffffffff05220200000000000017a91442402a28dd61f2718a4b27ae72a4791d5bbdade787d1420f130000000017a9145249bdf2c131d43995cff42e8feee293f79297a8870000000000000000266a24aa21a9ed6daa62fdbed57bd0fa6aa10c9522a4a6f602ab0206310d432541ed7dc33a26d000000000000000002f6a2d434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a03000000000000000002b6a2952534b424c4f434b3a68162ad9bace1bb20c1d2121e9634bc1be6c6dbe32c32684e291622200642fad0120000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockhash": "000000000000000000008fe0320eb7034ecababe30a838308b5df4fab8c7a176",
+    "confirmations": 16,
+    "time": 1722330680,
+    "blocktime": 1722330680
+}
+```
+
+#### Get address
+
+> `GET /api/v2/address/<address>`
+
+Returns balances and transactions of an address. The returned transactions are sorted by block height, the newest blocks first.
+
+##### Parameters
+<br/>
+
+  * `address` (path; string; required): the cryptocurrency address you want to retrieve information about.
+  * `page` (query; integer; optional): specifies page of returned transactions, starting from 1. If out of range, Blockbook returns the closest possible page.
+  * `pageSize` (query; integer; optional): number of transactions returned by call (default and maximum 1000)
+  * `from` (query; integer; optional): a starting block height of transactions to return.
+  * `to` (query; integer; optional): an ending block height of transactions to return.
+  * `details` (query; string; optional; default=`txids`): specifies level of details returned by request; supported values are the following:
+    * `basic`: return only address balances, without any transactions.
+    * `tokens`: `basic` + tokens belonging to the address (applicable only to some coins).
+    * `tokenBalances`: `basic` + tokens with balances + belonging to the address (applicable only to some coins).
+    * `txids`: `tokenBalances` + list of `txids`, subject to `from`, `to` filter and pagination.
+    * `txslight`: `tokenBalances` + list of transaction with limited details (only data from index), subject to `from`, `to` filter and pagination.
+    * `txs`: `tokenBalances` + list of transaction with details, subject to `from`, `to` filter and pagination.
+  * `contract` (query; string; optional): return only transactions which affect specified contract (applicable only to coins which support contracts).
+  * `secondary` (query; string; optional): specifies secondary (fiat) currency in which the token and total balances are returned in addition to crypto values.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/address/bc1qqy0q2hxw2hwyw4qqdjjewyxx5sq966tstjyvh2y96zrz674dztjqe6qld0?details=txids
+```
+
+##### Response example
+
+```json
+{
+    "page": 1,
+    "totalPages": 1,
+    "itemsOnPage": 1000,
+    "address": "bc1qqy0q2hxw2hwyw4qqdjjewyxx5sq966tstjyvh2y96zrz674dztjqe6qld0",
+    "balance": "140659800",
+    "totalReceived": "140659800",
+    "totalSent": "0",
+    "unconfirmedBalance": "0",
+    "unconfirmedTxs": 0,
+    "txs": 1,
+    "txids": [
+        "711004b7192e86b8c26e2567526a292e01045071a05b5fa40beed8edeb780829"
+    ]
+}
+```
+
+#### Get xpub
+
+> `GET /api/v2/xpub/<xpub>`
+
+Returns balances and transactions of an `xpub` or output descriptor, applicable only for Bitcoin-type coins.
+
+Blockbook supports BIP44, BIP49, BIP84 and BIP86 (Taproot) derivation schemes, using either xpubs or output descriptors (see https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md)
+
+- Xpubs
+
+  Blockbook expects xpub at level 3 derivation path, i.e. _m/purpose'/coin_type'/account'/_. Blockbook completes the _change/address_index_ part of the path when deriving addresses.
+  The BIP version is determined by the prefix of the xpub. The prefixes for each coin are defined by fields `xpub_magic`, `xpub_magic_segwit_p2sh`, `xpub_magic_segwit_native` in the [trezor-common](https://github.com/trezor/trezor-common/tree/master/defs/bitcoin) library. If the prefix is not recognized, Blockbook defaults to BIP44 derivation scheme.
+<br/>
+
+- Output descriptors
+
+  Output descriptors are in the form `<type>([<path>]<xpub>[/<change>/*])[#checksum]`, for example `pkh([5c9e228d/44'/0'/0']xpub6BgBgses...Mj92pReUsQ/<0;1>/*)#abcd`
+
+  Parameters `type` and `xpub` are mandatory, the rest is optional
+
+  Blockbook supports a limited set of `type`s:
+
+  - BIP44: `pkh(xpub)`
+  - BIP49: `sh(wpkh(xpub))`
+  - BIP84: `wpkh(xpub)`
+  - BIP86 (Taproot single key): `tr(xpub)`
+
+  Parameter `change` can be a single number or a list of change indexes, specified either in the format `<index1;index2;...>` or `{index1,index2,...}`. If the parameter `change` is not specified, Blockbook defaults to `<0;1>`.
+
+The returned transactions are sorted by block height, the newest blocks first.
+
+##### Parameters
+<br/>
+
+  * `xpub|descriptor` (path; string; required): the extended public key (xpub) or descriptor you want to retrieve information about.
+  * `page` (query; integer; optional): specifies returned transactions' page number, starting from 1. If out of range, Blockbook returns the closest possible page.
+  * `pageSize` (query; integer; optional): the number of transactions returned by call (default and maximum 1000).
+  * `from` (query; integer; optional): the starting block height to retrieve transactions from.
+  * `to` (query; integer; optional): the ending block height to retrieve transactions up to.
+  * `details` (query; string; optional): The level of detail in the response. Possible values are:
+    * `basic`: only xpub balances, without any derived addresses and transactions.
+    * `tokens`: basic + tokens (addresses) derived from the xpub, subject to tokens parameter
+    * `tokenBalances`: basic + tokens (addresses) derived from the xpub with balances, subject to tokens parameter
+    * `txids`: tokenBalances + list of txids, subject to `from`, `to` filter and paging
+    * `txs`: tokenBalances + list of transaction with details, subject to `from`, `to` filter and paging
+  * `tokens` (query; string; optional): specifies the tokens (xpub addresses) returned by the request (default nonzero); supported values are the following:
+    * `nonzero`: return only addresses with nonzero balance.
+    * `used`: return addresses with at least one transaction.
+    * `derived`: return all derived addresses.
+  * `secondary` (query; string; optional): specifies secondary (fiat) currency in which the balances are returned in addition to crypto values
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/xpub/xpub6AHA9hZDN11k2ijHMeS5QqHx2KP9aMBRhTDqANMnwVtdyw2TDYRmF8PjpvwUFcL1Et8Hj59S3gTSMcUQ5gAqTz3Wd8EsMTmF3DChhqPQBnU
+```
+
+##### Response example
+
+```json
+{
+    "page": 1,
+    "totalPages": 1,
+    "itemsOnPage": 1000,
+    "address": "xpub6AHA9hZDN11k2ijHMeS5QqHx2KP9aMBRhTDqANMnwVtdyw2TDYRmF8PjpvwUFcL1Et8Hj59S3gTSMcUQ5gAqTz3Wd8EsMTmF3DChhqPQBnU",
+    "balance": "0",
+    "totalReceived": "490131736",
+    "totalSent": "490131736",
+    "unconfirmedBalance": "0",
+    "unconfirmedTxs": 0,
+    "txs": 68,
+    "addrTxCount": 80,
+    "txids": [
+        "32ae8b107808fa52e811d0b0ac988959a5225af520ab1ba8b6461e1ae01c6549",
+        "4c3fb15f12550280922896879120f2f629e56341df59112b0463d19bced143d9",
+        "32b8d9c755d17da87d7ebbaa0589fe888f8547a7c4307b62991247d5dd4ef6f6",
+        "a69c554c12a0f991cc5b8072e30782381e5748c97ab851dafcbc984928a60894",
+        "2276913ab7b623feeda669d953ebd715984d87200bc01d1cb4fe8c1797e6f6ef",
+        "19540748a8f3dc41a6b4a76fd1567987c375ff028ff280fe0a06f4d77da1744d",
+        "0b24d267cb6c8122f2cff5a12090b78dd96102752b7ce9d274f1207805794635",
+        "bca1b4fa2e0e962523f299588b2aa5f06065f6fc8a46180e0e0992297a9bad22",
+        "8f8e412a4e0b0e140b28ae3ea01bad13b9a03383b04ead14e287f9103ecb64aa",
+        "3b9170ee0267d138334af4ca3accce780d6b99f0b339263dbfe1abbe2e0d9b98",
+        "22c0d06fe20252d22123d31bad257376c038b365e2206518ea3e085e6c1f893c",
+        "45bba65dd50120dbaba555471321074d631c492d7a6f6a48384b313f0e32ed3f",
+        "a958148603cbc8f4b98624c5807a6e6ac86f573191ee108d1795835561f98e2d",
+        "5f2cbbe257f7c38c62f0c5058e97451bc52b218596bb1fcadad1b7feddd8ac37"
+    ],
+    "usedTokens": 33
+}
+```
+
+Note: _usedTokens_ always returns total number of **used** addresses of xpub.
+
+#### Get utxo
+
+> `GET /api/v2/utxo/<address>`
+
+Returns array of unspent transaction outputs of address or xpub, applicable only for Bitcoin-type coins. By default, the list contains both confirmed and unconfirmed transactions. The query parameter `confirmed=true` disables return of unconfirmed transactions. The returned utxos are sorted by block height, the newest blocks first. For xpubs or output descriptors, the response also contains address and derivation path of the utxo.
+
+Unconfirmed utxos do not have field `height`, the field `confirmations` has value `0` and may contain field `lockTime`, if not zero.
+
+Coinbase utxos have field _coinbase_ set to true, however due to performance reasons only up to minimum coinbase confirmations limit (100). After this limit, utxos are not detected as coinbase.
+
+##### Parameters
+<br/>
+
+  * `address`|`xpub`|`descriptor` (string; path; required): this parameter can be either a regular cryptocurrency address, an extended public key (xpub), or a descriptor. It is required to specify one of these to identify the source for which UTXOs are to be retrieved:
+    * `address`: a standard cryptocurrency address (e.g., Bitcoin address).
+    * `xpub`: an extended public key that can derive multiple addresses.
+    * `descriptor`: a more flexible way to specify addresses using output descriptors.
+  * `confirmed` (boolean; query; optional): filters the UTXOs based on their confirmation status; If set to `true`, only confirmed UTXOs will be returned.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/utxo/bc1qxhmdufsvnuaaaer4ynz88fspdsxq2h9e9cetdj?confirmed=true
+```
+
+##### Response example
+
+```json
+[
+    {
+        "txid": "c80f70c48aff883b060aed28544aec0fbdeb3db913a214d37194cee6337b0437",
+        "vout": 1,
+        "value": "319691557",
+        "height": 854658,
+        "confirmations": 3,
+        "coinbase": true
+    },
+    {
+        "txid": "d6957ef0d3a8a13b369f4996f3a80182acc26445508f22ac50a4cea468663f06",
+        "vout": 1,
+        "value": "317092804",
+        "height": 854649,
+        "confirmations": 12,
+        "coinbase": true
+    },
+    {
+        "txid": "9b11befa61b7e7bc7440fcb68213c6ecf2c19f50bfac4fc5a4bbe37dad138d0d",
+        "vout": 1,
+        "value": "319367244",
+        "height": 854646,
+        "confirmations": 15,
+        "coinbase": true
+    }
+]
+```
+
+#### Get block
+
+> `GET /api/v2/block/<block>`
+
+Returns information about block with transactions. Subject to pagination.
+
+##### Parameters
+<br/>
+
+  * `block-height`|`block-hash` (path; required): specify the block height or the block hash to retrieve info for:
+    * `block-height` (integer): the height (number) of the block in the blockchain.
+    * `block-hash` (string): unique hash of the block.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/block/854631
+```
+
+##### Response example
+
+```json
+{
+    "page": 1,
+    "totalPages": 4,
+    "itemsOnPage": 1000,
+    "hash": "00000000000000000000b6770ffd8f9c1697e3d7f63ffe129c4f3a8f5eea0437",
+    "previousBlockHash": "00000000000000000002b9e2f4f115c54505978fc8691053af32e51127b5b335",
+    "nextBlockHash": "00000000000000000000225a7447063290267bf4ba2013b4bd53b1bc94c568d9",
+    "height": 854631,
+    "confirmations": 30,
+    "size": 1615140,
+    "time": 1722328595,
+    "version": 735567872,
+    "merkleRoot": "56b0dc81de0f00d81eb5ea566563deb15acb7b39ff79b46d14e34584d0431f1b",
+    "nonce": "287725700",
+    "bits": "17036e3a",
+    "difficulty": "82047728459932.75",
+    "txCount": 3988,
+    "txs": [
+        {
+            "txid": "9ebf046099d38fc97d9fbdb864fdbb1205871b2294bc6fd6eb187e13b42d41f7",
+            "vin": [
+                {
+                    "n": 0,
+                    "isAddress": false,
+                    "value": "0"
+                }
+            ],
+            "vout": [
+                {
+                    "value": "546",
+                    "n": 0,
+                    "addresses": [
+                        "37jKPSmbEGwgfacCr2nayn1wTaqMAbA94Z"
+                    ],
+                    "isAddress": true
+                },
+                {
+                    "value": "320584648",
+                    "n": 1,
+                    "addresses": [
+                        "39C7fxSzEACPjM78Z7xdPxhf7mKxJwvfMJ"
+                    ],
+                    "isAddress": true
+                },
+                {
+                    "value": "0",
+                    "n": 2,
+                    "addresses": [
+                        "OP_RETURN aa21a9edb28074e5f34e138fd659c82217610fbe81159aff0fee8bdb15f619828811f4f8"
+                    ],
+                    "isAddress": false
+                },
+                {
+                    "value": "0",
+                    "n": 3,
+                    "addresses": [
+                        "OP_RETURN 434f5245012953559db5cc88ab20b1960faa9793803d0703374e3ecda72cb7961caa4b541b1e322bcfe0b5a030"
+                    ],
+                    "isAddress": false
+                },
+                {
+                    "value": "0",
+                    "n": 4,
+                    "addresses": [
+                        "OP_RETURN 52534b424c4f434b3aef4c3fbaf3d2e916c4159306ca07eb8d7ba33359c32684e291621c2700642f6a"
+                    ],
+                    "isAddress": false
+                }
+            ],
+            "blockHash": "00000000000000000000b6770ffd8f9c1697e3d7f63ffe129c4f3a8f5eea0437",
+            "blockHeight": 854631,
+            "confirmations": 30,
+            "blockTime": 1722328595,
+            "vsize": 365,
+            "value": "320585194",
+            "valueIn": "0",
+            "fees": "0"
+        }
+    ]
+}
+```
+
+_Note: Blockbook always follows the main chain of the backend it is attached to. If there is a rollback-reorg in the backend, Blockbook will also do rollback. When you ask for block by height, you will always get the main chain block. If you ask for block by hash, you may get the block from another fork, but it is not guaranteed (backend may not keep it)_
+
+#### Send transaction
+
+> `GET /api/v2/sendtx/<hex-tx-data>`<br/>
+> `POST /api/v2/sendtx/`
+
+Broadcasts new transaction to the blockchain.
+
+##### Parameters (GET request)
+<br/>
+
+  * `hex-tx-data` (path; string; required): the raw transaction data in hexadecimal format that you want to broadcast to the network.
+
+##### Parameters (POST request)
+<br/>
+
+  * `hex-tx-data` (body; string; required): the raw transaction data in hexadecimal format that you want to broadcast to the network.
+
+##### Request example
+
+<Tabs
+  items={[
+    "GET request",
+    "POST request"
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/sendtx/{hex-tx-data}
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/http/btc_blockbook/api/v2/sendtx/ \
+     -H 'Content-Type: application/json' \
+     -d '{
+        "hex-tx-data": "your-raw-tx"
+      }'
+```
+  </Tab>
+</Tabs>
+
+##### Response example
+
+```json
+{
+  "result": "7c3be24063f268aaa1ed81b64776798f56088757641a34fb156c4f51ed2e9d25"
+}
+```
+
+##### Response example (error)
+
+```json
+{
+  "error": {
+    "message": "error message"
+  }
+}
+```
+
+#### Tickers list
+
+> `GET /api/v2/tickers-list/`
+
+Returns a list of available currency rate tickers (secondary currencies) for the specified date, along with an actual data timestamp.
+
+##### Parameters
+
+  * `timestamp` (query; integer; optional): the Unix timestamp for which to retrieve the tickers for.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tickers-list/?timestamp=1625648394
+```
+
+##### Response example
+
+```json
+{
+    "ts": 1722346261,
+    "available_currencies": [
+        "aed",
+        "ars",
+        "aud",
+        "bdt",
+        "bhd",
+        "bmd",
+        "brl",
+        "btc",
+        "cad"
+    ]
+}
+```
+
+#### Tickers
+
+> `GET /api/v2/tickers/`
+
+Returns currency rate for the specified currency and date. If the currency is not available for that specific timestamp, the next closest rate will be returned.
+All responses contain an actual rate timestamp.
+
+##### Parameters
+
+  * `currency` (query; string; optional): specifies a currency of returned rate ("usd", "eur", "eth"...). If not specified, all available currencies will be returned.
+  * `timestamp` (query; integer; optional): a Unix timestamp that specifies a date to return currency rates for. If not specified, the last available rate will be returned.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tickers/?currency=usd&timestamp=1625648394
+```
+
+##### Response example
+
+```json
+{
+    "ts": 1722346380,
+    "rates": {
+        "usd": 66601
+    }
+}
+```
+
+##### Response example (no params)
+
+```json
+{
+    "ts": 1722346500,
+    "rates": {
+        "aed": 244626,
+        "ars": 62038176,
+        "aud": 101909,
+        "bdt": 7828348,
+        "bhd": 25103,
+        "bmd": 66601,
+        "brl": 376127,
+        "btc": 1
+    }
+}
+```
+
+##### Response example (error)
+
+Rate unavailable, incorrect currency, etc.
+
+```json
+{
+  "ts":7980386400,
+  "rates": {
+    "usd": -1
+  }
+}
+```
+
+#### Balance history
+
+> `GET /api/v2/balancehistory/<address>`
+
+Returns a balance history for the specified xpub or address.
+
+##### Parameters
+
+  * `xpub|address` (path; string; required): the extended public key (XPUB) or the cryptocurrency address to retrieve the balance history for.
+  * `from` (query; integer; optional): specifies a start date as a Unix timestamp.
+  * `to` (query; integer; optional): specifies an end date as a Unix timestamp.
+  * `fiatcurrency` (query; string; optional): if specified, the response will contain secondary (fiat) rate at the time of transaction. If not, all available currencies will be returned.
+  * `groupBy` (query; integer; optional): an interval in seconds, to group results by. Default is 3600 seconds.
+
+##### Request example
+
+```shell
+curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/balancehistory/39C7fxSzEACPjM78Z7xdPxhf7mKxJwvfMJ
+```
+
+##### Response example
+
+```json
+[
+    {
+        "time": 1711350000,
+        "txs": 1,
+        "received": "100000",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "aed": 245674,
+            "ars": 62306730,
+            "aud": 102337
+            ...
+        }
+    },
+    {
+        "time": 1711436400,
+        "txs": 1,
+        "received": "5000000000",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "aed": 245674,
+            "ars": 62306730,
+            "aud": 102337
+            ...
+        }
+    }
+]
+```
+
+##### Response example (`?fiatcurrency=usd`)
+
+```json
+[
+    {
+        "time": 1711350000,
+        "txs": 1,
+        "received": "100000",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "usd": 66563
+        }
+    },
+    {
+        "time": 1711436400,
+        "txs": 1,
+        "received": "5000000000",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "usd": 66563
+        }
+    }
+]
+```
+
+##### Response example (`?fiatcurrency=usd&groupBy=172800`):
+
+```json
+[
+    {
+        "time": 1711238400,
+        "txs": 1,
+        "received": "100000",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "usd": 66563
+        }
+    },
+    {
+        "time": 1711411200,
+        "txs": 33,
+        "received": "30061271674",
+        "sent": "5000000000",
+        "sentToSelf": "4998996282",
+        "rates": {
+            "usd": 66563
+        }
+    }
+]
+```
+
+The value of `sentToSelf` is the amount sent from the same address to the same address or within addresses of xpub.
+
+---
+
+### Blockbook API v.1 REST
+
+```
+GET /api/v1/block-index/<block height>
+GET /api/v1/tx/<txid>
+GET /api/v1/address/<address>
+GET /api/v1/utxo/<address>
+GET /api/v1/block/<block height | block hash>
+GET /api/v1/estimatefee/<number of blocks>
+GET /api/v1/sendtx/<hex tx data>
+POST /api/v1/sendtx/ (hex tx data in request body)
 ```
