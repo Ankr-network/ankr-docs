@@ -45,6 +45,12 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/electroneum/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
   * [`eth_getLogs`](/rpc-service/chains/chains-api/electroneum/#eth_getlogs) — returns logs matching the parameters specified.
 
+**Premium-only methods**:
+
+  * [`debug_traceBlockByHash`](/rpc-service/chains/chains-api/electroneum/#debug_traceblockbyhash) — traces the execution of all transactions within a block specified by hash.
+  * [`debug_traceBlockByNumber`](/rpc-service/chains/chains-api/electroneum/#debug_traceblockbynumber) — traces the execution of all transactions within a block specified by number.
+  * [`debug_traceBlock`](/rpc-service/chains/chains-api/electroneum/#debug_traceblock) — traces the execution of all transactions within a block.
+
 ---
 
 ## `web3_clientVersion`
@@ -1607,5 +1613,273 @@ curl -X POST https://rpc.ankr.com/electroneum \
     "jsonrpc": "2.0",
     "id": 1,
     "result": []
+}
+```
+
+---
+
+## `debug_traceBlockByHash`
+
+> Traces the execution of all transactions within a block specified by hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<blockHash>` (string; required): the hash of the block you want to trace.
+    * `tracer` (string; optional): the tracer to use for the operation. Tracers can customize the output, for example, by including only certain types of operations. Common tracers are the following:
+      * `callTracer`: generates a detailed trace of all calls, including internal contract calls. `callTracer` has the following parameters:
+        * `onlyTopCall` (boolean): if `true`, only the top-level call is traced.
+        * `tracerConfig` (object): additional options to customize the output, such as including or excluding specific call types.
+      * `prestateTracer`: traces the state of accounts before the execution of transactions.
+      * `noopTracer`: a no-operation tracer that returns minimal information.
+      * `fourByteTracer`: identifies the function signature of calls by analyzing the first four bytes of the calldata.
+      * `memoryTracer`: traces memory changes during the execution of transactions. `memoryTracer` has the following parameters:
+        * `disableMemory` (boolean): if true, memory output is omitted.
+      * `opTracer`: traces all the EVM opcodes executed during a transaction. `opTracer` has the following parameters:
+        * `includeMemory` (boolean): if true, includes memory output.
+        * `includeStack` (boolean): if true, includes stack output.
+        * `includeStorage` (boolean): if true, includes storage output.
+      * `gasTracer`: traces the gas usage of the transaction and breaks it down by operation.
+    * `timeout` (optional, string): sets a timeout for the tracing operation, expressed in milliseconds (e.g., "5s" for 5 seconds). If the operation exceeds this time, it will be terminated.
+    * `tracingOptions` (optional, object): an object to specify additional options for the trace, such as:
+      * `disableMemory` (boolean): if true, memory output is omitted.
+      * `disableStack` (boolean): if true, stack output is omitted.
+      * `disableStorage` (boolean): if true, storage output is omitted.
+
+You can create custom tracers by combining existing tracer parameters or defining new ones. The flexibility of tracers allows you to tailor the debugging output to your specific needs, focusing on different aspects of transaction execution.
+
+If you're working on specific use cases, it may be helpful to look into the Electroneum blockchain documentation to get detailed information on additional or custom tracers that may be supported.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/electroneum/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "debug_traceBlockByHash",
+    "params": [
+        "0x33fae588909af0e48e0e70e799c366206d98e27a4b31c818324a5c95d5d9fe1b",
+        {
+            "tracer": "callTracer",
+            "timeout": "5s",
+            "tracingOptions": {
+                "disableMemory": true,
+                "disableStack": true,
+                "disableStorage": false
+            }
+        }
+    ],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "result": {
+                "type": "CALL",
+                "from": "0x12090c459a10757e4debaa114a46c082c22bdc70",
+                "to": "0x8018de591a0593bf856ffcff675ad87c39b8e633",
+                "value": "0x3bcb33300e37dc0000",
+                "gas": "0x0",
+                "gasUsed": "0x0",
+                "input": "0x",
+                "output": "0x"
+            }
+        }
+    ]
+}
+```
+
+---
+
+## `debug_traceBlockByNumber`
+
+> Traces the execution of all transactions within a block specified by number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<blockNumber>` (string; hex; required): the hex number of the block you want to trace.
+    * `tracer` (string; optional): the tracer to use for the operation. Tracers can customize the output, for example, by including only certain types of operations. Common tracers are the following:
+      * `callTracer`: generates a detailed trace of all calls, including internal contract calls. `callTracer` has the following parameters:
+        * `onlyTopCall` (boolean): if `true`, only the top-level call is traced.
+        * `tracerConfig` (object): additional options to customize the output, such as including or excluding specific call types.
+      * `prestateTracer`: traces the state of accounts before the execution of transactions.
+      * `noopTracer`: a no-operation tracer that returns minimal information.
+      * `fourByteTracer`: identifies the function signature of calls by analyzing the first four bytes of the calldata.
+      * `memoryTracer`: traces memory changes during the execution of transactions. `memoryTracer` has the following parameters:
+        * `disableMemory` (boolean): if true, memory output is omitted.
+      * `opTracer`: traces all the EVM opcodes executed during a transaction. `opTracer` has the following parameters:
+        * `includeMemory` (boolean): if true, includes memory output.
+        * `includeStack` (boolean): if true, includes stack output.
+        * `includeStorage` (boolean): if true, includes storage output.
+      * `gasTracer`: traces the gas usage of the transaction and breaks it down by operation.
+    * `timeout` (optional, string): sets a timeout for the tracing operation, expressed in milliseconds (e.g., "5s" for 5 seconds). If the operation exceeds this time, it will be terminated.
+    * `tracingOptions` (optional, object): an object to specify additional options for the trace, such as:
+      * `disableMemory` (boolean): if true, memory output is omitted.
+      * `disableStack` (boolean): if true, stack output is omitted.
+      * `disableStorage` (boolean): if true, storage output is omitted.
+
+You can create custom tracers by combining existing tracer parameters or defining new ones. The flexibility of tracers allows you to tailor the debugging output to your specific needs, focusing on different aspects of transaction execution.
+
+If you're working on specific use cases, it may be helpful to look into the Electroneum blockchain documentation to get detailed information on additional or custom tracers that may be supported.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/electroneum/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "debug_traceBlockByNumber",
+    "params": [
+        "0x2A5D33",
+        {
+            "tracer": "callTracer",
+            "timeout": "5s",
+            "tracingOptions": {
+                "disableMemory": true,
+                "disableStack": true,
+                "disableStorage": false
+            }
+        }
+    ],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "result": {
+                "type": "CALL",
+                "from": "0x12090c459a10757e4debaa114a46c082c22bdc70",
+                "to": "0x8018de591a0593bf856ffcff675ad87c39b8e633",
+                "value": "0x3bcb33300e37dc0000",
+                "gas": "0x0",
+                "gasUsed": "0x0",
+                "input": "0x",
+                "output": "0x"
+            }
+        }
+    ]
+}
+```
+
+---
+
+## `debug_traceBlock`
+
+> Traces the execution of all transactions within a block.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<blockRlp>` (string; hex; required): the RLP-encoded data of the block you want to trace.
+    * `tracer` (string; optional): the tracer to use for the operation. Tracers can customize the output, for example, by including only certain types of operations. Common tracers are the following:
+      * `callTracer`: generates a detailed trace of all calls, including internal contract calls. `callTracer` has the following parameters:
+        * `onlyTopCall` (boolean): if `true`, only the top-level call is traced.
+        * `tracerConfig` (object): additional options to customize the output, such as including or excluding specific call types.
+      * `prestateTracer`: traces the state of accounts before the execution of transactions.
+      * `noopTracer`: a no-operation tracer that returns minimal information.
+      * `fourByteTracer`: identifies the function signature of calls by analyzing the first four bytes of the calldata.
+      * `memoryTracer`: traces memory changes during the execution of transactions. `memoryTracer` has the following parameters:
+        * `disableMemory` (boolean): if true, memory output is omitted.
+      * `opTracer`: traces all the EVM opcodes executed during a transaction. `opTracer` has the following parameters:
+        * `includeMemory` (boolean): if true, includes memory output.
+        * `includeStack` (boolean): if true, includes stack output.
+        * `includeStorage` (boolean): if true, includes storage output.
+      * `gasTracer`: traces the gas usage of the transaction and breaks it down by operation.
+    * `timeout` (optional, string): sets a timeout for the tracing operation, expressed in milliseconds (e.g., "5s" for 5 seconds). If the operation exceeds this time, it will be terminated.
+    * `tracingOptions` (optional, object): an object to specify additional options for the trace, such as:
+      * `disableMemory` (boolean): if true, memory output is omitted.
+      * `disableStack` (boolean): if true, stack output is omitted.
+      * `disableStorage` (boolean): if true, storage output is omitted.
+
+You can create custom tracers by combining existing tracer parameters or defining new ones. The flexibility of tracers allows you to tailor the debugging output to your specific needs, focusing on different aspects of transaction execution.
+
+If you're working on specific use cases, it may be helpful to look into the Electroneum blockchain documentation to get detailed information on additional or custom tracers that may be supported.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/electroneum/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "debug_traceBlock",
+    "params": [
+        "blockRlp",
+        {
+            "tracer": "tracerType",
+            "timeout": "timeoutDuration",
+            "tracingOptions": {
+                "disableMemory": boolean,
+                "disableStack": boolean,
+                "disableStorage": boolean
+            }
+        }
+    ],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": [
+    {
+      "type": "call",
+      "from": "0x1234...abcd", // Address initiating the transaction
+      "to": "0xabcd...1234",   // Address receiving the transaction
+      "gas": "0x5208",         // Gas provided for the transaction
+      "gasUsed": "0x2100",     // Gas actually used during execution
+      "input": "0x...",        // Input data to the transaction (usually calldata)
+      "output": "0x...",       // Output data from the transaction (e.g., return data)
+      "value": "0x0",          // Value transferred in the transaction (in wei)
+      "calls": [               // Nested calls (if any)
+        {
+          "type": "call",
+          "from": "0xabcd...1234",
+          "to": "0x1234...abcd",
+          "gas": "0x5208",
+          "gasUsed": "0x2100",
+          "input": "0x...",
+          "output": "0x...",
+          "value": "0x0"
+        }
+      ]
+    }
+  ]
 }
 ```
