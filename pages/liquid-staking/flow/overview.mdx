@@ -1,0 +1,77 @@
+import { Callout } from "components";
+
+# Flow Liquid Staking
+
+Ankr Staking offers FLOW token holders the opportunity to stake FLOW and in return claim FLOW Liquid Staking tokens — ankrFLOW.
+ankrFLOW is a reward-bearing token, meaning that the fair value of 1 ankrFLOW token vs. FLOW increases over time as staking rewards accumulate inside the token.
+
+ankrFLOW also offers instant liquidity for your staked FLOW, enabling you to connect ankrFLOW with DeFi platforms and earn several more layers of rewards.
+
+<Callout type="tip">
+We have made a separate [testnet version of FLOW Liquid Staking](https://testnet.ankr.com/staking/stake/flow/)! <br/>
+    Anybody interested to test Liquid Staking without spending mainnet FLOW, come and try it!<br/>
+</Callout>
+
+## Audit details
+
+Liquid Staking Cadence and EVM smart contracts have undergone external audits by Halborn:
+
+* [Aug 2024 detailed audit report by Halborn](/pdf/smart_contract_security_audit_flow_halborn.pdf)
+
+## Smart contracts
+
+### Flow Cadence
+
+  * [StakingManager](https://testnet.flowdiver.io/account/e44676d56341a1c5) (0xe44676d56341a1c5) — managing the process of staking tokens to nodes and transferring the staked $FLOW between Cadence and EVM.
+  * [Operator](https://testnet.flowdiver.io/account/10de0d246f10344f?tab=keys) (0x10de0d246f10344f) — managing and overseeing the interactions between validators and the liquid staking protocol.
+
+### Flow EVM
+
+  * [Flow Staking Config](https://evm-testnet.flowscan.io/address/0xf301C2841020DB053e631Db322DaE291fA91b4cb) (0xf301C2841020DB053e631Db322DaE291fA91b4cb) — EVM staking's standard configuration that contains the operator address, pause status, treasury, and other addresses.
+  * [Ankr Ratio Feed](https://evm-testnet.flowscan.io/address/0x3feF0fAFAad69266253c5322322242C8bC653C3a) (0x3feF0fAFAad69266253c5322322242C8bC653C3a) — contains the token's ratio certificate.
+  * [aFLOWEVMc (CERT)](https://evm-testnet.flowscan.io/address/0x8E3DC6E937B560ce6a1Aaa78AfC775228969D16c) (0x8E3DC6E937B560ce6a1Aaa78AfC775228969D16c) — standard cert token used in staking.
+  * [FlowStakingPool](https://evm-testnet.flowscan.io/address/0x3adAB4e07184C7E14a29A95f93c6E3990eec1E9F) (0x3adAB4e07184C7E14a29A95f93c6E3990eec1E9F) — provides mechanisms for staking, unstaking, and reward distribution.
+
+## Supported wallets
+
+Flow Liquid Staking supports several wallet options, including hot and cold wallets.<br/>
+View a complete list at [Compatible wallets](/staking-extra/compatible-wallets/).
+
+## Benefits
+
+### Boosted yields
+
+As Liquid Staking solves the capital inefficiency problem of (Nominated) Proof-of-stake networks, it offers a way to earn additional rewards on your staked FLOW, enabling new yield farming strategies. The main components of FLOW Liquid Staking are the following:
+
+* **Liquidity mining opportunities** are enabled by providing liquidity for pools in decentralized exchanges.
+* **Farming rewards for liquidity providers**: Liquid Staking presents several yield farming strategies for users to contribute to liquidity pools and gain a share of the trading fees and governance tokens. These new LP tokens can be used to generate yet another layer of earnings.
+* **Staking rewards on farmed tokens**: After using yield farming strategies, users can also reinvest their farmed LP tokens into more staking opportunities. This is a highly repeatable process as layers of rewards from farming and staking will quickly stack up.
+* **Yield aggregators /vaults** can automate yield farming rewards and enable compounding returns with next to no effort from users. This is a great method for maximizing your passive income strategy.
+* **More trading opportunities** are enabled thanks to the elastic supply nature of ankrFLOW, meaning that you could potentially buy ankrFLOW at a discount on a Decentralized Exchange and redeem it (unstake it) on Ankr Staking to extract its fair value back within 7–15 days (the FLOW Liquid Staking unbonding period).
+
+### More flexibility
+
+If you would like to unstake your FLOW, you can do it at any time on the Ankr Staking platform. The unstake process takes 7–15 days before the funds are released to your wallet.
+
+This creates a more robust price stability mechanism for FLOW Liquid Staking, where any price deviation of ankrFLOW vs. its fair value will create trading opportunities that can be exploited by redeeming ankrFLOW while unstaking FLOW or minting ankrFLOW while staking FLOW. That means if you could potentially buy ankrFLOW at a discount on a DEX and unstake it on Ankr Staking at its fair value to make a profit!
+
+Therefore, ankrFLOW price stability will be less dependent on the size of liquidity pools and associated rewards. Borrowing and lending the ankrFLOW tokens will also allow users to borrow against their ankrFLOW assets in exchange for assets like FLOW that can be restaked or used for additional earning strategies. Or, lend your ankrFLOW assets in return for interest paid by borrowers.
+
+### No technical knowledge required
+
+Receive an easier staking experience with no technical knowledge necessary. Liquid Staking makes staking as easy as a swap: exchange your FLOW for the reward bearing ankrFLOW token. Enhanced decentralization Our FLOW Liquid Staking will not be using only Ankr validator nodes to stake the FLOW from users. Ankr Staking will select several suitable and reliable Flow validators, making FLOW Liquid Staking as decentralized as possible. This means that Ankr will not contribute to giving any party more influence over the Flow network as the FLOW will be spread over a wide variety of nodes. Ultimately, the end goal is having Ankr governance decide on the target allocation to different validator nodes.
+
+### Contribute to the security of the Flow network
+
+Staking with FLOW Liquid Staking allows you to play an important role in boosting the network’s security as a whole. Ankr’s FLOW staking system distributes staked tokens intelligently across the Flow ecosystem to help the network achieve optimal decentralization. Diversity and decentralization of active validators both ensure the network remains as secure as possible.
+
+### Additional yield
+If you want to get additional yield on your FLOW stake, read [how to receive more rewards](https://www.ankr.com/staking/defi/).
+
+### More benefits
+Instant Liquidity Using Ankr Staking is the best way to stake FLOW as you can access instant liquidity in the form of the ankrFLOW token.
+Avoiding locking your tokens up with the Flow network is a big advantage — it allows you to use the value of your staked tokens to earn multiple layers of rewards on DeFi platforms and multiply your ROI potential.
+
+Yield farming, arbitrage trading, lending, and more will all be possible using the value of your staked assets.
+
+Read the [Medium article](https://medium.com/Ankr-network/Ankr-x-ellipsis-staking-liquidity-mining-Ankr-rewards-f49a76fd50cc) about staking and liquidity mining to learn more!
