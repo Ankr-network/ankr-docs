@@ -1,21 +1,24 @@
 import { Tabs, Tab } from "nextra-theme-docs";
 import { Callout } from "components";
 
-# Secret Network
-<br/>
+# Allora
 
-<img src="/docs/build/chains-list/secret-network.png" class="responsive-pic" width="800" />
+> Allora API is available on [Web3 API platform](https://www.ankr.com/rpc/allora).
 
-> Secret Network API is available on [Web3 API platform](https://www.ankr.com/rpc/scrt).
+The Allora Network is an advanced protocol that leverages decentralized AI and machine learning (ML) to generate and share predictions among its participants. It provides a structured way for users to access on-chain AI predictions and pay the AI/ML node operators who produce these insights.
 
-*Secret Network* is the first blockchain with customizable privacy. You get to choose what you share, who you share with, and how long you share it for. This protects users and empowers developers to build a better Web3.
+Allora acts as a bridge between various parties — data owners, processors, AI/ML predictors, market analysts, and end-users — allowing them to utilize and act on these predictions. AI/ML agents on the network use their data and algorithms to broadcast predictions across a peer-to-peer network. They also evaluate predictions from other agents.
 
-We support the following networks and protocols for Secret Network:
+The network’s consensus mechanism then combines these predictions and assessments, rewarding agents based on the quality of their contributions. This incentive system helps Allora continuously learn and adapt to changing market conditions.
 
-  * [Tendermint JSON-RPC/REST API](/rpc-service/chains/chains-api/secret-network/#tendermint-json-rpcrest-methods)
-  * [Cosmos REST API](/rpc-service/chains/chains-api/secret-network/#cosmos-rest-methods)
+## Networks/Protocols supported
 
-Currently, we provide two interfaces to query Secret Network API — [JSON-RPC](https://www.jsonrpc.org/specification) and REST. Responses for both of them come in [JSON format](https://www.json.org/json-en.html).
+We support the following networks and protocols for Allora:
+
+    * [Tendermint JSON-RPC/REST API](/rpc-service/chains/chains-api/allora/#tendermint-json-rpcrest-methods)
+    * [Cosmos REST API](/rpc-service/chains/chains-api/allora/#cosmos-rest-methods)
+
+Currently, we provide two interfaces to query Allora API — [JSON-RPC](https://www.jsonrpc.org/specification) and REST. Responses for both of them come in [JSON format](https://www.json.org/json-en.html).
 
 Here is the request/response structure to use for querying:
 
@@ -30,12 +33,12 @@ Here is the request/response structure to use for querying:
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "block",
-      "params": ["1"],
+      "params": ["761001"],
       "id": 1
     }'
 ```
@@ -43,105 +46,90 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/block?height=1
+curl https://rpc.ankr.com/http/allora_testnet/block?height=761001
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
   </Tab>
   <Tab>
 
 ```json
 {
-  "id": 0,
-  "jsonrpc": "2.0",
-  "result": {
-    "block_id": {
-      "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
-      "parts": {
-        "total": 1,
-        "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
-      }
-    },
-    "block": {
-      "header": {
-        "version": {
-          "block": "10",
-          "app": "0"
-        },
-        "chain_id": "cosmoshub-2",
-        "height": "12",
-        "time": "2019-04-22T17:01:51.701356223Z",
-        "last_block_id": {
-          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
-          "parts": {
-            "total": 1,
-            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
-          }
-        },
-        "last_commit_hash": "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812",
-        "data_hash": "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73",
-        "validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
-        "next_validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
-        "consensus_hash": "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8",
-        "app_hash": "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C",
-        "last_results_hash": "",
-        "evidence_hash": "",
-        "proposer_address": "D540AB022088612AC74B287D076DBFBC4A377A2E"
-      },
-      "data": [
-        "yQHwYl3uCkKoo2GaChRnd+THLQ2RM87nEZrE19910Z28ABIUWW/t8AtIMwcyU0sT32RcMDI9GF0aEAoFdWF0b20SBzEwMDAwMDASEwoNCgV1YXRvbRIEMzEwMRCd8gEaagom61rphyEDoJPxlcjRoNDtZ9xMdvs+lRzFaHe2dl2P5R2yVCWrsHISQKkqX5H1zXAIJuC57yw0Yb03Fwy75VRip0ZBtLiYsUqkOsPUoQZAhDNP+6LY+RUwz/nVzedkF0S29NZ32QXdGv0="
-      ],
-      "evidence": [
-        {
-          "type": "string",
-          "height": 0,
-          "time": 0,
-          "total_voting_power": 0,
-          "validator": {
-            "pub_key": {
-              "type": "tendermint/PubKeyEd25519",
-              "value": "A6DoBUypNtUAyEHWtQ9bFjfNg8Bo9CrnkUGl6k6OHN4="
-            },
-            "voting_power": 0,
-            "address": "string"
-          }
-        }
-      ],
-      "last_commit": {
-        "height": 0,
-        "round": 0,
+    "jsonrpc": "2.0",
+    "id": -1,
+    "result": {
         "block_id": {
-          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
-          "parts": {
-            "total": 1,
-            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
-          }
-        },
-        "signatures": [
-          {
-            "type": 2,
-            "height": "1262085",
-            "round": 0,
-            "block_id": {
-              "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
-              "parts": {
+            "hash": "663789D1BAA0354453A5BB1474C46C9F74E6140B247153482BBE84893C029600",
+            "parts": {
                 "total": 1,
-                "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
-              }
+                "hash": "BFCC2C78C439E367ABEEA996FD9A120EAA70DC44572B8BFDCA032908BA4B439B"
+            }
+        },
+        "block": {
+            "header": {
+                "version": {
+                    "block": "11"
+                },
+                "chain_id": "allora-testnet-1",
+                "height": "761001",
+                "time": "2024-08-21T21:33:36.088780054Z",
+                "last_block_id": {
+                    "hash": "AD51186842A63CB515A4946C558DF1DA71D384DF646EC5522ECD5008E3FAEDA0",
+                    "parts": {
+                        "total": 1,
+                        "hash": "16A9CCD523F2E593E66F46CBD20FCC03B5849ACE5325951E50BC53B6D7D2F893"
+                    }
+                },
+                "last_commit_hash": "77BE45E09B5A5F40FA1F10BF430C2E14371445B9E2DF89952478E84A98DFA081",
+                "data_hash": "78F2AF9D01AC871045FB53CB383AA50EF4C0094E9563428BFF8BA59071801050",
+                "validators_hash": "CB957FF7AB192A9F9321F0E471C7BAE5A9AA82573FF8D509F8ACF7CA3A450A42",
+                "next_validators_hash": "CB957FF7AB192A9F9321F0E471C7BAE5A9AA82573FF8D509F8ACF7CA3A450A42",
+                "consensus_hash": "048091BC7DDC283F77BFBF91D73C44DA58C3DF8A9CBC867405D8B7F3DAADA22F",
+                "app_hash": "72AEC5979CEA9EE65275B77DA8F31676C7E52DA57B991D86C4870237E3D40127",
+                "last_results_hash": "455FD6D9D1888EBE5B8602E20E84EEACA30020B717A5B5298890E7236CAB84AD",
+                "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "proposer_address": "01458B61F0D7DE6E90798FE8C370413D718EB34C"
             },
-            "timestamp": "2019-08-01T11:39:38.867269833Z",
-            "validator_address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
-            "validator_index": 0,
-            "signature": "DBchvucTzAUEJnGYpNvMdqLhBAHG4Px8BsOBB3J3mAFCLGeuG7uJqy+nVngKzZdPhPi8RhmE/xcw/M9DOJjEDg=="
-          }
-        ]
-      }
+            "data": {
+                "txs": [
+                    "CuECCt4CCiQvZW1pc3Npb25zLnYyLk1zZ0luc2VydFdvcmtlclBheWxvYWQStQIKK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHcShQIKK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHcSBAiRuS4YBSJICkYIBRCRuS4aK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHciETE0NS42NTg1MDk2NjIzMjkzKkBkgCxd7XHQh+Debe/yvS+c8BBoKguydI/J/YNqRaYpBDpnwQo+4/LPouiYF04JXDBa4qxTfJFlpdSJ9EgoX+TAMkIwMmQ4MjYzOTFiYWI4ZjYzNWYzNDhkYmQxNDQ1ZGUxZmQ0YjgzZjNiNGJiZjFkY2EzY2Q4YWFjM2FlMWMyYmY5ODcSWApQCkYKHy9jb3Ntb3MuY3J5cHRvLnNlY3AyNTZrMS5QdWJLZXkSIwohAtgmORurj2NfNI29FEXeH9S4PztLvx3KPNiqw64cK/mHEgQKAggBGCkSBBDAhD0aQN1AnyLR2Kz/KMZ5yr+Sz4wo+4Tp8OnyDqSlr98oCNQVPtF69bWneamHvTEq7r5WUGuwQfWSD+sybXlUgnDlmIw=",
+                    "CuECCt4CCiQvZW1pc3Npb25zLnYyLk1zZ0luc2VydFdvcmtlclBheWxvYWQStQIKK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2cShQIKK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2cSBAiTuS4YAyJICkYIAxCTuS4aK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2ciETYxMzI3LjIzMTM5NzQ3MTg1KkA2b71NaRNK8PFRv+nLbaTfB53wu/AqI4cGoFYED/4U/3c8JOYW+Q2moUdlX35tKF0U2gneVA2jQy0vmem8uIz6MkIwMzA5Zjg2ZWY3YzNlM2IyZjUzMzg3OGZiNjY2Mjk1NjljNjFkYTNhMzg2OTkyNjNmMWM4MDhlMTcxMTQzOWYxMmMSWQpRCkYKHy9jb3Ntb3MuY3J5cHRvLnNlY3AyNTZrMS5QdWJLZXkSIwohAwn4bvfD47L1M4ePtmYpVpxh2jo4aZJj8cgI4XEUOfEsEgQKAggBGLJKEgQQwIQ9GkAYepebNx4qruj3/XCxlmVQ3XDbhfsXZlZyM+yeqUs7d263LfRxugRgQH3aiV/ROiC/gVH0bID6GA00y5QMWM+B"
+                ]
+            },
+            "evidence": {
+                "evidence": []
+            },
+            "last_commit": {
+                "height": "761000",
+                "round": 0,
+                "block_id": {
+                    "hash": "AD51186842A63CB515A4946C558DF1DA71D384DF646EC5522ECD5008E3FAEDA0",
+                    "parts": {
+                        "total": 1,
+                        "hash": "16A9CCD523F2E593E66F46CBD20FCC03B5849ACE5325951E50BC53B6D7D2F893"
+                    }
+                },
+                "signatures": [
+                    {
+                        "block_id_flag": 1,
+                        "validator_address": "",
+                        "timestamp": "0001-01-01T00:00:00Z",
+                        "signature": null
+                    },
+                    {
+                        "block_id_flag": 2,
+                        "validator_address": "2D5A6E69CDFBE8FF7C0C2DAFF752387AC73B9AB1",
+                        "timestamp": "2024-08-21T21:33:36.07519025Z",
+                        "signature": "LvyV25u8kxAivi7rHuAZlXtawVBMYyOJflcr4al44TWVLmYnztqycSgGyi1S9GkUGoeA4nG+wRM/4pqk4YIKDQ=="
+                    }
+                ]
+            }
+        }
     }
-  }
 }
 ```
   </Tab>
@@ -153,33 +141,33 @@ curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/blocks
 
 **Info — node information**:
 
-  * [`blockchain`](/rpc-service/chains/chains-api/secret-network/#blockchain) — retrieves block headers (max: 20) for `minHeight <= height <= maxHeight`.
-  * [`block`](/rpc-service/chains/chains-api/secret-network/#block) — retrieves a block at a specified height.
-  * [`block_by_hash`](/rpc-service/chains/chains-api/secret-network/#block_by_hash) — retrieves a block by hash.
-  * [`block_results`](/rpc-service/chains/chains-api/secret-network/#block_results) — retrieves block results at a specified height.
-  * [`commit`](/rpc-service/chains/chains-api/secret-network/#commit) — retrieves commit results at a specified height.
-  * [`validators`](/rpc-service/chains/chains-api/secret-network/#validators) — retrieves a validator set at a specified height.
-  * [`genesis_chunked`](/rpc-service/chains/chains-api/secret-network/#genesis_chunked) — retrieves the Genesis in multiple chunks.
-  * [`dump_consensus_state`](/rpc-service/chains/chains-api/secret-network/#dump_consensus_state) — retrieves consensus state.
-  * [`consensus_state`](/rpc-service/chains/chains-api/secret-network/#consensus_state) — retrieves consensus state.
-  * [`consensus_params`](/rpc-service/chains/chains-api/secret-network/#consensus_params) — retrieves consensus parameters.
-  * [`unconfirmed_txs`](/rpc-service/chains/chains-api/secret-network/#unconfirmed_txs) — retrieves the list of unconfirmed transactions.
-  * [`num_unconfirmed_txs`](/rpc-service/chains/chains-api/secret-network/#num_unconfirmed_txs) — retrieves data about unconfirmed transactions.
-  * [`tx_search`](/rpc-service/chains/chains-api/secret-network/#tx_search) — searches for transactions.
-  * [`block_search`](/rpc-service/chains/chains-api/secret-network/#block_search) — searches for blocks by `BeginBlock` and `EndBlock` events.
-  * [`tx`](/rpc-service/chains/chains-api/secret-network/#tx) — retrieves transactions by hash.
+  * [`blockchain`](/rpc-service/chains/chains-api/allora/#blockchain) — retrieves block headers (max: 20) for `minHeight <= height <= maxHeight`.
+  * [`block`](/rpc-service/chains/chains-api/allora/#block) — retrieves a block at a specified height.
+  * [`block_by_hash`](/rpc-service/chains/chains-api/allora/#block_by_hash) — retrieves a block by hash.
+  * [`block_results`](/rpc-service/chains/chains-api/allora/#block_results) — retrieves block results at a specified height.
+  * [`commit`](/rpc-service/chains/chains-api/allora/#commit) — retrieves commit results at a specified height.
+  * [`validators`](/rpc-service/chains/chains-api/allora/#validators) — retrieves a validator set at a specified height.
+  * [`genesis_chunked`](/rpc-service/chains/chains-api/allora/#genesis_chunked) — retrieves the Genesis in multiple chunks.
+  * [`dump_consensus_state`](/rpc-service/chains/chains-api/allora/#dump_consensus_state) — retrieves consensus state.
+  * [`consensus_state`](/rpc-service/chains/chains-api/allora/#consensus_state) — retrieves consensus state.
+  * [`consensus_params`](/rpc-service/chains/chains-api/allora/#consensus_params) — retrieves consensus parameters.
+  * [`unconfirmed_txs`](/rpc-service/chains/chains-api/allora/#unconfirmed_txs) — retrieves the list of unconfirmed transactions.
+  * [`num_unconfirmed_txs`](/rpc-service/chains/chains-api/allora/#num_unconfirmed_txs) — retrieves data about unconfirmed transactions.
+  * [`tx_search`](/rpc-service/chains/chains-api/allora/#tx_search) — searches for transactions.
+  * [`block_search`](/rpc-service/chains/chains-api/allora/#block_search) — searches for blocks by `BeginBlock` and `EndBlock` events.
+  * [`tx`](/rpc-service/chains/chains-api/allora/#tx) — retrieves transactions by hash.
 
 **Tx — transactions broadcast information**:
 
-  * [`broadcast_tx_sync`](/rpc-service/chains/chains-api/secret-network/#broadcast_tx_sync) — returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
-  * [`broadcast_tx_async`](/rpc-service/chains/chains-api/secret-network/#broadcast_tx_async) — returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
-  * [`broadcast_tx_commit`](/rpc-service/chains/chains-api/secret-network/#broadcast_tx_commit) — returns with the responses from `CheckTx` and `DeliverTx`.
-  * [`check_tx`](/rpc-service/chains/chains-api/secret-network/#check_tx) — checks the transaction without executing it.
+  * [`broadcast_tx_sync`](/rpc-service/chains/chains-api/allora/#broadcast_tx_sync) — returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
+  * [`broadcast_tx_async`](/rpc-service/chains/chains-api/allora/#broadcast_tx_async) — returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
+  * [`broadcast_tx_commit`](/rpc-service/chains/chains-api/allora/#broadcast_tx_commit) — returns with the responses from `CheckTx` and `DeliverTx`.
+  * [`check_tx`](/rpc-service/chains/chains-api/allora/#check_tx) — checks the transaction without executing it.
 
 **ABCI — ABCI info**:
 
-  * [`abci_info`](/rpc-service/chains/chains-api/secret-network/#abci_info) — retrieves info about the application.
-  * [`abci_query`](/rpc-service/chains/chains-api/secret-network/#abci_query) — queries the application for some information.
+  * [`abci_info`](/rpc-service/chains/chains-api/allora/#abci_info) — retrieves info about the application.
+  * [`abci_query`](/rpc-service/chains/chains-api/allora/#abci_query) — queries the application for some information.
 
 ---
 
@@ -212,7 +200,7 @@ Block headers, in descending order (highest first).
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -225,7 +213,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/blockchain?minHeight=1&maxHeight=2
+curl https://rpc.ankr.com/http/allora_testnet/blockchain?minHeight=1&maxHeight=2
 ```
   </Tab>
 </Tabs>
@@ -306,7 +294,7 @@ Block information.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -319,7 +307,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/blockchain?height=1
+curl https://rpc.ankr.com/http/allora_testnet/blockchain?height=1
 ```
   </Tab>
 </Tabs>
@@ -443,7 +431,7 @@ Block information.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -456,7 +444,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/block_by_hash?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED
+curl https://rpc.ankr.com/http/allora_testnet/block_by_hash?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED
 ```
   </Tab>
 </Tabs>
@@ -580,7 +568,7 @@ Block results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -593,7 +581,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/block_results?height=1
+curl https://rpc.ankr.com/http/allora_testnet/block_results?height=1
 ```
   </Tab>
 </Tabs>
@@ -707,7 +695,7 @@ Commit results. Canonical switches from false to true for block H once block H+1
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -720,7 +708,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/commit?height=1
+curl https://rpc.ankr.com/http/allora_testnet/commit?height=1
 ```
   </Tab>
 </Tabs>
@@ -813,7 +801,7 @@ Commit results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -826,7 +814,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/validators?height=1&page=2&per_page=30
+curl https://rpc.ankr.com/http/allora_testnet/validators?height=1&page=2&per_page=30
 ```
   </Tab>
 </Tabs>
@@ -884,7 +872,7 @@ A Genesis chunk response.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -897,7 +885,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/genesis_chunked?chunk=1
+curl https://rpc.ankr.com/http/allora_testnet/genesis_chunked?chunk=1
 ```
   </Tab>
 </Tabs>
@@ -944,7 +932,7 @@ A complete consensus state. See the [Vote string description](https://pkg.go.dev
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -957,7 +945,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/dump_consensus_state
+curl https://rpc.ankr.com/http/allora_testnet/dump_consensus_state
 ```
   </Tab>
 </Tabs>
@@ -1107,7 +1095,7 @@ Consensus state results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1120,7 +1108,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/consensus_state
+curl https://rpc.ankr.com/http/allora_testnet/consensus_state
 ```
   </Tab>
 </Tabs>
@@ -1188,7 +1176,7 @@ Consensus parameters results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1201,7 +1189,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/consensus_params?height=1
+curl https://rpc.ankr.com/http/allora_testnet/consensus_params?height=1
 ```
   </Tab>
 </Tabs>
@@ -1259,7 +1247,7 @@ The list of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1272,7 +1260,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/unconfirmed_txs?limit=1
+curl https://rpc.ankr.com/http/allora_testnet/unconfirmed_txs?limit=1
 ```
   </Tab>
 </Tabs>
@@ -1321,7 +1309,7 @@ The status of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1334,7 +1322,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/num_unconfirmed_txs
+curl https://rpc.ankr.com/http/allora_testnet/num_unconfirmed_txs
 ```
   </Tab>
 </Tabs>
@@ -1384,7 +1372,7 @@ The list of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1397,7 +1385,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/tx_search?query=tx.height%4D2000&prove=true&page=1&per_page=30&order_by=asc
+curl https://rpc.ankr.com/http/allora_testnet/tx_search?query=tx.height%4D2000&prove=true&page=1&per_page=30&order_by=asc
 ```
   </Tab>
 </Tabs>
@@ -1474,7 +1462,7 @@ The list of paginated blocks matching the search criteria.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1487,7 +1475,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/block_search?query=block.height%4D2000&page=1&per_page=30&order_by=asc
+curl https://rpc.ankr.com/http/allora_testnet/block_search?query=block.height%4D2000&page=1&per_page=30&order_by=asc
 ```
   </Tab>
 </Tabs>
@@ -1525,7 +1513,7 @@ Transaction info.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1538,7 +1526,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/tx?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED&prove=true
+curl https://rpc.ankr.com/http/allora_testnet/tx?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED&prove=true
 ```
   </Tab>
 </Tabs>
@@ -1601,7 +1589,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1614,7 +1602,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/broadcast_tx_sync?tx=456
+curl https://rpc.ankr.com/http/allora_testnet/broadcast_tx_sync?tx=456
 ```
   </Tab>
 </Tabs>
@@ -1666,7 +1654,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1679,7 +1667,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/broadcast_tx_async?tx=123
+curl https://rpc.ankr.com/http/allora_testnet/broadcast_tx_async?tx=123
 ```
   </Tab>
 </Tabs>
@@ -1733,7 +1721,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1746,7 +1734,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/broadcast_tx_commit?tx=785
+curl https://rpc.ankr.com/http/allora_testnet/broadcast_tx_commit?tx=785
 ```
   </Tab>
 </Tabs>
@@ -1801,7 +1789,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1814,7 +1802,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/check_tx?tx=785
+curl https://rpc.ankr.com/http/allora_testnet/check_tx?tx=785
 ```
   </Tab>
 </Tabs>
@@ -1878,7 +1866,7 @@ Application info.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1891,7 +1879,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/abci_info
+curl https://rpc.ankr.com/http/allora_testnet/abci_info
 ```
   </Tab>
 </Tabs>
@@ -1904,7 +1892,7 @@ curl https://rpc.ankr.com/http/scrt/abci_info
     "id": 1,
     "result": {
         "response": {
-            "data": "secret",
+            "data": "data-sample",
             "version": "1.6.1",
             "last_block_height": "7690381",
             "last_block_app_hash": "J1tJC9R3q3cNzkDcI7ipyi9NuZ8XUVbMyy7B42TPWuc="
@@ -1942,7 +1930,7 @@ Particular info according to the query submitted.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/scrt \
+curl -X POST https://rpc.ankr.com/allora_testnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1955,7 +1943,7 @@ curl -X POST https://rpc.ankr.com/scrt \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/scrt/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
+curl https://rpc.ankr.com/http/allora_testnet/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
 ```
   </Tab>
 </Tabs>
@@ -1987,84 +1975,84 @@ curl https://rpc.ankr.com/http/scrt/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&h
 
 **Gaia REST**:
 
-  * [`/node_info`](/rpc-service/chains/chains-api/secret-network/#node_info) — retrieves the properties of the connected node.
+  * [`/node_info`](/rpc-service/chains/chains-api/allora/#node_info) — retrieves the properties of the connected node.
 
 **Transactions**:
 
-  * [`/txs`](/rpc-service/chains/chains-api/secret-network/#txs) — broadcasts a signed transaction to a full node.
+  * [`/txs`](/rpc-service/chains/chains-api/allora/#txs) — broadcasts a signed transaction to a full node.
 
 **Staking**:
 
-  * [`/staking/delegators/{delegatorAddr}/delegations`](/rpc-service/chains/chains-api/secret-network/#stakingdelegatorsdelegatoraddrdelegations) — submits a delegation.
-  * [`/staking/delegators/{delegatorAddr}/unbonding_delegations`](/rpc-service/chains/chains-api/secret-network/#stakingdelegatorsdelegatoraddrunbonding_delegations) — submits an unbonding delegation.
+  * [`/staking/delegators/{delegatorAddr}/delegations`](/rpc-service/chains/chains-api/allora/#stakingdelegatorsdelegatoraddrdelegations) — submits a delegation.
+  * [`/staking/delegators/{delegatorAddr}/unbonding_delegations`](/rpc-service/chains/chains-api/allora/#stakingdelegatorsdelegatoraddrunbonding_delegations) — submits an unbonding delegation.
 
 **Query**:
 
-  * [`/cosmos/auth/v1beta1/accounts`](/rpc-service/chains/chains-api/secret-network/#cosmosauthv1beta1accounts) — retrieves all the existing accounts.
-  * [`/cosmos/auth/v1beta1/accounts/{address}`](/rpc-service/chains/chains-api/secret-network/#cosmosauthv1beta1accountsaddress) — retrieves account details based on address.
-  * [`/cosmos/auth/v1beta1/params`](/rpc-service/chains/chains-api/secret-network/#cosmosauthv1beta1params) — retrieves all parameters.
-  * [`/cosmos/bank/v1beta1/balances/{address}`](/rpc-service/chains/chains-api/secret-network/#cosmosbankv1beta1balancesaddress) — retrieves the balance of all coins for a single account.
-  * [`/cosmos/bank/v1beta1/balances/{address}/{denom}`](/rpc-service/chains/chains-api/secret-network/#cosmosbankv1beta1balancesaddressdenom) — retrieves the balance of a single coin for a single account.
-  * [`/cosmos/bank/v1beta1/denoms_metadata`](/rpc-service/chains/chains-api/secret-network/#cosmosbankv1beta1denoms_metadata) — retrieves the client metadata for all registered coin denominations.
-  * [`/cosmos/bank/v1beta1/denoms_metadata/{denom}`](/rpc-service/chains/chains-api/secret-network/#cosmosbankv1beta1denoms_metadatadenom) — retrieves the client metadata of a given coin denomination.
-  * [`/cosmos/bank/v1beta1/params`](/rpc-service/chains/chains-api/secret-network/#cosmosbankv1beta1params) — retrieves the parameters of x/bank module.
-  * [`/cosmos/bank/v1beta1/supply`](/rpc-service/chains/chains-api/secret-network/#cosmosbankv1beta1supply) — retrieves the total supply of all coins.
-  * [`/cosmos/distribution/v1beta1/community_pool`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1community_pool) — retrieves the community pool coins.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1delegatorsdelegator_addressrewards) — retrieves the total rewards accrued by each validator.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1delegatorsdelegator_addressrewardsvalidator_address) — retrieves the total rewards accrued by a delegation.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1delegatorsdelegator_addressvalidators) — retrieves the validators of a delegator.
-  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1delegatorsdelegator_addresswithdraw_address) — retrieves a withdrawal address of a delegator.
-  * [`/cosmos/distribution/v1beta1/params`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1params) — retrieves parameters of the distribution module.
-  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/commission`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1validatorsvalidator_addresscommission) — retrieves accumulated commission for a validator.
-  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1validatorsvalidator_addressoutstanding_rewards) — retrieves rewards of a validator address.
-  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/slashes`](/rpc-service/chains/chains-api/secret-network/#cosmosdistributionv1beta1validatorsvalidator_addressslashes) — retrieves slash events of a validator.
-  * [`/cosmos/evidence/v1beta1/evidence`](/rpc-service/chains/chains-api/secret-network/#cosmosevidencev1beta1evidence) — retrieves all evidence.
-  * [`/cosmos/evidence/v1beta1/evidence/{evidence_hash}`](/rpc-service/chains/chains-api/secret-network/#cosmosevidencev1beta1evidenceevidence_hash) — retrieves evidence based on evidence hash.
-  * [`/cosmos/gov/v1beta1/params/{params_type}`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1paramsparams_type) — retrieves all parameters of the gov module.
-  * [`/cosmos/gov/v1beta1/proposals`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1proposals) — retrieves all proposals based on given status.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1proposalsproposal_id) — retrieves proposal details based on proposal ID.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1proposalsproposal_iddeposits) — retrieves all deposits of a single proposal.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1proposalsproposal_iddepositsdepositor) — retrieves single deposit information based on proposal ID and deposit address.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/tally`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1proposalsproposal_idtally) — retrieves the tally of a proposal vote.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1proposalsproposal_idvotes) — retrieves votes of a given proposal.
-  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}`](/rpc-service/chains/chains-api/secret-network/#cosmosgovv1beta1proposalsproposal_idvotesvoter) — retrieves voted information based on proposal ID and voter address.
-  * [`/cosmos/mint/v1beta1/annual_provisions`](/rpc-service/chains/chains-api/secret-network/#cosmosmintv1beta1annual_provisions) — retrieves the current minting annual provisions value.
-  * [`/cosmos/mint/v1beta1/inflation`](/rpc-service/chains/chains-api/secret-network/#cosmosmintv1beta1inflation) — retrieves the current minting inflation value.
-  * [`/cosmos/mint/v1beta1/params`](/rpc-service/chains/chains-api/secret-network/#cosmosmintv1beta1params) — retrieves the total set of minting parameters.
-  * [`/cosmos/slashing/v1beta1/params`](/rpc-service/chains/chains-api/secret-network/#cosmosslashingv1beta1params) — retrieves the parameters of a slashing module.
-  * [`/cosmos/slashing/v1beta1/signing_infos`](/rpc-service/chains/chains-api/secret-network/#cosmosslashingv1beta1signing_infos) — retrieves signing info of all validators.
-  * [`/cosmos/slashing/v1beta1/signing_infos/{cons_address}`](/rpc-service/chains/chains-api/secret-network/#cosmosslashingv1beta1signing_infoscons_address) — retrieves the signing info of given cons address.
-  * [`/cosmos/staking/v1beta1/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1delegationsdelegator_addr) — retrieves all delegations of a given delegator address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1delegatorsdelegator_addrredelegations) — retrieves redelegations of a given address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1delegatorsdelegator_addrunbonding_delegations) — retrieves all unbonding delegations of a given delegator address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1delegatorsdelegator_addrvalidators) — retrieves all validators info for a given delegator address.
-  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1delegatorsdelegator_addrvalidatorsvalidator_addr) — retrieves validator info by given delegator validator pair.
-  * [`/cosmos/staking/v1beta1/historical_info/{height}`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1historical_infoheight) — retrieves the historical info for a given height.
-  * [`/cosmos/staking/v1beta1/params`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1params) — retrieves the staking parameters.
-  * [`/cosmos/staking/v1beta1/pool`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1pool) — retrieves the pool info.
-  * [`/cosmos/staking/v1beta1/validators`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1validators) — retrieves all validators that match the given status.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1validatorsvalidator_addr) — retrieves validator info for a given validator address.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1validatorsvalidator_addrdelegations) — retrieves delegate info for a given validator.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addr) — retrieves delegate info for given validator delegator pair.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addrunbonding_delegation) — retrieves unbonding info for given validator delegator pair.
-  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/secret-network/#cosmosstakingv1beta1validatorsvalidator_addrunbonding_delegations) — retrieves unbonding delegations of a given validator address.
-  * [`/cosmos/upgrade/v1beta1/applied_plan/{name}`](/rpc-service/chains/chains-api/secret-network/#cosmosupgradev1beta1applied_planname) — retrieves a previously applied upgrade plan by its name.
-  * [`/cosmos/upgrade/v1beta1/current_plan`](/rpc-service/chains/chains-api/secret-network/#cosmosupgradev1beta1current_plan) — retrieves the current upgrade plan.
-  * [`/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}`](/rpc-service/chains/chains-api/secret-network/#cosmosupgradev1beta1upgraded_consensus_statelast_height) — retrieves the consensus state that will serve as a trusted kernel for the next version of this chain.
-  * [`/cosmos/authz/v1beta1/grants`](/rpc-service/chains/chains-api/secret-network/#cosmosauthzv1beta1grants) — retrieves the list of `Authorization`, granted to the grantee by the granter.
-  * [`/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}`](/rpc-service/chains/chains-api/secret-network/#cosmosfeegrantv1beta1allowancegrantergrantee) — retrieves the fee granted to the grantee by the granter.
-  * [`/cosmos/feegrant/v1beta1/allowances/{grantee}`](/rpc-service/chains/chains-api/secret-network/#cosmosfeegrantv1beta1allowancesgrantee) — retrieves all the grants for an address.
+  * [`/cosmos/auth/v1beta1/accounts`](/rpc-service/chains/chains-api/allora/#cosmosauthv1beta1accounts) — retrieves all the existing accounts.
+  * [`/cosmos/auth/v1beta1/accounts/{address}`](/rpc-service/chains/chains-api/allora/#cosmosauthv1beta1accountsaddress) — retrieves account details based on address.
+  * [`/cosmos/auth/v1beta1/params`](/rpc-service/chains/chains-api/allora/#cosmosauthv1beta1params) — retrieves all parameters.
+  * [`/cosmos/bank/v1beta1/balances/{address}`](/rpc-service/chains/chains-api/allora/#cosmosbankv1beta1balancesaddress) — retrieves the balance of all coins for a single account.
+  * [`/cosmos/bank/v1beta1/balances/{address}/{denom}`](/rpc-service/chains/chains-api/allora/#cosmosbankv1beta1balancesaddressdenom) — retrieves the balance of a single coin for a single account.
+  * [`/cosmos/bank/v1beta1/denoms_metadata`](/rpc-service/chains/chains-api/allora/#cosmosbankv1beta1denoms_metadata) — retrieves the client metadata for all registered coin denominations.
+  * [`/cosmos/bank/v1beta1/denoms_metadata/{denom}`](/rpc-service/chains/chains-api/allora/#cosmosbankv1beta1denoms_metadatadenom) — retrieves the client metadata of a given coin denomination.
+  * [`/cosmos/bank/v1beta1/params`](/rpc-service/chains/chains-api/allora/#cosmosbankv1beta1params) — retrieves the parameters of x/bank module.
+  * [`/cosmos/bank/v1beta1/supply`](/rpc-service/chains/chains-api/allora/#cosmosbankv1beta1supply) — retrieves the total supply of all coins.
+  * [`/cosmos/distribution/v1beta1/community_pool`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1community_pool) — retrieves the community pool coins.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1delegatorsdelegator_addressrewards) — retrieves the total rewards accrued by each validator.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1delegatorsdelegator_addressrewardsvalidator_address) — retrieves the total rewards accrued by a delegation.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1delegatorsdelegator_addressvalidators) — retrieves the validators of a delegator.
+  * [`/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1delegatorsdelegator_addresswithdraw_address) — retrieves a withdrawal address of a delegator.
+  * [`/cosmos/distribution/v1beta1/params`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1params) — retrieves parameters of the distribution module.
+  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/commission`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1validatorsvalidator_addresscommission) — retrieves accumulated commission for a validator.
+  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1validatorsvalidator_addressoutstanding_rewards) — retrieves rewards of a validator address.
+  * [`/cosmos/distribution/v1beta1/validators/{validator_address}/slashes`](/rpc-service/chains/chains-api/allora/#cosmosdistributionv1beta1validatorsvalidator_addressslashes) — retrieves slash events of a validator.
+  * [`/cosmos/evidence/v1beta1/evidence`](/rpc-service/chains/chains-api/allora/#cosmosevidencev1beta1evidence) — retrieves all evidence.
+  * [`/cosmos/evidence/v1beta1/evidence/{evidence_hash}`](/rpc-service/chains/chains-api/allora/#cosmosevidencev1beta1evidenceevidence_hash) — retrieves evidence based on evidence hash.
+  * [`/cosmos/gov/v1beta1/params/{params_type}`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1paramsparams_type) — retrieves all parameters of the gov module.
+  * [`/cosmos/gov/v1beta1/proposals`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1proposals) — retrieves all proposals based on given status.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1proposalsproposal_id) — retrieves proposal details based on proposal ID.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1proposalsproposal_iddeposits) — retrieves all deposits of a single proposal.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1proposalsproposal_iddepositsdepositor) — retrieves single deposit information based on proposal ID and deposit address.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/tally`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1proposalsproposal_idtally) — retrieves the tally of a proposal vote.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1proposalsproposal_idvotes) — retrieves votes of a given proposal.
+  * [`/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}`](/rpc-service/chains/chains-api/allora/#cosmosgovv1beta1proposalsproposal_idvotesvoter) — retrieves voted information based on proposal ID and voter address.
+  * [`/cosmos/mint/v1beta1/annual_provisions`](/rpc-service/chains/chains-api/allora/#cosmosmintv1beta1annual_provisions) — retrieves the current minting annual provisions value.
+  * [`/cosmos/mint/v1beta1/inflation`](/rpc-service/chains/chains-api/allora/#cosmosmintv1beta1inflation) — retrieves the current minting inflation value.
+  * [`/cosmos/mint/v1beta1/params`](/rpc-service/chains/chains-api/allora/#cosmosmintv1beta1params) — retrieves the total set of minting parameters.
+  * [`/cosmos/slashing/v1beta1/params`](/rpc-service/chains/chains-api/allora/#cosmosslashingv1beta1params) — retrieves the parameters of a slashing module.
+  * [`/cosmos/slashing/v1beta1/signing_infos`](/rpc-service/chains/chains-api/allora/#cosmosslashingv1beta1signing_infos) — retrieves signing info of all validators.
+  * [`/cosmos/slashing/v1beta1/signing_infos/{cons_address}`](/rpc-service/chains/chains-api/allora/#cosmosslashingv1beta1signing_infoscons_address) — retrieves the signing info of given cons address.
+  * [`/cosmos/staking/v1beta1/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1delegationsdelegator_addr) — retrieves all delegations of a given delegator address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1delegatorsdelegator_addrredelegations) — retrieves redelegations of a given address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1delegatorsdelegator_addrunbonding_delegations) — retrieves all unbonding delegations of a given delegator address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1delegatorsdelegator_addrvalidators) — retrieves all validators info for a given delegator address.
+  * [`/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1delegatorsdelegator_addrvalidatorsvalidator_addr) — retrieves validator info by given delegator validator pair.
+  * [`/cosmos/staking/v1beta1/historical_info/{height}`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1historical_infoheight) — retrieves the historical info for a given height.
+  * [`/cosmos/staking/v1beta1/params`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1params) — retrieves the staking parameters.
+  * [`/cosmos/staking/v1beta1/pool`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1pool) — retrieves the pool info.
+  * [`/cosmos/staking/v1beta1/validators`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1validators) — retrieves all validators that match the given status.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1validatorsvalidator_addr) — retrieves validator info for a given validator address.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1validatorsvalidator_addrdelegations) — retrieves delegate info for a given validator.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addr) — retrieves delegate info for given validator delegator pair.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1validatorsvalidator_addrdelegationsdelegator_addrunbonding_delegation) — retrieves unbonding info for given validator delegator pair.
+  * [`/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations`](/rpc-service/chains/chains-api/allora/#cosmosstakingv1beta1validatorsvalidator_addrunbonding_delegations) — retrieves unbonding delegations of a given validator address.
+  * [`/cosmos/upgrade/v1beta1/applied_plan/{name}`](/rpc-service/chains/chains-api/allora/#cosmosupgradev1beta1applied_planname) — retrieves a previously applied upgrade plan by its name.
+  * [`/cosmos/upgrade/v1beta1/current_plan`](/rpc-service/chains/chains-api/allora/#cosmosupgradev1beta1current_plan) — retrieves the current upgrade plan.
+  * [`/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}`](/rpc-service/chains/chains-api/allora/#cosmosupgradev1beta1upgraded_consensus_statelast_height) — retrieves the consensus state that will serve as a trusted kernel for the next version of this chain.
+  * [`/cosmos/authz/v1beta1/grants`](/rpc-service/chains/chains-api/allora/#cosmosauthzv1beta1grants) — retrieves the list of `Authorization`, granted to the grantee by the granter.
+  * [`/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}`](/rpc-service/chains/chains-api/allora/#cosmosfeegrantv1beta1allowancegrantergrantee) — retrieves the fee granted to the grantee by the granter.
+  * [`/cosmos/feegrant/v1beta1/allowances/{grantee}`](/rpc-service/chains/chains-api/allora/#cosmosfeegrantv1beta1allowancesgrantee) — retrieves all the grants for an address.
 
 **Services**:
 
-  * [`/cosmos/base/tendermint/v1beta1/blocks/latest`](/rpc-service/chains/chains-api/secret-network/#cosmosbasetendermintv1beta1blockslatest) — retrieves the latest block.
-  * [`/cosmos/base/tendermint/v1beta1/blocks/{height}`](/rpc-service/chains/chains-api/secret-network/#cosmosbasetendermintv1beta1blocksheight) — retrieves the block for a given height.
-  * [`/cosmos/base/tendermint/v1beta1/validatorsets/latest`](/rpc-service/chains/chains-api/secret-network/#cosmosbasetendermintv1beta1validatorsetslatest) — retrieves the latest validator-set.
-  * [`/cosmos/base/tendermint/v1beta1/validatorsets/{height}`](/rpc-service/chains/chains-api/secret-network/#cosmosbasetendermintv1beta1validatorsetsheight) — retrieves the validator-set at a given height.
-  * [`/cosmos/tx/v1beta1/simulate`](/rpc-service/chains/chains-api/secret-network/#cosmostxv1beta1simulate) — simulates executing a transaction to estimate gas usage.
-  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/secret-network/#cosmostxv1beta1txs) — retrieves transactions by event.
-  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/secret-network/#cosmostxv1beta1txs-1) — broadcasts a transaction.
-  * [`/cosmos/tx/v1beta1/txs/{hash}`](/rpc-service/chains/chains-api/secret-network/#cosmostxv1beta1txshash) — retrieves a transaction by hash.
+  * [`/cosmos/base/tendermint/v1beta1/blocks/latest`](/rpc-service/chains/chains-api/allora/#cosmosbasetendermintv1beta1blockslatest) — retrieves the latest block.
+  * [`/cosmos/base/tendermint/v1beta1/blocks/{height}`](/rpc-service/chains/chains-api/allora/#cosmosbasetendermintv1beta1blocksheight) — retrieves the block for a given height.
+  * [`/cosmos/base/tendermint/v1beta1/validatorsets/latest`](/rpc-service/chains/chains-api/allora/#cosmosbasetendermintv1beta1validatorsetslatest) — retrieves the latest validator-set.
+  * [`/cosmos/base/tendermint/v1beta1/validatorsets/{height}`](/rpc-service/chains/chains-api/allora/#cosmosbasetendermintv1beta1validatorsetsheight) — retrieves the validator-set at a given height.
+  * [`/cosmos/tx/v1beta1/simulate`](/rpc-service/chains/chains-api/allora/#cosmostxv1beta1simulate) — simulates executing a transaction to estimate gas usage.
+  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/allora/#cosmostxv1beta1txs) — retrieves transactions by event.
+  * [`/cosmos/tx/v1beta1/txs`](/rpc-service/chains/chains-api/allora/#cosmostxv1beta1txs-1) — broadcasts a transaction.
+  * [`/cosmos/tx/v1beta1/txs/{hash}`](/rpc-service/chains/chains-api/allora/#cosmostxv1beta1txshash) — retrieves a transaction by hash.
 
 ---
 
@@ -2086,7 +2074,7 @@ Node status.
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/node_info
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/node_info
 ```
 
 #### Response example
@@ -2172,7 +2160,7 @@ Tx broadcasting result.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/scrt_cosmos/txs
+curl -X POST https://rpc.ankr.com/http/allora_cosmos_testnet/txs
 ```
 
 #### Response example
@@ -2261,7 +2249,7 @@ Submission result codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/scrt_cosmos/staking/delegators/{delegatorAddr}/delegations
+curl -X POST https://rpc.ankr.com/http/allora_cosmos_testnet/staking/delegators/{delegatorAddr}/delegations
 ```
 
 #### Response example
@@ -2347,7 +2335,7 @@ Result codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/scrt_cosmos/staking/delegators/{delegatorAddr}/unbonding_delegations
+curl -X POST https://rpc.ankr.com/http/allora_cosmos_testnet/staking/delegators/{delegatorAddr}/unbonding_delegations
 ```
 
 #### Response example
@@ -2406,7 +2394,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/auth/v1beta1/accounts
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/auth/v1beta1/accounts
 ```
 
 #### Response example
@@ -2447,7 +2435,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/auth/v1beta1/accounts/{address}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/auth/v1beta1/accounts/{address}
 ```
 
 #### Response example
@@ -2481,7 +2469,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/auth/v1beta1/params
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/auth/v1beta1/params
 ```
 
 #### Request example
@@ -2524,7 +2512,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/bank/v1beta1/balances/{address}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/balances/{address}
 ```
 
 #### Response example
@@ -2566,7 +2554,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/bank/v1beta1/balances/{address}/{denom}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/balances/{address}/{denom}
 ```
 
 #### Response example
@@ -2605,7 +2593,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/bank/v1beta1/denoms_metadata
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/denoms_metadata
 ```
 
 #### Response example
@@ -2660,7 +2648,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/bank/v1beta1/denoms_metadata/{denom}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/denoms_metadata/{denom}
 ```
 
 #### Response example
@@ -2708,7 +2696,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/bank/v1beta1/params
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/params
 ```
 
 #### Response example
@@ -2752,7 +2740,7 @@ Code responses:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/bank/v1beta1/supply
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/supply
 ```
 
 #### Response example
@@ -2792,7 +2780,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/community_pool
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/community_pool
 ```
 
 #### Response example
@@ -2829,7 +2817,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
 ```
 
 #### Response example
@@ -2878,7 +2866,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
 ```
 
 #### Response example
@@ -2915,7 +2903,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
 ```
 
 #### Response example
@@ -2949,7 +2937,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
 ```
 
 #### Response example
@@ -2980,7 +2968,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/params
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/params
 ```
 
 #### Response example
@@ -3017,7 +3005,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/commission
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/commission
 ```
 
 #### Response example
@@ -3056,7 +3044,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
 ```
 
 #### Response example
@@ -3102,7 +3090,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/slashes
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/slashes
 ```
 
 #### Response example
@@ -3147,7 +3135,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/evidence/v1beta1/evidence
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/evidence/v1beta1/evidence
 ```
 
 #### Response example
@@ -3188,7 +3176,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/evidence/v1beta1/evidence/{evidence_hash}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/evidence/v1beta1/evidence/{evidence_hash}
 ```
 
 #### Response example
@@ -3223,7 +3211,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/params/{params_type}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/params/{params_type}
 ```
 
 #### Response example
@@ -3284,7 +3272,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/proposals
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals
 ```
 
 #### Response example
@@ -3345,7 +3333,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}
 ```
 
 #### Response example
@@ -3405,7 +3393,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
 ```
 
 #### Response example
@@ -3453,7 +3441,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
 ```
 
 #### Response example
@@ -3494,7 +3482,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/tally
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/tally
 ```
 
 #### Response example
@@ -3536,7 +3524,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/votes
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/votes
 ```
 
 #### Response example
@@ -3585,7 +3573,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
 ```
 
 #### Response example
@@ -3626,7 +3614,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/mint/v1beta1/annual_provisions
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/mint/v1beta1/annual_provisions
 ```
 
 ### Response example
@@ -3657,7 +3645,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/mint/v1beta1/inflation
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/mint/v1beta1/inflation
 ```
 
 #### Response example
@@ -3688,7 +3676,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/mint/v1beta1/params
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/mint/v1beta1/params
 ```
 
 #### Response example
@@ -3726,7 +3714,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/slashing/v1beta1/params
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/slashing/v1beta1/params
 ```
 
 #### Response example
@@ -3768,7 +3756,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/slashing/v1beta1/signing_infos
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/slashing/v1beta1/signing_infos
 ```
 
 #### Response example
@@ -3813,7 +3801,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/slashing/v1beta1/signing_infos/{cons_address}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/slashing/v1beta1/signing_infos/{cons_address}
 ```
 
 #### Response example
@@ -3857,7 +3845,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/delegations/{delegator_addr}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegations/{delegator_addr}
 ```
 
 #### Response example
@@ -3912,7 +3900,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
 ```
 
 #### Response example
@@ -3980,7 +3968,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
 ```
 
 #### Reponse example
@@ -4034,7 +4022,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
 ```
 
 #### Response example
@@ -4101,7 +4089,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
 ```
 
 #### Response example
@@ -4161,7 +4149,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/historical_info/{height}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/historical_info/{height}
 ```
 
 #### Response example
@@ -4249,7 +4237,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/params
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/params
 ```
 
 #### Response example
@@ -4286,7 +4274,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/pool
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/pool
 ```
 
 #### Response example
@@ -4326,7 +4314,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/validators
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators
 ```
 
 #### Response example
@@ -4392,7 +4380,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}
 ```
 
 #### Response example
@@ -4457,7 +4445,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations
 ```
 
 #### Response example
@@ -4506,7 +4494,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
 ```
 
 #### Response example
@@ -4549,7 +4537,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
 ```
 
 #### Response example
@@ -4598,7 +4586,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
 ```
 
 #### Response example
@@ -4647,7 +4635,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/upgrade/v1beta1/applied_plan/{name}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/upgrade/v1beta1/applied_plan/{name}
 ```
 
 #### Response example
@@ -4678,7 +4666,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/upgrade/v1beta1/current_plan
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/upgrade/v1beta1/current_plan
 ```
 
 #### Response example
@@ -4721,7 +4709,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
 ```
 
 #### Response example
@@ -4760,7 +4748,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/authz/v1beta1/grants
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/authz/v1beta1/grants
 ```
 
 #### Response example
@@ -4805,7 +4793,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
 ```
 
 #### Response example
@@ -4849,7 +4837,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/feegrant/v1beta1/allowances/{grantee}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/feegrant/v1beta1/allowances/{grantee}
 ```
 
 #### Response example
@@ -4895,7 +4883,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/blocks/latest
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1beta1/blocks/latest
 ```
 
 #### Response example
@@ -5114,7 +5102,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
 
 #### Response example
@@ -5335,7 +5323,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/validatorsets/latest
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1beta1/validatorsets/latest
 ```
 
 #### Response example
@@ -5387,7 +5375,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/validatorsets/{height}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1beta1/validatorsets/{height}
 ```
 
 #### Response example
@@ -5502,7 +5490,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/scrt_cosmos/cosmos/tx/v1beta1/simulate
+curl -X POST https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/simulate
 ```
 
 #### Response example
@@ -5563,7 +5551,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/tx/v1beta1/txs
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/txs
 ```
 
 #### Response example
@@ -5705,7 +5693,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/scrt_cosmos/cosmos/tx/v1beta1/txs
+curl -X POST https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/txs
 ```
 
 #### Response example
@@ -5769,7 +5757,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/tx/v1beta1/txs/{hash}
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/txs/{hash}
 ```
 
 #### Response example
