@@ -53,7 +53,7 @@ const filesMap = [
     urlPath: `${STRAPI_ROOT_URL}/faq-fantom-items`,
   },
   {
-    filePath: join(FILES_ROOT_PATH, "liquid-staking", "matic", "faq.mdx"),
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "pol", "faq.mdx"),
     name: "matic",
     urlPath: `${STRAPI_ROOT_URL}/faq-polygon-items`,
   },

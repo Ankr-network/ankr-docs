@@ -13,7 +13,7 @@ Liquid Staking SDK supports multiple networks and allows you to interact with:
 * Binance blockchain: aBNBb/ankrBNB tokens and Binance Liquid Staking contracts.
 * Ethereum blockchain: aETHb/ankrETH tokens and Ethereum Liquid Staking contracts; 
 * Fantom blockchain: aFTMb/ankrFTM tokens and Fantom Liquid Staking contracts.
-* Ethereum and Polygon blockchains: aMATICb/ankrMATIC tokens, and Polygon Liquid Staking contracts.
+* Ethereum and Polygon blockchains: aMATICb/ankrPOL tokens, and Polygon Liquid Staking contracts.
 
 <Callout type="info">
 -b tokens are not actively supported anymore, and we're discontinuing their support in the SDK. 
@@ -44,23 +44,23 @@ Here are some reference examples on how to user Liquid Staking SDK in your proje
 Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-sdk-e1jvvi) as specific live example of interacting with `@ankr.com/staking-sdk`.<br /> 
 
 ### Polygon (on Ethereum)
-1. Stake ankrMATIC token:
+1. Stake ankrPOL token:
     ```
     import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
     const sdk = await PolygonOnEthereumSDK.getInstance();
    
-    const { txHash } = await sdk.stake(new BigNumber(1_200), 'aMATICc');
+    const { txHash } = await sdk.stake(new BigNumber(1_200), 'aPOLc');
     ```
-2. Unstake ankrMATIC token:
+2. Unstake ankrPOL token:
    ```
    import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
    const sdk = await PolygonOnEthereumSDK.getInstance();
    
-   await sdk.unstake(new BigNumber(1_200), 'aMATICc');
+   await sdk.unstake(new BigNumber(1_200), 'aPOLc');
    ```
-3. Switch aMATICb and ankrMATIC:
+3. Switch aMATICb and ankrPOL:
    ```
    import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
@@ -70,7 +70,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    
    const unlockResponse = await sdk.unlockShares({ amount: new BigNumber(1.98) });
    ```
-4. Get MATIC transaction history:
+4. Get POL transaction history:
    ```
    import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
@@ -141,7 +141,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    const writeProvider: Web3KeyWriteProvider = { ... };
    const sdk = await PolygonOnEthereumSDK.getInstance({ readProvider, writeProvider });
    
-   const { txHash } = await sdk.stake(new BigNumber(1_200), 'aMATICc');
+   const { txHash } = await sdk.stake(new BigNumber(1_200), 'aPOLc');
    ```
 
 ## Reference
@@ -159,5 +159,5 @@ To understand the processes and mechanics of Liquid Staking, refer to:
 * [Binance Liquid Staking mechanics](/staking-for-developers/dev-details/bnb-liquid-staking-mechanics/)
 * [Ethereum Liquid Staking mechanics](/staking-for-developers/dev-details/eth-liquid-staking-mechanics/)
 * [Fantom Liquid Staking mechanics](/staking-for-developers/dev-details/ftm-liquid-staking-mechanics/)
-* [Polygon Liquid Staking mechanics](/staking-for-developers/dev-details/matic-liquid-staking-mechanics/)
+* [Polygon Liquid Staking mechanics](/staking-for-developers/dev-details/pol-liquid-staking-mechanics/)
 
