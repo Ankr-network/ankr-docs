@@ -15,7 +15,7 @@ By the end of this tutorial, you'll be able to:
 
 1. **Start New Campaign**  — users will be able to start a new crowdfunding project by inputting some details about the campaign like title, story and goal amount to be raised.
 2. **View Projects** — users can see all the existing projects and campaign details on the homepage 
-3. **Make Donation** — anyone can fund to the project they want to support in Matic tokens
+3. **Make Donation** — anyone can fund to the project they want to support in POL tokens
 
 
 ## The Tech Stack
@@ -563,12 +563,12 @@ export function useCrowdfundingProjectFunctionReader({
 }
 ``` 
 
-Now, let's move to the other file named "**utils.ts**". In this file we are creating helper functions to convert wei into matic.
+Now, let's move to the other file named "**utils.ts**". In this file we are creating helper functions to convert wei into POL.
 
 **File:** `src/utils.ts`
 
 ```javascript
-//helper functions to convert wei into matic
+//helper functions to convert wei into pol
 
 import type { BigNumberish } from "ethers";
 import { BigNumber, utils } from "ethers";
@@ -1022,7 +1022,7 @@ function Campaign({ projectNumber }: CampaignProps) {
 
       addRecentTransaction({
         hash: tx.hash,
-        description: `Donate ${value} MATIC`,
+        description: `Donate ${value} POL`,
       });
     } catch (error) {
       console.log("errror >>> ", error);
@@ -1048,11 +1048,11 @@ function Campaign({ projectNumber }: CampaignProps) {
       <div className="px-6 pt-4 pb-2">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
           Goal Amount:
-          <span className="text-purple-700">{fromWei(goalAmount)} MATIC</span>
+          <span className="text-purple-700">{fromWei(goalAmount)} POL</span>
         </span>
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
           Raised Amount:
-          <span className="text-purple-700">{fromWei(raisedAmount)} MATIC</span>
+          <span className="text-purple-700">{fromWei(raisedAmount)} POL</span>
         </span>
 
         <div className="flex items-center py-2">

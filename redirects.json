@@ -2050,5 +2050,29 @@
   {
     "from": "docs/scaling-services-rollups/faq/index.html",
     "to": "/docs/scaling-services-faq/"
+  },
+  {
+    "from": "docs/liquid-staking/matic/overview/index.html",
+    "to": "/docs/liquid-staking/pol/overview/"
+  },
+  {
+    "from": "docs/liquid-staking/matic/stake/index.html",
+    "to": "/docs/liquid-staking/pol/stake/"
+  },
+  {
+    "from": "docs/liquid-staking/matic/unstake/index.html",
+    "to": "/docs/liquid-staking/pol/unstake/"
+  },
+  {
+    "from": "docs/liquid-staking/matic/faq/index.html",
+    "to": "/docs/liquid-staking/pol/faq/"
+  },
+  {
+    "from": "docs/staking-for-developers/dev-details/matic-liquid-staking-mechanics/index.html",
+    "to": "/docs/staking-for-developers/dev-details/pol-liquid-staking-mechanics/"
+  },
+  {
+    "from": "docs/staking-for-developers/smart-contract-api/matic-api/index.html",
+    "to": "/docs/staking-for-developers/smart-contract-api/pol-api/"
   }
 ]
