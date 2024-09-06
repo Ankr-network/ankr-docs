@@ -13,7 +13,7 @@ Liquid Staking SDK supports multiple networks and allows you to interact with:
 * Binance blockchain: aBNBb/ankrBNB tokens and Binance Liquid Staking contracts.
 * Ethereum blockchain: aETHb/ankrETH tokens and Ethereum Liquid Staking contracts; 
 * Fantom blockchain: aFTMb/ankrFTM tokens and Fantom Liquid Staking contracts.
-* Ethereum and Polygon blockchains: aMATICb/ankrPOL tokens, and Polygon Liquid Staking contracts.
+* Ethereum and Polygon blockchains: ankrPOL tokens, and Polygon Liquid Staking contracts.
 
 <Callout type="info">
 -b tokens are not actively supported anymore, and we're discontinuing their support in the SDK. 
@@ -60,17 +60,7 @@ Use the [codesandbox get balance sample](https://codesandbox.io/s/ankr-staking-s
    
    await sdk.unstake(new BigNumber(1_200), 'aPOLc');
    ```
-3. Switch aMATICb and ankrPOL:
-   ```
-   import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
-   
-   const sdk = await PolygonOnEthereumSDK.getInstance();
-   
-   const lockResponse = await sdk.lockShares({ amount: new BigNumber(2.65) });
-   
-   const unlockResponse = await sdk.unlockShares({ amount: new BigNumber(1.98) });
-   ```
-4. Get POL transaction history:
+3. Get POL transaction history:
    ```
    import { PolygonOnEthereumSDK } from '@ankr.com/staking-sdk';
    
