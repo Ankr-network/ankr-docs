@@ -57,6 +57,11 @@ const filesMap = [
     name: "matic",
     urlPath: `${STRAPI_ROOT_URL}/faq-polygon-items`,
   },
+  {
+    filePath: join(FILES_ROOT_PATH, "liquid-staking", "flow", "faq.mdx"),
+    name: "flow",
+    urlPath: `${STRAPI_ROOT_URL}/faq-flow-items`,
+  },
 ];
 
 /**
