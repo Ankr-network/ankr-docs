@@ -2074,5 +2074,21 @@
   {
     "from": "docs/staking-for-developers/smart-contract-api/matic-api/index.html",
     "to": "/docs/staking-for-developers/smart-contract-api/pol-api/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/pol/overview/index.html",
+    "to": "/docs/liquid-staking/pol/overview/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/pol/stake/index.html",
+    "to": "/docs/liquid-staking/pol/stake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/pol/unstake/index.html",
+    "to": "/docs/liquid-staking/pol/unstake/"
+  },
+  {
+    "from": "docs/staking/liquid-staking/pol/faq/index.html",
+    "to": "/docs/liquid-staking/pol/faq/"
   }
 ]
