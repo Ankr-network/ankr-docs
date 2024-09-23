@@ -22,12 +22,13 @@
   "basic-tutorials": "Basic Tutorials",
   "smart-contract-tutorials": "Smart Contract Development",
   "advanced-tutorials": "Advanced Tutorials",
-  "-- Scaling with Ankr": {
+  "-- Scaling with Asphere": {
     "type": "separator",
     "title": "Scaling with Asphere"
   },
   "scaling-services-overview": "Scaling Services Overview",
   "scaling-services-nocode-deployer": "No-Code Deployer",
+  "scaling-services-btc-l2": "Bitcoin L2s",
   "scaling-services-rollups": "Rollups",
   "scaling-services-sidechains": "Sidechains",
   "-- Staking": {
