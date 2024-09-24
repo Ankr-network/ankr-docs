@@ -2,9 +2,9 @@ import { Callout } from "components";
 
 # Bitcoin L2s
 
-Asphere partners with [Babylon](https://babylonlabs.io/) and offers launching your custom Bitcoin L2 PoS chains that natively integrate with Babylon's network and Bitcoin Staking protocol that bullet-proofs the crypto-economic security of you chain, makes it a participant of the healthy economics, and provides a highly-scalable chain with fast finality for its transactions.
+Asphere formed a strategic alliance with [Babylon](https://babylonlabs.io/) and offers launching your custom Bitcoin L2 chain that natively integrates with Babylon's network and Bitcoin Staking protocol that enhances the crypto-economic security of you chain, makes it a participant of the healthy economics, and provides a highly-scalable chain with fast finality for transactions.
 
-Babylon's Bitcoin Timestamping protocol provides the following security benefits to the PoS chains:
+Asphere's Bitcoin L2s provide the following security benefits to chains with Babylon's Bitcoin Timestamping protocol:
 
   * **Solves long-range attacks**: Bitcoin's immutability ensures that finalized PoS blocks cannot be tampered with after they are anchored to the Bitcoin blockchain. This significantly reduces the risk of long-range attacks, where an attacker tries to rewrite the blockchain’s history by manipulating old blocks, as Bitcoin’s Proof-of-Work (PoW) makes such attacks extremely costly and unlikely.
 
@@ -30,8 +30,27 @@ Asphere offers a comprehensive suite of technical solutions designed to accelera
 
   * **VM Flexibility**: Developers can choose between various Virtual Machine (VM) environments, such as Ethereum Virtual Machine (EVM) or WebAssembly (WASM), based on the specific requirements of their project. This flexibility allows you to deploy smart contracts and other decentralized dApps with ease.
 
-  * **Modules**: Asphere also offers optional modules to enhance the capabilities of your network. These include cross-chain bridges for connecting to other networks and blockchain explorers for enhanced transparency and user experience.
-
-<img src="/docs/scale/btc-l2.png" class="responsive-pic" width="600" />
+  * **Modules**: Asphere also offers optional modules to enhance the capabilities of your network. These include the following:
+    * **Auth**: Authentication of accounts and transactions for Cosmos SDK applications.
+    * **Authz**: Authorization for accounts to perform actions on behalf of other accounts.
+    * **Bank**: Token transfer functionalities.
+    * **Bank v2**: Token transfer functionalities, enhanced.
+    * **Circuit**: Circuit breaker module for pausing messages.
+    * **Consensus** Consensus module for modifying CometBFT's ABCI consensus params.
+    * **Distribution**: Fee distribution, and staking token provision distribution.
+    * **Epochs**: Allow other modules to set that they would like to be signaled once every period.
+    * **Evidence**: Evidence handling for double signing, misbehaviour, etc.
+    * **Feegrant**: Grant fee allowances for executing transactions.
+    * **Genutil**: Genesis utilities for the Cosmos SDK.
+    * **Governance**: On-chain proposals and voting.
+    * **Mint**: Creation of new units of staking token.
+    * **NFT**: NFT module implemented based on ADR43.
+    * **Params**: Globally available parameter store.
+    * **Protocolpool**: Functionalities handling community pool funds.
+    * **Slashing**: Validator punishment mechanisms.
+    * **Staking**: Proof-of-Stake layer for public blockchains.
+    * **Tx**: Tx utilities for the Cosmos SDK.
+    * **Upgrade**: Software upgrades handling and coordination.
+    * **Validate**: Global ante/post handlers and tx validator setup.
 
 
