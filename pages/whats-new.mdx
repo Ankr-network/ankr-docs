@@ -1,0 +1,87 @@
+# What's New
+
+## Agave v2.0 transition guide
+
+Agave v2.0 is a major validator client update scheduled to be released on Solana Mainnet-Beta in early October. Agave v2.0 is designed to improve the network's performance and security while maintaining backward compatibility for applications on Solana. This update is crucial for validator operators and developers, as the original Solana Labs GitHub repository will be archived, and all further development will shift to Anza’s Agave client repository.
+
+Agave v2.0 contributes to Solana’s efforts to enhance block space utilization and efficiency, and its introduction is part of a broader move toward diversifying the validator clients on Solana's network.
+
+Agave v2.0 update contains a number of breaking changes, such as deprecation of RPC endpoints, crate renaming, and validator arguments removal, which may require Solana developers to update their scripts. The article's info is based on Anza's recently released [transition guide](https://github.com/anza-xyz/agave/wiki/Agave-v2.0-Transition-Guide).
+
+### Removed RPC endpoints and SDK items
+
+**RPC endpoints changes**:
+
+A number of deprecated Agave v1.0 endpoints are set to be removed. These endpoints are recommended to be replaced in the following manner:
+
+| Deprecated v1 API Call              | v2 Replacement Call                       |
+|:------------------------------------|:------------------------------------------|
+| `confirmTransaction`                | `getSignatureStatuses`                    |
+| `getSignatureStatus`                | `getSignatureStatuses`                    |
+| `getSignatureConfirmation`          | `getSignatureStatuses`                    |
+| `getConfirmedSignaturesForAddress`  | `getSignaturesForAddress`                 |
+| `getConfirmedBlock`                 | `getBlock`                                |
+| `getConfirmedBlocks`                | `getBlocks`                               |
+| `getConfirmedBlocksWithLimit`       | `getBlocksWithLimit`                      |
+| `getConfirmedTransaction`           | `getTransaction`                          |
+| `getConfirmedSignaturesForAddress2` | `getSignaturesForAddress`                 |
+| `getRecentBlockhash`                | `getLatestBlockhash`                      |
+| `getFees`                           | `getFeeForMessage`                        |
+| `getFeeCalculatorForBlockhash`      | `isBlockhashValid` or `getFeeForMessage`  |
+| `getFeeRateGovernor`                | `getFeeForMessage`                        |
+| `getSnapshotSlot`                   | `getHighestSnapshotSlot`                  |
+| `getStakeActivation`                | `getAccountInfo` ([alternative approach](https://solana.stackexchange.com/questions/15710/the-alternative-method-to-get-the-stake-account-status-since-getstakeactivation))  |
+
+**SDK changes**:
+
+  * Support for Borsh v0.9 removed, use v1 or v0.10 ([#1440](https://github.com/anza-xyz/agave/pull/1440))
+  * [`Copy` is no longer derived on `Rent` and `EpochSchedule`](https://github.com/solana-labs/solana/pull/32767), switch to using `clone()`
+  * `solana-sdk`: deprecated symbols removed
+  * `solana-program`: deprecated symbols removed
+
+See a complete list of breaking changes on the [Agave changelog](https://github.com/anza-xyz/agave/blob/v2.0/CHANGELOG.md#200).
+
+### Renamed crates
+
+Agave v2.0 brings renaming for a number of crates to accommodate the introduction of multiple Solana validator clients and ensure clarity in distinguishing Agave-related dependencies from those managed by other teams.
+
+| Original Name                    | New Name                        |
+|:---------------------------------|:--------------------------------|
+| `solana-validator`               | `agave-validator`               |
+| `solana-ledger-tool`             | `agave-ledger-tool`             |
+| `solana-watchtower`              | `agave-watchtower`              |
+| `solana-install`                 | `agave-install`                 |
+| `solana-geyser-plugin-interface` | `agave-geyser-plugin-interface` |
+| `solana-cargo-registry`          | `agave-cargo-registry`          |
+
+
+### Removed validator arguments
+
+These deprecated validator arguments will be removed upon the release of Agave v2.0:
+
+| Commands                                                                                                   |
+|:-----------------------------------------------------------------------------------------------------------|
+| `--enable-rpc-obsolete_v1_7` ([#1886](https://github.com/anza-xyz/agave/pull/1886))                        |
+| `--accounts-db-caching-enabled` ([#2063](https://github.com/anza-xyz/agave/pull/2063))                     |
+| `--accounts-db-index-hashing` ([#2063](https://github.com/anza-xyz/agave/pull/2063))                       |
+| `--no-accounts-db-index-hashing` ([#2063](https://github.com/anza-xyz/agave/pull/2063))                    |
+| `--incremental-snapshots` ([#2148](https://github.com/anza-xyz/agave/pull/2148))                           |
+| `--halt-on-known-validators-accounts-hash-mismatch` ([#2157](https://github.com/anza-xyz/agave/pull/2157)) |
+
+### GitHub: Solanda Labs –> Anza Agave
+
+Over recent months, Anza's core engineers and Solana ecosystem developers have been progressively migrating the Agave validator client from the Solana Labs to Anza Agave repository. Once the Agave v2.0 update is released on Mainnet-Beta, the Solana Labs GitHub repository will be archived and no longer used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
