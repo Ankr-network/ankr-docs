@@ -22,6 +22,7 @@ Find the chain you require and go to its docs section by clicking it.
 
 |                         |           |              |   |     |                                                         |
 |-----------------------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------|
+| [Allora](/rpc-service/chains/chains-list/#allora)               | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)                 | [Fantom](/rpc-service/chains/chains-list/#fantom)               | [Kava](/rpc-service/chains/chains-list/#kava)         | [Optimism](/rpc-service/chains/chains-list/#optimism)             | [Sui](/rpc-service/chains/chains-list/#sui)               |
 | [Aptos](/rpc-service/chains/chains-list/#aptos)                 | [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Filecoin](/rpc-service/chains/chains-list/#filecoin)           | [Kinto](/rpc-service/chains/chains-list/#kinto)       | [Polkadot](/rpc-service/chains/chains-list/#polkadot)             | [Syscoin](/rpc-service/chains/chains-list/#syscoin)       |
 | [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)           | [Blast](/rpc-service/chains/chains-list/#blast)                       | [Flare](/rpc-service/chains/chains-list/#flare)                 | [Klaytn](/rpc-service/chains/chains-list/#klaytn)     | [Polygon](/rpc-service/chains/chains-list/#polygon)               | [Taiko](/rpc-service/chains/chains-list/#taiko)           |
 | [Arbitrum Nova](/rpc-service/chains/chains-list/#arbitrum-nova) | [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)   | [Gnosis](/rpc-service/chains/chains-list/#gnosis)               | [Kusama](/rpc-service/chains/chains-list/#kusama)     | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm)   | [Telos](/rpc-service/chains/chains-list/#telos)           |
@@ -31,7 +32,234 @@ Find the chain you require and go to its docs section by clicking it.
 | [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Electroneum](/rpc-service/chains/chains-list/#electroneum)           | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)  | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Sei](/rpc-service/chains/chains-list/#sei)                       | [XDC](/rpc-service/chains/chains-list/#xdc)               |
 | [Base](/rpc-service/chains/chains-list/#base)                   | [Ethereum](/rpc-service/chains/chains-list/#ethereum)                 | [Horizen EON](/rpc-service/chains/chains-list/#horizen-eon)     | [NEAR](/rpc-service/chains/chains-list/#near)         | [Solana](/rpc-service/chains/chains-list/#solana)                 | [X Layer](/rpc-service/chains/chains-list/#x-layer)       |
 | [Bitcoin](/rpc-service/chains/chains-list/#bitcoin)             | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)        | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Stellar](/rpc-service/chains/chains-list/#stellar)               | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
-| [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)           | [Fantom](/rpc-service/chains/chains-list/#fantom)                     | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                           |
+
+## Allora
+
+> Allora API is available on [Web3 API platform](https://www.ankr.com/rpc/allora).
+
+The Allora Network is an advanced protocol that leverages decentralized AI and machine learning (ML) to generate and share predictions among its participants. It provides a structured way for users to access on-chain AI predictions and pay the AI/ML node operators who produce these insights.
+
+Allora acts as a bridge between various parties — data owners, processors, AI/ML predictors, market analysts, and end-users — allowing them to utilize and act on these predictions. AI/ML agents on the network use their data and algorithms to broadcast predictions across a peer-to-peer network. They also evaluate predictions from other agents.
+
+The network’s consensus mechanism then combines these predictions and assessments, rewarding agents based on the quality of their contributions. This incentive system helps Allora continuously learn and adapt to changing market conditions.
+
+Official quick links:  [Website](https://www.allora.network/), [Docs](https://docs.allora.network/home/explore), [GitHub](https://github.com/allora-network)
+
+### Networks
+
+  * Testnet:
+    * Tendermint RPC API (`HTTPS` and `WSS`)
+    * Tendermint REST API (`HTTPS`)
+    * Cosmos REST API (`HTTPS`)
+
+### API methods
+
+For Allora, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/allora/) except for those listed as unsupported.
+
+#### Unsupported
+
+<Callout type="warning">
+This section contains a list of methods we don't support for either _Public_ or _Premium_ service plans.
+</Callout>
+
+<Callout type="tip">
+If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
+
+**Tendermint (both for REST and JSON-RPC)**:
+
+  `/health`,
+  `/genesis`,
+  `/broadcast_evidence`,
+  `/dial_seeds`,
+  `/dial_peers`,
+
+**Cosmos**:
+
+  `/cosmos/auth/v1beta1/address_by_id/{id}`,
+  `/cosmos/auth/v1beta1/module_accounts`,
+  `/cosmos/auth/v1beta1/bech32`,
+  `/cosmos/auth/v1beta1/bech32/{address_bytes}`,
+  `/cosmos/auth/v1beta1/bech32/{address_string}`,
+  `/cosmos/bank/v1beta1/supply/{denom}`,
+  `/cosmos/bank/v1beta1/denom_owners/{denom}`,
+  `/cosmos/bank/v1beta1/send_enabled`,
+  `/cosmos/base/reflection/v1beta1/interfaces`,
+  `/cosmos/base/reflection/v1beta1/interfaces/:interface_name/implementations`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/authn`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/chain`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/codec`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/configuration`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/query_services`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor`,
+  `/cosmos/base/tendermint/v1beta1/abci_query`,
+  `/cosmos/feegrant/v1beta1/issued/{granter}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}`,
+  `/cosmos/gov/v1/proposals`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/votes`,
+  `/cosmos/gov/v1/params/{params_type}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/deposits`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/tally`,
+  `/cosmos/group/v1/group_info/{group_id}`,
+  `/cosmos/group/v1/group_policy_info/{address}`,
+  `/cosmos/group/v1/group_members/{group_id}`,
+  `/cosmos/group/v1/groups_by_admin/{admin}`,
+  `/cosmos/group/v1/group_policies_by_group/{group_id}`,
+  `/cosmos/group/v1/group_policies_by_admin/{admin}`,
+  `/cosmos/group/v1/proposal/{proposal_id}`,
+  `/cosmos/group/v1/proposals_by_group_policy/{address}`,
+  `/cosmos/group/v1/vote_by_proposal_voter/{proposal_id}/{voter}`,
+  `/cosmos/group/v1/votes_by_proposal/{proposal_id}`,
+  `/cosmos/group/v1/votes_by_voter/{voter}`,
+  `/cosmos/group/v1/groups_by_member/{address}`,
+  `/cosmos/group/v1/proposals/{proposal_id}/tally`,
+  `/cosmos/nft/v1beta1/balance/{owner}/{class_id}`,
+  `/cosmos/nft/v1beta1/owner/{class_id}/{id}`,
+  `/cosmos/nft/v1beta1/supply/{class_id}`,
+  `/cosmos/nft/v1beta1/nfts`,
+  `/cosmos/nft/v1beta1/nfts/{class_id}/{id}`,
+  `/cosmos/nft/v1beta1/classes/{class_id}`,
+  `/cosmos/nft/v1beta1/classes`,
+  `/cosmos/params/v1beta1/subspaces`,
+  `/cosmos/upgrade/v1beta1/module_versions`,
+  `/cosmos/upgrade/v1beta1/authority`,
+  `/cosmos/base/tendermint/v1beta1/node_info`,
+  `/cosmos/base/tendermint/v1beta1/syncing`,
+  `/cosmos/params/v1beta1/params`,
+
+  `/syncing`,
+  `/blocks/latest`,
+  `/blocks/{height}`,
+  `/validatorsets/latest`,
+  `/validatorsets/{height}`,
+  `/wasm/code`,
+  `/wasm/code/{codeID}`,
+  `/wasm/code/{codeID}/contracts`,
+  `/wasm/contract/{contractAddress}`,
+  `/wasm/contract/{contractAddress}/code-hash`,
+  `/wasm/contract/{contractAddress}/query/{query}`,
+  `/wasm/code/{codeID}/hash`,
+  `/reg/consensus-io-exch-pubkey`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "Tendermint JSON-RPC",
+    "Tendermint REST",
+    "Cosmos REST"
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block",
+      "params": ["761001"],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/block?height=761001
+```
+  </Tab>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1beta1/blocks/{height}
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": -1,
+    "result": {
+        "block_id": {
+            "hash": "663789D1BAA0354453A5BB1474C46C9F74E6140B247153482BBE84893C029600",
+            "parts": {
+                "total": 1,
+                "hash": "BFCC2C78C439E367ABEEA996FD9A120EAA70DC44572B8BFDCA032908BA4B439B"
+            }
+        },
+        "block": {
+            "header": {
+                "version": {
+                    "block": "11"
+                },
+                "chain_id": "allora-testnet-1",
+                "height": "761001",
+                "time": "2024-08-21T21:33:36.088780054Z",
+                "last_block_id": {
+                    "hash": "AD51186842A63CB515A4946C558DF1DA71D384DF646EC5522ECD5008E3FAEDA0",
+                    "parts": {
+                        "total": 1,
+                        "hash": "16A9CCD523F2E593E66F46CBD20FCC03B5849ACE5325951E50BC53B6D7D2F893"
+                    }
+                },
+                "last_commit_hash": "77BE45E09B5A5F40FA1F10BF430C2E14371445B9E2DF89952478E84A98DFA081",
+                "data_hash": "78F2AF9D01AC871045FB53CB383AA50EF4C0094E9563428BFF8BA59071801050",
+                "validators_hash": "CB957FF7AB192A9F9321F0E471C7BAE5A9AA82573FF8D509F8ACF7CA3A450A42",
+                "next_validators_hash": "CB957FF7AB192A9F9321F0E471C7BAE5A9AA82573FF8D509F8ACF7CA3A450A42",
+                "consensus_hash": "048091BC7DDC283F77BFBF91D73C44DA58C3DF8A9CBC867405D8B7F3DAADA22F",
+                "app_hash": "72AEC5979CEA9EE65275B77DA8F31676C7E52DA57B991D86C4870237E3D40127",
+                "last_results_hash": "455FD6D9D1888EBE5B8602E20E84EEACA30020B717A5B5298890E7236CAB84AD",
+                "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "proposer_address": "01458B61F0D7DE6E90798FE8C370413D718EB34C"
+            },
+            "data": {
+                "txs": [
+                    "CuECCt4CCiQvZW1pc3Npb25zLnYyLk1zZ0luc2VydFdvcmtlclBheWxvYWQStQIKK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHcShQIKK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHcSBAiRuS4YBSJICkYIBRCRuS4aK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHciETE0NS42NTg1MDk2NjIzMjkzKkBkgCxd7XHQh+Debe/yvS+c8BBoKguydI/J/YNqRaYpBDpnwQo+4/LPouiYF04JXDBa4qxTfJFlpdSJ9EgoX+TAMkIwMmQ4MjYzOTFiYWI4ZjYzNWYzNDhkYmQxNDQ1ZGUxZmQ0YjgzZjNiNGJiZjFkY2EzY2Q4YWFjM2FlMWMyYmY5ODcSWApQCkYKHy9jb3Ntb3MuY3J5cHRvLnNlY3AyNTZrMS5QdWJLZXkSIwohAtgmORurj2NfNI29FEXeH9S4PztLvx3KPNiqw64cK/mHEgQKAggBGCkSBBDAhD0aQN1AnyLR2Kz/KMZ5yr+Sz4wo+4Tp8OnyDqSlr98oCNQVPtF69bWneamHvTEq7r5WUGuwQfWSD+sybXlUgnDlmIw=",
+                    "CuECCt4CCiQvZW1pc3Npb25zLnYyLk1zZ0luc2VydFdvcmtlclBheWxvYWQStQIKK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2cShQIKK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2cSBAiTuS4YAyJICkYIAxCTuS4aK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2ciETYxMzI3LjIzMTM5NzQ3MTg1KkA2b71NaRNK8PFRv+nLbaTfB53wu/AqI4cGoFYED/4U/3c8JOYW+Q2moUdlX35tKF0U2gneVA2jQy0vmem8uIz6MkIwMzA5Zjg2ZWY3YzNlM2IyZjUzMzg3OGZiNjY2Mjk1NjljNjFkYTNhMzg2OTkyNjNmMWM4MDhlMTcxMTQzOWYxMmMSWQpRCkYKHy9jb3Ntb3MuY3J5cHRvLnNlY3AyNTZrMS5QdWJLZXkSIwohAwn4bvfD47L1M4ePtmYpVpxh2jo4aZJj8cgI4XEUOfEsEgQKAggBGLJKEgQQwIQ9GkAYepebNx4qruj3/XCxlmVQ3XDbhfsXZlZyM+yeqUs7d263LfRxugRgQH3aiV/ROiC/gVH0bID6GA00y5QMWM+B"
+                ]
+            },
+            "evidence": {
+                "evidence": []
+            },
+            "last_commit": {
+                "height": "761000",
+                "round": 0,
+                "block_id": {
+                    "hash": "AD51186842A63CB515A4946C558DF1DA71D384DF646EC5522ECD5008E3FAEDA0",
+                    "parts": {
+                        "total": 1,
+                        "hash": "16A9CCD523F2E593E66F46CBD20FCC03B5849ACE5325951E50BC53B6D7D2F893"
+                    }
+                },
+                "signatures": [
+                    {
+                        "block_id_flag": 1,
+                        "validator_address": "",
+                        "timestamp": "0001-01-01T00:00:00Z",
+                        "signature": null
+                    },
+                    {
+                        "block_id_flag": 2,
+                        "validator_address": "2D5A6E69CDFBE8FF7C0C2DAFF752387AC73B9AB1",
+                        "timestamp": "2024-08-21T21:33:36.07519025Z",
+                        "signature": "LvyV25u8kxAivi7rHuAZlXtawVBMYyOJflcr4al44TWVLmYnztqycSgGyi1S9GkUGoeA4nG+wRM/4pqk4YIKDQ=="
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
+---
 
 ## Aptos
 <br/>
