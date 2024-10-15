@@ -33,7 +33,7 @@ To deploy a rollup using a Testnet network, follow these steps:
   1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://rollup.asphere.xyz/) platform.
   2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
   3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
-      * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack), [OP Stack](/scaling-services-overview/#op-stack).
+      * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [OP Stack](/scaling-services-overview/#op-stack), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack).
      <img src="/docs/scale/stack.png" class="responsive-pic" width="700" />
       * **Network**: Select **Testnet** — an option to explore the rollup functionality for free (48 hours).
      <img src="/docs/scale/network.png" class="responsive-pic" width="700" />
@@ -70,13 +70,13 @@ To deploy a rollup using a Mainnet network, follow these steps:
   1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
   2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
   3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
-      * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack), [OP Stack](/scaling-services-overview/#op-stack).
+      * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [OP Stack](/scaling-services-overview/#op-stack), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack).
      <img src="/docs/scale/stack.png" class="responsive-pic" width="700" />
       * **Network**: Select **Mainnet** — to deploy your rollup on a fully operational blockchain network.
      <img src="/docs/scale/network-mainnet.png" class="responsive-pic" width="700" />
       * **Infrastructure Package**: Upon selecting Mainnet, you have to select the Infrastructure to be used for your rollup solution:
-        * **Starter Package**: Starter RPC Package, Bridge, Block Explorer, Aggregator, Synchronizer.
-        * **Advanced Package**: Pro RPC Package, Bridge, Block Explorer, Aggregator, Synchronizer.
+        * **Starter Package**: Starter RPC Package, Bridge, Block Explorer, Synchronizer.
+        * **Advanced Package**: Pro RPC Package, Bridge, Block Explorer, Synchronizer.
       * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Arbitrum AnyTrust](/scaling-services-overview/#arbitrum-anytrust), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
      <img src="/docs/scale/da-layer.png" class="responsive-pic" width="700" />
   4. On the **Sequencer** tab, select whether you'd like to have an Ankr-managed sequencer or a self-managed sequencer.
@@ -200,3 +200,11 @@ Congrats — you've just added a Testnet chain to the bridge UI for local use!
 To have a Mainnet chain added to the Arbitrum bridge, there are two options available:
   * Request adding a Mainnet chain by filling out the [form](https://docs.google.com/forms/d/e/1FAIpQLSeHusW27KPta53XMD2HAIfgzubQbIxW1ghqOCuXfg-ocWpMeQ/viewform).
   * Fork and host the bridge UI, modifying it to add mainnet chains. The bridge UI can be found on [OffchainLabs' GitHib](https://github.com/OffchainLabs/arbitrum-token-bridge).
+
+---
+
+## OP Stack: Bridging
+
+The OP Stack is designed to build Layer 2 systems that are deeply integrated with Ethereum. While OP Mainnet handles transaction execution off-chain, developers need the ability to transfer data and tokens between OP Mainnet and Ethereum. This process is known as bridging.
+
+For more information, refer to the [Bridging Basics](https://docs.optimism.io/builders/app-developers/bridging/basics) section in the official Optimism documentation.
