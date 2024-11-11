@@ -46,7 +46,7 @@ To deploy a rollup using a Testnet network, follow these steps:
      <img src="/docs/scale/rollup-name.png" class="responsive-pic" width="500" />
       * **Gas Token**
         * **ETH**: Use ETH to pay your network's gas fees.
-        * **Custom Gas Token** (If DA layer = AnyTrust): For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#custom-gas-token) created and deployed on the network.
+        * **Custom Gas Token** (if `Arbitrum Stack + AnyTrust DA` or `OP Stack + Ethereum DA` combinations selected): For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#custom-gas-token) created and deployed on the network.
      <img src="/docs/scale/gas-token.png" class="responsive-pic" width="500" />
   5. On the **Infrastructure** tab, check the components included in the Starter package, and then click **Confirm**.
 <img src="/docs/scale/infra-package.png" class="responsive-pic" width="700" />
@@ -88,7 +88,7 @@ To deploy a rollup using a Mainnet network, follow these steps:
      <img src="/docs/scale/rollup-name.png" class="responsive-pic" width="500" />
       * **Gas Token**
         * **ETH**: Use ETH to pay your network's gas fees.
-        * **Custom Gas Token** (If DA layer = AnyTrust): For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#custom-gas-token) created and deployed on the network.
+        * **Custom Gas Token** (if `Arbitrum Stack + AnyTrust DA` or `OP Stack + Ethereum DA` combinations selected): For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#custom-gas-token) created and deployed on the network.
      <img src="/docs/scale/gas-token.png" class="responsive-pic" width="500" />
   6. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
 <img src="/docs/scale/mainnet-infra-package.png" class="responsive-pic" width="700" />
@@ -102,9 +102,11 @@ Congrats — you've just configured and deployed your Mainnet rollup!
 
 ## Custom Gas Token
 
-Deploying your AnyTrust Orbit chain, you have the option of using a custom gas token, other than ETH, for gas payments on the network. When choosing this option, there are certain requirements that the token needs to comply with.
+Deploying your AnyTrust Orbit chain or OP Stack chain, you have the option of using a custom gas token, other than ETH, for gas payments on the network. When choosing this option, there are certain requirements that the token needs to comply with.
 
-### Requirements
+### AnyTrust Orbit chain
+
+**Requirements**
 
 A custom gas token must meet the following requirements:
 
@@ -120,6 +122,23 @@ A custom gas token must meet the following requirements:
   * The token must only be able to set allowances via direct calls to the token address.
   * The token must not have a callback on transfer.
   * Users must not be able to make a transfer to themselves that results in a revert.
+
+### OP Stack chain
+
+**Requirements**
+
+The custom gas token must adhere to the following constraints:
+
+  * Must be a valid ERC-20 token.
+  * The number of decimals on the token MUST be exactly 18.
+  * The name of the token MUST be less than or equal to 32 bytes.
+  * Symbol MUST be less than or equal to 32 bytes.
+  * Must not be yield-bearing.
+  * Cannot be rebasing or have a transfer fee.
+  * Must be transferrable only via a call to the token address itself.
+  * Must only be able to set allowance via a call to the token address itself.
+  * Must not have a callback on transfer, and more generally a user must not be able to make a transfer to themselves revert.
+  * A user must not be able to make a transfer have unexpected side effects.
 
 ## Arbitrum Bridge Setup
 
