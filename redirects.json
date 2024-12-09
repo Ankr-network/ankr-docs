@@ -2094,5 +2094,9 @@
   {
     "from": "docs/scaling-services-btc-l2/index.html",
     "to": "/docs/scaling-services-bsi/"
+  },
+  {
+    "from": "docs/rpc-service/chains/chains-api/klaytn/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/kaia/"
   }
 ]

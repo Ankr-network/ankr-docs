@@ -1,63 +1,55 @@
 import { Callout } from "components";
 
-# Klaytn
-<br/>
+# Kaia
 
-<img src="/docs/build/chains-list/klaytn.png" class="responsive-pic" width="800" />
+> Kaia API is available on [Web3 API platform](https://www.ankr.com/rpc/kaia).
 
-> Klaytn API is available on [Web3 API platform](https://www.ankr.com/rpc/klaytn).
+*Kaia* is an EVM-compatible Layer 1 public blockchain designed to bring Web3 services to millions of users across Asia. Formed through the merger of the Klaytn and Finschia blockchains — initially developed by Kakao and LINE respectively — Kaia aims to integrate a broad user base with vast on-chain assets and technology to help builders promptly implement and expand their ideas with successful results.
 
-*Klaytn* is a highly optimized, BFT-based public blockchain that aims to meet the enterprise-grade reliability.
+Key Features of Kaia:
 
-Klaytn launched its mainnet, Cypress, on Jun/27/2019 with the following specification:
+  * **High Performance**: Kaia achieves immediate transaction finality with a 1-second block time, processing approximately 4,000 transactions per second.
+  * **User Accessibility**: By integrating with popular messaging apps like KakaoTalk and LINE, Kaia provides easy access to existing Web2 users, facilitating seamless onboarding to Web3 services.
+  * **Developer-Friendly Environment**: Kaia offers EVM equivalence, allowing developers to deploy existing Ethereum-based applications with minimal modifications. Planned support for CosmWasm and integration with industry-leading cross-chain bridges provide developers with unparalleled flexibility.
+  * **Scalability**: The network's modular architecture supports customizable and easily deployable service chains as Layer 2 solutions, enhancing scalability for high-throughput services.
+  * **Governance**: Kaia implements an on-chain governance system designed to be fair and inclusive, with voting rights proportional to the amount of KAIA tokens staked.
 
-  * 1-second block generation and confirmation time.
-  * 4,000 transactions per second.
-  * Low gas price that is almost 1/10 of Ethereum.
-  * Runs EVM (Ethereum Virtual Machine) and supports the execution of Solidity contracts.
-  * 19 reputable corporations worldwide initially formed Klaytn Governance Council to operate consensus nodes. The current number of consensus nodes is shown in the [Klaytnscope](https://scope.klaytn.com/).
-  * More than 50 initial service partners have committed to launch Blockchain Applications on Klaytn.
-
-In order for your Web3 application to interact with Klaytn — either by reading blockchain data or sending transactions to the network — it must connect to a Klaytn node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with Kaia — either by reading blockchain data or sending transactions to the network — it must connect to a Kaia node. Developers interact with the blockchain using the methods provided by the API.
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
-
----
-
-## Klaytn native methods (under construction)
 
 ---
 
 ## EVM Methods
 <br/>
 
-  * [`web3_clientVersion`](/rpc-service/chains/chains-api/klaytn/#web3_clientversion) — returns the current client version.
-  * [`web3_sha3`](/rpc-service/chains/chains-api/klaytn/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
-  * [`net_version`](/rpc-service/chains/chains-api/klaytn/#net_version) — returns the current network ID.
-  * [`eth_syncing`](/rpc-service/chains/chains-api/klaytn/#eth_syncing) — returns data on the sync status or false.
-  * [`eth_gasPrice`](/rpc-service/chains/chains-api/klaytn/#eth_gasprice) — returns the current price per gas in wei.
-  * [`eth_accounts`](/rpc-service/chains/chains-api/klaytn/#eth_accounts) — returns a list of addresses owned by client.
-  * [`eth_blockNumber`](/rpc-service/chains/chains-api/klaytn/#eth_blocknumber) — returns the number of most recent block.
-  * [`eth_getBalance`](/rpc-service/chains/chains-api/klaytn/#eth_getbalance) — returns the balance of the account specified by address.
-  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/klaytn/#eth_getstorageat) — returns the value from a storage position at an address specified.
-  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactioncount) — returns the number of transactions sent from an address.
-  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/klaytn/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
-  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
-  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/klaytn/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
-  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
-  * [`eth_getCode`](/rpc-service/chains/chains-api/klaytn/#eth_getcode) — returns code at an address specified.
-  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/klaytn/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
-  * [`eth_call`](/rpc-service/chains/chains-api/klaytn/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
-  * [`eth_estimateGas`](/rpc-service/chains/chains-api/klaytn/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/klaytn/#eth_getblockbyhash) — returns information for the block specified by block hash.
-  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/klaytn/#eth_getblockbynumber) — returns information for the block specified by block number.
-  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
-  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
-  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
-  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
-  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
-  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/klaytn/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
-  * [`eth_getLogs`](/rpc-service/chains/chains-api/klaytn/#eth_getlogs) — returns logs matching the parameters specified.
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/kaia/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/kaia/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/kaia/#net_version) — returns the current network ID.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/kaia/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/kaia/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/kaia/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/kaia/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/kaia/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/kaia/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/kaia/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/kaia/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/kaia/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/kaia/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/kaia/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/kaia/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/kaia/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/kaia/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/kaia/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/kaia/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/kaia/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/kaia/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/kaia/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/kaia/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/kaia/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/kaia/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/kaia/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/kaia/#eth_getlogs) — returns logs matching the parameters specified.
 
 ---
 
@@ -71,7 +63,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
+  * `params` (array; required): none.
 
 ### Returns
 <br/>
@@ -81,7 +73,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -97,7 +89,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "Klaytn/v1.10.1/linux-amd64/go1.15.7"
+    "result": "Klaytn/v1.0.3/linux-amd64/go1.22.1"
 }
 ```
 
@@ -125,7 +117,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -157,7 +149,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
+  * `params` (array; required): none.
 
 ### Returns
 <br/>
@@ -167,7 +159,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -199,7 +191,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
+  * `params` (array; required): none.
 
 ### Returns
 <br/>
@@ -212,7 +204,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -222,21 +214,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
     }'
 ```
 
-### Response example (syncing)
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-        "startingBlock": "0x384",
-        "currentBlock": "0x386",
-        "highestBlock": "0x454"
-    }
-}
-```
-
-### Response example (not syncing)
+### Response example
 
 ```json
 {
@@ -258,7 +236,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
+  * `params` (array; required): none.
 
 ### Returns
 <br/>
@@ -268,7 +246,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -284,7 +262,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0xba43b7400"
+    "result": "0x66720b300"
 }
 ```
 
@@ -300,7 +278,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array): None.
+  * `params` (array): none.
 
 ### Returns
 <br/>
@@ -310,7 +288,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -327,7 +305,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
     "id": 1,
     "jsonrpc": "2.0",
     "result": [
-        "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
+        "0xbfd7dd5ea8f7407c17965d4678327468001c3e9c"
     ]
 }
 ```
@@ -344,7 +322,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
+  * `params` (array; required): none.
 
 ### Returns
 <br/>
@@ -354,7 +332,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -370,7 +348,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x6d28a01"
+    "result": "0xa3c77ee"
 }
 ```
 
@@ -404,7 +382,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -420,7 +398,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x6f861f920892c0647a"
+    "result": "0x4f11f44d83e358f1f1"
 }
 ```
 
@@ -456,7 +434,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -507,7 +485,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -523,7 +501,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x9"
+    "result": "0x0"
 }
 ```
 
@@ -551,12 +529,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example:
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByHash",
-      "params": ["0x829df9bb801fc0494abf2f443423a49ffa32964554db71b098d332d87b70a48b"],
+      "params": ["0x8e19dc520cc1fd908c95f0c7a15fb3b48feda7051cb01bcfd094348e34ba2be8"],
       "id": 1
     }'
 ```
@@ -567,7 +545,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x7b"
+    "result": "0x16"
 }
 ```
 
@@ -600,12 +578,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getBlockTransactionCountByNumber",
-      "params": ["0x36c1d18"],
+      "params": ["0xA3C7A17"],
       "id": 1
     }'
 ```
@@ -616,7 +594,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x2"
+    "result": "0x16"
 }
 ```
 
@@ -634,7 +612,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
   * `method` (string; required): a method used for the request.
   * `params` (array; required): 
 
-    1. `<string>` (data, 32 bytes): a block's hash.
+    1. `<string>` (data, 32 bytes): a block hash.
 
 ### Returns
 <br/>
@@ -644,12 +622,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockHash",
-      "params": ["0xf1230a5bd7da128695c63cacc449aa25501d5cb164d710863a0a7a3512e78749"],
+      "params": ["0x8e19dc520cc1fd908c95f0c7a15fb3b48feda7051cb01bcfd094348e34ba2be8"],
       "id": 1
     }'
 ```
@@ -693,12 +671,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getUncleCountByBlockNumber",
-      "params": ["0xc5043f"],
+      "params": ["0xA3C7A17"],
       "id": 1
     }'
 ```
@@ -743,12 +721,12 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "eth_getCode",
-      "params": ["0xd5ae677feed771de3c08524364a1895ce21e220e", "latest"],
+      "params": ["0x7f5923e9c58d759a446705bcfe2493b10788f4c7", "latest"],
       "id": 1
     }'
 ```
@@ -784,17 +762,17 @@ curl -X POST https://rpc.ankr.com/klaytn \
 
   * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/klaytn/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/kaia/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_sendRawTransaction",
-    "params": ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"],
+    "params": ["signed_transaction_data"],
     "id": 1
 }'
 ```
@@ -846,12 +824,17 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_call",
-    "params": [{"from":null,"to":"0x6b175474e89094c44da98b954eedeac495271d0f","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "params": [
+        {
+            "to": "0x7f5923e9c58d759a446705bcfe2493b10788f4c7"
+        },
+        "latest"
+    ],
     "id": 1
 }'
 ```
@@ -862,7 +845,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x0000000000000000000000000000000000000000000000000858898f93629000"
+    "result": "0x"
 }
 ```
 
@@ -905,12 +888,19 @@ The transaction will not be added to the blockchain. Note that the estimate may 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc": "2.0",
     "method": "eth_estimateGas",
-    "params": [{"from":null,"to":"0x6b175474e89094c44da98b954eedeac495271d0f","data":"0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"}, "latest"],
+    "params": [
+        {
+            "from": null,
+            "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+            "data": "0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE"
+        },
+        "latest"
+    ],
     "id": 1
 }'
 ```
@@ -969,7 +959,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1064,7 +1054,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1161,7 +1151,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1235,7 +1225,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1314,7 +1304,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1393,7 +1383,7 @@ The receipt is not available for pending transactions.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1488,7 +1478,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1502,30 +1492,9 @@ curl -X POST https://rpc.ankr.com/klaytn \
 
 ```json
 {
-    "jsonrpc": "2.0",
     "id": 1,
-    "result": {
-        "difficulty": "0x4ea3f27bc",
-        "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
-        "gasLimit": "0x1388",
-        "gasUsed": "0x0",
-        "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
-        "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
-        "nonce": "0x689056015818adbe",
-        "number": "0x1b4",
-        "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x220",
-        "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
-        "timestamp": "0x55ba467c",
-        "totalDifficulty": "0x78ed983323d",
-        "transactions": [],
-        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "uncles": []
-    }
+    "jsonrpc": "2.0",
+    "result": null
 }
 ```
 
@@ -1578,7 +1547,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1592,30 +1561,9 @@ curl -X POST https://rpc.ankr.com/klaytn \
 
 ```json
 {
-    "jsonrpc": "2.0",
     "id": 1,
-    "result": {
-        "difficulty": "0x57f117f5c",
-        "extraData": "0x476574682f76312e302e302f77696e646f77732f676f312e342e32",
-        "gasLimit": "0x1388",
-        "gasUsed": "0x0",
-        "hash": "0x932bdf904546a2287a2c9b2ede37925f698a7657484b172d4e5184f80bdd464d",
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "miner": "0x5bf5e9cf9b456d6591073513de7fd69a9bef04bc",
-        "mixHash": "0x4500aa4ee2b3044a155252e35273770edeb2ab6f8cb19ca8e732771484462169",
-        "nonce": "0x24732773618192ac",
-        "number": "0x299",
-        "parentHash": "0xa779859b1ee558258b7008bbabff272280136c5dd3eb3ea3bfa8f6ae03bf91e5",
-        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0x21d",
-        "stateRoot": "0x2604fbf5183f5360da249b51f1b9f1e0f315d2ff3ffa1a4143ff221ad9ca1fec",
-        "timestamp": "0x55ba4827",
-        "totalDifficulty": "0xc46826a2c6a",
-        "transactions": [],
-        "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-        "uncles": []
-    }
+    "jsonrpc": "2.0",
+    "result": null
 }
 ```
 
@@ -1667,7 +1615,7 @@ curl -X POST https://rpc.ankr.com/klaytn \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/klaytn \
+curl -X POST https://rpc.ankr.com/kaia \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1683,37 +1631,6 @@ curl -X POST https://rpc.ankr.com/klaytn \
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": [
-        {
-            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-            "topics": [
-                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                "0x0000000000000000000000009acbb72cf67103a30333a32cd203459c6a9c3311",
-                "0x000000000000000000000000994871e1103c5da4be270365fa62771ea4525520"
-            ],
-            "data": "0x000000000000000000000000000000000000000000000000000000001ec39aa0",
-            "blockNumber": "0xf6289d",
-            "transactionHash": "0xc7ed73c9b219d4243872e5993ad2950c8ea87d15af28562d33b0c05d46a90cee",
-            "transactionIndex": "0x1e",
-            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
-            "logIndex": "0x13",
-            "removed": false
-        },
-        {
-            "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-            "topics": [
-                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                "0x0000000000000000000000005879975799597392c031f10b6eff282cb7974ac8",
-                "0x0000000000000000000000006d52ab66340f3f78d0c1007bec484268876b5948"
-            ],
-            "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
-            "blockNumber": "0xf6289d",
-            "transactionHash": "0x0118499f7be4c3510bd60fe3a3aee5f5f316743b6cc13a8cb0528d784f962aec",
-            "transactionIndex": "0x20",
-            "blockHash": "0x1e12377f0357320c0e5cfcadc2dfbc9c75fc339be668e118c34e4333f835ef31",
-            "logIndex": "0x14",
-            "removed": false
-        }
-    ]
+    "result": []
 }
 ```
