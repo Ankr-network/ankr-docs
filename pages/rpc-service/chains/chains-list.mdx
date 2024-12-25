@@ -5409,10 +5409,10 @@ Official quick links: [Website](https://www.kava.io/), [Docs](https://docs.kava.
 ### Networks
 
   * Mainnet:
-    * REST API (`HTTPS`)
+    * Cosmos REST API (`HTTPS`)
     * EVM JSON-RPC API (`HTTPS` and `WSS`)
     * Tendermint REST API (`HTTPS`)
-    * JSON-RPC API (`HTTPS` and `WSS`)
+    * Tendermint JSON-RPC API (`HTTPS` and `WSS`)
 
 ### API methods
 
@@ -5449,16 +5449,14 @@ For Kava, we support blockchain interaction via all the [applicable methods](/rp
   `/dial_seeds`,
   `/dial_peers`
 
-### API querying (EVM JSON-RPC)
+### API querying
 
-#### Request example
+#### EVM JSON-RPC
 
 <Tabs
   items={[
-    "cURL",
-    "Golang",
-    "Web3.JS",
-    "Python",
+    "Request example",
+    "Response example"
   ]}
 >
   <Tab>
@@ -5476,75 +5474,252 @@ curl -X POST https://rpc.ankr.com/kava_evm \
   </Tab>
   <Tab>
 
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "github.com/ethereum/go-ethereum/ethclient"
-)
-
-func main() {
-    const url = "https://rpc.ankr.com/kava_evm"  // url string
-
-    rpcClient,err := ethclient.Dial(url)
-
-    if err != nil {
-        panic(err)
-    }
-
-    blockNumber, err := rpcClient.BlockNumber(context.Background())
-
-    if err != nil {
-        panic(err)
-    }
-
-    fmt.Println(blockNumber)
-}
-```
-  </Tab>
-  <Tab>
-
-```js
-const Web3 = require('web3');
-
-const url = 'https://rpc.ankr.com/kava_evm'  // url string
-
-const web3 = new Web3(new Web3.providers.HttpProvider(url));
-
-web3.eth.getBlockNumber((error, blockNumber) => {
-    if(!error) {
-        console.log(blockNumber);
-    } else {
-        console.log(error);
-    }
-});
-```
-  </Tab>
-  <Tab>
-
-```python
-from web3 import Web3
-
-def test_block_number(self):
-    url = 'https://rpc.ankr.com/kava_evm'  # url string
-
-    web3 = Web3(HTTPProvider(url))
-    print(web3.eth.block_number)
-```
-  </Tab>
-</Tabs>
-
-#### Response example
-
 ```json
 {
   "jsonrpc":"2.0",
   "id":1,
-  "result":"0x8472af"
+  "result":"0xca0842"
 }
 ```
+  </Tab>
+</Tabs>
+
+#### Tendermint REST
+
+<Tabs
+  items={[
+    "Request example",
+    "Response example"
+  ]}
+>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/kava_rpc/blockchain?minHeight=1&maxHeight=2
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "last_height": "13211309",
+        "block_metas": [
+            {
+                "block_id": {
+                    "hash": "606AA3A0B325273C27FCD254D528DCCB968351ECF4C045920517A5269D76DB4E",
+                    "parts": {
+                        "total": 1,
+                        "hash": "8B827E255B0EFF6D3D66315F9460D180D7A1988A5281DE11699CE204A0308E79"
+                    }
+                },
+                "block_size": "6590",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "kava_2222-10",
+                    "height": "2",
+                    "time": "2022-05-25T18:39:32.196946927Z",
+                    "last_block_id": {
+                        "hash": "9D2AF876309BB9174604004A813DCFEE94F4947B08C5BB4C1A042F318488851E",
+                        "parts": {
+                            "total": 1,
+                            "hash": "510794F966632A503431FE4515D6C15D49BCFEA9E6753E06E582C8D26C826294"
+                        }
+                    },
+                    "last_commit_hash": "093DC4B1414DE776AAC2388AAD616FCAC5E783930420710395732259CA023DB8",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "next_validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "consensus_hash": "AD82B220C509602720D74FD75BCE7CFE9B148039958F236D8894E00EB1599E04",
+                    "app_hash": "4107A4EABA68DEF282B97D5071440DFB121307B524B0E2B64D7F348CB57E74A9",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "330871F4F79EF8572E4AB3A64A45AF0C88AFC24E"
+                },
+                "num_txs": "0"
+            },
+            {
+                "block_id": {
+                    "hash": "9D2AF876309BB9174604004A813DCFEE94F4947B08C5BB4C1A042F318488851E",
+                    "parts": {
+                        "total": 1,
+                        "hash": "510794F966632A503431FE4515D6C15D49BCFEA9E6753E06E582C8D26C826294"
+                    }
+                },
+                "block_size": "339",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "kava_2222-10",
+                    "height": "1",
+                    "time": "2022-05-25T17:00:00Z",
+                    "last_block_id": {
+                        "hash": "",
+                        "parts": {
+                            "total": 0,
+                            "hash": ""
+                        }
+                    },
+                    "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "next_validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "consensus_hash": "AD82B220C509602720D74FD75BCE7CFE9B148039958F236D8894E00EB1599E04",
+                    "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "BFA6235D95564560A73460860B8D6F847360A31B"
+                },
+                "num_txs": "0"
+            }
+        ]
+    }
+}
+```
+  </Tab>
+</Tabs>
+
+#### Tendermint JSON-RPC
+
+<Tabs
+  items={[
+    "Request example",
+    "Response example"
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/kava_rpc \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "blockchain",
+      "params": ["1", "2"],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "last_height": "13211309",
+        "block_metas": [
+            {
+                "block_id": {
+                    "hash": "606AA3A0B325273C27FCD254D528DCCB968351ECF4C045920517A5269D76DB4E",
+                    "parts": {
+                        "total": 1,
+                        "hash": "8B827E255B0EFF6D3D66315F9460D180D7A1988A5281DE11699CE204A0308E79"
+                    }
+                },
+                "block_size": "6590",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "kava_2222-10",
+                    "height": "2",
+                    "time": "2022-05-25T18:39:32.196946927Z",
+                    "last_block_id": {
+                        "hash": "9D2AF876309BB9174604004A813DCFEE94F4947B08C5BB4C1A042F318488851E",
+                        "parts": {
+                            "total": 1,
+                            "hash": "510794F966632A503431FE4515D6C15D49BCFEA9E6753E06E582C8D26C826294"
+                        }
+                    },
+                    "last_commit_hash": "093DC4B1414DE776AAC2388AAD616FCAC5E783930420710395732259CA023DB8",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "next_validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "consensus_hash": "AD82B220C509602720D74FD75BCE7CFE9B148039958F236D8894E00EB1599E04",
+                    "app_hash": "4107A4EABA68DEF282B97D5071440DFB121307B524B0E2B64D7F348CB57E74A9",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "330871F4F79EF8572E4AB3A64A45AF0C88AFC24E"
+                },
+                "num_txs": "0"
+            },
+            {
+                "block_id": {
+                    "hash": "9D2AF876309BB9174604004A813DCFEE94F4947B08C5BB4C1A042F318488851E",
+                    "parts": {
+                        "total": 1,
+                        "hash": "510794F966632A503431FE4515D6C15D49BCFEA9E6753E06E582C8D26C826294"
+                    }
+                },
+                "block_size": "339",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "kava_2222-10",
+                    "height": "1",
+                    "time": "2022-05-25T17:00:00Z",
+                    "last_block_id": {
+                        "hash": "",
+                        "parts": {
+                            "total": 0,
+                            "hash": ""
+                        }
+                    },
+                    "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "next_validators_hash": "9D8248DFDD2C7571A1FB66F43C21FF698BACE04A4F2802AF63ED70FB7DC91B57",
+                    "consensus_hash": "AD82B220C509602720D74FD75BCE7CFE9B148039958F236D8894E00EB1599E04",
+                    "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "BFA6235D95564560A73460860B8D6F847360A31B"
+                },
+                "num_txs": "0"
+            }
+        ]
+    }
+}
+```
+  </Tab>
+</Tabs>
+
+#### Cosmos REST
+
+<Tabs
+  items={[
+    "Request example",
+    "Response example"
+  ]}
+>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/kava_api/cosmos/auth/v1beta1/params
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "params": {
+        "max_memo_characters": "512",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+    }
+}
+```
+  </Tab>
+</Tabs>
 
 ---
 
