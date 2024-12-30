@@ -22,6 +22,7 @@ Find the chain you require and go to its docs section by clicking it.
 
 |                         |           |              |   |     |                                                         |
 |-----------------------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------|
+| [0G](/rpc-service/chains/chains-list/#0g)                       | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)                 | [Filecoin](/rpc-service/chains/chains-list/#filecoin)           | [Kinto](/rpc-service/chains/chains-list/#kinto)                 | [Rollux](/rpc-service/chains/chains-list/#rollux)                 | [Telos](/rpc-service/chains/chains-list/#telos)           |
 | [Allora](/rpc-service/chains/chains-list/#allora)               | [BitTorrent Chain](/rpc-service/chains/chains-list/#bittorrent-chain) | [Flare](/rpc-service/chains/chains-list/#flare)                 | [Kusama](/rpc-service/chains/chains-list/#kusama)               | [Scroll](/rpc-service/chains/chains-list/#scroll)                 | [Tenet](/rpc-service/chains/chains-list/#tenet)           |
 | [Aptos](/rpc-service/chains/chains-list/#aptos)                 | [Blast](/rpc-service/chains/chains-list/#blast)                       | [Gnosis](/rpc-service/chains/chains-list/#gnosis)               | [Linea](/rpc-service/chains/chains-list/#linea)                 | [Secret Network](/rpc-service/chains/chains-list/#secret-network) | [TON](/rpc-service/chains/chains-list/#ton)               |
 | [Arbitrum](/rpc-service/chains/chains-list/#arbitrum)           | [BNB Smart Chain](/rpc-service/chains/chains-list/#bnb-smart-chain)   | [Gnosis Beacon](/rpc-service/chains/chains-list/#gnosis-beacon) | [Mantle](/rpc-service/chains/chains-list/#mantle)               | [Sei](/rpc-service/chains/chains-list/#sei)                       | [TRON](/rpc-service/chains/chains-list/#tron)             |
@@ -33,7 +34,389 @@ Find the chain you require and go to its docs section by clicking it.
 | [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Ethereum](/rpc-service/chains/chains-list/#ethereum)                 | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Polkadot](/rpc-service/chains/chains-list/#polkadot)           | [Swell](/rpc-service/chains/chains-list/#swell)                   |                                                           |
 | [Base](/rpc-service/chains/chains-list/#base)                   | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)        | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Polygon](/rpc-service/chains/chains-list/#polygon)             | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                           |
 | [Bitcoin](/rpc-service/chains/chains-list/#bitcoin)             | [Fantom](/rpc-service/chains/chains-list/#fantom)                     | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm) | [Taiko](/rpc-service/chains/chains-list/#taiko)                   |                                                           |
-| [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)           | [Filecoin](/rpc-service/chains/chains-list/#filecoin)                 | [Kinto](/rpc-service/chains/chains-list/#kinto)                 | [Rollux](/rpc-service/chains/chains-list/#rollux)               | [Telos](/rpc-service/chains/chains-list/#telos)                   |                                                           |
+
+## 0G
+
+> 0G API is available on [Web3 API platform](https://www.ankr.com/rpc/0g).
+
+0G Chain is a highly scalable, AI-optimized L1 blockchain designed to meet the needs of data-heavy applications. Built with a modular architecture, it allows for the independent optimization of key components like consensus, execution, and storage—making it ideal for AI-driven workflows. 0G is fully EVM-compatible, so decentralized applications (dApps) already deployed on other L1 or L2 chains (such as Ethereum or rollups) can easily leverage 0G's products without needing to migrate entirely.
+
+0G Chain supports a [data availability network](https://docs.0g.ai/da/0g-da), [distributed storage network](https://docs.0g.ai/0g-storage), and [AI compute network](https://docs.0g.ai/0g-compute). All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI.
+
+Official quick links:  [Website](https://0g.ai/), [Docs](https://docs.0g.ai/), [GitHub](https://github.com/0glabs)
+
+### Networks
+
+  * Testnet:
+    * EVM JSON-RPC API (`HTTPS` and `WSS`)
+    * Tendermint RPC API (`HTTPS` and `WSS`)
+    * Tendermint REST API (`HTTPS`)
+    * Cosmos REST API (`HTTPS`)
+
+### API methods
+
+For 0G, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/0g/) except for those listed as unsupported.
+
+#### Unsupported
+
+<Callout type="warning">
+This section contains a list of methods we don't support for _Premium_ service plan.
+</Callout>
+
+<Callout type="tip">
+If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+</Callout>
+
+**Tendermint (both for REST and JSON-RPC)**:
+
+  `/health`,
+  `/genesis`,
+  `/broadcast_evidence`,
+  `/dial_seeds`,
+  `/dial_peers`,
+
+**Cosmos**:
+
+  `/cosmos/auth/v1beta1/address_by_id/{id}`,
+  `/cosmos/auth/v1beta1/module_accounts`,
+  `/cosmos/auth/v1beta1/bech32`,
+  `/cosmos/auth/v1beta1/bech32/{address_bytes}`,
+  `/cosmos/auth/v1beta1/bech32/{address_string}`,
+  `/cosmos/bank/v1beta1/supply/{denom}`,
+  `/cosmos/bank/v1beta1/denom_owners/{denom}`,
+  `/cosmos/bank/v1beta1/send_enabled`,
+  `/cosmos/base/reflection/v1beta1/interfaces`,
+  `/cosmos/base/reflection/v1beta1/interfaces/:interface_name/implementations`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/authn`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/chain`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/codec`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/configuration`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/query_services`,
+  `/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor`,
+  `/cosmos/base/tendermint/v1beta1/abci_query`,
+  `/cosmos/feegrant/v1beta1/issued/{granter}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}`,
+  `/cosmos/gov/v1/proposals`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/votes`,
+  `/cosmos/gov/v1/params/{params_type}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/deposits`,
+  `/cosmos/gov/v1/proposals/{proposal_id}/tally`,
+  `/cosmos/group/v1/group_info/{group_id}`,
+  `/cosmos/group/v1/group_policy_info/{address}`,
+  `/cosmos/group/v1/group_members/{group_id}`,
+  `/cosmos/group/v1/groups_by_admin/{admin}`,
+  `/cosmos/group/v1/group_policies_by_group/{group_id}`,
+  `/cosmos/group/v1/group_policies_by_admin/{admin}`,
+  `/cosmos/group/v1/proposal/{proposal_id}`,
+  `/cosmos/group/v1/proposals_by_group_policy/{address}`,
+  `/cosmos/group/v1/vote_by_proposal_voter/{proposal_id}/{voter}`,
+  `/cosmos/group/v1/votes_by_proposal/{proposal_id}`,
+  `/cosmos/group/v1/votes_by_voter/{voter}`,
+  `/cosmos/group/v1/groups_by_member/{address}`,
+  `/cosmos/group/v1/proposals/{proposal_id}/tally`,
+  `/cosmos/nft/v1beta1/balance/{owner}/{class_id}`,
+  `/cosmos/nft/v1beta1/owner/{class_id}/{id}`,
+  `/cosmos/nft/v1beta1/supply/{class_id}`,
+  `/cosmos/nft/v1beta1/nfts`,
+  `/cosmos/nft/v1beta1/nfts/{class_id}/{id}`,
+  `/cosmos/nft/v1beta1/classes/{class_id}`,
+  `/cosmos/nft/v1beta1/classes`,
+  `/cosmos/params/v1beta1/subspaces`,
+  `/cosmos/upgrade/v1beta1/module_versions`,
+  `/cosmos/upgrade/v1beta1/authority`,
+  `/cosmos/base/tendermint/v1beta1/node_info`,
+  `/cosmos/base/tendermint/v1beta1/syncing`,
+  `/cosmos/params/v1beta1/params`,
+
+  `/syncing`,
+  `/blocks/latest`,
+  `/blocks/{height}`,
+  `/validatorsets/latest`,
+  `/validatorsets/{height}`,
+  `/wasm/code`,
+  `/wasm/code/{codeID}`,
+  `/wasm/code/{codeID}/contracts`,
+  `/wasm/contract/{contractAddress}`,
+  `/wasm/contract/{contractAddress}/code-hash`,
+  `/wasm/contract/{contractAddress}/query/{query}`,
+  `/wasm/code/{codeID}/hash`,
+  `/reg/consensus-io-exch-pubkey`
+
+### API querying
+
+#### EVM JSON-RPC
+
+<Tabs
+  items={[
+    "Request example",
+    "Response example"
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_newton \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc":"2.0",
+      "method":"eth_blockNumber",
+      "params": [],
+      "id":1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+  "jsonrpc":"2.0",
+  "id":1,
+  "result":"0x27204c"
+}
+```
+  </Tab>
+</Tabs>
+
+#### Tendermint JSON-RPC
+
+<Tabs
+  items={[
+    "Request example",
+    "Response example"
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_newton_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "blockchain",
+      "params": ["1", "2"],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "last_height": "2564214",
+        "block_metas": [
+            {
+                "block_id": {
+                    "hash": "ED3BF22DDEAABE5B194ECE00FC97B73B31D6B6E381946054ADF248FADA65FD4F",
+                    "parts": {
+                        "total": 1,
+                        "hash": "268422F8D294840DBC5B24FB031F976357E8478F72C16B66E7B7388C2429D18F"
+                    }
+                },
+                "block_size": "830",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "zgtendermint_16600-2",
+                    "height": "2",
+                    "time": "2024-06-24T07:25:41.380275895Z",
+                    "last_block_id": {
+                        "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+                        "parts": {
+                            "total": 1,
+                            "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+                        }
+                    },
+                    "last_commit_hash": "5148301A7ABA311392D676C3C967F299F85A1AD48D74E96AF083DA4787FF9C2D",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                    "app_hash": "21181DF7C886CEE14012C07031E55BF04428BF77979015F2869ED1EACABAD22E",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "CDFF531A3AFA255BC193D52721027366935F9BF8"
+                },
+                "num_txs": "0"
+            },
+            {
+                "block_id": {
+                    "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+                    "parts": {
+                        "total": 1,
+                        "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+                    }
+                },
+                "block_size": "353",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "zgtendermint_16600-2",
+                    "height": "1",
+                    "time": "2024-06-24T07:24:31.526533772Z",
+                    "last_block_id": {
+                        "hash": "",
+                        "parts": {
+                            "total": 0,
+                            "hash": ""
+                        }
+                    },
+                    "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                    "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD"
+                },
+                "num_txs": "0"
+            }
+        ]
+    }
+}
+```
+  </Tab>
+</Tabs>
+
+#### Tendermint REST
+
+<Tabs
+  items={[
+    "Request example",
+    "Response example"
+  ]}
+>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_newton_tendermint/blockchain?minHeight=1&maxHeight=2
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": -1,
+    "result": {
+        "last_height": "2564234",
+        "block_metas": [
+            {
+                "block_id": {
+                    "hash": "ED3BF22DDEAABE5B194ECE00FC97B73B31D6B6E381946054ADF248FADA65FD4F",
+                    "parts": {
+                        "total": 1,
+                        "hash": "268422F8D294840DBC5B24FB031F976357E8478F72C16B66E7B7388C2429D18F"
+                    }
+                },
+                "block_size": "830",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "zgtendermint_16600-2",
+                    "height": "2",
+                    "time": "2024-06-24T07:25:41.380275895Z",
+                    "last_block_id": {
+                        "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+                        "parts": {
+                            "total": 1,
+                            "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+                        }
+                    },
+                    "last_commit_hash": "5148301A7ABA311392D676C3C967F299F85A1AD48D74E96AF083DA4787FF9C2D",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                    "app_hash": "21181DF7C886CEE14012C07031E55BF04428BF77979015F2869ED1EACABAD22E",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "CDFF531A3AFA255BC193D52721027366935F9BF8"
+                },
+                "num_txs": "0"
+            },
+            {
+                "block_id": {
+                    "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+                    "parts": {
+                        "total": 1,
+                        "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+                    }
+                },
+                "block_size": "353",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "zgtendermint_16600-2",
+                    "height": "1",
+                    "time": "2024-06-24T07:24:31.526533772Z",
+                    "last_block_id": {
+                        "hash": "",
+                        "parts": {
+                            "total": 0,
+                            "hash": ""
+                        }
+                    },
+                    "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                    "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD"
+                },
+                "num_txs": "0"
+            }
+        ]
+    }
+}
+```
+  </Tab>
+</Tabs>
+
+#### Cosmos REST
+
+<Tabs
+  items={[
+    "Request example",
+    "Response example"
+  ]}
+>
+  <Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_newton_cosmos/cosmos/auth/v1beta1/params
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+    }
+}
+```
+  </Tab>
+</Tabs>
+
+---
 
 ## Allora
 
