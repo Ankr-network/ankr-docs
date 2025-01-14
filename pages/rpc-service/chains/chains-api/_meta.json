@@ -1,4 +1,5 @@
 {
+  "0g": "0G",
   "allora": "Allora",
   "aptos": "Aptos",
   "arbitrum": "Arbitrum",
@@ -39,6 +40,7 @@
   "kusama": "Kusama",
   "linea": "Linea",
   "mantle": "Mantle",
+  "matchain": "Matchain",
   "metis": "Metis",
   "moonbeam": "Moonbeam",
   "near": "NEAR",
