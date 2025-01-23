@@ -4,7 +4,7 @@ import { Callout } from "components";
 
 No-code Deployer is a Rollup-as-a-Service (RaaS) platform that offers the infrastructure and tools required to implement and manage rollup solutions, eliminating the need for deep expertise in the underlying technology.
 
-## Rollup Deployment
+## Asphere Rollup Deployment
 
 A rollup deployment process consists of the following parts:
 
@@ -69,7 +69,7 @@ Congrats — you've just configured and deployed your Testnet rollup!
 
 To deploy a rollup using a Mainnet network, follow these steps:
 
-  1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://stage-rollup.ankr.com/) platform.
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in) on the [**Scaling Services**](https://rollup.asphere.xyz/) platform.
   2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
   3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
       * **Stack**: [Arbitrum Orbit](/scaling-services-overview/#arbitrum-orbit), [OP Stack](/scaling-services-overview/#op-stack), [Polygon CDK](/scaling-services-overview/#polygon-cdk), [ZK Stack](/scaling-services-overview/#zk-stack).
@@ -81,7 +81,7 @@ To deploy a rollup using a Mainnet network, follow these steps:
         * **Advanced Package**: Pro RPC Package, Bridge, Block Explorer, Synchronizer.
       * **Data Availability Layer**: [Ethereum](/scaling-services-overview/#ethereum), [Arbitrum AnyTrust](/scaling-services-overview/#arbitrum-anytrust), [Celestia](/scaling-services-overview/#celestia), [Eigen Layer](/scaling-services-overview/#eigen-layer), [Avail DA](/scaling-services-overview/#avail-da).
      <img src="/docs/scale/da-layer.png" class="responsive-pic" width="700" />
-  4. On the **Sequencer** tab, select whether you'd like to have an Ankr-managed sequencer or a self-managed sequencer.
+  4. On the **Sequencer** tab, select whether you'd like to have an Asphere-managed sequencer or a self-managed sequencer.
 <img src="/docs/scale/sequencer.png" class="responsive-pic" width="700" />
   5. On the **Configuration** tab, specify the following parameters, and then click **Next**:
       * **Chain ID**
@@ -94,8 +94,106 @@ To deploy a rollup using a Mainnet network, follow these steps:
      <img src="/docs/scale/gas-token.png" class="responsive-pic" width="500" />
   6. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
 <img src="/docs/scale/mainnet-infra-package.png" class="responsive-pic" width="700" />
-  7. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm and Pay**. Make sure you have `0.9 ETH` and `0.2 Custom Gas Token` in your wallet to deploy your rollup on a Mainnet.
+  7. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm and Pay**. Make sure you have `0.9 ETH` and `0.2 Custom Gas Token` (if using such an option) in your wallet to deploy your rollup on a Mainnet.
 <img src="/docs/scale/mainnet-summary.png" class="responsive-pic" width="350" />
+  8. On the Stripe checkout page, provide your card details, and then click **Subscribe** to deploy the configured rollup.
+
+Congrats — you've just configured and deployed your Mainnet rollup!
+
+---
+
+## Fraxtal Rollup Deployment
+
+A rollup deployment process consists of the following parts:
+
+> [`Sign in`](/scaling-services-nocode-deployer/#sign-in-1) —> [`Deploy Rollup`](/scaling-services-nocode-deployer/#deploy-testnet-rollup-1)
+
+  * **Sign in**: Authenticate on the platform to start using its functionality.
+  * **Deploy Rollup**: Define your rollup settings, and then deploy it.
+
+### Sign in
+
+First things first, sign in to use the platform's functionality:
+
+  1. Go to the [**Fraxtal No-code Deployer**](https://fraxtal.rollup.asphere.xyz/) platform.
+  2. Click **Sign in > Continue with Google**, and then select an account you'd like to use.
+
+Congrats — you've just signed in to the Scaling Services platform!
+
+For those signing in for the first time, please enter your basic company information so that we know our customers.
+
+---
+
+### Deploy Testnet Rollup
+
+To deploy a rollup using a Testnet network, follow these steps:
+
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in-1) on the [**Fraxtal No-code Deployer**](https://fraxtal.rollup.asphere.xyz/) platform.
+  2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
+  3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
+      * **Stack**: [Fraxtal](https://docs.frax.com/fraxtal)
+     <img src="/docs/scale/stack-fraxtal.png" class="responsive-pic" width="700" />
+      * **Network**: Select your **Testnet** option:
+        * **Trial**: Explore the rollup functionality for free (48 hours).
+        * **Persistent**: Use a permanent testing environment to experiment with your dapps before deploying them to Mainnet.
+     <img src="/docs/scale/network-fraxtal.png" class="responsive-pic" width="700" />
+      * **Data Availability Layer**: [Fraxtal DA](https://docs.frax.com/fraxtal/network/data-availability)
+     <img src="/docs/scale/da-layer-fraxtal.png" class="responsive-pic" width="700" />
+  4. On the **Configuration** tab, specify the following parameters, and then click **Next**:
+      * **Chain ID**
+     <img src="/docs/scale/chain-id-fraxtal.png" class="responsive-pic" width="500" />
+      * **Rollup Name**
+     <img src="/docs/scale/rollup-name-fraxtal.png" class="responsive-pic" width="500" />
+      * **Gas Token**
+        * **frxETH**: Use [frxETH](https://docs.frax.com/fraxtal/gas-fees/frxETH) to pay your network's gas fees.
+        * **Custom Gas Token**: For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#op-stack-chain) created and deployed on the network.
+     <img src="/docs/scale/gas-token-fraxtal.png" class="responsive-pic" width="500" />
+  5. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
+<img src="/docs/scale/infra-package-fraxtal.png" class="responsive-pic" width="700" />
+  6. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm**.
+<img src="/docs/scale/summary-fraxtal.png" class="responsive-pic" width="350" />
+  7. As an anti-abuse measure, to deploy a rollup on a Testnet, you must have `1 ankrETH` in your wallet.<br/>
+In the **Prove ankrETH** dialog, perform the following actions to start your rollup deployment:
+      * Click **Connect MetaMask and prove address**.
+     <img src="/docs/scale/prove-ankr-fraxtal.png" class="responsive-pic" width="400" />
+      * In MetaMask, select the Ethereum address to associate with your account.
+      * Sign with MetaMask wallet.
+
+Congrats — you've just configured and deployed your Testnet rollup!
+
+---
+
+### Deploy Mainnet Rollup
+
+To deploy a rollup using a Mainnet network, follow these steps:
+
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in-1) on the [**Fraxtal No-code Deployer**](https://fraxtal.rollup.asphere.xyz/) platform.
+  2. In **Navigation**, click **Deploy Rollup** to start a rollup configuration process.
+  3. On the **Essentials** tab, select the following rollup parameters, and then click **Next**:
+      * **Stack**: [Fraxtal](https://docs.frax.com/fraxtal)
+     <img src="/docs/scale/stack-fraxtal.png" class="responsive-pic" width="700" />
+      * **Network**: Select **Mainnet** — to deploy your rollup on a fully operational blockchain network.
+     <img src="/docs/scale/network-fraxtal.png" class="responsive-pic" width="700" />
+      * **Infrastructure Package**: Upon selecting Mainnet, you have to select the Infrastructure to be used for your rollup solution:
+        * **Starter Package**: Starter RPC Package, Bridge, Block Explorer, Synchronizer.
+        * **Advanced Package**: Pro RPC Package, Bridge, Block Explorer, Synchronizer.
+      * **Data Availability Layer**: [Fraxtal DA](https://docs.frax.com/fraxtal/network/data-availability).
+     <img src="/docs/scale/da-layer-fraxtal.png" class="responsive-pic" width="700" />
+  4. On the **Sequencer** tab, select whether you'd like to have an Asphere-managed sequencer or a self-managed sequencer.
+<img src="/docs/scale/sequencer-fraxtal.png" class="responsive-pic" width="700" />
+  5. On the **Configuration** tab, specify the following parameters, and then click **Next**:
+      * **Chain ID**
+     <img src="/docs/scale/chain-id-fraxtal.png" class="responsive-pic" width="500" />
+      * **Rollup Name**
+     <img src="/docs/scale/rollup-name-fraxtal.png" class="responsive-pic" width="500" />
+      * **Gas Token**
+        * **frxETH**: Use [frxETH](https://docs.frax.com/fraxtal/gas-fees/frxETH) to pay your network's gas fees.
+        * **Custom Gas Token**: For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#op-stack-chain) created and deployed on the network.
+     <img src="/docs/scale/gas-token-fraxtal.png" class="responsive-pic" width="500" />
+  6. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
+<img src="/docs/scale/mainnet-infra-package-fraxtal.png" class="responsive-pic" width="700" />
+  7. In the **Summary** dialog, check your complete rollup specification, and then click **Confirm and Pay**. Make sure you have `0.9 ETH` and `0.2 Custom Gas Token` (if using such an option) in your wallet to deploy your rollup on a Mainnet.
+<img src="/docs/scale/mainnet-summary-fraxtal.png" class="responsive-pic" width="350" />
   8. On the Stripe checkout page, provide your card details, and then click **Subscribe** to deploy the configured rollup.
 
 Congrats — you've just configured and deployed your Mainnet rollup!
