@@ -146,7 +146,7 @@ To deploy a rollup using a Testnet network, follow these steps:
      <img src="/docs/scale/rollup-name-fraxtal.png" class="responsive-pic" width="500" />
       * **Gas Token**
         * **frxETH**: Use [frxETH](https://docs.frax.com/fraxtal/gas-fees/frxETH) to pay your network's gas fees.
-        * **Custom Gas Token**: For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#op-stack-chain) created and deployed on the network.
+        * **Custom Gas Token**: For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#op-stack-chain--fraxtal) created and deployed on the network.
      <img src="/docs/scale/gas-token-fraxtal.png" class="responsive-pic" width="500" />
   5. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
 <img src="/docs/scale/infra-package-fraxtal.png" class="responsive-pic" width="700" />
@@ -190,7 +190,7 @@ To deploy a rollup using a Mainnet network, follow these steps:
      <img src="/docs/scale/rollup-name-fraxtal.png" class="responsive-pic" width="500" />
       * **Gas Token**
         * **frxETH**: Use [frxETH](https://docs.frax.com/fraxtal/gas-fees/frxETH) to pay your network's gas fees.
-        * **Custom Gas Token**: For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#op-stack-chain) created and deployed on the network.
+        * **Custom Gas Token**: For gas fees, use your [custom ERC-20 token](/scaling-services-nocode-deployer/#op-stack-chain--fraxtal) created and deployed on the network.
      <img src="/docs/scale/gas-token-fraxtal.png" class="responsive-pic" width="500" />
   6. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
 <img src="/docs/scale/mainnet-infra-package-fraxtal.png" class="responsive-pic" width="700" />
@@ -225,7 +225,7 @@ A custom gas token must meet the following requirements:
   * The token must not have a callback on transfer.
   * Users must not be able to make a transfer to themselves that results in a revert.
 
-### OP Stack chain
+### OP Stack chain / Fraxtal
 
 **Requirements**
 
@@ -324,8 +324,8 @@ To have a Mainnet chain added to the Arbitrum bridge, there are two options avai
 
 ---
 
-## OP Stack: Bridging
+## OP Stack / Fraxtal: Bridging
 
-The OP Stack is designed to build Layer 2 systems that are deeply integrated with Ethereum. While OP Mainnet handles transaction execution off-chain, developers need the ability to transfer data and tokens between OP Mainnet and Ethereum. This process is known as bridging.
+The OP Stack [note: Fraxtal is based on OP Stack]  is designed to build Layer 2 systems that are deeply integrated with Ethereum. While OP Mainnet handles transaction execution off-chain, developers need the ability to transfer data and tokens between OP Mainnet and Ethereum. This process is known as bridging.
 
 For more information, refer to the [Bridging Basics](https://docs.optimism.io/builders/app-developers/bridging/basics) section in the official Optimism documentation.
