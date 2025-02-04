@@ -32,6 +32,7 @@ Methods that report the current state of all the data stored. The "state" is lik
   * [`eth_getCode`](/rpc-service/chains/chains-api/ethereum/#eth_getcode) — returns code at an address specified.
   * [`eth_call`](/rpc-service/chains/chains-api/ethereum/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
   * [`eth_estimateGas`](/rpc-service/chains/chains-api/ethereum/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_simulateV1`](/rpc-service/chains/chains-api/ethereum/#eth_simulatev1) — simulates multiple blocks and transactions without creating transactions or blocks on the blockchain.
 
 ### History methods
 
@@ -1119,6 +1120,181 @@ curl -X POST https://rpc.ankr.com/eth \
     "jsonrpc": "2.0",
     "id": 1,
     "result": "0x5de2"
+}
+```
+
+---
+
+## `eth_simulateV1`
+
+> Simulates multiple blocks and transactions without creating transactions or blocks on the blockchain.
+
+The `eth_simulateV1` method allows the simulation of multiple blocks and transactions without creating transactions or blocks on the blockchain. It functions similarly to `eth_call`, but offers more control.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (hex encoded): the simulation payload:
+        * `blockStateCalls` (array): an array of the block state call objects.
+            * `blockOverrides` (object; optional): an object to override block-level parameters.
+                * `baseFeePerGas` (string): the base fee per gas for the block, encoded as hexadecimal.
+            * `stateOverrides` (object; optional): an object to override account states.
+                * `address` (object): the address of the account to override.
+                    * `balance` (string; optional): the balance to set for the account, encoded as hexadecimal.
+            * `calls` (array): an array of transaction call objects:
+                * `from` (string; optional): the address from which the transaction is sent.
+                * `to` (string): the address to which the transaction is sent.
+                * `maxFeePerGas` (string; optional): the maximum fee per gas the sender is going to pay.
+                * `value` (string; optional): the value sent with the transaction, encoded as hexadecimal.
+        * `validation` (boolean; optional): indicates whether to perform validation checks.
+        * `traceTransfers` (boolean; optional): indicates whether to trace value transfers.
+
+    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+On a successful `eth_simulateV1` call, an array of generated full blocks is returned (the same object that you would get with `eth_getBlockByHash`, except for an added calls field), otherwise an error is returned.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/eth \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_simulateV1",
+    "params": "params": [
+        {
+            "blockStateCalls": [
+                {
+                    "blockOverrides": {
+                        "baseFeePerGas": "0x9"
+                    },
+                    "stateOverrides": {
+                        "0xc000000000000000000000000000000000000000": {
+                            "balance": "0x4a817c800"
+                        }
+                    },
+                    "calls": [
+                        {
+                            "from": "0xc000000000000000000000000000000000000000",
+                            "to": "0xc000000000000000000000000000000000000001",
+                            "maxFeePerGas": "0xf",
+                            "value": "0x1"
+                        },
+                        {
+                            "from": "0xc000000000000000000000000000000000000000",
+                            "to": "0xc000000000000000000000000000000000000002",
+                            "maxFeePerGas": "0xf",
+                            "value": "0x1"
+                        }
+                    ]
+                }
+            ],
+            "validation": true,
+            "traceTransfers": true
+        },
+        "latest"
+    ],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "baseFeePerGas": "0x9",
+            "blobGasUsed": "0x0",
+            "calls": [
+                {
+                    "returnData": "0x",
+                    "logs": [
+                        {
+                            "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "topics": [
+                                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                                "0x000000000000000000000000c000000000000000000000000000000000000000",
+                                "0x000000000000000000000000c000000000000000000000000000000000000001"
+                            ],
+                            "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                            "blockNumber": "0x13d2747",
+                            "transactionHash": "0xe7217784e0c3f7b35d39303b1165046e9b7e8af9b9cf80d5d5f96c3163de8f51",
+                            "transactionIndex": "0x0",
+                            "blockHash": "0x5e28f54a56dc9df973a058cd54b3eeef8c67a1a613cb5db1df8a0a434c931d56",
+                            "logIndex": "0x0",
+                            "removed": false
+                        }
+                    ],
+                    "gasUsed": "0x5208",
+                    "status": "0x1"
+                },
+                {
+                    "returnData": "0x",
+                    "logs": [
+                        {
+                            "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            "topics": [
+                                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                                "0x000000000000000000000000c000000000000000000000000000000000000000",
+                                "0x000000000000000000000000c000000000000000000000000000000000000002"
+                            ],
+                            "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                            "blockNumber": "0x13d2747",
+                            "transactionHash": "0xf0182201606ec03701ba3a07d965fabdb4b7d06b424f226ea7ec3581802fc6fa",
+                            "transactionIndex": "0x1",
+                            "blockHash": "0x5e28f54a56dc9df973a058cd54b3eeef8c67a1a613cb5db1df8a0a434c931d56",
+                            "logIndex": "0x1",
+                            "removed": false
+                        }
+                    ],
+                    "gasUsed": "0x5208",
+                    "status": "0x1"
+                }
+            ],
+            "difficulty": "0x0",
+            "excessBlobGas": "0x0",
+            "extraData": "0x",
+            "gasLimit": "0x1c9c380",
+            "gasUsed": "0xa410",
+            "hash": "0x5e28f54a56dc9df973a058cd54b3eeef8c67a1a613cb5db1df8a0a434c931d56",
+            "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "miner": "0x4838b106fce9647bdf1e7877bf73ce8b0bad5f97",
+            "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "nonce": "0x0000000000000000",
+            "number": "0x13d2747",
+            "parentBeaconBlockRoot": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "parentHash": "0xd24222b93a05a066cf79dc20e333f5aa6bb06d36eb50eb2b6b0b744b937e7975",
+            "receiptsRoot": "0x75308898d571eafb5cd8cde8278bf5b3d13c5f6ec074926de3bb895b519264e1",
+            "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+            "size": "0x298",
+            "stateRoot": "0xbb0740745211507e2a2a6cdb627dfa171ef5050ad2a01e5401c2e3df4be5b919",
+            "timestamp": "0x66ec2853",
+            "totalDifficulty": "0xc70d815d562d3cfa955",
+            "transactions": [
+                "0xe7217784e0c3f7b35d39303b1165046e9b7e8af9b9cf80d5d5f96c3163de8f51",
+                "0xf0182201606ec03701ba3a07d965fabdb4b7d06b424f226ea7ec3581802fc6fa"
+            ],
+            "transactionsRoot": "0x9bdb74f3ce41f5893a02a631e904ae0d21ae8c4e416786d8dbd9cb5c54f1dc0f",
+            "uncles": [],
+            "withdrawals": [],
+            "withdrawalsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+        }
+    ]
 }
 ```
 
