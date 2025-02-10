@@ -1,0 +1,753 @@
+import { Callout } from "components";
+import { Tabs, Tab } from "nextra-theme-docs";
+
+# Fuel
+
+> Fuel API is available on [Web3 API platform](https://www.ankr.com/rpc/fuel).
+
+Fuel is an operating system specifically designed for Ethereum Rollups, providing the necessary tools and infrastructure to maximize the efficiency of rollups while solving key challenges around scalability and performance. Fuel’s goal is to enhance the Ethereum ecosystem by optimizing for parallelization, state-minimized execution, and interoperability (PSI), without compromising on any of these aspects.
+
+  * **FuelVM**: Optimized execution engine enabling parallel transaction execution and state minimization using a UTXO model, improving scalability and throughput.
+  * **Sway Language**: A Rust + Solidity inspired language for smart contracts, offering safety, performance, and static auditing.
+  * **Developer Experience**: Streamlined, boilerplate-free development for efficient contract creation and interaction with the FuelVM.
+  * **Unmatched Throughput**: Leverages parallel processing for significantly higher transaction throughput compared to single-threaded blockchains.
+
+In order for your Web3 application to interact with Fuel — either by reading blockchain data or sending transactions to the network — it must connect to a Fuel node. Developers interact with the blockchain using the methods provided by the API.
+
+Responses come in [JSON format](https://www.json.org/json-en.html).
+
+## Queries/Mutations supported
+
+  * [getAddressAssetBalance](/rpc-service/chains/chains-api/fuel/#getaddressassetbalance) — retrieves the balance of a specific asset of a given address.
+  * [getAddressAssetBalances](/rpc-service/chains/chains-api/fuel/#getaddressassetbalances) — retrieves balances of all assets of a given address.
+  * [getTransactionsByOwner](/rpc-service/chains/chains-api/fuel/#gettransactionsbyowner) — retrieves all transactions of a given address.
+  * [getLatestTransactions](/rpc-service/chains/chains-api/fuel/#getlatesttransactions) — retrieves the most recent transactions on the network.
+  * [getContractAssetBalance](/rpc-service/chains/chains-api/fuel/#getcontractassetbalance) — retrieves the balances of a specific asset of a given contract.
+  * [getContractAssetBalances](/rpc-service/chains/chains-api/fuel/#getcontractassetbalances) — retrieves all asset balances of a given contract.
+  * [getLatestBlocks](/rpc-service/chains/chains-api/fuel/#getlatestblocks) — retrieves several most recent blocks on the network.
+  * [getLatestBlock](/rpc-service/chains/chains-api/fuel/#getlatestblock) — retrieves the most recent block on the network.
+  * [getBlockByHeight](/rpc-service/chains/chains-api/fuel/#getblockbyheight) — retrieves info on a block specified by height.
+  * [getBlockById](/rpc-service/chains/chains-api/fuel/#getblockbyid) — retrieves info on a block specified by ID.
+  * [getMessagesByAddress](/rpc-service/chains/chains-api/fuel/#getaddressmessages) — retrieves all messages of a given address.
+  * [dryRunTransaction](/rpc-service/chains/chains-api/fuel/#dryruntransaction) — simulates a transaction without broadcasting it.
+  * [submitTransaction](/rpc-service/chains/chains-api/fuel/#submittransaction) — submits a transaction to the network.
+
+---
+
+## `getAddressAssetBalance`
+
+> Retrieves the balance of a specific asset of a given address.
+
+### Parameters
+
+  * `address` (string; required): an address of an externally owned account identified by a 32 byte string prefixed by `0x`.
+  * `assetId` (string; required): a 32 byte unique ID used to identify a coin.
+
+### Returns
+
+  * `data` (object): contains the query result.
+    * `balance` (object): represents the balance for the specified address and asset.
+      * `owner` (string): the address that owns the balance returned.
+      * `amount` (string): the amount of the asset held by the address.
+      * `assetId` (string): the asset ID for the queried asset.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "query Balance($address: Address, $assetId: AssetId) { balance(owner: $address, assetId: $assetId) { owner amount assetId } }",
+    "variables": {
+      "address": "0xce9f8d9367fc4671c0ececce7ab603f6f75d1e66082a82ad12ecdc219b308820",
+      "assetId": "0x2a0d0ed9d2217ec7f32dcd9a1902ce2a66d68437aeff84e3a3cc8bebee0d2eea"
+    }
+  }'
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "balance": {
+            "owner": "0xce9f8d9367fc4671c0ececce7ab603f6f75d1e66082a82ad12ecdc219b308820",
+            "amount": "0",
+            "assetId": "0x2a0d0ed9d2217ec7f32dcd9a1902ce2a66d68437aeff84e3a3cc8bebee0d2eea"
+        }
+    }
+}
+```
+
+---
+
+## `getAddressAssetBalances`
+
+> Retrieves the balances of all assets of a given address.
+
+### Parameters
+
+  * `filter` (object; required): the filter object to query balances.
+    * `owner` (string; required): an address of an externally owned account identified by a 32 byte string prefixed by `0x`.
+
+### Returns
+
+  * `data` (object): contains the query result.
+    * `balance` (object): represents the balance details of the provided address based on the filter applied
+      * `nodes` (array): an array of balance entries (up to 5 in this case, based on first: 5). Each object contains information about a balance for a specific asset.
+        * `amount` (string): the amount of the asset associated with the address.
+        * `assetId` (string): the asset ID for the specific asset the balance is associated with.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "query Balances($filter: BalanceFilterInput) { balances(filter: $filter, first: 5) { nodes { amount assetId } } }",
+    "variables": {
+      "filter": {
+        "owner": "0xce9f8d9367fc4671c0ececce7ab603f6f75d1e66082a82ad12ecdc219b308820"
+      }
+    }
+  }'
+```
+
+### Response example
+
+```json
+{
+  "data": {
+    "balances": {
+      "nodes": [
+        {
+          "amount": "1000000000000000000",
+          "assetId": "0xAssetIdHere"
+        },
+        {
+          "amount": "2000000000000000000",
+          "assetId": "0xAnotherAssetIdHere"
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+## `getTransactionsByOwner`
+
+> Retrieves all transactions sent from a given address.
+
+### Parameters
+
+  * `address` (string; required): the address to fetch the transactions for.
+
+### Returns
+
+  * `data` (object): contains the query result.
+    * `transactionsByOwner` (object): contains the transactions related to the provided address. It is an object with the following properties:
+      * `nodes` (array): an array of transactions, with each transaction containing information about inputs, outputs, and status.
+        * `id` (string): the transaction identifier.
+        * `inputs` (array): a list of inputs to the transaction:
+          * `__typename` (string): a specific type of input in the transaction.
+          * `owner` (string): the owner of the coin input (address).
+          * `utxoId` (string): the ID of the unspent transaction output (UTXO).
+          * `amount` (string): the amount of the asset involved in the transaction.
+          * `assetId` (string): the unique identifier of the asset involved in the transaction.
+        * `outputs` (array): an array of outputs, representing the transaction destination.
+          * `__typename` (string): a specific type of output in the transaction.
+          * `to` (string): the transaction destination address.
+          * `amount` (string): the amount of the asset involved in the transaction.
+          * `assetId` (string): the unique identifier of the asset involved in the transaction.
+        * `status` (object): the transaction status.
+          * `__typename` (string): the status name.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "query Transactions($address: Address) { transactionsByOwner(owner: $address, first: 5) { nodes { id inputs { __typename ... on InputCoin { owner utxoId amount assetId } ... on InputContract { utxoId contractId } ... on InputMessage { sender recipient amount data } } outputs { __typename ... on CoinOutput { to amount assetId } ... on ContractOutput { inputIndex balanceRoot stateRoot } ... on ChangeOutput { to amount assetId } ... on VariableOutput { to amount assetId } ... on ContractCreated { contract stateRoot } } status { __typename ... on FailureStatus { reason programState { returnType } } } } } }",
+    "variables": {
+        "address": "0xf65d6448a273b531ee942c133bb91a6f904c7d7f3104cdaf6b9f7f50d3518871"
+    }
+  }'
+```
+
+### Response example
+
+```json
+{
+  "data": {
+    "transactionsByOwner": {
+      "nodes": [
+        {
+          "id": "0x670dde2a38d1bcd055aff7dfde5ed4c8f7532002dd0a9740f1b8732981c575be",
+          "inputs": [
+            {
+              "__typename": "InputCoin",
+              "owner": "0x33d25d8d874c0eb5933f9ca505a172725aa19c65bd707ce7c1e7917b483bda16",
+              "utxoId": "0x00c38d75412b7835947c8fde5f6d1f892488687c5a030bafe058b97a253766c60000",
+              "amount": "2000000",
+              "assetId": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07"
+            }
+          ],
+          "outputs": [
+            {
+              "__typename": "CoinOutput",
+              "to": "0xf65d6448a273b531ee942c133bb91a6f904c7d7f3104cdaf6b9f7f50d3518871",
+              "amount": "160000",
+              "assetId": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07"
+            },
+            {
+              "__typename": "ChangeOutput",
+              "to": "0x33d25d8d874c0eb5933f9ca505a172725aa19c65bd707ce7c1e7917b483bda16",
+              "amount": "1715889",
+              "assetId": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07"
+            }
+          ],
+          "status": {
+            "__typename": "SuccessStatus"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+## `getLatestTransactions`
+
+> Retrieves the most recent transactions on the network.
+
+### Parameters
+
+None.
+
+### Returns
+
+  * `data` (object): contains the query result.
+    * `transactions` (object): the transaction object with the following properties:
+      * `nodes` (array): an array of transactions, with each transaction containing information about inputs, outputs, and status.
+        * `id` (string): the transaction identifier.
+        * `inputs` (array): a list of inputs to the transaction:
+          * `__typename` (string): a specific type of input in the transaction.
+          * `owner` (string): the owner of the coin input (address).
+          * `utxoId` (string): the ID of the unspent transaction output (UTXO).
+          * `amount` (string): the amount of the asset involved in the transaction.
+          * `assetId` (string): the unique identifier of the asset involved in the transaction.
+        * `outputs` (array): an array of outputs, representing the transaction destination.
+          * `__typename` (string): a specific type of output in the transaction.
+          * `to` (string): the transaction destination address.
+          * `amount` (string): the amount of the asset involved in the transaction.
+          * `assetId` (string): the unique identifier of the asset involved in the transaction.
+        * `status` (object): the transaction status.
+          * `__typename` (string): the status name.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "query LatestTransactions { transactions(last: 5) { nodes { id inputs { __typename ... on InputCoin { owner utxoId amount assetId } ... on InputContract { utxoId contractId } ... on InputMessage { sender recipient amount data } } outputs { __typename ... on CoinOutput { to amount assetId } ... on ContractOutput { inputIndex balanceRoot stateRoot } ... on ChangeOutput { to amount assetId } ... on VariableOutput { to amount assetId } ... on ContractCreated { contract stateRoot } } status { __typename ... on FailureStatus { reason programState { returnType } } } } } }"
+}'
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "transactions": {
+            "nodes": [
+                {
+                    "id": "0x330d0c4fb7d1c8dda917906ff2c87097b92bdf3be67b1c2fb03a4ad1fe0cd9a0",
+                    "inputs": null,
+                    "outputs": [],
+                    "status": {
+                        "__typename": "SuccessStatus"
+                    }
+                },
+                {
+                    "id": "0x4ece83232f7b818e484546414cf6d8ffe98a61691602f4a34e9ed8b9bcf2b1d2",
+                    "inputs": [
+                        {
+                            "__typename": "InputContract",
+                            "utxoId": "0x8cbd7f0a0e01cd848ef95b1702c70e07bc509d7461375be959358a9ea9cb4e280000",
+                            "contractId": "0x2e40f2b244b98ed6b8204b3de0156c6961f98525c8162f80162fcf53eebd90e7"
+                        },
+                        {
+                            "__typename": "InputCoin",
+                            "owner": "0x4526bf524620d52a5f2046ca4835f84bcc81a8359172dbd13995367d61adb08b",
+                            "utxoId": "0x76766650603cb2146f48a7ee6a42215b91b0e48df2565e7598e42826e5b915b70001",
+                            "amount": "296940893153",
+                            "assetId": "0x1d5d97005e41cae2187a895fd8eab0506111e0e2f3331cd3912c15c24e3c1d82"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "__typename": "ContractOutput",
+                            "inputIndex": "0",
+                            "balanceRoot": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                            "stateRoot": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                        },
+                        {
+                            "__typename": "VariableOutput",
+                            "to": "0x4526bf524620d52a5f2046ca4835f84bcc81a8359172dbd13995367d61adb08b",
+                            "amount": "10906889",
+                            "assetId": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07"
+                        }
+                    ],
+                    "status": {
+                        "__typename": "SuccessStatus"
+                    }
+                }
+            ]
+        }
+    }
+}
+```
+
+---
+
+## `getContractAssetBalance`
+
+> Retrieves the balances of a specific asset of a given contract.
+
+### Parameters
+
+  * `contract` (string; required): the contract address to fetch the balance for.
+  * `asset` (string: required): the unique identifier of an asset to fetch the balance for.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `contractBalance` (object): the object containing details on the contract's balance for a specific asset:
+      * `contract` (string): the ID of the contract.
+      * `amount` (string): the balance amount of the asset in the contract.
+      * `assetId` (string): the unique identifier of the asset associated with the contract.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "query ContractBalance($contract: ContractId, $asset: AssetId) { contractBalance(contract: $contract, asset: $asset) { contract amount assetId } }",
+    "variables": {
+        "contract": "0x7777777777777777777777777777777777777777777777777777777777777777",
+        "asset": "0x2a0d0ed9d2217ec7f32dcd9a1902ce2a66d68437aeff84e3a3cc8bebee0d2eea"
+    }
+}'
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "contractBalance": {
+            "contract": "0x7777777777777777777777777777777777777777777777777777777777777777",
+            "amount": "0",
+            "assetId": "0x2a0d0ed9d2217ec7f32dcd9a1902ce2a66d68437aeff84e3a3cc8bebee0d2eea"
+        }
+    }
+}
+```
+
+---
+
+## `getContractAssetBalances`
+
+> Retrieves all asset balances of a given contract.
+
+### Parameters
+
+  * `filter` (object; required): the filter object used to query balances.
+    * `contract` (string; required): the contract address for which the asset balances is to be fetched.
+
+### Returns
+
+  * `data` (object): the data object which contains the following fields:
+    * `contractBalances` (object): the object containing details on the contract's balance for a specific asset.
+      * `nodes` (array): an array of balance records for different assets.
+      * `amount` (string): the balance amount of the specified asset in the contract.
+      * `assetId` (string): the unique identifier of the asset associated with the balance.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "query ContractBalances($filter: ContractBalanceFilterInput!) { contractBalances(filter: $filter, first: 5) { nodes { amount assetId } } }",
+  "variables": {
+    "filter": {
+      "contract": "0xf5b08689ada97df7fd2fbd67bee7dea6d219f117c1dc9345245da16fe4e99111"
+    }
+  }
+}'
+```
+
+### Response example
+
+```json
+{
+  "data": {
+    "contractBalances": {
+      "nodes": [
+        {
+          "amount": "0",
+          "assetId": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "amount": "7661229750000",
+          "assetId": "0x2a0d0ed9d2217ec7f32dcd9a1902ce2a66d68437aeff84e3a3cc8bebee0d2eea"
+        },
+        {
+          "amount": "0",
+          "assetId": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07"
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+## `getLatestBlocks`
+
+> Retrieves several most recent blocks on the network.
+
+### Parameters
+
+None.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `blocks` (object): the blocks object with the following fields:
+      * `nodes` (array): an array with individual block records.
+        * `id` (string): the unique identifier of a block.
+        * `transactions` (array): an array representing the transactions within the block.
+          * `id` (string): the unique identifier of a transaction.
+          * `inputAssetIds` (array): an array of asset IDs used as inputs in the transaction.
+          * `inputs` (array): an array of the inputs used in the transaction.
+            * `__typename` (string): the specific type of input in the transaction.
+            * `owner` (string): the address that owned the input in the transaction.
+            * `utxoId` (string): the unique identifier for the unspent transaction output (UTXO) related to the input.
+            * `amount` (string): the amount of the asset in the transaction.
+            * `assetId` (string): the unique identifier of the asset in the transaction.
+          * `outputs` (array): an array of outputs, representing where the transaction destination.
+            * `__typename` (string): the specific type of output in the transaction.
+            * `inputIndex` (string): the index of the input that this contract output is associated with.
+            * `balanceRoot` (string): the root hash representing the contracts balance state.
+            * `stateRoot` (string): the root hash representing the contracts overall state.
+            * `to` (string): the destination address of the transaction.
+            * `amount` (string): the amount of the asset in the transaction.
+            * `assetId` (string): the unique identifier of the asset in the transaction.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "query LatestBlocks { blocks(last: 5) { nodes { id transactions { id inputAssetIds inputs { __typename ... on InputCoin { owner utxoId amount assetId } ... on InputContract { utxoId contractId } ... on InputMessage { sender recipient amount data } } outputs { __typename ... on CoinOutput { to amount assetId } ... on ContractOutput { inputIndex balanceRoot stateRoot } ... on ChangeOutput { to amount assetId } ... on VariableOutput { to amount assetId } ... on ContractCreated { contract stateRoot } } } } } }"
+}'
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "blocks": {
+            "nodes": [
+                {
+                    "id": "0xfc309ad1b32896287ffb19de63d49242d9f7eb7f067b9397d2e9cda134241bfc",
+                    "transactions": [
+                        {
+                            "id": "0x5749b555b9e4c89e453d08395e0b291df8b4a1b8235ca5440cd3701f6c11aa22",
+                            "inputAssetIds": null,
+                            "inputs": null,
+                            "outputs": []
+                        }
+                    ]
+                },
+                {
+                    "id": "0x52a868e1b13afecf51ef2161663011c9f3865381316fc568aaa209ff41ee35aa",
+                    "transactions": [
+                        {
+                            "id": "0x1078a8d9fc64a08a75ee2a20329bf98ad2cdafa340726e5184424709a6c25841",
+                            "inputAssetIds": null,
+                            "inputs": null,
+                            "outputs": []
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+```
+
+---
+
+## `getLatestBlock`
+
+> Retrieves the most recent block on the network.
+
+### Parameters
+
+None.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `chain` (object): the object representing the blockchain network info:
+      * `latestBlock` (object): the object containing details of the latest block on the network.
+        * `id` (string): the unique identifier (hash) of the latest block.
+        * `height` (string): the block height of the latest block.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "{ chain { latestBlock { id height } } }"
+}'
+```
+
+#### Response example
+
+```json
+{
+    "data": {
+        "chain": {
+            "latestBlock": {
+                "id": "0x1cd6d6725bb58123623e8a60de42f269252dbf0df8922e27e45b9e894bffeea7",
+                "height": "13781885"
+            }
+        }
+    }
+}
+```
+
+---
+
+## `getBlockByHeight`
+
+> Retrieves info on a block specified by height.
+
+### Parameters
+
+  * `height` (string; required): the height of the block.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `block` (object): the object with the queried block info.
+      * `id` (string): the unique identifier (hash) of the block.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "query Block($height: U64) { block(height: $height) { id } }",
+  "variables": {
+    "height": "3000"
+  }
+}'
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "block": {
+            "id": "0xe4f573c8ba98085d8006d64176587720f166e761558a6f13fb40ad884d5db52c"
+        }
+    }
+}
+```
+
+---
+
+## `getBlockById`
+
+> Retrieves info on a block specified by ID.
+
+### Parameters
+
+  * `id` (string; required): a unique hash identifier for a block.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `block` (object): the object representing a specific block info.
+      * `id` (string): the unique identifier (hash) of the block.
+      * `height` (string): the height of the block.
+      * `transactions` (array): an array of transactions included in the block.
+        * `id` (string): the unique identifier (hash) of each transaction in the block.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "query BlockById($id: BlockId!) { block(id: $id) { id height transactions { id } } }",
+  "variables": {
+    "id": "0xe4f573c8ba98085d8006d64176587720f166e761558a6f13fb40ad884d5db52c"
+  }
+}'
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "block": {
+            "id": "0xe4f573c8ba98085d8006d64176587720f166e761558a6f13fb40ad884d5db52c",
+            "height": "3000",
+            "transactions": [
+                {
+                    "id": "0x9dd04fce60b052963d8131c3e956a80e9a413363bae4f06a0ed0eeb575e24e0d"
+                }
+            ]
+        }
+    }
+}
+```
+
+---
+
+## `getMessagesByAddress`
+
+> Retrieves all messages of a given address.
+
+### Parameters
+
+  * `address` (string; required): the address to fetch the messages for.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `blocks` (object): the object representing the queried block info.
+      * `amount` (string): the amount of the message.
+      * `sender` (string): the address of the message sender.
+      * `recipient` (string): the address of the message destination.
+      * `nonce` (string): a unique identifier associated with the message.
+      * `data` (string): an optional additional data included in the message.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "query MessageInfo($address: Address) { messages(owner: $address, first: 5) { nodes { amount sender recipient nonce data daHeight } } }",
+    "variables": {
+        "address": "0xce9f8d9367fc4671c0ececce7ab603f6f75d1e66082a82ad12ecdc219b308820"
+    }
+}'
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "messages": {
+            "nodes": []
+        }
+    }
+}
+```
+
+---
+
+## `dryRunTransaction`
+
+> Simulates a transaction without broadcasting it.
+
+### Parameters
+
+  * `encodedTransaction` (string: required): the hex-encoded transaction.
+  * `utxoValidation` (boolean; required): a UTXO validation selector.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `dryRun` (array): an array representing the simulated transaction result.
+      * `receiptType` (string): the type of receipt generated by the simulation.
+      * `data` (string): the hexadecimal data associated with the transaction outcome.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "mutation DryRun($encodedTransaction: HexString!, $utxoValidation: Boolean) { dryRun(tx: $encodedTransaction, utxoValidation: $utxoValidation) { receiptType data } }",
+    "variables": {
+        "encodedTransaction": "YOUR_ENCODED_TRANSACTION_HERE",
+        "utxoValidation": true
+    }
+}'
+```
+
+---
+
+## `submitTransaction`
+
+> Submits a transaction to the network.
+
+### Parameters
+
+  * `encodedTransaction` (string: required): the hex-encoded transaction.
+
+### Returns
+
+  * `data` (object): the data object with the following fields:
+    * `submit` (object): result of the submit mutation:
+      * `id` (string): the unique transaction ID generated upon transaction submission.
+
+### Request example
+
+```shell
+curl --location 'https://rpc.ankr.com/http/fuel' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    "query": "mutation submit($encodedTransaction: HexString!) { submit(tx: $encodedTransaction) { id } }",
+    "variables": {
+        "encodedTransaction": "YOUR_ENCODED_TRANSACTION_HERE"
+    }
+}'
+```
