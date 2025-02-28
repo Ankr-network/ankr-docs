@@ -5677,7 +5677,6 @@ The Iota blockchain, often referred to as the Iota Tangle, is a unique and innov
 
 Official quick links: [Website](https://www.iota.org/), [Docs](https://wiki.iota.org/), [GitHub](https://github.com/iotaledger/)
 
-
 ### Networks
 
   * Mainnet (`HTTPS` and `WSS`)
@@ -8981,6 +8980,150 @@ curl -X POST https://rpc.ankr.com/solana \
         }
     },
     "id": 1
+}
+```
+
+---
+
+## Somnia
+
+> Somnia API is available on [Web3 API platform](https://www.ankr.com/rpc/somnia).
+
+Somnia is a high-performance, cost-efficient EVM-compatible Layer 1 blockchain capable of processing over 1,000,000 transactions per second (TPS) with sub-second finality. It is suitable for serving millions of users and building real-time mass-consumer applications like games, social applications, metaverses, and more, all fully on-chain.
+
+Key Features:
+
+  * **[Accelerated Sequential Execution](https://codex.somnia.network/somnia-blockchain/accelerated-sequential-execution)**: through compiled EVM bytecode.
+  * **[IceDB](https://codex.somnia.network/somnia-blockchain/somnias-icedb)**: a faster, more predictable database for storing blockchain state.
+  * **[MultiStream consensus](https://codex.somnia.network/somnia-blockchain/multistream-consensus)**: a Proof-of-Stake, partially synchronous BFT protocol inspired by [Autobahn BFT](https://arxiv.org/pdf/2401.10369).
+  * **[Advanced compression techniques](https://codex.somnia.network/somnia-blockchain/advanced-compression-techniques)**: to deal with increased node-to-node data traffic due to the throughput.
+
+Official quick links: [Website](https://somnia.network/), [Docs](https://codex.somnia.network//)
+
+### Networks
+
+  * Testnet (`HTTPS` and `WSS`)
+
+### API methods
+
+For Somnia, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/somnia) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for _Premium_ service plan.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*` (exception: `debug_traceBlockByHash`, `debug_traceBlockByNumber`, `debug_traceTransaction`, `debug_traceCall`, `debug_traceBlock`),
+
+`personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/somnia_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/somnia_testnet"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/somnia_testnet'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/somnia_testnet'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x6d1d8b"
 }
 ```
 
