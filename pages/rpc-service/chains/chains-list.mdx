@@ -9456,14 +9456,18 @@ curl https://rpc.ankr.com/http/stellar_horizon/accounts?cursor=&limit=1&order=as
 
 Story Network is a purpose-built layer 1 blockchain achieving the best of EVM and Cosmos SDK. It is 100% EVM-compatible alongside deep execution layer optimizations to support graph data structures, purpose-built for handling complex data structures like IP quickly and cost-efficiently. It does this by:
 
-  * Using precompiled primitives to traverse complex data structures like IP graphs within seconds at marginal costs.
-  * A consensus layer based on the mature CometBFT stack to ensure fast finality and cheap transactions.
-  * A modular architecture that decouples consensus from execution via Ethereum’s Engine-API.
+Key Features:
 
-Official quick links: [Website](https://sui.io/), [Docs](https://docs.story.foundation/docs/what-is-story), [GitHub](https://github.com/storyprotocol)
+  * **EVM Compatibility**: Full compatibility with Ethereum Virtual Machine.
+  * **Optimized Data Structures**: Precompiled primitives for efficient IP graph traversal.
+  * **Fast Finality**: CometBFT-based consensus layer for quick transaction finality.
+  * **Modular Architecture**: Decoupled consensus from execution using Ethereum's Engine-API.
+
+Official quick links: [Website](https://www.story.foundation/), [Docs](https://docs.story.foundation/docs/what-is-story), [GitHub](https://github.com/storyprotocol)
 
 ### Networks
 
+  * Mainnet (`HTTPS` and `WSS`)
   * Testnet (`HTTPS` and `WSS`)
 
 ### API methods
@@ -9507,7 +9511,7 @@ For Story, we support blockchain interaction via all the [applicable methods](/r
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/story_odyssey \
+curl -X POST https://rpc.ankr.com/story_mainnet \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -9529,7 +9533,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/story_odyssey"  // url string
+    const url = "https://rpc.ankr.com/story_mainnet"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -9552,7 +9556,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/story_odyssey'  // url string
+const url = 'https://rpc.ankr.com/story_mainnet'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -9571,7 +9575,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/story_odyssey'  # url string
+    url = 'https://rpc.ankr.com/story_mainnet'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -9585,7 +9589,7 @@ def test_block_number(self):
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": "0x122726"
+  "result": "0x17a1c4"
 }
 ```
 
