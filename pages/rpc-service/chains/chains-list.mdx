@@ -31,7 +31,7 @@ Find the chain you require and go to its docs section by clicking it.
 | [Avail](/rpc-service/chains/chains-list/#avail)                 | [Core](/rpc-service/chains/chains-list/#core)                         | [Harmony](/rpc-service/chains/chains-list/#harmony)             | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam)           | [Sonic](/rpc-service/chains/chains-list/#sonic)                   | [XDC](/rpc-service/chains/chains-list/#xdc)               |
 | [Avalanche](/rpc-service/chains/chains-list/#avalanche)         | [Corn](/rpc-service/chains/chains-list/#corn)                         | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)  | [NEAR](/rpc-service/chains/chains-list/#near)                   | [Stellar](/rpc-service/chains/chains-list/#stellar)               | [X Layer](/rpc-service/chains/chains-list/#x-layer)       |
 | [B2 Network](/rpc-service/chains/chains-list/#b2-network)       | [Electroneum](/rpc-service/chains/chains-list/#electroneum)           | [Horizen EON](/rpc-service/chains/chains-list/#horizen-eon)     | [Nervos](/rpc-service/chains/chains-list/#nervos)               | [Story](/rpc-service/chains/chains-list/#story)                   | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
-| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Ethereum](/rpc-service/chains/chains-list/#ethereum)                 | [Iota](/rpc-service/chains/chains-list/#iota)                   | [Optimism](/rpc-service/chains/chains-list/#optimism)           | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                           |
+| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Ethereum](/rpc-service/chains/chains-list/#ethereum)                 | [Iota EVM](/rpc-service/chains/chains-list/#iota-evm)                   | [Optimism](/rpc-service/chains/chains-list/#optimism)           | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                           |
 | [Base](/rpc-service/chains/chains-list/#base)                   | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)        | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Polkadot](/rpc-service/chains/chains-list/#polkadot)           | [Swell](/rpc-service/chains/chains-list/#swell)                   |                                                           |
 | [Bitcoin](/rpc-service/chains/chains-list/#bitcoin)             | [Fantom](/rpc-service/chains/chains-list/#fantom)                     | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Polygon](/rpc-service/chains/chains-list/#polygon)             | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                           |
 | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)           | [Filecoin](/rpc-service/chains/chains-list/#filecoin)                 | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Polygon zkEVM](/rpc-service/chains/chains-list/#polygon-zkevm) | [TAC](/rpc-service/chains/chains-list/#tac)                       |                                                           |
@@ -5655,27 +5655,13 @@ curl -X POST https://rpc.ankr.com/horizen_eon \
 
 ---
 
-## Iota
+## Iota EVM
 
-> Iota API is available on [Web3 API platform](https://www.ankr.com/rpc/iota_evm).
+> Iota EVM API is available on [Web3 API platform](https://www.ankr.com/rpc/iota_evm).
 
-The Iota blockchain, often referred to as the Iota Tangle, is a unique and innovative distributed ledger technology designed to address the limitations of traditional blockchains, particularly in the context of the Internet of Things (IoT). Here are its key elements:
+Iota EVM is a Layer 2 solution that operates on top of the Iota Mainnet. It is part of the broader Iota Smart Contracts (ISC) framework, which provides smart contract functionality on Iota. It leverages the Iota Tangle's scalability and security while providing an environment for running decentralized applications (dApps).
 
-  * **Tangle (Directed Acyclic Graph - DAG)**: Unlike traditional blockchain architectures, Iota uses a Tangle, which is a Directed Acyclic Graph (DAG). This structure allows for scalable and feeless transactions. In the Tangle, there is no single chain of blocks, but rather a network where each transaction validates two previous transactions, creating a web of interconnected transactions.
-
-  * **No Miners, Feeless Transactions**: Iota does not rely on miners or proof-of-work mechanisms like traditional blockchains. This means transactions are free and the network does not incur high fees, making it highly suitable for microtransactions, which are common in IoT environments.
-
-  * **Scalability and Speed**: The Tangle’s design improves scalability, as the more transactions that occur, the faster the network becomes. This is because new transactions contribute to validating older ones, making the system increasingly efficient as it grows.
-
-  * **Quantum Resistance**: Iota is working toward achieving quantum resistance, ensuring that its protocol can withstand the potential future threat of quantum computing breaking traditional cryptographic algorithms.
-
-  * **Iota Token (IOTA)**: Iota’s native cryptocurrency, IOTA, is used for transaction validation and securing the network. However, since Iota transactions do not require miners or fees, the role of IOTA in the network is mainly focused on participation and governance.
-
-  * **Iota's Use Cases**: Iota’s design is optimized for IoT applications, such as sensor networks, smart cities, supply chain tracking, and data sharing between devices. Its scalability and feeless nature make it well-suited for environments where small, frequent transactions are required.
-
-  * **Coordicide**: A key aspect of Iota’s evolution is the plan to remove the centralized "Coordinator" node, which currently provides security to the network. The aim is to fully decentralize Iota by implementing a more robust consensus mechanism that operates without the need for a Coordinator, known as the Coordicide project.
-
-Official quick links: [Website](https://www.iota.org/), [Docs](https://wiki.iota.org/), [GitHub](https://github.com/iotaledger/)
+Official quick links: [Website](https://evm.iota.org/), [Docs](https://wiki.iota.org/isc/introduction/), [GitHub](https://github.com/iotaledger/)
 
 ### Networks
 
@@ -5684,7 +5670,7 @@ Official quick links: [Website](https://www.iota.org/), [Docs](https://wiki.iota
 
 ### API methods
 
-For Iota, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/iota/) except for those listed as unsupported.
+For Iota EVM, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/iota-evm/) except for those listed as unsupported.
 
 #### Unsupported
 
