@@ -15,7 +15,6 @@
     "display": "hidden"
   },
   "automation": "Contract Automation",
-  "verify": "Ankr Verify",
   "-- Tutorials": {
     "type": "separator",
     "title": "Ankr Tutorials"
