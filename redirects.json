@@ -2098,5 +2098,33 @@
   {
     "from": "docs/rpc-service/chains/chains-api/klaytn/index.html",
     "to": "/docs/rpc-service/chains/chains-api/kaia/"
+  },
+  {
+    "from": "docs/verify/overview/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/verify/getting-started/create-id/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/verify/getting-started/comply-with-policy/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/verify/getting-started/create-policy/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/verify/integrating/integrate-with-ankr-verify/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/verify/integrating/check-user-compliance/index.html",
+    "to": "/docs/"
+  },
+  {
+    "from": "docs/verify/dev-details/index.html",
+    "to": "/docs/"
   }
 ]
