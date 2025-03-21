@@ -62,7 +62,7 @@ Aptos API uses the REST interface for querying, responses come in [JSON format](
 
 ### Get account
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}`**
 
 Returns the authentication key and the sequence number for an account address. Optionally, a ledger version can be specified. If the ledger version is not specified in the request, the latest ledger version is used.
 
@@ -75,7 +75,7 @@ Returns the authentication key and the sequence number for an account address. O
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address} \
 -H 'Content-Type: application/json'
 ```
 
@@ -92,7 +92,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address} \
 
 ### Get account resources
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resources`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/resources`**
 
 Retrieves all account resources for a given account and a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
 
@@ -111,7 +111,7 @@ The Aptos nodes prune account state history, via a configurable time window. If 
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resources \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/resources \
 -H 'Content-Type: application/json'
 ```
 
@@ -143,7 +143,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resources \
 
 ### Get account modules
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/modules`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/modules`**
 
 Retrieves all account modules' bytecode for a given account at a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
 
@@ -162,7 +162,7 @@ The Aptos nodes prune account state history, via a configurable time window. If 
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/modules \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/modules \
 -H 'Content-Type: application/json'
 ```
 
@@ -229,7 +229,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/modules \
 
 ### Get account resource
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resource/{resource_type}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/resource/{resource_type}`**
 
 Retrieves an individual resource from a given account and at a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
 
@@ -247,7 +247,7 @@ The Aptos nodes prune account state history, via a configurable time window. If 
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resource/{resource_type} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/resource/{resource_type} \
 -H 'Content-Type: application/json'
 ```
 
@@ -277,7 +277,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/resource/{reso
 
 ### Get account module
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/module/{module_name}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/module/{module_name}`**
 
 Retrieves an individual module from a given account and at a specific ledger version. If the ledger version is not specified in the request, the latest ledger version is used.
 
@@ -293,7 +293,7 @@ The Aptos nodes prune account state history, via a configurable time window. If 
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/module/{module_name} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/module/{module_name} \
 -H 'Content-Type: application/json'
 ```
 
@@ -360,7 +360,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/module/{module
 
 ### Get blocks by height
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/blocks/by_height/{block_height}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/blocks/by_height/{block_height}`**
 
 This endpoint allows you to get the transactions in a block and the corresponding block information.
 
@@ -376,7 +376,7 @@ If the block is pruned, it will return a 410
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/blocks/by_height/{block_height} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/blocks/by_height/{block_height} \
 -H 'Content-Type: application/json'
 ```
 
@@ -422,7 +422,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/blocks/by_height/{block_height} \
 
 ### Get blocks by version
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/blocks/by_version/{version}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/blocks/by_version/{version}`**
 
 This endpoint allows you to get the transactions in a block and the corresponding block information given a version in the block.
 
@@ -438,7 +438,7 @@ If the block has been pruned, it will return a 410
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/blocks/by_version/{version} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/blocks/by_version/{version} \
 -H 'Content-Type: application/json'
 ```
 
@@ -486,7 +486,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/blocks/by_version/{version} \
 
 ### Get events by creation number
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{creation_number}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/events/{creation_number}`**
 
 Event types are globally identifiable by an account `address` and monotonically increasing `creation_number`, one per event type emitted to the given account. This API returns events corresponding to that that event type.
 
@@ -502,7 +502,7 @@ Event types are globally identifiable by an account `address` and monotonically 
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{creation_number} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/events/{creation_number} \
 -H 'Content-Type: application/json'
 ```
 
@@ -527,7 +527,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{creati
 
 ### Get events by event handle
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{event_handle}/{field_name}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/events/{event_handle}/{field_name}`**
 
 This API uses the given account `address`, `eventHandle`, and `fieldName` to build a key that can globally identify an event types. It then uses this key to return events emitted to the given account matching that event type.
 
@@ -546,7 +546,7 @@ This API uses the given account `address`, `eventHandle`, and `fieldName` to bui
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{event_handle}/{field_name} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/events/{event_handle}/{field_name} \
 -H 'Content-Type: application/json'
 ```
 
@@ -573,7 +573,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/events/{event_
 
 ### Get ledger info
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/`**
 
 Retrieves the latest ledger information, including data such as chain ID, role type, ledger versions, epoch, etc.
 
@@ -584,7 +584,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/ \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/ \
 -H 'Content-Type: application/json'
 ```
 
@@ -610,7 +610,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/ \
 
 ### Get table item
 
-> **POST `https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item`**
+> **POST `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/tables/{table_handle}/item`**
 
 Get a table item at a specific ledger version from the table identified by `{table_handle}` in the path and the "key" (TableItemRequest) provided in the request body.
 
@@ -659,7 +659,7 @@ The Aptos nodes prune account state history, via a configurable time window. If 
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item \
+curl -X POST https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/tables/{table_handle}/item \
 -H 'Content-Type: application/json' \
 -d '{
       "key_type": "string",
@@ -678,7 +678,7 @@ curl -X POST https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item \
 
 ### Get raw table item
 
-> **POST `https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/raw_item`**
+> **POST `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/tables/{table_handle}/raw_item`**
 
 Get a table item at a specific ledger version from the table identified by `{table_handle}` in the path and the "key" (RawTableItemRequest) provided in the request body.
 
@@ -699,7 +699,7 @@ The Aptos nodes prune account state history, via a configurable time window. If 
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item \
+curl -X POST https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/tables/{table_handle}/item \
 -H 'Content-Type: application/json' \
 -d '{
   "key": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
@@ -718,7 +718,7 @@ curl -X POST https://rpc.ankr.com/http/aptos/v1/tables/{table_handle}/item \
 
 ### Get transactions
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/transactions`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions`**
 
 Retrieves on-chain committed transactions. The page size and start ledger version can be provided to get a specific sequence of transactions.
 
@@ -735,7 +735,7 @@ To retrieve a pending transaction, use [Get transactions by hash](/rpc-service/c
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions \
 -H 'Content-Type: application/json'
 ```
 
@@ -774,7 +774,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions \
 
 ### Submit transaction
 
-> **POST `https://rpc.ankr.com/http/aptos/v1/transactions`**
+> **POST `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions`**
 
 This endpoint accepts transaction submissions in two formats.
 
@@ -929,7 +929,7 @@ Request is an `application/json` body with the following parameters:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions \
+curl -X POST https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions \
 -H 'Content-Type: application/json'
 -d '{
   "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
@@ -987,7 +987,7 @@ curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions \
 
 ### Get transaction by hash
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/transactions/by_hash/{txn_hash}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/by_hash/{txn_hash}`**
 
 Retrieves a transaction by its hash. This is the same hash that is returned by the API when submitting a transaction (see PendingTransaction).
 
@@ -1006,7 +1006,7 @@ To create a transaction hash by yourself, do the following:
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions/by_hash/{txn_hash} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/by_hash/{txn_hash} \
 -H 'Content-Type: application/json'
 ```
 
@@ -1043,7 +1043,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions/by_hash/{txn_hash} \
 
 ### Get transaction by version
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/transactions/by_version/{txn_version}`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/by_version/{txn_version}`**
 
 Retrieves a transaction by a given version. If the version has been pruned, a 410 will be returned.
 
@@ -1055,7 +1055,7 @@ Retrieves a transaction by a given version. If the version has been pruned, a 41
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions/by_version/{txn_version} \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/by_version/{txn_version} \
 -H 'Content-Type: application/json'
 ```
 
@@ -1092,7 +1092,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/transactions/by_version/{txn_vers
 
 ### Get account transactions
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/accounts/{address}/transactions`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/transactions`**
 
 Retrieves on-chain committed transactions from an account. If the start version is too far in the past, a 410 will be returned.
 
@@ -1111,7 +1111,7 @@ To retrieve a pending transaction, use [Get transaction by hash](/rpc-service/ch
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/transactions \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/accounts/{address}/transactions \
 -H 'Content-Type: application/json'
 ```
 
@@ -1150,7 +1150,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/accounts/{address}/transactions \
 
 ### Submit batch transactions
 
-> **POST `https://rpc.ankr.com/http/aptos/v1/transactions/batch`**
+> **POST `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/batch`**
 
 Submits multiple transactions. The response has three outcomes:
 
@@ -1309,7 +1309,7 @@ A request body is represented by an array of the following parameters:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/batch \
+curl -X POST https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/batch \
 -H 'Content-Type: application/json'
 -d '[
   {
@@ -1358,7 +1358,7 @@ curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/batch \
 
 ### Simulate transaction
 
-> **POST `https://rpc.ankr.com/http/aptos/v1/transactions/simulate`**
+> **POST `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/simulate`**
 
 Simulates a transaction. The output of the transaction will have the exact transaction outputs and events that running an actual signed transaction would have. However, it will not have the associated state hashes, as they are not updated in storage. This can be used to estimate the maximum gas units for a submitted transaction.
 
@@ -1518,7 +1518,7 @@ A request body is represented by an array of the following parameters:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/simulate \
+curl -X POST https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/simulate \
 -H 'Content-Type: application/json' \
 -d '{
   "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
@@ -1606,7 +1606,7 @@ curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/simulate \
 
 ### Encode submission
 
-> **POST `https://rpc.ankr.com/http/aptos/v1/transactions/encode_submission`**
+> **POST `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/encode_submission`**
 
 This endpoint accepts an EncodeSubmissionRequest, which internally is a UserTransactionRequestInner (and optionally secondary signers) encoded as JSON, validates the request format, and then returns that request encoded in BCS. The client can then use this to create a transaction signature to be used in a SubmitTransactionRequest, which it then passes to the [Submit transaction](/rpc-service/chains/chains-api/aptos/#submit-transaction) POST endpoint.
 
@@ -1708,7 +1708,7 @@ Submission encoding request body contains the following parameters:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/encode_submission \
+curl -X POST https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/transactions/encode_submission \
 -H 'Content-Type: application/json' \
 -d '{
   "sender": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 ",
@@ -1744,7 +1744,7 @@ curl -X POST https://rpc.ankr.com/http/aptos/v1/transactions/encode_submission \
 
 ### Estimate gas price
 
-> **GET `https://rpc.ankr.com/http/aptos/v1/estimate_gas_price`**
+> **GET `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/estimate_gas_price`**
 
 Currently, the gas estimation is handled by taking the median of the last 100,000 transactions If a user wants to prioritize their transaction and is willing to pay, they can pay more than the gas price. If they're willing to wait longer, they can pay less. Note that the gas price moves with the fee market, and should only increase when demand outweighs supply.
 
@@ -1757,7 +1757,7 @@ None.
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/estimate_gas_price \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/estimate_gas_price \
 -H 'Content-Type: application/json'
 ```
 
@@ -1777,7 +1777,7 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/estimate_gas_price \
 
 ### Execute view function of a module
 
-> **POST `https://rpc.ankr.com/http/aptos/v1/view`**
+> **POST `https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/view`**
 
 Executes the Move function with the given parameters and return its execution result.
 
@@ -1802,7 +1802,7 @@ The Move view function request body contains the following parameters:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/aptos/v1/view \
+curl -X POST https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/view \
 -H 'Content-Type: application/json' \
 -d '{
   "function": "0x1::aptos_coin::transfer",

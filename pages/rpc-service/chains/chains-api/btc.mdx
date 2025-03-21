@@ -99,7 +99,7 @@ The block hash, hex-encoded.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getbestblockhash",
@@ -195,7 +195,7 @@ A string that is serialized, hex-encoded data for the block hash.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblock",
@@ -300,7 +300,7 @@ getblockchaininfo
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblockchaininfo",
@@ -359,7 +359,7 @@ The current block count.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblockcount",
@@ -410,7 +410,7 @@ getblockfilter "blockhash" ( "filtertype" )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblockfilter",
@@ -458,7 +458,7 @@ The hash of the block.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblockhash",
@@ -531,7 +531,7 @@ A string that is serialized, hex-encoded data for block hash.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblockheader",
@@ -643,7 +643,7 @@ getblockstats hash_or_height ( stats )
 **Block hash param**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblockstats",
@@ -654,7 +654,7 @@ curl -X POST https://rpc.ankr.com/btc \
 **Block height param**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getblockstats",
@@ -718,7 +718,7 @@ getchaintips
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getchaintips",
@@ -788,7 +788,7 @@ getchaintxstats ( nblocks "blockhash" )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getchaintxstats",
@@ -840,7 +840,7 @@ The proof-of-work difficulty as a multiple of the minimum difficulty.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getdifficulty",
@@ -932,7 +932,7 @@ getmempoolancestors "txid" ( verbose )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getmempoolancestors",
@@ -1014,7 +1014,7 @@ getmempooldescendants "txid" ( verbose )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getmempooldescendants",
@@ -1081,7 +1081,7 @@ getmempoolentry "txid"
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getmempoolentry",
@@ -1125,7 +1125,7 @@ getmempoolinfo
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getmempoolinfo",
@@ -1243,7 +1243,7 @@ getrawmempool ( verbose mempool_sequence )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getrawmempool",
@@ -1320,7 +1320,7 @@ gettxout "txid" n ( include_mempool )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "gettxout",
@@ -1366,7 +1366,7 @@ A string that is a serialized, hex-encoded data for the proof.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "gettxoutproof",
@@ -1417,7 +1417,7 @@ verifytxoutproof "proof"
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "verifytxoutproof",
@@ -1494,7 +1494,7 @@ analyzepsbt "psbt"
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "analyzepsbt",
@@ -1557,7 +1557,7 @@ The base64-encoded partially signed transaction.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "combinepsbt",
@@ -1601,7 +1601,7 @@ The hex-encoded raw transaction with signatures.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "combinerawtransaction",
@@ -1642,7 +1642,7 @@ The resulting raw transaction (base64-encoded string).
 **Create a transaction**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "createrawtransaction",
@@ -1653,7 +1653,7 @@ curl -X POST https://rpc.ankr.com/btc \
 **Convert the transaction to PSBT**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "converttopsbt",
@@ -1730,7 +1730,7 @@ The resulting raw transaction (base64-encoded string).
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "createpsbt",
@@ -1809,7 +1809,7 @@ A hex string of the transaction.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "hww",
       "method": "createrawtransaction",
@@ -1943,7 +1943,7 @@ decodepsbt "psbt"
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "decodepsbt",
@@ -2075,7 +2075,7 @@ decoderawtransaction "hexstring" ( iswitness )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "decoderawtransaction",
@@ -2174,7 +2174,7 @@ decodescript "hexstring"
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "decodescript",
@@ -2244,7 +2244,7 @@ finalizepsbt "psbt" ( extract )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "finalizepsbt",
@@ -2356,7 +2356,7 @@ The serialized, hex-encoded data for `txid`.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getrawtransaction",
@@ -2410,7 +2410,7 @@ The base64-encoded partially signed transaction.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "joinpsbts",
@@ -2452,7 +2452,7 @@ The transaction hash in hex.
 **Create a transaction**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "createrawtransaction",
@@ -2463,7 +2463,7 @@ curl -X POST https://rpc.ankr.com/btc \
 **Sign the transaction, and get back the hex**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "signrawtransactionwithwallet",
@@ -2474,7 +2474,7 @@ curl -X POST https://rpc.ankr.com/btc \
 **Send the transaction (signed hex)**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "sendrawtransaction",
@@ -2539,7 +2539,7 @@ testmempoolaccept ["rawtx",...] ( maxfeerate )
 **Create a transaction**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "createrawtransaction",
@@ -2550,7 +2550,7 @@ curl -X POST https://rpc.ankr.com/btc \
 **Sign the transaction, and get back the hex**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "signrawtransactionwithwallet",
@@ -2561,7 +2561,7 @@ curl -X POST https://rpc.ankr.com/btc \
 **Test acceptance of the transaction (signed hex)**:
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "testmempoolaccept",
@@ -2625,7 +2625,7 @@ The base64-encoded partially signed transaction with inputs updated.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "utxoupdatepsbt",
@@ -2688,7 +2688,7 @@ estimatesmartfee conf_target ( "estimate_mode" )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "estimatesmartfee",
@@ -2743,7 +2743,7 @@ getindexinfo ( "index_name" )
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getindexinfo",
@@ -2788,7 +2788,7 @@ validateaddress "address"
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "validateaddress",
@@ -2842,7 +2842,7 @@ If the signature is verified or not.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "verifymessage",
@@ -2920,7 +2920,7 @@ getaddressinfo "address"
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "test",
       "method": "getaddressinfo",
@@ -2977,7 +2977,7 @@ Retrieves the hash of the block specified by the block number.
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/block-index/854043
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/block-index/854043
 ```
 
 ##### Response example
@@ -3004,7 +3004,7 @@ Retrieves detailed information about a specific transaction on the blockchain. I
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tx/950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/tx/950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9
 ```
 
 ##### Response example
@@ -3150,7 +3150,7 @@ Returns transaction data in the exact format as returned by backend, including a
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tx-specific/950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/tx-specific/950817076007421e23552156277f343fd579cbacc1e92aa14657baff647d2fc9
 ```
 
 ##### Response example
@@ -3262,7 +3262,7 @@ Returns balances and transactions of an address. The returned transactions are s
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/address/bc1qqy0q2hxw2hwyw4qqdjjewyxx5sq966tstjyvh2y96zrz674dztjqe6qld0?details=txids
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/address/bc1qqy0q2hxw2hwyw4qqdjjewyxx5sq966tstjyvh2y96zrz674dztjqe6qld0?details=txids
 ```
 
 ##### Response example
@@ -3339,7 +3339,7 @@ The returned transactions are sorted by block height, the newest blocks first.
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/xpub/xpub6AHA9hZDN11k2ijHMeS5QqHx2KP9aMBRhTDqANMnwVtdyw2TDYRmF8PjpvwUFcL1Et8Hj59S3gTSMcUQ5gAqTz3Wd8EsMTmF3DChhqPQBnU
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/xpub/xpub6AHA9hZDN11k2ijHMeS5QqHx2KP9aMBRhTDqANMnwVtdyw2TDYRmF8PjpvwUFcL1Et8Hj59S3gTSMcUQ5gAqTz3Wd8EsMTmF3DChhqPQBnU
 ```
 
 ##### Response example
@@ -3401,7 +3401,7 @@ Coinbase utxos have field _coinbase_ set to true, however due to performance rea
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/utxo/bc1qxhmdufsvnuaaaer4ynz88fspdsxq2h9e9cetdj?confirmed=true
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/utxo/bc1qxhmdufsvnuaaaer4ynz88fspdsxq2h9e9cetdj?confirmed=true
 ```
 
 ##### Response example
@@ -3451,7 +3451,7 @@ Returns information about block with transactions. Subject to pagination.
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/block/854631
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/block/854631
 ```
 
 ##### Response example
@@ -3569,13 +3569,13 @@ Broadcasts new transaction to the blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/sendtx/{hex-tx-data}
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/sendtx/{hex-tx-data}
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/btc_blockbook/api/v2/sendtx/ \
+curl -X POST https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/sendtx/ \
      -H 'Content-Type: application/json' \
      -d '{
         "hex-tx-data": "your-raw-tx"
@@ -3615,7 +3615,7 @@ Returns a list of available currency rate tickers (secondary currencies) for the
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tickers-list/?timestamp=1625648394
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/tickers-list/?timestamp=1625648394
 ```
 
 ##### Response example
@@ -3652,7 +3652,7 @@ All responses contain an actual rate timestamp.
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/tickers/?currency=usd&timestamp=1625648394
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/tickers/?currency=usd&timestamp=1625648394
 ```
 
 ##### Response example
@@ -3714,7 +3714,7 @@ Returns a balance history for the specified xpub or address.
 ##### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/balancehistory/39C7fxSzEACPjM78Z7xdPxhf7mKxJwvfMJ
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/balancehistory/39C7fxSzEACPjM78Z7xdPxhf7mKxJwvfMJ
 ```
 
 ##### Response example
