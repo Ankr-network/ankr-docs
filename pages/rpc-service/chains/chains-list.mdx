@@ -687,8 +687,6 @@ For Aptos, we support blockchain interaction via all the [applicable methods](/r
 
 #### Request example
 
-https://rpc.ankr.com/premium-http/aptos/2d0c3a3a5ae6977edba0d1416c3fa21bd8273591dabd5f21156542eed96e167b/v1
-
 ```shell
 curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/ \
 -H 'Content-Type: application/json'
@@ -2494,7 +2492,7 @@ To add BitTorrent Chain Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `BitTorrent Chain Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/bttc/`.
+      * **New RPC URL**: `https://rpc.ankr.com/bttc/{your_token}`.
       * **Chain ID**: `199`.
       * **Currency symbol**: `BTT`.
       * **Block explorer URL**: `https://scan.bt.io/`.
@@ -2542,7 +2540,7 @@ For BitTorrent Chain, we support blockchain interaction via all the [applicable 
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/bttc \
+curl -X POST https://rpc.ankr.com/bttc/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -2564,7 +2562,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/bttc"  // url string
+    const url = "https://rpc.ankr.com/bttc/{your_token}"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -2587,7 +2585,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/bttc'  // url string
+const url = 'https://rpc.ankr.com/bttc/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -2606,7 +2604,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/bttc'  # url string
+    url = 'https://rpc.ankr.com/bttc/{your_token}'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -4119,7 +4117,7 @@ To add Fantom Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Fantom Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/fantom/`.
+      * **New RPC URL**: `https://rpc.ankr.com/fantom/{your_token}`.
       * **Chain ID**: `250`.
       * **Currency symbol**: `FTM`.
       * **Block explorer URL**: `https://ftmscan.com/`.
@@ -4132,7 +4130,7 @@ To add Fantom Testnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Fantom Testnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/fantom_testnet/`.
+      * **New RPC URL**: `https://rpc.ankr.com/fantom_testnet/{your_token}`.
       * **Chain ID**: `4002`.
       * **Currency symbol**: `FTM`.
       * **Block explorer URL**: `https://testnet.ftmscan.com/`.
@@ -4180,7 +4178,7 @@ For Fantom, we support blockchain interaction via all the [applicable methods](/
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/fantom \
+curl -X POST https://rpc.ankr.com/fantom/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -4202,7 +4200,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/fantom"  // url string
+    const url = "https://rpc.ankr.com/fantom/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -4225,7 +4223,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/fantom'  // url string
+const url = 'https://rpc.ankr.com/fantom/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -4244,7 +4242,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/fantom'  # url string
+    url = 'https://rpc.ankr.com/fantom/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -7400,7 +7398,7 @@ For Near, we support blockchain interaction via all the [applicable methods](/rp
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -10985,7 +10983,7 @@ And all the methods with the following segments in their path:
 #### Request example (JSON-RPC)
 
 ```shell
-curl -X POST https://rpc.ankr.com/tron_jsonrpc \
+curl -X POST https://rpc.ankr.com/tron_jsonrpc/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -11008,7 +11006,7 @@ curl -X POST https://rpc.ankr.com/tron_jsonrpc \
 #### Request example (REST)
 
 ```shell
-curl -X GET 'https://rpc.ankr.com/http/tron/walletsolidity/getnowblock'
+curl -X GET 'https://rpc.ankr.com/premium-http/tron/{your_token}/walletsolidity/getnowblock'
 ```
 
 #### Response example (REST)

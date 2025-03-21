@@ -88,7 +88,7 @@ If `permission` of the key is `FunctionCall`, it will return more details such a
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -146,7 +146,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -313,7 +313,7 @@ You can query multiple keys by passing an array of objects containing the `accou
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -385,7 +385,7 @@ Multiple accounts can be queried by passing an array of `account_ids`.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -469,7 +469,7 @@ The API enables you to view details about accounts and contracts as well as perf
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -523,7 +523,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -605,7 +605,7 @@ The returned code will be encoded in base64.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -659,7 +659,7 @@ Pass an empty string for `prefix_base64` if you would like to return the entire 
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -740,7 +740,7 @@ Pass an empty string for this param if you would like to return all state change
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -817,7 +817,7 @@ The change are returned as a base64-encoded WASM file.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -880,7 +880,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example (`get_num`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -901,7 +901,7 @@ curl -X POST https://rpc.ankr.com/near \
 The `args_base64` in this example is decoded as `{"account_id":"dev-1588039999690"}`. The `account_id` would likely be the validator and not the same account for this particular view function.
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -960,7 +960,7 @@ You can also use `finality` param to return latest block details.
 #### Request example (`finality`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -975,7 +975,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`block_id`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -990,7 +990,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`block_hash`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1133,7 +1133,7 @@ You may choose to search by a specific block or finality, you can not choose bot
 #### Request example (`finality`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1148,7 +1148,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`block_id`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1163,7 +1163,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`block_hash`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1221,7 +1221,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example (`chunk_id`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1234,7 +1234,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`block_id`, `shard_id`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1304,7 +1304,7 @@ Using `[null]` will return the most recent block's gas price.
 #### Request example (`[block_height]`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1317,7 +1317,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`["block_hash"]`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1330,7 +1330,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`[null]`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1374,7 +1374,7 @@ The API enables you to retrieve the current genesis and protocol configuration.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1640,7 +1640,7 @@ Useful for finding current storage and transaction costs.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1888,7 +1888,7 @@ Note: For `["block hash"]` & `[block number]` you will need to query from the la
 #### Request example (`["block number"]`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1901,7 +1901,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`["block hash"]`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -1914,7 +1914,7 @@ curl -X POST https://rpc.ankr.com/near \
 #### Request example (`["null"]`)
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -2041,7 +2041,7 @@ The RPC API enables you to send transactions and query their status.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -2083,7 +2083,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -2192,7 +2192,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -2318,7 +2318,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -2577,7 +2577,7 @@ For understanding what could go wrong and the error codes involved, refer to cor
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
