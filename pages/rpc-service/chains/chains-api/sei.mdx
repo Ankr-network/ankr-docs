@@ -28,7 +28,7 @@ Here is the request/response structure to use for querying:
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -41,13 +41,13 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/block?height=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/block?height=1
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
   </Tab>
   <Tab>
@@ -208,7 +208,7 @@ Status of the node.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -221,7 +221,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/status
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/status
 ```
   </Tab>
 </Tabs>
@@ -307,7 +307,7 @@ Network info.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -320,7 +320,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/net_info
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/net_info
 ```
   </Tab>
 </Tabs>
@@ -435,7 +435,7 @@ Block headers, in descending order (highest first).
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -448,7 +448,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/blockchain?minHeight=1&maxHeight=2
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/blockchain?minHeight=1&maxHeight=2
 ```
   </Tab>
 </Tabs>
@@ -529,7 +529,7 @@ Block information.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -542,7 +542,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/blockchain?height=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/blockchain?height=1
 ```
   </Tab>
 </Tabs>
@@ -666,7 +666,7 @@ Block information.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -679,7 +679,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/block_by_hash?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/block_by_hash?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED
 ```
   </Tab>
 </Tabs>
@@ -803,7 +803,7 @@ Block results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -816,7 +816,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/block_results?height=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/block_results?height=1
 ```
   </Tab>
 </Tabs>
@@ -930,7 +930,7 @@ Commit results. Canonical switches from false to true for block H once block H+1
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -943,7 +943,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/commit?height=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/commit?height=1
 ```
   </Tab>
 </Tabs>
@@ -1036,7 +1036,7 @@ Commit results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1049,7 +1049,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/validators?height=1&page=2&per_page=30
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/validators?height=1&page=2&per_page=30
 ```
   </Tab>
 </Tabs>
@@ -1107,7 +1107,7 @@ A Genesis chunk response.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1120,7 +1120,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/genesis_chunked?chunk=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/genesis_chunked?chunk=1
 ```
   </Tab>
 </Tabs>
@@ -1167,7 +1167,7 @@ A complete consensus state. See the [Vote string description](https://pkg.go.dev
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1180,7 +1180,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/dump_consensus_state
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/dump_consensus_state
 ```
   </Tab>
 </Tabs>
@@ -1330,7 +1330,7 @@ Consensus state results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1343,7 +1343,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/consensus_state
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/consensus_state
 ```
   </Tab>
 </Tabs>
@@ -1411,7 +1411,7 @@ Consensus parameters results.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1424,7 +1424,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/consensus_params?height=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/consensus_params?height=1
 ```
   </Tab>
 </Tabs>
@@ -1482,7 +1482,7 @@ The list of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1495,7 +1495,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/unconfirmed_txs?limit=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/unconfirmed_txs?limit=1
 ```
   </Tab>
 </Tabs>
@@ -1544,7 +1544,7 @@ The status of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1557,7 +1557,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/num_unconfirmed_txs
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/num_unconfirmed_txs
 ```
   </Tab>
 </Tabs>
@@ -1607,7 +1607,7 @@ The list of unconfirmed transactions.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1620,7 +1620,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/tx_search?query=tx.height%4D2000&prove=true&page=1&per_page=30&order_by=asc
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/tx_search?query=tx.height%4D2000&prove=true&page=1&per_page=30&order_by=asc
 ```
   </Tab>
 </Tabs>
@@ -1697,7 +1697,7 @@ The list of paginated blocks matching the search criteria.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1710,7 +1710,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/block_search?query=block.height%4D2000&page=1&per_page=30&order_by=asc
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/block_search?query=block.height%4D2000&page=1&per_page=30&order_by=asc
 ```
   </Tab>
 </Tabs>
@@ -1748,7 +1748,7 @@ Transaction info.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1761,7 +1761,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/tx?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED&prove=true
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/tx?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED&prove=true
 ```
   </Tab>
 </Tabs>
@@ -1824,7 +1824,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1837,7 +1837,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/broadcast_tx_sync?tx=456
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/broadcast_tx_sync?tx=456
 ```
   </Tab>
 </Tabs>
@@ -1889,7 +1889,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1902,7 +1902,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/broadcast_tx_async?tx=123
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/broadcast_tx_async?tx=123
 ```
   </Tab>
 </Tabs>
@@ -1956,7 +1956,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1969,7 +1969,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/broadcast_tx_commit?tx=785
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/broadcast_tx_commit?tx=785
 ```
   </Tab>
 </Tabs>
@@ -2024,7 +2024,7 @@ Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-c
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2037,7 +2037,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/check_tx?tx=785
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/check_tx?tx=785
 ```
   </Tab>
 </Tabs>
@@ -2101,7 +2101,7 @@ Application info.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2114,7 +2114,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/abci_info
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/abci_info
 ```
   </Tab>
 </Tabs>
@@ -2165,7 +2165,7 @@ Particular info according to the query submitted.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2178,7 +2178,7 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
 ```
   </Tab>
 </Tabs>
@@ -2313,7 +2313,7 @@ Node status.
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/node_info
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/node_info
 ```
 
 #### Response example
@@ -2398,7 +2398,7 @@ Tx broadcasting result.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/sei_cosmos/txs
+curl -X POST https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/txs
 ```
 
 #### Response example
@@ -2487,7 +2487,7 @@ Submission result codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/sei_cosmos/staking/delegators/{delegatorAddr}/delegations
+curl -X POST https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/staking/delegators/{delegatorAddr}/delegations
 ```
 
 #### Response example
@@ -2573,7 +2573,7 @@ Result codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/sei_cosmos/staking/delegators/{delegatorAddr}/unbonding_delegations
+curl -X POST https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/staking/delegators/{delegatorAddr}/unbonding_delegations
 ```
 
 #### Response example
@@ -2631,7 +2631,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/auth/v1beta1/accounts
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/auth/v1beta1/accounts
 ```
 
 #### Response example
@@ -2671,7 +2671,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/auth/v1beta1/accounts/{address}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/auth/v1beta1/accounts/{address}
 ```
 
 #### Response example
@@ -2705,7 +2705,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/auth/v1beta1/params
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/auth/v1beta1/params
 ```
 
 #### Request example
@@ -2747,7 +2747,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/balances/{address}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/bank/v1beta1/balances/{address}
 ```
 
 #### Response example
@@ -2788,7 +2788,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/balances/{address}/{denom}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/bank/v1beta1/balances/{address}/{denom}
 ```
 
 #### Response example
@@ -2827,7 +2827,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/denom_owners/{denom}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/bank/v1beta1/denom_owners/{denom}
 ```
 
 #### Response example
@@ -2874,7 +2874,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/denoms_metadata
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/bank/v1beta1/denoms_metadata
 ```
 
 #### Response example
@@ -2928,7 +2928,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/denoms_metadata/{denom}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/bank/v1beta1/denoms_metadata/{denom}
 ```
 
 #### Response example
@@ -2976,7 +2976,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos//cosmos/bank/v1beta1/params
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}//cosmos/bank/v1beta1/params
 ```
 
 #### Response example
@@ -3019,7 +3019,7 @@ Code responses:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/supply
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/bank/v1beta1/supply
 ```
 
 #### Response example
@@ -3059,7 +3059,7 @@ Code responses:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/bank/v1beta1/supply/{denom}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/bank/v1beta1/supply/{denom}
 ```
 
 #### Response example
@@ -3093,7 +3093,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/community_pool
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/community_pool
 ```
 
 #### Response example
@@ -3129,7 +3129,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
 ```
 
 #### Response example
@@ -3177,7 +3177,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
 ```
 
 #### Response example
@@ -3213,7 +3213,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
 ```
 
 #### Response example
@@ -3246,7 +3246,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
 ```
 
 #### Response example
@@ -3277,7 +3277,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/params
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/params
 ```
 
 #### Response example
@@ -3313,7 +3313,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/commission
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/validators/{validator_address}/commission
 ```
 
 #### Response example
@@ -3351,7 +3351,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
 ```
 
 #### Response example
@@ -3396,7 +3396,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/distribution/v1beta1/validators/{validator_address}/slashes
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/distribution/v1beta1/validators/{validator_address}/slashes
 ```
 
 #### Response example
@@ -3440,7 +3440,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/evidence/v1beta1/evidence
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/evidence/v1beta1/evidence
 ```
 
 #### Response example
@@ -3480,7 +3480,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/evidence/v1beta1/evidence/{evidence_hash}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/evidence/v1beta1/evidence/{evidence_hash}
 ```
 
 #### Response example
@@ -3514,7 +3514,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/params/{params_type}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/params/{params_type}
 ```
 
 #### Response example
@@ -3574,7 +3574,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/proposals
 ```
 
 #### Response example
@@ -3634,7 +3634,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/proposals/{proposal_id}
 ```
 
 #### Response example
@@ -3693,7 +3693,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
 ```
 
 #### Response example
@@ -3740,7 +3740,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
 
 ```
 
@@ -3781,7 +3781,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/tally
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/proposals/{proposal_id}/tally
 ```
 
 #### Response example
@@ -3822,7 +3822,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/votes
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/proposals/{proposal_id}/votes
 ```
 
 #### Response example
@@ -3870,7 +3870,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
 ```
 
 #### Response example
@@ -3911,7 +3911,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/mint/v1beta1/annual_provisions
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/mint/v1beta1/annual_provisions
 ```
 
 ### Response example
@@ -3942,7 +3942,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/mint/v1beta1/inflation
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/mint/v1beta1/inflation
 ```
 
 #### Response example
@@ -3973,7 +3973,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/mint/v1beta1/params
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/mint/v1beta1/params
 ```
 
 #### Response example
@@ -4012,7 +4012,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/params/v1beta1/params
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/params/v1beta1/params
 ```
 
 #### Response example
@@ -4047,7 +4047,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/slashing/v1beta1/params
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/slashing/v1beta1/params
 ```
 
 #### Response example
@@ -4088,7 +4088,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/slashing/v1beta1/signing_infos
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/slashing/v1beta1/signing_infos
 ```
 
 #### Response example
@@ -4132,7 +4132,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/slashing/v1beta1/signing_infos/{cons_address}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/slashing/v1beta1/signing_infos/{cons_address}
 ```
 
 #### Response example
@@ -4175,7 +4175,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegations/{delegator_addr}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/delegations/{delegator_addr}
 ```
 
 #### Response example
@@ -4229,7 +4229,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
 ```
 
 #### Response example
@@ -4296,7 +4296,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
 ```
 
 #### Reponse example
@@ -4349,7 +4349,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
 ```
 
 #### Response example
@@ -4415,7 +4415,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
 ```
 
 #### Response example
@@ -4474,7 +4474,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/historical_info/{height}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/historical_info/{height}
 ```
 
 #### Response example
@@ -4562,7 +4562,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/params
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/params
 ```
 
 #### Response example
@@ -4599,7 +4599,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/pool
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/pool
 ```
 
 #### Response example
@@ -4638,7 +4638,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/validators
 ```
 
 #### Response example
@@ -4703,7 +4703,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/validators/{validator_addr}
 ```
 
 #### Response example
@@ -4767,7 +4767,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/validators/{validator_addr}/delegations
 ```
 
 #### Response example
@@ -4815,7 +4815,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
 ```
 
 #### Response example
@@ -4857,7 +4857,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
 ```
 
 #### Response example
@@ -4905,7 +4905,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
 ```
 
 #### Response example
@@ -4953,7 +4953,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/applied_plan/{name}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/upgrade/v1beta1/applied_plan/{name}
 ```
 
 #### Response example
@@ -4984,7 +4984,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/current_plan
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/upgrade/v1beta1/current_plan
 ```
 
 #### Response example
@@ -5024,7 +5024,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/module_versions
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/upgrade/v1beta1/module_versions
 ```
 
 #### Response example
@@ -5062,7 +5062,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
 ```
 
 #### Response example
@@ -5100,7 +5100,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/authz/v1beta1/grants
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/authz/v1beta1/grants
 ```
 
 #### Response example
@@ -5144,7 +5144,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
 ```
 
 #### Response example
@@ -5187,7 +5187,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/feegrant/v1beta1/allowances/{grantee}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/feegrant/v1beta1/allowances/{grantee}
 ```
 
 #### Response example
@@ -5233,7 +5233,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/latest
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/blocks/latest
 ```
 
 #### Response example
@@ -5451,7 +5451,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
 
 #### Response example
@@ -5669,7 +5669,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/node_info
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/node_info
 ```
 
 #### Response example
@@ -5732,7 +5732,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/syncing
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/syncing
 ```
 
 #### Response example
@@ -5767,7 +5767,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/validatorsets/latest
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/validatorsets/latest
 ```
 
 #### Response example
@@ -5818,7 +5818,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/validatorsets/{height}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/validatorsets/{height}
 ```
 
 #### Response example
@@ -5932,7 +5932,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/simulate
+curl -X POST https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/tx/v1beta1/simulate
 ```
 
 #### Response example
@@ -5992,7 +5992,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/txs
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/tx/v1beta1/txs
 ```
 
 #### Response example
@@ -6133,7 +6133,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/txs
+curl -X POST https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/tx/v1beta1/txs
 ```
 
 #### Response example
@@ -6196,7 +6196,7 @@ Response codes:
 #### Request example
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/tx/v1beta1/txs/{hash}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/tx/v1beta1/txs/{hash}
 ```
 
 #### Response example

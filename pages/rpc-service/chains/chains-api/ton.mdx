@@ -87,13 +87,13 @@ Information about the address specified.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getAddressInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getAddressInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -167,13 +167,13 @@ Information about the address specified.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getExtendedAddressInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getExtendedAddressInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -253,13 +253,13 @@ Information about the address specified.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getWalletInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getWalletInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -326,13 +326,13 @@ The transaction history for a specific address.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getTransactions?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getTransactions?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -431,13 +431,13 @@ The balance of a specific address on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getAddressBalance?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getAddressBalance?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -488,13 +488,13 @@ Checks whether an address is active, uninitialized, or frozen.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getAddressState?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getAddressState?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -545,13 +545,13 @@ Converts TON addresses to a more readable and standardized output.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/packAddress?address=0%3A83DFD552E63729B472FCBCC8C45EBCC6691702558B68EC7527E1BA403A0F31A8
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/packAddress?address=0%3A83DFD552E63729B472FCBCC8C45EBCC6691702558B68EC7527E1BA403A0F31A8
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -602,13 +602,13 @@ Converts human-readable addresses into raw format.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/unpackAddress?address=EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/unpackAddress?address=EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -659,13 +659,13 @@ Data about a specific token on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getTokenData?address=EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getTokenData?address=EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -729,13 +729,13 @@ Detects the type and format of a TON address.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/detectAddress?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/detectAddress?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -797,13 +797,13 @@ Information about the current state of the TON masterchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getMasterchainInfo
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getMasterchainInfo
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -872,13 +872,13 @@ Detects the type and format of a TON address.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getMasterchainBlockSignatures?seqno=39064865
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getMasterchainBlockSignatures?seqno=39064865
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -955,13 +955,13 @@ The proof of a specific shard block on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getShardBlockProof?workchain=-1&shard=-9223372036854775808&seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getShardBlockProof?workchain=-1&shard=-9223372036854775808&seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1058,13 +1058,13 @@ Information about the latest consensus block on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getConsensusBlock
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getConsensusBlock
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1120,13 +1120,13 @@ Detailed information about a specific block on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/lookupBlock?workchain=-1&shard=-9223372036854775808&seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/lookupBlock?workchain=-1&shard=-9223372036854775808&seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1185,13 +1185,13 @@ Information about shards for a specific masterchain block on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/shards?seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/shards?seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1268,13 +1268,13 @@ Transactions from a specific block on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getBlockTransactions?workchain=-1&shard=-9223372036854775808&seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactions?workchain=-1&shard=-9223372036854775808&seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1368,13 +1368,13 @@ Detailed information about transactions from a specific block on the TON blockch
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getBlockTransactionsExt?workchain=-1&shard=-9223372036854775808&seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactionsExt?workchain=-1&shard=-9223372036854775808&seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1524,13 +1524,13 @@ Detailed metadata about a block, including its identifiers, state flags, and tim
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getBlockHeader?workchain=-1&shard=-9223372036854775808&seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockHeader?workchain=-1&shard=-9223372036854775808&seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1620,13 +1620,13 @@ Information about the size of message queues associated with a specified block o
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getOutMsgQueueSizes
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getOutMsgQueueSizes
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1746,13 +1746,13 @@ The transaction history for a specific address.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getTransactions?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getTransactions?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1856,13 +1856,13 @@ Transactions from a specific block on the TON blockchain.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getBlockTransactions?workchain=-1&shard=-9223372036854775808&seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactions?workchain=-1&shard=-9223372036854775808&seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -1956,13 +1956,13 @@ Detailed information about transactions from a specific block on the TON blockch
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getBlockTransactionsExt?workchain=-1&shard=-9223372036854775808&seqno=39064985
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactionsExt?workchain=-1&shard=-9223372036854775808&seqno=39064985
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -2109,13 +2109,13 @@ Specific transaction on the TON blockchain based on the source address, destinat
 >
   <Tab>
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/tryLocateTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/tryLocateTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -2197,13 +2197,13 @@ Specific transaction on the TON blockchain based on the source address, destinat
 >
   <Tab>
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/tryLocateResultTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/tryLocateResultTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -2285,13 +2285,13 @@ The source transaction in the TON blockchain based on the source address, destin
 >
   <Tab>
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/tryLocateSourceTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/tryLocateSourceTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -2387,13 +2387,13 @@ A specific configuration parameter from the TON blockchain.
 >
   <Tab>
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getConfigParam?config_id=5
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getConfigParam?config_id=5
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -2448,13 +2448,13 @@ Full config from the TON blockchain.
 >
   <Tab>
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getConfigAll
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getConfigAll
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -2511,7 +2511,7 @@ Retrieves data from smart contracts without modifying their state.
 >
   <Tab>
 ```shell
-curl --request POST https://rpc.ankr.com/http/ton_api_v2/runGetMethod \
+curl --request POST https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/runGetMethod \
      --header 'accept: application/json' \
      --header 'content-type: application/json' \
      --data '
@@ -2530,7 +2530,7 @@ curl --request POST https://rpc.ankr.com/http/ton_api_v2/runGetMethod \
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -2610,7 +2610,7 @@ Fees required for query processing.
 >
   <Tab>
 ```shell
-curl --request POST https://rpc.ankr.com/http/ton_api_v2/estimateFee \
+curl --request POST https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/estimateFee \
      --header 'accept: application/json' \
      --header 'content-type: application/json' \
      --data '
@@ -2624,7 +2624,7 @@ curl --request POST https://rpc.ankr.com/http/ton_api_v2/estimateFee \
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",

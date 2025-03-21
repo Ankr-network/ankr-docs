@@ -652,6 +652,10 @@ curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1be
 
 <img src="/docs/build/chains-list/aptos.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Aptos API is available on [Web3 API platform](https://www.ankr.com/rpc/aptos).
 
 The Aptos blockchain, designed with scalability, safety, reliability, and upgradability as key principles, to address blockchain challenges, such as frequent outages, high costs, low throughput limits, and security concerns. The Aptos blockchain has been developed over the past three years by over 350+ developers across the globe. It offers new and novel innovations in consensus, smart contract design, system security, performance, and decentralization. The combination of these technologies will provide a fundamental building block to bring web3 to the masses.
@@ -684,7 +688,7 @@ For Aptos, we support blockchain interaction via all the [applicable methods](/r
 #### Request example
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/aptos/v1/ \
+curl -X GET https://rpc.ankr.com/premium-http/aptos/{your_token}/v1/ \
 -H 'Content-Type: application/json'
 ```
 
@@ -711,6 +715,10 @@ curl -X GET https://rpc.ankr.com/http/aptos/v1/ \
 
 <img src="/docs/build/chains-list/arbitrum.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Arbitrum API is available on [Web3 API platform](https://www.ankr.com/rpc/arbitrum).
 
 Arbitrum is a side chain that runs parallel to Ethereum Mainnet. Also known as a Layer 2 (L2) scaling solution, Arbitrum improves transaction speeds and cost compared to the mainnet, making it an excellent solution for Ethereum developers.
@@ -725,6 +733,7 @@ Official quick links:
 ### Networks
 
   * Mainnet (`HTTPS` and `WSS`)
+  * Testnet (`HTTPS` and `WSS`)
 
 ### API methods
 
@@ -771,7 +780,7 @@ For Arbitrum, we support blockchain interaction via all the [applicable methods]
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/arbitrum \
+curl -X POST https://rpc.ankr.com/arbitrum/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -793,7 +802,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/arbitrum"  // url string
+    const url = "https://rpc.ankr.com/arbitrum/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -816,7 +825,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/arbitrum'  // url string
+const url = 'https://rpc.ankr.com/arbitrum/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -835,7 +844,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/arbitrum'  # url string
+    url = 'https://rpc.ankr.com/arbitrum/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -859,6 +868,10 @@ def test_block_number(self):
 <br/>
 
 <img src="/docs/build/chains-list/arbitrum-nova.png" class="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
 
 > Arbitrum Nova API is available on [Web3 API platform](https://www.ankr.com/rpc/arbitrumnova).
 
@@ -911,7 +924,7 @@ For Arbitrum Nova, we support blockchain interaction via all the [applicable met
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/arbitrumnova \
+curl -X POST https://rpc.ankr.com/arbitrumnova/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -933,7 +946,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/arbitrumnova"  // url string
+    const url = "https://rpc.ankr.com/arbitrumnova/{your_token}"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -956,7 +969,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/arbitrumnova'  // url string
+const url = 'https://rpc.ankr.com/arbitrumnova/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -975,7 +988,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/arbitrumnova'  # url string
+    url = 'https://rpc.ankr.com/arbitrumnova/{your_token}F'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -1288,6 +1301,10 @@ curl -X POST https://rpc.ankr.com/avail_turing_testnet \
 
 <img src="/docs/build/chains-list/avalanche.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Avalanche API is available on [Web3 API platform](https://www.ankr.com/rpc/avalanche).
 
 Avalanche is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche is the first decentralized smart contracts platform built for the scale of global finance, with near-instant transaction finality. Ethereum developers can quickly build on Avalanche as Solidity works out-of-the-box.
@@ -1323,7 +1340,7 @@ To add Avalanche Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Avalanche Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/avalanche/`.
+      * **New RPC URL**: `https://rpc.ankr.com/avalanche/{your_token}`.
       * **Chain ID**: `43114`.
       * **Currency symbol**: `AVAX`.
       * **Block explorer URL**: `https://snowtrace.io/`.
@@ -1336,7 +1353,7 @@ To add Avalanche Fuji Testnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Avalanche Fuji Testnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/avalanche_fuji/`.
+      * **New RPC URL**: `https://rpc.ankr.com/avalanche_fuji/{your_token}`.
       * **Chain ID**: `43113`.
       * **Currency symbol**: `AVAX`.
       * **Block explorer URL**: `https://testnet.snowtrace.io/`.
@@ -1393,7 +1410,7 @@ For Avalanche, we support blockchain interaction via the following methods:
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/avalanche \
+curl -X POST https://rpc.ankr.com/avalanche/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -1415,7 +1432,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/avalanche"  // url string
+    const url = "https://rpc.ankr.com/avalanche/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -1438,7 +1455,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/avalanche'  // url string
+const url = 'https://rpc.ankr.com/avalanche/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -1457,7 +1474,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/avalanche'  # url string
+    url = 'https://rpc.ankr.com/avalanche/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -1478,7 +1495,7 @@ def test_block_number(self):
 #### Request example (P-Chain)
 
 ```shell
-curl -X POST 'https://rpc.ankr.com/avalanche-p' \
+curl -X POST 'https://rpc.ankr.com/avalanche-p/{your_token}' \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc":"2.0",
@@ -1505,7 +1522,7 @@ curl -X POST 'https://rpc.ankr.com/avalanche-p' \
 #### Request example (C-Chain)
 
 ```shell
-curl -X POST 'https://rpc.ankr.com/avalanche-c' \
+curl -X POST 'https://rpc.ankr.com/avalanche-c/{your_token}' \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc":"2.0",
@@ -1535,7 +1552,7 @@ curl -X POST 'https://rpc.ankr.com/avalanche-c' \
 #### Request example (X-Chain)
 
 ```shell
-curl -X POST 'https://rpc.ankr.com/avalanche-x' \
+curl -X POST 'https://rpc.ankr.com/avalanche-x/{your_token}' \
 -H 'Content-Type: application/json' \
 -d '{
     "jsonrpc":"2.0",
@@ -1874,6 +1891,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/base.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Base API is available on [Web3 API platform](https://www.ankr.com/rpc/base).
 
 Base is a secure, low-cost, developer-friendly Ethereum L2 built to bring the next billion users to web3.
@@ -1938,7 +1959,7 @@ For Base, we support blockchain interaction via all the [applicable methods](/rp
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/base \
+curl -X POST https://rpc.ankr.com/base/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -1960,7 +1981,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/base"  // url string
+    const url = "https://rpc.ankr.com/base/{your_token}"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -1983,7 +2004,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/base'  // url string
+const url = 'https://rpc.ankr.com/base/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -2002,7 +2023,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/base'  # url string
+    url = 'https://rpc.ankr.com/base/{your_token}'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -2161,6 +2182,10 @@ def test_block_number(self):
 
 ## Bitcoin
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Bitcoin API is available on [Web3 API platform](https://www.ankr.com/rpc/btc).
 
 *Bitcoin* API provides the means for communication with the Bitcoin’s public ledger.
@@ -2211,7 +2236,7 @@ For Bitcoin, we support blockchain interaction via the following interfaces:
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/btc \
+curl -X POST https://rpc.ankr.com/btc/{your_token} \
 -d '{
       "id": "hmm",
       "method": "getindexinfo",
@@ -2222,7 +2247,7 @@ curl -X POST https://rpc.ankr.com/btc \
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/btc_blockbook/api/v2/utxo/bc1qxhmdufsvnuaaaer4ynz88fspdsxq2h9e9cetdj?confirmed=true
+curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/utxo/bc1qxhmdufsvnuaaaer4ynz88fspdsxq2h9e9cetdj?confirmed=true
 ```
   </Tab>
 </Tabs>
@@ -2432,6 +2457,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/bittorrent.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
+
 > BitTorrent Chain API is available on [Web3 API platform](https://www.ankr.com/rpc/bttc).
 
 BitTorrent Chain (BTTC) is a layer 2 scaling solution, BTTC strives to solve scalability and usability issues without compromising decentralization, and can make full use of the existing Ethereum developer community and ecosystem. BTTC is fully compatible with Ethereum, and existing applications on Ethereum can be easily migrated to this BTTC. In addition to the same experience as Ethereum, users can also enjoy ultra-high throughput and extremely low fees.
@@ -2463,7 +2492,7 @@ To add BitTorrent Chain Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `BitTorrent Chain Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/bttc/`.
+      * **New RPC URL**: `https://rpc.ankr.com/bttc/{your_token}`.
       * **Chain ID**: `199`.
       * **Currency symbol**: `BTT`.
       * **Block explorer URL**: `https://scan.bt.io/`.
@@ -2511,7 +2540,7 @@ For BitTorrent Chain, we support blockchain interaction via all the [applicable 
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/bttc \
+curl -X POST https://rpc.ankr.com/bttc/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -2533,7 +2562,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/bttc"  // url string
+    const url = "https://rpc.ankr.com/bttc/{your_token}"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -2556,7 +2585,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/bttc'  // url string
+const url = 'https://rpc.ankr.com/bttc/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -2575,7 +2604,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/bttc'  # url string
+    url = 'https://rpc.ankr.com/bttc/{your_token}'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -2738,6 +2767,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/bnb-smart-chain.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > BNB Smart Chain API is available on [Web3 API platform](https://www.ankr.com/rpc/bsc).
 
 BNB Smart Chain (BSC) (previously Binance Smart Chain) is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 21 active validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
@@ -2770,7 +2803,7 @@ To add BNB Smart Chain Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `BNB Smart Chain Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/bsc/`.
+      * **New RPC URL**: `https://rpc.ankr.com/bsc/{your_token}`.
       * **Chain ID**: `56`.
       * **Currency symbol**: `BNB`.
       * **Block explorer URL**: `https://bscscan.com/`.
@@ -2783,7 +2816,7 @@ To add BNB Smart Chain Testnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `BNB Smart Chain Chapel Testnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/bsc_testnet_chapel/`.
+      * **New RPC URL**: `https://rpc.ankr.com/bsc_testnet_chapel/{your_token}`.
       * **Chain ID**: `97`.
       * **Currency symbol**: `BNB`.
       * **Block explorer URL**: `https://testnet.bscscan.com/`.
@@ -2831,7 +2864,7 @@ For BNB Smart Chain, we support blockchain interaction via all the [applicable m
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/bsc \
+curl -X POST https://rpc.ankr.com/bsc/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -2853,7 +2886,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/bsc"  // url string
+    const url = "https://rpc.ankr.com/bsc/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -2876,7 +2909,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/bsc'  // url string
+const url = 'https://rpc.ankr.com/bsc/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -2895,7 +2928,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/bsc'  # url string
+    url = 'https://rpc.ankr.com/bsc/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -3073,6 +3106,7 @@ Official quick links: [Website](https://celo.org/), [Docs](https://docs.celo.org
 ### Networks
 
   * Mainnet (`HTTPS` and `WSS`)
+  * Testnet (`HTTPS` and `WSS`)
 
 ### Add networks to MetaMask
 
@@ -3794,6 +3828,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/ethereum.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Ethereum API is available on [Web3 API platform](https://www.ankr.com/rpc/ethereum).
 
 Ethereum is a blockchain with a computer embedded in it. It is the foundation for building apps and organizations in a decentralized, permissionless, censorship-resistant way. Ethereum uses a [proof-of-stake-based consensus mechanism](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/).
@@ -3826,7 +3864,7 @@ To add Ethereum Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Ethereum Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/eth/`.
+      * **New RPC URL**: `https://rpc.ankr.com/eth/{your_token}`.
       * **Chain ID**: `1`.
       * **Currency symbol**: `ETH`.
       * **Block explorer URL**: `https://etherscan.io/`.
@@ -3839,7 +3877,7 @@ To add Ethereum Sepolia Testnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Ethereum Sepolia Testnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/eth_sepolia/`.
+      * **New RPC URL**: `https://rpc.ankr.com/eth_sepolia/{your_token}`.
       * **Chain ID**: `11155111`.
       * **Currency symbol**: `ETH`.
       * **Block explorer URL**: `https://sepolia.etherscan.io/`.
@@ -3887,7 +3925,7 @@ For Ethereum, we support blockchain interaction via all the [applicable methods]
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/eth \
+curl -X POST https://rpc.ankr.com/eth/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3909,7 +3947,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/eth"  // url string
+    const url = "https://rpc.ankr.com/eth/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -3932,7 +3970,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/eth'  // url string
+const url = 'https://rpc.ankr.com/eth/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -3951,7 +3989,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/eth'  # url string
+    url = 'https://rpc.ankr.com/eth/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -4043,6 +4081,10 @@ curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/be
 
 <img src="/docs/build/chains-list/fantom.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
+
 > Fantom API is available on [Web3 API platform](https://www.ankr.com/rpc/fantom).
 
 Fantom is a fast, scalable, and secure layer-1 platform built on an aBFT consensus protocol. Fantom is permissionless, decentralized, open-source, and fully compatible with Ethereum.
@@ -4075,7 +4117,7 @@ To add Fantom Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Fantom Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/fantom/`.
+      * **New RPC URL**: `https://rpc.ankr.com/fantom/{your_token}`.
       * **Chain ID**: `250`.
       * **Currency symbol**: `FTM`.
       * **Block explorer URL**: `https://ftmscan.com/`.
@@ -4088,7 +4130,7 @@ To add Fantom Testnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Fantom Testnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/fantom_testnet/`.
+      * **New RPC URL**: `https://rpc.ankr.com/fantom_testnet/{your_token}`.
       * **Chain ID**: `4002`.
       * **Currency symbol**: `FTM`.
       * **Block explorer URL**: `https://testnet.ftmscan.com/`.
@@ -4136,7 +4178,7 @@ For Fantom, we support blockchain interaction via all the [applicable methods](/
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/fantom/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -4158,7 +4200,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/gnosis"  // url string
+    const url = "https://rpc.ankr.com/fantom/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -4181,7 +4223,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/gnosis'  // url string
+const url = 'https://rpc.ankr.com/fantom/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -4200,7 +4242,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/gnosis'  # url string
+    url = 'https://rpc.ankr.com/fantom/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -4611,6 +4653,10 @@ curl --location 'https://rpc.ankr.com/http/fuel' \
 
 <img src="/docs/build/chains-list/gnosis.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Gnosis API is available on [Web3 API platform](https://www.ankr.com/rpc/gnosis).
 
 Gnosis Chain (formerly xDai Chain) provides stability, scalability and an extendable beacon chain framework.
@@ -4645,7 +4691,7 @@ To add Gnosis Chain Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Gnosis Chain Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/gnosis/`.
+      * **New RPC URL**: `https://rpc.ankr.com/gnosis/{your_token}`.
       * **Chain ID**: `100`.
       * **Currency symbol**: `xDai`.
       * **Block explorer URL**: `https://blockscout.com/xdai/mainnet/`.
@@ -4693,7 +4739,7 @@ For Gnosis, we support blockchain interaction via all the [applicable methods](/
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/gnosis \
+curl -X POST https://rpc.ankr.com/gnosis/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -4715,7 +4761,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/gnosis"  // url string
+    const url = "https://rpc.ankr.com/gnosis/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -4738,7 +4784,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/gnosis'  // url string
+const url = 'https://rpc.ankr.com/gnosis/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -4757,7 +4803,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/gnosis'  # url string
+    url = 'https://rpc.ankr.com/gnosis/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -5277,6 +5323,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/harmony.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Harmony API is available on [Web3 API platform](https://www.ankr.com/rpc/harmony).
 
 Harmony is a fast and secure blockchain for decentralized applications. Production mainnet is expected to support 4 shards of 1000 nodes, producing blocks in 2 seconds with finality.
@@ -5308,7 +5358,7 @@ To add Harmony Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Harmony Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/harmony/`.
+      * **New RPC URL**: `https://rpc.ankr.com/harmony/{your_token}`.
       * **Chain ID**: `1666600000`.
       * **Currency symbol**: `ONE`.
       * **Block explorer URL**: `https://explorer.harmony.one/`.
@@ -5358,7 +5408,7 @@ For Harmony, we support blockchain interaction via all the [applicable methods](
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/harmony \
+curl -X POST https://rpc.ankr.com/harmony/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -5380,7 +5430,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/harmony"  // url string
+    const url = "https://rpc.ankr.com/harmony/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -5403,7 +5453,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/harmony'  // url string
+const url = 'https://rpc.ankr.com/harmony/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -5422,7 +5472,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/harmony'  # url string
+    url = 'https://rpc.ankr.com/harmony/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -5798,6 +5848,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/iotex.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > IoTeX API is available on [Web3 API platform](https://www.ankr.com/rpc/iotex).
 
 IoTeX Network is the lightning-fast, ultra-secure, and highly scalable blockchain platform that connects real world data to on-chain Dapps.
@@ -5828,7 +5882,7 @@ To add IoTeX Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `IoTeX Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/iotex/`.
+      * **New RPC URL**: `https://rpc.ankr.com/iotex/{your_token}`.
       * **Chain ID**: `4689`.
       * **Currency symbol**: `IOTX`.
       * **Block explorer URL**: `https://iotexscan.io/`.
@@ -5876,7 +5930,7 @@ For IoTeX, we support blockchain interaction via all the [applicable methods](/r
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/iotex \
+curl -X POST https://rpc.ankr.com/iotex/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -5898,7 +5952,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/iotex"  // url string
+    const url = "https://rpc.ankr.com/iotex/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -5921,7 +5975,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/iotex'  // url string
+const url = 'https://rpc.ankr.com/iotex/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -5940,7 +5994,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/iotex'  # url string
+    url = 'https://rpc.ankr.com/iotex/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -6709,6 +6763,10 @@ curl -X POST https://rpc.ankr.com/kusama/{your_token} \
 
 <img src="/docs/build/chains-list/mantle.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Mantle API is available on [Web3 API platform](https://www.ankr.com/rpc/mantle).
 
 Mantle is a high-performance Ethereum layer-2 network built with modular architecture delivering low fees and high security. Builders can leverage Mantle’s unique design to build dApps with exceptional UX, all while relying on Ethereum’s unrivaled security.
@@ -6761,7 +6819,7 @@ For Mantle, we support blockchain interaction via all the [applicable methods](/
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/mantle \
+curl -X POST https://rpc.ankr.com/mantle/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -6783,7 +6841,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/mantle"  // url string
+    const url = "https://rpc.ankr.com/mantle/{your_token}"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -6806,7 +6864,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/mantle'  // url string
+const url = 'https://rpc.ankr.com/mantle/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -6825,7 +6883,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/mantle'  # url string
+    url = 'https://rpc.ankr.com/mantle/{your_token}'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -7131,6 +7189,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/moonbeam.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Moonbeam API is available on [Web3 API platform](https://www.ankr.com/rpc/moonbeam).
 
 Moonbeam is the most Ethereum compatible smart-contract parachain in the Polkadot ecosystem. It combines the best of both worlds: the familiar and easy-to-use tooling of Ethereum and the scalable, interoperable architecture of Polkadot.
@@ -7160,7 +7222,7 @@ To add Moonbeam Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Moonbeam Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/moonbeam/`.
+      * **New RPC URL**: `https://rpc.ankr.com/moonbeam/{your_token}`.
       * **Chain ID**: `1284`.
       * **Currency symbol**: `GLMR`.
       * **Block explorer URL**: `https://moonbeam.moonscan.io/`.
@@ -7208,7 +7270,7 @@ For Moonbeam, we support blockchain interaction via all the [applicable methods]
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/moonbeam \
+curl -X POST https://rpc.ankr.com/moonbeam/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -7230,7 +7292,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/moonbeam"  // url string
+    const url = "https://rpc.ankr.com/moonbeam/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -7253,7 +7315,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/moonbeam'  // url string
+const url = 'https://rpc.ankr.com/moonbeam/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -7272,7 +7334,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/moonbeam'  # url string
+    url = 'https://rpc.ankr.com/moonbeam/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -7296,6 +7358,10 @@ def test_block_number(self):
 <br/>
 
 <img src="/docs/build/chains-list/near.png" class="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
 
 > NEAR API is available on [Web3 API platform](https://www.ankr.com/rpc/near).
 
@@ -7332,7 +7398,7 @@ For Near, we support blockchain interaction via all the [applicable methods](/rp
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/near \
+curl -X POST https://rpc.ankr.com/near/{your_token} \
 -H "content-type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -7375,6 +7441,10 @@ curl -X POST https://rpc.ankr.com/near \
 
 <img src="/docs/build/chains-list/nervos.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Nervos API is available on [Web3 API platform](https://www.ankr.com/rpc/nervos).
 
 Nervos blockchain, also known as Common Knowledge Base, is the rock-bottom layer of the Nervos ecosystem. As the foundation, Nervos blockchain provides trust for all the layers built on top of it. It is designed to maximize decentralization while remaining minimal, flexible, and secure. Its primary objective is to reliably preserve any data and assets stored therein.
@@ -7411,7 +7481,7 @@ To add Godwoken/PolyJuice Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Godwoken/PolyJuice Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/nervos/`.
+      * **New RPC URL**: `https://rpc.ankr.com/nervos/{your_token}`.
       * **Chain ID**: `71402`.
       * **Currency symbol**: `CKB`.
       * **Block explorer URL**: `https://v0.gwscan.com/`.
@@ -7482,7 +7552,7 @@ Below are the request examples applicable for Standard EVM and Polyjuice API.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/nervos \
+curl -X POST https://rpc.ankr.com/nervos/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -7504,7 +7574,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/nervos"  // url string
+    const url = "https://rpc.ankr.com/nervos/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -7527,7 +7597,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/nervos'  // url string
+const url = 'https://rpc.ankr.com/nervos/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -7546,7 +7616,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/nervos'  # url string
+    url = 'https://rpc.ankr.com/nervos/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -7570,6 +7640,10 @@ def test_block_number(self):
 <br/>
 
 <img src="/docs/build/chains-list/optimism.png" class="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
 
 > Optimism API is available on [Web3 API platform](https://www.ankr.com/rpc/optimism).
 
@@ -7604,7 +7678,7 @@ To add Optimism Mainnet, follow these steps:
   2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
 
       * **Network name**: `Optimism Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/optimism/`.
+      * **New RPC URL**: `https://rpc.ankr.com/optimism/{your_token}`.
       * **Chain ID**: `10`.
       * **Currency symbol**: `ETH`.
       * **Block explorer URL**: `https://optimistic.etherscan.io/`.
@@ -7652,7 +7726,7 @@ For Optimism, we support blockchain interaction via all the [applicable methods]
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/optimism \
+curl -X POST https://rpc.ankr.com/optimism/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -7674,7 +7748,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/optimism"  // url string
+    const url = "https://rpc.ankr.com/optimism/{your_token}"  // url string
     
     rpcClient,err := ethclient.Dial(url)
     
@@ -7697,7 +7771,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/optimism'  // url string
+const url = 'https://rpc.ankr.com/optimism/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -7716,7 +7790,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
           
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/optimism'  # url string
+    url = 'https://rpc.ankr.com/optimism/{your_token}'  # url string
     
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -8037,6 +8111,10 @@ def test_block_number(self):
 
 <img src="/docs/build/chains-list/polygon-zk-evm.png" class="responsive-pic" width="800" />
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Polygon zkEVM API is available on [Web3 API platform](https://www.ankr.com/rpc/polygon_zkevm).
 
 Polygon zkEVM is a decentralized Ethereum Layer 2 scalability solution that uses cryptographic zero-knowledge proofs to offer validity and quick finality to off-chain transaction computation, also known as a ZK-Rollup.
@@ -8097,7 +8175,7 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/polygon_zkevm \
+curl -X POST https://rpc.ankr.com/polygon_zkevm/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -8119,7 +8197,7 @@ import (
 )
 
 func main() {
-    const url = "https://rpc.ankr.com/polygon_zkevm"  // url string
+    const url = "https://rpc.ankr.com/polygon_zkevm/{your_token}"  // url string
 
     rpcClient,err := ethclient.Dial(url)
 
@@ -8142,7 +8220,7 @@ func main() {
 ```js
 const Web3 = require('web3');
 
-const url = 'https://rpc.ankr.com/polygon_zkevm'  // url string
+const url = 'https://rpc.ankr.com/polygon_zkevm/{your_token}'  // url string
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
@@ -8161,7 +8239,7 @@ web3.eth.getBlockNumber((error, blockNumber) => {
 from web3 import Web3
 
 def test_block_number(self):
-    url = 'https://rpc.ankr.com/polygon_zkevm'  # url string
+    url = 'https://rpc.ankr.com/polygon_zkevm/{your_token}'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
@@ -8715,6 +8793,10 @@ curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/blocks
 
 ## Sei
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > Sei API is available on [Web3 API platform](https://www.ankr.com/rpc/sei).
 
 Sei is a general purpose, open-source Layer 1 blockchain specialized for the exchange of digital assets. Sei has only one value prop: exchange apps — whether it’s an NFT marketplace or gaming economy — Sei offers the best user experience to build upon.
@@ -8771,7 +8853,7 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/sei \
+curl -X POST https://rpc.ankr.com/sei/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -8784,13 +8866,13 @@ curl -X POST https://rpc.ankr.com/sei \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei/block?height=1
+curl https://rpc.ankr.com/premium-http/sei/{your_token}/block?height=1
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/{height}
+curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tendermint/v1beta1/blocks/{height}
 ```
   </Tab>
 </Tabs>
@@ -8888,14 +8970,16 @@ curl https://rpc.ankr.com/http/sei_cosmos/cosmos/base/tendermint/v1beta1/blocks/
 }
 ```
 
-
-
 ---
 
 ## Solana
 <br/>
 
 <img src="/docs/build/chains-list/solana.png" class="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
 
 > Solana API is available on [Web3 API platform](https://www.ankr.com/rpc/solana).
 
@@ -8929,7 +9013,7 @@ None.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana \
+curl -X POST https://rpc.ankr.com/solana/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -9585,6 +9669,10 @@ def test_block_number(self):
 <br/>
 
 <img src="/docs/build/chains-list/sui.png" class="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
 
 > Sui API is available on [Web3 API platform](https://www.ankr.com/rpc/sui).
 
@@ -10743,6 +10831,10 @@ def test_block_number(self):
 
 ## TON
 
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
 > TON API is available on [Web3 API platform](https://www.ankr.com/rpc/ton).
 
 The Open Network (TON) is a decentralized and open internet platform made up of several components. These include: TON Blockchain, TON DNS, TON Storage, and TON Sites. TON Blockchain is the core protocol that connects TON’s underlying infrastructure together to form the greater TON Ecosystem.
@@ -10786,13 +10878,13 @@ None.
   <Tab>
 
 ```shell
-curl -X GET https://rpc.ankr.com/http/ton_api_v2/getConsensusBlock
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getConsensusBlock
 ```
   </Tab>
   <Tab>
 
 ```shell
-curl --location 'https://rpc.ankr.com/ton_api_v2' \
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -10822,6 +10914,10 @@ curl --location 'https://rpc.ankr.com/ton_api_v2' \
 <br/>
 
 <img src="/docs/build/chains-list/tron.png" class="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
 
 > TRON API is available on [Web3 API platform](https://www.ankr.com/rpc/tron).
 
@@ -10887,7 +10983,7 @@ And all the methods with the following segments in their path:
 #### Request example (JSON-RPC)
 
 ```shell
-curl -X POST https://rpc.ankr.com/tron_jsonrpc \
+curl -X POST https://rpc.ankr.com/tron_jsonrpc/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -10910,7 +11006,7 @@ curl -X POST https://rpc.ankr.com/tron_jsonrpc \
 #### Request example (REST)
 
 ```shell
-curl -X GET 'https://rpc.ankr.com/http/tron/walletsolidity/getnowblock'
+curl -X GET 'https://rpc.ankr.com/premium-http/tron/{your_token}/walletsolidity/getnowblock'
 ```
 
 #### Response example (REST)
