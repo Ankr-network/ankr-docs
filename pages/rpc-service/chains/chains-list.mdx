@@ -9013,7 +9013,7 @@ None.
 #### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -9032,24 +9032,25 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.5",
-            "slot": 171939795
+            "apiVersion": "2.2.3",
+            "slot": 374628996
         },
         "value": {
             "data": [
-                "df8aQUMTjEzaM7MBx7gWDVgHXxWNHx5rtjKTNMLR4JXHcXryskBMwTfNn6ksWcJgReufRevDzprYBek226dD3YrE2oXPyyhXvFdzbczZGvuD",
+                "",
                 "base58"
             ],
             "executable": false,
-            "lamports": 2000000,
+            "lamports": 88860054690252,
             "owner": "11111111111111111111111111111111",
-            "rentEpoch": 361
+            "rentEpoch": 18446744073709551615,
+            "space": 0
         }
-    },
-    "id": 1
+    }
 }
 ```
 
