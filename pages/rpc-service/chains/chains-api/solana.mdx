@@ -52,8 +52,6 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`getSlot`](/rpc-service/chains/chains-api/solana/#getslot) — returns the slot that has reached the given or default commitment level.
   * [`getSlotLeader`](/rpc-service/chains/chains-api/solana/#getslotleader) — returns the current slot leader.
   * [`getSlotLeaders`](/rpc-service/chains/chains-api/solana/#getslotleaders) — returns the slot leaders for a given slot range.
-  * [`getStakeActivation`](/rpc-service/chains/chains-api/solana/#getstakeactivation) — returns epoch activation information for a stake account.
-  * [`getStakeMinimumDelegation`](/rpc-service/chains/chains-api/solana/#getstakeminimumdelegation) — returns the stake minimum delegation, in lamports.
   * [`getSupply`](/rpc-service/chains/chains-api/solana/#getsupply) — returns information about the current supply.
   * [`getTokenAccountBalance`](/rpc-service/chains/chains-api/solana/#gettokenaccountbalance) — returns the token balance of an SPL Token account.
   * [`getTokenAccountsByDelegate`](/rpc-service/chains/chains-api/solana/#gettokenaccountsbydelegate) — returns all SPL Token accounts by approved delegate.
@@ -69,20 +67,6 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`requestAirdrop`](/rpc-service/chains/chains-api/solana/#requestairdrop) — requests an airdrop of lamports to a Pubkey.
   * [`sendTransaction`](/rpc-service/chains/chains-api/solana/#sendtransaction) — submits a signed transaction to the cluster for processing.
   * [`simulateTransaction`](/rpc-service/chains/chains-api/solana/#simulatetransaction) — simulates sending a transaction.
-
-### Deprecated
-<br/>
-
-  * [`getConfirmedBlock`](/rpc-service/chains/chains-api/solana/#getconfirmedblock-deprecated) — Returns identity and transaction information about a confirmed block in the ledger.
-  * [`getConfirmedBlocks`](/rpc-service/chains/chains-api/solana/#getconfirmedblocks-deprecated) — Returns a list of confirmed blocks between two slots.
-  * [`getConfirmedBlocksWithLimit`](/rpc-service/chains/chains-api/solana/#getconfirmedblockswithlimit-deprecated) — Returns a list of confirmed blocks starting at the given slot.
-  * [`getConfirmedSignaturesForAddress2`](/rpc-service/chains/chains-api/solana/#getconfirmedsignaturesforaddress2-deprecated) — Returns signatures for confirmed transactions that include the given address in their `accountKeys` list.
-  * [`getConfirmedTransaction`](/rpc-service/chains/chains-api/solana/#getconfirmedtransaction-deprecated) — Returns transaction details for a confirmed transaction.
-  * [`getFeeCalculatorForBlockhash`](/rpc-service/chains/chains-api/solana/#getfeecalculatorforblockhash-deprecated) — Returns the fee calculator associated with the query blockhash, or `null` if the blockhash has expired.
-  * [`getFeeRateGovernor`](/rpc-service/chains/chains-api/solana/#getfeerategovernor) — Returns the fee rate governor information from the root bank.
-  * [`getFees`](/rpc-service/chains/chains-api/solana/#getfees) — Returns a recent block hash from the ledger, a fee schedule that can be used to compute the cost of submitting a transaction using it, and the last slot in which the blockhash will be valid.
-  * [`getRecentBlockhash`](/rpc-service/chains/chains-api/solana/#getrecentblockhash) — Returns a recent block hash from the ledger, and a fee schedule that can be used to compute the cost of submitting a transaction using it.
-  * [`getSnapshotSlot`](/rpc-service/chains/chains-api/solana/#getsnapshotslot) — Returns the highest slot that the node has a snapshot for.
 
 ---
 
@@ -125,7 +109,7 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 ### Request example 1
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -144,31 +128,32 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.5",
-            "slot": 171939795
+            "apiVersion": "2.2.3",
+            "slot": 374431575
         },
         "value": {
             "data": [
-                "df8aQUMTjEzaM7MBx7gWDVgHXxWNHx5rtjKTNMLR4JXHcXryskBMwTfNn6ksWcJgReufRevDzprYBek226dD3YrE2oXPyyhXvFdzbczZGvuD",
+                "",
                 "base58"
             ],
             "executable": false,
-            "lamports": 2000000,
+            "lamports": 88860054690252,
             "owner": "11111111111111111111111111111111",
-            "rentEpoch": 361
+            "rentEpoch": 18446744073709551615,
+            "space": 0
         }
-    },
-    "id": 1
+    }
 }
 ```
 
 ### Request example 2
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -187,34 +172,25 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.5",
-            "slot": 171940021
+            "apiVersion": "2.2.3",
+            "slot": 374431699
         },
         "value": {
-            "data": {
-                "parsed": {
-                    "info": {
-                        "authority": "Bbqg1M4YVVfbhEzwA9SpC9FhsaG83YMTYoR4a8oTDLX",
-                        "blockhash": "9pf2WiEJT91VKq38PjvEdeom4Aug3NhCGRR7u3kwjhp5",
-                        "feeCalculator": {
-                            "lamportsPerSignature": "5000"
-                        }
-                    },
-                    "type": "initialized"
-                },
-                "program": "nonce",
-                "space": 80
-            },
+            "data": [
+                "",
+                "base64"
+            ],
             "executable": false,
-            "lamports": 2000000,
-            "owner": "11111111111111111111111111111111",
-            "rentEpoch": 361
+            "lamports": 7998763451,
+            "owner": "2WRuhE4GJFoE23DYzp2ij6ZnuQ8p9mJeU6gDgfsjR4or",
+            "rentEpoch": 18446744073709551615,
+            "space": 0
         }
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -252,7 +228,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -268,15 +244,15 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.5",
-            "slot": 171949127
+            "apiVersion": "2.2.3",
+            "slot": 374431850
         },
-        "value": 2000000
-    },
-    "id": 1
+        "value": 7998763451
+    }
 }
 ```
 
@@ -356,12 +332,12 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example 1
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getBlock",
-      "params": [430, {"encoding": "json","maxSupportedTransactionVersion":0,"transactionDetails":"full","rewards":false}],
+      "params": [370774640, {"encoding": "json","maxSupportedTransactionVersion":0,"transactionDetails":"full","rewards":false}],
       "id": 1
     }'
 ```
@@ -370,72 +346,91 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHeight": 428,
-    "blockTime": null,
-    "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
-    "parentSlot": 429,
-    "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
-    "transactions": [
-      {
-        "meta": {
-          "err": null,
-          "fee": 5000,
-          "innerInstructions": [],
-          "logMessages": [],
-          "postBalances": [499998932500, 26858640, 1, 1, 1],
-          "postTokenBalances": [],
-          "preBalances": [499998937500, 26858640, 1, 1, 1],
-          "preTokenBalances": [],
-          "rewards": null,
-          "status": {
-            "Ok": null
-          }
-        },
-        "transaction": {
-          "message": {
-            "accountKeys": [
-              "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
-              "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
-              "SysvarS1otHashes111111111111111111111111111",
-              "SysvarC1ock11111111111111111111111111111111",
-              "Vote111111111111111111111111111111111111111"
-            ],
-            "header": {
-              "numReadonlySignedAccounts": 0,
-              "numReadonlyUnsignedAccounts": 3,
-              "numRequiredSignatures": 1
-            },
-            "instructions": [
-              {
-                "accounts": [1, 2, 3, 0],
-                "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
-                "programIdIndex": 4
-              }
-            ],
-            "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
-          },
-          "signatures": [
-            "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
-          ]
-        }
-      }
-    ]
-  },
-  "id": 1
+    "jsonrpc": "2.0",
+    "result": {
+        "blockHeight": 358752908,
+        "blockTime": 1743307608,
+        "blockhash": "HF4FCaWTHZqoTSqeZS5xtqfvKB3crSHgqugWCC2CrF6N",
+        "parentSlot": 370774639,
+        "previousBlockhash": "2f1r7z58nr7HX92YDko28wAHTyWAHYvmDHfVjSApvw7T",
+        "transactions": [
+            {
+                "meta": {
+                    "computeUnitsConsumed": 150,
+                    "err": null,
+                    "fee": 5000,
+                    "innerInstructions": [],
+                    "loadedAddresses": {
+                        "readonly": [],
+                        "writable": []
+                    },
+                    "logMessages": [
+                        "Program 11111111111111111111111111111111 invoke [1]",
+                        "Program 11111111111111111111111111111111 success"
+                    ],
+                    "postBalances": [
+                        10804309975,
+                        10804407530,
+                        1
+                    ],
+                    "postTokenBalances": [],
+                    "preBalances": [
+                        10804315088,
+                        10804407417,
+                        1
+                    ],
+                    "preTokenBalances": [],
+                    "rewards": null,
+                    "status": {
+                        "Ok": null
+                    }
+                },
+                "transaction": {
+                    "message": {
+                        "accountKeys": [
+                            "ANVUJaJoVaJZELtV2AvRp7V5qPV1B84o29zAwDhPj1c2",
+                            "4PkiqJkUvxr9P8C1UsMqGN8NJsUcep9GahDRLfmeu8UK",
+                            "11111111111111111111111111111111"
+                        ],
+                        "header": {
+                            "numReadonlySignedAccounts": 0,
+                            "numReadonlyUnsignedAccounts": 1,
+                            "numRequiredSignatures": 1
+                        },
+                        "instructions": [
+                            {
+                                "accounts": [
+                                    0,
+                                    1
+                                ],
+                                "data": "3Bxs4KkuG3n7y751",
+                                "programIdIndex": 2,
+                                "stackHeight": null
+                            }
+                        ],
+                        "recentBlockhash": "2XvJSKxQXyiYzdVdWQ3hQkb7FZMRnevWUtyttLCtweha"
+                    },
+                    "signatures": [
+                        "32wUcJEURNhdDJve1y7giwE1zhMWRgGbNwfn3cxsLmtTznnunGEbvDjkispJCVnu7XfTmHreeLfRDpETgzczMG8B"
+                    ]
+                },
+                "version": "legacy"
+            }
+        ]
+    },
+    "id": 1
 }
 ```
 
 ### Request example 2
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getBlock",
-      "params": [430, "base64"],
+      "params": [370774640, "base64"],
       "id": 1
     }'
 ```
@@ -444,38 +439,62 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHeight": 428,
-    "blockTime": null,
-    "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
-    "parentSlot": 429,
-    "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
-    "rewards": [],
-    "transactions": [
-      {
-        "meta": {
-          "err": null,
-          "fee": 5000,
-          "innerInstructions": null,
-          "logMessages": null,
-          "postBalances": [499998932500, 26858640, 1, 1, 1],
-          "postTokenBalances": [],
-          "preBalances": [499998937500, 26858640, 1, 1, 1],
-          "preTokenBalances": [],
-          "rewards": [],
-          "status": {
-            "Ok": null
-          }
-        },
-        "transaction": [
-          "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
-          "base64"
+    "jsonrpc": "2.0",
+    "result": {
+        "blockHeight": 358752908,
+        "blockTime": 1743307608,
+        "blockhash": "HF4FCaWTHZqoTSqeZS5xtqfvKB3crSHgqugWCC2CrF6N",
+        "parentSlot": 370774639,
+        "previousBlockhash": "2f1r7z58nr7HX92YDko28wAHTyWAHYvmDHfVjSApvw7T",
+        "rewards": [
+            {
+                "commission": null,
+                "lamports": 77800,
+                "postBalance": 1012068020241072,
+                "pubkey": "dv2eQHeP4RFrJZ6UeiZWoc3XTtmtZCUKxxCApCDcRNV",
+                "rewardType": "Fee"
+            }
+        ],
+        "transactions": [
+            {
+                "meta": {
+                    "computeUnitsConsumed": 150,
+                    "err": null,
+                    "fee": 5000,
+                    "innerInstructions": [],
+                    "loadedAddresses": {
+                        "readonly": [],
+                        "writable": []
+                    },
+                    "logMessages": [
+                        "Program 11111111111111111111111111111111 invoke [1]",
+                        "Program 11111111111111111111111111111111 success"
+                    ],
+                    "postBalances": [
+                        10804309975,
+                        10804407530,
+                        1
+                    ],
+                    "postTokenBalances": [],
+                    "preBalances": [
+                        10804315088,
+                        10804407417,
+                        1
+                    ],
+                    "preTokenBalances": [],
+                    "rewards": [],
+                    "status": {
+                        "Ok": null
+                    }
+                },
+                "transaction": [
+                    "AWW00bg6XvEKFL0bfYFKxozs1lqn2iXsNGSISW8ecRprGyocrjVocrAFanSZbvhHxCtlHHELDHJQwMzkvi7AtQwBAAEDizqSQJGZ3Exs17wQBP+BB3AlC5LWj0lppkJp/w/nr98yZ0Y8gaZ3Klk/NF/WDYIThTzpRp42PYFbnRVVqliKHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFsdg39g9WrKEsn+BDMcD8H/kmr6+KwxKnn0feVGtoSUBAgIAAQwCAAAAcQAAAAAAAAA=",
+                    "base64"
+                ]
+            }
         ]
-      }
-    ]
-  },
-  "id": 1
+    },
+    "id": 1
 }
 ```
 
@@ -511,7 +530,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -525,7 +544,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 156071111,
+    "result": 362409082,
     "id": 1
 }
 ```
@@ -566,10 +585,10 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
       * `firstSlot` (u64): the first slot of the block production information (inclusive).
       * `lastSlot` (u64): the last slot of block production information (inclusive).
 
-### Request example 1
+### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -578,76 +597,38 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
     }'
 ```
 
-### Response example 1
+### Response example
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 9887
+            "apiVersion": "2.2.3",
+            "slot": 374432777
         },
         "value": {
             "byIdentity": {
-                "85iYT5RuzRTDgjyRa3cP8SYhM2j21fj7NhfJ3peu1DPr": [
-                    9888,
-                    9886
+                "3zvXem8vqvDYos6BKu66FV84tmDdQwgLxYSempy8tSrs": [
+                    984,
+                    984
+                ],
+                "4mdQGkbfrFvo5eG722xCXik4hn3xzu2EJD47g7Hd4HfH": [
+                    16,
+                    16
+                ],
+                "97YUjL2EK42M6jG5VA4fKuVxGXDfxsC5Zawd9haLQJGk": [
+                    200,
+                    200
                 ]
             },
             "range": {
-                "firstSlot": 0,
-                "lastSlot": 9887
+                "firstSlot": 374112000,
+                "lastSlot": 374432777
             }
         }
-    },
-    "id": 1
-}
-```
-
-### Request example 2
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "getBlockProduction",
-      "params": [
-          {
-            "identity": "85iYT5RuzRTDgjyRa3cP8SYhM2j21fj7NhfJ3peu1DPr",
-            "range": {
-              "firstSlot": 40,
-              "lastSlot": 50
-            }
-          }
-      ],
-      "id": 1
-    }'
-```
-
-### Response example 2
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "context": {
-            "slot": 10102
-        },
-        "value": {
-            "byIdentity": {
-                "85iYT5RuzRTDgjyRa3cP8SYhM2j21fj7NhfJ3peu1DPr": [
-                    11,
-                    11
-                ]
-            },
-            "range": {
-                "firstSlot": 50,
-                "lastSlot": 40
-            }
-        }
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -678,7 +659,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -692,15 +673,12 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-      "commitment": [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 10, 32
-      ],
-      "totalStake": 42
-    },
-    "id": 1
+        "commitment": null,
+        "totalStake": 157766894165168736
+    }
 }
 ```
 
@@ -735,12 +713,12 @@ The result field will be an array of u64 integers listing confirmed blocks betwe
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getBlocks",
-      "params": [5, 10],
+      "params": [374434259, 374434262],
       "id": 1
     }'
 ```
@@ -749,9 +727,14 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
-    "result": [5, 6, 7, 8, 9, 10],
-    "id": 1
+    "result": [
+        374434259,
+        374434260,
+        374434261,
+        374434262
+    ]
 }
 ```
 
@@ -786,12 +769,12 @@ The result field will be an array of u64 integers listing confirmed blocks start
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getBlocksWithLimit",
-      "params": [5, 3],
+      "params": [370778924, 3],
       "id": 1
     }'
 ```
@@ -800,9 +783,13 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
-    "result": [5, 6, 7],
-    "id": 1
+    "result": [
+        370779536,
+        370779537,
+        370779538
+    ]
 }
 ```
 
@@ -833,12 +820,12 @@ Each validator reports their UTC time to the ledger on a regular interval by int
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getBlockTime",
-      "params": [5],
+      "params": [374436187],
       "id": 1
     }'
 ```
@@ -848,7 +835,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 1574721591,
+    "result": 1744726372,
     "id": 1
 }
 ```
@@ -882,7 +869,7 @@ The result field will be an array of JSON objects, each with the following subfi
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -897,13 +884,22 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 {
     "jsonrpc": "2.0",
     "result": [
-      {
-        "gossip": "10.239.6.48:8001",
-        "pubkey": "9QzsJf7LPLj8GkXbYT3LFDKqsj2hHG7TA3xinJHu8epQ",
-        "rpc": "10.239.6.48:8899",
-        "tpu": "10.239.6.48:8856",
-        "version": "1.0.0 c375ce1f"
-      }
+        {
+            "featureSet": 3294202862,
+            "gossip": "63.251.106.87:21810",
+            "pubkey": "DiwJZxYKQbWBn59EhUhkiB3hM1TLWiQoGvD5mpUHJscu",
+            "pubsub": "63.251.106.87:21812",
+            "rpc": "63.251.106.87:21811",
+            "serveRepair": "63.251.106.87:11812",
+            "shredVersion": 2405,
+            "tpu": "63.251.106.87:11803",
+            "tpuForwards": "63.251.106.87:11804",
+            "tpuForwardsQuic": "63.251.106.87:11810",
+            "tpuQuic": "63.251.106.87:11809",
+            "tpuVote": "63.251.106.87:11805",
+            "tvu": "63.251.106.87:11801",
+            "version": "2.2.3"
+        }
     ],
     "id": 1
 }
@@ -947,7 +943,7 @@ The result field will be an object with the following fields:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -960,16 +956,16 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "absoluteSlot": 172112108,
-        "blockHeight": 156089334,
-        "epoch": 398,
-        "slotIndex": 176108,
+        "absoluteSlot": 374436745,
+        "blockHeight": 362413120,
+        "epoch": 866,
+        "slotIndex": 324745,
         "slotsInEpoch": 432000,
-        "transactionCount": 132596922065
-    },
-    "id": 1
+        "transactionCount": 15534671467
+    }
 }
 ```
 
@@ -1000,7 +996,7 @@ The result is an object containing the following parameters:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1013,6 +1009,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "firstNormalEpoch": 0,
@@ -1020,8 +1017,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
         "leaderScheduleSlotOffset": 432000,
         "slotsPerEpoch": 432000,
         "warmup": false
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -1057,7 +1053,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1076,15 +1072,15 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.5",
-            "slot": 172266779
+            "apiVersion": "2.2.3",
+            "slot": 374437860
         },
-        "value": 5000
-    },
-    "id": 1
+        "value": null
+    }
 }
 ```
 
@@ -1110,7 +1106,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1124,7 +1120,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 172148976,
+    "result": 370779475,
     "id": 1
 }
 ```
@@ -1151,7 +1147,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1165,7 +1161,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
+    "result": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
     "id": 1
 }
 ```
@@ -1193,7 +1189,7 @@ If the node is healthy: "ok" If the node is unhealthy, a JSON RPC error response
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1272,7 +1268,7 @@ This will find the highest full snapshot slot, and the highest incremental snaps
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1285,12 +1281,12 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "full": 172260516,
-        "incremental": 172269079
-    },
-    "id": 1
+        "full": 374423617,
+        "incremental": 374438029
+    }
 }
 ```
 
@@ -1330,7 +1326,7 @@ The `result` parameter containing the following field:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1343,11 +1339,11 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "identity": "BJggVt9UvLfrTTAWyffWFvXiHHXpB5yjnvFGg8MYu4yn"
-    },
-    "id": 1
+        "identity": "6ZaNrpjNZMmtAaZ4Tjj7GhmgbqpRR9vnipoCgwqjCHR5"
+    }
 }
 ```
 
@@ -1386,7 +1382,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1399,15 +1395,15 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "foundation": 0,
-        "foundationTerm": 0,
+        "foundation": 0.0,
+        "foundationTerm": 0.0,
         "initial": 0.08,
         "taper": 0.15,
         "terminal": 0.015
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -1436,7 +1432,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1449,14 +1445,14 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "epoch": 398,
-        "foundation": 0,
-        "total": 0.06409943295104789,
-        "validator": 0.06409943295104789
-    },
-    "id": 1
+        "epoch": 866,
+        "foundation": 0.0,
+        "total": 0.03846001179398413,
+        "validator": 0.03846001179398413
+    }
 }
 ```
 
@@ -1498,12 +1494,12 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getInflationReward",
-      "params": [["6dmNQ5jwLeLk5REvio1JcMshcbvkYMwy26sJ8pbkvStu", "BGsqMegLpV6n6Ve146sSX2dTjUMj3M92HnU8BbNRMhF2"], {"epoch": 2}],
+      "params": [["vgcDar2pryHvMgPkKaZfh8pQy4BJxv7SpwUG7zinWjG"], {"epoch": 865}],
       "id": 1
     }'
 ```
@@ -1512,17 +1508,17 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": [
         {
-            "amount": 2500,
-            "effectiveSlot": 224,
-            "epoch": 2,
-            "postBalance": 499999442500
-        },
-        null
-    ],
-    "id": 1
+            "amount": 62104278891217,
+            "commission": 95,
+            "effectiveSlot": 374112000,
+            "epoch": 865,
+            "postBalance": 10748380652807189
+        }
+    ]
 }
 ```
 
@@ -1561,11 +1557,14 @@ The result will be a JSON object with value equal to an array of:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getLargestAccounts",
+      "params": [
+          { "filter": "nonCirculating" }
+      ],
       "id": 1
     }'
 ```
@@ -1574,51 +1573,34 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "result": {
-        "context": {
-            "slot": 54
-        },
-        "value": [
-            {
-                "lamports": 999974,
-                "address": "99P8ZgtJYe1buSK8JXkvpLh8xPsCFuLYhz9hQFNw93WJ"
-            },
-            {
-                "lamports": 42,
-                "address": "uPwWLo16MVehpyWqsLkK3Ka8nLowWvAHbBChqv2FZeL"
-            },
-            {
-                "lamports": 42,
-                "address": "CTvHVtQ4gd4gUcw3bdVgZJJqApXE9nCbbbP4VTS5wE1D"
-            },
-            {
-                "lamports": 20,
-                "address": "4fq3xJ6kfrh9RkJQsmVd5gNMvJbuSHfErywvEjNQDPxu"
-            },
-            {
-                "lamports": 4,
-                "address": "AXJADheGVp9cruP8WYu46oNkRbeASngN5fPCMVGQqNHa"
-            },
-            {
-                "lamports": 2,
-                "address": "8NT8yS6LiwNprgW4yM1jPPow7CwRUotddBVkrkWgYp24"
-            },
-            {
-                "lamports": 1,
-                "address": "SysvarEpochSchedu1e111111111111111111111111"
-            },
-            {
-                "lamports": 1,
-                "address": "11111111111111111111111111111111"
-            },
-            {
-                "lamports": 1,
-                "address": "Vote111111111111111111111111111111111111111"
-            }
-        ]
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "lamports": 999999990000000000,
+      "address": "11111111111111111111111111111111"
     },
-    "id": 1
+    {
+      "lamports": 854321560000000000,
+      "address": "SysvarC1ock11111111111111111111111111111111"
+    },
+    {
+      "lamports": 732000000000000000,
+      "address": "Stake11111111111111111111111111111111111111"
+    },
+    {
+      "lamports": 690000000000000000,
+      "address": "Vote111111111111111111111111111111111111111"
+    },
+    {
+      "lamports": 540000000000000000,
+      "address": "NativeLoader1111111111111111111111111111111"
+    },
+    {
+      "lamports": 500000000000000000,
+      "address": "Config1111111111111111111111111111111111111"
+    }
+  ],
+  "id": 1
 }
 ```
 
@@ -1660,7 +1642,7 @@ NEW: This method is only available in solana-core v1.9 or newer. Please use [`ge
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1678,18 +1660,18 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.5",
-            "slot": 172277111
+            "apiVersion": "2.2.3",
+            "slot": 374442143
         },
         "value": {
-            "blockhash": "Bt6cPEjsvBz3prjJUYw81PvDabCzjPK92UxpgWbYYWvD",
-            "lastValidBlockHeight": 156240579
+            "blockhash": "5SVbJEwUwvS2PmGSMKcshCanrCnYcDBEpCp3aR7up6GV",
+            "lastValidBlockHeight": 362418664
         }
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -1727,11 +1709,12 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example 1
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "method": "getLeaderSchedule",
+      "params": [374442395],
       "id": 1
     }'
 ```
@@ -1742,12 +1725,15 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 {
     "jsonrpc": "2.0",
     "result": {
-      "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F": [
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
-        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
-        57, 58, 59, 60, 61, 62, 63
-      ]
+        "3zvXem8vqvDYos6BKu66FV84tmDdQwgLxYSempy8tSrs": [
+            2576,
+            2577,
+            2578,
+            2579,
+            3448,
+            3449,
+            3450
+        ]
     },
     "id": 1
 }
@@ -1756,7 +1742,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example 2
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1764,7 +1750,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
       "params": [
         null,
         {
-          "identity": "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F"
+          "identity": "dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS"
         }
       ],
       "id": 1
@@ -1777,12 +1763,20 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 {
     "jsonrpc": "2.0",
     "result": {
-      "4Qkev8aNZcqFNSRhQzwyLMFSsi94jHqE8WNVTJzTP99F": [
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
-        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
-        57, 58, 59, 60, 61, 62, 63
-      ]
+        "dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS": [
+            12,
+            13,
+            14,
+            15,
+            32,
+            33,
+            34,
+            35,
+            44,
+            45,
+            46,
+            47
+        ]
     },
     "id": 1
 }
@@ -1810,7 +1804,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1824,7 +1818,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 1234,
+    "result": 374443337,
     "id": 1
 }
 ```
@@ -1851,7 +1845,7 @@ Returns the max slot seen from after shred insert.
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1865,7 +1859,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 1234,
+    "result": 374443465,
     "id": 1
 }
 ```
@@ -1902,7 +1896,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1917,7 +1911,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 500,
+    "result": 1238880,
     "id": 1
 }
 ```
@@ -1964,7 +1958,7 @@ The result will be a JSON object with value equal to an array of:
 ### Request example 1
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -1989,34 +1983,45 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.6",
-            "slot": 172282067
+            "apiVersion": "2.2.3",
+            "slot": 374443766
         },
         "value": [
-            null,
             {
                 "data": [
                     "",
                     "base64"
                 ],
                 "executable": false,
-                "lamports": 2000000,
+                "lamports": 88860054690252,
                 "owner": "11111111111111111111111111111111",
-                "rentEpoch": 361
+                "rentEpoch": 18446744073709551615,
+                "space": 0
+            },
+            {
+                "data": [
+                    "",
+                    "base64"
+                ],
+                "executable": false,
+                "lamports": 7998763451,
+                "owner": "2WRuhE4GJFoE23DYzp2ij6ZnuQ8p9mJeU6gDgfsjR4or",
+                "rentEpoch": 18446744073709551615,
+                "space": 0
             }
         ]
-    },
-    "id": 1
+    }
 }
 ```
 
 ### Request example 2
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2038,21 +2043,24 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 1
+            "apiVersion": "2.2.3",
+            "slot": 374443852
         },
         "value": [
             {
                 "data": [
-                    "11116bv5nS2h3y12kD1yUKeMZvGcKLSjQgX6BeV7u1FrjeJcKfsHRTPuR3oZ1EioKtYGiYxpxMG5vpbZLsbcBYBEmZZcMKaSoGx9JZeAuWf",
+                    "",
                     "base58"
                 ],
                 "executable": false,
-                "lamports": 1000000000,
+                "lamports": 88860054690252,
                 "owner": "11111111111111111111111111111111",
-                "rentEpoch": 2
+                "rentEpoch": 18446744073709551615,
+                "space": 0
             },
             {
                 "data": [
@@ -2060,13 +2068,13 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
                     "base58"
                 ],
                 "executable": false,
-                "lamports": 5000000000,
-                "owner": "11111111111111111111111111111111",
-                "rentEpoch": 2
+                "lamports": 7998763451,
+                "owner": "2WRuhE4GJFoE23DYzp2ij6ZnuQ8p9mJeU6gDgfsjR4or",
+                "rentEpoch": 18446744073709551615,
+                "space": 0
             }
         ]
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -2116,69 +2124,25 @@ By default, the result field will be an array of JSON objects. If `withContext` 
     * `executable` (bool): a boolean indicating if the account contains a program (and is strictly read-only).
     * `rentEpoch` (u64): the epoch at which this account will next owe rent, as a u64.
 
-### Request example 1
+### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getProgramAccounts",
-      "params": ["4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T"]
-   }'
-```
-
-### Response example 1
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": [
-        {
-            "account": {
-                "data": "2R9jLfiAQ9bgdcw6h8s44439",
-                "executable": false,
-                "lamports": 15298080,
-                "owner": "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
-                "rentEpoch": 28
-            },
-            "pubkey": "CxELquR1gPP8wHe33gZ4QxqGB3sZ9RSwsJ2KshVewkFY"
-        }
-    ],
-    "id": 1
-}
-```
-
-### Request example 2
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "getProgramAccounts",
       "params": [
-        "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
-        {
-          "filters": [
-            {
-              "dataSize": 17
-            },
-            {
-              "memcmp": {
-                "offset": 4,
-                "bytes": "3Mc6vR"
-              }
-            }
-          ]
-        }
-      ]
+          "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+          {
+              "encoding": "base64"
+          }
+]
    }'
 ```
 
-### Response example 2
+### Response example
 
 ```json
 {
@@ -2186,13 +2150,17 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
     "result": [
         {
             "account": {
-                "data": "2R9jLfiAQ9bgdcw6h8s44439",
+                "data": [
+                    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+                    "base64"
+                ],
                 "executable": false,
-                "lamports": 15298080,
-                "owner": "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
-                "rentEpoch": 28
+                "lamports": 8017920,
+                "owner": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+                "rentEpoch": 18446744073709551615,
+                "space": 1024
             },
-            "pubkey": "CxELquR1gPP8wHe33gZ4QxqGB3sZ9RSwsJ2KshVewkFY"
+            "pubkey": "6uSF3nNb8ZZahnLEgDjXVFWTBeS9WVMh89BiRnJKhCT8"
         }
     ],
     "id": 1
@@ -2229,7 +2197,7 @@ The `result` object containing the following parameters:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2243,34 +2211,38 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": [
         {
-            "numSlots": 60,
-            "numTransactions": 113284,
+            "numNonVoteTransactions": 4059,
+            "numSlots": 152,
+            "numTransactions": 6339,
             "samplePeriodSecs": 60,
-            "slot": 172296358
+            "slot": 374448056
         },
         {
-            "numSlots": 69,
-            "numTransactions": 136366,
+            "numNonVoteTransactions": 5343,
+            "numSlots": 150,
+            "numTransactions": 7592,
             "samplePeriodSecs": 60,
-            "slot": 172296298
+            "slot": 374447904
         },
         {
-            "numSlots": 63,
-            "numTransactions": 120446,
+            "numNonVoteTransactions": 5971,
+            "numSlots": 153,
+            "numTransactions": 8250,
             "samplePeriodSecs": 60,
-            "slot": 172296229
+            "slot": 374447754
         },
         {
-            "numSlots": 69,
-            "numTransactions": 115511,
+            "numNonVoteTransactions": 6379,
+            "numSlots": 155,
+            "numTransactions": 8719,
             "samplePeriodSecs": 60,
-            "slot": 172296166
+            "slot": 374447601
         }
-    ],
-    "id": 1
+    ]
 }
 ```
 
@@ -2318,7 +2290,7 @@ The `result` field is an array of transaction signature information, ordered fro
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2337,25 +2309,18 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": [
         {
-            "blockTime": 1673625194,
+            "blockTime": 1744731098,
             "confirmationStatus": "finalized",
-            "err": {
-                "InstructionError": [
-                    0,
-                    {
-                        "Custom": 0
-                    }
-                ]
-            },
+            "err": null,
             "memo": null,
-            "signature": "67hjBTJ81at5VQ2BzyfvindwyZnaPLRpE1u9CFznZQRLcnzRSwQ1EuxNohcPdn23XLQbiFDyHPM7XhQobn6WD5Zc",
-            "slot": 172298185
+            "signature": "3wG35yPiT69tZSJRQJ9VTsU9dNR6nd4sQkU7FSyK5cc9Fpt7DXrvYSwbLLBuEo4Sz7DNwSGmTc5bx5mf3MSjZcNN",
+            "slot": 374448329
         }
-    ],
-    "id": 1
+    ]
 }
 ```
 
@@ -2395,7 +2360,7 @@ Unless the `searchTransactionHistory` configuration parameter is included, this 
 ### Request example 1
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
        "jsonrpc": "2.0",
@@ -2414,32 +2379,25 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 82
+            "apiVersion": "2.2.3",
+            "slot": 374449074
         },
         "value": [
-            {
-                "slot": 72,
-                "confirmations": 10,
-                "err": null,
-                "status": {
-                    "Ok": null
-                },
-                "confirmationStatus": "confirmed"
-            },
+            null,
             null
         ]
-    },
-    "id": 1
+    }
 }
 ```
 
 ### Request example 2
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
      "jsonrpc": "2.0",
@@ -2460,25 +2418,17 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 82
+            "apiVersion": "2.2.3",
+            "slot": 374449161
         },
         "value": [
-            {
-                "slot": 48,
-                "confirmations": null,
-                "err": null,
-                "status": {
-                    "Ok": null
-                },
-                "confirmationStatus": "finalized"
-            },
             null
         ]
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -2514,7 +2464,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2528,7 +2478,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 172622778,
+    "result": 374449197,
     "id": 1
 }
 ```
@@ -2565,7 +2515,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2579,7 +2529,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "BPX9WVx1MjVpSWY9fo3hGXfE74yKXcreS2XYKjpiyJfZ",
+    "result": "dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS",
     "id": 1
 }
 ```
@@ -2609,13 +2559,13 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "getSlotLeaders",
-      "params": [100, 10]
+      "params": [374449190, 10]
     }'
 ```
 
@@ -2623,113 +2573,20 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": [
-        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
-        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
-        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
-        "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
-        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-        "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-        "DWvDTSh3qfn88UoQTEKRV2JnLt5jtJAVoiCo3ivtMwXP",
-        "DWvDTSh3qfn88UoQTEKRV2JnLt5jtJAVoiCo3ivtMwXP"
-    ],
-    "id": 1
-}
-```
-
----
-
-## `getStakeActivation`
-
-> **Returns the epoch activation information for a stake account.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<string>`: the pubkey of stake account to query, as base-58 encoded string.
-    * `<object>` (optional): the configuration object containing the following fields:
-      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
-      * `epoch` (u64): the epoch for which to calculate activation details. If parameter not provided, defaults to the current epoch.
-      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
-
-### Returns
-
-The `result` object contains the following fields:
-
-  * `state` (string): the stake account's activation state, one of: `active`, `inactive`, `activating`, `deactivating`.
-  * `active` (u64): the stake active during the epoch.
-  * `inactive` (u64): the stake inactive during the epoch.
-
-### Request example 1
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getStakeActivation",
-      "params": ["CYRJWqiSjLitBAcRxPvWpgX3s5TvmN2SuRY3eEYypFvT"]
-    }'
-```
-
-### Response example 1
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "active": 197717120,
-        "inactive": 0,
-        "state": "active"
-    },
-    "id": 1
-}
-```
-
-### Request example 2
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getStakeActivation",
-      "params": [
-        "CYRJWqiSjLitBAcRxPvWpgX3s5TvmN2SuRY3eEYypFvT",
-        {
-          "epoch": 4
-        }
-      ]
-    }'
-```
-
-### Response example 2
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "active": 124429280,
-        "inactive": 73287840,
-        "state": "activating"
-    },
-    "id": 1
+        "dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB",
+        "dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB",
+        "dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS",
+        "dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS",
+        "dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS",
+        "dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS",
+        "dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB",
+        "dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB",
+        "dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB",
+        "dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB"
+    ]
 }
 ```
 
@@ -2769,7 +2626,7 @@ The result contains the `value` object with the following fields:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -2785,18 +2642,27 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 1114
+            "apiVersion": "2.2.3",
+            "slot": 374451103
         },
         "value": {
-            "circulating": 16000,
-            "nonCirculating": 1000000,
+            "circulating": 968499669854531580,
+            "nonCirculating": 315864946596719089,
             "nonCirculatingAccounts": [
-                "FEy8pTbP5fEoqMV1GdTz83byuA8EKByqYat1PKDgVAq5",
-                "9huDUZfxoJ7wGMTffUE7vh1xePqef7gyrLJu9NApncqA",
-                "3mi1GmwEE3zo2jmfDuzvjSX9ovRXsDUKHvsntpkhuLJ9",
-                "BYxEJTDerkaRWBem3XgnVcdhppktBXa2HbkHPKj2Ui4Z"
+                "AsrYX4FeLXnZcrjcZmrASY2Eq1jvEeQfwxtNTxS5zojA",
+                "CY7X5o3Wi2eQhTocLmUS6JSWyx1NinBfW7AXRrkRCpi8",
+                "CHmdL15akDcJgBkY6BP3hzs98Dqr6wbdDC5p8odvtSbq",
+                "3fV2GaDKa3pZxyDcpMh5Vrh2FVAMUiWUKbYmnBFv8As3",
+                "9xbcBZoGYFnfJZe81EDuDYKUm8xGkjzW8z4EgnVhNvsv",
+                "3vSVZC7LfnnyGuacykWoWrbzrmTyFVSXxCbKJUFbJcKS",
+                "CuatS6njAcfkFHnvai7zXCs7syA9bykXWsDCJEWfhjHG",
+                "APnSR52EC1eH676m7qTBHUJ1nrGpHYpV7XKPxgRDD8gX",
+                "9NFMpkv65d2G7UMMFYHeXrBAaB6rVD3BgQ95bKiwr448",
+                "4U9iUGSHj1kJa7AefG4UdEPd1xVvMyK3suDhngnvazyf",
+                "6Uz9bTkdAtmzsDWk3Jso9YzzfYiNpEShBZbxUsvMnRbJ",
+                "8MrstTxNJpwXSFxn5FGwvre2uCcCaRPs94f2FcknVUyr"
             ],
-            "total": 1016000
+            "total": 1284364616451250669
         }
     },
     "id": 1
@@ -2839,13 +2705,13 @@ The result contains the `value` object with the following fields:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "getTokenAccountBalance",
-      "params": ["7fUAJdStEuGbc3sM84cKRL6yYaaSstyLSU4ve5oovLS7"]
+      "params": ["7nxXxpEEsAFf5CSqapwjBjt65xnQUBAdug2pXS89YzmY"]
     }'
 ```
 
@@ -2853,18 +2719,19 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 1114
+            "apiVersion": "2.2.3",
+            "slot": 374621302
         },
         "value": {
-            "amount": "9864",
-            "decimals": 2,
-            "uiAmount": 98.64,
-            "uiAmountString": "98.64"
-        },
-        "id": 1
+            "amount": "828545484",
+            "decimals": 6,
+            "uiAmount": 828.545484,
+            "uiAmountString": "828.545484"
+        }
     }
 }
 ```
@@ -2914,7 +2781,7 @@ The result contains the `value` object with the following fields:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3028,7 +2895,7 @@ The result contains the `value` object with the following fields:
 ### Request parameters
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
      "jsonrpc": "2.0",
@@ -3135,13 +3002,13 @@ The result contains the `value` object with the following fields:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "getTokenLargestAccounts",
-      "params": ["3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E"]
+      "params": ["So11111111111111111111111111111111111111112"]
    }'
 ```
 
@@ -3152,22 +3019,23 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 1114
+            "apiVersion": "2.2.3",
+            "slot": 374624734
         },
         "value": [
             {
-                "address": "FYjHNoFtSQ5uijKrZFyYAxvEr87hsKXkXcxkcmkBAf4r",
-                "amount": "771",
-                "decimals": 2,
-                "uiAmount": 7.71,
-                "uiAmountString": "7.71"
+                "address": "35akt5uJn73ZN9FkGgBKpRwbW5scoqV7M1N59cwb4TKV",
+                "amount": "11109337918819635",
+                "decimals": 9,
+                "uiAmount": 11109337.918819636,
+                "uiAmountString": "11109337.918819635"
             },
             {
-                "address": "BnsywxTcaYeNUtzrPxQUvzAWxfzZe3ZLUJ4wMMuLESnu",
-                "amount": "229",
-                "decimals": 2,
-                "uiAmount": 2.29,
-                "uiAmountString": "2.29"
+                "address": "2ceB4kejtRYjPi2tC6KP9pvmRfcEtrukPT18rWV4yejb",
+                "amount": "1003836020391687",
+                "decimals": 9,
+                "uiAmount": 1003836.020391687,
+                "uiAmountString": "1003836.020391687"
             }
         ]
     },
@@ -3211,13 +3079,13 @@ The result contains the `value` object with the following fields:
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "getTokenSupply",
-      "params": ["3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E"]
+      "params": ["So11111111111111111111111111111111111111112"]
    }'
 ```
 
@@ -3225,19 +3093,20 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "slot": 1114
+            "apiVersion": "2.2.3",
+            "slot": 374624888
         },
         "value": {
-            "amount": "100000",
-            "decimals": 2,
-            "uiAmount": 1000,
-            "uiAmountString": "1000"
+            "amount": "0",
+            "decimals": 9,
+            "uiAmount": 0.0,
+            "uiAmountString": "0"
         }
-    },
-    "id": 1
+    }
 }
 ```
 
@@ -3304,15 +3173,18 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example 1
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "getTransaction",
       "params": [
-        "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
-        "json"
+        "jS5UBJWbrxL9DM86LoGznZtqg8q8rP3xPmMv77s7F7qdCwQFg7cchxWHdRSw5X7Bmuvy6dTaejMcgjv2XJQ9dfD",
+        {
+          "encoding": "json",
+          "maxSupportedTransactionVersion": 0
+        }
       ]
     }'
 ```
@@ -3323,44 +3195,104 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 {
     "jsonrpc": "2.0",
     "result": {
+        "blockTime": 1744798149,
         "meta": {
+            "computeUnitsConsumed": 4726,
             "err": null,
             "fee": 5000,
             "innerInstructions": [],
+            "loadedAddresses": {
+                "readonly": [],
+                "writable": []
+            },
+            "logMessages": [
+                "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [1]",
+                "Program log: Instruction: Transfer",
+                "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4726 of 200000 compute units",
+                "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success"
+            ],
             "postBalances": [
-                499998932500,
-                26858640,
-                1,
-                1,
-                1
+                35199803303,
+                2039280,
+                2039280,
+                934087680
             ],
-            "postTokenBalances": [],
+            "postTokenBalances": [
+                {
+                    "accountIndex": 1,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "EkkpfzUdwwgeqWb25hWcSi2c5gquELLUB3Z2asr1Xroo",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "828545485",
+                        "decimals": 6,
+                        "uiAmount": 828.545485,
+                        "uiAmountString": "828.545485"
+                    }
+                },
+                {
+                    "accountIndex": 2,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "DjGkZ6k5hMkaxMAboqc9MUrL8zq59Q8aQUuF6Fmr6DUD",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "1109995438",
+                        "decimals": 6,
+                        "uiAmount": 1109.995438,
+                        "uiAmountString": "1109.995438"
+                    }
+                }
+            ],
             "preBalances": [
-                499998937500,
-                26858640,
-                1,
-                1,
-                1
+                35199808303,
+                2039280,
+                2039280,
+                934087680
             ],
-            "preTokenBalances": [],
+            "preTokenBalances": [
+                {
+                    "accountIndex": 1,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "EkkpfzUdwwgeqWb25hWcSi2c5gquELLUB3Z2asr1Xroo",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "828545486",
+                        "decimals": 6,
+                        "uiAmount": 828.545486,
+                        "uiAmountString": "828.545486"
+                    }
+                },
+                {
+                    "accountIndex": 2,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "DjGkZ6k5hMkaxMAboqc9MUrL8zq59Q8aQUuF6Fmr6DUD",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "1109995437",
+                        "decimals": 6,
+                        "uiAmount": 1109.995437,
+                        "uiAmountString": "1109.995437"
+                    }
+                }
+            ],
             "rewards": [],
             "status": {
                 "Ok": null
             }
         },
-        "slot": 430,
+        "slot": 374619973,
         "transaction": {
             "message": {
                 "accountKeys": [
-                    "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
-                    "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
-                    "SysvarS1otHashes111111111111111111111111111",
-                    "SysvarC1ock11111111111111111111111111111111",
-                    "Vote111111111111111111111111111111111111111"
+                    "EkkpfzUdwwgeqWb25hWcSi2c5gquELLUB3Z2asr1Xroo",
+                    "7nxXxpEEsAFf5CSqapwjBjt65xnQUBAdug2pXS89YzmY",
+                    "HdUKfS4QwKUQawoLXNyDdsut11mtoYRyntFrhhjdhgR1",
+                    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
                 ],
+                "addressTableLookups": [],
                 "header": {
                     "numReadonlySignedAccounts": 0,
-                    "numReadonlyUnsignedAccounts": 3,
+                    "numReadonlyUnsignedAccounts": 1,
                     "numRequiredSignatures": 1
                 },
                 "instructions": [
@@ -3368,21 +3300,22 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
                         "accounts": [
                             1,
                             2,
-                            3,
+                            0,
                             0
                         ],
-                        "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
-                        "programIdIndex": 4
+                        "data": "3DdGGhkhJbjm",
+                        "programIdIndex": 3,
+                        "stackHeight": null
                     }
                 ],
-                "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
+                "recentBlockhash": "5jKHQZzdu7kazYmicjPgwANsDwAqJnjWCYR1yjEVDZBL"
             },
             "signatures": [
-                "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
+                "jS5UBJWbrxL9DM86LoGznZtqg8q8rP3xPmMv77s7F7qdCwQFg7cchxWHdRSw5X7Bmuvy6dTaejMcgjv2XJQ9dfD"
             ]
-        }
+        },
+        "version": 0
     },
-    "blockTime": null,
     "id": 1
 }
 ```
@@ -3390,15 +3323,18 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example 2
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "getTransaction",
       "params": [
-        "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
-        "base64"
+        "jS5UBJWbrxL9DM86LoGznZtqg8q8rP3xPmMv77s7F7qdCwQFg7cchxWHdRSw5X7Bmuvy6dTaejMcgjv2XJQ9dfD",
+        {
+          "encoding": "base64",
+          "maxSupportedTransactionVersion": 0
+        }
       ]
     }'
 ```
@@ -3409,36 +3345,97 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 {
     "jsonrpc": "2.0",
     "result": {
+        "blockTime": 1744798149,
         "meta": {
+            "computeUnitsConsumed": 4726,
             "err": null,
             "fee": 5000,
             "innerInstructions": [],
+            "loadedAddresses": {
+                "readonly": [],
+                "writable": []
+            },
+            "logMessages": [
+                "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [1]",
+                "Program log: Instruction: Transfer",
+                "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4726 of 200000 compute units",
+                "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success"
+            ],
             "postBalances": [
-                499998932500,
-                26858640,
-                1,
-                1,
-                1
+                35199803303,
+                2039280,
+                2039280,
+                934087680
             ],
-            "postTokenBalances": [],
+            "postTokenBalances": [
+                {
+                    "accountIndex": 1,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "EkkpfzUdwwgeqWb25hWcSi2c5gquELLUB3Z2asr1Xroo",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "828545485",
+                        "decimals": 6,
+                        "uiAmount": 828.545485,
+                        "uiAmountString": "828.545485"
+                    }
+                },
+                {
+                    "accountIndex": 2,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "DjGkZ6k5hMkaxMAboqc9MUrL8zq59Q8aQUuF6Fmr6DUD",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "1109995438",
+                        "decimals": 6,
+                        "uiAmount": 1109.995438,
+                        "uiAmountString": "1109.995438"
+                    }
+                }
+            ],
             "preBalances": [
-                499998937500,
-                26858640,
-                1,
-                1,
-                1
+                35199808303,
+                2039280,
+                2039280,
+                934087680
             ],
-            "preTokenBalances": [],
-            "rewards": null,
+            "preTokenBalances": [
+                {
+                    "accountIndex": 1,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "EkkpfzUdwwgeqWb25hWcSi2c5gquELLUB3Z2asr1Xroo",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "828545486",
+                        "decimals": 6,
+                        "uiAmount": 828.545486,
+                        "uiAmountString": "828.545486"
+                    }
+                },
+                {
+                    "accountIndex": 2,
+                    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+                    "owner": "DjGkZ6k5hMkaxMAboqc9MUrL8zq59Q8aQUuF6Fmr6DUD",
+                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                    "uiTokenAmount": {
+                        "amount": "1109995437",
+                        "decimals": 6,
+                        "uiAmount": 1109.995437,
+                        "uiAmountString": "1109.995437"
+                    }
+                }
+            ],
+            "rewards": [],
             "status": {
                 "Ok": null
             }
         },
-        "slot": 430,
+        "slot": 374619973,
         "transaction": [
-            "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
+            "ASSXkS4gFdRPjAgYMtI83mxAdkQQxNnrNjVo0/8n3PuyIfJiogZfy+QQZYpG/KbPbARMNWYYkgyNQtgHSfk+AgiAAQABBMxddFcL+KHOvfWKqE5HeL1iR4V7zrweiMVtVjfN1B7OZOwM3pq0f7lZsDDur9i+ue/ujyUjQwUnXvJRe7/+3hP3EsrzEUsyPOtXf0utjSb34dXGwknd9iobwU0NFQ5NrAbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCpRkXQbtykq1Yx/ZUrutYrW1qb5/p2XC9uMes1kL5LbhcBAwQBAgAACQMBAAAAAAAAAAA=",
             "base64"
-        ]
+        ],
+        "version": 0
     },
     "id": 1
 }
@@ -3476,7 +3473,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3489,9 +3486,9 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
-    "result": 133855482658,
-    "id": 1
+    "result": 15541529698
 }
 ```
 
@@ -3519,7 +3516,7 @@ The `result` object contains the following parameters:
 ### Request parameters
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3532,12 +3529,12 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "feature-set": 1775889670,
-        "solana-core": "1.13.6"
-    },
-    "id": 1
+        "feature-set": 3294202862,
+        "solana-core": "2.2.3"
+    }
 }
 ```
 
@@ -3582,7 +3579,7 @@ The result field will be a JSON object of `current` and `delinquent` accounts, e
 ### Request example 1
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3599,35 +3596,40 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
     "result": {
         "current": [
             {
-                "commission": 0,
-                "epochVoteAccount": true,
+                "activatedStake": 2364534867609880,
+                "commission": 100,
                 "epochCredits": [
                     [
-                        1,
-                        64,
-                        0
+                        863,
+                        931848333,
+                        924939069
                     ],
                     [
-                        2,
-                        192,
-                        64
+                        864,
+                        938750237,
+                        931848333
+                    ],
+                    [
+                        865,
+                        945661181,
+                        938750237
+                    ],
+                    [
+                        866,
+                        952567578,
+                        945661181
+                    ],
+                    [
+                        867,
+                        953877279,
+                        952567578
                     ]
                 ],
-                "nodePubkey": "B97CCUW3AEZFGy6uUg6zUdnNYvnVq5VG8PUtb2HayTDD",
-                "lastVote": 147,
-                "activatedStake": 42,
-                "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
-            }
-        ],
-        "delinquent": [
-            {
-                "commission": 127,
-                "epochVoteAccount": false,
-                "epochCredits": [],
-                "nodePubkey": "6ZPxeQaDo4bkZLRsdNrCzchNQr5LN9QMc9sipXv9Kw8f",
-                "lastVote": 0,
-                "activatedStake": 0,
-                "votePubkey": "CmgCk4aMS7KW1SHX3s9K5tBJ6Yng2LBaC8MFov4wx9sm"
+                "epochVoteAccount": true,
+                "lastVote": 374626126,
+                "nodePubkey": "Cw6X5R68muAyGRCb7W8ZSP2YbaRjwMs1t5sBEPkhdwbM",
+                "rootSlot": 374626095,
+                "votePubkey": "7AETLyAGJWjp6AWzZqZcP362yv5LQ3nLEdwnXNjdNwwF"
             }
         ]
     },
@@ -3640,7 +3642,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 Restricts the results to a single validator vote account.
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3648,7 +3650,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
       "method": "getVoteAccounts",
       "params": [
         {
-          "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
+          "votePubkey": "BZxzPVaLuAp2JUzR9gbtbrv47qYdSdRQfBWzatxPVjcD"
         }
       ]
     }'
@@ -3658,33 +3660,49 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "current": [
+        "current": [],
+        "delinquent": [
             {
-                "commission": 0,
-                "epochVoteAccount": true,
+                "activatedStake": 1997717120,
+                "commission": 100,
                 "epochCredits": [
                     [
-                        1,
-                        64,
-                        0
+                        851,
+                        13346414,
+                        6438750
                     ],
                     [
-                        2,
-                        192,
-                        64
+                        852,
+                        18873026,
+                        13346414
+                    ],
+                    [
+                        853,
+                        23618152,
+                        18873026
+                    ],
+                    [
+                        854,
+                        29813698,
+                        23618152
+                    ],
+                    [
+                        855,
+                        33504018,
+                        29813698
                     ]
                 ],
-                "nodePubkey": "B97CCUW3AEZFGy6uUg6zUdnNYvnVq5VG8PUtb2HayTDD",
-                "lastVote": 147,
-                "activatedStake": 42,
-                "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
+                "epochVoteAccount": true,
+                "lastVote": 369591011,
+                "nodePubkey": "9AyV9DykRupCenmHzvFckXLa2Hg8kvG61c6yX215EZCm",
+                "rootSlot": 369590980,
+                "votePubkey": "BZxzPVaLuAp2JUzR9gbtbrv47qYdSdRQfBWzatxPVjcD"
             }
-        ],
-        "delinquent": []
-    },
-    "id": 1
+        ]
+    }
 }
 ```
 
@@ -3725,14 +3743,14 @@ NEW: This method is only available in solana-core v1.9 or newer. Please use [`ge
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
      "id":45,
      "jsonrpc":"2.0",
      "method":"isBlockhashValid",
      "params":[
-       "J7rBdM6AecPDEZp8aPq5iPSNKVkU5Q76F3oAV4eW5wsW",
+       "Fv8Be2iVvuSbWr3M5krNf5UT4TwwwtyY14jHBZXiatdv",
        {"commitment": "processed"}
      ]
    }'
@@ -3742,15 +3760,15 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
+    "id": 45,
     "jsonrpc": "2.0",
     "result": {
         "context": {
-            "apiVersion": "1.13.6",
-            "slot": 172754624
+            "apiVersion": "2.2.3",
+            "slot": 374626674
         },
         "value": false
-    },
-    "id": 45
+    }
 }
 ```
 
@@ -3778,7 +3796,7 @@ This value may increase over time if the node is configured to purge older ledge
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
      "id":45,
@@ -3792,7 +3810,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 172638029,
+    "result": 370994242,
     "id": 45
 }
 ```
@@ -3830,13 +3848,16 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
       "method": "requestAirdrop",
-      "params": ["83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri", 1000000000]
+      "params": [
+          "83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri",
+          1000000000
+      ]
    }'
 ```
 
@@ -3845,7 +3866,7 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 ```json
 {
     "jsonrpc": "2.0",
-    "result": "5VERv8NMvzbJMEkV8xnrLkEaWRtSz9CosKDYjCJjBRnbJLgp8uirBgmQpjKhoR4tjF3ZpRzrFmBV6UjKdiSZkQUW",
+    "result": "4fv3RBynFREuU71Ajt9GyyiBJ7NKa9NmATmzdyKojdaGC111NfZBni1CJ5pb3AtnryqdjaVKWF9f1wp1d4gwoki5",
     "id": 1
 }
 ```
@@ -3901,7 +3922,7 @@ The returned signature is the first signature in the transaction, which is used 
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3974,7 +3995,7 @@ The result will be a JSON object with the `value` containing the following field
 ### Request example
 
 ```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
+curl -X POST https://rpc.ankr.com/solana_devnet/{your_token} \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -3992,951 +4013,22 @@ curl -X POST https://rpc.ankr.com/solana/{your_token} \
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "result": {
-    "context": {
-      "slot": 218
-    },
-    "value": {
-      "err": null,
-      "accounts": null,
-      "logs": [
-        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri invoke [1]",
-        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri consumed 2366 of 1400000 compute units",
-        "Program return: 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri KgAAAAAAAAA=",
-        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri success"
-      ],
-      "returnData": {
-        "data": [
-          "Kg==",
-          "base64"
-        ],
-        "programId": "83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri"
-      },
-      "unitsConsumed": 2366
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "context": {
+            "apiVersion": "2.2.3",
+            "slot": 374627777
+        },
+        "value": {
+            "accounts": null,
+            "err": "BlockhashNotFound",
+            "innerInstructions": null,
+            "logs": [],
+            "replacementBlockhash": null,
+            "returnData": null,
+            "unitsConsumed": 0
+        }
     }
-  },
-  "id": 1
 }
 ```
-
----
-
-## `getConfirmedBlock` (DEPRECATED)
-
-<Callout type="warning">
-DEPRECATED: Please use [`getBlock`](/rpc-service/chains/chains-api/solana/#getblock) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns identity and transaction information about a confirmed block in the ledger.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<u64>` (required): the slot, as u64 integer.
-    * `<object>` (optional): the configuration object containing the following fields:
-      * `encoding` (string): the encoding for each returned Transaction, either "json", "jsonParsed", "base58" (slow), "base64". If parameter not provided, the default encoding is "json". ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list. If "jsonParsed" is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
-      * `transactionDetails` (string): the level of transaction detail to return, either "full", "signatures", or "none". If parameter not provided, the default detail level is "full".
-      * `rewards` (boolean): whether to populate the rewards array. If parameter not provided, the default includes rewards.
-      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-
-### Returns
-
-The `result` is an object containing the following fields:
-
-  * `null`: if specified block is not confirmed.
-  * `<object>`: if block is confirmed, an object with the following fields:
-    * `blockhash` (string):  the blockhash of this block, as base-58 encoded string.
-    * `previousBlockhash` (string): the blockhash of this block's parent, as base-58 encoded string; if the parent block is not available due to ledger cleanup, this field will return "11111111111111111111111111111111".
-    * `parentSlot` (u64): the slot index of this block's parent.
-    * `transactions` (array): to be included if "full" transaction details are requested; an array of JSON objects containing:
-      * `transaction` (object|[string,encoding]): the [Transaction](https://docs.solana.com/developing/clients/jsonrpc-api#transaction-structure) object, either in JSON format or encoded binary data, depending on encoding parameter.
-      * `meta` (object): the transaction status metadata object, containing null or:
-        * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13) definitions.
-        * `fee` (u64): the fee this transaction was charged, as u64 integer.
-        * `preBalances` (array): an array of u64 account balances from before the transaction was processed.
-        * `postBalances` (array): an array of u64 account balances after the transaction was processed.
-        * `innerInstructions` (array|null): the list of [inner instructions](https://docs.solana.com/developing/clients/jsonrpc-api#inner-instructions-structure) or null if inner instruction recording was not enabled during this transaction.
-        * `preTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from before the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
-        * `postTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from after the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
-        * `logMessages` (array|null): an array of string log messages or null if log message recording was not enabled during this transaction.
-        * [DEPRECATED] `status` (object): the transaction status.
-          * `"Ok": <null>`: the transaction was successful.
-          * `"Err": <ERR>`: the Transaction failed with TransactionError.
-    * `signatures` (array): to be included if "signatures" are requested for transaction details; an array of signatures strings, corresponding to the transaction order in the block.
-    * `rewards` (array): to be included if rewards are requested; an array of JSON objects containing:
-      * `pubkey` (string): the public key, as base-58 encoded string, of the account that received the reward.
-      * `lamports` (i64): the number of reward lamports credited or debited by the account, as a i64.
-      * `postBalance` (u64): the account balance in lamports after the reward was applied.
-      * `rewardType` (string|undefined): the type of reward: "fee", "rent", "voting", "staking".
-      * `commission` (u8|undefined): the vote account commission when the reward was credited, only present for voting and staking rewards.
-    * `blockTime` (i64|null): the estimated production time, as Unix timestamp (seconds since the Unix epoch). null if not available.
-
-### Request example 1
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getConfirmedBlock",
-      "params": [430, {"encoding": "json", "transactionDetails": "full", "rewards": false}]
-    }'
-```
-
-### Response example 1
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "blockTime": null,
-        "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
-        "parentSlot": 429,
-        "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
-        "transactions": [
-            {
-                "meta": {
-                    "err": null,
-                    "fee": 5000,
-                    "innerInstructions": [],
-                    "logMessages": [],
-                    "postBalances": [
-                        499998932500,
-                        26858640,
-                        1,
-                        1,
-                        1
-                    ],
-                    "postTokenBalances": [],
-                    "preBalances": [
-                        499998937500,
-                        26858640,
-                        1,
-                        1,
-                        1
-                    ],
-                    "preTokenBalances": [],
-                    "status": {
-                        "Ok": null
-                    }
-                },
-                "transaction": {
-                    "message": {
-                        "accountKeys": [
-                            "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
-                            "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
-                            "SysvarS1otHashes111111111111111111111111111",
-                            "SysvarC1ock11111111111111111111111111111111",
-                            "Vote111111111111111111111111111111111111111"
-                        ],
-                        "header": {
-                            "numReadonlySignedAccounts": 0,
-                            "numReadonlyUnsignedAccounts": 3,
-                            "numRequiredSignatures": 1
-                        },
-                        "instructions": [
-                            {
-                                "accounts": [
-                                    1,
-                                    2,
-                                    3,
-                                    0
-                                ],
-                                "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
-                                "programIdIndex": 4
-                            }
-                        ],
-                        "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
-                    },
-                    "signatures": [
-                        "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
-                    ]
-                }
-            }
-        ]
-    },
-    "id": 1
-}
-```
-
-### Request example 2
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getConfirmedBlock",
-      "params": [430, "base64"]
-    }'
-```
-
-### Response example 2
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "blockTime": null,
-        "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
-        "parentSlot": 429,
-        "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
-        "rewards": [],
-        "transactions": [
-            {
-                "meta": {
-                    "err": null,
-                    "fee": 5000,
-                    "innerInstructions": [],
-                    "logMessages": [],
-                    "postBalances": [
-                        499998932500,
-                        26858640,
-                        1,
-                        1,
-                        1
-                    ],
-                    "postTokenBalances": [],
-                    "preBalances": [
-                        499998937500,
-                        26858640,
-                        1,
-                        1,
-                        1
-                    ],
-                    "preTokenBalances": [],
-                    "status": {
-                        "Ok": null
-                    }
-                },
-                "transaction": [
-                    "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
-                    "base64"
-                ]
-            }
-        ]
-    },
-    "id": 1
-}
-```
-
----
-
-## `getConfirmedBlocks` (DEPRECATED)
-
-<Callout type="warning">
-DEPRECATED: Please use [`getBlocks`](/rpc-service/chains/chains-api/solana/#getblocks) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns a list of confirmed blocks between two slots.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<u64>` (required): start_slot, as u64 integer.
-    * `<u64>` (optional): end_slot, as u64 integer.
-    * `<object>` (optional): the configuration object containing the following field:
-      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-
-### Returns
-
-The result field will be an array of u64 integers listing confirmed blocks between `start_slot` and either `end_slot`, if provided, or latest confirmed block, inclusive. Max range allowed is 500,000 slots.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getConfirmedBlocks",
-      "params": [5, 10]
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": [5, 6, 7, 8, 9, 10],
-    "id": 1
-}
-```
-
----
-
-## `getConfirmedBlocksWithLimit` (DEPRECATED)
-
-<Callout type="warning">
-DEPRECATED: Please use [`getBlocksWithLimit`](/rpc-service/chains/chains-api/solana/#getblockswithlimit) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns a list of confirmed blocks starting at the given slot.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<u64>` (required): start_slot, as u64 integer.
-    * `<u64>` (required): the limit, as u64 integer.
-    * `<object>` (optional): the configuration object containing the following field:
-      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-
-### Returns
-
-The result field will be an array of u64 integers listing confirmed blocks starting at start_slot for up to limit blocks, inclusive.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getConfirmedBlocksWithLimit",
-      "params": [5, 3]
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": [5, 6, 7],
-    "id": 1
-}
-```
-
----
-
-## `getConfirmedSignaturesForAddress2` (DEPRECATED)
-
-<Callout type="warning">
-DEPRECATED: Please use [`getSignaturesForAddress`](/rpc-service/chains/chains-api/solana/#getsignaturesforaddress) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns signatures for confirmed transactions that include the given address in their `accountKeys` list.**
-
-Returns signatures backwards in time from the provided signature or most recent confirmed block.
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<string>` (required): the account address as base-58 encoded string.
-    * `<object>` (optional): the configuration object containing the following fields:
-      * `limit` (number): the maximum transaction signatures to return (between 1 and 1,000, default: 1,000).
-      * `before` (string): starts searching backwards from this transaction signature. If not provided the search starts from the top of the highest max confirmed block.
-      * `until` (string): searches until this transaction signature, if found before limit reached.
-      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-
-### Returns
-
-The `result` contains the transaction signature information, ordered from newest to oldest transaction:
-
-  * `signature` (string): the transaction signature as base-58 encoded string.
-  * `slot` (u64): the slot that contains the block with the transaction.
-  * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13) definitions.
-  * `memo` (string|null): the memo associated with the transaction, null if no memo is included.
-  * `blockTime` (i64|null): the estimated production time, as Unix timestamp (seconds since the Unix epoch) of when transaction was processed; null if not available.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-     "jsonrpc": "2.0",
-     "id": 1,
-     "method": "getConfirmedSignaturesForAddress2",
-     "params": [
-       "Vote111111111111111111111111111111111111111",
-       {
-         "limit": 1
-       }
-     ]
-   }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": [
-        {
-            "blockTime": 1673887779,
-            "confirmationStatus": "finalized",
-            "err": null,
-            "memo": null,
-            "signature": "67qzQSveCwvDQhccgPGdudCSq1Yu3tYViXX63fSxvJA7JwaNqZtL9mybVbGc7og7Eaet292u7FY4mp4zUkTH8PQW",
-            "slot": 172819670
-        }
-    ],
-    "id": 1
-}
-```
-
----
-
-## `getConfirmedTransaction` (DEPRECATED)
-
-<Callout type="warning">
-DEPRECATED: Please use [`getTransaction`](/rpc-service/chains/chains-api/solana/#gettransaction) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns transaction details for a confirmed transaction.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<string>` (required): the transaction signature as base-58 encoded string.
-    * `<object>` (optional): the configuration object containing the following optional fields:
-      * `encoding` (string): the encoding for each returned Transaction, either "json", "jsonParsed", "base58" (slow), "base64". If parameter not provided, the default encoding is "json". ["jsonParsed" encoding](https://docs.solana.com/developing/clients/jsonrpc-api#parsed-responses) attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list. If "jsonParsed" is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
-      * `commitment` (string; default: "finalized"): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-
-### Returns
-<br/>
-
-  * `null`: if the transaction is not found or not confirmed.
-  * `<object>`: if the transaction is confirmed, an object with the following fields:
-    * `slot` (u64): the slot this transaction was processed in.
-    * `transaction` (object|[string,encoding]): the [Transaction](https://docs.solana.com/developing/clients/jsonrpc-api#transaction-structure) object, either in JSON format or encoded binary data, depending on encoding parameter.
-    * `blockTime` (i64|null): the estimated production time, as Unix timestamp (seconds since the Unix epoch) of when the transaction was processed; null if not available.
-    * `meta` (object|null): the transaction status metadata object:
-      * `err` (object|null): Error if transaction failed, null if transaction succeeded. See the [TransactionError](https://docs.rs/solana-sdk/1.14.11/solana_sdk/transaction/enum.TransactionError.html) definitions.
-      * `fee` (u64): the fee this transaction was charged, as u64 integer.
-      * `preBalances` (array): an array of u64 account balances from before the transaction was processed.
-      * `postBalances` (array): an array of u64 account balances after the transaction was processed.
-      * `innerInstructions` (array|null): the list of [inner instructions](https://docs.solana.com/developing/clients/jsonrpc-api#inner-instructions-structure) or `null` if inner instruction recording was not enabled during this transaction.
-      * `preTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from before the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
-      * `postTokenBalances` (array|undefined): the list of [token balances](https://docs.solana.com/developing/clients/jsonrpc-api#token-balances-structure) from after the transaction was processed or omitted if token balance recording was not yet enabled during this transaction.
-      * `logMessages` (array|null): an array of string log messages or `null` if log message recording was not enabled during this transaction.
-      * [DEPRECATED] `status` (object): the Transaction status.
-        * `"Ok": <null>`: the Transaction was successful.
-        * `"Err": <ERR>`: the Transaction failed with TransactionError.
-
-### Request example 1
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-     "jsonrpc": "2.0",
-     "id": 1,
-     "method": "getConfirmedTransaction",
-     "params": [
-       "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
-       "json"
-     ]
-   }'
-```
-
-### Response example 1
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "meta": {
-            "err": null,
-            "fee": 5000,
-            "innerInstructions": [],
-            "postBalances": [
-                499998932500,
-                26858640,
-                1,
-                1,
-                1
-            ],
-            "postTokenBalances": [],
-            "preBalances": [
-                499998937500,
-                26858640,
-                1,
-                1,
-                1
-            ],
-            "preTokenBalances": [],
-            "status": {
-                "Ok": null
-            }
-        },
-        "slot": 430,
-        "transaction": {
-            "message": {
-                "accountKeys": [
-                    "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
-                    "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
-                    "SysvarS1otHashes111111111111111111111111111",
-                    "SysvarC1ock11111111111111111111111111111111",
-                    "Vote111111111111111111111111111111111111111"
-                ],
-                "header": {
-                    "numReadonlySignedAccounts": 0,
-                    "numReadonlyUnsignedAccounts": 3,
-                    "numRequiredSignatures": 1
-                },
-                "instructions": [
-                    {
-                        "accounts": [
-                            1,
-                            2,
-                            3,
-                            0
-                        ],
-                        "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
-                        "programIdIndex": 4
-                    }
-                ],
-                "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
-            },
-            "signatures": [
-                "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
-            ]
-        }
-    },
-    "blockTime": null,
-    "id": 1
-}
-```
-
-### Request example 2
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-     "jsonrpc": "2.0",
-     "id": 1,
-     "method": "getConfirmedTransaction",
-     "params": [
-       "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
-       "base64"
-     ]
-   }'
-```
-
-### Response example 2
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "meta": {
-            "err": null,
-            "fee": 5000,
-            "innerInstructions": [],
-            "postBalances": [
-                499998932500,
-                26858640,
-                1,
-                1,
-                1
-            ],
-            "postTokenBalances": [],
-            "preBalances": [
-                499998937500,
-                26858640,
-                1,
-                1,
-                1
-            ],
-            "preTokenBalances": [],
-            "status": {
-                "Ok": null
-            }
-        },
-        "slot": 430,
-        "transaction": [
-            "AVj7dxHlQ9IrvdYVIjuiRFs1jLaDMHixgrv+qtHBwz51L4/ImLZhszwiyEJDIp7xeBSpm/TX5B7mYzxa+fPOMw0BAAMFJMJVqLw+hJYheizSoYlLm53KzgT82cDVmazarqQKG2GQsLgiqktA+a+FDR4/7xnDX7rsusMwryYVUdixfz1B1Qan1RcZLwqvxvJl4/t3zHragsUp0L47E24tAFUgAAAABqfVFxjHdMkoVmOYaR1etoteuKObS21cc1VbIQAAAAAHYUgdNXR0u3xNdiTr072z2DVec9EQQ/wNo1OAAAAAAAtxOUhPBp2WSjUNJEgfvy70BbxI00fZyEPvFHNfxrtEAQQEAQIDADUCAAAAAQAAAAAAAACtAQAAAAAAAAdUE18R96XTJCe+YfRfUp6WP+YKCy/72ucOL8AoBFSpAA==",
-            "base64"
-        ]
-    },
-    "id": 1
-}
-```
-
----
-
-## `getFeeCalculatorForBlockhash` (DEPRECATED)
-
-<Callout type="warning">
-DEPRECATED: Please use [`isBlockhashValid`](/rpc-service/chains/chains-api/solana/#isblockhashvalid) or [`getFeeForMessage`](/rpc-service/chains/chains-api/solana/#getfeeformessage) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns the fee calculator associated with the query blockhash, or `null` if the blockhash has expired.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<string>` (required): the blockhash to query, as a base58-encoded string.
-    * `<object>` (optional): the configuration object containing the following fields:
-      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
-      * `minContextSlot` (number): sets the minimum slot that the request can be evaluated at.
-
-### Returns
-
-The `value` object contains the following fields:
-
-  * `null`: if the query blockhash has expired.
-  * `<object>`:otherwise, a JSON object containing:
-    * `feeCalculator` (object): the object describing the cluster fee rate at the queried blockhash.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getFeeCalculatorForBlockhash",
-      "params": [
-        "GJxqhuxcgfn5Tcj6y3f8X4FeCDd2RQ6SnEMo1AAxrPRZ"
-      ]
-   }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "context": {
-            "slot": 221
-        },
-        "value": {
-            "feeCalculator": {
-                "lamportsPerSignature": 5000
-            }
-        }
-    },
-    "id": 1
-}
-```
-
----
-
-## `getFeeRateGovernor`
-
-> **Returns the fee rate governor information from the root bank.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Results
-
-The result is an object with the following fields:
-
-  * `burnPercent` (u8): a percentage of fees collected to be destroyed.
-  * `maxLamportsPerSignature` (u64): the largest value `lamportsPerSignature` can attain for the next slot.
-  * `minLamportsPerSignature` (u64): the smallest value `lamportsPerSignature` can attain for the next slot.
-  * `targetLamportsPerSignature` (u64): the desired fee rate for the cluster.
-  * `targetSignaturesPerSlot` (u64): the desired signature rate for the cluster.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getFeeRateGovernor"
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "context": {
-            "apiVersion": "1.13.6",
-            "slot": 172823609
-        },
-        "value": {
-            "feeRateGovernor": {
-                "burnPercent": 50,
-                "maxLamportsPerSignature": 100000,
-                "minLamportsPerSignature": 5000,
-                "targetLamportsPerSignature": 10000,
-                "targetSignaturesPerSlot": 20000
-            }
-        }
-    },
-    "id": 1
-}
-```
-
----
-
-## `getFees`
-
-<Callout type="warning">
-DEPRECATED: Please use [`getFeeForMessage`](/rpc-service/chains/chains-api/solana/#getfeeformessage) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns a recent block hash from the ledger, a fee schedule that can be used to compute the cost of submitting a transaction using it, and the last slot in which the blockhash will be valid.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<object>` (optional): the configuration object containing the following field:
-      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
-
-### Returns
-
-The result contains the `value` object with the following fields:
-
-  * `blockhash` (string): the Hash as base-58 encoded string.
-  * `feeCalculator` (object): the FeeCalculator object, the fee schedule for this block hash.
-  * `lastValidSlot` (u64): [DEPRECATED]; this value is inaccurate and should not be relied upon.
-  * `lastValidBlockHeight` (u64): the last [block height](https://docs.solana.com/terminology#block-height) at which the blockhash will be valid.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getFees"
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "context": {
-            "apiVersion": "1.13.6",
-            "slot": 172824441
-        },
-        "value": {
-            "blockhash": "64kBnRLDV4cbaRK2E3pxdePc8qXSetDp5A5oq2Zr2rFX",
-            "feeCalculator": {
-                "lamportsPerSignature": 5000
-            },
-            "lastValidBlockHeight": 156741543,
-            "lastValidSlot": 172824741
-        }
-    },
-    "id": 1
-}
-```
-
----
-
-## `getRecentBlockhash`
-
-<Callout type="warning">
-DEPRECATED: Please use [`getLatestBlockhash`](/rpc-service/chains/chains-api/solana/#getlatestblockhash) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns a recent block hash from the ledger, and a fee schedule that can be used to compute the cost of submitting a transaction using it.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<object>`: the configuration object containing the following field:
-      * `commitment` (string): the commitment describes how finalized a block is at that point in time. When querying the ledger state, it's recommended to use lower levels of commitment to report progress and higher levels to ensure the state will not be rolled back. For processing many dependent transactions in series, it's recommended to use "confirmed" commitment, which balances speed with rollback safety. For total safety, it's recommended to use "finalized" commitment:
-        * `finalized`: the node will query the most recent block confirmed by supermajority of the cluster as having reached maximum lockout, meaning the cluster has recognized this block as finalized.
-        * `confirmed`: the node will query the most recent block that has been voted on by supermajority of the cluster.
-          * it incorporates votes from gossip and replay.
-          * it does not count votes on descendants of a block, only direct votes on that block.
-          * this confirmation level also upholds "optimistic confirmation" guarantees in release 1.3 and onwards.
-        * `processed`: the node will query its most recent block. Note that the block may still be skipped by the cluster.
-
-### Returns
-
-The result contains the `value` object with the following fields:
-
-  * `blockhash` (string): the Hash as base-58 encoded string.
-  * `feeCalculator` (object): the FeeCalculator object, the fee schedule for this block hash.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getRecentBlockhash"
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "context": {
-            "apiVersion": "1.13.6",
-            "slot": 172824979
-        },
-        "value": {
-            "blockhash": "EDkAjrBjh9zyWMcgTwhTs3ZVnNtDoD3Ep8QTyxksAj38",
-            "feeCalculator": {
-                "lamportsPerSignature": 5000
-            }
-        }
-    },
-    "id": 1
-}
-```
-
----
-
-## `getSnapshotSlot`
-
-<Callout type="warning">
-DEPRECATED: Please use [`getHighestSnapshotSlot`](/rpc-service/chains/chains-api/solana/#gethighestsnapshotslot) instead. This method is expected to be removed in solana-core v2.0
-</Callout>
-
-> **Returns the highest slot that the node has a snapshot for.**
-
-### Parameters
-<br/>
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0). 
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required): None.
-
-### Returns
-<br/>
-
-  * `<u64>`: the snapshot slot.
-
-### Request example
-
-```shell
-curl -X POST https://rpc.ankr.com/solana/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "getSnapshotSlot"
-    }'
-```
-
-### Response example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": 172806633,
-    "id": 1
-}
-```
-
-### Response example (no snapshot)
-
-```json
-{
-    "jsonrpc": "2.0",
-    "error": {
-        "code": -32008,
-        "message": "No snapshot"
-    },
-    "id": 1
-}
-```
-
-
