@@ -58,8 +58,6 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
   * [`suix_queryTransactionBlocks`](/rpc-service/chains/chains-api/sui/#suix_querytransactionblocks) — retrieves list of transactions for a specified query criteria.
   * [`suix_resolveNameServiceAddress`](/rpc-service/chains/chains-api/sui/#suix_resolvenameserviceaddress) — retrieves the resolved address given the resolver and name.
   * [`suix_resolveNameServiceNames`](/rpc-service/chains/chains-api/sui/#suix_resolvenameservicenames) — retrieves  the resolved names given an address.
-  * [`suix_subscribeEvent`](/rpc-service/chains/chains-api/sui/#suix_subscribeevent) — subscribes to a stream of Sui event.
-  * [`suix_subscribeTransaction`](/rpc-service/chains/chains-api/sui/#suix_subscribetransaction) — subscribes to a stream of Sui transaction effects.
   * [`unsafe_batchTransaction`](/rpc-service/chains/chains-api/sui/#unsafe_batchtransaction) — creates an unsigned batched transaction.
   * [`unsafe_mergeCoins`](/rpc-service/chains/chains-api/sui/#unsafe_mergecoins) — creates an unsigned transaction to merge multiple coins into one coin.
   * [`unsafe_moveCall`](/rpc-service/chains/chains-api/sui/#unsafe_movecall) — creates an unsigned transaction to execute a Move call on the network by calling the specified function in the module of a given package.
@@ -2930,44 +2928,6 @@ If multiple names are resolved, the first one is the primary name.
 #### Returns
 
   * `Page<String,ObjectID>`
-
----
-
-### `suix_subscribeEvent`
-
-> Subscribes to a stream of Sui event.
-
-#### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<filter>` (EventFilter): the filter criteria of the event stream.
-
-#### Returns
-
-  * `SuiEvent`
-
----
-
-### `suix_subscribeTransaction`
-
-> Subscribes to a stream of Sui transaction effects.
-
-#### Parameters
-
-  * `id` (integer; required): a request ID (example: 1).
-  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
-  * `method` (string; required): a method used for the request.
-  * `params` (array; required):
-
-    * `<filter>` (TransactionFilter): the transaction filter criteria.
-
-#### Returns
-
-  * `SuiTransactionBlockEffects`
 
 ---
 
