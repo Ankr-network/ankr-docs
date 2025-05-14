@@ -1,0 +1,4530 @@
+import { Callout } from "components";
+import { Tabs, Tab } from "nextra-theme-docs";
+
+# IOTA
+
+> IOTA API is available on [Web3 API platform](https://www.ankr.com/rpc/iota).
+
+IOTA is a Move-based protocol that provides a decentralized, scalable platform for digital asset management and smart contracts. Leveraging the Move programming language, IOTA Layer 1 ensures high performance and security for applications deployed on the IOTA Mainnet.
+
+In order for your Web3 application to interact with IOTA — either by reading blockchain data or sending transactions to the network — it must connect to an IOTA node. Developers interact with the blockchain using the methods provided by the API.
+
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
+
+## Methods supported
+
+**Coin Query**:
+
+  * [`iotax_getAllBalances`](/rpc-service/chains/chains-api/iota/#iotax_getallbalances) — retrieves all coin balances for an account.
+  * [`iotax_getAllCoins`](/rpc-service/chains/chains-api/iota/#iotax_getallcoins) — retrieves all coins held by an account.
+  * [`iotax_getBalance`](/rpc-service/chains/chains-api/iota/#iotax_getbalance) — retrieves the balance of a specific coin for an account.
+  * [`iotax_getCirculatingSupply`](/rpc-service/chains/chains-api/iota/#iotax_getcirculatingsupply) — retrieves the circulating supply of a coin.
+  * [`iotax_getCoinMetadata`](/rpc-service/chains/chains-api/iota/#iotax_getcoinmetadata) — retrieves metadata of a coin (name, symbol, etc.).
+  * [`iotax_getCoins`](/rpc-service/chains/chains-api/iota/#iotax_getcoins) — retrieves all existing coins.
+  * [`iotax_getTotalSupply`](/rpc-service/chains/chains-api/iota/#iotax_gettotalsupply) — retrieves the total minted supply of a coin.
+
+[//]: # (**Extended**:)
+
+[//]: # ()
+[//]: # (  * [`iotax_getAllEpochAddressMetrics`]&#40;&#41; — retrieves address metrics for all epochs.)
+
+[//]: # (  * [`iotax_getCheckpointAddressMetrics`]&#40;&#41; — retrieves address metrics at a specific checkpoint.)
+
+[//]: # (  * [`iotax_getCurrentEpoch`]&#40;&#41; — retrieves the current epoch.)
+
+[//]: # (  * [`iotax_getDynamicFieldObject`]&#40;&#41; — retrieves a specific dynamic field object.)
+
+[//]: # (  * [`iotax_getDynamicFields`]&#40;&#41; — retrieves dynamic fields associated with an object.)
+
+[//]: # (  * [`iotax_getEpochMetrics`]&#40;&#41; — retrieves network metrics for a given epoch.)
+
+[//]: # (  * [`iotax_getEpochs`]&#40;&#41; — retrieves a list of past epochs.)
+
+[//]: # (  * [`iotax_getLatestAddressMetrics`]&#40;&#41; — retrieves the most recent address metrics.)
+
+[//]: # (  * [`iotax_getMoveCallMetrics`]&#40;&#41; — retrieves metrics related to Move function calls.)
+
+[//]: # (  * [`iotax_getNetworkMetrics`]&#40;&#41; — retrieves overall network performance metrics.)
+
+[//]: # (  * [`iotax_getOwnedObjects`]&#40;&#41; — retrieves all objects owned by an address.)
+
+[//]: # (  * [`iotax_getTotalTransactions`]&#40;&#41; — retrieves the total number of transactions.)
+
+[//]: # (  * [`iotax_queryEvents`]&#40;&#41; — retrieves events matching specific filters.)
+
+[//]: # (  * [`iotax_queryTransactionBlocks`]&#40;&#41; — retrieves transaction blocks based on query parameters.)
+
+[//]: # (  * [`iotax_subscribeEvent`]&#40;&#41; — subscribes to real-time event updates.)
+
+[//]: # (  * [`iotax_subscribeTransaction`]&#40;&#41; — subscribes to real-time transaction updates.)
+
+**Governance Read**:
+
+  * [`iotax_getCommitteeInfo`](/rpc-service/chains/chains-api/iota/#iotax_getcommitteeinfo) — retrieves the committee information for the asked `epoch`.
+  * [`iotax_getLatestIotaSystemState`](/rpc-service/chains/chains-api/iota/#iotax_getlatestiotasystemstate) — retrieves the latest IOTA system state.
+  * [`iotax_getLatestIotaSystemStateV2`](/rpc-service/chains/chains-api/iota/#iotax_getlatestiotasystemstatev2) — retrieves the latest IOTA system state (v2 format).
+  * [`iotax_getReferenceGasPrice`](/rpc-service/chains/chains-api/iota/#iotax_getreferencegasprice) — retrieves the current reference gas price.
+  * [`iotax_getStakes`](/rpc-service/chains/chains-api/iota/#iotax_getstakes) — retrieves all stakes for a given address.
+  * [`iotax_getStakesByIds`](/rpc-service/chains/chains-api/iota/#iotax_getstakesbyids) — retrieves stakes by stake object IDs.
+  * [`iotax_getTimelockedStakes`](/rpc-service/chains/chains-api/iota/#iotax_gettimelockedstakes) — retrieves all timelocked stakes for an address.
+  * [`iotax_getTimelockedStakesByIds`](/rpc-service/chains/chains-api/iota/#iotax_gettimelockedstakesbyids) — retrieves timelocked stakes by object IDs.
+  * [`iotax_getValidatorsApy`](/rpc-service/chains/chains-api/iota/#iotax_getvalidatorsapy) — retrieves the annual percentage yield (APY) for validators.
+
+**Move Utils**:
+
+  * [`iota_getMoveFunctionArgTypes`](/rpc-service/chains/chains-api/iota/#iota_getmovefunctionargtypes) — retrieves argument types for a Move function.
+  * [`iota_getNormalizedMoveFunction`](/rpc-service/chains/chains-api/iota/#iota_getnormalizedmovefunction) — retrieves normalized representation of a Move function.
+  * [`iota_getNormalizedMoveModule`](/rpc-service/chains/chains-api/iota/#iota_getnormalizedmovemodule) — retrieves normalized representation of a Move module.
+  * [`iota_getNormalizedMoveModulesByPackage`](/rpc-service/chains/chains-api/iota/#iota_getnormalizedmovemodulesbypackage) — retrieves all normalized Move modules in a package.
+  * [`iota_getNormalizedMoveStruct`](/rpc-service/chains/chains-api/iota/#iota_getnormalizedmovestruct) — retrieves normalized representation of a Move struct.
+
+**Read**:
+
+  * [`iota_getChainIdentifier`](/rpc-service/chains/chains-api/iota/#iota_getchainidentifier) — retrieves the unique identifier of the chain.
+  * [`iota_getCheckpoint`](/rpc-service/chains/chains-api/iota/#iota_getcheckpoint) — retrieves a checkpoint by sequence number.
+  * [`iota_getCheckpoints`](/rpc-service/chains/chains-api/iota/#iota_getcheckpoints) — retrieves a list of checkpoints.
+  * [`iota_getEvents`](/rpc-service/chains/chains-api/iota/#iota_getevents) — retrieves transaction events.
+  * [`iota_getLatestCheckpointSequenceNumber`](/rpc-service/chains/chains-api/iota/#iota_getlatestcheckpointsequencenumber) — retrieves the latest checkpoint sequence number.
+  * [`iota_getObject`](/rpc-service/chains/chains-api/iota/#iota_getobject) — retrieves object data by ID.
+  * [`iota_getProtocolConfig`](/rpc-service/chains/chains-api/iota/#iota_getprotocolconfig) — retrieves the current protocol configuration.
+  * [`iota_getTotalTransactionBlocks`](/rpc-service/chains/chains-api/iota/#iota_gettotaltransactionblocks) — retrieves the total number of transaction blocks.
+  * [`iota_getTransactionBlock`](/rpc-service/chains/chains-api/iota/#iota_gettransactionblock) — retrieves a transaction block by digest.
+  * [`iota_multiGetObjects`](/rpc-service/chains/chains-api/iota/#iota_multigetobjects) — retrieves multiple on-chain objects by ID.
+  * [`iota_multiGetTransactionBlocks`](/rpc-service/chains/chains-api/iota/#iota_multigettransactionblocks) — retrieves multiple transaction blocks by digest.
+  * [`iota_tryGetPastObject`](/rpc-service/chains/chains-api/iota/#iota_trygetpastobject) — retrieves a past version of an object if available.
+  * [`iota_tryMultiGetPastObjects`](/rpc-service/chains/chains-api/iota/#iota_trymultigetpastobjects) — retrieves past versions of multiple objects if available.
+
+**Transaction Builder**:
+
+  * [`unsafe_batchTransaction`](/rpc-service/chains/chains-api/iota/#unsafe_batchtransaction) — creates an unsigned batched transaction.
+  * [`unsafe_mergeCoins`](/rpc-service/chains/chains-api/iota/#unsafe_mergecoins) — creates an unsigned transaction to merge multiple coins.
+  * [`unsafe_moveCall`](/rpc-service/chains/chains-api/iota/#unsafe_movecall) — creates an unsigned transaction to call a Move function.
+  * [`unsafe_pay`](/rpc-service/chains/chains-api/iota/#unsafe_pay) — creates a transaction to transfer coins to multiple recipients.
+  * [`unsafe_payAllIota`](/rpc-service/chains/chains-api/iota/#unsafe_payalliota) — creates a transaction to transfer all IOTA coins to a single recipient.
+  * [`unsafe_payIota`](/rpc-service/chains/chains-api/iota/#unsafe_payiota) — creates a transaction to transfer IOTA coins to multiple recipients.
+  * [`unsafe_publish`](/rpc-service/chains/chains-api/iota/#unsafe_publish) — creates an unsigned transaction to publish Move modules.
+  * [`unsafe_requestAddStake`](/rpc-service/chains/chains-api/iota/#unsafe_requestaddstake) — creates a request to add stake.
+  * [`unsafe_requestAddTimelockedStake`](/rpc-service/chains/chains-api/iota/#unsafe_requestaddtimelockedstake) — adds a timelocked stake.
+  * [`unsafe_requestWithdrawStake`](/rpc-service/chains/chains-api/iota/#unsafe_requestwithdrawstake) — withdraws stake from a validator's staking pool.
+  * [`unsafe_requestWithdrawTimelockedStake`](/rpc-service/chains/chains-api/iota/#unsafe_requestwithdrawtimelockedstake) — withdraws timelocked stake from a validator's staking pool.
+  * [`unsafe_splitCoin`](/rpc-service/chains/chains-api/iota/#unsafe_splitcoin) — creates an unsigned transaction to split a coin into specified amounts.
+  * [`unsafe_splitCoinEqual`](/rpc-service/chains/chains-api/iota/#unsafe_splitcoinequal) — creates an unsigned transaction to split a coin into equal parts.
+  * [`unsafe_transferIota`](/rpc-service/chains/chains-api/iota/#unsafe_transferiota) — creates an unsigned transaction to transfer IOTA coins.
+  * [`unsafe_transferObject`](/rpc-service/chains/chains-api/iota/#unsafe_transferobject) — creates an unsigned transaction to transfer an on-chain object.
+
+**Write**:
+
+  * [`iota_devInspectTransactionBlock`](/rpc-service/chains/chains-api/iota/#iota_devinspecttransactionblock) — simulates a transaction block for debugging and inspection.
+  * [`iota_dryRunTransactionBlock`](/rpc-service/chains/chains-api/iota/#iota_dryruntransactionblock) — simulates execution of a transaction block without committing it.
+  * [`iota_executeTransactionBlock`](/rpc-service/chains/chains-api/iota/#iota_executetransactionblock) — executes and commits a transaction block to the network.
+
+---
+
+## Coin Query
+
+## `iotax_getAllBalances`
+
+> Retrieves all coin balances for an account.
+
+Retrieves the total coin balance for all coin type, owned by the address owner.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `owner< IotaAddress >` (required): the owner's IOTA address.
+
+### Returns
+
+Gets all balances for the address in the request.
+
+```
+Vec<Balance><[ Balance ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getAllBalances",
+      "params": ["0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "coinType": "0x2::iota::IOTA",
+      "coinObjectCount": 15,
+      "totalBalance": "3000000000"
+    }
+  ],
+  "id": 1
+}
+```
+
+---
+
+## `iotax_getAllCoins`
+
+> Retrieves all coins held by an account.
+
+Retrieves all Coin objects owned by an address.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `owner< IotaAddress >` (required): the owner's IOTA address.
+    * `cursor< ObjectID >`(optional): paging cursor.
+    * `limit< uint >` (optional): maximum number of items per page.
+
+### Returns
+
+```
+CoinPage< Page_for_Coin_and_ObjectID >
+```
+
+`next_cursor` points to the last item in the page; Reading with `next_cursor` will start from the next item after `next_cursor` if `next_cursor` is `Some`, otherwise it will start from the first item.
+
+  * `data<[ Coin ]>` (required)
+  * `hasNextPage< Boolean >` (required)
+  * `nextCursor< ObjectID | null >` (optional)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getAllCoins",
+      "params": [
+        "0x2762540744dfaeda69885db1f8e85c8c02e471ce41914aea9a85b3e6d63996a5"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "data": [
+            {
+                "coinType": "0x2::iota::IOTA",
+                "coinObjectId": "0x37904c3a2a5c5309afb2c622418f9b703522ff3ae28e61c202f47b1e4b536851",
+                "version": "94",
+                "digest": "8A6oR6tnJgyxJEPo8sb697QxmFedsZSttkAZpZTv66oM",
+                "balance": "9998019600",
+                "previousTransaction": "C9RF1uxim4uUQbMqrdNusJgVsxHwKEJgGyPnZ7BuTrqm"
+            }
+        ],
+        "nextCursor": "0x37904c3a2a5c5309afb2c622418f9b703522ff3ae28e61c202f47b1e4b536851",
+        "hasNextPage": false
+    }
+}
+```
+
+---
+
+## `iotax_getBalance`
+
+> Retrieves the balance of a specific coin for an account.
+
+Retrieves the total coin balance for one coin type, owned by the address owner.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `owner< IotaAddress >` (required): the owner's IOTA address.
+    * `coin_type< string >` (optional): type names for the coin (e.g., 0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC), default to 0x2::iota::IOTA if not specified.
+
+### Returns
+
+Gets the balance of the specified type of coin for the address in the request.
+
+```
+Balance< Balance >
+```
+
+  * `coinObjectCount< uint >` (required)
+  * `coinType< string >` (required)
+  * `totalBalance< BigInt_for_uint128 >` (required)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getBalance",
+      "params": [
+        "0x51ceab2edc89f74730e683ebee65578cb3bc9237ba6fca019438a9737cf156ae",
+        "0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "coinType": "0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC",
+    "coinObjectCount": 15,
+    "totalBalance": "15"
+  },
+  "id": 1
+}
+```
+
+---
+
+## `iotax_getCirculatingSupply`
+
+> Retrieves the circulating supply of a coin.
+
+Retrieves the circulating supply summary.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+IotaCirculatingSupply< IotaCirculatingSupply >
+```
+
+Provides a summary of the circulating IOTA supply.
+
+  * `atCheckpoint< uint64 >` (required): timestamp (UTC) when the circulating supply was calculated.
+  * `circulatingSupplyPercentage< >` (required): percentage of total supply that is currently circulating (range: 0.0 to 1.0).
+  * `value< uint64 >` (required): circulating supply in NANOS at the given timestamp.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getCirculatingSupply",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "value": 3751592581236347000,
+        "circulatingSupplyPercentage": 0.8146128347879668,
+        "atCheckpoint": 2771976
+    }
+}
+```
+
+---
+
+## `iotax_getCoinMetadata`
+
+> Retrieves metadata of a coin (name, symbol, etc.).
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `coin_type< string >` (required): type name for the coin (e.g., 0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC).
+
+### Returns
+
+```
+IotaCoinMetadata< IotaCoinMetadata >
+```
+
+  * `decimals< uint8 >` (required): number of decimal places the coin uses.
+  * `description< string >` (required): description of the token.
+  * `iconUrl< [string,null] >` (optional): URL for the token logo.
+  * `id< ObjectID | null >` (optional): object id for the CoinMetadata object.
+  * `name< string >` (required): name for the token.
+  * `symbol< string >` (required): symbol for the token.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getCoinMetadata",
+      "params": ["0x2::iota::IOTA"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "decimals": 9,
+        "name": "IOTA",
+        "symbol": "IOTA",
+        "description": "The main (gas)token of the IOTA Network.",
+        "iconUrl": "https://iota.org/logo.png",
+        "id": "0xd02db1bb647dfcc94f35b82a14e8bab07661be3e6d4b022bdc7ee63eed0728f8"
+    }
+}
+```
+
+---
+
+## `iotax_getCoins`
+
+> Retrieves all existing coins.
+
+Retrieves all `Coin<coin_type>` objects owned by an address.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `owner< IotaAddress >` (required): the owner's IOTA address.
+    * `coin_type< string >` (optional): type name for the coin (e.g., 0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC), default to 0x2::iota::IOTA if not specified.
+    * `cursor< ObjectID >` (optional): paging cursor.
+    * `limit< uint >` (optional): maximum number of items per page.
+
+### Returns
+
+```
+CoinPage< Page_for_Coin_and_ObjectID >
+```
+
+`next_cursor` points to the last item in the page; Reading with `next_cursor` will start from the next item after `next_cursor` if `next_cursor` is `Some`, otherwise it will start from the first item.
+
+  * `data<[ Coin ]>` (required)
+  * `hasNextPage< Boolean >` (required)
+  * `nextCursor< ObjectID | null >` (optional)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getCoins",
+      "params": [
+        "0x2762540744dfaeda69885db1f8e85c8c02e471ce41914aea9a85b3e6d63996a5"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "data": [
+            {
+                "coinType": "0x2::iota::IOTA",
+                "coinObjectId": "0x37904c3a2a5c5309afb2c622418f9b703522ff3ae28e61c202f47b1e4b536851",
+                "version": "94",
+                "digest": "8A6oR6tnJgyxJEPo8sb697QxmFedsZSttkAZpZTv66oM",
+                "balance": "9998019600",
+                "previousTransaction": "C9RF1uxim4uUQbMqrdNusJgVsxHwKEJgGyPnZ7BuTrqm"
+            }
+        ],
+        "nextCursor": "0x37904c3a2a5c5309afb2c622418f9b703522ff3ae28e61c202f47b1e4b536851",
+        "hasNextPage": false
+    }
+}
+```
+
+---
+
+## `iotax_getTotalSupply`
+
+> Retrieves the total minted supply of a coin.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `coin_type< string >` (required): type name for the coin (e.g., `0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC`)
+
+### Returns
+
+```
+Supply< Supply >
+```
+
+  * `value< BigInt_for_uint64 >` (required)
+
+### Request example
+
+Gets total supply for the type of coin provided.
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getTotalSupply",
+      "params": ["0x2::iota::IOTA"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "value": "4605368858708000000"
+    }
+}
+```
+
+---
+
+[//]: # (**Extended**:)
+
+[//]: # ()
+[//]: # (## `iotax_getAllEpochAddressMetrics`)
+
+[//]: # ()
+[//]: # (> Retrieves address metrics for all epochs.)
+
+[//]: # ()
+[//]: # (Address related metrics. Exclusively served by the indexer.)
+
+[//]: # ()
+[//]: # (### Parameters)
+
+[//]: # ()
+[//]: # (  * `id` &#40;integer; required&#41;: a request ID &#40;example: 1&#41;.)
+
+[//]: # (  * `jsonrpc` &#40;string; required&#41;: a JSON RPC spec used &#40;example: 2.0&#41;.)
+
+[//]: # (  * `method` &#40;string; required&#41;: a method used for the request.)
+
+[//]: # (  * `params` &#40;array; required&#41;:)
+
+[//]: # ()
+[//]: # (    * `descending_order< Boolean >` &#40;optional&#41;)
+
+[//]: # ()
+[//]: # (### Returns)
+
+[//]: # ()
+[//]: # (```)
+
+[//]: # (Vec<AddressMetrics><[ AddressMetrics ]>)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Request example)
+
+[//]: # ()
+[//]: # (```shell)
+
+[//]: # (curl -X POST https://rpc.ankr.com/iota_mainnet \)
+
+[//]: # (-H 'Content-Type: application/json' \)
+
+[//]: # (-d '{)
+
+[//]: # (      "jsonrpc": "2.0",)
+
+[//]: # (      "method": "iotax_getAllEpochAddressMetrics",)
+
+[//]: # (      "params": [],)
+
+[//]: # (      "id": 1)
+
+[//]: # (    }')
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Response example)
+
+[//]: # ()
+[//]: # (Method not found)
+
+[//]: # ()
+[//]: # (---)
+
+[//]: # ()
+[//]: # (## `iotax_getCheckpointAddressMetrics`)
+
+[//]: # ()
+[//]: # (> Retrieves address metrics at a specific checkpoint.)
+
+[//]: # ()
+[//]: # (Address related metrics. Exclusively served by the indexer.)
+
+[//]: # ()
+[//]: # (### Parameters)
+
+[//]: # ()
+[//]: # (  * `id` &#40;integer; required&#41;: a request ID &#40;example: 1&#41;.)
+
+[//]: # (  * `jsonrpc` &#40;string; required&#41;: a JSON RPC spec used &#40;example: 2.0&#41;.)
+
+[//]: # (  * `method` &#40;string; required&#41;: a method used for the request.)
+
+[//]: # (  * `params` &#40;array; required&#41;:)
+
+[//]: # ()
+[//]: # (    * `checkpoint< uint64 >` &#40;required&#41;)
+
+[//]: # ()
+[//]: # (### Returns)
+
+[//]: # ()
+[//]: # (```)
+
+[//]: # (AddressMetrics< AddressMetrics >)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (Provides metrics about the addresses.)
+
+[//]: # ()
+[//]: # (  * `checkpoint< uint64 >` &#40;required&#41;: the checkpoint sequence number at which the metrics were computed.)
+
+[//]: # (  * `cumulativeActiveAddresses< uint64 >` &#40;required&#41;: the count of sender addresses.)
+
+[//]: # (  * `cumulativeAddresses< uint64 >` &#40;required&#41;: the count of sender and recipient addresses.)
+
+[//]: # (  * `dailyActiveAddresses< uint64 >` &#40;required&#41;: the count of daily unique sender addresses.)
+
+[//]: # (  * `epoch< uint64 >` &#40;required&#41;: the epoch to which the checkpoint is assigned.)
+
+[//]: # (  * `timestampMs< uint64 >` &#40;required&#41;: the checkpoint timestamp.)
+
+[//]: # ()
+[//]: # (### Request example)
+
+[//]: # ()
+[//]: # (```shell)
+
+[//]: # (curl -X POST https://rpc.ankr.com/iota_mainnet \)
+
+[//]: # (-H 'Content-Type: application/json' \)
+
+[//]: # (-d '{)
+
+[//]: # (      "jsonrpc": "2.0",)
+
+[//]: # (      "method": "iotax_getCheckpointAddressMetrics",)
+
+[//]: # (      "params": [3110054],)
+
+[//]: # (      "id": 1)
+
+[//]: # (    }')
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Response example)
+
+[//]: # ()
+[//]: # (Method not found.)
+
+[//]: # ()
+[//]: # (---)
+
+[//]: # ()
+[//]: # (  * [`iotax_getCurrentEpoch`]&#40;&#41; — retrieves the current epoch.)
+
+[//]: # (  * [`iotax_getDynamicFieldObject`]&#40;&#41; — retrieves a specific dynamic field object.)
+
+[//]: # (  * [`iotax_getDynamicFields`]&#40;&#41; — retrieves dynamic fields associated with an object.)
+
+[//]: # (  * [`iotax_getEpochMetrics`]&#40;&#41; — retrieves network metrics for a given epoch.)
+
+[//]: # (  * [`iotax_getEpochs`]&#40;&#41; — retrieves a list of past epochs.)
+
+[//]: # (  * [`iotax_getLatestAddressMetrics`]&#40;&#41; — retrieves the most recent address metrics.)
+
+[//]: # (  * [`iotax_getMoveCallMetrics`]&#40;&#41; — retrieves metrics related to Move function calls.)
+
+[//]: # (  * [`iotax_getNetworkMetrics`]&#40;&#41; — retrieves overall network performance metrics.)
+
+[//]: # (  * [`iotax_getOwnedObjects`]&#40;&#41; — retrieves all objects owned by an address.)
+
+[//]: # (  * [`iotax_getTotalTransactions`]&#40;&#41; — retrieves the total number of transactions.)
+
+[//]: # (  * [`iotax_queryEvents`]&#40;&#41; — retrieves events matching specific filters.)
+
+[//]: # (  * [`iotax_queryTransactionBlocks`]&#40;&#41; — retrieves transaction blocks based on query parameters.)
+
+[//]: # (  * [`iotax_subscribeEvent`]&#40;&#41; — subscribes to real-time event updates.)
+
+[//]: # (  * [`iotax_subscribeTransaction`]&#40;&#41; — subscribes to real-time transaction updates.)
+
+[//]: # ()
+[//]: # (---)
+
+****
+
+## Governance Read
+
+## `iotax_getCommitteeInfo`
+
+> Retrieves the committee information for the asked `epoch`.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `epoch< BigInt_for_uint64 >` (optional): the epoch of interest. If None, default to the latest epoch.
+
+### Returns
+
+```
+IotaCommittee< CommitteeInfo >
+```
+
+  * `epoch< BigInt_for_uint64 >` (required)
+  * `validators<[ AuthorityPublicKeyBytes, BigInt_for_uint64 ]>` (required)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getCommitteeInfo",
+      "params": ["8"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "epoch": "8",
+        "validators": [
+            [
+                "gKPp7Gab6+i8KuWl7JgAXg8qgQ6T4Srzpa02cwK+tvOq0zIq8Ma9kCtyEKD604BeBjls9uxNRZj3tkcYIsTI7Z4WCINMfMb4FLQqSqZVxDVVH+XF//dip505b8Zkp0AJ",
+                "135"
+            ],
+            [
+                "gWZ1ZRkn0PswgR/mNtobDIpRbwo8KzLo3hEjeOz6xFhrI22AHt1pzbgAFwTtkP02DYCjAotyPK/8rMhi5vDQKGx5YQj2SnqJIa6LsHX+e7jouBdzmwUsDJgiKq4OUb+Y",
+                "179"
+            ]
+        ]
+    }
+}
+```
+
+---
+
+## `iotax_getLatestIotaSystemState`
+
+> Retrieves the latest IOTA system state.
+
+Retrieves the latest IOTA system state object on networks supporting protocol version `< 5`. These are networks with node software release version `< 0.11`.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+IotaSystemStateSummaryV1< IotaSystemStateSummaryV1 >
+```
+
+This is the JSON-RPC type for the `IotaSystemStateV1` object. It flattens all fields to make them top-level fields such that it as minimum dependencies to the internal data structures of the IOTA system state type.
+
+  * `activeValidators<[ IotaValidatorSummary ]>` (required): the list of active validators in the current epoch.
+  * `atRiskValidators<[ IotaAddress, BigInt_for_uint64 ]>` (required): map storing the number of epochs for which each validator has been below the low stake threshold.
+  * `epoch< BigInt_for_uint64 >` (required): the current epoch ID, starting from 0.
+  * `epochDurationMs< BigInt_for_uint64 >` (required): the duration of an epoch, in milliseconds.
+  * `epochStartTimestampMs< BigInt_for_uint64 >` (required): Unix timestamp of the current epoch start.
+  * `inactivePoolsId< ObjectID >` (required): ID of the object that maps from a staking pool ID to the inactive validator that has that pool as its staking pool.
+  * `inactivePoolsSize< BigInt_for_uint64 >` (required): number of inactive staking pools.
+  * `iotaTotalSupply< BigInt_for_uint64 >` (required): the current IOTA supply.
+  * `iotaTreasuryCapId< ObjectID >` (required): the `TreasuryCap<IOTA>` object ID.
+  * `maxValidatorCount< BigInt_for_uint64 >` (required): maximum number of active validators allowed in any epoch.
+  * `minValidatorCount< BigInt_for_uint64 >` (required): minimum number of active validators allowed in any epoch.
+  * `minValidatorJoiningStake< BigInt_for_uint64 >` (required): lower bound on the amount of stake required to become a validator.
+  * `pendingActiveValidatorsId< ObjectID >` (required): ID of the object containing the list of new validators scheduled to join at the end of the epoch.
+  * `pendingActiveValidatorsSize< BigInt_for_uint64 >` (required): number of new validators that will join at the end of the epoch.
+  * `pendingRemovals<[ BigInt_for_uint64 ]>` (required): removal requests from validators, each element is an index pointing to `activeValidators`.
+  * `protocolVersion< BigInt_for_uint64 >` (required): the current protocol version, starting from 1.
+  * `referenceGasPrice< BigInt_for_uint64 >` (required): the reference gas price for the current epoch.
+  * `safeMode< Boolean >` (required): indicates whether the system is running in downgraded safe mode due to a non-recoverable bug.
+  * `safeModeComputationRewards< BigInt_for_uint64 >` (required): amount of computation rewards accumulated and not yet distributed during safe mode.
+  * `safeModeNonRefundableStorageFee< BigInt_for_uint64 >` (required): amount of non-refundable storage fee accumulated during safe mode.
+  * `safeModeStorageCharges< BigInt_for_uint64 >` (required): amount of storage charges accumulated and not yet distributed during safe mode.
+  * `safeModeStorageRebates< BigInt_for_uint64 >` (required): amount of storage rebates accumulated and not yet burned during safe mode.
+  * `stakingPoolMappingsId< ObjectID >` (required): ID of the object that maps from staking pool IDs to validator IOTA addresses.
+  * `stakingPoolMappingsSize< BigInt_for_uint64 >` (required): number of staking pool mappings.
+  * `storageFundNonRefundableBalance< BigInt_for_uint64 >` (required): non-refundable portion of the storage fund from rebates and leftover rewards.
+  * `storageFundTotalObjectStorageRebates< BigInt_for_uint64 >` (required): total storage rebates for all on-chain objects stored in the storage fund.
+  * `systemStateVersion< BigInt_for_uint64 >` (required): current version of the system state data structure type.
+  * `totalStake< BigInt_for_uint64 >` (required): total stake from all active validators at the beginning of the epoch.
+  * `validatorCandidatesId< ObjectID >` (required): ID of the object that stores preactive validators, mapping addresses to validator structs.
+  * `validatorCandidatesSize< BigInt_for_uint64 >` (required): number of preactive validators.
+  * `validatorLowStakeGracePeriod< BigInt_for_uint64 >` (required): number of epochs a validator can remain under the low stake threshold before being removed.
+  * `validatorLowStakeThreshold< BigInt_for_uint64 >` (required): stake threshold below which validators are considered at risk and subject to removal after the grace period.
+  * `validatorReportRecords<[ IotaAddress, array ]>` (required): map storing records of validators reporting each other.
+  * `validatorVeryLowStakeThreshold< BigInt_for_uint64 >` (required): stake threshold below which validators are removed immediately at epoch change, with no grace period.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getLatestIotaSystemState",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "epoch": "8",
+        "protocolVersion": "7",
+        "systemStateVersion": "2",
+        "iotaTotalSupply": "4606135837711000000",
+        "iotaTreasuryCapId": "0x03f980dbd802f9cae9a91a95c7d8918d53e960a529224a4fe949f16ed0a0bfe6",
+        "storageFundTotalObjectStorageRebates": "142099092400",
+        "storageFundNonRefundableBalance": "0",
+        "referenceGasPrice": "1000",
+        "safeMode": false,
+        "safeModeStorageCharges": "0",
+        "safeModeComputationRewards": "0",
+        "safeModeStorageRebates": "0",
+        "safeModeNonRefundableStorageFee": "0",
+        "epochStartTimestampMs": "1747121947622",
+        "epochDurationMs": "86400000",
+        "minValidatorCount": "4",
+        "maxValidatorCount": "150",
+        "minValidatorJoiningStake": "2000000000000000",
+        "validatorLowStakeThreshold": "1500000000000000",
+        "validatorVeryLowStakeThreshold": "1000000000000000",
+        "validatorLowStakeGracePeriod": "7",
+        "totalStake": "1593618205314001166",
+        "activeValidators": [
+            {
+                "iotaAddress": "0xa69363ce32b9b1e5b9c7480232ca6799068daa7c22c3d8cc53632246c354b9ff",
+                "authorityPubkeyBytes": "hhTzcuJ0oEm+i3IQsoLp3tIODqhN69i6CcF2BiM6D/zzrNz7WTpYs1UFCLG1hp01AP314/jW/NoZ/esH6LvVwFDWu3LlL78rpUMnrob+jxzUpFszfGGRG1HVBthRsthH",
+                "networkPubkeyBytes": "cgaeXKN4Rg/Z6ffKCoRudauC5PHwrq13kpPG620EeR8=",
+                "protocolPubkeyBytes": "mlAC5S1B2MngnAUL/xdSCFFy4Pkg/nl1Tz59wSo1gDY=",
+                "proofOfPossessionBytes": "iWqAfqA1pnrZybpC9onttc1hyTy7kFUgdgu3Dod2TqxiCpaLfxXXIpATuwohTKdt",
+                "name": "Nansen",
+                "description": "Nansen is a leading on-chain analytics platform founded in 2020, and is now one of the most trusted names in crypto, serving traders and institutions. Disclaimer: delegating comes with slashing risks",
+                "imageUrl": "https://raw.githubusercontent.com/nansen-ai/staking-brand-assets/refs/heads/main/nansen_logo.png",
+                "projectUrl": "https://nansen.ai",
+                "netAddress": "/dns/iota-mainnet-validator.nansen.ai/tcp/8080/http",
+                "p2pAddress": "/dns/iota-mainnet-validator.nansen.ai/udp/8084",
+                "primaryAddress": "/dns/iota-mainnet-validator.nansen.ai/udp/8081",
+                "nextEpochAuthorityPubkeyBytes": null,
+                "nextEpochProofOfPossession": null,
+                "nextEpochNetworkPubkeyBytes": null,
+                "nextEpochProtocolPubkeyBytes": null,
+                "nextEpochNetAddress": null,
+                "nextEpochP2pAddress": null,
+                "nextEpochPrimaryAddress": null,
+                "votingPower": "709",
+                "operationCapId": "0x8c257442fdc3108e909a6e640d698183b5b659b4b91e49299b7bdec8eae77498",
+                "gasPrice": "1000",
+                "commissionRate": "1000",
+                "nextEpochStake": "107971890702362012",
+                "nextEpochGasPrice": "1000",
+                "nextEpochCommissionRate": "1000",
+                "stakingPoolId": "0x650976e1fcdc34715fcd3c3fc855fe53f8fb1975d71ef0a14c70def314f29cd0",
+                "stakingPoolActivationEpoch": "0",
+                "stakingPoolDeactivationEpoch": null,
+                "stakingPoolIotaBalance": "112369730917907092",
+                "rewardsPool": "446972976946139",
+                "poolTokenBalance": "111674731070595754",
+                "pendingStake": "714511436394942",
+                "pendingTotalIotaWithdraw": "5112351651940022",
+                "pendingPoolTokenWithdraw": "5080732072641612",
+                "exchangeRatesId": "0x6cac6ce099478b8502a3610cd5731fd506cdc68904f22140c2dc969baa5edccd",
+                "exchangeRatesSize": "9"
+            }
+        ],
+        "pendingActiveValidatorsId": "0x0c5baa1518f8bde68dbff9187e1c6ee4902991ec458dadac56bdad36d1dd1a6f",
+        "pendingActiveValidatorsSize": "0",
+        "pendingRemovals": [],
+        "stakingPoolMappingsId": "0x833c0d40c9ff97d5a58a5ddebee25beaee26a87d9d75935f918aea8ddcd77afe",
+        "stakingPoolMappingsSize": "50",
+        "inactivePoolsId": "0x1fdfc877c137ad53da70bf3173a59c2cae85268226918a071b00879d01ffee5e",
+        "inactivePoolsSize": "3",
+        "validatorCandidatesId": "0xbd088ad9621996a89da1f3ec01b360fad990b7e37499967b585248191210d7ad",
+        "validatorCandidatesSize": "9",
+        "atRiskValidators": [],
+        "validatorReportRecords": []
+    }
+}
+```
+
+---
+
+## `iotax_getLatestIotaSystemStateV2`
+
+> Retrieves the latest IOTA system state (v2 format).
+
+Retrieves the latest IOTA system state object on networks supporting protocol version `>= 5`. These are networks with node software release version `>= 0.11`.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+IotaSystemStateSummary< IotaSystemStateSummary >
+```
+
+  * `activeValidators<[ IotaValidatorSummary ]>` (required): the list of active validators in the current epoch.
+  * `atRiskValidators<[ IotaAddress, BigInt_for_uint64 ]>` (required): map storing the number of epochs for which each validator has been below the low stake threshold.
+  * `epoch< BigInt_for_uint64 >` (required): the current epoch ID, starting from 0.
+  * `epochDurationMs< BigInt_for_uint64 >` (required): the duration of an epoch, in milliseconds.
+  * `epochStartTimestampMs< BigInt_for_uint64 >` (required): Unix timestamp of the current epoch start.
+  * `inactivePoolsId< ObjectID >` (required): ID of the object that maps from a staking pool ID to the inactive validator that has that pool as its staking pool.
+  * `inactivePoolsSize< BigInt_for_uint64 >` (required): number of inactive staking pools.
+  * `iotaTotalSupply< BigInt_for_uint64 >` (required): the current IOTA supply.
+  * `iotaTreasuryCapId< ObjectID >` (required): the `TreasuryCap<IOTA>` object ID.
+  * `maxValidatorCount< BigInt_for_uint64 >` (required): maximum number of active validators allowed in any epoch.
+  * `minValidatorCount< BigInt_for_uint64 >` (required): minimum number of active validators allowed in any epoch.
+  * `minValidatorJoiningStake< BigInt_for_uint64 >` (required): lower bound on the amount of stake required to become a validator.
+  * `pendingActiveValidatorsId< ObjectID >` (required): ID of the object containing the list of new validators scheduled to join at the end of the epoch.
+  * `pendingActiveValidatorsSize< BigInt_for_uint64 >` (required): number of new validators that will join at the end of the epoch.
+  * `pendingRemovals<[ BigInt_for_uint64 ]>` (required): removal requests from validators, each element is an index pointing to `activeValidators`.
+  * `protocolVersion< BigInt_for_uint64 >` (required): the current protocol version, starting from 1.
+  * `referenceGasPrice< BigInt_for_uint64 >` (required): the reference gas price for the current epoch.
+  * `safeMode< Boolean >` (required): indicates whether the system is running in downgraded safe mode due to a non-recoverable bug.
+  * `safeModeComputationRewards< BigInt_for_uint64 >` (required): amount of computation rewards accumulated and not yet distributed during safe mode.
+  * `safeModeNonRefundableStorageFee< BigInt_for_uint64 >` (required): amount of non-refundable storage fee accumulated during safe mode.
+  * `safeModeStorageCharges< BigInt_for_uint64 >` (required): amount of storage charges accumulated and not yet distributed during safe mode.
+  * `safeModeStorageRebates< BigInt_for_uint64 >` (required): amount of storage rebates accumulated and not yet burned during safe mode.
+  * `stakingPoolMappingsId< ObjectID >` (required): ID of the object that maps from staking pool IDs to validator IOTA addresses.
+  * `stakingPoolMappingsSize< BigInt_for_uint64 >` (required): number of staking pool mappings.
+  * `storageFundNonRefundableBalance< BigInt_for_uint64 >` (required): non-refundable portion of the storage fund from rebates and leftover rewards.
+  * `storageFundTotalObjectStorageRebates< BigInt_for_uint64 >` (required): total storage rebates for all on-chain objects stored in the storage fund.
+  * `systemStateVersion< BigInt_for_uint64 >` (required): current version of the system state data structure type.
+  * `totalStake< BigInt_for_uint64 >` (required): total stake from all active validators at the beginning of the epoch.
+  * `validatorCandidatesId< ObjectID >` (required): ID of the object that stores preactive validators, mapping addresses to validator structs.
+  * `validatorCandidatesSize< BigInt_for_uint64 >` (required): number of preactive validators.
+  * `validatorLowStakeGracePeriod< BigInt_for_uint64 >` (required): number of epochs a validator can remain under the low stake threshold before being removed.
+  * `validatorLowStakeThreshold< BigInt_for_uint64 >` (required): stake threshold below which validators are considered at risk and subject to removal after the grace period.
+  * `validatorReportRecords<[ IotaAddress, array ]>` (required): map storing records of validators reporting each other.
+  * `validatorVeryLowStakeThreshold< BigInt_for_uint64 >` (required): stake threshold below which validators are removed immediately at epoch change, with no grace period.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getLatestIotaSystemStateV2",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "V2": {
+            "epoch": "8",
+            "protocolVersion": "7",
+            "systemStateVersion": "2",
+            "iotaTotalSupply": "4606135837711000000",
+            "iotaTreasuryCapId": "0x03f980dbd802f9cae9a91a95c7d8918d53e960a529224a4fe949f16ed0a0bfe6",
+            "storageFundTotalObjectStorageRebates": "142099092400",
+            "storageFundNonRefundableBalance": "0",
+            "referenceGasPrice": "1000",
+            "safeMode": false,
+            "safeModeStorageCharges": "0",
+            "safeModeComputationCharges": "0",
+            "safeModeComputationChargesBurned": "0",
+            "safeModeStorageRebates": "0",
+            "safeModeNonRefundableStorageFee": "0",
+            "epochStartTimestampMs": "1747121947622",
+            "epochDurationMs": "86400000",
+            "minValidatorCount": "4",
+            "maxValidatorCount": "150",
+            "minValidatorJoiningStake": "2000000000000000",
+            "validatorLowStakeThreshold": "1500000000000000",
+            "validatorVeryLowStakeThreshold": "1000000000000000",
+            "validatorLowStakeGracePeriod": "7",
+            "totalStake": "1593618205314001166",
+            "committeeMembers": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", ...],
+            "activeValidators": [
+                {
+                    "iotaAddress": "0xa69363ce32b9b1e5b9c7480232ca6799068daa7c22c3d8cc53632246c354b9ff",
+                    "authorityPubkeyBytes": "hhTzcuJ0oEm+i3IQsoLp3tIODqhN69i6CcF2BiM6D/zzrNz7WTpYs1UFCLG1hp01AP314/jW/NoZ/esH6LvVwFDWu3LlL78rpUMnrob+jxzUpFszfGGRG1HVBthRsthH",
+                    "networkPubkeyBytes": "cgaeXKN4Rg/Z6ffKCoRudauC5PHwrq13kpPG620EeR8=",
+                    "protocolPubkeyBytes": "mlAC5S1B2MngnAUL/xdSCFFy4Pkg/nl1Tz59wSo1gDY=",
+                    "proofOfPossessionBytes": "iWqAfqA1pnrZybpC9onttc1hyTy7kFUgdgu3Dod2TqxiCpaLfxXXIpATuwohTKdt",
+                    "name": "Nansen",
+                    "description": "Nansen is a leading on-chain analytics platform founded in 2020, and is now one of the most trusted names in crypto, serving traders and institutions. Disclaimer: delegating comes with slashing risks",
+                    "imageUrl": "https://raw.githubusercontent.com/nansen-ai/staking-brand-assets/refs/heads/main/nansen_logo.png",
+                    "projectUrl": "https://nansen.ai",
+                    "netAddress": "/dns/iota-mainnet-validator.nansen.ai/tcp/8080/http",
+                    "p2pAddress": "/dns/iota-mainnet-validator.nansen.ai/udp/8084",
+                    "primaryAddress": "/dns/iota-mainnet-validator.nansen.ai/udp/8081",
+                    "nextEpochAuthorityPubkeyBytes": null,
+                    "nextEpochProofOfPossession": null,
+                    "nextEpochNetworkPubkeyBytes": null,
+                    "nextEpochProtocolPubkeyBytes": null,
+                    "nextEpochNetAddress": null,
+                    "nextEpochP2pAddress": null,
+                    "nextEpochPrimaryAddress": null,
+                    "votingPower": "709",
+                    "operationCapId": "0x8c257442fdc3108e909a6e640d698183b5b659b4b91e49299b7bdec8eae77498",
+                    "gasPrice": "1000",
+                    "commissionRate": "1000",
+                    "nextEpochStake": "107971890702362012",
+                    "nextEpochGasPrice": "1000",
+                    "nextEpochCommissionRate": "1000",
+                    "stakingPoolId": "0x650976e1fcdc34715fcd3c3fc855fe53f8fb1975d71ef0a14c70def314f29cd0",
+                    "stakingPoolActivationEpoch": "0",
+                    "stakingPoolDeactivationEpoch": null,
+                    "stakingPoolIotaBalance": "112369730917907092",
+                    "rewardsPool": "446972976946139",
+                    "poolTokenBalance": "111674731070595754",
+                    "pendingStake": "714511436394942",
+                    "pendingTotalIotaWithdraw": "5112351651940022",
+                    "pendingPoolTokenWithdraw": "5080732072641612",
+                    "exchangeRatesId": "0x6cac6ce099478b8502a3610cd5731fd506cdc68904f22140c2dc969baa5edccd",
+                    "exchangeRatesSize": "9"
+                }
+            ],
+            "pendingActiveValidatorsId": "0x0c5baa1518f8bde68dbff9187e1c6ee4902991ec458dadac56bdad36d1dd1a6f",
+            "pendingActiveValidatorsSize": "0",
+            "pendingRemovals": [],
+            "stakingPoolMappingsId": "0x833c0d40c9ff97d5a58a5ddebee25beaee26a87d9d75935f918aea8ddcd77afe",
+            "stakingPoolMappingsSize": "50",
+            "inactivePoolsId": "0x1fdfc877c137ad53da70bf3173a59c2cae85268226918a071b00879d01ffee5e",
+            "inactivePoolsSize": "3",
+            "validatorCandidatesId": "0xbd088ad9621996a89da1f3ec01b360fad990b7e37499967b585248191210d7ad",
+            "validatorCandidatesSize": "9",
+            "atRiskValidators": [],
+            "validatorReportRecords": []
+        }
+    }
+}
+```
+
+---
+
+## `iotax_getReferenceGasPrice`
+
+> Retrieves the current reference gas price.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+BigInt<u64>< BigInt_for_uint64 >
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getReferenceGasPrice",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "1000"
+}
+```
+
+---
+
+## `iotax_getStakes`
+
+> Retrieves all stakes for a given address.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `owner< IotaAddress >` (required): the owner's IOTA address.
+
+### Returns
+
+```
+Vec<DelegatedStake><[ DelegatedStake ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getStakes",
+      "params": ["0x303db99c56283dba10c014f90fce2691cba6e7ea661fd3331d95b6e76ada9a19"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "validatorAddress": "0x303db99c56283dba10c014f90fce2691cba6e7ea661fd3331d95b6e76ada9a19",
+            "stakingPool": "0xf544f15d1c3fadcc60fa74717a0039607c64af9919ecad396716909768b3ba96",
+            "stakes": [
+                {
+                    "stakedIotaId": "0x4bab00a6e80e6271351ea8d2ebf9658bed92a7fb9f9e9778c7279dee0d47cfbb",
+                    "stakeRequestEpoch": "7",
+                    "stakeActiveEpoch": "8",
+                    "principal": "4279860002232",
+                    "status": "Active",
+                    "estimatedReward": "0"
+                },
+                {
+                    "stakedIotaId": "0x58cd59f365ff591d10fe67f6b449098940562c7fa7cdaf6783b7bc99ed0c292b",
+                    "stakeRequestEpoch": "1",
+                    "stakeActiveEpoch": "2",
+                    "principal": "7232810014145",
+                    "status": "Active",
+                    "estimatedReward": "25499919585"
+                }
+            ]
+        }
+    ]
+}
+```
+
+---
+
+## `iotax_getStakesByIds`
+
+> Retrieves stakes by stake object IDs.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `staked_iota_ids<[ ObjectID ]>` (required): list of object IDs representing IOTA coin objects that have been staked by the validator.
+
+### Returns
+
+```
+Vec<DelegatedStake><[ DelegatedStake ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getStakesByIds",
+      "params": [
+        [
+          "0x37e9ed4fe1b3781210575cdbb42a9599dc3b42ae12a6cd29f4f6b071522062d1",
+          "0x474a511684bc5323b3688ff3a7df5c2e99140e91a4cc010976f8ba5ee8e489b3"
+        ]
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "validatorAddress": "0x8e2e13c2ecfda356f07d008885b7bb82befb4d602245c3bff98ad59863162dd8",
+            "stakingPool": "0x49976354d0dc89ea6f0102c653f737d223ea4c0623e9d3e3ce73cb49f38bb0eb",
+            "stakes": [
+                {
+                    "stakedIotaId": "0x37e9ed4fe1b3781210575cdbb42a9599dc3b42ae12a6cd29f4f6b071522062d1",
+                    "stakeRequestEpoch": "5",
+                    "stakeActiveEpoch": "6",
+                    "principal": "7455240000000",
+                    "status": "Active",
+                    "estimatedReward": "7132473715"
+                },
+                {
+                    "stakedIotaId": "0x474a511684bc5323b3688ff3a7df5c2e99140e91a4cc010976f8ba5ee8e489b3",
+                    "stakeRequestEpoch": "7",
+                    "stakeActiveEpoch": "8",
+                    "principal": "6833970003564",
+                    "status": "Active",
+                    "estimatedReward": "0"
+                }
+            ]
+        }
+    ]
+}
+```
+
+---
+
+## `iotax_getTimelockedStakes`
+
+> Retrieves all timelocked stakes for an address.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `owner< IotaAddress >` (required): the owner's IOTA address.
+
+### Returns
+
+```
+Vec<DelegatedTimelockedStake><[ DelegatedTimelockedStake ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getTimelockedStakes",
+      "params": ["0x8e2e13c2ecfda356f07d008885b7bb82befb4d602245c3bff98ad59863162dd8"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": []
+}
+```
+
+---
+
+## `iotax_getTimelockedStakesByIds`
+
+> Retrieves timelocked stakes by object IDs.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `timelocked_staked_iota_ids<[ ObjectID ]>` (required): list of object IDs representing IOTA coin objects that have been staked with a time lock.
+
+### Returns
+
+```
+Vec<DelegatedTimelockedStake><[ DelegatedTimelockedStake ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getTimelockedStakesByIds",
+      "params": [["0x<timelocked_stake_object_id_1>", "0x<timelocked_stake_object_id_2>"]],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": [
+    {
+      "id": "0xabc123...",
+      "stake_amount": "1000000000",
+      "start_epoch": 5200,
+      "unlock_epoch": 5300,
+      "owner": "0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961",
+      "status": "Staked",
+      "validator_address": "0x8a8b61fe5e6ff7d70c6cbff8b6c3cf2cb74ff67236beed1e92b9e651e0e19f3b"
+    },
+    {
+      "id": "0xdef456...",
+      "stake_amount": "2000000000",
+      "start_epoch": 5180,
+      "unlock_epoch": 5280,
+      "owner": "0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961",
+      "status": "Unstaked",
+      "validator_address": "0x7b72a2cd3efbbde451a9f3f179edf65ff07f3a0616b72c1a95e12a1bd176c918"
+    }
+  ]
+}
+```
+
+---
+
+## `iotax_getValidatorsApy`
+
+> Retrieves the annual percentage yield (APY) for validators.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+ValidatorApys< ValidatorApys >
+```
+
+  * `apys<[ ValidatorApy ]>` (required)
+  * `epoch< BigInt_for_uint64 >` (required)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iotax_getValidatorsApy",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "apys": [
+            {
+                "address": "0xa69363ce32b9b1e5b9c7480232ca6799068daa7c22c3d8cc53632246c354b9ff",
+                "apy": 0.23075268854918127
+            },
+            {
+                "address": "0x864c651958094732a1227134cf7cab7587f05a399398804552553fbc01dba4e7",
+                "apy": 0.232642723786573
+            }
+        ],
+        "epoch": "8"
+    }
+}
+```
+
+---
+
+## Move Utils
+
+## `iota_getMoveFunctionArgTypes`
+
+> Retrieves argument types for a Move function.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `package< ObjectID >` (required): the object ID of the Move package that contains the target module.
+    * `module< string >` (required): the name of the Move module where the function is defined.
+    * `function< string >` (required): the name of the Move function for which to retrieve the argument types.
+
+### Returns
+
+```
+Vec<MoveFunctionArgType><[ MoveFunctionArgType ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getMoveFunctionArgTypes",
+      "params": [
+        "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd",
+        "request",
+        "create_and_send_request"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": [
+        "Pure",
+        {
+            "Object": "ByValue"
+        },
+        "Pure",
+        "Pure",
+        "Pure",
+        "Pure",
+        "Pure",
+        {
+            "Object": "ByMutableReference"
+        }
+    ]
+}
+```
+
+---
+
+## `iota_getNormalizedMoveFunction`
+
+> Retrieves normalized representation of a Move function.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `package< ObjectID >` (required): the object ID of the Move package that contains the module definition.
+    * `module_name< string >` (required): the name of the Move module in the specified package.
+    * `function_name< string >` (required): the name of the function within the module whose normalized representation should be retrieved.
+
+### Returns
+
+```
+IotaMoveNormalizedFunction< IotaMoveNormalizedFunction >
+```
+
+  * `isEntry< Boolean >` (required): indicates whether the function is an `entry` function, meaning it can be invoked directly in a transaction.
+  * `parameters<[ IotaMoveNormalizedType ]>` (required): list of types representing the function's input parameters, in normalized Move type format.
+  * `return<[ IotaMoveNormalizedType ]>` (required): list of types representing the function's return values, in normalized Move type format.
+  * `typeParameters<[ IotaMoveAbilitySet ]>` (required): list of type parameters declared by the function, each associated with a set of required abilities (e.g., copy, drop, store).
+  * `visibility< IotaMoveVisibility >` (required): the visibility of the function — e.g., `public`, `private`, or `friend` — which defines where and how the function can be accessed.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getNormalizedMoveFunction",
+      "params": [
+        "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd",
+        "request",
+        "create_and_send_request"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+            "Address",
+            {
+                "Struct": {
+                    "address": "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd",
+                    "module": "assets_bag",
+                    "name": "AssetsBag",
+                    "typeArguments": []
+                }
+            },
+            "U32",
+            "U32",
+            {
+                "Vector": {
+                    "Vector": "U8"
+                }
+            },
+            {
+                "Vector": "U8"
+            },
+            "U64",
+            {
+                "MutableReference": {
+                    "Struct": {
+                        "address": "0x2",
+                        "module": "tx_context",
+                        "name": "TxContext",
+                        "typeArguments": []
+                    }
+                }
+            }
+        ],
+        "return": []
+    }
+}
+```
+
+---
+
+## `iota_getNormalizedMoveModule`
+
+> Retrieves normalized representation of a Move module.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `package< ObjectID >` (required): the object ID of the Move package that contains the target module.
+    * `module_name< string >` (required): the name of the Move module within the specified package whose normalized representation should be retrieved.
+
+### Returns
+
+```
+IotaMoveNormalizedModule< IotaMoveNormalizedModule >
+```
+
+  * `address< string >` (required): the on-chain address (in hex format) where the Move module is published.
+  * `exposedFunctions< IotaMoveNormalizedFunction >` (required): a mapping of all functions exposed by the module, each including its name, parameters, return types, visibility, and entry status.
+  * `fileFormatVersion< uint32 >` (required): the version number of the Move bytecode file format used by this module.
+  * `friends<[ IotaMoveModuleId ]>` (required): list of module IDs that are declared as "friends" of this module — allowing access to its friend-visible members.
+  * `name< string >` (required): the name of the module.
+  * `structs< IotaMoveNormalizedStruct >` (required): a mapping of all struct definitions declared in the module, each including its fields, abilities, and type parameters.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getNormalizedMoveModule",
+      "params": [
+        "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd",
+        "request"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "fileFormatVersion": 6,
+    "address": "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd",
+    "name": "request",
+    "friends": [],
+    "structs": {},
+    "exposedFunctions": {}
+  },
+  "id": 1
+}
+```
+
+---
+
+## `iota_getNormalizedMoveModulesByPackage`
+
+> Retrieves all normalized Move modules in a package.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `package< ObjectID >` (required): the object ID of the Move package whose modules should be retrieved in normalized form.
+
+### Returns
+
+```
+BTreeMap<String,IotaMoveNormalizedModule>< IotaMoveNormalizedModule >
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getNormalizedMoveModulesByPackage",
+      "params": [
+        "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "fileFormatVersion": 6,
+    "address": "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd",
+    "name": "request",
+    "friends": [],
+    "structs": {},
+    "exposedFunctions": {}
+  },
+  "id": 1
+}
+```
+
+---
+
+## `iota_getNormalizedMoveStruct`
+
+> Retrieves normalized representation of a Move struct.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `package< ObjectID >` (required): the object ID of the Move package that contains the module defining the struct.
+    * `module_name< string >` (required): the name of the Move module within the package where the struct is defined.
+    * `struct_name< string >` (required): the name of the struct whose normalized representation should be retrieved.
+
+### Returns
+
+```
+IotaMoveNormalizedStruct< IotaMoveNormalizedStruct >
+```
+
+  * `abilities< IotaMoveAbilitySet >` (required): the set of abilities (e.g., `copy`, `drop`, `store`, `key`) that define what operations are allowed on this struct type.
+  * `fields<[ IotaMoveNormalizedField ]>` (required): list of fields defined in the struct, including each field's name and type.
+  * `typeParameters<[ IotaMoveStructTypeParameter ]>` (required): list of type parameters for the struct, where each includes constraints such as required abilities.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getNormalizedMoveStruct",
+      "params": [
+        "0x1b33a3cf7eb5dde04ed7ae571db1763006811ff6b7bb35b3d1c780de153af9dd",
+        "assets_bag",
+        "AssetsBag"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "abilities": {
+            "abilities": [
+                "Store",
+                "Key"
+            ]
+        },
+        "typeParameters": [],
+        "fields": [
+            {
+                "name": "id",
+                "type": {
+                    "Struct": {
+                        "address": "0x2",
+                        "module": "object",
+                        "name": "UID",
+                        "typeArguments": []
+                    }
+                }
+            },
+            {
+                "name": "size",
+                "type": "U64"
+            }
+        ]
+    }
+}
+```
+
+---
+
+## Read
+
+## `iota_getChainIdentifier`
+
+> Retrieves the unique identifier of the chain.
+
+Returns the first four bytes of the chain's genesis checkpoint digest.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+String< string >
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getChainIdentifier",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "6364aad5"
+}
+```
+
+---
+
+## `iota_getCheckpoint`
+
+> Retrieves a checkpoint by sequence number.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `id< CheckpointId >` (requried): checkpoint identifier, can use either checkpoint digest, or checkpoint sequence number as input.
+
+### Returns
+
+```
+Checkpoint< Checkpoint >
+```
+
+  * `checkpointCommitments<[ CheckpointCommitment ]>` (required): commitments to checkpoint state.
+  * `digest< CheckpointDigest >` (required): the digest of this checkpoint.
+  * `endOfEpochData< EndOfEpochData | null >` (optional): data present only on the final checkpoint of the epoch.
+  * `epoch< BigInt_for_uint64 >` (required): the checkpoint's epoch ID.
+  * `epochRollingGasCostSummary< GasCostSummary >` (required): the running total gas costs of all transactions included in the current epoch up to this checkpoint.
+  * `networkTotalTransactions< BigInt_for_uint64 >` (required): total number of transactions committed since genesis, including those in this checkpoint.
+  * `previousDigest< CheckpointDigest | null >` (optional): the digest of the previous checkpoint.
+  * `sequenceNumber< BigInt_for_uint64 >` (required): the checkpoint’s sequence number.
+  * `timestampMs< BigInt_for_uint64 >` (required): timestamp of the checkpoint in milliseconds since Unix epoch. Checkpoint timestamps are monotonic but may be equal across checkpoints originating from the same consensus commit.
+  * `transactions<[ TransactionDigest ]>` (required): digests of transactions included in the checkpoint.
+  * `validatorSignature< Base64 >` (required): the signature of the validator producing this checkpoint.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getCheckpoint",
+      "params": ["1000"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "epoch": "0",
+        "sequenceNumber": "1000",
+        "digest": "FKxXqL6KKGG1UyguTu6daodhRuZ8G3GrXVqPNmJ76YXc",
+        "networkTotalTransactions": "13995",
+        "previousDigest": "2kC97pinzVSrBNmi7LVN9LGMiDAupRP6p54fceMHma9j",
+        "epochRollingGasCostSummary": {
+            "computationCost": "0",
+            "computationCostBurned": "0",
+            "storageCost": "0",
+            "storageRebate": "0",
+            "nonRefundableStorageFee": "0"
+        },
+        "timestampMs": "1746433821035",
+        "transactions": [
+            "7Vzm6UUEaeoML3ZvAxJ48mebKaNHPDzUM1fNABipe9dB",
+            "5WNsm2PEbQv73KQ32ZA7AoSydXhma9LWGQRKrjL9BHHe",
+            "9mbaYLV9Vp6T2pJ68LhWRtUo57zs5jCPoHq5FZkCmcVg",
+            "8QS7YcDAKhnsHnkEvmkQ4sECp4fZaiVsVmQbB82BTSbe",
+            "6wz7WS4CiQYwtFTdhmaH5AU1e7Scw3VZimHzhViDuoFn"
+        ],
+        "checkpointCommitments": [],
+        "validatorSignature": "sCsUuGz4daTuwbPG9I+qLzFm3cF1Lq8kL+JYDL8/0DnT8/DbMj72DHhFNIC0uwuv"
+    }
+}
+```
+
+---
+
+## `iota_getCheckpoints`
+
+> Retrieves a list of checkpoints.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `cursor< BigInt_for_uint64 >` (optional): an optional paging cursor. If provided, the query starts from the item after the specified cursor; defaults to the first item if not specified.
+    * `limit< uint >` (optional): maximum number of items returned per page; defaults to `QUERY_MAX_RESULT_LIMIT_CHECKPOINTS` if not specified.
+    * `descending_order< Boolean >` (required): query result ordering. If `true`, returns results in descending order (newest first); defaults to `false` for ascending order (oldest first).
+
+### Returns
+
+```
+CheckpointPage< Page_for_Checkpoint_and_BigInt_for_uint64 >
+```
+
+`next_cursor` points to the last item in the page; Reading with `next_cursor` will start from the next item after `next_cursor` if `next_cursor` is `Some`, otherwise it will start from the first item.
+
+  * `data<[ Checkpoint ]>` (required): list of checkpoint objects returned by the query.
+  * `hasNextPage< Boolean >` (required): indicates whether more checkpoints are available beyond the current page.
+  * `nextCursor< BigInt_for_uint64 | null >` (optional): cursor value to use for retrieving the next page of results; `null` if there are no more results.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getCheckpoints",
+      "params": ["1004", 4, false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "data": [
+            {
+                "epoch": "0",
+                "sequenceNumber": "1005",
+                "digest": "7YGc3Pj9PrtLj7hMEjm3ZBAxGRVns9prvdhzqg8CFCSi",
+                "networkTotalTransactions": "14015",
+                "previousDigest": "H4dJS4R6bTFDBcCyN8UyCdrp1wNfa9UFqxM31xPLztb7",
+                "epochRollingGasCostSummary": {
+                    "computationCost": "0",
+                    "computationCostBurned": "0",
+                    "storageCost": "0",
+                    "storageRebate": "0",
+                    "nonRefundableStorageFee": "0"
+                },
+                "timestampMs": "1746433822163",
+                "transactions": [
+                    "B8DSv1PRfMxg6hx4Vcb5zKwKUHK4PAasmGLvg4UBwrSV",
+                    "FqBheLcfG5fUo7y3yM4Hvy6QYTojqRWWmLkNw5hBSXZ5",
+                    "3L2Sz8Vhikqzxvqin2NhiNfdnHcopuBStGYXNBVyML7Y",
+                    "GhVbcW3ZrHjtLxrWWUCaNErNEw1JULazA4LDMoDBmvja",
+                    "AdnqzbVVUFX55GvvWLGBgXbbH4mnPhzaryHJ5Tab8YLX"
+                ],
+                "checkpointCommitments": [],
+                "validatorSignature": "js9+DK5wdS2tJB46ygIa5fedn+0TfvgsmirQZ2QUa6ShVrOohrxKCGRY7bliQ985"
+            }
+        ],
+        "nextCursor": "1008",
+        "hasNextPage": true
+    }
+}
+```
+
+---
+
+## `iota_getEvents`
+
+> Retrieves transaction events.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `transaction_digest< TransactionDigest >` (required): the digest of the transaction whose emitted events should be retrieved.
+
+### Returns
+
+```
+Vec<IotaEvent><[ Event ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getEvents",
+      "params": ["1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "id": {
+                "txDigest": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+                "eventSeq": "0"
+            },
+            "packageId": "0x0000000000000000000000000000000000000000000000000000000000000003",
+            "transactionModule": "timelocked_staking",
+            "sender": "0x1ee12dca0e798966a82f74c010c109e1bd0674f4f47517db6843f223bad5eb7c",
+            "type": "0x3::validator::StakingRequestEvent",
+            "parsedJson": {
+                "amount": "2816564858653000",
+                "epoch": "9",
+                "pool_id": "0x829fcfaca1ce8ca42161469447c23a600b2df7215a5b784a51e930e323bdd3bb",
+                "staker_address": "0x1ee12dca0e798966a82f74c010c109e1bd0674f4f47517db6843f223bad5eb7c",
+                "validator_address": "0x37421363c5fd56c43325217b6c58b77f307d04a825ad8b49a38e7436ae422205"
+            },
+            "bcsEncoding": "base64",
+            "bcs": "gp/PrKHOjKQhYUaUR8I6YAst9yFaW3hKUekw4yO907s3QhNjxf1WxDMlIXtsWLd/MH0EqCWti0mjjnQ2rkIiBR7hLcoOeYlmqC90wBDBCeG9BnT09HUX22hD8iO61et8CQAAAAAAAABICeObpgEKAA=="
+        }
+    ]
+}
+```
+
+---
+
+## `iota_getLatestCheckpointSequenceNumber`
+
+> Retrieves the latest checkpoint sequence number.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+BigInt<u64>< BigInt_for_uint64 >
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getLatestCheckpointSequenceNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "3514321"
+}
+```
+
+---
+
+## `iota_getObject`
+
+> Retrieves object data by ID.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `object_id< ObjectID >` (required): the ID of the queried object.
+    * `options< ObjectDataOptions >` (optional): options for specifying the content to be returned.
+
+### Returns
+
+```
+IotaObjectResponse< IotaObjectResponse >
+```
+
+  * `data< ObjectData | null >` (optional): the retrieved on-chain object data if found; null if the object does not exist or is not accessible.
+  * `error< ObjectResponseError | null >` (optional): error details if the object could not be retrieved; null if the operation was successful.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getObject",
+      "params": [
+        "0x9f5bc1dbdc77a1603835318928fcb4bfb8b80b59638ea86579aecdadb00e6a58",
+        {
+          "showType": true,
+          "showOwner": true,
+          "showPreviousTransaction": true,
+          "showDisplay": false,
+          "showContent": true,
+          "showBcs": false,
+          "showStorageRebate": true
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "data": {
+            "objectId": "0x9f5bc1dbdc77a1603835318928fcb4bfb8b80b59638ea86579aecdadb00e6a58",
+            "version": "13624397",
+            "digest": "7igEiTswauamJfm8vKQq4htKzyEwTJKBUTP9RvfXaj2g",
+            "type": "0x3::timelocked_staking::TimelockedStakedIota",
+            "owner": {
+                "AddressOwner": "0x1ee12dca0e798966a82f74c010c109e1bd0674f4f47517db6843f223bad5eb7c"
+            },
+            "previousTransaction": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+            "storageRebate": "3009600",
+            "content": {
+                "dataType": "moveObject",
+                "type": "0x3::timelocked_staking::TimelockedStakedIota",
+                "fields": {
+                    "expiration_timestamp_ms": "1787097600000",
+                    "id": {
+                        "id": "0x9f5bc1dbdc77a1603835318928fcb4bfb8b80b59638ea86579aecdadb00e6a58"
+                    },
+                    "label": "000000000000000000000000000000000000000000000000000000000000107a::stardust_upgrade_label::STARDUST_UPGRADE_LABEL",
+                    "staked_iota": {
+                        "type": "0x3::staking_pool::StakedIota",
+                        "fields": {
+                            "id": {
+                                "id": "0xc9b07d5e6148cf2f70bc2f4d013bbe2697764a4e6181f0610803aac940bb04cc"
+                            },
+                            "pool_id": "0x829fcfaca1ce8ca42161469447c23a600b2df7215a5b784a51e930e323bdd3bb",
+                            "principal": "2816564858653000",
+                            "stake_activation_epoch": "10"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+---
+
+## `iota_getProtocolConfig`
+
+> Retrieves the current protocol configuration.
+
+Returns the protocol configuration for a specified version number. If no version is provided, the node returns the configuration corresponding to the latest epoch it has processed.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `version< BigInt_for_uint64 >` (optional): the protocol version to query. If omitted, the latest protocol config table for the node will be returned.
+
+### Returns
+
+```
+ProtocolConfigResponse< ProtocolConfig >
+```
+
+  * `attributes< Boolean >` (required): indicates whether Move object attributes are enabled in the current protocol version.
+  * `featureFlags< Boolean >` (required): indicates whether Move feature flags are supported and active.
+  * `maxSupportedProtocolVersion< ProtocolVersion >` (required): the highest protocol version supported by this node.
+  * `minSupportedProtocolVersion< ProtocolVersion >` (required): the lowest protocol version supported by this node.
+  * `protocolVersion< ProtocolVersion >` (required): the current protocol version this configuration applies to.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getProtocolConfig",
+      "params": ["6"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "minSupportedProtocolVersion": "1",
+    "maxSupportedProtocolVersion": "7",
+    "protocolVersion": "6",
+    "featureFlags": {
+      "bridge": false,
+      "convert_type_argument_error": true,
+      "native_charging_v2": true,
+      "passkey_auth": false,
+      "zklogin_auth": false
+    },
+    "attributes": {
+      "base_gas_price": { "u64": "1000" },
+      "base_tx_cost_fixed": { "u64": "1000" },
+      "base_tx_cost_per_byte": { "u64": "0" },
+      "max_tx_gas": { "u64": "50000000000" },
+      "max_tx_size_bytes": { "u64": "131072" },
+      "max_gas_price": { "u64": "100000" },
+      "max_function_definitions": { "u64": "1000" },
+      "max_struct_definitions": { "u64": "200" },
+      "storage_gas_price": { "u64": "76" },
+      "storage_rebate_rate": { "u64": "10000" },
+      "event_emit_cost_base": { "u64": "52" },
+      "event_emit_output_cost_per_byte": { "u64": "10" },
+      "debug_print_base_cost": { "u64": "52" },
+      "object_runtime_max_num_cached_objects": { "u64": "1000" },
+      "validator_target_reward": { "u64": "767000000000000" },
+      "consensus_max_num_transactions_in_block": { "u64": "512" },
+      "ecdsa_k1_ecrecover_sha256_cost_base": { "u64": "500" },
+      "ed25519_ed25519_verify_cost_base": { "u64": "1802" },
+      "bls12381_bls12381_min_sig_verify_cost_base": { "u64": "44064" },
+      "group_ops_bls12381_g1_mul_cost": { "u64": "4842" },
+      "hash_sha3_256_base_cost": { "u64": "52" },
+      "type_name_get_base_cost": { "u64": "52" },
+      "vector_push_back_base_cost": { "u64": "52" },
+      "dynamic_field_add_child_object_cost_base": { "u64": "100" },
+      "package_publish_cost_fixed": { "u64": "1000" },
+      "package_publish_cost_per_byte": { "u64": "80" }
+    }
+  }
+}
+```
+
+---
+
+## `iota_getTotalTransactionBlocks`
+
+> Retrieves the total number of transaction blocks.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+```
+BigInt<u64>< BigInt_for_uint64 >
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getTotalTransactionBlocks",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "15406387"
+}
+```
+
+---
+
+## `iota_getTransactionBlock`
+
+> Retrieves a transaction block by digest.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `digest< TransactionDigest >` (required): the digest of the queried transaction.
+    * `options< TransactionBlockResponseOptions >` (optional): specifying which parts of the transaction block to include in the response.
+
+### Returns
+
+```
+IotaTransactionBlockResponse< TransactionBlockResponse >
+```
+
+  * `balanceChanges< [BalanceChange] | null >` (optional): list of balance changes caused by the transaction, or null if not available.
+  * `checkpoint< BigInt_for_uint64 | null >` (optional): the checkpoint number in which the transaction was included and finalized. Only available in the read API.
+  * `confirmedLocalExecution< [boolean] | null >` (optional): indicates whether the transaction was confirmed by local execution; null if unknown or not applicable.
+  * `digest< TransactionDigest >` (required): the digest of the queried transaction.
+  * `effects< TransactionBlockEffects | null >` (optional): structured transaction effects, such as object mutations, deletions, and transfers.
+  * `errors< [string] >` (optional): list of errors, if any, encountered during processing or execution.
+  * `events< [Event] | null >` (optional): list of events emitted by the transaction, or null if none.
+  * `objectChanges< [ObjectChange] | null >` (optional): list of on-chain object changes caused by the transaction, or null if not available.
+  * `rawEffects< [string] >` (optional): BCS-encoded raw effect bytes, represented as base64 strings.
+  * `rawTransaction< Base64 >` (optional): BCS-encoded SenderSignedData representing the full signed transaction; empty if show_raw_transaction is false.
+  * `timestampMs< BigInt_for_uint64 | null >` (optional): timestamp (in milliseconds since Unix epoch) when the transaction was finalized.
+  * `transaction< TransactionBlock | null >` (optional): the input transaction block data, or null if not available.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_getTransactionBlock",
+      "params": [
+        "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+        {
+          "showInput": true,
+          "showRawInput": false,
+          "showEffects": true,
+          "showEvents": true,
+          "showObjectChanges": false,
+          "showBalanceChanges": false,
+          "showRawEffects": false
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "digest": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+    "transaction": {
+      "data": {
+        "messageVersion": "v1",
+        "transaction": {
+          "kind": "ProgrammableTransaction",
+          "inputs": [{ "objectId": "0xee2f...ab72", "version": "1" }],
+          "transactions": [{
+            "MoveCall": {
+              "package": "0x3",
+              "module": "timelocked_staking",
+              "function": "request_add_stake",
+              "arguments": [{ "Input": 1 }, { "Input": 0 }]
+            }
+          }]
+        },
+        "sender": "0x1ee1...eb7c",
+        "gasData": {
+          "payment": [{ "objectId": "0x3aba...9593" }],
+          "price": "1000",
+          "budget": "5990000"
+        }
+      },
+      "txSignatures": ["AADfuE3s...YKIA=="]
+    },
+    "effects": {
+      "status": { "status": "success" },
+      "executedEpoch": "9",
+      "gasUsed": {
+        "computationCost": "1000000",
+        "storageCost": "299037200",
+        "storageRebate": "296027600"
+      },
+      "created": [{ "reference": { "objectId": "0x9f5b...6a58" } }],
+      "mutated": [{ "reference": { "objectId": "0x0000...0005" } }],
+      "deleted": [{ "objectId": "0xee2f...ab72" }],
+      "gasObject": { "reference": { "objectId": "0x3aba...9593" } },
+      "eventsDigest": "D2wXokf8VZsdpR3qGCNkoJXBFSSvoMGdwXqwYuReRuDe"
+    },
+    "events": [{
+      "type": "0x3::validator::StakingRequestEvent",
+      "parsedJson": {
+        "amount": "2816564858653000",
+        "epoch": "9",
+        "pool_id": "0x829f...d3bb",
+        "staker_address": "0x1ee1...eb7c",
+        "validator_address": "0x3742...2205"
+      }
+    }],
+    "timestampMs": "1747226554971",
+    "checkpoint": "3513008"
+  }
+}
+```
+
+---
+
+## `iota_multiGetObjects`
+
+> Retrieves multiple on-chain objects by ID.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `object_ids< [ObjectID] >` (required): the list of object IDs to query.
+    * `options< ObjectDataOptions >` (optional): optional settings for specifying which parts of the object data to include in the response.
+
+### Returns
+
+```
+Vec<IotaObjectResponse><[ IotaObjectResponse ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_multiGetObjects",
+      "params": [
+        [
+          "0x9f5bc1dbdc77a1603835318928fcb4bfb8b80b59638ea86579aecdadb00e6a58",
+          "0x0000000000000000000000000000000000000000000000000000000000000005",
+          "0x3aba764588cac339ef5b2676cad430a6d7a0fbc97d2d8e3eece9c42ee0379593",
+          "0xee2fe355d70cd714eaa82d2d10644b44a3e2f65146dc95a7b759cab4b1d1ab72"
+        ],
+        {
+          "showType": true,
+          "showOwner": true,
+          "showPreviousTransaction": true,
+          "showDisplay": false,
+          "showContent": true,
+          "showBcs": false,
+          "showStorageRebate": true
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "data": {
+                "objectId": "0x9f5bc1dbdc77a1603835318928fcb4bfb8b80b59638ea86579aecdadb00e6a58",
+                "version": "13624397",
+                "digest": "7igEiTswauamJfm8vKQq4htKzyEwTJKBUTP9RvfXaj2g",
+                "type": "0x3::timelocked_staking::TimelockedStakedIota",
+                "owner": {
+                    "AddressOwner": "0x1ee12dca0e798966a82f74c010c109e1bd0674f4f47517db6843f223bad5eb7c"
+                },
+                "previousTransaction": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+                "storageRebate": "3009600",
+                "content": {
+                    "dataType": "moveObject",
+                    "type": "0x3::timelocked_staking::TimelockedStakedIota",
+                    "fields": {
+                        "expiration_timestamp_ms": "1787097600000",
+                        "id": {
+                            "id": "0x9f5bc1dbdc77a1603835318928fcb4bfb8b80b59638ea86579aecdadb00e6a58"
+                        },
+                        "label": "000000000000000000000000000000000000000000000000000000000000107a::stardust_upgrade_label::STARDUST_UPGRADE_LABEL",
+                        "staked_iota": {
+                            "type": "0x3::staking_pool::StakedIota",
+                            "fields": {
+                                "id": {
+                                    "id": "0xc9b07d5e6148cf2f70bc2f4d013bbe2697764a4e6181f0610803aac940bb04cc"
+                                },
+                                "pool_id": "0x829fcfaca1ce8ca42161469447c23a600b2df7215a5b784a51e930e323bdd3bb",
+                                "principal": "2816564858653000",
+                                "stake_activation_epoch": "10"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "error": {
+                "code": "deleted",
+                "object_id": "0xee2fe355d70cd714eaa82d2d10644b44a3e2f65146dc95a7b759cab4b1d1ab72",
+                "version": 13624397,
+                "digest": "7gyGAp71YXQRoxmFBaHxofQXAipvgHyBKPyxmdSJxyvz"
+            }
+        }
+    ]
+}
+```
+
+---
+
+## `iota_multiGetTransactionBlocks`
+
+> Retrieves multiple transaction blocks by digest.
+
+Retrieves an ordered list of transaction responses The method will throw an error if the input contains any duplicate or the input size exceeds `QUERY_MAX_RESULT_LIMIT`.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `digests< [TransactionDigest] >` (required): a list of transaction digests to query.
+    * `options< TransactionBlockResponseOptions >` (optional): configuration options to control which fields are included in the response.
+
+### Returns
+
+```
+Vec<IotaTransactionBlockResponse><[ TransactionBlockResponse ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_multiGetTransactionBlocks",
+      "params": [
+        [
+          "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+          "ESwp5E4rEeGSpfi86vpzogszMLo3mnkedUcvjEdLqqLi"
+        ],
+        {
+          "showInput": true,
+          "showRawInput": false,
+          "showEffects": true,
+          "showEvents": true,
+          "showObjectChanges": false,
+          "showBalanceChanges": false,
+          "showRawEffects": false
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": [
+    {
+      "digest": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+      "transaction": {
+        "data": {
+          "transaction": {
+            "kind": "ProgrammableTransaction",
+            "inputs": ["object", "sharedObject", "pure<address>"],
+            "transactions": [
+              {
+                "MoveCall": {
+                  "package": "0x3",
+                  "module": "timelocked_staking",
+                  "function": "request_add_stake"
+                }
+              }
+            ]
+          },
+          "sender": "0x1ee1...eb7c"
+        }
+      },
+      "effects": {
+        "status": { "status": "success" },
+        "executedEpoch": "9",
+        "gasUsed": {
+          "computationCost": "1000000",
+          "storageCost": "299037200",
+          "storageRebate": "296027600"
+        },
+        "created": ["0x9f5b...6a58"],
+        "mutated": ["0x0000...0005", "0x3aba...9593", "0x5b89...48d1"],
+        "deleted": ["0xee2f...ab72"]
+      },
+      "events": [
+        {
+          "type": "0x3::validator::StakingRequestEvent",
+          "parsedJson": {
+            "amount": "2816564858653000",
+            "epoch": "9"
+          }
+        }
+      ],
+      "timestampMs": "1747226554971",
+      "checkpoint": "3513008"
+    },
+    {
+      "digest": "ESwp5E4rEeGSpfi86vpzogszMLo3mnkedUcvjEdLqqLi",
+      "transaction": {
+        "data": {
+          "transaction": {
+            "kind": "ProgrammableTransaction",
+            "inputs": ["object", "pure<u64>", "pure<vector<u8>>"],
+            "transactions": [
+              { "MoveCall": { "function": "borrow_assets" } },
+              { "MakeMoveVec": ["Receipt", []] },
+              { "MoveCall": { "function": "take_coin_balance" } },
+              { "MoveCall": { "function": "from_balance" } },
+              { "MergeCoins": ["GasCoin"] },
+              { "MoveCall": { "function": "return_assets_from_borrow" } },
+              { "MoveCall": { "function": "transition" } }
+            ]
+          },
+          "sender": "0x7b4a...dd67"
+        }
+      },
+      "effects": {
+        "status": { "status": "success" },
+        "executedEpoch": "9",
+        "gasUsed": {
+          "computationCost": "1000000",
+          "storageCost": "6619600",
+          "storageRebate": "6619600"
+        },
+        "mutated": ["0x0dc4...409d", "0x3215...3cb8", "0xb693...270d"]
+      },
+      "events": [],
+      "timestampMs": "1747232429004",
+      "checkpoint": "3538984"
+    }
+  ]
+}
+```
+
+---
+
+## `iota_tryGetPastObject`
+
+> Retrieves a past version of an object if available.
+
+Note: there is no software-level guarantee/SLA that objects with past versions can be retrieved by this API, even if the object and version exists/existed. The result may vary across nodes depending on their pruning policies. Return the object information for a specified version.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `object_id< ObjectID >` (required): the ID of the queried object.
+    * `version< SequenceNumber >` (required): the version of the queried object. If `null`, defaults to the latest known version.
+    * `options< ObjectDataOptions >` (optional): settings for specifying which parts of the object data to include in the response.
+
+### Returns
+
+```
+IotaPastObjectResponse< ObjectRead >
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_tryGetPastObject",
+      "params": [
+          "0x0000000000000000000000000000000000000000000000000000000000000005",
+          13624397,
+          {
+            "showType": true,
+            "showOwner": true,
+            "showPreviousTransaction": true,
+            "showDisplay": false,
+            "showContent": true,
+            "showBcs": false,
+            "showStorageRebate": true
+          }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "status": "VersionFound",
+        "details": {
+            "objectId": "0x0000000000000000000000000000000000000000000000000000000000000005",
+            "version": "13624397",
+            "digest": "5HqUbjLYUvLayiSS4RwqHC55BMwnGp5dmiZCf375gHfh",
+            "type": "0x3::iota_system::IotaSystemState",
+            "owner": {
+                "Shared": {
+                    "initial_shared_version": 1
+                }
+            },
+            "previousTransaction": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+            "storageRebate": "1444000",
+            "content": {
+                "dataType": "moveObject",
+                "type": "0x3::iota_system::IotaSystemState",
+                "fields": {
+                    "id": {
+                        "id": "0x0000000000000000000000000000000000000000000000000000000000000005"
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+}
+```
+
+---
+
+## `iota_tryMultiGetPastObjects`
+
+> Retrieves past versions of multiple objects if available.
+
+Note: there is no software-level guarantee/SLA that objects with past versions can be retrieved by this API, even if the object and version exists/existed. The result may vary across nodes depending on their pruning policies. Return the object information for a specified version.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `past_objects< [GetPastObjectRequest] >` (required): a list of objects and their corresponding versions to be queried.
+    * `options< ObjectDataOptions >` (optional): settings for specifying which parts of the object data to include in the response.
+
+### Returns
+
+```
+Vec<IotaPastObjectResponse><[ ObjectRead ]>
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "iota_tryMultiGetPastObjects",
+      "params": [
+        [
+          {
+            "objectId": "0x5b890eaf2abcfa2ab90b77b8e6f3d5d8609586c3e583baf3dccd5af17edf48d1",
+            "version": "13624397"
+          },
+          {
+            "objectId": "0x0000000000000000000000000000000000000000000000000000000000000005",
+            "version": "13624397"
+          }
+        ],
+        {
+          "showType": true,
+          "showOwner": true,
+          "showPreviousTransaction": true,
+          "showDisplay": false,
+          "showContent": true,
+          "showBcs": false,
+          "showStorageRebate": true
+        }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "status": "VersionFound",
+      "details": {
+        "objectId": "0x5b890eaf2abcfa2ab90b77b8e6f3d5d8609586c3e583baf3dccd5af17edf48d1",
+        "version": "13624397",
+        "digest": "HRYS5tXW9HwcxV9NufDDHJvFUvwQ3GzAU5h1Tr9wWLZC",
+        "type": "0x2::dynamic_field::Field<u64, 0x3::iota_system_state_inner::IotaSystemStateV2>",
+        "owner": {
+          "ObjectOwner": "0x0000000000000000000000000000000000000000000000000000000000000005"
+        },
+        "previousTransaction": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+        "storageRebate": "293603200",
+        "content": {
+          "dataType": "moveObject",
+          "type": "0x2::dynamic_field::Field<u64, 0x3::iota_system_state_inner::IotaSystemStateV2>",
+          "fields": {
+            "balance": "10000",
+            "id": {
+              "id": "0x5b890eaf2abcfa2ab90b77b8e6f3d5d8609586c3e583baf3dccd5af17edf48d1"
+            }
+          }
+        }
+      }
+    },
+    {
+      "status": "VersionFound",
+      "details": {
+        "objectId": "0x0000000000000000000000000000000000000000000000000000000000000005",
+        "version": "13624397",
+        "digest": "5HqUbjLYUvLayiSS4RwqHC55BMwnGp5dmiZCf375gHfh",
+        "type": "0x3::iota_system::IotaSystemState",
+        "owner": {
+                    "Shared": {
+                        "initial_shared_version": 1
+                    }
+                },
+        "previousTransaction": "1yWvHoudroTZA8TpNwLCEjmGLaEZCLoXZETjt4GRq7G",
+        "storageRebate": "1444000",
+        "content": {
+          "dataType": "moveObject",
+          "type": "0x3::iota_system::IotaSystemState",
+          "fields": {
+            "id": {
+              "id": "0x0000000000000000000000000000000000000000000000000000000000000005"
+            },
+            "version": "2"
+          }
+        }
+      }
+    }
+  ],
+  "id": 1
+}
+```
+
+---
+
+## Transaction Builder
+
+## `unsafe_batchTransaction`
+
+> Create an unsigned batched transaction.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `single_transaction_params< [RPCTransactionRequestParams] >` (required): list of transaction request parameters to be included in the transaction.
+    * `gas< ObjectID >` (optional): the gas object to use for this transaction. If not provided, the node selects one from the signer's owned objects.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum gas allowed for the transaction. The transaction will fail if this budget is exceeded.
+    * `txn_builder_mode< IotaTransactionBlockBuilderMode >` (optional): specifies the transaction builder mode, indicating whether this is a regular transaction or a dev inspect transaction.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the list of gas objects to be used in the transaction.
+  * `inputObjects< [InputObjectKind] >` (required): the objects involved in this transaction.
+  * `txBytes< Base64 >` (required): the BCS-encoded transaction data (without its type tag), provided as a base64-encoded string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "jsonrpc": "2.0",
+        "method": "unsafe_batchTransaction",
+        "params": [
+          {
+            "signer": "0xYourIotaAddress",
+            "single_transaction_params": [
+              {
+                "moveCallRequestParams": {
+                  "package_object_id": "0xPackageID",
+                  "module": "moduleName",
+                  "function": "functionName",
+                  "type_arguments": [],
+                  "arguments": []
+                }
+              },
+              {
+                "transferObjectRequestParams": {
+                  "object_id": "0xObjectID",
+                  "recipient": "0xRecipientAddress"
+                }
+              }
+            ],
+            "gas_budget": "1000000"
+          }
+        ],
+        "id": 1
+      }'
+```
+
+### Response parameters
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "unsafe_batchTransaction",
+  "params": {
+    "signer": "string (IotaAddress)",
+    "single_transaction_params": [
+      {
+        "moveCallRequestParams": {
+          "package_object_id": "string (ObjectID)",
+          "module": "string",
+          "function": "string",
+          "type_arguments": ["string"],
+          "arguments": ["any"]
+        }
+        // or
+        // "transferObjectRequestParams": {
+        //   "object_id": "string (ObjectID)",
+        //   "recipient": "string (IotaAddress)"
+        // }
+      }
+    ],
+    "gas": "string (ObjectID, optional)",
+    "gas_budget": "string (BigInt_for_uint64)",
+    "txn_builder_mode": "string (IotaTransactionBlockBuilderMode, optional)"
+  }
+}
+
+```
+
+---
+
+## `unsafe_mergeCoins`
+
+> Creates an unsigned transaction to merge multiple coins.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `primary_coin< ObjectID >` (required): the coin object into which the other will be merged; this coin will remain after the transaction.
+    * `coin_to_merge< ObjectID >` (required): the coin object to be merged and destroyed; its balance will be added to the primary_coin.
+    * `gas< ObjectID >` (optional): the gas object to use for this transaction. If not provided, the node will select one from the signer's assets.
+    * `gas_budget< BigInt_for_uint64 >` (required): the gas limit for this transaction; it will fail if the gas usage exceeds this budget.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_mergeCoins",
+    "params": [
+      "0xYOUR_SIGNER_ADDRESS",       // placeholder: signer address (IotaAddress)
+      "0xPRIMARY_COIN_OBJECT_ID",    // placeholder: coin object that will remain
+      "0xCOIN_TO_MERGE_OBJECT_ID",   // placeholder: coin object that will be merged and destroyed
+      "0xOPTIONAL_GAS_OBJECT_ID",    // placeholder: gas object (can be same as primary coin or omitted)
+      "1000000"                      // gas budget as string (BigInt)
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "digest": "0xTRANSACTION_DIGEST",                // placeholder: transaction hash
+    "effects": {
+      "status": { "status": "success" },             // status of transaction execution
+      "gasUsed": {
+        "computationCost": "1000000",                // example gas values
+        "storageCost": "50000",
+        "storageRebate": "45000",
+        "nonRefundableStorageFee": "0"
+      },
+      "mutated": [
+        {
+          "owner": { "AddressOwner": "0xSIGNER_ADDRESS" },
+          "reference": {
+            "objectId": "0xPRIMARY_COIN_OBJECT_ID",   // placeholder: updated coin object
+            "version": 12345678,
+            "digest": "0xUPDATED_OBJECT_DIGEST"
+          }
+        }
+      ],
+      "deleted": [
+        {
+          "objectId": "0xCOIN_TO_MERGE_OBJECT_ID",     // placeholder: deleted coin
+          "version": 12345678,
+          "digest": "0xDELETED_OBJECT_DIGEST"
+        }
+      ]
+    },
+    "timestampMs": "1690000000000",                  // placeholder timestamp
+    "checkpoint": "1234567"                          // checkpoint in which transaction was finalized
+  }
+}
+```
+
+---
+
+## `unsafe_moveCall`
+
+> Creates an unsigned transaction to call a Move function.
+
+Creates an unsigned transaction to execute a Move call on the network, by calling the specified function in the module of a given package.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `package_object_id< ObjectID >` (required): the ID of the Move package to invoke, e.g. 0x2.
+    * `module< string >` (required): the name of the Move module containing the target function, e.g. pay.
+    * `function< string >` (required): the name of the Move function to call, e.g. split.
+    * `type_arguments< [TypeTag] >` (required): the type arguments to be passed into the Move function.
+    * `arguments< [IotaJsonValue] >` (required): the function arguments, formatted as [IOTA-compatible JSON](https://docs.iota.org/references/iota-api) values.
+    * `gas< ObjectID >` (optional): the gas object to use for the transaction. If not specified, one will be automatically selected from the signer's assets.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum gas the transaction is allowed to consume. It will fail if exceeded.
+    * `execution_mode< IotaTransactionBlockBuilderMode >` (optional): the execution mode, indicating whether the transaction should be executed normally or as a dev inspect. Defaults to Commit if not provided.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects to be used for the transaction.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects involved in the transaction.
+  * `txBytes< Base64 >` (required): the BCS-encoded transaction data bytes (without the type tag), represented as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_moveCall",
+    "params": [
+      "0xSIGNER_ADDRESS",             // placeholder: IOTA address of the transaction signer
+      "0xPACKAGE_ID",                 // placeholder: Move package ID (e.g., 0x2)
+      "module_name",                 // placeholder: Move module name (e.g., "pay")
+      "function_name",               // placeholder: Move function name (e.g., "split")
+      ["0xTYPE_TAG"],                // placeholder: list of type arguments (can be empty)
+      ["IOTA_JSON_ARGUMENTS"],       // placeholder: list of arguments in IOTA JSON format
+      "0xOPTIONAL_GAS_OBJECT_ID",    // placeholder: gas object (optional, or use one from signer's owned coins)
+      "1000000",                     // placeholder: gas budget (as string, BigInt)
+      "Commit"                       // placeholder: execution mode (e.g., "Commit" or "DevInspect")
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "digest": "0xTRANSACTION_DIGEST",                // placeholder: transaction hash
+    "effects": {
+      "status": {
+        "status": "success"                          // execution status
+      },
+      "executedEpoch": "123",                        // epoch in which transaction was executed
+      "gasUsed": {
+        "computationCost": "1000000",
+        "storageCost": "50000",
+        "storageRebate": "45000",
+        "nonRefundableStorageFee": "0"
+      },
+      "created": [
+        {
+          "owner": {
+            "AddressOwner": "0xSIGNER_ADDRESS"
+          },
+          "reference": {
+            "objectId": "0xCREATED_OBJECT_ID",
+            "version": 12345678,
+            "digest": "0xOBJECT_DIGEST"
+          }
+        }
+      ],
+      "mutated": [
+        {
+          "owner": {
+            "AddressOwner": "0xSIGNER_ADDRESS"
+          },
+          "reference": {
+            "objectId": "0xMUTATED_OBJECT_ID",
+            "version": 12345678,
+            "digest": "0xMUTATED_OBJECT_DIGEST"
+          }
+        }
+      ],
+      "deleted": [
+        {
+          "objectId": "0xDELETED_OBJECT_ID",
+          "version": 12345678,
+          "digest": "0xDELETED_OBJECT_DIGEST"
+        }
+      ],
+      "gasObject": {
+        "owner": {
+          "AddressOwner": "0xSIGNER_ADDRESS"
+        },
+        "reference": {
+          "objectId": "0xGAS_OBJECT_ID",
+          "version": 12345678,
+          "digest": "0xGAS_OBJECT_DIGEST"
+        }
+      }
+    },
+    "events": [
+      {
+        "id": {
+          "txDigest": "0xTRANSACTION_DIGEST",
+          "eventSeq": "0"
+        },
+        "packageId": "0xPACKAGE_ID",
+        "transactionModule": "module_name",
+        "sender": "0xSIGNER_ADDRESS",
+        "type": "0xPACKAGE::module::EventName",
+        "parsedJson": {
+          "key": "value"
+        }
+      }
+    ],
+    "timestampMs": "1690000000000",
+    "checkpoint": "1234567"
+  }
+}
+```
+
+---
+
+## `unsafe_pay`
+
+> Creates a transaction to transfer coins to multiple recipients.
+
+Sends `Coin<T>` to a list of recipient addresses, where `T` can be any supported coin type. The amounts must correspond to each recipient in the list. The object specified in the `gas` field will be used to pay the transaction fee. The `gas` object must not be included in the `input_coins`. If no `gas` object is provided, the RPC server will automatically select one.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `input_coins< [ObjectID] >` (required): the list of IOTA coin object IDs to be used for this transaction.
+    * `recipients< [IotaAddress] >` (required): the list of recipient addresses. The length must match the `amounts` array.
+    * `amounts< [BigInt_for_uint64] >` (required): the list of amounts to send to each corresponding recipient.
+    * `gas< ObjectID >` (optional): the gas object used to pay for transaction execution. If not provided, the node will automatically select one from the signer's assets.
+    * `gas_budget< BigInt_for_uint64 >` (required): the gas limit for the transaction. The transaction will fail if this limit is exceeded.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects that will be used in the transaction.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects that are referenced and consumed during transaction execution.
+  * `txBytes< Base64 >` (required): the BCS-encoded transaction data (excluding the type tag), represented as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_pay",
+    "params": [
+      "0xSIGNER_ADDRESS",               // IOTA address of the sender
+      [
+        "0xINPUT_COIN_1",               // Coin object IDs to be used
+        "0xINPUT_COIN_2"
+      ],
+      [
+        "0xRECIPIENT_ADDRESS_1",        // Recipient addresses
+        "0xRECIPIENT_ADDRESS_2"
+      ],
+      [
+        "1000000",                      // Amounts to transfer (must match recipient count)
+        "2500000"
+      ],
+      "0xOPTIONAL_GAS_OBJECT_ID",       // Optional: gas object (omit or set to null to auto-select)
+      "5000000"                         // Gas budget (as string)
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "digest": "0xTRANSACTION_DIGEST",
+    "effects": {
+      "status": {
+        "status": "success"
+      },
+      "executedEpoch": "123",
+      "gasUsed": {
+        "computationCost": "1000000",
+        "storageCost": "80000",
+        "storageRebate": "75000",
+        "nonRefundableStorageFee": "0"
+      },
+      "mutated": [
+        {
+          "owner": {
+            "AddressOwner": "0xSIGNER_ADDRESS"
+          },
+          "reference": {
+            "objectId": "0xPRIMARY_COIN_OBJECT_ID",
+            "version": 12345678,
+            "digest": "0xUPDATED_OBJECT_DIGEST"
+          }
+        }
+      ],
+      "deleted": [
+        {
+          "objectId": "0xMERGED_COIN_OBJECT_ID",
+          "version": 12345678,
+          "digest": "0xDELETED_OBJECT_DIGEST"
+        }
+      ],
+      "gasObject": {
+        "owner": {
+          "AddressOwner": "0xSIGNER_ADDRESS"
+        },
+        "reference": {
+          "objectId": "0xGAS_OBJECT_ID",
+          "version": 12345678,
+          "digest": "0xGAS_OBJECT_DIGEST"
+        }
+      }
+    },
+    "events": [],
+    "timestampMs": "1690000000000",
+    "checkpoint": "1234567"
+  }
+}
+```
+
+---
+
+## `unsafe_payAllIota`
+
+> Creates a transaction to transfer all IOTA coins to a single recipient.
+
+Sends all IOTA from multiple coin objects to a single recipient. This method supports IOTA coin only and does not require a separate gas coin object.
+
+The `pay_all_iota` operation performs the following steps:
+
+1. Aggregates the total IOTA from all input coins and consolidates it into the first input coin.
+2. Transfers the updated first coin to the recipient and uses it as the gas object for the transaction.
+3. After execution, the first input coin holds the remaining balance: `sum(input_coins) - actual_gas_cost`.
+4. All other input coins (except the first) are deleted.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `input_coins< [ObjectID] >` (required): the IOTA coin object IDs to be used in the transaction, including the coin that will be used to pay for gas.
+    * `recipient< IotaAddress >` (required): the address to receive the consolidated IOTA.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum amount of gas allowed for the transaction. The transaction will fail if this budget is exceeded.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used in the transaction execution.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects that are referenced and processed during the transaction.
+  * `txBytes< Base64 >` (required): the BCS-encoded transaction data, without its type tag, represented as a base64-encoded string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_payAllIota",
+    "params": [
+      "0xSIGNER_ADDRESS",             // IOTA address of the sender
+      [
+        "0xINPUT_COIN_ID_1",          // Input coins (must include coin used for gas)
+        "0xINPUT_COIN_ID_2"
+      ],
+      "0xRECIPIENT_ADDRESS",          // Recipient address
+      "5000000"                       // Gas budget (as string)
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",            // gas object used
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xINPUT_COIN_ID_1",          // first coin used and retained
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      },
+      {
+        "objectId": "0xINPUT_COIN_ID_2",          // coin that was merged and deleted
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_DATA" // base64-encoded BCS transaction bytes
+  }
+}
+```
+
+---
+
+## `unsafe_payIota`
+
+> Creates a transaction to transfer IOTA coins to multiple recipients.
+
+Sends IOTA coins to a list of recipient addresses based on a corresponding list of amounts. This method supports IOTA coin only and does not require a separate gas coin object.
+
+The `pay_iota` operation performs the following:
+
+1. Debits each `input_coin` to create new coin objects corresponding to the specified amounts and assigns them to the matching recipients.
+2. Accumulates any remaining IOTA from the input coins into the first input coin and uses it as the gas coin object.
+3. After execution, the balance of the first input coin is: `sum(input_coins) - sum(amounts) - actual_gas_cost`.
+4. All other input coins, except the first one, are deleted.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `input_coins< [ObjectID] >` (required): the list of IOTA coin object IDs to be used in this transaction, including the coin that will cover gas fees.
+    * `recipients< [IotaAddress] >` (required): the list of recipient addresses. The length must match the amounts list.
+    * `amounts< [BigInt_for_uint64] >` (required): the list of amounts to transfer to each corresponding recipient, in the same order as recipients.
+    * g`as_budget< BigInt_for_uint64 >` (required): the maximum gas allowed for the transaction. The transaction fails if this budget is exceeded.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for the transaction execution.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects referenced and consumed during the transaction.
+  * `txBytes< Base64 >` (required): the BCS-encoded transaction data (without a type tag), represented as a base64-encoded string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_payIota",
+    "params": [
+      "0xSIGNER_ADDRESS",               // IOTA address of the sender
+      [
+        "0xINPUT_COIN_ID_1",            // IOTA coin object IDs (including the one for gas)
+        "0xINPUT_COIN_ID_2"
+      ],
+      [
+        "0xRECIPIENT_ADDRESS_1",        // Recipient addresses
+        "0xRECIPIENT_ADDRESS_2"
+      ],
+      [
+        "1000000",                      // Amounts to send (must match recipients)
+        "2500000"
+      ],
+      "5000000"                         // Gas budget (as string)
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",            // gas object used
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xINPUT_COIN_ID_1",          // first coin retained and used for gas
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      },
+      {
+        "objectId": "0xINPUT_COIN_ID_2",          // coin that was consumed
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_DATA" // base64-encoded BCS transaction bytes
+  }
+}
+```
+
+---
+
+## `unsafe_publish`
+
+> Creates an unsigned transaction to publish Move modules.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `sender< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `compiled_modules< [Base64] >` (required): the compiled Move modules, encoded in base64 format.
+    * `dependencies< [ObjectID] >` (required): a list of object IDs representing the transitive dependencies required by the Move package.
+    * `gas< ObjectID >` (optional): the gas coin object to use for paying transaction fees. If not specified, the node will auto-select one from the sender's assets.
+    * `gas_budget< BigInt_for_uint64 >` (required): the gas budget for the transaction. The transaction will fail if gas consumption exceeds this value.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for the transaction execution.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects that are referenced, mutated, or consumed during the transaction.
+  * `txBytes< Base64 >` (required): the transaction payload, serialized in BCS format without its type tag, and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_publish",
+    "params": [
+      "0xSIGNER_ADDRESS",                   // sender<IotaAddress>
+      [
+        "BASE64_COMPILED_MODULE_1",         // compiled_modules<[Base64]>
+        "BASE64_COMPILED_MODULE_2"
+      ],
+      [
+        "0xDEPENDENCY_OBJECT_ID_1",         // dependencies<[ObjectID]>
+        "0xDEPENDENCY_OBJECT_ID_2"
+      ],
+      "0xOPTIONAL_GAS_OBJECT_ID",           // gas<ObjectID> (optional)
+      "10000000"                            // gas_budget<BigInt_for_uint64>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",       // Gas object used
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xSIGNER_ADDRESS",
+        "objectType": "0x2::account::Account"
+      },
+      {
+        "objectId": "0xDEPENDENCY_OBJECT_ID_1",
+        "objectType": "0x1::move_stdlib::Module"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_requestAddStake`
+
+> Creates a request to add stake.
+
+Adds stake to a validator's staking pool using multiple coins and amount.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `coins< [ObjectID] >` (required): the list of `Coin<IOTA>` object IDs to be staked in this transaction.
+    * `amount< BigInt_for_uint64 >` (optional): the amount to stake. If omitted, the total balance from the provided coin objects is used.
+    * `validator< IotaAddress >` (required): the IOTA address of the validator to which the stake is delegated.
+    * `gas< ObjectID >` (optional): the gas object used to pay transaction fees. If not specified, one will be selected automatically from the signer's assets.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum amount of gas allocated for the transaction. The transaction fails if this budget is exceeded.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects that will be used to pay for the transaction.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects referenced in the transaction, including coins and validator-related inputs.
+  * `txBytes< Base64 >` (required): the transaction data serialized in BCS format (excluding the type tag) and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_requestAddStake",
+    "params": [
+      "0xSIGNER_ADDRESS",                 // signer<IotaAddress>
+      [
+        "0xCOIN_OBJECT_ID_1",             // coins<[ObjectID]>
+        "0xCOIN_OBJECT_ID_2"
+      ],
+      "1000000000",                       // amount<BigInt_for_uint64> (optional, can be null)
+      "0xVALIDATOR_ADDRESS",             // validator<IotaAddress>
+      "0xOPTIONAL_GAS_OBJECT_ID",        // gas<ObjectID> (optional, can be null)
+      "5000000"                           // gas_budget<BigInt_for_uint64>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xCOIN_OBJECT_ID_1",
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      },
+      {
+        "objectId": "0xCOIN_OBJECT_ID_2",
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      },
+      {
+        "objectId": "0xVALIDATOR_ADDRESS",
+        "objectType": "staking::Validator"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_requestAddTimelockedStake`
+
+> Adds a timelocked stake.
+
+Adds timelocked stake to a validator's staking pool using multiple balances and amount.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `locked_balance< ObjectID >` (required): the object ID of the `TimeLock<Balance<IOTA>>` that will be staked.
+    * `validator< IotaAddress >` (required): the IOTA address of the validator to whom the stake is being delegated.
+    * `gas< ObjectID >` (required): the gas object used to pay for the transaction. This must be explicitly provided.
+    * `gas_budget< BigInt_for_uint64 >` (required): the gas budget for the transaction. The transaction will fail if the actual gas used exceeds this value.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for the transaction execution.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects involved in the transaction, such as the locked balance object and validator address.
+  * `txBytes< Base64 >` (required): the transaction data, serialized in BCS format (without its type tag) and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_requestAddTimelockedStake",
+    "params": [
+      "0xSIGNER_ADDRESS",               // signer<IotaAddress>
+      "0xLOCKED_BALANCE_OBJECT_ID",    // locked_balance<ObjectID>
+      "0xVALIDATOR_ADDRESS",           // validator<IotaAddress>
+      "0xGAS_OBJECT_ID",               // gas<ObjectID>
+      "5000000"                         // gas_budget<BigInt_for_uint64>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xLOCKED_BALANCE_OBJECT_ID",
+        "objectType": "timelock::TimeLock<coin::Coin<0x2::iota::IOTA>>"
+      },
+      {
+        "objectId": "0xVALIDATOR_ADDRESS",
+        "objectType": "staking::Validator"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_requestWithdrawStake`
+
+> Withdraws stake from a validator's staking pool.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `staked_iota< ObjectID >` (required): the object ID of the StakedIota that is to be withdrawn.
+    * `gas< ObjectID >` (optional): the gas object to be used for transaction fees. If not specified, the node will automatically select one from the signer's holdings.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum gas allowed for the transaction. The transaction will fail if gas consumption exceeds this value.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for the transaction execution.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects involved in the transaction, including the staked IOTA object and any additional references.
+  * `txBytes< Base64 >` (required): the transaction payload, serialized in BCS format (excluding its type tag), and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_requestWithdrawStake",
+    "params": [
+      "0xSIGNER_ADDRESS",             // signer<IotaAddress>
+      "0xSTAKED_IOTA_OBJECT_ID",     // staked_iota<ObjectID>
+      "0xOPTIONAL_GAS_OBJECT_ID",    // gas<ObjectID> (optional, can be null)
+      "5000000"                      // gas_budget<BigInt_for_uint64>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xSTAKED_IOTA_OBJECT_ID",
+        "objectType": "staking::StakedIota"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_requestWithdrawTimelockedStake`
+
+> Withdraws timelocked stake from a validator's staking pool.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `timelocked_staked_iota< ObjectID >` (required): the object ID of the TimelockedStakedIota to be withdrawn.
+    * `gas< ObjectID >` (required): the gas object to be used for paying transaction fees.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum amount of gas the transaction is allowed to consume. The transaction will fail if this budget is exceeded.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for the transaction execution.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects involved in the transaction, including the TimelockedStakedIota object and any supporting references.
+  * `txBytes< Base64 >` (required): the transaction payload serialized in BCS format (without its type tag), and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_requestWithdrawTimelockedStake",
+    "params": [
+      "0xSIGNER_ADDRESS",                   // signer<IotaAddress>
+      "0xTIMELOCKED_STAKED_IOTA_OBJECT_ID", // timelocked_staked_iota<ObjectID>
+      "0xGAS_OBJECT_ID",                    // gas<ObjectID>
+      "5000000"                             // gas_budget<BigInt_for_uint64>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xTIMELOCKED_STAKED_IOTA_OBJECT_ID",
+        "objectType": "staking::TimelockedStakedIota"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_splitCoin`
+
+> Creates an unsigned transaction to split a coin into specified amounts.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `coin_object_id< ObjectID >` (required): the object ID of the coin to be split.
+    * `split_amounts< [BigInt_for_uint64] >` (required): a list of amounts to split from the coin. Each value represents a new coin to be created with that amount.
+    * `gas< ObjectID >` (optional): the gas object to be used for paying transaction fees. If omitted, the node selects one from the signer's assets.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum gas allowed for this transaction. The transaction will fail if this limit is exceeded.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for the execution of the transaction.
+  * `inputObjects< [InputObjectKind] >` (required): the objects involved in the transaction, including the coin being split and any other necessary references.
+  * `txBytes< Base64 >` (required): the transaction payload serialized in BCS format (without its type tag), and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_splitCoin",
+    "params": [
+      "0xSIGNER_ADDRESS",              // signer<IotaAddress>
+      "0xCOIN_OBJECT_ID",             // coin_object_id<ObjectID>
+      ["1000", "2000", "3000"],       // split_amounts<[BigInt_for_uint64]>
+      "0xOPTIONAL_GAS_OBJECT_ID",     // gas<ObjectID> (optional, can be null)
+      "5000000"                       // gas_budget<BigInt_for_uint64>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xCOIN_OBJECT_ID",
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_splitCoinEqual`
+
+> Creates an unsigned transaction to split a coin into equal parts.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `coin_object_id< ObjectID >` (required): the object ID of the coin to be split.
+    * `split_count< BigInt_for_uint64 >` (required): the number of equally sized coins to create from the original coin. The total coin value will be evenly divided among them.
+    * `gas< ObjectID >` (optional): the gas object to be used for transaction fee payment. If omitted, the node will select one automatically from the signer’s holdings.
+    * `gas_budget< BigInt_for_uint64 >` (required): the gas budget for the transaction. The transaction fails if this amount is exceeded during execution.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for the transaction execution.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects involved in the transaction, including the coin being split.
+  * `txBytes< Base64 >` (required): the transaction payload serialized using BCS (without its type tag) and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_splitCoinEqual",
+    "params": [
+      "0xSIGNER_ADDRESS",          // signer<IotaAddress>
+      "0xCOIN_OBJECT_ID",         // coin_object_id<ObjectID>
+      "3",                         // split_count<BigInt_for_uint64>
+      "0xOPTIONAL_GAS_OBJECT_ID", // gas<ObjectID> (optional, can be null)
+      "5000000"                   // gas_budget<BigInt_for_uint64>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xCOIN_OBJECT_ID",
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_transferIota`
+
+> Creates an unsigned transaction to transfer IOTA coins.
+
+Creates an unsigned transaction to send IOTA coin object to an IOTA address. The IOTA object is also used as the gas object.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `iota_object_id< ObjectID >` (required): the object ID of the IOTA coin to be used in the transaction.
+    * `gas_budget< BigInt_for_uint64 >` (required): the gas budget for the transaction. The transaction will fail if gas usage exceeds this amount.
+    * `recipient< IotaAddress >` (required): the IOTA address of the recipient who will receive the transferred amount.
+    * `amount< BigInt_for_uint64 >` (optional): the amount of IOTA to be split from the original coin and transferred to the recipient. If omitted, the entire coin may be transferred.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for executing the transaction.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects involved in the transaction, including the IOTA coin and any other dependencies.
+  * `txBytes< Base64 >` (required): the transaction data, serialized using BCS (without its type tag) and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_transferIota",
+    "params": [
+      "0xSIGNER_ADDRESS",         // signer<IotaAddress>
+      "0xIOTA_OBJECT_ID",         // iota_object_id<ObjectID>
+      "5000000",                  // gas_budget<BigInt_for_uint64>
+      "0xRECIPIENT_ADDRESS",      // recipient<IotaAddress>
+      "100000000"                 // amount<BigInt_for_uint64> (optional)
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xIOTA_OBJECT_ID",
+        "objectType": "coin::Coin<0x2::iota::IOTA>"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## `unsafe_transferObject`
+
+> Creates an unsigned transaction to transfer an on-chain object.
+
+Creates an unsigned transaction to transfer an object from one address to another. The object's type must allow public transfers.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `signer< IotaAddress >` (required): the IOTA address of the transaction signer.
+    * `object_id< ObjectID >` (required): the object ID of the item to be transferred.
+    * `gas< ObjectID >` (optional): the gas object to be used for paying transaction fees. If not specified, the node selects one automatically from the signer's assets.
+    * `gas_budget< BigInt_for_uint64 >` (required): the maximum gas allowed for this transaction. The transaction will fail if this amount is exceeded.
+    * `recipient< IotaAddress >` (required): the IOTA address of the recipient who will receive the transferred object.
+
+### Returns
+
+```
+TransactionBlockBytes< TransactionBlockBytes >
+```
+
+  * `gas< [ObjectRef] >` (required): the gas objects used to pay for executing the transaction.
+  * `inputObjects< [InputObjectKind] >` (required): the input objects involved in the transaction, including the object being transferred and any related dependencies.
+  * `txBytes< Base64 >` (required): the transaction payload serialized using BCS (without its type tag) and encoded as a base64 string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "unsafe_transferObject",
+    "params": [
+      "0xSIGNER_ADDRESS",      // signer<IotaAddress>
+      "0xOBJECT_ID",           // object_id<ObjectID>
+      "0xOPTIONAL_GAS_ID",     // gas<ObjectID> (optional, can be null)
+      "5000000",               // gas_budget<BigInt_for_uint64>
+      "0xRECIPIENT_ADDRESS"    // recipient<IotaAddress>
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "gas": [
+      {
+        "objectId": "0xGAS_OBJECT_ID",
+        "version": 12345678,
+        "digest": "0xGAS_OBJECT_DIGEST"
+      }
+    ],
+    "inputObjects": [
+      {
+        "objectId": "0xOBJECT_ID",
+        "objectType": "example::CustomObjectType"
+      }
+    ],
+    "txBytes": "BASE64_ENCODED_TRANSACTION_BYTES"
+  }
+}
+```
+
+---
+
+## Write
+
+## `iota_devInspectTransactionBlock`
+
+> Simulates a transaction block for debugging and inspection.
+
+Runs the transaction in dev-inspect mode. Which allows for nearly any transaction (or Move call) with any arguments. Detailed results are provided, including both the transaction effects and any return values.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `sender_address< IotaAddress >` (required): the IOTA address initiating the dev inspect call.
+    * `tx_bytes< Base64 >` (required): the BCS-encoded TransactionKind (not TransactionData). This includes only the transaction logic without gasBudget and gasPrice.
+    * `gas_price< BigInt_for_uint64 >` (optional): the reference gas price to use for calculating gas usage. No actual gas is charged. If omitted, the system will use the default reference gas price.
+    * `epoch< BigInt_for_uint64 >` (optional): the epoch during which to simulate the call. If not provided, it will default to the current epoch from the latest system state.
+    * `additional_args< DevInspectArgs >` (optional): additional simulation configuration, including: `gas_budget`, `gas_objects`, `gas_sponsor`, `skip_checks`.
+
+### Returns
+
+```
+DevInspectResults< DevInspectResults >
+```
+
+  * `effects< TransactionBlockEffects >` (required): the simulated summary of effects that would likely occur if the transaction were executed. Note: not all dev-inspected transactions are valid for execution.
+  * `error< [string, null] >` (optional): any execution error encountered during simulation, if applicable.
+  * `events< [Event] >` (required): the list of events that would likely be emitted by the transaction if it were run.
+  * `rawEffects< [string] >` (optional): raw data representation of the transaction effects that were simulated.
+  * `rawTxnData< [string] >` (optional): raw data representation of the transaction itself used in the dev inspection.
+  * `results< [IotaExecutionResult, null] >` (optional): execution results from running the transaction, including any return values or outputs from function calls.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "iota_devInspectTransactionBlock",
+    "params": [
+      "0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961",  // sender_address<IotaAddress>
+      "BASE64_ENCODED_TX_BYTES",                                            // tx_bytes<Base64>
+      "1",                                                                  // gas_price<BigInt_for_uint64> (optional)
+      "1000",                                                               // epoch<BigInt_for_uint64> (optional)
+      {
+        "gas_budget": "1000000",                                            // gas_budget<BigInt_for_uint64> (optional)
+        "gas_objects": ["0xGAS_OBJECT_ID"],                                 // gas_objects<[ObjectID]> (optional)
+        "gas_sponsor": "0xSPONSOR_ADDRESS",                                 // gas_sponsor<IotaAddress> (optional)
+        "skip_checks": true                                                 // skip_checks<boolean> (optional)
+      }
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "effects": {
+      // Summary of effects that would likely occur if the transaction were executed
+    },
+    "error": null,
+    "events": [
+      // List of events that would likely be emitted by the transaction
+    ],
+    "rawEffects": [
+      // Raw data representation of the transaction effects
+    ],
+    "rawTxnData": [
+      // Raw data representation of the transaction itself
+    ],
+    "results": [
+      // Execution results from running the transaction, including return values
+    ]
+  }
+}
+```
+
+---
+
+## `iota_dryRunTransactionBlock`
+
+> Simulates execution of a transaction block without committing it.
+
+Returns transaction execution effects including the gas cost summary, while the effects are not committed to the chain.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `tx_bytes< Base64 >` (required): the transaction payload encoded as a base64 string. This must be the BCS-encoded `TransactionKind` (not `TransactionData`), meaning it contains only the logic of the transaction without metadata such as `gasBudget` or `gasPrice`.
+
+### Returns
+
+```
+DryRunTransactionBlockResponse< DryRunTransactionBlockResponse >
+```
+
+  * `balanceChanges< [BalanceChange] >` (required): a list of balance changes resulting from the execution of the transaction.
+  * `effects< TransactionBlockEffects >` (required): summary of transaction effects, including created, mutated, and deleted objects, along with gas usage and status.
+  * `events< [Event] >` (required): events emitted during the transaction execution.
+  * `input< TransactionBlockData >` (required): the transaction input data, including sender, gas settings, and execution logic.
+  * `objectChanges< [ObjectChange] >` (required): a list of changes made to on-chain objects, including object creation, mutation, and deletion.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "iota_dryRunTransactionBlock",
+    "params": [
+      "BASE64_ENCODED_TX_BYTES",  // tx_bytes<Base64>
+      {
+        "sender": "0xSENDER_ADDRESS",       // sender<IotaAddress>
+        "gasBudget": "1000000",             // gas_budget<BigInt_for_uint64>
+        "gasPrice": "1"                     // gas_price<BigInt_for_uint64> (optional)
+      },
+      false  // skipChecks<boolean> (optional)
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "balanceChanges": [
+      {
+        "owner": "0xSENDER_ADDRESS",
+        "coinType": "0x2::iota::IOTA",
+        "amount": "-100000"
+      },
+      {
+        "owner": "0xRECIPIENT_ADDRESS",
+        "coinType": "0x2::iota::IOTA",
+        "amount": "100000"
+      }
+    ],
+    "effects": {
+      "status": "success",
+      "created": [],
+      "mutated": [],
+      "deleted": [],
+      "gasUsed": "50000"
+    },
+    "events": [
+      {
+        "type": "0x2::iota::TransferEvent",
+        "sender": "0xSENDER_ADDRESS",
+        "recipient": "0xRECIPIENT_ADDRESS",
+        "amount": "100000"
+      }
+    ],
+    "input": {
+      "sender": "0xSENDER_ADDRESS",
+      "gasBudget": "1000000",
+      "gasPrice": "1",
+      "kind": {
+        "Transfer": {
+          "recipient": "0xRECIPIENT_ADDRESS",
+          "amount": "100000"
+        }
+      }
+    },
+    "objectChanges": [],
+    "error": null
+  }
+}
+```
+
+---
+
+## `iota_executeTransactionBlock`
+
+> Executes and commits a transaction block to the network.
+
+Executes the transaction and optionally waits for the result. Supported request types:
+
+1. `WaitForEffectsCert` – Waits for the `TransactionEffectsCert` before returning the response. This mode serves as a proxy for transaction finality.
+
+2. `WaitForLocalExecution` – Waits for the `TransactionEffectsCert` and ensures the node has executed the transaction locally before responding. This guarantees that the node is aware of the transaction for subsequent client queries. If the node fails to execute the transaction in time, the response includes a `false` flag indicating the failure.
+
+If neither is specified, the default behavior is `WaitForEffectsCert`—unless `options.show_events` or `options.show_effects` is set to `true`, in which case `WaitForLocalExecution` is used.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `tx_bytes< Base64 >` (required): BCS-serialized transaction data bytes (excluding the type tag), encoded as a base64 string.
+    * `signatures< [Base64] >` (required): a list of signatures, each encoded as base64. Each entry must be in the format: flag || signature || public_key. The signatures must be committed to the intent message derived from the transaction data.
+    * `options< TransactionBlockResponseOptions >` (optional): configuration options to specify which parts of the transaction response should be returned (e.g., events, effects, inputs).
+    * `request_type< ExecuteTransactionRequestType >` (optional): the type of request execution behavior. If not provided, it will be inferred from options. Default is WaitForEffectsCert.
+
+### Returns
+
+```
+IotaTransactionBlockResponse< TransactionBlockResponse >
+```
+
+  * `balanceChanges< [BalanceChange, null] >` (optional): a list of balance changes resulting from the execution of the transaction.
+  * `checkpoint< BigInt_for_uint64 | null >` (optional): the checkpoint number at which this transaction was finalized. Only available in read APIs, not execution endpoints.
+  * `confirmedLocalExecution< [boolean, null] >` (optional): indicates whether the node has successfully executed the transaction locally.
+  * `digest< TransactionDigest >` (required): the unique digest of the executed transaction.
+  * `effects< TransactionBlockEffects | null >` (optional): the effects of the transaction, including status, object mutations, and gas usage.
+  * `errors< [string] >` (optional): a list of errors encountered during transaction execution, if any.
+  * `events< [Event, null] >` (optional): a list of events emitted during the transaction execution.
+  * `objectChanges< [ObjectChange, null] >` (optional): a list of changes to on-chain objects, such as creations, deletions, or mutations.
+  * `rawEffects< [string] >` (optional): the raw, serialized representation of transaction effects.
+  * `rawTransaction< Base64 >` (optional): BCS-encoded `SenderSignedData` representing the transaction, including input object references. Will be empty if `options.show_raw_transaction` is false.
+  * `timestampMs< BigInt_for_uint64 | null >` (optional): the Unix timestamp (in milliseconds) when the transaction was finalized.
+  * `transaction< TransactionBlock | null >` (optional): the input data of the transaction, including sender, gas settings, and logic.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/iota_mainnet \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "iota_executeTransactionBlock",
+    "params": [
+      "BASE64_ENCODED_TX_BYTES",           // tx_bytes
+      [
+        "BASE64_ENCODED_SIGNATURE_1",      // signatures[]
+        "BASE64_ENCODED_SIGNATURE_2"
+      ],
+      {
+        "show_input": true,
+        "show_effects": true,
+        "show_events": true,
+        "show_object_changes": true,
+        "show_raw_transaction": true,
+        "show_balance_changes": true
+      },
+      "WaitForLocalExecution"             // request_type (optional)
+    ],
+    "id": 1
+  }'
+```
+
+### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "digest": "9XZBtYjprrsNzL4QXHj1SmttfAWhu7A8iTfbbJcYkHQx",
+    "transaction": {
+      "sender": "0x1a2b3c...abcd",
+      "gasBudget": "1000000",
+      "kind": {
+        "MoveCall": {
+          "package": "0x2",
+          "module": "pay",
+          "function": "split",
+          "arguments": [ ... ]
+        }
+      }
+    },
+    "effects": {
+      "status": "success",
+      "gasUsed": "50000",
+      "created": [ ... ],
+      "mutated": [ ... ],
+      "deleted": [ ... ]
+    },
+    "events": [
+      {
+        "type": "0x2::coin::SplitEvent",
+        "sender": "0x1a2b3c...abcd",
+        "details": {
+          "amount": "500000",
+          "recipient": "0x4d5e6f...beef"
+        }
+      }
+    ],
+    "balanceChanges": [
+      {
+        "owner": "0x1a2b3c...abcd",
+        "coinType": "0x2::iota::IOTA",
+        "amount": "-500000"
+      },
+      {
+        "owner": "0x4d5e6f...beef",
+        "coinType": "0x2::iota::IOTA",
+        "amount": "500000"
+      }
+    ],
+    "objectChanges": [ ... ],
+    "rawTransaction": "BASE64_ENCODED_SENDER_SIGNED_DATA",
+    "timestampMs": "1747234567890",
+    "confirmedLocalExecution": true
+  }
+}
+```
+
