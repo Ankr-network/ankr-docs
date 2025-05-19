@@ -109,11 +109,12 @@ We charge no matter whether a request has been successful or not. In other words
 
 **PAYG/Deal charging summary**:
 
-> `Correct call` — `Incorrect call` — `Correct call + incorrect method`
+> `Correct call` — `Incorrect call` — `Correct call + incorrect method` — `Correct call + rate limiting`
 
   * **Correct call** (charged) — a request uses a supported method and has a valid JSON-RPC structure.
   * **Incorrect call** (not charged) — a request has an invalid JSON-RPC structure or a batch request has the same ID in multiple requests. We can't parse such a request.
   * **Correct call + incorrect method** (charged default amount) — a request uses an unsupported method though has a valid JSON-RPC structure. We charge default amount of credits for the infrastructure usage.
+  * **Correct call + rate limiting** (not charged): a request uses a supported method and has a valid JSON-RPC structure but receives a `429` error due to rate limiting.
 
 ### Pricing per request: HTTPS
 
