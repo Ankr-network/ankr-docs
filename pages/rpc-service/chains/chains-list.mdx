@@ -9027,6 +9027,20 @@ This section contains a list of methods we don't support for _Premium_ service p
 If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
 </Callout>
 
+**EVM JSON-RPC**:
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*` (exception: `debug_traceBlockByHash`, `debug_traceBlockByNumber`, `debug_traceTransaction`, `debug_traceCall`, `debug_traceBlock`),
+
+`personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
 **Tendermint (both for REST and JSON-RPC)**:
 
   `/health`,
