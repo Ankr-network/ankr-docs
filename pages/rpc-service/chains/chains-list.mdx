@@ -52,7 +52,7 @@ Official quick links:  [Website](https://0g.ai/), [Docs](https://docs.0g.ai/), [
     * EVM JSON-RPC API (`HTTPS` and `WSS`)
     * Tendermint RPC API (`HTTPS` and `WSS`)
     * Tendermint REST API (`HTTPS`)
-    * Cosmos REST API (`HTTPS`)
+    * Beaconkit REST API (`HTTPS`)
 
 ### API methods
 
@@ -76,75 +76,6 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   `/dial_seeds`,
   `/dial_peers`,
 
-**Cosmos**:
-
-  `/cosmos/auth/v1beta1/address_by_id/{id}`,
-  `/cosmos/auth/v1beta1/module_accounts`,
-  `/cosmos/auth/v1beta1/bech32`,
-  `/cosmos/auth/v1beta1/bech32/{address_bytes}`,
-  `/cosmos/auth/v1beta1/bech32/{address_string}`,
-  `/cosmos/bank/v1beta1/supply/{denom}`,
-  `/cosmos/bank/v1beta1/denom_owners/{denom}`,
-  `/cosmos/bank/v1beta1/send_enabled`,
-  `/cosmos/base/reflection/v1beta1/interfaces`,
-  `/cosmos/base/reflection/v1beta1/interfaces/:interface_name/implementations`,
-  `/cosmos/base/reflection/v1beta1/app_descriptor/authn`,
-  `/cosmos/base/reflection/v1beta1/app_descriptor/chain`,
-  `/cosmos/base/reflection/v1beta1/app_descriptor/codec`,
-  `/cosmos/base/reflection/v1beta1/app_descriptor/configuration`,
-  `/cosmos/base/reflection/v1beta1/app_descriptor/query_services`,
-  `/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor`,
-  `/cosmos/base/tendermint/v1beta1/abci_query`,
-  `/cosmos/feegrant/v1beta1/issued/{granter}`,
-  `/cosmos/gov/v1/proposals/{proposal_id}`,
-  `/cosmos/gov/v1/proposals`,
-  `/cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}`,
-  `/cosmos/gov/v1/proposals/{proposal_id}/votes`,
-  `/cosmos/gov/v1/params/{params_type}`,
-  `/cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}`,
-  `/cosmos/gov/v1/proposals/{proposal_id}/deposits`,
-  `/cosmos/gov/v1/proposals/{proposal_id}/tally`,
-  `/cosmos/group/v1/group_info/{group_id}`,
-  `/cosmos/group/v1/group_policy_info/{address}`,
-  `/cosmos/group/v1/group_members/{group_id}`,
-  `/cosmos/group/v1/groups_by_admin/{admin}`,
-  `/cosmos/group/v1/group_policies_by_group/{group_id}`,
-  `/cosmos/group/v1/group_policies_by_admin/{admin}`,
-  `/cosmos/group/v1/proposal/{proposal_id}`,
-  `/cosmos/group/v1/proposals_by_group_policy/{address}`,
-  `/cosmos/group/v1/vote_by_proposal_voter/{proposal_id}/{voter}`,
-  `/cosmos/group/v1/votes_by_proposal/{proposal_id}`,
-  `/cosmos/group/v1/votes_by_voter/{voter}`,
-  `/cosmos/group/v1/groups_by_member/{address}`,
-  `/cosmos/group/v1/proposals/{proposal_id}/tally`,
-  `/cosmos/nft/v1beta1/balance/{owner}/{class_id}`,
-  `/cosmos/nft/v1beta1/owner/{class_id}/{id}`,
-  `/cosmos/nft/v1beta1/supply/{class_id}`,
-  `/cosmos/nft/v1beta1/nfts`,
-  `/cosmos/nft/v1beta1/nfts/{class_id}/{id}`,
-  `/cosmos/nft/v1beta1/classes/{class_id}`,
-  `/cosmos/nft/v1beta1/classes`,
-  `/cosmos/params/v1beta1/subspaces`,
-  `/cosmos/upgrade/v1beta1/module_versions`,
-  `/cosmos/upgrade/v1beta1/authority`,
-  `/cosmos/base/tendermint/v1beta1/node_info`,
-  `/cosmos/base/tendermint/v1beta1/syncing`,
-  `/cosmos/params/v1beta1/params`,
-
-  `/syncing`,
-  `/blocks/latest`,
-  `/blocks/{height}`,
-  `/validatorsets/latest`,
-  `/validatorsets/{height}`,
-  `/wasm/code`,
-  `/wasm/code/{codeID}`,
-  `/wasm/code/{codeID}/contracts`,
-  `/wasm/contract/{contractAddress}`,
-  `/wasm/contract/{contractAddress}/code-hash`,
-  `/wasm/contract/{contractAddress}/query/{query}`,
-  `/wasm/code/{codeID}/hash`,
-  `/reg/consensus-io-exch-pubkey`
-
 ### API querying
 
 #### EVM JSON-RPC
@@ -158,7 +89,7 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/0g_newton \
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc":"2.0",
@@ -191,7 +122,7 @@ curl -X POST https://rpc.ankr.com/0g_newton \
   <Tab>
 
 ```shell
-curl -X POST https://rpc.ankr.com/0g_newton_tendermint \
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
 -H 'Content-Type: application/json' \
 -d '{
       "jsonrpc": "2.0",
@@ -298,7 +229,7 @@ curl -X POST https://rpc.ankr.com/0g_newton_tendermint \
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/0g_newton_tendermint/blockchain?minHeight=1&maxHeight=2
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/blockchain?minHeight=1&maxHeight=2
 ```
   </Tab>
   <Tab>
@@ -387,7 +318,7 @@ curl https://rpc.ankr.com/http/0g_newton_tendermint/blockchain?minHeight=1&maxHe
   </Tab>
 </Tabs>
 
-#### Cosmos REST
+#### Beaconkit REST
 
 <Tabs
   items={[
@@ -398,19 +329,15 @@ curl https://rpc.ankr.com/http/0g_newton_tendermint/blockchain?minHeight=1&maxHe
   <Tab>
 
 ```shell
-curl https://rpc.ankr.com/http/0g_newton_cosmos/cosmos/auth/v1beta1/params
+curl https://rpc.ankr.com/http/0g_galileo_testnet_beaconkit/eth/v1/node/version
 ```
   </Tab>
   <Tab>
 
 ```json
 {
-    "params": {
-        "max_memo_characters": "256",
-        "tx_sig_limit": "7",
-        "tx_size_cost_per_byte": "10",
-        "sig_verify_cost_ed25519": "590",
-        "sig_verify_cost_secp256k1": "1000"
+    "data": {
+        "version": "1.1.0"
     }
 }
 ```
@@ -9080,11 +9007,7 @@ Official quick links: [Website](https://www.sei.io/), [Docs](https://docs.sei.io
 ### Networks
 
   * Mainnet:
-    * Tendermint JSON-RPC (`HTTPS` and `WSS`)
-    * Tendermint REST (`HTTPS`)
-    * Cosmos REST (`HTTPS`)
-    * Cosmos gRPC (`HTTPS`)
-  * Testnet:
+    * EVM JSON-RPC (`HTTPS` and `WSS`)
     * Tendermint JSON-RPC (`HTTPS` and `WSS`)
     * Tendermint REST (`HTTPS`)
     * Cosmos REST (`HTTPS`)
@@ -9115,7 +9038,30 @@ If you require any of the methods from the list, contact our Sales (`sales@ankr.
 
 ### API querying
 
-#### Request example
+#### Request example (EVM)
+
+```shell
+curl -X POST https://rpc.ankr.com/sei_evm/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_gasPrice",
+      "params": [],
+      "id": 1
+    }'
+```
+
+#### Response example (EVM)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x4190ab00"
+}
+```
+
+#### Request example (Tendermint/Cosmos)
 
 <Tabs
   items={[
@@ -9151,7 +9097,7 @@ curl https://rpc.ankr.com/premium-http/sei_cosmos/{your_token}/cosmos/base/tende
   </Tab>
 </Tabs>
 
-#### Response example
+#### Response example (Tendermint/Cosmos)
 
 ```json
 {
