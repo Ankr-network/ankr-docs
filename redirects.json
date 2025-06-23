@@ -2126,5 +2126,9 @@
   {
     "from": "docs/verify/dev-details/index.html",
     "to": "/docs/"
+  },
+  {
+    "from": "docs/advanced-api/index.html",
+    "to": "/docs/advanced-api/overview/"
   }
 ]
