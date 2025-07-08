@@ -40,12 +40,6 @@ jobs:
         with:
           node-version: '22.0.0'
 
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Prepare Yarn version for project
-        run: corepack prepare yarn@4.9.1 --activate
-
       - name: Build
         working-directory: .
         env:
