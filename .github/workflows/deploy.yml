@@ -34,11 +34,6 @@ jobs:
           echo "Production deployment is possible only from the main branch"
           exit 1
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.0
-        with:
-          node-version: '22.0.0'
-
       - name: Build
         working-directory: .
         env:
