@@ -52,7 +52,7 @@ jobs:
 
       - name: Install dependencies and build doc sdk
         run: |
-          yarn install --cwd staking-frontend/packages/staking-sdk
+          yarn --cwd staking-frontend/packages/staking-sdk
           cd  staking-frontend/packages/staking-sdk
           yarn docs
 
