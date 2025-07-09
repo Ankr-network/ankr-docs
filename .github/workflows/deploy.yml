@@ -21,9 +21,6 @@ jobs:
     runs-on: [self-hosted]
     container:
       image: registry.ankr.network/library/alpine-git-node-aws
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}-docs
-      cancel-in-progress: true
 
     steps:
       - uses: actions/checkout@v4
