@@ -18,23 +18,22 @@ on:
 
 jobs:
   deploy:
-    runs-on: [self-hosted]
-    container:
-      image: registry.ankr.network/library/alpine-git-node-aws
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}-docs
+      cancel-in-progress: true
 
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Prevent wrong version releasing
         if: ${{ github.event.inputs.environment == 'PROD' && github.ref != 'refs/heads/main' }}
         run: |
           echo "Production deployment is possible only from the main branch"
           exit 1
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.0
-        with:
-          node-version: '22.0.0'
 
       - name: Build
         working-directory: .
@@ -53,7 +52,7 @@ jobs:
 
       - name: Install dependencies and build doc sdk
         run: |
-          yarn install --cwd staking-frontend/packages/staking-sdk
+          yarn --cwd staking-frontend/packages/staking-sdk
           cd  staking-frontend/packages/staking-sdk
           yarn docs
 
