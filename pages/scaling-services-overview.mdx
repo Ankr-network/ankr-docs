@@ -85,9 +85,9 @@ Using a ZK (Zero-Knowledge) Stack has several key differentiators:
 
 In summary, the key advantages of using a ZK Stack include enhanced privacy and security through zero-knowledge proofs, improved scalability and efficiency, fast finality, developer friendliness, and strong compatibility and interoperability with the Ethereum ecosystem.
 
-#### Polygon CDK
+#### Agglayer CDK
 
-Using Polygon CDK (Chain Development Kit) as a Rollup stack offers unique advantages such as enhanced scalability, flexibility, and developer-friendly tools. It supports various types of rollups, catering to different needs and security models, thereby providing a versatile environment for building and deploying scalable blockchain applications. The integration with Polygon also offers a seamless connection to a broader ecosystem, facilitating easier access to users and assets within the Polygon network.
+Using Agglayer CDK (formerly Polygon CDK) as a Rollup stack offers unique advantages such as enhanced scalability, flexibility, and developer‑friendly tools. It supports various types of rollups, catering to different needs and security models, thereby providing a versatile environment for building and deploying scalable blockchain applications. The integration with Agglayer also offers a seamless connection to a broader ecosystem, facilitating easier access to users and assets within the Agglayer network.
 
 #### Arbitrum Orbit
 
@@ -108,6 +108,38 @@ The main advantages of the Arbitrum Orbit stack are the following:
   * **Native Data Availability**: Arbitrum AnyTrust is a natively supported DA layer that relies on an external Data Availability Committee (DAC) to store data and provide it on-demand instead of using its parent chain as the Data Availability (DA) layer. This provides for high throughput and sub-cent transaction fees.
 
   * **EVM+ Compatibility**: Orbit chains benefit from the same EVM+ compatibility introduced in Arbitrum Nitro, allowing for the deployment of EVM-compatible smart contracts using not only Solidity but other various programming languages — C, C++, Rust, and many more —  without the need to migrate away from your existing toolchain.
+
+#### Polkadot
+
+The Polkadot stack enables the creation of custom parachains that leverage the shared security and interoperability of the Polkadot network. It provides a scalable and flexible environment for deploying specialized blockchains while benefiting from Polkadot’s relay chain security and native cross-chain communication.
+
+The main advantages of the Polkadot stack are the following:
+
+  * **Shared Security and Interoperability**: Parachains built on Polkadot are secured by the relay chain’s validator set, removing the need for projects to bootstrap their own consensus mechanism. They also gain seamless cross-chain communication through the Cross-Chain Message Passing (XCMP) protocol, enabling easy integration with other parachains.
+
+  * **Customizable Chain Logic**: Projects can define their own runtime logic, governance, economic models, and consensus parameters, creating highly specialized chains for specific use cases such as DeFi, identity, gaming, or supply chain.
+
+  * **Modular Architecture**: The Polkadot stack supports a modular approach to blockchain design, allowing developers to use existing components or add custom ones to meet unique requirements.
+
+  * **Forkless Upgrades**: Parachains can implement on-chain, forkless upgrades, allowing them to evolve rapidly without disruptive hard forks, ensuring continuous innovation and security improvements.
+
+  * **Ecosystem Connectivity**: Connecting as a parachain provides access to Polkadot’s growing ecosystem of applications, users, and liquidity, giving projects an immediate network effect and interoperability from day one.
+
+#### Base
+
+The Base stack enables the creation of scalable Layer 2 (L2) blockchains built on top of Ethereum using the OP Stack, the same open-source technology powering Optimism. It provides a developer-friendly and cost-effective platform for deploying decentralized applications, combining Ethereum’s security with enhanced throughput and lower transaction costs.
+
+The main advantages of the Base stack are the following:
+
+  * **Ethereum Security**: Base inherits Ethereum’s security model through its rollup architecture, ensuring robust protection of assets and transactions while reducing reliance on separate validator sets.
+
+  * **OP Stack Foundation**: Built on the open-source OP Stack, Base benefits from a modular architecture, standardized infrastructure, and ongoing improvements from a growing ecosystem of contributors and partner chains.
+
+  * **Low Fees and High Throughput**: By batching and compressing transactions before posting them to Ethereum, Base achieves significantly lower transaction fees and improved scalability, making it ideal for user-facing applications.
+
+  * **Seamless Ethereum Compatibility**: Base offers full EVM compatibility, enabling developers to deploy existing Ethereum smart contracts and tooling with minimal modifications. This compatibility streamlines migration and integration with the broader Ethereum ecosystem.
+
+  * **Ecosystem Access**: Base provides access to Coinbase’s ecosystem and liquidity, enhancing visibility and adoption opportunities for applications built on its infrastructure, while also enabling interoperability with other OP Stack-based networks.
 
 ### Data Availability Layers
 
