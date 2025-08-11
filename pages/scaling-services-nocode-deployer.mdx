@@ -234,6 +234,68 @@ Congrats — you've just configured and deployed your Mainnet rollup!
 
 ---
 
+## Solana SPE Deployment
+
+An [SPE](https://solana.com/solutions/solana-permissioned-environments) deployment process consists of the following parts:
+
+> [`Sign in`](/scaling-services-nocode-deployer/#sign-in-2) —> [`Deploy Rollup`](/scaling-services-nocode-deployer/#deploy-testnet-rollup-2)
+
+  * **Sign in**: Authenticate on the platform to start using its functionality.
+  * **Deploy Rollup**: Define your SPE settings, and we will generate a Slack/Telegram group to finalize all the aspects of your deployment specification.
+
+### Sign in
+
+First things first, sign in to use the platform's functionality:
+
+  1. Go to the [**Solana No-code Deployer**](https://solana.asphere.xyz/) platform.
+  2. Click **Sign in > Continue with Google**, and then select an account you'd like to use.
+
+Congrats — you've just signed in to the Solana SPE deployment platform!
+
+For those signing in for the first time, please enter your basic company information so that we know our customers.
+
+---
+
+### Deploy SPE
+
+To define an SPE deployment configuration, follow these steps:
+
+  1. [Sign in](/scaling-services-nocode-deployer/#sign-in-2) on the [**Solana No-code Deployer**](https://solana.asphere.xyz/) platform.
+  2. In **Navigation**, click **Deploy Chain** to start an SPE configuration process.
+  3. On the **Essentials** tab, select the following SPE parameters, and then click **Next**:
+      * **Stack**: SVM.
+     <img src="/docs/scale/stack-solana.png" class="responsive-pic" width="700" />
+
+      * **Network**: Select either a **Testnet** or production-ready **Mainnet** option for your SPE:
+     <img src="/docs/scale/network-solana.png" class="responsive-pic" width="700" />
+      * **Infrastructure Package**:
+        * **For Testnet**:
+          * **Trial**: Explore the SPE functionality for free (48 hours).
+          * **Persistent**: Use a permanent testing environment to experiment with your dapps before deploying them to Mainnet.
+        * **For Mainnet**:
+          * **Starter package**: Block Explorer, Starter RPC Package.
+          * **Advanced package**: Block Explorer, Pro RPC Package.
+      * **Network access type**:
+        * **Private**: a restricted network — access, validation, and governance limited to approved participants.
+        * **Public**: an open network — access, validation, and governance available to all participants.
+     <img src="/docs/scale/network-access-solana.png" class="responsive-pic" width="700" />
+  4. On the **Configuration** tab, specify the following parameters, and then click **Next**:
+      * **Chain Name**
+     <img src="/docs/scale/chain-name-solana.png" class="responsive-pic" width="500" />
+
+      * **Gas Token**:
+        * **SOL**: Use [SOL](https://solana.com/docs/core/fees) to pay your network's transaction fees.
+        * **Gasless**: Transactions require no SOL from the sender.
+  5. On the **Infrastructure** tab, check the components included in your package, and then click **Confirm**.
+<img src="/docs/scale/infra-package-solana.png" class="responsive-pic" width="700" />
+
+  6. In the **Summary** dialog, check your complete SPE specification, click **Confirm via Telegram/Slack**, and then enter your **Telagram Username / Slack Email** so that we can generate a Slack/Telegram group to finalize all the aspects of your deployment specification.
+<img src="/docs/scale/summary-solana.png" class="responsive-pic" width="350" />
+
+Congrats — you've just defined your SPE configuration and our specialist will reach out to you shortly via the preferred communication channel to finalize all the aspects of your deployment specification!
+
+---
+
 ## Custom Gas Token
 
 Deploying your AnyTrust Orbit chain or OP Stack chain, you have the option of using a custom gas token, other than ETH, for gas payments on the network. When choosing this option, there are certain requirements that the token needs to comply with.
