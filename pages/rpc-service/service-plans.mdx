@@ -8,7 +8,7 @@ Our solutions work under the following Service Plans:
 
   * **Public** — public endpoints for free blockchain interaction provided with Public [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits).
   * **Premium** — private endpoints for high-performing blockchain interaction provided with Premium [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits).
-    * **Freemium** — this is not a service plan per se, but can be perceived as a transition state between Public and Premium services. You have to sign in on the platform without topping up your account balance to access Premium [features](/rpc-service/service-plans/#feature-list) but under Public [rate limits](/rpc-service/service-plans/#rate-limits).
+  * **Freemium** — a service plan to try out premium features before going fully Premium. Provides free 200M API credits monthly for API interactions. You have to sign in on the platform without topping up your account balance to access Premium [features](/rpc-service/service-plans/#feature-list) but under Public [rate limits](/rpc-service/service-plans/#rate-limits).
   * **Enterprise** — customer-tailored solutions for the most demanding blockchain interaction cases.
 <br/>
 
@@ -17,7 +17,6 @@ Our solutions work under the following Service Plans:
 Here is the list of solutions we have at your disposal on the [Web3 API](https://www.ankr.com/rpc/) platform under the Service Plan you've selected:
 
   * *[Node API](/rpc-service/overview/)* — the endpoints that enable your Web3 projects to start interacting with an extensive list of [supported blockchains](/rpc-service/chains/chains-list/), give access to viewing the usage statistics for the data queried, and provide the means for RPC API methods testing.
-
   * *[Advanced API](/advanced-api/overview)* — a ready-to-use indexed collection of endpoints that supports simultaneous querying of multiple blockchains (19 mainnet and 7 testnet chains available) for the most popular Web3 scenarios at near-instant speeds; available via [JavaScript](/advanced-api/javascript-sdk)/[Python](/advanced-api/python-sdk) SDKs and [React Hooks](/advanced-api/react-hooks). Advanced API also gives you access to the usage statistics for the data queried.
 
 Here is the list of blockchains supported: [Chains Quickstart](/rpc-service/chains/chains-list/).
@@ -49,7 +48,7 @@ The `Node API` and `Advanced API` solutions come with both *Public*, *Freemium*,
 | Connection                              | HTTPS                       | HTTPS and WebSocket         | HTTPS and WebSocket                                        |
 | Support                                 | Community Support (Discord) | Community Support (Discord) | Priority Portal Support                                    |
 | Terms                                   | No Contract                 | No Contract                 | Both Contract and No Contract                              |
-| Cost                                    | **Free**                    | **Free** | **[Pay-as-you-go](/rpc-service/service-plans/#pay-as-you-go)**<br/>**[Deal](/rpc-service/service-plans/#deal)** |
+| Cost                                    | Free                        | Free 200M API Credits / monthly | [Pay-as-you-go](/rpc-service/service-plans/#pay-as-you-go)<br/>[Deal](/rpc-service/service-plans/#deal) |
 
 
 ### Rate limits
@@ -65,7 +64,7 @@ The `Node API` and `Advanced API` solutions come with both *Public*, *Freemium*,
 Our Premium service plan users can choose to query blockchain data under the following charging models:
 
   * [Pay-as-you-go](/rpc-service/service-plans/#pay-as-you-go) — pay for each request you make.
-  * [Deal](/rpc-service/service-plans/#deal) — monthly subscription for 6 Billion API credits at 20% discount.
+  * [Deal](/rpc-service/service-plans/#deal) — monthly subscription with 20% extra credits added on top for any of the Deal options chosen ($500-3,000).
 
 ### Pay-as-you-go
 
@@ -73,23 +72,13 @@ Our Premium service plan users can choose to query blockchain data under the fol
 
 ### Deal
 
-<Callout type="warning">
-We discontinue the `500USD` *Package* subscription to introduce a more cost-efficient *Deal* option.
-</Callout>
-
-*Deal* is a subscription-based charging model for the Premium Plan services. It is a recurring `500USD` payment at a `20% discount` that provides you with `6 Billion` API credits that you can spend within a month to call both *Node* and *Advanced APIs* for all the chains we support.
+*Deal* is a subscription-based charging model for the Premium Plan services. It is a recurring `500USD` — `3,000USD` payment at a `20% discount` that provides you with `6 Billion` API credits that you can spend within a month to call both *Node* and *Advanced APIs* for all the chains we support.
 
 **Deal in a nutshell**:
 
-  * `6 Billion` monthly API credits at a `20% discount`.
-  * Both *Node and Advanced APIs* included.
+  * `500USD` — `3,000USD` monthly API credits with `20% extra` credits added on top of your payment.
+  * Both *Node* and *Advanced APIs* included.
   * *All chains* covered.
-
-**Package-to-Deal transition**:
-
-  * The transition from the *Package* to *Deal* subscription performs automatically upon the next subscription renewal.
-  * Before the renewal, the *Package* users continue to operate under their current subscription (30M calls, Node API, EVM-compatible protocols).
-  * Starting from the first subscription renewal, there is no more *Package* — let's have a *Deal*!
 
 ## PAYG pricing
 
@@ -120,8 +109,7 @@ We charge no matter whether a request has been successful or not. In other words
 
 | API Type       | Method      | API Credits | in USD   |
 |----------------|-------------|-------------|----------|
-| Ethereum       | all methods | 200         | $0.00002 |
-| EVM compatible | all methods | 200         | $0.00002 |
+| EVM-compatible | all methods | 200         | $0.00002 |
 | Solana         | all methods | 500         | $0.00005 |
 | Beacon Chains  | all methods | 700         | $0.00007 |
 | Advanced API   | all methods | 700         | $0.00007 |
@@ -137,6 +125,6 @@ WebSockets interaction consists of the following actions:
 | Action Type    | Chain               | API Credits | in USD   |
 |----------------|---------------------|-------------|----------|
 | Subscription   | Solana              | 500         | $0.00005 |
-|                | Ethereum & EVM-like | 200         | $0.00002 |
+|                | EVM-compatible      | 200         | $0.00002 |
 | Notification   | Solana              | 500         | $0.00005 |
 |                | Other               | 100         | $0.00001 |
