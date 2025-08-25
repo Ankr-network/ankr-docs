@@ -6,13 +6,13 @@ Getting Started docs will help you land on your feet safely and orient yourself 
 
 Here is your map to our basics:
 
-> `Iterface schema` — `Public: basics` — `Premium: basics` — `Business accounts` — `Projects`
+> `Iterface schema` — `Public: basics` — `Premium: basics` — `Team accounts` — `Projects`
 
-  * [`Interface schema`](/rpc-service/getting-started/intro/#interface-schema) — your way around Web3 API interface.
-  * [`Public: basics`](/rpc-service/getting-started/basics-public/) — your way around Public endpoints for blockchain interaction.
-  * [`Premium: basics`](/rpc-service/getting-started/basics-premium/) — your way around Premium endpoints for blockchain interaction.
-  * [`Business accounts`](/rpc-service/getting-started/business-accounts/) — your way around user accounts structuring your business.
-  * [`Projects`](/rpc-service/getting-started/projects/) — your way around multiple projects with IP whitelisting.
+  * [`Interface schema`](/rpc-service/getting-started/intro/#interface-schema): your way around Web3 API interface.
+  * [`Public: basics`](/rpc-service/getting-started/basics-public/): your way around Public endpoints for blockchain interaction.
+  * [`Premium: basics`](/rpc-service/getting-started/basics-premium/): your way around Premium endpoints for blockchain interaction.
+  * [`Team accounts`](/rpc-service/getting-started/team-accounts/): your way around team accounts structuring your business.
+  * [`Projects`](/rpc-service/getting-started/projects/): your way around setting your projects and adding whitelists.
 
 ## Interface schema
 
@@ -20,100 +20,108 @@ Here you'll find information on what you can expect from all the main panes you'
 
 Here are panes you usually work with:
 
-> [`Node API (Endpoints)`](/rpc-service/getting-started/intro/#node-api) — [`Andvanced API`](/rpc-service/getting-started/intro/#advanced-api) — [`Dashboard`](/rpc-service/getting-started/intro/#dashboard) — [`Settings`](/rpc-service/getting-started/intro/#settings) — [`Billing`](/rpc-service/getting-started/intro/#billing)
+> [`Chains list (Endpoints)`](/rpc-service/getting-started/intro/#chains-list) — [`Andvanced API`](/rpc-service/getting-started/intro/#advanced-api) — [`Statistics`](/rpc-service/getting-started/intro/#statistics) — [`Settings`](/rpc-service/getting-started/intro/#settings) — [`Billing`](/rpc-service/getting-started/intro/#billing)
 
-### Node API
+### Chains list
 
-Once you type down `ankr.com/rpc` in your browser and press `Enter`, you'll find yourself in the **Endpoints** pane. This is your starting point to empower your Web3 project with blockchain interaction capabilities.
+Once you type down `ankr.com/rpc` in your browser and press `Enter`, you'll find yourself in the **Chains list** pane. This is your starting point to empower your Web3 project with blockchain interaction capabilities.
 <br/>
 
 <img src="/docs/build/ui-schema.png" alt="UI Schema" class="responsive-pic" width="600" />
 
-You usually start as a [Public plan](/rpc-service/service-plans/) user, meaning that you haven't signed in to our platform yet and can only use free Node API endpoints and Advanced API with the corresponding [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits) available.
+You usually start as a [Public plan](/rpc-service/service-plans/) user, meaning that you haven't signed in to our platform yet and can only use free Node API endpoints with the corresponding [features](/rpc-service/service-plans/#feature-list) and [rate limits](/rpc-service/service-plans/#rate-limits) available.
 
 For a Public plan user, the following actions are available from the start:
 
-  * **Navigation** — selecting the pane to work with.
-  * **User authentication** — logging into the platform to use [Premium capabilities](/rpc-service/getting-started/basics-premium/).
-  * **Chains selection** — selecting the chain to [use public endpoints](/rpc-service/getting-started/basics-public/#use-public-endpoints) for your project's blockchain interaction.
+  * **Navigation**: selecting the pane to work with.
+  * **User authentication**: signing in to the platform to use [Premium capabilities](/rpc-service/getting-started/basics-premium/).
+  * **Chains selection**: selecting the chain to [use Public endpoints](/rpc-service/getting-started/basics-public/#use-public-endpoints) for your project's blockchain interaction.
 
 ### Advanced API
 
 <Callout type="tip">
-Research on Advanced API [rate limits](/rpc-service/service-plans/#rate-limits) supported by our service plans.
+Available for both [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
 </Callout>
 
-The Advanced API (AAPI) functionality is intended for more savvy and demanding users. Advanced API optimizes, indexes, caches, and stores blockchain data to make it access-ready for you. Some AAPI methods support simultaneous querying of multiple EVM-compatible blockchains in a single request.
+The Advanced API (AAPI) functionality is intended for a more savvy and demanding user. Advanced API optimizes, indexes, caches, and stores blockchain data to make it access-ready for you. Some AAPI methods support simultaneous querying of multiple EVM-compatible blockchains in a single request.
 <br/>
 
 <img src="/docs/build/aapi-gs.png" alt="Advanced API pane" class="responsive-pic" width="700" />
 
-So, as a Premium user, in **Navigation** you've clicked **Advanced API** and found yourself in the corresponding pane.
+For a Freemium/Premium user, the blockchain interaction capabilities still revolve around using Node/Advanced API endpoints but start from a different angle — [Projects](/rpc-service/getting-started/projects/) — which in essence represent individual unique tokens to differentiate and group your private endpoints around a single particular scope of work.
 
-Here is your set of options for that scenario:
+The endpoint for the Freemium/Premium user can be schematically described by the following formula:
 
-  * **AAPI endpoint** — your Premium endpoint for AAPI interaction.
-  * **Useful links** — open the [Advanced API docs](/advanced-api/overview/) or our [JS](/advanced-api/javascript-sdk/) and [Python](/advanced-api/python-sdk/) SDKs enabling interaction with AAPI.
-  * **Code samples** — the basis for AAPI interaction.
+> `Endpoint` = `Project` + `Network`
 
-### Dashboard
+In terms of the things you can do in the **Advanced API** pane, it comes to the following options based on whether you've already added AAPI to a project or not:
 
-<Callout type="tip">
-Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
-</Callout>
-
-To open the **Dashboard** pane, follow these steps:
-
-1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
-2. In **Navigation**, click **Dashboard** to open the corresponding pane.
-
-Congrats — you can see **Dashboard** statistics.
+  * **AAPI added**: the project added with AAPI functionality will have the **Copy endpoint** button to copy and paste your endpoint into the source code.
+  * **AAPI not added**: the project not added with AAPI functionality will have the **+ Add to project** button to create an endpoint which then can be copied into your source code.
 <br/>
 
-<img src="/docs/build/getting-started/dashboard.png" alt="UI Schema" class="responsive-pic" width="600" />
+<img src="/docs/build/aapi-scenarios.png" alt="Advanced API pane" class="responsive-pic" width="700" />
 
-In **Dashboard**, you can monitor and filter (by hours/days and chains) the following statistics data:
+### Statistics
 
-  * **Requests** — a diagram of total requests.
-  * **Requests by IP** — a list of IP addresses with the number of requests for each of them.
-  * **Chain Calls** — a total number of chain requests and percentage for each chain.
-  * **Projects** — projects used for chain requests.
-  * **Available Locations** — node locations for each chain.
-  * **Top Countries** — a list of countries the requests come from.
-  * **Usage History** — a number of chain requests by month.
+<Callout type="tip">
+Available for both [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
+To open the **Statistics** pane, follow these steps:
+
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [Web3 API](https://www.ankr.com/rpc/) platform.
+2. In **Navigation**, click **Statistics** to open the corresponding pane.
+
+Congrats — you can now see your statistics.
+<br/>
+
+<img src="/docs/build/getting-started/stats.png" class="responsive-pic" width="700" />
+
+In **Statistics**, you can monitor the following data:
+
+  * **Total Requests**: a number of total requests.
+  * **Top chain**: the most queried chain.
+  * **Requests health**: the overall requests' success-to-failure rate based on our node performance.
+  * **Requests**: a diagram of requests.
+  * **Requests overview** info on requests filtered by one of the parameters — projects, chains, IPs, countries, and methods.
+  * **Requests health breakdown**: a detailed node distribution of success and failure requests.
+  * **Usage History**: a number of chain requests by month.
 
 ### Settings
 
 <Callout type="tip">
-Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+Available for both [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
 </Callout>
 
 To open the **Settings** pane, follow these steps:
 
-1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
-2. In **Navigation**, click **Settings** to open the corresponding pane.
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [Web3 API](https://www.ankr.com/rpc/) platform.
+2. In **Navigation**, click **Settings** and select one of the submenus to work with:
+    * **Platform**: define general Web3 API platform settings.
+    * **Platform Swagger**: interact with the platform's internal endpoints in Swagger UI.
+    * **Notifications**: manage Email, Telegram, and Slack notifications for your personal or team account.
 
-Congrats — you can adjust the settings to your needs.
+#### Platform
+
 <br/>
+<img src="/docs/build/getting-started/pltfrm-stngs.png" alt="UI Schema" class="responsive-pic" width="700" />
 
-<img src="/docs/build/getting-started/stngs.png" alt="UI Schema" class="responsive-pic" width="700" />
+In **Settings > Platform**, the following actions are available for you:
 
-In **Settings**, the following actions are available for you:
-
-  * **Switch tabs** — select your general settings or create a [business account](/rpc-service/getting-started/business-accounts/).
-  * **Change email** — provide an email tied to your account.
-  * **Secure account** — make your account secure by enabling Two-Factor Authentication.
-  * **Select email notifications** — select the notifications you'd like to receive.
+  * **Sign-in methods**: manage Google or GitHub sign-in methods associated with your account.
+  * **Account security**: Secure account with two-factor authentication.
+  * **Theme**: Select theme preference — dark/light.
 
 ### Billing
 
 <Callout type="tip">
-Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+Available for both [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
 </Callout>
 
 To open the **Billing** pane, follow these steps:
 
-1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [RPC Service](https://www.ankr.com/rpc/) platform.
+1. [Sign in](/rpc-service/getting-started/basics-premium/#sign-in) to the [Web3 API](https://www.ankr.com/rpc/) platform.
 2. In **Navigation**, click **Billing** to open the corresponding pane.
 
 Congrats — you can now check your balance, deposit funds into your account, see payments history, and expenses chart.
@@ -123,10 +131,10 @@ Congrats — you can now check your balance, deposit funds into your account, se
 
 In **Billing**, the following actions are available for you:
 
-  * **Account balance** — check your account balance for API credits left and see if you need to top it up.
-  * **Balance top up** — [deposit funds](/rpc-service/getting-started/basics-premium/#deposit-funds) into your account.
-  * **Payments history** — check your history of funds depositing.
-  * **Expenses chart** — check the diagram of your expenses over a particular time period.
+  * **Account balance**: check your account balance for API credits left and see if you need to top it up.
+  * **Payments**: [deposit funds](/rpc-service/getting-started/basics-premium/#deposit-funds) into your account.
+  * **Payments history**: check your history of funds depositing.
+  * **Expenses chart**: check the diagram of your expenses over a particular time period.
 
 
 
