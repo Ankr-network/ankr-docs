@@ -16,9 +16,14 @@ In order for your Web3 application to interact with Base — either by reading b
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
+For Base, we support the following methods:
+
+  * [EVM JSON-RPC methods](/rpc-service/chains/chains-api/base/#evm-json-rpc-methods)
+  * [Flashblocks methods](/rpc-service/chains/chains-api/base/#flashblocks-methods)
+
 ---
 
-## Methods supported
+## EVM JSON-RPC methods
 
   * [`web3_clientVersion`](/rpc-service/chains/chains-api/base/#web3_clientversion) — returns the current client version.
   * [`web3_sha3`](/rpc-service/chains/chains-api/base/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
@@ -1673,3 +1678,307 @@ curl -X POST https://rpc.ankr.com/base/{your_token} \
     ]
 }
 ```
+
+---
+
+## Flashblocks methods
+
+[Flashblocks](https://docs.base.org/base-chain/flashblocks/apps) is a core Base feature that provides preconfirmation of the upcoming block's transaction ordering (~200 milliseconds) before the full block is sealed (~2 seconds).
+
+This enables ultra-fast transaction feedback, allowing applications to deliver instant and interactive user experiences. Flashblocks are particularly valuable for high-frequency trading platforms, real-time games, live dashboards, and other latency-sensitive use cases where even a brief delay feels disruptive.
+
+Flashblocks are integrated directly into Base’s block production process, therefore developers gain the advantages of low-latency feedback without compromising security or reliability. The result is a seamless foundation for applications that demand speed, responsiveness, and trust.
+
+The following RPC methods can return Flashblocks specific data:
+
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/base/#eth_getblockbynumber-1) — with `pending`, retrieves the latest Flashblock.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/base/#eth_gettransactionreceipt-1) — retrieves receipts for preconfirmed transactions.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/base/#eth_getbalance-1) — with `pending`, retrieves the address balance in the latest Flashblock.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/base/#eth_gettransactioncount-1) — with `pending`, retrieves the address nonce in the latest Flashblock.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/base/#eth_gettransactionbyhash-1) — retrieves preconfirmed transactions by hash.
+
+---
+
+## `eth_getBlockByNumber`
+
+> Use the `pending` tag to retrieve the latest Flashblock.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (tag; required): use the `pending` tag to retrieve the latest Flashblock.
+    2. `<boolean>` (required): if `true` — returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+
+Retrieves the latest Flashblock object.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/base/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByNumber",
+      "params": ["pending", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "hash": "0x644a1a48e50bd435aad25937b21deff4de85e2309cc985118a1e3ec793242702",
+        "parentHash": "0x945900ddc4a6e02b9d3ac1ea9d888e7ad4d9e7345ed1f275974906c8ca9529cc",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "miner": "0x4200000000000000000000000000000000000011",
+        "stateRoot": "0x72ac5384d9655594d36ce6ff3c855494cf13dc150321ba9d9a741c5cf7988754",
+        "transactionsRoot": "0x717fc55e978778557c5f7ebb7ef2cd82f6402db9852e8c3420ca9ab6c875f900",
+        "receiptsRoot": "0xfe0b80a42048813c3bf9604af7c70983ffd2f924336834ee039c6311c2d570e4",
+        "logsBloom": "0x12a37759df470838b0ab9272ae9fabe07c748764ba519647ff4414392160efaf25edcfd878071368de52df73972e778f8dd7d8399c6165cb27b20f946cbcf1c2c5e59cdd3b751e383fb516fbe1cac5a673cef5b700fc333ce986c0a9d366a2413bc4c06c8e8f9fc42548be2b6d0f3ea99d4b5f261e343fb9dff2b5bdc1cbb6a3a531f2d9dbed5f98457bc773884fef23cd8397f95eedc07f36ba43fe0fe1911f8e481f998a98fde5b77195c350328cd33e496a1bd61a9dde85c31f3f10e0c7abea4784ab66f9acddd957fb8cf27ff2cf8f7dd0cf36fda6d6c10437a2773ae94d5cfff849074dec8b7a74aab83f5335f585839701a5fe0e762e47face29838fc2",
+        "difficulty": "0x0",
+        "number": "0x212569b",
+        "gasLimit": "0x8f0d180",
+        "gasUsed": "0x33ebb21",
+        "timestamp": "0x68af0a19",
+        "extraData": "0x000000003200000003",
+        "mixHash": "0x33e69310dcf1126f078ecb8f5c53b97b12dec80b94b967553d19bf5b7fa66636",
+        "nonce": "0x0000000000000000",
+        "baseFeePerGas": "0x2615e00",
+        "withdrawalsRoot": "0x1aa45fb269b554ebdb203695ad59ad99a753aa6117dafbff40c42e81b9a6f458",
+        "blobGasUsed": "0x0",
+        "excessBlobGas": "0x0",
+        "parentBeaconBlockRoot": "0x3a4854cb45bcbde7a8071e87b739a300d0c3586b02ea305c0bc32ecee4f6c747",
+        "requestsHash": "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": "0x2ed2c",
+        "uncles": [],
+        "transactions": [
+            "0x16175d34cd1f9819ded6c9e1c630d05fd0c9f67a3373bfb26c5283e0f2f1fb25",
+            "0xa557335163d512fed8926a25c0862a02b551795b5a01ff8acc337e2c7511e83b",
+            "0xaf29ec8573ec61a9e5e9a7249576333c5a0cfa5804c57c63a7248518eeb445e5",
+            "0xfadfd79be42e585371184be82d6b98c56231ead2da90583b87946688df843d72"       ],
+        "withdrawals": []
+    }
+}
+```
+
+---
+
+## `eth_getTransactionReceipt`
+
+> Retrieves the receipts for preconfirmed transactions.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<hash>` (string; required): the transaction hash.
+
+### Returns
+
+Returns preconfirmation-aware receipt data if the transaction is already included in a Flashblock.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/base/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionReceipt",
+      "params": ["0x16175d34cd1f9819ded6c9e1c630d05fd0c9f67a3373bfb26c5283e0f2f1fb25"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "type": "0x7e",
+        "status": "0x1",
+        "cumulativeGasUsed": "0xb44c",
+        "logs": [],
+        "depositNonce": "0x212569d",
+        "depositReceiptVersion": "0x1",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "transactionHash": "0x16175d34cd1f9819ded6c9e1c630d05fd0c9f67a3373bfb26c5283e0f2f1fb25",
+        "transactionIndex": "0x0",
+        "blockHash": "0x644a1a48e50bd435aad25937b21deff4de85e2309cc985118a1e3ec793242702",
+        "blockNumber": "0x212569b",
+        "gasUsed": "0xb44c",
+        "effectiveGasPrice": "0x0",
+        "from": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "to": "0x4200000000000000000000000000000000000015",
+        "contractAddress": null,
+        "l1GasPrice": "0x671d09ca",
+        "l1GasUsed": "0x6da",
+        "l1Fee": "0x0",
+        "l1BaseFeeScalar": "0x8dd",
+        "l1BlobBaseFee": "0x1",
+        "l1BlobBaseFeeScalar": "0x101c12"
+    }
+}
+```
+
+---
+
+## `eth_getBalance`
+
+> Use the `pending` tag to retrieve the address balance in the latest Flashblock.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (required): the address to check the balance for.
+    2. `<string>` (tag; required): use the `pending` tag to retrieve the address balance in the latest Flashblock.
+
+### Returns
+
+The account balance in wei (hex-encoded string).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/base/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBalance",
+      "params": ["0x742d35Cc6634C0532925a3b844Bc454e4438f44e", "pending"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "0x64c9dd3ba4625"
+}
+```
+
+---
+
+## `eth_getTransactionCount`
+
+> Use the `pending` tag to retrieve the address nonce in the latest Flashblock.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (required): the account address to query.
+    2. `<string>` (tag; required): use `pending` to retrieve the nonce including the latest Flashblock state.
+
+### Returns
+
+The transaction count (nonce) of the given address, returned as a hex-encoded integer.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/base/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionCount",
+      "params": ["0x22d1b96d8EbA60BBd2e59573223eA650941Dd43D", "pending"],
+      "id": 1
+    }'
+```
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "0x2"
+}
+```
+
+---
+
+## `eth_getTransactionByHash`
+
+> Retrieves preconfirmed transactions by hash.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<string>` (required): the hash of the transaction to retrieve.
+
+### Returns
+
+The transaction object if found (including when present in a Flashblock preconfirmation); null if the transaction is unknown.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/base/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByHash",
+      "params": ["0x16175d34cd1f9819ded6c9e1c630d05fd0c9f67a3373bfb26c5283e0f2f1fb25"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "0x7e",
+        "sourceHash": "0x27da63a8ebe6b50bd7848cacad5b86358e86d31d34ff12023a7941bd70ecef93",
+        "from": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0001",
+        "to": "0x4200000000000000000000000000000000000015",
+        "mint": "0x0",
+        "value": "0x0",
+        "gas": "0xf4240",
+        "input": "0x098999be000008dd00101c1200000000000000020000000068af095f000000000162811000000000000000000000000000000000000000000000000000000000671d09ca0000000000000000000000000000000000000000000000000000000000000001076c7bd697aeb085221315e39c6748a7e7f1ed7e73961cf883c80452f07c30290000000000000000000000005050f69a9786f081509234f1a7f4684b5e5b76c9000000000000000000000000",
+        "hash": "0x16175d34cd1f9819ded6c9e1c630d05fd0c9f67a3373bfb26c5283e0f2f1fb25",
+        "r": "0x0",
+        "s": "0x0",
+        "yParity": "0x0",
+        "v": "0x0",
+        "blockHash": "0x644a1a48e50bd435aad25937b21deff4de85e2309cc985118a1e3ec793242702",
+        "blockNumber": "0x212569b",
+        "transactionIndex": "0x0",
+        "depositReceiptVersion": "0x1",
+        "gasPrice": "0x0",
+        "nonce": "0x212569d"
+    }
+}
+```
+
