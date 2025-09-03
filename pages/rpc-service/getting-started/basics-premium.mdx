@@ -32,7 +32,7 @@ The Google sign in procedure is the following:
 
 <img src="/docs/build/getting-started/gauth.png" alt="Google authentication" class="responsive-pic" width="400" />
 
-Congrats — you've signed in into RPC Service using your Google account.
+Congrats — you've signed in to Web3 API using your Google account.
 
 ### Via Ethereum wallet
 
@@ -55,7 +55,7 @@ The Ethereum wallet sign in procedure is the following:
 
 <img src="/docs/build/card-metamask.png" alt="MetaMask connection" class="responsive-pic" width="550" />
 
-Congrats — you now have an account with RPC Service, associated with your wallet.
+Congrats — you now have an account with Web3 API, associated with your wallet.
 
 ## Deposit funds
 
@@ -63,129 +63,31 @@ Congrats — you now have an account with RPC Service, associated with your wall
 We’ve pegged the price of our API Credits to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the current _ANKR/USD exchange rate on the moment of block's validation_.
 </Callout>
 
-Depending on the [sign-in](/rpc-service/getting-started/basics-premium/#sign-in) option selected, you can deposit funds the following way:
-
-  * [Ethereum wallet flow](/rpc-service/getting-started/basics-premium/#ethereum-wallet-flow)
-  * [Credit card flow](/rpc-service/getting-started/basics-premium/#credit-card-flow)
-
-### Ethereum wallet flow
-
-The Ethereum wallet flow has the following parts to it:
-
-  * [Initial deposit](/rpc-service/getting-started/basics-premium/#initial-deposit)
-  * [Subsequent top-ups](/rpc-service/getting-started/basics-premium/#subsequent-top-ups)
-
-#### Initial deposit
-
-Initial deposit is a required step to access Premium services, as, upon depositing funds into your account, the system generates a personal JWT token granting access to the Premium service plan functionality.
-
 Prerequisites:
 
-  * [Sign in](/rpc-service/getting-started/basics-premium/#via-ethereum-wallet)
+  * [Sign in via Google account](/rpc-service/getting-started/basics-premium/#via-google-account)
+  * [Sign in via Ethereum wallet](/rpc-service/getting-started/basics-premium/#via-ethereum-wallet)
 
-The initial top-up process is the following:
+The payment process contains the following steps:
 
-1. In **Navigation**, click **Pricing** to open the corresponding pane.
-2. In **Premium** box, click **Get Started with Premium** to get scrolled to the **Deposit** box.
-3. Enter the amount of ANKR tokens you'd like to deposit (min. 1000 ANKR), click **Top Up**, and then confirm the operation in your wallet.
+1. In **Navigation**, click **Billing** to open the corresponding pane.
+2. In the **Payments** box, select the following parameters, and then click **Pay**:
+    * **Payment type**:
+      * **One-time**: single Pay-as-you-go balance payment.
+      * **Recurring**: monthly-repeating Pay-as-you-go balance payment.
+      * **Deal**: monthly subscriptions with 20% extra API credits.
+       <img src="/docs/build/payments-payment-type.png" class="responsive-pic" width="550" />
+    * **Currency**:
+      * **USD**, **ANKR**, **USDT**/**USDC**: all three options available for the **One-time** payment type only.
+      * **USD**: the only option for both **Recurring** and **Deal** payment types.
+       <img src="/docs/build/payments-currency.png" class="responsive-pic" width="550" />
+    * **Amount**: select the amount in the presets or enter it manually.
+       <img src="/docs/build/payments-amount.png" class="responsive-pic" width="550" />
 
-<img src="/docs/build/initial-deposit.png" alt="Initial deposit" class="responsive-pic" width="600" />
+3. In the **Payment summary** dialog, check whether all the payment parameters selected are valid, and then either proceed to checkout with [Stripe](https://stripe.com/) or confirm the transaction with your Ethereum wallet.
+<img src="/docs/build/payments-summary.png" class="responsive-pic" width="550" />
 
-Congrats — you've made payment in ANKR tokens to get the API Credits into your account, and you're all set for using _Premium_ services.
-
-#### Subsequent top-ups
-
-As always the case, one day your account balance goes low — that's just the fact of life — and you need to top it up to continue querying blockchains:
-
-1. In **Navigation**, click **Billing** to open the pane.
-2. In the **Top Up** section (top right), enter the amount of ANKR tokens to deposit into your account, and then click **Top Up**.
-3. In the **Top Up** dialog, there are three substeps — two of them prompt you for the wallet confirmation:
-   * `Confirm top-up operation` — click **Next**.
-   * `Grant ANKRs to contract` — click **Confirm**, and then approve in the wallet.
-   * `Approve spending under contract` — click **Confirm**, and then approve in the wallet.
-
-Congrats — you've made payment in ANKR tokens to get the API Credits into your account, and you're all set for using _Premium_ services.
-
-### Credit card flow
-
-The credit card flow has the following parts to it:
-
-  * [Initial deposit](/rpc-service/getting-started/basics-premium/#initial-deposit-1)
-  * [Subsequent top ups](/rpc-service/getting-started/basics-premium/#subsequent-top-ups-1)
-
-#### Initial deposit
-
-Initial deposit is a required step to access Premium services, as, upon depositing funds into your account, the system generates a personal JWT token granting access to the Premium service plan functionality.
-
-Prerequisites:
-
-  * [Sign in](/rpc-service/getting-started/basics-premium/#via-google-account)
-
-The initial top-up process is the following:
-
-1. In **Navigation**, click **Pricing** to open the corresponding pane.
-2. In the **Premium** box, click **Get Started with Premium** to get scrolled to the **Deposit** box.
-
-<img src="/docs/build/usd-initial-deposit.png" alt="Initial deposit" class="responsive-pic" width="600" />
-
-3. Select one of the payment options to cover your query demands (see [Pricing](/rpc-service/pricing/)), and then click **Top Up**:
-    * **One time** — a single top up by the amount you indicate in the field below (min.: `10 USD`); requires manual action for [subsequent top ups](/rpc-service/getting-started/basics-premium/#subsequent-top-ups-1).
-    * **Recurrent** — an automatic monthly recurrent top up by `15/50/300 USD`.
-    * **Subscription** — a monthly service bundle for a fixed price of `500 USD`.
-4. On the **Pay with card** page, fill in the required fields and click **Pay** to get things done.
-
-<img src="/docs/build/card-stripe.png" alt="Initial deposit" class="responsive-pic" width="600" />
-
-Congrats — you've made a USD payment to get the API Credits into your account, and you're all set for using _Premium_ services.
-
-#### Subsequent top-ups
-
-If you've selected the **One time** payment option upon the [initial deposit](/rpc-service/getting-started/basics-premium/#initial-deposit-1), then one day your account balance goes low — that's just the fact of life — and you need to top it up to continue querying blockchains:
-
-1. In **Navigation**, click **Billing** to open the pane.
-2. In the **Top Up** section (top right), set the toggle to **USD**.
-
-<img src="/docs/build/getting-started/billing-ui.png" alt="Initial deposit" class="responsive-pic" width="600" />
-
-3. Select one of the payment options to cover your query demands (see [Pricing](/rpc-service/pricing/)), and then click **Top Up**:
-    * **One time** — a single top up by the amount you indicate in the field below (min.: `10 USD`); requires manual action for [subsequent top ups](/rpc-service/getting-started/basics-premium/#subsequent-top-ups-1).
-    * **Recurrent** — an automatic monthly recurrent top up by `15/50/300 USD`.
-    * **Subscription** — a monthly service bundle for a fixed price of `500 USD`.
-4. On the **Pay with card** page, fill in the required fields and click **Pay** to get things done.
-
-<img src="/docs/build/card-stripe.png" alt="Initial deposit" class="responsive-pic" width="600" />
-
-Congrats — you've made a USD payment to get the API Credits into your account, and you're all set to continue using _Premium_ services.
-
-[//]: # (### Withdraw funds)
-
-[//]: # ()
-[//]: # (<Callout type="warning">)
-
-[//]: # (We’ve pegged the price of our API Credits to USD. Currently, _withdrawals_ are to be requested via **Support** only.)
-
-[//]: # (</Callout>)
-
-[//]: # (Life goes fast, and it might be the case someday that you'd like to get your ANKR tokens back to your wallet. That's exactly what the withdrawal operation has been implemented for.)
-
-[//]: # ()
-[//]: # (The withdrawal procedure is the following:)
-
-[//]: # ()
-[//]: # (1. In **Navigation**, click **Billing** to open the corresponding pane.)
-
-[//]: # (2. In the **Account Balance** section &#40;top left&#41;, click **Withdraw**.)
-
-[//]: # (3. In the **Withdraw** dialog, there are three substeps — one of them prompts you for the wallet confirmation:)
-
-[//]: # (   * `Confirm withdrawal operation` — click **Next**.)
-
-[//]: # (   * `Withdrawal amount` &#40;min: 500 ANKR&#41; — enter the amount to withdraw, click **Confirm**, and then approve in the wallet.)
-
-[//]: # (   * `Transaction validation` — click **Next** and **Done** as soon as the validation completes.)
-
-[//]: # ()
-[//]: # (Congrats — you've withdrawn ANKR tokens back to your wallet.)
+Congrats — you've just deposited funds into your account balance, and you're all set to use your private endpoints.
 
 ## Use private endpoints
 
@@ -194,7 +96,9 @@ Prerequisites:
   * [Sign in](/rpc-service/getting-started/basics-premium/#sign-in)
   * [Deposit funds](/rpc-service/getting-started/basics-premium/#deposit-funds)
 
-As a Premium user, you have private Endpoints at hand to enable your projects to interact with a blockchain.
+### Premium URL structure
+
+As a Premium user, you have private Endpoints at hand to enable your projects to interact with blockchains.
 
 A Premium URL consists of a connection protocol (`https` or `wss`), domain name (`rpc.ankr.com`), common path of a blockchain to use (`/eth`), and your personal JWT token as the last segment of the path:
 
@@ -202,13 +106,26 @@ A Premium URL consists of a connection protocol (`https` or `wss`), domain name 
 https://rpc.ankr.com/eth/6fe08843fa0966456eaa3fb19d4828b12389e71f48829f50df25e45bc5fd6cc5
 ```
 
-To enable your project to interact with a blockchain, add the blockchain's URL into the project's library or config file:
+### Premium endpoint interaction formula
 
-1. In **Navigation**, click **Endpoints** to open the pane.
-2. In the **Chain Selection** area, click the chain you'd like to query.
-3. In the **Chain** opened, select a network (**Mainnet**/**Testnet**) needed for your project.
-4. In the **Endpoints** field, copy the `HTTPS` or `WebSocket` URL and paste it into your project's library or config file.
+For a Premium user, the blockchain interaction capabilities still revolve around using Node/Advanced API endpoints but start from a different angle — [Projects](/rpc-service/getting-started/projects/) — which in essence represent individual unique tokens to differentiate and group your private endpoints around a single particular scope of work.
 
-<img src="/docs/build/use-endpoint-premium.jpg" alt="Premium Endpoints" class="responsive-pic" width="600" />
+The endpoint for the Premium user can be schematically described by the following formula:
 
-Congrats — you've just added a private endpoint into your project to enable blockchain interaction.
+> `Endpoint` = `Project` + `Network`
+
+### Copy endpoint into your app's library
+
+To enable your web3 application to interact with a blockchain, copy the corresponding endpoint into your app's project library or config file:
+
+1. In **Navigation**, click **Projects** to open the pane.
+2. In **Projects list**, click the project you'd like to work under.
+<img src="/docs/build/endpoints-project.png" class="responsive-pic" width="550" />
+
+3. In the **Chains** box of the project opened, click the chain you'd like to interact with to expand its contents.
+<img src="/docs/build/endpoints-chain.png" class="responsive-pic" width="550" />
+
+4. In the chain expanded, click the **HTTPS/WSS endpoint** to copy it, and then paste it into your app's working library or config file.
+<img src="/docs/build/endpoints-copy.png" class="responsive-pic" width="550" />
+
+Congrats — you've just added a private endpoint into your app's working library or config file to enable blockchain interaction.
