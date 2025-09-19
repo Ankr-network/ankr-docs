@@ -45,11 +45,17 @@ const icons = {
   warning: Warning,
 };
 
+interface CalloutProps {
+  children: React.ReactNode;
+  emoji?: string;
+  type?: "default" | "error" | "info" | "note" | "success" | "tip" | "warning";
+}
+
 export function Callout({
   children,
   emoji /* string | undefined */,
   type = "default",
-}) {
+}: CalloutProps) {
   const { resolvedTheme } = useTheme();
   const [rootClasses, setRootClasses] = useState("");
 

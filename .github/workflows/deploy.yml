@@ -36,12 +36,22 @@ jobs:
           exit 1
 
       - name: Build
+        if: ${{ github.event.inputs.environment == 'PROD' }}
         working-directory: .
         env:
           NODE_OPTIONS: "--max-old-space-size=12288"
         run: |
           yarn install
           yarn build
+
+      - name: Build stage
+        if: ${{ github.event.inputs.environment != 'PROD' }}
+        working-directory: .
+        env:
+          NODE_OPTIONS: "--max-old-space-size=12288"
+        run: |
+          yarn install
+          yarn build:stage
 
       - uses: actions/checkout@v4
         with:
