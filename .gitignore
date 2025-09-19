@@ -104,7 +104,7 @@ typings/
 
 out/
 
-.env
+.env.local
 
 sitemap.xml
 

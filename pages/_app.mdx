@@ -1,8 +1,15 @@
 import "styles/global.css";
 import "nextra-theme-docs/style.css";
+
+import { MUIProvider } from "components/MUIProvider";
 import { useGtm } from "hooks";
 
 export default function App({ Component, pageProps }) {
   useGtm(pageProps);
-  return <Component {...pageProps} />
+
+  return (
+    <MUIProvider>
+      <Component {...pageProps} />
+    </MUIProvider>
+  );
 }

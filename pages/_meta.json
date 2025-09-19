@@ -65,8 +65,12 @@
     "newWindow": true
   },
   "ankr": {
-  "title": "To Ankr",
+    "title": "To Ankr",
     "type": "page",
     "href": "https://ankr.com"
+  },
+  "web3APIButton": {
+    "title": "web3APIButton",
+    "type": "separator"
   }
 }

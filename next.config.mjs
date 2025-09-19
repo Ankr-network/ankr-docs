@@ -22,8 +22,9 @@ export default withNextra({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
-    })
-    return config
+    });
+
+    return config;
   },
   siteUrl: process.env.SITE_URL || 'https://www.ankr.com/docs',
   generateIndexSitemap: false,

@@ -11,6 +11,25 @@ body {
   font-feature-settings: 'rlig' 1, 'calt' 1;
 }
 
+.nextra-search {
+  order: 2;
+}
+
+.nextra-hamburger {
+  order: 3;
+}
+
+.nextra-nav-container a[href="https://github.com/Ankr-network/"] {
+  order: 3;
+}
+
+/* Web3APIButton in the Sidebar */
+.nextra-sidebar-container ul li:last-of-type {
+  margin: 0;
+  margin-bottom: 44px;
+  padding: 0;
+}
+
 .home-content p {
   margin-top: 1.5em;
   line-height: 1.75em;
