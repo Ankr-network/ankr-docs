@@ -2,7 +2,7 @@
   "name": "docs",
   "private": true,
   "scripts": {
-    "build": "npm run update-strapi-faq-files && NODE_OPTIONS='--max-old-space-size=8192' next build && next-sitemap --config next.config.mjs && next export",
+    "build": "npm run update-strapi-faq-files && next build && next-sitemap --config next.config.mjs && next export",
     "build:stage": "cp .env.development .env.local && yarn build",
     "debug": "NODE_OPTIONS='--inspect' next",
     "dev": "npm run update-strapi-faq-files && next",
