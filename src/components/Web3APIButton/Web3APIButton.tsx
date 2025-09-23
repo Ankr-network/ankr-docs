@@ -1,10 +1,12 @@
 import { Button, Typography } from "@mui/material";
-import { useAuthState } from "@ankr.com/auth";
+import { useAuthState, useSubscribeToAuthStorage } from "@ankr.com/auth";
 
 import { getURL } from "./utils/getURL";
 
 export const Web3APIButton = () => {
   const { isSignedIn } = useAuthState();
+
+  useSubscribeToAuthStorage();
 
   return (
     <Button
