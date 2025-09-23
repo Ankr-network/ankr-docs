@@ -22,16 +22,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ankr.com/auth@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "@ankr.com/auth@npm:5.2.0"
+"@ankr.com/auth@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@ankr.com/auth@npm:5.3.0"
   dependencies:
     valtio: "npm:^2.1.5"
   peerDependencies:
     axios: ">=1.10.0"
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-  checksum: 10c0/261338fb7d3b76c1e50ee91510e1efd1eb14fb39195d9c74e8680e90eab7093541a566d4130d299e69f203778a9964525d55dea15067f21a3e2d3b268e38c7ef
+  checksum: 10c0/c0a1f6b122cfb50478f69492be71b055b765e1f313bb755515f19805d85a412b5751a9f9151d2773ad8382ecb8fae03f09c9f5e0215f8cde773196728ff457fb
   languageName: node
   linkType: hard
 
@@ -3288,7 +3288,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:."
   dependencies:
-    "@ankr.com/auth": "npm:^5.2.0"
+    "@ankr.com/auth": "npm:^5.3.0"
     "@ankr.com/ui": "npm:^2.8.2"
     "@emotion/react": "npm:^11.10.4"
     "@emotion/styled": "npm:^11.10.4"
