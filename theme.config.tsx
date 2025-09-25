@@ -40,9 +40,7 @@ const config: DocsThemeConfig = {
     const description = config.frontMatter.description
       ? config.frontMatter.description
       : "Ankr is the leading Web3 infrastructure company.";
-    const image =
-      config.frontMatter.image ||
-      "https://pbs.twimg.com/media/FZvncdhWAAA-hxK.jpg";
+    const image = config.frontMatter.image || "/docs/og/image.png";
 
     return (
       <>
