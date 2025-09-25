@@ -5,10 +5,10 @@
     "start_url": "/",
     "icons": [
         {
-            "src": "/favicon/android-icon-180x180.png",
+            "src": "/docs/favicon/android-icon-180x180.png",
             "sizes": "180x180",
             "type": "image/png"
-        },
+        }
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",

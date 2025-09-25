@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router'
 import { initGoogleGtm } from 'components';
 
@@ -19,8 +19,14 @@ interface UseGTMProps {
 }
 
 export function useGtm(pageProps: UseGTMProps) {
+  const isInitializedRef = useRef(false);
+
   useEffect(() => {
-    initGoogleGtm();
+    if (!isInitializedRef.current) {
+      initGoogleGtm();
+
+      isInitializedRef.current = true;
+    }
   }, []);
 
   const router = useRouter();

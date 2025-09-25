@@ -15,32 +15,43 @@ const Web3APIButton = dynamic(
   { ssr: false }
 );
 
+const titleTemplate = "%s — Ankr";
+const host = "https://www.ankr.com/docs";
+
 const config: DocsThemeConfig = {
   project: {
     link: "https://github.com/Ankr-network/",
   },
   docsRepositoryBase: "https://github.com/Ankr-network/ankr-docs/blob/main",
   useNextSeoProps() {
-    const { asPath } = useRouter();
+    const { pathname } = useRouter();
+    const config = useConfig();
 
-    if (asPath !== "/") {
-      return {
-        titleTemplate: "%s – Ankr",
-        canonical: `https://www.ankr.com/docs${asPath}`,
-      };
-    }
+    const description = config.frontMatter.description
+      ? config.frontMatter.description
+      : "Ankr is the leading Web3 infrastructure company.";
+
+    const image = config.frontMatter.image || `${host}/og/image.png`;
 
     return {
-      canonical: "https://www.ankr.com/docs/",
+      canonical: `${host}${pathname}${pathname.endsWith("/") ? "" : "/"}`,
+      description,
+      openGraph: {
+        type: "website",
+        images: [{ url: image }],
+      },
+      themeColor: "#ffffff",
+      titleTemplate,
+      twitter: {
+        cardType: "summary_large_image",
+        site: "ankr.com",
+      },
     };
   },
   logo: <AnkrLogo />,
   head() {
     const config = useConfig();
-    const description = config.frontMatter.description
-      ? config.frontMatter.description
-      : "Ankr is the leading Web3 infrastructure company.";
-    const image = config.frontMatter.image || "/docs/og/image.png";
+    const image = config.frontMatter.image || `${host}/og/image.png`;
 
     return (
       <>
@@ -49,22 +60,12 @@ const config: DocsThemeConfig = {
         <meta httpEquiv="Content-Language" content="en" />
 
         {/* SEO */}
-        <meta name="robots" content="follow, index" />
-        <meta name="description" content={description} />
-        <meta name="og:description" content={description} />
-        <meta name="og:title" content={`${config.title} — Ankr`} />
+        <meta name="twitter:image" content={image} />
         <meta
           name="apple-mobile-web-app-title"
-          content={`${config.title} — Ankr`}
+          content={titleTemplate.replace("%s", config.title)}
         />
         <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="theme-color" content="#ffffff" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site:domain" content="ankr.com" />
-        <meta name="twitter:url" content="https://ankr.com" />
-        <meta name="twitter:image" content={image} />
-        <meta name="og:image" content={image} />
 
         {/* Favicons */}
         <link rel="manifest" href="/docs/favicon/site.webmanifest" />
