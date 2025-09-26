@@ -1,17 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router'
 import { initGoogleGtm } from 'components';
 
-function gtmVirtualPageView(rest) {
+interface MainDataLayer {
+  pageTypeName: string | null;
+  url: string;
+}
+
+function gtmVirtualPageView(rest: MainDataLayer) {
   window.dataLayer?.push({
     event: 'VirtualPageView',
     ...rest,
   });
 }
 
-export function useGtm(pageProps) {
+interface UseGTMProps {
+  page?: string;
+}
+
+export function useGtm(pageProps: UseGTMProps) {
+  const isInitializedRef = useRef(false);
+
   useEffect(() => {
-    initGoogleGtm();
+    if (!isInitializedRef.current) {
+      initGoogleGtm();
+
+      isInitializedRef.current = true;
+    }
   }, []);
 
   const router = useRouter();
