@@ -17,7 +17,11 @@ The Projects feature aims to provide a business that manages multiple projects �
   * **Freeze projects**: You now have a single-click ability to put your projects on/off handbrake — to stop/start powering your projects with our endpoints.
   * **Safeguard endpoints**: We have your project's back covered with the whitelist security mechanisms safeguarding your endpoints from abuse and enabling you to define domains, IPs, or smart contracts allowed for endpoints communication.
 
-In simple terms, each new project provides a new unique token to be used in your private endpoints. Your projects differ from each other based on that token. The endpoints with the same token power a single project. And you can view each project's statistics in the Dashboard.
+In simple terms, each new project provides a new unique token to be used in your private endpoints. Your projects differ from each other based on that token. The endpoints with the same token power a single project. And you can view each project's metrics in the **Statistics** pane.
+
+In essence, the endpoint for the Freemium/Premium user can be schematically described by the following formula:
+
+> `Endpoint` = `Project (API key)` + `Network`
 
 ## Usage
 
@@ -27,6 +31,18 @@ The **Default** project contains all your previously configured data — chains,
 
 ### Create project
 
+#### Major parts
+
+Project creation consists of the following parts:
+
+> `General info` —> `Chains` —> `Endpoints whitelist`
+
+  * `General info`: The project’s basic details such as name and description, helping you define its scope of work. For example, if the project’s endpoints are used for a specific application, naming the project accordingly will make it easier to distinguish its stats and spending later.
+  * `Chains`: The chains and networks you'd like to interact with in terms of this project. You won't be able to interact with a particular network unless it's added into your project.
+  * `Endpoints whitelist`: A safeguard that prevents your endpoints from unauthorized use. Ideal for cases when you already know the domains, IPs, or smart contracts that will interact with your endpoints. Must be configured individually for each project's endpoint.
+
+#### Creation flow
+
 To create a new project, follow these steps:
 
 1. In **Navigation**, click **Projects** to open the corresponding pane.
@@ -35,9 +51,9 @@ To create a new project, follow these steps:
     * **General info** — enter a name (required) and give your project a description (optional) to identify its purpose; click **Next**.
 <img src="/docs/build/getting-started/general-info.png" className="responsive-pic" width="600" />
     * **Chains** — select chains and networks your project requires; click **Next**.
-<img src="/docs/build/getting-started/select-chains.png" className="responsive-pic" width="700" />
-    * **Whitelist** — click **Configure whitelist**, select whitelist option (**Domain**/**IP**/**Smart contract**), enter **Address**, select chains the endpoints of which cab be accessed by the address provided, then click **Confirm** and **Next**; this step can be configured right away or later (**Skip for now**).
-<img src="/docs/build/getting-started/configure-whitelist.png" className="responsive-pic" width="600" />
+<img src="/docs/build/getting-started/select-chains.png" className="responsive-pic" width="600" />
+    * **Endpoints whitelist** — click **Configure > Add** and select whitelist option (**Domain**/**IP**/**Smart contract**), enter the **Domain**/**IP**/**Smart contract** address, select chains the endpoints of which can be accessed by the address provided, then click **Confirm**, close the side menu, and click **Next**; this step can be configured right away or later (**Save** without configuring).
+<img src="/docs/build/getting-started/configure-whitelist.png" className="responsive-pic" width="800" />
 
 Congrats — you've just configured and created a new project.
 
