@@ -9,8 +9,8 @@ import { Tabs, Tab } from "nextra-theme-docs";
 
 For Stellar, we support blockchain interaction via the following methods:
 
-  * [Horizon REST](/rpc-service/chains/chains-api/stellar/#horizon-rest-methods) — both Mainnet and Testnet.
-  * [Soroban JSON-RPC](/rpc-service/chains/chains-api/stellar/#soroban-json-rpc-methods) — Testnet only.
+  * [Horizon REST](/rpc-service/chains/chains-api/stellar/#horizon-rest-methods)
+  * [Soroban JSON-RPC](/rpc-service/chains/chains-api/stellar/#soroban-json-rpc-methods)
 
 ## Horizon REST methods
 
@@ -244,8 +244,6 @@ This endpoint lists accounts by one of four filters : `signer`, `asset`, `liquid
 ```
 
 #### Request example
-
-curl https://rpc.ankr.com/http/stellar_horizon/accounts?cursor=&limit=1&order=asc&signer=GDI73WJ4SX7LOG3XZDJC3KCK6ED6E5NBYK2JUBQSPBCNNWEG3ZN7T75U
 
 <Tabs
   items={[
@@ -6668,11 +6666,15 @@ curl https://rpc.ankr.com/http/stellar_horizon/transactions/{transaction_hash}/e
 ## Soroban JSON-RPC methods
 
   * [`getEvents`](/rpc-service/chains/chains-api/stellar/#getevents) — retrieves contract events.
+  * [`getFeeStats`](/rpc-service/chains/chains-api/stellar/#getfeestats) — retrieves statistics for charged inclusion fees.
   * [`getHealth`](/rpc-service/chains/chains-api/stellar/#gethealth) — retrieves node health.
   * [`getLatestLedger`](/rpc-service/chains/chains-api/stellar/#getlatestledger) — retrieves the latest known ledgers.
   * [`getLedgerEntries`](/rpc-service/chains/chains-api/stellar/#getledgerentries) — retrieves ledger entries.
+  * [`getLedgers`](/rpc-service/chains/chains-api/stellar/#getledgers) — retrieves list of ledgers.
   * [`getNetwork`](/rpc-service/chains/chains-api/stellar/#getnetwork) — retrieves network config.
   * [`getTransaction`](/rpc-service/chains/chains-api/stellar/#gettransaction) — retrieves transaction details.
+  * [`getTransactions`](/rpc-service/chains/chains-api/stellar/#gettransactions) — retrieves list of transactions.
+  * [`getVersionInfo`](/rpc-service/chains/chains-api/stellar/#getversioninfo) — retrieves version info.
   * [`sendTransaction`](/rpc-service/chains/chains-api/stellar/#sendtransaction) — submits a transaction.
   * [`simulateTransaction`](/rpc-service/chains/chains-api/stellar/#simulatetransaction) — submits a trial contract invocation transaction.
 
@@ -6738,7 +6740,7 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
       "id": 1,
       "method": "getEvents",
       "params": {
-          "startLedger": 180000,
+          "startLedger": 1051743,
             "pagination": {
             "limit": 2
             }
@@ -6792,6 +6794,117 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
 
 ---
 
+### `getFeeStats`
+
+> Retrieves statistics for charged inclusion fees.
+
+Statistics for charged inclusion fees. The inclusion fee statistics are calculated from the inclusion fees that were paid for the transactions to be included onto the ledger. For Soroban transactions and Stellar transactions, they each have their own inclusion fees and own surge pricing. Inclusion fees are used to prevent spam and prioritize transactions during network traffic surge.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+
+#### Returns
+
+  * `sorobanInclusionFee` (object; required): Inclusion-fee distribution statistics for Soroban transactions, measured per transaction.
+    * `min` (string): Minimum inclusion fee observed.
+    * `max` (string): Maximum inclusion fee observed.
+    * `mode` (string): Most frequently occurring inclusion fee.
+    * `p10` (string): 10th percentile inclusion fee (nearest-rank method).
+    * `p20` (string): 20th percentile inclusion fee (nearest-rank method).
+    * `p30` (string): 30th percentile inclusion fee (nearest-rank method).
+    * `p40` (string): 40th percentile inclusion fee (nearest-rank method).
+    * `p50` (string): 50th percentile inclusion fee (median, nearest-rank method).
+    * `p60` (string): 60th percentile inclusion fee (nearest-rank method).
+    * `p70` (string): 70th percentile inclusion fee (nearest-rank method).
+    * `p80` (string): 80th percentile inclusion fee (nearest-rank method).
+    * `p90` (string): 90th percentile inclusion fee (nearest-rank method).
+    * `p95` (string): 95th percentile inclusion fee (nearest-rank method).
+    * `p99` (string): 99th percentile inclusion fee (nearest-rank method).
+    * `transactionCount` (number): Number of Soroban transactions included in this distribution.
+    * `ledgerCount` (number): Number of consecutive ledgers analyzed to produce the statistics.
+  * `inclusionFee` (object; required): Inclusion-fee distribution statistics for classic Stellar transactions, normalized per operation.
+    * `min` (string): Minimum inclusion fee observed per operation.
+    * `max` (string): Maximum inclusion fee observed per operation.
+    * `mode` (string): Most frequently occurring inclusion fee per operation.
+    * `p10` (string): 10th percentile inclusion fee per operation (nearest-rank method).
+    * `p20` (string): 20th percentile inclusion fee per operation (nearest-rank method).
+    * `p30` (string): 30th percentile inclusion fee per operation (nearest-rank method).
+    * `p40` (string): 40th percentile inclusion fee per operation (nearest-rank method).
+    * `p50` (string): 50th percentile inclusion fee per operation (median, nearest-rank method).
+    * `p60` (string): 60th percentile inclusion fee per operation (nearest-rank method).
+    * `p70` (string): 70th percentile inclusion fee per operation (nearest-rank method).
+    * `p80` (string): 80th percentile inclusion fee per operation (nearest-rank method).
+    * `p90` (string): 90th percentile inclusion fee per operation (nearest-rank method).
+    * `p95` (string): 95th percentile inclusion fee per operation (nearest-rank method).
+    * `p99` (string): 99th percentile inclusion fee per operation (nearest-rank method).
+    * `transactionCount` (number): Number of classic transactions included in this distribution.
+    * `ledgerCount` (number): Number of consecutive ledgers analyzed to produce the statistics.
+  * `latestLedger` (number; required): Sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
+
+#### Request example
+
+```shell
+curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getFeeStats"
+  }'
+```
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "sorobanInclusionFee": {
+            "max": "100",
+            "min": "100",
+            "mode": "100",
+            "p10": "100",
+            "p20": "100",
+            "p30": "100",
+            "p40": "100",
+            "p50": "100",
+            "p60": "100",
+            "p70": "100",
+            "p80": "100",
+            "p90": "100",
+            "p95": "100",
+            "p99": "100",
+            "transactionCount": "14",
+            "ledgerCount": 50
+        },
+        "inclusionFee": {
+            "max": "108",
+            "min": "100",
+            "mode": "100",
+            "p10": "100",
+            "p20": "100",
+            "p30": "100",
+            "p40": "100",
+            "p50": "100",
+            "p60": "100",
+            "p70": "100",
+            "p80": "100",
+            "p90": "100",
+            "p95": "108",
+            "p99": "108",
+            "transactionCount": "13",
+            "ledgerCount": 10
+        },
+        "latestLedger": 1051780
+    }
+}
+```
+
+---
+
 ### `getHealth`
 
 > Retrieves node health.
@@ -6803,7 +6916,6 @@ General node health check.
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): none.
 
 #### Returns
 
@@ -6816,8 +6928,7 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
-      "method": "getHealth",
-      "params": []
+      "method": "getHealth"
     }'
 ```
 
@@ -6846,7 +6957,6 @@ For finding out the current latest known ledger of this node. This is a subset o
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): none.
 
 #### Returns
 
@@ -6861,8 +6971,7 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
-      "method": "getLatestLedger",
-      "params": []
+      "method": "getLatestLedger"
     }'
 ```
 
@@ -6947,6 +7056,90 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
 
 ---
 
+### `getLedgers`
+
+> Retrieves list of ledgers.
+
+The `getLedgers` method returns a detailed list of ledgers starting from the user specified starting point that you can paginate as long as the pages fall within the history retention of their corresponding RPC provider.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required):
+
+    * `startLedger` (number; optional): ledger sequence number to start fetching from (inclusive). This must not be less than the oldest ledger stored in the node or greater than the latest ledger seen by the node. If a `cursor` is included, `startLedger` must be omitted.
+    * `pagination` (object; optional): pagination options, similar to Horizon pagination.
+        * `cursor` (string; optional): opaque string acting as a paging token. To fetch the next page of results, set this value to the `cursor` field returned in the previous response.
+        * `limit` (number; optional): maximum number of records to return. Valid range is `1–10000`. Defaults to `100` if not specified.
+    * `xdrFormat` (string; optional): output format for the response. Accepts `base64` (default) or `json`. If `json` is used, note that the schema may change with underlying XDR updates.
+
+#### Returns
+
+  * `ledgers` (array[object]; required): List of ledger entries returned by the query.
+    * `hash` (string): Hash of the ledger header that was included in the chain.
+    * `sequence` (number): Sequence number of the ledger (also referred to as the block height).
+    * `ledgerCloseTime` (string): Timestamp at which the ledger was closed.
+    * `headerXdr` (string): Base64-encoded `LedgerHeader` structure for this ledger.
+    * `metadataXdr` (string): Base64-encoded `LedgerCloseMeta` union for this ledger.
+  * `latestLedger` (number; required): Sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
+  * `latestLedgerCloseTime` (number; required): Unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.
+  * `oldestLedger` (number; required): Sequence number of the oldest ledger ingested by Stellar RPC at the time it handled the request.
+  * `oldestLedgerCloseTime` (number; required): Unix timestamp of the close time of the oldest ledger ingested by Stellar RPC at the time it handled the request.
+  * `cursor` (string; optional): Paging token to be included in a subsequent request to obtain the next page of results.
+
+#### Request example
+
+```shell
+curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getLedgers",
+      "params": {
+        "startLedger": 1052244,
+        "pagination": {
+            "limit": 2
+        }
+      }
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "ledgers": [
+            {
+                "hash": "318ce21369ba24f8332bd14babdb09889f24dce1bc089db067ab2af47d7aea0a",
+                "sequence": 1052244,
+                "ledgerCloseTime": "1760459309",
+                "headerXdr": "MYziE2m6JPgzK9FLq9sJiJ8k3OG8CJ2wZ6sq9H166goAAAAXqhYfNK6HfdyFen5WLUKzBrk4fqj2VgOFqA/e3Q0UBETV3k/2lliqEEleXCOJyLA7tEo+w6HoGUVmk9D1sibuxwAAAABo7notAAAAAAAAAAEAAAAAtV0Qsrt9KE7VwDpHpeG1kMkPV4NVRxzEUHu+ggTSPIsAAABAeBGYsdJuZvlPM7eIn7JrDrYrbTCGmMPYbMEKJtt7R8wJ2T8cjqH539FA7R8+WwwkH6aXeYnL7PGLFDprjVkHDmuVnjV3jJGH2Xbn8cE4ggoGSGNwv/kQZAVp4k9vqQu5/gq1fwb04v/lrWxbDVlQNcQczExnupW7OF5COtCaJYkAEA5UDeC2s6dkAAAAAAA6wJhozQAAAAAAAAAAAAAolQAAAGQATEtAAAAAyAtzObU3PsJWeTkdkBDOyExMTol0rEV7SX0oar2zxLtYDneB8P56sIYAP871glDb/k8XmSekQUzwCUQmkpViI6jDzf6BDMFFWKRAYhEqTq9VipuOz3SuiIzqdfMQdaLqhHjfX/XfBYxAEzDm6pGn2/xshRwOT3D56ojadgOLJjaYAAAAAAAAAAA=",
+                "metadataXdr": "AAAAAgAAAAAxjOITabok+DMr0Uur2wmInyTc4bw..."
+            },
+            {
+                "hash": "f8a3fc2f5a48f6c45a8a135f73ef6c818ec609b12b0e2a0a9ce8af73c0d4458d",
+                "sequence": 1052245,
+                "ledgerCloseTime": "1760459314",
+                "headerXdr": "+KP8L1pI9sRaihNfc+9sgY7GCbErDioKnOivc8DURY0AAAAXMYziE2m6JPgzK9FLq9sJiJ8k3OG8CJ2wZ6sq9H166gp533EGZ5PUMkezV8dRbxfBvkP+FWZ+DjgLLP+NYx2HzgAAAABo7noyAAAAAAAAAAEAAAAAtV0Qsrt9KE7VwDpHpeG1kMkPV4NVRxzEUHu+ggTSPIsAAABAJFqX2dyeZKxyFDk0H8uLiBqAkjnfnI/zCN43cLn26phZAivqFn+ZcURQTbPNLbMgx7Do59GWnkHZjpgFnrlDDNKlI/RUA1dq+H7EHtDzxOJuUk3iUMYSLimzRsEr3D+hRj35YE8eQRxWWnoiFL5qJnnRZG7pl6tByRySoa2a/mUAEA5VDeC2s6dkAAAAAAA6wJhplQAAAAAAAAAAAAAolQAAAGQATEtAAAAAyAtzObU3PsJWeTkdkBDOyExMTol0rEV7SX0oar2zxLtYDneB8P56sIYAP871glDb/k8XmSekQUzwCUQmkpViI6jDzf6BDMFFWKRAYhEqTq9VipuOz3SuiIzqdfMQdaLqhHjfX/XfBYxAEzDm6pGn2/xshRwOT3D56ojadgOLJjaYAAAAAAAAAAA=",
+                "metadataXdr": "AAAAAgAAAAD4o/wvWkj2xFqKE19z72yBjsYJsSsO..."
+            }
+        ],
+        "latestLedger": 1052247,
+        "latestLedgerCloseTime": 1760459324,
+        "oldestLedger": 931288,
+        "oldestLedgerCloseTime": 1759853894,
+        "cursor": "1052245"
+    }
+}
+```
+
+---
+
 ### `getNetwork`
 
 > Retrieves network config.
@@ -6958,7 +7151,6 @@ General information about the currently configured network. This response will c
   * `id` (integer; required): a request ID (example: 1).
   * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
   * `method` (string; required): a method used for the request.
-  * `params` (array; required): none.
 
 #### Returns
 
@@ -6973,8 +7165,7 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
 -d '{
       "jsonrpc": "2.0",
       "id": 1,
-      "method": "getNetwork",
-      "params": []
+      "method": "getNetwork"
     }'
 ```
 
@@ -7056,6 +7247,151 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
         "resultMetaXdr": "AAAAAwAAAAAAAAACAAAAAwAmwiAAAAAAAAAAAMYVjXj9HUoPRUa1NuLlinh3su4xbSJBssz8BSIYqPmjAAAAFUHZob0AJY3OAAAjqQAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAMAAAAAACbCHwAAAABlVUH3AAAAAAAAAAEAJsIgAAAAAAAAAADGFY14/R1KD0VGtTbi5Yp4d7LuMW0iQbLM/AUiGKj5owAAABVB2aG9ACWNzgAAI6oAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAADAAAAAAAmwiAAAAAAZVVB/AAAAAAAAAABAAAAAgAAAAMAJsIfAAAABgAAAAAAAAABhhOwI+RL18Zpk7cqI5pRRf0L96jE8i+0x3ekhuBh2cUAAAAUAAAAAQAAABMAAAAAjjTy9Ve4tTeavLz3tN8+liOOxI3ufjZESizbjVF11h0AAAABAAAABQAAABAAAAABAAAAAQAAAA8AAAAJQ29yZVN0YXRlAAAAAAAAEQAAAAEAAAAGAAAADwAAAAVhZG1pbgAAAAAAABIAAAAAAAAAADn1LT+CCK/HiHMChoEi/AtPrkos4XRR2E45Pr25lb3/AAAADwAAAAljb2xfdG9rZW4AAAAAAAASAAAAAdeSi3LCcDzP6vfrn",
         "ledger": 2540064,
         "createdAt": "1700086268"
+    }
+}
+```
+
+---
+
+### `getTransactions`
+
+> Retrieves list of transactions.
+
+The `getTransactions` method return a detailed list of transactions starting from the user specified starting point that you can paginate as long as the pages fall within the history retention of their corresponding RPC provider.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (object; required): Method-specific parameters, passed by name (not by position):
+
+    * `startLedger` (number; optional): Ledger sequence number to start fetching from (inclusive). This method returns an error if `startLedger` is less than the oldest ledger stored in this node or greater than the latest ledger seen by this node. If a `cursor` is included, `startLedger` must be omitted.
+    * `pagination` (object; optional): Pagination options, similar to Horizon pagination.
+        * `cursor` (string; optional): Opaque string acting as a paging token. To obtain the next page of results, set this value to the `cursor` field from the previous response.
+        * `limit` (number; optional): Maximum number of records to return. Valid range: `1–10000`. Defaults to `100` if not specified.
+    * `xdrFormat` (string; optional): Output format for the response — either `base64` (default) or `json`. The `json` schema may change as underlying XDR definitions evolve.
+
+#### Returns
+
+  * `transactions` (array[object]; required): List of transactions included in the queried ledger range.
+    * `status` (string): Indicates whether the transaction was successful or not.
+    * `applicationOrder` (number): 1-based index of the transaction among all transactions included in the ledger.
+    * `feeBump` (boolean): Indicates whether the transaction was fee-bumped.
+    * `envelopeXdr` (string): Base64-encoded `TransactionEnvelope` structure for this transaction.
+    * `resultXdr` (string): Base64-encoded `TransactionResult` structure for this transaction.
+    * `resultMetaXdr` (string): Base64-encoded metadata structure associated with this transaction.
+    * `diagnosticEventsXdr` (array[string]; optional): Base64-encoded list of `xdr.DiagnosticEvent` entries. Present only if `ENABLE_SOROBAN_DIAGNOSTIC_EVENTS` is enabled on the RPC server.
+    * `events` (object): All events emitted during transaction execution.
+    * `ledger` (number): Sequence number of the ledger that included this transaction.
+    * `createdAt` (number): Unix timestamp of when the transaction was included in the ledger.
+  * `latestLedger` (number; required): Sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
+  * `latestLedgerCloseTimestamp` (number; required): Unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.
+  * `oldestLedger` (number; required): Sequence number of the oldest ledger ingested by Stellar RPC at the time it handled the request.
+  * `oldestLedgerCloseTimestamp` (number; required): Unix timestamp of the close time of the oldest ledger ingested by Stellar RPC at the time it handled the request.
+  * `cursor` (string; optional): Paging token that can be included in a subsequent request to obtain the next page of results.
+
+#### Request example
+
+```shell
+curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTransactions",
+      "params": {
+        "startLedger": 1052434,
+        "pagination": {
+          "limit": 5
+        }
+      }
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "transactions": [
+            {
+                "status": "SUCCESS",
+                "txHash": "b1cb82270d381ff5ba487fad50c00e3fb9cd3601bcce75253b157718a7890a91",
+                "applicationOrder": 1,
+                "feeBump": false,
+                "envelopeXdr": "AAAAAgAAAACU+3v0Ae64yXpKFWzELvBXzV+CxBdatxq76IHUj4FeEgAAAGQAEA8QAAAAAgAAAAEAAAAAAAAAAAAAAABo7n3+AAAAAAAAAAEAAAAAAAAAAQAAAADu1x0Fy+Tl8JHtHUIdg4jDsT4PQY/JU50psZ2KOHv3FAAAAAAAAAAAATEtAAAAAAAAAAABj4FeEgAAAEC6Xlxcw/REbj+iodVG5PIk158ZZjziTwnQxWKLwXFD2zHKnByITkybE1EQIanPG8YD7htTAowDPoCHw4IKr4gF",
+                "resultXdr": "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAA=",
+                "resultMetaXdr": "AAAABAAAAAAAAAACAAAAAwAQDxIAAAAAAAAAAJT7e/QB7rjJekoVbMQu8FfNX4LEF1q3GrvogdSPgV4SAAAAF0eSBXgAEA8QAAAAAQAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAMAAAAAABAPEQAAAABo7n3fAAAAAAAAAAEAEA8SAAAAAAAAAACU+3v0Ae64yXpKFWzELvBXzV+CxBdatxq76IHUj4FeEgAAABdHkgV4ABAPEAAAAAIAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAADAAAAAAAQDxIAAAAAaO595AAAAAAAAAABAAAAAAAAAAQAAAADABAPEgAAAAAAAAAAlPt79AHuuMl6ShVsxC7wV81fgsQXWrcau+iB1I+BXhIAAAAXR5IFeAAQDxAAAAACAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAwAAAAAAEA8SAAAAAGjufeQAAAAAAAAAAQAQDxIAAAAAAAAAAJT7e/QB7rjJekoVbMQu8FfNX4LEF1q3GrvogdSPgV4SAAAAF0Zg2HgAEA8QAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAMAAAAAABAPEgAAAABo7n3kAAAAAAAAAAMAEA8RAAAAAAAAAADu1x0Fy+Tl8JHtHUIdg4jDsT4PQY/JU50psZ2KOHv3FAAAABdJW8nAABAPDwAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEAEA8SAAAAAAAAAADu1x0Fy+Tl8JHtHUIdg4jDsT4PQY/JU50psZ2KOHv3FAAAABdKjPbAABAPDwAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAdeSi3LCcDzP6vfrn/TvTVBKVai5efybRQ6iyEK00c5hAAAAAQAAAAAAAAAEAAAADwAAAAh0cmFuc2ZlcgAAABIAAAAAAAAAAJT7e/QB7rjJekoVbMQu8FfNX4LEF1q3GrvogdSPgV4SAAAAEgAAAAAAAAAA7tcdBcvk5fCR7R1CHYOIw7E+D0GPyVOdKbGdijh79xQAAAAOAAAABm5hdGl2ZQAAAAAACgAAAAAAAAAAAAAAAAExLQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAHXkotywnA8z+r365/0701QSlWouXn8m0UOoshCtNHOYQAAAAEAAAAAAAAAAgAAAA8AAAADZmVlAAAAABIAAAAAAAAAAJT7e/QB7rjJekoVbMQu8FfNX4LEF1q3GrvogdSPgV4SAAAACgAAAAAAAAAAAAAAAAAAAGQAAAAA",
+                "events": {
+                    "transactionEventsXdr": [
+                        "AAAAAAAAAAAAAAAB15KLcsJwPM/q9+uf9O9NUEpVqLl5/JtFDqLIQrTRzmEAAAABAAAAAAAAAAIAAAAPAAAAA2ZlZQAAAAASAAAAAAAAAACU+3v0Ae64yXpKFWzELvBXzV+CxBdatxq76IHUj4FeEgAAAAoAAAAAAAAAAAAAAAAAAABk"
+                    ],
+                    "contractEventsXdr": [
+                        [
+                            "AAAAAAAAAAHXkotywnA8z+r365/0701QSlWouXn8m0UOoshCtNHOYQAAAAEAAAAAAAAABAAAAA8AAAAIdHJhbnNmZXIAAAASAAAAAAAAAACU+3v0Ae64yXpKFWzELvBXzV+CxBdatxq76IHUj4FeEgAAABIAAAAAAAAAAO7XHQXL5OXwke0dQh2DiMOxPg9Bj8lTnSmxnYo4e/cUAAAADgAAAAZuYXRpdmUAAAAAAAoAAAAAAAAAAAAAAAABMS0A"
+                        ]
+                    ]
+                },
+                "ledger": 1052434,
+                "createdAt": 1760460260
+            }
+        ],
+        "latestLedger": 1052436,
+        "latestLedgerCloseTimestamp": 1760460270,
+        "oldestLedger": 931477,
+        "oldestLedgerCloseTimestamp": 1759854840,
+        "cursor": "4520178201137153"
+    }
+}
+```
+
+---
+
+### `getVersionInfo`
+
+> Retrieves version info.
+
+Version information about the RPC and Captive core. RPC manages its own, pared-down version of Stellar Core optimized for its own subset of needs. we'll refer to this as a "Captive Core" instance.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+
+#### Returns
+
+  * `version` (string; required): Version of the RPC server. Example: `23.0.1`.
+  * `commitHash` (string; required): Commit hash of the RPC server build. Example: `fcd2f0523f04279bae4502f3e3fa00ca627e6f6a`.
+  * `buildTimestamp` (string; required): Build timestamp of the RPC server. Example: `2025-05-10T11:18:38`.
+  * `captiveCoreVersion` (string; required): Version of the Captive Core used by the RPC server. Example: `stellar-core 23.0.1 (050eacf11a15afb2e95560dfb5723dfdcf78070f)`.
+  * `protocolVersion` (integer; required): Stellar protocol version supported by the RPC server. Example: `23`.
+
+#### Request example
+
+```shell
+curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getVersionInfo"
+    }'
+```
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "version": "23.0.0-67bf8456a32c74e1fe189ec8d0321614d07944d5",
+        "commitHash": "67bf8456a32c74e1fe189ec8d0321614d07944d5",
+        "buildTimestamp": "2025-08-14T15:20:26",
+        "captiveCoreVersion": "stellar-core 23.0.0 (d5cbc0793d6eab25eac886969c5bc0f7da69d6ea)",
+        "protocolVersion": 23
     }
 }
 ```
@@ -7172,7 +7508,7 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
 }'
 ```
 
-#### Request example
+#### Response example
 
 ```json
 {
@@ -7199,31 +7535,3 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
     }
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
