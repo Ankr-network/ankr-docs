@@ -9784,6 +9784,7 @@ Official quick links: [Website](https://stellar.org/), [Docs](https://developers
 
   * Mainnet:
     * Horizon (`HTTPS`)
+    * Soroban (`HTTPS`)
   * Testnet:
     * Horizon (`HTTPS`)
     * Soroban (`HTTPS`)
@@ -9792,8 +9793,8 @@ Official quick links: [Website](https://stellar.org/), [Docs](https://developers
 
 For Stellar we support blockchain interaction via the following methods:
 
-  * [Horizon REST](/rpc-service/chains/chains-api/stellar/#horizon-rest-methods) — both Mainnet and Testnet.
-  * [Soroban JSON-RPC](/rpc-service/chains/chains-api/stellar/#soroban-json-rpc-methods) — Testnet only.
+  * [Horizon REST](/rpc-service/chains/chains-api/stellar/#horizon-rest-methods).
+  * [Soroban JSON-RPC](/rpc-service/chains/chains-api/stellar/#soroban-json-rpc-methods).
 
 #### Unsupported
 
@@ -9809,13 +9810,13 @@ None.
 
 ### API querying
 
-#### Request example
+#### Request example (Horizon REST)
 
 ```shell
 curl https://rpc.ankr.com/http/stellar_horizon/accounts?cursor=&limit=1&order=asc&signer=GDI73WJ4SX7LOG3XZDJC3KCK6ED6E5NBYK2JUBQSPBCNNWEG3ZN7T75U
 ```
 
-#### Response example
+#### Response example (Horizon REST)
 
 ```shell
 {
@@ -9942,6 +9943,33 @@ curl https://rpc.ankr.com/http/stellar_horizon/accounts?cursor=&limit=1&order=as
                 "paging_token": "GDI73WJ4SX7LOG3XZDJC3KCK6ED6E5NBYK2JUBQSPBCNNWEG3ZN7T75U"
             }
         ]
+    }
+}
+```
+
+#### Request example (Soroban JSON-RPC)
+
+```shell
+curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getVersionInfo"
+    }'
+```
+
+#### Response example (Soroban JSON-RPC)
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "version": "23.0.0-67bf8456a32c74e1fe189ec8d0321614d07944d5",
+        "commitHash": "67bf8456a32c74e1fe189ec8d0321614d07944d5",
+        "buildTimestamp": "2025-08-14T15:20:26",
+        "captiveCoreVersion": "stellar-core 23.0.0 (d5cbc0793d6eab25eac886969c5bc0f7da69d6ea)",
+        "protocolVersion": 23
     }
 }
 ```
