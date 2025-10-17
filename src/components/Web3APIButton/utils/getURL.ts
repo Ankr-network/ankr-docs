@@ -8,7 +8,7 @@ export const getURL = (isSignedIn: boolean) => {
   const host = window.location.host;
   const appPath =
     host && !host.includes("localhost")
-      ? `${host}/rpc/auth/`
+      ? `${host.replace("www.", "")}/rpc/auth/`
       : process.env.NEXT_PUBLIC_WEB3_API_AUTH_APP_PATH!;
 
   return getSignInUrl({
