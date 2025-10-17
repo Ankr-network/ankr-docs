@@ -30,8 +30,8 @@ Find the chain you require and go to its docs section by clicking it.
 | [Atleta](/rpc-service/chains/chains-list/#atleta)               | [Corn](/rpc-service/chains/chains-list/#corn)                       | [HECO Chain](/rpc-service/chains/chains-list/#huobi-eco-chain)  | [Monad](/rpc-service/chains/chains-list/#monad)       | [Solana](/rpc-service/chains/chains-list/#solana)                 | [Xai](/rpc-service/chains/chains-list/#xai)               |
 | [Avail](/rpc-service/chains/chains-list/#avail)                 | [Electroneum](/rpc-service/chains/chains-list/#electroneum)         | [Horizen EON](/rpc-service/chains/chains-list/#horizen-eon)     | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Somnia](/rpc-service/chains/chains-list/#somnia)                 | [XDC](/rpc-service/chains/chains-list/#xdc)               |
 | [Avalanche](/rpc-service/chains/chains-list/#avalanche)         | [Ethereum](/rpc-service/chains/chains-list/#ethereum)               | [Iota](/rpc-service/chains/chains-list/#iota)                   | [Movement](/rpc-service/chains/chains-list/#movement) | [Sonic](/rpc-service/chains/chains-list/#sonic)                   | [X Layer](/rpc-service/chains/chains-list/#x-layer)       |
-| [B2 Network](/rpc-service/chains/chains-list/#b2-network)       | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)      | [Iota EVM](/rpc-service/chains/chains-list/#iota-evm)           | [NEAR](/rpc-service/chains/chains-list/#near)         | [Stellar](/rpc-service/chains/chains-list/#stellar)               | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
-| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Etherlink](/rpc-service/chains/chains-list/#etherlink)             | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Story](/rpc-service/chains/chains-list/#story)                   |                                                           |
+| [B2 Network](/rpc-service/chains/chains-list/#b2-network)       | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)      | [Iota EVM](/rpc-service/chains/chains-list/#iota-evm)           | [NEAR](/rpc-service/chains/chains-list/#near)         | [Stellar](/rpc-service/chains/chains-list/#stellar)               | [Xphere](/rpc-service/chains/chains-list/#xphere)         |
+| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Etherlink](/rpc-service/chains/chains-list/#etherlink)             | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Story](/rpc-service/chains/chains-list/#story)                   | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
 | [Base](/rpc-service/chains/chains-list/#base)                   | [Fantom](/rpc-service/chains/chains-list/#fantom)                   | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Neura](/rpc-service/chains/chains-list/#neura)       | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                           |
 | [Bitcoin](/rpc-service/chains/chains-list/#bitcoin)             | [Filecoin](/rpc-service/chains/chains-list/#filecoin)               | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Swell](/rpc-service/chains/chains-list/#swell)                   |                                                           |
 | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)           | [Flare](/rpc-service/chains/chains-list/#flare)                     | [Kinto](/rpc-service/chains/chains-list/#kinto)                 | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                           |
@@ -11930,6 +11930,144 @@ def test_block_number(self):
   "jsonrpc":"2.0",
   "id":1,
   "result":"0x148b7"
+}
+```
+
+---
+
+## Xphere
+
+> Xphere Era API is available on [Web3 API platform](https://www.ankr.com/rpc/xphere).
+
+Xphere is an EVM-compatible Layer-1 with a dual-chain architecture that separates consensus and heavy computation for scalability and security. A PBFT-based Main Chain finalizes transactions via a Council/Committee model to cut communication overhead, while a Proof Chain uses SHA-256 Proof-of-Work to select validators and generate cryptographic proofs. The design preserves decentralization, boosts throughput, and stays developer-friendly with Ethereum tooling.
+
+Official quick links: [Website](https://x-phere.com/), [Docs](https://docs.x-phere.com/), [GitHub](https://github.com/xpherechain)
+
+### Networks
+
+  * Mainnet (`HTTPS` and `WSS`)
+  * Testnet (`HTTPS` and `WSS`)
+
+### API methods
+
+For Xphere, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/xphere/) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for _Premium_ service plan.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*` (exception: `debug_traceBlockByHash`, `debug_traceBlockByNumber`, `debug_traceTransaction`, `debug_traceCall`, `debug_traceBlock`),
+
+`personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/xphere_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/xphere_mainnet"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/xphere_mainnet'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/xphere_mainnet'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x13460bc"
 }
 ```
 
