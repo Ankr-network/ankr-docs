@@ -117,7 +117,7 @@ We charge no matter whether a request has been successful or not. In other words
   * **Correct call + incorrect method** (charged default amount) — a request uses an unsupported method though has a valid JSON-RPC structure. We charge default amount of credits for the infrastructure usage.
   * **Correct call + rate limiting** (not charged): a request uses a supported method and has a valid JSON-RPC structure but receives a `429` error due to rate limiting.
 
-### Pricing per request: HTTPS
+### Pricing per request: RPC over HTTPS
 
 | API Type       | Method      | API Credits | in USD   |
 |----------------|-------------|-------------|----------|
@@ -127,7 +127,7 @@ We charge no matter whether a request has been successful or not. In other words
 | Advanced API   | all methods | 700         | $0.00007 |
 | Other          |             | 100         | $0.00001 |
 
-### Pricing per request: WSS
+### Pricing per request: RPC over WSS
 
 WebSockets interaction consists of the following actions:
 
@@ -140,3 +140,15 @@ WebSockets interaction consists of the following actions:
 |                | EVM-compatible      | 200         | $0.00002 |
 | Notification   | Solana              | 500         | $0.00005 |
 |                | Other               | 100         | $0.00001 |
+
+### Pricing: gRPC
+
+gRPC interaction consists of the following actions:
+
+  * **Method call**: Establishing gRPC connection using a particular method call.
+  * **Receiving data**: Receiving binary data pertaining to the method you've established connection with.
+
+| Action Type              | Billing metric    | API Credits | in USD    |
+|--------------------------|-------------------|-------------|-----------|
+| Method call (all chains) | per 1 request     | 10          | $0.000001 |
+| Receiving data           | per 1 GB          | 5,000,000   | $0.5      |
