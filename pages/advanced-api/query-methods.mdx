@@ -82,7 +82,7 @@ Returns statistics for the blockchains specified.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -192,7 +192,7 @@ Returns complete information for the block specified by request parameters.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -385,7 +385,7 @@ Returns history data for the blocks specified by request body parameters.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -590,7 +590,7 @@ Returns all transactions' metadata for the hash specified in request body parame
 #### Request
 
 ```shell
-curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+curl --location -g --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -1009,7 +1009,7 @@ Returns the transactions specified by address.
 #### Request
 
 ```shell
-curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+curl --location -g --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
               "id": 1,
@@ -1160,7 +1160,7 @@ Returns the list of blockchains interacted with the address specified in request
 #### Request
 
 ```shell
-curl --location -g --request POST 'https://rpc.ankr.com/multichain' \
+curl --location -g --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 			"jsonrpc": "2.0",

@@ -57,19 +57,6 @@ Currently, Advanced API supports querying the following chains using their alias
 
 ## AAPI Methods Supported
 
-> To get all supported AAPI methods in the OpenAPI-formatted `aapi-swagger` JSON, use the following request:
-
-```shell
-curl --location 'https://rpc.ankr.com/multichain/79258ce7f7ee046decc3b5292a24eb4bf7c910d7e39b691384c7ce0cfb839a01' \
---header 'Content-Type: application/json' \
---data '{
-    "jsonrpc": "2.0",
-    "method": "docs_schema",
-    "params": {},
-    "id": 1
-}'
-```
-
 ### NFT API
 
 [_NFT API Methods_](/advanced-api/nft-methods/) serve to request NFT-related data across multiple chains:
@@ -104,6 +91,7 @@ curl --location 'https://rpc.ankr.com/multichain/79258ce7f7ee046decc3b5292a24eb4
   * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
   * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
   * [`ankr_getTokenTransfers`](/advanced-api/token-methods/#ankr_gettokentransfers) — retrieves token transfers info.
+  * [`ankr_getTokenPriceHistory`](/advanced-api/token-methods/#ankr_gettokenpricehistory) — retrieves the historical price of the token specified.
 
 > Prefer interactive docs? See our [OpenAPI specification](https://api-docs.ankr.com/reference/introduction#token-api) for Token API methods.
 
@@ -132,6 +120,7 @@ The price of our API Credits is pegged to USD. It means that upon using ANKR tok
 |                | `ankr_getTokenHolders`                      | 700         | $0.00007    |
 |                | `ankr_getTokenHoldersCount`                 | 700         | $0.00007    |
 |                | `ankr_getTokenTransfers `                   | 700         | $0.00007    |
+|                | `ankr_getTokenPriceHistory`                 | 700         | $0.00007    |
 
 ## Support and Developer Community
 

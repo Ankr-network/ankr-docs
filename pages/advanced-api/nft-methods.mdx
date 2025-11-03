@@ -124,7 +124,7 @@ A successful response contains the following parameters:
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -417,7 +417,7 @@ A successful request returns, along with the general parameters, the `result` ob
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -603,7 +603,7 @@ A successful request returns a list of holders for the NFT specified.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -739,7 +739,7 @@ A successful request returns information on transfers for an address specified.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "id": 1,
