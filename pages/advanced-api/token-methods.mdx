@@ -23,6 +23,7 @@ _Token API_ consists of the following methods to request token-related data acro
   * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
   * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
   * [`ankr_getTokenTransfers`](/advanced-api/token-methods/#ankr_gettokentransfers) — retrieves token transfers info.
+  * [`ankr_getTokenPriceHistory`](/advanced-api/token-methods/#ankr_gettokenpricehistory) — retrieves the historical price of the token specified.
 
 > Prefer interactive docs? See our [OpenAPI specification](https://www.ankr.com/docs/advanced-api/specification/#tag/Token-API) for Token API methods.
 
@@ -95,7 +96,7 @@ Returns a complete set of balance data for the account specified in request body
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -277,7 +278,7 @@ Returns the currencies and their metadata for the blockchain specified by reques
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -467,7 +468,7 @@ Returns a USD price of the token specified by request body parameters.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -584,7 +585,7 @@ Returns holders, holders number, and holders metadata of the tokens specified by
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -729,7 +730,7 @@ Returns the number of holders for the tokens specified by request body parameter
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -927,7 +928,7 @@ Returns info on transfers of the tokens specified by request body parameters.
 #### Request
 
 ```shell
-curl --location --request POST 'https://rpc.ankr.com/multichain' \
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -989,3 +990,137 @@ Code: 200 OK
     }
 }
 ```
+
+---
+
+## `ankr_getTokenPriceHistory`
+
+> Retrieves the historical price of the token specified.
+
+### Request
+
+Build your request using the parameters below.
+
+#### Parameters
+
+* `id` (int64; required): a request ID (example: 1).
+* `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+* `method` (string; required): a method used for the request.
+* `params` (object): the data object containing request body parameters:
+
+  * `blockchain` (string; required): either of the supported chains (`arbitrum`, `avalanche`, `base`, `bsc`, `eth`, `fantom`, `flare`, `gnosis`, `linea`, `optimism`, `polygon`, `polygon_zkevm`, `scroll`, `stellar`, `story_mainnet`, `syscoin`, `telos`, `xai`, `xlayer`, `avalanche_fuji`, `base_sepolia`, `eth_holesky`, `eth_sepolia`, `optimism_testnet`, `polygon_amoy`, `story_aeneid_testnet`).
+  * `contractAddress` (string): an address of the token contract; supports the Ethereum Name Service (ENS). If not provided, returns the native coin price of the blockchain specified.
+  * `fromTimestamp` (integer): narrow your search indicating the UNIX timestamp to start from (inclusive; `>= 0`).
+  * `toTimestamp` (integer): narrow your search indicating the UNIX timestamp to end with (inclusive; `>=0`).
+  * `interval` (integer): time interval for updating the token price. UNIX timestamp (inclusive; `>=0`).
+  * `limit` (integer): amount of records to be returned (inclusive; `>=0`).
+  * `syncCheck` (boolean): if `false`, the data is returned regardless of indexer health; if `true`, the data is returned only when the indexer health check is positive.
+
+<Tabs
+  items={[
+    "Body",
+    "Headers",
+  ]}
+>
+  <Tab>
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "ankr_getTokenPriceHistory",
+  "params": {
+    "blockchain": "string",
+    "contractAddress": "string"
+  }
+}
+```
+  </Tab>
+  <Tab>
+
+```shell
+Content-Type: application/json
+```
+  </Tab>
+</Tabs>
+
+### Response
+
+Returns the latest USD price data for the requested token, including historical quote entries and the node’s synchronization status.
+
+### Code Examples
+
+#### Request
+
+```shell
+curl --location --request POST 'https://rpc.ankr.com/multichain/{your_token}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "ankr_getTokenPriceHistory",
+    "params": {
+        "blockchain": "eth",
+        "contractAddress": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4"
+    },
+    "id": 1
+}'
+```
+
+#### Response
+
+Code: 200 OK
+
+<Tabs
+  items={[
+    "Schema",
+    "Example",
+  ]}
+>
+  <Tab>
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": integer,
+  "result": {
+    "quotes": [
+      {
+        "timestamp": integer,
+        "blockHeight": integer,
+        "usdPrice": "string"
+      }
+    ],
+    "syncStatus": {
+      "timestamp": integer,
+      "lag": "string",
+      "status": "string"
+    }
+  }
+}
+```
+  </Tab>
+  <Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "quotes": [
+            {
+                "timestamp": 1753625651,
+                "blockHeight": 23011008,
+                "usdPrice": "0.01771388896807847"
+            }
+        ],
+        "syncStatus": {
+            "timestamp": 1762179251,
+            "lag": "-4s",
+            "status": "synced"
+        }
+    }
+}
+```
+  </Tab>
+</Tabs>
+
