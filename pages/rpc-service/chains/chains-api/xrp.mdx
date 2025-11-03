@@ -512,15 +512,272 @@ curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94a
 
 ---
 
+## `account_nfts`
+
+> Retrieves a list of all NFTs for an account.
+
+The `account_nfts` method returns a list of `NFToken` objects for the specified account.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `account` (string; required): the unique identifier of an account (typically, address???). Returns a list of NFTs owned by this account.
+    * `ledger_hash` (string; optional): the unique hash of the ledger version to use (see ???Specifying Ledgers???).
+    * `ledger_index` (string or number; optional): the ???ledger index??? of the ledger version to use, or a shortcut string to choose a ledger automatically (see ???Specifying Ledgers???).
+    * `limit` (integer; optional): limits the number of ???token pages??? to retrieve. Each page can contain up to 32 NFTs.
+      * Must be between `20` and `400`; values outside this range are adjusted to the nearest valid option.
+      * Default: `100`.
+    * `marker` (string — marker; optional): value from a previous paginated response; resumes retrieving data where that response left off.
+
+### Returns
+
+The response follows the ???standard format???, with a successful result containing the following fields:
+
+  * `account` (string): the account that owns the list of NFTs.
+  * `account_nfts` (array of objects): list of NFTs owned by the account. Each object represents one NFToken and includes the following fields:
+    * `Flags` (number): a bitmap of boolean flags enabled for this NFToken. See ???NFToken Flags??? for possible values.
+    * `Issuer` (string — ???address???): the account that issued this NFToken.
+    * `NFTokenID` (string): the unique identifier of this NFToken, represented as a hexadecimal string.
+    * `NFTokenTaxon` (number): the unscrambled version of this token’s ???taxon???. Tokens sharing the same taxon may represent multiple instances of a limited series.
+    * `URI` (string): the URI data associated with this NFToken, represented in hexadecimal format.
+    * `nft_serial` (number): the token sequence number of this NFToken, unique per issuer.
+  * `ledger_hash` (string; optional): the identifying hash of the ledger version used to generate this response.
+  * `ledger_index` (number; optional): the ledger index of the ledger version used to generate this response.
+  * `ledger_current_index` (number; optional): the ledger index of the current in-progress ledger version used to generate this response.
+  * `validated` (boolean): if true, the information in this response comes from a validated ledger version; otherwise, the information is subject to change.
+  * `marker` (string — marker; optional): server-defined value indicating pagination. Pass this to the next call to resume fetching results from where this response ended. Omitted when there are no additional pages.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "account_nfts",
+      "params": [
+        {
+          "account": "rpoYSH7mntUSWF41gD7RhJQzrNHxogAb6W"
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "account": "rpoYSH7mntUSWF41gD7RhJQzrNHxogAb6W",
+        "account_nfts": [],
+        "ledger_current_index": 99893274,
+        "status": "success",
+        "validated": false
+    }
+}
+```
+
+---
+
+## `account_objects`
+
+> Retrieves all ledger objects owned by an account.
+
+The `account_objects` command returns all ledger entries owned by an account, in their raw ???ledger format???.
+
+There are other API methods that are specialized for getting certain types of ledger entry, such as the ???account_lines??? method for trust lines, or ???account_offers??? method for offers. These methods provide a processed view of the data that is more suitable for typical use cases. Use `account_objects` if you want to get ledger entries of types that don't have a specialized method, or if you want to get the entries in their canonical format.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `account` (string — ???address???; required): retrieves ledger entries associated with this account.
+    * `deletion_blockers_only` (boolean; optional): if `true`, returns only ledger entries that would prevent this account from being deleted. Default: `false`.
+    * `ledger_hash` (string — ???hash???; optional): the unique hash of the ledger version to use (see ???Specifying Ledgers???).
+    * `ledger_index` (number or string; optional): the ???ledger index??? of the ledger version to use, or a shortcut string to choose a ledger automatically (see ???Specifying Ledgers???).
+    * `limit` (number; optional): the maximum number of ledger entries to include in the results. Must be between `10` and `400` for non-admin connections. Default: `200`.
+    * `marker` (string — marker; optional): value from a previous paginated response; resumes retrieving data where that response left off.
+    * `type` (string; optional): filters results by a specific type of ledger entry. Accepts canonical or ???short names?? of ???ledger entry types??? (case-insensitive). Ledger entry types that cannot appear in an owner directory are not allowed. If omitted, all types are returned.
+
+### Returns
+
+The response follows the ???standard format???, with a successful result containing the following fields:
+
+  * `account` (string — ???address???): the account this request corresponds to.
+  * `account_objects` (array of objects): array of ledger entries found in this account’s owner directory. Includes both:
+    * Entries owned directly by this account, and
+    * Entries linked to this account but owned by others (for example, escrows where this account is the destination).
+    * Each member is a ledger entry in its raw ???ledger format???. The number of entries may be fewer than the value specified in `limit`.
+  * `ledger_hash` (string; optional): the identifying hash of the ledger used to generate this response.
+  * `ledger_index` (number; optional): the ???ledger index??? of the ledger version used to generate this response.
+  * `ledger_current_index` (number; optional): the ???ledger index??? of the open ledger version used to generate this response.
+  * `limit` (number; optional): the limit value that was applied in this request, if specified.
+  * `marker` (string — ???marker???; optional): server-defined value indicating pagination. Pass this to the next call to resume retrieving data where this response ended. Omitted when there are no additional pages.
+  * `validated` (boolean; optional): if `true`, the data in this response originates from a validated ledger version; otherwise, it may be subject to change.
+
+<Callout type="warning">
+The `account_objects` array may be empty even if there are additional ledger entries to retrieve. This is especially likely when using `type` to filter ledger entry types. If the response includes a `marker` field, there are additional pages of data; if the response does not include a `marker`, then this is the end of the data. This behavior is a consequence of how the API method iterates through the account's owner directory, and a precaution against requests putting excessive load on the server.
+</Callout>
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "account_objects",
+      "params": [
+        {
+            "account": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+            "ledger_index": "validated",
+            "type": "state",
+            "deletion_blockers_only": false,
+            "limit": 10
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "result": {
+        "account": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+        "account_objects": [
+            {
+                "Balance": {
+                    "currency": "ASP",
+                    "issuer": "rrrrrrrrrrrrrrrrrrrrBZbvji",
+                    "value": "0"
+                },
+                "Flags": 65536,
+                "HighLimit": {
+                    "currency": "ASP",
+                    "issuer": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+                    "value": "0"
+                },
+                "HighNode": "0",
+                "LedgerEntryType": "RippleState",
+                "LowLimit": {
+                    "currency": "ASP",
+                    "issuer": "r3vi7mWxru9rJCxETCyA1CHvzL96eZWx5z",
+                    "value": "10"
+                },
+                "LowNode": "0",
+                "PreviousTxnID": "BF7555B0F018E3C5E2A3FF9437A1A5092F32903BE246202F988181B9CED0D862",
+                "PreviousTxnLgrSeq": 1438879,
+                "index": "2243B0B630EA6F7330B654EFA53E27A7609D9484E535AB11B7F946DF3D247CE9"
+            }
+        ],
+        "ledger_hash": "3E5A1F0602C9699922CBE7BD3846D0C22A584867FFAF9787A1C676315F0797B0",
+        "ledger_index": 99893571,
+        "limit": 10,
+        "marker": "F60ADF645E78B69857D2E4AEC8B7742FEABC8431BD8611D099B428C3E816DF93,94A9F05FEF9A153229E2E997E64919FD75AAE2028C8153E8EBDB4440BD3ECBB5",
+        "status": "success",
+        "validated": true
+    }
+}
+```
+
+---
+
+## `account_offers`
+
+> Retrieves info on the account's currency exchange offers.
+
+The `account_offers` method retrieves a list of ???offers??? made by a given ???account??? that are outstanding as of a particular ???ledger version???.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `account` (string — ???address???; required): look up Offers placed by this account.
+    * `ledger_hash` (string — ???hash???; optional): the unique hash of the ledger version to use (see ???Specifying Ledgers???).
+    * `ledger_index` (number or string; optional): the ???ledger index??? of the ledger version to use, or a shortcut string to choose a ledger automatically (see ???Specifying Ledgers???).
+    * `limit` (number; optional): limits the number of Offers to retrieve.
+      * Must be between `10` and `400`; values outside this range are replaced with the nearest valid option.
+      * Default: `200`.
+    * `marker` (string — ???marker???; optional): value from a previous paginated response; resumes retrieving data where that response left off.
+
+### Returns
+
+The response follows the ???standard format???, with a successful result containing the following fields:
+
+  * `account` (string): the unique ???address??? identifying the account that created the offers.
+  * `offers` (array of objects): list of offers made by this account that are outstanding as of the requested ledger version. If the number of offers is large, only up to the specified ???limit??? are returned per response. Each object contains the following fields:
+    * `flags` (unsigned integer): bitwise flags representing options set for this offer entry.
+    * `seq` (unsigned integer): the sequence number of the transaction that created this offer entry. (Transaction ???sequence numbers??? are relative to the account.)
+    * `taker_gets` (string or object): the amount the offer receiver (taker) receives, expressed as either:
+      * a string representing an amount in XRP, or
+      * an object defining a non-XRP currency amount (see ???Specifying Currency Amounts???).
+    * `taker_pays` (string or object): the amount the offer receiver (taker) provides, expressed as either:
+      * a string representing an amount in XRP, or
+      * an object defining a non-XRP currency amount (see ???Specifying Currency Amounts???).
+    * `quality` (string): the exchange rate of the offer, calculated as the ratio of the original `taker_pays` divided by the original `taker_gets`.
+      * Offers with a lower quality are more favorable and are executed first.
+      * Offers with the same quality are executed in order of oldest to newest.
+    * `expiration` (unsigned integer; optional): time after which this offer is considered unfunded, represented as ???seconds since the Ripple Epoch???. (See also: ???Offer Expiration???.)
+  * `ledger_current_index` (number; optional): the ???ledger index?? of the current in-progress ledger version used when retrieving this data. Omitted if ledger_hash or ledger_index is provided.
+  * `ledger_index` (number; optional): the ???ledger index??? of the ledger version used when retrieving this data. Omitted if ledger_current_index is provided instead.
+  * `ledger_hash` (string — ???hash???; optional): the identifying hash of the ledger version used to generate this response.
+  * `marker` (string — ???marker???; optional): server-defined value indicating pagination. Pass this to the next call to resume retrieving results where this response ended. Omitted when there are no additional pages.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "account_offers",
+      "params": [
+        {
+            "account": "rpP2JgiMyTF5jR5hLG3xHCPi1knBb1v9cM"
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "account": "rpP2JgiMyTF5jR5hLG3xHCPi1knBb1v9cM",
+        "ledger_current_index": 99895001,
+        "offers": [],
+        "status": "success",
+        "validated": false
+    }
+}
+```
+
+---
 
 
 
 
 
 
-  * [`account_nfts`]() — retrieves a list of all NFTs for an account.
-  * [`account_objects`]() — retrieves all ledger objects owned by an account.
-  * [`account_offers`]() — retrieves info on the account's currency exchange offers.
+
+
+
   * [`account_tx`]() — retrieves a list of transactions affecting an account.
   * [`gateway_balances`]() — calculates total amounts issued by an account.
   * [`noripple_check`]() — gets recommended changes to an account's Default Ripple and No Ripple settings.
