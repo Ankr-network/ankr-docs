@@ -14,14 +14,13 @@ For both our Premium plan's charging models — [Pay-as-you-go (PAYG)](/rpc-serv
 
 ## Pricing per request: RPC over HTTPS
 
-| API Type       | Method      | API Credits | in USD   |
-|----------------|-------------|-------------|----------|
-| Ethereum       | all methods | 200         | $0.00002 |
-| EVM-compatible | all methods | 200         | $0.00002 |
-| Solana         | all methods | 500         | $0.00005 |
-| Beacon Chains  | all methods | 700         | $0.00007 |
-| Advanced API   | all methods | 700         | $0.00007 |
-| Other          |             | 100         | $0.00001 |
+| API Type        | Method      | API Credits | in USD   |
+|-----------------|-------------|-------------|----------|
+| EVM-compatible  | all methods | 200         | $0.00002 |
+| Solana          | all methods | 500         | $0.00005 |
+| Beacon Chains   | all methods | 700         | $0.00007 |
+| Other (non-EVM) | all methods | 200         | $0.00002 |
+| Advanced API    | all methods | 700         | $0.00007 |
 
 ## Pricing per request: RPC over WSS
 
@@ -33,7 +32,7 @@ WebSockets interaction consists of the following actions:
 | Action Type    | Chain               | API Credits | in USD   |
 |----------------|---------------------|-------------|----------|
 | Subscription   | Solana              | 500         | $0.00005 |
-|                | Ethereum & EVM-like | 200         | $0.00002 |
+|                | EVM-compatible      | 200         | $0.00002 |
 | Notification   | Solana              | 500         | $0.00005 |
 |                | Other               | 100         | $0.00001 |
 
