@@ -32,7 +32,7 @@ An account in the XRP Ledger represents a holder of XRP and a sender of transact
 
 A ledger version contains a header, a transaction tree, and a state tree, which contain account settings, trustlines, balances, transactions, and other data. Use these methods to retrieve ledger info.
 
-  * [`ledger`]() — retrieves info on the ledger version.
+  * [`ledger`]() — retrieves info on the ledger.
   * [`ledger_closed`]() — retrieves the latest closed ledger version.
   * [`ledger_current`]() — retrieves the current working ledger version.
   * [`ledger_data`]() — retrieves the raw contents of a ledger version.
@@ -770,6 +770,646 @@ curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94a
 
 ---
 
+## `account_tx`
+
+> Retrieves a list of transactions affecting an account.
+
+The `account_tx` method retrieves a list of validated transactions that involve a given account.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `account` (string; required): the unique identifier of the account, typically its address.
+    * `tx_type` (string; optional): (Clio only) filters results to a specific transaction type (for example "Clawback", "AccountSet", "AccountDelete"). Case-insensitive. See ???Transaction Types???. ???New in: Clio v2.0???; ???AMM support since: Clio v2.1.0???.
+    * `ledger_index_min` (integer; optional): earliest ledger index to include transactions from. A value of `-1` uses the earliest validated ledger available.
+    * `ledger_index_max` (integer; optional): most recent ledger index to include transactions from. A value of `-1` uses the most recent validated ledger available.
+    * `ledger_hash` (string — hash; optional): specifies a single ledger by its unique hash (see ???Specifying Ledgers???).
+    * `ledger_index` (string or unsigned integer; optional): specifies a single ledger by its index or a shortcut keyword (see ???Specifying Ledgers???).
+    * `binary` (boolean; optional): if `true`, returns transactions as hex strings instead of JSON. Default: `false`.
+    * `forward` (boolean; optional): if `true`, returns results indexed with the oldest ledger first; otherwise, the newest ledger first. Each page may not be internally ordered, but pages overall follow the chosen order. Default: `false`.
+    * `limit` (integer; optional): limits the number of transactions to retrieve. The default varies depending on server configuration. The server is not required to honor this value.
+    * `marker` (string — ???marker???; optional): value from a previous paginated response; resumes retrieving data where that response left off. Stable even if the server’s available ledger range changes.
+
+**Iterating over queried data**:
+
+As with other paginated methods, you can use the `marker` field to return multiple pages of data.
+
+In the time between requests, `"ledger_index_min": -1` and `"ledger_index_max": -1` may change to refer to different ledger versions than they did before. The `marker` field can safely paginate even if there are changes in the ledger range from the request, so long as the marker does not indicate a point outside the range of ledgers specified in the request.
+
+### Returns
+
+#### API v2
+
+  * `account` (string): Unique ???Address??? identifying the related account.
+  * `ledger_index_min` (integer — ???ledger index???): The ledger index of the earliest ledger actually searched for transactions.
+  * `ledger_index_max` (integer — ???ledger index???): The ledger index of the most recent ledger actually searched for transactions.
+  * `limit` (integer): The `limit` value used in the request. (This may differ from the actual limit value enforced by the server.)
+  * `marker` (string — ???marker???): Server-defined value indicating the response is paginated. Pass this to the next call to resume where this call left off.
+  * `transactions` (array): Array of transactions matching the request's criteria, as explained below.
+  * `validated` (boolean): If included and set to `true`, the information in this response comes from a validated ledger version. Otherwise, the information is subject to change.
+
+<Callout type="tip">
+The server may respond with different values of `ledger_index_min` and `ledger_index_max` than you provided in the request, for example if it did not have the versions you specified on hand.
+</Callout>
+
+Each transaction object includes the following fields, depending on whether it was requested in JSON or hex string (`"binary": true`) format:
+
+  * `close_time_iso` (string): The ledger close time represented in ISO 8601 time format.
+  * `hash` (string): The unique hash identifier of the transaction.
+  * `ledger_hash` (string): A hex string of the ledger version that included this transaction.
+  * `ledger_index` (integer): The ledger index of the ledger version that included this transaction.
+  * `tx_json` (object — JSON): (JSON mode) JSON object defining the transaction.
+  * `tx_blob` (string — binary): (Binary mode) A unique hex string defining the transaction.
+  * `meta` (object — JSON): (JSON mode) The transaction results metadata in JSON.
+  * `meta_blob` (string — binary): (Binary mode) The transaction results metadata as a hex string.
+  * `validated` (boolean): Whether the transaction is included in a validated ledger or not. Any transaction not yet in a validated ledger is subject to change.
+
+#### API v1
+
+  * `account` (string): Unique ???Address??? identifying the related account.
+  * `ledger_index_min` (integer — ???ledger index???): The ledger index of the earliest ledger actually searched for transactions.
+  * `ledger_index_max` (integer — ???ledger index???): The ledger index of the most recent ledger actually searched for transactions.
+  * `limit` (integer): The `limit` value used in the request. (This may differ from the actual limit value enforced by the server.)
+  * `marker` (string — ???marker???): Server-defined value indicating the response is paginated. Pass this to the next call to resume where this call left off.
+  * `transactions` (array): Array of transactions matching the request's criteria, as explained below.
+  * `validated` (boolean): If included and set to `true`, the information in this response comes from a validated ledger version. Otherwise, the information is subject to change.
+
+<Callout type="tip">
+The server may respond with different values of `ledger_index_min` and `ledger_index_max` than you provided in the request, for example if it did not have the versions you specified on hand.
+</Callout>
+
+Each transaction object includes the following fields, depending on whether it was requested in JSON or hex string (`"binary": true`) format.
+
+  * `ledger_index` (integer): The ledger index of the ledger version that included this transaction.
+  * `tx` (object — JSON): (JSON mode) JSON object defining the transaction.
+  * `tx_blob` (string — binary): (Binary mode) Hex string representing the transaction.
+  * `meta` (object — JSON or string — binary): If `binary` is `true`, then this is a hex string of the transaction results metadata. Otherwise, the transaction results metadata is included in JSON format.
+  * `validated` (boolean): Whether the transaction is included in a validated ledger or not. Any transaction not yet in a validated ledger is subject to change.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "account_tx",
+      "params": [
+        {
+            "account": "rLNaPoKeeBjZe2qs6x52yVPZpZ8td4dc6w",
+            "binary": false,
+            "forward": false,
+            "ledger_index_max": -1,
+            "ledger_index_min": -1,
+            "limit": 2,
+            "api_version": 2
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "account": "rLNaPoKeeBjZe2qs6x52yVPZpZ8td4dc6w",
+        "ledger_index_max": 100184671,
+        "ledger_index_min": 99766025,
+        "limit": 2,
+        "status": "success",
+        "transactions": [],
+        "validated": true
+    }
+}
+```
+
+---
+
+## `gateway_balances`
+
+> Calculates total amounts issued by an account.
+
+The `gateway_balances` method calculates the total balances issued by a given account, optionally excluding amounts held by [operational addresses](https://xrpl.org/docs/concepts/accounts/account-types).
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `account` (string): The [Address](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#addresses) to check. This should be the [issuing address](https://xrpl.org/docs/concepts/accounts/account-types).
+    * `strict` (boolean; optional): If `true`, only accept an address or public key for the account parameter. Defaults to `false`.
+    * `hotwallet` (string or array; optional): An [operational address](https://xrpl.org/docs/concepts/accounts/account-types) to exclude from the balances issued, or an array of such addresses.
+    * `ledger_hash` (string; optional): The unique hash of the ledger version to use. (See [Specifying Ledgers](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-ledgers).)
+    * `ledger_index` (string or unsigned integer; optional): The ledger index of the ledger version to use, or a shortcut string to choose a ledger automatically. (See [Specifying Ledgers](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-ledgers).)
+
+### Returns
+
+The response follows the [standard format](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/response-formatting), with a successful result containing the following fields:
+
+  * `account` (string — [address](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#addresses)): The address of the account that issued the balances.
+  * `obligations` (object; omitted if empty): Total amounts issued to addresses not excluded, as a map of currencies to the total value issued.
+  * `balances` (object; omitted if empty): Amounts issued to the `hotwallet` addresses from the request. The keys are addresses and the values are arrays of currency amounts they hold.
+  * `assets` (object; omitted if empty): Total amounts held that are issued by others. In the recommended configuration, the [issuing address](https://xrpl.org/docs/concepts/accounts/account-types) should have none.
+  * `ledger_hash` (string — [hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes); optional): The identifying hash of the ledger version that was used to generate this response.
+  * `ledger_index` (number — [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index); optional): The ledger index of the ledger version that was used to generate this response.
+  * `ledger_current_index` (number — [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index); optional): (Omitted if `ledger_current_index` is provided). The [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of the current in-progress ledger version, which was used to retrieve this information.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "gateway_balances",
+      "params": [
+        {
+            "account": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
+            "hotwallet": [
+                "rKm4uWpg9tfwbVSeATv4KxDe6mpE9yPkgJ",
+                "ra7JkEzrgeKHdzKgo4EUUVBnxggY4z37kt"
+            ],
+            "ledger_index": "validated",
+            "strict": true
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "account": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
+        "assets": {
+            "r9F6wk8HkXrgYWoJ7fsv4VrUBVoqDVtzkH": [
+                {
+                    "currency": "BTC",
+                    "value": "5444166510000000e-26"
+                }
+            ],
+            "rPU6VbckqCLW4kb51CWqZdxvYyQrQVsnSj": [
+                {
+                    "currency": "BTC",
+                    "value": "1029900000000000e-26"
+                }
+            ],
+            "rpR95n1iFkTqpoy1e878f4Z1pVHVtWKMNQ": [
+                {
+                    "currency": "BTC",
+                    "value": "4000000000000000e-30"
+                }
+            ],
+            "rwmUaXsWtXU4Z843xSYwgt1is97bgY8yj6": [
+                {
+                    "currency": "BTC",
+                    "value": "8700000000000000e-30"
+                }
+            ]
+        },
+        "balances": {
+            "rKm4uWpg9tfwbVSeATv4KxDe6mpE9yPkgJ": [
+                {
+                    "currency": "EUR",
+                    "value": "144816.1965999999"
+                }
+            ],
+            "ra7JkEzrgeKHdzKgo4EUUVBnxggY4z37kt": [
+                {
+                    "currency": "USD",
+                    "value": "6677.38614"
+                }
+            ]
+        },
+        "frozen_balances": {
+            "r4keXr5myiU4iTLh68ZqZ2CgsJ8dM9FSW6": [
+                {
+                    "currency": "BTC",
+                    "value": "0.091207822800868"
+                }
+            ]
+        },
+        "ledger_hash": "9F04F45FC6A7B4BE8DA04580F7E4E23DCCE58A9FD73178296CA70319C5B799F1",
+        "ledger_index": 100185180,
+        "obligations": {
+            "BTC": "1761.964986208178",
+            "EUR": "813788.3511514511",
+            "GBP": "4973.797603049582",
+            "USD": "6734902.401181124"
+        },
+        "status": "success",
+        "validated": true
+    }
+}
+```
+
+---
+
+## `noripple_check`
+
+> Gets recommended changes to an account's Default Ripple and No Ripple settings.
+
+The `noripple_check` command provides a quick way to check the status of [the Default Ripple field for an account and the No Ripple flag of its trust lines](https://xrpl.org/docs/concepts/tokens/fungible-tokens/rippling), compared with the recommended settings.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `account` (string): A unique identifier for the account, most commonly the account's address.
+    * `role` (string): Whether the address refers to a `gateway` or `user`. Recommendations depend on the role of the account. Issuers must have Default Ripple enabled and must disable No Ripple on all trust lines. Users should have Default Ripple disabled, and should enable No Ripple on all trust lines.
+    * `transactions` (boolean; optional): If `true`, include an array of suggested [transactions](https://xrpl.org/docs/references/protocol/transactions), as JSON objects, that you can sign and submit to fix the problems. The default is `false`.
+    * `limit` (unsigned integer; optional): The maximum number of trust line problems to include in the results. Defaults to 300.
+    * `ledger_hash` (string; optional): The unique hash of the ledger version to use. (See [Specifying Ledgers](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-ledgers).)
+    * `ledger_index` (string or unsigned integer; optional): The [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of the ledger to use, or a shortcut string to choose a ledger automatically. (See [Specifying Ledgers](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-ledgers).)
+
+### Returns
+
+The response follows the [standard format](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/response-formatting), with a successful result containing the following fields:
+
+  * `ledger_current_index` (number): The [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of the ledger used to calculate these results.
+  * `problems` (array): Array of strings with human-readable descriptions of the problems. This includes up to one entry if the account's Default Ripple setting is not as recommended, plus up to `limit` entries for trust lines whose No Ripple setting is not as recommended.
+  * `transactions` (array; optional): If the request specified `transactions` as `true`, this is an array of JSON objects, each of which is the JSON form of a [transaction](https://xrpl.org/docs/references/protocol/transactions) that should fix one of the described problems. The length of this array is the same as the `problems` array, and each entry is intended to fix the problem described at the same index into that array.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "noripple_check",
+      "params": [
+        {
+            "account": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+            "ledger_index": "current",
+            "limit": 2,
+            "role": "gateway",
+            "transactions": true
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "result": {
+        "ledger_current_index": 100203014,
+        "problems": [
+            "You should immediately set your default ripple flag",
+            "You should clear the no ripple flag on your USD line to rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
+            "You should clear the no ripple flag on your EUR line to rLEsXccBGNR3UPuPu2hUXPjziKC3qKSBun",
+            "You should clear the no ripple flag on your CNY line to rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK",
+            "You should clear the no ripple flag on your XAU line to r3vi7mWxru9rJCxETCyA1CHvzL96eZWx5z",
+            "You should clear the no ripple flag on your 015841551A748AD2C1F76FF6ECB0CCCD00000000 line to rs9M85karFkCRjvc6KMWn8Coigm9cbcgcx",
+            "You should clear the no ripple flag on your AUX line to r3vi7mWxru9rJCxETCyA1CHvzL96eZWx5z",
+            "You should clear the no ripple flag on your CNY line to razqQKzJRdB4UxFPWf5NEpEG3WMkmwgcXA",
+            "You should clear the no ripple flag on your JPY line to rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B",
+            "You should clear the no ripple flag on your USD line to rfF3PNkwkq1DygW2wum2HK3RGfgkJjdPVD",
+            "You should clear the no ripple flag on your USD line to r9vbV3EHvXWjSkeQ6CAcYVPGeq7TuiXY2X"
+        ],
+        "status": "success",
+        "transactions": [
+            {
+                "Account": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+                "Fee": 10,
+                "Sequence": 1406,
+                "SetFlag": 8,
+                "TransactionType": "AccountSet"
+            },
+            {
+                "Account": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+                "Fee": 10,
+                "Flags": 262144,
+                "LimitAmount": {
+                    "currency": "USD",
+                    "issuer": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
+                    "value": "5"
+                },
+                "Sequence": 1407,
+                "TransactionType": "TrustSet"
+            }
+        ],
+        "validated": false
+    }
+}
+```
+
+---
+
+**Ledger Methods**:
+
+A ledger version contains a header, a transaction tree, and a state tree, which contain account settings, trustlines, balances, transactions, and other data. Use these methods to retrieve ledger info.
+
+## `ledger`
+
+> Retrieves info on the ledger.
+
+Retrieves information about the public [ledger](https://xrpl.org/docs/concepts/ledgers).
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `ledger_hash` (string — [hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes); optional): A 32-byte hex string for the ledger version to use. (See [Specifying Ledgers](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-ledgers)).
+    * `ledger_index` (number or string; optional): The [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of the ledger to use, or a shortcut string to choose a ledger automatically. (See [Specifying Ledgers](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-ledgers)).
+    * `transactions` (boolean; optional): If `true`, return information on transactions in the specified ledger version. The default is `false`. Ignored if you did not specify a ledger version.
+    * `expand` (boolean; optional): Provide full JSON-formatted information for transaction/account information instead of only hashes. The default is `false`. Ignored unless you request transactions, accounts, or both.
+    * `owner_funds` (boolean; optional): If `true`, include `owner_funds` field in the metadata of OfferCreate transactions in the response. The default is `false`. Ignored unless transactions are included and `expand` is `true`.
+    * `binary` (boolean; optional): If `true`, and `transactions` and `expand` are both also `true`, return transaction information in binary format (hexadecimal string) instead of JSON format.
+    * `queue` (boolean; optional): If `true`, and the command is requesting the `current` ledger, includes an array of [queued transactions](https://xrpl.org/docs/concepts/transactions/transaction-cost#queued-transactions) in the results.
+
+### Returns
+
+The response follows the [standard format](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/response-formatting), with a successful result containing information about the ledger, including the following fields:
+
+  * `ledger` (object): The complete [ledger header data](https://xrpl.org/docs/references/protocol/ledger-data/ledger-header) of this ledger, with some additional fields added for convenience.
+  * `ledger.account_hash` (string): [Hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes) of all account state information in this ledger, as hexadecimal.
+  * `ledger.close_flags` (number): A bit-map of [flags relating to the closing of this ledger](https://xrpl.org/docs/references/protocol/ledger-data/ledger-header#close-flags).
+  * `ledger.close_time` (number): The time this ledger was closed, in [seconds since the Ripple Epoch](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-time).
+  * `ledger.close_time_human` (string): The time this ledger was closed, in human-readable format. Always uses the UTC time zone.
+  * `ledger.close_time_resolution` (number): Ledger close times are rounded to within this many seconds.
+  * `ledger.closed` (boolean): Whether this ledger has been closed or not.
+  * `ledger.ledger_hash` (string): Unique identifying hash of the entire ledger.
+  * `ledger.ledger_index` (string — [API v1](https://xrpl.org/docs/references/http-websocket-apis#api-versioning); number — [API v2](https://xrpl.org/docs/references/http-websocket-apis#api-versioning)): The [Ledger Index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of this ledger.
+  * `ledger.parent_close_time` (number): The time at which the previous ledger was closed.
+  * `ledger.parent_hash` (string): The unique identifying hash of the ledger that came immediately before this one, as hexadecimal.
+  * `ledger.total_coins` (string): Total number of XRP drops in the network, as a quoted integer. (This decreases as transaction costs destroy XRP.)
+  * `ledger.transaction_hash` (string): [Hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes) of the transaction information included in this ledger.
+  * `ledger.transactions` (array; optional): Transactions applied in this ledger version. By default, members are the transactions’ identifying [Hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes) strings. If the request specified `expand` as `true`, members are full representations of the transactions instead, in either JSON or binary depending on whether the request specified `binary` as `true`.
+  * `ledger_hash` (string): The unique identifying hash of the entire ledger, as hexadecimal.
+  * `ledger_index` (number): The [Ledger Index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of this ledger.
+  * `validated` (boolean; optional): If `true`, this is a validated ledger version. If omitted or set to `false`, this ledger’s data is not final.
+  * `queue_data` (array; optional): (Omitted unless requested with the `queue` parameter) Array of objects describing queued transactions, in the same order as the queue. If the request specified `expand` as `true`, members contain full representations of the transactions, in either JSON or binary depending on whether the request specified `binary` as `true`.
+
+Each member of the `queue_data` array represents one transaction in the queue. Some fields of this object may be omitted because they have not yet been calculated. The fields of this object are as follows:
+
+  * `account` (string): The [Address](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#addresses) of the sender for this queued transaction.
+  * `tx` (string or object): By default, this is a string containing the identifying hash of the transaction. If transactions are expanded in binary format, this is an object whose only field is `tx_blob`, containing the binary form of the transaction as a decimal string. If transactions are expanded in JSON format, this is an object containing the transaction object including the transaction's identifying hash in the `hash` field.
+  * `retries_remaining` (number): How many times this transaction can be retried before being dropped.
+  * `preflight_result` (string): The tentative result from preliminary transaction checking. This is always `tesSUCCESS`.
+  * `last_result` (string; optional): If this transaction was left in the queue after getting a [retriable (`ter`) result](https://xrpl.org/docs/references/protocol/transactions/transaction-results/ter-codes), this is the exact `ter` result code it got.
+  * `auth_change` (boolean; optional): Whether this transaction changes this address's [ways of authorizing transactions](https://xrpl.org/docs/concepts/transactions#authorizing-transactions).
+  * `fee` (string; optional): The [Transaction Cost](https://xrpl.org/docs/concepts/transactions/transaction-cost) of this transaction, in [drops of XRP](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-currency-amounts).
+  * `fee_level` (string; optional): The transaction cost of this transaction, relative to the minimum cost for this type of transaction, in fee levels.
+  * `max_spend_drops` (string; optional): The maximum amount of [XRP, in drops](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-currency-amounts), this transaction could potentially send or destroy.
+
+If the request specified `"owner_funds": true` and expanded transactions, the response has a field `owner_funds` in the `metaData` object of each [OfferCreate transaction](https://xrpl.org/docs/references/protocol/transactions/types/offercreate). The purpose of this field is to make it easier to track the [funding status of offers](https://xrpl.org/docs/concepts/tokens/decentralized-exchange/offers#lifecycle-of-an-offer) with each new validated ledger. This field is defined slightly differently than the version of this field in [Order Book subscription streams](https://xrpl.org/docs/references/http-websocket-apis/public-api-methods/subscription-methods/subscribe#order-book-streams):
+
+  * `owner_funds` (string): Numeric amount of the `TakerGets` currency that the `Account` sending this OfferCreate transaction has after the execution of all transactions in this ledger. This does not check whether the currency amount is [frozen](https://xrpl.org/docs/concepts/tokens/fungible-tokens/freezes).
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "ledger",
+      "params": [
+        {
+            "ledger_index": "validated",
+            "transactions": false,
+            "expand": false,
+            "owner_funds": false
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "ledger": {
+            "account_hash": "E8C6EF996B38EFC2E297B3165F6B687433B1DF137BDCF804C0B0F9E393E0D045",
+            "close_flags": 0,
+            "close_time": 816442750,
+            "close_time_human": "2025-Nov-14 13:39:10.000000000 UTC",
+            "close_time_iso": "2025-11-14T13:39:10Z",
+            "close_time_resolution": 10,
+            "closed": true,
+            "ledger_hash": "344AC8FCFC579E9EAC59CAFEBCC1E2EA36A261F4EB2A6CC649380C351F402397",
+            "ledger_index": "100204822",
+            "parent_close_time": 816442741,
+            "parent_hash": "ADA5D8A5A554881A9E45A8EC88FBDADD5D4D47213F0FFBCE23001AD7E37B5768",
+            "total_coins": "99985759346884737",
+            "transaction_hash": "03E26EC74BFBEEFEBD19FD512A16809C1A165B1A2F9CFF4BFD987994FCA60334"
+        },
+        "ledger_hash": "344AC8FCFC579E9EAC59CAFEBCC1E2EA36A261F4EB2A6CC649380C351F402397",
+        "ledger_index": 100204822,
+        "status": "success",
+        "validated": true
+    }
+}
+```
+
+---
+
+## `ledger_closed`
+
+> Retrieves the latest closed ledger version.
+
+The `ledger_closed` method returns the unique identifiers of the most recently closed ledger. (This ledger is not necessarily validated and immutable yet.)
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+The response follows the [standard format](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/response-formatting), with a successful result containing the following fields:
+
+  * `ledger_hash` (string): The unique [Hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes) of this ledger version, in hexadecimal.
+  * `ledger_index` (unsigned integer): The [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of this ledger version.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "ledger_closed",
+      "params": [
+        {}
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "ledger_hash": "3E6CF37B032E232ED6D77900C937647A275C8FE1F9F784F361B1022BB4608172",
+        "ledger_index": 100204931,
+        "status": "success"
+    }
+}
+```
+
+---
+
+## `ledger_current`
+
+> Retrieves the current working ledger version.
+
+The `ledger_current` method returns the unique identifiers of the current in-progress [ledger](https://xrpl.org/docs/concepts/ledgers). This command is mostly useful for testing, because the ledger returned is still in flux.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+The response follows the [standard format](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/response-formatting), with a successful result containing the following field:
+
+  * `ledger_current_index` (unsigned integer — [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index)): The ledger index of this ledger version.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "ledger_current",
+      "params": [
+        {}
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "ledger_current_index": 100205074,
+        "status": "success"
+    }
+}
+```
+
+---
+
+## `ledger_data`
+
+> Retrieves the raw contents of a ledger version.
+
+The `ledger_data` method retrieves contents of the specified ledger. You can iterate through several calls to retrieve the entire contents of a single ledger version.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `ledger_hash` (string — [hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes); optional): A 20-byte hex string identifying the ledger version to use.
+    * `ledger_index` (number or string; optional): The [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index) of the ledger to use, or a shortcut string to choose a ledger automatically. (See [Specifying Ledgers](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#specifying-ledgers).)
+    * `binary` (boolean; optional): If `true`, return ledger entries as hexadecimal strings instead of JSON. The default is `false`.
+    * `limit` (number; optional): Limit the number of ledger entries to retrieve. The server may return fewer than this number of entries. Cannot be more than 2048 (when requesting binary) or 256 (when requesting JSON). Positive values outside this range are replaced with the closest valid option. The default is the maximum.
+    * `marker` (string — [marker](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/markers-and-pagination); optional): Value from a previous paginated response. Resume retrieving data where that response left off.
+    * `type` (string; optional): Filter results to a specific type of ledger entry. This field accepts canonical names of [ledger entry types](https://xrpl.org/docs/references/protocol/ledger-data/ledger-entry-types) (case-insensitive) or [short names](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/ledger-entry-short-names). If omitted, return ledger entries of all types.
+
+### Returns
+
+The response follows the [standard format](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/response-formatting), with a successful result containing the following fields:
+
+  * `ledger_index` (unsigned integer — [ledger index](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#ledger-index)): The ledger index of this ledger version.
+  * `ledger_hash` (string — [hash](https://xrpl.org/docs/references/protocol/data-types/basic-data-types#hashes)): Unique identifying hash of this ledger version.
+  * `state` (array): Array of JSON objects containing data from the ledger's state tree, as defined below.
+  * `marker` (string — [marker](https://xrpl.org/docs/references/http-websocket-apis/api-conventions/markers-and-pagination)): Server-defined value indicating the response is paginated. Pass this to the next call to resume where this call left off.
+
+If a `type` field is mentioned in the request, the `state` array will be empty if the first set of array objects does not match the type requested. In such cases, you can use the `marker` from this response to paginate and retrieve further data.
+
+The format of each object in the `state` array depends on whether `binary` was set to true or not in the request. Each `state` object may include the following fields:
+
+  * `data` (string): (Only included if `"binary": true`) Hex representation of the requested data.
+  * `LedgerEntryType` (string): (Only included if `"binary": false`) String indicating what type of ledger object this object represents. See [ledger object types](https://xrpl.org/docs/references/protocol/ledger-data/ledger-entry-types) for the full list.
+  * **(Additional fields)** (various): (Only included if `"binary": false`) Additional fields describing this object, depending on which [ledger object type](https://xrpl.org/docs/references/protocol/ledger-data/ledger-entry-types) it is.
+  * `index` (string): Unique identifier for this ledger entry, as hex.
+
+### Request example
+
+```shell
+curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94ac96c5e063c305f8dbe76d29' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "ledger_data",
+      "params": [
+        {
+            "binary": true,
+            "ledger_hash": "842B57C1CC0613299A686D3E9F310EC0422C84D3911E5056389AA7E5808A93C8",
+            "limit": 5
+        }
+      ]
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "error": "lgrNotFound",
+        "error_code": 21,
+        "error_message": "ledgerNotFound",
+        "request": {
+            "binary": true,
+            "command": "ledger_data",
+            "ledger_hash": "842B57C1CC0613299A686D3E9F310EC0422C84D3911E5056389AA7E5808A93C8",
+            "limit": 5
+        },
+        "status": "error"
+    }
+}
+```
+
+---
+
+## `ledger_entry`
+
+> Retrieves a single item from a ledger version.
+
+The `ledger_entry` method returns a single ledger entry from the XRP Ledger in its raw format. See [ledger format](https://xrpl.org/docs/references/protocol/ledger-data/ledger-entry-types) for information on the different types of entries you can retrieve.
 
 
 
@@ -778,6 +1418,25 @@ curl 'https://rpc.ankr.com/xrp_mainnet/e65149e943f9f3a07d76cc87e6a90883e851ef94a
 
 
 
-  * [`account_tx`]() — retrieves a list of transactions affecting an account.
-  * [`gateway_balances`]() — calculates total amounts issued by an account.
-  * [`noripple_check`]() — gets recommended changes to an account's Default Ripple and No Ripple settings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
