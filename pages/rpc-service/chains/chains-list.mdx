@@ -10129,7 +10129,10 @@ Official quick links: [Website](https://sui.io/), [Docs](https://docs.sui.io/), 
 
 ### API methods
 
-For Sui, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/sui/) except for those listed as unsupported.
+For Sui, we support blockchain interaction via the following methods:
+
+  * [RPC methods](/rpc-service/chains/chains-api/sui/)
+  * [gRPC methods](/rpc-service/chains/chains-api/sui-grpc/)
 
 #### Unsupported
 
@@ -10143,7 +10146,7 @@ For Sui, we support blockchain interaction via all the [applicable methods](/rpc
 
 None.
 
-### API querying
+### API querying (RPC methods)
 
 #### Request example
 
@@ -10165,6 +10168,57 @@ curl -X POST https://rpc.ankr.com/sui/{your_token} \
     "jsonrpc": "2.0",
     "result": "4c78adac",
     "id": 1
+}
+```
+
+### API querying (gRPC methods)
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "read_mask": {
+          "paths": [
+            "sequence_number",
+            "digest",
+            "summary"
+          ]
+        }
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.GetCheckpoint
+```
+
+#### Response example
+
+```json
+{
+  "checkpoint": {
+    "sequenceNumber": "214225619",
+    "digest": "GNSviTUX6DXkiCPKYDo1uihJsm5oRcjtvrkT8mVQyay8",
+    "summary": {
+      "bcs": {
+        "name": "CheckpointSummary",
+        "value": "uAMAAAAAAADT0sQMAAAAADnoOwgBAAAAIPstfiDnwCpkcFlrp8nRs5js5xXtg0tbEcIIcaE+c+ldASDIgYxj9sUG3w0UPAMjIBpRGWeo4PV/1D5fw6pQLRm0VefE2UCSBwAAcCuegkRtAAC8pNR6PmsAABT/ZlEVAQAA/fdQoZoBAAAAAAoAAdn2AQAAAAAA"
+      },
+      "digest": "GNSviTUX6DXkiCPKYDo1uihJsm5oRcjtvrkT8mVQyay8",
+      "epoch": "952",
+      "sequenceNumber": "214225619",
+      "totalNetworkTransactions": "4433111097",
+      "contentDigest": "HuVZqNZXeitWwTsHdNKT5JcjcsHZfT28CJAgpCFxy3kg",
+      "previousDigest": "EVh7YWQnfvF89gg48v7tYDtX12SVyWSWQb5YtbCzJaxc",
+      "epochRollingGasCostSummary": {
+        "computationCost": "8324734633191",
+        "storageCost": "120141016607600",
+        "storageRebate": "117916092900540",
+        "nonRefundableStorageFee": "1191071645460"
+      },
+      "timestamp": "2025-11-20T12:50:29.501Z",
+      "versionSpecificData": "AAHZ9gEAAAAAAA=="
+    }
+  }
 }
 ```
 
