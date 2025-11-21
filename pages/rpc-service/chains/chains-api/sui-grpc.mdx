@@ -1,0 +1,1743 @@
+import { Callout } from "components";
+
+# Sui gRPC
+<br/>
+
+<img src="/docs/build/chains-list/sui.png" className="responsive-pic" width="800" />
+
+> Sui gRPC API is available on [Web3 API platform](https://www.ankr.com/rpc/sui).
+
+The Sui gRPC API provides a fast, type-safe, and efficient interface for interacting with the Sui blockchain. Designed for power users, indexers, explorers, and decentralized apps, this API enables access to Sui data with high performance and low latency.
+
+gRPC offers a high-performance communication protocol that uses [Protocol Buffers](https://protobuf.dev/overview/) for fast, compact data serialization. Protocol Buffers enforce strict request and response schemas that match Sui’s RPC definitions exactly — reducing runtime errors, improving compatibility, and enabling automatic client generation. With built-in support for code generation, you can scaffold clients in TypeScript, Go, Rust, and more, making it ideal for scalable backend systems such as indexers, blockchain explorers, and data-intensive decentralized apps.
+
+In addition to standard request–response calls, gRPC supports server-side streaming, enabling real-time data delivery without constant polling. This is especially useful when tracking events, checkpoints, or transactions live. The binary format used by Protocol Buffers is significantly faster and more bandwidth-efficient than JSON.
+
+The Sui gRPC server fully supports server reflection, allowing tools like `grpcurl` to discover available services and methods at runtime without requiring local `.proto` files.
+
+## Methods list
+
+**Ledger Service**:
+
+Provides read access to global ledger metadata such as chain identifiers, epochs, checkpoints, timestamps, and system-level information.
+
+  * [`BatchGetObjects`](/rpc-service/chains/chains-api/sui-grpc/#batchgetobjects) — Retrieves multiple objects in one request.
+  * [`BatchGetTransactions`](/rpc-service/chains/chains-api/sui-grpc/#batchgettransactions) — Retrieves multiple transactions by digest.
+  * [`GetCheckpoint`](/rpc-service/chains/chains-api/sui-grpc/#getcheckpoint) — Retrieves a checkpoint by sequence or digest.
+  * [`GetEpoch`](/rpc-service/chains/chains-api/sui-grpc/#getepoch) — Retrieves details for a specific epoch.
+  * [`GetObject`](/rpc-service/chains/chains-api/sui-grpc/#getobject) — Retrieves a single object by ID.
+  * [`GetServiceInfo`](/rpc-service/chains/chains-api/sui-grpc/#getserviceinfo) — Retrieves node, chain, and service metadata.
+  * [`GetTransaction`](/rpc-service/chains/chains-api/sui-grpc/#gettransaction) — Retrieves a single transaction by digest.
+
+---
+
+**Move Package Service**:
+
+Exposes Move package metadata, allowing you to query on-chain modules and published Move code.
+
+  * [`GetDatatype`](/rpc-service/chains/chains-api/sui-grpc/#getdatatype) — Retrieves metadata about a Move struct/type.
+  * [`GetFunction`](/rpc-service/chains/chains-api/sui-grpc/#getfunction) — Retrieves metadata about a Move function.
+  * [`GetPackage`](/rpc-service/chains/chains-api/sui-grpc/#getpackage) — Retrieves information about a Move package.
+  * [`ListPackageVersions`](/rpc-service/chains/chains-api/sui-grpc/#listpackageversions) — Lists the published versions of a package.
+
+---
+
+**Signature Verification Service**:
+
+Performs cryptographic verification for signatures, proofs, and signed messages.
+
+  * [`VerifySignature`](/rpc-service/chains/chains-api/sui-grpc/#verifysignature): Validates a signature against a message and public key.
+
+---
+
+**State Service**:
+
+Provides access to detailed on-chain state including objects, balances, ownership, object layouts, dynamic fields, and protocol configuration. This is the main service for querying Sui state data.
+
+  * [`GetBalance`](/rpc-service/chains/chains-api/sui-grpc/#getbalance) — Retrieves balance for a specific coin type.
+  * [`GetCoinInfo`](/rpc-service/chains/chains-api/sui-grpc/#getcoininfo) — Retrieves metadata for a coin type.
+  * [`ListBalances`](/rpc-service/chains/chains-api/sui-grpc/#listbalances) — Lists all coin balances for an address.
+  * [`ListDynamicFields`](/rpc-service/chains/chains-api/sui-grpc/#listdynamicfields) — Lists dynamic fields under an object.
+  * [`ListOwnedObjects`](/rpc-service/chains/chains-api/sui-grpc/#listownedobjects) — Lists objects owned by an address.
+
+---
+
+**Subscription Service**:
+
+Supports server-side streaming for real-time updates. Use it to subscribe to events, transactions, checkpoints, or other continuous data feeds.
+
+  * [`SubscribeCheckpoints`](/rpc-service/chains/chains-api/sui-grpc/#subscribecheckpoints) — Subscribes to a stream of newly produced checkpoints.
+
+**Transaction Execution Service**:
+
+Lets you simulate and execute transactions, fetch execution effects, run dry-runs, and retrieve transaction metadata. This is the primary service for write operations and transaction analysis.
+
+  * [`ExecuteTransaction`](/rpc-service/chains/chains-api/sui-grpc/#executetransaction) — Executes a signed transaction on-chain.
+  * [`SimulateTransaction`](/rpc-service/chains/chains-api/sui-grpc/#simulatetransaction) — Simulates a transaction without executing it.
+
+---
+
+**Ledger Service**
+
+Provides read access to global ledger metadata such as chain identifiers, epochs, checkpoints, timestamps, and system-level information.
+
+### `BatchGetObjects`
+
+> Retrieves multiple objects in one request.
+
+#### Parameters
+
+* `requests` (array; required): List of objects to retrieve. Each entry is a `GetObjectRequest`.
+  * `object_id` (string; required): ID of the object to fetch.
+  * `version` (uint64; optional): Specific version to return. Latest version is used if omitted.
+  * `read_mask` (object; optional): Field mask for this specific request.
+
+* `read_mask` (object; optional): Field mask specifying which object fields to include.
+  * `paths` (array of strings; optional): Protobuf field names to include (for example: `object_id`, `version`, `digest`, `owner`, `object_type`, `previous_transaction`, `storage_rebate`, `json`). Some implementations accept `"*"` to return all available fields.
+
+#### Returns
+
+* `objects` (array): Results for each requested object, in the same order as `requests`.
+  * `object` (object; optional): Object data when the lookup succeeds.
+    * `objectId` (string): Unique identifier of the object.
+    * `version` (string): Version of the object at the time it was fetched.
+    * `digest` (string): Digest of this object state.
+    * `owner` (object; optional): Ownership information.
+      * `kind` (string; optional): Ownership kind (e.g., `ADDRESS`, `OBJECT`, `SHARED`, `IMMUTABLE`, `CONSENSUS_ADDRESS`).
+      * `address` (string; optional): Owner or consensus address, when applicable.
+      * `version` (string; optional): Version marker associated with ownership (mainly for shared objects).
+    * `objectType` (string; optional): Type of the object (e.g., fully qualified Move struct type or `package`).
+    * `storageRebate` (string; optional): Storage rebate amount returned if the object is deleted.
+    * `balance` (string; optional): Balance value for coin objects (e.g., `0x2::coin::Coin<T>`), when applicable.
+    * `bcs` (object; optional): BCS-encoded representation of the object.
+      * `name` (string; optional): Label of the BCS payload.
+      * `value` (string; optional): Base64-encoded BCS bytes.
+    * `contents` (object; optional): BCS-encoded contents of the underlying Move struct for non-package objects.
+      * `name` (string; optional): Type name of the contents.
+      * `value` (string; optional): Base64-encoded serialized data.
+    * `package` (object; optional): Package metadata when the object is a Move package.
+    * `json` (object; optional): JSON rendering of the object’s data, when available.
+  * `error` (object; optional): Error information if the object could not be retrieved.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+    "requests": [
+      { "object_id": "0x0000000000000000000000000000000000000000000000000000000000000006"}
+    ],
+    "read_mask": { "paths": ["*"] }
+  }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.BatchGetObjects
+```
+
+#### Response example
+
+```json
+{
+  "objects": [
+    {
+      "object": {
+        "bcs": {
+          "name": "Object",
+          "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgVjbG9jawVDbG9jawAAcUe1JQAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbyXYShmgEAAAIBAAAAAAAAACDB7K0J+aEqTtdTNV6fyXp81uAAUxcbRAl2UsKvtr/TigAAAAAAAAAA"
+        },
+        "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+        "version": "632637297",
+        "digest": "GZ4vSjvoMLXj9BoiBsmJ52YKCR4nRTK2oEYMjMyCvBMk",
+        "owner": {
+          "kind": "SHARED",
+          "version": "1"
+        },
+        "objectType": "0x0000000000000000000000000000000000000000000000000000000000000002::clock::Clock",
+        "hasPublicTransfer": false,
+        "contents": {
+          "name": "0x0000000000000000000000000000000000000000000000000000000000000002::clock::Clock",
+          "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbyXYShmgEAAA=="
+        },
+        "previousTransaction": "E411BJgW1RbuBePFkJ4BYaWVgF7g87wC46TjjYzH5Z1B",
+        "storageRebate": "0",
+        "json": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000006",
+          "timestamp_ms": "1763646397938"
+        }
+      }
+    }
+  ]
+}
+```
+
+---
+
+### `BatchGetTransactions`
+
+> Retrieves multiple transactions by digest.
+
+#### Parameters
+
+* `digests` (array of strings; required): List of transaction digests to retrieve.
+* `read_mask` (object; optional): Field mask specifying which transaction fields to include.
+  * `paths` (array of strings; optional): Protobuf field names to include (for example: `digest`, `transaction`, `transaction.sender`, `transaction.kind`, `effects`, `effects.status`, `effects.changed_objects`, `events`, `balance_changes`, `checkpoint`, `timestamp`). Some implementations accept `"*"` to return all available fields.
+
+
+#### Returns
+
+* `transactions` (array): Results for each requested digest, in the same order as `digests`.
+  * `transaction` (object; optional): Full transaction data when the lookup succeeds.
+    * `digest` (string): Digest of the transaction.
+    * `transaction` (object; optional): The transaction payload, including sender, gas settings, and transaction kind.
+      * `sender` (string; optional): Address of the sender.
+      * `gasPayment` (object; optional): Gas payment details (objects used to pay gas, owner, price, budget).
+      * `kind` (object; optional): High-level transaction kind (e.g., `ProgrammableTransaction`, `ConsensusCommitPrologue`, etc.).
+    * `signatures` (array; optional): User signatures authorizing the transaction.
+      * Each entry may contain `scheme`, `signature`, `publicKey`, or a multisig/zkLogin/passkey structure.
+    * `effects` (object; optional): Execution effects.
+      * `status` (object; optional): Execution status, typically `{ success: true }` or `{ success: false }`.
+      * `changedObjects` (array; optional): Objects created, mutated, or deleted by the transaction.
+      * `gasUsed` (object; optional): Breakdown of gas usage (computation, storage, rebate).
+      * `transactionDigest` (string; optional): Digest of the executed transaction.
+      * `dependencies` (array of strings; optional): Digests of dependency transactions.
+    * `events` (object; optional): Events generated by this transaction, if any.
+    * `balanceChanges` (array; optional): Per-address balance updates produced by the transaction.
+    * `checkpoint` (string; optional): Checkpoint sequence number containing this transaction.
+    * `timestamp` (string; optional): Timestamp of the checkpoint (ISO-8601 format).
+    * `objects` (object; optional): Objects referenced or produced by this transaction (may be omitted when returned at checkpoint level).
+  * `error` (object; optional): Error information if the transaction could not be retrieved.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+    "digests": ["hSwNywhBjUhHvSsZT5PhVFz5iZgMR24onKQKFSyubVu"],
+    "read_mask": { "paths": ["*"] }
+  }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.BatchGetTransactions
+```
+
+#### Response example
+
+```json
+{
+  "transactions": [
+    {
+      "transaction": {
+        "digest": "hSwNywhBjUhHvSsZT5PhVFz5iZgMR24onKQKFSyubVu",
+        "transaction": {
+          "digest": "hSwNywhBjUhHvSsZT5PhVFz5iZgMR24onKQKFSyubVu",
+          "version": 1,
+          "kind": {
+            "kind": "CONSENSUS_COMMIT_PROLOGUE_V4",
+            "consensusCommitPrologue": {
+              "epoch": "951",
+              "round": "1188405",
+              "commitTimestamp": "2025-11-19T15:34:37.980Z",
+              "consensusCommitDigest": "EqQHgXytDRK7Api3bw9AmwSaJ26s81bMBYY7Hs4gQJ2i"
+            }
+          },
+          "sender": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "gasPayment": {
+            "objects": [
+              {
+                "objectId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "version": "0",
+                "digest": "11111111111111111111111111111111"
+              }
+            ],
+            "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "price": "1",
+            "budget": "0"
+          },
+          "expiration": {
+            "kind": "NONE"
+          }
+        },
+        "effects": {
+          "digest": "75dAW4QrYV6Vt9ngQA4g14DDnmCCWF5BgE3dsgvtgzwy",
+          "version": 2,
+          "status": {
+            "success": true
+          },
+          "epoch": "951",
+          "gasUsed": {
+            "computationCost": "0",
+            "storageCost": "0",
+            "storageRebate": "0",
+            "nonRefundableStorageFee": "0"
+          },
+          "transactionDigest": "hSwNywhBjUhHvSsZT5PhVFz5iZgMR24onKQKFSyubVu",
+          "dependencies": [
+            "FRS9rMUZ2ycrVYFdtS2wiWE12JMwuVWKSZy3wpFd5ifD"
+          ],
+          "changedObjects": [
+            {
+              "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+              "inputState": "INPUT_OBJECT_STATE_EXISTS",
+              "outputState": "OUTPUT_OBJECT_STATE_OBJECT_WRITE",
+              "objectType": "0x2::clock::Clock"
+            }
+          ]
+        },
+        "checkpoint": "213906807",
+        "timestamp": "2025-11-19T15:34:37.980Z"
+      }
+    }
+  ]
+}
+```
+
+---
+
+### `GetCheckpoint`
+
+> Retrieves a checkpoint by sequence or digest.
+
+#### Parameters
+
+* `sequence_number` (uint64; optional): Sequence number of the checkpoint to fetch.
+  If both `sequence_number` and `digest` are omitted, the latest checkpoint is returned.
+* `digest` (string; optional): Digest of the checkpoint to fetch.
+* `read_mask` (object; optional): Field mask specifying which checkpoint fields to include in the response.
+  * `paths` (array of strings; optional): Protobuf field names to include (for example: `sequence_number`, `digest`, `summary`, `summary.timestamp`, `summary.epoch`, `transactions`, `objects`). Some implementations accept `"*"` to return all available fields.
+
+#### Returns
+
+* `checkpoint` (object; optional): Checkpoint data for the requested identifier, or the latest checkpoint if no identifier was provided.
+  * `sequenceNumber` (string): Height of this checkpoint.
+  * `digest` (string): Digest of this checkpoint’s summary.
+  * `summary` (object; optional): Compact header describing the checkpoint.
+    * `epoch` (string; optional): Epoch that this checkpoint belongs to.
+    * `totalNetworkTransactions` (string; optional): Total number of transactions committed since genesis, including this checkpoint.
+    * `contentDigest` (string; optional): Digest of the checkpoint contents.
+    * `previousDigest` (string; optional): Digest of the previous checkpoint summary (empty for genesis).
+    * `timestamp` (string; optional): Timestamp of the checkpoint (ISO-8601).
+  * `signature` (object; optional): Aggregated validator signature certifying this checkpoint.
+    * `epoch` (string; optional): Epoch in which the aggregated signature was produced.
+    * `signature` (string; optional): Aggregated BLS signature bytes (base64-encoded).
+  * `contents` (object; optional): Committed contents of this checkpoint.
+    * `digest` (string; optional): Digest of the checkpoint contents.
+    * `transactions` (array; optional): List of transaction/effects digests included in this checkpoint.
+  * `transactions` (array; optional): Executed transactions included in this checkpoint. Each entry has the same structure as `ExecutedTransaction` returned by transaction-related methods.
+  * `objects` (object; optional): Set of objects referenced or produced by transactions in this checkpoint, returned as a collection of object records when requested.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "read_mask": {
+          "paths": [
+            "sequence_number",
+            "digest",
+            "summary"
+          ]
+        }
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.GetCheckpoint
+```
+
+#### Response example
+
+```json
+{
+  "checkpoint": {
+    "sequenceNumber": "214225619",
+    "digest": "GNSviTUX6DXkiCPKYDo1uihJsm5oRcjtvrkT8mVQyay8",
+    "summary": {
+      "bcs": {
+        "name": "CheckpointSummary",
+        "value": "uAMAAAAAAADT0sQMAAAAADnoOwgBAAAAIPstfiDnwCpkcFlrp8nRs5js5xXtg0tbEcIIcaE+c+ldASDIgYxj9sUG3w0UPAMjIBpRGWeo4PV/1D5fw6pQLRm0VefE2UCSBwAAcCuegkRtAAC8pNR6PmsAABT/ZlEVAQAA/fdQoZoBAAAAAAoAAdn2AQAAAAAA"
+      },
+      "digest": "GNSviTUX6DXkiCPKYDo1uihJsm5oRcjtvrkT8mVQyay8",
+      "epoch": "952",
+      "sequenceNumber": "214225619",
+      "totalNetworkTransactions": "4433111097",
+      "contentDigest": "HuVZqNZXeitWwTsHdNKT5JcjcsHZfT28CJAgpCFxy3kg",
+      "previousDigest": "EVh7YWQnfvF89gg48v7tYDtX12SVyWSWQb5YtbCzJaxc",
+      "epochRollingGasCostSummary": {
+        "computationCost": "8324734633191",
+        "storageCost": "120141016607600",
+        "storageRebate": "117916092900540",
+        "nonRefundableStorageFee": "1191071645460"
+      },
+      "timestamp": "2025-11-20T12:50:29.501Z",
+      "versionSpecificData": "AAHZ9gEAAAAAAA=="
+    }
+  }
+}
+```
+
+---
+
+### `GetEpoch`
+
+> Retrieves details for a specific epoch.
+
+#### Parameters
+
+* `epoch` (uint64; optional): The epoch number to fetch. If omitted, the service returns the current epoch.
+* `read_mask` (object; optional): Field mask specifying which epoch fields to include in the response.
+  * `paths` (array of strings; optional): Protobuf field names to include (for example: `epoch`, `protocol_version`, `reference_gas_price`, `validator_set`, `validator_set.members`, `system_state`). Some implementations accept `"*"` to return all available fields.
+
+#### Returns
+
+* `epoch` (object; optional): Information about the requested epoch.
+  * `epoch` (string): Epoch number.
+  * `firstCheckpoint` (string; optional): Sequence number of the first checkpoint in this epoch.
+  * `lastCheckpoint` (string; optional): Sequence number of the last checkpoint in this epoch.
+  * `start` (string; optional): Start timestamp of the epoch (ISO-8601 format).
+  * `end` (string; optional): End timestamp of the epoch (ISO-8601 format).
+  * `referenceGasPrice` (string; optional): Reference gas price for this epoch.
+  * `protocolConfig` (object; optional): Protocol configuration active in this epoch.
+    * `protocolVersion` (string; optional): Protocol version number.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "epoch": "951"
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.GetEpoch
+```
+
+#### Response example
+
+```json
+{
+  "epoch": {
+    "epoch": "951",
+    "firstCheckpoint": "213579473",
+    "lastCheckpoint": "213938636",
+    "start": "2025-11-18T17:42:29.619Z",
+    "end": "2025-11-19T17:42:30.554Z",
+    "referenceGasPrice": "500",
+    "protocolConfig": {
+      "protocolVersion": "101"
+    }
+  }
+}
+```
+
+---
+
+### `GetObject`
+
+> Retrieves a single object by ID.
+
+#### Parameters
+
+* `object_id` (string; required): The `ObjectId` of the object to retrieve.
+* `version` (uint64; optional): The specific version of the object to return. If omitted and the object is live, the latest version is returned.
+* `read_mask` (object; optional): Field mask specifying which object fields to include in the response.
+  * `paths` (array of strings; optional): Protobuf field names to include (for example: `object_id`, `version`, `digest`, `owner`, `object_type`, `previous_transaction`, `storage_rebate`, `json`). Some implementations accept `"*"` to return all available fields.
+
+#### Returns
+
+* `object` (object; optional): The returned object data if the lookup succeeds.
+  * `objectId` (string): ID of the object.
+  * `version` (string): Version of the object.
+  * `digest` (string): Digest of this object state.
+  * `owner` (object; optional): Ownership information.
+    * May include fields such as `address`, `version`, or ownership `kind` (shared, immutable, object, etc.).
+  * `objectType` (string): Type of the object (e.g., Move struct tag or `package`).
+  * `bcs` (object; optional): Raw BCS representation of the object.
+    * `name` (string): Name of the BCS-encoded type.
+    * `value` (string): Base64-encoded BCS bytes.
+  * `contents` (object; optional): BCS bytes of a Move struct value.
+  * `package` (object; optional): Package information (present for Move packages).
+  * `previousTransaction` (string; optional): Digest of the transaction that last mutated this object.
+  * `storageRebate` (string; optional): Storage rebate amount associated with this object.
+  * `json` (object; optional): JSON rendering of the object.
+  * `balance` (string; optional): Current balance if the object is a `0x2::coin::Coin<T>`.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "object_id": "0x0000000000000000000000000000000000000000000000000000000000000006"
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.GetObject
+```
+
+#### Response example
+
+```json
+{
+  "object": {
+    "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+    "version": "632658683",
+    "digest": "H7BP9CsjCWqWdV459C7bAzECD5ozmFBfhSgb1KxXb5L7"
+  }
+}
+```
+
+---
+
+### `GetServiceInfo`
+
+> Retrieves node, chain, and service metadata.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+* `chainId` (string): Chain identifier (digest of the genesis checkpoint).
+* `chain` (string): Human-readable chain name (e.g., `"mainnet"`).
+* `epoch` (string): Current epoch of the node.
+* `checkpointHeight` (string): Height of the most recently executed checkpoint.
+* `timestamp` (string): Timestamp of the latest executed checkpoint (ISO-8601 format).
+* `lowestAvailableCheckpoint` (string): Lowest checkpoint height for which checkpoint and transaction data are available.
+* `lowestAvailableCheckpointObjects` (string): Lowest checkpoint height for which object data is available.
+* `server` (string): Software version string for this service.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{}' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.GetServiceInfo
+```
+
+#### Response example
+
+```json
+{
+  "chainId": "4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S",
+  "chain": "mainnet",
+  "epoch": "952",
+  "checkpointHeight": "214248984",
+  "timestamp": "2025-11-20T14:23:54.546Z",
+  "lowestAvailableCheckpoint": "130842232",
+  "lowestAvailableCheckpointObjects": "213684741",
+  "server": "sui-node/1.60.1-49d95e90e36e"
+}
+```
+
+---
+
+### `GetTransaction`
+
+> Retrieves a single transaction by digest.
+
+#### Parameters
+
+* `digest` (string; required): Digest of the transaction to retrieve.
+* `read_mask` (object; optional): Field mask specifying which transaction fields to include in the response.
+  * `paths` (array of strings; optional): Protobuf field names to include (for example: `digest`, `transaction`, `transaction.sender`, `transaction.kind`, `effects`, `effects.status`, `effects.changed_objects`, `events`, `balance_changes`, `checkpoint`, `timestamp`, `objects`). Some implementations accept `"*"` to return all available fields.
+
+#### Returns
+
+* `transaction` (object; optional): Executed transaction data if the lookup succeeds.
+  * `digest` (string): Digest of the transaction.
+  * `transaction` (object; optional): Transaction payload.
+    * `sender` (string; optional): Address of the transaction sender.
+    * `gasPayment` (object; optional): Gas payment configuration (gas objects, owner, price, budget).
+    * `kind` (object; optional): Transaction kind (for example, programmable transaction, consensus commit prologue).
+  * `signatures` (array; optional): User signatures authorizing the transaction.
+  * `effects` (object; optional): Execution effects for this transaction.
+    * `status` (object; optional): Execution status (for example, `success: true`).
+    * `changedObjects` (array; optional): Objects created, mutated, or deleted by the transaction.
+    * `gasUsed` (object; optional): Gas usage breakdown (computation, storage, rebate).
+    * `transactionDigest` (string; optional): Digest of the executed transaction.
+    * `dependencies` (array of strings; optional): Digests of dependency transactions.
+  * `events` (object; optional): Events emitted during transaction execution, if any.
+  * `balanceChanges` (array; optional): Per-address, per-coin-type balance updates caused by this transaction.
+  * `checkpoint` (string; optional): Checkpoint sequence number containing this transaction.
+  * `timestamp` (string; optional): Timestamp of the checkpoint that includes this transaction (ISO-8601 format).
+  * `objects` (object; optional): Objects referenced as inputs or produced as outputs by this transaction.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "digest": "hSwNywhBjUhHvSsZT5PhVFz5iZgMR24onKQKFSyubVu",
+        "read_mask": {
+          "paths": ["*"]
+        }
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.LedgerService.GetTransaction
+```
+
+#### Response example
+
+```json
+{
+  "transaction": {
+    "digest": "hSwNywhBjUhHvSsZT5PhVFz5iZgMR24onKQKFSyubVu",
+    "effects": {
+      "bcs": {
+        "name": "TransactionEffects",
+        "value": "AQC3AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIApcj2B2cnBzLKo2O9lBRpzwZh0U+NBGVIDtATtFaKEUAAABINZF/xw55sjHgk8nWetzMPXVfvvmQQQazN0LJEwBiOfMbq2iJQAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYBba2iJQAAAAAgA4c8QzpRZ3K7ARu5evaUjapDn2phY9m2brwDZ7zIfAwCAQAAAAAAAAABIF4Fipa86aBJjMYj9zfd72ecY9o6PfR0Z6iy8mAtZEAEAgEAAAAAAAAAAAAA"
+      },
+      "digest": "75dAW4QrYV6Vt9ngQA4g14DDnmCCWF5BgE3dsgvtgzwy",
+      "version": 2,
+      "status": {
+        "success": true
+      },
+      "epoch": "951",
+      "gasUsed": {
+        "computationCost": "0",
+        "storageCost": "0",
+        "storageRebate": "0",
+        "nonRefundableStorageFee": "0"
+      },
+      "transactionDigest": "hSwNywhBjUhHvSsZT5PhVFz5iZgMR24onKQKFSyubVu",
+      "dependencies": [
+        "FRS9rMUZ2ycrVYFdtS2wiWE12JMwuVWKSZy3wpFd5ifD"
+      ],
+      "lamportVersion": "631418222",
+      "changedObjects": [
+        {
+          "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+          "inputState": "INPUT_OBJECT_STATE_EXISTS",
+          "inputVersion": "631418221",
+          "inputDigest": "EmpuZ8vHkphwFnaH6NuC3cPsK58aWtdmJWCUpFZosNK",
+          "inputOwner": {
+            "kind": "SHARED",
+            "version": "1"
+          },
+          "outputState": "OUTPUT_OBJECT_STATE_OBJECT_WRITE",
+          "outputVersion": "631418222",
+          "outputDigest": "7L2E1st8zEP7QTaEyKYurMYmMBR1NV5WmYcS3QEsC63d",
+          "outputOwner": {
+            "kind": "SHARED",
+            "version": "1"
+          },
+          "idOperation": "NONE",
+          "objectType": "0x0000000000000000000000000000000000000000000000000000000000000002::clock::Clock"
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+**Move Package Service**:
+
+Exposes Move package metadata, allowing you to query on-chain modules and published Move code.
+
+### `GetDatatype`
+
+> Retrieves metadata about a Move struct/type.
+
+#### Parameters
+
+* `package_id` (string; required): The storage ID (`storage_id`) of the package that defines the datatype.
+* `module_name` (string; required): The name of the module where the datatype is defined.
+* `name` (string; required): The name of the datatype to retrieve.
+
+#### Returns
+
+* `datatype` (object; optional): Information about the requested Move datatype.
+  * `typeName` (string): Fully qualified name (`<package>::<module>::<name>`).
+  * `definingId` (string): Package ID of the version where this datatype was first introduced.
+  * `module` (string): Name of the defining module.
+  * `name` (string): Name of the datatype.
+  * `abilities` (array): List of abilities (e.g., `COPY`, `DROP`, `STORE`, `KEY`).
+  * `typeParameters` (array): Type parameter descriptors.
+    * `constraints` (array): Ability constraints.
+    * `isPhantom` (boolean): Whether the type parameter is phantom.
+  * `kind` (string): Either `STRUCT` or `ENUM`.
+  * `fields` (array; optional): Field descriptors (only for struct types).
+    * `name` (string): Field name.
+    * `position` (number): Field position in the struct definition.
+    * `type` (object): Field type signature.
+      * `type` (string): Primitive or composite type (e.g., `U64`, `ADDRESS`, `VECTOR`, `DATATYPE`, etc.).
+      * `typeName` (string; optional): Fully qualified datatype name (when `type` is `DATATYPE`).
+      * `typeParameterInstantiation` (array; optional): Applied generic parameters.
+      * `typeParameter` (number; optional): Index of the type parameter (when applicable).
+  * `variants` (array; optional): Enum variant descriptors (only for enum types).
+    * `name` (string): Variant name.
+    * `position` (number): Variant order.
+    * `fields` (array): Field descriptors for this variant.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "package_id": "0x2",
+        "module_name": "coin",
+        "name": "Coin"
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.MovePackageService.GetDatatype
+```
+
+#### Response example
+
+```json
+{
+  "datatype": {
+    "typeName": "0x0000000000000000000000000000000000000000000000000000000000000002::coin::Coin",
+    "definingId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+    "module": "coin",
+    "name": "Coin",
+    "abilities": [
+      "STORE",
+      "KEY"
+    ],
+    "typeParameters": [
+      {
+        "isPhantom": true
+      }
+    ],
+    "kind": "STRUCT",
+    "fields": [
+      {
+        "name": "id",
+        "position": 0,
+        "type": {
+          "type": "DATATYPE",
+          "typeName": "0x0000000000000000000000000000000000000000000000000000000000000002::object::UID"
+        }
+      },
+      {
+        "name": "balance",
+        "position": 1,
+        "type": {
+          "type": "DATATYPE",
+          "typeName": "0x0000000000000000000000000000000000000000000000000000000000000002::balance::Balance",
+          "typeParameterInstantiation": [
+            {
+              "type": "TYPE_PARAMETER",
+              "typeParameter": 0
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `GetFunction`
+
+> Retrieves metadata about a Move function.
+
+#### Parameters
+
+* `package_id` (string; required): The storage ID (`storage_id`) of the package that defines the function.
+* `module_name` (string; required): The name of the module where the function is defined.
+* `name` (string; required): The name of the function to retrieve.
+
+#### Returns
+
+* `function` (object; optional): Metadata describing the requested Move function.
+  * `name` (string): The function name.
+  * `visibility` (string): One of `PRIVATE`, `PUBLIC`, or `FRIEND`.
+  * `isEntry` (boolean): Whether the function is marked as `entry`.
+  * `typeParameters` (array): Type parameter descriptors.
+    * `constraints` (array): Ability constraints required by this type parameter.
+    * `isPhantom` (boolean): Indicates whether this type parameter is phantom.
+  * `parameters` (array): Function parameter type descriptors.
+    * `reference` (string): Reference kind (`IMMUTABLE`, `MUTABLE`, or `UNKNOWN`).
+    * `body` (object): Type signature.
+      * `type` (string): Primitive or composite type (`U64`, `ADDRESS`, `VECTOR`, `DATATYPE`, etc.).
+      * `typeName` (string; optional): Fully qualified datatype name (when applicable).
+      * `typeParameterInstantiation` (array; optional): Applied type parameters (for generics).
+      * `typeParameter` (number; optional): Index of the type parameter.
+  * `returns` (array): Function return type descriptors.
+    * Same structure as `parameters`.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "package_id": "0x2",
+        "module_name": "coin",
+        "name": "mint"
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.MovePackageService.GetFunction
+```
+
+#### Response example
+
+```json
+{
+  "function": {
+    "name": "mint",
+    "visibility": "PUBLIC",
+    "isEntry": false,
+    "typeParameters": [
+      {}
+    ],
+    "parameters": [
+      {
+        "reference": "MUTABLE",
+        "body": {
+          "type": "DATATYPE",
+          "typeName": "0x0000000000000000000000000000000000000000000000000000000000000002::coin::TreasuryCap",
+          "typeParameterInstantiation": [
+            {
+              "type": "TYPE_PARAMETER",
+              "typeParameter": 0
+            }
+          ]
+        }
+      },
+      {
+        "body": {
+          "type": "U64"
+        }
+      },
+      {
+        "reference": "MUTABLE",
+        "body": {
+          "type": "DATATYPE",
+          "typeName": "0x0000000000000000000000000000000000000000000000000000000000000002::tx_context::TxContext"
+        }
+      }
+    ],
+    "returns": [
+      {
+        "body": {
+          "type": "DATATYPE",
+          "typeName": "0x0000000000000000000000000000000000000000000000000000000000000002::coin::Coin",
+          "typeParameterInstantiation": [
+            {
+              "type": "TYPE_PARAMETER",
+              "typeParameter": 0
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
+###  `GetPackage`
+
+> Retrieves information about a Move package.
+
+#### Parameters
+
+* `package_id` (string; required): The storage ID (`storage_id`) of the package to retrieve.
+
+#### Returns
+
+* `package` (object; optional): Metadata describing the requested Move package.
+  * `storageId` (string): The on-chain ObjectId for this specific package version.
+  * `originalId` (string): The package’s original ID (the first published version).
+    Stable across upgrades.
+  * `version` (number): The version number of this package.
+  * `modules` (array): List of Move modules defined in the package.
+    * `name` (string): Module name.
+    * `contents` (string): Base64-encoded compiled bytecode.
+    * `datatypes` (array): Datatype descriptors defined in the module.
+    * `functions` (array): Function descriptors defined in the module.
+  * `typeOrigins` (array): Mapping of datatypes to the package version that first defined them.
+    * `moduleName` (string)
+    * `datatypeName` (string)
+    * `packageId` (string)
+  * `linkage` (array): Mapping of dependency package IDs.
+    * `originalId` (string): Runtime ID used by dependent packages.
+    * `upgradedId` (string): Storage ID used for loading.
+    * `upgradedVersion` (number): Version corresponding to `upgraded_id`.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "package_id": "0x2"
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.MovePackageService.GetPackage
+```
+
+#### Response example
+
+Below is a truncated example:
+
+```json
+{
+  "package": {
+    "storageId": "0x2",
+    "originalId": "0x2",
+    "version": "1",
+    "modules": [
+      {
+        "name": "coin",
+        "contents": "BASE64_BYTECODE...",
+        "datatypes": [
+          {
+            "typeName": "0x2::coin::Coin",
+            "definingId": "0x2",
+            "module": "coin",
+            "name": "Coin",
+            "abilities": ["COPY", "DROP", "STORE"],
+            "typeParameters": [],
+            "kind": "STRUCT",
+            "fields": [
+              {
+                "name": "value",
+                "position": 0,
+                "type": {
+                  "type": "U64"
+                }
+              }
+            ]
+          }
+        ],
+        "functions": [
+          {
+            "name": "mint",
+            "visibility": "FRIEND",
+            "isEntry": false,
+            "typeParameters": [],
+            "parameters": [],
+            "returns": []
+          }
+        ]
+      }
+    ],
+    "typeOrigins": [
+      {
+        "moduleName": "coin",
+        "datatypeName": "Coin",
+        "packageId": "0x2"
+      }
+    ],
+    "linkage": [
+      {
+        "originalId": "0x1",
+        "upgradedId": "0x1",
+        "upgradedVersion": "1"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `ListPackageVersions`
+
+> Lists the published versions of a package.
+
+#### Parameters
+
+* `package_id` (string; required): The storage ID (`storage_id`) of any version of the package.
+* `page_size` (number; optional): Maximum number of versions to return. Defaults to `1000`, maximum is `10000`.
+* `page_token` (string; optional): Token from a previous response used to fetch the next page. Must match the original request parameters.
+
+#### Returns
+
+* `versions` (array): List of available package versions, ordered by version.
+  * `packageId` (string): Storage ID of this package version.
+  * `version` (number): Version number.
+* `nextPageToken` (string; optional): Token to retrieve the next page. Omitted if no more versions are available.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "package_id": "0x2",
+        "page_size": 5
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.MovePackageService.ListPackageVersions
+```
+
+#### Response example
+
+```json
+{
+  "versions": [
+    {
+      "packageId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "version": "38"
+    },
+    {
+      "packageId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "version": "39"
+    },
+    {
+      "packageId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "version": "40"
+    },
+    {
+      "packageId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "version": "41"
+    },
+    {
+      "packageId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "version": "42"
+    }
+  ],
+  "nextPageToken": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIrAAAAAAAAAA=="
+}
+```
+
+---
+
+**Signature Verification Service**:
+
+Performs cryptographic verification for signatures, proofs, and signed messages.
+
+### `VerifySignature`
+
+> Validates a signature against a message and public key.
+
+#### Parameters
+
+* `message` (object; required): BCS-encoded message to verify.
+  * `name` (string; required): Message type identifier (for example: `"PersonalMessage"`, `"TransactionData"`).
+  * `value` (string; required): Base64-encoded BCS bytes of the message.
+
+* `signature` (object; required): Signature to verify, represented as a `UserSignature`.
+  * May contain one of the following depending on the scheme:
+    * `simple` → ED25519 / SECP256K1 / SECP256R1 signatures
+    * `multisig` → multisig aggregated signature
+    * `zklogin` → zkLogin authenticator
+    * `passkey` → passkey authenticator
+  * `scheme` (string; optional): Signature scheme identifier (e.g., `"ED25519"`).
+
+* `address` (string; optional): Expected address derived from the signature. Verification fails unless the derived address matches this value.
+
+* `jwks` (array; optional): List of JSON Web Keys used to verify zkLogin signatures. If omitted, the node uses the active on-chain JWK set.
+  * Each entry:
+    * `kty` (string): Key type (e.g., `"RSA"`).
+    * `e` (string): RSA public exponent.
+    * `n` (string): RSA modulus.
+    * `alg` (string): Algorithm (e.g., `"RS256"`).
+
+#### Returns
+
+* `isValid` (boolean): Indicates whether the provided signature is valid for the given message.
+* `reason` (string; optional): Error explanation when `isValid` is `false`.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "message": {
+          "name": "PersonalMessage",
+          "value": "BASE64_BCS_MESSAGE"
+        },
+        "signature": {
+          "scheme": "ED25519",
+          "simple": {
+            "scheme": "ED25519",
+            "signature": "BASE64_SIGNATURE",
+            "publicKey": "BASE64_PUBLIC_KEY"
+          }
+        },
+        "address": "0xREPLACE_WITH_EXPECTED_ADDRESS",
+        "jwks": [
+          {
+            "kty": "RSA",
+            "e": "AQAB",
+            "n": "BASE64URL_RSA_MODULUS",
+            "alg": "RS256"
+          }
+        ]
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.SignatureVerificationService.VerifySignature
+```
+
+#### Response example
+
+```json
+{
+  "isValid": true
+}
+```
+
+---
+
+**State Service**:
+
+Provides access to detailed on-chain state including objects, balances, ownership, object layouts, dynamic fields, and protocol configuration. This is the main service for querying Sui state data.
+
+### `GetBalance`
+
+> Retrieves balance for a specific coin type.
+
+#### Parameters
+
+* `owner` (string; required): Sui address whose balance you want to query.
+* `coin_type` (string; required): Fully qualified coin type (for example: `0x2::sui::SUI`).
+
+#### Returns
+
+* `balance` (object; optional): Balance information for the requested coin type.
+  * `coinType` (string): Coin type identifier.
+  * `balance` (string): Total balance in the smallest unit of the coin.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "coin_type": "0x2::sui::SUI"
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.StateService.GetBalance
+```
+
+#### Response example
+
+```json
+{
+  "balance": {
+    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+    "balance": "2044869853603"
+  }
+}
+```
+
+---
+
+### `GetCoinInfo`
+
+> Retrieves metadata for a coin type.
+
+#### Parameters
+
+* `coin_type` (string; required): Fully qualified coin type to query (example: `0x2::sui::SUI`).
+
+#### Returns
+
+* `coinType` (string): The coin type returned by the node.
+
+* `metadata` (object; optional): Standard metadata for this coin type.
+  * `id` (string): ObjectId of the metadata object.
+  * `decimals` (number): Number of decimal places.
+  * `name` (string): Human-readable token name.
+  * `symbol` (string): Token symbol.
+  * `description` (string): Token description.
+  * `iconUrl` (string; optional): URL to the coin icon.
+  * `metadataCapId` (string; optional): If claimed, ID of MetadataCap.
+  * `metadataCapState` (string): State of the MetadataCap.
+
+* `treasury` (object; optional): Information about the coin’s TreasuryCap object.
+  * `id` (string): TreasuryCap object ID.
+  * `totalSupply` (string): Total supply (smallest unit).
+  * `supplyState` (string): Whether supply is FIXED, BURN_ONLY, etc.
+
+* `regulatedMetadata` (object; optional): Applies only to regulated coins.
+  * `id` (string): RegulatedCoinMetadata object ID.
+  * `coinMetadataObject` (string): Linked metadata object ID.
+  * `denyCapObject` (string): Deny list controller object.
+  * `allowGlobalPause` (boolean): Whether coin can be globally paused.
+  * `variant` (number): Variant of regulated metadata.
+  * `coinRegulatedState` (string): REGULATED / UNREGULATED / UNKNOWN.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "coin_type": "0x2::sui::SUI"
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.StateService.GetCoinInfo
+```
+
+#### Response example
+
+```json
+{
+  "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+  "metadata": {
+    "id": "0xf256d3fb6a50eaa748d94335b34f2982fbc3b63ceec78cafaa29ebc9ebaf2bbc",
+    "decimals": 9,
+    "name": "Sui",
+    "symbol": "SUI",
+    "description": "",
+    "iconUrl": "",
+    "metadataCapState": "UNCLAIMED"
+  },
+  "treasury": {
+    "totalSupply": "10000000000000000000",
+    "supplyState": "FIXED"
+  },
+  "regulatedMetadata": {
+    "coinRegulatedState": "UNREGULATED"
+  }
+}
+```
+
+---
+
+###  `ListBalances`
+
+> Lists all coin balances for an address.
+
+#### Parameters
+
+* `owner` (string; required): Address whose balances to list.
+* `page_size` (uint32; optional): Maximum number of entries to return (default: `50`; max: `1000`).
+* `page_token` (bytes; optional): Token for fetching the next page.
+
+#### Returns
+
+* `balances` (array): List of balances for each coin type.
+  * `coinType` (string): Fully qualified coin type.
+  * `balance` (string): Total balance in the smallest unit.
+
+* `nextPageToken` (bytes; optional): Token for retrieving the next page.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "owner": "0x123456789abcdef123456789abcdef123456789abcdef123456789abcdef1234",
+        "page_size": 20
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.StateService.ListBalances
+```
+
+#### Response example
+
+```json
+{
+  "balances": [
+    {
+      "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+      "balance": "1048533540"
+    },
+    {
+      "coinType": "0x022cac18d673c28bb29a69bf1cc4b86344d81e1ae29d9bd2220745f75e4c980c::mat::MAT",
+      "balance": "1000000000000"
+    },
+    {
+      "coinType": "0x03cbd6eac52f4e6a98cd8ee44e1d7c8960ccc94cb48fcd94b45846df2c58ce07::mat::MAT",
+      "balance": "1000000000000"
+    },
+    {
+      "coinType": "0x25bb6dda13a9e44f0a5eef5edf6967e551f3c8e57e3495f2f1da1285a2d45955::mat::MAT",
+      "balance": "1000000000000"
+    },
+    {
+      "coinType": "0x49b3e7b2b7f3fec982c1c40d4acfcc55361e0925d1b689b643251b01ee6e635c::mat::MAT",
+      "balance": "1000000000000"
+    },
+    {
+      "coinType": "0x7e21166ee1ae31652cdbbac427d4830e172a0b8a65eb1c2f37e6b7c9fc24bd53::mat::MAT",
+      "balance": "1000000000000"
+    }
+  ]
+}
+```
+
+---
+
+### `ListDynamicFields`
+
+> Lists dynamic fields under an object.
+
+#### Parameters
+
+* `parent` (string; required): The UID/ObjectId of the parent that owns the dynamic fields.
+* `page_size` (uint32; optional): Maximum number of entries to return (default: `50`; max: `1000`).
+* `page_token` (bytes; optional): Token for fetching the next page.
+* `read_mask` (object; optional): Field mask specifying which fields to include.
+  * `paths` (array of strings): Protobuf field names to return (for example: `"parent"`, `"field_id"`, `"field_object"`, `"name"`, `"value"`, `"value_type"`, `"child_id"`, `"child_object"`). Some implementations accept `"*"` to request all available fields.
+
+#### Returns
+
+* `dynamicFields` (array): Page of dynamic fields under the parent. Each entry may contain:
+  * `kind` (string): `"FIELD"` or `"OBJECT"`.
+  * `parent` (string): Parent ObjectId.
+  * `fieldId` (string): ObjectId representing this dynamic field.
+  * `fieldObject` (object; optional): The Object when the field is stored as an object.
+  * `name` (object; optional): BCS-encoded dynamic field name.
+  * `value` (object; optional): BCS-encoded dynamic field value.
+  * `valueType` (string; optional): Type of the value or child object.
+  * `childId` (string; optional): ObjectId of a child object (when `kind = OBJECT`).
+  * `childObject` (object; optional): The dynamic child object itself.
+
+* `nextPageToken` (bytes; optional): Token for retrieving the next results page.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "parent": "0xREAL_PARENT_WITH_DYNAMIC_FIELDS",
+        "page_size": 10
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.StateService.ListDynamicFields
+```
+
+#### Response example
+
+```json
+{
+  "dynamicFields": [
+    {
+      "kind": "FIELD",
+      "parent": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd",
+      "fieldId": "0xa1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1",
+      "name": {
+        "name": "u64",
+        "value": "AAAAAAE="
+      },
+      "value": {
+        "name": "u64",
+        "value": "AAAH6A=="
+      },
+      "valueType": "u64"
+    },
+    {
+      "kind": "OBJECT",
+      "parent": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd",
+      "fieldId": "0x99ffeeddccbbaa99887766554433221100ffeeddccbbaa9988776655443322",
+      "childId": "0x22ee11ddccbb0099887766554433221100ffeeccbb22aa9988776655443300",
+      "childObject": {
+        "objectId": "0x22ee11ddccbb0099887766554433221100ffeeccbb22aa9988776655443300",
+        "version": "5",
+        "digest": "B9k7QJ4twQ6nB8c6jZpTZxB6TcvG6YtM2h5b2j2G5mTf",
+        "objectType": "0x2::my_module::MyStruct",
+        "owner": {
+          "kind": "AddressOwner",
+          "addressOwner": "0x87654321abcdef00112233445566778899aabbccddeeff0011223344556677"
+        }
+      },
+      "valueType": "0x2::my_module::MyStruct"
+    }
+  ],
+  "nextPageToken": "CgYIARAA"
+}
+```
+
+---
+
+### `ListOwnedObjects`
+
+> Lists the objects owned by an address.
+
+#### Parameters
+
+* `owner` (string; required): The Sui address whose owned objects should be listed.
+* `page_size` (uint32; optional): Maximum number of objects to return (default: `50`; max: `1000`).
+* `page_token` (bytes; optional): Token from a previous response to fetch the next page.
+
+* `read_mask` (object; optional): Field mask selecting which object fields to include. If omitted, defaults to: `object_id, version, object_type`.
+  * `paths` (array of strings): Field names to include (e.g., `"object_id"`, `"version"`, `"owner"`, `"object_type"`, `"digest"`, `"bcs"`, `"json"`).
+
+* `object_type` (string; optional): Optional type filter:
+  * `"0x2::coin::Coin"` → returns all `Coin<T>` objects.
+  * `"0x2::coin::Coin<0x2::sui::SUI>"` → returns only `Coin<SUI>`.
+  * Any Move struct tag is accepted.
+
+#### Returns
+
+* `objects` (array): List of owned objects with fields requested via `read_mask`. Each object may include fields such as:
+  * `objectId` (string): Object identifier.
+  * `version` (string): Object version.
+  * `digest` (string): Object digest.
+  * `owner` (object): Ownership details.
+  * `objectType` (string): Move type or `"package"`.
+  * `bcs` (object): BCS-encoded value (if requested).
+  * `json` (object): JSON representation (if requested).
+  * Additional fields depending on the mask.
+
+* `nextPageToken` (bytes; optional): Returned if more pages are available.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "owner": "0xd8908c165dee785924e7421a0fd0418a19d5daeec395fd505a92a0fd3117e428",
+        "read_mask": {
+            "paths": ["object_id", "version", "owner", "digest", "object_type"]
+        }
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.StateService.ListOwnedObjects
+```
+
+#### Response example
+
+```json
+{
+  "objects": [
+    {
+      "objectId": "0x5b52d6863faad645692a0928fe7bc35df999ecfcf2ad029e471b42a4abbecec6",
+      "version": "527071929",
+      "digest": "DigX1wVS5xGHCELdhG1BSzHULNkF5sM3aPpS9Q1ZfHri",
+      "owner": {
+        "kind": "ADDRESS",
+        "address": "0xd8908c165dee785924e7421a0fd0418a19d5daeec395fd505a92a0fd3117e428"
+      },
+      "objectType": "0x0000000000000000000000000000000000000000000000000000000000000002::coin::Coin\u003c0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI\u003e"
+    },
+    {
+      "objectId": "0x4fb01474fd465cf97e36f6e758b9f3f47c56d4907ea74552fc0027c9318b354a",
+      "version": "527071928",
+      "digest": "4WohPFhmhq1ezPh7XqP8AexG9bg5nEXcY82VoKBVaL15",
+      "owner": {
+        "kind": "ADDRESS",
+        "address": "0xd8908c165dee785924e7421a0fd0418a19d5daeec395fd505a92a0fd3117e428"
+      },
+      "objectType": "0x0000000000000000000000000000000000000000000000000000000000000002::coin::Coin\u003c0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI\u003e"
+    }
+  ]
+}
+```
+
+---
+
+**Subscription Service**:
+
+Supports server-side streaming for real-time updates. Use it to subscribe to events, transactions, checkpoints, or other continuous data feeds.
+
+### `SubscribeCheckpoints`
+
+> Subscribes to a stream of newly produced checkpoints.
+
+#### Parameters
+
+* `read_mask` (object; optional):
+  Field mask specifying which fields of the streamed response to include.
+  If omitted, all default fields are returned.
+  * `paths` (array of strings; optional): Protobuf field names to include in each `SubscribeCheckpointsResponse` message (for example: `cursor`, `checkpoint`, `checkpoint.sequence_number`, `checkpoint.digest`, `checkpoint.summary`, `checkpoint.transactions`). Some implementations accept `"*"` to return all available fields.
+
+#### Returns
+
+Stream of `SubscribeCheckpointsResponse` messages:
+
+* `cursor` (string): Checkpoint sequence number representing the current position in the checkpoint stream.
+* `checkpoint` (object; optional): Details of the checkpoint at the current cursor.
+  * `sequenceNumber` (string): Height of this checkpoint.
+  * `digest` (string): Digest of the checkpoint’s summary.
+  * `summary` (object; optional): High-level checkpoint summary (epoch, total transactions, content digest, timestamp, etc.).
+  * `signature` (object; optional): Validator aggregated signature that certified this checkpoint.
+  * `contents` (object; optional): Committed transaction digests and signatures for this checkpoint.
+  * `transactions` (array; optional): Executed transactions included in this checkpoint.
+  * `objects` (object; optional): Objects referenced or produced by transactions in this checkpoint.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{}' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.SubscriptionService.SubscribeCheckpoints
+```
+
+#### Reponse example
+
+```json
+{
+  "cursor": "213938636",
+  "checkpoint": {
+    "sequenceNumber": "213938636",
+    "digest": "6mSsq3PjZc4rK2aFT3eK6oRxmM6DPo7LcFFo7z1Doq9H",
+    "summary": {
+      "epoch": "951",
+      "sequenceNumber": "213938636",
+      "totalNetworkTransactions": "1254933841",
+      "contentDigest": "9B7kLz8F8svuZ8mFyKqutMAyCcwR1R2uF3xTjv7p9QyE",
+      "previousDigest": "3JfxNefB6DmSaJMj1iJXqZF4KA3VjsoUUP1gHnN9LaMR",
+      "timestamp": "2025-11-19T17:42:30.554Z"
+    }
+  }
+}
+```
+
+---
+
+**Transaction Execution Service**:
+
+Lets you simulate and execute transactions, fetch execution effects, run dry-runs, and retrieve transaction metadata. This is the primary service for write operations and transaction analysis.
+
+### `ExecuteTransaction`
+
+> Executes a signed transaction on-chain.
+
+#### Parameters
+
+* `transaction` (object; required): The transaction to execute.
+  * `bcs` (object; optional): BCS-encoded transaction data.
+    * `name` (string): Expected to be `"TransactionData"`.
+    * `value` (string): Base64-encoded BCS bytes of the transaction.
+  * `digest` (string; optional): Transaction digest, if already known.
+  * `version` (int32; optional): Transaction version.
+  * `kind` (object; optional): Transaction kind and data (for example, programmable transaction, system transaction).
+  * `sender` (string; optional): Sui address of the transaction sender.
+  * `gas_payment` (object; optional): Gas payment configuration.
+  * `expiration` (object; optional): Transaction expiration settings (for example, epoch-based).
+
+Note: In practice, most clients construct the transaction using SDKs/wallets and send it via the `bcs` field, rather than manually building all nested fields.
+
+* `signatures` (array; required): Set of `UserSignature` objects authorizing execution of the transaction. Typically, contains one or more signatures depending on the scheme (`ED25519`, multisig, zkLogin, passkey, etc.).
+* `read_mask` (object; optional): Field mask specifying which parts of the executed transaction to return. If omitted, defaults to: `effects.status, checkpoint`.
+  * `paths` (array of strings; optional): Names of fields to include in the `ExecutedTransaction` result (for example: `"digest"`, `"transaction"`, `"signatures"`, `"effects"`, `"effects.status"`, `"effects.gas_used"`, `"checkpoint"`, `"timestamp"`, `"objects"`). Some implementations accept `"*"` to return all available fields.
+
+#### Returns
+
+* `transaction` (object; optional):
+  Executed transaction result (`ExecutedTransaction`).
+  * `digest` (string): Digest of the executed transaction.
+  * `transaction` (object; optional): Original transaction data (if requested).
+  * `signatures` (array; optional): User signatures used to authorize execution.
+  * `effects` (object; optional): Execution effects (status, gas used, changed objects, dependencies, etc.).
+  * `events` (object; optional): Events emitted by the transaction.
+  * `checkpoint` (string; optional): Checkpoint sequence number that includes this transaction.
+  * `timestamp` (string; optional): Timestamp of the checkpoint containing the transaction.
+  * `balanceChanges` (array; optional): Balance changes resulting from execution.
+  * `objects` (object; optional): Objects referenced or produced by this transaction.
+
+Note: The exact fields present depend on the `read_mask` you provide.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+        "transaction": {
+          "bcs": {
+            "name": "TransactionData",
+            "value": "BASE64_BCS_TRANSACTION"
+          }
+        },
+        "signatures": [
+          {
+            "scheme": "ED25519",
+            "simple": {
+              "scheme": "ED25519",
+              "signature": "BASE64_SIGNATURE",
+              "publicKey": "BASE64_PUBLIC_KEY"
+            }
+          }
+        ],
+        "read_mask": {
+          "paths": [
+            "digest",
+            "effects.status",
+            "effects.gas_used",
+            "checkpoint"
+          ]
+        }
+      }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.TransactionExecutionService.ExecuteTransaction
+```
+
+#### Response example
+
+```json
+{
+  "transaction": {
+    "digest": "H3m2oZ4aJx9t8fV6vG3Z9KQ9XkqD4zTqLk2oQZ2V7pU",
+    "transaction": {
+      "sender": "0x8a1f2c1e4b3d9a55678900112233445566778899aa11223344556677889900ff",
+      "gasPayment": {
+        "objects": [
+          {
+            "objectId": "0x4e1b...02f1",
+            "version": "12345",
+            "digest": "Gp3qz9Ck1B4Hd8xF3vZtYc9tK1p9V5mQm29L6gC48zdK"
+          }
+        ],
+        "owner": "0x8a1f2c1e4b3d9a55678900112233445566778899aa11223344556677889900ff",
+        "price": "1000",
+        "budget": "50000000"
+      }
+    },
+    "signatures": [
+      {
+        "scheme": "ED25519",
+        "simple": {
+          "scheme": "ED25519",
+          "signature": "AAAAAAAAAAAAAAAAAAAAAA==",
+          "publicKey": "BBBBBBBBBBBBBBBBBBBBBB=="
+        }
+      }
+    ],
+    "effects": {
+      "digest": "7rFqL4y8Bv4mMZ1HjX89U8C4o5JkF9wN1u5NQ3p4zXq",
+      "version": 2,
+      "status": {
+        "success": true
+      },
+      "epoch": "951",
+      "gasUsed": {
+        "computationCost": "5000",
+        "storageCost": "3000",
+        "storageRebate": "1500",
+        "nonRefundableStorageFee": "200"
+      },
+      "transactionDigest": "H3m2oZ4aJx9t8fV6vG3Z9KQ9XkqD4zTqLk2oQZ2V7pU",
+      "changedObjects": [
+        {
+          "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+          "inputState": "INPUT_OBJECT_STATE_EXISTS",
+          "outputState": "OUTPUT_OBJECT_STATE_OBJECT_WRITE",
+          "outputVersion": "631418222",
+          "objectType": "0x2::coin::Coin<0x2::sui::SUI>"
+        }
+      ]
+    },
+    "checkpoint": "213906807",
+    "timestamp": "2025-11-19T15:34:37.980Z"
+  }
+}
+```
+
+---
+
+### `SimulateTransaction`
+
+> Simulates a transaction without executing it.
+
+#### Parameters
+
+* `transaction` (object; required): The transaction to simulate (not executed on-chain).
+  * `bcs` (object; optional): BCS-encoded transaction data.
+    * `name` (string): Usually `"TransactionData"`.
+    * `value` (string): Base64-encoded BCS bytes of the transaction.
+  * Other fields (`digest`, `version`, `kind`, `sender`, `gas_payment`, `expiration`) may be present, but most clients rely on `bcs`.
+
+* `read_mask` (object; optional): Field mask specifying which parts of the simulated `ExecutedTransaction` to include.
+  * `paths` (array of strings; optional): Field names to include in the response (for example: `"digest"`, `"effects"`, `"effects.status"`, `"effects.gas_used"`, `"checkpoint"`, `"objects"`). Some implementations accept `"*"` to return all available fields.
+
+* `checks` (string; optional): Controls whether validation checks are applied during simulation.
+  * `"ENABLED"` (default): Run full transaction checks (recommended).
+  * `"DISABLED"`: Skip checks; useful for low-level analysis but may produce unrealistic results.
+
+* `do_gas_selection` (boolean; optional): When `true`, the node estimates gas usage, selects appropriate gas coins, and includes the chosen gas payment and budget in the response. Ignored if `checks` is set to `"DISABLED"`.
+
+#### Returns
+
+* `transaction` (object; optional): Simulated execution result in the `ExecutedTransaction` format.
+  * `digest` (string): Simulated transaction digest.
+  * `transaction` (object; optional): Transaction data (may include updated gas payment when `do_gas_selection` is `true`).
+  * `effects` (object; optional): Simulated execution effects (status, gas usage, changed objects, dependencies, etc.).
+  * `events` (object; optional): Events that would be emitted by this transaction.
+  * `checkpoint` (string; optional): Simulated checkpoint position, if applicable.
+  * `timestamp` (string; optional): Simulated timestamp.
+  * `balanceChanges` (array; optional): Estimated balance changes.
+  * `objects` (object; optional): Objects that would be read/changed.
+
+* `command_outputs` (array): Per-command intermediate outputs from executing the programmable transaction.
+  * Each entry is a `CommandResult`:
+    * `return_values` (array): Outputs returned by a command.
+      * `argument` (object): Reference to the argument this output corresponds to (kind: `GAS`, `INPUT`, or `RESULT`, plus index).
+      * `value` (object): BCS-encoded value.
+      * `json` (object): JSON rendering of the output, when available.
+    * `mutated_by_ref` (array): Outputs for values mutated via mutable references, with the same shape as `return_values`.
+
+#### Request example
+
+```shell
+grpcurl \
+  -H "x-token: token-value" \
+  -d '{
+    "transaction": {
+      "bcs": {
+        "name": "TransactionData",
+        "value": "AAm3AwAAAAAAADUiEgAAAAAAAJziwJyaAQAAIM2OI+iSHv7wsCz6HJ2NdpMelfuJGh/nlMWzDYH8lHAvAQAgefKIMDsHD3If7IXj/emWCPFZEQDIwG7nmVTP+j3M/SoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=="
+      }
+    }
+  }' \
+  sui.grpc.ankr.com:443 \
+  sui.rpc.v2.TransactionExecutionService.SimulateTransaction
+```
+
+#### Response example
+
+```json
+{
+  "transaction": {
+    "digest": "9JvPyz9pLRuCrN8WUyj4q7LZ4E8xRCqUj9Dj3m7JrT3",
+    "transaction": {
+      "digest": "9JvPyz9pLRuCrN8WUyj4q7LZ4E8xRCqUj9Dj3m7JrT3",
+      "sender": "0xabc...123",
+      "kind": {
+        "kind": "PROGRAMMABLE_TRANSACTION"
+      }
+    },
+    "effects": {
+      "status": {
+        "success": true
+      },
+      "gasUsed": {
+        "computationCost": "20000",
+        "storageCost": "5000",
+        "storageRebate": "1200",
+        "nonRefundableStorageFee": "0"
+      },
+      "version": 1,
+      "digest": "5tuFT5NmrFh4u9w1SwQLuRY1fJ5r93R4cdE9eWHK8n8",
+      "changedObjects": [],
+      "dependencies": []
+    },
+    "balanceChanges": [],
+    "checkpoint": null,
+    "timestamp": null
+  },
+  "command_outputs": [
+    {
+      "return_values": [
+        {
+          "argument": {
+            "kind": "INPUT",
+            "input": 0
+          },
+          "value": {
+            "name": "u64",
+            "value": "AAAAAA=="
+          },
+          "json": 42
+        }
+      ],
+      "mutated_by_ref": []
+    }
+  ]
+}
+```
