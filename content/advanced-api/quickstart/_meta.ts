@@ -1,0 +1,13 @@
+import type { MetaRecord } from 'nextra';
+
+const meta: MetaRecord = {
+  overview: 'Overview',
+  'fetch-nfts-ankrjs': 'Ankr.js SDK: Fetch NFTs',
+  'account-balance-ankrjs': 'Ankr.js SDK: Check Account Balance',
+  'aapi-on-nodejs': 'Ankr.js SDK: Advanced APIs on NodeJS Server',
+  'aapi-react-app': 'Ankr.js SDK: Advanced APIs for React App',
+  'defi-dashboard-ankrjs':
+    'DeFi-Dashboard dApp with Vite.js, Ankr.js, & Tailwind CSS',
+};
+
+export default meta;

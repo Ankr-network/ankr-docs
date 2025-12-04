@@ -1,0 +1,585 @@
+import { Tabs, Tab } from "nextra/components";
+
+import { Callout } from "components";
+
+# Avail
+
+> Avail API is available on [Web3 API platform](https://www.ankr.com/rpc/avail).
+
+*Avail* is a Web3 infrastructure layer that allows modular execution layers to scale and interoperate in a trust-minimized way.
+
+Avail's mission is to streamline the rollup experience, offering a unified, efficient platform for both users and developers from any ecosystem. This vertically integrated stack aims to dissolve the growing pains and user fragmentation experienced today, enabling Rollups to seamlessly access users and liquidity across the entire blockchain landscape.
+
+The Turing Testnet is live and marks Avail's final and definitive pre-Mainnet testing environment, aimed at vetting Mainnet deployments, executing extensive stress tests, and assessing network topologies for scalability and resilience.
+
+In order for your Web3 application to interact with Avail — either by reading blockchain data or sending transactions to the network — it must connect to an Avail node. Developers interact with the blockchain using the methods provided by the API.
+
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
+
+---
+
+## Methods supported
+
+  * [`chain_getBlock`](/rpc-service/chains/chains-api/avail/#chain_getblock) — retrieves the header and body of a relay chain block.
+  * [`chain_getBlockHash`](/rpc-service/chains/chains-api/avail/#chain_getblockhash) — retrieves the block hash for a specific block.
+  * [`chain_getHeader`](/rpc-service/chains/chains-api/avail/#chain_getheader) — retrieves the header for a specific block.
+  * [`chain_getFinalizedHead`](/rpc-service/chains/chains-api/avail/#chain_getfinalizedhead) — retrieves the hash of the last finalized block in the canon chain.
+  * [`state_getStorage`](/rpc-service/chains/chains-api/avail/#state_getstorage) — retrieves the storage for a key.
+  * [`state_getStorageHash`](/rpc-service/chains/chains-api/avail/#state_getstoragehash) — retrieves the storage hash.
+  * [`state_getStorageSize`](/rpc-service/chains/chains-api/avail/#state_getstoragesize) — retrieves the storage size.
+  * [`grandpa_proveFinality`](/rpc-service/chains/chains-api/avail/#grandpa_provefinality) — proves finality for the given block number, returning the Justification for the last block in the set.
+  * [`grandpa_roundState`](/rpc-service/chains/chains-api/avail/#grandpa_roundstate) — returns the state of the current best round state as well as the ongoing background rounds.
+  * [`system_chain`](/rpc-service/chains/chains-api/avail/#system_chain) — retrieves the chain.
+  * [`system_chainType`](/rpc-service/chains/chains-api/avail/#system_chaintype) — retrieves the chain type.
+
+---
+
+### `chain_getBlock`
+
+> Retrieves the header and body of a relay chain block.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block to retrieve; if omitted, retrieves the latest finalized block.
+
+#### Returns
+
+  * `SignedBlock`: the header and body data of a relay chain block.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getBlock",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "block": {
+            "header": {
+                "parentHash": "0x32d67a9e5843dd8527bf0e2ec1f4c6d2f8642ef264348ef7d610575619a5b6e8",
+                "number": "0x49993",
+                "stateRoot": "0x7d0860d48e20e42886aeac479dd339d1f75387d3be844a490ca1734efd430213",
+                "extrinsicsRoot": "0x07d2cb3154a4bc3ff485d0101bb1cba8045bf1bd74a34a977cc2672a41e76596",
+                "digest": {
+                    "logs": [
+                        "0x0642414245b5010359000000757a1e0500000000841bf8fb61a548ec94caba8ddedcf85e02de0110990ffe3c4216277ee0b9734a9b966b69d9025691e82043d9a647ce917871b1b2d2082afc3ce3b195c96e1c039b2e312d9028cf976284d61c41f1069b1df154b5e6b6bef9ad4455dd24ea160d",
+                        "0x05424142450101c2be2a753a256b1261e00d5d31a20befa735767d5debe27edfff52149e4ce53398135479d97a0e594a2160cf78b3743ca42899138b0c5b58334bc7c4d0217080"
+                    ]
+                },
+                "extension": {
+                    "V3": {
+                        "appLookup": {
+                            "size": 114,
+                            "index": [
+                                {
+                                    "appId": 36,
+                                    "start": 0
+                                }
+                            ]
+                        },
+                        "commitment": {
+                            "rows": 1,
+                            "cols": 128,
+                            "commitment": [
+                                128,
+                                27,
+                                216,
+                                161
+                            ],
+                            "dataRoot": "0x67e432157400275ba4e6e7c9d61312afa5cbbea68d8b718fa8be3038980a9970"
+                        }
+                    }
+                }
+            },
+            "extrinsics": [
+                "0x280403000ba0f41eed8f01",
+                "0xc90384007ce8ccf46bbdf7561f0d1419857dab91bfbda9866d564c2c5cfe43210a75db310122850737c933478016ee92ddcbd1eda470ead30b6a7938adba396b9e51922949b1bba1bf56ca8bd67f2241b1240fa1f2bd18f07b42111fe70f9f386b78f66f87040162760100000001020c0603004e558a63713b227cb661a5cb639c5bea499bd00039d7dabe16cb891e8fc2025213000064a7b3b6e00d06030006aa84733a1b39c3cc83586e589fd6bb82228321e1f75d4e2bc3af8d4957785213000064a7b3b6e00d0603003a1e5289c81ff9dfd53cf55e64aaaee9aeb31e5ae43c9679de15a841b406521d13000064a7b3b6e00d"
+            ]
+        },
+        "justifications": null
+    },
+    "id": 1
+}
+```
+
+---
+
+### `chain_getBlockHash`
+
+> Retrieves the block hash for a specific block.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    `<BlockNumber>` (string; hex; optional): the number of a block to retrieve the hash for; if omitted, retrieves the latest finalized block.
+
+#### Returns
+
+  * `<BlockHash>`: the block hash of the block specified.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getBlockHash",
+      "params": ["0x499A4"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0xfe9e859407f0ceb39140690d34a12e2ff34fef0e38fda83ecf3474d31a1a3526",
+    "id": 1
+}
+```
+
+---
+
+### `chain_getHeader`
+
+> Retrieves the header for a specific block.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block to retrieve the header for; if omitted, shows the result for the latest finalized block.
+
+#### Returns
+
+  * `<Header>`: the header of the block specified.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getHeader",
+      "params": ["0x1d8ec46e226db5453ab546efb873e7a2bf611aded65818b68206747c646bd478"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "parentHash": "0x23c72818d0462766e69f90895ce47b6251eca7112ca2be56e2efe56c9546f5b9",
+        "number": "0x499b7",
+        "stateRoot": "0xa31b41414cba3ecd32dbf23cf1541c9105de308d396b76e840635076c5dedd95",
+        "extrinsicsRoot": "0xb3fea001c50633dcbcb8304486061c433e5e33d32f3d21759368228e58defadd",
+        "digest": {
+            "logs": [
+                "0x0642414245b5010337000000997a1e050000000078c42af8d5e7733c9aff7cd090c873a89892c101276b7dc96e1610ceca285a3d35133d72233df237ac7aa399c25c4d88b2a58835d93dc903919722ac312e4900ab66b214730d7280a9b9dbb4ef020efa785ef444d6477f9e34b7d295ddd6fb0a",
+                "0x05424142450101ea438e2f3314fc10aba33b53aa79b4a75ba89131d9a847b96eb70c0bf70bbb6bc4720a57f973833c02f8dd3f0f7596ca83e76af9f9933b3ea33f14c2e84e8781"
+            ]
+        },
+        "extension": {
+            "V3": {
+                "appLookup": {
+                    "size": 0,
+                    "index": []
+                },
+                "commitment": {
+                    "rows": 0,
+                    "cols": 0,
+                    "commitment": [],
+                    "dataRoot": "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
+                }
+            }
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+### `chain_getFinalizedHead`
+
+> Retrieves the hash of the last finalized block in the canon chain.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<BlockHash>`: the hash of the last finalized block in the canon chain.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getFinalizedHead",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x7021a6a7aa0d6db341684d0969b1a31248d7568596a7028f0d7f490d9b7990ed",
+    "id": 1
+}
+```
+
+---
+
+### `state_getStorage`
+
+> Retrieves the storage for a key.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<StorageKey>` (string; hex ; required): the key to retrieve the storage for.
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block.
+
+#### Returns
+
+  * `<StorageData>`: the storage data.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "state_getStorage",
+      "params": ["0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0xc1772bed8f010000",
+    "id": 1
+}
+```
+
+---
+
+### `state_getStorageHash`
+
+> Retrieves the storage hash.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<StorageKey>` (string; hex; required): a storage key.
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block.
+
+#### Returns
+
+  * `<Hash>`: the storage hash.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "state_getStorageHash",
+      "params": ["0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0xd63ffee954d00ba81f68297f8f7d866ca2ed141fea270c994cca8bab47fb580d",
+    "id": 1
+}
+```
+
+---
+
+### `state_getStorageSize`
+
+> Retrieves the storage size.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<StorageKey>` (string; hex; required): the storage key.
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block.
+
+#### Returns
+
+  * `<u64>`: the storage size.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "state_getStorageSize",
+      "params": ["0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 8,
+    "id": 1
+}
+```
+
+---
+
+### `grandpa_proveFinality`
+
+> Proves finality for the given block number, returning the Justification for the last block in the set.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<BlockNumber>` (integer; required): the number of a block to prove finality for.
+
+#### Returns
+
+  * `Option<EncodedFinalityProofs>`: the Justification for the last block in the set.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "grandpa_proveFinality",
+      "params": [301495]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x3c59e6bc2b424b11686ab978fae65eff7f2fb689d710b188eec62a0325fc8cadcda769030000000000003c59e6bc2b424b11686ab978fae65eff7f2fb689d710b188eec62a0325fc8cadbf99040045013c59e6bc2b424b11686ab978fae65eff7f2fb689d710b188eec62a0325fc8cadbf99040094841d8cb36056bc3d0da86f09cb1a71294ddbc3284207f7f820f0f2cbe6aa029e91db5a755e5a7f892b918fa3ee89af090dbc4ffedf95813e9f47d56f65cb0a00ea76...",
+    "id": 1
+}
+```
+
+---
+
+### `grandpa_roundState`
+
+> Returns the state of the current best round state as well as the ongoing background rounds.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<ReportedRoundStates>`: the states of reported rounds.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "grandpa_roundState",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "setId": 93,
+        "best": {
+            "round": 899,
+            "totalWeight": 120,
+            "thresholdWeight": 81,
+            "prevotes": {
+                "currentWeight": 0,
+                "missing": [
+                    "5C5uWLcr4Sjb6bFeJpqev1sEdBehiTAMuj1dftYVR9NkBnjS",
+                    "5C65142vucMnMu8baXL5qi7qfNzTd9sRtBqvksdwwW3BPHYN",
+                    "5C9DSoURqitE1WQKgztnHnX8BARFtpTRwtFio5Kkq1pQv96E",
+                    "5C9tvEcZF4Zx7TAnywwu9ZmFGQSjT5WNW44p8PuGb9wEodX4"
+                ]
+            },
+            "precommits": {
+                "currentWeight": 0,
+                "missing": [
+                    "5C5uWLcr4Sjb6bFeJpqev1sEdBehiTAMuj1dftYVR9NkBnjS",
+                    "5C65142vucMnMu8baXL5qi7qfNzTd9sRtBqvksdwwW3BPHYN",
+                    "5C9DSoURqitE1WQKgztnHnX8BARFtpTRwtFio5Kkq1pQv96E",
+                    "5C9tvEcZF4Zx7TAnywwu9ZmFGQSjT5WNW44p8PuGb9wEodX4"
+                ]
+            }
+        },
+        "background": []
+    },
+    "id": 1
+}
+```
+
+---
+
+### `system_chain`
+
+> Retrieves the chain.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<Text>`: a chain name.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "system_chain",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "Avail Turing Network",
+    "id": 1
+}
+```
+
+---
+
+### `system_chainType`
+
+> Retrieves the chain type.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<ChainType>`: a chain type.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/avail_turing_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "system_chainType",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "Live",
+    "id": 1
+}
+```

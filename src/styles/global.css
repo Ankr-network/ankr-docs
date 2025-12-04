@@ -1,30 +1,11 @@
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
-
-/* new */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 body {
   font-feature-settings: 'rlig' 1, 'calt' 1;
 }
 
-.nextra-search {
-  order: 2;
-}
-
-.nextra-hamburger {
-  order: 3;
-}
-
-.nextra-nav-container a[href="https://github.com/Ankr-network/"] {
-  order: 3;
-}
-
 /* Web3APIButton in the Sidebar */
-.nextra-sidebar-container ul li:last-of-type {
+.nextra-mobile-nav ul li:last-of-type {
   margin: 0;
   margin-bottom: 44px;
   padding: 0;
@@ -71,46 +52,6 @@ code.text-\[\.9em\] {
   }
 }
 
-/*
-.steps-container {
-  margin-left: 1rem;
-  padding-left: 1.5rem;
-  counter-reset: step;
-  border-left: 1px solid;
-  border-color: rgb(229 231 235/1);
-  margin-bottom: 3rem;
-}
-.steps-container h3 {
-  counter-increment: step;
-}
-.steps-container h3:before {
-  content: counter(step);
-  display: inline-block;
-  position: absolute;
-  margin-top: 3px;
-  margin-left: -41px;
-  width: 33px;
-  height: 33px;
-  text-align: center;
-  text-indent: -1px;
-  color: #999;
-  border-radius: 100%;
-  border: 4px solid #fff;
-  background: #f3f3f3;
-  line-height: 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.dark .steps-container {
-  border-color: #2e2e2e;
-}
-.dark .steps-container h3:before {
-  color: #999;
-  border: 4px solid rgba(17, 17, 17, var(--tw-bg-opacity));
-  background: #2e2e2e;
-} */
-
 /* Position custom callouts icons */
 .nextra-callout-icon-area {
   @apply select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2;
@@ -127,60 +68,21 @@ code.text-\[\.9em\] {
   line-height: 1.5rem;
 }
 
-/* Make space before a list and before a nested list of a diff kind shorter */
-
 /* Make embedded YouTube container responsive */
-.responsive-youtube
-{overflow:hidden; padding-bottom:56.25%; position:relative; height:0;}
-
-.responsive-youtube iframe
-{left:0; top:0; height:100%; width:100%; position:absolute;}
-
-
-
-
-
-
-
-/* old */
-
-/* @layer base{
-  body{
-      @apply bg-green-100 text-green-900; 
-  }
-} */
-
-/*
-html {
-  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1 !important;
+.responsive-youtube {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
-[data-reach-skip-link] {
-  @apply sr-only;
+.responsive-youtube iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
-
-[data-reach-skip-link]:focus {
-  @apply not-sr-only fixed ml-6 top-0 bg-white text-lg px-6 py-2 mt-2 outline-none focus:ring z-50;
-}
-
-.dark .invert-on-dark {
-  filter: invert(1) brightness(1.8);
-}
-
-.callout a {
-  color: inherit;
-}
-
-sup a {
-  @apply text-current;
-  text-decoration: none;
-}
-
-.footnotes {
-  @apply text-sm;
-}
- */
-
 
 /* Make space before a list and before a nested list of a diff kind shorter */
 ul.nx-mt-6,
@@ -188,84 +90,3 @@ ol.nx-mt-6 {
   margin-top: 0.6em;
   margin-bottom: 0.5em;
 }
-
-
-/* Make Prev/Next links font for the desktop version as small as for mobile */
-/* @media (min-width: 768px) {
-  div.mb-8.flex.items-center.border-t.pt-8 > a.gap-1.flex.items-center.py-4.text-base.font-medium.text-gray-600.transition-colors {
-    font-size: 1.1rem;
-  }
-}
- */
-
-/* Links in outlined rectangles */
-
-/*
-hr.my-8 {
-  margin-top: 1.5em;
-  margin-bottom: -0.1em;
-}
-
-h3.mt-8 {
-  margin-bottom: -0.2em;
-}
-
-h4.mt-8 {
-  margin-bottom: -0.3em;
-}
-
-.nextra-callout.mt-6 {
-  margin-top: 1.9em;
-  padding-bottom: 0.6rem;
-}
-
-.nextra-callout-icon-area {
-  @apply select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2;
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
-
-.redoc-wrap {
-  background-color: white;
-}
-
-.menu-content {
-  top: 64px !important;
-}
-*/
-
-/* Some debatable styling refinements
-
-h2.mt-10 {
-  margin-bottom: 0.6em;
-}
-
-h3.mt-8 {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
-
-h4.mt-8 {
-  margin-top: 1.4em;
-  margin-bottom: 0.6em;
-}
-
-pre.mt-6 {
-  margin-top: 1.1em;
-}
-
-p.mt-6 {
-  margin-top: 0.7em;
-  margin-bottom: -0.2em;
-}
-
-blockquote.mt-6 {
-    margin-top: 1.4em;
-}
-
- */
-

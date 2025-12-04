@@ -1,4 +1,4 @@
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from '@mui/material';
 
 interface MobileGuardProps {
   children: React.ReactNode;
@@ -6,9 +6,9 @@ interface MobileGuardProps {
 
 export const MobileGuard = ({ children }: MobileGuardProps) => {
   const theme = useTheme();
-  
-  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
-  
+
+  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
+
   if (isDesktop) {
     return null;
   }

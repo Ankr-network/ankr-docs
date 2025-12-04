@@ -1,0 +1,24 @@
+import type { MetaRecord } from 'nextra';
+
+const meta: MetaRecord = {
+  'ankr-governance-mechanics': 'ANKR Governance Mechanics',
+  'ankr-tokenomics': 'ANKR Tokenomics',
+  'ankr-validators': 'Ankr Validators',
+  'audit-reports': 'Audit Reports',
+  'brand-assets': 'Brand Assets',
+  'compatible-wallets': 'Compatible Wallets',
+  'fix-broken-network-switch': 'Fixing Network Switch in MetaMask',
+  glossary: 'Glossary',
+  integrations: 'Integrating with Ankr Staking',
+  'ls-sc-addresses-mn': 'Liquid Staking Tokens Addresses (Mainnet)',
+  'ls-sc-addresses-tn': 'Liquid Staking Tokens Addresses  (Testnet)',
+  'micropool-staking': 'Micropool Staking',
+  'liquid-crowdloan-market-makers': 'Parachain Liquid Crowdloan Market Makers',
+  principles: 'Principles',
+  'staking-fees': 'Staking Fees',
+  'staking-smart-contracts': 'Staking Smart Contracts',
+  'switch-ankreth-binance': 'Switching ankrETH on BNB Chain',
+  'get-goerli-eth': 'Get goETH',
+};
+
+export default meta;

@@ -1,0 +1,14 @@
+import type { MetaRecord } from 'nextra';
+
+const meta: MetaRecord = {
+  overview: 'Overview',
+  'circulation-model-native-bridge':
+    'Circulation Model and Native Asset Bridge',
+  'native-bridge': 'Native Asset Bridge',
+  'fast-finality': 'Fast-Finality and BLS Cryptography\n',
+  'system-smart-contracts': 'System Smart Contracts',
+  governance: 'Governance',
+  'runtime-upgrades': 'Runtime Upgrades',
+};
+
+export default meta;
