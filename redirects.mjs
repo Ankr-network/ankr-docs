@@ -1,5 +1,6 @@
-const fs = require('fs')
-const AWS = require('aws-sdk')
+import AWS from 'aws-sdk';
+import fs from 'fs';
+
 const s3 = new AWS.S3();
 
 const redirects = JSON.parse(fs.readFileSync('./redirects.json'));
@@ -13,11 +14,11 @@ redirects.forEach((item) => {
         Body: '',
         Bucket: process.env.DOMAIN,
         Key: item.from,
-    }, (err, data) => {
+    }, (err) => {
         if (err) {
             return console.log(err);
         }
 
         console.log('Done')
     })
-})
+});

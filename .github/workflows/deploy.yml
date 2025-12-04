@@ -100,4 +100,4 @@ jobs:
         env:
           DOMAIN: ${{ vars[format('{0}{1}', github.event.inputs.environment, '_DOMAIN')] }}
         run: |
-          node redirects.js
+          node redirects.mjs

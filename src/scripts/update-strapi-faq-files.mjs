@@ -1,8 +1,8 @@
-const axios = require('axios');
-const fs = require('fs');
-const json2md = require('json2md');
-const { NodeHtmlMarkdown } = require('node-html-markdown');
-const { join } = require('path');
+import axios from 'axios';
+import fs from 'fs';
+import json2md from 'json2md';
+import { NodeHtmlMarkdown } from 'node-html-markdown';
+import { join } from 'path';
 
 const FILES_ROOT_PATH = join(process.cwd(), 'content');
 
