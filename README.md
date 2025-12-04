@@ -118,7 +118,7 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ┌ ○ .github 
 ├     ○ workflows 
 ├         deploy.yml — workflows for deploying the project via GitHub Actions.
-├ ○ pages — source files with the content to generate static HTML files from.
+├ ○ content — source files with the content to generate static HTML files from.
 ├ ○ public — images to use in the docs.
 ├ ○ src  
 ├     ○ components — custom React components to import and use in the project.

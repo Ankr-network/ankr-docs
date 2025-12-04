@@ -1,9 +1,16 @@
 'use client';
 
 import cn from 'clsx';
-import { Default, Error, Info, Note, Success, Tip, Warning } from 'icons';
 import { useEffect, useMemo, useState } from 'react';
 import { useTheme } from 'next-themes';
+
+import DefaultIcon from 'icons/default.svg';
+import ErrorIcon from 'icons/error.svg';
+import InfoIcon from 'icons/info.svg';
+import NoteIcon from 'icons/note.svg';
+import SuccessIcon from 'icons/success.svg';
+import TipIcon from 'icons/tip.svg';
+import WarningIcon from 'icons/warning.svg';
 
 const themes = {
   default: {
@@ -37,13 +44,13 @@ const themes = {
 };
 
 const icons = {
-  default: Default,
-  error: Error,
-  info: Info,
-  note: Note,
-  success: Success,
-  tip: Tip,
-  warning: Warning,
+  default: DefaultIcon,
+  error: ErrorIcon,
+  info: InfoIcon,
+  note: NoteIcon,
+  success: SuccessIcon,
+  tip: TipIcon,
+  warning: WarningIcon,
 };
 
 interface CalloutProps {
