@@ -11,47 +11,6 @@ body {
   padding: 0;
 }
 
-.home-content p {
-  margin-top: 1.5em;
-  line-height: 1.75em;
-}
-
-.home-content a {
-  --tw-ring-color: hsl(var(--nextra-primary-hue) 100% 50%/0.3);
-  --tw-text-opacity: 1;
-  text-underline-position: under;
-  text-decoration-line: underline;
-  text-decoration-thickness: from-font;
-  color: hsl(var(--nextra-primary-hue) 100% 50% / var(--tw-text-opacity));
-}
-
-figcaption {
-  font-size: 0.85rem;
-  line-height: 1.5rem;
-  display: block;
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-code.text-\[\.9em\] {
-  font-size: 14px;
-}
-
-@media screen and (max-width: 1200px) {
-  .home-content .hide-medium {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .home-content p {
-    font-size: 0.9rem;
-  }
-  .home-content .hide-small {
-    display: none;
-  }
-}
-
 /* Position custom callouts icons */
 .nextra-callout-icon-area {
   @apply select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2;
@@ -64,7 +23,7 @@ code.text-\[\.9em\] {
 }
 
 /* less space between lines of text in callouts */
-.nx-leading-7 {
+.x\:leading-7 {
   line-height: 1.5rem;
 }
 
@@ -85,8 +44,8 @@ code.text-\[\.9em\] {
 }
 
 /* Make space before a list and before a nested list of a diff kind shorter */
-ul.nx-mt-6,
-ol.nx-mt-6 {
+ul.mt-6,
+ol.mt-6 {
   margin-top: 0.6em;
   margin-bottom: 0.5em;
 }

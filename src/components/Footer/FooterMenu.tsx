@@ -26,7 +26,7 @@ const ListItem = ({ children }: ListItemProps) => <li>{children}</li>;
 
 const List = ({ title, items }: Section) => (
   <li className="pb-8">
-    <p className="nx-text-lg nx-font-medium nx-mb-2">{title}</p>
+    <p className="text-lg font-medium mb-2">{title}</p>
     <ul>
       {items.map((item, index) => (
         <ListItem key={index}>

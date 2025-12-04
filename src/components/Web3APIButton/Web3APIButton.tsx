@@ -19,7 +19,7 @@ export function Web3APIButton({ className, visibility }: Web3APIButtonProps) {
 
   useSubscribeToAuthStorage();
 
-  const Guard = visibility === 'desktop' ? DesktopGuard : MobileGuard; 
+  const Guard = visibility === 'desktop' ? DesktopGuard : MobileGuard;
 
   return (
     <MUIProvider>
@@ -34,12 +34,12 @@ export function Web3APIButton({ className, visibility }: Web3APIButtonProps) {
             minHeight: 30,
             borderRadius: 0.5,
 
-            "&:active": {
-              boxShadow: "none",
+            '&:active': {
+              boxShadow: 'none',
             },
 
-            "&:focus": {
-              boxShadow: "none",
+            '&:focus': {
+              boxShadow: 'none',
             },
           }}
           target="_blank"

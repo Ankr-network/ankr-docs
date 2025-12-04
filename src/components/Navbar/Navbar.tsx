@@ -1,6 +1,6 @@
 import { Navbar as NextraNavbar } from 'nextra-theme-docs';
 
-import AnkrLogo from "public/logo/ankr-docs-with-logo.svg";
+import AnkrLogo from 'public/logo/ankr-docs-with-logo.svg';
 import { Web3APIButtonLazy } from 'components/Web3APIButton';
 
 import classes from './Navbar.module.css';
