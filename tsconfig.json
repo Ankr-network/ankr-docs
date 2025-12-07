@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -11,22 +15,55 @@
     "incremental": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "moduleResolution": "node",
-    "jsx": "preserve",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
     "module": "esnext",
     "resolveJsonModule": true,
     "paths": {
-      "components": ["src/components"],
-      "components/*": ["src/components/*"],
-      "hooks": ["src/hooks"],
-      "hooks/*": ["src/hooks/*"],
-      "icons": ["src/icons"],
-      "icons/*": ["src/icons/*"],
-      "styles": ["src/styles"],
-      "styles/*": ["src/styles/*"],
-      "types/*": ["src/types/*"]
-    }
+      "components": [
+        "src/components"
+      ],
+      "components/*": [
+        "src/components/*"
+      ],
+      "hooks": [
+        "src/hooks"
+      ],
+      "hooks/*": [
+        "src/hooks/*"
+      ],
+      "icons": [
+        "src/icons"
+      ],
+      "icons/*": [
+        "src/icons/*"
+      ],
+      "styles": [
+        "src/styles"
+      ],
+      "styles/*": [
+        "src/styles/*"
+      ],
+      "types/*": [
+        "src/types/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "app/layout.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "theme1.config.tsx"
+  ]
 }

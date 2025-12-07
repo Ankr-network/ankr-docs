@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { initGoogleGtm } from 'components';
 
 interface MainDataLayer {
@@ -38,5 +38,7 @@ export function useGtm(pageProps: UseGTMProps) {
     };
 
     gtmVirtualPageView(mainDataLayer);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageProps]);
 }

@@ -118,7 +118,7 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ┌ ○ .github 
 ├     ○ workflows 
 ├         deploy.yml — workflows for deploying the project via GitHub Actions.
-├ ○ pages — source files with the content to generate static HTML files from.
+├ ○ content — source files with the content to generate static HTML files from.
 ├ ○ public — images to use in the docs.
 ├ ○ src  
 ├     ○ components — custom React components to import and use in the project.
@@ -132,7 +132,7 @@ git checkout stage && git checkout -b `<type>/<JIRA-TASK-NUMBER-description>`
 ├   package.json — project dependencies and dev commands.
 ├   postcss.config.js — configuration file listing additional packages to import to Nextra.
 ├   README.md — readme of the project.
-├   redirects.js — redirects solution.
+├   redirects.mjs — redirects solution.
 ├   redirects.json — map of redirects for the redirects solution.
 ├   tailwind.config.js — additional CSS framework (imported in postcss.config.js).
 ├   theme.config.tsx — configuration file for Nextra with the essential project parameters.

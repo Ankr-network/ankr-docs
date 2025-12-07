@@ -1,0 +1,10 @@
+import type { MetaRecord } from 'nextra';
+
+const meta: MetaRecord = {
+  'blockchain-and-evm-security': 'Blockchain and EVM Security',
+  'system-smart-contracts': 'System Smart Contracts Security',
+  'on-chain-security': 'On-chain Security',
+  'off-chain-security': 'Off-chain Security',
+};
+
+export default meta;

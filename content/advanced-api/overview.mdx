@@ -1,0 +1,131 @@
+import { Callout } from "components";
+
+# Overview
+
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
+> Start using Advanced API on the [Web3 API platform](https://www.ankr.com/rpc/advanced-api/).
+
+*Advanced API* is a specifically-tailored collection of JSON-RPC API endpoints built to support the most popular Web3 scenarios on multiple chains at almost instant speeds. We believe it to become a single point of reference for the multi-chain requests.
+<br/>
+
+<img src="/docs/build/aapi.png" className="responsive-pic" width="800" />
+
+Advanced API optimizes, indexes, caches, and stores blockchain data to make it access-ready for you. To make things even better, our Advanced API supports querying across multiple mainnet and testnet chains in a single request.
+
+## Chains Supported
+
+<Callout type="tip">
+Before making calls, verify the required method's supported chains in its documentation.
+</Callout>
+
+Currently, Advanced API supports querying the following chains using their aliases:
+
+**Mainnet**:
+
+  * Arbitrum: `arbitrum`.
+  * Avalanche: `avalanche`.
+  * Base: `base`.
+  * BNB Smart Chain: `bsc`.
+  * Ethereum: `eth`.
+  * Fantom: `fantom`.
+  * Flare: `flare`.
+  * Gnosis: `gnosis`
+  * Linea: `linea`.
+  * Optimism: `optimism`.
+  * Polygon: `polygon`.
+  * Polygon zkEVM: `polygon_zkevm`.
+  * Scroll: `scroll`.
+  * Stellar: `stellar`.
+  * Story: `story_mainnet`.
+  * Syscoin: `syscoin`.
+  * Telos: `telos`
+  * Xai: `xai`.
+  * X Layer: `xlayer`
+
+**Testnet**:
+
+  * Avalanche Fuji: `avalanche_fuji`.
+  * Base Sepolia: `base_sepolia`
+  * Ethereum Holesky: `eth_holesky`.
+  * Ethereum Sepolia: `eth_sepolia`.
+  * Optimism Testnet: `optimism_testnet`.
+  * Polygon Amoy: `polygon_amoy`.
+  * Story Testnet: `story_aeneid_testnet`.
+
+## AAPI Methods Supported
+
+### NFT API
+
+[_NFT API Methods_](/advanced-api/nft-methods/) serve to request NFT-related data across multiple chains:
+
+  * [`ankr_getNFTsByOwner`](/advanced-api/nft-methods/#ankr_getnftsbyowner) — retrieves an account-associated NFTs.
+  * [`ankr_getNFTMetadata`](/advanced-api/nft-methods/#ankr_getnftmetadata) — retrieves metadata of a particular NFT.
+  * [`ankr_getNFTHolders`](/advanced-api/nft-methods/#ankr_getnftholders) — retrieves holders of a particular NFT.
+  * [`ankr_getNftTransfers`](/advanced-api/nft-methods/#ankr_getnfttransfers) — retrieves NFT transfers info of a particular address.
+
+> Prefer interactive docs? See our [OpenAPI specification](https://api-docs.ankr.com/reference/introduction#nft-api) for NFT API methods.
+
+### Query API
+
+[_Query API Methods_](/advanced-api/query-methods/) serve to request info on the ranges of blocks (max range is 100) for a full list of block metadata:
+
+  * [`ankr_getBlockchainStats`](/advanced-api/query-methods/#ankr_getblockchainstats) — retrieves blockchain statistics.
+  * [`ankr_getBlocks`](/advanced-api/query-methods/#ankr_getblocks) — retrieves full info of a particular block.
+  * [`ankr_getLogs`](/advanced-api/query-methods/#ankr_getlogs) — retrieves history data of a particular block range.
+  * [`ankr_getTransactionsByHash`](/advanced-api/query-methods/#ankr_gettransactionsbyhash) — retrieves the details of a transaction specified by hash.
+  * [`ankr_getTransactionsByAddress`](/advanced-api/query-methods/#ankr_gettransactionsbyaddress) — retrieves the details of a transaction specified by wallet address.
+  * [`ankr_getInteractions`](/advanced-api/query-methods/#ankr_getinteractions) — retrieves blockchains interacted with a particular wallet.
+
+> Prefer interactive docs? See our [OpenAPI specification](https://api-docs.ankr.com/reference/introduction#query-api) for Query API methods.
+
+### Token API
+
+[_Token API Methods_](/advanced-api/token-methods/) serve to request token-related data across multiple chains:
+
+  * [`ankr_getAccountBalance`](/advanced-api/token-methods/#ankr_getaccountbalance) — retrieves the balance of a particular account.
+  * [`ankr_getCurrencies`](/advanced-api/token-methods/#ankr_getcurrencies) — retrieves a list of currencies used on a particular blockchain.
+  * [`ankr_getTokenPrice`](/advanced-api/token-methods/#ankr_gettokenprice) — retrieves the price of a particular token.
+  * [`ankr_getTokenHolders`](/advanced-api/token-methods/#ankr_gettokenholders) — retrieves info on holders of a particular token.
+  * [`ankr_getTokenHoldersCount`](/advanced-api/token-methods/#ankr_gettokenholderscount) — retrieves the number of token holders.
+  * [`ankr_getTokenTransfers`](/advanced-api/token-methods/#ankr_gettokentransfers) — retrieves token transfers info.
+  * [`ankr_getTokenPriceHistory`](/advanced-api/token-methods/#ankr_gettokenpricehistory) — retrieves the historical price of the token specified.
+
+> Prefer interactive docs? See our [OpenAPI specification](https://api-docs.ankr.com/reference/introduction#token-api) for Token API methods.
+
+## Advanced API PAYG Pricing
+
+The price of our API Credits is pegged to USD. It means that upon using ANKR tokens for PAYG, `ANKR` calculates into `API Credits` at the latest _ANKR/USD_ exchange rate.
+
+> Our PAYG pricing model:  
+> 0.10 USD = 1M API Credits  
+
+| API Collection | Method                                      | API Credits | USD/request |
+|----------------|---------------------------------------------|-------------|-------------|
+| NFT API        | `ankr_getNFTsByOwner`                       | 700         | $0.00007    |
+|                | `ankr_getNFTMetadata`                       | 700         | $0.00007    |
+|                | `ankr_getNFTHolders`                        | 700         | $0.00007    |
+|                | `ankr_getNftTransfers`                      | 700         | $0.00007    |
+| Query API      | `ankr_getBlockchainStats`                   | 700         | $0.00007    |
+|                | `ankr_getBlocks`                            | 700         | $0.00007    |
+|                | `ankr_getLogs`                              | 700         | $0.00007    |
+|                | `ankr_getTransactionsByHash`                | 700         | $0.00007    |
+|                | `ankr_getTransactionsByAddress`             | 700         | $0.00007    |
+|                | `ankr_getInteractions`                      | 700         | $0.00007    |
+| Token API      | `ankr_getAccountBalance`                    | 700         | $0.00007    |
+|                | `ankr_getCurrencies`                        | 700         | $0.00007    |
+|                | `ankr_getTokenPrice`                        | 700         | $0.00007    |
+|                | `ankr_getTokenHolders`                      | 700         | $0.00007    |
+|                | `ankr_getTokenHoldersCount`                 | 700         | $0.00007    |
+|                | `ankr_getTokenTransfers `                   | 700         | $0.00007    |
+|                | `ankr_getTokenPriceHistory`                 | 700         | $0.00007    |
+
+## Support and Developer Community
+
+<div className="p-4 border border-gray-200 x:dark:border-gray-900 rounded mt-6">
+  [Start Building with Advanced API](/advanced-api/quickstart/overview/)↗
+</div>
+
+Our goal is to provide developers with the best user experience possible and supercharge Web3 projects with our Advanced API. Also, we strongly believe that community feedback fills our sails. So, let's team up — join our [Discord community](https://discord.ankr.com/) to get support from our team, engage with like-minded developers, and propose new features that we can add in our Roadmap.

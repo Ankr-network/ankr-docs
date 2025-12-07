@@ -1,0 +1,12 @@
+import type { MetaRecord } from 'nextra';
+
+const meta: MetaRecord = {
+  overview: 'Overview',
+  'avax-api': 'Avalanche Liquid Staking API',
+  'bnb-api': 'Binance Liquid Staking API',
+  'eth-api': 'Ethereum Liquid Staking API',
+  'ftm-api': 'Fantom Liquid Staking API',
+  'pol-api': 'Polygon Liquid Staking API',
+};
+
+export default meta;

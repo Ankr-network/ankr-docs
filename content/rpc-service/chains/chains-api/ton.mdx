@@ -1,0 +1,2662 @@
+import { Tabs } from "nextra/components";
+
+import { Callout } from "components";
+
+# TON
+
+> TON API is available on [Web3 API platform](https://www.ankr.com/rpc/ton).
+
+The Open Network (TON) is a decentralized and open internet platform made up of several components. These include: TON Blockchain, TON DNS, TON Storage, and TON Sites. TON Blockchain is the core protocol that connects TON’s underlying infrastructure together to form the greater TON Ecosystem.
+
+TON is focused on achieving widespread cross-chain interoperability, while operating in a highly scalable secure framework. TON is designed to process millions of transactions per second (TPS), with the goal of eventually reaching hundreds of millions of users moving forward.
+
+Currently, we provide two interfaces to query TON API — [JSON-RPC](https://www.jsonrpc.org/specification) and REST. Responses for both of them come in [JSON format](https://www.json.org/json-en.html).
+
+## JSON-RPC/REST methods
+
+**Accounts — info about accounts**:
+
+  * [`getAddressInformation`](/rpc-service/chains/chains-api/ton/#getaddressinformation) — retrieves address info.
+  * [`getExtendedAddressInformation`](/rpc-service/chains/chains-api/ton/#getextendedaddressinformation) — retrieves extended address info.
+  * [`getWalletInformation`](/rpc-service/chains/chains-api/ton/#getwalletinformation) — retrieves wallet info.
+  * [`getTransactions`](/rpc-service/chains/chains-api/ton/#gettransactions) — retrieves transactions.
+  * [`getAddressBalance`](/rpc-service/chains/chains-api/ton/#getaddressbalance) — retrieves address balance.
+  * [`getAddressState`](/rpc-service/chains/chains-api/ton/#getaddressstate) — retrieves address state.
+  * [`packAddress`](/rpc-service/chains/chains-api/ton/#packaddress) — packs address.
+  * [`unpackAddress`](/rpc-service/chains/chains-api/ton/#unpackaddress) — unpacks address.
+  * [`getTokenData`](/rpc-service/chains/chains-api/ton/#gettokendata) — retrieves token data.
+  * [`detectAddress`](/rpc-service/chains/chains-api/ton/#detectaddress) — detects address.
+
+**Blocks — info about blocks**:
+
+  * [`getMasterchainInfo`](/rpc-service/chains/chains-api/ton/#getmasterchaininfo) — retrieves masterchain info.
+  * [`getMasterchainBlockSignatures`](/rpc-service/chains/chains-api/ton/#getmasterchainblocksignatures) — retrieves masterchian block signatures.
+  * [`getShardBlockProof`](/rpc-service/chains/chains-api/ton/#getshardblockproof) — retrieves shard block proof.
+  * [`getConsensusBlock`](/rpc-service/chains/chains-api/ton/#getconsensusblock) — retrieves consensus block.
+  * [`lookupBlock`](/rpc-service/chains/chains-api/ton/#lookupblock) — looks up block.
+  * [`shards`](/rpc-service/chains/chains-api/ton/#shards) — retrieves shards.
+  * [`getBlockTransactions`](/rpc-service/chains/chains-api/ton/#getblocktransactions) — retrieves block transactions.
+  * [`getBlockTransactionsExt`](/rpc-service/chains/chains-api/ton/#getblocktransactionsext) — retrieves block transactions extended info.
+  * [`getBlockHeader`](/rpc-service/chains/chains-api/ton/#getblockheader) — retrieves block header.
+  * [`getOutMsgQueueSizes`](/rpc-service/chains/chains-api/ton/#getoutmsgqueuesizes) — retrieves messages queue sizes.
+
+**Transactions — fetching and locating transactions**:
+
+  * [`getTransactions`](/rpc-service/chains/chains-api/ton/#gettransactions-1) — retrieves transactions.
+  * [`getBlockTransactions`](/rpc-service/chains/chains-api/ton/#getblocktransactions-1) — retrieves block transactions.
+  * [`getBlockTransactionsExt`](/rpc-service/chains/chains-api/ton/#getblocktransactionsext-1) — retrieves block transactions extended info.
+  * [`tryLocateTx`](/rpc-service/chains/chains-api/ton/#trylocatetx) — locates outgoing transaction.
+  * [`tryLocateResultTx`](/rpc-service/chains/chains-api/ton/#trylocateresulttx) — locates outgoing transaction.
+  * [`tryLocateSourceTx`](/rpc-service/chains/chains-api/ton/#trylocatesourcetx) — locates incoming transaction.
+
+**Get config — getting blockchain config**:
+
+  * [`getConfigParam`](/rpc-service/chains/chains-api/ton/#getconfigparam) — retrieves config param.
+  * [`getConfigAll`](/rpc-service/chains/chains-api/ton/#getconfigall) — retrieves full config.
+
+**Run method — running get method of smart contract**:
+
+  * [`runGetMethod`](/rpc-service/chains/chains-api/ton/#rungetmethod) — runs get method.
+
+**Send — sending data to blockchain**:
+
+  * [`estimateFee`](/rpc-service/chains/chains-api/ton/#estimatefee) — estimates fee.
+
+---
+
+## `getAddressInformation`
+
+> Retrieves basic information about the address: balance, code, data, last_transaction_id.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+
+### Returns
+
+Information about the address specified.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getAddressInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getAddressInformation",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "result": {
+        "@type": "raw.fullAccountState",
+        "balance": "6088697",
+        "code": "te6cckEBAQEAIwAIQgKPRS16Tf10BmtoI2UXclntBXNENb52tf1L1divK3w9aCBrv3Y=",
+        "data": "te6cckEBAQEARgAAhwCAAAcRAW+YmneBHIAnWwEhXRhwGKbrpWwuvovatLofekvwAsROplLUCShZxn2kTkyjrdZWWw4ol9ZAosUb+zcNiHf6+xcGRA==",
+        "last_transaction_id": {
+            "@type": "internal.transactionId",
+            "lt": "50630341000001",
+            "hash": "/PZphaovGJ1xCTklvEPzGszPvBaotdzWcon79et+Nvw="
+        },
+        "block_id": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 41748127,
+            "root_hash": "LUtR/YNt5qJdLeo2AJAPcoTRbhTx1K2c+sMPkRMT8mA=",
+            "file_hash": "iOOCR19ILPA9vbpJ8KbhsY76Ns03GitAcF2sMWIkRG4="
+        },
+        "frozen_hash": "",
+        "sync_utime": 1730904471,
+        "@extra": "1730904488.9606094:0:0.8056820862639625",
+        "state": "active"
+    }
+}
+```
+
+---
+
+## `getExtendedAddressInformation`
+
+> Retrieves extended address info.
+
+Similar to previous one but tries to parse additional information for known contract types. This method is based on tonlib's function `getAccountState`. For detecting wallets we recommend to use `getWalletInformation`.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+
+### Returns
+
+Information about the address specified.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getExtendedAddressInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getExtendedAddressInformation",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "fullAccountState",
+        "address": {
+            "@type": "accountAddress",
+            "account_address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+        },
+        "balance": "6088697",
+        "last_transaction_id": {
+            "@type": "internal.transactionId",
+            "lt": "50630341000001",
+            "hash": "/PZphaovGJ1xCTklvEPzGszPvBaotdzWcon79et+Nvw="
+        },
+        "block_id": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 41748257,
+            "root_hash": "BtEIAxrUco9i3qeK0lb3FNnuupSQdwu/b35cn7eNqTg=",
+            "file_hash": "Ojn6XMPRb8BZ6gJ/ibpWF6V+e+wUh0jh+8UwV+UkIBc="
+        },
+        "sync_utime": 1730904823,
+        "account_state": {
+            "@type": "raw.accountState",
+            "code": "te6cckEBAQEAIwAIQgKPRS16Tf10BmtoI2UXclntBXNENb52tf1L1divK3w9aCBrv3Y=",
+            "data": "te6cckEBAQEARgAAhwCAAAcRAW+YmneBHIAnWwEhXRhwGKbrpWwuvovatLofekvwAsROplLUCShZxn2kTkyjrdZWWw4ol9ZAosUb+zcNiHf6+xcGRA==",
+            "frozen_hash": ""
+        },
+        "revision": 0,
+        "@extra": "1730904845.8151195:0:0.1685316976114063"
+    }
+}
+```
+
+---
+
+## `getWalletInformation`
+
+> Retrieves wallet info.
+
+This method parses contract state and currently supports more wallet types than `getExtendedAddressInformation`: simple wallet, standart wallet, v3 wallet, v4 wallet.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+
+### Returns
+
+Information about the address specified.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getWalletInformation?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getWalletInformation",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "wallet": false,
+        "balance": "6088697",
+        "account_state": "active",
+        "wallet_type": null,
+        "seqno": null,
+        "last_transaction_id": {
+            "@type": "internal.transactionId",
+            "lt": "50630341000001",
+            "hash": "/PZphaovGJ1xCTklvEPzGszPvBaotdzWcon79et+Nvw="
+        }
+    }
+}
+```
+
+---
+
+## `getTransactions`
+
+> Retrieves transactions.
+
+Retrieves transaction history of a given address.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+  * `limit` (integer; query; default=10, max=100): maximum number of transactions in response.
+  * `lt` (integer; query): logical time of transaction to start with, must be sent with `hash`.
+  * `hash` (string; query): the hash of transaction to start with, in base64 or hex encoding , must be sent with `lt`.
+  * `to_lt` (integer; query): logical time of transaction to finish with (to get tx from `lt` to `to_lt`).
+  * `archival` (boolean; query; default=false): by default `getTransaction` request is processed by any available liteserver. If `archival=true` only liteservers with full history are used.
+
+### Returns
+
+The transaction history for a specific address.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getTransactions?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getTransactions",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": [
+        {
+            "@type": "raw.transaction",
+            "utime": 1730897178,
+            "data": "te6cckECDwEAAywAA7V/l26clqHVRGrod9+7tISkJI53k+e7PGKqChEe+RI36rAAAuDEt9e0EUhqqRoLlokU16oee06iuNKCfrXMhyS9QXJLNJK+RvjwAALf81h8KBZytlGgADRhjwMIAQIDAgHgBAUAgnKmm1F2uF+qjoLb+DOkjIiO+1S2/rUFfz/9X0ecgCrNJJxt7rYpNtcbz4bUhkV3+hJYM6a4v6txgynCn27hbW/LAhkEhZUJANqpBRhgw1ARDQ4BsWgAAHEQFvmJp3gRyAJ1sBIV0YcBim66VsLr6L2rS6H3pL8APl26clqHVRGrod9+7tISkJI53k+e7PGKqChEe+RI36rQDaqQUAYQFLQAAFwYloDkhM5Wyh7ABgEB3wcBqA+KfqVUbeTv2XoE7jY5HJgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kAAA4iAt8xNO8COQBOtgJCujDgMU3XSthdfRe1aXQ+9JfCAwwCsWgB8u3TktQ6qI1dDvv3dpCUhJHO8nz3Z4xVQUIj3yJG/VcAIzum7Z4PaYlBTeFvKo6mdRJVSxaBZjYWdNcZV1Ty5TgQDUbO0AYZHTgAAFwYlvr2hM5WyjXgCAkCATQKCwGnF41FGVRt5O/ZegTuNjkcmAAAcRAW+YmneBHIAnWwEhXRhwGKbrpWwuvovatLofekvwAADiIC3zE07wI5AE62AkK6MOAxTddK2F19F7VpdD70l8QHDAhCAo9FLXpN/XQGa2gjZRdyWe0Fc0Q1vna1/UvV2K8rfD1oAIcAgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kALETqZS1AkoWcZ9pE5Mo63WVlsOKJfWQKLFG/s3DYh3+gAaAAAAADEwOTUxNTg2OACeQH0MCL8UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvyYlq8EwZHRAAAAAAAAIAAAAAAALC24AfOr7B+9wHRF8yKXY1QVDD2tgXWyS0aakzhF8WbEGQR6TI4r5Y",
+            "transaction_id": {
+                "@type": "internal.transactionId",
+                "lt": "50630341000001",
+                "hash": "/PZphaovGJ1xCTklvEPzGszPvBaotdzWcon79et+Nvw="
+            },
+            "fee": "1640116",
+            "storage_fee": "5716",
+            "other_fee": "1634400",
+            "in_msg": {
+                "@type": "raw.message",
+                "source": "EQAAOIgLfMTTvAjkATrYCQrow4DFN10rYXX0XtWl0PvSX5uk",
+                "destination": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W",
+                "value": "57320468",
+                "fwd_fee": "526938",
+                "ihr_fee": "0",
+                "created_lt": "50630337000002",
+                "body_hash": "vt02QoQHP7hw48TBJm8i1YII+Zx8kL/QfNVj79Kmt7w=",
+                "msg_data": {
+                    "@type": "msg.dataRaw",
+                    "body": "te6cckEBAgEAZgABqA+KfqVUbeTv2XoE7jY5HJgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kAAA4iAt8xNO8COQBOtgJCujDgMU3XSthdfRe1aXQ+9JfCAwEAGgAAAAAxMDk1MTU4NjicCb0U",
+                    "init_state": ""
+                },
+                "message": "D4p+pVRt5O/ZegTuNjkcmAHzNijAFciaXiVi8dGN1XrxElXQWLyLbRMfO9b9ZAfziQAADiIC3zE0\n7wI5AE62AkK6MOAxTddK2F19F7VpdD70l8ID\n"
+            },
+            "out_msgs": [
+                {
+                    "@type": "raw.message",
+                    "source": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W",
+                    "destination": "EQCM7pu2eD2mJQU3hbyqOpnUSVUsWgWY2FnTXGVdU8uU4Ddb",
+                    "value": "55686068",
+                    "fwd_fee": "822940",
+                    "ihr_fee": "0",
+                    "created_lt": "50630341000002",
+                    "body_hash": "Ycyf2S915TpjkcLaOH70Kse87Z1rZrF65nPLm/70Rms=",
+                    "msg_data": {
+                        "@type": "msg.dataRaw",
+                        "body": "te6cckEBAgEAZgABpxeNRRlUbeTv2XoE7jY5HJgAAHEQFvmJp3gRyAJ1sBIV0YcBim66VsLr6L2rS6H3pL8AAA4iAt8xNO8COQBOtgJCujDgMU3XSthdfRe1aXQ+9JfEBwEAGgAAAAAxMDk1MTU4NjhoTgE0",
+                        "init_state": "te6cckEBAwEAbgACATQBAghCAo9FLXpN/XQGa2gjZRdyWe0Fc0Q1vna1/UvV2K8rfD1oAIcAgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kALETqZS1AkoWcZ9pE5Mo63WVlsOKJfWQKLFG/s3DYh3+vXib6g="
+                    },
+                    "message": "F41FGVRt5O/ZegTuNjkcmAAAcRAW+YmneBHIAnWwEhXRhwGKbrpWwuvovatLofekvwAADiIC3zE0\n7wI5AE62AkK6MOAxTddK2F19F7VpdD70l8QG\n"
+                }
+            ]
+        }
+    ]
+}
+```
+
+---
+
+## `getAddressBalance`
+
+> Retrieves address balance.
+
+Retrieves balance (in nanotons) of a given address.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+
+### Returns
+
+The balance of a specific address on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getAddressBalance?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getAddressBalance",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": "6088697"
+}
+```
+
+---
+
+## `getAddressState`
+
+> Retrieves address state.
+
+Retrieves state of a given address. State can be either `unitialized`, `active`, or `frozen`.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+
+### Returns
+
+Checks whether an address is active, uninitialized, or frozen.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getAddressState?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getAddressState",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": "active"
+}
+```
+
+---
+
+## `packAddress`
+
+> Packs address.
+
+Convert an address from raw to human-readable format.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account in raw format. Example: `0:83DFD552E63729B472FCBCC8C45EBCC6691702558B68EC7527E1BA403A0F31A8`.
+
+### Returns
+
+Converts TON addresses to a more readable and standardized output.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/packAddress?address=0%3A83DFD552E63729B472FCBCC8C45EBCC6691702558B68EC7527E1BA403A0F31A8
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "packAddress",
+    "params": {
+      "address": "0:83dfd552e63729b472fcbcc8c45ebcc6691702558b68ec7527e1ba403a0f31a8"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": "EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N"
+}
+```
+
+---
+
+## `unpackAddress`
+
+> Unpacks address.
+
+Converts an address from human-readable to raw format.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account in user-friendly form. Example: `EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N`.
+
+### Returns
+
+Converts human-readable addresses into raw format.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/unpackAddress?address=EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "unpackAddress",
+    "params": {
+      "address": "EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": "0:83dfd552e63729b472fcbcc8c45ebcc6691702558b68ec7527e1ba403a0f31a8"
+}
+```
+
+---
+
+## `getTokenData`
+
+> Retrieves token data.
+
+Retrieves NFT or Jetton information.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): the address of NFT collection/item or Jetton master/wallet smart contract.
+
+### Returns
+
+Data about a specific token on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getTokenData?address=EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getTokenData",
+    "params": {
+      "address": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "total_supply": 1229976002510000,
+        "mintable": true,
+        "admin_address": "EQBkQP48aUEDg5Y5RRc8SxFHm_C5tNcJDlh3e9pYHC-ZmG2M",
+        "jetton_content": {
+            "type": "onchain",
+            "data": {
+                "uri": "https://tether.to/usdt-ton.json",
+                "decimals": "6"
+            }
+        },
+        "jetton_wallet_code": "te6cckEBAQEAIwAIQgKPRS16Tf10BmtoI2UXclntBXNENb52tf1L1divK3w9aCBrv3Y=",
+        "contract_type": "jetton_master"
+    }
+}
+```
+
+---
+
+## `detectAddress`
+
+> Detects address.
+
+Retrieves all possible address forms.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+
+### Returns
+
+Detects the type and format of a TON address.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/detectAddress?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "detectAddress",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "raw_form": "0:f976e9c96a1d5446ae877dfbbb484a4248e7793e7bb3c62aa0a111ef91237eab",
+        "bounceable": {
+            "b64": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN+q19W",
+            "b64url": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+        },
+        "non_bounceable": {
+            "b64": "UQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN+qwKT",
+            "b64url": "UQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-qwKT"
+        },
+        "given_type": "friendly_bounceable",
+        "test_only": false
+    }
+}
+```
+
+---
+
+## `getMasterchainInfo`
+
+> Retrieves masterchain info.
+
+Retrieves up-to-date masterchain state.
+
+### Parameters
+
+None.
+
+### Returns
+
+Information about the current state of the TON masterchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getMasterchainInfo
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getMasterchainInfo",
+    "params": {},
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "blocks.masterchainInfo",
+        "last": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 41808232,
+            "root_hash": "OARlTgr+YA5SqBL3SOxIFiTve/E397qeDIshLmZzwNA=",
+            "file_hash": "ragbYfalWXeldsyZZ2BSBJwqtOLsw6ifLrpyWhnVduo="
+        },
+        "state_root_hash": "p/eRavA1zOrMtonVIuhvQ22JhsbgtzUu6bUDUGoPVvg=",
+        "init": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "0",
+            "seqno": 0,
+            "root_hash": "F6OpKZKqvqeFp6CQmFomXNMfMj2EnaUSOXN+Mh+wVWk=",
+            "file_hash": "XplPz01CXAps5qeSWUtxcyBfdAo5zVb1N979KLSKD24="
+        },
+        "@extra": "1731069303.2264078:0:0.6208585424366947"
+    }
+}
+```
+
+---
+
+## `getMasterchainBlockSignatures`
+
+> Retrieves masterchian block signatures.
+
+Retrieves the signatures of a specific masterchain block on the TON blockchain.
+
+### Parameters
+<br/>
+
+  * `seqno` (integer; query; required): the sequence number of the masterchain block for which to retrieve signatures.
+
+### Returns
+
+Detects the type and format of a TON address.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getMasterchainBlockSignatures?seqno=39064865
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getMasterchainBlockSignatures",
+    "params": {
+      "seqno": "39064865"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "blocks.blockSignatures",
+        "id": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 39064865,
+            "root_hash": "AovDThkPXWEPiYOBVzYpQW9Mf/B1DXRVK2jNCEaMuUk=",
+            "file_hash": "vTGEDDjoVzWCR+Yz/DUAUSMNfIjl7LL/I0ynpAYz4rk="
+        },
+        "signatures": [
+            {
+                "@type": "blocks.signature",
+                "node_id_short": "/DM6Q8OqwsiL/lo0h6yryoGLXLBxW9dXXGLfduMkwSQ=",
+                "signature": "dQStdfk5/FrUiTvJ6uuSaHT8xq5IvIn5Oj9evkP5BExrhMhZ4yAF/S49eP9AmVBCu6k4DHZwlYkoErGrYMsLBw=="
+            },
+            {
+                "@type": "blocks.signature",
+                "node_id_short": "mwccnaYVl/CYI/QcZEas6hv01zM4BDR9FegiGvuRYYY=",
+                "signature": "Oo18FpSQB82eyeVJjUAnYPcHtvmI/uO17nWb6rnrp9yvAjJhHMrb386gqcH2eEwIVcveUR9smPOZzNMeEmXyCQ=="
+            }
+        ],
+        "@extra": "1731069520.765146:0:0.3486811129074091"
+    }
+}
+```
+
+---
+
+## `getShardBlockProof`
+
+> Retrieves shard block proof.
+
+Retrieves the proof of a specific shard block on the TON blockchain.
+
+### Parameters
+<br/>
+
+  * `workchain` (integer; query; required): the block workchain ID. Example: `-1` for the masterchain.
+  * `shard` (integer; query; required): the block shard ID. Example: `-9223372036854775808` for the masterchain.
+  * `seqno` (integer; query; required): the sequence number of the masterchain block for which to retrieve signatures.
+  * `from_seqno` (integer; query): the sequence number of the masterchain block starting from which the proof is required. If not specified latest masterchain block is used.
+
+### Returns
+
+The proof of a specific shard block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getShardBlockProof?workchain=-1&shard=-9223372036854775808&seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getShardBlockProof",
+    "params": {
+      "workchain": -1,
+      "shard": -9223372036854775808,
+      "seqno": 39064865
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "blocks.shardBlockProof",
+        "from": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 41808549,
+            "root_hash": "s7xGa9Mp3ly90+p6CEyQ2jQgC4lhFktWBC99VCNalhA=",
+            "file_hash": "otXbmchM7gVDOnMo99RcezYGKv7XOICChVs15K5mFu8="
+        },
+        "mc_id": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 39064985,
+            "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+            "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M="
+        },
+        "links": [],
+        "mc_proof": [
+            {
+                "@type": "blocks.blockLinkBack",
+                "to_key_block": false,
+                "from": {
+                    "@type": "ton.blockIdExt",
+                    "workchain": -1,
+                    "shard": "-9223372036854775808",
+                    "seqno": 41808549,
+                    "root_hash": "s7xGa9Mp3ly90+p6CEyQ2jQgC4lhFktWBC99VCNalhA=",
+                    "file_hash": "otXbmchM7gVDOnMo99RcezYGKv7XOICChVs15K5mFu8="
+                },
+                "to": {
+                    "@type": "ton.blockIdExt",
+                    "workchain": -1,
+                    "shard": "-9223372036854775808",
+                    "seqno": 39064985,
+                    "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+                    "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M="
+                },
+                "dest_proof": "te6ccgECBwEAAUcACUYD8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/sAFgEkEBHvVar///8RAgMEBQGgm8ephwAAAAAEAQJUFZkAAAABAP////8AAAAAAAAAAGaXMXwAACt6kiZ7gAAAK3qSJnuEhbCm0wAI8i0CVBWVAlQU...",
+                "proof": "te6ccgECCQEAAfoACUYDs7xGa9Mp3ly90+p6CEyQ2jQgC4lhFktWBC99VCNalhAAFQEkEBHvVar///8RAgMEBQGgm8ephwAAAAAEAQJ98qUAAAABAP////8AAAAAAAAAAGcuCMYAAC4bdxckQAAALht3FyRELyM3uwAJjQ4CffKhAn2ug8QAAAAJAAAAAAAAAe4GKEgBAXr54c8Gc+eWcHETEHYK/CztB+T1ieXVEoBn1572ldkCAAMqigRpFcGq8hDStc521CzfSTiXxjfhoWUP1kP/q+8wjF6fkv4hVokx69NGJUjnOO8UvPQC/j...",
+                "state_proof": "te6ccgECcAEADIkACUYD/iFWiTHr00YlSOc47xS89AL+P4rCuq4G0iP3ZgTHMsABbwEkW5Ajr+L///8RAP////8AAAAAAAAAAAJ98qUAAAABZy4IxgAALht3FyREAn3yoWACAwQFKEgBAUUKG6HVTbjHrjXJoRaa4m9/CZLcQ8jQHvlvDAcBD2rwAAEoSAEB0du2kTZcVh2Ne1F8P0D7eOk45xNyeq8QG794Zq98TmQBbiIzAAAAAAAAAAD//////////4HBuempBkmw+CgGByRVzCaqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqsI4MhMW7ZfvfggJCgsoSAEBpafSQFfYZDslJ3CdmGzaOEatyz7dwy0o7CH2nhfbqu8AAShIAQFH1daNUVAp9rX2NNYO0AXdnjuS9fglxh8OI1KoLN2vrAAlKEgBATJfFYvXj+BzkWTrjA8QIG3vJcXD/xs..."
+            }
+        ],
+        "@extra": "1731070166.2531776:0:0.6464551742790462"
+    }
+}
+```
+
+---
+
+## `getConsensusBlock`
+
+> Retrieves consensus block.
+
+Retrieves the consensus block and its update timestamp.
+
+### Parameters
+
+None.
+
+### Returns
+
+Information about the latest consensus block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getConsensusBlock
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getConsensusBlock",
+    "params": {},
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "consensus_block": 41808671,
+        "timestamp": 1731070487.261679
+    }
+}
+```
+
+---
+
+## `lookupBlock`
+
+> looks up block.
+
+Retrieves detailed information about a specific block in the TON blockchain.
+
+### Parameters
+<br/>
+
+  * `workchain` (integer; query; required): the block workchain ID. Example: `-1` for the masterchain.
+  * `shard` (integer; query; required): the block shard ID. Example: `-9223372036854775808` for the masterchain.
+  * `seqno` (integer; query; required): the sequence number of the block. Example: `39064985`.
+  * `lt` (integer; query): the block's logical time.
+  * `unixtime` (integer; query): the block's unix time.
+
+### Returns
+
+Detailed information about a specific block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/lookupBlock?workchain=-1&shard=-9223372036854775808&seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "lookupBlock",
+    "params": {
+      "workchain": -1,
+      "shard": -9223372036854775808,
+      "seqno": 39064985
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "ton.blockIdExt",
+        "workchain": -1,
+        "shard": "-9223372036854775808",
+        "seqno": 39064985,
+        "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+        "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M=",
+        "@extra": "1731070853.2663236:0:0.3731994442759804"
+    }
+}
+```
+
+---
+
+## `shards`
+
+> Retrieves shards information.
+
+### Parameters
+<br/>
+
+  * `seqno` (integer; query; required): the sequence number of the masterchain block. Example: `39064985`.
+
+### Returns
+
+Information about shards for a specific masterchain block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/shards?seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "shards",
+    "params": {
+      "seqno": "39064985"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "blocks.shards",
+        "shards": [
+            {
+                "@type": "ton.blockIdExt",
+                "workchain": 0,
+                "shard": "4611686018427387904",
+                "seqno": 44599306,
+                "root_hash": "c5B0hqpAddUbvNiSf3gjdzRf3CwZwI6Sf0wQsWwOGsA=",
+                "file_hash": "ZtTs6ODJrgoBSIs5df5ldHaiamLOpsFT2uSV+5VzFn8="
+            },
+            {
+                "@type": "ton.blockIdExt",
+                "workchain": 0,
+                "shard": "-4611686018427387904",
+                "seqno": 44599315,
+                "root_hash": "uf8DTtjRw5hQc1tBi/gD3sCNcFrAjnKeIuPPIUjR3h0=",
+                "file_hash": "s0afHo/ReFDI8s6e2+6BjpSRpJjN6ST1DfY1Ke2fMm4="
+            }
+        ],
+        "@extra": "1731071058.0157397:0:0.09471235795206101"
+    }
+}
+```
+
+---
+
+## `getBlockTransactions`
+
+> Retrieves transactions of a given block.
+
+### Parameters
+<br/>
+
+  * `workchain` (integer; query; required): the block workchain ID. Example: `-1` for the masterchain.
+  * `shard` (integer; query; required): the block shard ID. Example: `-9223372036854775808` for the masterchain.
+  * `seqno` (integer; query; required): the sequence number of the block. Example: `39064985`.
+  * `root_hash` (string; query): the root hash of the block for which to request transactions.
+  * `file_hash` (string; query): the file hash associated with the block.
+  * `after_lt` (integer; query): the logical time (LT) marker after which to retrieve transactions.
+  * `after_hash` (string; query): the hash of the last transaction from which to continue fetching additional transactions.
+  * `count` (integer; query; default=40): max number of transactions to return.
+
+### Returns
+
+Transactions from a specific block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactions?workchain=-1&shard=-9223372036854775808&seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getBlockTransactions",
+    "params": {
+      "workchain": -1,
+      "shard": -9223372036854775808,
+      "seqno": 39064985
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "blocks.transactions",
+        "id": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 39064985,
+            "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+            "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M="
+        },
+        "req_count": 40,
+        "incomplete": false,
+        "transactions": [
+            {
+                "@type": "blocks.shortTxId",
+                "mode": 135,
+                "account": "-1:3333333333333333333333333333333333333333333333333333333333333333",
+                "lt": "47805438000001",
+                "hash": "oWXZAgtiaqG69JC90PhKUCu/czgLghQVqQGAhxIetMY="
+            },
+            {
+                "@type": "blocks.shortTxId",
+                "mode": 135,
+                "account": "-1:3333333333333333333333333333333333333333333333333333333333333333",
+                "lt": "47805438000002",
+                "hash": "gG/fp7ukb3YHhcqRqhARG24xuNncdgc7dT4aSWLhRCI="
+            },
+            {
+                "@type": "blocks.shortTxId",
+                "mode": 135,
+                "account": "-1:5555555555555555555555555555555555555555555555555555555555555555",
+                "lt": "47805438000003",
+                "hash": "6p8ROuJ33hA6l7SrfhiXG1XB8YUNEnm05IElYQQCDek="
+            }
+        ],
+        "@extra": "1731071592.980471:0:0.13996576074060574"
+    }
+}
+```
+
+---
+
+## `getBlockTransactionsExt`
+
+> Retrieves block transactions extended info.
+
+### Parameters
+<br/>
+
+  * `workchain` (integer; query; required): the block workchain ID. Example: `-1` for the masterchain.
+  * `shard` (integer; query; required): the block shard ID. Example: `-9223372036854775808` for the masterchain.
+  * `seqno` (integer; query; required): the sequence number of the block. Example: `39064985`.
+  * `root_hash` (string; query): the root hash of the block for which to request transactions.
+  * `file_hash` (string; query): the file hash associated with the block.
+  * `after_lt` (integer; query): the logical time (LT) marker after which to retrieve transactions.
+  * `after_hash` (string; query): the hash of the last transaction from which to continue fetching additional transactions.
+  * `count` (integer; query; default=40): max number of transactions to return.
+
+### Returns
+
+Detailed information about transactions from a specific block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactionsExt?workchain=-1&shard=-9223372036854775808&seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getBlockTransactionsExt",
+    "params": {
+      "workchain": -1,
+      "shard": -9223372036854775808,
+      "seqno": 39064874
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+  "ok": true,
+  "result": {
+    "@type": "blocks.transactionsExt",
+    "id": {
+      "@type": "ton.blockIdExt",
+      "workchain": -1,
+      "shard": "-9223372036854775808",
+      "seqno": 39064985,
+      "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+      "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M="
+    },
+    "req_count": 40,
+    "incomplete": false,
+    "transactions": [
+      {
+        "@type": "raw.transaction",
+        "address": {
+          "@type": "accountAddress",
+          "account_address": "Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF"
+        },
+        "utime": 1721184636,
+        "data": "te6cckECBgEAASwAA69zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzAAArepIme4GscsDwDDBgx9i/DeB5aFmy2vrV8aOK0rP/cq/8TPKZcwAAK3qSFzlCZpcxfAABQIAQIDAAEgAIJy8I5H0zoxilm4IYvCWq+YZvggOAzax3zPCIkpOOBNG8wO3imDKvL7ljWwH4GPI4A1OWEW8XeiXiwJjU86+K4vmQIFIDAkBAUAoEMBkBCwdgAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFvAAAAAAAAAAAAAAAABLUUtpEnlC4z33SeGHxRhIq/htUa7i3D8ghbwxhQTn44ES774TA==",
+        "transaction_id": {
+          "@type": "internal.transactionId",
+          "lt": "47805438000001",
+          "hash": "oWXZAgtiaqG69JC90PhKUCu/czgLghQVqQGAhxIetMY="
+        },
+        "fee": "0",
+        "storage_fee": "0",
+        "other_fee": "0",
+        "out_msgs": [],
+        "account": "-1:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "@type": "raw.transaction",
+        "address": {
+          "@type": "accountAddress",
+          "account_address": "Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF"
+        },
+        "utime": 1721184636,
+        "data": "te6cckECBwEAAYoAA69zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzAAArepIme4KhZdkCC2Jqobr0kL3Q+EpQK79zOAuCFBWpAYCHEh60xgAAK3qSJnuBZpcxfAABQIAQIDAQGgBACCcg7eKYMq8vuWNbAfgY8jgDU5YRbxd6JeLAmNTzr4ri+ZpP0ft+83iz9Yc0BgMlvUwWg3jAnIjmISfn+TgvvOiOICDwQJLVTvQJgRBQYAq2n+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE/zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzS1U70CAAAAFb1JEz3AM0uYvhAAKBCr3AQsHYAAAAAAAAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbwAAAAAAAAAAAAAAAAS1FLaRJ5QuM990nhh8UYSKv4bVGu4tw/IIW8MYUE5+OBOSEDw0=",
+        "transaction_id": {
+          "@type": "internal.transactionId",
+          "lt": "47805438000002",
+          "hash": "gG/fp7ukb3YHhcqRqhARG24xuNncdgc7dT4aSWLhRCI="
+        },
+        "fee": "0",
+        "storage_fee": "0",
+        "other_fee": "0",
+        "in_msg": {
+          "@type": "raw.message",
+          "source": {
+            "@type": "accountAddress",
+            "account_address": "Ef8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAU"
+          },
+          "destination": {
+            "@type": "accountAddress",
+            "account_address": "Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF"
+          },
+          "value": "3042163970",
+          "fwd_fee": "0",
+          "ihr_fee": "0",
+          "created_lt": "47805438000000",
+          "body_hash": "lqKW0iTyhcZ77pPDD4owkVfw2qNdxbh+QQt4YwoJz8c=",
+          "msg_data": {
+            "@type": "msg.dataRaw",
+            "body": "te6cckEBAQEAAgAAAEysuc0=",
+            "init_state": ""
+          }
+        },
+        "out_msgs": [],
+        "account": "-1:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "@type": "raw.transaction",
+        "address": {
+          "@type": "accountAddress",
+          "account_address": "Ef9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbxn"
+        },
+        "utime": 1721184636,
+        "data": "te6cckECBgEAASwAA691VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVAAArepIme4OECgCvSheQctVrVPqeBE/WfbkG6v5cpslm2if1ScBQRgAAK3qSFzlDZpcxfAABQIAQIDAAEgAIJyQ/ThOpAPm9H/T3ILcT7NCWm9UnbAgiq5qKeHYGOf36hhkadzn9gB0z9C3sKgAmTwI1mVw0NYAp/yY+U2+xU+aAIFMDAkBAUAoEGCkBCwdgAAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFvAAAAAAAAAAAAAAAABLUUtpEnlC4z33SeGHxRhIq/htUa7i3D8ghbwxhQTn44ECXKhng==",
+        "transaction_id": {
+          "@type": "internal.transactionId",
+          "lt": "47805438000003",
+          "hash": "6p8ROuJ33hA6l7SrfhiXG1XB8YUNEnm05IElYQQCDek="
+        },
+        "fee": "0",
+        "storage_fee": "0",
+        "other_fee": "0",
+        "out_msgs": [],
+        "account": "-1:5555555555555555555555555555555555555555555555555555555555555555"
+      }
+    ],
+    "@extra": "1731071979.505911:1:0.010321268558367347"
+  }
+}
+```
+
+---
+
+## `getBlockHeader`
+
+> Retrieves block header.
+
+Retrieves metadata of a given block.
+
+### Parameters
+<br/>
+
+  * `workchain` (integer; query; required): the block workchain ID. Example: `-1` for the masterchain.
+  * `shard` (integer; query; required): the block shard ID. Example: `-9223372036854775808` for the masterchain.
+  * `seqno` (integer; query; required): the sequence number of the block. Example: `39064985`.
+  * `root_hash` (string; query): the root hash of the block for which to request transactions.
+  * `file_hash` (string; query): the file hash associated with the block.
+
+### Returns
+
+Detailed metadata about a block, including its identifiers, state flags, and timing information.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockHeader?workchain=-1&shard=-9223372036854775808&seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getBlockHeader",
+    "params": {
+      "workchain": -1,
+      "shard": -9223372036854775808,
+      "seqno": 39064874
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "blocks.header",
+        "id": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 39064985,
+            "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+            "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M="
+        },
+        "global_id": -239,
+        "version": 0,
+        "flags": 1,
+        "after_merge": false,
+        "after_split": false,
+        "before_split": false,
+        "want_merge": true,
+        "want_split": false,
+        "validator_list_hash_short": -2052020525,
+        "catchain_seqno": 586285,
+        "min_ref_mc_seqno": 39064981,
+        "is_key_block": false,
+        "prev_key_block_seqno": 39064828,
+        "start_lt": "47805438000000",
+        "end_lt": "47805438000004",
+        "gen_utime": 1721184636,
+        "vert_seqno": 1,
+        "prev_blocks": [
+            {
+                "@type": "ton.blockIdExt",
+                "workchain": -1,
+                "shard": "-9223372036854775808",
+                "seqno": 39064984,
+                "root_hash": "2IPv7Ob6GLJAUa6mnyLRWgiZPumAMtf9I4rKJ4CYA7U=",
+                "file_hash": "MlowUE4mRqGoS7aKMmXROnpBDTL35jpZDZDrd+oDtBc="
+            }
+        ],
+        "@extra": "1731074187.3699944:0:0.9581414160490025"
+    }
+}
+```
+
+---
+
+## `getOutMsgQueueSizes`
+
+> Retrieves messages queue sizes.
+
+Retrieves info with current sizes of messages queues by shards.
+
+### Parameters
+
+None.
+
+### Returns
+
+Information about the size of message queues associated with a specified block or shard.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getOutMsgQueueSizes
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getOutMsgQueueSizes",
+    "params": {},
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+  "ok": true,
+  "result": {
+    "@type": "blocks.outMsgQueueSizes",
+    "shards": [
+      {
+        "@type": "blocks.outMsgQueueSize",
+        "id": {
+          "@type": "ton.blockIdExt",
+          "workchain": -1,
+          "shard": "-9223372036854775808",
+          "seqno": 41810136,
+          "root_hash": "PfkJ9d9Y7C+YuemqU1EZuJHVAYLsW8DarhUvT4vZV9U=",
+          "file_hash": "QimWa2jewflBa8R91i8+2/3+FGTGggOe0ObOrxnch8c="
+        },
+        "size": 1
+      },
+      {
+        "@type": "blocks.outMsgQueueSize",
+        "id": {
+          "@type": "ton.blockIdExt",
+          "workchain": 0,
+          "shard": "2305843009213693952",
+          "seqno": 46979192,
+          "root_hash": "XWJreLPIZ6hvembivVKNjL7DCB/Zha5eJrMIMLsawGo=",
+          "file_hash": "voQ0q1oAGFF6GkiV0I7UUQ3fubnxoeKQ/D7AuFHCJ9U="
+        },
+        "size": 128
+      },
+      {
+        "@type": "blocks.outMsgQueueSize",
+        "id": {
+          "@type": "ton.blockIdExt",
+          "workchain": 0,
+          "shard": "6917529027641081856",
+          "seqno": 46992152,
+          "root_hash": "xtxBOJrfNB9E3DMI3X3a1Ydt+/39LF+zJ3O5QQ0JmpE=",
+          "file_hash": "hfgU2iDQaZ0vt9hNbcevGWbaWbrQeL9VFjGWqX2XGXY="
+        },
+        "size": 175
+      },
+      {
+        "@type": "blocks.outMsgQueueSize",
+        "id": {
+          "@type": "ton.blockIdExt",
+          "workchain": 0,
+          "shard": "-6917529027641081856",
+          "seqno": 46753006,
+          "root_hash": "RZGjpslMKh9r4X/6j/RSNubR3MGFWo2T+II59CG4FpU=",
+          "file_hash": "Qskhx4BuIiXKyQKZaL+ZKndM76cI4+4F+Z6RhDF2HFU="
+        },
+        "size": 117
+      },
+      {
+        "@type": "blocks.outMsgQueueSize",
+        "id": {
+          "@type": "ton.blockIdExt",
+          "workchain": 0,
+          "shard": "-2305843009213693952",
+          "seqno": 46951966,
+          "root_hash": "CbJl2xiawT0B9iJIgQv6+xllWdRD92kFp83ajojbSdo=",
+          "file_hash": "U5A22AXfIQAkeFVZT1yvyoIcREK/vDR8QHBlV9RcI30="
+        },
+        "size": 113
+      }
+    ],
+    "ext_msg_queue_size_limit": 8000,
+    "@extra": "1731074512.3481815:16:0.07293629857925221"
+  }
+}
+```
+
+---
+
+## `getTransactions`
+
+> Retrieves transactions.
+
+Retrieves transaction history of a given address.
+
+### Parameters
+<br/>
+
+  * `address` (string; query; required): an identifier of a target TON account.
+  * `limit` (integer; query; default=10, max=100): maximum number of transactions in response.
+  * `lt` (integer; query): logical time of transaction to start with, must be sent with `hash`.
+  * `hash` (string; query): the hash of transaction to start with, in base64 or hex encoding , must be sent with `lt`.
+  * `to_lt` (integer; query): logical time of transaction to finish with (to get tx from `lt` to `to_lt`).
+  * `archival` (boolean; query; default=false): by default `getTransaction` request is processed by any available liteserver. If `archival=true` only liteservers with full history are used.
+
+### Returns
+
+The transaction history for a specific address.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getTransactions?address=EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getTransactions",
+    "params": {
+      "address": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": [
+        {
+            "@type": "raw.transaction",
+            "utime": 1730897178,
+            "data": "te6cckECDwEAAywAA7V/l26clqHVRGrod9+7tISkJI53k+e7PGKqChEe+RI36rAAAuDEt9e0EUhqqRoLlokU16oee06iuNKCfrXMhyS9QXJLNJK+RvjwAALf81h8KBZytlGgADRhjwMIAQIDAgHgBAUAgnKmm1F2uF+qjoLb+DOkjIiO+1S2/rUFfz/9X0ecgCrNJJxt7rYpNtcbz4bUhkV3+hJYM6a4v6txgynCn27hbW/LAhkEhZUJANqpBRhgw1ARDQ4BsWgAAHEQFvmJp3gRyAJ1sBIV0YcBim66VsLr6L2rS6H3pL8APl26clqHVRGrod9+7tISkJI53k+e7PGKqChEe+RI36rQDaqQUAYQFLQAAFwYloDkhM5Wyh7ABgEB3wcBqA+KfqVUbeTv2XoE7jY5HJgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kAAA4iAt8xNO8COQBOtgJCujDgMU3XSthdfRe1aXQ+9JfCAwwCsWgB8u3TktQ6qI1dDvv3dpCUhJHO8nz3Z4xVQUIj3yJG/VcAIzum7Z4PaYlBTeFvKo6mdRJVSxaBZjYWdNcZV1Ty5TgQDUbO0AYZHTgAAFwYlvr2hM5WyjXgCAkCATQKCwGnF41FGVRt5O/ZegTuNjkcmAAAcRAW+YmneBHIAnWwEhXRhwGKbrpWwuvovatLofekvwAADiIC3zE07wI5AE62AkK6MOAxTddK2F19F7VpdD70l8QHDAhCAo9FLXpN/XQGa2gjZRdyWe0Fc0Q1vna1/UvV2K8rfD1oAIcAgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kALETqZS1AkoWcZ9pE5Mo63WVlsOKJfWQKLFG/s3DYh3+gAaAAAAADEwOTUxNTg2OACeQH0MCL8UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvyYlq8EwZHRAAAAAAAAIAAAAAAALC24AfOr7B+9wHRF8yKXY1QVDD2tgXWyS0aakzhF8WbEGQR6TI4r5Y",
+            "transaction_id": {
+                "@type": "internal.transactionId",
+                "lt": "50630341000001",
+                "hash": "/PZphaovGJ1xCTklvEPzGszPvBaotdzWcon79et+Nvw="
+            },
+            "fee": "1640116",
+            "storage_fee": "5716",
+            "other_fee": "1634400",
+            "in_msg": {
+                "@type": "raw.message",
+                "source": "EQAAOIgLfMTTvAjkATrYCQrow4DFN10rYXX0XtWl0PvSX5uk",
+                "destination": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W",
+                "value": "57320468",
+                "fwd_fee": "526938",
+                "ihr_fee": "0",
+                "created_lt": "50630337000002",
+                "body_hash": "vt02QoQHP7hw48TBJm8i1YII+Zx8kL/QfNVj79Kmt7w=",
+                "msg_data": {
+                    "@type": "msg.dataRaw",
+                    "body": "te6cckEBAgEAZgABqA+KfqVUbeTv2XoE7jY5HJgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kAAA4iAt8xNO8COQBOtgJCujDgMU3XSthdfRe1aXQ+9JfCAwEAGgAAAAAxMDk1MTU4NjicCb0U",
+                    "init_state": ""
+                },
+                "message": "D4p+pVRt5O/ZegTuNjkcmAHzNijAFciaXiVi8dGN1XrxElXQWLyLbRMfO9b9ZAfziQAADiIC3zE0\n7wI5AE62AkK6MOAxTddK2F19F7VpdD70l8ID\n"
+            },
+            "out_msgs": [
+                {
+                    "@type": "raw.message",
+                    "source": "EQD5dunJah1URq6Hffu7SEpCSOd5PnuzxiqgoRHvkSN-q19W",
+                    "destination": "EQCM7pu2eD2mJQU3hbyqOpnUSVUsWgWY2FnTXGVdU8uU4Ddb",
+                    "value": "55686068",
+                    "fwd_fee": "822940",
+                    "ihr_fee": "0",
+                    "created_lt": "50630341000002",
+                    "body_hash": "Ycyf2S915TpjkcLaOH70Kse87Z1rZrF65nPLm/70Rms=",
+                    "msg_data": {
+                        "@type": "msg.dataRaw",
+                        "body": "te6cckEBAgEAZgABpxeNRRlUbeTv2XoE7jY5HJgAAHEQFvmJp3gRyAJ1sBIV0YcBim66VsLr6L2rS6H3pL8AAA4iAt8xNO8COQBOtgJCujDgMU3XSthdfRe1aXQ+9JfEBwEAGgAAAAAxMDk1MTU4NjhoTgE0",
+                        "init_state": "te6cckEBAwEAbgACATQBAghCAo9FLXpN/XQGa2gjZRdyWe0Fc0Q1vna1/UvV2K8rfD1oAIcAgB8zYowBXIml4lYvHRjdV68RJV0Fi8i20THzvW/WQH84kALETqZS1AkoWcZ9pE5Mo63WVlsOKJfWQKLFG/s3DYh3+vXib6g="
+                    },
+                    "message": "F41FGVRt5O/ZegTuNjkcmAAAcRAW+YmneBHIAnWwEhXRhwGKbrpWwuvovatLofekvwAADiIC3zE0\n7wI5AE62AkK6MOAxTddK2F19F7VpdD70l8QG\n"
+                }
+            ]
+        }
+    ]
+}
+```
+
+---
+
+## `getBlockTransactions`
+
+> Retrieves transactions of a given block.
+
+### Parameters
+<br/>
+
+  * `workchain` (integer; query; required): the block workchain ID. Example: `-1` for the masterchain.
+  * `shard` (integer; query; required): the block shard ID. Example: `-9223372036854775808` for the masterchain.
+  * `seqno` (integer; query; required): the sequence number of the block. Example: `39064985`.
+  * `root_hash` (string; query): the root hash of the block for which to request transactions.
+  * `file_hash` (string; query): the file hash associated with the block.
+  * `after_lt` (integer; query): the logical time (LT) marker after which to retrieve transactions.
+  * `after_hash` (string; query): the hash of the last transaction from which to continue fetching additional transactions.
+  * `count` (integer; query; default=40): max number of transactions to return.
+
+### Returns
+
+Transactions from a specific block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactions?workchain=-1&shard=-9223372036854775808&seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getBlockTransactions",
+    "params": {
+      "workchain": -1,
+      "shard": -9223372036854775808,
+      "seqno": 39064985
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "blocks.transactions",
+        "id": {
+            "@type": "ton.blockIdExt",
+            "workchain": -1,
+            "shard": "-9223372036854775808",
+            "seqno": 39064985,
+            "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+            "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M="
+        },
+        "req_count": 40,
+        "incomplete": false,
+        "transactions": [
+            {
+                "@type": "blocks.shortTxId",
+                "mode": 135,
+                "account": "-1:3333333333333333333333333333333333333333333333333333333333333333",
+                "lt": "47805438000001",
+                "hash": "oWXZAgtiaqG69JC90PhKUCu/czgLghQVqQGAhxIetMY="
+            },
+            {
+                "@type": "blocks.shortTxId",
+                "mode": 135,
+                "account": "-1:3333333333333333333333333333333333333333333333333333333333333333",
+                "lt": "47805438000002",
+                "hash": "gG/fp7ukb3YHhcqRqhARG24xuNncdgc7dT4aSWLhRCI="
+            },
+            {
+                "@type": "blocks.shortTxId",
+                "mode": 135,
+                "account": "-1:5555555555555555555555555555555555555555555555555555555555555555",
+                "lt": "47805438000003",
+                "hash": "6p8ROuJ33hA6l7SrfhiXG1XB8YUNEnm05IElYQQCDek="
+            }
+        ],
+        "@extra": "1731071592.980471:0:0.13996576074060574"
+    }
+}
+```
+
+---
+
+## `getBlockTransactionsExt`
+
+> Retrieves block transactions extended info.
+
+### Parameters
+<br/>
+
+  * `workchain` (integer; query; required): the block workchain ID. Example: `-1` for the masterchain.
+  * `shard` (integer; query; required): the block shard ID. Example: `-9223372036854775808` for the masterchain.
+  * `seqno` (integer; query; required): the sequence number of the block. Example: `39064985`.
+  * `root_hash` (string; query): the root hash of the block for which to request transactions.
+  * `file_hash` (string; query): the file hash associated with the block.
+  * `after_lt` (integer; query): the logical time (LT) marker after which to retrieve transactions.
+  * `after_hash` (string; query): the hash of the last transaction from which to continue fetching additional transactions.
+  * `count` (integer; query; default=40): max number of transactions to return.
+
+### Returns
+
+Detailed information about transactions from a specific block on the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getBlockTransactionsExt?workchain=-1&shard=-9223372036854775808&seqno=39064985
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getBlockTransactionsExt",
+    "params": {
+      "workchain": -1,
+      "shard": -9223372036854775808,
+      "seqno": 39064874
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+  "ok": true,
+  "result": {
+    "@type": "blocks.transactionsExt",
+    "id": {
+      "@type": "ton.blockIdExt",
+      "workchain": -1,
+      "shard": "-9223372036854775808",
+      "seqno": 39064985,
+      "root_hash": "8txd0JPm3PHUMknZMybwYD8WlGT+nqOQjJ3pqmd22/s=",
+      "file_hash": "jVToDU7mOXsUoHRntkmE6/hbA1AgrFMMeFcqlnwv75M="
+    },
+    "req_count": 40,
+    "incomplete": false,
+    "transactions": [
+      {
+        "@type": "raw.transaction",
+        "address": {
+          "@type": "accountAddress",
+          "account_address": "Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF"
+        },
+        "utime": 1721184636,
+        "data": "te6cckECBgEAASwAA69zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzAAArepIme4GscsDwDDBgx9i/DeB5aFmy2vrV8aOK0rP/cq/8TPKZcwAAK3qSFzlCZpcxfAABQIAQIDAAEgAIJy8I5H0zoxilm4IYvCWq+YZvggOAzax3zPCIkpOOBNG8wO3imDKvL7ljWwH4GPI4A1OWEW8XeiXiwJjU86+K4vmQIFIDAkBAUAoEMBkBCwdgAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFvAAAAAAAAAAAAAAAABLUUtpEnlC4z33SeGHxRhIq/htUa7i3D8ghbwxhQTn44ES774TA==",
+        "transaction_id": {
+          "@type": "internal.transactionId",
+          "lt": "47805438000001",
+          "hash": "oWXZAgtiaqG69JC90PhKUCu/czgLghQVqQGAhxIetMY="
+        },
+        "fee": "0",
+        "storage_fee": "0",
+        "other_fee": "0",
+        "out_msgs": [],
+        "account": "-1:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "@type": "raw.transaction",
+        "address": {
+          "@type": "accountAddress",
+          "account_address": "Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF"
+        },
+        "utime": 1721184636,
+        "data": "te6cckECBwEAAYoAA69zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzAAArepIme4KhZdkCC2Jqobr0kL3Q+EpQK79zOAuCFBWpAYCHEh60xgAAK3qSJnuBZpcxfAABQIAQIDAQGgBACCcg7eKYMq8vuWNbAfgY8jgDU5YRbxd6JeLAmNTzr4ri+ZpP0ft+83iz9Yc0BgMlvUwWg3jAnIjmISfn+TgvvOiOICDwQJLVTvQJgRBQYAq2n+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE/zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzS1U70CAAAAFb1JEz3AM0uYvhAAKBCr3AQsHYAAAAAAAAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbwAAAAAAAAAAAAAAAAS1FLaRJ5QuM990nhh8UYSKv4bVGu4tw/IIW8MYUE5+OBOSEDw0=",
+        "transaction_id": {
+          "@type": "internal.transactionId",
+          "lt": "47805438000002",
+          "hash": "gG/fp7ukb3YHhcqRqhARG24xuNncdgc7dT4aSWLhRCI="
+        },
+        "fee": "0",
+        "storage_fee": "0",
+        "other_fee": "0",
+        "in_msg": {
+          "@type": "raw.message",
+          "source": {
+            "@type": "accountAddress",
+            "account_address": "Ef8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAU"
+          },
+          "destination": {
+            "@type": "accountAddress",
+            "account_address": "Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF"
+          },
+          "value": "3042163970",
+          "fwd_fee": "0",
+          "ihr_fee": "0",
+          "created_lt": "47805438000000",
+          "body_hash": "lqKW0iTyhcZ77pPDD4owkVfw2qNdxbh+QQt4YwoJz8c=",
+          "msg_data": {
+            "@type": "msg.dataRaw",
+            "body": "te6cckEBAQEAAgAAAEysuc0=",
+            "init_state": ""
+          }
+        },
+        "out_msgs": [],
+        "account": "-1:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "@type": "raw.transaction",
+        "address": {
+          "@type": "accountAddress",
+          "account_address": "Ef9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbxn"
+        },
+        "utime": 1721184636,
+        "data": "te6cckECBgEAASwAA691VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVAAArepIme4OECgCvSheQctVrVPqeBE/WfbkG6v5cpslm2if1ScBQRgAAK3qSFzlDZpcxfAABQIAQIDAAEgAIJyQ/ThOpAPm9H/T3ILcT7NCWm9UnbAgiq5qKeHYGOf36hhkadzn9gB0z9C3sKgAmTwI1mVw0NYAp/yY+U2+xU+aAIFMDAkBAUAoEGCkBCwdgAAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFvAAAAAAAAAAAAAAAABLUUtpEnlC4z33SeGHxRhIq/htUa7i3D8ghbwxhQTn44ECXKhng==",
+        "transaction_id": {
+          "@type": "internal.transactionId",
+          "lt": "47805438000003",
+          "hash": "6p8ROuJ33hA6l7SrfhiXG1XB8YUNEnm05IElYQQCDek="
+        },
+        "fee": "0",
+        "storage_fee": "0",
+        "other_fee": "0",
+        "out_msgs": [],
+        "account": "-1:5555555555555555555555555555555555555555555555555555555555555555"
+      }
+    ],
+    "@extra": "1731071979.505911:1:0.010321268558367347"
+  }
+}
+```
+
+---
+
+## `tryLocateTx`
+
+> Locates outgoing transaction.
+
+Locates an outgoing transaction of the destination address by incoming message.
+
+### Parameters
+<br/>
+
+  * `source` (string; query; required): the source address of the transaction.
+  * `destination` (string; query; required): recipient address of the transaction.
+  * `created_lt` (string; query; required): the logical time when the transaction was created.
+
+### Returns
+
+Specific transaction on the TON blockchain based on the source address, destination address, and the logical time of its creation.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/tryLocateTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "tryLocateTx",
+    "params": {
+      "source": "UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1",
+      "destination": "UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA",
+      "created_lt": "47597573000002"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "raw.transaction",
+        "utime": 1720370807,
+        "data": "te6cckECCAEAAcYAA7N0/ibOkMjLAvVJX5an1m4EGXOmtH15dCBJgYReJQQebvAAArSixuS0NxLUvVgs8QeGGFM2MZwhibMZb5gyItVOLXOT/S0xskoAAAK0graeWDZorGdwABRUR+gBAgMBAaAEAIJyQ6mmQyZ39HLmBav8jckU7IrGamu4wzwWzKlJuYOGa/n6kZCfzjVebR8px97WNeOqId7XzjMSA2dM8e5vAZIEWgIVDIF/yMPQkBhTiBEGBwGvSAAvs7wFs7x4S8B9plt/S8M02irdNOUxttiffJcI1kFvmwAT+Js6QyMsC9UlflqfWbgQZc6a0fXl0IEmBhF4lBB5u8w9CQAGDGcIAABWlFjcloTNFYzuwAUAagAAAABidWdhdHRpYm95dmljZSAyNjUsMDAwIPCfko4gYXZhaWxhYmxlIG9uIGZyYWdtZW50AJonyCcQAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbwAAAAAAAAAAAAAAAAS1FLaRJ5QuM990nhh8UYSKv4bVGu4tw/IIW8MYUE5+OBHSfO+8=",
+        "transaction_id": {
+            "@type": "internal.transactionId",
+            "lt": "47597573000003",
+            "hash": "mlVb0ixiGkELIAog5jwcqDOEcJa3R1CQk/20yaYAQ10="
+        },
+        "fee": "41535",
+        "storage_fee": "1535",
+        "other_fee": "40000",
+        "in_msg": {
+            "@type": "raw.message",
+            "source": "EQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zW_w",
+            "destination": "EQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm7yYF",
+            "value": "1000000",
+            "fwd_fee": "406404",
+            "ihr_fee": "0",
+            "created_lt": "47597573000002",
+            "body_hash": "0+UqzPwXQY+jCm7ohKTneJ+Yi3q08vctwy000JALqts=",
+            "msg_data": {
+                "@type": "msg.dataText",
+                "text": "YnVnYXR0aWJveXZpY2UgMjY1LDAwMCDwn5KOIGF2YWlsYWJsZSBvbiBmcmFnbWVudA=="
+            },
+            "message": "bugattiboyvice 265,000 💎 available on fragment"
+        },
+        "out_msgs": []
+    }
+}
+```
+
+---
+
+## `tryLocateResultTx`
+
+> Locates outgoing transaction.
+
+Same as previous. Locates an outgoing transaction of destination address by incoming message.
+
+### Parameters
+<br/>
+
+  * `source` (string; query; required): the source address of the transaction.
+  * `destination` (string; query; required): the recipient address of the transaction.
+  * `created_lt` (string; query; required): the logical time when the transaction was created.
+
+### Returns
+
+Specific transaction on the TON blockchain based on the source address, destination address, and the logical time of its creation.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/tryLocateResultTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "tryLocateResultTx",
+    "params": {
+      "source": "UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1",
+      "destination": "UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA",
+      "created_lt": "47597573000002"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "raw.transaction",
+        "utime": 1720370807,
+        "data": "te6cckECCAEAAcYAA7N0/ibOkMjLAvVJX5an1m4EGXOmtH15dCBJgYReJQQebvAAArSixuS0NxLUvVgs8QeGGFM2MZwhibMZb5gyItVOLXOT/S0xskoAAAK0graeWDZorGdwABRUR+gBAgMBAaAEAIJyQ6mmQyZ39HLmBav8jckU7IrGamu4wzwWzKlJuYOGa/n6kZCfzjVebR8px97WNeOqId7XzjMSA2dM8e5vAZIEWgIVDIF/yMPQkBhTiBEGBwGvSAAvs7wFs7x4S8B9plt/S8M02irdNOUxttiffJcI1kFvmwAT+Js6QyMsC9UlflqfWbgQZc6a0fXl0IEmBhF4lBB5u8w9CQAGDGcIAABWlFjcloTNFYzuwAUAagAAAABidWdhdHRpYm95dmljZSAyNjUsMDAwIPCfko4gYXZhaWxhYmxlIG9uIGZyYWdtZW50AJonyCcQAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbwAAAAAAAAAAAAAAAAS1FLaRJ5QuM990nhh8UYSKv4bVGu4tw/IIW8MYUE5+OBHSfO+8=",
+        "transaction_id": {
+            "@type": "internal.transactionId",
+            "lt": "47597573000003",
+            "hash": "mlVb0ixiGkELIAog5jwcqDOEcJa3R1CQk/20yaYAQ10="
+        },
+        "fee": "41535",
+        "storage_fee": "1535",
+        "other_fee": "40000",
+        "in_msg": {
+            "@type": "raw.message",
+            "source": "EQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zW_w",
+            "destination": "EQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm7yYF",
+            "value": "1000000",
+            "fwd_fee": "406404",
+            "ihr_fee": "0",
+            "created_lt": "47597573000002",
+            "body_hash": "0+UqzPwXQY+jCm7ohKTneJ+Yi3q08vctwy000JALqts=",
+            "msg_data": {
+                "@type": "msg.dataText",
+                "text": "YnVnYXR0aWJveXZpY2UgMjY1LDAwMCDwn5KOIGF2YWlsYWJsZSBvbiBmcmFnbWVudA=="
+            },
+            "message": "bugattiboyvice 265,000 💎 available on fragment"
+        },
+        "out_msgs": []
+    }
+}
+```
+
+---
+
+## `tryLocateSourceTx`
+
+> Locates incoming transaction.
+
+Locates incoming transaction of source address by outgoing message.
+
+### Parameters
+<br/>
+
+  * `source` (string; query; required): the source address of the transaction.
+  * `destination` (string; query; required): the recipient address of the transaction.
+  * `created_lt` (string; query; required): the logical time when the transaction was created.
+
+### Returns
+
+The source transaction in the TON blockchain based on the source address, destination address, and the logical time of a result transaction.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/tryLocateSourceTx?source=UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1&destination=UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA&created_lt=47597573000002
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "tryLocateSourceTx",
+    "params": {
+      "source": "UQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zTI1",
+      "destination": "UQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm73vA",
+      "created_lt": "47597573000002"
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "raw.transaction",
+        "utime": 1720370807,
+        "data": "te6cckECCwEAArMAA7VxfZ3gLZ3jwl4D7TLb+l4ZptFW6acpjbbE++S4RrILfNAAArSixuS0ELoQyiDrvrN3Z0DPMD02uBod3iPli5PYjRN2/Ub+3FzAAAK0or5PcBZorGdwADRkYqjIAQIDAgHgBAUAgnKKPjpYcmgZLfsPoW9xmCLuTvF605qU692DTlFlYt85leU7kkdddoIfJzvx8qfF8HlSpJoGlSpo4eN5F697Wt9PAg8MQoYYoYYEQAkKAeGIAC+zvAWzvHhLwH2mW39LwzTaKt005TG22J98lwjWQW+aBp2t/wOepbcynWvjnMnSZ74h87QzObNk6oolE6HVQhB28rHHhfhPHOxPhrn435Q7Y0DIBKfINv5sP+zJYHem6CFNTRi7NFY88AAA0IAAHAYBAd8HANBCACfxNnSGRlgXqkr8tT6zcCDLnTWj68uhAkwMIvEoIPN3mHoSAAAAAAAAAAAAAAAAAAAAAAAAYnVnYXR0aWJveXZpY2UgMjY1LDAwMCDwn5KOIGF2YWlsYWJsZSBvbiBmcmFnbWVudAGvSAAvs7wFs7x4S8B9plt/S8M02irdNOUxttiffJcI1kFvmwAT+Js6QyMsC9UlflqfWbgQZc6a0fXl0IEmBhF4lBB5u8w9CQAGDGcIAABWlFjcloTNFYzuwAgAagAAAABidWdhdHRpYm95dmljZSAyNjUsMDAwIPCfko4gYXZhaWxhYmxlIG9uIGZyYWdtZW50AJ1BnYMTiAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAG/JhKagTAxm8AAAAAAAAgAAAAAAA9aib6Td8cdWhCpStTRgutI+DjjUUflMzLbRvaXnP5FgQJAjDIpjigg=",
+        "transaction_id": {
+            "@type": "internal.transactionId",
+            "lt": "47597573000001",
+            "hash": "9BFX+3WF/g7lt+fmHWmyFraflfOoAG3s7z32tOx3HbQ="
+        },
+        "fee": "2705610",
+        "storage_fee": "10",
+        "other_fee": "2705600",
+        "in_msg": {
+            "@type": "raw.message",
+            "source": "",
+            "destination": "EQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zW_w",
+            "value": "0",
+            "fwd_fee": "0",
+            "ihr_fee": "0",
+            "created_lt": "0",
+            "body_hash": "ZSRHhXgmUkSeNbEYIOHUYXcW8kCvcG99IPJk4PWP6Lc=",
+            "msg_data": {
+                "@type": "msg.dataRaw",
+                "body": "te6cckEBAgEAuwABnNO1v+Bz1LbmU618c5k6TPfEPnaGZzZsnVFEonQ6qEIO3lY48L8J452J8Nc/G/KHbGgZAJT5Bt/Nh/2ZLA703QQpqaMXZorHngAAGhAAAwEA0EIAJ/E2dIZGWBeqSvy1PrNwIMudNaPry6ECTAwi8Sgg83eYehIAAAAAAAAAAAAAAAAAAAAAAABidWdhdHRpYm95dmljZSAyNjUsMDAwIPCfko4gYXZhaWxhYmxlIG9uIGZyYWdtZW506B10iw==",
+                "init_state": ""
+            },
+            "message": "07W/4HPUtuZTrXxzmTpM98Q+doZnNmydUUSidDqoQg7eVjjwvwnjnYnw1z8b8odsaBkAlPkG382H\n/ZksDvTdBCmpoxdmiseeAAAaEAAD\n"
+        },
+        "out_msgs": [
+            {
+                "@type": "raw.message",
+                "source": "EQAX2d4C2d48JeA-0y2_peGabRVumnKY22xPvkuEayC3zW_w",
+                "destination": "EQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm7yYF",
+                "value": "1000000",
+                "fwd_fee": "406404",
+                "ihr_fee": "0",
+                "created_lt": "47597573000002",
+                "body_hash": "0+UqzPwXQY+jCm7ohKTneJ+Yi3q08vctwy000JALqts=",
+                "msg_data": {
+                    "@type": "msg.dataText",
+                    "text": "YnVnYXR0aWJveXZpY2UgMjY1LDAwMCDwn5KOIGF2YWlsYWJsZSBvbiBmcmFnbWVudA=="
+                },
+                "message": "bugattiboyvice 265,000 💎 available on fragment"
+            }
+        ]
+    }
+}
+```
+
+---
+
+## `getConfigParam`
+
+> Retrieves config by ID.
+
+### Parameters
+<br/>
+
+  * `config_id` (integer; query; required): the ID of the configuration parameter to retrieve.
+  * `seqno` (integer; query): the masterchain sequence number. If not specified, the latest blockchain state will be used.
+
+### Returns
+
+A specific configuration parameter from the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getConfigParam?config_id=5
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getConfigParam",
+    "params": {
+      "config_id": 5
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+  "ok": true,
+  "result": {
+    "@type": "configInfo",
+    "config": {
+      "@type": "tvm.cell",
+      "bytes": "te6cckEBAQEALAAAUwH//////////////////////////////////////////4AAAACAAAABQNJ1A1s="
+    },
+    "@extra": "1731077332.7515757:0:0.8627180770404548"
+  }
+}
+```
+
+---
+
+## `getConfigAll`
+
+> Retrieves full config.
+
+### Parameters
+<br/>
+
+  * `seqno` (integer; query): the masterchain sequence number. If not specified, the latest blockchain state will be used.
+
+### Returns
+
+Full config from the TON blockchain.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+```shell
+curl -X GET https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/getConfigAll
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "getConfigAll",
+    "params": {},
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+  "ok": true,
+  "result": {
+    "@type": "configInfo",
+    "config": {
+      "@type": "tvm.cell",
+      "bytes": "te6cckIDCFwAAQAAATrxAAACASAAAQACAgLYAAMABAIC9QAxADICASAABQAGAgFiCDIIMwIBIAAHAAgCAUgACQAKAgEgADUANgIBIAB9AH4CAUgACwAMAgFqBsYGxwEBSAANAQFIAB8BKxJnLE8IZy1PCAGQAGQP////////RMAADgICxwAPABACASAAEQASAgEgApoCmwIBIAATABQCASAAGQAaAgEgABUAFgIBIAAXABgCASAAqgCrAgEgAOgA6QIBIAEmAScCASABZAFlAgEgABsAHAIBIAAdAB4CASABogGjAgEgAeAB4QIBIAIeAh8CASACXAJdASsSZy1PCGcuTwgBkABkD////////zrAACACAscAIQAiAgEgACMAJAIBIAWoBakCASAAJQAmAgEgACsALAIBIAAnACgCASAAKQAqAgEgA7gDuQIBIAP2A..."
+    },
+    "@extra": "1731077952.979539:7:0.4668203125193432"
+  }
+}
+```
+
+---
+
+## `runGetMethod`
+
+> Runs get method.
+
+Executes a get method on a smart contract on the TON blockchain.
+
+### Request body parameters
+<br/>
+
+  * `address` (string; required): the address of the smart contract to interact with. Example: `EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs`.
+  * `method` (string; required): the name of the get method to execute. Example: `get_wallet_address`.
+  * `stack` (array; optional): an array of arguments to pass with the method. Default is an empty array.
+
+### Returns
+
+Retrieves data from smart contracts without modifying their state.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+```shell
+curl --request POST https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/runGetMethod \
+     --header 'accept: application/json' \
+     --header 'content-type: application/json' \
+     --data '
+{
+  "address": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+  "method": "get_wallet_address",
+  "stack": [
+    [
+      "tvm.Slice",
+      "te6cckEBAQEAJAAAQ4AbUzrTQYTUv8s/I9ds2TSZgRjyrgl2S2LKcZMEFcxj6PARy3rF"
+    ]
+  ]
+}'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "runGetMethod",
+    "params": {
+      "address": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+      "method": "get_wallet_address",
+      "stack": [
+        [
+          "tvm.Slice",
+          "te6cckEBAQEAJAAAQ4AbUzrTQYTUv8s/I9ds2TSZgRjyrgl2S2LKcZMEFcxj6PARy3rF"
+        ]
+      ]
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "smc.runResult",
+        "gas_used": 3143,
+        "stack": [
+            [
+                "cell",
+                {
+                    "bytes": "te6cckEBAQEAJAAAQ4ANjovsYdlAob6Pq3ofaIojUCMKGuvEP9qPZMUW1kpwFzD5vQ3S",
+                    "object": {
+                        "data": {
+                            "b64": "gA2Oi+xh2UChvo+reh9oiiNQIwoa68Q/2o9kxRbWSnAXIA==",
+                            "len": 267
+                        },
+                        "refs": [],
+                        "special": false
+                    }
+                }
+            ]
+        ],
+        "exit_code": 0,
+        "@extra": "1731078699.3790262:0:0.023048354399674897"
+    }
+}
+```
+
+---
+
+## `estimateFee`
+
+> Estimates fee.
+
+Estimates the fees required for query processing. `body`, `init-code`, and `init-data` accepted in serialized format (b64-encoded).
+
+### Request body parameters
+<br/>
+
+  * `address` (string; required): the address of the smart contract.
+  * `body` (string; required): the body of the transaction in base64 format.
+  * `ignore_chksig` (boolean; optional): whether to ignore the signature check. Default: false.
+
+### Returns
+
+Fees required for query processing.
+
+### Request example
+
+<Tabs
+  items={[
+    "REST",
+    "JSON-RPC"
+  ]}
+>
+  <Tabs.Tab>
+```shell
+curl --request POST https://rpc.ankr.com/premium-http/ton_api_v2/{your_token}/estimateFee \
+     --header 'accept: application/json' \
+     --header 'content-type: application/json' \
+     --data '
+{
+  "address": "EQBVbC7Hu-g3htYXzst8L5ucV76NMzeBK3URJKebN2Y1k55Q",
+  "body": "te6ccgEBBAEAwwABRYgAqthdj3fQbw2sL52W+F83OK99GmZvAlbqIklPNm7MayYMAQGcJRnEjp8cFJEdHYEy0LKHHYzifhXgDjogvM4i1RhNr6JL5bGaLxFWgLvL/9Q5K9CsRfVakAbG1JfXmJjD+54vAimpoxdm1XNnAAAAEwADAgFkQgA0XvoMzOTI+7LhqhMUCzQfZ6f1jWBzDLBT90cgmTz0fBE4gAAAAAAAAAAAAAAAAAEDACoAAAAAdGhpcyBpcyBhIHRlc3QgdHg=",
+  "ignore_chksig": false
+}'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl --location 'https://rpc.ankr.com/ton_api_v2/{your_token}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "method": "estimateFee",
+    "params": {
+      "address": "EQBVbC7Hu-g3htYXzst8L5ucV76NMzeBK3URJKebN2Y1k55Q",
+      "body": "te6ccgEBBAEAwwABRYgAqthdj3fQbw2sL52W+F83OK99GmZvAlbqIklPNm7MayYMAQGcJRnEjp8cFJEdHYEy0LKHHYzifhXgDjogvM4i1RhNr6JL5bGaLxFWgLvL/9Q5K9CsRfVakAbG1JfXmJjD+54vAimpoxdm1XNnAAAAEwADAgFkQgA0XvoMzOTI+7LhqhMUCzQfZ6f1jWBzDLBT90cgmTz0fBE4gAAAAAAAAAAAAAAAAAEDACoAAAAAdGhpcyBpcyBhIHRlc3QgdHg=",
+      "ignore_chksig": false
+    },
+    "id": "1"
+ }'
+```
+  </Tabs.Tab>
+</Tabs>
+
+### Response example
+
+```json
+{
+    "ok": true,
+    "result": {
+        "@type": "query.fees",
+        "source_fees": {
+            "@type": "fees",
+            "in_fwd_fee": 996800,
+            "storage_fee": 0,
+            "gas_fee": 40000,
+            "fwd_fee": 0
+        },
+        "destination_fees": [],
+        "@extra": "1731079591.0619361:0:0.37221728035875046"
+    }
+}
+```
