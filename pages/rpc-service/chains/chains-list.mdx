@@ -31,8 +31,8 @@ Find the chain you require and go to its docs section by clicking it.
 | [Avail](/rpc-service/chains/chains-list/#avail)                 | [Electroneum](/rpc-service/chains/chains-list/#electroneum)         | [Horizen EON](/rpc-service/chains/chains-list/#horizen-eon)     | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Somnia](/rpc-service/chains/chains-list/#somnia)                 | [XDC](/rpc-service/chains/chains-list/#xdc)               |
 | [Avalanche](/rpc-service/chains/chains-list/#avalanche)         | [Ethereum](/rpc-service/chains/chains-list/#ethereum)               | [Iota](/rpc-service/chains/chains-list/#iota)                   | [Movement](/rpc-service/chains/chains-list/#movement) | [Sonic](/rpc-service/chains/chains-list/#sonic)                   | [X Layer](/rpc-service/chains/chains-list/#x-layer)       |
 | [B2 Network](/rpc-service/chains/chains-list/#b2-network)       | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)      | [Iota EVM](/rpc-service/chains/chains-list/#iota-evm)           | [NEAR](/rpc-service/chains/chains-list/#near)         | [Stellar](/rpc-service/chains/chains-list/#stellar)               | [Xphere](/rpc-service/chains/chains-list/#xphere)         |
-| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Etherlink](/rpc-service/chains/chains-list/#etherlink)             | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Story](/rpc-service/chains/chains-list/#story)                   | [XRP](/rpc-service/chains/chains-list/#xrp)               |
-| [Base](/rpc-service/chains/chains-list/#base)                   | [Fantom](/rpc-service/chains/chains-list/#fantom)                   | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Neura](/rpc-service/chains/chains-list/#neura)       | [Sui](/rpc-service/chains/chains-list/#sui)                       | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
+| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Etherlink](/rpc-service/chains/chains-list/#etherlink)             | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Story](/rpc-service/chains/chains-list/#story)                   | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
+| [Base](/rpc-service/chains/chains-list/#base)                   | [Fantom](/rpc-service/chains/chains-list/#fantom)                   | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Neura](/rpc-service/chains/chains-list/#neura)       | [Sui](/rpc-service/chains/chains-list/#sui)                       |                                                           |
 | [Bitcoin](/rpc-service/chains/chains-list/#bitcoin)             | [Filecoin](/rpc-service/chains/chains-list/#filecoin)               | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Swell](/rpc-service/chains/chains-list/#swell)                   |                                                           |
 | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)           | [Flare](/rpc-service/chains/chains-list/#flare)                     | [Kinto](/rpc-service/chains/chains-list/#kinto)                 | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                           |
 | [Blast](/rpc-service/chains/chains-list/#blast)                 | [Fuel](/rpc-service/chains/chains-list/#fuel)                       | [Kusama](/rpc-service/chains/chains-list/#kusama)               | [Polygon](/rpc-service/chains/chains-list/#polygon)   | [TAC](/rpc-service/chains/chains-list/#tac)                       |                                                           |
@@ -12123,93 +12123,6 @@ def test_block_number(self):
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x13460bc"
-}
-```
-
----
-
-## XRP
-
-<Callout type="tip">
-Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
-</Callout>
-
-> XRP API is available on [Web3 API platform](https://www.ankr.com/rpc/xrp).
-
-The XRP Ledger (XRPL) is a decentralized blockchain optimized for fast, low-cost payments and asset transfers. It uses a federated consensus algorithm in which a trusted set of validators propose and agree on transactions; once 80%+ reach consensus, a new ledger is finalized in 3–5 seconds with deterministic finality. XRPL supports native issued assets, a built-in DEX, escrows, payment channels, and multi-signing.
-
-**XRPL Ecosystem Overview**
-
-  * **Core Servers**: The network is powered by rippled, the open-source server responsible for ledger synchronization, transaction processing, and consensus. Clio servers provide scalable, API-focused access without participating in the P2P consensus network.
-  * **Client Libraries**: SDKs streamline integration by wrapping XRPL APIs and performing secure local transaction signing.
-  * **Middleware**: Services built on XRPL APIs provide indexed data, higher-level abstractions, or custom interfaces, typically running continuously with their own storage layers.
-  * **Apps and Services**: Wallets, exchanges, token issuers, marketplaces, payment processors, and DEX interfaces form the user-facing layer, enabling transfers, trading, and broader financial use cases.
-
-### Networks
-
-  * Mainnet (`HTTPS` and `WSS`)
-
-### API methods
-
-For XRP, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/xrp/) except for those listed as unsupported.
-
-#### Unsupported
-
- <Callout type="warning">
- This section contains a list of methods we don't support for _Premium_ service plan.
- </Callout>
-
- <Callout type="tip">
- If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
- </Callout>
-
-None.
-
-### API querying
-
-#### Request example
-
-```shell
-curl 'https://rpc.ankr.com/xrp_mainnet/{your_token}' \
--d '{
-      "jsonrpc": "2.0",
-      "id": 1,
-      "method": "account_channels",
-      "params": [
-        {
-          "account": "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn",
-          "destination_account": "ra5nK24KXen9AHvsdFTKHSANinZseWnPcX",
-          "ledger_index": "validated"
-        }
-      ]
-    }'
-```
-
-#### Response example
-
-```json
-{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-        "account": "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn",
-        "channels": [
-            {
-                "account": "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn",
-                "amount": "1000",
-                "balance": "0",
-                "channel_id": "C7F634794B79DB40E87179A9D1BF05D05797AE7E92DF8E93FD6656E8C4BE3AE7",
-                "destination_account": "ra5nK24KXen9AHvsdFTKHSANinZseWnPcX",
-                "public_key": "aBR7mdD75Ycs8DRhMgQ4EMUEmBArF8SEh1hfjrT2V9DQTLNbJVqw",
-                "public_key_hex": "03CFD18E689434F032A4E84C63E2A3A6472D684EAF4FD52CA67742F3E24BAE81B2",
-                "settle_delay": 60
-            }
-        ],
-        "ledger_hash": "42C4F4E81710B015B3BA2A81E357E30E261F58964A6AB6C012734FADB67AB40D",
-        "ledger_index": 99672209,
-        "status": "success",
-        "validated": true
-    }
 }
 ```
 
