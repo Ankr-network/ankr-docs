@@ -108,3 +108,6 @@ out/
 
 sitemap.xml
 
+# Generated index files
+_pagefind/
+

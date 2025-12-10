@@ -1,8 +1,9 @@
 import nextra from 'nextra'
 
 const withNextra = nextra({
+  defaultShowCopyCode: true,
+  search: { codeblocks: false },
   staticImage: true,
-  defaultShowCopyCode: true
 });
 
 export default withNextra({
@@ -24,4 +25,4 @@ export default withNextra({
   siteUrl: process.env.SITE_URL || 'https://www.ankr.com/docs',
   generateIndexSitemap: false,
   generateRobotsTxt: false,
-})
+});
