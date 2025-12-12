@@ -937,6 +937,9 @@ def test_block_number(self):
 ---
 
 ## Atleta
+<br/>
+
+<img src="/docs/build/chains-list/atleta.png" className="responsive-pic" width="800" />
 
 > Atleta API is available on [Web3 API platform](https://www.ankr.com/rpc/atleta).
 
@@ -1086,6 +1089,9 @@ def test_block_number(self):
 ---
 
 ## Avail
+<br/>
+
+<img src="/docs/build/chains-list/avail.png" className="responsive-pic" width="800" />
 
 > Avail API is available on [Web3 API platform](https://www.ankr.com/rpc/avail).
 
@@ -1510,6 +1516,9 @@ curl -X POST 'https://rpc.ankr.com/avalanche-x/{your_token}' \
 ---
 
 ## B2 Network
+<br/>
+
+<img src="/docs/build/chains-list/b2.png" className="responsive-pic" width="800" />
 
 > B² Network API is available on [Web3 API platform](https://www.ankr.com/rpc/b2).
 
@@ -1660,6 +1669,9 @@ def test_block_number(self):
 ---
 
 ## Bahamut
+<br/>
+
+<img src="/docs/build/chains-list/bahamut.png" className="responsive-pic" width="800" />
 
 > Bahamut API is available on [Web3 API platform](https://www.ankr.com/rpc/bahamut).
 
@@ -1971,144 +1983,10 @@ def test_block_number(self):
 
 ---
 
-## Berachain
-
-> Berachain API is available on [Web3 API platform](https://www.ankr.com/rpc/berachain).
-
-Berachain is a high-performance EVM-compatible blockchain built on Proof-of-Liquidity consensus. Proof-of-Liquidity is a novel consensus mechanism that aims to align network incentives, creating strong synergy between Berachain validators and the ecosystem of projects. Berachain's technology is built on Polaris, a high-performance blockchain framework for building EVM-compatible chains on-top of the CometBFT consensus engine.
-
-Official quick links: [Website](https://www.berachain.com/), [Docs](https://docs.berachain.com/), [GitHub](https://github.com/berachain)
-
-### Networks
-
-  * Testnet (`HTTPS` and `WSS`)
-
-### API methods
-
-For Berachain, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/berachain/) except for those listed as unsupported.
-
-#### Unsupported
-
- <Callout type="warning">
- This section contains a list of methods we don't support for _Premium_ service plan.
- </Callout>
-
- <Callout type="tip">
- If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
- </Callout>
-
-**HTTPS**:
-
-`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
-
-`debug_*` (exception: `debug_traceBlockByHash`, `debug_traceBlockByNumber`, `debug_traceTransaction`, `debug_traceCall`, `debug_traceBlock`),
-
-`personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
-
-**WSS**:
-
-`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
-
-### API querying
-
-#### Request example
-
-<Tabs
-  items={[
-    "cURL",
-    "Golang",
-    "Web3.JS",
-    "Python",
-  ]}
->
-  <Tab>
-
-```shell
-curl -X POST https://rpc.ankr.com/berachain_testnet \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc": "2.0",
-      "method": "eth_blockNumber",
-      "params": [],
-      "id": 1
-    }'
-```
-  </Tab>
-  <Tab>
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "github.com/ethereum/go-ethereum/ethclient"
-)
-
-func main() {
-    const url = "https://rpc.ankr.com/berachain_testnet"  // url string
-
-    rpcClient,err := ethclient.Dial(url)
-
-    if err != nil {
-        panic(err)
-    }
-
-    blockNumber, err := rpcClient.BlockNumber(context.Background())
-
-    if err != nil {
-        panic(err)
-    }
-
-    fmt.Println(blockNumber)
-}
-```
-  </Tab>
-  <Tab>
-
-```js
-const Web3 = require('web3');
-
-const url = 'https://rpc.ankr.com/berachain_testnet'  // url string
-
-const web3 = new Web3(new Web3.providers.HttpProvider(url));
-
-web3.eth.getBlockNumber((error, blockNumber) => {
-    if(!error) {
-        console.log(blockNumber);
-    } else {
-        console.log(error);
-    }
-});
-```
-  </Tab>
-  <Tab>
-
-```python
-from web3 import Web3
-
-def test_block_number(self):
-    url = 'https://rpc.ankr.com/berachain_testnet'  # url string
-
-    web3 = Web3(HTTPProvider(url))
-    print(web3.eth.block_number)
-```
-  </Tab>
-</Tabs>
-
-#### Response example
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x26a494"
-}
-```
-
----
-
 ## Bitcoin
+<br/>
+
+<img src="/docs/build/chains-list/bitcoin.png" className="responsive-pic" width="800" />
 
 <Callout type="tip">
 Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
@@ -2243,6 +2121,9 @@ curl -X GET https://rpc.ankr.com/premium-http/btc_blockbook/{your_token}/api/v2/
 ---
 
 ## Bitlayer
+<br/>
+
+<img src="/docs/build/chains-list/bitlayer.png" className="responsive-pic" width="800" />
 
 > Bitlayer API is available on [Web3 API platform](https://www.ankr.com/rpc/bitlayer).
 
@@ -2381,6 +2262,9 @@ def test_block_number(self):
 ---
 
 ## Blast
+<br/>
+
+<img src="/docs/build/chains-list/blast.png" className="responsive-pic" width="800" />
 
 > Blast API is available on [Web3 API platform](https://www.ankr.com/rpc/blast).
 
@@ -2705,6 +2589,9 @@ def test_block_number(self):
 ---
 
 ## Botanix
+<br/>
+
+<img src="/docs/build/chains-list/botanix.png" className="responsive-pic" width="800" />
 
 > Botanix API is available on [Web3 API platform](https://www.ankr.com/rpc/botanix).
 
@@ -3157,6 +3044,9 @@ def test_block_number(self):
 ---
 
 ## Core
+<br/>
+
+<img src="/docs/build/chains-list/core.png" className="responsive-pic" width="800" />
 
 > Core API is available on [Web3 API platform](https://www.ankr.com/rpc/core).
 
@@ -3294,6 +3184,9 @@ def test_block_number(self):
 ---
 
 ## Corn
+<br/>
+
+<img src="/docs/build/chains-list/corn.png" className="responsive-pic" width="800" />
 
 > Corn API is available on [Web3 API platform](https://www.ankr.com/rpc/corn).
 
@@ -3441,6 +3334,9 @@ def test_block_number(self):
 ---
 
 ## Electroneum
+<br/>
+
+<img src="/docs/build/chains-list/electroneum.png" className="responsive-pic" width="800" />
 
 > Electroneum API is available on [Web3 API platform](https://www.ankr.com/rpc/electroneum).
 
@@ -3834,6 +3730,9 @@ curl -X GET "https://rpc.ankr.com/premium-http/eth_beacon/{your_token}/eth/v1/be
 ---
 
 ## Etherlink
+<br/>
+
+<img src="/docs/build/chains-list/etherlink.png" className="responsive-pic" width="800" />
 
 <Callout type="tip">
 Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
@@ -4328,6 +4227,9 @@ curl -X POST https://rpc.ankr.com/filecoin \
 ---
 
 ## Flare
+<br/>
+
+<img src="/docs/build/chains-list/flare.png" className="responsive-pic" width="800" />
 
 > Flare API is available on [Web3 API platform](https://www.ankr.com/rpc/flare).
 
@@ -4486,6 +4388,9 @@ def test_block_number(self):
 ---
 
 ## Fuel
+<br/>
+
+<img src="/docs/build/chains-list/fuel.png" className="responsive-pic" width="800" />
 
 > Fuel API is available on [Web3 API platform](https://www.ankr.com/rpc/fuel).
 
@@ -5077,6 +4982,9 @@ def test_block_number(self):
 ---
 
 ## Linea
+<br/>
+
+<img src="/docs/build/chains-list/linea.png" className="responsive-pic" width="800" />
 
 <Callout type="tip">
 Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
@@ -5607,6 +5515,9 @@ curl -X POST https://rpc.ankr.com/horizen_eon \
 ---
 
 ## IOTA
+<br/>
+
+<img src="/docs/build/chains-list/iota.png" className="responsive-pic" width="800" />
 
 > IOTA API is available on [Web3 API platform](https://www.ankr.com/rpc/iota).
 
@@ -5677,6 +5588,9 @@ curl -X POST https://rpc.ankr.com/iota_mainnet \
 ---
 
 ## IOTA EVM
+<br/>
+
+<img src="/docs/build/chains-list/iota.png" className="responsive-pic" width="800" />
 
 > IOTA EVM API is available on [Web3 API platform](https://www.ankr.com/rpc/iota_evm).
 
@@ -5986,6 +5900,9 @@ def test_block_number(self):
 ---
 
 ## Kaia
+<br/>
+
+<img src="/docs/build/chains-list/kaia.png" className="responsive-pic" width="800" />
 
 > Kaia API is available on [Web3 API platform](https://www.ankr.com/rpc/kaia).
 
@@ -6157,6 +6074,9 @@ def test_block_number(self):
 ---
 
 ## Kava
+<br/>
+
+<img src="/docs/build/chains-list/kava.png" className="responsive-pic" width="800" />
 
 > Kava API is available on [Web3 API platform](https://www.ankr.com/rpc/kava).
 
@@ -6482,6 +6402,9 @@ curl https://rpc.ankr.com/http/kava_api/cosmos/auth/v1beta1/params
 ---
 
 ## Kinto
+<br/>
+
+<img src="/docs/build/chains-list/kinto.png" className="responsive-pic" width="800" />
 
 > Kinto API is available on [Web3 API platform](https://www.ankr.com/rpc/kinto).
 
@@ -6875,6 +6798,9 @@ def test_block_number(self):
 ---
 
 ## Matchain
+<br/>
+
+<img src="/docs/build/chains-list/matchain.png" className="responsive-pic" width="800" />
 
 > Matchain API is available on [Web3 API platform](https://www.ankr.com/rpc/matchain).
 
@@ -7156,6 +7082,11 @@ def test_block_number(self):
 ---
 
 ## Midnight
+<br/>
+
+<img src="/docs/build/chains-list/midnight.png" className="responsive-pic" width="800" />
+
+> Midnight API is available on [Web3 API platform](https://www.ankr.com/rpc/midnight).
 
 Midnight is a data protection-focused sidechain of Cardano, designed to support confidential smart contracts and zero-knowledge (ZK) technology. Developed by IOG (Input Output Global)—the same team behind Cardano—Midnight aims to bring privacy-preserving decentralized applications (dApps) to Web3.
 
@@ -7222,6 +7153,9 @@ curl -X POST https://rpc.ankr.com/midnight_testnet/ \
 ---
 
 ## Monad
+<br/>
+
+<img src="/docs/build/chains-list/monad.png" className="responsive-pic" width="800" />
 
 <Callout type="tip">
 Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
@@ -7546,6 +7480,9 @@ def test_block_number(self):
 ---
 
 ## Movement
+<br/>
+
+<img src="/docs/build/chains-list/movement.png" className="responsive-pic" width="800" />
 
 > Movement API is available on [Web3 API platform](https://www.ankr.com/rpc/movement).
 
@@ -7895,6 +7832,9 @@ def test_block_number(self):
 ---
 
 ## Neura
+<br/>
+
+<img src="/docs/build/chains-list/neura.png" className="responsive-pic" width="800" />
 
 > Neura API is available on [Web3 API platform](https://www.ankr.com/rpc/neura).
 
@@ -9034,6 +8974,9 @@ curl https://rpc.ankr.com/http/scrt_cosmos/cosmos/base/tendermint/v1beta1/blocks
 ---
 
 ## Sei
+<br/>
+
+<img src="/docs/build/chains-list/sei.png" className="responsive-pic" width="800" />
 
 <Callout type="tip">
 Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
@@ -9462,6 +9405,9 @@ def test_block_number(self):
 ---
 
 ## Sonic
+<br/>
+
+<img src="/docs/build/chains-list/sonic.png" className="responsive-pic" width="800" />
 
 > Sonic API is available on [Web3 API platform](https://www.ankr.com/rpc/sonic).
 
@@ -9607,6 +9553,9 @@ def test_block_number(self):
 ---
 
 ## Stellar
+<br/>
+
+<img src="/docs/build/chains-list/stellar.png" className="responsive-pic" width="800" />
 
 > Stellar API is available on [Web3 API platform](https://www.ankr.com/rpc/stellar).
 
@@ -9811,6 +9760,9 @@ curl 'https://rpc.ankr.com/stellar_testnet_soroban' \
 ---
 
 ## Story
+<br/>
+
+<img src="/docs/build/chains-list/story.png" className="responsive-pic" width="800" />
 
 > Story API is available on [Web3 API platform](https://www.ankr.com/rpc/story).
 
@@ -10073,6 +10025,9 @@ grpcurl \
 ---
 
 ## Swell
+<br/>
+
+<img src="/docs/build/chains-list/swell.png" className="responsive-pic" width="800" />
 
 > Swell API is available on [Web3 API platform](https://www.ankr.com/rpc/swell).
 
@@ -10380,6 +10335,9 @@ def test_block_number(self):
 ---
 
 ## TAC
+<br/>
+
+<img src="/docs/build/chains-list/tac.png" className="responsive-pic" width="800" />
 
 > TAC API is available on [Web3 API platform](https://www.ankr.com/rpc/tac).
 
@@ -10767,6 +10725,9 @@ curl https://rpc.ankr.com/http/tac_turin_cosmos/cosmos/auth/v1beta1/params
 ---
 
 ## Taiko
+<br/>
+
+<img src="/docs/build/chains-list/taiko.png" className="responsive-pic" width="800" />
 
 > Taiko API is available on [Web3 API platform](https://www.ankr.com/rpc/taiko).
 
@@ -10904,6 +10865,9 @@ def test_block_number(self):
 ---
 
 ## Telos
+<br/>
+
+<img src="/docs/build/chains-list/telos.png" className="responsive-pic" width="800" />
 
 > Telos API is available on [Web3 API platform](https://www.ankr.com/rpc/telos).
 
@@ -11177,6 +11141,9 @@ def test_block_number(self):
 ---
 
 ## TON
+<br/>
+
+<img src="/docs/build/chains-list/ton.png" className="responsive-pic" width="800" />
 
 <Callout type="tip">
 Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
@@ -11412,6 +11379,9 @@ curl -X GET 'https://rpc.ankr.com/premium-http/tron/{your_token}/walletsolidity/
 ---
 
 ## Xai
+<br/>
+
+<img src="/docs/build/chains-list/xai.png" className="responsive-pic" width="800" />
 
 > Xai API is available on [Web3 API platform](https://www.ankr.com/rpc/xai).
 
@@ -11552,6 +11522,9 @@ def test_block_number(self):
 ---
 
 ## XDC Network
+<br/>
+
+<img src="/docs/build/chains-list/xdc.png" className="responsive-pic" width="800" />
 
 > XDC Network API is available on [Web3 API platform](https://www.ankr.com/rpc/xdc).
 
@@ -11838,6 +11811,9 @@ def test_block_number(self):
 ---
 
 ## Xphere
+<br/>
+
+<img src="/docs/build/chains-list/xphere.png" className="responsive-pic" width="800" />
 
 > Xphere Era API is available on [Web3 API platform](https://www.ankr.com/rpc/xphere).
 
@@ -11976,6 +11952,9 @@ def test_block_number(self):
 ---
 
 ## XRP
+<br/>
+
+<img src="/docs/build/chains-list/xrp.png" className="responsive-pic" width="800" />
 
 <Callout type="tip">
 Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
