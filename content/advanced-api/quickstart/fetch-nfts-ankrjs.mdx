@@ -1,16 +1,16 @@
 # Fetch Particular Owner's NFTs with Ankr.js
 
-In this tutorial, we’ll be fetching all the NFTs owned by a particular wallet or owner across multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Advanced APIs](https://www.ankr.com/advanced-api/)↗.
+In this tutorial, we’ll be fetching all the NFTs owned by a particular wallet or owner across multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Advanced APIs](https://www.ankr.com/advanced-api/).
 
 ### Advanced APIs
 
-Ankr's Advanced Multichain APIs are the collection of RPC methods created to simplify querying blockchain data. These APIs do all the heavy lifting for us so that we can query on-chain data in a matter of seconds. 
+Ankr's Advanced Multichain APIs are the collection of RPC methods created to simplify querying blockchain data. These APIs do all the heavy lifting for us so that we can query on-chain data in a matter of seconds.
 
-Currently, it supports eight EVM compatible chains: Ethereum, Fantom, Binance Smart Chain, Polygon, Avalanche, Arbitrum, Syscoin and Optimism with more EVM and non-EVM chains coming soon. To interact with Ankr's Advanced APIs, we are going to use a JavaScript library named [Ankr.js](https://www.npmjs.com/package/@ankr.com/ankr.js)↗.
+Currently, it supports eight EVM compatible chains: Ethereum, Fantom, Binance Smart Chain, Polygon, Avalanche, Arbitrum, Syscoin and Optimism with more EVM and non-EVM chains coming soon. To interact with Ankr's Advanced APIs, we are going to use a JavaScript library named [Ankr.js](https://www.npmjs.com/package/@ankr.com/ankr.js).
 
 ## Getting Started
 
-**Prerequisite:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/)↗ and [Yarn](https://yarnpkg.com/)↗ installed on your machine.
+**Prerequisite:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed on your machine.
 
 ### Step 1: Set Up Next.js Starter Application
 First up, navigate into the directory of your choice where you want to initiate this project and run the following command in your terminal to set up a new Next.js starter page:
@@ -28,7 +28,7 @@ cd ankrjs-fetch-nfts
 yarn dev
 ```
 
-Visit localhost:3000 to view the starter application and it will resemble the screen attached below: 
+Visit localhost:3000 to view the starter application and it will resemble the screen attached below:
 <br></br>
 <img src="/docs/build/nextjs.png" alt="API" className="responsive-pic"  />
 
@@ -82,7 +82,7 @@ export const getNfts = async (address: string) => {
   };
 };
 ```
-And that's it. 
+And that's it.
 
 Let's call this function on our page i.e. `./pages/index.tsx` to see the fetched NFTs by the owner's wallet address and log the output. To do so, clear the code from the **index.tsx** file and replace it with the one given below:
 
@@ -113,11 +113,11 @@ const Home: NextPage = () => {
 export default Home;
 ```
 
-Now, let's see the NFT logs of an inputted wallet address in the developer console of a browser. 
+Now, let's see the NFT logs of an inputted wallet address in the developer console of a browser.
 
-- Head over to your localhost and use `Option + ⌘ + J` (on macOS), or `Shift + CTRL + J` (on Windows/Linux). 
+- Head over to your localhost and use `Option + ⌘ + J` (on macOS), or `Shift + CTRL + J` (on Windows/Linux).
 
-You should be able to see the list of NFTs owned by a particular address. 
+You should be able to see the list of NFTs owned by a particular address.
 <br></br>
 <img src="/docs/build/nftlog.png" alt="API" className="responsive-pic"  />
 

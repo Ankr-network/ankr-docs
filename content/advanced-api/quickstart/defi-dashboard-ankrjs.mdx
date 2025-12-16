@@ -1,6 +1,6 @@
 # DeFi-Dashboard dApp using Advanced APIs
 
-In this tutorial, we’ll be building a "What's in Your Wallet?" dApp where users can check their net worth, credits in native balance by chain, and NFTs they hold on multiple blockchains such as Ethereum, Polygon and Fantom (to name a few) using [Advanced APIs](https://www.ankr.com/advanced-api/)↗.
+In this tutorial, we’ll be building a "What's in Your Wallet?" dApp where users can check their net worth, credits in native balance by chain, and NFTs they hold on multiple blockchains such as Ethereum, Polygon and Fantom (to name a few) using [Advanced APIs](https://www.ankr.com/advanced-api/).
 
 ## Advanced APIs
 
@@ -13,14 +13,14 @@ Currently, it supports eight EVM compatible chains:
 - BNB Smart Chain
 - Fantom
 - Avalanche
-- Arbitrum 
-- Syscoin 
+- Arbitrum
+- Syscoin
 - and Optimism, with more EVM and non-EVM chains coming soon.
 
-To interact with Advanced APIs, we are going to use a JavaScript library named [Ankr.js](https://www.npmjs.com/package/@ankr.com/ankr.js)↗. Here's the tech stack for this guide:
+To interact with Advanced APIs, we are going to use a JavaScript library named [Ankr.js](https://www.npmjs.com/package/@ankr.com/ankr.js). Here's the tech stack for this guide:
 
-- Vite.js 
-- [TailwindCSS](https://tailwindcss.com/docs/guides/vite)↗ as CSS framework (follow their official guide to set it up)
+- Vite.js
+- [TailwindCSS](https://tailwindcss.com/docs/guides/vite) as CSS framework (follow their official guide to set it up)
 - Advanced APIs for querying blockchain data
 
 Here's what you'll be able to build by the end of this tutorial:
@@ -36,7 +36,7 @@ _______________________
 
 **Prerequisite**: To successfully finish this guide, you'll only need [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed on your machine.
 
-We will begin the project by forking this Vite + Tailwind CSS + RainbowKit 🌈 [starter repository](https://github.com/kaymomin/StarterKit-DefiDashboard)↗. We can do so by clicking the 'fork' button at the top-right of the linked GitHub page. It has some basic configurations and setup to get us started with our dApp.
+We will begin the project by forking this Vite + Tailwind CSS + RainbowKit 🌈 [starter repository](https://github.com/kaymomin/StarterKit-DefiDashboard). We can do so by clicking the 'fork' button at the top-right of the linked GitHub page. It has some basic configurations and setup to get us started with our dApp.
 
 > Note in the code block below, make sure you paste the repo URL of your own cloned repository.
 
@@ -47,7 +47,7 @@ Once the repository has been forked, we will clone it locally to get building on
 
 ```
 git clone https://github.com/kaymomin/StarterKit-DefiDashboard
-``` 
+```
 - Now, let's navigate into the cloned directory and install the dependencies in the following section
 
 ```
@@ -66,15 +66,15 @@ We will start by installing the `ankr.js` package from npm:
 
 ```
 yarn add @ankr.com/ankr.js
-``` 
+```
 
-Now that we have installed the Ankr.js library, let's head to the VSCode and open the `starterkit-defidashboard` folder in our code editor.  
+Now that we have installed the Ankr.js library, let's head to the VSCode and open the `starterkit-defidashboard` folder in our code editor.
 
 To launch the starter kit, run the following command in the VSCode terminal:
 ```
 yarn dev
 ```
-and you will be able to see the start-kit webpage. Here's the [live demo](https://defidashboard-starterkit.vercel.app/)↗ of what the site will look like at this point.
+and you will be able to see the start-kit webpage. Here's the [live demo](https://defidashboard-starterkit.vercel.app/) of what the site will look like at this point.
 
 <img src="/docs/build/dash02.png" alt="API" className="responsive-pic"  />
 
@@ -91,13 +91,13 @@ import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
 const provider = new AnkrProvider('');
 
-``` 
+```
 To interact with Ankr's Advanced APIs, we have created a provider instance which will serve as an interface to the APIs required to fetch data.
 
 
 ## Creating Function to Fetch Total Balance
 
-In this step, we will first create a `getAccountBalance` function in the `src/api.ts` file, which will accept a `walletAddress`, and return the coin and the respective token balances. Here we are going to utilize the [getAccountBalance](/advanced-api/javascript-sdk/#getaccountbalance)↗ method provided by Ankr.js to calculate the sum of balance (net worth) across the chains in the `getTotalMultichainBalance` function.
+In this step, we will first create a `getAccountBalance` function in the `src/api.ts` file, which will accept a `walletAddress`, and return the coin and the respective token balances. Here we are going to utilize the [getAccountBalance](/advanced-api/javascript-sdk/#getaccountbalance) method provided by Ankr.js to calculate the sum of balance (net worth) across the chains in the `getTotalMultichainBalance` function.
 
 **File: **`src/api.ts`
 ```javascript
@@ -107,7 +107,7 @@ import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
-const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
+const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche',
 'bsc', 'fantom', 'polygon', ];
 
 //key-value pair mapping of chains to their native symbols
@@ -143,7 +143,7 @@ export const getTotalMultichainBalance = async (walletAddress: string) => {
   }
   return total;
 };
-``` 
+```
 
 Just to see if things are working, let's call this function on our app i.e. `./src/App.tsx` and log out the output.
 
@@ -156,7 +156,7 @@ import {
 } from './api';
 
 function App() {
- 
+
   useEffect(() => {
     (async () => {
       const  total  = await getTotalMultichainBalance(
@@ -169,7 +169,7 @@ function App() {
 
   return (
     <div className="flex flex-col items-center py-8">
-    <h1 className="flex justify-center text-sm sm:text-base md:text-3xl 
+    <h1 className="flex justify-center text-sm sm:text-base md:text-3xl
 lg:text-4xl pb-10">DefiDashboard 🪙 What's in your Wallet?</h1>
 
     <div className="flex justify-center">
@@ -183,7 +183,7 @@ lg:text-4xl pb-10">DefiDashboard 🪙 What's in your Wallet?</h1>
 
 export default App;
 
-``` 
+```
 
 You should be able to see the net-worth or total balance in your browser's console.
 
@@ -216,8 +216,8 @@ export const getNativeCurrencyBalance = async (
     );
     return nativeCurrencyBalance ? +nativeCurrencyBalance.balance : 0;
   };
-  
-  export const getAllNativeCurrencyBalances = async (walletAddress: string) => 
+
+  export const getAllNativeCurrencyBalances = async (walletAddress: string) =>
 {
     const balances: { [key in Blockchain]?: number } = {};
     for await (const chain of listOfChains) {
@@ -229,7 +229,7 @@ export const getNativeCurrencyBalance = async (
     }
     return balances;
   };
-  
+
   export const getNfts = async (walletAddress: string) => {
     const { assets } = await provider.getNFTsByOwner({
       walletAddress,
@@ -237,9 +237,9 @@ export const getNativeCurrencyBalance = async (
     });
     return assets;
   };
-  
-``` 
-And with that, we have our `api.ts` file all ready where we created methods for getting account balance, calculation net worth, fetching balances by native tokens and getting NFTs by owner. You can also find the complete code for this file below: 
+
+```
+And with that, we have our `api.ts` file all ready where we created methods for getting account balance, calculation net worth, fetching balances by native tokens and getting NFTs by owner. You can also find the complete code for this file below:
 
 
 ```javascript
@@ -249,7 +249,7 @@ import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
-const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
+const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche',
 'bsc', 'fantom', 'polygon', ];
 
 //key-value pair mapping of chains to their native symbols
@@ -297,7 +297,7 @@ export const getNativeCurrencyBalance = async (
     );
     return nativeCurrencyBalance ? +nativeCurrencyBalance.balance : 0;
   };
-  
+
   export const getAllNativeCurrencyBalances = async (walletAddress: string) => {
     const balances: { [key in Blockchain]?: number } = {};
     for await (const chain of listOfChains) {
@@ -309,7 +309,7 @@ export const getNativeCurrencyBalance = async (
     }
     return balances;
   };
-  
+
   export const getNfts = async (walletAddress: string) => {
     const { assets } = await provider.getNFTsByOwner({
       walletAddress,
@@ -317,13 +317,13 @@ export const getNativeCurrencyBalance = async (
     });
     return assets;
   };
-  
 
-``` 
+
+```
 
 
 ## Creating Components and Frontend
-In this section, we will work on `App.tsx` file where we will create some components that will interact with our functions in `api.ts` file and build frontend to display the results on our webpage. Here's the code for the `App.tsx` file: 
+In this section, we will work on `App.tsx` file where we will create some components that will interact with our functions in `api.ts` file and build frontend to display the results on our webpage. Here's the code for the `App.tsx` file:
 
 **File:** `src/App.tsx`
 ```javascript
@@ -377,7 +377,7 @@ function App() {
         <h1 className="flex justify-center text-sm sm:text-base md:text-3xl lg:text-4xl pb-10">
           DefiDashboard 🪙 What's in your Wallet?
         </h1>
-        
+
         <div className="flex justify-center">
           <ConnectButton showBalance={false}/>
         </div>
@@ -432,7 +432,7 @@ function App() {
               })}
             </div>
           </div>
-        )}      
+        )}
   </div>
 </div>
   );
@@ -440,14 +440,14 @@ function App() {
 
 export default App;
 
-``` 
-Woah, that's a lot of code that we wrote! Now comes the crunch as we run our dApp in the local dev environment. 
+```
+Woah, that's a lot of code that we wrote! Now comes the crunch as we run our dApp in the local dev environment.
 
 
 ```
 yarn dev
-``` 
+```
 
-You should now be able to view your net-worth, balances by chain and their native token and ofc the NFTs!! 
+You should now be able to view your net-worth, balances by chain and their native token and ofc the NFTs!!
 <br></br>
 <img src="/docs/build/dash04.png" alt="API" className="responsive-pic"  />

@@ -7,15 +7,15 @@ Fetch account balance across multiple blockchains:
 - BNB Smart Chain
 - Fantom
 - Avalanche
-- Arbitrum 
-- Syscoin 
+- Arbitrum
+- Syscoin
 - Optimism.
 
-In this tutorial, we’ll be fetching the account balances from multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Advanced APIs](https://www.ankr.com/advanced-api/)↗.
+In this tutorial, we’ll be fetching the account balances from multiple blockchains such as Ethereum, Polygon, and Fantom, to name a few, using [Advanced APIs](https://www.ankr.com/advanced-api/).
 
 ## Getting Started
 
-**Prerequisite:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/)↗ and [Yarn](https://yarnpkg.com/)↗ installed on your machine.
+**Prerequisite:** To successfully finish this guide, you'll need [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed on your machine.
 
 ### Step 1: Setting Up Next.js Starter Application
 First up, navigate into the directory of your choice where you want to initiate this project and run the following command in your terminal to set up a new Next.js starter page:
@@ -33,7 +33,7 @@ cd ankrjs-account-balance
 yarn dev
 ```
 
-Visit localhost:3000 to view the starter application and it will resemble the screen attached below: 
+Visit localhost:3000 to view the starter application and it will resemble the screen attached below:
 <br></br>
 
 <img src="/docs/build/nextjs.png" alt="API" className="responsive-pic"  />
@@ -64,7 +64,7 @@ To interact with Ankr's Advanced APIs, we have created a provider instance that 
 
 ### Step 3: Creating Function to Fetch Total Balance
 
-In this step, we will first create a `getAccountBalance` function in the `./apis.ts` file, which will accept a `walletAddress`, and return the coin and the respective token balance. Here we are going to utilize the [getAccountBalance](https://documenter.getpostman.com/view/19024547/UVsEVUGQ#74b5cc68-fba2-415c-a53b-28c08818f970)↗ method provided by Ankr.js. 
+In this step, we will first create a `getAccountBalance` function in the `./apis.ts` file, which will accept a `walletAddress`, and return the coin and the respective token balance. Here we are going to utilize the [getAccountBalance](https://documenter.getpostman.com/view/19024547/UVsEVUGQ#74b5cc68-fba2-415c-a53b-28c08818f970) method provided by Ankr.js.
 
 File: `./apis.ts`
 
@@ -75,7 +75,7 @@ import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
-const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
+const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche',
 'bsc', 'fantom', 'polygon', ];
 
 //key-value pair mapping of chains to their native symbols
@@ -130,11 +130,11 @@ export default App;
 
 ```
 
-Now, let's see the Account Balances of an inputted wallet address in the developer console of a browser. 
+Now, let's see the Account Balances of an inputted wallet address in the developer console of a browser.
 
-- Head over to your localhost and use `Option + ⌘ + J` (on macOS), or `Shift + CTRL + J` (on Windows/Linux). 
+- Head over to your localhost and use `Option + ⌘ + J` (on macOS), or `Shift + CTRL + J` (on Windows/Linux).
 
-You should be able to see the list of chains with their respective tokens and account balances. 
+You should be able to see the list of chains with their respective tokens and account balances.
 <br></br>
 
 <img src="/docs/build/accbalance.png" alt="API" className="responsive-pic"  />
@@ -153,7 +153,7 @@ import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 const provider = new AnkrProvider('');
 
 //defining the list of supported blockchains
-const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche', 
+const listOfChains: Blockchain[] = ['eth', 'arbitrum', 'avalanche',
 'bsc', 'fantom', 'polygon', ];
 
 //key-value pair mapping of chains to their native symbols
@@ -191,7 +191,7 @@ export const getTotalMultichainBalance = async (walletAddress: string) => {
 };
 
 ```
-Let's call this function on our page to check the total account balance. 
+Let's call this function on our page to check the total account balance.
 
 **File:** `./pages/index.tsx`
 ```javascript

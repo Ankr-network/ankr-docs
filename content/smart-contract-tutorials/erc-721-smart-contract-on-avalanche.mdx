@@ -5,7 +5,7 @@ ____________________________________
 
 ## Set up your Dev Environment
 
-First, create a new directory called `avaxankr`. 
+First, create a new directory called `avaxankr`.
 
 Initialize your new npm project in the directory:
 
@@ -76,7 +76,7 @@ contract AnkrAvalancheNFT is ERC721URIStorage, Ownable {
     constructor() ERC721("AnkrAvaxNFT", "ANKRAVAX") {}
 
 /* @dev This will set the mint function for the token with the URI and recipient specified
-* @param tokenURI specifies the schema and 
+* @param tokenURI specifies the schema and
 * @return This will set the name, image, description, and properties
 */
     function mint(address recipient, string memory tokenURI) public returns (uint256){
@@ -211,7 +211,7 @@ npx hardhat run scripts/deploy.js --network fuji
 # output
 # Contract deployed to: 0xc7f2061054FceF82397942F42a37d5fE7A758960
 ```
-Copy the contract address and search for it in Snowtrace at [testnet.snowtrace.io](https://testnet.snowtrace.io/)↗ (example)
+Copy the contract address and search for it in Snowtrace at [testnet.snowtrace.io](https://testnet.snowtrace.io/) (example)
 
 <img src="/docs/tutorials/14.png" alt="Hello" className="responsive-pic" width="700" />
 
@@ -227,7 +227,7 @@ npx hardhat run scripts/deploy.js --network avalanche
 # Contract deployed to: 0xc7f2061054FceF82397942F42a37d5fE7A758960
 ```
 
-Copy the contract address and search for it in Snowtrace at snowtrace.io ([example contract](https://snowtrace.io/address/0xc7f2061054FceF82397942F42a37d5fE7A758960)↗)
+Copy the contract address and search for it in Snowtrace at snowtrace.io ([example contract](https://snowtrace.io/address/0xc7f2061054FceF82397942F42a37d5fE7A758960))
 
 
 <img src="/docs/tutorials/16.png" alt="Hello" className="responsive-pic" width="700" />
@@ -257,7 +257,7 @@ npx hardhat verify YOUR_CONTRACT_ADDRESS --network avalanche
 
 ## Mint an ERC-721 NFT on Avalanche
 
-We will be using Hardhat to mint an NFT programmatically and [web3.storage](https://web3.storage/)↗ to store our image and data. We will need to set the Token URI to a [JSON](https://www.json.org/json-en.html)↗ file. I’ve gone ahead and made an image with the tools we’ve used on this tutorial. Web3.storage is a tool that allows users to store their files on the Interplanetary File System (IPFS) by Protocol Labs
+We will be using Hardhat to mint an NFT programmatically and [web3.storage](https://web3.storage/) to store our image and data. We will need to set the Token URI to a [JSON](https://www.json.org/json-en.html) file. I’ve gone ahead and made an image with the tools we’ve used on this tutorial. Web3.storage is a tool that allows users to store their files on the Interplanetary File System (IPFS) by Protocol Labs
 
 Start by uploading your file to Web3.storage.
 

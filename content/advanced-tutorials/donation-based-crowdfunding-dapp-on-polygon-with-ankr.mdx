@@ -3,18 +3,18 @@
 **By** [**Krinza Momin**](https://twitter.com/kayprasla)
 ____________________________________
 
-In this tutorial, we’ll be building a donation-based crowdfunding dApp on Polygon where users can start a fundraising project for anyone to contribute and support the campaign by pledging the amount of their wish. 
+In this tutorial, we’ll be building a donation-based crowdfunding dApp on Polygon where users can start a fundraising project for anyone to contribute and support the campaign by pledging the amount of their wish.
 
 By the end of this tutorial, you'll be able to:
 - deploy crowdfunding smart contract on polygon
-- and create a full-fledged frontend for your dApp 
+- and create a full-fledged frontend for your dApp
 
 <img src="/docs/tutorials/-EFHTGxf6.png" alt="Hello" className="responsive-pic" width="700" />
 
 ## The Functionalities
 
 1. **Start New Campaign**  — users will be able to start a new crowdfunding project by inputting some details about the campaign like title, story and goal amount to be raised.
-2. **View Projects** — users can see all the existing projects and campaign details on the homepage 
+2. **View Projects** — users can see all the existing projects and campaign details on the homepage
 3. **Make Donation** — anyone can fund to the project they want to support in POL tokens
 
 
@@ -22,12 +22,12 @@ By the end of this tutorial, you'll be able to:
 
 - Smart Contract Language: Solidity
 - Smart Contract Deploy and Verify Scripts: Javascript
-- Smart Contract Development Environment: [Hardhat](https://hardhat.org/)↗
+- Smart Contract Development Environment: [Hardhat](https://hardhat.org/)
 - Frontend Language: React - TypeScript
-- Wallet Connect: [Rainbowkit](https://www.rainbowkit.com/)↗
-- Interacting with Contract through Frontend: [Wagmi](https://wagmi.sh/)↗
-- User Interface: [TailwindCSS](https://tailwindcss.com/)↗
-- RPC provider: [Ankr](https://www.ankr.com/protocol/)↗
+- Wallet Connect: [Rainbowkit](https://www.rainbowkit.com/)
+- Interacting with Contract through Frontend: [Wagmi](https://wagmi.sh/)
+- User Interface: [TailwindCSS](https://tailwindcss.com/)
+- RPC provider: [Ankr](https://www.ankr.com/protocol/)
 
 __________________________________________
 
@@ -36,7 +36,7 @@ __________________________________________
 
 **Prerequisite:** To successfully finish this guide, you'll need Node.js and Yarn installed on your machine.
 
-We will begin the project by forking this [Crowdfunding-dApp🌈 Starter Repository](https://github.com/kaymomin/Starterkit-Crowdfunding-dApp)↗ that I have prepared which includes basic configurations, wallet connect with rainbowkit and complete structure of empty files and folders to get us started with our dApp. To clone the repo, click the **fork** button at the top-right of the linked GitHub page. 
+We will begin the project by forking this [Crowdfunding-dApp🌈 Starter Repository](https://github.com/kaymomin/Starterkit-Crowdfunding-dApp) that I have prepared which includes basic configurations, wallet connect with rainbowkit and complete structure of empty files and folders to get us started with our dApp. To clone the repo, click the **fork** button at the top-right of the linked GitHub page.
 
 > Note in the code block below, make sure you paste the repo URL of your own cloned repository.
 
@@ -50,7 +50,7 @@ git clone https://github.com/kaymomin/Starterkit-Crowdfunding-dApp.git
 - Now, let's navigate into the cloned directory and set up the development environment
 ```bash
 cd starterkit-crowdfunding-dapp
-``` 
+```
 ``` bash
 yarn
 ```
@@ -59,13 +59,13 @@ yarn
 ``` bash
 yarn dev
 ```
-and you will be able to see the starter-kit webpage. Here's what the site will look like at this point: 
+and you will be able to see the starter-kit webpage. Here's what the site will look like at this point:
 
 <img src="/docs/tutorials/wztwdf729.png" alt="Hello" className="responsive-pic" width="700" />
 
 ## Step 1: Setup Hardhat Configs
 
-Navigate back to the project and find the `hardhat.config.js` file in root directory and the following code: 
+Navigate back to the project and find the `hardhat.config.js` file in root directory and the following code:
 
 **File:** `hardhat.config.js`
 ```javascript
@@ -75,7 +75,7 @@ Navigate back to the project and find the `hardhat.config.js` file in root direc
  require("dotenv").config();
  require("@nomiclabs/hardhat-ethers");
  require("@nomiclabs/hardhat-etherscan");
- 
+
  module.exports = {
    solidity: "0.8.15",
    defaultNetwork: "mumbai",
@@ -94,12 +94,12 @@ Navigate back to the project and find the `hardhat.config.js` file in root direc
      },
    },
  };
-``` 
-In this file, we have configured the solidity version, network details and plugged [Ankr's free public RPC](https://www.ankr.com/protocol/public/polygon/)↗ for Polygon Mumbai Testnet.
+```
+In this file, we have configured the solidity version, network details and plugged [Ankr's free public RPC](https://www.ankr.com/protocol/public/polygon/) for Polygon Mumbai Testnet.
 
-Did you notice how we are sourcing the PRIVATE_KEY and POLYGONSCAN_API_KEY variable in this file? We are loading them up from `process.env` using the dotenv library. So before we move ahead to next steps, let's add these variables in our `.env` file. 
+Did you notice how we are sourcing the PRIVATE_KEY and POLYGONSCAN_API_KEY variable in this file? We are loading them up from `process.env` using the dotenv library. So before we move ahead to next steps, let's add these variables in our `.env` file.
 
-- Head over to the `.env` file and create these two environment variables: 
+- Head over to the `.env` file and create these two environment variables:
 
 **File:** `.env`
 ```bash
@@ -108,7 +108,7 @@ POLYGONSCAN_API_KEY=ADD_YOUR_POLYGONSCAN_API_KEY
 
 ```
 
-Here, you need to set your wallet's [private key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)↗ and API key from [Polygonscan](https://polygonscan.com/)↗. You can follow their [tutorial](https://docs.polygonscan.com/getting-started/viewing-api-usage-statistics)↗ if you aren't familiar with how to get one. 
+Here, you need to set your wallet's [private key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) and API key from [Polygonscan](https://polygonscan.com/). You can follow their [tutorial](https://docs.polygonscan.com/getting-started/viewing-api-usage-statistics) if you aren't familiar with how to get one.
 
 ___________________________
 
@@ -208,10 +208,10 @@ contract CrowdfundingProject {
         emit Funded(msg.sender, msg.value, block.timestamp);
     }
 }
-``` 
+```
 You'll see we have initiated two contracts:
 1. **CrowdfundingProject** - deals with a single project or campaign being create. It includes the `makeDonation()` function which calculates the amount raised and checks if the `goalAmount` is achieved or not while recording the wallet address of the donor.
-2. **CrowdFactory** - records for all the crowdfunding projects being created and launched. 
+2. **CrowdFactory** - records for all the crowdfunding projects being created and launched.
 
 Now, let's compile hardhat to see if everything's good to go!
 
@@ -220,13 +220,13 @@ yarn hardhat compile
 
 # output
 # Compiled n Solidity file successfully
-``` 
+```
 
 __________________________________
 
 ## Step 3: Write the Deploy Script(s)
 
-Now that we've got our contract set up, let's create the deployment scripts. There will be two scripts, one for deploying the **CrowdFactory** contract and second for a dummy campaign creation with some dummy project info. 
+Now that we've got our contract set up, let's create the deployment scripts. There will be two scripts, one for deploying the **CrowdFactory** contract and second for a dummy campaign creation with some dummy project info.
 
 - For the first script, navigate to the `scripts` folder and add the following code in `deploy.js` file
 
@@ -250,13 +250,13 @@ main()
     console.error(error);
     process.exit(1);
   });
-``` 
+```
 - Save this file and run the following command to deploy the **CrowdFactory** contract
- 
+
 ```bash
 yarn hardhat run scripts/deploy.js --network mumbai
-``` 
-Running this command will prompt you with the address of the deployed contract. Here's the contract I [deployed](https://mumbai.polygonscan.com/address/0xA6A30bCc591107d932CA12a50FC616BAb5E58cdA).↗
+```
+Running this command will prompt you with the address of the deployed contract. Here's the contract I [deployed](https://mumbai.polygonscan.com/address/0xA6A30bCc591107d932CA12a50FC616BAb5E58cdA).
 
 ***Note your contract address as you will need it in your next deployment script.***
 ____________________
@@ -269,7 +269,7 @@ export const FACTORY_CONTRACT_ADDRESS = "0xA6A30bCc591107d932CA12a50FC616BAb5E58
 
 //just for testing purpose
 export const DEBUG = false;
-``` 
+```
 
 
 _______________
@@ -277,7 +277,7 @@ _______________
 
 Now let's deploy another contract with a sudo campaign details for us to get started. For this, we are going to use **createCampaigns.js** file under `scripts` directory. Navigate to that file and save the following code.
 
-> Note: In this file you need to edit two things. First the contract address we got in the above step. Replace your contract address with the address mentioned already in the script (check line 6). Second, on line 13, replace my wallet address with yours. 
+> Note: In this file you need to edit two things. First the contract address we got in the above step. Replace your contract address with the address mentioned already in the script (check line 6). Second, on line 13, replace my wallet address with yours.
 
 **File:** `scripts/createCampaigns.js`
 ```
@@ -289,9 +289,9 @@ const contract = await ethers.getContractAt("CrowdFactory",
 "0xA6A30bCc591107d932CA12a50FC616BAb5E58cdA") //line 6
 
 await contract.createProject(
-"first title", 
-ethers.utils.parseUnits("0.1", 18), 
-"description", 
+"first title",
+ethers.utils.parseUnits("0.1", 18),
+"description",
 //insert your wallet's public key
 "0x81AE60AC85F0b81Cc00e2B294d83A03f40d1deF5") //line 13
 }
@@ -302,24 +302,24 @@ main()
     console.error(error);
     process.exit(1);
   });
-``` 
+```
 Once done, run the following command to deploy this script as well:
 
 
 ```
 yarn hardhat run scripts/createCampaigns.js --network mumbai
-``` 
+```
 
 ## Step 4: Get Contract ABI for Verified Codes
 In this step, we are going to do two things:
-1. we will verify our smart contracts on [Polygonscan](https://mumbai.polygonscan.com/)↗
+1. we will verify our smart contracts on [Polygonscan](https://mumbai.polygonscan.com/)
 2. get contract ABIs for verified contract source codes
 
 **Verifying Smart Contracts**
 
-- Go to `verify-factory.js` file under scripts folder and add the following verify script: 
+- Go to `verify-factory.js` file under scripts folder and add the following verify script:
 
-> Note: In this file you need to edit one thing. The **contractAddress**  you see on line number 5 needs to be replaced by your contract's address. 
+> Note: In this file you need to edit one thing. The **contractAddress**  you see on line number 5 needs to be replaced by your contract's address.
 
 **File:** `scripts/verify-factory.js`
 
@@ -351,7 +351,7 @@ main()
     console.error(error);
     process.exit(1);
   });
-``` 
+```
 
 - Now in the terminal, run this command to verify the **CrowdFactory** smart contract on polygonscan:
 
@@ -372,7 +372,7 @@ yarn hardhat run scripts/verify-factory.js --network mumbai
 
 - Copy the ABI and paste it in the `crowdfactory.json` file under `src/abis` directory
 
-- Go back to the same polygonscan link, click on the **Read Contract **button and query "0" from the **publishedProjs**. 
+- Go back to the same polygonscan link, click on the **Read Contract **button and query "0" from the **publishedProjs**.
 
 
 > Copy and save the address it outputs, we will need it in *line 5* of the next file.
@@ -418,7 +418,7 @@ main()
     console.error(error);
     process.exit(1);
   });
-``` 
+```
 
 - Once you save the above file, run this command to verify it on polygonscan:
 
@@ -437,7 +437,7 @@ Once this is done, run the following command in the terminal:
 
 ```
 yarn typechain
-``` 
+```
 TypeChain is a typescript binding and code generator used to create smart contracts that features static typing and IDE support.
 _____________________________________
 
@@ -561,7 +561,7 @@ export function useCrowdfundingProjectFunctionReader({
 
   return contractRead;
 }
-``` 
+```
 
 Now, let's move to the other file named "**utils.ts**". In this file we are creating helper functions to convert wei into POL.
 
@@ -627,8 +627,8 @@ export function fromWei(value: BigNumberish, decimals: number = 18): string {
 export default function isZero(hexNumberString: string) {
   return /^0x0*$/.test(hexNumberString);
 }
-``` 
-And last but not at all the least, "**read.ts**" under the **src** directory which will contain [view and pure functions](https://www.geeksforgeeks.org/solidity-view-and-pure-functions/).↗
+```
+And last but not at all the least, "**read.ts**" under the **src** directory which will contain [view and pure functions](https://www.geeksforgeeks.org/solidity-view-and-pure-functions/).
 
 **File:** `src/read.ts`
 ```javascript
@@ -763,11 +763,11 @@ export function useRaisedAmount(
 
   return raisedAmount as unknown as BigNumber;
 }
-``` 
+```
 __________________________
 ## Step 6: Create Components
 
-In this step, we are going to head over to `components` folder under `src` directory. First up, navigate to "**CreateCampaign.tsx**" file and insert the following code. In this file, we will be using custom hook we made in hooks.ts for writing functions along with the coding the UI. 
+In this step, we are going to head over to `components` folder under `src` directory. First up, navigate to "**CreateCampaign.tsx**" file and insert the following code. In this file, we will be using custom hook we made in hooks.ts for writing functions along with the coding the UI.
 
 **File:** `src/components/CreateCampaign.tsx`
 ```javascript
@@ -946,7 +946,7 @@ function CreateCampaign() {
 export default CreateCampaign;
 ```
 
-Now, navigate to "**Campaign.tsx**" file and the edit the following code. Again in this file, we will use custom hook we made in hooks.ts for writing functions along with the UI. This component deals with the details of a single campaign. 
+Now, navigate to "**Campaign.tsx**" file and the edit the following code. Again in this file, we will use custom hook we made in hooks.ts for writing functions along with the UI. This component deals with the details of a single campaign.
 
 **File:** `src/components/Campaign.tsx`
 ```javascript
@@ -1086,7 +1086,7 @@ function Campaign({ projectNumber }: CampaignProps) {
 }
 
 export default Campaign;
-``` 
+```
 Last, let's edit the "**Campaigns.tsx**" file and for that, navigate to `Campaigns.tsx` and add the following code:
 
 **File:** `src/components/Campaigns.tsx`
@@ -1131,12 +1131,12 @@ function Campaigns() {
 }
 
 export default Campaigns;
-``` 
+```
 _________________
 
 ## Step 7: Displaying the UI
 
-Now comes the moment of truth we have been waiting for. All the code, all these functions, contract, and frontend will come together in a form of a single-page application. 
+Now comes the moment of truth we have been waiting for. All the code, all these functions, contract, and frontend will come together in a form of a single-page application.
 
 In this section, we will edit our "App.tsx" file which will display everything we have been building so far. So let's go and edit the existing code in the file and replace it with this one:
 
@@ -1190,13 +1190,13 @@ function App() {
 }
 
 export default App;
-``` 
+```
 Woah, that was a lot of code that we wrote! Now comes the crunch as we run our dApp in the local dev environment.
 
 ```
 yarn dev
-``` 
-And, here's what you should be able to see! 
+```
+And, here's what you should be able to see!
 
 <img src="/docs/tutorials/-EFHTGxf6.png" alt="Hello" className="responsive-pic" width="700" />
 
@@ -1206,4 +1206,4 @@ If you want to take a look at the full source code, find the [repo here](https:/
 ______________________
 
 ### Next Steps
-If you are up for a fun challenge, extend this project into a full-fleshed platform with additional functionalities in the smart contract and improved UI. 
+If you are up for a fun challenge, extend this project into a full-fleshed platform with additional functionalities in the smart contract and improved UI.
