@@ -3,6 +3,9 @@ import { Tabs, Tab } from "nextra/components";
 import { Callout } from "components";
 
 # Monad
+<br/>
+
+<img src="/docs/build/chains-list/monad.png" className="responsive-pic" width="800" />
 
 > Monad API is available on [Web3 API platform](https://www.ankr.com/rpc/monad).
 
@@ -38,6 +41,7 @@ Responses come in [JSON format](https://www.json.org/json-en.html).
   * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/monad/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
   * [`eth_getCode`](/rpc-service/chains/chains-api/monad/#eth_getcode) — returns code at an address specified.
   * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/monad/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_sendRawTransactionSync`](/rpc-service/chains/chains-api/monad/#eth_sendrawtransactionsync) — submits a transaction and retrieves the transaction receipt.
   * [`eth_call`](/rpc-service/chains/chains-api/monad/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
   * [`eth_estimateGas`](/rpc-service/chains/chains-api/monad/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
   * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/monad/#eth_getblockbyhash) — returns information for the block specified by block hash.
@@ -578,6 +582,95 @@ curl -X POST https://rpc.ankr.com/monad_testnet \
     "id": 1,
     "jsonrpc": "2.0",
     "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
+}
+```
+
+---
+
+## `eth_sendRawTransactionSync`
+
+> Submits a transaction and retrieves the transaction receipt.
+
+Synchronous transaction submission; waits for transaction to be included in a block before returning.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data; required): the valid hex-encoded, RLP-encoded signed transaction.
+    2. `<integer>` (quantity; optional): maximum wait time in milliseconds. MUST be a positive integer not greater than the node-configured maximum timeout.
+
+### Returns
+
+  * `object`: a transaction receipt object, or null when no receipt was found:
+
+      * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
+      * `transactionIndex` (string; quantity): the transactions index position in the block.
+      * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
+      * `blockNumber` (string; quantity): a number of the block containing the transaction.
+      * `from` (string; data, 20 bytes): an address of the sender.
+      * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
+      * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
+      * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
+      * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
+      * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
+      * `logs` (array): an array of log objects, which this transaction generated.
+      * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
+      * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
+
+          * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
+          * `status` (string; quantity): either 1 (success) or 0 (failure).
+
+### Request example (no timeout)
+
+```shell
+curl -X POST https://rpc.ankr.com/monad_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_sendRawTransactionSync",
+      "params": [
+        "0xf86c808504a817c80082520894ab... (signed tx hex)"
+      ],
+      "id": 1
+    }'
+```
+
+### Request example (with timeout)
+
+```shell
+curl -X POST https://rpc.ankr.com/monad_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_sendRawTransactionSync",
+      "params": [
+        "0xf86c808504a817c80082520894ab... (signed tx hex)",
+        5000
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "transactionHash": "0x1234abcd...",
+        "blockHash": "0xabcd1234...",
+        "blockNumber": "0x10d4f",
+        "cumulativeGasUsed": "0x5208",
+        "gasUsed": "0x5208",
+        "contractAddress": null,
+        "logs": [],
+        "status": "0x1"
+    }
 }
 ```
 
