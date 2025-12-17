@@ -1,0 +1,5597 @@
+import { Tabs } from "nextra/components";
+
+import { Callout } from "components";
+
+# Allora
+<br/>
+
+<img src="/docs/build/chains-list/allora.png" className="responsive-pic" width="800" />
+
+> Allora API is available on [Web3 API platform](https://www.ankr.com/rpc/allora).
+
+The Allora Network is an advanced protocol that leverages decentralized AI and machine learning (ML) to generate and share predictions among its participants. It provides a structured way for users to access on-chain AI predictions and pay the AI/ML node operators who produce these insights.
+
+Allora acts as a bridge between various parties — data owners, processors, AI/ML predictors, market analysts, and end-users — allowing them to utilize and act on these predictions. AI/ML agents on the network use their data and algorithms to broadcast predictions across a peer-to-peer network. They also evaluate predictions from other agents.
+
+The network’s consensus mechanism then combines these predictions and assessments, rewarding agents based on the quality of their contributions. This incentive system helps Allora continuously learn and adapt to changing market conditions.
+
+## Networks/Protocols supported
+
+We support the following networks and protocols for Allora:
+
+    * [Tendermint JSON-RPC/REST API](/rpc-service/chains/chains-api/allora/#tendermint-json-rpcrest-methods)
+    * [Cosmos REST API](/rpc-service/chains/chains-api/allora/#cosmos-rest-methods)
+
+Currently, we provide two interfaces to query Allora API — [JSON-RPC](https://www.jsonrpc.org/specification) and REST. Responses for both of them come in [JSON format](https://www.json.org/json-en.html).
+
+Here is the request/response structure to use for querying:
+
+<Tabs
+  items={[
+    "Tendermint JSON-RPC request",
+    "Tendermint REST request",
+    "Cosmos REST request",
+    "JSON response"
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block",
+      "params": ["761001"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/block?height=761001
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/base/tendermint/v1beta1/blocks/{height}
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": -1,
+    "result": {
+        "block_id": {
+            "hash": "663789D1BAA0354453A5BB1474C46C9F74E6140B247153482BBE84893C029600",
+            "parts": {
+                "total": 1,
+                "hash": "BFCC2C78C439E367ABEEA996FD9A120EAA70DC44572B8BFDCA032908BA4B439B"
+            }
+        },
+        "block": {
+            "header": {
+                "version": {
+                    "block": "11"
+                },
+                "chain_id": "allora-testnet-1",
+                "height": "761001",
+                "time": "2024-08-21T21:33:36.088780054Z",
+                "last_block_id": {
+                    "hash": "AD51186842A63CB515A4946C558DF1DA71D384DF646EC5522ECD5008E3FAEDA0",
+                    "parts": {
+                        "total": 1,
+                        "hash": "16A9CCD523F2E593E66F46CBD20FCC03B5849ACE5325951E50BC53B6D7D2F893"
+                    }
+                },
+                "last_commit_hash": "77BE45E09B5A5F40FA1F10BF430C2E14371445B9E2DF89952478E84A98DFA081",
+                "data_hash": "78F2AF9D01AC871045FB53CB383AA50EF4C0094E9563428BFF8BA59071801050",
+                "validators_hash": "CB957FF7AB192A9F9321F0E471C7BAE5A9AA82573FF8D509F8ACF7CA3A450A42",
+                "next_validators_hash": "CB957FF7AB192A9F9321F0E471C7BAE5A9AA82573FF8D509F8ACF7CA3A450A42",
+                "consensus_hash": "048091BC7DDC283F77BFBF91D73C44DA58C3DF8A9CBC867405D8B7F3DAADA22F",
+                "app_hash": "72AEC5979CEA9EE65275B77DA8F31676C7E52DA57B991D86C4870237E3D40127",
+                "last_results_hash": "455FD6D9D1888EBE5B8602E20E84EEACA30020B717A5B5298890E7236CAB84AD",
+                "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "proposer_address": "01458B61F0D7DE6E90798FE8C370413D718EB34C"
+            },
+            "data": {
+                "txs": [
+                    "CuECCt4CCiQvZW1pc3Npb25zLnYyLk1zZ0luc2VydFdvcmtlclBheWxvYWQStQIKK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHcShQIKK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHcSBAiRuS4YBSJICkYIBRCRuS4aK2FsbG8xYWhhcGE2ZHpkOG0yNjc0MHp5N2gyd3pnamx1ZnM4NjRmeDR1eHciETE0NS42NTg1MDk2NjIzMjkzKkBkgCxd7XHQh+Debe/yvS+c8BBoKguydI/J/YNqRaYpBDpnwQo+4/LPouiYF04JXDBa4qxTfJFlpdSJ9EgoX+TAMkIwMmQ4MjYzOTFiYWI4ZjYzNWYzNDhkYmQxNDQ1ZGUxZmQ0YjgzZjNiNGJiZjFkY2EzY2Q4YWFjM2FlMWMyYmY5ODcSWApQCkYKHy9jb3Ntb3MuY3J5cHRvLnNlY3AyNTZrMS5QdWJLZXkSIwohAtgmORurj2NfNI29FEXeH9S4PztLvx3KPNiqw64cK/mHEgQKAggBGCkSBBDAhD0aQN1AnyLR2Kz/KMZ5yr+Sz4wo+4Tp8OnyDqSlr98oCNQVPtF69bWneamHvTEq7r5WUGuwQfWSD+sybXlUgnDlmIw=",
+                    "CuECCt4CCiQvZW1pc3Npb25zLnYyLk1zZ0luc2VydFdvcmtlclBheWxvYWQStQIKK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2cShQIKK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2cSBAiTuS4YAyJICkYIAxCTuS4aK2FsbG8xcmZweng2MGR6MDc5dWhuZXRxdHNkdTJ1ZTM0dmdyMnJ3ZGFrd2ciETYxMzI3LjIzMTM5NzQ3MTg1KkA2b71NaRNK8PFRv+nLbaTfB53wu/AqI4cGoFYED/4U/3c8JOYW+Q2moUdlX35tKF0U2gneVA2jQy0vmem8uIz6MkIwMzA5Zjg2ZWY3YzNlM2IyZjUzMzg3OGZiNjY2Mjk1NjljNjFkYTNhMzg2OTkyNjNmMWM4MDhlMTcxMTQzOWYxMmMSWQpRCkYKHy9jb3Ntb3MuY3J5cHRvLnNlY3AyNTZrMS5QdWJLZXkSIwohAwn4bvfD47L1M4ePtmYpVpxh2jo4aZJj8cgI4XEUOfEsEgQKAggBGLJKEgQQwIQ9GkAYepebNx4qruj3/XCxlmVQ3XDbhfsXZlZyM+yeqUs7d263LfRxugRgQH3aiV/ROiC/gVH0bID6GA00y5QMWM+B"
+                ]
+            },
+            "evidence": {
+                "evidence": []
+            },
+            "last_commit": {
+                "height": "761000",
+                "round": 0,
+                "block_id": {
+                    "hash": "AD51186842A63CB515A4946C558DF1DA71D384DF646EC5522ECD5008E3FAEDA0",
+                    "parts": {
+                        "total": 1,
+                        "hash": "16A9CCD523F2E593E66F46CBD20FCC03B5849ACE5325951E50BC53B6D7D2F893"
+                    }
+                },
+                "signatures": [
+                    {
+                        "block_id_flag": 1,
+                        "validator_address": "",
+                        "timestamp": "0001-01-01T00:00:00Z",
+                        "signature": null
+                    },
+                    {
+                        "block_id_flag": 2,
+                        "validator_address": "2D5A6E69CDFBE8FF7C0C2DAFF752387AC73B9AB1",
+                        "timestamp": "2024-08-21T21:33:36.07519025Z",
+                        "signature": "LvyV25u8kxAivi7rHuAZlXtawVBMYyOJflcr4al44TWVLmYnztqycSgGyi1S9GkUGoeA4nG+wRM/4pqk4YIKDQ=="
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+  </Tabs.Tab>
+</Tabs>
+
+---
+
+## Tendermint JSON-RPC/REST methods
+
+**Info — node information**:
+
+  * [`blockchain`](/rpc-service/chains/chains-api/allora/#blockchain) — retrieves block headers (max: 20) for `minHeight <= height <= maxHeight`.
+  * [`block`](/rpc-service/chains/chains-api/allora/#block) — retrieves a block at a specified height.
+  * [`block_by_hash`](/rpc-service/chains/chains-api/allora/#block_by_hash) — retrieves a block by hash.
+  * [`block_results`](/rpc-service/chains/chains-api/allora/#block_results) — retrieves block results at a specified height.
+  * [`commit`](/rpc-service/chains/chains-api/allora/#commit) — retrieves commit results at a specified height.
+  * [`validators`](/rpc-service/chains/chains-api/allora/#validators) — retrieves a validator set at a specified height.
+  * [`genesis_chunked`](/rpc-service/chains/chains-api/allora/#genesis_chunked) — retrieves the Genesis in multiple chunks.
+  * [`dump_consensus_state`](/rpc-service/chains/chains-api/allora/#dump_consensus_state) — retrieves consensus state.
+  * [`consensus_state`](/rpc-service/chains/chains-api/allora/#consensus_state) — retrieves consensus state.
+  * [`consensus_params`](/rpc-service/chains/chains-api/allora/#consensus_params) — retrieves consensus parameters.
+  * [`unconfirmed_txs`](/rpc-service/chains/chains-api/allora/#unconfirmed_txs) — retrieves the list of unconfirmed transactions.
+  * [`num_unconfirmed_txs`](/rpc-service/chains/chains-api/allora/#num_unconfirmed_txs) — retrieves data about unconfirmed transactions.
+  * [`tx_search`](/rpc-service/chains/chains-api/allora/#tx_search) — searches for transactions.
+  * [`block_search`](/rpc-service/chains/chains-api/allora/#block_search) — searches for blocks by `BeginBlock` and `EndBlock` events.
+  * [`tx`](/rpc-service/chains/chains-api/allora/#tx) — retrieves transactions by hash.
+
+**Tx — transactions broadcast information**:
+
+  * [`broadcast_tx_sync`](/rpc-service/chains/chains-api/allora/#broadcast_tx_sync) — returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
+  * [`broadcast_tx_async`](/rpc-service/chains/chains-api/allora/#broadcast_tx_async) — returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
+  * [`broadcast_tx_commit`](/rpc-service/chains/chains-api/allora/#broadcast_tx_commit) — returns with the responses from `CheckTx` and `DeliverTx`.
+  * [`check_tx`](/rpc-service/chains/chains-api/allora/#check_tx) — checks the transaction without executing it.
+
+**ABCI — ABCI info**:
+
+  * [`abci_info`](/rpc-service/chains/chains-api/allora/#abci_info) — retrieves info about the application.
+  * [`abci_query`](/rpc-service/chains/chains-api/allora/#abci_query) — queries the application for some information.
+
+---
+
+## Information
+
+### `blockchain`
+
+> Retrieves block headers for `minHeight <= height <= maxHeight`.
+
+At most 20 items will return for the `minHeight` or `maxHeight` parameters specified. If `maxHeight` does not yet exist, the blocks up to the current height will return. If `minHeight` does not exist (pruning), the earliest existing height will be used.
+
+#### Parameters
+<br/>
+
+  * `minHeight` (integer): the minimum block height to return.
+  * `maxHeight` (integer): the maximum block height to return.
+
+#### Returns
+
+Block headers, in descending order (highest first).
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "blockchain",
+      "params": ["1", "2"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/blockchain?minHeight=1&maxHeight=2
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "id": 0,
+  "jsonrpc": "2.0",
+  "result": {
+    "last_height": "1276718",
+    "block_metas": [
+      {
+        "block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "block_size": 1000000,
+        "header": {
+          "version": {
+            "block": "10",
+            "app": "0"
+          },
+          "chain_id": "cosmoshub-2",
+          "height": "12",
+          "time": "2019-04-22T17:01:51.701356223Z",
+          "last_block_id": {
+            "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+            "parts": {
+              "total": 1,
+              "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+            }
+          },
+          "last_commit_hash": "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812",
+          "data_hash": "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73",
+          "validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+          "next_validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+          "consensus_hash": "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8",
+          "app_hash": "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C",
+          "last_results_hash": "",
+          "evidence_hash": "",
+          "proposer_address": "D540AB022088612AC74B287D076DBFBC4A377A2E"
+        },
+        "num_txs": "54"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `block`
+
+> Retrieves a block at a specified height.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block is to be fetched.
+
+#### Returns
+
+Block information.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/blockchain?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "id": 0,
+  "jsonrpc": "2.0",
+  "result": {
+    "block_id": {
+      "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+      "parts": {
+        "total": 1,
+        "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+      }
+    },
+    "block": {
+      "header": {
+        "version": {
+          "block": "10",
+          "app": "0"
+        },
+        "chain_id": "cosmoshub-2",
+        "height": "12",
+        "time": "2019-04-22T17:01:51.701356223Z",
+        "last_block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "last_commit_hash": "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812",
+        "data_hash": "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73",
+        "validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "next_validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "consensus_hash": "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8",
+        "app_hash": "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C",
+        "last_results_hash": "",
+        "evidence_hash": "",
+        "proposer_address": "D540AB022088612AC74B287D076DBFBC4A377A2E"
+      },
+      "data": [
+        "yQHwYl3uCkKoo2GaChRnd+THLQ2RM87nEZrE19910Z28ABIUWW/t8AtIMwcyU0sT32RcMDI9GF0aEAoFdWF0b20SBzEwMDAwMDASEwoNCgV1YXRvbRIEMzEwMRCd8gEaagom61rphyEDoJPxlcjRoNDtZ9xMdvs+lRzFaHe2dl2P5R2yVCWrsHISQKkqX5H1zXAIJuC57yw0Yb03Fwy75VRip0ZBtLiYsUqkOsPUoQZAhDNP+6LY+RUwz/nVzedkF0S29NZ32QXdGv0="
+      ],
+      "evidence": [
+        {
+          "type": "string",
+          "height": 0,
+          "time": 0,
+          "total_voting_power": 0,
+          "validator": {
+            "pub_key": {
+              "type": "tendermint/PubKeyEd25519",
+              "value": "A6DoBUypNtUAyEHWtQ9bFjfNg8Bo9CrnkUGl6k6OHN4="
+            },
+            "voting_power": 0,
+            "address": "string"
+          }
+        }
+      ],
+      "last_commit": {
+        "height": 0,
+        "round": 0,
+        "block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "signatures": [
+          {
+            "type": 2,
+            "height": "1262085",
+            "round": 0,
+            "block_id": {
+              "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+              "parts": {
+                "total": 1,
+                "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+              }
+            },
+            "timestamp": "2019-08-01T11:39:38.867269833Z",
+            "validator_address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+            "validator_index": 0,
+            "signature": "DBchvucTzAUEJnGYpNvMdqLhBAHG4Px8BsOBB3J3mAFCLGeuG7uJqy+nVngKzZdPhPi8RhmE/xcw/M9DOJjEDg=="
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+---
+
+### `block_by_hash`
+
+> Retrieves a block by hash.
+
+#### Parameters
+<br/>
+
+  * `hash` (string; required): a block hash.
+
+#### Returns
+
+Block information.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block_by_hash",
+      "params": ["0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/block_by_hash?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "id": 0,
+  "jsonrpc": "2.0",
+  "result": {
+    "block_id": {
+      "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+      "parts": {
+        "total": 1,
+        "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+      }
+    },
+    "block": {
+      "header": {
+        "version": {
+          "block": "10",
+          "app": "0"
+        },
+        "chain_id": "cosmoshub-2",
+        "height": "12",
+        "time": "2019-04-22T17:01:51.701356223Z",
+        "last_block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "last_commit_hash": "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812",
+        "data_hash": "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73",
+        "validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "next_validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "consensus_hash": "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8",
+        "app_hash": "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C",
+        "last_results_hash": "",
+        "evidence_hash": "",
+        "proposer_address": "D540AB022088612AC74B287D076DBFBC4A377A2E"
+      },
+      "data": [
+        "yQHwYl3uCkKoo2GaChRnd+THLQ2RM87nEZrE19910Z28ABIUWW/t8AtIMwcyU0sT32RcMDI9GF0aEAoFdWF0b20SBzEwMDAwMDASEwoNCgV1YXRvbRIEMzEwMRCd8gEaagom61rphyEDoJPxlcjRoNDtZ9xMdvs+lRzFaHe2dl2P5R2yVCWrsHISQKkqX5H1zXAIJuC57yw0Yb03Fwy75VRip0ZBtLiYsUqkOsPUoQZAhDNP+6LY+RUwz/nVzedkF0S29NZ32QXdGv0="
+      ],
+      "evidence": [
+        {
+          "type": "string",
+          "height": 0,
+          "time": 0,
+          "total_voting_power": 0,
+          "validator": {
+            "pub_key": {
+              "type": "tendermint/PubKeyEd25519",
+              "value": "A6DoBUypNtUAyEHWtQ9bFjfNg8Bo9CrnkUGl6k6OHN4="
+            },
+            "voting_power": 0,
+            "address": "string"
+          }
+        }
+      ],
+      "last_commit": {
+        "height": 0,
+        "round": 0,
+        "block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "signatures": [
+          {
+            "type": 2,
+            "height": "1262085",
+            "round": 0,
+            "block_id": {
+              "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+              "parts": {
+                "total": 1,
+                "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+              }
+            },
+            "timestamp": "2019-08-01T11:39:38.867269833Z",
+            "validator_address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+            "validator_index": 0,
+            "signature": "DBchvucTzAUEJnGYpNvMdqLhBAHG4Px8BsOBB3J3mAFCLGeuG7uJqy+nVngKzZdPhPi8RhmE/xcw/M9DOJjEDg=="
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+---
+
+### `block_results`
+
+> Retrieves block results at a specified height.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block info is to be fetched.
+
+#### Returns
+
+Block results.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block_results",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/block_results?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "height": "12",
+    "txs_results": [
+      {
+        "code": "0",
+        "data": "",
+        "log": "not enough gas",
+        "info": "",
+        "gas_wanted": "100",
+        "gas_used": "100",
+        "events": [
+          {
+            "type": "app",
+            "attributes": [
+              {
+                "key": "YWN0aW9u",
+                "value": "c2VuZA==",
+                "index": false
+              }
+            ]
+          }
+        ],
+        "codespace": "ibc"
+      }
+    ],
+    "begin_block_events": [
+      {
+        "type": "app",
+        "attributes": [
+          {
+            "key": "YWN0aW9u",
+            "value": "c2VuZA==",
+            "index": false
+          }
+        ]
+      }
+    ],
+    "end_block": [
+      {
+        "type": "app",
+        "attributes": [
+          {
+            "key": "YWN0aW9u",
+            "value": "c2VuZA==",
+            "index": false
+          }
+        ]
+      }
+    ],
+    "validator_updates": [
+      {
+        "pub_key": {
+          "type": "tendermint/PubKeyEd25519",
+          "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+        },
+        "power": "300"
+      }
+    ],
+    "consensus_params_updates": {
+      "block": {
+        "max_bytes": "22020096",
+        "max_gas": "1000",
+        "time_iota_ms": "1000"
+      },
+      "evidence": {
+        "max_age": "100000"
+      },
+      "validator": {
+        "pub_key_types": [
+          "ed25519"
+        ]
+      }
+    }
+  }
+}
+```
+
+---
+
+### `commit`
+
+> Retrieves commit results at a specified height.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block commit info is to be fetched.
+
+#### Returns
+
+Commit results. Canonical switches from false to true for block H once block H+1 has been committed, until then it's subjective and only reflects what this node has seen so far.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "commit",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/commit?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "signed_header": {
+      "header": {
+        "version": {
+          "block": "10",
+          "app": "0"
+        },
+        "chain_id": "cosmoshub-2",
+        "height": "12",
+        "time": "2019-04-22T17:01:51.701356223Z",
+        "last_block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "last_commit_hash": "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812",
+        "data_hash": "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73",
+        "validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "next_validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+        "consensus_hash": "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8",
+        "app_hash": "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C",
+        "last_results_hash": "",
+        "evidence_hash": "",
+        "proposer_address": "D540AB022088612AC74B287D076DBFBC4A377A2E"
+      },
+      "commit": {
+        "height": "1311801",
+        "round": 0,
+        "block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "signatures": [
+          {
+            "block_id_flag": 2,
+            "validator_address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+            "timestamp": "2019-04-22T17:01:58.376629719Z",
+            "signature": "14jaTQXYRt8kbLKEhdHq7AXycrFImiLuZx50uOjs2+Zv+2i7RTG/jnObD07Jo2ubZ8xd7bNBJMqkgtkd0oQHAw=="
+          }
+        ]
+      }
+    },
+    "canonical": true
+  }
+}
+```
+
+---
+
+### `validators`
+
+> Retrieves a validator set at a specified height.
+
+Validators are sorted by voting power.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the validator set corresponding to the latest block is to be fetched.
+  * `page` (integer; default: 1): a page number (1-based).
+  * `per_page` (integer; default: 30; max: 100): a number of entries per page.
+
+#### Returns
+
+Commit results.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "validators",
+      "params": ["1","1","30"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/validators?height=1&page=2&per_page=30
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "block_height": "55",
+    "validators": [
+      {
+        "address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+        "pub_key": {
+          "type": "tendermint/PubKeyEd25519",
+          "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+        },
+        "voting_power": "239727",
+        "proposer_priority": "-11896414"
+      }
+    ],
+    "count": "1",
+    "total": "25"
+  }
+}
+```
+
+---
+
+### `genesis_chunked`
+
+> Retrieves Genesis in multiple chunks.
+
+Gets genesis document in multiple chunks to make it easier to iterate through larger genesis structures. Each chunk is produced by converting the genesis document to JSON and then splitting the resulting payload into 16MB blocks, and then Base64-encoding each block.
+
+#### Parameters
+<br/>
+
+  * `chunk` (integer; default: 0): a sequence number of the chunk to download.
+
+#### Returns
+
+A Genesis chunk response.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "genesis_chunked",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/genesis_chunked?chunk=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "chunk": 0,
+    "total": 1,
+    "data": "Z2VuZXNpcwo="
+  }
+}
+```
+
+---
+
+### `dump_consensus_state`
+
+> Retrieves consensus state.
+
+Not safe to call from inside the ABCI application during a block execution.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+A complete consensus state. See the [Vote string description](https://pkg.go.dev/github.com/tendermint/tendermint/types?tab=doc#Vote.String).
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "dump_consensus_state",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/dump_consensus_state
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "round_state": {
+      "height": "1311801",
+      "round": 0,
+      "step": 3,
+      "start_time": "2019-08-05T11:28:49.064658805Z",
+      "commit_time": "2019-08-05T11:28:44.064658805Z",
+      "validators": {
+        "validators": [
+          {
+            "address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+            "pub_key": {
+              "type": "tendermint/PubKeyEd25519",
+              "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+            },
+            "voting_power": "239727",
+            "proposer_priority": "-11896414"
+          }
+        ],
+        "proposer": {
+          "address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+          "pub_key": {
+            "type": "tendermint/PubKeyEd25519",
+            "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+          },
+          "voting_power": "239727",
+          "proposer_priority": "-11896414"
+        }
+      },
+      "locked_round": -1,
+      "valid_round": "-1",
+      "votes": [
+        {
+          "round": "0",
+          "prevotes": [
+            "nil-Vote",
+            "Vote{19:46A3F8B8393B 1311801/00/1(Prevote) 000000000000 64CE682305CB @ 2019-08-05T11:28:47.374703444Z}"
+          ],
+          "prevotes_bit_array": "BA{100:___________________x________________________________________________________________________________} 209706/170220253 = 0.00",
+          "precommits": [
+            "nil-Vote"
+          ],
+          "precommits_bit_array": "BA{100:____________________________________________________________________________________________________} 0/170220253 = 0.00"
+        }
+      ],
+      "commit_round": -1,
+      "last_commit": {
+        "votes": [
+          "Vote{0:000001E443FD 1311800/00/2(Precommit) 3071ADB27D1A 77EE1B6B6847 @ 2019-08-05T11:28:43.810128139Z}"
+        ],
+        "votes_bit_array": "BA{100:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} 170220253/170220253 = 1.00",
+        "peer_maj_23s": {}
+      },
+      "last_validators": {
+        "validators": [
+          {
+            "address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+            "pub_key": {
+              "type": "tendermint/PubKeyEd25519",
+              "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+            },
+            "voting_power": "239727",
+            "proposer_priority": "-11896414"
+          }
+        ],
+        "proposer": {
+          "address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+          "pub_key": {
+            "type": "tendermint/PubKeyEd25519",
+            "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+          },
+          "voting_power": "239727",
+          "proposer_priority": "-11896414"
+        }
+      },
+      "triggered_timeout_precommit": false
+    },
+    "peers": [
+      {
+        "node_address": "357f6a6c1d27414579a8185060aa8adf9815c43c@68.183.41.207:26656",
+        "peer_state": {
+          "round_state": {
+            "height": "1311801",
+            "round": "0",
+            "step": 3,
+            "start_time": "2019-08-05T11:28:49.21730864Z",
+            "proposal": false,
+            "proposal_block_parts_header": {
+              "total": 0,
+              "hash": ""
+            },
+            "proposal_pol_round": -1,
+            "proposal_pol": "____________________________________________________________________________________________________",
+            "prevotes": "___________________x________________________________________________________________________________",
+            "precommits": "____________________________________________________________________________________________________",
+            "last_commit_round": 0,
+            "last_commit": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "catchup_commit_round": -1,
+            "catchup_commit": "____________________________________________________________________________________________________"
+          },
+          "stats": {
+            "votes": "1159558",
+            "block_parts": "4786"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `consensus_state`
+
+> Retrieves consensus state.
+
+Not safe to call from inside the ABCI application during a block execution.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+Consensus state results.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "consensus_state",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/consensus_state
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "round_state": {
+      "height/round/step": "1262197/0/8",
+      "start_time": "2019-08-01T11:52:38.962730289Z",
+      "proposal_block_hash": "634ADAF1F402663BEC2ABC340ECE8B4B45AA906FA603272ACC5F5EED3097E009",
+      "locked_block_hash": "634ADAF1F402663BEC2ABC340ECE8B4B45AA906FA603272ACC5F5EED3097E009",
+      "valid_block_hash": "634ADAF1F402663BEC2ABC340ECE8B4B45AA906FA603272ACC5F5EED3097E009",
+      "height_vote_set": [
+        {
+          "round": 0,
+          "prevotes": [
+            "Vote{0:000001E443FD 1262197/00/1(Prevote) 634ADAF1F402 7BB974E1BA40 @ 2019-08-01T11:52:35.513572509Z}",
+            "nil-Vote"
+          ],
+          "prevotes_bit_array": "BA{100:xxxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} 169753436/170151262 = 1.00",
+          "precommits": [
+            "Vote{5:18C78D135C9D 1262197/00/2(Precommit) 634ADAF1F402 8B5EFFFEABCD @ 2019-08-01T11:52:36.25600005Z}",
+            "nil-Vote"
+          ],
+          "precommits_bit_array": "BA{100:xxxxxx_xxxxx_xxxx_x_xxx_xx_xx_xx__x_x_x__xxxxxxxxxxxxxx_xxxx_xx_xxxxxx_xxxxxxxx_xxxx_xxx_x_xxxx__xxx} 118726247/170151262 = 0.70"
+        }
+      ],
+      "proposer": {
+        "address": "D540AB022088612AC74B287D076DBFBC4A377A2E",
+        "index": 0
+      }
+    }
+  }
+}
+```
+
+---
+
+### `consensus_params`
+
+> Retrieves consensus parameters.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block commit info is to be returned.
+
+#### Returns
+
+Consensus parameters results.
+
+#### Request parameters
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "consensus_params",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/consensus_params?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "block_height": "1",
+    "consensus_params": {
+      "block": {
+        "max_bytes": "22020096",
+        "max_gas": "1000",
+        "time_iota_ms": "1000"
+      },
+      "evidence": {
+        "max_age": "100000"
+      },
+      "validator": {
+        "pub_key_types": [
+          "ed25519"
+        ]
+      }
+    }
+  }
+}
+```
+
+---
+
+### `unconfirmed_txs`
+
+> Retrieves the list of unconfirmed transactions.
+
+#### Parameters
+<br/>
+
+  * `limit` (integer; default: 30; max: 100): the maximum number of unconfirmed transactions to return.
+
+#### Returns
+
+The list of unconfirmed transactions.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "unconfirmed_txs",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/unconfirmed_txs?limit=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "n_txs": "82",
+    "total": "82",
+    "total_bytes": "19974",
+    "txs": [
+      "gAPwYl3uCjCMTXENChSMnIkb5ZpYHBKIZqecFEV2tuZr7xIUA75/FmYq9WymsOBJ0XSJ8yV8zmQKMIxNcQ0KFIyciRvlmlgcEohmp5wURXa25mvvEhQbrvwbvlNiT+Yjr86G+YQNx7kRVgowjE1xDQoUjJyJG+WaWBwSiGannBRFdrbma+8SFK2m+1oxgILuQLO55n8mWfnbIzyPCjCMTXENChSMnIkb5ZpYHBKIZqecFEV2tuZr7xIUQNGfkmhTNMis4j+dyMDIWXdIPiYKMIxNcQ0KFIyciRvlmlgcEohmp5wURXa25mvvEhS8sL0D0wwgGCItQwVowak5YB38KRIUCg4KBXVhdG9tEgUxMDA1NBDoxRgaagom61rphyECn8x7emhhKdRCB2io7aS/6Cpuq5NbVqbODmqOT3jWw6kSQKUresk+d+Gw0BhjiggTsu8+1voW+VlDCQ1GRYnMaFOHXhyFv7BCLhFWxLxHSAYT8a5XqoMayosZf9mANKdXArA="
+    ]
+  }
+}
+```
+
+---
+
+### `num_unconfirmed_txs`
+
+> Retrieves data on unconfirmed transactions.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+The status of unconfirmed transactions.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "num_unconfirmed_txs",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/num_unconfirmed_txs
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "n_txs": "31",
+    "total": "82",
+    "total_bytes": "19974"
+  }
+}
+```
+
+---
+
+### `tx_search`
+
+> Searches for transactions with their results.
+
+#### Parameters
+<br/>
+
+  * `query` (string; required): query is a string, which has a form: "condition AND condition ..." (no OR at the moment). condition has a form: "key operation operand". key is a string with a restricted set of possible symbols ( \t\n\r\()"'=>< are not allowed). operation can be `=`, `<`, `<=`, `>`, `>=`, `CONTAINS`. An operand can be a string (escaped with single quotes), number, date, or time.
+  * `prove` (boolean; default: false): adds proofs of the transactions inclusion in the block.
+  * `page` (integer; default: 1): a page number (1-based).
+  * `per_page` (integer; default: 30, max: 100): a number of entries per page.
+  * `order_by` (string; default: asc): the order in which transactions are sorted (`asc` or `desc`), by height & index. If empty, default sorting still applies.
+  * `match_events` (boolean; default: false): match attributes in query within events, in addition to the height and txhash.
+
+#### Returns
+
+The list of unconfirmed transactions.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "tx_search",
+      "params": ["4D2000", true, "1", "30", "asc"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/tx_search?query=tx.height%4D2000&prove=true&page=1&per_page=30&order_by=asc
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "txs": [
+      {
+        "hash": "D70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED",
+        "height": "1000",
+        "index": 0,
+        "tx_result": {
+          "log": "[{\"msg_index\":\"0\",\"success\":true,\"log\":\"\"}]",
+          "gas_wanted": "200000",
+          "gas_used": "28596",
+          "tags": {
+            "key": "YWN0aW9u",
+            "value": "c2VuZA==",
+            "index": false
+          }
+        },
+        "tx": "5wHwYl3uCkaoo2GaChQmSIu8hxpJxLcCuIi8fiHN4TMwrRIU/Af1cEG7Rcs/6LjTl7YjRSymJfYaFAoFdWF0b20SCzE0OTk5OTk1MDAwEhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAwswBShaB1wkZBctLIhYqBC3JrAI28XGzxP+rVEticGEEkAc+khTkKL9CDE47aDvjEHvUNt+izJfT4KVF2v2JkC+bmlH9K08q3PqHeMI9Z5up+XMusnTqlP985KF+SI5J3ZOIhhNYWRlIGJ5IENpcmNsZSB3aXRoIGxvdmU=",
+        "proof": {
+          "RootHash": "72FE6BF6D4109105357AECE0A82E99D0F6288854D16D8767C5E72C57F876A14D",
+          "Data": "5wHwYl3uCkaoo2GaChQmSIu8hxpJxLcCuIi8fiHN4TMwrRIU/Af1cEG7Rcs/6LjTl7YjRSymJfYaFAoFdWF0b20SCzE0OTk5OTk1MDAwEhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAwswBShaB1wkZBctLIhYqBC3JrAI28XGzxP+rVEticGEEkAc+khTkKL9CDE47aDvjEHvUNt+izJfT4KVF2v2JkC+bmlH9K08q3PqHeMI9Z5up+XMusnTqlP985KF+SI5J3ZOIhhNYWRlIGJ5IENpcmNsZSB3aXRoIGxvdmU=",
+          "Proof": {
+            "total": "2",
+            "index": "0",
+            "leaf_hash": "eoJxKCzF3m72Xiwb/Q43vJ37/2Sx8sfNS9JKJohlsYI=",
+            "aunts": [
+              "eWb+HG/eMmukrQj4vNGyFYb3nKQncAWacq4HF5eFzDY="
+            ]
+          }
+        }
+      }
+    ],
+    "total_count": "2"
+  }
+}
+```
+
+---
+
+### `block_search`
+
+> Searches for blocks by `BeginBlock` and `EndBlock` events.
+
+#### Parameters
+<br/>
+
+  * `query` (string; required): query is a string, which has a form: "condition AND condition ..." (no OR at the moment). condition has a form: "key operation operand". key is a string with a restricted set of possible symbols ( \t\n\r\()"'=>< are not allowed). operation can be `=`, `<`, `<=`, `>`, `>=`, `CONTAINS`. An operand can be a string (escaped with single quotes), number, date, or time.
+  * `page` (integer; default: 1): a page number (1-based).
+  * `per_page` (integer; default: 30, max: 100): a number of entries per page.
+  * `order_by` (string; default: asc): the order in which transactions are sorted (`asc` or `desc`), by height & index. If empty, default sorting still applies.
+  * `match_events` (boolean; default: false): match attributes in query within events, in addition to the height.
+
+#### Returns
+
+The list of paginated blocks matching the search criteria.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block_search",
+      "params": ["4D2000", "1", "30", "asc"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/block_search?query=block.height%4D2000&page=1&per_page=30&order_by=asc
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "blocks": [
+      {
+        "block_id": {
+          "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+          "parts": {
+            "total": 1,
+            "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        },
+        "block": {
+          "header": {
+            "version": {
+              "block": "10",
+              "app": "0"
+            },
+            "chain_id": "cosmoshub-2",
+            "height": "12",
+            "time": "2019-04-22T17:01:51.701356223Z",
+            "last_block_id": {
+              "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+              "parts": {
+                "total": 1,
+                "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+              }
+            },
+            "last_commit_hash": "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812",
+            "data_hash": "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73",
+            "validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+            "next_validators_hash": "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0",
+            "consensus_hash": "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8",
+            "app_hash": "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C",
+            "last_results_hash": "",
+            "evidence_hash": "",
+            "proposer_address": "D540AB022088612AC74B287D076DBFBC4A377A2E"
+          },
+          "data": [
+            "yQHwYl3uCkKoo2GaChRnd+THLQ2RM87nEZrE19910Z28ABIUWW/t8AtIMwcyU0sT32RcMDI9GF0aEAoFdWF0b20SBzEwMDAwMDASEwoNCgV1YXRvbRIEMzEwMRCd8gEaagom61rphyEDoJPxlcjRoNDtZ9xMdvs+lRzFaHe2dl2P5R2yVCWrsHISQKkqX5H1zXAIJuC57yw0Yb03Fwy75VRip0ZBtLiYsUqkOsPUoQZAhDNP+6LY+RUwz/nVzedkF0S29NZ32QXdGv0="
+          ],
+          "evidence": [
+            {
+              "type": "string",
+              "height": 0,
+              "time": 0,
+              "total_voting_power": 0,
+              "validator": {
+                "pub_key": {
+                  "type": "tendermint/PubKeyEd25519",
+                  "value": "A6DoBUypNtUAyEHWtQ9bFjfNg8Bo9CrnkUGl6k6OHN4="
+                },
+                "voting_power": 0,
+                "address": "string"
+              }
+            }
+          ],
+          "last_commit": {
+            "height": 0,
+            "round": 0,
+            "block_id": {
+              "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+              "parts": {
+                "total": 1,
+                "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+              }
+            },
+            "signatures": [
+              {
+                "type": 2,
+                "height": "1262085",
+                "round": 0,
+                "block_id": {
+                  "hash": "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7",
+                  "parts": {
+                    "total": 1,
+                    "hash": "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+                  }
+                },
+                "timestamp": "2019-08-01T11:39:38.867269833Z",
+                "validator_address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
+                "validator_index": 0,
+                "signature": "DBchvucTzAUEJnGYpNvMdqLhBAHG4Px8BsOBB3J3mAFCLGeuG7uJqy+nVngKzZdPhPi8RhmE/xcw/M9DOJjEDg=="
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "total_count": 2
+  }
+}
+```
+
+---
+
+### `tx`
+
+> Retrieves a transaction by hash.
+
+#### Parameters
+<br/>
+
+  * `hash` (string; required): a hash of a transaction to retrieve.
+  * `prove` (boolean; default: false): adds proofs of the transaction's inclusion in the block.
+
+#### Returns
+
+Transaction info.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "tx",
+      "params": ["0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED", true],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/tx?hash=0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED&prove=true
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "hash": "D70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED",
+    "height": "1000",
+    "index": 0,
+    "tx_result": {
+      "log": "[{\"msg_index\":\"0\",\"success\":true,\"log\":\"\"}]",
+      "gas_wanted": "200000",
+      "gas_used": "28596",
+      "tags": [
+        {
+          "key": "YWN0aW9u",
+          "value": "c2VuZA==",
+          "index": false
+        }
+      ]
+    },
+    "tx": "5wHwYl3uCkaoo2GaChQmSIu8hxpJxLcCuIi8fiHN4TMwrRIU/Af1cEG7Rcs/6LjTl7YjRSymJfYaFAoFdWF0b20SCzE0OTk5OTk1MDAwEhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAwswBShaB1wkZBctLIhYqBC3JrAI28XGzxP+rVEticGEEkAc+khTkKL9CDE47aDvjEHvUNt+izJfT4KVF2v2JkC+bmlH9K08q3PqHeMI9Z5up+XMusnTqlP985KF+SI5J3ZOIhhNYWRlIGJ5IENpcmNsZSB3aXRoIGxvdmU="
+  }
+}
+```
+
+---
+
+## Transactions
+
+### `broadcast_tx_sync`
+
+> Returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
+
+If you want to be sure that the transaction is included in a block, you can subscribe for the result using JSON-RPC via a websocket. See https://docs.cometbft.com/v0.34/core/subscription.html If you haven't received anything after a couple of blocks, resend it. If the same happens again, send it to some other node. A few reasons why it could happen:
+
+  1. A malicious node drops or pretends it has committed your tx.
+  2. A malicious proposer (not necessary the one you're communicating with) drops transactions, which might become valid in the future (https://github.com/tendermint/tendermint/issues/3322).
+
+Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#formatting) for formatting/encoding rules.
+
+### Parameters
+<br/>
+
+  * `tx` (string; required): the transaction.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "broadcast_tx_sync",
+      "params": ["456"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/broadcast_tx_sync?tx=456
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "code": "0",
+    "data": "",
+    "log": "",
+    "codespace": "ibc",
+    "hash": "0D33F2F03A5234F38706E43004489E061AC40A2E"
+  },
+  "error": ""
+}
+```
+
+---
+
+### `broadcast_tx_async`
+
+> Returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
+
+If you want to be sure that the transaction is included in a block, you can subscribe for the result using JSON-RPC via a websocket. See https://docs.cometbft.com/v0.34/core/subscription.html If you haven't received anything after a couple of blocks, resend it. If the same happens again, send it to some other node. A few reasons why it could happen:
+
+  1. A malicious node drops or pretends it has committed your tx.
+  2. A malicious proposer (not necessary the one you're communicating with) drops transactions, which might become valid in the future (https://github.com/tendermint/tendermint/issues/3322).
+  3. A node is offline.
+
+Please refer to [CometBFT docs](https://docs.cometbft.com/v0.34/core/using-cometbft.html#formatting) for formatting/encoding rules.
+
+#### Parameters
+<br/>
+
+  * `tx` (string; required): the transaction.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "broadcast_tx_async",
+      "params": ["123"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/broadcast_tx_async?tx=123
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "code": "0",
+    "data": "",
+    "log": "",
+    "codespace": "ibc",
+    "hash": "0D33F2F03A5234F38706E43004489E061AC40A2E"
+  },
+  "error": ""
+}
+```
+
+---
+
+### `broadcast_tx_commit`
+
+> Returns with the responses from `CheckTx` and `DeliverTx`.
+
+<Callout type="warning">
+Use only for testing and development. In production, use `BroadcastTxSync` or `BroadcastTxAsync`. You can subscribe for the transaction result using JSON-RPC via a websocket (see [CometBFT docs](https://docs.cometbft.com/v0.34/core/subscription.html)).
+</Callout>
+
+<Callout type="tip">
+CONTRACT: only returns error if `mempool.CheckTx()` errs or if we timeout waiting for tx to commit.
+If `CheckTx` or `DeliverTx` fails, no error will be returned, but the result will contain a non-OK ABCI code.
+Please refer to [CometBFT docs](https://docs.cometbft.com/v0.34/core/using-cometbft.html#formatting) for formatting/encoding rules.
+</Callout>
+
+#### Parameters
+<br/>
+
+  * `tx` (string; required): the transaction.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "broadcast_tx_commit",
+      "params": ["785"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/broadcast_tx_commit?tx=785
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "error": "",
+  "result": {
+    "height": "26682",
+    "hash": "75CA0F856A4DA078FC4911580360E70CEFB2EBEE",
+    "deliver_tx": {
+      "log": "",
+      "data": "",
+      "code": "0"
+    },
+    "check_tx": {
+      "log": "",
+      "data": "",
+      "code": "0"
+    }
+  },
+  "id": 0,
+  "jsonrpc": "2.0"
+}
+```
+
+---
+
+### `check_tx`
+
+> Checks the transaction without executing it.
+
+The transaction won't be added to the mempool.
+
+Please refer to [CometBFT docs](https://docs.cometbft.com/v0.34/core/using-cometbft.html#formatting) for formatting/encoding rules.
+
+#### Parameters
+<br/>
+
+  * `tx` (string; required): the transaction.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "check_tx",
+      "params": ["785"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/check_tx?tx=785
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "error": "",
+  "result": {
+    "code": "0",
+    "data": "",
+    "log": "",
+    "info": "",
+    "gas_wanted": "1",
+    "gas_used": "0",
+    "events": [
+      {
+        "type": "app",
+        "attributes": [
+          {
+            "key": "YWN0aW9u",
+            "value": "c2VuZA==",
+            "index": false
+          }
+        ]
+      }
+    ],
+    "codespace": "bank"
+  },
+  "id": 0,
+  "jsonrpc": "2.0"
+}
+```
+
+---
+
+## ABCI
+
+### `abci_info`
+
+> Retrieves application info.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+Application info.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "abci_info",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/abci_info
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "response": {
+            "data": "data-sample",
+            "version": "1.6.1",
+            "last_block_height": "7690381",
+            "last_block_app_hash": "J1tJC9R3q3cNzkDcI7ipyi9NuZ8XUVbMyy7B42TPWuc="
+        }
+    }
+}
+```
+
+---
+
+### `abci_query`
+
+> Queries the application for particular information.
+
+#### Parameters
+<br/>
+
+  * `path` (string; required): a path to the data ("/a/b/c").
+  * `data` (string; required): the data.
+  * `height` (integer; default: 0): the height (0 means latest).
+  * `prove` (boolean; default: false): adds proofs of the transactions inclusion in the block.
+
+#### Returns
+
+Particular info according to the query submitted.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/allora_testnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "abci_query",
+      "params": ["a/b/c", "the_data", "1", true],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/allora_testnet/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "error": "",
+  "result": {
+    "response": {
+      "log": "exists",
+      "height": "0",
+      "proof": "010114FED0DAD959F36091AD761C922ABA3CBF1D8349990101020103011406AA2262E2F448242DF2C2607C3CDC705313EE3B0001149D16177BC71E445476174622EA559715C293740C",
+      "value": "61626364",
+      "key": "61626364",
+      "index": "-1",
+      "code": "0"
+    }
+  },
+  "id": 0,
+  "jsonrpc": "2.0"
+}
+```
+
+---
+
+## Cosmos REST methods
+
+**Query**:
+
+  * [Auth methods](/rpc-service/chains/chains-api/allora/#auth-methods)
+  * [Bank methods](/rpc-service/chains/chains-api/allora/#bank-methods)
+  * [Distribution methods](/rpc-service/chains/chains-api/allora/#distribution-methods)
+  * [Evidence methods](/rpc-service/chains/chains-api/allora/#evidence-methods)
+  * [Gov methods](/rpc-service/chains/chains-api/allora/#gov-methods)
+  * [Mint methods](/rpc-service/chains/chains-api/allora/#mint-methods)
+  * [Slashing methods](/rpc-service/chains/chains-api/allora/#slashing-methods)
+  * [Staking methods](/rpc-service/chains/chains-api/allora/#staking-methods)
+  * [Upgrade methods](/rpc-service/chains/chains-api/allora/#upgrade-methods)
+  * [Ibc core methods](/rpc-service/chains/chains-api/allora/#ibc-core-methods)
+  * [Ibc applications methods](/rpc-service/chains/chains-api/allora/#ibc-applications-methods)
+
+**Service**:
+
+  * [Tx methods](/rpc-service/chains/chains-api/allora/#tx-methods)
+
+### Auth methods
+
+### `/cosmos/auth/v1beta1/accounts/{address}`
+
+> Retrieves account details based on address.
+
+#### Parameters
+
+  * `address` (string; required): an address to query for account details.
+
+#### Returns
+
+Account details.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/auth/v1beta1/accounts/{address}
+```
+
+#### Response example
+
+```json
+{
+  "account": {
+    "type_url": "string",
+    "value": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/auth/v1beta1/params`
+
+> Retrieves all parameters.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Parameters.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/auth/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "max_memo_characters": "string",
+    "tx_sig_limit": "string",
+    "tx_size_cost_per_byte": "string",
+    "sig_verify_cost_ed25519": "string",
+    "sig_verify_cost_secp256k1": "string"
+  }
+}
+```
+
+---
+
+### Bank methods
+
+### `/cosmos/bank/v1beta1/balances/{address}`
+
+> Retrieves the balance of all coins for a single account.
+
+#### Parameters
+
+  * `address`(string; required): an address to query balances for.
+  * `pagination.key` (string, byte): value returned in `PageResponse.next_key` to begin querying the next page most efficiently. Only one of offset or key should be set.
+  * `pagination.offset` (string, uint64): numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
+  * `pagination.limit` (string, uint64): total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. `count_total` is only respected when `offset` is used, it is ignored when `key` is set.
+
+#### Returns
+
+Balance of all coins for a single account.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/balances/{address}
+```
+
+#### Response example
+
+```json
+{
+  "balances": [
+    {
+      "denom": "string",
+      "amount": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+### `/cosmos/bank/v1beta1/balances/{address}/{denom}`
+
+> Retrieves balance of a single coin for a single account.
+
+#### Parameters
+
+  * `address` (string; required): an address to query balances for.
+  * `denom` (string; required): a coin denom to query balances for.
+
+#### Returns
+
+Balance of the specific coin for a single account.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/balances/{address}/{denom}
+```
+
+#### Response example
+
+```shell
+{
+  "balance": {
+    "denom": "string",
+    "amount": "string"
+  }
+}
+```
+
+### `/cosmos/bank/v1beta1/params`
+
+> Retrieves the parameters of x/bank module.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Parameters of x/bank module.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "send_enabled": [
+      {
+        "denom": "string",
+        "enabled": true
+      }
+    ],
+    "default_send_enabled": true
+  }
+}
+```
+
+---
+
+### `/cosmos/bank/v1beta1/supply`
+
+> Retrieves the total supply of all coins.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Supply of all coins.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/bank/v1beta1/supply
+```
+
+#### Response example
+
+```json
+{
+  "supply": [
+    {
+      "denom": "string",
+      "amount": "string"
+    }
+  ]
+}
+```
+
+---
+
+### Distribution methods
+
+### `/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards`
+
+> Retrieves the total rewards accrued by each validator.
+
+#### Parameters
+
+  * `delegator_address` (string; required): a delegator address to query for.
+
+#### Returns
+
+Rewards from each validator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
+```
+
+#### Response example
+
+```shell
+{
+  "rewards": [
+    {
+      "validator_address": "string",
+      "reward": [
+        {
+          "denom": "string",
+          "amount": "string"
+        }
+      ]
+    }
+  ],
+  "total": [
+    {
+      "denom": "string",
+      "amount": "string"
+    }
+  ]
+}
+```
+
+---
+
+### `/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}`
+
+> Retrieves the total rewards accrued by a delegation.
+
+#### Parameters
+
+  * `delegator_address` (string; required): a delegator address to query for.
+  * `validator_address` (string; required): a validator address to query for.
+
+#### Returns
+
+Total rewards accrued by a delegation for a specific validator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
+```
+
+#### Response example
+
+```json
+{
+  "rewards": [
+    {
+      "denom": "string",
+      "amount": "string"
+    }
+  ]
+}
+```
+
+---
+
+### `/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators`
+
+> Retrieves the validators of a delegator.
+
+#### Parameters
+
+  * `delegator_address` (string; required): a delegator address to query for.
+
+#### Returns
+
+Validators for a given delegator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
+```
+
+#### Response example
+
+```json
+{
+  "validators": [
+    "string"
+  ]
+}
+```
+
+---
+
+### `/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address`
+
+> Retrieves withdraw address of a delegator.
+
+#### Parameters
+
+  * `delegator_address` (string, required): a delegator address to query for.
+
+#### Returns
+
+Withdraw address of delegator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
+```
+
+#### Response example
+
+```json
+{
+  "withdraw_address": "string"
+}
+```
+
+---
+
+### `/cosmos/distribution/v1beta1/params`
+
+> Retrieves params of the distribution module.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Params of the distribution module.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "community_tax": "string",
+    "base_proposer_reward": "string",
+    "bonus_proposer_reward": "string",
+    "withdraw_addr_enabled": true
+  }
+}
+```
+
+---
+
+### `/cosmos/distribution/v1beta1/validators/{validator_address}/commission`
+
+> Retrieves accumulated commission for a validator.
+
+#### Parameters
+
+  * `validator_address` (string; required): a validator address to query for.
+
+#### Returns
+
+Total commission for a validator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/commission
+```
+
+#### Response example
+
+```json
+{
+  "commission": {
+    "commission": [
+      {
+        "denom": "string",
+        "amount": "string"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards`
+
+> Retrieves the rewards of a validator address.
+
+#### Parameters
+
+  * `validator_address` (string; required): validator address to query for.
+
+#### Returns
+
+Total outstanding rewards for a validator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
+```
+
+#### Response example
+
+```json
+{
+  "rewards": {
+    "rewards": [
+      {
+        "denom": "string",
+        "amount": "string"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `/cosmos/distribution/v1beta1/validators/{validator_address}/slashes`
+
+> Retrieves slash events of a validator.
+
+#### Parameters
+
+  * `validator_address` (string; required): a validator address to query for.
+  * `starting_height` (string, uint64): the optional starting height to query the hashes
+  * `ending_height` (string, uint64): the optional ending height to query the hashes
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of
+`offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+All slash events of a validator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/distribution/v1beta1/validators/{validator_address}/slashes
+```
+
+#### Response example
+
+```json
+{
+  "slashes": [
+    {
+      "validator_period": "string",
+      "fraction": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### Evidence methods
+
+### `/cosmos/evidence/v1beta1/evidence`
+
+> Retrieves all evidence.
+
+#### Parameters
+
+  * `pagination.key` (string, byte): a value returned in PageResponse.next_key to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of
+`offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+All evidence.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/evidence/v1beta1/evidence
+```
+
+#### Response example
+
+```json
+{
+  "evidence": [
+    {
+      "type_url": "string",
+      "value": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/evidence/v1beta1/evidence/{evidence_hash}`
+
+> Retrieves evidence based on evidence hash.
+
+#### Parameters
+
+  * `evidence_hash` (string, byte): the hash of the requested evidence.
+
+#### Returns
+
+Evidence for a given hash.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/evidence/v1beta1/evidence/{evidence_hash}
+```
+
+#### Response example
+
+```json
+{
+  "evidence": {
+    "type_url": "string",
+    "value": "string"
+  }
+}
+```
+
+---
+
+### Gov methods
+
+### `/cosmos/gov/v1beta1/params/{params_type}`
+
+> Retrieves all parameters of the gov module.
+
+#### Parameters
+
+  * `params_type` (string, required): parameters to query for; possible values: `voting`, `tallying`, or `deposit`.
+
+#### Returns
+
+Parameters of the gov module.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/params/{params_type}
+```
+
+#### Response example
+
+```json
+{
+  "voting_params": {
+    "voting_period": "string"
+  },
+  "deposit_params": {
+    "min_deposit": [
+      {
+        "denom": "string",
+        "amount": "string"
+      }
+    ],
+    "max_deposit_period": "string"
+  },
+  "tally_params": {
+    "quorum": "string",
+    "threshold": "string",
+    "veto_threshold": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/gov/v1beta1/proposals`
+
+> Retrieves all proposals based on given status.
+
+#### Parameters
+
+  * `proposal_status`: defines status of the proposals. See below for different options. Default value = PROPOSAL_STATUS_UNSPECIFIED. Other statuses:
+    * `PROPOSAL_STATUS_UNSPECIFIED`: default proposal status.
+    * `PROPOSAL_STATUS_DEPOSIT_PERIOD`: defines a proposal status during the deposit period.
+    * `PROPOSAL_STATUS_VOTING_PERIOD`: defines a proposal status during the voting period.
+    * `PROPOSAL_STATUS_PASSED`: defines a proposal status of a proposal that has passed.
+    * `PROPOSAL_STATUS_REJECTED`: defines a proposal status of a proposal that has been rejected.
+    * `PROPOSAL_STATUS_FAILED`: defines a proposal status of a proposal that has failed.
+  * `voter` (string): defines the voter address for the proposals.
+  * `depositor` (string): defines the deposit addresses from the proposals.
+  * `pagination.key` (string, byte): a value returned in PageResponse.next_key to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of
+`offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Proposals based on given status.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals
+```
+
+#### Response example
+
+```json
+{
+  "proposals": [
+    {
+      "proposal_id": "string",
+      "content": {
+        "type_url": "string",
+        "value": "string"
+      },
+      "status": "PROPOSAL_STATUS_UNSPECIFIED",
+      "final_tally_result": {
+        "yes": "string",
+        "abstain": "string",
+        "no": "string",
+        "no_with_veto": "string"
+      },
+      "submit_time": "2021-01-19T03:03:05.413Z",
+      "deposit_end_time": "2021-01-19T03:03:05.413Z",
+      "total_deposit": [
+        {
+          "denom": "string",
+          "amount": "string"
+        }
+      ],
+      "voting_start_time": "2021-01-19T03:03:05.413Z",
+      "voting_end_time": "2021-01-19T03:03:05.413Z"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/gov/v1beta1/proposals/{proposal_id}`
+
+> Retrieves proposal details based on `ProposalID`.
+
+#### Parameters
+
+  * `proposal_id` (string; required): a unique id of the proposal.
+
+#### Returns
+
+Proposal details based on proposalID.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}
+```
+
+#### Response example
+
+```json
+{
+  "proposal": {
+    "proposal_id": "string",
+    "content": {
+      "type_url": "string",
+      "value": "string"
+    },
+    "status": "PROPOSAL_STATUS_UNSPECIFIED",
+    "final_tally_result": {
+      "yes": "string",
+      "abstain": "string",
+      "no": "string",
+      "no_with_veto": "string"
+    },
+    "submit_time": "2021-01-19T03:30:27.807Z",
+    "deposit_end_time": "2021-01-19T03:30:27.807Z",
+    "total_deposit": [
+      {
+        "denom": "string",
+        "amount": "string"
+      }
+    ],
+    "voting_start_time": "2021-01-19T03:30:27.807Z",
+    "voting_end_time": "2021-01-19T03:30:27.807Z"
+  }
+}
+```
+
+---
+
+### `/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits`
+
+> Retrieves all deposits of a single proposal.
+
+#### Parameters
+
+  * `proposal_id` (string, uint64; required): a unique id of the proposal.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of
+`offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+All deposits based on a proposalID.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
+```
+
+#### Response example
+
+```json
+{
+  "deposits": [
+    {
+      "proposal_id": "string",
+      "depositor": "string",
+      "amount": [
+        {
+          "denom": "string",
+          "amount": "string"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}`
+
+> Retrieves single deposit information based `proposalID` and `depositAddr`.
+
+#### Parameters
+
+  * `proposal_id` (string, uint64): a required unique id of the proposal.
+  * `depositor` (string): the deposit addresses from the proposals.
+
+#### Returns
+
+Single deposit based on a proposalID.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
+```
+
+#### Response example
+
+```json
+{
+  "deposit": {
+    "proposal_id": "string",
+    "depositor": "string",
+    "amount": [
+      {
+        "denom": "string",
+        "amount": "string"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `/cosmos/gov/v1beta1/proposals/{proposal_id}/tally`
+
+> Retrieves the tally of a proposal vote.
+
+#### Parameters
+
+  * `proposal_id` (string, uint64): a required unique ID of the proposal.
+
+#### Returns
+
+Tally of proposal vote.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/tally
+```
+
+#### Response example
+
+```json
+{
+  "tally": {
+    "yes": "string",
+    "abstain": "string",
+    "no": "string",
+    "no_with_veto": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/gov/v1beta1/proposals/{proposal_id}/votes`
+
+> Retrieves the votes of a given proposal.
+
+#### Parameters
+
+  * `proposal_id` (string($uint64), required): a unique id of the proposal
+  * `pagination.key` (string, byte): a value returned in PageResponse.next_key to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of
+`offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Votes for a given proposal.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/votes
+```
+
+#### Response example
+
+```json
+{
+  "votes": [
+    {
+      "proposal_id": "string",
+      "voter": "string",
+      "option": "VOTE_OPTION_UNSPECIFIED"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}`
+
+> Retrieves voted information based on `proposalID` and `voterAddr`.
+
+#### Parameters
+
+  * `proposal_id` (string, uint64; required): a unique ID of the proposal.
+  * `voter` (string): the other address for the proposals.
+
+#### Returns
+
+Votes for a given proposal.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
+```
+
+#### Response example
+
+```json
+{
+  "vote": {
+    "proposal_id": "string",
+    "voter": "string",
+    "option": "VOTE_OPTION_UNSPECIFIED"
+  }
+}
+```
+
+---
+
+### Mint methods
+
+### `/cosmos/mint/v1beta1/annual_provisions`
+
+> Retrieves the current minting annual provisions value.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Value of minting annual provisions.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/mint/v1beta1/annual_provisions
+```
+
+#### Response example
+
+```json
+{
+  "error": "string",
+  "code": 0,
+  "message": "string",
+  "details": [
+    {
+      "type_url": "string",
+      "value": "string"
+    }
+  ]
+}
+```
+
+---
+
+### `/cosmos/mint/v1beta1/inflation`
+
+> Retrieves the current minting inflation value.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Current minting inflation value.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/mint/v1beta1/inflation
+```
+
+#### Response example
+
+```json
+{
+  "inflation": "string"
+}
+```
+
+---
+
+### `/cosmos/mint/v1beta1/params`
+
+> Retrieves the total set of minting parameters
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Total set of minting params.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/mint/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "mint_denom": "string",
+    "inflation_rate_change": "string",
+    "inflation_max": "string",
+    "inflation_min": "string",
+    "goal_bonded": "string",
+    "blocks_per_year": "string"
+  }
+}
+```
+
+---
+
+### Slashing methods
+
+### `/cosmos/slashing/v1beta1/params`
+
+> Retrieves the slashing module parameters.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+The parameters of a slashing module.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/slashing/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "signed_blocks_window": "string",
+    "min_signed_per_window": "string",
+    "downtime_jail_duration": "string",
+    "slash_fraction_double_sign": "string",
+    "slash_fraction_downtime": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/slashing/v1beta1/signing_infos`
+
+> Retrieves signing info of all validators.
+
+#### Parameters
+
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+The signing info of all validators.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/slashing/v1beta1/signing_infos
+```
+
+#### Response example
+
+```json
+{
+  "info": [
+    {
+      "address": "string",
+      "start_height": "string",
+      "index_offset": "string",
+      "jailed_until": "2021-01-19T06:33:32.230Z",
+      "tombstoned": true,
+      "missed_blocks_counter": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/slashing/v1beta1/signing_infos/{cons_address}`
+
+> Retrieves the signing info of given cons address.
+
+#### Parameters
+
+  * `cons_address` (string, required): an address to query signing info for.
+
+#### Returns
+
+The signing info of all specified cons address.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/slashing/v1beta1/signing_infos/{cons_address}
+```
+
+#### Response example
+
+```json
+{
+  "val_signing_info": {
+    "address": "string",
+    "start_height": "string",
+    "index_offset": "string",
+    "jailed_until": "2021-01-19T06:34:40.106Z",
+    "tombstoned": true,
+    "missed_blocks_counter": "string"
+  }
+}
+```
+
+---
+
+### Staking methods
+
+### `/cosmos/staking/v1beta1/delegations/{delegator_addr}`
+
+> Retrieves all delegations of a given delegator address.
+
+#### Parameters
+
+  * `delegator_addr` (string, required): a delegator address to query for.
+  * `pagination.key` (string, byte): a value returned in PageResponse.next_key to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Delegations from a specific delegator address.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegations/{delegator_addr}
+```
+
+#### Response example
+
+```json
+{
+  "delegation_responses": [
+    {
+      "delegation": {
+        "delegator_address": "string",
+        "validator_address": "string",
+        "shares": "string"
+      },
+      "balance": {
+        "denom": "string",
+        "amount": "string"
+      }
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations`
+
+> Retrieves the redelegations of a given address.
+
+#### Parameters
+
+  * `delegator_addr` (string, required): a delegator address to query for.
+  * `src_validator_addr` (string): the validator address to redelegate from.
+  * `dst_validator_addr` (string): the validator address to redelegate to.
+  * `pagination.key` (string, byte): a value returned in PageResponse.next_key to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` `string, uint64`: a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Delegations from a specific delegator address.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
+```
+
+#### Response example
+
+```json
+{
+  "redelegation_responses": [
+    {
+      "redelegation": {
+        "delegator_address": "string",
+        "validator_src_address": "string",
+        "validator_dst_address": "string",
+        "entries": [
+          {
+            "creation_height": "string",
+            "completion_time": "2021-01-19T06:58:45.718Z",
+            "initial_balance": "string",
+            "shares_dst": "string"
+          }
+        ]
+      },
+      "entries": [
+        {
+          "redelegation_entry": {
+            "creation_height": "string",
+            "completion_time": "2021-01-19T06:58:45.718Z",
+            "initial_balance": "string",
+            "shares_dst": "string"
+          },
+          "balance": "string"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations`
+
+> Retrieves all unbonding delegations of a given delegator address.
+
+#### Parameters
+
+  * `delegator_addr` (string, required): a delegator address to query for.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Unbonding delegations from a specific delegator address.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
+```
+
+#### Response example
+
+```json
+{
+  "unbonding_responses": [
+    {
+      "delegator_address": "string",
+      "validator_address": "string",
+      "entries": [
+        {
+          "creation_height": "string",
+          "completion_time": "2021-01-19T07:01:25.628Z",
+          "initial_balance": "string",
+          "balance": "string"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators`
+
+> Retrieves all validators info for given delegator address.
+
+#### Parameters
+
+  * `delegator_addr` (string; required): a delegator address to query for.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Validator info for a specific delegator address.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
+```
+
+#### Response example
+
+```json
+{
+  "validators": [
+    {
+      "operator_address": "string",
+      "consensus_pubkey": {
+        "type_url": "string",
+        "value": "string"
+      },
+      "jailed": true,
+      "status": "BOND_STATUS_UNSPECIFIED",
+      "tokens": "string",
+      "delegator_shares": "string",
+      "description": {
+        "moniker": "string",
+        "identity": "string",
+        "website": "string",
+        "security_contact": "string",
+        "details": "string"
+      },
+      "unbonding_height": "string",
+      "unbonding_time": "2021-01-19T07:06:38.006Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "string",
+          "max_rate": "string",
+          "max_change_rate": "string"
+        },
+        "update_time": "2021-01-19T07:06:38.006Z"
+      },
+      "min_self_delegation": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}`
+
+> Retrieves validator info for a given delegator-validator pair.
+
+#### Parameters
+
+  * `delegator_addr` (string; required): a delegator address to query for.
+  * `validator_addr` (string; required): a validator address to query for.
+
+#### Returns
+
+Validator info for a given delegator pair.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
+```
+
+#### Response example
+
+```json
+{
+  "validator": {
+    "operator_address": "string",
+    "consensus_pubkey": {
+      "type_url": "string",
+      "value": "string"
+    },
+    "jailed": true,
+    "status": "BOND_STATUS_UNSPECIFIED",
+    "tokens": "string",
+    "delegator_shares": "string",
+    "description": {
+      "moniker": "string",
+      "identity": "string",
+      "website": "string",
+      "security_contact": "string",
+      "details": "string"
+    },
+    "unbonding_height": "string",
+    "unbonding_time": "2021-01-19T07:08:34.100Z",
+    "commission": {
+      "commission_rates": {
+        "rate": "string",
+        "max_rate": "string",
+        "max_change_rate": "string"
+      },
+      "update_time": "2021-01-19T07:08:34.100Z"
+    },
+    "min_self_delegation": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/historical_info/{height}`
+
+> Retrieves the historical info for a given height.
+
+#### Parameters
+
+  * `height` (string, int64): defines at which height to query the historical info for.
+
+#### Returns
+
+Historical info for a given height.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/historical_info/{height}
+```
+
+#### Response example
+
+```json
+{
+  "hist": {
+    "header": {
+      "version": {
+        "block": "string",
+        "app": "string"
+      },
+      "chain_id": "string",
+      "height": "string",
+      "time": "2021-01-19T07:13:57.974Z",
+      "last_block_id": {
+        "hash": "string",
+        "part_set_header": {
+          "total": 0,
+          "hash": "string"
+        }
+      },
+      "last_commit_hash": "string",
+      "data_hash": "string",
+      "validators_hash": "string",
+      "next_validators_hash": "string",
+      "consensus_hash": "string",
+      "app_hash": "string",
+      "last_results_hash": "string",
+      "evidence_hash": "string",
+      "proposer_address": "string"
+    },
+    "valset": [
+      {
+        "operator_address": "string",
+        "consensus_pubkey": {
+          "type_url": "string",
+          "value": "string"
+        },
+        "jailed": true,
+        "status": "BOND_STATUS_UNSPECIFIED",
+        "tokens": "string",
+        "delegator_shares": "string",
+        "description": {
+          "moniker": "string",
+          "identity": "string",
+          "website": "string",
+          "security_contact": "string",
+          "details": "string"
+        },
+        "unbonding_height": "string",
+        "unbonding_time": "2021-01-19T07:13:57.974Z",
+        "commission": {
+          "commission_rates": {
+            "rate": "string",
+            "max_rate": "string",
+            "max_change_rate": "string"
+          },
+          "update_time": "2021-01-19T07:13:57.974Z"
+        },
+        "min_self_delegation": "string"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/params`
+
+> Retrieves the staking parameters.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Staking parameters.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "unbonding_time": "string",
+    "max_validators": 0,
+    "max_entries": 0,
+    "historical_entries": 0,
+    "bond_denom": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/pool`
+
+> Retrieves the pool info.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Pool info.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/pool
+```
+
+#### Response example
+
+```json
+{
+  "pool": {
+    "not_bonded_tokens": "string",
+    "bonded_tokens": "string"
+  }
+}
+```
+
+---
+
+### /cosmos/staking/v1beta1/validators
+
+> Retrieves all validators that match the given status.
+
+#### Parameters
+
+  * `status` (string): a status to query validators by.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Validators that match the given status.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators
+```
+
+#### Response example
+
+```json
+{
+  "validators": [
+    {
+      "operator_address": "string",
+      "consensus_pubkey": {
+        "type_url": "string",
+        "value": "string"
+      },
+      "jailed": true,
+      "status": "BOND_STATUS_UNSPECIFIED",
+      "tokens": "string",
+      "delegator_shares": "string",
+      "description": {
+        "moniker": "string",
+        "identity": "string",
+        "website": "string",
+        "security_contact": "string",
+        "details": "string"
+      },
+      "unbonding_height": "string",
+      "unbonding_time": "2021-01-19T07:21:25.914Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "string",
+          "max_rate": "string",
+          "max_change_rate": "string"
+        },
+        "update_time": "2021-01-19T07:21:25.914Z"
+      },
+      "min_self_delegation": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/validators/{validator_addr}`
+
+> Retrieves validator info for a given validator address.
+
+#### Parameters
+
+  * `validator_addr` (string; required): a validator address to query for.
+
+#### Returns
+
+Validator info for a given validator address.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}
+```
+
+#### Response example
+
+```json
+{
+  "validator": {
+    "operator_address": "string",
+    "consensus_pubkey": {
+      "type_url": "string",
+      "value": "string"
+    },
+    "jailed": true,
+    "status": "BOND_STATUS_UNSPECIFIED",
+    "tokens": "string",
+    "delegator_shares": "string",
+    "description": {
+      "moniker": "string",
+      "identity": "string",
+      "website": "string",
+      "security_contact": "string",
+      "details": "string"
+    },
+    "unbonding_height": "string",
+    "unbonding_time": "2021-01-19T07:25:26.679Z",
+    "commission": {
+      "commission_rates": {
+        "rate": "string",
+        "max_rate": "string",
+        "max_change_rate": "string"
+      },
+      "update_time": "2021-01-19T07:25:26.679Z"
+    },
+    "min_self_delegation": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/validators/{validator_addr}/delegations`
+
+> Retrieves delegate info for a given validator.
+
+#### Parameters
+
+  * `validator_addr` (string; required): a validator address to query for.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` `string, uint64`: a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Delegate info for a given validator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations
+```
+
+#### Response example
+
+```json
+{
+  "delegation_responses": [
+    {
+      "delegation": {
+        "delegator_address": "string",
+        "validator_address": "string",
+        "shares": "string"
+      },
+      "balance": {
+        "denom": "string",
+        "amount": "string"
+      }
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}`
+
+> Retrieves delegate info for a given validator-delegator pair.
+
+#### Parameters
+
+  * `validator_addr` (string; required): a validator address to query for.
+  * `delegator_addr` (string; required): a delegator address to query for.
+
+#### Returns
+
+Delegate info for a given validator delegator pair.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
+```
+
+#### Response example
+
+```json
+{
+  "delegation_response": {
+    "delegation": {
+      "delegator_address": "string",
+      "validator_address": "string",
+      "shares": "string"
+    },
+    "balance": {
+      "denom": "string",
+      "amount": "string"
+    }
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation`
+
+> Retrieves unbonding info for a given validator-delegator pair.
+
+#### Parameters
+
+  * `validator_addr` (string; required): a validator address to query for.
+  * `delegator_addr` (string; required): a delegator address to query for.
+
+#### Returns
+
+Unbonding info for a given validator delegator pair.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
+```
+
+#### Response example
+
+```json
+{
+  "unbond": {
+    "delegator_address": "string",
+    "validator_address": "string",
+    "entries": [
+      {
+        "creation_height": "string",
+        "completion_time": "2021-01-19T07:35:28.235Z",
+        "initial_balance": "string",
+        "balance": "string"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations`
+
+> Retrieves unbonding delegations of a validator.
+
+#### Parameters
+
+  * `validator_addr` (string, required): a validator address to query for.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Unbonding info for a given validator.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
+```
+
+#### Response example
+
+```json
+{
+  "unbonding_responses": [
+    {
+      "delegator_address": "string",
+      "validator_address": "string",
+      "entries": [
+        {
+          "creation_height": "string",
+          "completion_time": "2021-01-19T07:37:20.281Z",
+          "initial_balance": "string",
+          "balance": "string"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### Upgrade methods
+
+### `/cosmos/upgrade/v1beta1/applied_plan/{name}`
+
+> Retrieves a previously applied upgrade plan by its name.
+
+#### Parameters
+
+  * `name` (string; required): a name of the applied plan to query for.
+
+#### Returns
+
+Previously applied upgrade plan.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/upgrade/v1beta1/applied_plan/{name}
+```
+
+#### Response example
+
+```json
+{
+  "height": "string"
+}
+```
+
+---
+
+### `/cosmos/upgrade/v1beta1/current_plan`
+
+> Retrieves the current upgrade plan.
+
+#### Parameters
+
+  * `name` (string; required): a name of the applied plan to query for.
+
+#### Returns
+
+Current upgrade plan.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/upgrade/v1beta1/current_plan
+```
+
+#### Response example
+
+```json
+{
+  "plan": {
+    "name": "string",
+    "time": "2021-01-19T07:49:08.875Z",
+    "height": "string",
+    "info": "string",
+    "upgraded_client_state": {
+      "type_url": "string",
+      "value": "string"
+    }
+  }
+}
+```
+
+---
+### `/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}`
+
+> Retrieves the consensus state that will serve as a trusted kernel for the next version of this chain.
+
+It will only be stored at the last height of this chain, not supported with legacy querier.
+
+#### Parameters
+
+  * `last_height` (string, int64): a required last height under which next consensus state is stored.
+
+#### Returns
+
+Consensus state.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
+```
+
+#### Response example
+
+```json
+{
+  "upgraded_consensus_state": {
+    "type_url": "string",
+    "value": "string"
+  }
+}
+```
+
+---
+
+### Ibc core methods
+
+### `/ibc/core/channel/v1beta1/channels`
+
+> Retrieves all the IBC channels of a chain.
+
+#### Parameters
+
+  * `pagination.key` (string, byte): a value returned in PageResponse.next_key to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+IBC channels of a chain.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels
+```
+
+#### Response example
+
+```json
+{
+  "channels": [
+    {
+      "state": "STATE_UNINITIALIZED_UNSPECIFIED",
+      "ordering": "ORDER_NONE_UNSPECIFIED",
+      "counterparty": {
+        "port_id": "string",
+        "channel_id": "string"
+      },
+      "connection_hops": [
+        "string"
+      ],
+      "version": "string",
+      "port_id": "string",
+      "channel_id": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  },
+  "height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}`
+
+> Retrieves an IBC Channel.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+
+#### Returns
+
+IBC channels of a chain.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}
+```
+
+#### Response example
+
+```json
+{
+  "channel": {
+    "state": "STATE_UNINITIALIZED_UNSPECIFIED",
+    "ordering": "ORDER_NONE_UNSPECIFIED",
+    "counterparty": {
+      "port_id": "string",
+      "channel_id": "string"
+    },
+    "connection_hops": [
+      "string"
+    ],
+    "version": "string"
+  },
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/client_state`
+
+> Retrieves the client state for the channel associated with the provided channel identifiers.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+
+#### Returns
+
+Client state.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/client_state
+```
+
+#### Response example
+
+```json
+{
+  "identified_client_state": {
+    "client_id": "string",
+    "client_state": {
+      "type_url": "string",
+      "value": "string"
+    }
+  },
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/consensus_state/revision/{revision_number}/height/{revision_height}`
+
+> Retrieves the consensus state for the channel associated with the provided channel identifiers.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `revision_number` (string, uint64; required): a revision number of the consensus state.
+  * `revision_height` string, uint64; required: a revision height of the consensus state.
+
+#### Returns
+
+Consensus state.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/consensus_state/revision/{revision_number}/height/{revision_height}
+```
+
+#### Response example
+
+```json
+{
+  "consensus_state": {
+    "type_url": "string",
+    "value": "string"
+  },
+  "client_id": "string",
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/next_sequence`
+
+> Retrieves the next receive sequence for a given channel.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+
+#### Returns
+
+Next receive sequence.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/next_sequence
+```
+
+#### Response example
+
+```json
+{
+  "next_sequence_receive": "string",
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_acknowledgements`
+
+> Retrieves all the packet acknowledgements associated with a channel.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Packet acknowledgements.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_acknowledgements
+```
+
+#### Response example
+
+```json
+{
+  "acknowledgements": [
+    {
+      "port_id": "string",
+      "channel_id": "string",
+      "sequence": "string",
+      "data": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  },
+  "height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_acks/{sequence}`
+
+> Retrieves a stored packet acknowledgement hash.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `sequence` (string, uint64): a packet sequence.
+
+#### Returns
+
+Packet acknowledgements.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_acks/{sequence}
+```
+
+#### Response example
+
+```json
+{
+  "acknowledgement": "string",
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments`
+
+> Retrieves all the packet commitments hashes associated with a channel.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Packet commitments.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments
+```
+
+#### Response example
+
+```json
+{
+  "commitments": [
+    {
+      "port_id": "string",
+      "channel_id": "string",
+      "sequence": "string",
+      "data": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  },
+  "height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_ack_sequences}/unreceived_acks`
+
+> Retrieves all the unreceived IBC acknowledgements associated with a channel and sequences.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `packet_ack_sequence` (array[string]): a required list of acknowledgement sequences.
+
+#### Returns
+
+Unreceived IBC acknowledgements.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_ack_sequences}/unreceived_acks
+```
+
+#### Response example
+
+```json
+{
+  "sequences": [
+    "string"
+  ],
+  "height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_commitment_sequences}/unreceived_packets`
+
+> Retrieves all the unreceived IBC packets associated with a channel and sequences.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `packet_commitment_sequences` (array[string]): a list of packet sequences.
+
+#### Returns
+
+Unreceived IBC packets.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_commitment_sequences}/unreceived_packets
+```
+
+#### Response example
+
+```json
+{
+  "sequences": [
+    "string"
+  ],
+  "height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments/{sequence}`
+
+> Retrieves a stored packet commitment hash.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `packet_commitment_sequences` (array[string]): a list of packet sequences.
+
+#### Returns
+
+Packet commitment hash.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_commitments/{sequence}
+```
+
+#### Response example
+
+```json
+{
+  "commitment": "string",
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_receipts/{sequence}`
+
+> Checks whether a given packet sequence has been received on the queried chain.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `port_id` (string; required): a port unique identifier.
+  * `sequence` (string, uint64): a required packet sequence.
+
+#### Returns
+
+Whether the given packet has been received or not.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/channels/{channel_id}/ports/{port_id}/packet_receipts/{sequence}
+```
+
+#### Response example
+
+```json
+{
+  "received": true,
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/channel/v1beta1/connections/{connection}/channels`
+
+> Retrieves all the channels associated with a connection end.
+
+#### Parameters
+
+  * `connection` (string, required): a connection unique identifier.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` string($uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Channels associated with a connection.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/channel/v1beta1/connections/{connection}/channels
+```
+
+#### Response example
+
+```json
+{
+  "channels": [
+    {
+      "state": "STATE_UNINITIALIZED_UNSPECIFIED",
+      "ordering": "ORDER_NONE_UNSPECIFIED",
+      "counterparty": {
+        "port_id": "string",
+        "channel_id": "string"
+      },
+      "connection_hops": [
+        "string"
+      ],
+      "version": "string",
+      "port_id": "string",
+      "channel_id": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  },
+  "height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/client/v1beta1/params`
+
+> Retrieves all parameters of the IBC client.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Params of the IBC client.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/client/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "allowed_clients": [
+      "string"
+    ]
+  }
+}
+```
+
+---
+
+### `/ibc/core/client/v1beta1/client_states`
+
+> Retrieves all the IBC light clients of a chain.
+
+#### Parameters
+
+  * `pagination.key` (string; byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string; uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string; uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+IBC light clients.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/client/v1beta1/client_states
+```
+
+#### Response example
+
+```json
+{
+  "client_states": [
+    {
+      "client_id": "string",
+      "client_state": {
+        "type_url": "string",
+        "value": "string"
+      }
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/client/v1beta1/client_states/{client_id}`
+
+> Retrieves an IBC light client.
+
+#### Parameters
+
+  * `client_id` (string; required): a client state unique identifier.
+
+#### Returns
+
+IBC light client from client_id.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/client/v1beta1/client_states/{client_id}
+```
+
+#### Response example
+
+```json
+{
+  "client_state": {
+    "type_url": "string",
+    "value": "string"
+  },
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/client/v1beta1/consensus_states/{client_id}`
+
+> Retrieves all the consensus state associated with a given client.
+
+#### Parameters
+
+  * `client_id` (string; required): a client unique identifier.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Consensus state associated with given client
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/client/v1beta1/consensus_states/{client_id}
+```
+
+#### Response example
+
+```json
+{
+  "consensus_states": [
+    {
+      "height": {
+        "revision_number": "string",
+        "revision_height": "string"
+      },
+      "consensus_state": {
+        "type_url": "string",
+        "value": "string"
+      }
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/client/v1beta1/consensus_states/{client_id}/revision/{revision_number}/height/{revision_height}`
+
+> Retrieves a consensus state associated with a client state at a given height.
+
+#### Parameters
+
+  * `channel_id` (string; required): a channel unique identifier.
+  * `revision_number` (string, uint64): a required consensus state revision number.
+  * `revision_height`(string, uint64): a required consensus state revision height.
+  * `latest_height` (boolean): overrides the height field and queries the latest stored consensus state.
+
+#### Returns
+
+Consensus state associated with a client state at a given height.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/client/v1beta1/consensus_states/{client_id}/revision/{revision_number}/height/{revision_height}
+```
+
+#### Response example
+
+```json
+{
+  "consensus_state": {
+    "type_url": "string",
+    "value": "string"
+  },
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/connection/v1beta1/client_connections/{client_id}`
+
+> Retrieves the connection paths associated with a client state.
+
+#### Parameters
+
+  * `client_id` (string, required): a client identifier associated with a connection.
+
+#### Returns
+
+Connections paths associated with a client state.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/connection/v1beta1/client_connections/{client_id}
+```
+
+#### Response example
+
+```json
+{
+  "connection_paths": [
+    "string"
+  ],
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/connection/v1beta1/connections`
+
+> Retrieves all the IBC connections of a chain.
+
+#### Parameters
+
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+IBC connections.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/connection/v1beta1/connections
+```
+
+#### Response example
+
+```json
+{
+  "connections": [
+    {
+      "id": "string",
+      "client_id": "string",
+      "versions": [
+        {
+          "identifier": "string",
+          "features": [
+            "string"
+          ]
+        }
+      ],
+      "state": "STATE_UNINITIALIZED_UNSPECIFIED",
+      "counterparty": {
+        "client_id": "string",
+        "connection_id": "string",
+        "prefix": {
+          "key_prefix": "string"
+        }
+      },
+      "delay_period": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  },
+  "height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/connection/v1beta1/connections/{connection_id}`
+
+> Retrieves an IBC connection end.
+
+#### Parameters
+
+  * `connection_id` (string; required): a connection unique identifier.
+
+#### Returns
+
+IBC connections end.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/connection/v1beta1/connections/{connection_id}
+```
+
+#### Response example
+
+```json
+{
+  "connection": {
+    "client_id": "string",
+    "versions": [
+      {
+        "identifier": "string",
+        "features": [
+          "string"
+        ]
+      }
+    ],
+    "state": "STATE_UNINITIALIZED_UNSPECIFIED",
+    "counterparty": {
+      "client_id": "string",
+      "connection_id": "string",
+      "prefix": {
+        "key_prefix": "string"
+      }
+    },
+    "delay_period": "string"
+  },
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/connection/v1beta1/connections/{connection_id}/client_state`
+
+> Retrieves the client state associated with the connection.
+
+#### Parameters
+
+  * `connection_id` (string; required): a connection unique identifier.
+
+#### Returns
+
+Client state.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/connection/v1beta1/connections/{connection_id}/client_state
+```
+
+#### Response example
+
+```json
+{
+  "identified_client_state": {
+    "client_id": "string",
+    "client_state": {
+      "type_url": "string",
+      "value": "string"
+    }
+  },
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/core/connection/v1beta1/connections/{connection_id}/consensus_state/revision/{revision_number}/height/{revision_height}`
+
+> Retrieves the consensus state associated with the connection.
+
+#### Parameters
+
+  * `connection_id` (string; required): a connection unique identifier.
+  * `revision_number` (string, uint64): a required revision number.
+  * `revision_height` (string, uint64): a required revision height.
+
+#### Returns
+
+Consensus state.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/core/connection/v1beta1/connections/{connection_id}/consensus_state/revision/{revision_number}/height/{revision_height}
+```
+
+#### Response example
+
+```json
+{
+  "consensus_state": {
+    "type_url": "string",
+    "value": "string"
+  },
+  "client_id": "string",
+  "proof": "string",
+  "proof_height": {
+    "revision_number": "string",
+    "revision_height": "string"
+  }
+}
+```
+
+---
+
+### Ibc applications methods
+
+### `/ibc/applications/transfer/v1beta1/denom_traces`
+
+> Retrieves all denomination traces.
+
+#### Parameters
+
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Denomination traces.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/applications/transfer/v1beta1/denom_traces
+```
+
+#### Response example
+
+```json
+{
+  "denom_traces": [
+    {
+      "path": "string",
+      "base_denom": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/applications/transfer/v1beta1/denom_traces/{hash}`
+
+> Retrieves a denomination trace information by hash.
+
+#### Parameters
+
+  * `hash` (string, hex; required): a hash of the denomination trace information.
+
+#### Returns
+
+Denomination traces.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/applications/transfer/v1beta1/denom_traces/{hash}
+```
+
+#### Response example
+
+```json
+{
+  "denom_trace": {
+    "path": "string",
+    "base_denom": "string"
+  }
+}
+```
+
+---
+
+### `/ibc/applications/transfer/v1beta1/params`
+
+> Retrieves all parameters of the IBC transfer module.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+Parameters of the IBC transfer module.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/ibc/applications/transfer/v1beta1/params
+```
+
+#### Response example
+
+```json
+{
+  "params": {
+    "send_enabled": true,
+    "receive_enabled": true
+  }
+}
+```
+
+---
+
+### Tx methods
+
+### `/cosmos/tx/v1beta1/simulate`
+
+> Simulates executing a transaction for estimating gas usage.
+
+#### Parameters
+
+  * `<body>` (object; required):
+
+```json
+{
+  "tx": {
+    "body": {
+      "messages": [
+        {
+          "type_url": "string",
+          "value": "string"
+        }
+      ],
+      "memo": "string",
+      "timeout_height": "string",
+      "extension_options": [
+        {
+          "type_url": "string",
+          "value": "string"
+        }
+      ],
+      "non_critical_extension_options": [
+        {
+          "type_url": "string",
+          "value": "string"
+        }
+      ]
+    },
+    "auth_info": {
+      "signer_infos": [
+        {
+          "public_key": {
+            "type_url": "string",
+            "value": "string"
+          },
+          "mode_info": {
+            "single": {
+              "mode": "SIGN_MODE_UNSPECIFIED"
+            },
+            "multi": {
+              "bitarray": {
+                "extra_bits_stored": 0,
+                "elems": "string"
+              },
+              "mode_infos": [
+                null
+              ]
+            }
+          },
+          "sequence": "string"
+        }
+      ],
+      "fee": {
+        "amount": [
+          {
+            "denom": "string",
+            "amount": "string"
+          }
+        ],
+        "gas_limit": "string",
+        "payer": "string",
+        "granter": "string"
+      }
+    },
+    "signatures": [
+      "string"
+    ]
+  }
+}
+```
+
+#### Returns
+
+Estimated gas usage.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/simulate
+````
+
+#### Response example
+
+```json
+{
+  "gas_info": {
+    "gas_wanted": "string",
+    "gas_used": "string"
+  },
+  "result": {
+    "data": "string",
+    "log": "string",
+    "events": [
+      {
+        "type": "string",
+        "attributes": [
+          {
+            "key": "string",
+            "value": "string",
+            "index": true
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+
+### `/cosmos/tx/v1beta1/txs`
+
+> Fetches txs by event.
+
+#### Parameters
+
+  * `events` (array[string]): a list of transaction event type.
+  * `pagination.key` (string, byte): a value returned in `PageResponse.next_key` to begin querying the next page efficiently. Only one of
+`offset` or `key` should be set.
+  * `pagination.key` (string, uint64): a numeric offset that can be used when key is unavailable (less efficient than using key). Only one of `offset` or `key` should be set.
+  * `pagination.limit` (string, uint64): a total number of results to be returned in the results page. If empty, will default to a value to be set by each app.
+  * `pagination.count_total` (boolean): set to true to indicate that the result set should include a count of the total number of items available for pagination in the UIs. Only respected when `offset` is used, ignored when `key` is set.
+
+#### Returns
+
+Transactions.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/txs
+```
+
+#### Response example
+
+```json
+{
+  "txs": [
+    {
+      "body": {
+        "messages": [
+          {
+            "type_url": "string",
+            "value": "string"
+          }
+        ],
+        "memo": "string",
+        "timeout_height": "string",
+        "extension_options": [
+          {
+            "type_url": "string",
+            "value": "string"
+          }
+        ],
+        "non_critical_extension_options": [
+          {
+            "type_url": "string",
+            "value": "string"
+          }
+        ]
+      },
+      "auth_info": {
+        "signer_infos": [
+          {
+            "public_key": {
+              "type_url": "string",
+              "value": "string"
+            },
+            "mode_info": {
+              "single": {
+                "mode": "SIGN_MODE_UNSPECIFIED"
+              },
+              "multi": {
+                "bitarray": {
+                  "extra_bits_stored": 0,
+                  "elems": "string"
+                },
+                "mode_infos": [
+                  null
+                ]
+              }
+            },
+            "sequence": "string"
+          }
+        ],
+        "fee": {
+          "amount": [
+            {
+              "denom": "string",
+              "amount": "string"
+            }
+          ],
+          "gas_limit": "string",
+          "payer": "string",
+          "granter": "string"
+        }
+      },
+      "signatures": [
+        "string"
+      ]
+    }
+  ],
+  "tx_responses": [
+    {
+      "height": "string",
+      "txhash": "string",
+      "codespace": "string",
+      "code": 0,
+      "data": "string",
+      "raw_log": "string",
+      "logs": [
+        {
+          "msg_index": 0,
+          "log": "string",
+          "events": [
+            {
+              "type": "string",
+              "attributes": [
+                {
+                  "key": "string",
+                  "value": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "info": "string",
+      "gas_wanted": "string",
+      "gas_used": "string",
+      "tx": {
+        "type_url": "string",
+        "value": "string"
+      },
+      "timestamp": "string"
+    }
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/tx/v1beta1/txs`
+
+> Broadcasts a transaction.
+
+#### Parameters
+
+  * `<body>` (object; required):
+
+```json
+{
+  "tx_bytes": "string",
+  "mode": "BROADCAST_MODE_UNSPECIFIED"
+}
+```
+
+#### Returns
+
+Broadcasted transaction.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/txs
+````
+
+#### Response example
+
+```json
+{
+  "tx_response": {
+    "height": "string",
+    "txhash": "string",
+    "codespace": "string",
+    "code": 0,
+    "data": "string",
+    "raw_log": "string",
+    "logs": [
+      {
+        "msg_index": 0,
+        "log": "string",
+        "events": [
+          {
+            "type": "string",
+            "attributes": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "info": "string",
+    "gas_wanted": "string",
+    "gas_used": "string",
+    "tx": {
+      "type_url": "string",
+      "value": "string"
+    },
+    "timestamp": "string"
+  }
+}
+```
+
+---
+
+### `/cosmos/tx/v1beta1/txs/{hash}`
+
+> Fetches a tx by hash.
+
+#### Parameters
+
+  * `hash` (string, hex; required): a tx hash to query, encoded as a hex string.
+
+#### Returns
+
+Transaction.
+
+#### Request example
+
+```shell
+curl https://rpc.ankr.com/http/allora_cosmos_testnet/cosmos/tx/v1beta1/txs/{hash}
+```
+
+#### Response example
+
+```json
+{
+  "tx": {
+    "body": {
+      "messages": [
+        {
+          "type_url": "string",
+          "value": "string"
+        }
+      ],
+      "memo": "string",
+      "timeout_height": "string",
+      "extension_options": [
+        {
+          "type_url": "string",
+          "value": "string"
+        }
+      ],
+      "non_critical_extension_options": [
+        {
+          "type_url": "string",
+          "value": "string"
+        }
+      ]
+    },
+    "auth_info": {
+      "signer_infos": [
+        {
+          "public_key": {
+            "type_url": "string",
+            "value": "string"
+          },
+          "mode_info": {
+            "single": {
+              "mode": "SIGN_MODE_UNSPECIFIED"
+            },
+            "multi": {
+              "bitarray": {
+                "extra_bits_stored": 0,
+                "elems": "string"
+              },
+              "mode_infos": [
+                null
+              ]
+            }
+          },
+          "sequence": "string"
+        }
+      ],
+      "fee": {
+        "amount": [
+          {
+            "denom": "string",
+            "amount": "string"
+          }
+        ],
+        "gas_limit": "string",
+        "payer": "string",
+        "granter": "string"
+      }
+    },
+    "signatures": [
+      "string"
+    ]
+  },
+  "tx_response": {
+    "height": "string",
+    "txhash": "string",
+    "codespace": "string",
+    "code": 0,
+    "data": "string",
+    "raw_log": "string",
+    "logs": [
+      {
+        "msg_index": 0,
+        "log": "string",
+        "events": [
+          {
+            "type": "string",
+            "attributes": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "info": "string",
+    "gas_wanted": "string",
+    "gas_used": "string",
+    "tx": {
+      "type_url": "string",
+      "value": "string"
+    },
+    "timestamp": "string"
+  }
+}
+```

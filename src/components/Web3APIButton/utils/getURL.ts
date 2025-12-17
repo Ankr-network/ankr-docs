@@ -1,13 +1,13 @@
-import { getSignInUrl } from "@ankr.com/auth";
+import { getSignInUrl } from '@ankr.com/auth';
 
 export const getURL = (isSignedIn: boolean) => {
-  if (isSignedIn) {  
+  if (isSignedIn) {
     return `${window.location.origin}/rpc/home/`;
   }
 
   const host = window.location.host;
   const appPath =
-    host && !host.includes("localhost")
+    host && !host.includes('localhost')
       ? `${host}/rpc/auth/`
       : process.env.NEXT_PUBLIC_WEB3_API_AUTH_APP_PATH!;
 

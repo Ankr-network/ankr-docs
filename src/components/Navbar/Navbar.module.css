@@ -1,0 +1,14 @@
+/* Search container */
+.root :global(.nextra-scrollbar) + div {
+  order: 2;
+}
+
+/* Github icon */
+.root a[href="https://github.com/Ankr-network/"] {
+  order: 3;
+}
+
+/* Hamburger icon */
+.root :global(.nextra-hamburger) {
+  order: 3;
+}

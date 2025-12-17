@@ -1,0 +1,3735 @@
+import { Callout } from "components";
+
+import { Tabs } from "nextra/components";
+
+# 0G
+<br/>
+
+<img src="/docs/build/chains-list/0g.png" className="responsive-pic" width="800" />
+
+> 0G API is available on [Web3 API platform](https://www.ankr.com/rpc/0g).
+
+0G Chain is a highly scalable, AI-optimized L1 blockchain designed to meet the needs of data-heavy applications. Built with a modular architecture, it allows for the independent optimization of key components like consensus, execution, and storage — making it ideal for AI-driven workflows. 0G is fully EVM-compatible, so decentralized applications (dApps) already deployed on other L1 or L2 chains (such as Ethereum or rollups) can easily leverage 0G's products without needing to migrate entirely.
+
+0G Chain supports a data availability network, distributed storage network, and AI compute network. All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI.
+
+In order for your Web3 application to interact with 0G — either by reading blockchain data or sending transactions to the network — it must connect to an 0G node. Developers interact with the blockchain using the methods provided by the API.
+
+We support the following networks and protocols for 0G:
+
+  * [EVM JSON-RPC API](/rpc-service/chains/chains-api/0g/#evm-json-rpc-methods)
+  * [Tendermint JSON-RPC/REST API](/rpc-service/chains/chains-api/0g/#tendermint-json-rpcrest-methods)
+  * [Beaconkit REST API](/rpc-service/chains/chains-api/0g/#beaconkit-rest-methods)
+
+Responses come in [JSON format](https://www.json.org/json-en.html).
+
+## EVM JSON-RPC methods
+
+  * [`web3_clientVersion`](/rpc-service/chains/chains-api/0g/#web3_clientversion) — returns the current client version.
+  * [`web3_sha3`](/rpc-service/chains/chains-api/0g/#web3_sha3) — returns Keccak-256 (not the standardized SHA3-256) of the given data.
+  * [`net_version`](/rpc-service/chains/chains-api/0g/#net_version) — returns the current network ID.
+  * [`net_listening`](/rpc-service/chains/chains-api/0g/#net_listening) — returns true if client is actively listening for network connections.
+  * [`eth_syncing`](/rpc-service/chains/chains-api/0g/#eth_syncing) — returns data on the sync status or false.
+  * [`eth_gasPrice`](/rpc-service/chains/chains-api/0g/#eth_gasprice) — returns the current price per gas in wei.
+  * [`eth_accounts`](/rpc-service/chains/chains-api/0g/#eth_accounts) — returns a list of addresses owned by client.
+  * [`eth_blockNumber`](/rpc-service/chains/chains-api/0g/#eth_blocknumber) — returns the number of most recent block.
+  * [`eth_getBalance`](/rpc-service/chains/chains-api/0g/#eth_getbalance) — returns the balance of the account specified by address.
+  * [`eth_getStorageAt`](/rpc-service/chains/chains-api/0g/#eth_getstorageat) — returns the value from a storage position at an address specified.
+  * [`eth_getTransactionCount`](/rpc-service/chains/chains-api/0g/#eth_gettransactioncount) — returns the number of transactions sent from an address.
+  * [`eth_getBlockTransactionCountByHash`](/rpc-service/chains/chains-api/0g/#eth_getblocktransactioncountbyhash) — returns the number of transactions in a block specified by block hash.
+  * [`eth_getBlockTransactionCountByNumber`](/rpc-service/chains/chains-api/0g/#eth_getblocktransactioncountbynumber) — returns the number of transactions in the block specified by number.
+  * [`eth_getUncleCountByBlockHash`](/rpc-service/chains/chains-api/0g/#eth_getunclecountbyblockhash) — returns the number of uncles in a block specified by block hash.
+  * [`eth_getUncleCountByBlockNumber`](/rpc-service/chains/chains-api/0g/#eth_getunclecountbyblocknumber) — returns the number of uncles in a block specified by block number.
+  * [`eth_getCode`](/rpc-service/chains/chains-api/0g/#eth_getcode) — returns code at an address specified.
+  * [`eth_sendRawTransaction`](/rpc-service/chains/chains-api/0g/#eth_sendrawtransaction) — creates a new message call transaction or a contract creation for signed transactions.
+  * [`eth_call`](/rpc-service/chains/chains-api/0g/#eth_call) — executes a new message call immediately without creating a transaction on the blockchain.
+  * [`eth_estimateGas`](/rpc-service/chains/chains-api/0g/#eth_estimategas) — generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+  * [`eth_getBlockByHash`](/rpc-service/chains/chains-api/0g/#eth_getblockbyhash) — returns information for the block specified by block hash.
+  * [`eth_getBlockByNumber`](/rpc-service/chains/chains-api/0g/#eth_getblockbynumber) — returns information for the block specified by block number.
+  * [`eth_getTransactionByHash`](/rpc-service/chains/chains-api/0g/#eth_gettransactionbyhash) — returns information on a transaction specified by transaction hash.
+  * [`eth_getTransactionByBlockHashAndIndex`](/rpc-service/chains/chains-api/0g/#eth_gettransactionbyblockhashandindex) — returns information on a transaction specified by block hash and transaction index position.
+  * [`eth_getTransactionByBlockNumberAndIndex`](/rpc-service/chains/chains-api/0g/#eth_gettransactionbyblocknumberandindex) — returns information on a transaction by block number and transaction index position.
+  * [`eth_getTransactionReceipt`](/rpc-service/chains/chains-api/0g/#eth_gettransactionreceipt) — returns the receipt of a transaction by transaction hash.
+  * [`eth_getUncleByBlockHashAndIndex`](/rpc-service/chains/chains-api/0g/#eth_getunclebyblockhashandindex) — returns information about an uncle of a block by hash and uncle index position.
+  * [`eth_getUncleByBlockNumberAndIndex`](/rpc-service/chains/chains-api/0g/#eth_getunclebyblocknumberandindex) — returns information about an uncle of a block by number and uncle index position.
+  * [`eth_getLogs`](/rpc-service/chains/chains-api/0g/#eth_getlogs) — returns logs matching the parameters specified.
+
+---
+
+## `web3_clientVersion`
+
+> Returns the current client version.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+  * `<string>`: the current client version.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_clientVersion",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "Version dev ()\nCompiled at  using Go go1.21.13 (amd64)"
+}
+```
+
+---
+
+## `web3_sha3`
+
+> Returns Keccak-256 (not the standardized SHA3-256) of the given data.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<string>` (data): the data to convert into a SHA3 hash.
+
+### Returns
+
+  * `<string>` (data): the SHA3 result of the given string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "web3_sha3",
+      "params": ["0x68656c6c6f20776f726c64"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x5b2c76da96136d193336fad3fbc049867b8ca157da22f69ae0e4923648250acc"
+}
+```
+
+---
+
+## `net_version`
+
+> Returns the current network ID.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+  * `<string>`: the current network ID.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_version",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "16600"
+}
+```
+
+---
+
+## `net_listening`
+
+> Returns `true` if client is actively listening for network connections.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+  * `<boolean>`: `true` when listening, otherwise `false`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "net_listening",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": true
+}
+```
+
+---
+
+## `eth_syncing`
+
+> Returns an object with data about the sync status or false.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+  * `<object>`|`<boolean>`: an object with sync status data or `false`, when not syncing:
+    * `startingBlock` (quantity): the block at which the import started (will only be reset, after the sync reached its head).
+    * `currentBlock` (quantity): the current block, same as `eth_blockNumber`.
+    * `highestBlock` (quantity): the estimated highest block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_syncing",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": false
+}
+```
+
+---
+
+## `eth_gasPrice`
+
+> Returns the current price per gas in wei.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+  * `<string>` (quantity): the current gas price in wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_gasPrice",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x14"
+}
+```
+
+---
+
+## `eth_accounts`
+
+> Returns a list of addresses owned by client.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+  * `<array>` (string; data, 20 bytes): addresses owned by the client.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_accounts",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": []
+}
+```
+
+---
+
+## `eth_blockNumber`
+
+> Returns the number of most recent block.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+### Returns
+
+  * `<string>` (quantity): the current block number the client is on.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x27221a"
+}
+```
+
+---
+
+## `eth_getBalance`
+
+> Returns the balance of the account specified by address.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address to check for balance.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (quantity): the current balance in wei.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBalance",
+      "params": ["0x83c4A688174A8d4b99b4C8A2feC124dff79D58d2", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x209e65811b7e34e40de0"
+}
+```
+
+---
+
+## `eth_getStorageAt`
+
+> Returns the value from a storage position at an address specified.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address of the storage (hex encoded).
+    2. `<string>` (quantity): a slot position in the storage (hex encoded unsigned integer).
+    3. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (data): the value at this storage position.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getStorageAt",
+      "params": ["0x83c4A688174A8d4b99b4C8A2feC124dff79D58d2", "0x0", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+```
+
+---
+
+## `eth_getTransactionCount`
+
+> Returns the number of transactions sent from an address.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (quantity): the number of transactions send from this address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionCount",
+      "params": ["0x83c4A688174A8d4b99b4C8A2feC124dff79D58d2", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xc9121"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByHash`
+
+> Returns the number of transactions in a block specified by block hash.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+
+### Returns
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example:
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByHash",
+      "params": ["0x14d481f2a9bd51b3bb5ab2b64d41deb7083b9b8036969d407da673d163a09905"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getBlockTransactionCountByNumber`
+
+> Returns the number of transactions in the block specified by number.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (quantity): the number of transactions in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockTransactionCountByNumber",
+      "params": ["0x87D"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x1"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockHash`
+
+> Returns the number of uncles in a block specified by block hash.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+
+### Returns
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockHash",
+      "params": ["0x14d481f2a9bd51b3bb5ab2b64d41deb7083b9b8036969d407da673d163a09905"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getUncleCountByBlockNumber`
+
+> Returns the number of uncles in a block specified by block number.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (quantity): the number of uncles in this block.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleCountByBlockNumber",
+      "params": ["0x87D"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x0"
+}
+```
+
+---
+
+## `eth_getCode`
+
+> Returns code at a given address.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 20 bytes): an address to get the code from.
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (data): the code from the given address.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getCode",
+      "params": ["0x83c4A688174A8d4b99b4C8A2feC124dff79D58d2", "latest"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x"
+}
+```
+
+---
+
+## `eth_sendRawTransaction`
+
+> Creates new message call transaction or a contract creation for signed transactions.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data): the signed transaction data.
+
+### Returns
+
+  * `<string>` (data, 32 bytes): the transaction hash, or the zero hash if the transaction is not yet available.
+
+Use [eth_getTransactionReceipt](/rpc-service/chains/chains-api/0g/#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_sendRawTransaction",
+    "params": ["signed_tx_data"],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
+}
+```
+
+---
+
+## `eth_call`
+
+> Executes a new message call immediately without creating a transaction on the blockchain.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (hex encoded bytes): the return value of executed contract.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_call",
+    "params": [
+        {
+            "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+            "data": "0x70a08231000000000000000000000000a0df350d2637096571f7a701cb08f08f0775fcf9"
+        },
+        "latest"
+    ],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x"
+}
+```
+
+---
+
+## `eth_estimateGas`
+
+> Generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+
+The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (hex encoded): the transaction object:
+        * `from` (string; data, 20 bytes; optional): the address the transaction is sent from.
+        * `to` (string; data, 20 bytes; optional): the address the transaction is directed to.
+        * `gas` (string; quantity; optional): the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+        * `gasPrice` (string; quantity; optional): the gas price willing to be paid by the sender in wei.
+        * `value` (string; quantity; optional): the value sent with this transaction, in wei.
+        * `data` (string; data; optional): the hash of the method signature and encoded parameters.
+
+    2. `<string>` (quantity|tag; optional): either a HEX value of a *block number* or one of the following *block tags*:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+
+### Returns
+
+  * `<string>` (quantity): the amount of gas used.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "eth_estimateGas",
+    "params": [
+        {
+            "from": "0x83c4A688174A8d4b99b4C8A2feC124dff79D58d2",
+            "to": "0x7E359114E9098cBeB28f4e23648a39E3Fcb915D0",
+            "data": "0xa9059cbb000000000000000000000000a0df350d2637096571f7a701cb08f08f0775fcf90000000000000000000000000000000000000000000000000000000000000064"
+        }
+    ],
+    "id": 1
+}'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x705a"
+}
+```
+
+---
+
+## `eth_getBlockByHash`
+
+> Returns information for the block specified by block hash.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the block hash.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByHash",
+      "params": ["0xc0f659554c7d61d4259afb5b3f43de2624a7339e765ea306b5b0a332e885e724", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "difficulty": "0x0",
+        "extraData": "0x",
+        "gasLimit": "0x17d7840",
+        "gasUsed": "0xa640",
+        "hash": "0xc0f659554c7d61d4259afb5b3f43de2624a7339e765ea306b5b0a332e885e724",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0x0000000000000000000000000000000000000000",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x2f3c",
+        "parentHash": "0xd9f7ea5876fd41bb813fc9b398f6757ab92e180a6491d326d68af958a7aa8d27",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x1c35",
+        "stateRoot": "0xacd51211e93c698d8ada90fcf5cf201ae4f396007b3e5548b4f1026486662c74",
+        "timestamp": "0x667a35ab",
+        "totalDifficulty": "0x0",
+        "transactions": [
+            "0x77ffa56267d61485b5a250b69537fd37f1c14b9dd2572e191870f2c47ad70a4d",
+            "0xb36be3d2197fd10bcd5ce0b105f4fdb5465b69e964150fe56bb40fa7de977d1e"
+        ],
+        "transactionsRoot": "0xff05085919eb0bd88b94901cd035a3445853f9b74de9d91dddc6f77ed5950406",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getBlockByNumber`
+
+> Returns information for the block specified by block number.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a *block number* or one of the following *block tags*:
+       * `earliest`: the lowest numbered block available on the client.
+       * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+       * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+       * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+       * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<boolean>`: if `true` it returns the full transaction objects, if `false` — only the hashes of the transactions.
+
+### Returns
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getBlockByNumber",
+      "params": ["0x2F3C", false],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "difficulty": "0x0",
+        "extraData": "0x",
+        "gasLimit": "0x17d7840",
+        "gasUsed": "0xa640",
+        "hash": "0xc0f659554c7d61d4259afb5b3f43de2624a7339e765ea306b5b0a332e885e724",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "miner": "0x0000000000000000000000000000000000000000",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x2f3c",
+        "parentHash": "0xd9f7ea5876fd41bb813fc9b398f6757ab92e180a6491d326d68af958a7aa8d27",
+        "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x1c35",
+        "stateRoot": "0xacd51211e93c698d8ada90fcf5cf201ae4f396007b3e5548b4f1026486662c74",
+        "timestamp": "0x667a35ab",
+        "totalDifficulty": "0x0",
+        "transactions": [
+            "0x77ffa56267d61485b5a250b69537fd37f1c14b9dd2572e191870f2c47ad70a4d",
+            "0xb36be3d2197fd10bcd5ce0b105f4fdb5465b69e964150fe56bb40fa7de977d1e"
+        ],
+        "transactionsRoot": "0xff05085919eb0bd88b94901cd035a3445853f9b74de9d91dddc6f77ed5950406",
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByHash`
+
+> Returns information on a transaction specified by transaction hash.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a transaction hash.
+
+### Returns
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByHash",
+      "params": ["0x77ffa56267d61485b5a250b69537fd37f1c14b9dd2572e191870f2c47ad70a4d"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "blockHash": "0xc0f659554c7d61d4259afb5b3f43de2624a7339e765ea306b5b0a332e885e724",
+        "blockNumber": "0x2f3c",
+        "from": "0x83c4a688174a8d4b99b4c8a2fec124dff79d58d2",
+        "gas": "0x5208",
+        "gasPrice": "0x2540be400",
+        "hash": "0x77ffa56267d61485b5a250b69537fd37f1c14b9dd2572e191870f2c47ad70a4d",
+        "input": "0x",
+        "nonce": "0x839",
+        "to": "0xec33ad015cfd18e1e297fc599b9a4c2545d6f570",
+        "transactionIndex": "0x0",
+        "value": "0xde0b6b3a7640000",
+        "type": "0x1",
+        "accessList": [],
+        "chainId": "0x40d8",
+        "v": "0x1",
+        "r": "0xcb9d36fad167f688c4340d2ce17c5bc8048164af619c109e989208245a5ef1cd",
+        "s": "0x7fc1d67ad61b5ed62c67e79d2f6a867f2003cc765a17a2f5acdb785c264e9cb1"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByBlockHashAndIndex`
+
+> Returns information on a transaction specified by block hash and transaction index position.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a block hash.
+    2. `<string>` (quantity): a transaction index position.
+
+### Returns
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByBlockHashAndIndex",
+      "params": [
+          "0x41a807e984a4e73512979cbbf7ad7cf6cba17d133e87ddf9e2446ec2063c59a5",
+          "0x0"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "blockHash": "0x41a807e984a4e73512979cbbf7ad7cf6cba17d133e87ddf9e2446ec2063c59a5",
+        "blockNumber": "0x27226b",
+        "from": "0xd0d01fa55e7920a3f90f18aa48f184752b3ed554",
+        "gas": "0x5208",
+        "gasPrice": "0x14",
+        "hash": "0x59fcf4411839f410cc034b151fe94a50814d8cc87f1d55a3e1f3807558d6c65b",
+        "input": "0x",
+        "nonce": "0xaad6",
+        "to": "0x9f218404ddc2aee210c2836361e97813a7993ca1",
+        "transactionIndex": "0x0",
+        "value": "0x2540be400",
+        "type": "0x0",
+        "chainId": "0x40d8",
+        "v": "0x81d3",
+        "r": "0xfdd63bb645b4ba5288fd47fb177e6cb2db157c858a0c8141f50cc7df613548d",
+        "s": "0x2ae3fa2a8461302e0c5f1e49c6c3c448eea55758484dcdbaadfaa754724b8ec2"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionByBlockNumberAndIndex`
+
+> Returns information on a transaction by block number and transaction index position.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): either the hex value of a _block number_ or one of the following _block tags_:
+        * `earliest`: the lowest numbered block available on the client.
+        * `finalized`: the most recent crypto-economically secure block; cannot be re-orged outside of manual intervention driven by community coordination.
+        * `safe`: the most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions.
+        * `latest`: the most recent block in the canonical chain observed by the client; this block can be re-orged out of the canonical chain even under healthy/normal conditions.
+        * `pending`: a sample next block built by the client on top of the `latest` and containing the set of transactions usually taken from local mempool. In other words, it is the block that has not been mined yet.
+    2. `<string>` (quantity): the transaction index position.
+
+### Returns
+
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction; null when it's pending.
+  * `blockNumber` (string; quantity): a number of the block containing the transaction; null when it's pending.
+  * `from` (string; data, 20 bytes): an address of the sender.
+  * `gas` (string; quantity): the gas provided by the sender.
+  * `gasPrice` (string; quantity): the gas price provided by the sender in wei.
+  * `hash` (string; data, 32 bytes): the hash of the transaction.
+  * `input` (string; data): the data send along with the transaction.
+  * `nonce` (string; quantity): the number of transactions made by the sender prior to this one.
+  * `to` (string: data, 20 bytes): an address of the receiver: null when it's a contract creation transaction.
+  * `transactionIndex` (string; quantity): the transaction index position in the block; null when it's pending.
+  * `value` (string; quantity): the value transferred in wei.
+  * `v` (string; quantity): ECDSA recovery ID.
+  * `r` (string; quantity): ECDSA signature r.
+  * `s` (string; quantity): ECDSA signature s.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionByBlockNumberAndIndex",
+      "params": ["latest", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "blockHash": "0x1a607bc23c79c1cd894d85a39f18c8a0cc0f6c14a0709723b3e0e4807d893df8",
+        "blockNumber": "0x2722c4",
+        "from": "0x83c4a688174a8d4b99b4c8a2fec124dff79d58d2",
+        "gas": "0x17d7840",
+        "gasPrice": "0x2540be400",
+        "hash": "0x6900d33fc30327f12295886329b612a1e54760aa29b50f9bfedcd8bd3f70b76b",
+        "input": "0x",
+        "nonce": "0xc914c",
+        "to": "0x8990e6db035f041edce0f3174d3af58251f79457",
+        "transactionIndex": "0x0",
+        "value": "0xde0b6b3a7640000",
+        "type": "0x1",
+        "accessList": [],
+        "chainId": "0x40d8",
+        "v": "0x0",
+        "r": "0xeba5d9e8e61d5f7fa8d10cab4be75d545be434822e3683148b47020d3735474d",
+        "s": "0xc84dec7945fa5517da680093ef2d876da151a72184ede6f33cec0ad840b9a2b"
+    }
+}
+```
+
+---
+
+## `eth_getTransactionReceipt`
+
+> Returns the receipt of a transaction by transaction hash.
+
+The receipt is not available for pending transactions.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): a hash of the transaction.
+
+### Returns
+
+  * `object`: a transaction receipt object, or null when no receipt was found:
+
+      * `transactionHash` (string; data, 32 bytes): a hash of the transaction.
+      * `transactionIndex` (string; quantity): the transactions index position in the block.
+      * `blockHash` (string; data, 32 bytes): a hash of the block containing the transaction.
+      * `blockNumber` (string; quantity): a number of the block containing the transaction.
+      * `from` (string; data, 20 bytes): an address of the sender.
+      * `to` (string; data, 20 bytes): an address of the receiver; null when it's a contract creation transaction.
+      * `cumulativeGasUsed` (string; quantity): the total amount of gas used when this transaction was executed in the block.
+      * `effectiveGasPrice` (string; quantity): the sum of the base fee and tip paid per unit of gas.
+      * `gasUsed` (string; quantity): the amount of gas used by this specific transaction alone.
+      * `contractAddress` (string; data, 20 bytes): the contract address created, if the transaction was a contract creation, otherwise null.
+      * `logs` (array): an array of log objects, which this transaction generated.
+      * `logsBloom` (string; data, 256 bytes): a bloom filter for light clients to quickly retrieve related logs.
+      * `type` (string; data): the transaction type, `0x00` for legacy transactions, `0x01` for access list types, `0x02` for dynamic fees. It also returns either of the following:
+
+          * `root` (string; data, 32 bytes): a post-transaction stateroot (pre Byzantium).
+          * `status` (string; quantity): either 1 (success) or 0 (failure).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getTransactionReceipt",
+      "params": ["0x74418d226679f370574a1f82635c63598a91bfdbf3638e70122ec1dc182556ad"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "blockHash": "0x10e8d7221051ed761a33b62fc7c6c012a0675467d7fadd2112a31d5c182099c9",
+        "blockNumber": "0x158d",
+        "contractAddress": null,
+        "cumulativeGasUsed": "0x5208",
+        "from": "0x83c4a688174a8d4b99b4c8a2fec124dff79d58d2",
+        "gasUsed": "0x5208",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "status": "0x1",
+        "to": "0xda6941c4f108084dedcfb294f506c9e4eeafe2f6",
+        "transactionHash": "0x74418d226679f370574a1f82635c63598a91bfdbf3638e70122ec1dc182556ad",
+        "transactionIndex": "0x0",
+        "type": "0x1"
+    }
+}
+```
+
+---
+
+## `eth_getUncleByBlockHashAndIndex`
+
+> Returns information about an uncle of a block by hash and uncle index position.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (data, 32 bytes): the hash of a block.
+    2. `<string>` (quantity): the uncle's index position.
+
+### Returns
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockHashAndIndex",
+      "params": ["0x10e8d7221051ed761a33b62fc7c6c012a0675467d7fadd2112a31d5c182099c9", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": null
+}
+```
+
+---
+
+## `eth_getUncleByBlockNumberAndIndex`
+
+> Returns information about an uncle of a block by number and uncle index position.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (quantity|tag): the hex value of a _block number_.
+    2. `<string>` (quantity): the uncle's index position.
+
+### Returns
+
+  * `<object>`: a block object, or null when no block was found:
+      * `number` (string; quantity): the block number; null when it's a pending block.
+      * `hash` (string; data, 32 bytes): the hash of the block; null when it's a pending block.
+      * `parentHash` (string; data, 32 bytes): the hash of the parent block.
+      * `nonce` (string; data, 8 bytes): the hash of the generated proof-of-work; null when it's a pending block.
+      * `sha3Uncles` (string; data, 32 bytes): SHA3 of the uncles data in the block.
+      * `logsBloom` (string; data, 256 bytes): the bloom filter for the logs of the block. null when its pending block.
+      * `transactionsRoot` (string; data, 32 bytes): the root of the transaction trie of the block.
+      * `stateRoot` (string; data, 32 bytes): the root of the final state trie of the block.
+      * `receiptsRoot` (string; data, 32 bytes): the root of the receipts trie of the block.
+      * `miner` (string; data, 20 bytes): the address of the beneficiary to whom the mining rewards were given.
+      * `difficulty` (string; quantity): the difficulty for this block.
+      * `totalDifficulty` (string; quantity): the total difficulty of the chain until this block.
+      * `extraData` (string; data): the **extra data** field of this block.
+      * `size` (string; quantity): the size of this block in bytes.
+      * `gasLimit` (string; quantity): the maximum gas allowed in this block.
+      * `gasUsed` (string; quantity): the total used gas by all transactions in this block.
+      * `timestamp` (string; quantity): the unix timestamp for when the block was collated.
+      * `transactions` (array of strings): an array of transaction objects, or 32 bytes transaction hashes depending on the last given parameter.
+      * `uncles` (array of strings): an array of uncle hashes.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getUncleByBlockNumberAndIndex",
+      "params": ["0x272328", "0x0"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": null
+}
+```
+
+---
+
+## `eth_getLogs`
+
+> Returns an array of all logs matching a given filter object.
+
+### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+      1. `object`: the filter options:
+
+         * `fromBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `toBlock` (string; quantity|tag; optional; default: "latest"): either the _block number_ or one of the following _block tags_:
+
+             * `latest`: for the last mined block.
+             * `earliest`: for the lowest numbered block available on the client.
+             * `pending`: for not yet mined transactions.
+
+         * `address` (array of strings; data, 20 bytes; optional): a contract address or a list of addresses from which logs should originate.
+         * `topics` (array of strings; data; optional): an array of 32 bytes data topics. Topics are order-dependent. Each topic can also be an array of data with "or" options.
+         * `blockhash` (string; data, 32 bytes; optional; **future**): with the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to `fromBlock = toBlock = the block` number with hash blockHash. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
+
+### Returns
+
+  * `removed` (string; tag): `true` when the log was removed, due to a chain reorganization; `false` if it's a valid log.
+  * `logIndex` (string; quantity): the log index position in the block; null when it's a pending log.
+  * `transactionIndex` (string; quantity): the transactions index position log was created from; null when it's a pending log.
+  * `transactionHash` (string; data, 32 bytes): a hash of the transactions this log was created from; null when it's a pending log.
+  * `blockHash` (string; data, 32 bytes): a hash of the block containing the log; null when it's pending; null when it's a pending log.
+  * `blockNumber` (string; quantity): the number of the block containing the log; null when it's pending; null when it's a pending log.
+  * `address` (string; data, 20 bytes): an address from which this log originated.
+  * `data` (string; data): contains one or more 32 bytes non-indexed arguments of the log.
+  * `topics` (array of strings; data): an array of 0 to 4 32 bytes data of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_evm \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_getLogs",
+      "params": [
+          {
+              "fromBlock": "0x1",
+              "toBlock": "0x7d1"
+          }
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "address": "0x361b62b78fdbf68a0e19c2136c167f72059d2a8e",
+            "topics": [
+                "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+                "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "0x0000000000000000000000008873cc79c5b3b5666535c825205c9a128b1d75f1"
+            ],
+            "data": "0x",
+            "blockNumber": "0x323",
+            "transactionHash": "0xc3fdb3cd6bdb987ae99cfe7dc6f78e81a18ea9888cea584e35dc0691df104464",
+            "transactionIndex": "0x0",
+            "blockHash": "0x713cb11222119183f553533df5835c1610190c04c113d02fa7a2e17460a6f6a2",
+            "logIndex": "0x0",
+            "removed": false
+        },
+        {
+            "address": "0x85f6722319538a805ed5733c5f4882d96f1c7384",
+            "topics": [
+                "0xbfeb006f16aca8eb3d9953cf44db6b11b6f3041a313875dfa18f2e9d71bd309e",
+                "0x4a6310b386fdabbe95b1cb8fa92d362dd51a32051d1e24cf929856e0cb174a74",
+                "0x00000000000000000000000063df5c411aa90b9866e7e6082230ffbf61aeda8c"
+            ],
+            "data": "0x",
+            "blockNumber": "0x7c5",
+            "transactionHash": "0xad9036c230807cebcfb78f11fc27824c202b68c3938233877d232ca8a739e4b3",
+            "transactionIndex": "0x0",
+            "blockHash": "0x73f32feb88bbd78e03809d28a22dda63f0f1862ce3bd22763efc42bf1a029cee",
+            "logIndex": "0x0",
+            "removed": false
+        }
+    ]
+}
+```
+
+---
+
+## Tendermint JSON-RPC/REST methods
+
+**Info — node information**:
+
+  * [`blockchain`](/rpc-service/chains/chains-api/0g/#blockchain) — retrieves block headers (max: 20) for `minHeight <= height <= maxHeight`.
+  * [`block`](/rpc-service/chains/chains-api/0g/#block) — retrieves a block at a specified height.
+  * [`block_by_hash`](/rpc-service/chains/chains-api/0g/#block_by_hash) — retrieves a block by hash.
+  * [`block_results`](/rpc-service/chains/chains-api/0g/#block_results) — retrieves block results at a specified height.
+  * [`commit`](/rpc-service/chains/chains-api/0g/#commit) — retrieves commit results at a specified height.
+  * [`validators`](/rpc-service/chains/chains-api/0g/#validators) — retrieves a validator set at a specified height.
+  * [`genesis_chunked`](/rpc-service/chains/chains-api/0g/#genesis_chunked) — retrieves the Genesis in multiple chunks.
+  * [`dump_consensus_state`](/rpc-service/chains/chains-api/0g/#dump_consensus_state) — retrieves consensus state.
+  * [`consensus_state`](/rpc-service/chains/chains-api/0g/#consensus_state) — retrieves consensus state.
+  * [`consensus_params`](/rpc-service/chains/chains-api/0g/#consensus_params) — retrieves consensus parameters.
+  * [`unconfirmed_txs`](/rpc-service/chains/chains-api/0g/#unconfirmed_txs) — retrieves the list of unconfirmed transactions.
+  * [`num_unconfirmed_txs`](/rpc-service/chains/chains-api/0g/#num_unconfirmed_txs) — retrieves data about unconfirmed transactions.
+  * [`tx_search`](/rpc-service/chains/chains-api/0g/#tx_search) — searches for transactions.
+  * [`block_search`](/rpc-service/chains/chains-api/0g/#block_search) — searches for blocks by `BeginBlock` and `EndBlock` events.
+  * [`tx`](/rpc-service/chains/chains-api/0g/#tx) — retrieves transactions by hash.
+
+**Tx — transactions broadcast information**:
+
+  * [`broadcast_tx_sync`](/rpc-service/chains/chains-api/0g/#broadcast_tx_sync) — returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
+  * [`broadcast_tx_async`](/rpc-service/chains/chains-api/0g/#broadcast_tx_async) — returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
+  * [`broadcast_tx_commit`](/rpc-service/chains/chains-api/0g/#broadcast_tx_commit) — returns with the responses from `CheckTx` and `DeliverTx`.
+  * [`check_tx`](/rpc-service/chains/chains-api/0g/#check_tx) — checks the transaction without executing it.
+
+**ABCI — ABCI info**:
+
+  * [`abci_info`](/rpc-service/chains/chains-api/0g/#abci_info) — retrieves info about the application.
+  * [`abci_query`](/rpc-service/chains/chains-api/0g/#abci_query) — queries the application for some information.
+
+---
+
+## Information
+
+### `blockchain`
+
+> Retrieves block headers for `minHeight <= height <= maxHeight`.
+
+At most 20 items will return for the `minHeight` or `maxHeight` parameters specified. If `maxHeight` does not yet exist, the blocks up to the current height will return. If `minHeight` does not exist (pruning), the earliest existing height will be used.
+
+#### Parameters
+<br/>
+
+  * `minHeight` (integer): the minimum block height to return.
+  * `maxHeight` (integer): the maximum block height to return.
+
+#### Returns
+
+Block headers, in descending order (highest first).
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "blockchain",
+      "params": ["1", "2"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/blockchain?minHeight=1&maxHeight=2
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "last_height": "2564978",
+        "block_metas": [
+            {
+                "block_id": {
+                    "hash": "ED3BF22DDEAABE5B194ECE00FC97B73B31D6B6E381946054ADF248FADA65FD4F",
+                    "parts": {
+                        "total": 1,
+                        "hash": "268422F8D294840DBC5B24FB031F976357E8478F72C16B66E7B7388C2429D18F"
+                    }
+                },
+                "block_size": "830",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "zgtendermint_16600-2",
+                    "height": "2",
+                    "time": "2024-06-24T07:25:41.380275895Z",
+                    "last_block_id": {
+                        "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+                        "parts": {
+                            "total": 1,
+                            "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+                        }
+                    },
+                    "last_commit_hash": "5148301A7ABA311392D676C3C967F299F85A1AD48D74E96AF083DA4787FF9C2D",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                    "app_hash": "21181DF7C886CEE14012C07031E55BF04428BF77979015F2869ED1EACABAD22E",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "CDFF531A3AFA255BC193D52721027366935F9BF8"
+                },
+                "num_txs": "0"
+            },
+            {
+                "block_id": {
+                    "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+                    "parts": {
+                        "total": 1,
+                        "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+                    }
+                },
+                "block_size": "353",
+                "header": {
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "zgtendermint_16600-2",
+                    "height": "1",
+                    "time": "2024-06-24T07:24:31.526533772Z",
+                    "last_block_id": {
+                        "hash": "",
+                        "parts": {
+                            "total": 0,
+                            "hash": ""
+                        }
+                    },
+                    "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                    "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                    "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD"
+                },
+                "num_txs": "0"
+            }
+        ]
+    }
+}
+```
+
+---
+
+### `block`
+
+> Retrieves a block at a specified height.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block is to be fetched.
+
+#### Returns
+
+Block information.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/blockchain?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "block_id": {
+            "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+            "parts": {
+                "total": 1,
+                "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+            }
+        },
+        "block": {
+            "header": {
+                "version": {
+                    "block": "11"
+                },
+                "chain_id": "zgtendermint_16600-2",
+                "height": "1",
+                "time": "2024-06-24T07:24:31.526533772Z",
+                "last_block_id": {
+                    "hash": "",
+                    "parts": {
+                        "total": 0,
+                        "hash": ""
+                    }
+                },
+                "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "proposer_address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD"
+            },
+            "data": {
+                "txs": []
+            },
+            "evidence": {
+                "evidence": []
+            },
+            "last_commit": {
+                "height": "0",
+                "round": 0,
+                "block_id": {
+                    "hash": "",
+                    "parts": {
+                        "total": 0,
+                        "hash": ""
+                    }
+                },
+                "signatures": []
+            }
+        }
+    }
+}
+```
+
+---
+
+### `block_by_hash`
+
+> Retrieves a block by hash.
+
+#### Parameters
+<br/>
+
+  * `hash` (string; required): the Base64-encoded block hash.
+
+#### Returns
+
+Block information.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block_by_hash",
+      "params": {
+          "hash": "zNX/NZMiC0tZQVr5hlXJ9K/oIlcMzjVoXdXll630i0E="
+      },
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl "https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/block_by_hash?hash=0xccd5ff3593220b4b59415af98655c9f4afe822570cce35685dd5e597adf48b41"
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "block_id": {
+            "hash": "CCD5FF3593220B4B59415AF98655C9F4AFE822570CCE35685DD5E597ADF48B41",
+            "parts": {
+                "total": 1,
+                "hash": "24E75E2F1D225490E8890316E7E0C0D382579EF0BD8DB3DE4D41A4B92E9D9223"
+            }
+        },
+        "block": {
+            "header": {
+                "version": {
+                    "block": "11"
+                },
+                "chain_id": "zgtendermint_16600-2",
+                "height": "2564904",
+                "time": "2024-12-26T12:10:47.144809998Z",
+                "last_block_id": {
+                    "hash": "994AA199E4DCDAD2F085FE4B41D20085A0ED12BE557E88D4D9566C314D5A3486",
+                    "parts": {
+                        "total": 1,
+                        "hash": "EBF9742D10789704AC87037D05DC7F445E79DAE4AB01ACB80C99D18ED6D77D11"
+                    }
+                },
+                "last_commit_hash": "2D35D340C71BD0ACDA481585236B717C98C31EDD9B7577CB4C40D23E2B16CE27",
+                "data_hash": "080CF08012B3EDE6D0C7D9092D2B6919EA7A74C6B1F78D3732A43ABBA17A4E2C",
+                "validators_hash": "50A4F72C26AE3EBF51D521B7BA99D263BBA2E1686CB1B710CD10EF3B81F70282",
+                "next_validators_hash": "50A4F72C26AE3EBF51D521B7BA99D263BBA2E1686CB1B710CD10EF3B81F70282",
+                "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                "app_hash": "8F7D4C95F3F405A5274DA79833223A8AAA50A25DF68994324296DA3EBD66F0A2",
+                "last_results_hash": "865B5DC7B13DACE27EEFA0B4617F44946B2A3BEA44541E928859F002DCE466AF",
+                "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "proposer_address": "CB78E69FD887112E9C3DBD9490B8A51A3EE4E318"
+            },
+            "data": {
+                "txs": [
+                    "CssCCpcCCh8vZXRoZXJtaW50LmV2bS52MS5Nc2dFdGhlcmV1bVR4EvMBCqwBChovZXRoZXJtaW50LmV2bS52MS5MZWdhY3lUeBKNAQj/1QISAjIwGIikASIqMHg4Qjc1MmU4N2RjZTMwNjI2YTYwNjg3MzkxMWFlOGM2ODFiOUZDZTE1KgsxMDAwMDAwMDAwMDoCgdRCICKTguwyMeC0CnN5ejfXSYKT76jiJ7JyunyeFhz73HJsSiA/9hhgI3rQRu81GgjlJ5f9uTZ52PcMV22ed2S5IJlkexpCMHgyMzRmOGRkZmUxMGNhOGEyYmRhMDk2OThhN2VkODk0M2YzZmNiODNhYjgxZTE3NGNmYjg5MDg0Mzg3OTQyZWZl+j8uCiwvZXRoZXJtaW50LmV2bS52MS5FeHRlbnNpb25PcHRpb25zRXRoZXJldW1UeBIYEhYKEAoGbmV1cm9uEgY0MjAwMDAQiKQB, ..."
+                ]
+            },
+            "evidence": {
+                "evidence": []
+            },
+            "last_commit": {
+                "height": "2564903",
+                "round": 0,
+                "block_id": {
+                    "hash": "994AA199E4DCDAD2F085FE4B41D20085A0ED12BE557E88D4D9566C314D5A3486",
+                    "parts": {
+                        "total": 1,
+                        "hash": "EBF9742D10789704AC87037D05DC7F445E79DAE4AB01ACB80C99D18ED6D77D11"
+                    }
+                },
+                "signatures": [
+                    {
+                        "block_id_flag": 2,
+                        "validator_address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD",
+                        "timestamp": "2024-12-26T12:10:47.182829723Z",
+                        "signature": "tc9915ID/XmkBPg1R+aeew0MDkGLgpTpcpo8VqpYqq17RIdwkcQ5rlZxnJuIL9G0skmOrIIXrzri2EhsudW+AQ=="
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
+---
+
+### `block_results`
+
+> Retrieves block results at a specified height.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block info is to be fetched.
+
+#### Returns
+
+Block results.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "block_results",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/block_results?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "height": "1",
+        "txs_results": null,
+        "begin_block_events": [
+            {
+                "type": "coin_received",
+                "attributes": [
+                    {
+                        "key": "receiver",
+                        "value": "0g1m3h30wlvsf8llruxtpukdvsy0km2kum85yn938",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "38487598u0g",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "block_gas",
+                "attributes": [
+                    {
+                        "key": "height",
+                        "value": "1",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "0",
+                        "index": true
+                    }
+                ]
+            }
+        ],
+        "validator_updates": null,
+        "consensus_param_updates": {
+            "block": {
+                "max_bytes": "200000",
+                "max_gas": "20000000"
+            },
+            "evidence": {
+                "max_age_num_blocks": "1000000",
+                "max_age_duration": "6000000000000000",
+                "max_bytes": "50000"
+            },
+            "validator": {
+                "pub_key_types": [
+                    "ed25519"
+                ]
+            }
+        }
+    }
+}
+```
+
+---
+
+### `commit`
+
+> Retrieves commit results at a specified height.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block commit info is to be fetched.
+
+#### Returns
+
+Commit results. Canonical switches from false to true for block H once block H+1 has been committed, until then it's subjective and only reflects what this node has seen so far.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "commit",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/commit?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "signed_header": {
+            "header": {
+                "version": {
+                    "block": "11"
+                },
+                "chain_id": "zgtendermint_16600-2",
+                "height": "1",
+                "time": "2024-06-24T07:24:31.526533772Z",
+                "last_block_id": {
+                    "hash": "",
+                    "parts": {
+                        "total": 0,
+                        "hash": ""
+                    }
+                },
+                "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                "next_validators_hash": "EC4FD9C58AB322D57FD67299FC64AE10459BDAA2652BFC1CC989C66F8B9B6EA1",
+                "consensus_hash": "81BA6261D0077795E489737675DE120CC9170ADCCAAD805E12EF2708A2E21453",
+                "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "proposer_address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD"
+            },
+            "commit": {
+                "height": "1",
+                "round": 0,
+                "block_id": {
+                    "hash": "A3052C548269F770727A7E74EE90FCDAE6C4AEB5C0F0C614DA0621790D479B89",
+                    "parts": {
+                        "total": 1,
+                        "hash": "E2CF5FEEBCCDA872FB23EA228B82937C4620A887071E9B68AE77CB62F431F2BA"
+                    }
+                },
+                "signatures": [
+                    {
+                        "block_id_flag": 2,
+                        "validator_address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD",
+                        "timestamp": "2024-06-24T07:25:41.481185893Z",
+                        "signature": "VtIJZ4q7ooX/Bcy5uNojugXaWSxnW2K0hYcqHdZTAhFEURZFCuwqWYKpFCr2Tu95QQR9ROrCVVC9/3UNlPTYDQ=="
+                    },
+                    {
+                        "block_id_flag": 1,
+                        "validator_address": "",
+                        "timestamp": "0001-01-01T00:00:00Z",
+                        "signature": null
+                    }
+                ]
+            }
+        },
+        "canonical": true
+    }
+}
+```
+
+---
+
+### `validators`
+
+> Retrieves a validator set at a specified height.
+
+Validators are sorted by voting power.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the validator set corresponding to the latest block is to be fetched.
+  * `page` (integer; default: 1): a page number (1-based).
+  * `per_page` (integer; default: 30; max: 100): a number of entries per page.
+
+#### Returns
+
+Commit results.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "validators",
+      "params": ["1","1","30"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl "https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/validators?height=1&page=1&per_page=30"
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "block_height": "1",
+        "validators": [
+            {
+                "address": "13E845BC0B362D63BC7D4817279EDE51BEB7F9AD",
+                "pub_key": {
+                    "type": "tendermint/PubKeyEd25519",
+                    "value": "Cu7jYSsTcNgCfi4upLVfH1ak5OM7A4OEFHJiXQe6lR8="
+                },
+                "voting_power": "5000000",
+                "proposer_priority": "-15000000"
+            },
+            {
+                "address": "542977517E9B10F6D51792A92BCC5F5B9C1DC74A",
+                "pub_key": {
+                    "type": "tendermint/PubKeyEd25519",
+                    "value": "sa0J8aTS4tscdWI0On+JEhWjs+szgH49i4jhzAcyh40="
+                },
+                "voting_power": "5000000",
+                "proposer_priority": "5000000"
+            },
+            {
+                "address": "CDFF531A3AFA255BC193D52721027366935F9BF8",
+                "pub_key": {
+                    "type": "tendermint/PubKeyEd25519",
+                    "value": "kyAfOOxIQSLf2WXQLB8D3gqItZiOHiSeHGjfhhDtlyQ="
+                },
+                "voting_power": "5000000",
+                "proposer_priority": "5000000"
+            },
+            {
+                "address": "FAD365F3FF137C1F70CBA4E3B3E61F4EFD2CDF02",
+                "pub_key": {
+                    "type": "tendermint/PubKeyEd25519",
+                    "value": "ZJGhAhqDwuq1MUsUqT32mGnjlqtjlH7MHzOv8ezK7cg="
+                },
+                "voting_power": "5000000",
+                "proposer_priority": "5000000"
+            }
+        ],
+        "count": "4",
+        "total": "4"
+    }
+}
+```
+
+---
+
+### `genesis_chunked`
+
+> Retrieves Genesis in multiple chunks.
+
+Gets genesis document in multiple chunks to make it easier to iterate through larger genesis structures. Each chunk is produced by converting the genesis document to JSON and then splitting the resulting payload into 16MB blocks, and then Base64-encoding each block.
+
+#### Parameters
+<br/>
+
+  * `chunk` (integer; default: 0): a sequence number of the chunk to download.
+
+#### Returns
+
+A Genesis chunk response.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "genesis_chunked",
+      "params": ["0"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/genesis_chunked?chunk=0
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": -1,
+    "result": {
+        "chunk": "0",
+        "total": "1",
+        "data": "eyJnZW5lc2lzX3RpbWUiOiIyMDI0LTA2LTI0VDA3OjI0OjMxLjUyNjUzMzc3MloiLCJjaGFpbl9pZCI6InpndGVuZGVybWludF8xNjYwMC0yIiwiaW5pdGlhbF9oZWlnaHQiOiIxIiwiY29uc2Vuc3VzX3BhcmFtcyI6eyJibG9jayI6eyJtYXhfYnl0ZXMiOiIyMjAyMD..."
+    }
+}
+```
+
+---
+
+### `dump_consensus_state`
+
+> Retrieves consensus state.
+
+Not safe to call from inside the ABCI application during a block execution.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+A complete consensus state. See the [Vote string description](https://pkg.go.dev/github.com/tendermint/tendermint/types?tab=doc#Vote.String).
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "dump_consensus_state",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/dump_consensus_state
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "round_state": {
+            "height": "13211550",
+            "round": 0,
+            "step": 1,
+            "start_time": "2024-12-23T13:24:44.738595111Z",
+            "commit_time": "2024-12-23T13:24:39.738595111Z",
+            "validators": {
+                "validators": [
+                    {
+                        "address": "279EAD5DD43F82490C6B3CFB41EEF4E9A1A49D07",
+                        "pub_key": {
+                            "type": "tendermint/PubKeyEd25519",
+                            "value": "GFeC1pZ7fslcucbIsx44x9c0MPeJlLRb+WGG/wGflbw="
+                        },
+                        "voting_power": "21656144",
+                        "proposer_priority": "-52387076"
+                    }
+                ],
+                "proposer": {
+                    "address": "279EAD5DD43F82490C6B3CFB41EEF4E9A1A49D07",
+                    "pub_key": {
+                        "type": "tendermint/PubKeyEd25519",
+                        "value": "GFeC1pZ7fslcucbIsx44x9c0MPeJlLRb+WGG/wGflbw="
+                    },
+                    "voting_power": "21656144",
+                    "proposer_priority": "-52387076"
+                }
+            },
+            "proposal": null,
+            "proposal_block": null,
+            "proposal_block_parts": null,
+            "locked_round": -1,
+            "locked_block": null,
+            "locked_block_parts": null,
+            "valid_round": -1,
+            "valid_block": null,
+            "valid_block_parts": null,
+            "votes": [
+                {
+                    "round": 0,
+                    "prevotes": [
+                        "nil-Vote",
+                        "nil-Vote"
+                    ],
+                    "prevotes_bit_array": "BA{88:________________________________________________________________________________________} 0/117388861 = 0.00",
+                    "precommits": [
+                        "nil-Vote",
+                        "nil-Vote"
+                    ],
+                    "precommits_bit_array": "BA{88:________________________________________________________________________________________} 0/117388861 = 0.00"
+                }
+            ],
+            "commit_round": -1,
+            "last_commit": {
+                "votes": [
+                    "Vote{0:279EAD5DD43F 13211549/00/SIGNED_MSG_TYPE_PRECOMMIT(Precommit) 2F31A8E1F581 8B6CEAA65010 @ 2024-12-23T13:24:39.500074271Z}",
+                    "Vote{1:BD417EAD7FF9 13211549/00/SIGNED_MSG_TYPE_PRECOMMIT(Precommit) 2F31A8E1F581 31E4D1FFA299 @ 2024-12-23T13:24:39.553047425Z}"
+                ],
+                "votes_bit_array": "BA{88:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} 117388861/117388861 = 1.00",
+                "peer_maj_23s": {}
+            },
+            "last_validators": {
+                "validators": [
+                    {
+                        "address": "279EAD5DD43F82490C6B3CFB41EEF4E9A1A49D07",
+                        "pub_key": {
+                            "type": "tendermint/PubKeyEd25519",
+                            "value": "GFeC1pZ7fslcucbIsx44x9c0MPeJlLRb+WGG/wGflbw="
+                        },
+                        "voting_power": "21656144",
+                        "proposer_priority": "43345641"
+                    }
+                ],
+                "proposer": {
+                    "address": "5AA4440350230D5BB8CDFE6A5726656B4FC7DC6E",
+                    "pub_key": {
+                        "type": "tendermint/PubKeyEd25519",
+                        "value": "BM16Wru6ELaZXCyKZAH5WGxg5YiMYw2WlcpBnfdbnQg="
+                    },
+                    "voting_power": "162210",
+                    "proposer_priority": "-63939004"
+                }
+            },
+            "triggered_timeout_precommit": false
+        },
+        "peers": [
+            {
+                "node_address": "f8d5e677f1f68f8bd798752595371817f61dc532@178.128.156.131:26656",
+                "peer_state": {
+                    "round_state": {
+                        "height": "13211550",
+                        "round": 0,
+                        "step": 1,
+                        "start_time": "2024-12-23T13:24:43.982077345Z",
+                        "proposal": false,
+                        "proposal_block_part_set_header": {
+                            "total": 0,
+                            "hash": ""
+                        },
+                        "proposal_block_parts": null,
+                        "proposal_pol_round": -1,
+                        "proposal_pol": "________________________________________________________________________________________",
+                        "prevotes": "________________________________________________________________________________________",
+                        "precommits": "________________________________________________________________________________________",
+                        "last_commit_round": 0,
+                        "last_commit": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "catchup_commit_round": -1,
+                        "catchup_commit": "________________________________________________________________________________________"
+                    },
+                    "stats": {
+                        "votes": "14173",
+                        "block_parts": "45"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+---
+
+### `consensus_state`
+
+> Retrieves consensus state.
+
+Not safe to call from inside the ABCI application during a block execution.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+Consensus state results.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "consensus_state",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/consensus_state
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "round_state": {
+            "height/round/step": "13213043/0/6",
+            "start_time": "2024-12-23T15:53:01.989949876Z",
+            "proposal_block_hash": "78CB001605FE99454B82944CB47D65D093629DDD38454260E7B7980874A6A5D7",
+            "locked_block_hash": "78CB001605FE99454B82944CB47D65D093629DDD38454260E7B7980874A6A5D7",
+            "valid_block_hash": "78CB001605FE99454B82944CB47D65D093629DDD38454260E7B7980874A6A5D7",
+            "height_vote_set": [
+                {
+                    "round": 0,
+                    "prevotes": [
+                        "Vote{0:279EAD5DD43F 13213043/00/SIGNED_MSG_TYPE_PREVOTE(Prevote) 78CB001605FE 619E4C697B2C @ 2024-12-23T15:53:02.160332603Z}",
+                        "Vote{1:BD417EAD7FF9 13213043/00/SIGNED_MSG_TYPE_PREVOTE(Prevote) 78CB001605FE 82F0E2036082 @ 2024-12-23T15:53:02.374084828Z}"
+                    ],
+                    "prevotes_bit_array": "BA{88:xxxxxxxxxx__xxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_xxxxxxxxxx_xxxxxxxxxxxxxxx} 110520639/117416870 = 0.94",
+                    "precommits": [
+                        "Vote{0:279EAD5DD43F 13213043/00/SIGNED_MSG_TYPE_PRECOMMIT(Precommit) 78CB001605FE 92F18B4F01EA @ 2024-12-23T15:53:02.551832113Z}",
+                        "nil-Vote",
+                        "Vote{2:BFA6235D9556 13213043/00/SIGNED_MSG_TYPE_PRECOMMIT(Precommit) 78CB001605FE 0FB040BC54A6 @ 2024-12-23T15:53:02.563127503Z}",
+                        "nil-Vote"
+                    ],
+                    "precommits_bit_array": "BA{88:x_x_x________x_x__x_xx____x__xxxx___x_xx_xx_xxx_xxx__x___xxx__xx_xxx__x___x___xx___xxxx_} 52462972/117416870 = 0.45"
+                },
+                {
+                    "round": 1,
+                    "prevotes": [
+                        "nil-Vote",
+                        "nil-Vote"
+                    ],
+                    "prevotes_bit_array": "BA{88:________________________________________________________________________________________} 0/117416870 = 0.00",
+                    "precommits": [
+                        "nil-Vote",
+                        "nil-Vote"
+                    ],
+                    "precommits_bit_array": "BA{88:________________________________________________________________________________________} 0/117416870 = 0.00"
+                }
+            ],
+            "proposer": {
+                "address": "026D3C349592A1A1D6534744106D7B0453E3C565",
+                "index": 29
+            }
+        }
+    }
+}
+```
+
+---
+
+### `consensus_params`
+
+> Retrieves consensus parameters.
+
+#### Parameters
+<br/>
+
+  * `height` (integer; default: 0): the height to return. If no height is provided, the latest block commit info is to be returned.
+
+#### Returns
+
+Consensus parameters results.
+
+#### Request parameters
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "consensus_params",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/consensus_params?height=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "block_height": "1",
+        "consensus_params": {
+            "block": {
+                "max_bytes": "200000",
+                "max_gas": "20000000"
+            },
+            "evidence": {
+                "max_age_num_blocks": "1000000",
+                "max_age_duration": "6000000000000000",
+                "max_bytes": "50000"
+            },
+            "validator": {
+                "pub_key_types": [
+                    "ed25519"
+                ]
+            },
+            "version": {
+                "app": "0"
+            }
+        }
+    }
+}
+```
+
+---
+
+### `unconfirmed_txs`
+
+> Retrieves the list of unconfirmed transactions.
+
+#### Parameters
+<br/>
+
+  * `limit` (integer; default: 30; max: 100): the maximum number of unconfirmed transactions to return.
+
+#### Returns
+
+The list of unconfirmed transactions.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "unconfirmed_txs",
+      "params": ["1"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/unconfirmed_txs?limit=1
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "n_txs": "2",
+        "total": "4",
+        "total_bytes": "2012",
+        "txs": [
+            "CoYBCoMBCiQva2F2YS5wcmljZWZlZWQudjFiZXRhMS5Nc2dQb3N0UHJpY2USWwora2F2YTE5cmprNXFtbXd5d256ZmNjd3p5bjAyanl3Z3B3anFmNjBhZmo5MhILdXNkeDp1c2Q6MzAaEjcxODkzMDAwMDAwMDAwMDA2OSILCPHVsLsGEMCO5TcSagpSCkYKHy9jb3Ntb3MuY3J5cHRvLnNlY3AyNTZrMS5QdWJLZXkSIwohA31VSgUTeXh1kcCYwNrx04+4ItSC8M6wuKV96JLq9G0pEgQKAggBGJHBFxIUCg4KBXVrYXZhEgU1MDAwMBDwkwkaQKvIEvEmlpm5Xuw9on+NLx53kPmvw3QI2Fic1/IDowITWeN8bbGHdomSC1cdnrtZ8rxaBUnfpLM7Yisnk4cqcl4=",
+            "CoQBCoEBCiQva2F2YS5wcmljZWZlZWQudjFiZXRhMS5Nc2dQb3N0UHJpY2USWQora2F2YTF1ZWFrN256ZXNtM3BuZXY2bG5ncDZsZ2swcnkwMmRqejhwanBjZxIIdXNkeDp1c2QaEjczMzg5OTk5OTk5OTk5OTk5NyIMCLSAp7sGEMCR+NQCEmkKUgpGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQJh+Rd6tFqIDMHzDY2LUqIfd6iQjaxEk7kCf/PggVVILxIECgIIARj78XASEwoNCgV1a2F2YRIENTAwMBDwkwkaQNH1d9rV6P0l8EktESQ6pSg1htx5I8FNNit3kfg/bOXqJ0c5PxTgBfeitv167yLxWxyXBWaJueQGMVh8KOHi1W0="
+        ]
+    }
+}
+```
+
+---
+
+### `num_unconfirmed_txs`
+
+> Retrieves data on unconfirmed transactions.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+The status of unconfirmed transactions.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "num_unconfirmed_txs",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/num_unconfirmed_txs
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "n_txs": "0",
+        "total": "0",
+        "total_bytes": "0",
+        "txs": null
+    }
+}
+```
+
+---
+
+### `tx_search`
+
+> Searches for transactions with their results.
+
+#### Parameters
+<br/>
+
+  * `query` (string; required): query is a string, which has a form: "condition AND condition ..." (no OR at the moment). condition has a form: "key operation operand". key is a string with a restricted set of possible symbols ( \t\n\r\()"'=>< are not allowed). operation can be `=`, `<`, `<=`, `>`, `>=`, `CONTAINS`. An operand can be a string (escaped with single quotes), number, date, or time.
+  * `prove` (boolean; default: false): adds proofs of the transactions inclusion in the block.
+  * `page` (integer; default: 1): a page number (1-based).
+  * `per_page` (integer; default: 30, max: 100): a number of entries per page.
+  * `order_by` (string; default: asc): the order in which transactions are sorted (`asc` or `desc`), by height & index. If empty, default sorting still applies.
+  * `match_events` (boolean; default: false): match attributes in query within events, in addition to the height and txhash.
+
+#### Returns
+
+The list of unconfirmed transactions.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "tx_search",
+    "params": {
+        "query": "tx.height=13225811",
+        "prove": true,
+        "page": "1",
+        "per_page": "5",
+        "order_by": "desc"
+    },
+    "id": 1
+}'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/tx_search?query=tx.height%3D13225811&prove=true&page=1&per_page=5&order_by=desc
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "txs": [],
+        "total_count": "0"
+    }
+}
+```
+
+---
+
+### `block_search`
+
+> Searches for blocks by `BeginBlock` and `EndBlock` events.
+
+#### Parameters
+<br/>
+
+  * `query` (string; required): query is a string, which has a form: "condition AND condition ..." (no OR at the moment). condition has a form: "key operation operand". key is a string with a restricted set of possible symbols ( \t\n\r\()"'=>< are not allowed). operation can be `=`, `<`, `<=`, `>`, `>=`, `CONTAINS`. An operand can be a string (escaped with single quotes), number, date, or time.
+  * `page` (integer; default: 1): a page number (1-based).
+  * `per_page` (integer; default: 30, max: 100): a number of entries per page.
+  * `order_by` (string; default: asc): the order in which transactions are sorted (`asc` or `desc`), by height & index. If empty, default sorting still applies.
+  * `match_events` (boolean; default: false): match attributes in query within events, in addition to the height.
+
+#### Returns
+
+The list of paginated blocks matching the search criteria.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+    "jsonrpc": "2.0",
+    "method": "block_search",
+    "params": {
+        "query": "block.height=13225811",
+        "page": "1",
+        "per_page": "10",
+        "order_by": "desc"
+    },
+    "id": 1
+}'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/block_search?query=block.height%3D13225811&page=1&per_page=10&order_by=desc
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "blocks": [
+            {
+                "block_id": {
+                    "hash": "F054E236608C0E65DFE9231F9332D7F54F1A282D4C2C3DA6B35FAED5D4EE9169",
+                    "parts": {
+                        "total": 1,
+                        "hash": "4F02FC67A8503D1D5428EE6D1209FC5BC1BB67382DBDB53F38C3FD0783B2FC8A"
+                    }
+                },
+                "block": {
+                    "header": {
+                        "version": {
+                            "block": "11"
+                        },
+                        "chain_id": "0g_2222-10",
+                        "height": "13225811",
+                        "time": "2024-12-24T12:58:00.512093988Z",
+                        "last_block_id": {
+                            "hash": "304F208093FA799825FA221EB9B517B73A0879E6D9B971DD28FDF96F564EEC7C",
+                            "parts": {
+                                "total": 1,
+                                "hash": "4158FCF92A13A2A5F8D466BD0189EB466DDD5D1FCA7ACF0E40069A8A0B775792"
+                            }
+                        },
+                        "last_commit_hash": "CCFD88F120E554844A8DED71E1DAF3FA8089B1D7CFDC276917C8A5E34FDE6DBD",
+                        "data_hash": "2E1EC915F83863741270A49157E2787F5F34F3B0E2E67BB1527368F8BA05D1CD",
+                        "validators_hash": "7C3AABDFAA6A53BF1C63DC025201337CA9CB3F7DE8A51EA0C54B2CEBDCEF6E39",
+                        "next_validators_hash": "7C3AABDFAA6A53BF1C63DC025201337CA9CB3F7DE8A51EA0C54B2CEBDCEF6E39",
+                        "consensus_hash": "AD82B220C509602720D74FD75BCE7CFE9B148039958F236D8894E00EB1599E04",
+                        "app_hash": "2AA5FE48061351DF5DD4F79C25A902466C31975199BEE286FE294273DB4FBF4A",
+                        "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                        "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                        "proposer_address": "279EAD5DD43F82490C6B3CFB41EEF4E9A1A49D07"
+                    },
+                    "data": {
+                        "txs": [
+                            "CrIHCv4GCh8vZXRoZXJtaW50LmV2bS52MS5Nc2dFdGhlcmV1bVR4EtoGCpMGChovZXRoZXJtaW50LmV2bS52MS5MZWdhY3lUeBL0BQiXvhMSDDEwMTAwMDAwMDAwMBjJ9hgiKjB4ODE1ZjI3QTU2MTcxMUE2QjA0YmNFM0FhNjVjNUQ5QTE5NDVBNWVFQioBMDLkBHgmYbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGdqr9oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA..."
+                        ]
+                    },
+                    "evidence": {
+                        "evidence": []
+                    },
+                    "last_commit": {
+                        "height": "13225810",
+                        "round": 0,
+                        "block_id": {
+                            "hash": "304F208093FA799825FA221EB9B517B73A0879E6D9B971DD28FDF96F564EEC7C",
+                            "parts": {
+                                "total": 1,
+                                "hash": "4158FCF92A13A2A5F8D466BD0189EB466DDD5D1FCA7ACF0E40069A8A0B775792"
+                            }
+                        },
+                        "signatures": [
+                            {
+                                "block_id_flag": 2,
+                                "validator_address": "279EAD5DD43F82490C6B3CFB41EEF4E9A1A49D07",
+                                "timestamp": "2024-12-24T12:58:00.458392974Z",
+                                "signature": "LU+rS0/HPXczwL9jxzAWYHSck0ORgzD9MGLXx6POcKO2XpNnHRG8/QsxDSs4Ouy3hO9AAiG0RNUWBrVlgjlpBg=="
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "total_count": "1"
+    }
+}
+```
+
+---
+
+### `tx`
+
+> Retrieves a transaction by hash.
+
+#### Parameters
+<br/>
+
+  * `hash` (string; required): a hash of a transaction to retrieve.
+  * `prove` (boolean; default: false): adds proofs of the transaction's inclusion in the block.
+
+#### Returns
+
+Transaction info.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "tx",
+      "params": ["4B6D8FEA3786BFC6152EAEA791C4DAF00C41E93DAD56A7230B565179CD29CAA1", true],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/tx?hash=4B6D8FEA3786BFC6152EAEA791C4DAF00C41E93DAD56A7230B565179CD29CAA1&prove=true
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "hash": "4B6D8FEA3786BFC6152EAEA791C4DAF00C41E93DAD56A7230B565179CD29CAA1",
+    "height": "12345",
+    "index": 2,
+    "tx_result": {
+      "code": 0,
+      "log": "Success",
+      "events": [
+        {
+          "type": "transfer",
+          "attributes": [
+            { "key": "sender", "value": "0g1xyz..." },
+            { "key": "recipient", "value": "0g1abc..." },
+            { "key": "amount", "value": "10000u0g" }
+          ]
+        }
+      ]
+    },
+    "tx": "BASE64_ENCODED_TX",  // The transaction itself in Base64 format
+    "proof": {
+      "root_hash": "0xABC123...",
+      "data": "BASE64_ENCODED_PROOF",
+      "proof": { /* Detailed proof structure */ }
+    }
+  }
+}
+```
+
+---
+
+## Transactions
+
+### `broadcast_tx_sync`
+
+> Returns with the response from `CheckTx`. Does not wait for `DeliverTx` result.
+
+If you want to be sure that the transaction is included in a block, you can subscribe for the result using JSON-RPC via a websocket. See https://docs.cometbft.com/v0.34/core/subscription.html If you haven't received anything after a couple of blocks, resend it. If the same happens again, send it to some other node. A few reasons why it could happen:
+
+  1. A malicious node drops or pretends it has committed your tx.
+  2. A malicious proposer (not necessary the one you're communicating with) drops transactions, which might become valid in the future (https://github.com/tendermint/tendermint/issues/3322).
+
+Please refer to [Tendermint docs](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#formatting) for formatting/encoding rules.
+
+### Parameters
+<br/>
+
+  * `tx` (string; required): the signed transaction, encoded as Base64.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "broadcast_tx_sync",
+      "params": ["<BASE64_ENCODED_TRANSACTION>"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/broadcast_tx_sync?tx=<BASE64_ENCODED_TRANSACTION>
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "code": 0,
+    "data": "",
+    "log": "transaction successfully broadcasted",
+    "hash": "0xABC123..." // The transaction hash
+  }
+}
+```
+
+---
+
+### `broadcast_tx_async`
+
+> Returns right away, with no response. Does not wait for `CheckTx` nor `DeliverTx` results.
+
+If you want to be sure that the transaction is included in a block, you can subscribe for the result using JSON-RPC via a websocket. See https://docs.cometbft.com/v0.34/core/subscription.html If you haven't received anything after a couple of blocks, resend it. If the same happens again, send it to some other node. A few reasons why it could happen:
+
+  1. A malicious node drops or pretends it has committed your tx.
+  2. A malicious proposer (not necessary the one you're communicating with) drops transactions, which might become valid in the future (https://github.com/tendermint/tendermint/issues/3322).
+  3. A node is offline.
+
+Please refer to [CometBFT docs](https://docs.cometbft.com/v0.34/core/using-cometbft.html#formatting) for formatting/encoding rules.
+
+#### Parameters
+<br/>
+
+  * `tx` (string; required): the Base64-encoded signed transaction.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "broadcast_tx_async",
+      "params": ["<BASE64_ENCODED_TRANSACTION>"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/broadcast_tx_async?tx=<BASE64_ENCODED_TRANSACTION>
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "code": 0,
+    "data": "",
+    "log": "",
+    "hash": "0xABC123..." // Transaction hash
+  }
+}
+```
+
+---
+
+### `broadcast_tx_commit`
+
+> Returns with the responses from `CheckTx` and `DeliverTx`.
+
+<Callout type="warning">
+Use only for testing and development. In production, use `BroadcastTxSync` or `BroadcastTxAsync`. You can subscribe for the transaction result using JSON-RPC via a websocket (see [CometBFT docs](https://docs.cometbft.com/v0.34/core/subscription.html)).
+</Callout>
+
+<Callout type="tip">
+CONTRACT: only returns error if `mempool.CheckTx()` errs or if we timeout waiting for tx to commit.
+If `CheckTx` or `DeliverTx` fails, no error will be returned, but the result will contain a non-OK ABCI code.
+Please refer to [CometBFT docs](https://docs.cometbft.com/v0.34/core/using-cometbft.html#formatting) for formatting/encoding rules.
+</Callout>
+
+#### Parameters
+<br/>
+
+  * `tx` (string; required): the Base64-encoded signed transaction.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "broadcast_tx_commit",
+      "params": ["<BASE64_ENCODED_TRANSACTION>"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/broadcast_tx_commit?tx=<BASE64_ENCODED_TRANSACTION>
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "check_tx": {
+      "code": 0,
+      "data": "",
+      "log": "Transaction checked successfully"
+    },
+    "deliver_tx": {
+      "code": 0,
+      "data": "",
+      "log": "Transaction delivered successfully",
+      "events": [
+        {
+          "type": "transfer",
+          "attributes": [
+            { "key": "sender", "value": "0g1xyz..." },
+            { "key": "recipient", "value": "0g1abc..." },
+            { "key": "amount", "value": "10000u0g" }
+          ]
+        }
+      ]
+    },
+    "hash": "0xABC123...",
+    "height": "12345"
+  }
+}
+```
+
+---
+
+### `check_tx`
+
+> Checks the transaction without executing it.
+
+The transaction won't be added to the mempool.
+
+Please refer to [CometBFT docs](https://docs.cometbft.com/v0.34/core/using-cometbft.html#formatting) for formatting/encoding rules.
+
+#### Parameters
+<br/>
+
+  * `tx` (string; required): the Base64-encoded signed transaction.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "check_tx",
+      "params": ["<BASE64_ENCODED_TRANSACTION>"],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/check_tx?tx=<BASE64_ENCODED_TRANSACTION>
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "code": 0,
+    "data": "",
+    "log": "Transaction is valid",
+    "events": [
+      {
+        "type": "transfer",
+        "attributes": [
+          { "key": "sender", "value": "0g1xyz..." },
+          { "key": "recipient", "value": "0g1abc..." },
+          { "key": "amount", "value": "10000u0g" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+
+## ABCI
+
+### `abci_info`
+
+> Retrieves application info.
+
+#### Parameters
+<br/>
+
+None.
+
+#### Returns
+
+Application info.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "abci_info",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/abci_info
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "response": {
+            "data": "0g",
+            "version": "0.27.0",
+            "app_version": "8",
+            "last_block_height": "13239641",
+            "last_block_app_hash": "wLirVXfBEeq0jZcrshBGWS7AGN19N7p8aQqMAiaIl+I="
+        }
+    }
+}
+```
+
+---
+
+### `abci_query`
+
+> Queries the application for particular information.
+
+#### Parameters
+<br/>
+
+  * `path` (string; required): a path to the data ("/a/b/c").
+  * `data` (string; required): the hex-encoded data.
+  * `height` (integer; default: 0): the height (0 means latest).
+  * `prove` (boolean; default: false): adds proofs of the transactions inclusion in the block.
+
+#### Returns
+
+Particular info according to the query submitted.
+
+#### Request example
+
+<Tabs
+  items={[
+    "JSON-RPC",
+    "REST",
+  ]}
+>
+  <Tabs.Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/0g_galileo_testnet_tendermint \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "abci_query",
+      "params": ["a/b/c", "the_data", "1", true],
+      "id": 1
+    }'
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_tendermint/blockchain?path=%2Fa%2Fb%2Fc&data=the_data&height=1&prove=true
+```
+  </Tabs.Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "response": {
+      "code": 0,
+      "log": "",
+      "info": "",
+      "index": -1,
+      "key": "0x6b61766131387879377a...",
+      "value": "0x123456789abcdef", // Hex-encoded value
+      "proofOps": null,
+      "height": "12345",
+      "codespace": ""
+    }
+  }
+}
+```
+
+---
+
+## Beaconkit REST methods
+
+  * [`GET /eth/v1/node/version`](/rpc-service/chains/chains-api/0g/#get-ethv1nodeversion) — retrieves node version info.
+  * [`GET /eth/v2/debug/beacon/states/{state_id}`](/rpc-service/chains/chains-api/0g/#get-ethv2debugbeaconstatesstate_id) — retrieves debug info.
+
+## `GET /eth/v1/node/version`
+
+> Retrieves node version info.
+
+### Parameters
+
+None.
+
+### Request example
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_beaconkit/eth/v1/node/version
+```
+
+### Response example
+
+```json
+{
+    "data": {
+        "version": "1.1.0"
+    }
+}
+```
+
+---
+
+## `GET /eth/v2/debug/beacon/states/{state_id}`
+
+> Retrieves debug info.
+
+Returns a quantity of debug information, including the following:
+
+  * Validator root.
+  * Latest beacon and execution chain block headers.
+  * Various root hashes.
+  * The node's understanding of the validator set voting power, slashing status.
+
+### Parameters
+
+  * `state_id` (string, hex; path): ID for the state to query. Can be one of the following:
+    * A block root (32-byte hex string, e.g., 0xabc123...).
+    * A state root (32-byte hex string).
+    * A block ID alias such as:
+      * `head` – the latest known state.
+      * `genesis` – the genesis state.
+      * `finalized` – the latest finalized state.
+      * `justified` – the latest justified state.
+
+### Request example
+
+```shell
+curl https://rpc.ankr.com/http/0g_galileo_testnet_beaconkit/eth/v2/debug/beacon/states/head
+```
+
+### Response example
+
+```json
+{
+    "version": "electra",
+    "execution_optimistic": false,
+    "finalized": true,
+    "data": {
+        "genesis_validators_root": "0xc22d6f6c6672c738e5696fa0e43c0aa0acf25ec09bd301b68036d61eb79c2daf",
+        "slot": "0x1c3b08",
+        "fork": {
+            "previous_version": "0x05000000",
+            "current_version": "0x05000000",
+            "epoch": "0x0"
+        },
+        "latest_block_header": {
+            "slot": "0x1c3b08",
+            "proposer_index": "0x0",
+            "parent_block_root": "0x7ce89c85094fa830a5cf6649621000400d3a882240fa222ddd0f021f0bcbb42a",
+            "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "body_root": "0xa8e552f88c09ff0f7394b82041ab25a712cbe73d9e646190ac5330d50073d21f"
+        },
+        "block_roots": [
+            "0x2f3a417b224d5262596c7d4dfa696abaf3800ccf7593cc749952f88e3948c7cd",
+            "0x7f40aa67f38b9eb7dc36a9dd5f6cdf6a3e9a94a206084240f81345100708290f",
+            "0xa703243bff9736a2154d4fbb158bfc0317a8c52af58516ae6844a17d497d739d",
+            "0x0d9701998fbf960cebe13cdb89647595334db848c2a326bd39cce67815e42adb",
+            "0x6a705f37d7fccfe3b7ae202bd22840c3c70f7138a366f3506fa533da4f26dea7",
+            "0x7bc0ea29114f8a334cf28eb1de33443de5214810fbe5c5b49a07d4878c5342ff",
+            "0xf3875ec20169e7f48c576a7076ab04a4dac25c15a7c80c721defcc10851af802",
+            "0x7ce89c85094fa830a5cf6649621000400d3a882240fa222ddd0f021f0bcbb42a"
+        ],
+        "state_roots": [
+            "0xde5cf944fec524820e3d4d9174ca5b42855ebb9ad89104d92bc5001c4a9b9e32",
+            "0xac2e45403552d2b2372950fea027f0c826b4d09b8af1bafba14be45347b1e69a",
+            "0x5a5663ca9e37572174e5957e1260c221aca96384a3b441de8491de58afd6e44f",
+            "0x593206fbb5b8f1ae140c4041d8ab865cb5afb7fccc7da019ce2834ce9f11bb0a",
+            "0x39262683ed866217509ec6bd75b655c8380b42874d8b1d1eb5c40ead206ef700",
+            "0x5dc2e2b8c9f04cea3e5574aefca4365d2a920d90c9cdad3eb4d5adee26fec217",
+            "0x8a048f206b906dddb5c0144e2d6248b32ed5e593ef1494f9d0e9141a19cc5862",
+            "0x6cede03f993b5ee611cea35969a54f655693f8004fba4ab7e3740ffd5d1b9cbc"
+        ],
+        "eth1_data": {
+            "depositRoot": "0xa14b8fd2b3468db5bc151c63cf07b85bf774bfa94cc45e4bd4c7d5f450888a79",
+            "depositCount": "0x0",
+            "blockHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "eth1_deposit_index": 7,
+        "latest_execution_payload_header": {
+            "parentHash": "0x812d076cc7ea828fbb4a93a23db0b68e0e952ced2e56eaaadff43a48e1ca2337",
+            "feeRecipient": "0x0000000000000000000000000000000000000001",
+            "stateRoot": "0x115cfcd4e912feb47ca34a490b02f1a71fea4dd402893ed62385bc0688d1f26a",
+            "receiptsRoot": "0xc1e4e11c4d71733acebe11c2ea4c179267e56838eefbec0cd2609500010f66bd",
+            "logsBloom": "0x1201000014800000100006808228400420c010020100800102000110400020104300c0004008010000100004010000092010691000202040020140000028800000002040080000094888010804000800400040800400050002080000000000c030022800024100020800000020040c0200080100000c8008010880308408002000000010000420020020040b02840000900080021100040a00041110200004000e001210009026000b0a100000040004113020200801000944220000440440100408200640000401200004000200000004000002f4100200922000080101280080d80c0880048400000000001c00000020a0200008280040002000084000c001",
+            "prevRandao": "0x73ca1a22bd4c673a6a320736f17e462c01f024303d6b74bd7dadd78296500348",
+            "blockNumber": "0x1c3b08",
+            "gasLimit": "0x2255100",
+            "gasUsed": "0x4f71d5",
+            "timestamp": "0x6848429c",
+            "extraData": "0xd883010f0b846765746888676f312e32332e38856c696e7578",
+            "baseFeePerGas": "9",
+            "blockHash": "0xf43ec3c5eb64cb5c205af34fc90675117f6ad9ed1b8453220e77d7d424a2952e",
+            "transactionsRoot": "0xb6577e8b117a399b7ef1a8b25080c4601f01cd9ccc5bd2fc02388ef4deb37d73",
+            "withdrawalsRoot": "0x0145cc91e1ba724070abab6da58080fc905c13e071e17882988043e70efe0988",
+            "blobGasUsed": "0x0",
+            "excessBlobGas": "0x0"
+        },
+        "validators": [
+            {
+                "pubkey": "0xa21978649e2dca81ff5b5a9c1206ff28d86f55debf3cf0e47ed0354a168ffcdbf14ed556ad4e9260b9bdd6b0f01907a9",
+                "withdrawalCredentials": "0x01000000000000000000000063df5c411aa90b9866e7e6082230ffbf61aeda8c",
+                "effectiveBalance": "0x1fe5d61a000",
+                "slashed": false,
+                "activationEligibilityEpoch": "0x0",
+                "activationEpoch": "0x0",
+                "exitEpoch": "0xffffffffffffffff",
+                "withdrawableEpoch": "0xffffffffffffffff"
+            },
+            {
+                "pubkey": "0xa68a786ea4c5b0d5b327a91d7eab6c07e69c58d301f86bc3e39991d124c7d7638efa1964089ac5d81f9f7f151a86eebf",
+                "withdrawalCredentials": "0x01000000000000000000000063df5c411aa90b9866e7e6082230ffbf61aeda8c",
+                "effectiveBalance": "0x773594000",
+                "slashed": false,
+                "activationEligibilityEpoch": "0x0",
+                "activationEpoch": "0x0",
+                "exitEpoch": "0xffffffffffffffff",
+                "withdrawableEpoch": "0xffffffffffffffff"
+            },
+            {
+                "pubkey": "0x975d7a0569f6dd5560fa5054690d87f48fd99026f2336f9666f47d2c74a22611d1158d0ec3feb3511331ec4ef714f608",
+                "withdrawalCredentials": "0x01000000000000000000000063df5c411aa90b9866e7e6082230ffbf61aeda8c",
+                "effectiveBalance": "0x773594000",
+                "slashed": false,
+                "activationEligibilityEpoch": "0x0",
+                "activationEpoch": "0x0",
+                "exitEpoch": "0xffffffffffffffff",
+                "withdrawableEpoch": "0xffffffffffffffff"
+            },
+            {
+                "pubkey": "0x94f8722acefe3b6d2de811a64cb4f93209bba50bb3613eaeab1d720ae09c7313c29f7de71a8718d351983c9c0c48ad09",
+                "withdrawalCredentials": "0x010000000000000000000000565e66aa2bcb27116937983f2f208efabf620ab2",
+                "effectiveBalance": "0xee6b28000",
+                "slashed": false,
+                "activationEligibilityEpoch": "0x4308",
+                "activationEpoch": "0x4309",
+                "exitEpoch": "0xffffffffffffffff",
+                "withdrawableEpoch": "0xffffffffffffffff"
+            }
+        ],
+        "balances": [
+            2192000000000,
+            32000000000,
+            32000000000,
+            64000000000
+        ],
+        "randao_mixes": [
+            "0xf3dadd64aafe134e583f639ab5b9fc650a7f0d008789b867ecb05b68e0037e2a",
+            "0x0570972fa2cb1548eb6d3b5161d638708d89b3cf49d88727b7dd7721141325c0",
+            "0x6761890246fa48731c333166236dd4bca041ad5ba491abf299bd94ee84faa551",
+            "0x995cb20d32dca378b4e09f625575141ae1bac9276982971b6402dfd9bc985928",
+            "0x995cb20d32dca378b4e09f625575141ae1bac9276982971b6402dfd9bc985928",
+            "0x5784db6dd330eaeb0215c5de57eef097cac679458038aac95a4c6d4b2d247590",
+            "0x7890bf970c57a80a27f1ad9e2425e9b80f5cbbb7ac1f8e3a17bbd1fd2dafadf2",
+            "0x6ec60f8c3be68f54efe87f84c48a8474039d30922674ca1d9043eb9205eeb0df"
+        ],
+        "next_withdrawal_validator_index": "0x1"
+    }
+}
+```

@@ -1,0 +1,538 @@
+import { Tabs, Tab } from "nextra/components";
+
+import { Callout } from "components";
+
+# Polkadot
+<br/>
+
+<img src="/docs/build/chains-list/polkadot.png" className="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Premium](/rpc-service/service-plans/#service-plans-comparison) users only.
+</Callout>
+
+> Polkadot API is available on [Web3 API platform](https://www.ankr.com/rpc/polkadot).
+
+*Polkadot* is the first fully-sharded blockchain.
+
+Polkadot enables scalability by allowing specialized blockchains to communicate with each other in a secure, trust-free environment.
+
+Polkadot is built to connect and secure unique blockchains, whether they be public, permissionless networks, private consortium chains, or other Web3 technologies. It enables an internet where independent blockchains can exchange information under common security guarantees.
+
+In order for your Web3 application to interact with Polkadot — either by reading blockchain data or sending transactions to the network — it must connect to a Polkadot node. Developers interact with the blockchain using the methods provided by the API.
+
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
+
+---
+
+## Methods supported
+
+  * [`chain_getBlock`](/rpc-service/chains/chains-api/polkadot/#chain_getblock) — retrieves the header and body of a relay chain block.
+  * [`chain_getBlockHash`](/rpc-service/chains/chains-api/polkadot/#chain_getblockhash) — retrieves the block hash for a specific block.
+  * [`chain_getHeader`](/rpc-service/chains/chains-api/polkadot/#chain_getheader) — retrieves the header for a specific block.
+  * [`chain_getFinalizedHead`](/rpc-service/chains/chains-api/polkadot/#chain_getfinalizedhead) — retrieves the hash of the last finalized block in the canon chain.
+  * [`state_getStorage`](/rpc-service/chains/chains-api/polkadot/#state_getstorage) — retrieves the storage for a key.
+  * [`state_getStorageHash`](/rpc-service/chains/chains-api/polkadot/#state_getstoragehash) — retrieves the storage hash.
+  * [`state_getStorageSize`](/rpc-service/chains/chains-api/polkadot/#state_getstoragesize) — retrieves the storage size.
+  * [`grandpa_proveFinality`](/rpc-service/chains/chains-api/polkadot/#grandpa_provefinality) — proves finality for the given block number, returning the Justification for the last block in the set.
+  * [`grandpa_roundState`](/rpc-service/chains/chains-api/polkadot/#grandpa_roundstate) — returns the state of the current best round state as well as the ongoing background rounds.
+  * [`system_chain`](/rpc-service/chains/chains-api/polkadot/#system_chain) — retrieves the chain.
+  * [`system_chainType`](/rpc-service/chains/chains-api/polkadot/#system_chaintype) — retrieves the chain type.
+
+---
+
+### `chain_getBlock`
+
+> Retrieves the header and body of a relay chain block.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block to retrieve; if omitted, retrieves the latest finalized block.
+
+#### Returns
+
+  * `SignedBlock`: the header and body data of a relay chain block.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getBlock",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "block": {
+            "header": {
+                "parentHash": "0xe121a7c43cbe19eab2601d422df9173a84553cda9f0cd59e0656227696f46d30",
+                "number": "0xedaaed",
+                "stateRoot": "0x4f4dd4f1bc408dfd01222a8d1401a96c9abb8be86ab60c0e01f10b4a54834b6f",
+                "extrinsicsRoot": "0xf310b41030a9bbf5788176a0a187a7fe84833729fb763883329bcc2f9a308a03",
+                "digest": {
+                    "logs": [
+                        "0x0642414245b50103fc000000f4aebb1000000000440c17d240df02d42ddab5c961fe2649e30f69aea189e5bc95487ae5f889a74bc516a159ccc7db48e5253dae8f1168be0c66597b18ab1e2248ecd3862eae9e0a8c74b856d20d6916ab8cbe3cd4955f183c231bde98ca24dbb3f201468cc23b0f",
+                        "0x054241424501015a6148654f94084ca0373a6d708704ce54ae704e159d51eb00d7de032b2b3824a91a4509f94f90fda82a3ff372b0003c0440475b9218e6469d883eeba276ac8a"
+                    ]
+                }
+            },
+            "extrinsics": [
+                "0x280403000bc076d42e8801",
+                "0xdd02040c00ecaaed009c98002408011220c9b7d94c0c8dc84ca9034c1a6926bfb2e0b1e31c0c9fbaee8126874d32d122840878742f6970342f3134312e39382e3231392e3139392f7463702f33303333336c682f6970342f3130302e36342e332e31322f7463702f333033333379190000f600000029010000903755c7655994b2ca1f457d26c947041f9e6970e6b3cf578ee8459d061cc20d3d7e65d5c166fcca21059ad60b89d21f8a2b5574da4414adb72941c0c2e44d8c"
+            ]
+        },
+        "justifications": null
+    },
+    "id": 1
+}
+```
+
+---
+
+### `chain_getBlockHash`
+
+> Retrieves the block hash for a specific block.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    `<BlockNumber>` (string; hex; optional): the number of a block to retrieve the hash for; if omitted, retrieves the latest finalized block.
+
+#### Returns
+
+  * `<BlockHash>`: the block hash of the block specified.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getBlockHash",
+      "params": ["0xb48f90"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x92f387735d1d4459c8e6d5931bc350712a1697866ed708fb241ee97a1bd0da94",
+    "id": 1
+}
+```
+
+---
+
+### `chain_getHeader`
+
+> Retrieves the header for a specific block.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block to retrieve the header for; if omitted, shows the result for the latest finalized block.
+
+#### Returns
+
+  * `<Header>`: the header of the block specified.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getHeader",
+      "params": ["0x56547256415c6ca5d7e43e32f0664ede1aa78aae59e07cdc64f2037beba31e9e"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "parentHash": "0x88ac4b5bc7ea4e0cb1b8d8e1d2dce838e37d1a4480c4bde37bdfdcc9c8fffb64",
+        "number": "0xb48f75",
+        "stateRoot": "0xa2baf709447aa9055b4ca5046fc76a0ca05ace90758fcf3bc3bc004612173bfa",
+        "extrinsicsRoot": "0xe94f82eae3aba9331e0370f1c3b7d72da3bd9a82dd36711448d6197b6659e308",
+        "digest": {
+            "logs": [
+                "0x0642414245b50103c0000000076382100000000084c21f756e3473b8717c13d27c85a94466cbd0f64fe8bbd37cbf23dd46c70e5a49626481005b811dfcff67dda4b12ee502cb3589c6b2ff6450c6537f18298c08fd2942aaa2f0ee1591522fe4dc0482949c920a046201cf39f7ba766af4907509",
+                "0x05424142450101340de0372f172ba4d9c12d767ddd42e2f1844691c93f74773e7839ccba29b96f400a6b8bbea109e807033696c182f08c8c02918c3521968612cd20ed82af0b89"
+            ]
+        }
+    },
+    "id": 1
+}
+```
+
+---
+
+### `chain_getFinalizedHead`
+
+> Retrieves the hash of the last finalized block in the canon chain.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<BlockHash>`: the hash of the last finalized block in the canon chain.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "chain_getFinalizedHead",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0xc487e58e468240ea30fa17a2d982fb47d0213dd64e6b980e4a0cb4fb6bcc3ca6",
+    "id": 1
+}
+```
+
+---
+
+### `state_getStorage`
+
+> Retrieves the storage for a key.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<StorageKey>` (string; hex ; required): the key to retrieve the storage for.
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block.
+
+#### Returns
+
+  * `<StorageData>`: the storage data.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "state_getStorage",
+      "params": ["0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0xf08af92e88010000",
+    "id": 1
+}
+```
+
+---
+
+### `state_getStorageHash`
+
+> Retrieves the storage hash.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<StorageKey>` (string; hex; required): a storage key.
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block.
+
+#### Returns
+
+  * `<Hash>`: the storage hash.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "state_getStorageHash",
+      "params": ["0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0xcadcddea7fce8dd4169f521f2c043b3637bca8b07870994491d3b3d9bdfb4102",
+    "id": 1
+}
+```
+
+---
+
+### `state_getStorageSize`
+
+> Retrieves the storage size.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<StorageKey>` (string; hex; required): the storage key.
+    * `<BlockHash>` (data; 32 byte; optional): a hash of the block.
+
+#### Returns
+
+  * `<u64>`: the storage size.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "state_getStorageSize",
+      "params": ["0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb"]
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 8,
+    "id": 1
+}
+```
+
+---
+
+### `grandpa_proveFinality`
+
+> Proves finality for the given block number, returning the Justification for the last block in the set.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    * `<BlockNumber>` (integer; required): the number of a block to prove finality for.
+
+#### Returns
+
+  * `Option<EncodedFinalityProofs>`: the Justification for the last block in the set.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "grandpa_proveFinality",
+      "params": [11833440]
+}'
+```
+
+---
+
+### `grandpa_roundState`
+
+> Returns the state of the current best round state as well as the ongoing background rounds.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<ReportedRoundStates>`: the states of reported rounds.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "grandpa_roundState",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "setId": 1446,
+        "best": {
+            "round": 14118,
+            "totalWeight": 297,
+            "thresholdWeight": 199,
+            "prevotes": {
+                "currentWeight": 297,
+                "missing": []
+            },
+            "precommits": {
+                "currentWeight": 0,
+                "missing": [
+                    "12cCLNxo2WqvqizuMrgHtpjUz2s5xmomTM7y3FWESbvjcwq",
+                    "14ZryeDT1MmSSX29QaJ2pbNjJDv8hoLTfwFmDwe6mDMh3Vj",
+                    "15E5zYJhV2iqZXmL1FKe8MdFocj9n1phEaJob4izAaXA9bw"
+                ]
+            }
+        },
+        "background": []
+    },
+    "id": 1
+}
+```
+
+---
+
+### `system_chain`
+
+> Retrieves the chain.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<Text>`: a chain name.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "system_chain",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "Polkadot",
+    "id": 1
+}
+```
+
+---
+
+### `system_chainType`
+
+> Retrieves the chain type.
+
+#### Parameters
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): none.
+
+#### Returns
+
+  * `<ChainType>`: a chain type.
+
+#### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/polkadot/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "system_chainType",
+      "params": []
+}'
+```
+
+#### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "Live",
+    "id": 1
+}
+```

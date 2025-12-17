@@ -5,9 +5,8 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,ts,jsx,tsx}',
-    './theme.config.tsx'
+    './content/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {}

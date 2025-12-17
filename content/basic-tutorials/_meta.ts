@@ -1,0 +1,15 @@
+import type { MetaRecord } from 'nextra';
+
+const meta: MetaRecord = {
+  'dapp-on-ethereum-using-nocode':
+    'Decentralized Application on Ethereum using No-Code',
+  'dao-in-5min': 'DAO in 5 Minutes with Zero Lines of Code',
+  'ankrjs-advanced-apis-react-quickstart-guide':
+    'Ankr.js (Advanced APIs) React Quickstart Guide',
+  'file-storage-on-ipfs-with-filebase':
+    'Permanent File Storage (IPFS) with Filebase',
+  'backend-nodejs-ipfs-file-uploader-with-filebase':
+    'Backend NodeJS IPFS File Uploader With Filebase',
+};
+
+export default meta;
