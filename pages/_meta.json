@@ -44,11 +44,6 @@
   "bridge": "Bridge",
   "switch": "Switch",
   "staking-extra": "Extra",
-  "-- Gaming": {
-    "type": "separator",
-    "title": "Making Games"
-  },
-  "gaming-overview": "Mirage Gaming",
 
   "-- Support": {
     "type": "separator",
