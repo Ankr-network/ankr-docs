@@ -56,11 +56,11 @@ The `Node API` and `Advanced API` solutions come with both *Public*, *Freemium*,
 
 ### Rate limits
 
-| Service                                  | Public / Freemium                                                                                                                                       | Premium                                                      |
-|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| Node API<br/>(EVM-compatible chains) | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈1.5k requests/second` |
-| Node API<br/>(Solana)                | **Requests across all endpoints:**<br/>`≈1800 requests/minute` — guaranteed;<br/>`>1800 requests/minute` — possible<br/>(depends on the load) | **Requests per endpoint:**<br/>Up to `≈4k requests/second`   |
-| Advanced API                             | `50 requests/minute`                                                                                                                          | `1k+ requests/minute`                                        |
+| Service                                  | Public | Freemium                                                                                                                                                                                 | Premium                                                      |
+|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| Node API<br/>(EVM/non-EVM chains) | **Requests across all endpoints:**<br/>`≈1800 reqs/min` — guaranteed;<br/>`>1800 reqs/min` — possible<br/>(depends on the load) | **Requests across all endpoints:**<br/>`≈1800 reqs/min` — guaranteed;<br/>`>1800 reqs/min` — possible<br/>(depends on the load)                                            | **Requests per endpoint:**<br/>Up to `≈1.5k reqs/sec` |
+| Node API<br/>(Solana)                | **Requests across all endpoints:**<br/>`≈1800 reqs/min` — guaranteed;<br/>`>1800 reqs/min` — possible<br/>(depends on the load) | **Requests across all endpoints:**<br/>`≈1800 reqs/min` — guaranteed;<br/>`>1800 reqs/min` — possible<br/>(depends on the load)                                            | **Requests per endpoint:**<br/>Up to `≈4k reqs/sec`   |
+| Advanced API                             | ❌ | `50 reqs/min` (max `500 reqs / 10 min`)                                                                                                                               | `1k+ reqs/min`                                        |
 
 ### Block range / batch size limits
 
