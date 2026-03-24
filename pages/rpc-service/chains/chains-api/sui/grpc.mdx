@@ -15,19 +15,31 @@ In addition to standard request–response calls, gRPC supports server-side stre
 
 The Sui gRPC server fully supports server reflection, allowing tools like `grpcurl` to discover available services and methods at runtime without requiring local `.proto` files.
 
+## Endpoints
+
+| Network | Endpoint | Description |
+|---------|----------|-------------|
+| Mainnet | `sui.grpc.ankr.com:443` | Standard gRPC |
+| Testnet | `sui-testnet.grpc.ankr.com:443` | Testnet gRPC |
+| Mainnet Archive | `archive.sui.grpc.ankr.com:443` | Historical data access |
+
+For Premium users, pass your token via the `x-token` header (e.g., `-H "x-token: your-token"`).
+
+**Archive endpoint** — provides access to historical Sui data that standard full nodes may have pruned. It exposes the same `LedgerService` API, so you can use the same client code. Use it when querying older transactions, checkpoints, or objects that are no longer available on current nodes.
+
 ## Methods list
 
 **Ledger Service**:
 
 Provides read access to global ledger metadata such as chain identifiers, epochs, checkpoints, timestamps, and system-level information.
 
-  * [`BatchGetObjects`](/rpc-service/chains/chains-api/sui-grpc/#batchgetobjects) — Retrieves multiple objects in one request.
-  * [`BatchGetTransactions`](/rpc-service/chains/chains-api/sui-grpc/#batchgettransactions) — Retrieves multiple transactions by digest.
-  * [`GetCheckpoint`](/rpc-service/chains/chains-api/sui-grpc/#getcheckpoint) — Retrieves a checkpoint by sequence or digest.
-  * [`GetEpoch`](/rpc-service/chains/chains-api/sui-grpc/#getepoch) — Retrieves details for a specific epoch.
-  * [`GetObject`](/rpc-service/chains/chains-api/sui-grpc/#getobject) — Retrieves a single object by ID.
-  * [`GetServiceInfo`](/rpc-service/chains/chains-api/sui-grpc/#getserviceinfo) — Retrieves node, chain, and service metadata.
-  * [`GetTransaction`](/rpc-service/chains/chains-api/sui-grpc/#gettransaction) — Retrieves a single transaction by digest.
+  * [`BatchGetObjects`](/rpc-service/chains/chains-api/sui/grpc#batchgetobjects) — Retrieves multiple objects in one request.
+  * [`BatchGetTransactions`](/rpc-service/chains/chains-api/sui/grpc#batchgettransactions) — Retrieves multiple transactions by digest.
+  * [`GetCheckpoint`](/rpc-service/chains/chains-api/sui/grpc#getcheckpoint) — Retrieves a checkpoint by sequence or digest.
+  * [`GetEpoch`](/rpc-service/chains/chains-api/sui/grpc#getepoch) — Retrieves details for a specific epoch.
+  * [`GetObject`](/rpc-service/chains/chains-api/sui/grpc#getobject) — Retrieves a single object by ID.
+  * [`GetServiceInfo`](/rpc-service/chains/chains-api/sui/grpc#getserviceinfo) — Retrieves node, chain, and service metadata.
+  * [`GetTransaction`](/rpc-service/chains/chains-api/sui/grpc#gettransaction) — Retrieves a single transaction by digest.
 
 ---
 
@@ -35,10 +47,10 @@ Provides read access to global ledger metadata such as chain identifiers, epochs
 
 Exposes Move package metadata, allowing you to query on-chain modules and published Move code.
 
-  * [`GetDatatype`](/rpc-service/chains/chains-api/sui-grpc/#getdatatype) — Retrieves metadata about a Move struct/type.
-  * [`GetFunction`](/rpc-service/chains/chains-api/sui-grpc/#getfunction) — Retrieves metadata about a Move function.
-  * [`GetPackage`](/rpc-service/chains/chains-api/sui-grpc/#getpackage) — Retrieves information about a Move package.
-  * [`ListPackageVersions`](/rpc-service/chains/chains-api/sui-grpc/#listpackageversions) — Lists the published versions of a package.
+  * [`GetDatatype`](/rpc-service/chains/chains-api/sui/grpc#getdatatype) — Retrieves metadata about a Move struct/type.
+  * [`GetFunction`](/rpc-service/chains/chains-api/sui/grpc#getfunction) — Retrieves metadata about a Move function.
+  * [`GetPackage`](/rpc-service/chains/chains-api/sui/grpc#getpackage) — Retrieves information about a Move package.
+  * [`ListPackageVersions`](/rpc-service/chains/chains-api/sui/grpc#listpackageversions) — Lists the published versions of a package.
 
 ---
 
@@ -46,7 +58,7 @@ Exposes Move package metadata, allowing you to query on-chain modules and publis
 
 Performs cryptographic verification for signatures, proofs, and signed messages.
 
-  * [`VerifySignature`](/rpc-service/chains/chains-api/sui-grpc/#verifysignature): Validates a signature against a message and public key.
+  * [`VerifySignature`](/rpc-service/chains/chains-api/sui/grpc#verifysignature): Validates a signature against a message and public key.
 
 ---
 
@@ -54,11 +66,11 @@ Performs cryptographic verification for signatures, proofs, and signed messages.
 
 Provides access to detailed on-chain state including objects, balances, ownership, object layouts, dynamic fields, and protocol configuration. This is the main service for querying Sui state data.
 
-  * [`GetBalance`](/rpc-service/chains/chains-api/sui-grpc/#getbalance) — Retrieves balance for a specific coin type.
-  * [`GetCoinInfo`](/rpc-service/chains/chains-api/sui-grpc/#getcoininfo) — Retrieves metadata for a coin type.
-  * [`ListBalances`](/rpc-service/chains/chains-api/sui-grpc/#listbalances) — Lists all coin balances for an address.
-  * [`ListDynamicFields`](/rpc-service/chains/chains-api/sui-grpc/#listdynamicfields) — Lists dynamic fields under an object.
-  * [`ListOwnedObjects`](/rpc-service/chains/chains-api/sui-grpc/#listownedobjects) — Lists objects owned by an address.
+  * [`GetBalance`](/rpc-service/chains/chains-api/sui/grpc#getbalance) — Retrieves balance for a specific coin type.
+  * [`GetCoinInfo`](/rpc-service/chains/chains-api/sui/grpc#getcoininfo) — Retrieves metadata for a coin type.
+  * [`ListBalances`](/rpc-service/chains/chains-api/sui/grpc#listbalances) — Lists all coin balances for an address.
+  * [`ListDynamicFields`](/rpc-service/chains/chains-api/sui/grpc#listdynamicfields) — Lists dynamic fields under an object.
+  * [`ListOwnedObjects`](/rpc-service/chains/chains-api/sui/grpc#listownedobjects) — Lists objects owned by an address.
 
 ---
 
@@ -66,14 +78,14 @@ Provides access to detailed on-chain state including objects, balances, ownershi
 
 Supports server-side streaming for real-time updates. Use it to subscribe to events, transactions, checkpoints, or other continuous data feeds.
 
-  * [`SubscribeCheckpoints`](/rpc-service/chains/chains-api/sui-grpc/#subscribecheckpoints) — Subscribes to a stream of newly produced checkpoints.
+  * [`SubscribeCheckpoints`](/rpc-service/chains/chains-api/sui/grpc#subscribecheckpoints) — Subscribes to a stream of newly produced checkpoints.
 
 **Transaction Execution Service**:
 
 Lets you simulate and execute transactions, fetch execution effects, run dry-runs, and retrieve transaction metadata. This is the primary service for write operations and transaction analysis.
 
-  * [`ExecuteTransaction`](/rpc-service/chains/chains-api/sui-grpc/#executetransaction) — Executes a signed transaction on-chain.
-  * [`SimulateTransaction`](/rpc-service/chains/chains-api/sui-grpc/#simulatetransaction) — Simulates a transaction without executing it.
+  * [`ExecuteTransaction`](/rpc-service/chains/chains-api/sui/grpc#executetransaction) — Executes a signed transaction on-chain.
+  * [`SimulateTransaction`](/rpc-service/chains/chains-api/sui/grpc#simulatetransaction) — Simulates a transaction without executing it.
 
 ---
 
