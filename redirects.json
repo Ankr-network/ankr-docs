@@ -2133,6 +2133,6 @@
   },
   {
     "from": "rpc-service/chains/chains-api/sui-grpc",
-    "to": "/rpc-service/chains/chains-api/sui/grpc"
+    "to": "/rpc-service/chains/chains-api/sui/"
   }
 ]
