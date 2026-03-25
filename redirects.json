@@ -2132,7 +2132,7 @@
     "to": "/docs/advanced-api/overview/"
   },
   {
-    "from": "rpc-service/chains/chains-api/sui-grpc",
-    "to": "/rpc-service/chains/chains-api/sui/grpc"
+    "from": "docs/rpc-service/chains/chains-api/sui-grpc/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/sui/"
   }
 ]
