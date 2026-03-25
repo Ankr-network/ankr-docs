@@ -1,0 +1,86 @@
+import { Callout } from "components";
+
+# Sui GraphQL
+<br/>
+
+<img src="/docs/build/chains-list/sui.png" className="responsive-pic" width="800" />
+
+> Sui GraphQL API is available on [Web3 API platform](https://www.ankr.com/rpc/sui).
+
+The Sui GraphQL RPC provides a flexible query interface for interacting with the Sui blockchain. Unlike JSON-RPC, GraphQL lets you request exactly the data you need in a single call — reducing overfetching and round trips.
+
+With GraphQL, you can compose queries that combine objects, transactions, balances, checkpoints, and more into a single request. It supports pagination, filtering, and nested lookups, making it well suited for frontends, dashboards, and analytics tools.
+
+## Endpoint
+
+| Network | Endpoint |
+|---------|----------|
+| Mainnet | `https://rpc.ankr.com/http/sui_graphql` |
+
+For Premium users, append your token to the URL: `https://rpc.ankr.com/http/sui_graphql/{your_token}`
+
+---
+
+## Request example
+
+Query the latest checkpoint:
+
+```shell
+curl -X POST https://rpc.ankr.com/http/sui_graphql \
+-H 'Content-Type: application/json' \
+-d '{
+  "query": "{ checkpoint { sequenceNumber digest timestamp } }"
+}'
+```
+
+## Response example
+
+```json
+{
+  "data": {
+    "checkpoint": {
+      "sequenceNumber": 214225619,
+      "digest": "GNSviTUX6DXkiCPKYDo1uihJsm5oRcjtvrkT8mVQyay8",
+      "timestamp": "2025-03-24T12:00:00Z"
+    }
+  }
+}
+```
+
+---
+
+## Query examples
+
+### Get object by ID
+
+```shell
+curl -X POST https://rpc.ankr.com/http/sui_graphql \
+-H 'Content-Type: application/json' \
+-d '{
+  "query": "{ object(address: \"0x5\") { address version digest owner { __typename } } }"
+}'
+```
+
+### Get address balances
+
+```shell
+curl -X POST https://rpc.ankr.com/http/sui_graphql \
+-H 'Content-Type: application/json' \
+-d '{
+  "query": "{ address(address: \"0xYOUR_ADDRESS\") { balance { totalBalance coinType { repr } } } }"
+}'
+```
+
+---
+
+## Key features
+
+- **Composable queries** — request multiple related resources in a single call.
+- **Pagination** — default 50 items per page, up to 200 for multi-get operations.
+- **Filtering** — narrow results by type, owner, checkpoint range, and more.
+- **No overfetching** — get only the fields you need.
+
+## Further reading
+
+- [Sui GraphQL reference](https://docs.sui.io/references/sui-graphql)
+- [Sui GraphQL RPC concepts](https://docs.sui.io/concepts/data-access/graphql-rpc)

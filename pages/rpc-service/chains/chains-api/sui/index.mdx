@@ -1,0 +1,72 @@
+import { Callout } from "components";
+
+# Sui
+
+<br/>
+
+<img src="/docs/build/chains-list/sui.png" className="responsive-pic" width="800" />
+
+<Callout type="tip">
+Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
+</Callout>
+
+> Sui API is available on [Web3 API platform](https://www.ankr.com/rpc/sui).
+
+*Sui* is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in Web3. Sui is horizontally scalable to support a wide range of application development with unrivaled speed at low cost.
+
+Ankr provides multiple interfaces for interacting with Sui — JSON-RPC, gRPC, and GraphQL — across mainnet, testnet, and archival data.
+
+---
+
+## Endpoints
+
+| Interface | Network | Endpoint | Auth |
+|-----------|---------|----------|------|
+| JSON-RPC | Mainnet | `https://rpc.ankr.com/sui` | Token for Premium |
+| JSON-RPC | Testnet | `https://rpc.ankr.com/sui_testnet` | Token for Premium |
+| gRPC | Mainnet | `sui.grpc.ankr.com:443` | `x-token` header for Premium |
+| gRPC | Testnet | `sui-testnet.grpc.ankr.com:443` | `x-token` header for Premium |
+| gRPC Archive | Mainnet | `archive.sui.grpc.ankr.com:443` | `x-token` header for Premium |
+| GraphQL | Mainnet | `https://rpc.ankr.com/http/sui_graphql` | Token for Premium |
+
+For Premium endpoints, append your token to the URL (for HTTP-based APIs) or pass it via the `x-token` header (for gRPC).
+
+---
+
+## Interfaces
+
+### JSON-RPC
+
+The standard [JSON-RPC 2.0](https://www.jsonrpc.org/specification) interface for reading blockchain data and sending transactions. This is the most widely used API for Sui dApp development.
+
+[View JSON-RPC methods →](/rpc-service/chains/chains-api/sui/json-rpc)
+
+### gRPC
+
+A high-performance interface using [Protocol Buffers](https://protobuf.dev/overview/) for fast, type-safe, and bandwidth-efficient communication. gRPC supports server-side streaming for real-time data delivery and automatic client generation in TypeScript, Go, Rust, and more. Ideal for indexers, explorers, and backend systems.
+
+[View gRPC methods →](/rpc-service/chains/chains-api/sui/grpc)
+
+### GraphQL
+
+A flexible query language that lets you request exactly the data you need in a single call. Sui's GraphQL RPC provides composable queries for on-chain state — objects, transactions, balances, checkpoints — without overfetching. It supports pagination, filtering, and nested lookups.
+
+[View GraphQL documentation →](/rpc-service/chains/chains-api/sui/graphql)
+
+---
+
+## gRPC Archive
+
+The gRPC Archive endpoint (`archive.sui.grpc.ankr.com:443`) provides access to historical Sui network data that standard full nodes may have pruned. It exposes the same `LedgerService` gRPC API as the standard gRPC endpoint, so you can use the same client code and methods.
+
+Use the Archive endpoint when you need to query older transactions, checkpoints, or objects that are no longer available on current full nodes. A common pattern is to first query the standard endpoint and fall back to the Archive endpoint if the data is not found.
+
+---
+
+## Getting started
+
+1. **Get your API token** — Sign up at [ankr.com/rpc](https://www.ankr.com/rpc/sui) to get a Premium token, or use the public endpoints without authentication.
+2. **Choose your interface** — Pick JSON-RPC, gRPC, or GraphQL based on your use case.
+3. **Connect** — Use the endpoints from the table above with your preferred client library or tool.
+
+Official Sui links: [Website](https://sui.io/), [Docs](https://docs.sui.io/), [GitHub](https://github.com/MystenLabs)

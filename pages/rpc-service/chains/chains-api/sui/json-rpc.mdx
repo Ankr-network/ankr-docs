@@ -17,60 +17,60 @@ The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification
 
 ## Methods supported
 
-  * [`sui_devInspectTransactionBlock`](/rpc-service/chains/chains-api/sui/#sui_devinspecttransactionblock) — runs the transaction in dev-inspect mode.
-  * [`sui_dryRunTransactionBlock`](/rpc-service/chains/chains-api/sui/#sui_dryruntransactionblock) — retrieves transaction execution effects including the gas cost summary, while the effects are not committed to the chain.
-  * [`sui_executeTransactionBlock`](/rpc-service/chains/chains-api/sui/#sui_executetransactionblock) — executes the transaction and wait for results if desired.
-  * [`sui_getChainIdentifier`](/rpc-service/chains/chains-api/sui/#sui_getchainidentifier) — retrieves the chain's identifier.
-  * [`sui_getCheckpoint`](/rpc-service/chains/chains-api/sui/#sui_getcheckpoint) — retrieves a checkpoint.
-  * [`sui_getCheckpoints`](/rpc-service/chains/chains-api/sui/#sui_getcheckpoints) — retrieves a paginated list of checkpoints.
-  * [`sui_getEvents`](/rpc-service/chains/chains-api/sui/#sui_getevents) — retrieves transaction events.
-  * [`sui_getLatestCheckpointSequenceNumber`](/rpc-service/chains/chains-api/sui/#sui_getlatestcheckpointsequencenumber) — retrieves the sequence number of the latest checkpoint that has been executed.
-  * [`sui_getLoadedChildObjects`](/rpc-service/chains/chains-api/sui/#sui_getloadedchildobjects) — retrieves loaded child objects.
-  * [`sui_getMoveFunctionArgTypes`](/rpc-service/chains/chains-api/sui/#sui_getmovefunctionargtypes) — retrieves the argument types of a Move function, based on normalized Type.
-  * [`sui_getNormalizedMoveFunction`](/rpc-service/chains/chains-api/sui/#sui_getnormalizedmovefunction) — retrieves a structured representation of Move function.
-  * [`sui_getNormalizedMoveModule`](/rpc-service/chains/chains-api/sui/#sui_getnormalizedmovemodule) — retrieves a structured representation of Move module.
-  * [`sui_getNormalizedMoveModulesByPackage`](/rpc-service/chains/chains-api/sui/#sui_getnormalizedmovemodulesbypackage) — retrieves structured representations of all modules in the given package.
-  * [`sui_getNormalizedMoveStruct`](/rpc-service/chains/chains-api/sui/#sui_getnormalizedmovestruct) — retrieves a structured representation of Move struct.
-  * [`sui_getObject`](/rpc-service/chains/chains-api/sui/#sui_getobject) — retrieves the object information for a specified object.
-  * [`sui_getProtocolConfig`](/rpc-service/chains/chains-api/sui/#sui_getprotocolconfig) — retrieves the protocol config table for the given version number.
-  * [`sui_getTotalTransactionBlocks`](/rpc-service/chains/chains-api/sui/#sui_gettotaltransactionblocks) — retrieves the total number of transactions known to the server.
-  * [`sui_getTransactionBlock`](/rpc-service/chains/chains-api/sui/#sui_gettransactionblock) — retrieves the transaction response object.
-  * [`sui_multiGetObjects`](/rpc-service/chains/chains-api/sui/#sui_multigetobjects) — retrieves the object data for a list of objects.
-  * [`sui_multiGetTransactionBlocks`](/rpc-service/chains/chains-api/sui/#sui_multigettransactionblocks) — retrieves  an ordered list of transaction responses.
-  * [`sui_tryGetPastObject`](/rpc-service/chains/chains-api/sui/#sui_trygetpastobject) — retrieves the object information for a specified version.
-  * [`sui_tryMultiGetPastObjects`](/rpc-service/chains/chains-api/sui/#sui_tryMultigetpastobjects) — retrieves the object information for a specified version.
-  * [`suix_getAllBalances`](/rpc-service/chains/chains-api/sui/#suix_getallbalances) — retrieves the total coin balance for all coin type, owned by the address owner.
-  * [`suix_getAllCoins`](/rpc-service/chains/chains-api/sui/#suix_getallcoins) — retrieves all Coin objects owned by an address.
-  * [`suix_getBalance`](/rpc-service/chains/chains-api/sui/#suix_getbalance) — retrieves the total coin balance for one coin type, owned by the address owner.
-  * [`suix_getCoinMetadata`](/rpc-service/chains/chains-api/sui/#suix_getcoinmetadata) — retrieves metadata (as symbol or decimals) for a coin.
-  * [`suix_getCoins`](/rpc-service/chains/chains-api/sui/#suix_getcoins) — retrieves all coin type objects owned by an address.
-  * [`suix_getCommitteeInfo`](/rpc-service/chains/chains-api/sui/#suix_getcommitteeinfo) — retrieves the committee information for the epoch specified.
-  * [`suix_getDynamicFieldObject`](/rpc-service/chains/chains-api/sui/#suix_getdynamicfieldobject) — retrieves the dynamic field object information for a specified object.
-  * [`suix_getDynamicFields`](/rpc-service/chains/chains-api/sui/#suix_getdynamicfields) — retrieves the list of dynamic field objects owned by an object.
-  * [`suix_getLatestSuiSystemState`](/rpc-service/chains/chains-api/sui/#suix_getlatestsuisystemstate) — retrieves the latest SUI system state object on-chain.
-  * [`suix_getOwnedObjects`](/rpc-service/chains/chains-api/sui/#suix_getownedobjects) — retrieves the list of objects owned by an address.
-  * [`suix_getReferenceGasPrice`](/rpc-service/chains/chains-api/sui/#suix_getreferencegasprice) — retrieves the reference gas price for the network.
-  * [`suix_getStakes`](/rpc-service/chains/chains-api/sui/#suix_getstakes) — retrieves all `DelegatedStake`.
-  * [`suix_getStakesByIds`](/rpc-service/chains/chains-api/sui/#suix_getstakesbyids) — retrieves one or more `DelegatedStake`s.
-  * [`suix_getTotalSupply`](/rpc-service/chains/chains-api/sui/#suix_gettotalsupply) — retrieves total supply for a coin.
-  * [`suix_getValidatorsApy`](/rpc-service/chains/chains-api/sui/#suix_getvalidatorsapy) — retrieves the validator APY.
-  * [`suix_queryEvents`](/rpc-service/chains/chains-api/sui/#suix_queryevents) — retrieves the list of events for a specified query criteria.
-  * [`suix_queryTransactionBlocks`](/rpc-service/chains/chains-api/sui/#suix_querytransactionblocks) — retrieves list of transactions for a specified query criteria.
-  * [`suix_resolveNameServiceAddress`](/rpc-service/chains/chains-api/sui/#suix_resolvenameserviceaddress) — retrieves the resolved address given the resolver and name.
-  * [`suix_resolveNameServiceNames`](/rpc-service/chains/chains-api/sui/#suix_resolvenameservicenames) — retrieves  the resolved names given an address.
-  * [`unsafe_batchTransaction`](/rpc-service/chains/chains-api/sui/#unsafe_batchtransaction) — creates an unsigned batched transaction.
-  * [`unsafe_mergeCoins`](/rpc-service/chains/chains-api/sui/#unsafe_mergecoins) — creates an unsigned transaction to merge multiple coins into one coin.
-  * [`unsafe_moveCall`](/rpc-service/chains/chains-api/sui/#unsafe_movecall) — creates an unsigned transaction to execute a Move call on the network by calling the specified function in the module of a given package.
-  * [`unsafe_pay`](/rpc-service/chains/chains-api/sui/#unsafe_pay) — sends `Coin<T>` to a list of addresses.
-  * [`unsafe_payAllSui`](/rpc-service/chains/chains-api/sui/#unsafe_payallsui) — sends all SUI coins to one recipient.
-  * [`unsafe_paySui`](/rpc-service/chains/chains-api/sui/#unsafe_paysui) — sends SUI coins to a list of addresses, following a list of amounts.
-  * [`unsafe_publish`](/rpc-service/chains/chains-api/sui/#unsafe_publish) — creates an unsigned transaction to publish a Move package.
-  * [`unsafe_requestAddStake`](/rpc-service/chains/chains-api/sui/#unsafe_requestaddstake) — adds the stake to a validator's staking pool using multiple coins and amount.
-  * [`unsafe_requestWithdrawStake`](/rpc-service/chains/chains-api/sui/#unsafe_requestwithdrawstake) — withdraws the stake from a validator's staking pool.
-  * [`unsafe_splitCoin`](/rpc-service/chains/chains-api/sui/#unsafe_splitcoin) — creates an unsigned transaction to split a coin object into multiple coins.
-  * [`unsafe_splitCoinEqual`](/rpc-service/chains/chains-api/sui/#unsafe_splitcoinequal) — creates an unsigned transaction to split a coin object into multiple equal-size coins.
-  * [`unsafe_transferObject`](/rpc-service/chains/chains-api/sui/#unsafe_transferobject) — creates an unsigned transaction to transfer an object from one address to another.
-  * [`unsafe_transferSui`](/rpc-service/chains/chains-api/sui/#unsafe_transfersui) — an unsigned transaction to send SUI coin object to a Sui address.
+  * [`sui_devInspectTransactionBlock`](/rpc-service/chains/chains-api/sui/json-rpc#sui_devinspecttransactionblock) — runs the transaction in dev-inspect mode.
+  * [`sui_dryRunTransactionBlock`](/rpc-service/chains/chains-api/sui/json-rpc#sui_dryruntransactionblock) — retrieves transaction execution effects including the gas cost summary, while the effects are not committed to the chain.
+  * [`sui_executeTransactionBlock`](/rpc-service/chains/chains-api/sui/json-rpc#sui_executetransactionblock) — executes the transaction and wait for results if desired.
+  * [`sui_getChainIdentifier`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getchainidentifier) — retrieves the chain's identifier.
+  * [`sui_getCheckpoint`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getcheckpoint) — retrieves a checkpoint.
+  * [`sui_getCheckpoints`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getcheckpoints) — retrieves a paginated list of checkpoints.
+  * [`sui_getEvents`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getevents) — retrieves transaction events.
+  * [`sui_getLatestCheckpointSequenceNumber`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getlatestcheckpointsequencenumber) — retrieves the sequence number of the latest checkpoint that has been executed.
+  * [`sui_getLoadedChildObjects`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getloadedchildobjects) — retrieves loaded child objects.
+  * [`sui_getMoveFunctionArgTypes`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getmovefunctionargtypes) — retrieves the argument types of a Move function, based on normalized Type.
+  * [`sui_getNormalizedMoveFunction`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getnormalizedmovefunction) — retrieves a structured representation of Move function.
+  * [`sui_getNormalizedMoveModule`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getnormalizedmovemodule) — retrieves a structured representation of Move module.
+  * [`sui_getNormalizedMoveModulesByPackage`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getnormalizedmovemodulesbypackage) — retrieves structured representations of all modules in the given package.
+  * [`sui_getNormalizedMoveStruct`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getnormalizedmovestruct) — retrieves a structured representation of Move struct.
+  * [`sui_getObject`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getobject) — retrieves the object information for a specified object.
+  * [`sui_getProtocolConfig`](/rpc-service/chains/chains-api/sui/json-rpc#sui_getprotocolconfig) — retrieves the protocol config table for the given version number.
+  * [`sui_getTotalTransactionBlocks`](/rpc-service/chains/chains-api/sui/json-rpc#sui_gettotaltransactionblocks) — retrieves the total number of transactions known to the server.
+  * [`sui_getTransactionBlock`](/rpc-service/chains/chains-api/sui/json-rpc#sui_gettransactionblock) — retrieves the transaction response object.
+  * [`sui_multiGetObjects`](/rpc-service/chains/chains-api/sui/json-rpc#sui_multigetobjects) — retrieves the object data for a list of objects.
+  * [`sui_multiGetTransactionBlocks`](/rpc-service/chains/chains-api/sui/json-rpc#sui_multigettransactionblocks) — retrieves  an ordered list of transaction responses.
+  * [`sui_tryGetPastObject`](/rpc-service/chains/chains-api/sui/json-rpc#sui_trygetpastobject) — retrieves the object information for a specified version.
+  * [`sui_tryMultiGetPastObjects`](/rpc-service/chains/chains-api/sui/json-rpc#sui_tryMultigetpastobjects) — retrieves the object information for a specified version.
+  * [`suix_getAllBalances`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getallbalances) — retrieves the total coin balance for all coin type, owned by the address owner.
+  * [`suix_getAllCoins`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getallcoins) — retrieves all Coin objects owned by an address.
+  * [`suix_getBalance`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getbalance) — retrieves the total coin balance for one coin type, owned by the address owner.
+  * [`suix_getCoinMetadata`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getcoinmetadata) — retrieves metadata (as symbol or decimals) for a coin.
+  * [`suix_getCoins`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getcoins) — retrieves all coin type objects owned by an address.
+  * [`suix_getCommitteeInfo`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getcommitteeinfo) — retrieves the committee information for the epoch specified.
+  * [`suix_getDynamicFieldObject`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getdynamicfieldobject) — retrieves the dynamic field object information for a specified object.
+  * [`suix_getDynamicFields`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getdynamicfields) — retrieves the list of dynamic field objects owned by an object.
+  * [`suix_getLatestSuiSystemState`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getlatestsuisystemstate) — retrieves the latest SUI system state object on-chain.
+  * [`suix_getOwnedObjects`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getownedobjects) — retrieves the list of objects owned by an address.
+  * [`suix_getReferenceGasPrice`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getreferencegasprice) — retrieves the reference gas price for the network.
+  * [`suix_getStakes`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getstakes) — retrieves all `DelegatedStake`.
+  * [`suix_getStakesByIds`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getstakesbyids) — retrieves one or more `DelegatedStake`s.
+  * [`suix_getTotalSupply`](/rpc-service/chains/chains-api/sui/json-rpc#suix_gettotalsupply) — retrieves total supply for a coin.
+  * [`suix_getValidatorsApy`](/rpc-service/chains/chains-api/sui/json-rpc#suix_getvalidatorsapy) — retrieves the validator APY.
+  * [`suix_queryEvents`](/rpc-service/chains/chains-api/sui/json-rpc#suix_queryevents) — retrieves the list of events for a specified query criteria.
+  * [`suix_queryTransactionBlocks`](/rpc-service/chains/chains-api/sui/json-rpc#suix_querytransactionblocks) — retrieves list of transactions for a specified query criteria.
+  * [`suix_resolveNameServiceAddress`](/rpc-service/chains/chains-api/sui/json-rpc#suix_resolvenameserviceaddress) — retrieves the resolved address given the resolver and name.
+  * [`suix_resolveNameServiceNames`](/rpc-service/chains/chains-api/sui/json-rpc#suix_resolvenameservicenames) — retrieves  the resolved names given an address.
+  * [`unsafe_batchTransaction`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_batchtransaction) — creates an unsigned batched transaction.
+  * [`unsafe_mergeCoins`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_mergecoins) — creates an unsigned transaction to merge multiple coins into one coin.
+  * [`unsafe_moveCall`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_movecall) — creates an unsigned transaction to execute a Move call on the network by calling the specified function in the module of a given package.
+  * [`unsafe_pay`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_pay) — sends `Coin<T>` to a list of addresses.
+  * [`unsafe_payAllSui`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_payallsui) — sends all SUI coins to one recipient.
+  * [`unsafe_paySui`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_paysui) — sends SUI coins to a list of addresses, following a list of amounts.
+  * [`unsafe_publish`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_publish) — creates an unsigned transaction to publish a Move package.
+  * [`unsafe_requestAddStake`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_requestaddstake) — adds the stake to a validator's staking pool using multiple coins and amount.
+  * [`unsafe_requestWithdrawStake`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_requestwithdrawstake) — withdraws the stake from a validator's staking pool.
+  * [`unsafe_splitCoin`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_splitcoin) — creates an unsigned transaction to split a coin object into multiple coins.
+  * [`unsafe_splitCoinEqual`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_splitcoinequal) — creates an unsigned transaction to split a coin object into multiple equal-size coins.
+  * [`unsafe_transferObject`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_transferobject) — creates an unsigned transaction to transfer an object from one address to another.
+  * [`unsafe_transferSui`](/rpc-service/chains/chains-api/sui/json-rpc#unsafe_transfersui) — an unsigned transaction to send SUI coin object to a Sui address.
 
 ---
 
