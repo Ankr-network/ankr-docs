@@ -1,15 +1,24 @@
 import { Callout } from "components";
 
-# Sui
+# Sui JSON-RPC *(deprecated)*
 <br/>
 
 <img src="/docs/build/chains-list/sui.png" className="responsive-pic" width="800" />
+
+<Callout type="warning">
+**Deprecation notice.** The Sui JSON-RPC interface is being deprecated and will be turned off at the **end of July 2026**, in line with the Sui Foundation's network-wide deprecation timeline. Please migrate existing integrations to:
+
+- **[gRPC](/rpc-service/chains/chains-api/sui/grpc)** — recommended for indexers, backend services, and most dApp use cases.
+- **[GraphQL](/rpc-service/chains/chains-api/sui/graphql)** — recommended for frontends, dashboards, and analytics tools.
+
+This page is preserved for reference until the sunset date.
+</Callout>
 
 > Sui API is available on [Web3 API platform](https://www.ankr.com/rpc/sui).
 
 *Sui* is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in Web3. Sui is horizontally scalable to support a wide range of application development with unrivaled speed at low cost.
 
-In order for your Web3 application to interact with Sui — either by reading blockchain data or sending transactions to the network — it must connect to a Sui node. Developers interact with the blockchain using the methods provided by the API.
+In order for your Web3 application to interact with Sui — either by reading blockchain data or sending transactions to the network — it must connect to a Sui node. Historically, Sui developers have used JSON-RPC for this; going forward we recommend gRPC or GraphQL (see the deprecation notice above).
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in other message-passing environments. It uses JSON (RFC 4627) as data format.
 
