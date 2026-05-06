@@ -25,6 +25,16 @@ The Sui gRPC server fully supports server reflection, allowing tools like `grpcu
 
 For Premium users, pass your token via the `x-token` header (e.g., `-H "x-token: your-token"`).
 
+### Regions
+
+Sui gRPC services are deployed across multiple regions for low-latency access. Requests are routed to the closest healthy region automatically.
+
+| Service | Regions | High-level coverage |
+|---------|---------|---------------------|
+| Mainnet gRPC | Frankfurt, London, New York, Los Angeles, San Francisco, Singapore, Tokyo | EU, Americas, APAC |
+| Mainnet Archive gRPC | London, New York, Los Angeles, Singapore | EU, Americas, APAC |
+| Testnet gRPC | Frankfurt, New York, San Francisco, Singapore | EU, Americas, APAC |
+
 **Archive endpoint** — provides access to historical Sui data that standard full nodes may have pruned. It exposes the same `LedgerService` API, so you can use the same client code. Use it when querying older transactions, checkpoints, or objects that are no longer available on current nodes.
 
 ## Methods list

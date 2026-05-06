@@ -6,6 +6,10 @@ import { Callout } from "components";
 
 <img src="/docs/build/chains-list/sui.png" className="responsive-pic" width="800" />
 
+<Callout type="warning">
+**JSON-RPC deprecation notice.** The Sui JSON-RPC interface is being deprecated and will be turned off at the **end of July 2026**, in line with the Sui Foundation's network-wide deprecation timeline. Please migrate existing integrations to **gRPC** (recommended for indexers and backend services) or **GraphQL** (recommended for frontends and analytics). See the [JSON-RPC page](/rpc-service/chains/chains-api/sui/json-rpc) for details.
+</Callout>
+
 <Callout type="tip">
 Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
 </Callout>
@@ -22,8 +26,8 @@ Ankr provides multiple interfaces for interacting with Sui — JSON-RPC, gRPC, a
 
 | Interface | Network | Endpoint | Auth |
 |-----------|---------|----------|------|
-| JSON-RPC | Mainnet | `https://rpc.ankr.com/sui` | Token for Premium |
-| JSON-RPC | Testnet | `https://rpc.ankr.com/sui_testnet` | Token for Premium |
+| JSON-RPC *(deprecated, sunset end of July 2026)* | Mainnet | `https://rpc.ankr.com/sui` | Token for Premium |
+| JSON-RPC *(deprecated, sunset end of July 2026)* | Testnet | `https://rpc.ankr.com/sui_testnet` | Token for Premium |
 | gRPC | Mainnet | `sui.grpc.ankr.com:443` | `x-token` header for Premium |
 | gRPC | Testnet | `sui-testnet.grpc.ankr.com:443` | `x-token` header for Premium |
 | gRPC Archive | Mainnet | `archive.sui.grpc.ankr.com:443` | `x-token` header for Premium |
@@ -33,11 +37,29 @@ For Premium endpoints, append your token to the URL (for HTTP-based APIs) or pas
 
 ---
 
+## Regions
+
+Sui gRPC services are deployed across multiple regions for low-latency access. Requests are routed to the closest healthy region automatically.
+
+| Service | High-level coverage |
+|---------|---------------------|
+| Mainnet gRPC | EU, Americas, APAC |
+| Mainnet Archive gRPC | EU, Americas, APAC |
+| Testnet gRPC | EU, Americas, APAC |
+
+See the [gRPC page](/rpc-service/chains/chains-api/sui/grpc#regions) for the full list of cities per service.
+
+---
+
 ## Interfaces
 
-### JSON-RPC
+### JSON-RPC *(deprecated)*
 
-The standard [JSON-RPC 2.0](https://www.jsonrpc.org/specification) interface for reading blockchain data and sending transactions. This is the most widely used API for Sui dApp development.
+<Callout type="warning">
+Sunset at **end of July 2026**. Migrate existing integrations to gRPC or GraphQL.
+</Callout>
+
+The standard [JSON-RPC 2.0](https://www.jsonrpc.org/specification) interface for reading blockchain data and sending transactions. Historically the most common entry point for Sui dApps; superseded by gRPC and GraphQL going forward.
 
 [View JSON-RPC methods →](/rpc-service/chains/chains-api/sui/json-rpc)
 
@@ -66,7 +88,7 @@ Use the Archive endpoint when you need to query older transactions, checkpoints,
 ## Getting started
 
 1. **Get your API token** — Sign up at [ankr.com/rpc](https://www.ankr.com/rpc/sui) to get a Premium token, or use the public endpoints without authentication.
-2. **Choose your interface** — Pick JSON-RPC, gRPC, or GraphQL based on your use case.
+2. **Choose your interface** — Pick gRPC or GraphQL based on your use case (JSON-RPC is deprecated; see notice above).
 3. **Connect** — Use the endpoints from the table above with your preferred client library or tool.
 
 Official Sui links: [Website](https://sui.io/), [Docs](https://docs.sui.io/), [GitHub](https://github.com/MystenLabs)
