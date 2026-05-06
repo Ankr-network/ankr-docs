@@ -32,7 +32,7 @@ Find the chain you require and go to its docs section by clicking it.
 | [Avalanche](/rpc-service/chains/chains-list/#avalanche)         | [Ethereum](/rpc-service/chains/chains-list/#ethereum)               | [Iota](/rpc-service/chains/chains-list/#iota)                   | [Movement](/rpc-service/chains/chains-list/#movement) | [Stellar](/rpc-service/chains/chains-list/#stellar)               | [Xphere](/rpc-service/chains/chains-list/#xphere)         |
 | [B2 Network](/rpc-service/chains/chains-list/#b2-network)       | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)      | [Iota EVM](/rpc-service/chains/chains-list/#iota-evm)           | [NEAR](/rpc-service/chains/chains-list/#near)         | [Story](/rpc-service/chains/chains-list/#story)                   | [XRP](/rpc-service/chains/chains-list/#xrp)               |
 | [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Etherlink](/rpc-service/chains/chains-list/#etherlink)             | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Sui](/rpc-service/chains/chains-list/#sui)                       | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
-| [Base](/rpc-service/chains/chains-list/#base)                   | [Fantom](/rpc-service/chains/chains-list/#fantom)                   | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Neura](/rpc-service/chains/chains-list/#neura)       | [Swell](/rpc-service/chains/chains-list/#swell)                   |                                                           |
+| [Base](/rpc-service/chains/chains-list/#base)                   | [Fantom](/rpc-service/chains/chains-list/#fantom)                   | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Neura](/rpc-service/chains/chains-list/#neura)       | [Swell](/rpc-service/chains/chains-list/#swell)                   | [Kite AI](/rpc-service/chains/chains-list/#kite-ai)       |
 | [Bitcoin](/rpc-service/chains/chains-list/#bitcoin)             | [Filecoin](/rpc-service/chains/chains-list/#filecoin)               | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                           |
 | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)           | [Flare](/rpc-service/chains/chains-list/#flare)                     | [Kinto](/rpc-service/chains/chains-list/#kinto)                 | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [TAC](/rpc-service/chains/chains-list/#tac)                       |                                                           |
 | [Blast](/rpc-service/chains/chains-list/#blast)                 | [Fuel](/rpc-service/chains/chains-list/#fuel)                       | [Kusama](/rpc-service/chains/chains-list/#kusama)               | [Polygon](/rpc-service/chains/chains-list/#polygon)   | [Taiko](/rpc-service/chains/chains-list/#taiko)                   |                                                           |
@@ -10876,6 +10876,146 @@ from web3 import Web3
 
 def test_block_number(self):
     url = 'https://rpc.ankr.com/taiko_hekla'  # url string
+
+    web3 = Web3(HTTPProvider(url))
+    print(web3.eth.block_number)
+```
+  </Tab>
+</Tabs>
+
+#### Response example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x28244"
+}
+```
+
+---
+
+## Kite AI
+<br/>
+
+<img src="/docs/build/chains-list/kite.png" className="responsive-pic" width="800" />
+
+> Kite AI API is available on [Web3 API platform](https://www.ankr.com/rpc/kite).
+
+Kite AI is the first AI payment blockchain, providing foundational infrastructure that empowers autonomous agents to operate and transact with identity, payment, and verification. The network enables AI agents to discover and pay for services autonomously through features like funded wallets, scoped spending sessions, and service discovery, all while maintaining user control.
+
+Official quick links: [Website](https://gokite.ai/), [Docs](https://docs.gokite.ai/)
+
+### Networks
+
+  * Mainnet (`HTTPS` and `WSS`)
+
+### API methods
+
+For Kite AI, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/kite/) except for those listed as unsupported.
+
+#### Unsupported
+
+ <Callout type="warning">
+ This section contains a list of methods we don't support for _Premium_ service plan.
+ </Callout>
+
+ <Callout type="tip">
+ If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
+ </Callout>
+
+**HTTPS**:
+
+`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
+
+`debug_*` (exception: `debug_traceBlockByHash`, `debug_traceBlockByNumber`, `debug_traceTransaction`, `debug_traceCall`, `debug_traceBlock`),
+
+`personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`
+
+**WSS**:
+
+`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
+
+### API querying
+
+#### Request example
+
+<Tabs
+  items={[
+    "cURL",
+    "Golang",
+    "Web3.JS",
+    "Python",
+  ]}
+>
+  <Tab>
+
+```shell
+curl -X POST https://rpc.ankr.com/kite_mainnet \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "eth_blockNumber",
+      "params": [],
+      "id": 1
+    }'
+```
+  </Tab>
+  <Tab>
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+    const url = "https://rpc.ankr.com/kite_mainnet"  // url string
+
+    rpcClient,err := ethclient.Dial(url)
+
+    if err != nil {
+        panic(err)
+    }
+
+    blockNumber, err := rpcClient.BlockNumber(context.Background())
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(blockNumber)
+}
+```
+  </Tab>
+  <Tab>
+
+```js
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/kite_mainnet'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
+```
+  </Tab>
+  <Tab>
+
+```python
+from web3 import Web3
+
+def test_block_number(self):
+    url = 'https://rpc.ankr.com/kite_mainnet'  # url string
 
     web3 = Web3(HTTPProvider(url))
     print(web3.eth.block_number)
