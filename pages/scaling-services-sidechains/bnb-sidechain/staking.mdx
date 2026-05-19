@@ -12,7 +12,7 @@ Staking roles are:
 ## Validator
 
 Validator is a node that runs the validator node software, in a special validator mode. This mode allows the node to connect to bootnodes and produce new blocks.
-Once a block is produced by a validator, it propagates it though the network, using bootnodes, to other validators. Other validators must verify and set this block.
+Once a block is produced by a validator, it propagates it through the network, using bootnodes, to other validators. Other validators must verify and set this block.
 Today the Parlia consensus engine doesn't support fast-finality, this feature is still under development, that is why to prove the correctness of the produced block, the user must verify 2/3*N+1 blocks.
 
 To become a validator, the user must fit these requirements:
@@ -28,9 +28,9 @@ One slashing is equal to one missed block in the blockchain.
 
 If a validator misses a block, another validator can slash them. They don't receive rewards for the missed block.
 
-If a validator misses blocks for `misdemeanorThreshold` times, such validator losses rewards for entire epoch. The default value of `misdemeanorThreshold` is 50.
+If a validator misses blocks for `misdemeanorThreshold` times, such validator loses rewards for entire epoch. The default value of `misdemeanorThreshold` is 50.
 
-If validator misses blocks for `felonyThreshold` times, such validator goes to jail and is not able to produce rewards for `validatorJailEpochLength` epochs (usually its around 1 week). The default value of `felonyThreshold` is 150.
+If validator misses blocks for `felonyThreshold` times, such validator goes to jail and is not able to produce rewards for `validatorJailEpochLength` epochs (usually it's around 1 week). The default value of `felonyThreshold` is 150.
 
 As a result, a jailed validator loses all their rewards for 1 week or 25% of monthly rewards.
 
@@ -73,9 +73,9 @@ Each transaction has execution cost and 15/16 of this cost goes to the validator
 Not all block rewards go to the validator's owner. A share of them is also distributed between delegators.
 
 When the validator's owner creates a new validator, the commission rate must be specified.
-The commission rate defines what percentage of the block reward go to the validator owner.
+The commission rate defines what percentage of the block reward goes to the validator owner.
 The rate is encoded as `uint16` and the percentage is encoded as `N%*100`. For example, `0.01%*100=1` and `99%*100=9900`.
-It also means the commission rate must be in range from `0%` to `99.99%`. However, in reality, its limited to `0%` up to `30%` to restrict validators from setting very high commission rates.
+It also means the commission rate must be in range from `0%` to `99.99%`. However, in reality, it's limited to `0%` up to `30%` to restrict validators from setting very high commission rates.
 
 ### Delegator's rewards
 Delegators rewards are calculated based on their total staked amount at the validator.
