@@ -14,6 +14,10 @@ In order for your Web3 application to interact with the Arbitrum blockchain — 
 
 The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, lightweight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message-passing environments. It uses JSON (RFC 4627) as data format.
 
+<Callout type="info">
+**Transaction history window.** Ankr Solana RPC nodes are configured with a ledger size of ~100M, which retains approximately the last **16 hours** of transaction history. Requests via `getTransaction`, `getBlock`, `getSignaturesForAddress`, etc. for slots older than this window will return `null` or an error. For deeper historical lookups, use a Solana archive provider or a block explorer API.
+</Callout>
+
 ## Methods
 <br/>
 
