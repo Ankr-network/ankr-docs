@@ -53,28 +53,6 @@ jobs:
           yarn install
           yarn build:stage
 
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          repository: Ankr-network/staking-frontend
-          token: ${{ secrets.ACCESS_TOKEN }}
-          path: staking-frontend
-
-      - name: Install dependencies and build doc sdk
-        run: |
-          yarn --cwd staking-frontend/packages/staking-sdk
-          cd  staking-frontend/packages/staking-sdk
-          yarn docs
-
-      - name: Copy build
-        run: |
-          cd out/staking-for-developers/sdk/
-          mkdir liquid-staking
-          cd liquid-staking
-          mkdir reference
-          cd ../../../../
-          mv staking-frontend/packages/staking-sdk/docs/*  out/staking-for-developers/sdk/liquid-staking/reference
-
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:

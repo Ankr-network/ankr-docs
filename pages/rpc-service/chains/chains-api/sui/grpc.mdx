@@ -37,6 +37,66 @@ Sui gRPC services are deployed across multiple regions for low-latency access. R
 
 **Archive endpoint** — provides access to historical Sui data that standard full nodes may have pruned. It exposes the same `LedgerService` API, so you can use the same client code. Use it when querying older transactions, checkpoints, or objects that are no longer available on current nodes.
 
+## gRPC-Web
+
+In addition to standard (native) gRPC over HTTP/2, the Sui gRPC API is served over **gRPC-Web** across the whole fleet (mainnet, testnet, and archive). gRPC-Web runs over HTTP/1.1 and HTTP/2 and is CORS-enabled, so it can be called directly from browsers and from runtimes that don't ship a native gRPC stack — no client-side proxy (such as Envoy) is required.
+
+In particular, the official [`@mysten/sui`](https://www.npmjs.com/package/@mysten/sui) SDK works against Ankr with its **default transport**, with no workarounds.
+
+Both transports share the same hosts, proto package (`sui.rpc.v2`), methods, and `x-token` authentication — only the wire format differs:
+
+| Transport | Address form | Typical clients |
+|-----------|--------------|-----------------|
+| Native gRPC | `sui.grpc.ankr.com:443` | `grpcurl`, Go / Rust / Java gRPC stacks |
+| gRPC-Web | `https://sui.grpc.ankr.com` | `@mysten/sui` SDK, browsers, `fetch` / `curl` |
+
+A gRPC-Web call is an HTTP `POST` to `https://<host>/<package>.<Service>/<Method>` — for example `https://sui.grpc.ankr.com/sui.rpc.v2.LedgerService/GetServiceInfo`.
+
+<Callout type="info">
+gRPC-Web responses are CORS-enabled (`access-control-allow-origin: *`) and expose the `grpc-status` / `grpc-message` trailers, so browser clients can read the call status. For convenience, responses also carry plain HTTP headers such as `x-sui-chain`, `x-sui-chain-id`, and `x-sui-checkpoint-height`.
+</Callout>
+
+### Using the `@mysten/sui` SDK
+
+Install the SDK with `npm i @mysten/sui` and point its gRPC-Web transport at the Ankr endpoint:
+
+```typescript
+import { SuiGrpcClient, GrpcWebFetchTransport } from '@mysten/sui/grpc';
+
+const client = new SuiGrpcClient({
+  network: 'mainnet',
+  transport: new GrpcWebFetchTransport({
+    baseUrl: 'https://sui.grpc.ankr.com',
+    // Premium: send your token with every call
+    // meta: { 'x-token': 'your-token' },
+  }),
+});
+
+const { response } = await client.ledgerService.getServiceInfo({});
+console.log(response.chain, response.checkpointHeight, response.server);
+// mainnet  285076503  sui-node/1.72.5-...
+
+// Other services use the same client, for example:
+// await client.ledgerService.getObject({ objectId: '0x6' });
+// await client.stateService.getBalance({ owner, coinType: '0x2::sui::SUI' });
+```
+
+### Using `curl`
+
+`GetServiceInfo` takes an empty request, so the body is a single empty gRPC-Web data frame (5 bytes: `00 00 00 00 00`):
+
+```shell
+printf '\x00\x00\x00\x00\x00' | curl -s -X POST \
+  -H 'Content-Type: application/grpc-web+proto' \
+  --data-binary @- \
+  https://sui.grpc.ankr.com/sui.rpc.v2.LedgerService/GetServiceInfo \
+  -D -
+# HTTP/2 200 · content-type: application/grpc-web · trailer: grpc-status: 0
+# x-sui-chain: mainnet · x-sui-checkpoint-height: <height>
+```
+
+For Premium access, add your token with `-H 'x-token: your-token'`.
+
 ## Methods list
 
 **Ledger Service**:

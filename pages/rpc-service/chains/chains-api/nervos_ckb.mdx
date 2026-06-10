@@ -1,0 +1,879 @@
+import { Callout } from "components";
+
+# Nervos CKB
+<br/>
+
+<img src="/docs/build/chains-list/nervos.png" className="responsive-pic" width="800" />
+
+> Nervos CKB API is available on [Web3 API platform](https://www.ankr.com/rpc/nervos).
+
+*Nervos CKB* (Common Knowledge Base) is the Layer 1, proof-of-work blockchain of the Nervos ecosystem. As the foundation of the ecosystem, it provides trust for all the layers built on top of it. CKB uses an improved Nakamoto consensus (NC-Max) and a generalized UTXO model — the *Cell model* — designed to maximize decentralization while remaining minimal, flexible, and secure. Its primary objective is to reliably preserve any data and assets stored therein.
+
+<Callout type="warning">
+The **Nervos EVM / Polyjuice (Godwoken)** Layer 2 endpoint (`rpc.ankr.com/nervos`) has been **deprecated and removed**. Nervos officially sunset the Godwoken network starting **June 2025** (a strategic shift toward UTXO-native protocols such as RGB++), so the network is no longer operational upstream. See the official [Godwoken & Force Bridge sunset announcement](https://sunset.forcebridge.com/announcement). Only the native **Nervos CKB (Layer 1)** endpoint documented below is available.
+</Callout>
+
+In order for your Web3 application to interact with Nervos CKB — either by reading blockchain data or sending transactions to the network — it must connect to a CKB node. Developers interact with the blockchain using the methods provided by the API.
+
+The API interaction follows the [JSON-RPC](https://www.jsonrpc.org/specification) which is a stateless, light-weight remote procedure call (RPC) protocol. It uses JSON (RFC 4627) as data format. CKB exposes its JSON-RPC over `HTTPS` and `WSS`.
+
+Endpoint format:
+
+```shell
+https://rpc.ankr.com/nervos_ckb/{your_token}
+```
+
+Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [JSON-RPC reference](https://github.com/nervosnetwork/ckb/blob/develop/rpc/README.md), [GitHub](https://github.com/nervosnetwork/ckb)
+
+---
+
+## Methods supported
+<br/>
+
+  * [`get_tip_block_number`](/rpc-service/chains/chains-api/nervos_ckb/#get_tip_block_number) — returns the highest block number in the canonical chain.
+  * [`get_tip_header`](/rpc-service/chains/chains-api/nervos_ckb/#get_tip_header) — returns the header with the highest block number in the canonical chain.
+  * [`get_current_epoch`](/rpc-service/chains/chains-api/nervos_ckb/#get_current_epoch) — returns the epoch with the highest number in the canonical chain.
+  * [`get_block_by_number`](/rpc-service/chains/chains-api/nervos_ckb/#get_block_by_number) — returns the block in the canonical chain with the specified block number.
+  * [`get_block`](/rpc-service/chains/chains-api/nervos_ckb/#get_block) — returns the information about a block by hash.
+  * [`get_header`](/rpc-service/chains/chains-api/nervos_ckb/#get_header) — returns the information about a block header by hash.
+  * [`get_header_by_number`](/rpc-service/chains/chains-api/nervos_ckb/#get_header_by_number) — returns the block header in the canonical chain with the specified block number.
+  * [`get_block_hash`](/rpc-service/chains/chains-api/nervos_ckb/#get_block_hash) — returns the block hash of a block in the canonical chain by block number.
+  * [`get_transaction`](/rpc-service/chains/chains-api/nervos_ckb/#get_transaction) — returns the information about a transaction by hash, including its status.
+  * [`get_live_cell`](/rpc-service/chains/chains-api/nervos_ckb/#get_live_cell) — returns the status of a cell, optionally with its data.
+  * [`get_consensus`](/rpc-service/chains/chains-api/nervos_ckb/#get_consensus) — returns various consensus parameters.
+  * [`get_fee_rate_statistics`](/rpc-service/chains/chains-api/nervos_ckb/#get_fee_rate_statistics) — returns the fee rate statistics of confirmed blocks.
+  * [`get_blockchain_info`](/rpc-service/chains/chains-api/nervos_ckb/#get_blockchain_info) — returns general information about the chain.
+  * [`tx_pool_info`](/rpc-service/chains/chains-api/nervos_ckb/#tx_pool_info) — returns the transaction pool information.
+  * [`send_transaction`](/rpc-service/chains/chains-api/nervos_ckb/#send_transaction) — submits a new transaction into the transaction pool.
+  * [`test_tx_pool_accept`](/rpc-service/chains/chains-api/nervos_ckb/#test_tx_pool_accept) — tests whether the transaction pool would accept a transaction.
+
+<Callout type="tip">
+CKB encodes integers as 0x-prefixed hexadecimal strings (e.g. block number `0x12a6ad1`). Block hashes and other byte fields are 0x-prefixed hex.
+</Callout>
+
+<Callout type="warning">
+Node administration, mining and network-control methods are not exposed on the shared endpoint — e.g. `local_node_info`, `get_peers`, `get_banned_addresses`, `set_ban`, `sync_state`, `add_node`, `remove_node`, `clear_tx_pool`, `truncate`, `generate_block`, miner methods (`get_block_template`, `submit_block`) and `debug_*`. For dedicated access, contact Sales (`sales@ankr.com`) about the Enterprise plan.
+</Callout>
+
+---
+
+## `get_tip_block_number`
+
+> Returns the highest block number in the canonical chain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<string>` (BlockNumber): the highest block number in the canonical chain, as a 0x-prefixed hex string.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_tip_block_number",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": "0x12a69e1",
+    "id": 1
+}
+```
+
+---
+
+## `get_tip_header`
+
+> Returns the header with the highest block number in the canonical chain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array): optionally a verbosity `<string>` (`0x0` returns the serialized header; `0x1`, the default, returns a JSON header object).
+
+### Returns
+<br/>
+
+  * `<object>` (HeaderView): the block header, including `number`, `hash`, `parent_hash`, `timestamp`, `epoch`, `compact_target`, `dao`, `nonce`, `transactions_root`, `extra_hash`, `proposals_hash` and `version`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_tip_header",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "compact_target": "0x1913ca98",
+        "dao": "0x0be3ccb2b7279c59cd86a389ab882a00fe62c81b1474e9090068f4dfb7183707",
+        "epoch": "0x524029e003810",
+        "extra_hash": "0x6ce92f725a28bae121cf062051a95f6b843bc52c9ed75cd17d600f8efdeffd3f",
+        "hash": "0xaa8d68b396f8a01449d829fef85c4065c83e6fa71ec7b1f066674ff752dd0d01",
+        "nonce": "0x4826eb8b5c783719000000092f10020e",
+        "number": "0x12a6ad1",
+        "parent_hash": "0x395a24dc75784a8e0a08f712c1186b8e74bf3d6e6fe5c2a0592cdf443725dde6",
+        "proposals_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "timestamp": "0x19eb091b1a5",
+        "transactions_root": "0x4343d4eec2b8d1d082fafc8cc056b250bb6ca853d99c5acdbc54555cbbcc7677",
+        "version": "0x0"
+    }
+}
+```
+
+---
+
+## `get_current_epoch`
+
+> Returns the epoch with the highest number in the canonical chain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<object>` (EpochView):
+    * `number` (string): the epoch number.
+    * `start_number` (string): the block number of the first block in the epoch.
+    * `length` (string): the number of blocks in the epoch.
+    * `compact_target` (string): the difficulty target of the epoch, in compact form.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_current_epoch",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "compact_target": "0x1913ca98",
+        "length": "0x524",
+        "number": "0x3810",
+        "start_number": "0x12a6833"
+    }
+}
+```
+
+---
+
+## `get_block_by_number`
+
+> Returns the block in the canonical chain with the specified block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (BlockNumber): the block number, as a 0x-prefixed hex string.
+    2. `<string>` (optional): verbosity — `0x0` returns the serialized block; `0x2` (the default) returns a JSON block object.
+    3. `<boolean>` (optional): `with_cycles` — if `true`, the response also includes the execution cycles of each transaction.
+
+### Returns
+<br/>
+
+  * `<object>` (BlockView): the block, containing a `header`, the `transactions` array, the `proposals` array and `uncles`. Returns `null` when there is no block at the given number.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_block_by_number",
+      "params": ["0x12a6ad1"],
+      "id": 1
+    }'
+```
+
+### Response example (trimmed)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "header": {
+            "compact_target": "0x1913ca98",
+            "epoch": "0x524029e003810",
+            "hash": "0xaa8d68b396f8a01449d829fef85c4065c83e6fa71ec7b1f066674ff752dd0d01",
+            "number": "0x12a6ad1",
+            "parent_hash": "0x395a24dc75784a8e0a08f712c1186b8e74bf3d6e6fe5c2a0592cdf443725dde6",
+            "timestamp": "0x19eb091b1a5",
+            "transactions_root": "0x4343d4eec2b8d1d082fafc8cc056b250bb6ca853d99c5acdbc54555cbbcc7677",
+            "version": "0x0"
+        },
+        "proposals": [],
+        "transactions": [
+            {
+                "cell_deps": [],
+                "header_deps": [],
+                "hash": "0x...",
+                "inputs": [],
+                "outputs": [],
+                "outputs_data": [],
+                "version": "0x0",
+                "witnesses": []
+            }
+        ],
+        "uncles": []
+    }
+}
+```
+
+---
+
+## `get_block`
+
+> Returns the information about a block by hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (H256): the block hash (32 bytes, 0x-prefixed).
+    2. `<string>` (optional): verbosity — `0x0` or `0x2` (default).
+    3. `<boolean>` (optional): `with_cycles`.
+
+### Returns
+<br/>
+
+  * `<object>` (BlockView): the block (same structure as [`get_block_by_number`](/rpc-service/chains/chains-api/nervos_ckb/#get_block_by_number)). Returns `null` when the block is not found.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_block",
+      "params": ["0xaa8d68b396f8a01449d829fef85c4065c83e6fa71ec7b1f066674ff752dd0d01"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+A `BlockView` object, identical in shape to the [`get_block_by_number`](/rpc-service/chains/chains-api/nervos_ckb/#get_block_by_number) response.
+
+---
+
+## `get_header`
+
+> Returns the information about a block header by hash.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (H256): the block hash.
+    2. `<string>` (optional): verbosity — `0x0` or `0x1` (default).
+
+### Returns
+<br/>
+
+  * `<object>` (HeaderView): the block header (same structure as [`get_tip_header`](/rpc-service/chains/chains-api/nervos_ckb/#get_tip_header)). Returns `null` when the header is not found.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_header",
+      "params": ["0xaa8d68b396f8a01449d829fef85c4065c83e6fa71ec7b1f066674ff752dd0d01"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+A `HeaderView` object, identical in shape to the [`get_tip_header`](/rpc-service/chains/chains-api/nervos_ckb/#get_tip_header) response.
+
+---
+
+## `get_header_by_number`
+
+> Returns the block header in the canonical chain with the specified block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (BlockNumber): the block number.
+    2. `<string>` (optional): verbosity — `0x0` or `0x1` (default).
+
+### Returns
+<br/>
+
+  * `<object>` (HeaderView): the block header. Returns `null` when there is no block at the given number.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_header_by_number",
+      "params": ["0x12a6ad1"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+A `HeaderView` object, identical in shape to the [`get_tip_header`](/rpc-service/chains/chains-api/nervos_ckb/#get_tip_header) response.
+
+---
+
+## `get_block_hash`
+
+> Returns the block hash of a block in the canonical chain by block number.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (BlockNumber): the block number.
+
+### Returns
+<br/>
+
+  * `<string>` (H256): the block hash, or `null` when there is no block at the given number.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_block_hash",
+      "params": ["0x12a6ad1"],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xaa8d68b396f8a01449d829fef85c4065c83e6fa71ec7b1f066674ff752dd0d01"
+}
+```
+
+---
+
+## `get_transaction`
+
+> Returns the information about a transaction by hash, including its status.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<string>` (H256): the transaction hash.
+    2. `<string>` (optional): verbosity — `0x0`, `0x1` or `0x2` (default).
+    3. `<boolean>` (optional): `only_committed` — if `true`, only returns the transaction if it has been committed on chain.
+
+### Returns
+<br/>
+
+  * `<object>` (TransactionWithStatus):
+    * `transaction` (object): the transaction (or `null` depending on verbosity / status).
+    * `cycles` (string): the consumed cycles, when available.
+    * `tx_status` (object): `{ status, block_hash, block_number, reason }`. `status` is one of `pending`, `proposed`, `committed`, `unknown` or `rejected`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_transaction",
+      "params": ["0xa0 ... transaction hash ... 5b"],
+      "id": 1
+    }'
+```
+
+### Response example (trimmed)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "cycles": "0x219c",
+        "transaction": { "hash": "0x...", "inputs": [], "outputs": [] },
+        "tx_status": {
+            "block_hash": "0xaa8d68b396f8a01449d829fef85c4065c83e6fa71ec7b1f066674ff752dd0d01",
+            "block_number": "0x12a6ad1",
+            "reason": null,
+            "status": "committed"
+        }
+    }
+}
+```
+
+---
+
+## `get_live_cell`
+
+> Returns the status of a cell. The RPC returns extra information if it is a live cell.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (OutPoint): `{ "tx_hash": "<H256>", "index": "<hex>" }` — the cell out point.
+    2. `<boolean>`: `with_data` — if `true`, the response includes the cell data.
+
+### Returns
+<br/>
+
+  * `<object>` (CellWithStatus):
+    * `cell` (object): the cell `output` and optional `data`, when the cell is live.
+    * `status` (string): one of `live`, `dead` or `unknown`.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_live_cell",
+      "params": [{ "index": "0x0", "tx_hash": "0xa0ef4eb5f4ce087db3ce8b58c1bb6c6f93a6c4d1c1f1f8f6f8b... " }, true],
+      "id": 1
+    }'
+```
+
+### Response example (trimmed)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "cell": {
+            "data": { "content": "0x", "hash": "0x..." },
+            "output": {
+                "capacity": "0x802665800",
+                "lock": { "args": "0x", "code_hash": "0x...", "hash_type": "type" },
+                "type": null
+            }
+        },
+        "status": "live"
+    }
+}
+```
+
+---
+
+## `get_consensus`
+
+> Returns various consensus parameters of the chain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<object>` (Consensus): consensus parameters, including `id`, `genesis_hash`, `primary_epoch_reward_halving_interval`, `epoch_duration_target`, `block_version`, `tx_version`, `max_block_cycles`, `max_block_bytes`, `dao_type_hash`, `secp256k1_blake160_sighash_all_type_hash`, `hardfork_features` and more.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_consensus",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example (trimmed)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "id": "ckb",
+        "genesis_hash": "0x92b197aa1fba0f63633922c61c92375c9c074a93e85963554f5499fe1450d0e5",
+        "epoch_duration_target": "0x3840",
+        "max_block_bytes": "0x91c08",
+        "max_block_cycles": "0xd09dc300",
+        "block_version": "0x0",
+        "tx_version": "0x0",
+        "dao_type_hash": "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e"
+    }
+}
+```
+
+---
+
+## `get_fee_rate_statistics`
+
+> Returns the fee rate statistics of confirmed blocks on the chain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array): optionally a `<string>` (hex) `target` — the number of confirmed blocks to look back over (default `0x15`).
+
+### Returns
+<br/>
+
+  * `<object>`: `{ "mean": "<hex>", "median": "<hex>" }` — the mean and median fee rate (Shannons per kilo-weight) over the target window, or `null` when no statistics are available.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_fee_rate_statistics",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "mean": "0x3e8",
+        "median": "0x3e8"
+    }
+}
+```
+
+---
+
+## `get_blockchain_info`
+
+> Returns general information about the chain.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<object>` (ChainInfo):
+    * `chain` (string): the network name (e.g. `ckb` for mainnet).
+    * `difficulty` (string): the current difficulty.
+    * `epoch` (string): the current epoch number (packed).
+    * `median_time` (string): the median time of the last 37 blocks (milliseconds).
+    * `is_initial_block_download` (boolean): whether the node is still in initial block download.
+    * `alerts` (array): the active network alerts.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "get_blockchain_info",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "alerts": [],
+        "chain": "ckb",
+        "difficulty": "0xcef571d05179903",
+        "epoch": "0x524029e003810",
+        "is_initial_block_download": false,
+        "median_time": "0x19eb08ed9db"
+    }
+}
+```
+
+---
+
+## `tx_pool_info`
+
+> Returns the transaction pool information.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required): None.
+
+### Returns
+<br/>
+
+  * `<object>` (TxPoolInfo):
+    * `pending` (string), `proposed` (string), `orphan` (string): the number of transactions in each state.
+    * `total_tx_size` (string), `total_tx_cycles` (string): the aggregate size and cycles of pool transactions.
+    * `min_fee_rate` (string), `min_rbf_rate` (string): the minimum fee rate for acceptance / replace-by-fee.
+    * `tip_hash` (string), `tip_number` (string): the chain tip the pool is based on.
+    * `tx_size_limit` (string), `max_tx_pool_size` (string), `verify_queue_size` (string), `last_txs_updated_at` (string).
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "tx_pool_info",
+      "params": [],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "last_txs_updated_at": "0x19eb091d08b",
+        "max_tx_pool_size": "0xaba9500",
+        "min_fee_rate": "0x3e8",
+        "min_rbf_rate": "0x5dc",
+        "orphan": "0x0",
+        "pending": "0x4",
+        "proposed": "0x0",
+        "tip_hash": "0xaa8d68b396f8a01449d829fef85c4065c83e6fa71ec7b1f066674ff752dd0d01",
+        "tip_number": "0x12a6ad1",
+        "total_tx_cycles": "0x67aa33",
+        "total_tx_size": "0xc99",
+        "tx_size_limit": "0x7d000",
+        "verify_queue_size": "0x0"
+    }
+}
+```
+
+---
+
+## `send_transaction`
+
+> Submits a new transaction into the transaction pool.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (Transaction): the transaction object (`version`, `cell_deps`, `header_deps`, `inputs`, `outputs`, `outputs_data`, `witnesses`).
+    2. `<string>` (optional): `outputs_validator` — `passthrough` or `well_known_scripts_only` (the default).
+
+### Returns
+<br/>
+
+  * `<string>` (H256): the transaction hash.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "send_transaction",
+      "params": [
+        {
+          "version": "0x0",
+          "cell_deps": [],
+          "header_deps": [],
+          "inputs": [],
+          "outputs": [],
+          "outputs_data": [],
+          "witnesses": []
+        },
+        "passthrough"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xa0ef4eb5f4ce087db3ce8b58c1bb6c6f93a6c4d1c1f1f8f6f8b94c8f9b5e2c5b"
+}
+```
+
+---
+
+## `test_tx_pool_accept`
+
+> Tests whether the transaction pool would accept a transaction, without actually submitting it.
+
+### Parameters
+<br/>
+
+  * `id` (integer; required): a request ID (example: 1).
+  * `jsonrpc` (string; required): a JSON RPC spec used (example: 2.0).
+  * `method` (string; required): a method used for the request.
+  * `params` (array; required):
+
+    1. `<object>` (Transaction): the transaction object (same structure as [`send_transaction`](/rpc-service/chains/chains-api/nervos_ckb/#send_transaction)).
+    2. `<string>` (optional): `outputs_validator` — `passthrough` or `well_known_scripts_only` (the default).
+
+### Returns
+<br/>
+
+  * `<object>` (EntryCompleted): `{ "cycles": "<hex>", "fee": "<hex>" }` — the consumed cycles and the fee the transaction would pay.
+
+### Request example
+
+```shell
+curl -X POST https://rpc.ankr.com/nervos_ckb/{your_token} \
+-H 'Content-Type: application/json' \
+-d '{
+      "jsonrpc": "2.0",
+      "method": "test_tx_pool_accept",
+      "params": [
+        {
+          "version": "0x0",
+          "cell_deps": [],
+          "header_deps": [],
+          "inputs": [],
+          "outputs": [],
+          "outputs_data": [],
+          "witnesses": []
+        },
+        "passthrough"
+      ],
+      "id": 1
+    }'
+```
+
+### Response example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "cycles": "0x219c",
+        "fee": "0x16e"
+    }
+}
+```

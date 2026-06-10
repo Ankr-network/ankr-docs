@@ -31,11 +31,12 @@ Find the chain you require and go to its docs section by clicking it.
 | [Avail](/rpc-service/chains/chains-list/#avail)                 | [Electroneum](/rpc-service/chains/chains-list/#electroneum)         | [Horizen EON](/rpc-service/chains/chains-list/#horizen-eon)     | [Moonbeam](/rpc-service/chains/chains-list/#moonbeam) | [Sonic](/rpc-service/chains/chains-list/#sonic)                   | [X Layer](/rpc-service/chains/chains-list/#x-layer)       |
 | [Avalanche](/rpc-service/chains/chains-list/#avalanche)         | [Ethereum](/rpc-service/chains/chains-list/#ethereum)               | [Iota](/rpc-service/chains/chains-list/#iota)                   | [Movement](/rpc-service/chains/chains-list/#movement) | [Stellar](/rpc-service/chains/chains-list/#stellar)               | [Xphere](/rpc-service/chains/chains-list/#xphere)         |
 | [B2 Network](/rpc-service/chains/chains-list/#b2-network)       | [Ethereum Beacon](/rpc-service/chains/chains-list/#eth-beacon)      | [Iota EVM](/rpc-service/chains/chains-list/#iota-evm)           | [NEAR](/rpc-service/chains/chains-list/#near)         | [Story](/rpc-service/chains/chains-list/#story)                   | [XRP](/rpc-service/chains/chains-list/#xrp)               |
-| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Etherlink](/rpc-service/chains/chains-list/#etherlink)             | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos](/rpc-service/chains/chains-list/#nervos)     | [Sui](/rpc-service/chains/chains-list/#sui)                       | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
-| [Base](/rpc-service/chains/chains-list/#base)                   | [Fantom](/rpc-service/chains/chains-list/#fantom)                   | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Neura](/rpc-service/chains/chains-list/#neura)       | [Swell](/rpc-service/chains/chains-list/#swell)                   | [Kite AI](/rpc-service/chains/chains-list/#kite-ai)       |
+| [Bahamut](/rpc-service/chains/chains-list/#bahamut)             | [Etherlink](/rpc-service/chains/chains-list/#etherlink)             | [IoTeX](/rpc-service/chains/chains-list/#iotex)                 | [Nervos CKB](/rpc-service/chains/chains-list/#nervos-ckb)     | [Sui](/rpc-service/chains/chains-list/#sui)                       | [zkSync Era](/rpc-service/chains/chains-list/#zksync-era) |
+| [Base](/rpc-service/chains/chains-list/#base)                   | [Fantom](/rpc-service/chains/chains-list/#fantom)                   | [Kaia](/rpc-service/chains/chains-list/#kaia)                   | [Neura](/rpc-service/chains/chains-list/#neura)       | [Swell](/rpc-service/chains/chains-list/#swell)                   |                                                           |
 | [Bitcoin](/rpc-service/chains/chains-list/#bitcoin)             | [Filecoin](/rpc-service/chains/chains-list/#filecoin)               | [Kava](/rpc-service/chains/chains-list/#kava)                   | [Optimism](/rpc-service/chains/chains-list/#optimism) | [Syscoin](/rpc-service/chains/chains-list/#syscoin)               |                                                           |
 | [Bitlayer](/rpc-service/chains/chains-list/#bitlayer)           | [Flare](/rpc-service/chains/chains-list/#flare)                     | [Kinto](/rpc-service/chains/chains-list/#kinto)                 | [Polkadot](/rpc-service/chains/chains-list/#polkadot) | [TAC](/rpc-service/chains/chains-list/#tac)                       |                                                           |
-| [Blast](/rpc-service/chains/chains-list/#blast)                 | [Fuel](/rpc-service/chains/chains-list/#fuel)                       | [Kusama](/rpc-service/chains/chains-list/#kusama)               | [Polygon](/rpc-service/chains/chains-list/#polygon)   | [Taiko](/rpc-service/chains/chains-list/#taiko)                   |                                                           |
+| [Blast](/rpc-service/chains/chains-list/#blast)                 | [Fuel](/rpc-service/chains/chains-list/#fuel)                       | [Kite AI](/rpc-service/chains/chains-list/#kite-ai)             | [Polygon](/rpc-service/chains/chains-list/#polygon)   | [Taiko](/rpc-service/chains/chains-list/#taiko)                   |                                                           |
+|                                                                 |                                                                     | [Kusama](/rpc-service/chains/chains-list/#kusama)               |                                                       |                                                                   |                                                           |
 
 ## 0G
 <br/>
@@ -7643,7 +7644,7 @@ curl -X POST https://rpc.ankr.com/near/{your_token} \
 
 ---
 
-## Nervos
+## Nervos CKB
 <br/>
 
 <img src="/docs/build/chains-list/nervos.png" className="responsive-pic" width="800" />
@@ -7652,196 +7653,24 @@ curl -X POST https://rpc.ankr.com/near/{your_token} \
 Available for [Freemium and Premium](/rpc-service/service-plans/#service-plans-comparison) users.
 </Callout>
 
-> Nervos API is available on [Web3 API platform](https://www.ankr.com/rpc/nervos).
+> Nervos CKB API is available on [Web3 API platform](https://www.ankr.com/rpc/nervos).
 
-Nervos blockchain, also known as Common Knowledge Base, is the rock-bottom layer of the Nervos ecosystem. As the foundation, Nervos blockchain provides trust for all the layers built on top of it. It is designed to maximize decentralization while remaining minimal, flexible, and secure. Its primary objective is to reliably preserve any data and assets stored therein.
+Nervos CKB (Common Knowledge Base) is the Layer 1, proof-of-work blockchain of the Nervos ecosystem, using an improved Nakamoto consensus and the generalized UTXO *Cell* model. It is designed to maximize decentralization while remaining minimal, flexible, and secure.
 
-Nervos blockchain ecosystem has a multi-layer architecture — both a Layer 1 solution (Nervos CKB) and a Layer 2 (Godwoken). Nervos CKB is a public permissionless blockchain using PoW and improved Nakamoto consensus.
+<Callout type="warning">
+The Nervos EVM / Polyjuice (Godwoken) Layer 2 endpoint has been **deprecated and removed** following the [sunset of the Godwoken network](https://sunset.forcebridge.com/announcement) by Nervos (June 2025). Only the native Nervos CKB (Layer 1) endpoint is available.
+</Callout>
 
-Godwoken comprises two key components: the Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Polyjuice serves as the backend for the Godwoken rollup framework, providing an Ethereum-compatible layer atop Nervos CKB. Polyjuice leverages the account model and the scalability provided by Godwoken, and integrates [evmone](https://github.com/ethereum/evmone) as the EVM engine to run Ethereum smart contracts.
-
-Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [Godwoken Docs](https://docs.godwoken.io/), [GitHub](https://github.com/godwokenrises/godwoken)
+Official quick links: [Website](https://www.nervos.org/), [CKB Docs](https://docs.nervos.org/), [JSON-RPC reference](https://github.com/nervosnetwork/ckb/blob/develop/rpc/README.md), [GitHub](https://github.com/nervosnetwork/ckb)
 
 ### Networks
 
   * Mainnet:
-    * Standard EVM and Polyjuice API (`HTTPS`)
-    * Godwoken API (`HTTPS`)
-    * Nervos CKB API (`HTTPS` and `WSS`)
-
-### Add networks to MetaMask
-
-Using Ankr as the blockchain provider for MetaMask makes user interaction on Web3 not just easy and slick but also PRIVATE. We DON'T collect users' blockchain addresses — end of the story. Feel free to check our [terms](https://www.ankr.com/terms/
-) and [privacy policy](https://www.ankr.com/privacy-policy/) to be sure.
-
-For MetaMask to interact with Nervos through Ankr's infrastructure, add a required Nervos network either via Web3 API platform's or MetaMask's UI.
-
-#### Via Web3 API platform
-
-To be added soon.
-
-#### Via MetaMask
-
-To add Godwoken/PolyJuice Mainnet, follow these steps:
-
-  1. In MetaMask extension, click **Networks** (drop-down menu) **> Add network** to open **Settings**.
-  2. In the **Add a network** pane, click **Add a network manually**, then enter the network details and click **Save**:
-
-      * **Network name**: `Godwoken/PolyJuice Mainnet by Ankr RPC`.
-      * **New RPC URL**: `https://rpc.ankr.com/nervos/{your_token}`.
-      * **Chain ID**: `71402`.
-      * **Currency symbol**: `CKB`.
-      * **Block explorer URL**: `https://v0.gwscan.com/`.
-
-Congrats — you've just added Ankr as the blockchain provider for MetaMask to interact with Godwoken/PolyJuice Mainnet.
+    * Nervos CKB API (`HTTPS` and `WSS`) — `https://rpc.ankr.com/nervos_ckb/{your_token}`
 
 ### API methods
 
-For Nervos, we support blockchain interaction via all the [applicable methods](/rpc-service/chains/chains-api/nervos) except for those listed as unsupported.
-
-#### Unsupported
-
- <Callout type="warning">
- This section contains a list of methods we don't support for _Premium_ service plan.
- </Callout>
-
- <Callout type="tip">
- If you require any of the methods from the list, contact our Sales (`sales@ankr.com`) about moving to the _Enterprise_ service plan that can provide the services tailored to your specific needs.
- </Callout>
-
-**HTTPS**:
-
-`eth_newFilter`, `eth_getFilterChanges`, `eth_coinbase`, `eth_hashrate`, `eth_mining`, `eth_getWork`,`eth_submitWork`, `eth_submitHashrate`, `net_peerCount`, `eth_newBlockFilter`, `eth_newPendingTransactionFilter`, `eth_uninstallFilter`, `eth_getFilterLogs`,
-
-`debug_*` (exception: `debug_traceBlockByHash`, `debug_traceBlockByNumber`, `debug_traceTransaction`, `debug_traceCall`, `debug_traceBlock`),
-
-`personal_*`, `admin_*`, `clique_*`, `les_*`, `miner_*`, `engine_*`, `parity_*`,
-
-  `send_alert`,
-  `process_block_without_verify`,
-  `truncate`,
-  `generate_block`,
-  `notify_transaction`,
-  `generate_block_with_template`,
-  `calculate_dao_field`,
-  `get_block_template`,
-  `submit_block`,
-  `local_node_info`,
-  `get_peers`,
-  `get_banned_addresses`,
-  `clear_banned_addresses`,
-  `set_ban`,
-  `sync_state`,
-  `set_network_active`,
-  `add_node`,
-  `remove_node`,
-  `ping_peers`,
-  `clear_tx_pool` 
-
-**WSS**:
-
-`txpool_content`, `txpool_inspect`, `txpool_status`, `txpool_contentFrom`
-
-### API querying
-
-Below are the request examples applicable for Standard EVM and Polyjuice API.
-
-#### Request example
-
-<Tabs
-  items={[
-    "cURL",
-    "Golang",
-    "Web3.JS",
-    "Python",
-  ]}
->
-  <Tab>
-
-```shell
-curl -X POST https://rpc.ankr.com/nervos/{your_token} \
--H 'Content-Type: application/json' \
--d '{
-      "jsonrpc":"2.0",
-      "method":"eth_blockNumber",
-      "params": [],
-      "id":1
-    }'
-```
-  </Tab>
-  <Tab>
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "github.com/ethereum/go-ethereum/ethclient"
-)
-
-func main() {
-    const url = "https://rpc.ankr.com/nervos/{your_token}"  // url string
-    
-    rpcClient,err := ethclient.Dial(url)
-    
-    if err != nil {
-        panic(err)
-    }
-    
-    blockNumber, err := rpcClient.BlockNumber(context.Background())
-    
-    if err != nil {
-        panic(err)
-    }
-    
-    fmt.Println(blockNumber)
-}
-```
-  </Tab>
-  <Tab>
-
-```js
-const Web3 = require('web3');
-
-const url = 'https://rpc.ankr.com/nervos/{your_token}'  // url string
-
-const web3 = new Web3(new Web3.providers.HttpProvider(url));
-
-web3.eth.getBlockNumber((error, blockNumber) => {
-    if(!error) {
-        console.log(blockNumber);
-    } else {
-        console.log(error);
-    }
-});
-```
-  </Tab>
-  <Tab>
-
-```python
-from web3 import Web3
-          
-def test_block_number(self):
-    url = 'https://rpc.ankr.com/nervos/{your_token}'  # url string
-    
-    web3 = Web3(HTTPProvider(url))
-    print(web3.eth.block_number)
-```
-  </Tab>
-</Tabs>
-
-#### Response example
-
-```json
-{
-  "jsonrpc":"2.0",
-  "id":1,
-  "result":"0x37e7d"
-}
-```
-
----
+For Nervos CKB, see the [supported methods](/rpc-service/chains/chains-api/nervos_ckb). Node administration, mining, network-control and `debug_*` methods are restricted on the shared endpoint; contact Sales (`sales@ankr.com`) for Enterprise access.
 
 ## Neura
 <br/>
