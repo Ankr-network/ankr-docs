@@ -2134,5 +2134,9 @@
   {
     "from": "docs/rpc-service/chains/chains-api/sui-grpc/index.html",
     "to": "/docs/rpc-service/chains/chains-api/sui/"
+  },
+  {
+    "from": "docs/rpc-service/chains/chains-api/nervos/index.html",
+    "to": "/docs/rpc-service/chains/chains-api/nervos_ckb/"
   }
 ]
