@@ -392,7 +392,7 @@ async function main() {
   const contractAddress = "0xcf092E8bDCDC1FA8B15Ebeb9D97453D498067Df1"; //line5
   const args = [
     "first title", ethers.utils.parseUnits("0.1", 18), "description",
-//Insert you wallet's public address here
+//Insert your wallet's public address here
 "YOUR_WALLET_PUBLIC_ADDRESS",  //line 9
 
   ];
@@ -859,7 +859,7 @@ function CreateCampaign() {
         description: "Create Project Transaction",
       });
     } catch (error) {
-      console.log("errror >>> ", error);
+      console.log("error >>> ", error);
     }
   };
 
@@ -931,7 +931,7 @@ function CreateCampaign() {
             </button>
           </div>
 
-          {/* if error occures display text to try again */}
+          {/* if error occurs display text to try again */}
           {isError && (
             <p className="text-red-500 text-xs italic">
               Error occured! Please try again!.
@@ -1025,7 +1025,7 @@ function Campaign({ projectNumber }: CampaignProps) {
         description: `Donate ${value} POL`,
       });
     } catch (error) {
-      console.log("errror >>> ", error);
+      console.log("error >>> ", error);
     }
   };
 
@@ -1074,7 +1074,7 @@ function Campaign({ projectNumber }: CampaignProps) {
           </button>
         </div>
 
-        {/* if error occures display text to try again */}
+        {/* if error occurs display text to try again */}
         {isError && (
           <p className="text-red-500 text-xs italic">
             Error occured! Please try again!.
