@@ -7,7 +7,7 @@ import { Callout } from "components";
 <img src="/docs/build/chains-list/sui.png" className="responsive-pic" width="800" />
 
 <Callout type="warning">
-**JSON-RPC deprecation notice.** The Sui JSON-RPC interface is being deprecated and will be turned off at the **end of July 2026**, in line with the Sui Foundation's network-wide deprecation timeline. Please migrate existing integrations to **gRPC** (recommended for indexers and backend services) or **GraphQL** (recommended for frontends and analytics). See the [JSON-RPC page](/rpc-service/chains/chains-api/sui/json-rpc) for details.
+**JSON-RPC deprecation notice.** In line with the Sui Foundation's updated, phased deprecation plan, the Sui JSON-RPC interface is being retired network-wide during 2026. Because Ankr runs its own Sui full nodes, Ankr's JSON-RPC endpoints keep serving until JSON-RPC support is removed from the Sui node software (**targeted mid-October 2026**); historical/pruned data may become unavailable earlier (**from September 2026**). Migrate existing integrations to **gRPC** (recommended for indexers and backend services) or **GraphQL** (recommended for frontends and analytics) as soon as possible. See the [JSON-RPC page](/rpc-service/chains/chains-api/sui/json-rpc) for the full timeline.
 </Callout>
 
 <Callout type="tip">
@@ -26,8 +26,8 @@ Ankr provides multiple interfaces for interacting with Sui — JSON-RPC, gRPC, a
 
 | Interface | Network | Endpoint | Auth |
 |-----------|---------|----------|------|
-| JSON-RPC *(deprecated, sunset end of July 2026)* | Mainnet | `https://rpc.ankr.com/sui` | Token for Premium |
-| JSON-RPC *(deprecated, sunset end of July 2026)* | Testnet | `https://rpc.ankr.com/sui_testnet` | Token for Premium |
+| JSON-RPC *(deprecated, sunset mid-Oct 2026)* | Mainnet | `https://rpc.ankr.com/sui` | Token for Premium |
+| JSON-RPC *(deprecated, sunset mid-Oct 2026)* | Testnet | `https://rpc.ankr.com/sui_testnet` | Token for Premium |
 | gRPC | Mainnet | `sui.grpc.ankr.com:443` | `x-token` header for Premium |
 | gRPC | Testnet | `sui-testnet.grpc.ankr.com:443` | `x-token` header for Premium |
 | gRPC Archive | Mainnet | `archive.sui.grpc.ankr.com:443` | `x-token` header for Premium |
@@ -56,7 +56,7 @@ See the [gRPC page](/rpc-service/chains/chains-api/sui/grpc#regions) for the ful
 ### JSON-RPC *(deprecated)*
 
 <Callout type="warning">
-Sunset at **end of July 2026**. Migrate existing integrations to gRPC or GraphQL.
+Sunset on Ankr's nodes is **targeted for mid-October 2026**, when JSON-RPC is removed from Sui full-node software (Sui Foundation public-good endpoints turn off earlier, in July 2026). Migrate existing integrations to gRPC or GraphQL.
 </Callout>
 
 The standard [JSON-RPC 2.0](https://www.jsonrpc.org/specification) interface for reading blockchain data and sending transactions. Historically the most common entry point for Sui dApps; superseded by gRPC and GraphQL going forward.
