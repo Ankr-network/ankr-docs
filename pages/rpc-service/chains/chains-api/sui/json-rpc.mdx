@@ -6,12 +6,21 @@ import { Callout } from "components";
 <img src="/docs/build/chains-list/sui.png" className="responsive-pic" width="800" />
 
 <Callout type="warning">
-**Deprecation notice.** The Sui JSON-RPC interface is being deprecated and will be turned off at the **end of July 2026**, in line with the Sui Foundation's network-wide deprecation timeline. Please migrate existing integrations to:
+**Deprecation notice — JSON-RPC is being retired.** Per the Sui Foundation's updated, phased deprecation plan, JSON-RPC is being removed network-wide through 2026. Migrate existing integrations to:
 
 - **[gRPC](/rpc-service/chains/chains-api/sui/grpc)** — recommended for indexers, backend services, and most dApp use cases.
 - **[GraphQL](/rpc-service/chains/chains-api/sui/graphql)** — recommended for frontends, dashboards, and analytics tools.
 
-This page is preserved for reference until the sunset date.
+**Sui Foundation timeline:**
+
+- **July 2026** — Sui Foundation public-good JSON-RPC endpoints are turned off (Testnet: week of July 6; Mainnet: week of July 20). This affects apps pointing at Sui Foundation public endpoints, including for dev/test.
+- **August 2026** — Sui Foundation stops publishing JSON-RPC snapshots; new JSON-RPC full nodes can no longer be bootstrapped from them.
+- **September 2026** — Implicit archival fallback is removed; requests for pruned historical data over JSON-RPC may fail.
+- **Mid-October 2026** — JSON-RPC support is removed from Sui full-node software. After this point JSON-RPC is no longer available from any Sui full node.
+
+**On Ankr:** Ankr operates its own Sui full nodes, so the JSON-RPC endpoints (`https://rpc.ankr.com/sui`, `https://rpc.ankr.com/sui_testnet`) are **not** affected by the July public-good shutdown and keep serving until the mid-October 2026 software removal. Historical/pruned-data queries may start failing from September 2026 — for historical data, use the [gRPC Archive endpoint](/rpc-service/chains/chains-api/sui/grpc) (`archive.sui.grpc.ankr.com:443`). We strongly recommend migrating now to avoid disruption.
+
+This page is preserved for reference until JSON-RPC is removed.
 </Callout>
 
 > Sui API is available on [Web3 API platform](https://www.ankr.com/rpc/sui).
