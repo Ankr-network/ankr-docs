@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repo has been migrated to https://github.com/w3tech/ankr-docs.
+
 # Ankr Docs
 Ankr is the leading Web3 infrastructure company. It provides all the necessary blockchain infrastructure and services for companies to build new and bring their existing projects to Web3.
 
